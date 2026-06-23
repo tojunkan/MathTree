@@ -1,0 +1,45 @@
+[SCOPE:root|description|虚误差函数]
+文章名: Erfi
+标题: 虚误差函数
+
+[0] 贡献者： 待更新
+[1] 预备知识 误差函数
+[SCOPE:s_def|description|定义]
+[SCOPE:s_def_let|let_bind|定义变量]
+[2] 虚误差函数的定义为
+[3] \begin{equation}
+\operatorname{erfi} (x) = - \mathrm{i} \operatorname{erf} ( \mathrm{i} x) = \frac{1}{\sqrt{\pi}} \int_{-x}^x \mathrm{e} ^{t^2} \,\mathrm{d}{t}
+= \frac{2}{\sqrt{\pi}} \int_0^x \mathrm{e} ^{t^2} \,\mathrm{d}{t} ~.
+\end{equation}
+[/SCOPE:s_def_let]
+[4] 推导如下，使用换元法 $t = \mathrm{i} \tau$ 有
+[5] \begin{equation}
+\operatorname{erfi} (x) = \frac{- \mathrm{i} }{\sqrt{\pi}} \int_{- \mathrm{i} x}^{ \mathrm{i} x} \mathrm{e} ^{t^2} \,\mathrm{d}{t}
+= \frac{- \mathrm{i} }{\sqrt{\pi}} \int_{-x}^{x} \mathrm{e} ^{-( \mathrm{i} \tau)^2} \,\mathrm{d}{( \mathrm{i} \tau)}
+= \frac{1}{\sqrt{\pi}} \int_{-x}^{x} \mathrm{e} ^{\tau^2} \,\mathrm{d}{\tau} ~.
+\end{equation}
+[6] 同理可得
+[7] \begin{equation}
+\operatorname{erfi} ( \mathrm{i} x) = \mathrm{i} \operatorname{erf} (x)~,
+\end{equation}
+[/SCOPE:s_def]
+[SCOPE:s_deriv|description|导函数与积分]
+[8] 其导函数为
+[9] \begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}{x}} \operatorname{erfi} (x) = \frac{2}{\sqrt{\pi}} \mathrm{e} ^{x^2}~,
+\end{equation}
+[10] 所以
+[11] \begin{equation}
+\int \mathrm{e} ^{x^2} \,\mathrm{d}{x} = \frac{\sqrt{\pi}}{2} \operatorname{erfi} (x) + C~.
+\end{equation}
+[/SCOPE:s_deriv]
+[SCOPE:s_series_let|let_bind|级数变量]
+[SCOPE:s_series|description|级数展开]
+[12] 与误差函数的级数展开同理，$ \operatorname{erfi} (x)$ 的级数展开为
+[13] \begin{equation}
+\operatorname{erfi} (x) = \frac{2}{\sqrt{\pi}} \sum_{n=0}^\infty \frac{x^{2n+1}}{(2n+1)n!}
+= \frac{2}{\sqrt{\pi}} \left(x + \frac{x^3}{3} + \frac{x^5}{10} + \frac{x^7}{42} + \frac{x^9}{216} \dots \right) ~.
+\end{equation}
+[/SCOPE:s_series_let]
+[/SCOPE:s_series]
+[/SCOPE:root]

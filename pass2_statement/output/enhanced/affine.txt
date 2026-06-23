@@ -1,0 +1,606 @@
+[SCOPE:root|description|仿射法在解析几何中的应用]
+文章名: affine
+标题: 仿射法在解析几何中的应用
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=仿射变换
+  [1] type=lemma heading=引理 1 title=
+  [2] type=lemma heading=引理 2 title=
+  [3] type=lemma heading=引理 3 title=
+  [4] type=lemma heading=引理 4 title=
+  [5] type=lemma heading=引理 5 title=
+  [6] type=corollary heading=推论 1 title=
+  [7] type=corollary heading=推论 2 title=
+  [8] type=corollary heading=推论 3 title=
+  [9] type=corollary heading=推论 4 title=
+  [10] type=corollary heading=推论 5 title=等角定理
+  [11] type=corollary heading=推论 6 title=
+  [12] type=corollary heading=推论 7 title=
+  [13] type=corollary heading=推论 8 title=
+  [14] type=corollary heading=推论 9 title=软解定理
+  [15] type=corollary heading=推论 10 title=
+  [16] type=corollary heading=推论 11 title=蒙日圆
+  [17] type=corollary heading=推论 12 title=
+  [18] type=example heading=例 1 title=
+  [19] type=example heading=例 2 title=
+  [20] type=example heading=例 3 title=
+  [21] type=example heading=例 4 title=2017 全国 I 理
+  [22] type=example heading=例 5 title=
+  [23] type=exercise heading=习题 1 title=2019 全国 II 理
+  [24] type=exercise heading=习题 2 title=2020 全国 I 理
+  [25] type=exercise heading=习题 3 title=
+
+[0] 本文存在未完成的内容。
+[1] {缺少仿射变换的一般定义及性质证明}
+
+[2] 已知椭圆 $\displaystyle{E}$ 的中心为坐标原点，对称轴为 $\displaystyle{x}$ 轴、$\displaystyle{y}$ 轴，且过 $\displaystyle{A(0,-2)}$,$\displaystyle{B\left(\frac{3}{2},-1\right)}$ 两点。
+[3] （1）求 $\displaystyle{E}$ 的方程；
+[4] （2）设过点 $\displaystyle{P(1,-2)}$ 的直线交 $\displaystyle{E}$ 于 $\displaystyle{M,N}$ 两点，过 $\displaystyle{M}$ 且平行于 $\displaystyle{x}$ 轴的直线与线段 $\displaystyle{AB}$ 交于点 $\displaystyle{T}$。
+[5] 点 $\displaystyle{H}$ 满足 $\displaystyle{\overrightarrow{MT}=\overrightarrow{TH}}$，证明：直线 $\displaystyle{HN}$ 过定点。
+[6] 解：（1）$\displaystyle{E:\frac{x^2}{3}+\frac{y^2}{4}=1}$
+[7] 【图解】图 1：2022 年全国乙卷
+[8] （2）置 $\displaystyle{x'=\frac{x}{\sqrt{3}},y'=\frac{y}{2}}$
+[9] 则 $\displaystyle{E}$ 化为单位圆 $\displaystyle{x'^2+y'^2=1}$，且 $\displaystyle{\text{A}'(0,-1)\,,\text{B}'\left(\frac{\sqrt{3}}{2},-\frac{1}{2}\right)\,,\text{P}'\left(\frac{\sqrt{3}}{3},-1\right)}~.$
+[10] 容易发现 $\displaystyle{\triangle \text{OAB}}$ 为等边三角形
+[11] 我们猜想 $\displaystyle{\text{HN}}$ 恒过 $\displaystyle{\text{A}}$，
+[12] 故只需证 $\displaystyle{\text{H},\text{N},\text{A}}$ 三点共线，只需证：
+[13] $$\frac{\text{MN}}{\text{PN}}=\frac{\text{HM}}{\text{AP}}~.$$
+[14] 而我们知道 $\displaystyle{\frac{\text{QM}}{\text{PQ}}=\frac{\text{TM}}{\text{AP}}}~,$
+[15] 即：
+[16] $$1-\frac{\text{PM}}{\text{PQ}}=\frac{\text{TM}}{\text{AP}}~.$$
+[17] 两式相除，得：
+[18] $$\frac{1-\frac{\text{MP}}{\text{PQ}}}{\frac{\text{MN}}{\text{PN}}}=\frac{1}{2}~,$$
+[19] 即：
+[20] $$\frac{\text{PN}}{\text{MN}}-\frac{\text{PM}\cdot\text{PN}}{\text{PQ}\cdot\text{MN}}=\frac{1}{2}~.$$
+[21] 由切割线定理：
+[22] $${\text{PM}}\cdot{\text{PN}}=\text{AP}^2=\frac{1}3~.$$
+[23] 又：
+[24] $$\text{PQ}=\frac{\sqrt{3}}{6\cos\angle\text{OPN}}~.$$
+[25] 故 $\displaystyle{\text{PN}-\frac{2\sqrt{3}}{3}\cos\angle\text{OPN}=\frac{1}{2}\text{MN}}$，
+[26] 即：
+[27] $$\text{PN}-\text{OP}\cos\angle\text{OPN}=\frac{1}{2}\text{MN}~.$$
+[28] 此式显然
+
+[SCOPE:s_def1|description|仿射变换]
+[29] 定义 1 仿射变换
+[SCOPE:s_def1_let|let_bind|仿射变换变量]
+[30] 设椭圆 $\displaystyle{\frac{x^2}{a^2}+\frac{y^2}{b^2}=1}$，其中 $\displaystyle{a>b>0}$，置变换：
+[31] $$x'=\frac{x}{a},y'=\frac{y}{b}~.$$
+[32] 则椭圆化为单位圆 $\displaystyle{C:x'^2+y'^2=1}~.$
+[/SCOPE:s_def1_let]
+[33] 届时，我们可以就可以抛开繁琐的代数计算，运用几何性质解决问题。
+[34] 此前，我们先介绍仿射变换的几个性质。
+
+[/SCOPE:s_def1]
+[SCOPE:s_lemma1|description|引理1]
+[35] 引理 1
+[36] 变换后，平面内任意一条直线的斜率变为原来的 $\displaystyle{\frac{a}{b}}~.$
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_lemma2|description|引理2]
+[37] 引理 2
+[38] 变换后，平面上任意区域的面积变为原来的 $\displaystyle{\frac1{ab}}~.$
+
+[/SCOPE:s_lemma2]
+[SCOPE:s_lemma3|description|引理3]
+[39] 引理 3
+[40] 变换后，线段中点依然是线段中点；
+[41] 关于水平线、铅垂线、坐标原点对称的元素依然对称；
+[42] 平面区域的重心保持不变
+
+[/SCOPE:s_lemma3]
+[SCOPE:s_lemma4|description|引理4]
+[43] 引理 4
+[44] 变换前后，平行关系保持不变
+
+[/SCOPE:s_lemma4]
+[SCOPE:s_lemma5|description|引理5]
+[45] 引理 5
+[46] 变换前后，平行线段的长度比保持不变
+
+[/SCOPE:s_lemma5]
+[SCOPE:s_cor1|description|推论1]
+[47] 推论 1
+[SCOPE:s_cor1_let|let_bind|推论1变量]
+[48] 设椭圆 $\displaystyle{\frac{x^2}{a^2}+\frac{y^2}{b^2}}$，直线 $\displaystyle{l}$ 交椭圆于点 $\displaystyle{A}$ 和 $\displaystyle{B}$，点 $\displaystyle{P(x_0,y_0)}$ 为线段 $\displaystyle{AB}$ 的中点，求直线斜率
+[49] 图 2：推论 1
+[50] 解：作变换 $\displaystyle{x'=\frac{x}{a},y'=\frac{y}{b}}$，
+[51] 则椭圆化为单位圆 $\displaystyle{C:x'^2+y'^2=1}$，且 $\displaystyle{P'\left(\frac{x_0}{a},\frac{y_0}{b}\right)}$
+[/SCOPE:s_cor1_let]
+[52] 故 $\displaystyle{k_{OP'}=\frac{ay_0}{bx_0}}~.$
+[53] 由性质 3，$\displaystyle{P'}$ 为 $\displaystyle{A'B'}$ 的中点
+[54] 在圆中，由垂径定理，$\displaystyle{OP'\bot A'B'}~.$
+[55] 而 $\displaystyle{k_{A'B'}\cdot k_{OP'}=-1}$，得 $\displaystyle{k_{A'B'}=-\frac{bx_0}{ay_0}}~.$
+[56] 由上述性质，$\displaystyle{k_l=\frac{b}{a}\cdot k_{A'B'}=-\frac{b^2x_0}{a^2y_0}}~.$
+
+[/SCOPE:s_cor1]
+[SCOPE:s_cor2|description|推论2]
+[57] 推论 2
+[SCOPE:s_cor2_let|let_bind|推论2变量]
+[58] 设椭圆 $\displaystyle{\Gamma:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1(a>b>0)}$，直线 $\displaystyle{l}$ 切椭圆于点 $\displaystyle{P(x_0,y_0)}$，求直线斜率
+[59] 解：作变换 $\displaystyle{x'=\frac{x}{a},y'=\frac{y}{b}}$，
+[60] 则椭圆化为单位圆 $\displaystyle{C:x'^2+y'^2=1}$，$\displaystyle{P'\left(\frac{x_0}{a},\frac{y_0}{b}\right)}~.$
+[/SCOPE:s_cor2_let]
+[61] 故 $\displaystyle{k_{OP'}=\frac{ay_0}{bx_0}}~.$
+[62] 在圆中，由切线定理，$\displaystyle{OP'\bot l'}~.$
+[63] 而 $\displaystyle{k_{l'}\cdot k_{OP'}=-1}$，得 $\displaystyle{k_{l'}=-\frac{bx_0}{ay_0}}~.$
+[64] 由上述性质 1，$\displaystyle{k_l=\frac{b}{a}\cdot k_{l'}=-\frac{b^2x_0}{a^2y_0}}~.$
+
+[/SCOPE:s_cor2]
+[SCOPE:s_cor3|description|推论3]
+[65] 推论 3
+[SCOPE:s_cor3_let|let_bind|推论3变量]
+[66] 设椭圆 $\displaystyle{\Gamma:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1(a>b>0)}$，$\displaystyle{A}$、$\displaystyle{B}$ 和 $\displaystyle{M}$ 为椭圆上的点，点 $\displaystyle{A}$ 和 $\displaystyle{B}$ 关于原点对称，求证：$\displaystyle{k_{MA}\cdot k_{MB}}$ 为一定值
+[67] 图 3：推论 3
+[68] 证明：作变换 $\displaystyle{x'=\frac{x}{a},y'=\frac{y}{b}}$，
+[69] 则椭圆化为单位圆 $\displaystyle{C:x'^2+y'^2=1}~.$
+[/SCOPE:s_cor3_let]
+[70] 则 $\displaystyle{A'B'}$ 为圆 $\displaystyle{C}$ 的直径，
+[71] 所以 $\displaystyle{M'A'\bot M'B'}$，$\displaystyle{k_{M'A'}\cdot k_{M'B'}=-1}~.$
+[72] 由性质 1，$\displaystyle{k_{MA}\cdot k_{MB}=-1\cdot \frac{b}{a}\cdot \frac{b}{a}=-\frac{b^2}{a^2}}~.$
+
+[/SCOPE:s_cor3]
+[SCOPE:s_cor4|description|推论4]
+[73] 推论 4
+[SCOPE:s_cor4_let|let_bind|推论4变量]
+[74] 设椭圆 $\displaystyle{\Gamma:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1(a>b>0)}$，$\displaystyle{A}$ 和 $\displaystyle{B}$ 为椭圆上的点，点 $\displaystyle{M}$ 为 $\displaystyle{AB}$ 的中点，求证：$\displaystyle{k_{AB}\cdot k_{OM}}$ 为一定值
+[75] 图 4：推论 4
+[76] 证明：作变换 $\displaystyle{x'=\frac{x}{a},y'=\frac{y}{b}}$，
+[77] 则椭圆化为单位圆 $\displaystyle{C:x'^2+y'^2=1}~.$
+[/SCOPE:s_cor4_let]
+[78] 由性质 3，$\displaystyle{M'}$ 为 $\displaystyle{A'B'}$ 的中点，由垂径定理，$\displaystyle{O'M'\bot A'B'}$ , $\displaystyle{k_{OM'}\cdot k_{A'B'}=-1}~.$
+[79] 由性质 1，$\displaystyle{k_{OM}\cdot k_{AB}=-1\cdot \frac{b}{a}\cdot \frac{b}{a}=-\frac{b^2}{a^2}}~.$
+
+[/SCOPE:s_cor4]
+[SCOPE:s_cor5|description|推论5 等角定理]
+[80] 推论 5 等角定理
+[SCOPE:s_cor5_let|let_bind|推论5变量]
+[81] 设椭圆 $\displaystyle{\Gamma:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1(a>b>0)}$，$\displaystyle{A}$ 和 $\displaystyle{B}$ 为椭圆上的点，直线 $\displaystyle{AB}$ 交 $\displaystyle{x}$ 轴于点 $\displaystyle{P(x_0,0)}$，在 $\displaystyle{x}$ 轴上求一点 $\displaystyle{G}$，使 $\displaystyle{x}$ 轴平分 $\displaystyle{\angle AGB}$
+[82] 图 5：等角定理
+[83] 解：作变换 $\displaystyle{x'=\frac{x}{a},y'=\frac{y}{b}}$，
+[84] 则椭圆化为单位圆 $\displaystyle{C:x'^2+y'^2=1}$，$\displaystyle{P'\left(\frac{x_0}{a},0 \right)}~.$
+[/SCOPE:s_cor5_let]
+[85] 由性质 3，$\displaystyle{\angle A'G'B'}$ 依然被 $\displaystyle{x}$ 轴平分，记 $\displaystyle{B'G'}$ 交圆 $\displaystyle{O}$ 于另一点 $\displaystyle{D'}$
+[86] 易见 $\displaystyle{\angle A'OG'=\frac{1}{2}\cdot\angle A'OD'=\angle A'B'D'}~.$
+[87] 又 $\displaystyle{\angle A'P'O=\angle B'P'G'}~,$
+[88] 所以 $\displaystyle{\angle OA'P'=\angle OG'B'}~.$
+[89] 又 $\displaystyle{\angle A'G'O=\angle B'G'O}~,$
+[90] 故 $\displaystyle{\angle OA'B'=\angle A'G'O}~.$
+[91] 又 $\displaystyle{\angle A'OG'=\angle A'OG'}~,$
+[92] 故 $\displaystyle{\triangle A'OG'\sim \triangle P'OA'}~.$
+[93] 进而 $\displaystyle{\frac{OP'}{OA'}=\frac{OA'}{OG'}}~,$
+[94] 故 $\displaystyle{OP'\cdot OG'=OA'^2=1}~.$
+[95] 即 $\displaystyle{G'\left(\frac{a}{x_0},0\right)}~.$
+[96] 由性质 1，$\displaystyle{G\left( \frac{a^2}{x_0},0\right)}~.$
+
+[/SCOPE:s_cor5]
+[SCOPE:s_cor6|description|推论6]
+[97] 推论 6
+[SCOPE:s_cor6_let|let_bind|推论6变量]
+[98] 过椭圆 $\displaystyle{\Gamma:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1}$ 上任一点 $\displaystyle{A(x_0,y_0)}$ 作两条倾斜角互补的直线交椭圆于点 $\displaystyle{P}$,$\displaystyle{Q}$，求证：$\displaystyle{k_{PQ}}$ 为一定值
+[99] 图 6：推论 6
+[100] 证明：作变换 $\displaystyle{x'=\frac{x}{a},y'=\frac{y}{b}}$，
+[101] 则椭圆化为单位圆 $\displaystyle{C:x'^2+y'^2=1}$ , $\displaystyle{A\left(\frac{x_0}{a},\frac{y_0}{b}\right)}~.$
+[/SCOPE:s_cor6_let]
+[102] 由性质 3，$\displaystyle{A'P'}$,$\displaystyle{A'Q'}$ 仍然关于铅垂线对称，
+[103] 故 $\displaystyle{\angle P'A'B'=\angle OA'B'}~.$
+[104] 同弧所对的圆周角等于圆心角的一半，
+[105] 故 $\displaystyle{\angle P'OB'=\angle Q'OB'}~.$
+[106] 又 $\displaystyle{OP'=OQ'}$，等腰三角形三线合一，
+[107] 所以 $\displaystyle{OB'\bot P'Q' }$, $\displaystyle{k_{P'Q'}\cdot k_{OB'}=-1}~.$
+[108] 又因为 $\displaystyle{k_{OA'}=-k_{OB'}}$ ,所以 $\displaystyle{k_{OA'}\cdot k_{P'Q'}=1~,}$
+[109] 而 $\displaystyle{k_{OA'}=\frac{a\cdot y_0}{b\cdot x_0}}$ ,因此 $\displaystyle{k_{P'Q'}=\frac{b\cdot x_0}{a\cdot y_0}}~.$
+[110] 由性质 1，$\displaystyle{k_{PQ}=\frac{b^2\cdot x_0}{a^2 \cdot y_0}}~.$
+
+[/SCOPE:s_cor6]
+[SCOPE:s_cor7|description|推论7]
+[111] 推论 7
+[SCOPE:s_cor7_let|let_bind|推论7变量]
+[112] 求椭圆 $\displaystyle{\frac{x^2}{a^2}+\frac{y^2}{b^2}=1}$ 内接三角形的最大面积和外切三角形的最小面积
+[113] 图 7：推论 7
+[114] 解：作变换 $\displaystyle{x'=\frac{x}{a},y'=\frac{y}{b}}$，
+[115] 则椭圆化为单位圆 $\displaystyle{C:x'^2+y'^2=1}~.$
+[/SCOPE:s_cor7_let]
+[116] 由琴生不等式：
+[117] $$S'_{\text{ins}}\leq \frac{3}{2}\cdot \sin\frac{\pi}{3}=\frac{3\sqrt{3}}{4}, S'_{\text{ext}}\geq 3\cot\frac{\pi}{6}=3\sqrt{3}~.$$
+[118] 由性质 2：
+[119] $$S_{\text{ins}\max}=\frac{3\sqrt{3}}{4}\cdot ab, S_{\text{ext}\max}=3\sqrt{3}\cdot ab~.$$
+
+[/SCOPE:s_cor7]
+[SCOPE:s_cor8|description|推论8]
+[120] 推论 8
+[SCOPE:s_cor8_let|let_bind|推论8变量]
+[121] 求以 $\displaystyle{O}$ 为重心的椭圆 $\displaystyle{\frac{x^2}{a^2}+\frac{y^2}{b^2}=1}$ 的内接三角形 $\displaystyle{\triangle ABC}$ 的面积
+[122] 图 8：推论 8
+[123] 解：作变换 $\displaystyle{x'=\frac{x}{a},y'=\frac{y}{b}}$，
+[124] 则椭圆化为单位圆 $\displaystyle{C:x'^2+y'^2=1}~.$
+[/SCOPE:s_cor8_let]
+[125] 由性质 3，$\displaystyle{O}$ 仍为 $\displaystyle{\triangle A'B'C'}$ 的重心，
+[126] 故 $\displaystyle{\vec{OA'}=\vec{OB'}=\vec{OC'}}$ , $\displaystyle{\triangle A'B'C'}$ 为等边三角形
+[127] 故 $\displaystyle{S_{\triangle A'B'C'}=\frac{3\sqrt{3}}{4}}$ ,由性质 3，$\displaystyle{S_{\triangle ABC}=\frac{3\sqrt{3}}{4}\cdot ab}~.$
+
+[/SCOPE:s_cor8]
+[SCOPE:s_cor9|description|推论9 软解定理]
+[128] 推论 9 软解定理
+[SCOPE:s_cor9_let|let_bind|推论9变量]
+[129] 已知椭圆 $\displaystyle{\Gamma:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1}$，过 $\displaystyle{T(t,0)}$ 的直线 $\displaystyle{l}$ 交 $\displaystyle{\Gamma}$ 于 $\displaystyle{A}$,$\displaystyle{B}$ 两点，且 $\displaystyle{\frac{AT}{BT}=p}$ ,求 $\displaystyle{l}$ 斜率
+[130] 解：作变换 $\displaystyle{x'=\frac{x}{a},y'=\frac{y}{b}}$，
+[131] 则椭圆化为单位圆 $\displaystyle{C:x'^2+y'^2=1}~.$
+[132] 由性质 5，仍有 $\displaystyle{\frac{A'T'}{B'T'}=p}$ ,记 $\displaystyle{m=A'T',n=B'T'}$ ,于是 $\displaystyle{\frac{m}{n}=p}~.$
+[/SCOPE:s_cor9_let]
+[133] 由切割线定理，$\displaystyle{A'T'\cdot B'T'=MT'\cdot NT'}$ ,其中 $\displaystyle{M}$,$\displaystyle{N}$ 为单位圆与 $\displaystyle{x}$ 轴的两交点
+[134] 即 $\displaystyle{m\cdot n=(1+t')(1-t')=1-t'^2}~.$
+[135] 接着，
+[136] $$(m+n)^2=m^2+n^2+2mn=\frac{mn}{\frac{m}{n}}+\frac{mn}{\frac{n}{m}}+2mn=\left(p+\frac{1}{p}+2\right)(1-t'^2)~.$$
+[137] 由垂径定理
+[138] $$1-\frac{k'^2t'^2}{k'^2+1}=\frac{1}{4}\left(p+\frac{1}{p}+2\right)(1-t'^2)~.$$
+[139] 整理，由性质 1 得：
+[140] $$\frac{1}{1+(\frac{b}{ak})^2}=1-\frac{1}{4}\left(p+\frac{1}{p}+2\right)\left(1-\frac{t}{a}^2\right)~.$$
+
+[/SCOPE:s_cor9]
+[SCOPE:s_cor10|description|推论10]
+[141] 推论 10
+[SCOPE:s_cor10_let|let_bind|推论10变量]
+[142] 设椭圆 $\displaystyle{\Gamma:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1}$ ,$\displaystyle{C}$ 为第三象限内椭圆上的一点，$\displaystyle{A}$,$\displaystyle{B}$ 分别是椭圆的上顶点、右顶点，直线 $\displaystyle{OA}$ 与 $\displaystyle{y}$ 轴交于点 $\displaystyle{M}$，直线 $\displaystyle{OB}$ 与 $\displaystyle{x}$ 轴交于点 $\displaystyle{N}$，求证：四边形 $\displaystyle{ABNM}$ 的面积为定值
+[143] 图 9：推论 10
+[144] 证明：作变换 $\displaystyle{x'=\frac{x}{a},y'=\frac{y}{b}}$，
+[145] 则椭圆化为单位圆 $\displaystyle{O:x'^2+y'^2=1}~.$
+[/SCOPE:s_cor10_let]
+[146] 于是 $\displaystyle{OM'=\tan{\beta},ON'=\tan{\alpha},\alpha+\beta=\frac{\pi}{4}}~.$
+[147] 于是
+[148] $$
+\begin{aligned}
+S'&=\frac{1}{2}\cdot B'M'\cdot A'N'\\
+&=\frac{1}{2}(\tan\alpha+1)(\tan\beta+1)\\
+&=\frac{1}{2}\cdot\left[\tan\alpha\tan\beta+(\tan\alpha+\tan\beta)+1\right]\\
+&=\frac{1}{2}\cdot[\tan\alpha\tan\beta+1-\tan\alpha\tan\beta+1]\\
+&=1 ~.
+\end{aligned}
+$$
+[149] 由性质 2，$\displaystyle{S=ab}~.$
+
+[/SCOPE:s_cor10]
+[SCOPE:s_cor11|description|推论11 蒙日圆]
+[150] 推论 11 蒙日圆
+[SCOPE:s_cor11_let|let_bind|推论11变量]
+[151] 求椭圆 $\displaystyle{\Gamma:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1}$ 两垂直切线的交点的轨迹方程
+[152] 解：置 $\displaystyle{x'=\frac{x}{a}\,,y'=\frac{y}b}$，
+[153] 则椭圆化为单位圆 $\displaystyle{x'^2+y'^2=1}~.$
+[/SCOPE:s_cor11_let]
+[154] 如图，设直线 $\displaystyle{\text{AB}}$,$\displaystyle{\text{AC}}$ 的斜率分别为 $\displaystyle{k_1}$,$\displaystyle{k_2}$，由仿射性质，$\displaystyle{k_1k_2=-\frac{a^2}{b^2}}~.$
+[155] 设 $\displaystyle{\text{A}(x_0,y_0)}$，
+[156] 于是：
+[157] $$\text{AB}:y=k_1(x-x_0)+y_0\text{BC}:y=k_2(x-x_0)+y_0 ~.$$
+[158] 原点到切线的距离为圆的半径，
+[159] 即：$\displaystyle{\frac{|k_{1,2}x_0-y_0|}{\sqrt{k_{1,2}^2+1}}=1}~.$
+[160] 化简得：
+[161] $$(x_0^2-1)k_{1,2}^2-2x_0y_0k_{1,2}+y_0^2-1=0~.$$
+[162] 由韦达定理：
+[163] $$\frac{y_0^2-1}{x_0^2-1}=-\frac{a^2}{b^2}~.$$
+[164] 即：
+[165] $$a^2x_0^2+b^2y_0^2=a^2+b^2~.$$
+[166] 回代，得：
+[167] $$\text{M}:x^2+y^2=a^2+b^2~.$$
+
+[/SCOPE:s_cor11]
+[SCOPE:s_cor12|description|推论12]
+[168] 推论 12
+[SCOPE:s_cor12_let|let_bind|推论12变量]
+[169] 设过椭圆 $\displaystyle{\Gamma:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1}$ 外一点 $\displaystyle{P(x_0,y_0)}$ 作椭圆的一条切线 $\displaystyle{l}$ 切椭圆于 $\displaystyle{M}$，连结 $\displaystyle{PM}$，求 $\displaystyle{|PM|}$
+[170] 图 10：推论 12
+[171] 解：过 $\displaystyle{O}$ 作直线 $\displaystyle{l'}$ 交椭圆于两点，靠近点 $\displaystyle{P}$ 一侧的点为 $\displaystyle{A}$，设 $\displaystyle{|PM|=\lambda|OA|}$，我们只需要求出 $\displaystyle{\lambda}$ 以及 $\displaystyle{|OA|}$
+[172] 不妨令 $\displaystyle{x'=\frac{x}{a},y'=\frac{y}{b}}$，
+[173] 则椭圆化为圆 $\displaystyle{C:x'^2+y'^2=1}~.$
+[/SCOPE:s_cor12_let]
+[174] 变换前后，平行线段比例不变，
+[175] 故 $\displaystyle{\lambda=\frac{|P'M'|}{|OA'|}=\sqrt{\frac{m^2}{a^2}+\frac{n^2}{b^2}-1}}~.$
+[176] 至于 $\displaystyle{|OA|}$，可以求出切线斜率，与椭圆联立，这里不再赘述
+
+[/SCOPE:s_cor12]
+[177] 这里列举一些利用仿射法解决解析几何问题的例子，其中蕴含着该方法的常用技巧
+
+[SCOPE:s_example1|description|例1]
+[SCOPE:s_example1_let|let_bind|例1变量]
+[178] 已知点 $\displaystyle{P\left(t,\frac{1}{2}\right)}$ 在椭圆 $\displaystyle{\Gamma:\frac{x^2}{2}+y^2=1}$ 内，过点 $\displaystyle{P}$ 的直线 $\displaystyle{l}$ 与椭圆 $\displaystyle{\Gamma}$ 相交于 $\displaystyle{A}$ 和 $\displaystyle{B}$ 两点，且点 $\displaystyle{P}$ 是线段 AB 的中点，O 为坐标原点。
+[179] 求 $\displaystyle{S_{\triangle OAB}}$ 的最大值
+[180] 解：令 $\displaystyle{x'=\frac{x}{\sqrt{2}},y'=y}$，
+[181] 则 $\displaystyle{C:x'^2+y'^2=1}$ ,$\displaystyle{P'\left(\frac{\sqrt{2}}{2}\cdot t,\frac{1}{2}\right)}~.$
+[/SCOPE:s_example1_let]
+[182] $\displaystyle{OP'=\sqrt{\left(\frac{\sqrt{2}}{2}\cdot t\right)^2+{\frac{1}{2}}^2}=\sqrt{\frac{t^2}{2}+\frac{1}{4}}}~.$
+[183] 由性质 3，$\displaystyle{P'}$ 为 $\displaystyle{A'B'}$ 的中点
+[184] 由垂径定理，$\displaystyle{OP'\bot A'B'}$
+[185] 故 $\displaystyle{A'B'=2\sqrt{1-OP'^2}=2\sqrt{\frac{3}{4}-\frac{t^2}{2}}}~.$
+[186] $\displaystyle{S'=\frac{1}{2}\cdot OP' \cdot A'B'=\sqrt{\left(\frac{t^2}{2}+\frac{1}{4}\right)\left(\frac{3}{4}-\frac{t^2}{2}\right)},t\in[-1,1]}~.$
+[187] $\displaystyle{S'_{max}=\frac{1}{2}}~.$
+[188] 由性质 2，$\displaystyle{S_{max}=\frac{\sqrt{2}}{2}}~.$
+
+[/SCOPE:s_example1]
+[SCOPE:s_example2|description|例2]
+[SCOPE:s_example2_let|let_bind|例2变量]
+[189] 已知椭圆 $\displaystyle{\Gamma:\frac{x^2}{b^2}+\frac{y^2}{b^2}=1(a>b>0)}$ 的左焦点为 $\displaystyle{F(-2,0)}$ ,离心率为 $\displaystyle{\frac{\sqrt{6}}{3}}$.
+[190] （1）求椭圆 $\displaystyle{\Gamma}$ 的标准方程；
+[191] （2）设 $\displaystyle{T}$ 为直线 $\displaystyle{x=-3}$ 上一点，过点 $\displaystyle{F}$ 作 $\displaystyle{TF}$ 的垂线交椭圆于 $\displaystyle{P,Q}$ 两点，当四边形 $\displaystyle{OPTQ}$ 是平行四边形时，求四边形 $\displaystyle{OPTQ}$ 的面积。
+[192] 解：（1）椭圆的标准方程为 $\displaystyle{\frac{x^2}{6}+\frac{y^2}{2}=1}$
+[193] 图 11：例 2
+[194] （2）令 $\displaystyle{x'=\frac{x}{\sqrt{6}},y'=\frac{y}{\sqrt{2}}}$，
+[195] 则 $\displaystyle{F'\left(-\frac{2}{\sqrt{6}},0\right) , l':x'=-\frac{3}{\sqrt{6}}}~.$
+[/SCOPE:s_example2_let]
+[196] 由性质 4，$\displaystyle{OP'T'Q'}$ 仍为平行四边形，又 $\displaystyle{OP'=OQ'}$ , $\displaystyle{OP'T'Q'}$ 为菱形
+[197] 故 $\displaystyle{P'Q'\bot OT'}~.$
+[198] 记 $\displaystyle{l'\bot x}$ 轴于 $\displaystyle{H'}~,$
+[199] 因为 $\displaystyle{\angle {T'H'O}=\angle {F'BO},\angle T'OH'=\angle T'OH'}~,$
+[200] 所以 $\displaystyle{\triangle T'OH'\sim\triangle F'BO}~.$
+[201] 故 $\displaystyle{\frac{OF'}{OT'}=\frac{OB}{OH'}}~,$
+[202] 得 $\displaystyle{OB=\frac{\sqrt{2}}{2}}~.$
+[203] 由垂径定理，$\displaystyle{P'Q'=2P'B=2\sqrt{1-OB^2}=\sqrt{2}}~.$
+[204] 则 $\displaystyle{S_{\text{菱形}OP'T'Q'}=\sqrt{2}\cdot\frac{\sqrt{2}}{2}=1}~.$
+[205] 由性质 2，$\displaystyle{S_{\text{四边形}OPTQ}=1\cdot \sqrt{6}\cdot\sqrt{2}=2\sqrt{3}}~.$
+
+[/SCOPE:s_example2]
+[SCOPE:s_example3|description|例3]
+[SCOPE:s_example3_let|let_bind|例3变量]
+[206] 已知椭圆 $\displaystyle{\Gamma:\frac{x^2}{2}+y^2=1}$ ,过左焦点 $\displaystyle{F}$ 的直线 $\displaystyle{l}$ 交椭圆于 $\displaystyle{P,Q}$ 两点，$\displaystyle{M}$ 为 $\displaystyle{PQ}$ 的中点，$\displaystyle{O}$ 为坐标原点。
+[207] 若 $\displaystyle{\triangle FMO}$ 是以 $\displaystyle{OF}$ 为底边的等腰三角形，求直线 $\displaystyle{l}$ 的方程
+[208] 图 12：例 3
+[209] 解：令 $\displaystyle{x'=\frac{x}{\sqrt{2}},y'=y}$，
+[210] 则 $\displaystyle{F'\left(-\frac{1}{\sqrt{2}},0\right)}~.$
+[/SCOPE:s_example3_let]
+[211] 由性质 3，$\displaystyle{M'F',OM'}$ 仍旧关于铅垂线对称
+[212] 在圆中，由垂径定理，$\displaystyle{OM'\bot P'Q'}~.$
+[213] 故 $\displaystyle{\triangle OM'F'}$ 为等腰直角三角形，$\displaystyle{OF'=\sqrt{2} OM'}~.$
+[214] 设 $\displaystyle{l':y'=k'\left(x'+\frac{1}{\sqrt{2}}\right)}$ ,于是 $\displaystyle{\frac{1}{\sqrt{2}}=\sqrt{2}\cdot \frac{k'}{\sqrt{2(k'^2+1)}}}~.$
+[215] 解得 $\displaystyle{k'=1}$ ,由性质 1，$\displaystyle{k=\frac{\sqrt{2}}{2}}~.$
+[216] 故 $\displaystyle{l:y=\frac{\sqrt{2}}{2}(x+1)}~.$
+
+[/SCOPE:s_example3]
+[SCOPE:s_example4|description|例4 2017全国I理]
+[217] 例 4 2017 全国 I 理
+[SCOPE:s_example4_let|let_bind|例4变量]
+[218] 已知 $\displaystyle{C:\frac{x^2}4+y^2=1,P_2(0,1)}$，设直线 $\displaystyle{l}$ 不经过 $\displaystyle{P_2}$ 点且与 $\displaystyle{C}$ 相交于 $\displaystyle{A,B}$ 两点，若直线 $\displaystyle{P_2A}$ 与直线 $\displaystyle{P_2B}$ 的斜率之和为 $\displaystyle{-1}$，求证：$\displaystyle{l}$ 过定点
+[219] 图 13：例 4
+[220] 解：作变换 $\displaystyle{x'=\frac{x}{2},y'=y}$ ,则椭圆化为单位圆 $\displaystyle{x'^2+y'^2=1}~.$
+[221] 记如图所示的 $\displaystyle{\alpha,\beta}$，
+[/SCOPE:s_example4_let]
+[222] 则 $\displaystyle{A'(\cos2\alpha,\sin2\alpha),B'(\cos2\beta,\cos2\beta)}~.$
+[223] $\displaystyle{k_1'=\cot{\alpha},k_2'=\cot{\beta}}$ ,由性质 1，$\displaystyle{k_1'+k_2'=-2}$ ,即 $\displaystyle{\cot{\alpha}+\cot{\beta}=-2}~.$
+[224] 移项，得 $\displaystyle{\cot\alpha+\cot \beta+2=0}~.$
+[225] 进而 $\displaystyle{(\cot\alpha+\cot \beta+2)(\cot \alpha+\cot\beta)=0}~.$
+[226] 展开，得 $\displaystyle{\cot^2\alpha+2\cot\alpha=\cot^2\beta+2\cot\beta}~.$
+[227] 所以 $\displaystyle{\cot^2\alpha+2\cot\alpha+\frac{1}{2}=\cot^2\beta+2\cot\beta+\frac{1}{2}}~.$
+[228] 整理，得 $\displaystyle{-\frac{(\tan\alpha+1)^2}{2\tan^2\alpha}=-\frac{(\tan\beta+1)^2}{2\tan^2\beta}}~,$
+[229] 得
+[230] $$\frac{\frac{2\tan\alpha}{1+\tan^2\alpha}+1}{\frac{1-\tan^2\alpha}{1+\tan^2\alpha}-1}=\frac{\frac{2\tan\beta}{1+\tan^2\beta}+1}{\frac{1-\tan^2\beta}{1+\tan^2\beta}-1}~.$$
+[231] 由万能公式，$\displaystyle{\frac{\sin2\alpha+1}{\cos2\alpha-1}=\frac{\sin2\beta+1}{\cos2\beta-1}}~.$
+[232] 所以 $\displaystyle{l'}$ 恒过定点 $\displaystyle{(1,-1)}~,$
+[233] 所以 $\displaystyle{l}$ 恒过定点 $\displaystyle{(2,-1)}~.$
+
+[/SCOPE:s_example4]
+[SCOPE:s_example5|description|例5]
+[SCOPE:s_example5_let|let_bind|例5变量]
+[234] 已知椭圆 $\displaystyle{\Gamma:\frac{x^2}{9}+\frac{y^2}{3}=1}$，过点 $\displaystyle{P(0,2)}$ 作两直线分别交 $\displaystyle{\Gamma}$ 于 $\displaystyle{A,B}$ 和 $\displaystyle{C,D}$ , $\displaystyle{AB,CD}$ 的中点分别为 $\displaystyle{M,N}$，且 $\displaystyle{k_{AB}\cdot k_{CD}=-2}$ ,证明：$\displaystyle{MN}$ 过定点
+[235] 图 14：例 5
+[236] 证明：作变换 $\displaystyle{x'=\frac{x}{3},y'=\frac{y}{\sqrt{3}}}$ ,则椭圆化为单位圆 $\displaystyle{x'^2+y'^2=1}$，$\displaystyle{P'\left(0,\frac{2}{\sqrt{3}}\right)}$
+[237] 由性质 1，$\displaystyle{k_{A'B'}\cdot k_{C'D'}=-6}~.$
+[/SCOPE:s_example5_let]
+[238] 由性质 3，$\displaystyle{M',N'}$ 仍为 $\displaystyle{P'A',P'B'}$ 的中点
+[239] 由垂径定理，$\displaystyle{OM'\bot P'A',ON'\bot P'B'}~,$
+[240] 所以 $\displaystyle{O,N',M',P'}$ 四点共圆，
+[241] 则
+[242] $$\frac{P'G'}{M'G'}=\frac{N'G'}{OG'}=\frac{P'N'}{OM'}~,$$
+[243] $$\frac{P'G'}{N'G'}=\frac{M'G'}{OG'}=\frac{P'M'}{ON'}~.$$
+[244] 所以 $\displaystyle{\frac{P'G'^2}{OG'^2}=\left(\frac{P'N'\cdot P'M'}{OM'\cdot ON'}\right)^2=\left(k_{A'B'}\cdot k_{C'D'}\right)^2=36}~,$
+[245] 故 $\displaystyle{\frac{P'G'}{OG'}=6}~.$
+[246] 又 $\displaystyle{OG'+P'G'=OP'=\frac{2\sqrt{3}}{3}}~,$
+[247] 故 $\displaystyle{OG'=\frac{2\sqrt{3}}{3}\cdot\frac{1}{7}\,,OG=\frac{2}{7}}~.$
+[248] 即 $\displaystyle{MN}$ 过定点 $\displaystyle{\left(0,\frac{2}{7}\right)}~.$
+
+[/SCOPE:s_example5]
+[SCOPE:s_exercise1|description|习题1 2019全国II理]
+[249] 习题 1 2019 全国 II 理
+[250] 已知 $\displaystyle{C:\frac{x^2}4+\frac{y^2}2=1}$，过坐标原点的直线交 $\displaystyle{C}$ 于 $\displaystyle{P,Q}$ 两点，$\displaystyle{P}$ 在第一象限，$\displaystyle{PE\bot x}$ 轴，垂足为 $\displaystyle{E}$，联结 $\displaystyle{QE}$ 并延长交 $\displaystyle{C}$ 于 $\displaystyle{G}$。
+[251] 求证：$\displaystyle{\triangle PQG}$ 是直角三角形
+
+[/SCOPE:s_exercise1]
+[SCOPE:s_exercise2|description|习题2 2020全国I理]
+[252] 习题 2 2020 全国 I 理
+[253] 已知椭圆 $\displaystyle{\Gamma:\frac{x^2}{9}+y^2=1}$ , $\displaystyle{A,B}$ 是椭圆的左、右顶点，过直线 $\displaystyle{l:x=6}$ 上一点 P 作 $\displaystyle{PA,PB}$ 分别交椭圆于 $\displaystyle{C,D}$，证明：$\displaystyle{CD}$ 过定点
+
+[/SCOPE:s_exercise2]
+[SCOPE:s_exercise3|description|习题3]
+[254] 习题 3
+[255] $\displaystyle{P,Q}$ 是椭圆 $\displaystyle{\Gamma:\frac{x^2}{8}+\frac{y^2}{2}=1}$ 上两动点，$\displaystyle{\angle PAQ}$ 的角平分线恒垂直于 $\displaystyle{x}$ 轴，试判断直线 $\displaystyle{PQ}$ 的斜率是否为定值
+[/SCOPE:s_exercise3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_lemma3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1使用性质3（引理3）"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1使用性质1（引理1）"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论2使用性质1（引理1）"
+  },
+  {
+    "source_scope": "s_cor3",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论3使用性质1（引理1）"
+  },
+  {
+    "source_scope": "s_cor4",
+    "target_scope": "s_lemma3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论4使用性质3（引理3）"
+  },
+  {
+    "source_scope": "s_cor4",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论4使用性质1（引理1）"
+  },
+  {
+    "source_scope": "s_cor5",
+    "target_scope": "s_lemma3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论5使用性质3（引理3）"
+  },
+  {
+    "source_scope": "s_cor5",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论5使用性质1（引理1）"
+  },
+  {
+    "source_scope": "s_cor6",
+    "target_scope": "s_lemma3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论6使用性质3（引理3）"
+  },
+  {
+    "source_scope": "s_cor6",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论6使用性质1（引理1）"
+  },
+  {
+    "source_scope": "s_cor7",
+    "target_scope": "s_lemma2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论7使用性质2（引理2）"
+  },
+  {
+    "source_scope": "s_cor8",
+    "target_scope": "s_lemma3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论8使用性质3（引理3）"
+  },
+  {
+    "source_scope": "s_cor8",
+    "target_scope": "s_lemma2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论8使用性质2（引理2）"
+  },
+  {
+    "source_scope": "s_cor9",
+    "target_scope": "s_lemma5",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论9使用性质5（引理5）"
+  },
+  {
+    "source_scope": "s_cor9",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论9使用性质1（引理1）"
+  },
+  {
+    "source_scope": "s_cor10",
+    "target_scope": "s_lemma2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论10使用性质2（引理2）"
+  },
+  {
+    "source_scope": "s_cor11",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论11使用性质1（引理1）"
+  },
+  {
+    "source_scope": "s_cor12",
+    "target_scope": "s_lemma5",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论12使用性质5（引理5）"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_lemma3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1使用性质3（引理3）"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_lemma2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1使用性质2（引理2）"
+  },
+  {
+    "source_scope": "s_example2",
+    "target_scope": "s_lemma4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2使用性质4（引理4）"
+  },
+  {
+    "source_scope": "s_example2",
+    "target_scope": "s_lemma2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2使用性质2（引理2）"
+  },
+  {
+    "source_scope": "s_example3",
+    "target_scope": "s_lemma3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例3使用性质3（引理3）"
+  },
+  {
+    "source_scope": "s_example3",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例3使用性质1（引理1）"
+  },
+  {
+    "source_scope": "s_example4",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例4使用性质1（引理1）"
+  },
+  {
+    "source_scope": "s_example5",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例5使用性质1（引理1）"
+  },
+  {
+    "source_scope": "s_example5",
+    "target_scope": "s_lemma3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例5使用性质3（引理3）"
+  }
+]

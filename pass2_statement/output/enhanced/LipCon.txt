@@ -1,0 +1,139 @@
+[SCOPE:root|description|李普希茨条件]
+文章名: LipCon
+标题: 李普希茨条件
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=李普希茨条件
+  [1] type=example heading=例 1 title=压缩映射
+  [2] type=theorem heading=定理 1 title=满足李普希茨条件的映射必一致连续
+  [3] type=definition heading=定义 2 title=一致连续
+  [4] type=theorem heading=定理 2 title=凸且紧子集上的连续可微映射满足李普希茨条件
+  [5] type=definition heading=定义 3 title=局部 Lipschitz 条件
+
+[SCOPE:s_def1|description|定义 1 李普希茨条件]
+[0] 定义 1 李普希茨条件
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[1] 设 $A$ 是度量空间 $(M_1,d)$ 到 $(M_2,d')$ 的映射，$L$ 是一个正实数。
+[2] 若 $A$ 满足
+[/SCOPE:s_def1_let]
+[3] \begin{equation}
+d'(Ax,Ay)\leq Ld(x,y),\quad\forall x,y\in M_1~,
+\end{equation}
+[4] 李普希茨条件
+[5] 李普希茨常数
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|例 1 压缩映射]
+[6] 例 1 压缩映射
+[7] 若定义 1 中的 $(M_2,d')=(M_1,d)$，且 $0< L<1$，
+[8] 则此时 $A$ 便是 $M_1$ 中的压缩映射。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_thm1|description|定理 1 满足李普希茨条件的映射必一致连续]
+[9] 定理 1 满足李普希茨条件的映射必一致连续
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[10] 若 $A$ 是度量空间 $(M_1,d)$ 到 $(M_2,d')$ 的满足具有常数 $L$ 的李普希茨条件的映射，
+[11] 则 $A$ 必一致连续。
+[/SCOPE:s_thm1_let]
+[12] 度量空间中的映射的一致连续性定义如下：
+
+[SCOPE:s_def2|description|定义 2 一致连续]
+[13] 定义 2 一致连续
+[SCOPE:s_def2_let|let_bind|定义 2 的变量]
+[14] 设 $f$ 是度量空间 $(M_1,d)$ 到 $(M_2,d')$ 的映射，若对每一正数 $\epsilon$，都有一个 $\delta>0$ 存在，使得只要
+[/SCOPE:s_def2_let]
+[15] \begin{equation}
+d(x,y)<\delta~,
+\end{equation}
+[16] \begin{equation}
+d'(Ax,Ay)<\epsilon~.
+\end{equation}
+[17] 一致连续
+[/SCOPE:s_def2]
+[SCOPE:s_thm1_proof|description|定理 1 的证明]
+[18] 现在来证明定理 1 。
+[19] 证明：只要取 $0<\delta<\frac{\epsilon}{L}$（由实数的稠密性，这是可以做到的），
+[20] 那么
+[21] \begin{equation}
+d(Ax,Ay)\leq Ld'(x,y)< \epsilon~.
+\end{equation}
+[22] 定义 2 [链接 L0]
+[23] ，$A$ 一致连续。
+[24] 证毕！
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_proof]
+[SCOPE:s_thm2|description|定理 2 凸且紧子集上的连续可微映射满足李普希茨条件]
+[25] 定理 2 凸且紧子集上的连续可微映射满足李普希茨条件
+[SCOPE:s_thm2_let|let_bind|定理 2 的变量]
+[26] 设 $V$ 是 $\mathbb R^n$ 空间任意凸的和紧致的子集，
+[27] 则任一连续可微映射（定义 1 ）$f:V\rightarrow \mathbb R^m$ 在 $V$ 上满足具有常数 $L$ 的李普希茨条件，$L$ 等于 $f$ 在 $V$ 上的上确界，
+[28] 即($f_*$ 是可微函数 $f$ 的导数)
+[29] \begin{equation}
+L=\sup_{x\in V} \left\lvert f_{*x} \right\rvert ~.
+\end{equation}
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm2_proof|description|定理 2 的证明]
+[30] 证明：要证 $f$ 满足具有常数 $L$ 的李普希茨条件，就是要证
+[31] \begin{equation}
+\left\lvert f(y)-f(x) \right\rvert \leq L \left\lvert y-x \right\rvert ,\quad\forall x,y\in\mathbb R^n~.
+\end{equation}
+[SCOPE:s_thm2_proof_let|let_bind|证明中引入的变量 z(t)]
+[32] 设 $z(t)=x+t(y-x),t\in[0,1]$，
+[33] 即 $z(t)$ 是连接点 $x$ 和 $y$ 的线段，$V$ 的凸集性意味着这一线段属于 $V$
+[/SCOPE:s_thm2_proof_let]
+[34] 1
+[35] 。
+[36] 由微积分基本定理（
+[37] 牛顿—莱布尼兹公式 [链接 L1]
+[38] \begin{equation}
+f(y)-f(x)=\int_0^1 \frac{\mathrm{d}{}}{\mathrm{d}{\tau}} f(z(\tau)) \,\mathrm{d}{\tau} =\int_0^1f_{*z(\tau)}\dot z(\tau) \,\mathrm{d}{\tau} ~.
+\end{equation}
+[39] 由于 $f$ 是在 $V$ 上连续可微，
+[40] 于是 $f_*$ 连续。
+[41] 而 $\mathbb R^n$ 中紧致的子集是闭的，魏尔斯特拉斯第一定理 $\mathbb R^n$ 的闭集上连续函数必有界，第二定理表明 $\mathbb R^n$ 的闭集上连续函数必能达到其上下确界，
+[42] 于是
+[43] \begin{equation}
+\left\lvert f_* \right\rvert (x)\leq L ,\forall x\in V ~.
+\end{equation}
+[44] 所以成立
+[45] \begin{equation}
+\left\lvert \int_0^1f_{*z(\tau)}\dot z(\tau) \,\mathrm{d}{\tau} \right\rvert \leq\int_0^1L \left\lvert y-x \right\rvert \,\mathrm{d}{\tau} =L \left\lvert y-x \right\rvert ~.
+\end{equation}
+[46] 式 7 [链接 L2]
+[47] 式 6 [链接 L3]
+[48] 证毕！
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_proof]
+[SCOPE:s_def3|description|定义 3 局部 Lipschitz 条件]
+[49] 局部 Lipschitz 条件一般用开球（邻域）来定义：
+
+[50] 定义 3 局部 Lipschitz 条件
+[SCOPE:s_def3_let|let_bind|定义 3 的变量]
+[51] 对于 $ \boldsymbol{\mathbf{z}} \in \mathbb R^m$，$\exists r > 0$，在开球 $B_{r} = \{ \boldsymbol{\mathbf{y}} \in \mathbb R^m | d( \boldsymbol{\mathbf{y}} , \boldsymbol{\mathbf{z}} ) < r\}$ 上（可以发现 $ \boldsymbol{\mathbf{z}} $ 是球心），$f$ 是满足 Lipschitz 条件的，就称 $f$ 满足局部 Lipschitz 条件。
+[/SCOPE:s_def3_let]
+[52] 另一种 “局部” Lipschitz 连续的定义仅是限定这开球 $B_r$ 为某另外的集合。
+
+跨文章引用:
+  [L1] 牛顿—莱布尼兹公式 → NLeib
+[/SCOPE:s_def3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的结论是一致连续，引用定义2"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2的结论是满足李普希茨条件，引用定义1"
+  }
+]

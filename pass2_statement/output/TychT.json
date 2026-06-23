@@ -1,0 +1,266 @@
+{
+  "article_name": "TychT",
+  "statements": [
+    {
+      "stmt_id": "st_tychonoff_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        4,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_tychonoff",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_tychonoff_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_tychonoff_let",
+      "exposed_entities": [
+        "X_alpha",
+        "T_alpha",
+        "Lambda"
+      ]
+    },
+    {
+      "stmt_id": "st_tychonoff_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_tychonoff_let",
+      "exposed_entities": [
+        "prod X_alpha",
+        "T"
+      ]
+    },
+    {
+      "stmt_id": "st_exercise1",
+      "subtype": "exercise",
+      "clause_range": [
+        23,
+        26
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem2",
+      "subtype": "theorem",
+      "clause_range": [
+        30,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem2_let",
+      "exposed_entities": [
+        "X",
+        "A",
+        "S"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem2_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem2_reductio_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem2_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem2_zorn_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        39,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem2_zorn",
+      "exposed_entities": [
+        "B_alpha"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem2_let2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        43,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem2_let2",
+      "exposed_entities": [
+        "I",
+        "x",
+        "S_k"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem2_reductio_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        62,
+        63
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem2_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_corollary1",
+      "subtype": "corollary",
+      "clause_range": [
+        67,
+        68
+      ],
+      "truth_value": "true",
+      "scope_id": "s_corollary1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_tychonoff_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        75,
+        79
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let",
+      "exposed_entities": [
+        "X_alpha",
+        "T_alpha",
+        "Lambda",
+        "X",
+        "T",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_reductio_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        80,
+        89
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let2",
+      "exposed_entities": [
+        "S",
+        "S_alpha",
+        "x_alpha0"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_reductio_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        90,
+        91
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof_reductio",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_tychonoff_assump",
+      "target": "st_tychonoff_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem2_assump",
+      "target": "st_theorem2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem2_reductio_assump",
+      "target": "st_theorem2_reductio_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_reductio_assump",
+      "target": "st_proof_reductio_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem2",
+      "target": "st_exercise1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_corollary1",
+      "target": "st_theorem2",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_tychonoff_assump",
+      "target": "st_tychonoff_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_theorem2",
+      "target": "st_exercise1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理2结合习题1得到Alexander子基定理"
+    },
+    {
+      "source": "st_corollary1",
+      "target": "st_theorem2",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "Alexander子基定理是定理2的直接推论"
+    },
+    {
+      "source": "st_proof_tychonoff_assump",
+      "target": "st_tychonoff_theorem",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明部分推出定理1"
+    }
+  ],
+  "unresolved": []
+}

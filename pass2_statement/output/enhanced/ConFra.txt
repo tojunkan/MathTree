@@ -1,0 +1,62 @@
+[SCOPE:root|description|连分数]
+文章名: ConFra
+标题: 连分数
+
+[SCOPE:s_cf_def|description|连分数定义]
+[SCOPE:s_cf_let|let_bind|连分数变量]
+[0] 1连分数（continued fraction）形如
+[1] \begin{equation}
+a_0 + \frac{1}{\displaystyle a_1 + \frac{1}{\displaystyle a_2 + \frac{1}{\displaystyle \ddots + \frac{1}{a_n}}}}~
+\end{equation}
+[2] 其中要求所有 $a_i$
+[3] 都是整数
+[4] ，且除 $a_0$ 外，其他 $a_i$ 都
+[5] 大于零
+[/SCOPE:s_cf_let]
+[6] 。
+[7a] 若有无穷多项
+[7b] 则$n\to\infty$，
+[8] 则将其称为
+[9] 无穷连分数
+[10] 。
+[11] 如果不要求 $a_i$ 为整数，也不要求分子都为 1，
+[12] 那么称其为
+[13] 广义连分数
+[14] ，见下文。
+[15] 为了方便书写，也可以记为
+[16] \begin{equation}
+a_0 + \frac{1}{a_1 + }\frac{1}{a_2 + }\dots \frac{1}{a_n}~.
+\end{equation}
+[17] 或者更简洁地，记为
+[18] \begin{equation}
+[a_0;\ a_1,\ a_2,\ \dots\ ,\ a_n]~.
+\end{equation}
+[19] 连分数有性质
+[20] \begin{equation}
+[a_0, a_1, \dots, a_{n-1}, a_n] = [a_0, a_1, \dots, a_{n-1}+\frac{1}{a_n}] = [a_0, [a_1, \dots, a_n]]~.
+\end{equation}
+[21] 每个实数都可以被表示为一个唯一的连分数：对实数 $x$，取其整数部分为 $a_0$，把剩余部分取倒数，令 $x_1 = 1/(x-a_0)$，
+[22] 那么它的整数部分就是 $a_1$，再把剩余部分取倒数，令 $x_2 = 1/(x_1 - a_1)$，它的整数部分就是 $a_2$，以此类推。
+
+[/SCOPE:s_cf_def]
+[SCOPE:s_gcf_let|let_bind|广义连分数变量]
+[SCOPE:s_gcf_def|description|广义连分数定义]
+[23] 广义连分数的形式为
+[24] \begin{equation}
+b_0 + \frac{a_1}{\displaystyle b_1 + \frac{a_2}{\displaystyle b_2 + \frac{a_3}{\displaystyle b_3 + \dots}}}~
+\end{equation}
+[25] 其中 $a_i, b_i$ 不要求是整数，甚至可以是函数。
+[/SCOPE:s_gcf_let]
+[/SCOPE:s_gcf_def]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_gcf_def",
+    "target_scope": "s_cf_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "广义连分数是连分数的推广"
+  }
+]

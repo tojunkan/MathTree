@@ -1,0 +1,133 @@
+[SCOPE:root|description|指数函数（复数）]
+文章名: CExp
+标题: 指数函数（复数）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=复指数函数
+  [1] type=definition heading=定义 2 title=复指数函数
+
+[SCOPE:s_def1|description|定义 1 复指数函数]
+[0] 定义 1 复指数函数
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1] 令 $z = x + \mathrm{i} y$ 为任意复数，
+[2] 那么复数域中的指数函数的一种定义就是
+[/SCOPE:s_def1_let]
+[3] \begin{equation}
+w = \mathrm{e} ^z = \mathrm{e} ^{x + \mathrm{i} y} = \mathrm{e} ^x(\cos y + \mathrm{i} \sin y)~,
+\end{equation}
+[4] 【图解】图 1：复数域中的指数函数
+[5] 在复平面上表示这个函数，
+[6] 则指数的实部 $x$ 控制函数值 $w$ 的模长，虚部 $y$ 控制 $w$ 的辐角，如图 1
+[7] \begin{equation}
+\left\lvert w \right\rvert = \mathrm{e} ^x \qquad \arg(w) = y~,
+\end{equation}
+[8] 当指数为纯虚数（令 $x = 0$，$y = \mathrm{i} \theta$，$\theta$ 为实数）时，
+[9] 式 1 [链接 L0]
+[10] 变为著名的
+[11] 欧拉公式（Euler's formula）
+[12] \begin{equation}
+\mathrm{e} ^{ \mathrm{i} \theta} = \cos \theta + \mathrm{i} \sin \theta~,
+\end{equation}
+[13] 虽然这里的 $\theta$ 是实数（最常见的情况），
+[14] 但根据复数域三角函数的定义
+[15] ，对于任何复数 $z$，同样满足欧拉公式
+[16] \begin{equation}
+\mathrm{e} ^{ \mathrm{i} z} = \cos z + \mathrm{i} \sin z~.
+\end{equation}
+[17] 三角函数（复数） [链接 L1]
+[18] ” 中的
+[19] 式 1 [链接 L2]
+[20] 式 2 [链接 L3]
+[21] 代入即可证明。
+[22] 根据式 1 的定义结合两角和公式（式 4 ），容易证明（留做习题）$ \mathrm{e} ^z$ 同样满足恒等式
+[23] \begin{equation}
+\mathrm{e} ^{z_1 + z_2} = \mathrm{e} ^{z_1} \mathrm{e} ^{z_2}~.
+\end{equation}
+
+[/SCOPE:s_def1]
+[SCOPE:s_compat|description|和实函数的兼容性]
+[24] 根据定义容易看到，在实数轴 $x$ 上，式 1 中 $y = 0$，复指数函数就还原成熟悉的实数指数函数了。
+[25] 所以二者使用同一个符号不会带来歧义，复指数函数是实指数函数在复平面上的拓展。
+[26] 但乍看之下，拓展有许多方式，为什么一定是式 1 呢？
+[27] 因为在复变函数中，我们一般研究的是解析函数。
+[28] 若要求 $ \mathrm{e} ^x$ 拓展到复数域后是解析函数式 1 是唯一的定义。
+[29] 详见 “柯西—黎曼条件”。
+
+[/SCOPE:s_compat]
+[SCOPE:s_deriv|description|导数]
+[30] 虽然我们只学了实函数的导数，还没有系统地学习复变函数求导，
+[31] 但我们可以根据式 3 求出一个常见的导数公式。
+[SCOPE:s_deriv_let1|let_bind|导数中的变量a,x]
+[32] 令 $a, x$ 为实数，$a$ 为常数，
+[33] \begin{equation} \begin{aligned}
+\frac{\mathrm{d}}{\mathrm{d}{x}} \mathrm{e} ^{ \mathrm{i} ax} &= -a \sin\left(ax\right) + \mathrm{i} a \cos\left(ax\right) \\
+&= \mathrm{i} a[ \cos\left(ax\right) + \mathrm{i} \sin\left(ax\right) ]\\
+&= \mathrm{i} a \mathrm{e} ^{ \mathrm{i} ax}~,
+\end{aligned} \end{equation}
+[/SCOPE:s_deriv_let1]
+[SCOPE:s_deriv_let2|let_bind|导数中的复常数c]
+[34] 进一步拓展，令复常数 $c = a + \mathrm{i} b$ 得
+[35] \begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}{x}} \mathrm{e} ^{c x} = \frac{\mathrm{d}}{\mathrm{d}{x}} \left( \mathrm{e} ^{ax} \mathrm{e} ^{ \mathrm{i} bx} \right) = (a + \mathrm{i} b) \mathrm{e} ^{(a+ \mathrm{i} b)x} = c \mathrm{e} ^{cx}~.
+\end{equation}
+[/SCOPE:s_deriv_let2]
+[36] 可见 $ \mathrm{e} ^z$ 的求导与实数域的 $ \mathrm{e} ^x$ 类似（
+[37] 式 10 [链接 L4]
+[38] 这只是对实数 $x$ 求导的特殊情况，一般来说，复变函数是可以对复数求导的，详见 “复变函数的导数、柯西—黎曼条件”。
+
+[/SCOPE:s_deriv]
+[SCOPE:s_euler|description|欧拉公式的导出]
+[39] 欧拉公式最初是将泰勒级数进行推广得到的。
+[40] 首先，我们有如下三个展开：
+[41] \begin{equation}
+\sin x = x - \frac{1}{3!} x^3 + \frac{1}{5!} x^5 - \frac{1}{7!} x^7 \ldots
+\qquad (x \in \mathbb R)~,
+\end{equation}
+[42] \begin{equation}
+\cos x = 1 - \frac{1}{2!} x^2 + \frac{1}{4!} x^4 -\frac{1}{6!} x^6 \ldots
+\qquad (x \in \mathbb R)~,
+\end{equation}
+[43] \begin{equation}
+\mathrm{e} ^x =1 + x + \frac{1}{2!} x^2 + \frac{1}{3!} x^3 \ldots
+\qquad (x \in \mathbb R)~.
+\end{equation}
+[44] 由于我们已经知道复数的加减乘除运算，欧拉便尝试直接把虚数 $ \mathrm{i} $ 插入式 11 中，得到
+[45] \begin{equation}
+\mathrm{e} ^{ \mathrm{i} x} =1 + \mathrm{i} x - \frac{1}{2!} x^2 - \frac{1}{3!} \mathrm{i} x^3 \ldots
+\qquad (x \in \mathbb R)~.
+\end{equation}
+[46] 把式 11 中的实部和虚部分开，再和式 8 、式 9 对比，
+[47] 即得欧拉公式式 1 。
+
+[/SCOPE:s_euler]
+[SCOPE:s_series|description|复指数函数的级数定义]
+[48] 同理，用级数法也可以直接推导出式 1 。
+[49] 事实上，这种方法叫做 “解析拓延”，就是在保证函数解析的前提下给函数扩大定义域，例如从实轴拓展到复平面。
+[50] 使用复数的加法和乘法，可以用级数来定义复指数函数
+
+[/SCOPE:s_series]
+[SCOPE:s_def2|description|定义 2 复指数函数]
+[51] 定义 2 复指数函数
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[52] 令复指数函数为
+[53] \begin{equation}
+\mathrm{e} ^z = \sum_{n=0}^\infty \frac{z^n}{n!}~.
+\end{equation}
+[/SCOPE:s_def2_let]
+[54] 【未完成】证明等效
+
+跨文章引用:
+  [L1] 三角函数（复数） → CTrig
+[/SCOPE:s_def2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_def1",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "定义2的级数定义与定义1的欧拉公式定义等价，但证明未完成"
+  }
+]

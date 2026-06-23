@@ -1,0 +1,154 @@
+[SCOPE:root|description|一般积分]
+文章名: IntGen
+标题: 一般积分
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=一般积分
+  [1] type=definition heading=定义 2 title=微分方程组的一般积分
+  [2] type=definition heading=定义 3 title=微分方程组的积分
+
+[SCOPE:s_intro|description|引言]
+[0] 1下面将介绍常微分方程的一般积分，它是常微分方程解的一般形式。
+[1] 物理学中 “运动积分”（或 “运动方程的积分”）（运动积分）和 “循环积分” 中的 “积分” 之所以叫 “积分” 的原因，可以在本文得到解答。
+[2] “积分” 的概念源于微积分，“积分” 和 “导数” 彼此对应：“你” 是 “我” 的导数，“我” 就是 “你” 的积分，反之亦然。
+[3] 微分方程是关于未知函数导数的方程，其主要目的是要求得该未知函数，满足微分方程的未知函数称为该方程的解，
+[4] 所以微分方程的解当然就是微分方程中对应的导数的积分。
+[5] 由于这样的理由，人们也把微分方程的解叫作微分方程的积分。
+
+[/SCOPE:s_intro]
+[SCOPE:s_ode_gen|description|n阶常微分方程的一般积分]
+[SCOPE:s_ode_let|let_bind|n阶方程变量]
+[6] $n$ 阶常微分方程一般形式为（式 1 ）：
+[7] \begin{equation}
+F \left(x,y,y',\cdots,y^{(n)} \right) =0~,
+\end{equation}
+[8] 或写成（
+[9] 式 3 [链接 L0]
+[10] \begin{equation}
+y^{(n)}=f(x,y,y',\cdots,y^{(n-1)})~.
+\end{equation}
+[11] 自变量 $x$ 的任何函数，若满足方程
+[/SCOPE:s_ode_let]
+[12] 式 1 [链接 L1]
+[13] 式 2 [链接 L2]
+[14] ，就叫作这方程的
+[15] ；
+[16] 而微分方程的求解问题也叫作求微分方程的
+[17] 积分问题
+[18] 对于 $n$ 阶微分方程式 1 或式 2 ，有存在与唯一定理，它可以叙述为：若函数 $f(x,y,y',\cdots,y^{(n-1)})$ 是 $(x,y,y',\cdots,y^{(n-1)})$ 的单值函数，且在 $(x_0,y_0,y_0',\cdots,y_0^{(n-1)})$ 的一邻域内，$f$ 连续且有对 $y,y',\cdots,y^{(n-1)}$ 的一阶连续偏微商，
+[19] 则满足初始条件
+[20] \begin{equation}
+y|_{x=x_0}=y_0,y'|_{x=x_0}=y_0',\cdots,y^{(n-1)}|_{x=x_0}=y_0^{(n-1)}~
+\end{equation}
+[21] 的解存在且唯一。
+[22] 改变初始条件中的常数 $y_0,y_0',\cdots,y_0^{(n-1)}$，就可以得到微分方程式 1 或式 2 的无穷多个解。
+[23] 这就是说，微分方程的解依赖于 $n$ 个任意常数。
+[24] 一般来说，这 $n$ 个任意常数不一定以初始条件的形式在解中出现，而以一般的形式出现2：
+[25] \begin{equation}
+y=\varphi(x,C_1,\cdots,C_n)~.
+\end{equation}
+
+[/SCOPE:s_ode_gen]
+[SCOPE:s_def1|description|定义1 一般积分]
+[SCOPE:s_def1_let|let_bind|定义1变量]
+[26] 定义 1 一般积分
+[27] 微分方程式 2 的这样的含有 $n$ 个任意常数的解式 4 ，叫作方程式 2 的一般积分。
+[28] 一般积分式 4 也可以写成隐示式
+[29] \begin{equation}
+\psi(x,y,C_1,\cdots,C_n)=0~.
+\end{equation}
+[/SCOPE:s_def1_let]
+[30] 给常数 $C_1,\cdots,C_n$ 以确定的值，就得到方程的一个
+[31] 特殊解
+[32] 由方程式 4 或式 5 对 $x$ 求导，直到 $n-1$ 阶，再用 $x=x_0$ 及初始条件式 3 代入，就得到 $n$ 个方程。
+[33] 由这 $n$ 个方程，就可以确定出对应初始条件式 3 的一般积分式 4 中的任意常数 $C_1,\cdots,C_n$。
+
+[/SCOPE:s_def1]
+[SCOPE:s_sys_gen|description|常微分方程组的一般积分]
+[SCOPE:s_sys_let|let_bind|方程组变量]
+[34] 根据定理 2 ，一般的常微分方程组都等价于一阶的常微分方程组（标准常微分方程组定义 1 ）。
+[35] 这就是说，我们只需要讨论下面 $n$ 个一阶微分方程的方程组
+[36] \begin{equation}
+y_i'=f_i(x,y_1,\cdots,y_n)\qquad (i=1,\cdots,n)~
+\end{equation}
+[37] 像一个方程的情形一样，也有
+[/SCOPE:s_sys_let]
+[38] 存在与唯一定理
+[39] ，其可叙述为：若函数
+[40] \begin{equation}
+f_i(x,y_1,\cdots,y_n)\qquad (i=1,\cdots,n)~
+\end{equation}
+[41] 在 $(x_0,y_1^{(0)},y_2^{(0)},\cdots,y_n^{(0)})$ 的一邻域内连续且有对 $y,y_1,\cdots,y_n$ 的一阶连续偏微商，
+[42] 则满足初始条件
+[43] \begin{equation}
+y_1|_{x=x_0}=y_1{(0)},y_2|_{x=x_0}=y_2^{(0)},\cdots,y_n|_{x=x_0}=y_n^{(0)}~
+\end{equation}
+[44] 的解 $y_i=\omega_i(x)$ 存在且唯一。
+[45] 和一个方程时一样的理由，方程组式 6 的解依赖于 $n$ 个任意常数，这些常数以一般的形式出现在解中：
+[46] \begin{equation}
+y_i=\psi_i(x,C_1,\cdots,C_n)\qquad (i=1,\cdots,n)~.
+\end{equation}
+
+[/SCOPE:s_sys_gen]
+[SCOPE:s_def2|description|定义2 微分方程组的一般积分]
+[SCOPE:s_def2_let|let_bind|定义2变量]
+[47] 定义 2 微分方程组的一般积分
+[48] 微分方程组式 6 的这样的含有 $n$ 个任意常数的解式 9 ，叫作方程组式 6 的一般积分。
+[49] 给常数 $C_1,\cdots,C_n$ 以确定的值，就得到方程组式 6 的特殊解。
+[/SCOPE:s_def2_let]
+[50a] 若代入初始条件于 式 9
+[50b] 则可由 $n$ 个方程组
+[51] \begin{equation}
+y_i^{(0)}=\psi_i(x_0,C_1,\cdots,C_n) \qquad (i=1,\cdots,n)~.
+\end{equation}
+[52] 求出满足初始条件
+[53] 式 8 [链接 L3]
+[54] 的任意常数的值，再把这些值代入
+[55] 式 9 [链接 L4]
+[56] ，就得到满足初始条件
+[57] 式 8 [链接 L5]
+[58] 由式 9 ，可以得到微分方程组一般解的下面形状的公式：
+[59] \begin{equation}
+\varphi_i(x,y_1,\cdots,y_n)=C_i\qquad (i=1,\cdots,n)~.
+\end{equation}
+[60] 于是，为了从微分方程组的积分求出方程组的一般积分，需要求出方程组的 $n$ 个这样的积分，才能由等式式 11 解出解出 $y_1,\cdots,y_n$ 来。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|定义3 微分方程组的积分]
+[SCOPE:s_def3_let|let_bind|定义3变量]
+[61] 定义 3 微分方程组的积分
+[62] 式 11 中的每一个都叫作微分方程组式 6 的一个积分。
+[63] 上面的定义正是物理中的 “运动积分”、“循环积分” 的 “积分” 之涵义。
+[/SCOPE:s_def3_let]
+[64] 有时我们说方程组的积分，不是指等式式 11 ，而是指函数 $\varphi_i(x,y_1,\cdots,y_n)$。
+[65] 就是说，若把方程组的任何解代入函数 $\varphi(x,y_1,\cdots,y_n)$ 中，$\varphi$ 成为常数，
+[66] 则函数 $\varphi$ 叫作这方程组的积分。
+[67] 这里 $\varphi$ 当然不是常数，因为解的初始条件是随意的，这个常数当然也是随意的。
+[68] 显然，方程组的一些积分的任意函数 $F(\varphi_1,\cdots,\varphi_k)$ 也是方程组的积分，这只是由式 11 推得的，并非什么新结果。
+[/SCOPE:s_def3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def1",
+    "target_scope": "s_ode_gen",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义1是n阶方程一般积分的正式定义，是前面描述的special_case。"
+  },
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_sys_gen",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义2是方程组一般积分的正式定义。"
+  },
+  {
+    "source_scope": "s_def3",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义3是方程组积分的定义，是定义2中一般积分的组成部分。"
+  }
+]

@@ -1,0 +1,182 @@
+[SCOPE:root|description|一阶常系数线性微分方程组]
+文章名: ODEb3
+标题: 一阶常系数线性微分方程组（常微分方程）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=基解矩阵
+  [1] type=theorem heading=定理 1 title=
+  [2] type=example heading=例 1 title=
+
+[0] 一阶常系数齐次线性微分方程组形如
+[1] \begin{equation}
+\left\{\begin{aligned}
+\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }x_1&=a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n\\
+\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }x_2&=a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n\\
+&\vdots\\
+\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }x_n&=a_{n1}x_1+a_{n2}x_2+\cdots+a_{nn}x_n~,
+\end{aligned}\right.
+\end{equation}
+[2] 其中各 $x_i$ 是关于 $t$ 的未知函数，各 $a_{ij}$ 是已知常数。
+[3] 我们要研究的是如何解出这个方程组中的各未知函数。
+[4a] (t)$，实际上我们可以把它们放到一起，构成一个 $n$ 维向量 $ \boldsymbol{\mathbf{x}}
+[4b] (t)=(x_1
+[4c] (t), x_2
+[4d] (t), \cdots, x_n
+[4e] (t))$，这样就可以理解为还是只有一个自变量，只不过自变量从标量变成向量了。
+[5] 以上述向量理解的方式来看，式 1 右边部分就是一个线性变换 $ \boldsymbol{\mathbf{M}} \boldsymbol{\mathbf{x}} (t)$，其中
+[6] \begin{equation}
+\boldsymbol{\mathbf{M}} = \begin{pmatrix}
+a_{11} &a_{12} &\cdots &a_{1n}\\
+a_{21} &a_{22} &\cdots &a_{2n}\\
+\vdots &\vdots &\ddots &\vdots\\
+a_{n1} &a_{n2} &\cdots &a_{nn}
+\end{pmatrix} ~
+\end{equation}
+[7] 是已知常数矩阵。
+[8] 这样，我们就还可以把式 1 写成
+[9] \begin{equation}
+\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} } \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{M}} \boldsymbol{\mathbf{x}} ~
+\end{equation}
+[10] 的形式，看起来和一元方程
+[11] \begin{equation}
+\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }x=ax~
+\end{equation}
+[12] 非常像。
+
+[13] 式 4 的通解是 $x=C \mathrm{e} ^{at}$，其中 $C$ 为常数。
+[14] 事实上，式 3 的通解也可以类似地用矩阵指数来表示：
+[15] \begin{equation}
+\boldsymbol{\mathbf{X}} = \mathrm{e} ^{ \boldsymbol{\mathbf{M}} t}~.
+\end{equation}
+
+[SCOPE:s_definition1|description|定义1 基解矩阵]
+[16] 定义 1 基解矩阵
+[17] 如果 $n\times n$ 矩阵 $ \boldsymbol{\mathbf{X}} $ 的每一列作为一个向量，都是式 1 或者说式 3 的线性无关解1，
+[18] 那么称 $ \boldsymbol{\mathbf{X}} $ 是 式 1 或者说式 2 的基解矩阵。
+
+[/SCOPE:s_definition1]
+[SCOPE:s_theorem1_let|let_bind|定理1的变量]
+[SCOPE:s_theorem1|description|定理1]
+[19] 定理 1
+[20] 式 5 是式 1 或者说式 2 的基解矩阵。
+[21] 证明思路很简单，根据定理 2 ，直接得到 $\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} } \boldsymbol{\mathbf{X}} = \boldsymbol{\mathbf{M}} \boldsymbol{\mathbf{X}} $，又由于求导是对每个矩阵元独立进行的，
+[22] 因此把 $ \boldsymbol{\mathbf{X}} $ 看成是列向量排列而成的行矩阵，
+[23] 则每个列向量都是一个解。
+[24] 另外，由于 $ \boldsymbol{\mathbf{X}} |_{t=0}= \boldsymbol{\mathbf{E}} $，其中 $ \boldsymbol{\mathbf{E}} $ 为单位矩阵，
+[25] 故 $ \operatorname {tr} \boldsymbol{\mathbf{X}} =n\not=0$，
+[26] 故根据定理 1 ，$ \left\lvert \boldsymbol{\mathbf{X}} \right\rvert $ 的行列式不为零，
+[27] 故各解向量线性无关。
+[28] 这样，线性无关的一组解就构成了基解矩阵。
+[29] 基解矩阵的地位和基本解组一样，都能用来线性组合出所有的解。
+[30] 我们看一个实例：
+
+[/SCOPE:s_theorem1_let]
+[/SCOPE:s_theorem1]
+[SCOPE:s_example1_let|let_bind|例1的变量]
+[SCOPE:s_example1|description|例1]
+[31] 考虑方程组
+[32] \begin{equation}
+\left\{\begin{aligned}
+\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }x_1&=x_1+x_2\\
+\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }x_2&=x_2~,
+\end{aligned}\right.
+\end{equation}
+[33] \begin{equation}
+\left\{\begin{aligned}
+x_1(0)&=3\\
+x_1(0)&=2~.
+\end{aligned}\right.
+\end{equation}
+[34] 首先我们要求出其基解矩阵：
+[35] \begin{equation}
+\begin{aligned}
+\boldsymbol{\mathbf{X}} = \mathrm{e} ^{ \begin{pmatrix}1&1\\0&1\end{pmatrix} t}&=\sum_{n=0}^\infty\frac{1}{n!} \begin{pmatrix}1&n\\0&1\end{pmatrix} t^n\\
+&=\sum_{n=0}^\infty\frac{1}{n!} \begin{pmatrix}t^n&nt^n\\0&t^n\end{pmatrix} \\
+&= \begin{pmatrix} \mathrm{e} ^t&t \mathrm{e} ^t\\0& \mathrm{e} ^t\end{pmatrix} ~.
+\end{aligned}
+\end{equation}
+[36] 容易验证，
+[37] \begin{equation}
+x_1= \mathrm{e} ^t~, x_2=0~
+\end{equation}
+[38] \begin{equation}
+x_1=t \mathrm{e} ^t~, x_2= \mathrm{e} ^t~
+\end{equation}
+[39] \begin{equation}
+\left\{\begin{aligned}
+x_1&=A \mathrm{e} ^t+Bt \mathrm{e} ^t\\x_2&=B \mathrm{e} ^t~,
+\end{aligned}\right.
+\end{equation}
+[40] 将式 11 代入初值条件式 7 ，解出 $A, B$，最终得到满足初值条件的特解
+[41] \begin{equation}
+\left\{\begin{aligned}
+x_1&=3 \mathrm{e} ^t+2t \mathrm{e} ^t\\
+x_2&=2 \mathrm{e} ^t~.
+\end{aligned}\right.
+\end{equation}
+
+[/SCOPE:s_example1_let]
+[/SCOPE:s_example1]
+[SCOPE:s_eigenvector_method|description|本征向量解法]
+[SCOPE:s_eigenvector_let1|let_bind|本征向量和本征值]
+[42] 如果 $n\times n$ 矩阵 $ \boldsymbol{\mathbf{M}} $ 有 $n$ 个线性无关的本征向量 $ \boldsymbol{\mathbf{v}} _i$，其本征值分别为 $\lambda_i$，
+[43] 那么式 5 的另一种基解矩阵就可以写为
+[44] \begin{equation}
+\boldsymbol{\mathbf{X}} = \begin{pmatrix} \mathrm{e} ^{\lambda_{1}t} \boldsymbol{\mathbf{v}} _1& \mathrm{e} ^{\lambda_{2}t} \boldsymbol{\mathbf{v}} _2&\cdots& \mathrm{e} ^{\lambda_{n}t} \boldsymbol{\mathbf{v}} _n\end{pmatrix} ~.
+\end{equation}
+[/SCOPE:s_eigenvector_let1]
+[45] 验证是很容易的：$\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} } \mathrm{e} ^{\lambda_{i}t} \boldsymbol{\mathbf{v}} _i=\lambda_i \mathrm{e} ^{\lambda_{i}t} \boldsymbol{\mathbf{v}} _i= \boldsymbol{\mathbf{M}} \mathrm{e} ^{\lambda_{i}t} \boldsymbol{\mathbf{v}} _i$。
+[46a] 如果 $ \boldsymbol{\mathbf{M}} $ 没
+[46b] 则多线性无关的本征向量（换句话来说，就是无法对角化），
+[47] 那么式 13 虽然仍旧是解，却不够全面，
+[48] 从而不是基解矩阵。
+[49] 我们接下来讨论这种情况下的基解矩阵求法。
+[50] 我们的目标是脱离无穷级数来计算矩阵指数 $ \mathrm{e} ^{ \boldsymbol{\mathbf{M}} t}$，这是因为无穷级数常常难以计算。
+[51] 虽然接下来使用的方法也常有很大计算量，
+[52] 但这也是没办法的事，$ \boldsymbol{\mathbf{M}} $ 无法对角化导致过程不会像式 13 那么简单了。
+[SCOPE:s_eigenvector_let2|let_bind|单位向量]
+[53] 首先注意到，如果设列向量 $ \hat{\boldsymbol{\mathbf{e}}} _i$ 为 “第 $i$ 行为 $1$，其余为 $0$”，
+[54] 那么我们应该有
+[55] \begin{equation}
+\mathrm{e} ^{ \boldsymbol{\mathbf{M}} t}= \begin{pmatrix} \mathrm{e} ^{ \boldsymbol{\mathbf{M}} t} \hat{\boldsymbol{\mathbf{e}}} _1& \mathrm{e} ^{ \boldsymbol{\mathbf{M}} t} \hat{\boldsymbol{\mathbf{e}}} _2&\cdots& \mathrm{e} ^{ \boldsymbol{\mathbf{M}} t} \hat{\boldsymbol{\mathbf{e}}} _n\end{pmatrix} ~,
+\end{equation}
+[56] 问题转化为计算 $ \mathrm{e} ^{ \boldsymbol{\mathbf{M}} t} \hat{\boldsymbol{\mathbf{e}}} _i$。
+[/SCOPE:s_eigenvector_let2]
+[SCOPE:s_eigenvector_let3|let_bind|单位矩阵]
+[57] 设 $ \boldsymbol{\mathbf{E}} $ 是单位矩阵，
+[58] 那么我们有
+[59] \begin{equation}
+\mathrm{e} ^{\lambda_it} \mathrm{e} ^{-\lambda_i \boldsymbol{\mathbf{E}} t}= \boldsymbol{\mathbf{E}} ~.
+\end{equation}
+[60] 因此，
+[61] \begin{equation}
+\begin{aligned}
+\mathrm{e} ^{ \boldsymbol{\mathbf{M}} t} \hat{\boldsymbol{\mathbf{e}}} _j&= \mathrm{e} ^{ \boldsymbol{\mathbf{M}} t} \boldsymbol{\mathbf{E}} \hat{\boldsymbol{\mathbf{e}}} _j\\
+&= \mathrm{e} ^{ \boldsymbol{\mathbf{M}} …[truncated]…thbf{E}} )t} \hat{\boldsymbol{\mathbf{e}}} _j\\
+&= \mathrm{e} ^{\lambda_it} \left(\sum_{k=0}^\infty \frac{t^k}{k!}( \boldsymbol{\mathbf{M}} -\lambda_i \boldsymbol{\mathbf{E}} )^k \right) \hat{\boldsymbol{\mathbf{e}}} _j~,
+\end{aligned}
+\end{equation}
+[62] 式 16 里仍有无穷级数。
+[63] 将 $ \hat{\boldsymbol{\mathbf{e}}} _j$ 进行特征分解，
+[64] 则对于其每一个特征分量 $ \boldsymbol{\mathbf{v}} $，设其重数为 $m$，都有
+[65] 【未完成】引用特征向量与特征分解相关文章。
+[66] \begin{equation}
+\left(\sum_{k=0}^\infty \frac{t^k}{k!}( \boldsymbol{\mathbf{M}} -\lambda_i \boldsymbol{\mathbf{E}} )^k \right) \boldsymbol{\mathbf{v}} = \left(\sum_{k=0}^n \frac{t^k}{k!}( \boldsymbol{\mathbf{M}} -\lambda_i \boldsymbol{\mathbf{E}} )^k \right) \boldsymbol{\mathbf{v}} ~,
+\end{equation}
+[67] 这样就把无穷级数计算化为多个有限和计算了。
+[68] 这种计算方式规避了直接计算无穷级数，
+[69] 但复杂点在于要先关于 $ \boldsymbol{\mathbf{M}} $ 对各 $ \hat{\boldsymbol{\mathbf{e}}} _j$ 进行特征分解，再分别计算用特征分解计算式 17 ，最后再利用式 16 、式 14 组合成整个 $ \mathrm{e} ^{ \boldsymbol{\mathbf{M}} t}$。
+[/SCOPE:s_eigenvector_method]
+[/SCOPE:s_eigenvector_let3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_theorem1",
+    "target_scope": "s_definition1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的结论是定义1的一个实例"
+  }
+]

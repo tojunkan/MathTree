@@ -1,0 +1,290 @@
+{
+  "article_name": "AfQ",
+  "statements": [
+    {
+      "stmt_id": "st_affine_group_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_affine_group",
+      "exposed_entities": [
+        "仿射群"
+      ]
+    },
+    {
+      "stmt_id": "st_closure_condition",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_affine_group",
+      "exposed_entities": [
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_closure_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_affine_group",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_affine_let1",
+      "exposed_entities": [
+        "f",
+        "g",
+        "A",
+        "A1",
+        "A2",
+        "A3"
+      ]
+    },
+    {
+      "stmt_id": "st_let1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_affine_let1",
+      "exposed_entities": [
+        "A",
+        "A1",
+        "A2",
+        "A3"
+      ]
+    },
+    {
+      "stmt_id": "st_affine_map_form",
+      "subtype": "remark",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_affine_group",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_part_remark",
+      "subtype": "remark",
+      "clause_range": [
+        21,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_affine_group",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_affine_let2",
+      "exposed_entities": [
+        "Df",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_let2_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_affine_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_affine_group_def2",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_affine_let3",
+      "exposed_entities": [
+        "A",
+        "V",
+        "F",
+        "Aff(A)",
+        "A_n(F)"
+      ]
+    },
+    {
+      "stmt_id": "st_identity_equiv",
+      "subtype": "theorem",
+      "clause_range": [
+        33,
+        41
+      ],
+      "truth_value": "true",
+      "scope_id": "s_affine_let3",
+      "exposed_entities": [
+        "e",
+        "E"
+      ]
+    },
+    {
+      "stmt_id": "st_example_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_example_let",
+      "exposed_entities": [
+        "f",
+        "g",
+        "F",
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_example_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_part1",
+      "subtype": "theorem",
+      "clause_range": [
+        45,
+        56
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1_let1",
+      "exposed_entities": [
+        "A_n(F)_o",
+        "GL(V)",
+        "D"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem1_part2",
+      "subtype": "theorem",
+      "clause_range": [
+        57,
+        71
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1_let2",
+      "exposed_entities": [
+        "T",
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_exact_seq_def",
+      "subtype": "definition",
+      "clause_range": [
+        72,
+        76
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1_let3",
+      "exposed_entities": [
+        "M_i",
+        "alpha_i"
+      ]
+    },
+    {
+      "stmt_id": "st_exact_seq_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        77,
+        79
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1_let3",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_closure_condition",
+      "target": "st_closure_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let1_assump",
+      "target": "st_let1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let2_assump",
+      "target": "st_let2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_assump",
+      "target": "st_example_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_part1",
+      "target": "st_affine_group_def2",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_part2",
+      "target": "st_affine_group_def2",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_exact_seq_def",
+      "target": "st_exact_seq_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_theorem1_part1",
+      "target": "st_affine_group_def2",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1是仿射群的一个子群性质"
+    }
+  ],
+  "unresolved": []
+}

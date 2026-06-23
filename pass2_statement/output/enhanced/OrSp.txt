@@ -1,0 +1,153 @@
+[SCOPE:root|description|正交空间与辛空间]
+文章名: OrSp
+标题: 正交空间与辛空间
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+  [1] type=definition heading=定义 2 title=
+  [2] type=theorem heading=定理 1 title=
+  [3] type=theorem heading=定理 2 title=
+  [4] type=theorem heading=定理 3 title=
+
+[SCOPE:s_def1|description|定义 1]
+[0] 定义 1
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[1] 设 $V$ 是域 $\mathbb F$ 上的线性空间，$f$ 是 $V$ 上的双线性函数，
+[2] 若 $f$ 是对称的，称 $(V,f)$ 是正交空间；
+[3] 若 $f$ 是反对称的，称 $(V,f)$ 是辛空间；
+[4] $f$ 则为广义内积，$(V,f)$ 为广义内积空间。
+[5] 对任意 $ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} \in V$，简记广义内积为 $( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} )\equiv f( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} )$
+[/SCOPE:s_def1_let]
+[6] 引入广义内积的概念后，向量关系不再是直观的几何关系。
+[7] 在欧几里得空间下，由于内积是正定对称双线性型，我们可以定义两个点之间的距离，向量长度和角度。
+[8] 然而在广义内积下，这些概念无法再定义。
+[9] 譬如一般定义长度 $l_{ \boldsymbol{\mathbf{x}} }=\sqrt{ \boldsymbol{\mathbf{x}} ^2}\ge 0$，
+[10] 但在辛空间内向量内积都为 0，不再具有区分性，
+[11] 所以没有这个概念。
+[12] 同理，正交性不再由角度定义，而是采取内积为 $0$ 的定义。
+[13] 由于正交关系是对称的，左根和右根等同，统称为根，以 $ \operatorname {Rad}$ 表示。
+[14] 需要注意的是，在平面几何里，两向量正交则线性无关。
+[15] 但在广义内积空间内并不一定成立，比如退化的正交空间内总有与自身内积为 0 的向量，
+[16] 因此 “正交基” 要严格保证既是线性无关也是相互正交。
+[17] 一般称与自身正交为 $0$ 的向量为迷向向量。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义 2]
+[18] 定义 2
+[SCOPE:s_def2_let|let_bind|定义 2 的变量]
+[19] 设 $V$ 是域 $F$ 的内积空间，$S,T$ 为其子空间。
+[20] 若对于任意 $ \boldsymbol{\mathbf{x}} \in S, \boldsymbol{\mathbf{y}} \in T$ 有 $( \boldsymbol{\mathbf{x}} . \boldsymbol{\mathbf{y}} )$，
+[/SCOPE:s_def2_let]
+[21] 则称这两个空间互相垂直。
+[22] 若任意与 $S$ 垂直的向量都在 $T$ 内，
+[23] 则可以表示 $T=S^{\bot}$。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|定理 1]
+[24] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[25] 设特征不为 2 的域 $F$ 上有 $n$ 维正交空间 $(V,f)$，
+[26] 则该正交空间一定存在正交基。
+[/SCOPE:s_thm1_let]
+[27] 证明：
+[28] 由于 $f$ 是对称的，
+[29] 则度量矩阵是对称矩阵，设为 $A$。
+[30] $A$ 可以通过正交矩阵来对角化，每一列是 $A$ 的两两正交的特征向量。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理 2]
+[31] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理 2 的变量]
+[32] $(V,f)$ 是正交空间，A 是 $f$ 的度量矩阵表示，
+[33] 则有子空间 $W$ 非退化 $\Longleftrightarrow W^{\bot}$ 非退化 $\Longleftrightarrow A|_{W}$ 满秩 $\Longleftrightarrow V=W\oplus W^{\bot} $
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm2_proof|description|定理 2 的证明]
+[34] 证明：
+[35] $W$ 非退化 $\Longleftrightarrow \operatorname {Rad}W=W\cap W^{\bot}=0\Longleftrightarrow W^{\bot}$ 非退化。
+[36] 前两条得证。
+[SCOPE:s_thm2_proof_let|let_bind|定理 2 证明中的变量]
+[37] 设任意 $ \boldsymbol{\mathbf{x}} \in \operatorname {Rad} W, \boldsymbol{\mathbf{y}} \in W$，$W$ 的退化性意味着 $( \boldsymbol{\mathbf{x}} ^{T}A|_{W}) \boldsymbol{\mathbf{y}} =0$ 只有 $ \boldsymbol{\mathbf{0}} $ 解，
+[38] 因此 $A|_{W}$ 是单射，满秩。
+[39] 接下来证明最后一条。
+[40] 因为 $W\cap W^{\bot}=0$，只需证明 $V=W+W^{\bot}$ 即可。
+[41] 正交空间必有正交基，设 $\{ \boldsymbol{\mathbf{e}} _i\}_{i=1}^k$ 是 $W$ 上的一组由非迷向向量组成的正交基，任意 $ \boldsymbol{\mathbf{z}} \in V$，$ \boldsymbol{\mathbf{z}} '$ 为任意向量在 $W$ 上的分量。
+[/SCOPE:s_thm2_proof_let]
+[42] 剩余分量为
+[43] \begin{equation}
+\boldsymbol{\mathbf{z}} - \boldsymbol{\mathbf{z}} '= \boldsymbol{\mathbf{z}} -\sum\limits_{i=1}^k\frac{f( \boldsymbol{\mathbf{z}} , \boldsymbol{\mathbf{e}} _i)}{f( \boldsymbol{\mathbf{e}} _i, \boldsymbol{\mathbf{e}} _i)} \boldsymbol{\mathbf{e}} _i~.
+\end{equation}
+[44] 若剩余分量属于 $W$ 的正交补，
+[45] 则必然与 $W$ 上的基向量内积为 $0$。
+[46] 验证有：
+[47] \begin{equation}
+f( \boldsymbol{\mathbf{z}} - \boldsymbol{\mathbf{z}} ', \boldsymbol{\mathbf{e}} _j)=f( \boldsymbol{\mathbf{z}} , \boldsymbol{\mathbf{e}} _j)-\sum\limits_{i=1}^k\frac{f( \boldsymbol{\mathbf{z}} , \boldsymbol{\mathbf{e}} _i)}{f( \boldsymbol{\mathbf{e}} _i, \boldsymbol{\mathbf{e}} _i)}f( \boldsymbol{\mathbf{e}} _i, \boldsymbol{\mathbf{e}} _j)=0~,
+\end{equation}
+[/SCOPE:s_thm2_proof]
+[48] 辛空间也有一条类似的定理：
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|定理 3]
+[49] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理 3 的变量]
+[50] $(V,f)$ 是有限维辛空间，$W$ 是其非退化的子空间，
+[51] 则 $V=W\oplus W^{\bot}$
+[/SCOPE:s_thm3_let]
+[SCOPE:s_thm3_proof|description|定理 3 的证明]
+[52] 证明：1
+[53] 由于 $W$ 非退化，
+[54] 所以 $ \operatorname {Rad} W=W\cap W^{\bot}={ \boldsymbol{\mathbf{0}} }$ 且 $W$ 是偶数维的辛空间。
+[SCOPE:s_thm3_proof_let|let_bind|定理 3 证明中的变量]
+[55a] 设 $\{ \boldsymbol{\mathbf{\theta}} _i, \boldsymbol{\mathbf{\theta}} _{-i}\}_{i=1}^k$ 是 $W$ 的一组基并满足 $f( \boldsymbol{\mathbf{\theta}} _i, \boldsymbol{\mathbf{\theta}} _{-i})=1$
+[55b] 若 $i\neq t$，则有 $f( \boldsymbol{\mathbf{\theta}} _i, \boldsymbol{\mathbf{\theta}} _{\pm t})= 0$2。
+[56] 扩展其为 $V$ 上的一组基：$\{ \boldsymbol{\mathbf{\theta}} _i, \boldsymbol{\mathbf{\theta}} _{-i}\}_{i=1}^k\cup\{ \boldsymbol{\mathbf{\eta}} _i\}_{i=1}^{t}$。
+[57] 设 $ \boldsymbol{\mathbf{\eta}} '_i= \boldsymbol{\mathbf{\eta}} _i-\sum\limits_{t=1}^kf( \boldsymbol{\mathbf{\eta}} _i, \boldsymbol{\mathbf{\theta}} _{-t}) \boldsymbol{\mathbf{\theta}} _t+\sum\limits_{t=1}^kf( \boldsymbol{\mathbf{\eta}} _i, \boldsymbol{\mathbf{\theta}} _t) \boldsymbol{\mathbf{\theta}} _{-t}$，
+[/SCOPE:s_thm3_proof_let]
+[58] 则有：
+[59] \begin{equation}
+\begin{aligned}
+f( \boldsymbol{\mathbf{\eta}} '_j, \boldsymbol{\mathbf{\theta}} _i)&=f( \boldsymbol{\mathbf{\eta}} _j, \boldsymbol{\mathbf{\theta}} _i)-f( \boldsymbol{\mathbf{\eta}} _j, \boldsymbol{\mathbf{\theta}} _{-i}) \boldsymbol…[truncated]…hbf{\theta}} _i, \boldsymbol{\mathbf{\theta}} _{-i})+f( \boldsymbol{\mathbf{\eta}} _j, \boldsymbol{\mathbf{\theta}} _i) \boldsymbol{\mathbf{f}} ( \boldsymbol{\mathbf{\theta}} _{-i}, \boldsymbol{\mathbf{\theta}} _{-i})=0~.
+\end{aligned}
+\end{equation}
+[60] 因而 $\{ \boldsymbol{\mathbf{\eta}} '_i\}_{i=1}^t\in W^{\bot}$，可以证明 $\{ \boldsymbol{\mathbf{\theta}} _i, \boldsymbol{\mathbf{\theta}} _{-i}\}_{i=1}^k\cup\{ \boldsymbol{\mathbf{\eta}} '_i\}_{i=1}^t$ 是 $V$ 上的一组基，得证。
+[/SCOPE:s_thm3_proof]
+[61] 由定理 2 可知，总可以找到一组基使得辛空间的度量矩阵为：
+[62] \begin{equation}
+\operatorname{diag}\left\{\left(\begin{array}{rr}
+0 & 1 \\
+-1 & 0
+\end{array}\right), \cdots,\left(\begin{array}{rr}
+0 & 1 \\
+-1 & 0
+\end{array}\right), 0, \cdots, 0\right\} \text {, }
+~.\end{equation}
+[63] 这组基又称为
+[64] 辛基
+[65] 。
+[66] 改变基的顺序，从满足上述形式的 ${ \boldsymbol{\mathbf{\theta}} _1, \boldsymbol{\mathbf{\theta}} _{-1}, \boldsymbol{\mathbf{\theta}} _2, \boldsymbol{\mathbf{\theta}} _{-2}... \boldsymbol{\mathbf{\theta}} _k, \boldsymbol{\mathbf{\theta}} _{-k}... \boldsymbol{\mathbf{…[truncated]…} _2, \boldsymbol{\mathbf{\theta}} _k, \boldsymbol{\mathbf{\theta}} _{-k}... \boldsymbol{\mathbf{\theta}} _{-1} \boldsymbol{\mathbf{\theta}} _{-2} \boldsymbol{\mathbf{\theta}} _{-k}... \boldsymbol{\mathbf{\eta}} _1... \boldsymbol{\mathbf{\eta}} _t}$。
+[67] 则可以证明在这组基下度量矩阵的形式为：
+[68] \begin{equation}
+\begin{pmatrix}
+0 & \boldsymbol E_k \\
+-\boldsymbol E_k& 0\\
+\end{pmatrix}~.
+\end{equation}
+[/SCOPE:s_thm3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理 2 的证明中使用了定理 1 的正交基存在性"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理 3 是定理 2 在辛空间的特例，且证明中引用定理 2"
+  }
+]

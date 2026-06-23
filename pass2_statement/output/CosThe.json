@@ -1,0 +1,133 @@
+{
+  "article_name": "CosThe",
+  "statements": [
+    {
+      "stmt_id": "st_coslaw_def",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_coslaw",
+      "exposed_entities": [
+        "c",
+        "a",
+        "b",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_right_triangle_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_coslaw",
+      "exposed_entities": [
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_pythagoras_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_coslaw",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_coord_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_coslaw_let2",
+      "exposed_entities": [
+        "C",
+        "B",
+        "A",
+        "a",
+        "b",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_sine_law_deriv",
+      "subtype": "theorem",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_coslaw_let2",
+      "exposed_entities": [
+        "A",
+        "b",
+        "C",
+        "c",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_coslaw_deriv_coord",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_coslaw_let2",
+      "exposed_entities": [
+        "c",
+        "a",
+        "b",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_vector_deriv",
+      "subtype": "theorem",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_coslaw_let3",
+      "exposed_entities": [
+        "a",
+        "b",
+        "θ"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_right_triangle_assump",
+      "target": "st_pythagoras_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coord_assump",
+      "target": "st_sine_law_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coord_assump",
+      "target": "st_coslaw_deriv_coord",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

@@ -1,0 +1,107 @@
+[SCOPE:root|description|有界算子的预解式]
+文章名: BddRsv
+标题: 有界算子的预解式
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=预解式
+  [1] type=definition heading=定义 2 title=冯诺依曼级数
+  [2] type=theorem heading=定理 1 title=
+
+[SCOPE:s_def1|description|预解式]
+[0] 定义 1 预解式
+[SCOPE:s_def1_let|let_bind|预解式的变量]
+[1] 设 $X$ 是复巴拿赫空间，$T:X\to X$ 是有界线性算子。
+[2] 定义 $T$ 的预解式（resolvent） 为复变量 $z\in\mathbb{C}$ 的算子值函数
+[/SCOPE:s_def1_let]
+[3] $$
+R(z;T):=(z-T)^{-1}~,
+$$
+[4a] 如果 $z$ 使得上式有意义（
+[4b] 则$z$ 属于 $T$ 的预解集）。
+[5] 然而我们首先要确认这个式子确实对某些 $z$ 有意义。
+[6] 引入下列定义：
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|冯诺依曼级数]
+[7] 定义 2 冯诺依曼级数
+[SCOPE:s_def2_let|let_bind|冯诺依曼级数的变量]
+[8] 设 $X$ 是巴拿赫空间，$A:X\to X$ 是有界算子。
+[9] 算子 $A$ 的几何级数
+[/SCOPE:s_def2_let]
+[10] $$
+\text{Id}+A+A^2+\dots~
+$$
+[11] 称为冯诺依曼级数（von Neumann series）。
+[12] 不难看出在 $\|A\|<1$ 时，它按照算子范数收敛到 $(\text{Id}-A)^{-1}$，这与通常的数值几何级数很类似。
+[13] 借助冯诺依曼级数，立刻看出当 $|z|>\|T\|$ 时成立
+[14] $$
+(z-T)^{-1}
+=\frac{1}{z}(1-z^{-1}T)^{-1}
+=\frac{1}{z}\sum_{n=0}\frac{T^n}{z^n}~,
+$$
+[15] 所以可见 $R(z;T)$ 对于充分大的 $z$ 确实是全纯函数。
+[16] 据此便可以证明如下基本命题：
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|定理1]
+[17] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[18] 如果 $T:X\to X$ 是有界线性算子，
+[19] 那么预解集 $\rho(T)$ 是开集，而谱集 $\sigma(T)$ 是紧集。
+[/SCOPE:s_thm1_let]
+[20] 如果 $T:X\to X$ 是有界线性算子，
+[21] 那么它至少有一个谱点，也就是说 $\sigma(T)$ 是非空紧集。
+[SCOPE:s_thm1_proof|description|定理1的证明]
+[22] 证明
+[SCOPE:s_thm1_part1|description|第一部分：预解集开，谱集紧]
+[SCOPE:s_thm1_part1_let|let_bind|第一部分引入的变量]
+[23] 对于 1.，如果 $\lambda_0\in\rho(T)$，
+[24] 那么 $A:=\lambda_0-T$ 是有界的可逆算子。
+[/SCOPE:s_thm1_part1_let]
+[25] 于是可作冯诺依曼级数
+[26] $$
+A^{-1}(\text{Id}+zA^{-1}+z^2A^{-2}+\dots+z^nA^{-n}+\dots)~.
+$$
+[27] 如果 $|z|<\|A^{-1}\|^{-1}$，
+[28] 那么这个级数收敛到 $A^{-1}(\text{Id}-zA^{-1})^{-1}=(\lambda_0-z-T)^{-1}$。
+[29] 这说明预解集的点的某个邻域还包含在预解集内，
+[30] 从而预解集是开集，而谱集是闭集。
+[31] 另一方面，我们已经知道，只要 $|z|>\|T\|$，$(z-T)^{-1}$ 便是全纯函数，
+[32] 于是谱集包含在圆 $|z|\leq\|T\|$ 内。
+[33] 所以谱集是紧集。
+[/SCOPE:s_thm1_part1]
+[SCOPE:s_thm1_part2|description|第二部分：谱集非空]
+[SCOPE:s_thm1_part2_let|let_bind|第二部分引入的变量]
+[34] 对于 2.，如果 $(z-T)^{-1}$ 对于所有复数 $z$ 都存在，
+[35] 那么根据上面的级数展开，可以看出它是全复平面上的算子值全纯函数，而且由于 $|z|>2\|T\|$ 时有
+[/SCOPE:s_thm1_part2_let]
+[36] $$
+(z-T)^{-1}=\frac{1}{z}\sum_{n=0}\frac{T^n}{z^n}~,
+$$
+[37] 而右边级数的模显然小于 2，
+[38] 所以 $f(z)$ 是有界的全纯函数。
+[39] 按照刘维尔定理，它只能是常值函数，这当然不可能。
+[40] Q.E.D.
+[/SCOPE:s_thm1_proof]
+[/SCOPE:s_thm1_part2]
+[41] 从证明中可见 $R(z;T)$ 是定义在 $\rho(T)$ 上的算子值全纯函数。
+[/SCOPE:s_thm1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1使用预解式的定义"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1使用冯诺依曼级数"
+  }
+]

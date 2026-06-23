@@ -1,0 +1,264 @@
+{
+  "article_name": "RicciC",
+  "statements": [
+    {
+      "stmt_id": "st_default_assumption",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "M",
+        "∇"
+      ]
+    },
+    {
+      "stmt_id": "st_curvature_def",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_curvature_def",
+      "exposed_entities": [
+        "R",
+        "X",
+        "Y"
+      ]
+    },
+    {
+      "stmt_id": "st_linearity_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_linearity",
+      "exposed_entities": [
+        "f",
+        "g",
+        "h",
+        "X",
+        "Y",
+        "Z"
+      ]
+    },
+    {
+      "stmt_id": "st_linearity_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_linearity",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ricci_def",
+      "subtype": "definition",
+      "clause_range": [
+        87,
+        89
+      ],
+      "truth_value": null,
+      "scope_id": "s_ricci_def",
+      "exposed_entities": [
+        "R_{kj}",
+        "R^i_{kij}"
+      ]
+    },
+    {
+      "stmt_id": "st_antisym_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        96,
+        97
+      ],
+      "truth_value": "true",
+      "scope_id": "s_antisym",
+      "exposed_entities": [
+        "X",
+        "Y"
+      ]
+    },
+    {
+      "stmt_id": "st_metric_antisym_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        100,
+        101
+      ],
+      "truth_value": "true",
+      "scope_id": "s_metric_antisym",
+      "exposed_entities": [
+        "X",
+        "Y",
+        "U",
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_exchange_sym_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        104,
+        105
+      ],
+      "truth_value": "true",
+      "scope_id": "s_exchange_sym",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_first_bianchi_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        107,
+        108
+      ],
+      "truth_value": "true",
+      "scope_id": "s_first_bianchi",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_second_bianchi_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        111,
+        112
+      ],
+      "truth_value": "true",
+      "scope_id": "s_second_bianchi",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1",
+      "subtype": "corollary",
+      "clause_range": [
+        115,
+        116
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor2",
+      "subtype": "corollary",
+      "clause_range": [
+        129,
+        136
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor2",
+      "exposed_entities": [
+        "R_{abcd}"
+      ]
+    },
+    {
+      "stmt_id": "st_ricci_sym_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        145,
+        146
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ricci_sym",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_notation_def",
+      "subtype": "definition",
+      "clause_range": [
+        147,
+        148
+      ],
+      "truth_value": null,
+      "scope_id": "s_notation",
+      "exposed_entities": [
+        "T_{[i_1 i_2 ... i_n]}"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_default_assumption",
+      "target": "st_curvature_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_linearity_theorem",
+      "target": "st_linearity_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_curvature_def",
+      "target": "st_linearity_theorem",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_curvature_def",
+      "target": "st_ricci_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_curvature_def",
+      "target": "st_antisym_theorem",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_curvature_def",
+      "target": "st_metric_antisym_theorem",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_curvature_def",
+      "target": "st_exchange_sym_theorem",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_curvature_def",
+      "target": "st_first_bianchi_theorem",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_curvature_def",
+      "target": "st_second_bianchi_theorem",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_second_bianchi_theorem",
+      "target": "st_cor1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_curvature_def",
+      "target": "st_cor2",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_exchange_sym_theorem",
+      "target": "st_ricci_sym_theorem",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

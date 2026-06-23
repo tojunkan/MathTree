@@ -1,0 +1,204 @@
+[SCOPE:root|description|单群]
+文章名: SemGrp
+标题: 单群
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=单群
+  [1] type=definition heading=定义 2 title=（次）正规序列
+  [2] type=definition heading=定义 3 title=
+  [3] type=theorem heading=定理 1 title=Jordan-Hölder 定理
+  [4] type=definition heading=定义 4 title=有限单群分类定理11
+
+[0] 单群可以和素数类比。
+[1] 我们知道，任何一个非平凡的整数（即除了 $0$ 和 $1$）都可以分解为素数的乘积，素数是正整数的 “砖石”。
+[2] 类似地，任何一个具有正规子群的群都可以分解为其正规子群和另一个群的半直积，而不存在非平凡正规子群的群就可以类比为群的 “砖石”。
+[3] 这样的砖石被称为单群。
+
+[SCOPE:s_def1|description|定义 1 单群]
+[4] 定义 1 单群
+[SCOPE:s_def1_let|let_bind|单群定义中的变量]
+[5] 如果一个群 $G$ 不存在非平凡正规子群，
+[6] 那么称其为一个单群（simple group）。
+[/SCOPE:s_def1_let]
+[7] 正如我们不把 $1$ 视作素数，平凡群也不被视作单群。
+[8] 群的分解和数字的分解有很多类似之处，
+[9] 但依然有很多不同，
+[10] 因此本节中使用的类比更多地是为了方便建立直观印象，而非对号入座，请注意。
+
+[/SCOPE:s_def1]
+[11] 每一个非平凡整数都可以通过因子分解，一步步拆成素因子更少的数，直到得到素数。
+[12] 比如说，$120$ 可以拆成 $4 \times 30$，$30$ 可以拆成 $2 \times 15$，$15$ 再拆成 $3 \times 5$，$3$ 和 $5$ 就无法再拆了。
+[13] 群也类似，可以把群拆成自己的正规子群和子群的半直积。
+
+[SCOPE:s_def2|description|定义 2 （次）正规序列]
+[14] 定义 2 （次）正规序列
+[SCOPE:s_def2_let|let_bind|次正规序列定义中的变量]
+[15] 给定群 $G$，如果有 $n+1$ 个群 $\{G_i\}_{i = 1}^n$，满足 $\{e\} = G_0 \triangleleft G_1 \triangleleft \cdots \triangleleft G_n = G$，
+[16] 即满足 $G_{i}$ 都是 $G_{i+1}$ 的正规子群，称之为 $G$ 的一个次正规序列（subnormal series），$G_{i+1} / G_{i}$ 被称为该序列的合成因子（factor group 或 composition factor），$n$ 被称为该序列的长度（length）。
+[/SCOPE:s_def2_let]
+[17] 我们有 $G_{i + 1} = G_{i} \rtimes (G_{i+1} / G_{i})$.
+[18] 注意，正规子群列只要求相邻的两个群具有 “正规子群” 的关系，而 $G_{i+2}$ 不一定是 $G_i$ 的正规子群。
+[19] 如果序列满足任意的 $G_{i} \neq G_{i+1}$，（等价的，所有合成因子 $G_{i+1} / G_{i}$ 非平凡），该序列被称为无重复的。
+[20] 【未完成】“无重复的” 不确定是否为官方翻译
+[21] 有时候，无重复的正规子群列的相邻两项中间可以再插入一个群，使之仍然成为一个正规子群列。
+[22] 这样的行为有时被称为 “加细”。
+[23] 如果一个正规子群列已经无法加细，
+[24] 那么我们称之为群 $G$ 的一个合成序列。
+[25] 或者说，合成序列是按如下方法定义的：
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|定义 3 合成序列]
+[26] 定义 3
+[27] 如果次正规序列的每一个合成因子都是单群，
+[28] 则称之为一个合成序列（composition sequence）。
+[29] 类比到非负整数的质因数分解，合成序列就好比是每次只拿走一个质因子（单群）。
+[30] 非负整数 “合成序列” 的分解顺序不一定唯一，比如 $60$ 可以写成 $2\times 3\times 2\times 5$，也可以写成 $5\times 3\times 2\times 2$，
+[31] 但是任何一个 “合成序列” 里的元素一定是一样的（计入重数）1。
+[32] 群的合成序列也类似，合成序列不唯一，
+[33] 但其合成因子集合一样（计入重数）。
+[34] 这就是以下 Jordan-Hölder 定理在群论中的情形。
+
+[/SCOPE:s_def3]
+[SCOPE:s_thm1|description|定理 1 Jordan-Hölder 定理]
+[35] 定理 1 Jordan-Hölder 定理
+[SCOPE:s_thm1_let1|let_bind|定理1 变量 G]
+[36] 如果群 $G$ 有合成序列，
+[37] 则所有合成序列同构。
+[/SCOPE:s_thm1_let1]
+[38] 进而，如果 $G$ 有主序列，
+[39] 则所有主序列同构。
+[40] 证明：
+[41] 主序列都是合成序列，
+[42] 从而如果命题第一句成立则第二句自然成立。
+[43] 只需证明合成序列同构即可。
+[SCOPE:s_thm1_let2|let_bind|两个合成序列]
+[44] 给定群 $G$ 的两个合成序列
+[45] \begin{equation}
+G= K_1\rhd K_2\rhd \cdots \rhd K_r\rhd \{e\},
+~\end{equation}
+[46] \begin{equation}
+G= H_1\rhd H_2\rhd \cdots \rhd H_s\rhd \{e\}.
+~\end{equation}
+[/SCOPE:s_thm1_let2]
+[SCOPE:s_thm1_let3|let_bind|取 H_i 的次正规序列]
+[47] 取 $H_i$，考虑它的一个次正规序列3
+[48] \begin{equation}
+H_i\cap K_1\rhd H_i\cap K_2\rhd \cdots \rhd H_i\cap K_r\rhd \{e\}.
+~\end{equation}
+[/SCOPE:s_thm1_let3]
+[SCOPE:s_thm1_let4|let_bind|乘进 H_{i+1}]
+[49] 已知 $H_{i+1}$ 是 $H_i$ 的一个极大正规真子群，我们可以把它利用起来，乘进上述次正规序列里
+[50] 4
+[51] 5
+[52] \begin{equation}
+(H_i\cap K_1)H_{i+1}\rhd (H_i\cap K_2)H_{i+1}\rhd \cdots \rhd (H_i\cap K_r)H_{i+1}\rhd H_{i+1}.
+~\end{equation}
+[/SCOPE:s_thm1_let4]
+[SCOPE:s_thm1_let5|let_bind|存在唯一的 j]
+[53] 考虑到 $H_i\cap K_1=H_i$，以及 $H_{i+1}$ 是 $H_i$ 的极大正规真子群，
+[54] 故存在唯一的$j$ 使得 $(H_i\cap K_j)H_{i+1}=H_i$，而 $(H_i\cap K_{j+1})H_{i+1}=H_{i+1}$。
+[/SCOPE:s_thm1_let5]
+[SCOPE:s_thm1_let6|let_bind|存在唯一的 m]
+[55] 反过来同理，存在唯一的$m$ 使得 $(K_j\cap H_m)K_{j+1}=K_j$，而 $(K_j\cap H_{m+1})K_{j+1}=K_{j+1}$。
+[/SCOPE:s_thm1_let6]
+[SCOPE:s_thm1_let7|let_bind|证明 m=i]
+[56] 下证$m=i$，
+[57] 即 $H_i$ 和 $K_j$ 相互对应。
+[58] 反过来，$(K_j\cap H_i)K_{j+1}$ 要么是 $K_j$，要么是 $K_{j+1}$，
+[59] 但是阴影区域非空意味着它不是 $K_{j+1}$，
+[60] 故必有
+[61] \begin{equation}
+(K_j\cap H_i)K_{j+1} = K_j.
+~\end{equation}
+[62] 同样，$(K_j\cap H_{i+1})K_{j+1}$ 要么是 $K_j$，要么是 $K_{j+1}$。
+[63] 因为 $(K_j\cap H_{i+1})(K_{j+1}\cap H_i)\subseteq H_{i+1}$，而群运算的唯一性和封闭性使得 $(K_j\cap H_{i+1})(K_{j+1} - H_i)\subseteq K_j-H_i$，
+[64] 于是非空阴影区域不包含于$(K_j\cap H_{i+1})K_{j+1}$。
+[65] 于是 $(K_j\cap H_{i+1})K_{j+1}$ 不是 $K_j$，
+[66] 故必有
+[67] \begin{equation}
+(K_j\cap H_{i+1})K_{j+1} = K_{j+1}.
+~\end{equation}
+[68] 这就证明了那个唯一的 $m$ 就是 $i$。
+[/SCOPE:s_thm1_let7]
+[SCOPE:s_thm1_let8|let_bind|最后同构证明中的变量]
+[69] 最后证明$H_i/H_{i+1}$ 和对应的 $K_j/K_{j+1}$ 同构。
+[70] 由一个定理6知7
+[71] \begin{equation}
+\begin{aligned}
+H_i/H_{i+1} ={}& (H_i\cap K_j)H_{i+1} / (H_i\cap K_{j+1})H_{i+1}\\
+={}& (H_i\cap K_j)(H_i\cap K_{j+1})H_{i+1} / (H_i\cap K_{j+1})H_{i+1}\\
+\cong{}& (H_i\cap K_j) / (H_i\cap K_j)\cap[(H_i\cap K_{j+1})H_{i+1}]\\
+={}& (H_i\cap K_j) / K_j\cap[(H_i\cap K_{j+1})H_{i+1}]\\
+={}& (H_i\cap K_j) / (K_j\cap H_{i+1})(H_i\cap K_{j+1}).
+\end{aligned}
+~\end{equation}
+[72] \begin{equation}
+K_j/K_{j+1} \cong (K_j\cap H_i)/(H_i\cap K_{j+1})(K_j\cap H_{i+1}).
+~\end{equation}
+[73] 比较即可得 $H_i/H_{i+1} \cong K_j/K_{j+1}$。
+[/SCOPE:s_thm1_let8]
+[74] 证毕。
+[75] 上述证明中没有展开讨论为什么8
+[76] $H_{i+1}(H_i\cap K_j)H_{i+1}\rhd H_{i+1}(H_i\cap K_{j+1})H_{i+1}$，也没有据此证明 $(H_i\cap K_{j})H_{i+1}\rhd (H_i\cap K_{j+1})H_{i+1}$，我们现在讨论。
+[77] 先证明一个简化问题：给定 $G$ 的子群 $K, H, N$，若 $K\rhd H$，且对任意 $k\in K$ 都有 $kHk^{-1}\subseteq H$9，
+[78] 则 $HKH\rhd HNH$。
+[79] 任取 $h\in H, k\in K$，
+[80] 则 $hkh^{-1} H hk^{-1}h^{-1}=H$，$kNk^{-1}=N$ 且 $hkh^{-1}k^{-1}$，
+[81] 从而
+[82] \begin{equation}
+\begin{aligned}
+hkh^{-1} HNH hk^{-1}h^{-1} ={}& H \left(hkh^{-1} N hk^{-1}h^{-1} \right) H\\
+={}& H \left(hkh^{-1} k^{-1} \right) k N k^{-1} (k hk^{-1}h^{-1})H\\
+={}& HNH.
+\end{aligned}~
+\end{equation}
+[83] 最后，据一个引理10，考虑到 $H_{i+1}\lhd H_i$，可知
+[84] \begin{equation}
+H_{i+1}(H_i\cap K_j)H_{i+1}=(H_i\cap K_j)H_{i+1}. ~
+\end{equation}
+[85] 这样，取 $K=H_i\cap K_j$，$H=H_{i+1}$ 和 $N=H_i\cap K_{j+1}$，
+[86] 即可得证原定理证明中式 4 是次正规序列。
+[87] 我们可以把群 $G$ 的长度（length）定义成它的任意合成序列的长度。
+
+[/SCOPE:s_thm1]
+[88] 有限群的研究重点是有限单群，知道了所有有限单群的性质也就能相应推出任意有限群的性质。
+[89] 但我们是否知道所有有限单群了呢？
+[90] 答案是肯定的。
+[91] 事实上，目前的研究表明，全体有限单群都可以归入特定的几个类别里，如果这是真的，
+[92] 那么我们确实已经知道了所有有限单群。
+
+[SCOPE:s_def4|description|定义 4 有限单群分类定理]
+[93] 定义 4 有限单群分类定理11
+[SCOPE:s_def4_let|let_bind|分类定理中的变量]
+[94] 如果 $G$ 是一个单群，
+[95] 那么 $G$ 必属于以下几类群中的一个：
+[/SCOPE:s_def4_let]
+[96] $\mathbb{Z}_p$，其中 $p$ 是素数；
+[97] 交错群 $A_n$，其中 $n\geq 5$；
+[98] 典型李群；
+[99] 例外、缠绕李群；
+[100] 26 个散在单群。
+[101] 有限单群的分类定理的证明历时长且极为复杂，汇聚了历代无数数学家的工作。
+[102] 这庞杂的证明在过去曾被指出有漏洞，尽管这些漏洞都已经被补上了，
+[103] 但过于复杂的证明和毫无美感的分类结果还是让人质疑其正确性。
+[104] 事实上，当代数学家仍然在尝试给出更简洁的证明，截至 2019 年已经有八册证明发表，预计完成后约 5000 页证明。
+[/SCOPE:s_def4]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "合成序列是次正规序列的特例"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "Jordan-Hölder 定理基于合成序列的定义"
+  }
+]

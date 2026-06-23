@@ -1,0 +1,198 @@
+[SCOPE:root|description|零函数（列）]
+文章名: F0
+标题: 零函数（列）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=零函数
+  [1] type=example heading=例 1 title=
+  [2] type=theorem heading=定理 1 title=充分必要条件
+  [3] type=theorem heading=定理 2 title=零函数的性质
+  [4] type=example heading=例 2 title=
+  [5] type=example heading=例 3 title=
+
+[SCOPE:s_def|description|定义 1 零函数]
+[0] 定义 1 零函数
+[SCOPE:s_def_let|let_bind|定义中的变量]
+[1] 对任何性质良好1的平方可积函数 $f: \mathbb R \to \mathbb C$，若函数列 $z_n: \mathbb R \to \mathbb C$（$n = 1, 2, \dots$）满足
+[2] \begin{equation}
+\lim_{n\to \infty}\int_{a}^{b} z_n(x) f(x) = 0~.
+\end{equation}
+[3] 零函数列
+
+[/SCOPE:s_def]
+[/SCOPE:s_def_let]
+[SCOPE:s_ex1|description|例 1]
+[4] 在任意积分区间 $(a,b)$ 上，
+[5] 显然 $z_n(x) = 0$ 是一个零函数。
+[6] 简谐函数 $ \sin\left(nx + \phi\right) $，$ \exp\left( \mathrm{i} n x\right) $ 都是零函数。
+[7a] (x)$ 是一个性质良好的函数，$f
+[7b] (x) \sin\left(nx + \phi\right) $ 和 $f
+[7c] (x) \exp\left( \mathrm{i} n x\right) $ 也都是零函数，例如高斯波包 $A \mathrm{e} ^{-ax^2} \mathrm{e} ^{ \mathrm{i} nx}$。
+[8a] (x)$ 乘以一个另快速震荡的函数（震荡的平均值为零），这时 $ \left\lvert f
+[8b] (x) \right\rvert $ 就是波包的包络线，
+[9] 那么震荡频率越来越快，式 1 的积分越接近 $0$。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_thm1|description|定理 1 充分必要条件]
+[10] 定理 1 充分必要条件
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[11] 一个函数列 $z_n$ 是区间 $(a, b)$ 的零函数的充分必要条件是，对 $(a, b)$ 中的任意区间 $(p, q)$，都有
+[12] \begin{equation}
+\lim_{n\to\infty}\int_p^q z_n(x) \,\mathrm{d}{x} = 0~.
+\end{equation}
+[13] 读者可以用定理 1 验证例 1 的零函数。
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm2|description|定理 2 零函数的性质]
+[14] 定理 2 零函数的性质
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[15] 容易证明，若 $z_n(x)$ 是零函数列，
+[16] 那么对它进行任意平移，拉伸，乘以性质良好的函数 $A(x)$ 等变换后仍然是零函数列：
+[17] \begin{equation}
+A(x) z(kx + b) = z(x)~.
+\end{equation}
+[18] \begin{equation}
+z[\varphi(x)] = z(x)~.
+\end{equation}
+[19] 该定理笔者同样不会证，
+[20] 但同样符合直觉。
+[21] 式 4 告诉我们，零函数的震荡的频率可以随 $x$ 变化。
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_let]
+[SCOPE:s_sec1|description|1. 两组正交的函数基底]
+[22] 定义零函数有什么用呢？
+[23] 我们可以以此判断两组连续的函数基底（例如量子力学的一维散射态）是否正交。
+[SCOPE:s_sec1_let1|let_bind|正交归一基底变量]
+[24] 在 “$\delta$ 函数” 中，我们知道若两个含参数的函数满足
+[25] \begin{equation}
+\int_{-n}^{n} f^*(k_1, x) f(k_2, x) \,\mathrm{d}{x} = \delta_n(k_2 - k_1)~,
+\end{equation}
+[26] 或者简写为 $\int_{-\infty}^{\infty} f^*(k_1, x) f(k_2, x) \,\mathrm{d}{x} = \delta(k_2 - k_1)$。
+[27] 那么它们就是正交归一的。
+[SCOPE:s_sec1_let2|let_bind|系数变量]
+[28] 正交归一的好处是，若一个平方可积函数 $g(x)$ 可以用一组 $f(k, x)$ 展开函数
+[29] \begin{equation}
+g(x) = \int_{-\infty}^{\infty} C(k) f(k, x) \,\mathrm{d}{k} ~.
+\end{equation}
+[30] 那么就有系数公式
+[31] \begin{equation}
+C(k) = \int_{-\infty}^{\infty} f^*(k, x)g(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[32] 具体过程类见？
+[33] 【未完成】需要在 delta 函数文章补充类似式 9 的定理。
+[34] 需要强调 $g(x)$ 是平方可积的。
+[35] 但若我们有两组（多组也同理）正交归一的函数 $f_1(k, x)$ 和 $f_2(k, x)$ 组成的正交归一基底用于展开 $g(x)$
+[36] \begin{equation}
+g(x) = \int_{-\infty}^{\infty} C_1(k) f_1(k, x) \,\mathrm{d}{k} + \int_{-\infty}^{\infty} C_2(k) f_2(k, x) \,\mathrm{d}{k} ~.
+\end{equation}
+[37] 那么两组函数基底间满足什么样的正交归一条件才可以使以下系数公式仍然成立呢？
+[38] \begin{equation}
+C_i(k) = \int_{-\infty}^{\infty} f_i^*(k, x)g(x) \,\mathrm{d}{x} \qquad (i = 1,2)~.
+\end{equation}
+[39] 下面会证明：除了要求 $f_1, f_2$ 各自正交归一（
+[40] 式 5 [链接 L0]
+[41] ），还需要保证 $f_1, f_2$ 之间满足以下正交条件
+[42] \begin{equation}
+\int_{-n}^{+n} f_1^*(k_1, x) f_2(k_2, x) \,\mathrm{d}{x} = z_n(k_2 - k_1)~,
+\end{equation}
+[43] 或者简写为
+[44] \begin{equation}
+\int_{-\infty}^{\infty} f_1^*(k_1, x) f_2(k_2, x) \,\mathrm{d}{x} = z(k_2 - k_1)~,
+\end{equation}
+[45] 这是相当于
+[46] 式 5 [链接 L1]
+[47] 的只有正交没有归一的变形。
+[48] 同理，我们也可以把以上所有定积分区间变为其他，例如 $(0, \infty)$。
+
+[/SCOPE:s_sec1]
+[/SCOPE:s_sec1_let1]
+[/SCOPE:s_sec1_let2]
+[SCOPE:s_ex2|description|例 2]
+[49] \begin{equation}
+\int_0^\infty \sin\left(k'x\right) \cos\left(kx\right) \,\mathrm{d}{x} = z(k' - k) + \frac{1}{4k}~.
+\end{equation}
+[50] \begin{equation}
+\begin{aligned}
+\int_0^n \sin\left(kx\right) \cos\left(kx\right) \,\mathrm{d}{x} &= \frac{1}{2} \int_0^n \sin\left(2kx\right) \,\mathrm{d}{x} \\
+&= -\frac{1}{4k} \cos\left(2nk\right) + \frac{1}{4k}~.
+\end{aligned}
+\end{equation}
+[51] 可见 $ \sin\left(kx\right) $ 和 $ \cos\left(kx\right) $ 在 $(0,\infty)$ 上并不是正交的。
+[52] 但它们在 $(-\infty, \infty)$ 上却是正交的，见下例。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3_let|let_bind|例3的变量]
+[SCOPE:s_ex3|description|例 3]
+[53] 若 $f(k,x),g(k',x)$ 分别是关于 $x$ 的偶函数和奇函数，
+[54] 那么
+[55] \begin{equation}
+\int_{-\infty}^{+\infty} f(k', x) g(k, x) \,\mathrm{d}{x} = z(k'-k)~.
+\end{equation}
+[56] 具体的例子如：$f(k,x) = \cos\left(kx\right) $，$g(k, x) = \sin\left(kx\right) $。
+[57] 量子力学中的应用可以参考 “有限深方势阱” 或者其他势阱问题中的两组散射态波函数。
+[58a] 当两组散射态波函数归一化后
+[58b] 则可以用于展开波包，并计算波包随时间的变化。
+
+[/SCOPE:s_ex3_let]
+[/SCOPE:s_ex3]
+[SCOPE:s_proof|description|形式证明]
+[59] 要证明系数公式式 9 ，把式 8 代入式 9 右边，以 $i = 1$ 为例，得
+[60] \begin{equation}
+\begin{aligned}
+&\int_{-\infty}^{\infty} C_1(k') \int_{-\infty}^{\infty} f_1^*(k, x) f_1(k', x) \,\mathrm{d}{x} \,\mathrm{d}{k'} + \int_{-\infty}^{\infty} C_2(k') \int_{-\infty}^{\infty} f_1^*(k, x)f_2(k', x) \,\mathrm{d}{x} \,\mathrm{d}{k'} \\
+&= \int_{-\infty}^{\infty} C_1(k') \delta(k' - k) \,\mathrm{d}{k'} + \int_{-\infty}^{\infty} C_2(k') z(k' - k) \,\mathrm{d}{k'} \\
+&= C_1(k) + 0~.
+\end{aligned}
+\end{equation}
+[61] $i = 2$ 同理，证毕。
+[62] 这个证明过程和傅里叶变换 的证明类似，只是要用零函数保证第二个积分为零。
+[/SCOPE:s_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1给出零函数的充要条件，是定义的延伸"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2给出零函数的性质，是定义的推论"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1给出零函数的例子"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2给出零函数的例子"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例3给出零函数的例子"
+  },
+  {
+    "source_scope": "s_proof",
+    "target_scope": "s_sec1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "形式证明支持第1节中的系数公式"
+  }
+]

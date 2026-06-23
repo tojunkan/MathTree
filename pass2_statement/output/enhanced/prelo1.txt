@@ -1,0 +1,142 @@
+[SCOPE:root|description|个体词、谓词与量词（数理逻辑）]
+文章名: prelo1
+标题: 个体词、谓词与量词（数理逻辑）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=个体词
+  [1] type=definition heading=定义 2 title=论域
+  [2] type=definition heading=定义 3 title=谓词
+  [3] type=definition heading=定义 4 title=量词
+  [4] type=definition heading=定义 5 title=全称量词
+  [5] type=definition heading=定义 6 title=存在量词
+  [6] type=definition heading=定义 7 title=作用变量与辖域
+  [7] type=definition heading=定义 8 title=自由变元与约束变元
+  [8] type=example heading=例 1 title=谓词的例子
+  [9] type=example heading=例 2 title=全称量词的例子
+  [10] type=example heading=例 3 title=存在量词的例子
+  [11] type=example heading=例 4 title=
+
+[SCOPE:s_def1|description|定义1 个体词]
+[0] 定义 1 个体词
+[1] 在原子命题中，可以独立存在的客体（句子中的主语、宾语等），称为个体词，可以是个体常量或个体变量。
+[SCOPE:s_def1_let|let_bind|个体词变量]
+[2] 个体常量表示特定的或具体的个体，是不变的，一般用带或不带下标的小写字母 $a, b, c, \dots, a_1, a_2, \dots$ 表示。
+[3] 个体变量表示泛指的或抽象的、不定的个体，是变化的，一般用带或不带下标的小写字母 $x, y, z, \dots, x_1, x_2, \dots$ 表示。
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_def2|description|定义2 论域]
+[4] 定义 2 论域
+[SCOPE:s_def2_let|let_bind|论域变量]
+[5] 所有个体词的取值范围称为论域（或取值域），常用字母 $D$ 表示。
+
+[/SCOPE:s_def2]
+[/SCOPE:s_def2_let]
+[SCOPE:s_def3|description|定义3 谓词]
+[6] 定义 3 谓词
+[7] 用以刻画客体的属性或心智（类似于一元函数），或多个客体之间的关系（类似于多元函数）的词称为谓词。
+
+[/SCOPE:s_def3]
+[SCOPE:s_def4|description|定义4 量词]
+[8] 定义 4 量词
+[9] 表达个体词的数量或数量关系的称为量词。
+
+[/SCOPE:s_def4]
+[SCOPE:s_def5|description|定义5 全称量词]
+[10] 定义 5 全称量词
+[SCOPE:s_def5_let|let_bind|全称量词变量]
+[11] $\forall x$ 表示全称量词，
+[/SCOPE:s_def5_let]
+[12] 即 “任意 $x$”、“每个 $x$”、“一切的 $x$”......
+[13] 符号化时，全称量词 $\forall$ 一般都接 $\to$ 连接词。
+
+[/SCOPE:s_def5]
+[SCOPE:s_def6|description|定义6 存在量词]
+[14] 定义 6 存在量词
+[SCOPE:s_def6_let|let_bind|存在量词变量]
+[15] $\exists x$ 表示存在量词，
+[/SCOPE:s_def6_let]
+[16] 即 “存在 $x$”、“至少有一个 $x$”......
+[17] 符号化时，存在量词 $\exists$ 一般都接 $\land$（合取、并且）连接词。
+
+[/SCOPE:s_def6]
+[SCOPE:s_def7|description|定义7 作用变量与辖域]
+[18] 定义 7 作用变量与辖域
+[SCOPE:s_def7_let|let_bind|作用变量与辖域变量]
+[19] 对于全称量词 $\forall x$ 与存在量词 $\exists x$，对应的符号 $\forall$ 与 $\exists$ 紧接一个变量 $x$，这变量就称作作用变量。
+[20] 一般将量词加到其谓词之前，描述这个句子或句子的一部分的个体词的数量或数量关系，此时就称这个部分的谓词是这量词的辖域。
+[21] 例如 $(\forall x) F(x)$，
+[22] 则 $F(x)$ 就是这个全称量词的辖域。
+
+[/SCOPE:s_def7]
+[/SCOPE:s_def7_let]
+[SCOPE:s_def8|description|定义8 自由变元与约束变元]
+[23] 定义 8 自由变元与约束变元
+[24] 有量词约束而在对应量词的辖域范围内的称为约束变元。
+[25] 无量词约束的称为自由变元。
+
+[/SCOPE:s_def8]
+[26] 个体词、谓词与量词的定义比较抽象，下面借助几个例子来理解。
+
+[SCOPE:s_ex1|description|例1 谓词的例子]
+[27] 例 1 谓词的例子
+[SCOPE:s_ex1_let|let_bind|例1变量]
+[28a] (x)$ 表示 $x$ 是北方人、$Q
+[28b] (x)$ 表示 $x$ 怕冷，$c$ 表示李华，符号化下面这个句子：
+[/SCOPE:s_ex1_let]
+[29] 除非李华是北方人，否则李华一定怕冷。
+[30] 首先表示为命题逻辑的形式，先用 $p$ 表示 “李华怕冷”，用 $q$ 表示 “李华是北方人”，原来的句子就可以化作
+[31] \begin{equation}
+\neg p \to q ~.
+\end{equation}
+[32a] (c)$，而 $q$ 就是 $P
+[32b] (c)$，
+[33] 所以这句子就可以化为
+[34] \begin{equation}
+\neg Q(c) \to P(c) ~.
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2 全称量词的例子]
+[35] 例 2 全称量词的例子
+[36] 符号化下面这个句子：
+[37] 所有人的头发都是黑色的。
+[SCOPE:s_ex2_let|let_bind|例2变量]
+[38a] (x)$ 表示 $x$ 是人、$Q
+[38b] (x)$ 表示 $x$ 长有黑头发，
+[/SCOPE:s_ex2_let]
+[39] 则原句可以表示为：
+[40] \begin{equation}
+(\forall x)(P(x) \to Q(x)) ~.
+\end{equation}
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|例3 存在量词的例子]
+[41] 例 3 存在量词的例子
+[42] 符号化：有的人登上过月球。
+[43] 这里 “有的” 就是一个存在量词的例子。
+[SCOPE:s_ex3_let|let_bind|例3变量]
+[44a] (x)$ 表示 $x$ 是人、$Q
+[44b] (x)$ 表示 $x$ 上过月球，
+[/SCOPE:s_ex3_let]
+[45] 则原句可以表示为：
+[46] \begin{equation}
+(\exists x)(P(x) \land Q(x)) ~.
+\end{equation}
+
+[/SCOPE:s_ex3]
+[SCOPE:s_ex4|description|例4]
+[47] 符号化：所有人都不喜欢杂草。
+[SCOPE:s_ex4_let|let_bind|例4变量]
+[48a] (x)$ 表示 $x$ 是人、$Q
+[48b] (y)$ 表示 $y$ 是杂草、$L(x, y)$ 表示 $x$ 喜欢 $y$，
+[/SCOPE:s_ex4_let]
+[49] 则原句可以表示为：
+[50] \begin{equation}
+\forall x(P(x) \to \forall y(Q(y) \to \neg L(x, y))) ~,
+\end{equation}
+[51] \begin{equation}
+\forall x \forall y (P(x) \land Q(y) \to \neg L(x, y)) ~.
+\end{equation}
+[/SCOPE:s_ex4]
+[/SCOPE:root]

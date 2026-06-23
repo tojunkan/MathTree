@@ -1,0 +1,417 @@
+{
+  "article_name": "VecHol",
+  "statements": [
+    {
+      "stmt_id": "st_assump_M_E",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_sec1_let1",
+      "exposed_entities": [
+        "M",
+        "E",
+        "D"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_p",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_sec1_let2",
+      "exposed_entities": [
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_def_holonomy_group",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_sec1",
+      "exposed_entities": [
+        "Hol_p(D)",
+        "GL(E_p)"
+      ]
+    },
+    {
+      "stmt_id": "st_iso_holonomy",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_sec1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_restricted_holonomy",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_sec1",
+      "exposed_entities": [
+        "Hol^0_p(D)"
+      ]
+    },
+    {
+      "stmt_id": "st_quotient_group",
+      "subtype": "conclusion",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_sec1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_topology",
+      "subtype": "remark",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_sec1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_path_connected",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_sec1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_yamabe",
+      "subtype": "theorem",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_sec1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lie_subgroup_restricted",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_sec1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lie_subgroup_full",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_sec1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_identity_component",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_sec1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lie_algebra_same",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_sec2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_holonomy_algebra",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_sec2",
+      "exposed_entities": [
+        "h_p(D)",
+        "End(E_p)"
+      ]
+    },
+    {
+      "stmt_id": "st_cartan_interpretation",
+      "subtype": "remark",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_sec2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_XY",
+      "subtype": "assumption",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_sec2_let1",
+      "exposed_entities": [
+        "X",
+        "Y"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_f",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_sec2_let2",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_curvature_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_sec2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rough_interpretation",
+      "subtype": "remark",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_sec2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_infinitesimal_generators",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_sec2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_holonomy_theorem_intro",
+      "subtype": "remark",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_sec2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_R",
+      "subtype": "assumption",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_ambrose_singer",
+      "subtype": "theorem",
+      "clause_range": [
+        36,
+        38
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_M_E",
+      "target": "st_def_holonomy_group",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_p",
+      "target": "st_def_holonomy_group",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_M_E",
+      "target": "st_iso_holonomy",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_p",
+      "target": "st_iso_holonomy",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_M_E",
+      "target": "st_def_restricted_holonomy",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_p",
+      "target": "st_def_restricted_holonomy",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_holonomy_group",
+      "target": "st_quotient_group",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_restricted_holonomy",
+      "target": "st_quotient_group",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_M_E",
+      "target": "st_path_connected",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_p",
+      "target": "st_path_connected",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_yamabe",
+      "target": "st_lie_subgroup_restricted",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_path_connected",
+      "target": "st_lie_subgroup_restricted",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lie_subgroup_restricted",
+      "target": "st_lie_subgroup_full",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lie_subgroup_restricted",
+      "target": "st_identity_component",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_M_E",
+      "target": "st_lie_algebra_same",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_p",
+      "target": "st_lie_algebra_same",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lie_algebra_same",
+      "target": "st_def_holonomy_algebra",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_XY",
+      "target": "st_curvature_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_f",
+      "target": "st_curvature_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_curvature_formula",
+      "target": "st_infinitesimal_generators",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_R",
+      "target": "st_ambrose_singer",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ambrose_singer",
+      "target": "st_infinitesimal_generators",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理是前面讨论的结论"
+    }
+  ],
+  "unresolved": []
+}

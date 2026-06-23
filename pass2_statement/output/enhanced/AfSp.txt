@@ -1,0 +1,306 @@
+[SCOPE:root|description|仿射空间]
+文章名: AfSp
+标题: 仿射空间
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=仿射空间
+  [1] type=definition heading=定义 2 title=平移空间
+  [2] type=example heading=例 1 title=
+  [3] type=exercise heading=习题 1 title=
+  [4] type=definition heading=定义 3 title=仿射映射，同构
+  [5] type=theorem heading=定理 1 title=
+  [6] type=corollary heading=推论 1 title=
+  [7] type=theorem heading=定理 2 title=
+  [8] type=definition heading=定义 4 title=坐标系（坐标架）
+  [9] type=theorem heading=定理 3 title=
+  [10] type=theorem heading=定理 4 title=
+
+[0] 在任一矢量空间 $V$ 中，与零矢量 $0$ 结合在一起的坐标原点总是起着特殊的作用，因为在空间 $V$ 的所有到其自身的线性双射 $f:V\rightarrow V$ 下（这样的映射也称作矢量空间的自同构映射），零矢量 $0$ 是不变的（推论 1 ），这意味着坐标原点具有突出于其它空间点的性质。
+[1] 然而，对身处 3 维空间中的我们来说，放置在不同位置的点线面显然不依赖于一个挑选出来的坐标原点。
+[2] 因此，为了满足我们的需求，我们希望把矢量空间的自同构群加以扩展，使得所有的空间点都等价。
+[3] 完成这一任务的属于仿射空间。
+
+[4] 仿射空间的定义是基于矢量空间的。
+
+[SCOPE:s_def1|description|定义1 仿射空间]
+[5] 定义 1 仿射空间
+[SCOPE:s_def1_let1|let_bind|设V是域F上的矢量空间]
+[6] 设 $V$ 是域 $\mathbb F$ 上的矢量空间。
+[/SCOPE:s_def1_let1]
+[SCOPE:s_def1_let2|let_bind|设A是一个集合，其元素称作点]
+[7] 且 $\mathbb A$ 是一个集合，其元素称作点，并用 $\dot{p},\dot{q},\dot{r},\cdots$ 表示。
+[/SCOPE:s_def1_let2]
+[8] 称 $\mathbb A$（或 $(\mathbb A,V)$）是和 $V$ 相伴（连带的）的仿射空间，若给定笛卡尔积 $\mathbb A\times V$ 到 $\mathbb A$ 的映射（记该映射的像 $f(\dot p,v)$ 为 $\dot p+v$）：
+[9] \begin{equation}
+f:(\dot p,v)\mapsto\dot p+v~.
+\end{equation}
+[10] \begin{equation}
+\forall \dot p\in\mathbb A,\qquad
+\forall u,v\in V\Rightarrow\dot p+0=\dot p, \qquad
+(\dot p+u)+v=\dot p+(u+v)~.
+\end{equation}
+[11] 其中，0 是空间 $V$ 的零矢量；
+[12] $\forall \dot p,\dot q\in\mathbb A$，有且仅有一个矢量 $v\in V$ 使得 $\dot p+v=\dot q$。
+[13] 通常用 $\overrightarrow{pq}$ 或 $\dot q-\dot p$ 代表矢量 $v$。
+[14] 并把 $V$ 的维数 $n$ 称为 $\mathbb A$ 的维数，有时记成 $\mathbb A^n$。
+[15] 在定义中，用了 $\dot p+v$，这和矢量空间中的 $u+v$ 的＋号一样，
+[16] 但这并不会引起混淆。
+[17a] 因为，一个是 $\mathbb A$ 中的点和 $V$ 中矢量的相作用，一个是 $V$ 中的两矢量相作用
+[17b] 当写出表达式时，“+” 两边的对象是已知的，则能立刻知道是哪种情况。
+[18] 由仿射空间的定义，可推出下面两个性质（留做习题）：
+[19] 每个点 $\dot p\in \mathbb A$ 都对应一个从 $V$ 到 $\mathbb A$ 的双射：
+[20] \begin{equation}
+v\mapsto \dot p+v~.
+\end{equation}
+[21] 有 $\mathbb A\rightarrow\mathbb A$ 上的双射：
+[22] \begin{equation}
+t_v:\dot p\mapsto\dot p+v~.
+\end{equation}
+[23] 称其为用矢量 $v$ 平移 $\mathbb A$（或平行移动 $\mathbb A$）。
+[24] 由定义中的 1，2，有
+[25] \begin{equation}
+t_u\cdot t_v=t_{u+v},\quad t_v\cdot t_{-v}=e~.
+\end{equation}
+[26] 其中 $e=t_0$ 是恒等映射。
+[27] 显然所有的平移构成一个群。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义2 平移空间]
+[28] 定义 2 平移空间
+[29] \begin{equation}
+\alpha t_u+\beta t_v:= t_{\alpha u+\beta v}~.
+\end{equation}
+[30] 平移空间
+
+[/SCOPE:s_def2]
+[SCOPE:s_ex1|description|例1]
+[31] 由仿射空间的定义，试证明：
+[32] \begin{equation}
+\overrightarrow{pq}+\overrightarrow{qr}=\overrightarrow{pr},\quad \overrightarrow{pq}=-\overrightarrow{qp},\quad\overrightarrow{pp}=0~.
+\end{equation}
+[33] \begin{equation}
+(\dot q-\dot p )+(\dot r-\dot q)=\dot r-\dot p,\quad(\dot q-\dot p)=-(\dot p-\dot q),\quad\dot p-\dot p=0~.
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_exer1|description|习题1]
+[34] 习题 1
+[35] 试证明：平移空间 $\mathbb A^{\#}$ 同构于矢量空间 $V$ 的加法群。
+
+[/SCOPE:s_exer1]
+[36] 仿射空间的同构和一般的同构定义实质上相同，都是起说明两个集合结构相同的作用，
+[37] 即集合上元素之间运算，对应于另一集合对应元素之间的运算，这个 “对应” 是靠双射来完成的。
+
+[SCOPE:s_def3|description|定义3 仿射映射，同构]
+[38] 定义 3 仿射映射，同构
+[SCOPE:s_def3_let|let_bind|设A,A'是同一域F上分别与V,V'相伴随的仿射空间]
+[39] 设 $\mathbb A,\mathbb A'$ 是同一域 $\mathbb F$ 上分别与矢量空间 $V,V'$ 相伴随的仿射空间。
+[/SCOPE:s_def3_let]
+[40] 称映射
+[41] \begin{equation}
+f:\mathbb A\rightarrow\mathbb A'~
+\end{equation}
+[42] 仿射映射
+[43] 线性仿射映射
+[44] \begin{equation}
+f(\dot p+v)=f(\dot p)+Df\cdot v~.
+\end{equation}
+[45] 线性部分
+
+[/SCOPE:s_def3]
+[SCOPE:s_thm1|description|定理1]
+[46] 定理 1
+[SCOPE:s_thm1_let|let_bind|设f:A->A'仿射映射，Df:V->V'线性部分]
+[47] 仿射映射
+[48] \begin{equation}
+f:\mathbb A\rightarrow\mathbb A'~
+\end{equation}
+[49] \begin{equation}
+Df:V\rightarrow V'~
+\end{equation}
+[/SCOPE:s_thm1_let]
+[50] 证明：
+[SCOPE:s_thm1_part1|description|f=>Df]
+[51] 1. $f\Rightarrow Df$
+[52] 因为 $f$ 是双射，
+[53] 所以对 $v_1\neq v_2\Rightarrow \dot p+v_1\neq\dot p+v_2$，有
+[54] \begin{equation}
+\begin{aligned}
+f(\dot p)+Df\cdot v_1=f(\dot p+v_1)&\neq f(\dot p+v_2)=f(\dot p)+Df\cdot v_2\\
+&\Downarrow\\
+Df\cdot v_1&\neq Df\cdot v_2~.
+\end{aligned}
+\end{equation}
+[55] 这就证明了 $Df$ 的单射性。
+[56] $\forall v'\in V'$，对 $\forall f(\dot p)+v'$, $f$ 双射意味着 $\exists v$，使得
+[57] \begin{equation}
+f(\dot p)+v'=f(\dot p+v)=f(\dot p)+Df\cdot v~.
+\end{equation}
+[58] 即 $v'=Df\cdot v$，这就证明了满射性。
+[59] 于是 $Df$ 双射得证。
+[/SCOPE:s_thm1_part1]
+[SCOPE:s_thm1_part2|description|Df=>f]
+[60] 2. $Df\Rightarrow f$
+[SCOPE:s_thm1_part2_let|let_bind|设p!=q，固定一点o]
+[61] 设 $\dot p\neq \dot q$，固定一点 $\dot o\in \mathbb A$，由仿射空间性质，$\exists \overrightarrow{op}\neq\overrightarrow{oq}\in V$，使得
+[/SCOPE:s_thm1_part2_let]
+[62] \begin{equation}
+\dot p=\dot o+\overrightarrow{op},\quad\dot q=\dot o+\overrightarrow{oq} ~.
+\end{equation}
+[63] 由 $Df$ 的单射性
+[64] \begin{equation}
+\begin{aligned}
+Df\cdot \overrightarrow{op}&\neq Df\cdot \overrightarrow{oq}~,\\
+&\Downarrow\\
+f(\dot p)=f(\dot o)+Df\cdot \overrightarrow{op}&\neq f(\dot o)+Df\cdot \overrightarrow{oq}=f(\dot q)~.
+\end{aligned}
+\end{equation}
+[65] 即有 $f(\dot p)\neq f(\dot q)$，这就证明了 $f$ 的单射性。
+[66] $\forall \dot p'\in\mathbb A'$，同样 $\exists\overrightarrow{o'p'}\in V'$ 使得 $\dot p'=o'+\overrightarrow{o'p'}$，其中 $\dot o'=f(\dot o)$，由 $Df$ 的满射性，
+[67] \begin{equation}
+\exists v\in V,\quad st.\; Df\cdot v=\overrightarrow{o'p'}~.
+\end{equation}
+[68] \begin{equation}
+f(\dot o+v)=f(\dot o)+Df\cdot v=\dot o'+\overrightarrow{o'p'}=\dot p'~,
+\end{equation}
+[69] 这就证明了满射性。
+[70] \end{enumerate}
+[/SCOPE:s_thm1_part2]
+[71] 证毕！
+
+[/SCOPE:s_thm1]
+[SCOPE:s_cor1|description|推论1]
+[72] 推论 1
+[73] 具有相同维数的仿射空间 $(\mathbb A,V),(\mathbb A',V')$ 必同构。
+[74] 证明： 由于维数相同的矢量空间必同构，
+[75] 所以存在双射 $F:V\rightarrow V'$，令其作为 $Df$，由定理 1 ，
+[76] 即得证!
+
+[/SCOPE:s_cor1]
+[SCOPE:s_thm2|description|定理2]
+[77] 定理 2
+[SCOPE:s_thm2_let|let_bind|设f:E->E仿射变换，线性部分F]
+[78] 任意仿射变换 $f:\mathbb E\rightarrow\mathbb E$，设其线性部分为 $\mathcal F$，
+[/SCOPE:s_thm2_let]
+[79] 则必有
+[80] \begin{equation}
+f=t_a g~.
+\end{equation}
+[81] 现在，若将固定点改为 $\dot o'$，
+[82] 那么需取 $a'=a+(\mathcal F-\mathcal E)\overrightarrow{oo'}$ 来代替 $a$。
+[83] 证明： 设 $V$ 是与空间 $\mathbb E$ 伴随的矢量空间，
+[84] 则 $\forall v\in V$，有
+[85] \begin{equation}
+f(\dot o+v)=f(\dot o)+\mathcal F v=\dot o+\overrightarrow{of(o)}+\mathcal F v~.
+\end{equation}
+[86] \begin{equation}
+g(\dot o+v)=\dot o+\mathcal F v,\quad a=\overrightarrow{of(o)}~,
+\end{equation}
+[87] 式 20 [链接 L0]
+[88] \begin{equation}
+f(\dot o+v)=g(\dot o+v)+a=t_a g(\dot o+v)~.
+\end{equation}
+[89] 由于 $v$ 的任意性，
+[90] 故 $f=t_ag$。
+[91] 由，$g$ 显然对 $\dot o$ 不变。
+[92] 当用固定点取 $\dot o'$，显然 $\overrightarrow{of(o)}$ 需用 $\overrightarrow{o'f(o')}$ 替换，而
+[93] \begin{equation}
+\begin{aligned}
+f(\dot o')=f(\dot o)+\mathcal F \overrightarrow{oo'}\quad\Rightarrow \quad \dot o'+\overrightarrow{o'f(o')}&=\dot o+\overrightarrow{of(o)}+\mathcal F \overrightarrow{oo'}\\
+&\Downarrow\\
+\overrightarrow{o'f(o')}&=\overrightarrow{of(o)}+(\mathcal F-\mathcal E)\overrightarrow{oo'}~.
+\end{aligned}
+\end{equation}
+[94] 注意 $a=\overrightarrow{of(o)}$，并令 $a'=o'f(o')$，
+[95] 即得 $a'=a+(\mathcal F-\mathcal E)\overrightarrow{oo'}$。
+[96] 证毕！
+
+[/SCOPE:s_thm2]
+[SCOPE:s_def4|description|定义4 坐标系（坐标架）]
+[97] 定义 4 坐标系（坐标架）
+[98] 称点 $\dot o\in\mathbb A$ 和 $V$ 的一个基底 $\{e_1,\cdots,e_n\}$ 的集合 $\{\dot o;e_1,\cdots,e_n\}$ 是 $n$ 维仿射空间 $(\mathbb A,V)$ 的一个坐标系（或坐标架）。
+[99] 矢量 $\overrightarrow{op}$ 在基底 ${e_i}$ 下
+[100] \begin{equation}
+\overrightarrow{op}=\sum_{i=1}^n x_ie_i~
+\end{equation}
+[101] 坐标系同样也可以用这样的 $n+1$ 个点 $\{\dot p_0;\dot p_1,\cdots,\dot p_n\}$ 给出，只要矢量 $\overrightarrow{p_0p_1},\cdots,\overrightarrow{p_0p_n}$ 构成空间 $V$ 的一个基底即可。
+
+[/SCOPE:s_def4]
+[SCOPE:s_thm3|description|定理3]
+[102] 定理 3
+[SCOPE:s_thm3_let|let_bind|设{p0;p1,...,pn}是V的一个坐标系]
+[103] 设 $\{\dot p_0;\dot p_1,\cdots,\dot p_n\}$ 是空间 $V$ 的一个坐标系：
+[/SCOPE:s_thm3_let]
+[104] \begin{equation}
+e_i:=\overrightarrow{p_0 p_i},\quad i=1,\cdots,n~.
+\end{equation}
+[105] 矢量 $\overrightarrow{pq}$ 在此基底之下的坐标为 $y_1-x_1,\cdots,y_n-x_n$;
+[106] 对任意矢量 $a=\sum\limits_{i=1}^n a_ie_i$，点 $\dot p+a$ 的坐标是 $x_1+a_1,\cdots,x_n+a_n$。
+[107] 证明： 由：
+[108] \begin{equation}
+\overrightarrow{pq}=\overrightarrow{pp_0}+\overrightarrow{p_0q}=\overrightarrow{p_0q}-\overrightarrow{p_0p}~.
+\end{equation}
+[109] 由矢量加法定义，
+[110] 即证得定理中的 1.
+[111] 设 $\dot q=\dot p+a$，
+[112] 于是 $a=\overrightarrow{pq}$，结合式 26 ，有
+[113] \begin{equation}
+a=\overrightarrow{p_0q}-\overrightarrow{p_0p}\Rightarrow \overrightarrow{p_0q}=a+\overrightarrow{p_0p}~.
+\end{equation}
+[114] 由矢量加法和点的坐标定义，
+[115] 即证得定理中的 2.
+[116] 证毕！
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|定理4]
+[117] 定理 4
+[SCOPE:s_thm4_let|let_bind|设{o;e1,...,en}和{o';e'1,...,e'n}是两个坐标系]
+[118] 设 $\{\dot o;e_1,\cdots,e_n\},\{\dot o';e'_1,\cdots,e'_n\}$ 是仿射空间 $\mathbb A$ 中的两个坐标系。
+[/SCOPE:s_thm4_let]
+[119] $\dot p,\dot o'$ 在前一坐标系下的坐标分别为 $x_1,\cdots,x_n$ 和 $b_1,\cdots,b_n$。
+[120] 则 $\dot p$ 在后一坐标系下的坐标 $x_i'$ 满足
+[121] \begin{equation}
+\boldsymbol{\mathbf{x}} '= \boldsymbol{\mathbf{A}} ^{-1} \boldsymbol{\mathbf{x}} - \boldsymbol{\mathbf{A}} ^{-1} \boldsymbol{\mathbf{b}} ~.
+\end{equation}
+[122] \begin{equation}
+\boldsymbol{\mathbf{x}} =(x_1,\cdots,x_n)^T,\; \boldsymbol{\mathbf{x}} '=(x_1',\cdots,x_n')^T,\; \boldsymbol{\mathbf{b}} =(b_1,\cdots,b_n)^T~.
+\end{equation}
+[123] 证明：由
+[124] \begin{equation}
+\begin{aligned}
+\sum_{i}x_ie_i&=\overrightarrow{op}=\overrightarrow{oo'}-\overrightarrow{po'}=\sum_{i}b_ie_i+\sum_{j}x'_je'_j\\
+&=\sum_i b_ie_i+\sum_{j}x'_j\sum_{i}a_{ij}e_i\\
+&=\sum_{i} \left(\sum_{j}a_{ij}x_j'+b_i \right) e_i~,
+\end{aligned}
+\end{equation}
+[125] 其中 $a_{ij}$ 是 $ \boldsymbol{\mathbf{A}} $ 的矩阵元。
+[126] 上式翻译成矩阵语言就是：
+[127] \begin{equation}
+\boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{x}} '+ \boldsymbol{\mathbf{b}} ~.
+\end{equation}
+[128] 由于 $ \boldsymbol{\mathbf{A}} $ 必定可逆，
+[129] 则
+[130] \begin{equation}
+\boldsymbol{\mathbf{x}} '= \boldsymbol{\mathbf{A}} ^{-1} \boldsymbol{\mathbf{x}} - \boldsymbol{\mathbf{A}} ^{-1} \boldsymbol{\mathbf{b}} ~.
+\end{equation}
+[131] 证毕！
+[/SCOPE:s_thm4]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_cor1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1引用定理1"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2的证明用到定理1的结论"
+  }
+]

@@ -1,0 +1,227 @@
+[SCOPE:root|description|高维球谐函数]
+文章名: HDsphF
+标题: 高维球谐函数
+
+[SCOPE:s_intro|description|引言]
+[0] 在三维的情形，球谐函数是在球坐标下，求解拉普拉斯方程时，通过分离变量得到的。
+[1] 其是拉普拉斯方程角度部分的解。
+[2] 即下面的微分方程
+[3] \begin{equation}
+\boldsymbol{\nabla} _\Omega^2 Y+\lambda Y=0.~
+\end{equation}
+[4] 其中 $\Omega$ 代表只含角 $(\theta,\phi)$ 的部分，$\lambda$ 是常数，且
+[5] \begin{equation}
+\boldsymbol{\nabla} ^2_\Omega= \frac{\partial^{2}{}}{\partial{\theta}^{2}} +\cot\theta \frac{\partial }{\partial \theta} +\frac{1}{\sin^2\theta} \frac{\partial^{2}{}}{\partial{\varphi}^{2}} .~
+\end{equation}
+[6] 本词条将仿照三维情形推导球谐函数的方法，推导高维弯曲空间中的球谐函数。
+
+[/SCOPE:s_intro]
+[SCOPE:s_laplacian|description|球坐标系下的高维拉普拉斯方程]
+[7] 对一般高维空间的拉普拉斯方程，可由对应空间的拉普拉斯算符获得，
+[8] 即从 $\Delta u=0$ 一般高维空间的拉普拉斯方程如下：
+[9] \begin{equation}
+\begin{aligned}
+&\frac{1}{\sqrt{ \left\lvert g \right\rvert }} \frac{\partial }{\partial x^i} \left(\sqrt{ \left\lvert g \right\rvert }g^{ij} \frac{\partial u}{\partial x^j} \right)\\
+=&\frac{1}{\sqrt{ \left\lvert g \right\rvert }} \…[truncated]…\left\lvert g \right\rvert } \right) g^{ij} \frac{\partial u}{\partial x^j}+ \left(\frac{\partial }{\partial x^i} g^{ij} \right) \frac{\partial u}{\partial x^j}+g^{ij}\frac{\partial^2 u}{\partial x^i\partial x^j}\\
+=&0 .
+\end{aligned}~
+\end{equation}
+[10] \begin{equation}
+\begin{aligned}
+&\frac{1}{\sqrt{ \left\lvert g \right\rvert }}\frac{\partial }{\partial x^i} \sqrt{ \left\lvert g \right\rvert }=\frac{1}{2g} \frac{\partial g}{\partial g_{jk}} \frac{\partial g_{jk}}{\partial x^i} \\
+&=\frac{1}{2g}(gg^{jk}) \frac{\partial g_{jk}}{\partial x^i} \\
+&=\frac{1}{2}g^{jk} \frac{\partial g_{jk}}{\partial x^i} .
+\end{aligned}~
+\end{equation}
+[SCOPE:s_laplacian_let|let_bind|引入度规和变量]
+[11] $N+1$ 维空间球坐标系 $x^i=\theta^i,i=1,\cdots,N,x^{N+1}=r$ 下的
+[12] 度规 [链接 L0]
+[13] \begin{equation}
+\begin{aligned}
+g_{ij}&=\mathrm{diag}(\eta_i),\\
+\eta_{i}&=\left\{\begin{aligned}
+& r^2\prod\limits_{k=i+1}^{N}\sin^2\theta^{k},i\leq N,\\
+&1,i=N+1.
+\end{aligned}\right.
+\end{aligned}~
+\end{equation}
+[14] \begin{equation}
+\begin{aligned}
+g^{ij}&=\mathrm{diag}(h^i),\\
+h^{i}&=\left\{\begin{aligned}
+& r^{-2}\prod\limits_{k=i+1}^{N}\sin^{-2}\theta^{k},i\leq N,\\
+&1,i=N+1.
+\end{aligned}\right.
+\end{aligned}~
+\end{equation}
+[/SCOPE:s_laplacian_let]
+[15] \begin{equation}
+\begin{aligned}
+&\frac{1}{2}g^{jk} \frac{\partial g_{jk}}{\partial x^{N+1}} =\frac{1}{2}\sum_{j=1}^{N+1}h^{j} \frac{\partial \eta_{j}}{\partial x^i} \\
+=&\frac{1}{2} \left(\sum_{j=1}^{N}r^{-2}\prod\limits_{k=j+1}^{N}\sin^{-2}\theta^{…[truncated]… x^i} \\
+=&\frac{1}{2} \left(\sum_{j=1}^{i-1}r^{-2}\prod\limits_{k=j+1}^{N}\sin^{-2}\theta^{k}2r^2\sin\theta^{i}\cos\theta^{i}\prod\limits_{k=j+1,k\neq i}^{N}\sin^2\theta^{k} \right) \\
+=&(i-1)\cot\theta^i,\quad i\leq N.
+\end{aligned}~
+\end{equation}
+[16] \begin{equation}
+\begin{aligned}
+&\frac{1}{\sqrt{ \left\lvert g \right\rvert }} \left(\frac{\partial }{\partial x^i} \sqrt{ \left\lvert g \right\rvert } \right) g^{ij} \frac{\partial u}{\partial x^j}\\
+=&Nr^{-1} \frac{\partial u}{\partial r} +\sum_{i=1}^{N}h^{i}(i-1)\cot\theta^i \frac{\partial u}{\partial \theta^i} \\
+\end{aligned}~
+\end{equation}
+[17] 式 6 [链接 L1]
+[18] ，$ \frac{\partial g^{ij}}{\partial \theta^i} =0$。且
+[19] \begin{equation}
+g^{ij}\frac{\partial^2 u}{\partial x^i\partial x^j}=\sum_{i=1}^{N}h^{i}\frac{\partial^2 u}{\partial {\theta^i}^2}+\frac{\partial^2 u}{\partial r^2}~
+\end{equation}
+[20] 所以最后
+[21] 式 3 [链接 L2]
+[22] \begin{equation}
+\begin{aligned}
+\sum_{i=1}^{N}h^{i} \left[(i-1)\cot\theta^i \frac{\partial u}{\partial \theta^i} +\frac{\partial^2 u}{\partial {\theta^i}^2} \right] +r^{-N}\frac{\partial }{\partial r} \left(r^{N}\frac{\partial u}{\partial r} \right) =0.
+\end{aligned}~
+\end{equation}
+[23] \begin{equation}
+h^i_{(N)}:=r^2h^i,~
+\end{equation}
+[24] 则 $h^i_{(N)}$ 将仅仅依赖于角部变量。
+[25] 类似球坐标下
+[26] 三维拉普拉斯方程 [链接 L3]
+[27] 的写法，我们有
+[28] \begin{equation}
+r^{-2} \boldsymbol{\nabla} ^{2}_{S^N}u+r^{-N}\frac{\partial }{\partial r} \left(r^{N}\frac{\partial u}{\partial r} \right) =0.~
+\end{equation}
+[29] \begin{equation}
+\boldsymbol{\nabla} ^{2}_{S^N}u:=\sum_{i=1}^N h^{i}_{(N)} \left[(i-1)\cot\theta^i \frac{\partial u}{\partial \theta^i} + \frac{\partial^{2}{u}}{\partial{\theta^i}^{2}} \right] ~
+\end{equation}
+[30] 定义了单位 $N$ 球上的
+[31] Laplace-Beltrami 算子
+
+[/SCOPE:s_laplacian]
+[SCOPE:s_harmonics|description|高维球谐函数]
+[32] 式 12 没有出现混合导数，
+[SCOPE:s_harmonics_let|let_bind|分离变量假设]
+[33] 因此，若将 $u$ 写成变量分离的形式
+[34] \begin{equation}
+u(r,\theta^1,\cdots,\theta^N)=R(r)W_N(\theta^1,\cdots,\theta^N),~
+\end{equation}
+[35] 式 12 [链接 L4]
+[36] 就可写为
+[37] \begin{equation}
+\frac{1}{R}r^{-N+2}\frac{\partial }{\partial r} \left(r^{N}\frac{\partial u}{\partial r}R \right) =-\frac{1}{W_N}\Delta_{S^N}W_N=\lambda_N.~
+\end{equation}
+[38] 其中 $\lambda_N$ 是分离常数，$\Delta_{S^N}:= \boldsymbol{\nabla} _{S^N}^2$。
+[/SCOPE:s_harmonics_let]
+[39] 将式 15 中只含角度变量的部分提取出来，就得到如下角变量部分满足的方程：
+[40] \begin{equation}
+\Delta_{S^N}W_N+\lambda_N W_N=0.~
+\end{equation}
+[41] 该方程的解 $W_N$ 便是所谓的 $N$ 维
+[42] 球谐函数
+[43] （因为它是定义在 $N+1$ 维空间的 $N$ 维球上的）。
+
+[/SCOPE:s_harmonics]
+[SCOPE:s_separation|description|将球谐函数转化为分离变量的形式]
+[44] 三维空间的球谐函数可以继续分离为只关于 $\theta$ 和 $\varphi$ 的乘积形式。
+[45] 同样的，高维空间的球谐函数也能如此。
+[46] 为了分离变量，我们先试图将 $\theta^N$ 提取出来。
+[47] 利用式 13 ，有
+[48] \begin{equation}
+\sum_{i=1}^{N-1} h^{i}_{(N)} \left[(i-1)\cot\theta^i \frac{\partial W_N}{\partial \theta^i} + \frac{\partial^{2}{W_N}}{\partial{\theta^i}^{2}} \right] +h^{N}_{(N)} \left[(N-1)\cot\theta^N \frac{\partial W_N}{\partial \theta^N} + \frac{\partial^{2}{W_N}}{\partial{\theta^N}^{2}} \right] +\lambda_N W_N=0.~
+\end{equation}
+[49] 然而，由
+[50] 式 6 [链接 L5]
+[51] 式 11 [链接 L6]
+[52] ，$h^i_{(N)}$ 是关于 $\theta^j,i+1\leq j\leq N$ 的函数，为使得上式左边第一式不含 $\theta^j$，只要将 $h^i_{(N)}$ 乘以 $\sin^2\theta^j$ 即可。
+[SCOPE:s_separation_let1|let_bind|定义 h^i_{(k-1)}]
+[53] 因此，若定义
+[54] \begin{equation}
+h^{i}_{(k-1)}=\sin^2\theta^k h^i_{(k)},\quad 1\leq i\leq k-1,2\leq k\leq N,~
+\end{equation}
+[55] 则 $h^i_{(N-1)}$ 只依赖与 $\theta ^{i+1},\cdots,\theta^{N-1}$。
+[/SCOPE:s_separation_let1]
+[56] 利用
+[57] 式 18 [链接 L7]
+[58a] (k)}=1$，且 $h^k_{
+[58b] (k)}=1$。
+[59] 现在，我们可以将式 17 写为
+[60] \begin{equation}
+\sum_{i=1}^{N-1} \sin^{-2}\theta^N h^{i}_{(N-1)} \left[(i-1)\cot\theta^i \frac{\partial W_N}{\partial \theta^i} + \frac{\partial^{2}{W_N}}{\partial{\theta^i}^{2}} \right] +h^{N}_{(N)} \left[(N-1)\cot\theta^N \frac{\partial W_N}{\partial \theta^N} + \frac{\partial^{2}{W_N}}{\partial{\theta^N}^{2}} \right] =-\lambda_N W_N.~
+\end{equation}
+[61] 式 13 [链接 L8]
+[62] ，上式可写为
+[63] \begin{equation}
+\sin^{-2}\theta^N \Delta_{S^{N-1}}{W_N}+ \left[(N-1)\cot\theta^N \frac{\partial W_N}{\partial \theta^N} + \frac{\partial^{2}{W_N}}{\partial{\theta^N}^{2}} \right] =-\lambda_N W_N.~
+\end{equation}
+[SCOPE:s_separation_let2|let_bind|分离变量 W_N = W_{N-1} y_N]
+[64] 显然，现在可以继续进行变量分离，令
+[65] \begin{equation}
+W_N(\theta^1,\cdots,\theta^N)=W_{N-1}(\theta^1,\cdots,\theta^{N-1})y_N(\theta^N),~
+\end{equation}
+[66] \begin{equation}
+-\frac{1}{W_{N-1}}\Delta_{S^{N-1}}W_{N-1}=\frac{\sin^2\theta^N}{y_N} \left((N-1)\cot\theta^N \frac{\partial y_N}{\partial \theta^N} + \frac{\partial^{2}{y_N}}{\partial{\theta^N}^{2}} \right) +\lambda_N\sin^2\theta^N=\lambda_{N-1}.~
+\end{equation}
+[67] 其中 $\lambda_{N-1}$ 是一个新分离常数。
+[/SCOPE:s_separation_let2]
+[68] 因此，我们有下面方程
+[69] \begin{equation}
+\begin{aligned}
+&\Delta_{S^{N-1}}W_{N-1}+\lambda_{N-1}W_{N-1}=0,\\
+& \left((N-1)\cot\theta^N \frac{\partial y_N}{\partial \theta^N} + \frac{\partial^{2}{y_N}}{\partial{\theta^N}^{2}} \right) + \left(\lambda_N-\lambda_{N-1}\sin^{-2}\theta^N \right) y_N=0.
+\end{aligned}~
+\end{equation}
+[70] 注意第一个方程和回到了
+[71] 式 16 [链接 L9]
+[72] 的形式，
+[73] 因此可以继续重复该过程。
+[SCOPE:s_separation_let3|let_bind|最终分离形式]
+[74] 最终可以获得关于 $W_k=W_k(\theta_1,\cdots,\theta_k)$ 的方程
+[75] \begin{equation}
+\Delta_{S^{k}}W_{k}+\lambda_{k}W_{k}=0,\quad 1\leq k\leq N.~
+\end{equation}
+[76] 和关于 $y_k=y_k(\theta_k)$ 的方程：
+[77] \begin{equation}
+\frac{\partial^{2}{y_k}}{\partial{\theta^k}^{2}} +(k-1)\cot\theta^k \frac{\partial y_k}{\partial \theta^k} + \left(\lambda_k-\frac{\lambda_{k-1}}{\sin^2\theta_k} \right) y_k=0,2\leq k\leq N~
+\end{equation}
+[78] 并且有一组 $N$ 个变量的分离常数 $\{\lambda_k\}$。
+[/SCOPE:s_separation_let3]
+[79] 注意在 $k=2$ 时，由
+[80] 式 21 [链接 L10]
+[81] ，我们有
+[82] \begin{equation}
+W_2(\theta^1,\theta^2)=W_1(\theta^1)y_2(\theta^2).~
+\end{equation}
+[83] \begin{equation}
+\Delta_{S^{1}}W_{1}+\lambda_{1}W_{k}=0.~
+\end{equation}
+[84] 若令 $y_1=W_1$，
+[85] 那么由
+[86] 式 21 [链接 L11]
+[87] \begin{equation}
+W_N(\theta^1,\cdots,\theta^N)=y_1(\theta^1)\cdots y_N(\theta^N).~
+\end{equation}
+[88] 因此，一般高维空间球谐函数可以写为关于每一角变量函数的乘积形式。
+
+跨文章引用:
+  [L0] 度规 → nDSM
+  [L3] 三维拉普拉斯方程 → SphLap
+[/SCOPE:s_separation]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_harmonics",
+    "target_scope": "s_laplacian",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "球谐函数是拉普拉斯方程角度部分的解"
+  },
+  {
+    "source_scope": "s_separation",
+    "target_scope": "s_harmonics",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "分离变量法得到球谐函数的乘积形式"
+  }
+]

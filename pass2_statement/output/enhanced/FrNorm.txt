@@ -1,0 +1,67 @@
+[SCOPE:root|description|球谐展开中径向函数的归一化]
+文章名: FrNorm
+标题: 球谐展开中径向函数的归一化
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=归一化的球贝塞尔函数
+
+[0] 为什么 $k$ 一定是正的？
+[1] 这篇文章的背景是 $f( \boldsymbol{\mathbf{r}} )$ 作为量子力学波函数，考虑了量子力学概率守恒的限制，
+[2] 所以 $u_{l,m}$ 的两个线性无关解的系数其实不是独立的，入射概率必须等于出射概率。
+[3a] 如果不仅限于量子力学
+[3b] 则可以有负的，或者使用 $u,v$ 两组线性无关的基底。
+[4] 若一组径向函数基底 $u_{l,m}(k, r)$ 满足归一化条件
+[5] \begin{equation}
+\int_0^\infty u^*_{l,m}(k',r) u_{l,m}(k, r) \,\mathrm{d}{r} = \delta(k - k')~,
+\end{equation}
+[6] 则球坐标中一组完备正交归一的函数基底为
+[7] \begin{equation}
+\left\lvert s_{l,m}(k) \right\rangle = \frac{1}{r} u_{l,m}(k, r) Y_{l,m}( \hat{\boldsymbol{\mathbf{r}}} )~,
+\end{equation}
+[8] 满足正交归一条件
+[9] \begin{equation} \begin{aligned}
+&\quad \left\langle s_{l,m}(k) \middle| s_{l',m'}(k') \right\rangle \\
+&= \int_0^\infty \frac{1}{r} u_{l,m}^*(k, r) \frac{1}{r} u_{l',m'}(k', r) r^2 \,\mathrm{d}{r} \int Y_{l,m}^*( \hat{\boldsymbol{\mathbf{r}}} ) Y_{l',m'}( \hat{\boldsymbol{\mathbf{r}}} ) \,\mathrm{d}{\Omega} \\
+&= \delta_{l,l'}\delta_{m,m'}\delta(k-k')~.
+\end{aligned} \end{equation}
+
+[10] 空间中任意复函数可以用式 2 中的基底展开为
+[11] \begin{equation} \begin{aligned}
+f( \boldsymbol{\mathbf{r}} ) &= \sum_{l,m} \int_0^\infty c_{l,m}(k) \left\lvert s_{l,m}(k) \right\rangle \,\mathrm{d}{k} \\
+&= \frac{1}{r}\sum_{l,m} \left(\int_0^\infty c_{l,m}(k) u_{l,m}(k, r) \,\mathrm{d}{k} \right) Y_{l,m}( \hat{\boldsymbol{\mathbf{r}}} )~.
+\end{aligned} \end{equation}
+[12] 函数在任意基底上的投影为
+[13] \begin{equation} \begin{aligned}
+\left\langle s_{l,m}(k) \middle| f( \boldsymbol{\mathbf{r}} ) \right\rangle &= \sum_{l',m'} \int_0^\infty \,\mathrm{d}{k'} c_{l',m'}(k') \left\langle s_{l,m}(k) \middle| s_{l',m'}(k') \right\rangle \\
+& = \sum_{l',m'} \int_0^\infty \,\mathrm{d}{k'} c_{l',m'}(k') \delta_{l,l'}\delta_{m,m'}\delta(k-k')\\
+& = c_{l,m}(k)~.
+\end{aligned} \end{equation}
+[14] 令 $ \left\lvert f \right\rangle $ 的分波展开形式为
+[15] \begin{equation}
+f( \boldsymbol{\mathbf{r}} ) =
+\frac{1}{r}\sum_{l,m} g_{l,m}(r) Y_{l,m}( \hat{\boldsymbol{\mathbf{r}}} )~.
+\end{equation}
+[16a] (r)$ 和 $c_{l,m}
+[16b] (k)$ 有类似傅里叶变换的关系
+[17] \begin{equation}
+g_{l,m}(r) = \int_0^\infty c_{l,m}(k) u_{l,m}(k, r) \,\mathrm{d}{k} ~,
+\end{equation}
+[18] \begin{equation}
+c_{l,m}(k) = \int_0^\infty u_{l,m}^*(k, r) g_{l,m}(r) \,\mathrm{d}{r} ~.
+\end{equation}
+
+[SCOPE:s_example1|description|归一化的球贝塞尔函数]
+[19] 例 1 归一化的球贝塞尔函数
+[20] 由于 $ \mathrm{e} ^{ \mathrm{i} kx}$ 从负无穷到正无穷的归一化积分为 $2\pi\delta(k-k')$，易得 $ \sin\left(kx\right) $ 的积分为 $\pi\delta(k-k')$（先表示成指数形式），从 0 到正无穷的积分为 $\pi\delta(k-k')/2$。
+[21] 注意归一化只需要渐进表达式即可（因为局部的不同相对于无穷积分来说可以忽略）。
+[22] 球贝塞尔函数的渐进形式为 $j_l(kr) \to \sin\left(kr - l\pi/2\right) /(kr)$，
+[23] 所以 $kr j_l(kr)$ 从 0 到正无穷的归一化积分同样是 $\pi\delta(k-k')/2$。
+[24] 所以归一化的球贝塞尔函数为
+[25] \begin{equation}
+u_{l,m}(k, r) = \sqrt{\frac{2}{\pi}} kr j_l(kr)~,
+\end{equation}
+[26] \begin{equation}
+u_{l,m}(k, r) \to \sqrt{\frac{2}{\pi}} \sin\left(kr - l\pi/2\right) ~.
+\end{equation}
+[/SCOPE:s_example1]
+[/SCOPE:root]

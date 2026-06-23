@@ -1,0 +1,205 @@
+[SCOPE:root|description|贝叶斯概率（综述）]
+文章名: BYSGL
+标题: 贝叶斯概率（综述）
+
+[SCOPE:s_intro|description|引言]
+[0] （本文根据 CC-BY-SA 协议转载自原搜狗科学百科对英文维基百科的翻译）
+[1] 贝叶斯概率是对概率概念的一种解释，其中概率被解释为一种代表知识[1] 状态的合理期望[2] 或个人信念的量化，而不是某种现象发生的频率或倾向。
+[2] [3]
+[3] 概率的贝叶斯解释可以被看作是命题逻辑的扩展，它支持用假设进行推理。
+[4] 也就是说，命题的真假是不确定的。
+[5] 在贝叶斯观点中，一个概率被分配给一个假设，而在频率推断下，一个假设通常在没有被分配概率的情况下被检验。
+[6] 贝叶斯概率属于证据概率的范畴；
+[7] 为了评估假设的概率，贝叶斯概率学家指定一个先验概率。
+[8] 继而，又根据新的相关数据(证据)将其更新为后验概率。
+[9] [4] 贝叶斯解释提供了一套标准的程序和公式来进行这种计算。
+[10] 贝叶斯一词源于 18 世纪的数学家和神学家托马斯·贝叶斯（Thomas Bayes），他首次用数学方法处理了一个重要的统计数据分析问题，该方法现在被称为贝叶斯推断(Bayesian inference)。
+[11] [5] 数学家皮埃尔·西蒙·拉普拉斯（Pierre-Simon Laplace）开创并推广了现在所谓的贝叶斯概率。
+[12] [5]
+
+[/SCOPE:s_intro]
+[SCOPE:s_method|description|贝叶斯方法]
+[13] 概念和过程是贝叶斯方法的一大特点，如下:
+[14] 使用随机变量，或更一般的未知量，[6] 对统计模型中的所有不确定性来源进行建模，包括因缺乏信息而导致的不确定性。
+[15] 需要考虑可用的(先验前的)信息来确定先验的概率分布。
+[16] 贝叶斯公式的计算顺序是:当更多数据可用时，使用贝叶斯公式计算后验分布；
+[17] 随后，后验分布成为下一个先验分布。
+[18] 而对于频率学派来说，假设是一个命题(必须是真或假)，
+[19] 因此假设的频率学派概率是 0 或 1，在贝叶斯统计中，如果真值不确定，分配给假设的概率也可以在 0 到 1 的范围内。
+
+[/SCOPE:s_method]
+[SCOPE:s_objective_subjective|description|客观和主观贝叶斯概率]
+[20] 从广义上讲，贝叶斯概率有两种解释。
+[21] 对于客观主义者来说，把概率解释为逻辑的延伸，概率量化合理的期望，每个共享相同知识的人（甚至是 “机器人”）都应该按照贝叶斯统计的规则共享知识，这可以用考克斯定理（Cox's theorem）来证明。
+[22] [2][7] 对于主观主义者来说，概率相应于个人信仰。
+[23] [3] 合理性和一致性允许在它们所构成的约束范围内发生实质性的变化；
+[24] 这些约束由荷兰赌论证或决策理论和德·芬内蒂定理（de Finetti's theorem）来证明。
+[25] [3] 贝叶斯概率的客观变体和主观变体不同主要表现在它们对先验概率的解释和构造。
+
+[/SCOPE:s_objective_subjective]
+[SCOPE:s_history|description|历史]
+[26] 贝叶斯这个术语指的是托马斯·贝叶斯（Thomas Bayes）(1702-1761)，他在一篇题为《旨在解决机会论中的一个问题的文章 》的论文中证明了现在被称为贝叶斯定理的一个特例。
+[27] [8] 在这种特殊情况下，先验和后验分布是贝塔分布，数据来自伯努利试验。
+[28] 皮埃尔·西蒙·拉普拉斯（Pierre-Simon Laplace）(1749-1827)引入了这个定理的一般形式，并用它来处理天体力学、医学统计、可靠性和法理学方面的问题。
+[29] [9] 早期贝叶斯推断遵循拉普拉斯的不充分推理原则使用均匀的先验，被称为 “逆概率”(因为它从观测值到参数，或者从结果到原因进行逆向推理)。
+[30] [10] 20 世纪 20 年代以后，“逆概率” 在很大程度上被一系列称为频率统计的方法所取代。
+[31] [10]
+[32] 20 世纪，拉普拉斯思想向两个方向发展，在贝叶斯实践中产生了客观和主观的潮流。
+[33] 哈罗德·杰弗里斯（Harold Jeffreys）的概率论(首次发表于 1939 年)在贝叶斯概率观的复兴中发挥了重要作用，随后是亚伯拉罕·瓦尔德（Abraham Wald）(1950 年)和伦纳德·萨维奇（Leonard J. Savage）(1954 年)的著作。
+[34] 形容词贝叶斯本身可以追溯到 20 世纪 50 年代；
+[35] 衍生出的贝叶斯主义和新贝叶斯主义是 20 世纪 60 年代的新造词。
+[36] [11][12][13] 在客观主义者的潮流中，统计分析只依赖于假设的模型和分析的数据。
+[37] [14] 不需要涉及主观决策。
+[38] 相比之下，“主观主义” 统计学家否认对一般情况进行完全客观分析的可能性。
+[39] 在 20 世纪 80 年代，贝叶斯方法的研究和应用有了显著的发展，这主要归功于马尔可夫链蒙特卡罗方法的发现和随之而来的许多计算问题的消除，以及对非标准、复杂应用日益增长的兴趣。
+[40] [15] 虽然频率学派统计学仍然占主导地位(从大多数本科教学仍然以此为基础这一事实可以看出[16]，
+[41] 但是贝叶斯方法被广泛接受和使用，例如在机器学习领域。
+[42] [17]
+
+[/SCOPE:s_history]
+[SCOPE:s_justification|description|贝叶斯概率的证明]
+[43] 使用贝叶斯概率作为贝叶斯推断的基础得到了几个论点的支持，如考克斯公理（Cox axioms）、荷兰著作论点、基于决策理论的论点和德·费内蒂定理（de Finetti's theorem）。
+
+[SCOPE:s_axiomatic|description|公理化方法]
+[44] 理查德·考克斯（Richard T. Cox）证明了[7] 贝叶斯更新遵循几个公理，包括两个函数方程和一个可微性假设。
+[45] 可微性甚至连续性的假设是有争议的；
+[46] 哈尔彭（Halpern）发现了一个反例，基于他的观察，布尔代数的语句可能是有限的。
+[47] [18] 为了使理论更加严谨，许多作者还提出了其他公理。
+[48] [6]
+
+[/SCOPE:s_axiomatic]
+[SCOPE:s_dutch_book|description|荷兰赌方法]
+[49] 荷兰赌论证是由德·芬内蒂提出的；
+[50] 它基于赌博。
+[51a] 当一个聪明的赌徒下了一套保证盈利的赌注，而不管赌注的结果如何时，一个荷兰赌
+[51b] 则诞生了。
+[52a] 如果一个赌徒在计算赔率时遵循贝叶斯演算的规
+[52b] 则，
+[53] 那么赌局是输的。
+[54] 然而，伊恩·哈金(Ian Hacking)指出，传统的荷兰赌论证并没有具体说明贝叶斯更新:它们留下了非贝叶斯更新规则避开荷兰赌的可能性。
+[55] 例如，哈克（Hacking）写道[19][20] :“无论是荷兰赌论证还是个性化库中证明概率公理的任何其他论点，都不包含动态假设。
+[56] 没有人需要贝叶斯主义。
+[57] 所以个人主义者要求动态假设是贝叶斯的。
+[58] 的确，在一致性方面，个人主义者可以放弃从经验中学习的贝叶斯模型。
+[59] 盐可能会失去味道。”
+[60] 事实上，也有非贝叶斯更新规则避免荷兰赌(如理查德·杰弗里斯规则出版后关于 “概率运动学”[21] 的文献中所讨论的那样，该规则本身被认为是贝叶斯[22])。
+[61] 足以(唯一地)指定贝叶斯更新的额外假设是实质性的[23]，且不是普遍令人满意的。
+[62] [24]
+
+[/SCOPE:s_dutch_book]
+[SCOPE:s_decision_theory|description|决策理论方法]
+[63] 亚伯拉罕·瓦尔德（Abraham Wald）给出了使用贝叶斯推断(以及贝叶斯概率)的决策理论证明，他证明了每个可接受的统计过程要么是贝叶斯过程，要么是贝叶斯过程的极限。
+[64] [25] 相反，每一个贝叶斯过程都是可以接受的。
+[65] [26]
+
+[/SCOPE:s_justification]
+[/SCOPE:s_decision_theory]
+[SCOPE:s_prior|description|构建先验的个人概率和客观方法]
+[66] 在拉姆齐（Ramsey）和冯·诺依曼（von Neumann）的期望效用理论的工作之后，决策理论家已经用代理的概率分布来解释理性行为。
+[67] 约翰·普范扎格（Johann Pfanzagl）通过提供主观概率和效用的公理化完成了博弈和经济行为理论，这是冯·诺依曼和奥斯卡·莫根施特恩（Oskar Morgenstern）没有完成的一项任务:为了方便起见，他们最初的理论假设所有的代理都有相同的概率分布。
+[68] [27] 普范扎格的公理（Pfanzagl's axiomatization）化得到了奥斯卡·莫根施特恩的认可:“冯·诺伊曼和我已经预料到了...[概率是否存在的问题]可能，也许更典型地，是主观的，并特别指出，在后一种情况下，可以找到公理，从中可以推导出期望的数值效用以及概率的数字(博弈论和经济行为理论第 19 页)。
+[69] 我们没有这样做；
+[70] 普范扎格（Pfanzagl）证明了这一点...具有所有必要的严谨性”。
+[71] [28]
+[72] 拉姆齐和萨维奇（Ramsey and Savage）指出，在实验中可以客观地研究个体代理的概率分布。
+[73] 检验概率假设的过程(使用有限样本)应归功于拉姆齐(1931)和德·芬尼蒂(1931，1937，1964，1970)。
+[74] 布鲁诺·德·福内梯（Bruno de Finetti）[29][30] 和弗兰克·拉姆齐（Frank P. Ramsey）[30][31] 都承认他们欠实用主义哲学的债，特别是(对拉姆齐来说)对查尔斯·皮尔斯（Charles S. Peirce）。
+[75] [30][31]
+[76] 评估概率分布的 “拉姆齐检验” 在理论上是可行的，并且让实验心理学家们忙了半个世纪。
+[77] [32]这项工作证明贝叶斯概率命题可以被证伪，
+[78] 因此符合查尔斯·皮尔斯的经验标准，他的工作启发了拉姆齐。
+[79] (卡尔·波普（Karl Popper）推广了这种可证伪性标准。
+[80] [33][34])
+[81] 现代个人概率实验评估的工作使用皮尔斯-贾斯特罗实验的随机化、盲法和布尔决策过程。
+[82] [35] 由于个人根据不同的概率判断行事，这些代理人的概率是 “个人的”(但服从客观研究)。
+[83] 对于科学和一些决策者缺乏知识或时间来指定知情概率分布（他们准备采取行动）的应用，个人概率是有问题的。
+[84] 为了满足科学和人类局限性的需要，贝叶斯统计学家已经开发了用于指定先验概率的 “客观” 方法。
+[85] 事实上，一些贝叶斯主义者认为先验知识状态定义了 “常规” 统计问题的(唯一的)先验概率分布；
+[86] 参见适定问题。
+[87] 从拉普拉斯到约翰·梅纳德·凯恩斯（John Maynard Keynes）、哈罗德·杰弗里斯（Harold Jeffreys）和埃德温·汤普森·贾恩斯（Edwin Thompson Jaynes），统计理论家们一直在寻找构建这种 “客观” 先验(适用于适当类别的常规问题)的正确方法。
+[88] 这些理论家及其后继者提出了几种构建 “客观” 先验的方法(不幸的是，不清楚如何评估这些方法所提出的先验的相对 “客观性”):
+[89] 最大熵
+[90] 变化群分析
+[91] 参考分析
+[92] 这每一种方法都为 “常规的” 单参数问题提供了有用的先验知识，并且每一种先验知识都可以处理一些具有挑战性的统计模型(具有 “不规则性” 或几个参数)。
+[93] 这些方法在贝叶斯实践中都很有用。
+[94] 事实上，构建 “客观”(或者，“默认” 或者 “无知”)先验的方法是公认的主观(或者 “个人”)贝叶斯主义者发展起来的，比如詹姆斯·伯杰(杜克大学)和何塞·米格尔·贝尔纳多(瓦利亚大学)，这仅仅是因为贝叶斯实践需要这样的先验，特别是在科学领域。
+[95] [36] 对 “构建先验的普遍方法” 的探索继续吸引统计理论家。
+[96] [36]
+[97] 因此，贝叶斯统计学家需要使用已知的先验(使用相关专业知识或先前数据)，或者在构建 “客观” 先验的竞争方法中进行选择。
+
+[/SCOPE:s_prior]
+[98] [1]
+[99] ^Cox, R.T. (1946). "Probability, Frequency, and Reasonable Expectation". American Journal of Physics. 14 (1): 1–10. Bibcode:1946AmJPh..14....1C. doi:10.1119/1.1990764..
+[100] [2]
+[101] ^Jaynes, E.T. (1986). "Bayesian Methods: General Background". In Justice, J. H. Maximum-Entropy and Bayesian Methods in Applied Statistics. Cambridge: Cambridge University Press..
+[102] [3]
+[103] ^de Finetti, Bruno (2017). Theory of Probability: A critical introductory treatment. Chichester: John Wiley & Sons Ltd. ISBN 9781119286370..
+[104] [4]
+[105] ^Paulos, John Allen (5 August 2011). "The Mathematics of Changing Your Mind [by Sharon Bertsch McGrayne]". Book Review. New York Times. Retrieved 2011-08-06..
+[106] [5]
+[107] ^Stigler, Stephen M. (March 1990). The history of statistics. Harvard University Press. ISBN 9780674403413..
+[108] [6]
+[109] ^Dupré, Maurice J.; Tipler, Frank J. (2009). "New axioms for rigorous Bayesian probability". Bayesian Analysis (3): 599–606..
+[110] [7]
+[111] ^Cox, Richard T. (1961). The algebra of probable inference (Reprint ed.). Baltimore, MD; London, UK: Johns Hopkins Press; Oxford University Press [distributor]. ISBN 9780801869822..
+[112] [8]
+[113] ^McGrayne, Sharon Bertsch (2011). The Theory that Would not Die. , p. 10,于 Google Books。
+[114] ..
+[115] [9]
+[116] ^Stigler, Stephen M. (1986). "Chapter 3". The History of Statistics. Harvard University Press..
+[117] [10]
+[118] ^Fienberg, Stephen. E. (2006). "When did Bayesian Inference become "Bayesian"?" (PDF). Bayesian Analysis. 1 (1): 5, 1–40. Archived from the original (PDF) on 10 September 2014..
+[119] [11]
+[120] ^Harris, Marshall Dees (1959). "Recent developments of the so-called Bayesian approach to statistics". Agricultural Law Center. Legal-Economic Research. University of Iowa: 125 (fn. #52), 126. The works of Wald, Statistical Decision Functions (1950) and Savage, The Foundation of Statistics (1954) are commonly regarded starting points for current Bayesian approaches.
+[121] [12]
+[122] ^Annals of the Computation Laboratory of Harvard University. 31. 1962. p. 180. This revolution, which may or may not succeed, is neo-Bayesianism. Jeffreys tried to introduce this approach, but did not succeed at the time in giving it general appeal..
+[123] [13]
+[124] ^Kempthorne, Oscar (1967). The Classical Problem of Inference—Goodness of Fit. Fifth Berkeley Symposium on Mathematical Statistics and Probability. p. 235. It is curious that even in its activities unrelated to ethics, humanity searches for a religion. At the present time, the religion being 'pushed' the hardest is Bayesianism..
+[125] [14]
+[126] ^Bernardo, J.M. (2005). Reference analysis. Handbook of Statistics. 25. pp. 17–90. doi:10.1016/S0169-7161(05)25002-2. ISBN 9780444515391..
+[127] [15]
+[128] ^Wolpert, R.L. (2004). "A conversation with James O. Berger". Statistical Science. 9: 205–218..
+[129] [16]
+[130] ^Bernardo, José M. (2006). A Bayesian mathematical statistics primer (PDF). ICOTS-7. Bern..
+[131] [17]
+[132] ^Bishop, C.M. (2007). Pattern Recognition and Machine Learning. Springer..
+[133] [18]
+[134] ^Halpern, J. "A counterexample to theorems of Cox and Fine". Journal of Artificial Intelligence Research. 10: 67–85..
+[135] [19]
+[136] ^Hacking (1967), Section 3, page 316.
+[137] [20]
+[138] ^Hacking (1988, page 124).
+[139] [21]
+[140] ^Skyrms, Brian (1 January 1987). "Dynamic Coherence and Probability Kinematics". Philosophy of Science. 54 (1): 1–20. CiteSeerX 10.1.1.395.5723. doi:10.1086/289350. JSTOR 187470..
+[141] [22]
+[142] ^"Bayes' Theorem". stanford.edu. Retrieved 21 March 2016..
+[143] [23]
+[144] ^Fuchs, Christopher A.; Schack, Rüdiger (1 January 2012). Ben-Menahem, Yemima; Hemmo, Meir, eds. Probability in Physics. The Frontiers Collection (in 英语). Springer Berlin Heidelberg. pp. 233–247. arXiv:1103.5950. doi:10.1007/978-3-642-21329-8_15. ISBN 9783642213281..
+[145] [24]
+[146] ^van Frassen, Bas (1989). Laws and Symmetry. Oxford University Press. ISBN 0-19-824860-1..
+[147] [25]
+[148] ^Wald, Abraham (1950). Statistical Decision Functions. Wiley..
+[149] [26]
+[150] ^Bernardo, José M.; Smith, Adrian F.M. (1994). Bayesian Theory. John Wiley. ISBN 0-471-92416-4..
+[151] [27]
+[152] ^Pfanzagl (1967, 1968).
+[153] [28]
+[154] ^Morgenstern (1976, page 65).
+[155] [29]
+[156] ^Galavotti, Maria Carla (1 January 1989). "Anti-Realism in the Philosophy of Probability: Bruno de Finetti's Subjectivism". Erkenntnis. 31 (2/3): 239–261. doi:10.1007/bf01236565. JSTOR 20012239..
+[157] [30]
+[158] ^Galavotti, Maria Carla (1 December 1991). "The notion of subjective probability in the work of Ramsey and de Finetti". Theoria (in 英语). 57 (3): 239–259. doi:10.1111/j.1755-2567.1991.tb00839.x. ISSN 1755-2567..
+[159] [31]
+[160] ^Dokic, Jérôme; Engel, Pascal (2003). Frank Ramsey: Truth and Success. Routledge. ISBN 9781134445936..
+[161] [32]
+[162] ^Davidson et al. (1957).
+[163] [33]
+[164] ^"Karl Popper". Stanford Encyclopedia of Philosophy..
+[165] [34]
+[166] ^Popper, Karl (2002) [1959]. The Logic of Scientific Discovery (in 英语) (2nd ed.). Routledge. p. 57. ISBN 0-415-27843-0 – via Google Books. (translation of 1935 original, in German)..
+[167] [35]
+[168] ^Peirce & Jastrow (1885).
+[169] [36]
+[170] ^Bernardo, J. M. (2005). "Reference Analysis". In Dey, D.K.; Rao, C. R. Handbook of Statistics (PDF). 25. Amsterdam: Elsevier. pp. 17–90..
+[/SCOPE:root]

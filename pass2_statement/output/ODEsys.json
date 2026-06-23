@@ -1,0 +1,468 @@
+{
+  "article_name": "ODEsys",
+  "statements": [
+    {
+      "stmt_id": "st_const_eq",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_const_let",
+      "exposed_entities": [
+        "v(t)",
+        "A",
+        "v(0)"
+      ]
+    },
+    {
+      "stmt_id": "st_exp_def",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_const_let",
+      "exposed_entities": [
+        "exp(At)"
+      ]
+    },
+    {
+      "stmt_id": "st_diag_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_diag",
+      "exposed_entities": [
+        "A",
+        "U",
+        "Lambda",
+        "lambda_i"
+      ]
+    },
+    {
+      "stmt_id": "st_diag_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_diag",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_time_dep_general",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_time_let",
+      "exposed_entities": [
+        "A(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_time_dep_solution",
+      "subtype": "definition",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_time_let",
+      "exposed_entities": [
+        "v(t)",
+        "Delta t",
+        "A(t_i)"
+      ]
+    },
+    {
+      "stmt_id": "st_commute_prop",
+      "subtype": "theorem",
+      "clause_range": [
+        25,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_time_let",
+      "exposed_entities": [
+        "P",
+        "Q"
+      ]
+    },
+    {
+      "stmt_id": "st_noncommute",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_time_order",
+      "exposed_entities": [
+        "A(t_i)"
+      ]
+    },
+    {
+      "stmt_id": "st_time_order_def",
+      "subtype": "definition",
+      "clause_range": [
+        29,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_time_order",
+      "exposed_entities": [
+        "T_hat",
+        "A(t1)",
+        "A(t2)",
+        "A(t3)"
+      ]
+    },
+    {
+      "stmt_id": "st_time_order_solution",
+      "subtype": "definition",
+      "clause_range": [
+        34,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_time_order",
+      "exposed_entities": [
+        "v(t)",
+        "T_hat",
+        "A(t')"
+      ]
+    },
+    {
+      "stmt_id": "st_schrodinger_eq",
+      "subtype": "definition",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_herm_let",
+      "exposed_entities": [
+        "v",
+        "H"
+      ]
+    },
+    {
+      "stmt_id": "st_herm_H",
+      "subtype": "assumption",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_herm_let",
+      "exposed_entities": [
+        "H"
+      ]
+    },
+    {
+      "stmt_id": "st_antiherm",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        41
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_herm_let",
+      "exposed_entities": [
+        "-iH"
+      ]
+    },
+    {
+      "stmt_id": "st_H_time_indep",
+      "subtype": "assumption",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_herm_let",
+      "exposed_entities": [
+        "H"
+      ]
+    },
+    {
+      "stmt_id": "st_unitary",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        44
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_herm_let",
+      "exposed_entities": [
+        "exp(iHt)"
+      ]
+    },
+    {
+      "stmt_id": "st_norm_const",
+      "subtype": "conclusion",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_herm_let",
+      "exposed_entities": [
+        "v(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_herm_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_step1",
+      "subtype": "conclusion",
+      "clause_range": [
+        48,
+        48
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_herm_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_step2",
+      "subtype": "conclusion",
+      "clause_range": [
+        49,
+        50
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_herm_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_step3",
+      "subtype": "conclusion",
+      "clause_range": [
+        51,
+        51
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_herm_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_numerical_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        53,
+        55
+      ],
+      "truth_value": null,
+      "scope_id": "s_num_let",
+      "exposed_entities": [
+        "v(t)",
+        "f(t)",
+        "u",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_eigen_eq",
+      "subtype": "definition",
+      "clause_range": [
+        56,
+        58
+      ],
+      "truth_value": null,
+      "scope_id": "s_num_let",
+      "exposed_entities": [
+        "A",
+        "u",
+        "lambda",
+        "u_i",
+        "lambda_i",
+        "U",
+        "Lambda"
+      ]
+    },
+    {
+      "stmt_id": "st_f_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        59,
+        59
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_num_let",
+      "exposed_entities": [
+        "f(t)",
+        "lambda"
+      ]
+    },
+    {
+      "stmt_id": "st_split_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        61,
+        61
+      ],
+      "truth_value": null,
+      "scope_id": "s_split_let",
+      "exposed_entities": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_commute_case",
+      "subtype": "conclusion",
+      "clause_range": [
+        62,
+        63
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_split_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_noncommute_case",
+      "subtype": "assumption",
+      "clause_range": [
+        67,
+        67
+      ],
+      "truth_value": null,
+      "scope_id": "s_split_let",
+      "exposed_entities": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_approx",
+      "subtype": "conclusion",
+      "clause_range": [
+        68,
+        70
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_split_let",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_diag_assump",
+      "target": "st_diag_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_herm_H",
+      "target": "st_antiherm",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_H_time_indep",
+      "target": "st_unitary",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_unitary",
+      "target": "st_norm_const",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_assump",
+      "target": "st_proof_step1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_step1",
+      "target": "st_proof_step2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_step2",
+      "target": "st_proof_step3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_numerical_assump",
+      "target": "st_eigen_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_eigen_eq",
+      "target": "st_f_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_split_assump",
+      "target": "st_commute_case",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_noncommute_case",
+      "target": "st_approx",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_const_eq",
+      "target": "st_time_dep_general",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "常系数是含时系数的特例"
+    },
+    {
+      "source": "st_herm_H",
+      "target": "st_const_eq",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "厄米矩阵情况是常系数的一个特例"
+    },
+    {
+      "source": "st_numerical_assump",
+      "target": "st_herm_H",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "数值计算部分基于厄米矩阵"
+    },
+    {
+      "source": "st_split_assump",
+      "target": "st_const_eq",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "算符拆分是常系数的一种推广"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,128 @@
+[SCOPE:root|description|施勒米希-洛希余项公式]
+文章名: SchRo
+标题: 施勒米希-洛希余项公式
+
+[SCOPE:s_intro|description|引言与公式陈述]
+[0] 在用带有皮亚诺（Peano）余项的泰勒公式式 1 表达函数 $f(x)$ 时，得到的总是属于 “局部” 的性质，
+[1] 即关于点 $x_0$ 的性质的。
+[2] 若取其它数值 $x$，必须假定这些数值 “充分接近” 于 $x_0$，而不能任意选取。
+[3a] (x)$ 与其 n 阶近似多项式 $p
+[3b] (x)$ 的差为一余项 $o((x-x_0)^n)$，而这余项仅仅说在 $x$ 充分接近 $x_0$ 时趋于 0。
+[4] 而对于其它的 $x$，并不能保证近似多项式可以表达函数 $f(x)$ 至预先选定的准确度，而这往往是我们希望做到的。
+[5] 因此，我们需要推导余项的其它形式。
+[SCOPE:s_intro_let|let_bind|引入 f, x0, H, p]
+[6a] (x)$ 在区间 $[x_0,x_0+H]\;(H>0)$ 内定义着，并在该区间内有直至 $n$ 阶导数存在并连续，此外，至少在开区间 $(x_0,x_0+H)$ 内 $n+1$ 阶导数 $f^{(n+1)}
+[6b] (x)$ 存在且有限。
+[7] 函数在区间 $[x_0-H,x_0]$ 内定义时的情形，可类似说明。
+[8] (注：之所以这样假定，是为了应用柯西微分中值定理式 3 )
+[9] 若用 $n$ 阶多项式
+[10] \begin{equation}
+p(x)=\sum_{i=0}^n\frac{f^{(i)}(x_0)}{i!}(x-x_0)^i~.
+\end{equation}
+[11a] (x)$ 的近似公式，余项用 $r_n
+[11b] (x)$ 表示，
+[12] 即
+[13] \begin{equation}
+r_n(x)=f(x)-p(x)~.
+\end{equation}
+[14] 施勒米希-洛希（O.Schl$\ddot{o}$milch-Roche）推导出下面的公式
+[15] \begin{equation}
+r_n(x)=\frac{f^{(n+1)}(x_0+\theta(x-x_0))}{n!p}\cdot(1-\theta)^{n+1-p}(x-x_0)^{n+1}\quad (0<\theta<1)~.
+\end{equation}
+[16] 其中，$p$ 为大于 0 的任一数。
+[/SCOPE:s_intro_let]
+[17] 该式称为
+[18] 施勒米希-洛希余项公式
+
+[/SCOPE:s_intro]
+[SCOPE:s_proof|description|施勒米希-洛希余项公式的证明]
+[19] 由式 1 ，式 2
+[20] \begin{equation}
+r_n(x)=f(x)-\sum_{i=0}^n\frac{f^{(i)}(x_0)}{i!}(x-x_0)^i~.
+\end{equation}
+[SCOPE:s_proof_let1|let_bind|固定 x, 定义 φ(z)]
+[21] 令 $x$ 固定为区间 $[x_0,x_0+H]$ 内任一数值，做辅助函数
+[22] \begin{equation}
+\varphi(z)=f(x)-\sum_{i=0}^n\frac{f^{(i)}(z)}{i!}(x-z)^i~.
+\end{equation}
+[23] 其中 $z\in[x_0,x]$。
+[24a] (z)$ 是连续的（因为 $f
+[24b] (x)$ 在这区间直至 $n$ 阶导数皆是连续的），且有
+[25] \begin{equation}
+\varphi(x_0)=r_n(x),\quad \varphi(x)=0~.
+\end{equation}
+[26] \begin{equation}
+\begin{aligned}
+\varphi'(z)&=- \left(f'(z)+\sum_{i=1}^n \left(\frac{f^{(i+1)}(z)}{i!}(x-z)^i-\frac{f^{(i)}(z)}{(i-1)!}(x-z)^{i-1} \right) \right) \\
+&=- \left(f'(z)+\sum_{i=1}^n\frac{f^{(i+1)}(z)}{i!}(x-z)^i-\sum_{i=0}^{n-1}\frac{f^{(i+1)}(z)}{i!}(x-z)^{i} \right) \\
+&=-\frac{f^{(n+1)}}{n!}(x-z)^{n}~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_proof_let1]
+[SCOPE:s_proof_let2|let_bind|任取 ψ(z)]
+[27a] (z)$，其在区间 $[x_0,x]$ 内连续，且至少在开区间 $(x_0,x)$ 内有不等于 0 的导数 $\psi'
+[27b] (z)$。
+[28] 应用柯西微分中值定理定理 3
+[29] \begin{equation}
+\frac{\varphi(x)-\varphi(x_0)}{\psi(x)-\psi(x_0)}=\frac{\varphi'(c)}{\psi'(c)}~.
+\end{equation}
+[30] 其中，$x_0< c< x$ 或 $c=x_0+\theta(x-x_0)\quad(0<\theta<1)$。
+[31] 式 6 ，式 7 代入式 8 ，得
+[32] \begin{equation}
+r_n(x)=\frac{\psi(x)-\psi(x_0)}{\psi'(c)}\cdot\frac{f^{(n+1)}(c)}{n!}(x-c)^n~.
+\end{equation}
+[SCOPE:s_proof_let3|let_bind|取 ψ(z)=(x-z)^p]
+[33a] (z)$ 为满足在区间 $[x_0,x]$ 内连续，且至少在开区间 $(x_0,x)$ 内有不等于 0 的导数的任意函数，取 $\psi
+[33b] (z)=(x-z)^p,\;p>0$，就有
+[34] \begin{equation}
+\psi'(z)=-p(x-z)^{p-1}\quad (x_0< z< x)~.
+\end{equation}
+[/SCOPE:s_proof_let2]
+[35] 式 9 [链接 L0]
+[36] \begin{equation}
+\begin{aligned}
+r_n(x)&=\frac{-(x-x_0)^p}{-p(x-c)^{p-1}}\cdot\frac{f^{(n+1)}(c)}{n!}(x-c)^n\\
+&=\frac{f^{(n+1)}(c)}{n!p}(x-c)^{n+1-p}(x-x_0)^p~.
+\end{aligned}
+\end{equation}
+[37] 因为 $c=x_0+\theta(x-x_0)\quad(0<\theta<1)$，代入上式，
+[38] 即得
+[39] 式 3 [链接 L1]
+[/SCOPE:s_proof_let3]
+[40] 证毕！
+
+[/SCOPE:s_proof]
+[SCOPE:s_lagrange|description|拉格朗日余项公式]
+[41] 式 3 中令 $p=n+1$，
+[42] 即得拉格朗日余项公式式 7
+[43] \begin{equation}
+r_n(x)=\frac{f^{(n+1)}(c)}{(n+1)!}(x-x_0)^{n+1}\quad (c\in(x_0,x))~.
+\end{equation}
+
+[/SCOPE:s_lagrange]
+[SCOPE:s_cauchy|description|柯西余项式]
+[44] 令 $p=1$，
+[45] 即得柯西余项式
+[46] \begin{equation}
+r_n(x)=\frac{f^{(n+1)}(x_0+\theta(x-x_0))}{n!}(1-\theta)^{n}(x-x_0)^{n+1}~.
+\end{equation}
+[/SCOPE:s_cauchy]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_lagrange",
+    "target_scope": "s_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "拉格朗日余项是施勒米希-洛希余项在 p=n+1 时的特例"
+  },
+  {
+    "source_scope": "s_cauchy",
+    "target_scope": "s_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "柯西余项是施勒米希-洛希余项在 p=1 时的特例"
+  }
+]

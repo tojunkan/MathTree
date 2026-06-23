@@ -1,0 +1,334 @@
+{
+  "article_name": "F0",
+  "statements": [
+    {
+      "stmt_id": "st_def_zero_func",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "f",
+        "z_n"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_zero_func",
+      "subtype": "example",
+      "clause_range": [
+        4,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_condition",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "z_n",
+        "p",
+        "q"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_assumption",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "z_n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        14,
+        18
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "A(x)",
+        "k",
+        "b",
+        "varphi"
+      ]
+    },
+    {
+      "stmt_id": "st_sec1_ortho_cond",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_sec1",
+      "exposed_entities": [
+        "f",
+        "k1",
+        "k2",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_sec1_expansion",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_sec1",
+      "exposed_entities": [
+        "g",
+        "C",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_sec1_coeff_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_sec1",
+      "exposed_entities": [
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_sec1_two_bases",
+      "subtype": "assumption",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_sec1",
+      "exposed_entities": [
+        "f1",
+        "f2",
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "stmt_id": "st_sec1_question",
+      "subtype": "question",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_sec1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sec1_cross_ortho_cond",
+      "subtype": "assumption",
+      "clause_range": [
+        39,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_sec1",
+      "exposed_entities": [
+        "f1",
+        "f2",
+        "k1",
+        "k2",
+        "z_n"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_nonorthogonal",
+      "subtype": "example",
+      "clause_range": [
+        49,
+        51
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_assumption",
+      "subtype": "assumption",
+      "clause_range": [
+        53,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3",
+      "exposed_entities": [
+        "f",
+        "g",
+        "k",
+        "k'",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_conclusion",
+      "subtype": "example",
+      "clause_range": [
+        54,
+        55
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_step1",
+      "subtype": "assumption",
+      "clause_range": [
+        59,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof",
+      "exposed_entities": [
+        "C1",
+        "C2",
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        60,
+        61
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_condition",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assumption",
+      "target": "st_thm2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sec1_ortho_cond",
+      "target": "st_sec1_coeff_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sec1_expansion",
+      "target": "st_sec1_coeff_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sec1_two_bases",
+      "target": "st_sec1_question",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sec1_cross_ortho_cond",
+      "target": "st_sec1_question",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_assumption",
+      "target": "st_ex3_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_step1",
+      "target": "st_proof_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_conclusion",
+      "target": "st_def_zero_func",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1给出零函数的充要条件，是定义的延伸"
+    },
+    {
+      "source": "st_thm2_conclusion",
+      "target": "st_def_zero_func",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2给出零函数的性质，是定义的推论"
+    },
+    {
+      "source": "st_ex1_zero_func",
+      "target": "st_def_zero_func",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1给出零函数的例子"
+    },
+    {
+      "source": "st_ex2_nonorthogonal",
+      "target": "st_def_zero_func",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2给出零函数的例子"
+    },
+    {
+      "source": "st_ex3_conclusion",
+      "target": "st_def_zero_func",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例3给出零函数的例子"
+    },
+    {
+      "source": "st_proof_conclusion",
+      "target": "st_sec1_coeff_formula",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "形式证明支持第1节中的系数公式"
+    }
+  ],
+  "unresolved": []
+}

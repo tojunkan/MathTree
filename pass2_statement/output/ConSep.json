@@ -1,0 +1,108 @@
+{
+  "article_name": "ConSep",
+  "statements": [
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "M",
+        "N",
+        "f",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_cond",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "f",
+        "L",
+        "M",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_equiv1",
+      "subtype": "theorem",
+      "clause_range": [
+        8,
+        10
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "M",
+        "N",
+        "L",
+        "J(M)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_concl",
+      "subtype": "theorem",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_cond",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1_equiv1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let",
+      "target": "st_thm2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

@@ -1,0 +1,87 @@
+[SCOPE:root|description|公式的基本等价关系]
+文章名: wffEqR
+标题: 公式的基本等价关系（数理逻辑）
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=公式的基本等价关系
+
+[SCOPE:s_theorem|description|定理1 公式的基本等价关系]
+[0] 定理 1 公式的基本等价关系
+[SCOPE:s_let|let_bind|变量A,B,C]
+[1] 令 $A, B, C$ 都是任意的合式公式，
+[2] 则有以下的关系成立：
+[/SCOPE:s_let]
+[3] 幂等律：
+[4] \begin{equation}
+\begin{aligned}
+A \land A &\Leftrightarrow A,\\
+A \lor A &\Leftrightarrow A~.
+\end{aligned}
+\end{equation}
+[5] 交换律：
+[6] \begin{equation}
+\begin{aligned}
+A \land B &\Leftrightarrow B \land A,\\
+A \lor B &\Leftrightarrow B \lor A ~.
+\end{aligned}
+\end{equation}
+[7] 结合律：
+[8] \begin{equation}
+\begin{aligned}
+A \land (B \land C) &\Leftrightarrow (A \land B) \land C, \\
+A \lor (B \lor C) &\Leftrightarrow (A \lor B) \lor C ~.
+\end{aligned}
+\end{equation}
+[9] 同一律：
+[10] \begin{equation}
+\begin{aligned}
+A \land 1 &\Leftrightarrow A, \\
+A \lor 0 &\Leftrightarrow A ~.
+\end{aligned}
+\end{equation}
+[11] “分配律”：
+[12] \begin{equation}
+\begin{aligned}
+A \lor (B \land C) &\Leftrightarrow (A \lor B) \land (A \lor C) ,\\
+A \land (B \lor C) &\Leftrightarrow (A \land B) \lor (A \land C) ~.
+\end{aligned}
+\end{equation}
+[13] 逆否（假言易位）：
+[14] \begin{equation}
+(A \to B) \Leftrightarrow ((\neg B) \to (\neg A)) ~.
+\end{equation}
+[15] 吸收率：
+[16] \begin{equation}
+\begin{aligned}
+A \lor (A \land B) &\Leftrightarrow A, \\
+A \land (A \lor B) &\Leftrightarrow A ~.
+\end{aligned}
+\end{equation}
+[17] 矛盾率与排中律：
+[18] \begin{equation}
+\begin{aligned}
+A \land (\neg A) &\Leftrightarrow 0, \\
+A \lor (\neg A) &\Leftrightarrow 1~.
+\end{aligned}
+\end{equation}
+[19] 双重否定：
+[20] \begin{equation}
+\neg (\neg A) \Leftrightarrow A ~.
+\end{equation}
+[21] 德摩根定率（De Morgan's laws）：
+[22] \begin{equation}
+\begin{aligned}
+\neg(A \lor B) &\Leftrightarrow (\neg A) \land (\neg B) , \\
+\neg(A \land B) &\Leftrightarrow (\neg A) \lor (\neg B) ~.
+\end{aligned}
+\end{equation}
+[23] 蕴含：
+[24] \begin{equation}
+A \to B \Leftrightarrow (\neg A) \lor B~.
+\end{equation}
+[25] 等价：
+[26] \begin{equation}
+(A \leftrightarrow B) \Leftrightarrow ((A \to B) \land (B \to A)) ~.
+\end{equation}
+[/SCOPE:s_theorem]
+[/SCOPE:root]

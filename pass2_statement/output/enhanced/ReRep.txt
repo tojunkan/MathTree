@@ -1,0 +1,42 @@
+[SCOPE:root|description|实数的表示]
+文章名: ReRep
+标题: 实数的表示
+
+环境标记 (hints):
+  [0] type=lemma heading=引理 1 title=
+
+[SCOPE:s_lemma1|description|引理1]
+[0] 引理 1
+[SCOPE:s_lemma1_let2|let_bind|整数n和a]
+[SCOPE:s_lemma1_let1|let_bind|设x>0]
+[1] 设实数 $x>0$. 则有唯一一个整数 $n\in\mathbb{Z}$ 和唯一一个 $a\in\{1,2,...,q-1\}$, 使得 $aq^n\leq x<(a+1)q^{n}$.
+[/SCOPE:s_lemma1_let1]
+[2] 实际上，整个正实数轴被划分成彼此不相交的区间 $[aq^n,(a+1)q^{n})$; 这里 $n$ 跑遍所有整数，$a$ 跑遍 $1,2,...,q-1$. 因此正实数 $x$ 只能属于所有这些区间之中的一个。
+[/SCOPE:s_lemma1_let2]
+[SCOPE:s_lemma1_let3|let_bind|记n1,a1]
+[3] 将对应于 $x$ 的这两个整数记为 $n_1$ 和 $a_1$. 则 $x-a_1q^{n_1}$ 是非负实数。
+[/SCOPE:s_lemma1_let3]
+[4] 如果它等于零，
+[SCOPE:s_lemma1_let4|let_bind|递归得到n2,a2]
+[5] 那么无需续行，否则可以对它继续应用上述命题，而得到 $n_2\in\mathbb{Z}$ 和 $a_2\in\{1,2,...,q-1\}$, 使得 $a_2q^{n_2}\leq x-a_1q^{n_1}<(a_2+1)q^{n_2}$. 由此不等式立刻可得
+[6] \[
+[7] q^{n_2}\leq a_2q^{n_2}\leq x-a_1q^{n_1}< q^{n_1}~,
+[8] \]
+[9] 从而 $n_2< n_1$. 如果 $x-a_1q^{n_1}-a_2q^{n_2}$ 等于零，
+[/SCOPE:s_lemma1_let4]
+[10] 则无需续行，否则可以再次重复上面的过程。
+[SCOPE:s_lemma1_let5|let_bind|序列a_k,n_k]
+[11] 这样就得到了一个取值于 $\{1,2,...,q-1\}$ 的整数序列 $a_1,a_2,...$, 以及一列递降的整数 $n_1>n_2>...$, 使得
+[12] \[
+[13] 0\leq x-a_1q^{n_1}-a_2q^{n_2}-...-a_kq^{n_k}< q^{n_k}~.
+[14] \]
+[15] 递降的整数序列序列 $n_1>n_2>...$ 或者在某处终止（这意味着上面的操作在某一步因差值为零而停止，
+[16] 由此 $x$ 在 $q$ 进制下的表达式是有限的）, 或者只能递降到负无穷。
+[17] 因此当 $k\to\infty$ 时，序列 $a_1q^{n_1}+a_2q^{n_2}+...+a_kq^{n_k}$ 越来越逼近实数 $x$. 于是可以写下如下的形式等式：
+[18] \begin{equation}
+x=a_1q^{n_1}+a_2q^{n_2}+...+a_kq^{n_k}+... ~
+\end{equation}
+[19] 它的严格含义是，右端和式的前面有限项组成的序列的极限是 $x$.
+[/SCOPE:s_lemma1]
+[/SCOPE:s_lemma1_let5]
+[/SCOPE:root]

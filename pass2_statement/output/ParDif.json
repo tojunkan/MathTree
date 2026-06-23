@@ -1,0 +1,224 @@
+{
+  "article_name": "ParDif",
+  "statements": [
+    {
+      "stmt_id": "st_intro_let1",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let1",
+      "exposed_entities": [
+        "f",
+        "U",
+        "x_1",
+        "x_2",
+        "x_n"
+      ]
+    },
+    {
+      "stmt_id": "st_partial_derivative_def",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "f",
+        "x_i",
+        "x'_i",
+        "x_1",
+        "x_n",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_let2",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let2",
+      "exposed_entities": [
+        "x_0",
+        "g",
+        "x_i"
+      ]
+    },
+    {
+      "stmt_id": "st_higher_order_derivatives",
+      "subtype": "remark",
+      "clause_range": [
+        18,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geometric_interpretation",
+      "subtype": "remark",
+      "clause_range": [
+        22,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_dirderiv_intro_let",
+      "subtype": "definition",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_dirderiv_intro_let",
+      "exposed_entities": [
+        "v",
+        "S_n",
+        "theta_1",
+        "theta_2",
+        "theta_n"
+      ]
+    },
+    {
+      "stmt_id": "st_dirderiv_def_let",
+      "subtype": "assumption",
+      "clause_range": [
+        29,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_dirderiv_def_let",
+      "exposed_entities": [
+        "f",
+        "D",
+        "x_0",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_dirderiv_def_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_dirderiv_def",
+      "exposed_entities": [
+        "f",
+        "v",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_dirderiv_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_dirderiv_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_dirderiv_remark2",
+      "subtype": "remark",
+      "clause_range": [
+        34,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_dirderiv_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_diff_def_let",
+      "subtype": "assumption",
+      "clause_range": [
+        40,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_diff_def_let",
+      "exposed_entities": [
+        "f",
+        "D",
+        "x_0",
+        "Delta_x",
+        "A_1",
+        "A_n"
+      ]
+    },
+    {
+      "stmt_id": "st_diff_def_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        44,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_diff_def",
+      "exposed_entities": [
+        "f",
+        "x_0",
+        "A_i",
+        "dx_i"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_intro_let1",
+      "target": "st_partial_derivative_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_let2",
+      "target": "st_partial_derivative_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_dirderiv_def_let",
+      "target": "st_dirderiv_def_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_diff_def_let",
+      "target": "st_diff_def_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_dirderiv_def_conclusion",
+      "target": "st_partial_derivative_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "方向导数是偏导数的推广"
+    },
+    {
+      "source": "st_diff_def_conclusion",
+      "target": "st_dirderiv_def_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "可微蕴含方向导数存在"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,364 @@
+{
+  "article_name": "bertTh",
+  "statements": [
+    {
+      "stmt_id": "st_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_equiv",
+      "subtype": "remark",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_no_prime",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_reductio",
+      "exposed_entities": [
+        "n",
+        "N",
+        "p",
+        "alpha_p"
+      ]
+    },
+    {
+      "stmt_id": "st_alpha_eq0",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_p_le_2n3",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theta_bound",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_alpha_ge2",
+      "subtype": "assumption",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_p_sqrt2n",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sum_alpha_ge2",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lnN_bound",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        25
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_N_max",
+      "subtype": "assumption",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_2n_bound",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_binom_def",
+      "subtype": "remark",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_inequality",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_simplify",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_j_def",
+      "subtype": "definition",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_reductio",
+      "exposed_entities": [
+        "j"
+      ]
+    },
+    {
+      "stmt_id": "st_ineq2",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_contradiction",
+      "subtype": "conclusion",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_final_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_small_n",
+      "subtype": "conclusion",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_small_n",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_end",
+      "subtype": "remark",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_no_prime",
+      "target": "st_alpha_eq0",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_no_prime",
+      "target": "st_p_le_2n3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_no_prime",
+      "target": "st_theta_bound",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_alpha_ge2",
+      "target": "st_p_sqrt2n",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_alpha_ge2",
+      "target": "st_sum_alpha_ge2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_no_prime",
+      "target": "st_lnN_bound",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theta_bound",
+      "target": "st_lnN_bound",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sum_alpha_ge2",
+      "target": "st_lnN_bound",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_N_max",
+      "target": "st_2n_bound",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lnN_bound",
+      "target": "st_inequality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_2n_bound",
+      "target": "st_inequality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inequality",
+      "target": "st_simplify",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_simplify",
+      "target": "st_ineq2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_j_def",
+      "target": "st_ineq2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ineq2",
+      "target": "st_contradiction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_contradiction",
+      "target": "st_final_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_small_n",
+      "target": "st_final_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_contradiction",
+      "target": "st_final_conclusion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "反证法推出矛盾，从而原命题成立"
+    },
+    {
+      "source": "st_small_n",
+      "target": "st_theorem",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "小 n 情况是定理的特例"
+    }
+  ],
+  "unresolved": []
+}

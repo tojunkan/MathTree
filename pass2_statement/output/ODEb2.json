@@ -1,0 +1,456 @@
+{
+  "article_name": "ODEb2",
+  "statements": [
+    {
+      "stmt_id": "st_complex_func_intro",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_complex_func",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_complex_let",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_complex_let",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "z(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_euler_formula",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_complex_func",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exp_complex",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_complex_func",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1_let",
+      "exposed_entities": [
+        "z_1(t)",
+        "z_2(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem1_concl1",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_concl2",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_concl3",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_concl4",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_concl5",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        28,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_eq",
+      "subtype": "definition",
+      "clause_range": [
+        33,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "x(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_no_repeated_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_no_repeated_let",
+      "exposed_entities": [
+        "λ"
+      ]
+    },
+    {
+      "stmt_id": "st_no_repeated_concl1",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_no_repeated",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_no_repeated_def_char",
+      "subtype": "definition",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_no_repeated",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_no_repeated_concl2",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_no_repeated",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_no_repeated_concl3",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        48
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_no_repeated",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_no_repeated_remark",
+      "subtype": "remark",
+      "clause_range": [
+        49,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_no_repeated",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_eq",
+      "subtype": "example",
+      "clause_range": [
+        53,
+        57
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_eq",
+      "subtype": "example",
+      "clause_range": [
+        60,
+        65
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_cases_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        68,
+        68
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2_cases_let",
+      "exposed_entities": [
+        "λ_0"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_cases_concl1",
+      "subtype": "conclusion",
+      "clause_range": [
+        69,
+        75
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_cases_concl2",
+      "subtype": "conclusion",
+      "clause_range": [
+        76,
+        77
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_cases_concl3",
+      "subtype": "conclusion",
+      "clause_range": [
+        78,
+        80
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_cases_concl4",
+      "subtype": "conclusion",
+      "clause_range": [
+        81,
+        81
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_cases_concl5",
+      "subtype": "conclusion",
+      "clause_range": [
+        82,
+        86
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_cases_concl6",
+      "subtype": "conclusion",
+      "clause_range": [
+        87,
+        94
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        97,
+        98
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem2_let",
+      "exposed_entities": [
+        "λ_1",
+        "λ_2",
+        "λ_r"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem2_concl",
+      "subtype": "theorem",
+      "clause_range": [
+        99,
+        100
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_complex_let",
+      "target": "st_complex_func_intro",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_assump",
+      "target": "st_theorem1_concl1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_assump",
+      "target": "st_theorem1_concl2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_assump",
+      "target": "st_theorem1_concl3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_assump",
+      "target": "st_theorem1_concl4",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_assump",
+      "target": "st_theorem1_concl5",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_no_repeated_assump",
+      "target": "st_no_repeated_concl1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_no_repeated_assump",
+      "target": "st_no_repeated_concl2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_no_repeated_assump",
+      "target": "st_no_repeated_concl3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_cases_assump",
+      "target": "st_example2_cases_concl1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_cases_assump",
+      "target": "st_example2_cases_concl2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_cases_assump",
+      "target": "st_example2_cases_concl3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_cases_assump",
+      "target": "st_example2_cases_concl4",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_cases_assump",
+      "target": "st_example2_cases_concl5",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_cases_assump",
+      "target": "st_example2_cases_concl6",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem2_assump",
+      "target": "st_theorem2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_theorem2_concl",
+      "target": "st_no_repeated_concl3",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2包含无重根情形作为特例"
+    },
+    {
+      "source": "st_theorem2_concl",
+      "target": "st_example2_cases_concl6",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2包含有重根情形作为特例"
+    }
+  ],
+  "unresolved": []
+}

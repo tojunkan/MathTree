@@ -1,0 +1,139 @@
+[SCOPE:root|description|线性算子的谱]
+文章名: SofLO
+标题: 线性算子的谱
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=本征值，谱，正则点，预解式
+  [1] type=theorem heading=定理 1 title=
+  [2] type=definition heading=定义 2 title=点谱
+  [3] type=definition heading=定义 3 title=连续谱
+  [4] type=theorem heading=定理 2 title=
+
+[SCOPE:s_intro|description|引言与有限维回顾]
+[0] [1] 在算子理论中，谱的概念或许是最重要的概念。
+[1] 在提到谱的地方，我们都假定算子作用域复空间。
+[2] 回顾有限维空间的情形。
+[SCOPE:s_intro_let|let_bind|有限维算子 A]
+[3] 设 $A$ 是 $n$ 维空间 $\mathbb C^n$ 的线性算子，如果方程
+[4] \begin{equation}
+Ax=\lambda x~
+\end{equation}
+[5] 有非零解，
+[6] 则数 $\lambda$ 称为算子 $A$ 的
+[7] 本征值 [链接 L0]
+[8] 。
+[9] 所有本征值的总体称为算子的
+[10] 。
+[11] 而其它的 $\lambda$ 值称为
+[12] 正则点
+[13] 。
+[14] 即 $\lambda$ 是正则点，当且仅当算子 $(A-\lambda I)$ 可逆。
+[15] 此时 $(A-\lambda I)^{-1}$ 定义在整个 $\mathbb C^n$ 上，并且作为有限为空间的任意算子，它是有界的。
+[16] 于是，在有限维空间中有两种可能：
+[17] 方程 $Ax=\lambda x$ 有非零解，$\lambda$ 是 $A$ 的本征值，这时算子 $(A-\lambda I)^{-1}$ 不存在；
+[18] 存在定义在整个空间上的算子 $(A-\lambda I)^{-1}$，
+[19] 即 $\lambda$ 时正则点。
+[20] 但是在无限维空间中，有第三种可能：3）算子 $(A-\lambda I)^{-1}$ 存在，
+[21] 但不是定义在整个空间上的，且可能无界。
+
+[/SCOPE:s_intro]
+[/SCOPE:s_intro_let]
+[22] 无穷维空间里，本征值、谱和正则点的基本概念几乎是一样的。
+[23] 为正式起见，这里给出基本的定义。
+[24] 一般线性拓扑空间中第三种可能的存在将导致一些本质性区别。
+
+[SCOPE:s_def1|description|定义 1 本征值，谱，正则点，预解式]
+[25] 定义 1 本征值，谱，正则点，预解式
+[SCOPE:s_def1_let|let_bind|定义1中的算子 A]
+[26] 设 $A$ 是任意线性拓扑空间中的线性连续算子（定义空间和象空间一样），
+[27] 则称 $(A-\lambda I)^{-1}$ 为算子 $A$ 的预解式。
+[28] 若 $A$ 的预解式 $(A-\lambda I)^{-1}$ 存在且并定义在整个空间上，
+[29] 则称 $\lambda$ 对 $A$ 是正则的。
+[30] 所有其余的值 $\lambda$ 称为 $A$ 的谱。
+[31] 使 $Ax=\lambda x$ 有非零矢量解的数 $\lambda$ 称为算子 $A$ 的本征值。
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_thm1|description|定理 1]
+[32] 定理 1
+[33] 本征值属于谱。
+[SCOPE:s_thm1_let|let_bind|定理1中的本征值 λ]
+[34] 证明：若 $\lambda$ 是本征值，
+[35] 则预解式不存在，
+[36] 即 $\lambda$ 不对线性算子正则，
+[37] 因而属于谱。
+[/SCOPE:s_thm1_let]
+[38] 证毕！
+[39] 该定理引入了下面的概念。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_def2|description|定义 2 点谱]
+[40] 定义 2 点谱
+[41] 本征值的总体称为点谱。
+[42] 对第一可数性空间，定理 1 表明线性连续算子 $A,I$ 有界，特别，对于完备赋范空间上的线性连续算子，由定理 2 ，预解式是有界的。
+[43] 此时谱中的非点谱部分对应的预解式存在，
+[44] 但不是定义在整个空间上的。
+[45] 这是无限维和有限维空间的本质区别。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|定义 3 连续谱]
+[46] 定义 3 连续谱
+[47] 定义在完备赋范空间上的算子的谱中非点谱部分称为连续谱。
+
+[/SCOPE:s_def3]
+[SCOPE:s_thm2|description|定理 2]
+[48] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2中的算子 A 和 λ]
+[49] 若 $A$ 是完备赋范空间 $E$ 中的有界线性算子，且 $ \left\lvert \lambda \right\rvert > \left\lVert A \right\rVert $，
+[50] 则 $\lambda$ 是正则点。
+[51] 证明：
+[52] \begin{equation}
+\begin{aligned}
+A-\lambda I&=-\lambda(I-\frac{A}{\lambda})\\
+\Downarrow\\
+(A-\lambda I)^{-1}&=-\frac{1}{\lambda}(I-\frac{A}{\lambda})^{-1}=-\frac{1}{\lambda}\sum_{k=0}^\infty\frac{A^k}{\lambda^k}.\\
+\end{aligned}~
+\end{equation}
+[53] 以上最后一式源于 $ \left\lVert \frac{A}{\lambda} \right\rVert <1$。
+[54] 由于 $ \left\lVert \frac{A}{\lambda} \right\rVert <1$，最后的级数是收敛、有界并定义在整个空间上的，
+[55] 因而 $(A-\lambda I)^{-1}$ 存在、有界且定义在整个空间上。
+[56] 从而 $\lambda$ 是正则点。
+[57] 证毕！
+
+跨文章引用:
+  [L0] 本征值 → LiOper
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的结论（本征值属于谱）是定义1中谱概念的特例。"
+  },
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "点谱是谱的子集。"
+  },
+  {
+    "source_scope": "s_def3",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "连续谱是谱的子集。"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2给出正则点的充分条件。"
+  }
+]

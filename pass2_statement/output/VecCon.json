@@ -1,0 +1,524 @@
+{
+  "article_name": "VecCon",
+  "statements": [
+    {
+      "stmt_id": "st_let_root",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_root",
+      "exposed_entities": [
+        "M",
+        "E"
+      ]
+    },
+    {
+      "stmt_id": "st_let_def_connection",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_def_connection",
+      "exposed_entities": [
+        "D"
+      ]
+    },
+    {
+      "stmt_id": "st_cond1",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_connection",
+      "exposed_entities": [
+        "X",
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_cond2",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_connection",
+      "exposed_entities": [
+        "c1",
+        "c2"
+      ]
+    },
+    {
+      "stmt_id": "st_cond3",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_connection",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def_connection",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_connection",
+      "exposed_entities": [
+        "D"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_intuition",
+      "subtype": "remark",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_connection",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": [
+        "M",
+        "E"
+      ]
+    },
+    {
+      "stmt_id": "st_example_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example",
+      "exposed_entities": [
+        "D"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_non_trivial",
+      "subtype": "remark",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let_conn_form",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_conn_form",
+      "exposed_entities": [
+        "D",
+        "e_i",
+        "theta^i",
+        "s_alpha"
+      ]
+    },
+    {
+      "stmt_id": "st_conn_form_derivation",
+      "subtype": "theorem",
+      "clause_range": [
+        20,
+        30
+      ],
+      "truth_value": "true",
+      "scope_id": "s_connection_form",
+      "exposed_entities": [
+        "Gamma",
+        "omega"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_local",
+      "subtype": "remark",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_connection_form",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_transformation_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_connection_form",
+      "exposed_entities": [
+        "s'_beta",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_transformation_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        33,
+        36
+      ],
+      "truth_value": "true",
+      "scope_id": "s_connection_form",
+      "exposed_entities": [
+        "omega'"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_transformation",
+      "subtype": "remark",
+      "clause_range": [
+        37,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_connection_form",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_conn_form",
+      "subtype": "example",
+      "clause_range": [
+        40,
+        42
+      ],
+      "truth_value": "true",
+      "scope_id": "s_connection_form",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_origin",
+      "subtype": "remark",
+      "clause_range": [
+        43,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_connection_form",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exist_intro",
+      "subtype": "remark",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_exist_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let_thm1",
+      "subtype": "assumption",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_thm1",
+      "exposed_entities": [
+        "U",
+        "e_i^U",
+        "s_alpha^U",
+        "omega^U"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_cond",
+      "subtype": "assumption",
+      "clause_range": [
+        47,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "b_U^V"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        51,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let_thm2",
+      "subtype": "assumption",
+      "clause_range": [
+        53,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_thm2",
+      "exposed_entities": [
+        "p",
+        "D"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        53,
+        53
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_proof",
+      "subtype": "theorem",
+      "clause_range": [
+        54,
+        60
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        61,
+        62
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_remark2",
+      "subtype": "remark",
+      "clause_range": [
+        63,
+        63
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let_dual",
+      "subtype": "assumption",
+      "clause_range": [
+        64,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_dual",
+      "exposed_entities": [
+        "D",
+        "D*"
+      ]
+    },
+    {
+      "stmt_id": "st_dual_def",
+      "subtype": "definition",
+      "clause_range": [
+        64,
+        66
+      ],
+      "truth_value": null,
+      "scope_id": "s_dual_sum_prod",
+      "exposed_entities": [
+        "D*"
+      ]
+    },
+    {
+      "stmt_id": "st_dual_form",
+      "subtype": "theorem",
+      "clause_range": [
+        67,
+        70
+      ],
+      "truth_value": "true",
+      "scope_id": "s_dual_sum_prod",
+      "exposed_entities": [
+        "omega*"
+      ]
+    },
+    {
+      "stmt_id": "st_dual_expr",
+      "subtype": "theorem",
+      "clause_range": [
+        71,
+        73
+      ],
+      "truth_value": "true",
+      "scope_id": "s_dual_sum_prod",
+      "exposed_entities": [
+        "eta*"
+      ]
+    },
+    {
+      "stmt_id": "st_sum_prod_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        74,
+        74
+      ],
+      "truth_value": null,
+      "scope_id": "s_dual_sum_prod",
+      "exposed_entities": [
+        "D1",
+        "D2",
+        "E1",
+        "E2"
+      ]
+    },
+    {
+      "stmt_id": "st_sum_prod_def",
+      "subtype": "definition",
+      "clause_range": [
+        75,
+        76
+      ],
+      "truth_value": null,
+      "scope_id": "s_dual_sum_prod",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_cond1",
+      "target": "st_def_connection",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cond2",
+      "target": "st_def_connection",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cond3",
+      "target": "st_def_connection",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_assump",
+      "target": "st_example_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_conn_form",
+      "target": "st_conn_form_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_transformation_assump",
+      "target": "st_transformation_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_thm1",
+      "target": "st_thm1_cond",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_cond",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_thm2",
+      "target": "st_thm2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_dual",
+      "target": "st_dual_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sum_prod_assump",
+      "target": "st_sum_prod_def",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_conclusion",
+      "target": "st_exist_intro",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1是存在定理的具体化"
+    },
+    {
+      "source": "st_thm2_conclusion",
+      "target": "st_thm1_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2是定理1的推论"
+    }
+  ],
+  "unresolved": []
+}

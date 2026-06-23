@@ -1,0 +1,342 @@
+[SCOPE:root|description|向量空间的对称/反对称幂]
+文章名: vecSAS
+标题: 向量空间的对称/反对称幂
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=exercise heading=习题 1 title=
+  [2] type=example heading=例 2 title=
+  [3] type=theorem heading=定理 1 title=
+  [4] type=example heading=例 3 title=
+  [5] type=theorem heading=定理 2 title=对称映射的万有性质
+  [6] type=theorem heading=定理 3 title=反对称映射的万有性质
+
+[SCOPE:s_sym_let|let_bind|对称幂的变量]
+[SCOPE:s_sym|description|对称幂]
+[0] 我们可以在 $V^{\times n}$ 上定义自然置换作用例 5 ，类似的 $n$ 阶张量幂空间 $V^{\otimes n}$ 上也可以定义一个 $S_n$ 的群作用：
+[1] \begin{equation}
+\begin{aligned}
+\rho(\sigma): V^{\otimes n} &\to V^{\otimes n}~, \\
+v_1 \otimes \cdots \otimes v_n &\mapsto v_{\sigma(1)} \otimes \cdots \otimes v_{\sigma(n)}~.
+\end{aligned}
+\end{equation}
+[2] 注意：我们把 $\rho(\sigma)$ 被定义为线性的，
+[3] 因此只需要考虑 $V^{\otimes n}$ 的一组基的映射就可以了，完整的写法为 $\sum a_v v_1 \otimes \cdots \otimes v_n \mapsto \sum a_v v_{\sigma(1)} \otimes \cdots \otimes v_{\sigma(n)}$，下同。
+
+[/SCOPE:s_sym_let]
+[/SCOPE:s_sym]
+[SCOPE:s_ex1|description|例1]
+[4] 考虑 $n = 2$，$S_2 = \mathbb{Z}/2\mathbb{Z} = \{e, (1 2)\}$，$\rho(e)$ 是恒等映射，而
+[5] \begin{equation}
+\begin{aligned}
+\rho((1 2)): V \otimes V &\to V \otimes V~, \\
+v_1 \otimes v_2 &\mapsto v_2 \otimes v_1~.
+\end{aligned}
+\end{equation}
+[6] 特别的，我们把 $n$ 阶张量幂空间 $V^{\otimes n}$ 的不动点集 $(V^{\otimes n})^{S_n}$（定义 2 ）称为 $V$ 的 $n$ 阶对称幂空间，记做 $ \operatorname {Sym}^n V$ 或者 $S^n(V)$。
+
+[/SCOPE:s_ex1]
+[7] 习题 1
+[8] $v_1 \otimes \cdots \otimes v_n \in \operatorname {Sym}^n V$ 当且仅当对任意的的 $i, j$，
+[9] \begin{equation}
+\cdots \otimes v_i \otimes \cdots \otimes v_j \otimes \cdots = \cdots \otimes v_j \otimes \cdots \otimes v_i \otimes \cdots~.
+\end{equation}
+
+[SCOPE:s_ex2|description|例2]
+[SCOPE:s_ex2_let1|let_bind|例2的向量空间]
+[10] 考虑 $V = \mathbb{R}^2$；
+[11] $ \operatorname {Sym}^2 V = \langle e_1 \otimes e_1, e_2 \otimes e_2, e_1 \otimes e_2 + e_2 \otimes e_1 \rangle$ 是一个三维向量空间。
+[/SCOPE:s_ex2_let1]
+[SCOPE:s_ex2_let2|let_bind|对称积定义]
+[12] 我们定义（向量的）对称积1
+[13] \begin{equation}
+\begin{aligned}
+\cdot: V \times V &\to V^{\otimes 2}~, \\
+v \cdot w &:= \frac12 (v \otimes w + w \otimes v)~,
+\end{aligned}
+\end{equation}
+[14] 例 2 [链接 L0]
+[15] 中 $ \operatorname {Sym}^2 V$ 的基向量可以写成 $e_1 \cdot e_1, e_2 \cdot e_2$ 和 $e_1 \cdot e_2$（在基向量的意义下，系数不重要）。
+[/SCOPE:s_ex2_let2]
+[16] 注意：我们会说一个向量空间 $V$ 的（反）对称幂空间，以及两个向量的对称积，有时我们会把二阶对称幂空间 $\text{Sym}^2 V$ 称为向量空间 $V$ 的对称积空间，
+[17] 但是这并不严谨。
+[SCOPE:s_ex2_let3|let_bind|多项对称积]
+[18] 更一般的，我们可以定义多项对称积
+[19] \begin{equation}
+\begin{aligned}
+\cdot: V^{\times n} &\to V^{\otimes n}~, \\
+v_1 \cdots v_n &:= \frac{1}{n!} \sum_{\sigma \in S_n} v_{\sigma(1)} \otimes \cdots \otimes v_{\sigma(n)}~,
+\end{aligned}
+\end{equation}
+[20] 比如当 $n = 3$ 时，
+[21] \begin{equation}
+\begin{aligned}
+v_1 \cdot v_2 \cdot v_3 = &\frac16 (v_1 \otimes v_2 \otimes v_3 \\
+&+ v_1 \otimes v_3 \otimes v_2 \\
+&+ v_2 \otimes v_1 \otimes v_3 \\
+&+ v_2 \otimes v_3 \otimes v_1 \\
+&+ v_3 \otimes v_1 \otimes v_2 \\
+&+ v_3 \otimes v_2 \otimes v_1)~,
+\end{aligned}
+\end{equation}
+[22] 可以证明，$v_1 \cdot v_2 \cdots = v_1 \cdot v_3 \cdot v_2 \cdots = \cdots$ 在 $S_n$ 的置换作用下固定，这意味着 $v \cdots w \in \text{Sym}^n V$；
+[23] 取 $V$ 的一组基 $\{e_1, \dots, e_k\}$，可以找到 $ \operatorname {Sym}^n V$ 的一组基
+[24] \begin{equation}
+\left\{ e_{i_1} \cdot \cdots \cdot e_{i_n} \mid 1 \leq i_1 \leq \dots \leq i_n \leq k \right\}~,
+\end{equation}
+[25] 特别的，$\dim( \operatorname {Sym}^n V) =  \begin{pmatrix}k + n - 1 \\ n\end{pmatrix}  $（
+[26] 隔板法 [链接 L1]
+
+[/SCOPE:s_ex2]
+[/SCOPE:s_ex2_let3]
+[SCOPE:s_asym_let|let_bind|反对称幂的变量]
+[SCOPE:s_asym|description|反对称幂]
+[27] 张量幂空间 $V^{\otimes n}$ 上存在另一个 $S_n$ 的群作用：
+[28] \begin{equation}
+\begin{aligned}
+\rho(\sigma): V^{\otimes n} &\to V^{\otimes n}~, \\
+v_1 \otimes \cdots \otimes v_n &\mapsto \operatorname {sgn}(\sigma) v_{\sigma(1)} \otimes \cdots \otimes v_{\sigma(n)}~.
+\end{aligned}
+\end{equation}
+[29] 其中对于偶置换 $ \operatorname {sgn}{\sigma} = 1$、奇置换 $ \operatorname {sgn}{\sigma} = -1$；
+[30] 我们把它的不动点集称为 $V$ 的 $n$ 阶
+[31] 反对称幂空间
+[32] 交错幂
+[33] 外幂
+[34] ），记做 ${\large \wedge}^n V$。
+[35] 同样由于对称群 $S_n$ 由对换生成，我们只需要考虑 “交换两项变号” 即可。
+
+[/SCOPE:s_asym_let]
+[/SCOPE:s_asym]
+[SCOPE:s_thm1|description|定理1]
+[36] 定理 1
+[37] $v_1 \otimes \cdots \otimes v_n \in {\large \wedge}^n V$ 当且仅当对任意的的 $i, j$，
+[38] \begin{equation}
+\cdots \otimes v_i \otimes \cdots \otimes v_j \otimes \cdots = - \cdots \otimes v_j \otimes \cdots \otimes v_i \otimes \cdots~.
+\end{equation}
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex3|description|例3]
+[SCOPE:s_ex3_let1|let_bind|例3的向量空间]
+[39] 考虑 $V = \mathbb{R}^2$；
+[40] 反对称幂子空间 ${\large \wedge}^2 V = \langle e_1 \otimes e_2 - e_2 \otimes e_1 \rangle$，因为
+[/SCOPE:s_ex3_let1]
+[41] \begin{equation}
+\begin{aligned}
+&\phantom{=} \rho((1 2))(e_1 \otimes e_2 - e_2 \otimes e_1) \\
+&= \rho((1 2))(e_1 \otimes e_2) - \rho((1 2))(e_2 \otimes e_1) \\
+&= - e_2 \otimes e_1 + e_1 \otimes e_2
+\end{aligned}~
+\end{equation}
+[SCOPE:s_ex3_let2|let_bind|反对称积定义]
+[42] 我们定义（向量的）反对称积（或称交错积、外积）
+[43] \begin{equation}
+\begin{aligned}
+\wedge: V \times V &\to V^{\otimes 2}~, \\
+v \wedge w &:= \frac12 (v \otimes w - w \otimes v)~,
+\end{aligned}
+\end{equation}
+[44] 例 3 [链接 L2]
+[45] 中 ${\large \wedge}^2 V$ 的基向量可以写成 $e_1 \wedge e_2$。
+[46] 反对称积满足，
+[47] $v \wedge w = - w \wedge v$，特别的，
+[48] $v \wedge v = 0$；
+[49] 这意味着 $v \wedge w \in {\large \wedge}^2 V$。
+[/SCOPE:s_ex3_let2]
+[SCOPE:s_ex3_let3|let_bind|多项反对称积]
+[50] 更一般的，我们可以定义多项反对称积
+[51] \begin{equation}
+\begin{aligned}
+\wedge: V^{\times n} &\to V^{\otimes n}~, \\
+v_1 \wedge \cdots \wedge v_n &:= \frac{1}{n!} \sum_{\sigma \in S_n} \text{sgn}(\sigma) v_{\sigma(1)} \otimes \cdots \otimes v_{\sigma(n)}~,
+\end{aligned}
+\end{equation}
+[52] 对任意的 $\mu \in S_n$，
+[53] \begin{equation}
+\begin{aligned}
+\rho(\mu)(v_1 \wedge \cdots \wedge v_n) &= \frac{1}{n!} \sum_{\sigma \in S_n} \text{sgn}(\sigma) \rho(\mu)(v_{\sigma(1)} \otimes \cdots \otimes v_{\sigma(n)}) \\
+&= \frac{1}{n!} \sum_{\sigma \in S_n} \text{sgn}(\sigma…[truncated]…{\mu(\sigma(1))} \otimes \cdots \otimes v_{\mu(\sigma(n))}) \\
+&= \frac{1}{n!} \sum_{\sigma \in S_n} \text{sgn}(\mu \sigma) (v_{\mu \sigma(1)} \otimes \cdots \otimes v_{\mu \sigma(n)}) \\
+&= v_1 \wedge \cdots \wedge v_n~,
+\end{aligned}
+\end{equation}
+[54] 因此 $v_1 \wedge \cdots \wedge v_n \in {\large \wedge}^n V$。
+[/SCOPE:s_ex3_let3]
+[SCOPE:s_ex3_let4|let_bind|反对称积的推广]
+[55] 我们还可以定义两个反对称积（的结果）之间的的反对称积：
+[56] \begin{equation}
+\begin{aligned}
+\wedge: {\large \wedge}^{n_1} V \times {\large \wedge}^{n_2} V &\to {\large \wedge}^{n_1 + n_2} V~, \\
+\nu \wedge \omega &:= v_1 \wedge \cdots \wedge v_{n_1} \wedge w_1 \wedge \cdots \wedge w_{n_2}~,
+\end{aligned}
+\end{equation}
+[57] 此时的反对称积 “并不满足反对称律”，取而代之的是
+[58] \begin{equation}
+\nu \wedge \omega = (-1)^{n_1 n_2} \omega \wedge \nu~.
+\end{equation}
+[59] 最后，类似对称积的情况，取 $V$ 的一组基 $\{e_1, \dots, e_k\}$，可以找到 ${\large \wedge}^n V$ 的一组基
+[60] \begin{equation}
+\left\{ e_{i_1} \wedge \cdots \wedge e_{i_n} \mid 1 \leq i_1 < \dots < i_n \leq k \right\}~,
+\end{equation}
+[61] 特别的，$\dim({\large \wedge}^n V) =  \begin{pmatrix}k \\ n\end{pmatrix}  $，
+[62] 因此如果 $n > k$，${\large \wedge}^n V$ 就是零空间了。
+
+[/SCOPE:s_ex3]
+[/SCOPE:s_ex3_let4]
+[SCOPE:s_decomp|description|二阶张量幂空间的对称反对称分解]
+[63] 由于 $k$ 维向量空间 $V$ 的二阶张量幂空间可以被分解成对称幂空间和反对称幂空间的直和
+[64] \begin{equation}
+\begin{aligned}
+V^{\otimes 2} &= \operatorname {Sym}^2 V \oplus {\large \wedge}^2 V \\
+v_1 \otimes v_2 &= v_1 \cdot v_2 + v_1 \wedge v_2~.
+\end{aligned}
+\end{equation}
+[65] 另一方面，$k$ 维向量空间 $V$ 的二阶张量幂空间 $V^{\otimes 2}$ 的维度为 $k^2$，我们有
+[66] \begin{equation}
+\begin{aligned}
+\begin{pmatrix}k + 1 \\ 2\end{pmatrix} + \begin{pmatrix}k \\ 2\end{pmatrix} &= \frac{(k + 1)!}{(k - 1)! 2} + \frac{k!}{(k - 2)! 2} \\
+&= \frac{(k + 1) k}{2} + \frac{k (k - 1)}{2} \\
+&= k^2~.
+\end{aligned}
+\end{equation}
+[67] 不过，这个性质对于更高阶的情况不再成立，比如当 $n = 3$ 时
+[68] \begin{equation}
+\begin{aligned}
+\begin{pmatrix}k + 2 \\ 3\end{pmatrix} + \begin{pmatrix}k \\ 3\end{pmatrix} &= \frac{(k + 2)!}{(k - 1)! 6} + \frac{k!}{(k - 3)! 6} \\
+&= \frac{k}{3} ((k + 2)(k + 1) + (k - 1) (k - 2)) \\
+&= \frac{k}{3} (k^2 + 4) \\
+&< k^3~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_decomp]
+[SCOPE:s_quotient_let|let_bind|商空间构造的变量]
+[SCOPE:s_quotient|description|作为商空间的对称/反对称幂]
+[69] 我们可以换一个视角来看待对称/反对称幂。
+[70] 考虑对称积映射 $\cdot: V^{\times n} \to V^{\otimes n}$，由于
+[71] 它的值域为 $ \operatorname {Sym}^n V$，而且
+[72] 它是一个多线性映射，
+[73] 我们可以把它改写为一个线性满同态 $ \operatorname {Sym}: V^{\otimes n} \twoheadrightarrow \operatorname {Sym}^n V$，我们有
+[74] \begin{equation}
+\ker( \operatorname {Sym}) = \{v - \rho_\text{perm}(g) v \mid v \in V^{\otimes n}, g \in S_n\}~,
+\end{equation}
+[75] 换言之，我们可以把 $ \operatorname {Sym}^n V$ 理解成 $V^{\otimes n}$ 的商空间；
+[76] 类似的，反对称积映射 $\wedge: V^{\times n} \to V^{\otimes n}$ 可以改写成线性满同态 ${\large \wedge}: V^{\otimes n} \twoheadrightarrow {\large \wedge}^n V$，同样有
+[77] \begin{equation}
+\ker({\large \wedge}) = \{v - \rho_\text{sign}(g) v \mid v \in V^{\otimes n}, g \in S_n\}~.
+\end{equation}
+
+[/SCOPE:s_quotient_let]
+[/SCOPE:s_quotient]
+[SCOPE:s_univ|description|对称/反对称幂的万有性质]
+[78] 【未完成】万有性质的文章，包含初/终性质
+
+[/SCOPE:s_univ]
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[SCOPE:s_thm2|description|定理2 对称映射的万有性质]
+[79] 定理 2 对称映射的万有性质
+[80] 对称幂映射 $ \operatorname {Sym}: V^{\times n} \to \operatorname {Sym}^n V$ 是一个对称映射，而且 $ \operatorname {Sym}^n V$ 是所有到达域中 “最小的” 的（初对象，相关文章有待补充）：任意对称映射 $f: V^{\times n} \to W$，我们都有唯一确定的线性映射 $\bar{f}: \operatorname {Sym}^n V \to W$，满足 $f = \bar{f} \circ \operatorname {Sym}$，我们有交换图
+[81] \begin{equation}
+\begin{CD}
+V^{\times n} @>{ \operatorname {Sym}}>> \operatorname {Sym}^n V \\
+@V{f}VV @V{\bar{f}}VV \\
+W @= W
+\end{CD}~.
+\end{equation}
+[82] 对称映射的万有性质可以对照张量积的万有性质定义 1 进行理解。
+[83] 类似的，
+
+[/SCOPE:s_thm2_let]
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[SCOPE:s_thm3|description|定理3 反对称映射的万有性质]
+[84] 定理 3 反对称映射的万有性质
+[85] 反对称幂映射 ${\large \wedge}: V^{\times n} \to {\large \wedge}^n V$ 是一个反对称映射，任意反对称映射 $f: V^{\times n} \to W$，我们都有唯一确定的线性映射 $\bar{f}: {\large \wedge}^n V \to W$，满足 $f = \bar{f} \circ {\large \wedge}$，我们有交换图
+[86] \begin{equation}
+\begin{CD}
+V^{\times n} @>{{\large \wedge}}>> {\large \wedge}^n V \\
+@V{f}VV @V{\bar{f}}VV \\
+W @= W
+\end{CD}~.
+\end{equation}
+[87] 万有性质保证了对称/反对称幂空间在同构意义下的唯一性，进而证明了子空间构造和商空间构造是同构的。
+
+跨文章引用:
+  [L1] 隔板法 → BarCom
+[/SCOPE:s_thm3_let]
+[/SCOPE:s_thm3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_sym",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是n=2时的对称幂"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_sym",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2具体化对称幂"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_asym",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例3具体化反对称幂"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_asym",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1刻画反对称幂"
+  },
+  {
+    "source_scope": "s_decomp",
+    "target_scope": "s_sym",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "分解涉及对称幂"
+  },
+  {
+    "source_scope": "s_decomp",
+    "target_scope": "s_asym",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "分解涉及反对称幂"
+  },
+  {
+    "source_scope": "s_quotient",
+    "target_scope": "s_sym",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "商空间构造等价于子空间构造"
+  },
+  {
+    "source_scope": "s_quotient",
+    "target_scope": "s_asym",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "商空间构造等价于子空间构造"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_sym",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2给出对称幂的万有性质"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_asym",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3给出反对称幂的万有性质"
+  }
+]

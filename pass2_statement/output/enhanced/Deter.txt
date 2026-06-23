@@ -1,0 +1,109 @@
+[SCOPE:root|description|行列式]
+文章名: Deter
+标题: 行列式
+
+环境标记 (hints):
+  [0] type=exercise heading=习题 1 title=
+
+[SCOPE:s_intro|description|行列式介绍]
+[0] 1行列式（determinant）是线性代数中的一个重要工具，常用于判断线性相关性（定理 6 ）或解线性方程组（见克拉默法则）。
+[1] 一个 $N\times N$ 的方阵 $ \boldsymbol{\mathbf{A}} $ 的行列式叫做 $N$ 阶行列式，记为 $ \left\lvert \boldsymbol{\mathbf{A}} \right\rvert $，矩阵元可以是实数或者复数。
+[2] 行列式的运算的结果是一个数，若结果不为零，
+[3] 则所有列矢量（或行矢量）线性无关，否则线性相关。
+[4] 物理中经常出现二阶和三阶行列式，我们先介绍它们的性质，然后介绍高阶的情况。
+[SCOPE:s_intro_let_2x2|let_bind|二阶方阵变量]
+[5] 令二阶方阵 $ \boldsymbol{\mathbf{A}} $ 第 $i$ 行第 $j$ 列的矩阵元为 $a_{i,j}$，其行列式为
+[6] \begin{equation}
+\left\lvert \boldsymbol{\mathbf{A}} \right\rvert =
+\begin{vmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{vmatrix} = a_{11}a_{22} - a_{12}a_{21}~.
+\end{equation}
+[/SCOPE:s_intro_let_2x2]
+[SCOPE:s_intro_let_3x3|let_bind|三阶方阵变量]
+[7] 三维方阵 $ \boldsymbol{\mathbf{A}} $ 的行列式展开后有 6 项
+[8] \begin{equation}
+\begin{aligned}
+\left\lvert \boldsymbol{\mathbf{A}} \right\rvert =
+\begin{vmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{vmatrix}
+&=
+a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} \\
+&\qquad- a_{11}a_{23}a_{32} - a_{12}a_{21}a_{33} - a_{13}a_{22}a_{31}~,
+\end{aligned}
+\end{equation}
+[9] 行列式也可以记为 $\det{ \boldsymbol{\mathbf{A}} }$。
+
+[/SCOPE:s_intro]
+[/SCOPE:s_intro_let_3x3]
+[SCOPE:s_geo|description|几何理解]
+[10] 【图解】图 1：二阶行列式的绝对值对应平行四边形的面积
+[11] 在集合理解中，我们假设矩阵元都是实数。
+[12a] 如图 1 ，二阶行列式的绝对值对应平行四边形的面积（可以认为是二维空间中的 “体积”）
+[12b] 若把行列式的两列看成两个几何矢量的坐标，他们，则是平行四边形的两条边。
+[13] 当 $ \boldsymbol{\mathbf{v}} _1$ 逆时针转动2得到 $ \boldsymbol{\mathbf{v}} _2$ 时，行列式的值为正，反之为负。
+[14] 【图解】图 2：三阶行列式对应平行四面体的体积
+[15a] 如图 2 ，二阶行列式代表一个平行四面体的体积
+[15b] 若把行列式的 3 列看成 3 个几何矢量的坐标，他们，则是平行四面体的 3 条边。
+[16a] 若 $ \boldsymbol{\mathbf{v}} _1, \boldsymbol{\mathbf{v}} _2, \boldsymbol{\mathbf{v}} _3$ 的位置关系与 $x, y, z$ 轴的关系相似（符合右手定
+[16b] 则）则行列式的值为正，反之为负。
+
+[/SCOPE:s_geo]
+[SCOPE:s_exercise|description|习题1]
+[17] 习题 1
+[18] 请证明二阶行列式对应平行四边形的面积，三阶行列式对应平行四面体的体积
+[19] 以上两个结论也可以拓展到更高维的情况，
+[20] 即 $N$ 阶行列式表示 $N$ 维空间中平行体的体积（见行列式与体积）。
+[21] 另外，以后我们会看到行列式转置（即 $a_{ij}$ 变为 $a_{ji}$）以后不影响它的值（定理 8 ），
+[22] 所以我们也可以把每行看成是平行体一条边的坐标。
+[23] 由行列式的几何意义，我们很容易理解为什么行列式的值为零当且仅当行矢量或列矢量线性相关：例如三维的情况下，$ \boldsymbol{\mathbf{v}} _1, \boldsymbol{\mathbf{v}} _2, \boldsymbol{\mathbf{v}} _3$ 线性相关意味着三矢量共面，体积必为零。
+
+[/SCOPE:s_exercise]
+[SCOPE:s_general_def_let|let_bind|一般定义变量]
+[SCOPE:s_general_def|description|行列式的一般定义]
+[24] $N$ 阶行列式（$N$ 为正整数3）共有 $N!$ 项，每一项都是 $N$ 个矩阵元的乘积4。
+[25] 每一项中的 $N$ 个矩阵元的行标和列标各不相同，我们既可以在每一项中按照行标来排序，也可以按照列标，我们选用前者。
+[26] 排序后，行列式展开后的任意一项可记为（先不考虑前面的 $\pm$ 号）
+[27] \begin{equation}
+\prod_{i=1}^N a_{i,\pi_{n,i}} =
+a_{1,\pi_{n,1}} \boldsymbol\cdot a_{2,\pi_{n,2}} \dots~.
+\end{equation}
+[28] 其中列标 $\pi_{n,i}$ 是集合 ${1,2 \dots N}$
+[29] 排列 [链接 L0]
+[30] 后的第 $i$ 个数，显然该数列共有 $N!$ 种不同的排列，这里用 $n$ 表示第 $n$ 种排列，也表示行列式展开的第 $n$ 项。
+[31] 现在来考虑式 3 前面的 $\pm$ 号。
+[32] 这由 $\pi_n$ 的逆序数 $r$ 决定。
+[33] $N$ 阶行列式可以用逆序数定义为
+[34] \begin{equation}
+\operatorname {det}{A} = \sum_{n=1}^{N!} (-1)^{r} \prod_{i=1}^N a_{i,\pi_{n,i}}~.
+\end{equation}
+
+[/SCOPE:s_general_def_let]
+[/SCOPE:s_general_def]
+[SCOPE:s_levi_civita|description|Levi-Civita符号]
+[35] \begin{equation}
+\operatorname {det}{A} = \sum_{i_1 = 1}^N \sum_{i_2 = 1}^N \dots \sum_{i_N = 1}^N \epsilon_{i_1, \dots, i_N} a_{1,i_1}a_{2,i_2}\dots a_{N,i_N}~.
+\end{equation}
+[36] 式 4 [链接 L1]
+[37] 等效：该式共有 $N^N$ 项求和，根据 LC 符号的定义，$i_1, \dots, i_N$ 中任意两个角标相同时该项为零，
+[38] 所以不为零的项中 $i_1, \dots, i_N$ 必为 $\pi_n$ 的一种，仍然只有 $N!$ 种不同的可能，这时 $\epsilon_{i_1, \dots, i_N} = (-1)^{r}$。
+
+跨文章引用:
+  [L0] 排列 → permut
+[/SCOPE:s_levi_civita]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_general_def",
+    "target_scope": "s_levi_civita",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "行列式的一般定义与Levi-Civita符号定义等价"
+  }
+]

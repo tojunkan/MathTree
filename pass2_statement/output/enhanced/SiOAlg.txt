@@ -1,0 +1,162 @@
+[SCOPE:root|description|算子代数]
+文章名: SiOAlg
+标题: 算子代数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=极小多项式
+  [1] type=theorem heading=定理 1 title=
+  [2] type=theorem heading=定理 2 title=
+
+[SCOPE:s_algebra_def|description|代数定义]
+[0] 根据线性映射的数乘，加法运算，及映射复合定义 6 ，可令
+[1] \begin{equation}
+(\mathcal{A}+\mathcal{B}) x=\mathcal{A} x+\mathcal{B} x~,\quad (\lambda\mathcal A) x=\lambda(\mathcal A x)~,\quad (\mathcal{AB}) x=\mathcal{A}(\mathcal{B} x)~.
+\end{equation}
+[2] 也就是说，我们把线性算子之间的复合理解成线性算子空间上的乘法。
+[3] 由式 1 可直接验证
+[4] \begin{equation}
+\begin{aligned}
+&\alpha(\mathcal{A+B})=\alpha\mathcal{A}+\alpha\mathcal{B}~,\\
+&(\alpha+\beta)\mathcal{A}=\alpha\mathcal{A}+\beta\mathcal{A}~,\\
+&(\alpha\beta)\mathcal{A}=\alpha(\beta\mathcal{A})~,\\
+&1\cdot \mathcal{A}=\mathcal A~,\…[truncated]…uad(\text{结合律})~,\\
+&\mathcal A(\mathcal{B+C})=\mathcal{AB+AC}~,\quad (\mathcal{A+B})\mathcal C=\mathcal{AC+BC}\quad(\text{分配律})~,\\
+&\lambda(\mathcal{AB})=(\lambda\mathcal{A})\mathcal{B}=\mathcal{A}(\lambda \mathcal B)~.
+\end{aligned}
+\end{equation}
+[5] 我们看到，$\mathcal{L}(V)$ 不仅是个矢量空间，同时也是个结合环
+[6] 定义 2 [链接 L0]
+[7] ，最后的关系式建立了纯量和算子之间乘法的补充定律。
+[8] 这样一个满足补充定律 $\lambda(ab)=(\lambda a)b=a(\lambda b)$ , 又是环又是域 $\mathbb{F}$ 上的向量空间 $K$，就称为域 $\mathbb{F}$ 上的
+[9] 代数
+[10] 定义 1 [链接 L1]
+[11] 。
+[12] $K$ 作为矢量空间的维数即称为代数 $K$ 的
+[13] 维数
+
+[/SCOPE:s_algebra_def]
+[SCOPE:s_subalgebra|description|单一算子生成的子代数]
+[14a] 已经知道，定义在域 $\mathbb{F}$ 上的向量空间 $K$
+[14b] 如果它同时是一个环，它，则是一个代数。
+[15] 如果这个向量空间 $K$ 的子空间 $L$ 对于 $K$ 作为环的乘法封闭，
+[16] 那么 $L$ 就称为代数 $K$ 的子代数。
+[SCOPE:s_subalgebra_let|let_bind|引入算子A]
+[17] 现在要研究包含算子 $\mathcal{A}$ 的最小子代数（且含环的单位元 $\mathcal{E}$），这个子代数记作 $\mathbb{F}[\mathcal A]$（之所以这样记，是因为这个子代数是域 $\mathbb{F}$ 上的多项式环例 3 ）。
+[18] 要找包含算子 $\mathcal{A}$ 的最小子代数 $\mathbb{F}[\mathcal A]$，可以这样思考：首先考虑这个子代数是个向量空间并且含有 $\mathcal{E}$，
+[19] 那么由算子 $\mathcal{A,E,O}$（$\mathcal{O}$ 为零算子例 1 ）进行向量空间的加法和数乘得到的元素形为 $a_0\mathcal{E},a_1\mathcal{A}\;\forall a_0,a_1\in\mathbb{F}$。
+[20] 现在，这个子代数至少包含 $a_0\mathcal{E},a_1\mathcal{A}\;\forall a_0,a_1\in\mathbb{F}$。
+[21] 考虑子代数也是个环，
+[22] 那么由算子 $a_0\mathcal{E},a_1\mathcal{A}\;\forall a_0,a_1\in\mathbb{F}$ 进行环的乘法得到的元素形为 $a_0\mathcal{E},a_1\mathcal{A},a_2\mathcal{A}^2\;\forall a_0,a_1,a_2\in\mathbb{F}$，
+[23] 所以现在这个子代数至少包含算子 $a_0\mathcal{E},a_1\mathcal{A},a_2\mathcal{A}\;\forall a_0,a_1,a_2\in\mathbb{F}$；
+[24] 再考虑它是个向量空间及环，如此重复可得到这个子代数至少包含所有下面形式的元素（注意 $\mathcal{A}^0=\mathcal{E}$）
+[25] \begin{equation}
+f(\mathcal{A})=\sum_{i=0}^ma_i\mathcal{A^i},\;m\in\mathbb{N}~.
+\end{equation}
+[26] 易验证，所有形如
+[27] 式 3 [链接 L2]
+[28] 的元素构成一个子代数，这个子代数便是要找的 $\mathbb{F}[\mathcal A]$，称为由
+[29] 算子 $\mathcal{A}$ 生成的子代数
+
+[/SCOPE:s_subalgebra]
+[/SCOPE:s_subalgebra_let]
+[SCOPE:s_commutative|description|交换性]
+[30] 代数 $\mathbb{F}[\mathcal A]$ 是交换的，因为 $\mathcal A^{k}\cdot \mathcal{A}^l=\mathcal{A}^{k+l}=\mathcal A^{l}\cdot \mathcal{A}^k$（利用 $\mathcal{A}$ 本身的交换性和结合性易证该性质），易验证 $f(\mathcal{A})g(\mathcal{A})=g(\mathcal{A})f(\mathcal{A})$。
+[31] 与线性算子作用在向量上的方式一样，$f(\mathcal{A})$ 通过以下方式作用在 $ \boldsymbol{\mathbf{x}} \in V$ 上：
+[32] \begin{equation}
+f(\mathcal{A}) \boldsymbol{\mathbf{x}} =a_0 \boldsymbol{\mathbf{x}} +\sum_{i=1}^m a_i\mathcal{A}^i \boldsymbol{\mathbf{x}} ~.
+\end{equation}
+
+[/SCOPE:s_commutative]
+[SCOPE:s_minpoly_def|description|极小多项式定义]
+[33] 定义 1 极小多项式
+[34] 称多项式 $f(t)$ 零化 算子 $\mathcal{A}$，如果 $f(\mathcal{A})=\mathcal O$。
+[35] 次数（定义 1 ）最低且首项系数为 1 的多项式称为算子 $\mathcal{A}$ 的极小多项式。
+
+[/SCOPE:s_minpoly_def]
+[SCOPE:s_thm1|description|定理1]
+[SCOPE:s_thm1_let1|let_bind|引入A]
+[36] 定理 1
+[37] 所有线性算子 $\mathcal{A}$ 都有极小多项式 $\mu_\mathcal{A}(t)$，其次数与代数 $\mathbb{F}[\mathcal{A}]$ 的维数一致。
+[38] 算子 $\mathcal{A}$ 可逆，当且仅当 $\mu_\mathcal{A}(t)$ 的常数项不为 0.
+[/SCOPE:s_thm1_let1]
+[39] 证明：
+[SCOPE:s_thm1_part1|description|定理1前一部分]
+[40] (1)定理前一部分的证明
+[SCOPE:s_thm1_let2|let_bind|引入mu_A]
+[41] \begin{equation}
+\mu_\mathcal{A}(t)=\sum_{i=0}^{m-1}\mu_i\mathcal t^i+t^m~,
+\end{equation}
+[42] 那么 $\mathcal{A}^0,\mathcal{A},\cdots \mathcal{A}^{m-1}$ 必然线性无关。
+[/SCOPE:s_thm1_let2]
+[43a] 因为
+[43b] 若 $\sum\limits_{i=0}^{m-1}\lambda_i\mathcal{A}^i=\mathcal{O}$，则意味着 $\sum\limits_{i=0}^{m-1}\lambda_i\mathcal{A}^i=\mathcal{O}$ 零化 $\mathcal A$，而它的次数小于 $m$，与 $\mu_\mathcal{A}(t)$ 是极小多项式矛盾。
+[44] 反之，若 $\mathcal{A}^0,\mathcal{A},\cdots \mathcal{A}^{m-1}$ 线性无关，而 $\mathcal{A}^m$ 可由它们线性表示，
+[45] 则极小多项式次数为 $m$，因为
+[46] \begin{equation}
+\mathcal A^m=\sum_{i=0}^{m-1}\lambda_i\mathcal A^i~,
+\end{equation}
+[47] 就意味 $t^m-\sum\limits_{i=0}^{m-1}\lambda_i\mathcal t^i$ 是极小多项式。
+[48] 由于 $\mathbb{F}[\mathcal{A}]\subset\mathcal{L}(V)$，而 $\mathrm{dim}(V)=n^2$（因为 $\mathcal{L}(V)$ 上的线性算子和 $n$ 阶矩阵相对应，而 $n$ 阶矩阵构成 $n^2$ 维的向量空间，它以第 $i$ 行第 $j$ 列元素为 1，其余为 0 的矩阵 $E_{ij}$ 为基底向量），
+[49] 所以 $m\leq n^2$。
+[50] 由于每一线性算子 $\mathcal A$ 都有与之对应的子代数 $\mathbb{F}[\mathcal A]$，其至少是一维的（这一维对应基底 $\mathcal{E=A}^0$），而上述表明 $\mathbb{F}[\mathcal A]$ 的维度 $m$（$1\leq m\leq n$）一定存在，这对应 $m$ 个线性无关向量 $\mathcal{A}^0,\mathcal{A},\cdots \mathcal{A}^{m-1}$ ,那么式 6 的 $\mathcal A^m$ 和它们一起便构成极小多项式 $t^m-\sum\limits_{i=0}^{m-1}\lambda_i\mathcal t^i$。
+[51] 即每一线性算子都有极小多项式，且次数就是代数 $\mathbb{F}[\mathcal{A}]$ 的维度。
+[/SCOPE:s_thm1_part1]
+[SCOPE:s_thm1_part2|description|定理1后一部分]
+[52] (2)定理后一部分证明
+[53] 若 $\mu_0= 0$，
+[54] 那么
+[55] \begin{equation}
+\mathcal O=\mu_\mathcal{A}(\mathcal A)=\mathcal A(\sum_{i=1}^{m-1}\mu_i\mathcal A^i+\mathcal{A})~.
+\end{equation}
+[56] 即 $\mathcal{A}$ 有零因子
+[57] 定义 1 [链接 L3]
+[58] $\sum\limits_{i=1}^{m-1}\mu_i\mathcal A^i+\mathcal{A}\neq \mathcal O$（$\mu_\mathcal{A}(t)$ 的极小性），而环中有零因子的元素无逆元（因为若 $a$ 可逆且 $ab=0,b\neq 0\Rightarrow 0\neq b=a^{-1}0=0$）。
+[59] 反过来，若 $\mu_0\neq0$，
+[60] 那么
+[61] \begin{equation}
+-\mathcal{A} \left(\sum_{i=1}^{m-1}\frac{\mu_i}{\mu_0}\mathcal A^{i-1}+\frac{1}{\mu_0}\mathcal A^{m-1} \right) =\mathcal{E}~,
+\end{equation}
+[62] 显然 $\mathcal{A}$ 可逆。
+[63] 证毕！
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_part2]
+[SCOPE:s_thm2|description|定理2]
+[SCOPE:s_thm2_let|let_bind|引入A和f]
+[64] 定理 2
+[65] 若 $f(t)$ 零化算子 $\mathcal A$，
+[66a] (t)|f
+[66b] (t)$定义 1 。
+[/SCOPE:s_thm2_let]
+[67] .
+[68] 证明：由定理 1 ，可设
+[69] \begin{equation}
+f(t)=q(t)\mu_\mathcal{A}(t)+r(t),\quad\mathrm{deg}\;r(t)<\mathrm{deg}\;\mu_{\mathcal{A}}(t)~,
+\end{equation}
+[70] \begin{equation}
+\mathcal O=f(\mathcal A)=q(\mathcal A)\mathcal O+r(\mathcal A)=r(\mathcal A)~,
+\end{equation}
+[71a] (t)<\mathrm{deg}\;\mu_{\mathcal A}
+[71b] (t)$ 矛盾。
+[72] 即 $r(t)=0$。
+[73] 证毕！
+[/SCOPE:s_thm2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_minpoly_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1引用极小多项式定义"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2引用定理1"
+  }
+]

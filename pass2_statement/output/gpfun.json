@@ -1,0 +1,151 @@
+{
+  "article_name": "gpfun",
+  "statements": [
+    {
+      "stmt_id": "st_group_function_def",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_group_function_let",
+      "exposed_entities": [
+        "G",
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_group_function_space_def",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_gfs_let",
+      "exposed_entities": [
+        "F_G",
+        "v_i",
+        "g_alpha"
+      ]
+    },
+    {
+      "stmt_id": "st_gfs_isomorphism",
+      "subtype": "theorem",
+      "clause_range": [
+        9,
+        11
+      ],
+      "truth_value": "true",
+      "scope_id": "s_group_function_space",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rep_gives_gf",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_gfs_rep",
+      "exposed_entities": [
+        "D",
+        "f_mu_nu"
+      ]
+    },
+    {
+      "stmt_id": "st_rep_gf_important",
+      "subtype": "remark",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_gfs_rep",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_inner_product_def",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_group_function_space",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_class_function_def",
+      "subtype": "definition",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_class_function_let",
+      "exposed_entities": [
+        "G",
+        "f",
+        "c_alpha"
+      ]
+    },
+    {
+      "stmt_id": "st_class_space_isomorphism",
+      "subtype": "theorem",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "s_class_function",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_group_function_def",
+      "target": "st_group_function_space_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_group_function_space_def",
+      "target": "st_gfs_isomorphism",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rep_gives_gf",
+      "target": "st_rep_gf_important",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_class_function_def",
+      "target": "st_class_space_isomorphism",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_group_function_space_def",
+      "target": "st_group_function_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "群函数空间是群函数的线性组合，是群函数的推广"
+    },
+    {
+      "source": "st_class_function_def",
+      "target": "st_group_function_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "类函数是群函数在共轭类上的特例"
+    }
+  ],
+  "unresolved": []
+}

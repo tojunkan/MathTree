@@ -1,0 +1,64 @@
+{
+  "article_name": "Arctan",
+  "statements": [
+    {
+      "stmt_id": "st_definition_scope",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_definition",
+      "exposed_entities": [
+        "P",
+        "x",
+        "y",
+        "θ",
+        "Arctan(y,x)"
+      ]
+    },
+    {
+      "stmt_id": "st_let_arctan",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_arctan",
+      "exposed_entities": [
+        "x",
+        "y",
+        "Arctan(y,x)"
+      ]
+    },
+    {
+      "stmt_id": "st_partial_derivatives",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        15
+      ],
+      "truth_value": "true",
+      "scope_id": "s_partial_derivatives",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let_arctan",
+      "target": "st_definition_scope",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_partial_derivatives",
+      "target": "st_definition_scope",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

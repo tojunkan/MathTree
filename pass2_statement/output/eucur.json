@@ -1,0 +1,259 @@
+{
+  "article_name": "eucur",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "I",
+        "f",
+        "f(I)"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "I",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_simple",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2",
+      "subtype": "definition",
+      "clause_range": [
+        18,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def3",
+      "subtype": "definition",
+      "clause_range": [
+        23,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "f",
+        "f'(t0)",
+        "||f'(t0)||",
+        "∫_a^b ||f'(t)|| dt"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_let",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3_let",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def4",
+      "subtype": "definition",
+      "clause_range": [
+        26,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "f",
+        "s"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_let",
+      "subtype": "assumption",
+      "clause_range": [
+        27,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4_let",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def5",
+      "subtype": "definition",
+      "clause_range": [
+        32,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_def5",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def5_let",
+      "subtype": "assumption",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_def5_let",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def6",
+      "subtype": "definition",
+      "clause_range": [
+        40,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_def6",
+      "exposed_entities": [
+        "C",
+        "p",
+        "U"
+      ]
+    },
+    {
+      "stmt_id": "st_def6_let",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_def6_let",
+      "exposed_entities": [
+        "C",
+        "p",
+        "U"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_let",
+      "target": "st_def3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def4_let",
+      "target": "st_def4",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def5_let",
+      "target": "st_def5",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def6_let",
+      "target": "st_def6",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_def2",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "连续可微参数曲线是参数曲线的特例"
+    },
+    {
+      "source": "st_def3",
+      "target": "st_def2",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "速度、速率、弧长定义在连续可微参数曲线上"
+    },
+    {
+      "source": "st_def4",
+      "target": "st_def3",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "常速率参数曲线是连续可微参数曲线的特例"
+    },
+    {
+      "source": "st_def5",
+      "target": "st_def2",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "光滑参数曲线是任意阶连续可微参数曲线"
+    },
+    {
+      "source": "st_def6",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "曲线是局部为简单参数曲线轨迹的子集"
+    }
+  ],
+  "unresolved": []
+}

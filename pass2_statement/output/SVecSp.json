@@ -1,0 +1,322 @@
+{
+  "article_name": "SVecSp",
+  "statements": [
+    {
+      "stmt_id": "st_def1_main",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "V",
+        "V_0",
+        "V_1",
+        "|v|"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "F",
+        "V",
+        "V_0",
+        "V_1",
+        "|v|"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_main",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "V",
+        "V_0",
+        "V_1",
+        "n",
+        "m",
+        "F^{n|m}"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "V",
+        "V_0",
+        "V_1",
+        "n",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_main",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "V",
+        "Pi V"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_let",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3_let",
+      "exposed_entities": [
+        "V",
+        "Pi V"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_main",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "V",
+        "W",
+        "Hom(V,W)",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_let",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4_let",
+      "exposed_entities": [
+        "V",
+        "W",
+        "V_0",
+        "V_1",
+        "W_0",
+        "W_1",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_main",
+      "subtype": "theorem",
+      "clause_range": [
+        27,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "V",
+        "W",
+        "f",
+        "g",
+        "h",
+        "Hom(V,W)",
+        "Pi V",
+        "Pi W"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "V",
+        "W",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion1",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "g",
+        "h"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion2",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "Hom(V,W)",
+        "Pi V",
+        "Pi W"
+      ]
+    },
+    {
+      "stmt_id": "st_def5_main",
+      "subtype": "definition",
+      "clause_range": [
+        34,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_def5",
+      "exposed_entities": [
+        "V",
+        "V*",
+        "v_i",
+        "f^i"
+      ]
+    },
+    {
+      "stmt_id": "st_def5_let",
+      "subtype": "assumption",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_def5_let",
+      "exposed_entities": [
+        "V",
+        "V*",
+        "v_i",
+        "f^i"
+      ]
+    },
+    {
+      "stmt_id": "st_ops_main",
+      "subtype": "definition",
+      "clause_range": [
+        40,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_ops",
+      "exposed_entities": [
+        "V",
+        "W",
+        "V⊕W",
+        "V⊗W",
+        "v^a",
+        "w^b"
+      ]
+    },
+    {
+      "stmt_id": "st_ops_let",
+      "subtype": "assumption",
+      "clause_range": [
+        40,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_ops_let",
+      "exposed_entities": [
+        "V",
+        "W",
+        "V_0",
+        "V_1",
+        "W_0",
+        "W_1",
+        "v^a",
+        "w^b"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_let",
+      "target": "st_def3_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def4_let",
+      "target": "st_def4_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1_conclusion1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_conclusion1",
+      "target": "st_thm1_conclusion2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def5_let",
+      "target": "st_def5_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ops_let",
+      "target": "st_ops_main",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

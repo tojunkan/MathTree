@@ -1,0 +1,48 @@
+[SCOPE:root|description|无穷小、无穷大和阶数（极简微积分）]
+文章名: InfOrd
+标题: 无穷小、无穷大和阶数（极简微积分）
+
+环境标记 (hints):
+  [0] type=exercise heading=习题 1 title=
+
+[0] 本文存在未完成的内容。
+
+[SCOPE:s_inf_def|description|无穷小、无穷大的定义]
+[1] 首先，我们要严格区分一个给定的实数和无穷大或无穷小之间的区别。
+[2] 一个给定的实数是指一个具体的值，例如 $3.2 \times 10^{-100} $ 或者 $1.6 \times 10^{1000} $。
+[3] 无论一个确定的实数多么大或多么小，都不能说它是无穷。
+[SCOPE:s_inf_let|let_bind|无穷小定义中的变量]
+[4] 无穷小是一个过程，具体来在求函数 $f(x)$ 的极限时，如果
+[5] \begin{equation}
+\lim_{x\to \square} f(x) = 0~,
+\end{equation}
+[6] $f(x)$ 就可以叫做无穷小。
+[7] 这里的 $\square$ 代表一个实数或者 $\pm\infty$。
+[/SCOPE:s_inf_let]
+[8] 如果我们说一个符号或者函数是无穷小，
+[9] 那么就暗含者我们在讨论某个
+[10] 式 1 [链接 L0]
+[11] 这样的极限。
+[12] 反之，如果（定义见式 10 ）
+[13] \begin{equation}
+\lim_{x\to \square} f(x) = \pm\infty~,
+\end{equation}
+[14] 就说 $f(x)$ 是无穷大。
+
+[/SCOPE:s_inf_def]
+[SCOPE:s_exercise1|description|习题 1]
+[15] 习题 1
+[16] 说明以下极限中的表达式是无穷小（即极限等于 0）
+[17] $\lim\limits_{x\to 0} x$
+[18] $\lim\limits_{x\to 0} x^n$ 其中 $n$ 是一个正整数
+[19] $\lim\limits_{x\to 0} \sqrt{x}$
+[20] $\lim\limits_{x\to 0} \sin x$
+[21] $\lim\limits_{x\to \infty} 1/x$
+[22] 如果把以上的 $\lim\limits_{x\to 0}$ 和 $\lim\limits_{x\to \infty}$ 互换，哪些会变为无穷大？
+
+[/SCOPE:s_exercise1]
+[SCOPE:s_inf_order|description|高阶无穷小、高阶无穷大]
+[23] 在某个极限 $\lim\limits_{x\to \square}$ 的语境下，如果 $f(x)$ 是无穷小，我们可以定义它的阶数。
+[24] 【未完成】复制过来
+[/SCOPE:s_inf_order]
+[/SCOPE:root]

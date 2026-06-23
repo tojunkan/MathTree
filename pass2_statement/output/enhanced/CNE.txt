@@ -1,0 +1,61 @@
+[SCOPE:root|description|线性泛函的保范延拓]
+文章名: CNE
+标题: 线性泛函的保范延拓
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=corollary heading=推论 1 title=
+
+[SCOPE:s_intro|description|引言]
+[0] 由一般线性泛函延拓的Hahn-Banach 定理，可以得到赋范空间中线性泛函延拓定理的表述，进而很容易得到，赋范空间中，定义在子空间上的线性泛函可以保范的延拓到整个空间上去。
+[1] 详情见下文。
+
+[/SCOPE:s_intro]
+[SCOPE:s_theorem1|description|定理 1]
+[2] 定理 1
+[SCOPE:s_theorem1_let|let_bind|定理1的变量]
+[3] 设 $L$ 是实赋范空间 $E$ 的子空间，$f_0$ 是 $L$ 上的有界线性泛函，
+[4] 则存在 $f_0$ 在 $E$ 上的保范延拓 $f$，
+[5a] (x)=f_0
+[5b] (x),x\in L$。
+[/SCOPE:s_theorem1_let]
+[6] 证明：令 $k= \left\lVert f_0 \right\rVert _{L}$，
+[7] 则 $k \left\lVert x \right\rVert $ 是齐次凸泛函。
+[8a] (x) \right\rvert \leq k \left\lVert x \right\rVert $，根据 Hahn-Banach 延拓定理，存在 $f_0$ 的在 $E$ 上延拓 $f$，使得 $f
+[8b] (x)\leq k \left\lVert x \right\rVert $。
+[9] 进而
+[10] \begin{equation}
+\left\lVert f \right\rVert _E=\sup_{x\neq0}\frac{ \left\lvert f(x) \right\rvert }{ \left\lVert x \right\rVert }\leq\sup_{x\neq0}\frac{k \left\lVert x \right\rVert }{ \left\lVert x \right\rVert }=k= \left\lVert f_0 \right\rVert _L.~
+\end{equation}
+[11] 又 $ \left\lVert f \right\rVert _E\geq \left\lVert f_0 \right\rVert _L$（因为它们在 $L$ 上一致，由范数定义得到该式），
+[12] 所以 $ \left\lVert f \right\rVert _{E}= \left\lVert f_0 \right\rVert _{L}$。
+[13] 证毕！
+
+[/SCOPE:s_theorem1]
+[SCOPE:s_corollary1|description|推论 1]
+[14] 推论 1
+[SCOPE:s_corollary1_let|let_bind|推论1的变量]
+[15] 设 $x_0$ 是赋范空间 $X$ 中的非零元素，
+[16] 则在 $X$ 上存在线性连续泛函 $f$，使得
+[17] \begin{equation}
+\left\lVert f \right\rVert =1,f(x_0)= \left\lVert x_0 \right\rVert .~
+\end{equation}
+[/SCOPE:s_corollary1_let]
+[18] 证明：定义在由 $x_0$ 生成的一维子空间上的线性泛函 $f_0(\alpha x_0)=\alpha \left\lVert x_0 \right\rVert $，由定理 1 ，它可保范延拓到整个 $X$ 上的泛函 $f$，且
+[19] \begin{equation}
+\left\lVert f \right\rVert = \left\lVert f_0 \right\rVert =1,\quad f(x_0)=f_0(x_0)= \left\lVert x_0 \right\rVert .~
+\end{equation}
+[20] 证毕！
+[/SCOPE:s_corollary1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_corollary1",
+    "target_scope": "s_theorem1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1的证明引用定理1的结论"
+  }
+]

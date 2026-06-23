@@ -1,0 +1,235 @@
+[SCOPE:root|description|集合的测度（实变函数）]
+文章名: SetMet
+标题: 集合的测度（实变函数）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=“开方块”的体积
+  [1] type=theorem heading=定理 1 title=
+  [2] type=definition heading=定义 2 title=外测度
+  [3] type=theorem heading=定理 2 title=
+  [4] type=theorem heading=定理 3 title=
+  [5] type=lemma heading=引理 1 title=集合极限的测度
+  [6] type=example heading=例 1 title=不具有可加性的集合
+
+[0] 本节为实变函数的一部分，
+[1] 因此讨论中涉及的集合均为实数集合 $\mathbb{R}^n$ 或者其子集。
+
+[SCOPE:s_intro|description|从Riemann积分到Lebesgue积分]
+[2] 在微积分或数学分析中，介绍积分的时候通常都是指 Riemann 积分。
+[3] Riemann 积分的思路是对定义域作分划，在每个分划区间里取一个代表的函数值作为 “高度”，分划区间作为 “底部”，构成许多 “柱子”，计算这些柱子的 “体积” 并求和。
+[4] 这种思路的好处是逻辑上容易处理，只需要有极限的概念就能讨论清楚怎么积分。
+[5] 但是它有很多局限性，比如严重依赖函数的连续性，导致理论不完备，无法处理很多例外情况。
+[6] 比较典型的例子有 Riemman 函数和 Dirichlet 函数。
+[7] Lebesgue 积分就是换了一种积分的思路，反过来对值域作分划，计算各函数值（“高度”）对应的自变量集合的 “底面积”，以此来计算 “柱子体积” 并求和。
+[8] 上面提到的 Riemann 积分处理不了的病态函数，就可以用 Lebesgue 积分来处理，并且对于 Riemann 积分能处理的函数，两种积分算出来的结果是一样的。
+[SCOPE:s_intro_let|let_bind|引入A_q]
+[9] 考虑 Riemann 函数，函数值为整数 $q$ 的点是 $[0, 1]$ 上的全体形如 $p/q$ 的既约真分数，记它们构成的集合为 $A_q$。
+[10] 现在知道柱子的高度是 $q$ 了，计算柱子的体积还需要底面积，也就是 $A_q$ 的 “面积”。
+[/SCOPE:s_intro_let]
+[11] 从这里就能看出 Lebesgue 积分的特别之处，
+[12] 即需要考虑非开区间的集合的 “面积”。
+[13] 集合的 “面积”，被称为 “测度（measure）”。
+[14] 本节我们就来讨论测度的概念。
+
+[/SCOPE:s_intro]
+[SCOPE:s_def1|description|定义1 开方块的体积]
+[15] 定义 1 “开方块”的体积
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[16] 设 $I=I_1\times I_2\times I_3\times\cdots\times I_n$ 是 $\mathbb{R}^n$ 上开区间的笛卡尔积，其中 $I_i=(x_i, y_i)$，
+[17] 那么定义 $I$ 的体积为 $ \left\lvert I \right\rvert = \prod_{i=1}^n \left\lvert y_i-x_i \right\rvert $。
+[/SCOPE:s_def1_let]
+[18] $\mathbb{R}^n$ 的任意开集都能表示为形如定义 1 中 $I$ 的 “开方块” 的不交并，
+[19] 因此开集的体积就可以直接定义为这些开方块的体积之和。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理1 开集体积的性质]
+[20] 定理 1
+[21] 开集的体积具有如下性质：
+[22] 正定性：对于任意开集$U$ 有 $ \left\lvert U \right\rvert \geq 0$，且等号只在 $U=\varnothing$ 时成立；
+[23] 单调性：如果两个开集满足 $U_1\subseteq U_2$，
+[24] 那么 $ \left\lvert U_1 \right\rvert \leq \left\lvert U_2 \right\rvert $；
+[25] 可数次可加性：对于任意可数多个开集$U_i$，有 $ \left\lvert U_1\cup U_2\cup U_3\cup \cdots \right\rvert \leq \left\lvert U_1 \right\rvert + \left\lvert U_2 \right\rvert + \left\lvert U_3 \right\rvert +\cdots$；
+[26] 完全可加性：对于至多可数个两两不交的开集$U_n$，有 $ \left\lvert \bigcup U_n \right\rvert =\sum \left\lvert U_n \right\rvert $。
+
+[/SCOPE:s_thm1]
+[27] 有了开集的体积概念，我们就可以定义一种测度了。
+
+[SCOPE:s_def2|description|定义2 外测度]
+[28] 定义 2 外测度
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[29] 设 $A$ 是 $\mathbb{R}^n$ 上的任意点集，定义 $ \operatorname {m^*}(A)=\inf\{ \left\lvert U \right\rvert : U\text{是}\mathbb{R}^n\text{的开集}\}$ 为 $A$ 的外测度，有时候也表示为 $ \operatorname {m^*}A$。
+[/SCOPE:s_def2_let]
+[30] 外测度可以这样理解：要测量一个物体的体积，就用不同形状和大小的容器去容纳它，整理出所有能容纳它的容器，那这些容器的体积的下确界就是该物体的体积。
+[31] 要注意的是，开集都是开区间或者开方块的并集，
+[32] 所以每个容器开集也都可以理解为用一系列不相交的开区间或开方块来覆盖待测的集合 $A$。
+[33] 这就是为什么我们要先定义开集的测度，因为它最直观，最容易理解，用开集来做容器再合适不过。
+[34a] 可以类比
+[34b] 如果先定义闭集的体积，则可以定义任意点集的内测度，
+[35] 即反过来用给定的任意点集做容器，看它能容纳的闭集体积的上确界是什么。
+[36] 使用闭集建立内测度理论稍麻烦些，我们这里只用外测度。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm2|description|定理2 开集的外测度等于体积]
+[37] 定理 2
+[38] 开集的外测度，就是开集的体积。
+[39] 利用开集体积的性质和外测度的定义，很容易证明该定理，
+[40] 故在此省略证明。
+[41] 用简练的数学语言，可以把定理 2 写成：$ \operatorname {m^*}(U)= \left\lvert U \right\rvert $，其中 $U$ 是一个 $\mathbb{R}^n$ 上的开集。
+[42] 显然，外测度是体积的推广，也继承了体积的一些性质：
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|定理3 外测度的性质]
+[43] 定理 3
+[44] 非负性：对于任意集合$E$ 有 $ \operatorname {m^*}{E}\geq 0$，且 $ \operatorname {m^*}\varnothing=0$1；
+[45] 单调性：如果两个集合满足 $E_1\subseteq E_2$，
+[46] 那么 $ \operatorname {m^*}{E_1}\leq \operatorname {m^*}{E_2}$；
+[47] 可数次可加性：对于任意可数多个集合$E_i$，有 $ \operatorname {m^*}({E_1\cup E_2\cup E_3\cup \cdots})\leq \operatorname {m^*}{E_1}+ \operatorname {m^*}{E_2}+ \operatorname {m^*}{E_3}$；
+[48] 分离条件下的可数可加性：对于至多可数个集合$E_i$，如果存在对应的开集 $U_i$，使得 $E_i\subseteq U_i$，且各 $U_i$ 两两不相交，
+[49] 那么就有 $ \operatorname {m^*}{\bigcup U_n}=\sum \operatorname {m^*}{U_n}$。
+[50] 注意比较定理 1 和定理 2 的异同。
+[51] 定理 3 的第 1 和第 2 条很容易证明，留作习题。
+[52] 下面证明后两条。
+[SCOPE:s_thm3_proof|description|定理3的证明]
+[53] 证明：
+[SCOPE:s_thm3_subadd|description|可数次可加性的证明]
+[54] 可数次可加性：
+[55] 应用开集体积的可数次可加性以及外测度的定义即可。
+[SCOPE:s_thm3_subadd_let|let_bind|取开集U_i]
+[56] 任取开集 $U_i$ 使得各 $E_i\subseteq U_i$，
+[/SCOPE:s_thm3_subadd_let]
+[57] 那么有
+[58] \begin{equation}
+E_1\cup E_2\cup E_3\cup \cdots \subseteq U_1\cup U_2\cup U_3\cup \cdots~
+\end{equation}
+[59] 又因为
+[60] \begin{equation}
+\left\lvert U_1\cup U_2\cup U_3\cup \cdots \right\rvert \leq \left\lvert U_1 \right\rvert + \left\lvert U_2 \right\rvert + \left\lvert U_3 \right\rvert \cdots~
+\end{equation}
+[61] 任何能容纳 $E_1\cup E_2\cup E_3\cup \cdots $ 的开集，总可以写成 $U_1\cup U_2\cup U_3\cup \cdots$ 的形式，其中 $U_i$ 是任取的能容纳 $E_i$ 的开集。
+[62] 因此由式 2 可得，能容纳 $E_1\cup E_2\cup E_3\cup \cdots $ 的开集的体积，小于等于能容纳各 $E_i$ 的开集的体积之和——换句话说，
+[63] 即可数可加性。
+[/SCOPE:s_thm3_subadd]
+[SCOPE:s_thm3_sepadd|description|分离条件下可数可加性的证明]
+[64] 分离条件下的可数可加性：
+[65] 应用开集体积的完全可加性以及外测度的定义即可。
+[SCOPE:s_thm3_sepadd_let|let_bind|取开集V_i]
+[66] 取开集 $V_i$ 使得 $E_i\subseteq V_i\subseteq U_i$，
+[/SCOPE:s_thm3_sepadd_let]
+[67] 那么由开集体积的完全可加性，$ \left\lvert V_1\cup V_2\cup V_3\cup \cdots \right\rvert = \left\lvert V_1 \right\rvert + \left\lvert V_2 \right\rvert + \left\lvert V_3 \right\rvert +\cdots$。
+[68] 因此，每个能容纳 $E_1\cup E_2\cup E_3\cup\cdots$ 的开集的体积，都等于一组能容纳各 $E_i$ 的开集的体积之和——换句话说，
+[69] 即 $ \operatorname {m^*}(E_1\cup E_2\cup E_3)\geq \operatorname {m^*}E_1+ \operatorname {m^*}E_2+ \operatorname {m^*}E_3+\cdots$。
+[70] 再结合 $ \operatorname {m^*}({E_1\cup E_2\cup E_3\cup \cdots})\leq \operatorname {m^*}{E_1}+ \operatorname {m^*}{E_2}+ \operatorname {m^*}{E_3}$，可知
+[71] \begin{equation}
+\operatorname {m^*}({E_1\cup E_2\cup E_3\cup \cdots})\leq \operatorname {m^*}{E_1}+ \operatorname {m^*}{E_2}+ \operatorname {m^*}{E_3}~,
+\end{equation}
+[72] 证毕。
+[/SCOPE:s_thm3]
+[/SCOPE:s_thm3_proof]
+[/SCOPE:s_thm3_sepadd]
+[73] 最后，我们要再讨论一个引理，在下一节可测集合中会很有用。
+
+[SCOPE:s_lemma1|description|引理1 集合极限的测度]
+[74] 引理 1 集合极限的测度
+[SCOPE:s_lemma1_let|let_bind|引理1的变量]
+[75] 设 $\{A_i\}_{i=1}^\infty$ 是一列集合，且 $A_{i}\subseteq A_{i+1}$ 恒成立，再记 $A_0=\bigcup_{i=1}^\infty A_i$。则
+[76] \begin{equation}
+\operatorname {m^*}A_0=\lim\limits_{i\to\infty} \operatorname {m^*}A_i~.
+\end{equation}
+[/SCOPE:s_lemma1_let]
+[77] 证明：
+[78] 由外测度的单调性，知 $ \operatorname {m^*}A_0\geq\lim\limits_{i\to\infty} \operatorname {m^*}A_i$。
+[SCOPE:s_lemma1_reductio|reductio|反证法证明引理1]
+[SCOPE:s_lemma1_reductio_let|let_bind|反证法中的变量]
+[79] 反设 $ \operatorname {m^*}A_0-x_0=\lim\limits_{i\to\infty} \operatorname {m^*}A_i$，其中 $x_0$ 是一个正实数，
+[80] 那么由于 $A_{i}\subseteq A_{i+1}$ 恒成立，可知应该存在一个 $S\subseteq A$，使得 $ \operatorname {m^*}S=x_0$ 且 $A_i\cap S=\varnothing$ 恒成立。
+[/SCOPE:s_lemma1_reductio_let]
+[81] 但是由集合的极限可知，$A_0=\lim\limits_{i\to\infty} A_i$，
+[82] 因此使得 $A_i\cap S=\varnothing$ 恒成立的 $S$ 必须是空集 $\varnothing$，而这和 $ \operatorname {m^*}S=x_0>0$ 矛盾。
+[83] 因此假设不成立，引理得证。
+[/SCOPE:s_lemma1_reductio]
+[84] 证毕。
+
+[/SCOPE:s_lemma1]
+[85] 可加性是定义 Lebesgue 积分时极为基础的性质，它是说，任取两个不相交的集合，
+[86] 则它们的并集的测度等于各自测度的和。
+[87] 如果这个性质成立，
+[88] 那么 Lebesgue 积分就可以很自然地定义了。
+[89] 但是很可惜的是，它并不成立，我们用以下反例来说明：
+
+[SCOPE:s_example1|description|例1 不具有可加性的集合]
+[90] 例 1 不具有可加性的集合
+[SCOPE:s_example1_let1|let_bind|构造Q_x和S]
+[91] 取区间 $(0, 1)$ 上的任意一点 $x$，定义与该点相关的集合 $Q_x=\{r\in(0, 1)|r-x\in\mathbb{Q}\}$。
+[92] 由于有理数相加减仍是有理数，
+[93] 故 $Q_x$ 可以看作对 $(0, 1)$ 区间进行的等价划分，
+[94] 即各 $Q_x$ 两两不相交。
+[95] 从各 $Q_x$ 中分别取一个元素，构成一个新的集合，记为 $S$。
+[/SCOPE:s_example1_let1]
+[SCOPE:s_example1_let2|let_bind|构造S_i]
+[96] 把区间 $(-1, 1)$ 中的有理数进行排列（编号）2：
+[97] \begin{equation}
+q_1, q_2, q_3, \cdots ~
+\end{equation}
+[98] 构造集合 $S_i=\{s+q_i|s\in S\}$3。
+[/SCOPE:s_example1_let2]
+[99] 显然，各 $S_i$ 互不相交。
+[100] 并且由于都是 $S$ 平移的结果，各 $S_i$ 的外测度也相等。
+[101] 对于任意 $Q_x$，从中取任何一个元素 $y$，都有 $Q_y=Q_x$，且全体 $Q_x$ 的并集就是 $(0, 1)$。
+[102] 因此，$\bigcup_{i=1}^\infty S_i\supseteq (0, 1)$。
+[103] 同时，又易证 $\bigcup_{i=1}^\infty S_i\subseteq (-1, 2)$。
+[104] 综合这两个属于关系，可以得到
+[105] \begin{equation}
+1\leq \operatorname {m^*}(\bigcup_{i=1}^\infty S_i)\leq 3~.
+\end{equation}
+[106] 可见，我们构造出了一类集合 $S_i$，它们各自的测度都相等，彼此不相交，
+[107] 但是可数无穷多个它们的并集，测度却是个非负的有限数。
+[108] 有了这些信息就很容易得到不具有可加性的集合了：
+[SCOPE:s_example1_reductio|reductio|反证法证明存在不可加性]
+[109] 假设对于任意编号 $k$，都有 $ \operatorname {m^*}(\bigcup_{i=1}^{k+1} S_i)= \operatorname {m^*}(\bigcup_{i=1}^k S_i)+ \operatorname {m^*}S_{k+1}$，
+[110] 那么应有 $ \operatorname {m^*}(\bigcup_{i=1}^{k} S_i)=k \operatorname {m^*}(S_0)$。
+[111] 问题是这样一来，要么 $ \operatorname {m^*}(S_0)=0$，使得 $ \operatorname {m^*}(\bigcup_{i=1}^\infty S_i)=0$；
+[112] 要么 $ \operatorname {m^*}(S_0)>0$，使得 $ \operatorname {m^*}(\bigcup_{i=1}^\infty S_i)=+\infty$。
+[113] 不论如何，都违反了式 6 。
+[114] 因此假设不成立。
+[/SCOPE:s_example1_reductio]
+[115] 因此，必然存在一个 $k$ 使得 $ \operatorname {m^*}(\bigcup_{i=1}^{k+1} S_i) \neq \operatorname {m^*}(\bigcup_{i=1}^k S_i)+ \operatorname {m^*}S_{k+1}$。
+[116] 于是，$\bigcup_{i=1}^k S_i$ 和 $S_{k+1}$ 就是两个不相交的集合，
+[117] 但它们并集的测度不等于测度之和。
+[118] 我们能不能通过修改外测度的定义，来让任意不相交的集合之间都满足可加性呢？
+[119] 答案是不能，因为例 1 的推导中只用到了外测度的非负性、单调性、可数次可加性、平移不变性以及定理 2 ，这些都是开集的体积也拥有的性质。
+[120] 因此，不管怎么定义外测度，只要它是体积的推广，就不可能绕开例 1 的问题。
+[121] 所以，为了能正常研究积分，我们只好对集合的性质进行限制了，详见可测集合。
+[/SCOPE:s_example1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2是定义2的特例"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3是定理1的推广"
+  },
+  {
+    "source_scope": "s_lemma1",
+    "target_scope": "s_thm3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "引理1用于后续可测集"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_thm3",
+    "edge_type": "counterexample_of",
+    "category": "logic",
+    "note": "例1说明外测度不满足可加性"
+  }
+]

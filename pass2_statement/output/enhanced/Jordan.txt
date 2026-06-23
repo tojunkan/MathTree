@@ -1,0 +1,121 @@
+[SCOPE:root|description|幂零线性变换的 Jordan 标准形]
+文章名: Jordan
+标题: 幂零线性变换的 Jordan（若尔当）标准形
+
+环境标记 (hints):
+  [0] type=exercise heading=习题 1 title=
+  [1] type=theorem heading=定理 1 title=
+
+[SCOPE:s_intro|description|引言与循环子空间]
+[0] 尽管复数域可以保证 $n$ 阶矩阵的特征多项式都有 $n$ 个解，
+[1] 但因为原则上几何重数可以小于代数重数，
+[2] 所以不是所有矩阵都有 $n$ 个线性无关的特征向量从而可以对角化。
+[3] 为了简化问题，我们需要 “简化” 矩阵（找一组基，使得矩阵在该基下有比较简单且规律的形式，比较多 $0$）。
+[4] 定理 3 保证我们线性变换都有分块对角矩阵的形式。
+[5] 与之比较，“Jordan 标准形” 是更加简化的形式。
+[6] 为拓展至任意线性变换，本节先从较为简单的幂零线性变换入手。
+
+[SCOPE:s_let_B|let_bind|设 B 为幂零线性变换]
+[7] 设矩阵 $B$ 为线性空间 $V$ 上的幂零线性变换，
+[8] 即对于任意非零向量 $ \boldsymbol{\mathbf{x}} $，总存在非负整数 $k$ 使得 $B^{k}( \boldsymbol{\mathbf{x}} )= \boldsymbol{\mathbf{0}} $ 且 $B^{k-1}( \boldsymbol{\mathbf{x}} )\neq \boldsymbol{\mathbf{0}} $。
+[9] 可以证明，$\{ \boldsymbol{\mathbf{x}} ,B \boldsymbol{\mathbf{x}} ,B^2 \boldsymbol{\mathbf{x}} ,...B^{k-1} \boldsymbol{\mathbf{x}} \}$ 线性无关。
+
+[/SCOPE:s_intro]
+[/SCOPE:s_let_B]
+[SCOPE:s_exercise|description|习题 1]
+[10] 习题 1
+[11] 证明：$ \operatorname {Span}\{ \boldsymbol{\mathbf{x}} ,B \boldsymbol{\mathbf{x}} ,B^2 \boldsymbol{\mathbf{x}} ,...B^{k-1} \boldsymbol{\mathbf{x}} \}$ 张成线性空间，并证明这是 $B$ 的不变子空间。
+[SCOPE:s_ex_let_W|let_bind|设 W 为循环子空间]
+[12] 设 $W= \operatorname {Span}\{ \boldsymbol{\mathbf{x}} ,B \boldsymbol{\mathbf{x}} ,B^2 \boldsymbol{\mathbf{x}} ,...B^{k-1} \boldsymbol{\mathbf{x}} \}$，将幂零变换 $B$ 限制在该不变子空间上，记为 $B|_W$。
+[13] 则每一列可表示为：$(B \boldsymbol{\mathbf{x}} ,B^2 \boldsymbol{\mathbf{x}} ,...B^{k-1} \boldsymbol{\mathbf{x}} ,B^k \boldsymbol{\mathbf{x}} )$，
+[14] 即：
+[15] \begin{equation}
+\left(\begin{array}{cccccc}
+0 & 0 & 0 & \cdots & 0 & 0 \\
+1 & 0 & 0 & \cdots & 0 & 0 \\
+0 & 1 & 0 & \cdots & 0 & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+0 & 0 & 0 & \cdots & 1 & 0
+\end{array}\right)~.
+\end{equation}
+[16] 假设该子空间为 4 维。
+[17] 输入 $ \boldsymbol{\mathbf{x}} =(1\,0\,0\,0)^T$，得到 $B \boldsymbol{\mathbf{x}} =(0\,1\,0\,0)^T$。
+[18] 输入 $B \boldsymbol{\mathbf{x}} =(0\,1\,0\,0)^T$，得到 $B^2 \boldsymbol{\mathbf{x}} =(0\,0\,1\,0)^T$。
+[19] 显然，$B$ 可以对基进行循环，
+[20] 因此把这种形式的基向量组 $ \operatorname {Span}\{ \boldsymbol{\mathbf{x}} ,B \boldsymbol{\mathbf{x}} ,B^2 \boldsymbol{\mathbf{x}} ,...B^{k-1} \boldsymbol{\mathbf{x}} \}$ 称为循环基（cyclic basis），$W$ 为 $B$ 的循环子空间（cyclic subspace）。
+[21] 称形如式 1 的矩阵为Jordan（若当）块，由若当块直和而成的矩阵为 Jordan(若当)形矩阵。
+[22] 本节的主要目的便是证明：复数域上的幂零变换总可以表示为 Jordan 矩阵。
+[23] 下面的讨论默认在复数域上。
+
+[/SCOPE:s_exercise]
+[/SCOPE:s_ex_let_W]
+[SCOPE:s_theorem1|description|定理 1]
+[24] 由于 Jordan 表示是分块对角矩阵，对角块（Joradan 块）是循环子空间，
+[25] 则 $B$ 有 Jordan 形表示等价于 $V$ 可分解为 $B$ 的循环子空间之直和。
+[26] 因此我们需要证明：
+
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[27] 定理 1
+[28] 若 $B$ 是 $V$ 上的幂零线性变换，
+[29] 则 $V$ 总可以分解为 $B$ 的循环子空间之直和。
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm1_induction|description|归纳法证明]
+[30] Proof.
+[31] 用归纳法证明1。
+[32] 当线性空间维度为 1 时，由 $B$ 的定义可知定理显然成立。
+[SCOPE:s_thm1_ind_let|let_bind|归纳假设中的变量]
+[33] 现设定理对维度小于 $n$ 时成立，设 $ \operatorname {dim}V=n$，需要利用该假设证明定理在此维度下成立。
+[34] 由于 $B$ 可以在 $ \operatorname {Im}B$ 上分解为循环子空间的直和，
+[35] 即：
+[36] \begin{equation}
+\operatorname {Im}B=W_1\oplus W_2\oplus...\oplus W_k~,
+\end{equation}
+[37] 令 $W_i= \operatorname {Span}\{ \boldsymbol{\mathbf{x}} _i,B( \boldsymbol{\mathbf{x}} _i),B^2( \boldsymbol{\mathbf{x}} _i)...B^{l_i-1}( \boldsymbol{\mathbf{x}} _i)\}$，有 $B^{l_i}|_{W_i}=0,i=1,2...k$。
+[38] 由于 $B^{l_i-1}( \boldsymbol{\mathbf{x}} _i)\in \operatorname {ker}B$，
+[39] 因此可以扩充 $\{B^{l_i-1}( \boldsymbol{\mathbf{x}} _i)\}^k_{i=1}$ 至 $ \operatorname {ker}B$ 的一组基：
+[40] \begin{equation}
+\operatorname {ker}B= \operatorname {Span}\{ \boldsymbol{\mathbf{v}} \}^m_{i=1}\cup \{B^{l_i-1}( \boldsymbol{\mathbf{x}} _i)\}^k_{i=1}~,
+\end{equation}
+[41] 接下来我们证明：
+[42] \begin{equation}
+V=\bigoplus ^m_{i=1} \operatorname {Span} \boldsymbol{\mathbf{v}} _i\oplus W_1\oplus W_2\oplus...\oplus W_n~,
+\end{equation}
+[43] 证明分两步，一是证明基矢组 $\{ \boldsymbol{\mathbf{v}} \}^m_{i=1}\cup \{ \boldsymbol{\mathbf{x}} _i,B( \boldsymbol{\mathbf{x}} _i),B^2( \boldsymbol{\mathbf{x}} _i)...B^{l_i-1}( \boldsymbol{\mathbf{x}} _i)\}^{k}_{i=1}$ 线性无关，其次是张成 $V$。
+[44] 设 $\{a_i\}^m_{i=1},\{b^i_1,b^i_2...b^i_{l_{i-1}}\}^{k}_{i=1}\in\mathbb F$，满足
+[45] \begin{equation}
+a^{i'} \boldsymbol{\mathbf{v}} _{i'}+b^i_jB^{j}( \boldsymbol{\mathbf{x}} _i)= \boldsymbol{\mathbf{0}} ~,
+\end{equation}
+[46] 其中 $j\in[0,l_{i-1}],i\in[1,k],i'\in[1,m]$，式子采用爱因斯坦求和约定。
+[47] 两边各乘以 $B$，
+[48] 则有：
+[49] \begin{equation}
+b^i_jB^{j}( \boldsymbol{\mathbf{x}} _i)= \boldsymbol{\mathbf{0}} ~,
+\end{equation}
+[50] 此时 $j\in[1,l_{i-2}]$。
+[51] 由题设知 $B^j( \boldsymbol{\mathbf{x}} _i)$ 线性无关，
+[52] 则系数为 $0$，代入
+[53] 式 5 [链接 L0]
+[54] \begin{equation}
+a_i \boldsymbol{\mathbf{v}} _i+b^i_{l_{i-1}}B^{l_{i-1}}( \boldsymbol{\mathbf{x}} _i)= \boldsymbol{\mathbf{0}} ~.
+\end{equation}
+[55] 这是 $ \operatorname {ker}B$ 的 basis，
+[56] 所以系数为 $0$。
+[57] 因此式 5 的所有系数为 0，所证向量组线性无关，和为直和。
+[58] 又因为这组基包含了 $B$ 的核与象，由 $\dim V=\dim \ker B+\dim \operatorname{Im} B$ 知，这组基张成了整个线性空间。
+[59] 由于 $B \boldsymbol{\mathbf{v}} _i=0$，
+[60] 则 $ \operatorname {Span} \boldsymbol{\mathbf{v}} _i$ 都是 $B$ 的一维循环子空间，定理得证。
+[/SCOPE:s_theorem1]
+[/SCOPE:s_thm1_induction]
+[/SCOPE:s_thm1_ind_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_theorem1",
+    "target_scope": "s_exercise",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理 1 的证明中使用了循环子空间的概念，习题 1 定义了循环子空间。"
+  }
+]

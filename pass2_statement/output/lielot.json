@@ -1,0 +1,276 @@
+{
+  "article_name": "lielot",
+  "statements": [
+    {
+      "stmt_id": "st_review_O13",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_review",
+      "exposed_entities": [
+        "O(1,3)",
+        "Λ",
+        "η"
+      ]
+    },
+    {
+      "stmt_id": "st_review_inner_product_inv",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_review",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_review_equiv_def",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_review",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_O13",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "O(1,3)"
+      ]
+    },
+    {
+      "stmt_id": "st_liealgebra_dim",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_liealgebra",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_liealgebra_importance",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_liealgebra",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_generators_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_generators",
+      "exposed_entities": [
+        "X",
+        "Λ"
+      ]
+    },
+    {
+      "stmt_id": "st_generators_condition",
+      "subtype": "condition",
+      "clause_range": [
+        19,
+        22
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_let_generators",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_generators_explicit",
+      "subtype": "definition",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_generators",
+      "exposed_entities": [
+        "L^1",
+        "L^2",
+        "L^3",
+        "K^1",
+        "K^2",
+        "K^3"
+      ]
+    },
+    {
+      "stmt_id": "st_generators_note",
+      "subtype": "remark",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_generators",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_commutators",
+      "subtype": "theorem",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_commutators",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_commutators_info",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_commutators",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exponential_map",
+      "subtype": "theorem",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": "true",
+      "scope_id": "s_exponential",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exponential_interpret",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": "true",
+      "scope_id": "s_exponential",
+      "exposed_entities": [
+        "L_1",
+        "L_2",
+        "L_3",
+        "K_1",
+        "K_2",
+        "K_3"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_review_O13",
+      "target": "st_review_inner_product_inv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_review_O13",
+      "target": "st_review_equiv_def",
+      "edge_type": "equivalent",
+      "category": "logic"
+    },
+    {
+      "source": "st_generators_assump",
+      "target": "st_generators_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_generators_condition",
+      "target": "st_generators_explicit",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_commutators",
+      "target": "st_commutators_info",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exponential_map",
+      "target": "st_exponential_interpret",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_liealgebra_dim",
+      "target": "st_liealgebra_importance",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_generators_explicit",
+      "target": "st_commutators",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_commutators",
+      "target": "st_exponential_map",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_def_O13",
+      "target": "st_review_O13",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义1是O(1,3)的正式定义，回顾中的描述是等价表述"
+    },
+    {
+      "source": "st_liealgebra_dim",
+      "target": "st_def_O13",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "从洛伦兹群的定义推出其李代数的维数"
+    },
+    {
+      "source": "st_generators_explicit",
+      "target": "st_liealgebra_dim",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "生成元的具体形式是李代数维数的具体化"
+    },
+    {
+      "source": "st_commutators",
+      "target": "st_liealgebra_dim",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "对易关系蕴含了李代数的结构"
+    },
+    {
+      "source": "st_exponential_map",
+      "target": "st_commutators",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "指数映射从李代数得到群元素，依赖于对易关系"
+    }
+  ],
+  "unresolved": []
+}

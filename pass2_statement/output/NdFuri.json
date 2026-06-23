@@ -1,0 +1,159 @@
+{
+  "article_name": "NdFuri",
+  "statements": [
+    {
+      "stmt_id": "st_general_expansion",
+      "subtype": "theorem",
+      "clause_range": [
+        2,
+        4
+      ],
+      "truth_value": "true",
+      "scope_id": "s_general",
+      "exposed_entities": [
+        "f(x_1,...,x_N)",
+        "C_{n_1,...,n_N}",
+        "l_i",
+        "x_i"
+      ]
+    },
+    {
+      "stmt_id": "st_general_coeff",
+      "subtype": "theorem",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": "true",
+      "scope_id": "s_general",
+      "exposed_entities": [
+        "C_{i_1,...,i_N}"
+      ]
+    },
+    {
+      "stmt_id": "st_2d_let",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_2d",
+      "exposed_entities": [
+        "N=2",
+        "x",
+        "y",
+        "a",
+        "b",
+        "f(x,y)"
+      ]
+    },
+    {
+      "stmt_id": "st_2d_expansion",
+      "subtype": "theorem",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_2d",
+      "exposed_entities": [
+        "C_{m,n}"
+      ]
+    },
+    {
+      "stmt_id": "st_2d_coeff",
+      "subtype": "theorem",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": "true",
+      "scope_id": "s_2d",
+      "exposed_entities": [
+        "C_{m,n}"
+      ]
+    },
+    {
+      "stmt_id": "st_basis_def",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_2d_basis",
+      "exposed_entities": [
+        "b_{m,n}(x,y)"
+      ]
+    },
+    {
+      "stmt_id": "st_inner_prod_def",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_2d_basis",
+      "exposed_entities": [
+        "⟨f|g⟩"
+      ]
+    },
+    {
+      "stmt_id": "st_orthonormality",
+      "subtype": "theorem",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_2d_basis",
+      "exposed_entities": [
+        "δ_{m,m'}δ_{n,n'}"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_general_expansion",
+      "target": "st_general_coeff",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_2d_let",
+      "target": "st_2d_expansion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_2d_expansion",
+      "target": "st_2d_coeff",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_basis_def",
+      "target": "st_orthonormality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inner_prod_def",
+      "target": "st_orthonormality",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_2d_expansion",
+      "target": "st_general_expansion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "二元是N元的特例"
+    }
+  ],
+  "unresolved": []
+}

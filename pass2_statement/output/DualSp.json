@@ -1,0 +1,442 @@
+{
+  "article_name": "DualSp",
+  "statements": [
+    {
+      "stmt_id": "st_linear_func_def",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_func_let",
+      "exposed_entities": [
+        "V",
+        "f",
+        "v",
+        "u",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_func_ops_add",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_func_ops_let1",
+      "exposed_entities": [
+        "V",
+        "f",
+        "g",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_func_ops_scalar",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_func_ops_let2",
+      "exposed_entities": [
+        "V",
+        "a",
+        "f",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_func_ops_distrib",
+      "subtype": "theorem",
+      "clause_range": [
+        33,
+        35
+      ],
+      "truth_value": "true",
+      "scope_id": "s_linear_func_ops_let3",
+      "exposed_entities": [
+        "V",
+        "f",
+        "g",
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_dual_space_def",
+      "subtype": "definition",
+      "clause_range": [
+        38,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_dual_space_let",
+      "exposed_entities": [
+        "V",
+        "V*"
+      ]
+    },
+    {
+      "stmt_id": "st_dual_dual_thm",
+      "subtype": "theorem",
+      "clause_range": [
+        47,
+        60
+      ],
+      "truth_value": "true",
+      "scope_id": "s_dual_dual_let",
+      "exposed_entities": [
+        "V",
+        "V*",
+        "v",
+        "f",
+        "iota_v",
+        "V**"
+      ]
+    },
+    {
+      "stmt_id": "st_finite_dual_def",
+      "subtype": "definition",
+      "clause_range": [
+        66,
+        71
+      ],
+      "truth_value": null,
+      "scope_id": "s_finite_dual_let",
+      "exposed_entities": [
+        "V",
+        "W",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_dual_basis_def",
+      "subtype": "definition",
+      "clause_range": [
+        74,
+        78
+      ],
+      "truth_value": null,
+      "scope_id": "s_dual_basis_let",
+      "exposed_entities": [
+        "V",
+        "e_i",
+        "f_i",
+        "delta_ij"
+      ]
+    },
+    {
+      "stmt_id": "st_exercise1",
+      "subtype": "exercise",
+      "clause_range": [
+        79,
+        89
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise1_let",
+      "exposed_entities": [
+        "V",
+        "f_i"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem4",
+      "subtype": "theorem",
+      "clause_range": [
+        90,
+        98
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem4_let",
+      "exposed_entities": [
+        "V",
+        "g",
+        "sigma_g"
+      ]
+    },
+    {
+      "stmt_id": "st_reciprocal_basis_def",
+      "subtype": "definition",
+      "clause_range": [
+        99,
+        104
+      ],
+      "truth_value": null,
+      "scope_id": "s_reciprocal_basis_let",
+      "exposed_entities": [
+        "V",
+        "g",
+        "e_i",
+        "varepsilon_i"
+      ]
+    },
+    {
+      "stmt_id": "st_example1",
+      "subtype": "example",
+      "clause_range": [
+        105,
+        109
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "g",
+        "e_0",
+        "e_1",
+        "e_2",
+        "e_3"
+      ]
+    },
+    {
+      "stmt_id": "st_infinite_dim_thm",
+      "subtype": "theorem",
+      "clause_range": [
+        111,
+        114
+      ],
+      "truth_value": "true",
+      "scope_id": "s_infinite_dim_let",
+      "exposed_entities": [
+        "V",
+        "e_alpha",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_infinite_dim_cor",
+      "subtype": "corollary",
+      "clause_range": [
+        115,
+        116
+      ],
+      "truth_value": "true",
+      "scope_id": "s_infinite_dim",
+      "exposed_entities": [
+        "V",
+        "V**"
+      ]
+    },
+    {
+      "stmt_id": "st_matrix_rep",
+      "subtype": "remark",
+      "clause_range": [
+        117,
+        132
+      ],
+      "truth_value": null,
+      "scope_id": "s_matrix_rep_let",
+      "exposed_entities": [
+        "e_1",
+        "e_2",
+        "f_1",
+        "f_2"
+      ]
+    },
+    {
+      "stmt_id": "st_dirac",
+      "subtype": "remark",
+      "clause_range": [
+        133,
+        151
+      ],
+      "truth_value": null,
+      "scope_id": "s_dirac_let",
+      "exposed_entities": [
+        "s",
+        "t",
+        "f_s",
+        "f_t"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_linear_func_ops_add",
+      "target": "st_linear_func_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_linear_func_ops_scalar",
+      "target": "st_linear_func_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_linear_func_ops_distrib",
+      "target": "st_linear_func_ops_scalar",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_dual_space_def",
+      "target": "st_linear_func_ops_add",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_dual_space_def",
+      "target": "st_linear_func_ops_scalar",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_dual_dual_thm",
+      "target": "st_dual_space_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_finite_dual_def",
+      "target": "st_dual_dual_thm",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_dual_basis_def",
+      "target": "st_dual_space_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_exercise1",
+      "target": "st_dual_basis_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem4",
+      "target": "st_dual_space_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_reciprocal_basis_def",
+      "target": "st_theorem4",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1",
+      "target": "st_reciprocal_basis_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_infinite_dim_thm",
+      "target": "st_dual_space_def",
+      "edge_type": "counterexample_of",
+      "category": "logic"
+    },
+    {
+      "source": "st_infinite_dim_cor",
+      "target": "st_infinite_dim_thm",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_matrix_rep",
+      "target": "st_dual_basis_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_dirac",
+      "target": "st_dual_space_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_linear_func_ops_add",
+      "target": "st_linear_func_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "线性函数的运算基于线性函数的定义"
+    },
+    {
+      "source": "st_dual_space_def",
+      "target": "st_linear_func_ops_add",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "对偶空间由线性函数空间定义"
+    },
+    {
+      "source": "st_dual_dual_thm",
+      "target": "st_dual_space_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "对偶对偶空间定理"
+    },
+    {
+      "source": "st_finite_dual_def",
+      "target": "st_dual_dual_thm",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "有限维情况下的对偶定义"
+    },
+    {
+      "source": "st_dual_basis_def",
+      "target": "st_dual_space_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "对偶基是对偶空间的具体构造"
+    },
+    {
+      "source": "st_exercise1",
+      "target": "st_dual_basis_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "习题1证明对偶基是基"
+    },
+    {
+      "source": "st_theorem4",
+      "target": "st_dual_space_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "内积诱导同构"
+    },
+    {
+      "source": "st_reciprocal_basis_def",
+      "target": "st_theorem4",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "互反基由内积同构导出"
+    },
+    {
+      "source": "st_example1",
+      "target": "st_reciprocal_basis_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1展示互反基"
+    },
+    {
+      "source": "st_infinite_dim_thm",
+      "target": "st_dual_space_def",
+      "edge_type": "counterexample_of",
+      "category": "logic",
+      "note": "无限维时对偶空间性质不同"
+    },
+    {
+      "source": "st_matrix_rep",
+      "target": "st_dual_basis_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "矩阵表示基于对偶基"
+    },
+    {
+      "source": "st_dirac",
+      "target": "st_dual_space_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "狄拉克符号是对偶空间在量子力学中的应用"
+    }
+  ],
+  "unresolved": []
+}

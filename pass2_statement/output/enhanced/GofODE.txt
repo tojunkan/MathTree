@@ -1,0 +1,324 @@
+[SCOPE:root|description|常微分方程的几何图像]
+文章名: GofODE
+标题: 常微分方程的几何图像
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=可微函数
+  [1] type=definition heading=定义 2 title=可微映射
+  [2] type=definition heading=定义 3 title=微分同胚
+  [3] type=definition heading=定义 4 title=单参数微分同胚群
+  [4] type=theorem heading=定理 1 title=
+  [5] type=definition heading=定义 5 title=相速度
+  [6] type=definition heading=定义 6 title=速度相量
+  [7] type=definition heading=定义 7 title=曲线的相切
+  [8] type=theorem heading=定理 2 title=
+  [9] type=definition heading=定义 8 title=切向量
+  [10] type=definition heading=定义 9 title=切空间
+  [11] type=definition heading=定义 10 title=切丛
+  [12] type=definition heading=定义 11 title=向量场
+  [13] type=definition heading=定义 12 title=奇点
+  [14] type=definition heading=定义 13 title=微分方程
+  [15] type=definition heading=定义 14 title=微分方程的解
+  [16] type=definition heading=定义 15 title=相曲线
+
+[0] 这里，将从几何上来理解常微分方程。
+[1] 这需要先引入一些概念。
+
+[2] 以下新名词的理解只需掌握函数可微性的知识。
+
+[SCOPE:s_def1|description|可微函数]
+[3] 定义 1 可微函数
+[SCOPE:s_def1_let|let_bind|可微函数的变量]
+[4] 设 $U$ 是矢量空间 $\mathbb R^n$ 上的区域，其上坐标为 $x_1,\cdots,x_n$，称函数
+[5] \begin{equation}
+f:U\rightarrow\mathbb R~.
+\end{equation}
+[/SCOPE:s_def1_let]
+[6] 可微函数
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|可微映射]
+[7] 定义 2 可微映射
+[SCOPE:s_def2_let|let_bind|可微映射的变量]
+[8] 设 $U$ 是 $\mathbb R^n$ 中区域，$V$ 是 $\mathbb R^m$ 中区域，其中 $x_1,\cdots,x_n$ 是 $U$ 中的坐标，$y_1,\cdots,y_m$ 是 $V$ 中的坐标，称映射
+[9] \begin{equation}
+f:U\rightarrow V,\quad f(x_1,\cdots,x_n)=(y_1,\cdots,y_m)~.
+\end{equation}
+[/SCOPE:s_def2_let]
+[10] 可微映射
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|微分同胚]
+[11] 定义 3 微分同胚
+[SCOPE:s_def3_let|let_bind|微分同胚的变量]
+[12] 若映射 $f:U\rightarrow V$ 是个双射，且 $f$ 和其逆 $f^{-1}$ 都是可微映射，
+[/SCOPE:s_def3_let]
+[13] 则称 $f$ 为微分同胚。
+
+[/SCOPE:s_def3]
+[SCOPE:s_def4|description|单参数微分同胚群]
+[14] 定义 4 单参数微分同胚群
+[SCOPE:s_def4_let|let_bind|单参数微分同胚群的变量]
+[15] 设 $M$ 是一流形（可认为是欧氏空间中一区域），若映射
+[16] \begin{equation}
+g:\mathbb R\times M\rightarrow M,\quad g(t,x) =g^t x~.
+\end{equation}
+[/SCOPE:s_def4_let]
+[17] 定义 1
+[18] 单参数微分同胚群
+
+[/SCOPE:s_def4]
+[SCOPE:s_thm1|description|定理1]
+[19] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[20] 若 $\{g^t|t\in\mathbb R\}$ 是单参数微分同胚群，
+[/SCOPE:s_thm1_let]
+[21] 则对每一 $t$，映射 $g^t$ 是微分同胚。
+[22] 证明：因为 $g$ 是可微映射，且
+[23] \begin{equation}
+\frac{\mathrm{d}{g^tx}}{\mathrm{d}{x}} = \frac{\partial g(t,x)}{\partial x} ~,
+\end{equation}
+[24] 所以 $g^t$ 对 $x$ 可微。
+[25] 又 $\{g^t\}$ 是单参数变换群，
+[26] 所以对每一 $t$，$g^t$ 是
+[27] 双射 [链接 L0]
+[28] ，这意味着 $ \frac{\mathrm{d}{g^t x}}{\mathrm{d}{x}} \neq 0$（因为否则 $g^t(x+ \,\mathrm{d}{x} )=g^t(x)$,这违反了 $g^t$ 的单射性）。
+[29] 所以
+[30] \begin{equation}
+\frac{\mathrm{d}{{g^{t}}^{-1}}}{\mathrm{d}{x}} =\frac{1}{ \frac{\mathrm{d}{g^t x}}{\mathrm{d}{x}} }~,
+\end{equation}
+[31] 证毕！
+
+[/SCOPE:s_thm1]
+[32] 常微分方程研究的过程是可微过程，
+[33] 即要求相空间 $M$ 是微分流形，状态随时间的变化由可微函数描述。
+[34] 由于状态 x 经过 t 时间后变为 $g^tx$，要这个有可微函数描述的映射就是 $g(t,x)=g^tx$，由定义 4 ，$\{g^t|t\in\mathbb R\}$ 就是 $M$ 的单参数微分同胚群。
+[35] 因此，以后提到相流 $\{M,\{g^t\}\}$，都有将 $\{g^t\}$ 理解成单参数微分同胚群。
+[36] 掌握了以上概念，下面的概念是容易理解的。
+
+[SCOPE:s_def5|description|相速度]
+[37] 定义 5 相速度
+[SCOPE:s_def5_let|let_bind|相速度的变量]
+[38] \begin{equation}
+v(x):=\left. \frac{\mathrm{d}{}}{\mathrm{d}{t}} \right|_{t=\tau} g^tx~,
+\end{equation}
+[/SCOPE:s_def5_let]
+[39] 由于 $M$ 可看成欧几里得空间中的区域，
+[40] 所以其中的点就有坐标，
+[41] 因此 $ \,\mathrm{d}{g} ^t x$ 有定义，上面的 $v(x)$ 也就有定义。
+
+[/SCOPE:s_def5]
+[42] 同样令 $U$ 是 $\mathbb R^n$ 中一区域，其坐标为 $x_1,\cdots,x_n$，每个 $x_i$ 其实都相当于将 $U$ 映射到 $\mathbb R$ 的映射
+[43] \begin{equation}
+x_i:U\rightarrow\mathbb R~.
+\end{equation}
+[44] $U$ 上的曲线就是 $t$ 轴上一区间 $I$ 到 $U$ 的连续映射 $\varphi$，通常我们设它连续可微。
+
+[SCOPE:s_def6|description|速度相量]
+[45] 定义 6 速度相量
+[SCOPE:s_def6_let|let_bind|速度相量的变量]
+[46] 设 $\varphi$ 是 $U$ 的曲线且 $\varphi(0)=x$，
+[47] 则
+[48] \begin{equation}
+v=\left. \frac{\mathrm{d}{}}{\mathrm{d}{t}} \right|_{t=0}(x\circ\varphi)~
+\end{equation}
+[/SCOPE:s_def6_let]
+[49] 速度向量
+
+[/SCOPE:s_def6]
+[SCOPE:s_def7|description|曲线的相切]
+[50] 定义 7 曲线的相切
+[SCOPE:s_def7_let|let_bind|曲线的相切的变量]
+[51] 若两曲线 $\varphi_1,\varphi_2$ 经过同一点 $x=\varphi_1(0)=\varphi_2(0)$。
+[52a] (t),\varphi_2
+[52b] (t)$ 之间距离是比 $t$ 高阶的无穷小 $o
+[52c] (t)$，
+[/SCOPE:s_def7_let]
+[53] 则称它们在点 $x$ 相切。
+
+[/SCOPE:s_def7]
+[SCOPE:s_thm2|description|定理2]
+[54] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[55] 两曲线 $\varphi_1,\varphi_2$ 在点 $x$ 处相切，当且仅当它们的速度向量相同。
+[/SCOPE:s_thm2_let]
+[56a] (t)-x\circ\varphi_2
+[56b] (t)$ 在 $t=0$ 处展开：
+[57] \begin{equation}
+x\circ\varphi_1(t)-x\circ\varphi_2(t)=\sum_{i=1}\frac{1}{i!} \left(\left. \frac{\mathrm{d}^{i}{}}{\mathrm{d}{t}^{i}} \right|_{t=0} \left(x\circ\varphi_1-x\circ\varphi_2 \right) \right) t^i~.
+\end{equation}
+[58a] (t)-x\circ\varphi_2
+[58b] (t) \right\rvert =o
+[58c] (t)$ 上式就不能含 $t$ 的一次项，
+[59] 于是只能
+[60] \begin{equation}
+\left. \frac{\mathrm{d}{}}{\mathrm{d}{t}} \right|_{t=0}x\circ\varphi_1=\left. \frac{\mathrm{d}{}}{\mathrm{d}{t}} \right|_{t=0}x\circ\varphi_2~.
+\end{equation}
+[61] 证毕！
+[62] 这一定理意味着相切的曲线对应同一速度向量，而在一点 $x_0$ 处都有一速度矢量与任一矢量 $v$ 对应，只需这样定义曲线 $\varphi$（注意下面 $x(x_0)$ 代表 $x_0$ 的坐标）。
+[63] \begin{equation}
+x\circ\varphi(t)=\int_0^t v \,\mathrm{d}{t} +x(x_0)~.
+\end{equation}
+[64] 也就是说在
+[65] 点 $x$ 的速度矢量 $v$ 相当于过 $x$ 点的曲线的等价类
+[66] ，该等价类中的任一曲线在点 $x$ 的速度矢量都是 $v$。
+[67] 所以有下面的定义
+
+[/SCOPE:s_thm2]
+[SCOPE:s_def8|description|切向量]
+[68] 定义 8 切向量
+[SCOPE:s_def8_let|let_bind|切向量的变量]
+[69] 称过点 $x\in U$ 的曲线的等价类为点 $x$ 的切向量。
+[/SCOPE:s_def8_let]
+[70] 由于 $n$ 维空间中的区域 $U$ 上的一点处所有的速度矢量构成一 $n$ 维的矢量空间，
+[71] 所以在 $x$ 点的所有切向量构成的几何就是一个 $n$ 维的矢量空间。
+
+[/SCOPE:s_def8]
+[SCOPE:s_def9|description|切空间]
+[72] 定义 9 切空间
+[SCOPE:s_def9_let|let_bind|切空间的变量]
+[73] 在点 $x\in U$ 处的所有切向量构成的集合称为 $U$ 在 $x$ 的切空间，记作 $TU_x$
+[/SCOPE:s_def9_let]
+[74] 我们说过，$n$ 维流形 $M$ 相当于 $\mathbb R^n$ 中一区域，
+[75] 那么在它上面任一点 $x$ 都有一切空间 $TM_x$。
+
+[/SCOPE:s_def9]
+[SCOPE:s_def10|description|切丛]
+[76] 定义 10 切丛
+[SCOPE:s_def10_let|let_bind|切丛的变量]
+[77] 流形 $M$ 上所有点的切空间构成的集合
+[78] \begin{equation}
+TM=\bigcup_{x\in U}TM_x~,
+\end{equation}
+[/SCOPE:s_def10_let]
+[79] 流形 $M$ 的向量场就是说对 $M$ 上的每一点都有一向量与之对应，每一点处的向量显然是该点的切向量，它是在 该点的切空间 $TM_x$ 中的，而另一点的向量又在另一点的切空间中的，
+[80] 那么向量场就相当于一个映射 $v$，它把 $x\in M$ 映到 $v(x)\in TM_x$，由于向量场 $v$ 定义域在 $M$，它的像要 $v$ 取遍 $M$，
+[81] 那么像所在的集合就是
+[82] $\bigcup_{x\in M} TM_x$。
+[83] 这就是说 $M$ 的向量场相当于是流形 $M$ 到其切丛 $TM$ 的映射。
+[84] 一般情况，我们还要求它是可微映射。
+
+[/SCOPE:s_def10]
+[SCOPE:s_def11|description|向量场]
+[85] 定义 11 向量场
+[SCOPE:s_def11_let|let_bind|向量场的变量]
+[86] 设 $M$ 是一 $n$ 维流形（$\mathbb R^n$ 中的一区域），映射
+[/SCOPE:s_def11_let]
+[87] \begin{equation}
+v:M\rightarrow\mathbb TM~
+\end{equation}
+
+[/SCOPE:s_def11]
+[SCOPE:s_def12|description|奇点]
+[88] 定义 12 奇点
+[SCOPE:s_def12_let|let_bind|奇点的变量]
+[89] 设 $v$ 是 $M$ 的向量场，且 $v(x)=0$，
+[/SCOPE:s_def12_let]
+[90] 则称点 $x$ 为向量场 $v$ 的奇点。
+
+[/SCOPE:s_def12]
+[91] 有了上述诸概念，微分方程的几何意义就是显然的了。
+
+[SCOPE:s_def13|description|微分方程]
+[92] 定义 13 微分方程
+[SCOPE:s_def13_let|let_bind|微分方程的变量]
+[93] 设 $U$ 是 $\mathbb R^n$ 中一区域，$v$ 是 $U$ 上的向量场，
+[94] 则称方程
+[95] \begin{equation}
+\dot x=v(x),\quad x\in U~
+\end{equation}
+[/SCOPE:s_def13_let]
+[96] 微分方程
+
+[/SCOPE:s_def13]
+[SCOPE:s_def14|description|微分方程的解]
+[97] 定义 14 微分方程的解
+[SCOPE:s_def14_let|let_bind|微分方程的解的变量]
+[98] 若从 $t$ 轴的区间 $I$ 到相空间 $U$ 的可微映射 $\varphi$ 满足：
+[99] \begin{equation}
+\left. \frac{\mathrm{d}{}}{\mathrm{d}{t}} \right|_{t=\tau}\varphi(t)=v(\varphi(\tau)),\quad\forall\tau\in I~,
+\end{equation}
+[/SCOPE:s_def14_let]
+[100] 式 14
+
+[/SCOPE:s_def14]
+[SCOPE:s_def15|description|相曲线]
+[101] 定义 15 相曲线
+[SCOPE:s_def15_let|let_bind|相曲线的变量]
+[102] 设 $\varphi$ 是微分方程式 14 的解，
+[/SCOPE:s_def15_let]
+[103] 则 $\varphi$ 的像称为该微分方程的相曲线。
+[104] 观察式 6 和式 15 ，可以发现：若 $x=\varphi(t_0)$, 那么若求得了微分方程满足条件 $x=\varphi(t_0)$ 的解 $\varphi(t)$，
+[105] 那么 $\varphi(t)$ 就是相流 $\{g^t\}$ 在点 $x$ 处的运动，而向量场 $v$ 对应相流 $\{g^t\}$ 的相速度。
+
+跨文章引用:
+  [L0] 双射 → PSaPF
+[/SCOPE:s_def15]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是单参数微分同胚群的性质"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def7",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2给出了曲线相切的等价条件"
+  },
+  {
+    "source_scope": "s_def8",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "切向量定义基于定理2的等价类"
+  },
+  {
+    "source_scope": "s_def9",
+    "target_scope": "s_def8",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "切空间由切向量构成"
+  },
+  {
+    "source_scope": "s_def10",
+    "target_scope": "s_def9",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "切丛是所有切空间的并"
+  },
+  {
+    "source_scope": "s_def11",
+    "target_scope": "s_def10",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "向量场是到切丛的映射"
+  },
+  {
+    "source_scope": "s_def13",
+    "target_scope": "s_def11",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "微分方程由向量场定义"
+  },
+  {
+    "source_scope": "s_def14",
+    "target_scope": "s_def13",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "解满足微分方程"
+  },
+  {
+    "source_scope": "s_def15",
+    "target_scope": "s_def14",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "相曲线是解的像"
+  }
+]

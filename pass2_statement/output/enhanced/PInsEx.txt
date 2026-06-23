@@ -1,0 +1,453 @@
+[SCOPE:root|description|纯不可分扩张]
+文章名: PInsEx
+标题: 纯不可分扩张
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=纯不可分扩张
+  [1] type=definition heading=定义 2 title=纯不可分元素
+  [2] type=theorem heading=定理 1 title=
+  [3] type=definition heading=定义 3 title=可分次数
+  [4] type=theorem heading=定理 2 title=单扩张的可分次数
+  [5] type=corollary heading=推论 1 title=
+  [6] type=example heading=例 1 title=
+  [7] type=exercise heading=习题 1 title=
+  [8] type=exercise heading=习题 2 title=
+  [9] type=lemma heading=引理 1 title=
+  [10] type=corollary heading=推论 2 title=
+  [11] type=theorem heading=定理 3 title=特征为 $p$ 时纯不可分扩张的等价定义
+  [12] type=theorem heading=定理 4 title=
+  [13] type=theorem heading=定理 5 title=
+  [14] type=theorem heading=定理 6 title=塔性质
+  [15] type=theorem heading=定理 7 title=
+  [16] type=exercise heading=习题 3 title=
+  [17] type=theorem heading=定理 8 title=
+
+[0] 我们容易想到并且熟悉的扩域，通常是可分扩张。
+[1] 相对地，凡不是可分扩张的情况，都叫做不可分扩张——也就是说，不可分扩张是可分元、不可分元混杂的扩域。
+[2] 这样一来，代数扩张就分为两类了。
+[3] 似乎不可分扩张只是可分扩张的例外，不像可分扩张有那么好的性质；
+[4] 可相对的，下面定义的纯不可分扩张就很有意思了。
+
+[SCOPE:s_def1|description|定义1 纯不可分扩张]
+[5] 定义 1 纯不可分扩张
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[6] 设 $\mathbb{K}/\mathbb{F}$ 是代数扩域。
+[/SCOPE:s_def1_let]
+[7] 如果 $\mathbb{K}-\mathbb{F}$ 中的元素在 $\mathbb{F}$ 上都是不可分的，
+[8] 那么称 $\mathbb{K}/\mathbb{F}$ 是纯不可分扩张（purely inseparable extension），且称 $\mathbb{K}$ 在 $\mathbb{F}$ 上（over $\mathbb{F}$）是纯不可分的。
+[9] 任何域 $\mathbb{F}$ 都是自己的纯不可分扩张，因为不存在 $\mathbb{F}-\mathbb{F}$ 的元素，命题前提为假则命题恒真。
+[10] 留意定理 6 ，可以猜测可分性质与 $p$ 次根是否在给定域中息息相关，其中 $p$ 是这个域的特征。
+[11] 由此提示，我们可以定义 “纯不可分元素”：
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义2 纯不可分元素]
+[12] 定义 2 纯不可分元素
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[13] 设域 $\mathbb{F}$ 的特征为素数 $p$。
+[14] 称 $\alpha\in\overline{\mathbb{F}}$ 是 $\mathbb{F}$ 上的纯不可分元素（purely inseparable element），如果存在非负整数 $k$ 使得 $\alpha^{p^k}\in\mathbb{F}$。
+[/SCOPE:s_def2_let]
+[15] 或者说，$\alpha$ 是 $\mathbb{F}$ 的代数元，且其最小多项式为 $x^{p^n}-a$，其中 $n$ 是上述 $k$ 中最小的，$a\in\mathbb{F}$。
+[16] 同样，域 $\mathbb{F}$ 的元素都是纯不可分元素。
+[17] 一切代数扩张，必是进行一次可分扩张后再进行一次纯不可分扩张的结果。
+[18] 要注意，反过来的 “代数扩张必是先进行纯不可分扩张再进行可分扩张的结果” 并不总是成立。
+[19] 【未完成】是否需要举一个反例，说明为什么并不总是成立？
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|定理1]
+[20] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[21] 给定代数扩域 $\mathbb{K}/\mathbb{F}$，
+[22] 则集合 $\mathbb{S}=\{\alpha\in\mathbb{K}|\alpha\text{在}\mathbb{F}\text{上可分}\}$ 是一个域。
+[/SCOPE:s_thm1_let]
+[23] 且 $\mathbb{K}/\mathbb{S}$ 是一个纯不可分扩张。
+[24] 证明：
+[25] 由可分元素的封闭性（推论 4 ），可知 $\mathbb{S}$ 是 $\mathbb{F}$ 的可分闭包与 $\mathbb{K}$ 的交集，显然是个域。
+[SCOPE:s_thm1_reductio|reductio|定理1的反证法]
+[26] 反设 $\mathbb{K}-\mathbb{S}$ 中存在 $\mathbb{S}$ 的可分元素 $a$，
+[27] 那么 $\mathbb{S}(a)/\mathbb{S}$ 是可分扩张。
+[28] 由可分扩张的传递性（推论 2 ），可知 $\mathbb{S}(a)/\mathbb{F}$ 是可分扩张，这与可分闭包的定义矛盾。
+[29] 因此反设不成立，
+[30] 即 $\mathbb{K}-\mathbb{S}$ 中全是 $\mathbb{S}$ 的不可分元素。
+[/SCOPE:s_thm1_reductio]
+[31] 证毕。
+[32] 该定理还引出了一个重要的概念：
+
+[/SCOPE:s_thm1]
+[SCOPE:s_def3|description|定义3 可分次数]
+[33] 定义 3 可分次数
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[34] 给定代数扩域 $\mathbb{K}/\mathbb{F}$，构造中间域 $\mathbb{K}_S=\{\alpha\in\mathbb{K}|\alpha\text{在}\mathbb{F}\text{上可分}\}$。
+[/SCOPE:s_def3_let]
+[35] 则称 $[\mathbb{K}_S:\mathbb{F}]$ 是 $\mathbb{K}/\mathbb{F}$ 的可分次数（separability degree），记为 $[\mathbb{K}:\mathbb{F}]_S$。
+[36] 称 $[\mathbb{K}:\mathbb{F}] / [\mathbb{K}:\mathbb{F}]_S$ 为 $\mathbb{K}/\mathbb{F}$ 的不可分次数（inseparable degree）。
+
+[/SCOPE:s_def3]
+[SCOPE:s_thm2|description|定理2 单扩张的可分次数]
+[37] 定理 2 单扩张的可分次数
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[38] 设 $\alpha$ 是域 $\mathbb{F}$ 的代数元，
+[/SCOPE:s_thm2_let]
+[39] 则 $[\mathbb{F}(\alpha):\mathbb{F}]_S$ 正是 $ \operatorname {irr}(\alpha, \mathbb{F})$ 不同根的数目。
+[40] 证明：
+[41] 以 $\mathbb{F}$ 为基域。
+[42] 设 $ \operatorname {irr}(\alpha, \mathbb{F})=f$，其在 $\overline{\mathbb{F}}$ 中的全体根构成集合 $\{\alpha_i\}_{i=1}^n$，其中 $\alpha_1=\alpha$。
+[43] 则存在非负整数 $k$，使得
+[44] \begin{equation}
+\begin{aligned}
+f(x) &= (x-\alpha_1)^{p^k}(x-\alpha_2)^{p^k}\cdots(x-\alpha_n)^{p^k}\\
+&=(x^{p^k}-\alpha^{p^k}_1)(x^{p^k}-\alpha^{p^k}_2)\cdots(x^{p^k}-\alpha^{p^k}_n)~.
+\end{aligned}
+\end{equation}
+[45] 设 $\beta_i=\alpha_i^{p^k}$，$ \operatorname {irr}(x)(\beta_1, \mathbb{F})=g$，
+[46] 那么
+[47] \begin{equation}
+g(x) = (x-\alpha^{p^k}_1)(x-\alpha^{p^k}_2)\cdots(x-\alpha^{p^k}_n)~.
+\end{equation}
+[48] 显然，$\beta_i$ 都是 $\mathbb{F}$ 上的可分元。
+[49] 设 $\mathbb{S}$ 是 $\mathbb{F}(\alpha)$ 上 $\mathbb{F}$ 的可分闭包。
+[50] 由可分元的封闭性（推论 4 ）可知，可分元必是可分元运算所得结果。
+[51] 又考虑到 $\mathbb{S}$ 的元素都是由各 $\alpha_i$ 组合而来，又不能包含不可分元素，
+[52] 于是
+[53] 证毕。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_cor1|description|推论1]
+[54] 推论 1
+[SCOPE:s_cor1_let|let_bind|推论1的变量]
+[55] 设定同定理 2 。
+[56] 如果 $ \operatorname {ch}\mathbb{F}$ 是素数 $p$，
+[57] 则存在非负整数 $k$ 使得 $[\mathbb{F}(\alpha):\mathbb{F}]=p^k[\mathbb{K}(\alpha):\mathbb{K}]_S$。
+[58] 由于特征为 $0$ 的域都是完美域（定义见定理 5 ），不存在不可分元素，
+[59] 因此纯不可分扩张的讨论集中在特征为素数 $p$ 的域上。
+[60] 考虑域 $\mathbb{F}$，$ \operatorname {ch}\mathbb{F}=p$。
+[61] 对于任意 $\alpha, \beta\in\overline{\mathbb{F}}$ 和 $k\in\mathbb{Z}^+$，都有 $\alpha^{p^k}-\beta^{p^k}=(\alpha-\beta)^{p^k}$，其中 $\overline{\mathbb{F}}$ 是 $\mathbb{F}$ 的代数闭包。
+[/SCOPE:s_cor1_let]
+[62] 于是，任意 $a\in\mathbb{F}$ 在其代数闭包里有唯一的 $p^k$ 次根 $\alpha$，因为
+[63] \begin{equation}
+x^{p^k}-a=x^{p^k}-\alpha^{p^k}=(x-\alpha)^{p^k}~.
+\end{equation}
+[64] 显然这是 $\alpha$ 在 $\mathbb{F}$ 上的最小多项式，以及该最小多项式在 $\overline{\mathbb{F}}$ 上的分解。
+[65] 受此启发，我们可以得到一个纯不可分扩张的例子：
+
+[/SCOPE:s_cor1]
+[SCOPE:s_ex1|description|例1]
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[66] 设域 $\mathbb{F}$ 的特征为素数 $p$。
+[67] 定义集合
+[68] \begin{equation}
+\mathbb{F}^{1/p^\infty} = \{\alpha\in\overline{\mathbb{F}}\mid \alpha^{p^k}\in\mathbb{F}, k\in\mathbb{Z}^+\}~.
+\end{equation}
+[69] 这个集合满足加法和乘法的封闭性：设 $\alpha^m\in\mathbb{F}$ 和 $\beta^n\in\mathbb{F}$，另 $k$ 为 $m$ 和 $n$ 的任意公倍数，
+[70] 则 $\alpha^k$ 和 $\beta^k$ 都是 $\mathbb{F}$ 的元素，
+[71] 那么有
+[72] \begin{equation}
+\begin{aligned}
+(\alpha+\beta)^k&=\alpha^k+\beta^k~,\\
+(\alpha\beta)^k&=\alpha^k\beta^k~,
+\end{aligned}
+\end{equation}
+[73] 任取 $\alpha\in\mathbb{F}^{1/p^\infty}-\mathbb{F}$，令 $k$ 是使得 $\alpha^k\in\mathbb{F}$ 的最小非负整数，
+[/SCOPE:s_ex1_let]
+[74] 那么 $\alpha$ 在 $\mathbb{F}$ 上的最小多项式为
+[75] \begin{equation}
+\operatorname {Irr}(\alpha, \mathbb{F})(x) = x^{p^k}-a~,
+\end{equation}
+[76] 而在 $\mathbb{F}^{1/p^\infty}$ 上有
+[77] \begin{equation}
+x^{p^k}-a = (x-\alpha)^{p^k}~,
+\end{equation}
+[78] 因此 $\alpha$ 在 $\mathbb{F}$ 上不可分。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_exer1|description|习题1]
+[79] 习题 1
+[SCOPE:s_exer1_let|let_bind|习题1的变量]
+[80] 定义集合 $\mathbb{F}^{1/p^k}=\{\alpha\in\overline{\mathbb{F}}\mid \alpha^{p^k}\in\mathbb{F}\}$，其中 $k$ 是给定的任意正整数。
+[/SCOPE:s_exer1_let]
+[81] 证明这个集合是 $\mathbb{F}$ 的扩域。
+[82] $\mathbb{F}^{1/p^\infty}/\mathbb{F}^{1/p^k}$ 是不是纯不可分扩张？
+
+[/SCOPE:s_exer1]
+[SCOPE:s_exer2|description|习题2]
+[83] 习题 2
+[SCOPE:s_exer2_let|let_bind|习题2的变量]
+[84] 设域 $\mathbb{F}$ 的特征为素数 $p$。
+[/SCOPE:s_exer2_let]
+[85] 证明 $\mathbb{F}$ 是完美域（定义 5 ），当且仅当 $\mathbb{F}^{1/p^\infty}=\mathbb{F}$。
+[86] 例 1 启发我们得到限制条件下纯不可分扩张的另一定义。
+[87] 为了描述这一定义，我们先看一个简单的引理：
+
+[/SCOPE:s_exer2]
+[SCOPE:s_lem1|description|引理1]
+[88] 引理 1
+[SCOPE:s_lem1_let|let_bind|引理1的变量]
+[89] 设域 $\mathbb{F}$ 的特征是素数 $p$，且 $\alpha$ 是其代数元。
+[/SCOPE:s_lem1_let]
+[90] 则 “存在非负整数 $k$ 使得 $\alpha^{p^k}\in\mathbb{F}$”$\iff$“存在 $a\in\mathbb{F}$ 和非负整数 $n$ 使得 $ \operatorname {Irr}(\alpha, \mathbb{F})(x) = x^{p^n}-a$”。
+[91] 证明：
+[92] $\implies$：
+[93] 取 $n$ 是所有符合条件的 $k$ 中最小的。
+[94] 则 $ \operatorname {Irr}(\alpha, \mathbb{F})(x) = x^{p^n}-a$。
+[95] $\Leftarrow$：
+[96] 取 $k=n$ 即可。
+[97] 证毕。
+
+[/SCOPE:s_lem1]
+[SCOPE:s_cor2|description|推论2]
+[98] 推论 2
+[SCOPE:s_cor2_let|let_bind|推论2的变量]
+[99] 设域 $\mathbb{F}$ 的特征是素数 $p$，$\overline{\mathbb{F}}$ 是其代数闭包，
+[100] 则对于任意 $a\in\mathbb{F}$ 和 $k\in\mathbb{Z}^+$，存在唯一的 $\alpha\in\overline{\mathbb{F}}$，使得 $\alpha^{p^k}=a$。
+[/SCOPE:s_cor2_let]
+[101] 也就是说，特征为 $p$ 的域上，任意元素都有唯一的 $p^k$ 次根。
+[102] 这同时意味着，纯不可分元素在 $\mathbb{F}$ 上的最小多项式只有一个根——可以说，这种元素的最小多项式 “不可分” 的程度、或者说 “根的重数” 已经达到极致了，“纯” 不可分确实名不虚传。
+[103] 现在，我们可以给出纯不可分扩张在特征不为零时的等价定义了：
+
+[/SCOPE:s_cor2]
+[SCOPE:s_thm3|description|定理3 特征为p时纯不可分扩张的等价定义]
+[104] 定理 3 特征为 $p$ 时纯不可分扩张的等价定义
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[105] 给定代数域扩张 $\mathbb{K}/\mathbb{F}$，其特征为素数 $p$。
+[/SCOPE:s_thm3_let]
+[106] 则下列命题等价：
+[107] 1. $\mathbb{K}$ 在 $\mathbb{F}$ 上纯不可分.
+[108] 2. $\forall \alpha\in\mathbb{K}$，$\alpha$ 在 $\mathbb{F}$ 上纯不可分.
+[109] 3. 存在一个 $\mathbb{K}\to\mathbb{F}^{1/p^\infty}$1的保 $\mathbb{F}$ 单同态.
+[110] 4. $[\mathbb{K}:\mathbb{F}]_S=1$.
+[111] 证明：
+[112] 1. $\implies$2.
+[113] 只需要考虑 $\alpha\in\mathbb{K}-\mathbb{F}$ 的情况。
+[114] 记 $ \operatorname {Irr}(\alpha, \mathbb{F})=f$，
+[115] 则 $f$ 不可分、不可约，
+[116] 故由定义 2 和推论 2 知，可以把 $f$ 中次数不是 $p$ 整数倍的单项式挖掉。
+[117a] (x)\in\mathbb{F}[x]$ 和非负整数 $k$，使得 $f
+[117b] (x)=g(x^{p^k})$。
+[118] 于是 $g(\alpha^{p^k})=0$，
+[119] 因此 $g= \operatorname {Irr}(\alpha^{p^k}, \mathbb{F})$，
+[120] 从而 $\alpha^{p^k}$ 是 $\mathbb{F}$ 上的可分元素。
+[121] 又因为 $\mathbb{K}/\mathbb{F}$ 纯不可分，
+[122] 故 $\alpha^{p^k}\in\mathbb{F}$。
+[123] 2. $\implies$3.
+[124] 由纯不可分元素的定义 2 ，显然 $\mathbb{K}\subseteq\mathbb{F}^{1/p^\infty}$。
+[125] 故恒等映射即为所求。
+[126] 3. $\implies$4.
+[127] 令 $\varphi:\mathbb{K}\to\mathbb{F}^{1/p^\infty}$ 和 $\sigma:\mathbb{K}\to\overline{\mathbb{F}}$ 都是保 $\mathbb{F}$ 单同态。
+[128] 下证它们是同一个映射。
+[129] 由于 $ \operatorname {ch}\mathbb{F}=p$，
+[130] 于是由推论 2 ，任取正整数 $k$，每个 $a\in\mathbb{F}$ 在其代数闭包上都有唯一的 $p^k$ 次根。
+[131] 任取$\alpha\in\mathbb{K}$，
+[132] 那么 $\varphi(\alpha^{p^k})=(\varphi(\alpha))^{p^k}\in\mathbb{F}$。
+[133] 由于 $\varphi$ 是单射且保 $\mathbb{F}$ 的元素不变，
+[134] 故 $\alpha^{p^k}\in\mathbb{F}$。
+[135] 于是同理，$\sigma(\alpha^{p^k})=\alpha^{p^k}$。
+[136] 由于都是同态，
+[137] 故 $\varphi(\alpha^{p^k})=\sigma(\alpha^{p^k})\iff \varphi(\alpha)=\sigma(\alpha)$。
+[138] 4. $\implies$1.
+[139] 由可分次数的定义，题设意味着 $\mathbb{K}-\mathbb{F}$ 的元素都不是 $\mathbb{F}$ 上的可分元素。
+[140] 证毕。
+[141] 由定理 3 中第 1 和第 3 条的等价性，可知域 $\mathbb{F}$ 最大的纯不可分扩张就是 $\mathbb{F}^{1/p^\infty}$。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|定理4]
+[142] 定理 4
+[SCOPE:s_thm4_let|let_bind|定理4的变量]
+[143] 给定特征为素数 $p$ 的域 $\mathbb{F}$ 和 $\overline{\mathbb{F}}$ 的子集 $S$，如果 $S$ 的元素都是 $\mathbb{F}$ 的纯不可分元素，
+[/SCOPE:s_thm4_let]
+[144] 那么 $\mathbb{F}(S)/\mathbb{F}$ 是纯不可分扩张。
+[145] 证明：
+[146] 任取 $\alpha_i\in S\cup\mathbb{F}$，
+[147] 则 $\alpha_i$ 纯不可分，
+[148] 于是存在正整数 $k_i$ 使得 $\alpha_i^{p^{k_i}}\in\mathbb{F}$。
+[149] 于是，$\alpha_1^{p^{k_1}p^{k_2}}$ 和 $\alpha_2^{p^{k_2}p^{k_1}}$ 都在 $\mathbb{F}$ 中。
+[150] \begin{equation}
+(\alpha_1\alpha_2)^{p^{k_1+k_2}}=\alpha_1^{p^{k_1}p^{k_2}}\alpha_2^{p^{k_2}p^{k_1}}\in\mathbb{F}~,
+\end{equation}
+[151] \begin{equation}
+(\alpha_1+\alpha_2)^{p^{k_1+k_2}}=\alpha_1^{p^{k_1}p^{k_2}}+\alpha_2^{p^{k_2}p^{k_1}}\in\mathbb{F}~
+\end{equation}
+[152] \begin{equation}
+(\alpha_1^{-1})^{p^{k_1}} = (\alpha_1^{p^{k_1}})^{-1} \in\mathbb{F}~.
+\end{equation}
+[153] 换言之，纯不可分元素之积、和、逆都是纯不可分元素，
+[154] 因此 $\mathbb{F}(S)$ 中的元素都是 $\mathbb{F}$ 的纯不可分元素。
+[155] 由定理 3 第 2 条的定义得证。
+[156] 证毕。
+
+[/SCOPE:s_thm4]
+[SCOPE:s_thm5|description|定理5]
+[157] 定理 5
+[SCOPE:s_thm5_let|let_bind|定理5的变量]
+[158] 设 $\mathbb{L}/\mathbb{K}/\mathbb{F}$ 是代数扩域链。
+[/SCOPE:s_thm5_let]
+[159] 如果 $\mathbb{L}/\mathbb{F}$ 纯不可分，
+[160] 那么 $\mathbb{K}/\mathbb{F}$ 和 $\mathbb{L}/\mathbb{K}$ 也纯不可分。
+[161] 证明：
+[162] $\mathbb{K}\subseteq\mathbb{L}$，
+[163] 因此据定理 3 第 2 条的定义，$\mathbb{K}/\mathbb{F}$ 纯不可分。
+[164] $\mathbb{F}\subseteq\mathbb{K}$，
+[165] 因此据可分元素的定义和定理 3 第 2 条的定义，$\mathbb{F}/\mathbb{K}$ 纯不可分。
+[166] 证毕。
+
+[/SCOPE:s_thm5]
+[SCOPE:s_thm6|description|定理6 塔性质]
+[167] 定理 6 塔性质
+[SCOPE:s_thm6_let|let_bind|定理6的变量]
+[168] 设 $\mathbb{L}/\mathbb{K}/\mathbb{F}$ 是代数扩域链。
+[/SCOPE:s_thm6_let]
+[169] 如果 $\mathbb{K}/\mathbb{F}$ 和 $\mathbb{L}/\mathbb{K}$ 纯不可分，
+[170] 那么 $\mathbb{L}/\mathbb{F}$ 纯不可分。
+[171] 证明：
+[172] 任取 $\alpha\in\mathbb{L}$，
+[173] 则由于 $\mathbb{L}/\mathbb{K}$ 纯不可分，存在正整数 $m$ 使得 $\alpha^{p^m}\in\mathbb{K}$。
+[174] 由于 $\mathbb{K}/\mathbb{F}$ 纯不可分，存在正整数 $n$ 使得 $(\alpha^{p^m})^{p^n}\in\mathbb{F}$。
+[175] 于是，$\alpha$ 是 $\mathbb{F}$ 上的纯不可分元素。
+[176] 证毕。
+
+[/SCOPE:s_thm6]
+[SCOPE:s_thm7|description|定理7]
+[177] 定理 7
+[SCOPE:s_thm7_let|let_bind|定理7的变量]
+[178] 如果 $\mathbb{K}/\mathbb{F}$ 是一个纯不可分的代数扩张，且域合成 $\mathbb{EK}$ 存在，
+[/SCOPE:s_thm7_let]
+[179] 那么 $\mathbb{EK}/\mathbb{EF}$ 是纯不可分扩张。
+[180] 证明：
+[181] 任取 $\epsilon\in\mathbb{E}$ 和 $\kappa\in\mathbb{K}$，
+[182] 则存在正整数 $k$ 使得 $(\epsilon\kappa)^k\in\mathbb{EF}$。
+[183] 注意到 $\mathbb{EK}$ 是由集合 $\{\epsilon\kappa\mid\epsilon\in\mathbb{E}, \kappa\in\mathbb{K}\}$ 生成的，再类比式 8 、式 9 和式 10 可知，$\mathbb{EK}$ 中的元素都是 $\mathbb{EF}$ 上的纯不可分元素。
+[184] 证毕。
+
+[/SCOPE:s_thm7]
+[SCOPE:s_exer3|description|习题3]
+[185] 习题 3
+[SCOPE:s_exer3_let|let_bind|习题3的变量]
+[186] 给定域 $\mathbb{F}$，设 $\mathbb{K}_i$ 都是 $\mathbb{F}$ 的代数纯不可分扩域。
+[/SCOPE:s_exer3_let]
+[187] 证明 $\mathbb{K}_1\mathbb{K}_2/\mathbb{F}$ 是纯不可分扩张。
+
+[/SCOPE:s_exer3]
+[SCOPE:s_thm8|description|定理8]
+[188] 定理 8
+[SCOPE:s_thm8_let|let_bind|定理8的变量]
+[189] 给定域 $\mathbb{F}$ 及其代数闭包 $\overline{\mathbb{F}}$。
+[190] 则 $\alpha\in\overline{\mathbb{F}}$ 是 $\mathbb{F}$ 上的纯不可分元素，当且仅当对于 $\overline{\mathbb{F}}$ 的保 $\mathbb{K}$ 自同构 $\sigma$，都有 $\sigma\alpha=\alpha$。
+[/SCOPE:s_thm8_let]
+[191] 证明：
+[192] $ \operatorname {ch}\mathbb{F}=0$ 以及其它 $\mathbb{F}$ 是完美域的情况是平凡情况。
+[193] 下面讨论 $\mathbb{F}$ 存在不可分元素的情况，设其特征为 $p$。
+[194] 必要性：
+[195] 设 $\alpha\in\overline{\mathbb{F}}$ 是 $\mathbb{F}$ 上的纯不可分元素，
+[196] 则存在正整数 $k$ 和 $a\in\mathbb{F}$ 使得 $\alpha$ 是 $\mathbb{F}$ 上不可约多项式 $x^{p^k}-a$ 唯一的根。
+[197] $\sigma$ 必须把 $\mathbb{F}$ 上多项式的一个根映射为另一个根，
+[198] 因此只能有 $\sigma\alpha=\alpha$。
+[199] 充分性：
+[200] 设对于 $\overline{\mathbb{F}}$ 的保 $\mathbb{K}$ 自同构 $\sigma$，都有 $\sigma\alpha=\alpha$。
+[201] 设 $\alpha$ 在 $\mathbb{F}$ 上的最小多项式为 $f(x)$，
+[202a] (x)$ 的任意其它根，可知 $f
+[202b] (x)$ 在代数闭包 $\overline{\mathbb{F}}$ 上只有一个根，
+[203] 因此 $f$ 在 $\overline{\mathbb{F}}$ 上应分解为 $(x-\alpha)^n$，其中 $n$ 是一个正整数。
+[204] 展开 $(x-\alpha)^n$，其常数项 $\alpha^n=a\in\mathbb{F}$。
+[205] 因此 $x^n-a$ 也是 $\alpha$ 的零化多项式。
+[206] 由于次数相等以及最小多项式的定义，可知 $(x-\alpha)^n=x^n-a$。
+[207a] (x)\in\mathbb{F}$ 和非负整数 $k$，使得 $h(x^{p^k})=f
+[207b] (x)=x^n-a$，
+[208] 因此 $p^k\mid n$。
+[209] 设 $n=p^km$，
+[210] 那么 $h(x)=x^m-a$。
+[211] 由于 $f$ 只有唯一的根 $\alpha$，
+[212] 故 $h$ 也只能有唯一的根2。
+[213] 加上 $h$ 是可分的，不存在重根，
+[214] 故 $m=1$。
+[215] 因此，$\alpha$ 是 $a$ 唯一的 $p^k$ 次根，符合定义 2 。
+[216] 证毕。
+[217] 定理 8 充分性的证明很能说明纯不可分扩张的特点：就一个根，
+[218] 因此对应定理中 $\sigma \alpha$ 的可能性就一个。
+[/SCOPE:s_thm8]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的结论涉及纯不可分扩张，是定义1的特例应用"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2计算单扩张的可分次数，是定义3的特例"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推论1由定理2推出"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1给出纯不可分元素的例子"
+  },
+  {
+    "source_scope": "s_lem1",
+    "target_scope": "s_def2",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "引理1给出纯不可分元素的等价刻画"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_lem1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推论2由引理1推出"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def1",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "定理3给出纯不可分扩张在特征p时的等价定义"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_thm3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理4由定理3推出"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_thm3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理5由定理3推出"
+  },
+  {
+    "source_scope": "s_thm6",
+    "target_scope": "s_thm5",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理6是定理5的逆命题"
+  },
+  {
+    "source_scope": "s_thm7",
+    "target_scope": "s_thm3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理7由定理3推出"
+  },
+  {
+    "source_scope": "s_thm8",
+    "target_scope": "s_def2",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "定理8给出纯不可分元素的等价刻画"
+  }
+]

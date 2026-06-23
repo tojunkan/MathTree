@@ -1,0 +1,164 @@
+[SCOPE:root|description|平面旋转矩阵]
+文章名: Rot2D
+标题: 平面旋转矩阵
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+
+[SCOPE:s_rot_matrix|description|旋转矩阵推导]
+[0] 我们之前学过的 “平面旋转变换” 属于线性变换，以下用矩阵 $ \boldsymbol{\mathbf{R}} _2$ 表示。
+[1] 虽然我们可以直接把式 1 到式 4 写成矩阵乘以列矢量的形式，得到
+[2] \begin{equation}
+\begin{pmatrix}x'\\ y'\end{pmatrix} =
+\begin{pmatrix}
+\cos\theta & - \sin\theta\\
+\sin\theta &\cos\theta
+\end{pmatrix} \begin{pmatrix}x\\ y\end{pmatrix} ~.
+\end{equation}
+[3] 但这里我们用另一种方法推导一次，能更好地帮助理解和记忆。
+[SCOPE:s_rot_let1|let_bind|单位矢量旋转]
+[4] 【图解】图 1：把单位矢量 $ \hat{\boldsymbol{\mathbf{x}}} $ 和 $ \hat{\boldsymbol{\mathbf{y}}} $ 逆时针旋转 $\theta$
+[5] 已知单位矢量 $ \hat{\boldsymbol{\mathbf{x}}} = (1, 0), \hat{\boldsymbol{\mathbf{y}}} = (0, 1)$ 逆时针旋转 $\theta$ 得（图 1 ）
+[6] \begin{equation}
+\boldsymbol{\mathbf{R}} _2 \begin{pmatrix}1\\0\end{pmatrix} = \begin{pmatrix}\cos \theta \\ \sin \theta\end{pmatrix} ~,
+\qquad
+\boldsymbol{\mathbf{R}} _2 \begin{pmatrix}0\\1\end{pmatrix} = \begin{pmatrix}-\sin\theta \\ \cos\theta\end{pmatrix} ~.
+\end{equation}
+[/SCOPE:s_rot_let1]
+[SCOPE:s_rot_let2|let_bind|任意矢量v]
+[7] 要求任意矢量 $ \boldsymbol{\mathbf{v}} = (v_1, v_2)$ 的旋转矩阵，可以将 $ \boldsymbol{\mathbf{v}} $ 表示成 $ \hat{\boldsymbol{\mathbf{x}}} $ 和 $ \hat{\boldsymbol{\mathbf{y}}} $ 的线性组合（
+[8] 式 14 [链接 L0]
+[9] ）$ \boldsymbol{\mathbf{v}} = v_1 \hat{\boldsymbol{\mathbf{x}}} + v_2 \hat{\boldsymbol{\mathbf{y}}} $。由
+[10] 式 21 [链接 L1]
+[11] ，该线性组合的旋转变换等于 $ \hat{\boldsymbol{\mathbf{x}}} , \hat{\boldsymbol{\mathbf{y}}} $ 分别做旋转变换再做同样的线性组合，
+[12] 即
+[13] \begin{equation}
+\begin{aligned}
+\boldsymbol{\mathbf{R}} _2 \left(v_1 \hat{\boldsymbol{\mathbf{x}}} + v_2 \hat{\boldsymbol{\mathbf{y}}} \right)
+&= v_1 \boldsymbol{\mathbf{R}} _2 \hat{\boldsymbol{\mathbf{x}}} + v_2 \boldsymbol{\mathbf{R}} _2 \hat{\bol…[truncated]…a \\ \sin \theta\end{pmatrix}
++ v_2 \begin{pmatrix}-\sin\theta \\ \cos\theta\end{pmatrix} \\
+&= \begin{pmatrix}\cos \theta & - \sin \theta \\ \sin \theta & \cos \theta\end{pmatrix}
+\begin{pmatrix}v_1 \\v_2\end{pmatrix} ~.
+\end{aligned} \end{equation}
+[/SCOPE:s_rot_let2]
+[14] 所以旋转矩阵为
+[15] \begin{equation}
+\boldsymbol{\mathbf{R}} _2 = \begin{pmatrix}
+\cos\theta & - \sin\theta\\
+\sin\theta &\cos\theta
+\end{pmatrix}~.
+\end{equation}
+[16] 平面旋转变换 [链接 L2]
+[17] 得出的结果一致。
+[18] 把这个推导推广到一般情况，就是如果已知每个基底 $ \boldsymbol{\mathbf{\beta}} _i$ 的线性变换（记变换矩阵为 $ \boldsymbol{\mathbf{A}} $）结果为 $ \boldsymbol{\mathbf{\alpha}} _i = \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{\beta}} _i$，
+[19] 那么变换矩阵的第 $i$ 列就是第 $i$ 个列矢量 $ \boldsymbol{\mathbf{\alpha}} _i$。
+
+[/SCOPE:s_rot_matrix]
+[SCOPE:s_arbitrary_rotation|description|绕任意点旋转]
+[20] 由式 5 可得绕任一点 $(x_0, y_0)$ 旋转为
+[21] \begin{equation}
+\begin{aligned}
+\begin{pmatrix}x'\\y'\end{pmatrix} &= \begin{pmatrix}\cos\theta & -\sin\theta\\ \sin\theta & \cos\theta\end{pmatrix} \begin{pmatrix}x - x_0\\ y - y_0\end{pmatrix} + \begin{pmatrix}x_0 \\ y_0\end{pmatrix} \\
+&= \begin{…[truncated]…os\theta & -\sin\theta\\ \sin\theta & \cos\theta\end{pmatrix} \begin{pmatrix}x\\ y\end{pmatrix} + \begin{pmatrix}1-\cos\theta & -\sin\theta\\ \sin\theta & 1-\cos\theta\end{pmatrix} \begin{pmatrix}x_0\\ y_0\end{pmatrix} ~.
+\end{aligned}
+\end{equation}
+[22] 可见绕任意点旋转并不能简单表示为单个矩阵和 $(x\ y) ^{\mathrm{T}} $ 相乘，
+[23] 所以不是线性变换。
+[24] 习惯上讨论旋转变换时都是默认关于原点旋转。
+
+[/SCOPE:s_arbitrary_rotation]
+[SCOPE:s_active_passive|description|主动理解和被动理解]
+[SCOPE:s_active_let|let_bind|主动理解变量]
+[25] 我们将任意矢量 $ \boldsymbol{\mathbf{v}} $ 的旋转变换记为 $ \boldsymbol{\mathbf{u}} = \boldsymbol{\mathbf{R}} _2 \boldsymbol{\mathbf{v}} $，我们把 $ \boldsymbol{\mathbf{v}} $ 看做是二维空间中某矢量关于基底 $ \hat{\boldsymbol{\mathbf{x}}} , \hat{\boldsymbol{\mathbf{y}}} $ 的坐标。
+[26] 若我们把 $ \boldsymbol{\mathbf{u}} $ 看做是另一矢量关于 $ \hat{\boldsymbol{\mathbf{x}}} , \hat{\boldsymbol{\mathbf{y}}} $ 的坐标，
+[27] 那么 $ \hat{\boldsymbol{\mathbf{u}}} $ 就等于 $ \hat{\boldsymbol{\mathbf{v}}} $ 逆时针旋转 $\theta$ 角。
+[/SCOPE:s_active_let]
+[28] 旋转矩阵的这种理解被称为主动的（active）。
+[SCOPE:s_passive_let|let_bind|被动理解变量]
+[29] 另一种可能的理解是，$ \boldsymbol{\mathbf{u}} $ 和 $ \boldsymbol{\mathbf{v}} $ 代表二维空间中的同一矢量关于不同基底的展开。
+[30] 我们把 $ \boldsymbol{\mathbf{u}} $ 使用的基底记为 $ \hat{\boldsymbol{\mathbf{u}}} _1, \hat{\boldsymbol{\mathbf{u}}} _2$，$ \boldsymbol{\mathbf{v}} $ 使用的基底记为 $ \hat{\boldsymbol{\mathbf{v}}} _1, \hat{\boldsymbol{\mathbf{v}}} _2$。
+[31] 我们有
+[32] \begin{equation}
+u_1 \hat{\boldsymbol{\mathbf{u}}} _1 + u_2 \hat{\boldsymbol{\mathbf{u}}} _2 = v_1 \hat{\boldsymbol{\mathbf{v}}} _1 + v_2 \hat{\boldsymbol{\mathbf{v}}} _2~.
+\end{equation}
+[33] 将 $ \boldsymbol{\mathbf{R}} _2$ 的矩阵元记为 $R_{ij}$，不难证明两组基底之间的关系为
+[34] \begin{equation}
+\left\{\begin{aligned}
+\hat{\boldsymbol{\mathbf{u}}} _1 = R_{11} \hat{\boldsymbol{\mathbf{v}}} _1 + R_{12} \hat{\boldsymbol{\mathbf{v}}} _2 \\
+\hat{\boldsymbol{\mathbf{u}}} _2 = R_{21} \hat{\boldsymbol{\mathbf{v}}} _1 + R_{22} \hat{\boldsymbol{\mathbf{v}}} _2
+\end{aligned}\right. ~.\end{equation}
+[35] 将矩阵元代入可知，基底 $ \hat{\boldsymbol{\mathbf{u}}} _1, \hat{\boldsymbol{\mathbf{u}}} _2$ 分别是基底 $ \hat{\boldsymbol{\mathbf{v}}} _1, \hat{\boldsymbol{\mathbf{v}}} _2$ 顺时针旋转 $\theta$ 角所得。
+[/SCOPE:s_passive_let]
+[36] 我们把这种理解叫做
+[37] 被动（passive）
+[38] 的，
+[39] 即旋转矩阵表示同一个矢量的
+[40] 基底变换
+
+[/SCOPE:s_active_passive]
+[SCOPE:s_matrix_elements|description|矩阵元的意义（被动理解）]
+[41] 在被动理解中，矩阵元 $R_{i,j}$ 的几何意义就是单位矢量 $ \hat{\boldsymbol{\mathbf{u}}} _i$ 和 $ \hat{\boldsymbol{\mathbf{v}}} _j$ 的点乘（内积）。
+[42] 于是变换可以写成
+[43] \begin{equation}
+\begin{pmatrix}u_1\\u_2\end{pmatrix} = \begin{pmatrix} \hat{\boldsymbol{\mathbf{u}}} _1 \boldsymbol\cdot \hat{\boldsymbol{\mathbf{v}}} _1 & \hat{\boldsymbol{\mathbf{u}}} _1 \boldsymbol\cdot \hat{\boldsymbol{\mathbf{v}}} _2\\ \hat{\boldsymbol{\mathbf{u}}} _2 \boldsymbol\cdot \hat{\boldsymbol{\mathbf{v}}} _1 & \hat{\boldsymbol{\mathbf{u}}} _2 \boldsymbol\cdot \hat{\boldsymbol{\mathbf{v}}} _2\end{pmatrix} \begin{pmatrix}v_1 \\ v_2\end{pmatrix} ~,
+\end{equation}
+[44] 展开后得
+[45] \begin{equation}
+\begin{aligned}
+&u_1 = (v_1 \hat{\boldsymbol{\mathbf{v}}} _1 + v_2 \hat{\boldsymbol{\mathbf{v}}} _2) \boldsymbol\cdot \hat{\boldsymbol{\mathbf{u}}} _1~,\\
+&u_2 = (v_1 \hat{\boldsymbol{\mathbf{v}}} _1 + v_2 \hat{\boldsymbol{\mathbf{v}}} _2) \boldsymbol\cdot \hat{\boldsymbol{\mathbf{u}}} _2~,
+\end{aligned}
+\end{equation}
+[46] 这正是 $u_1, u_2$ 的定义。
+[47] 若考虑从 $u_i$ 到 $v_i$ 的逆变换，同理有
+[48] \begin{equation}
+\begin{pmatrix}v_1\\v_2\end{pmatrix} = \begin{pmatrix} \hat{\boldsymbol{\mathbf{v}}} _1 \boldsymbol\cdot \hat{\boldsymbol{\mathbf{u}}} _1 & \hat{\boldsymbol{\mathbf{v}}} _1 \boldsymbol\cdot \hat{\boldsymbol{\mathbf{u}}} _2\\ \hat{\boldsymbol{\mathbf{v}}} _2 \boldsymbol\cdot \hat{\boldsymbol{\mathbf{u}}} _1 & \hat{\boldsymbol{\mathbf{v}}} _2 \boldsymbol\cdot \hat{\boldsymbol{\mathbf{u}}} _2\end{pmatrix} \begin{pmatrix}u_1 \\ u_2\end{pmatrix} ~.
+\end{equation}
+[49] 由于几何矢量的点乘满足交换律，对比
+[50] 式 8 [链接 L3]
+[51] 式 10 [链接 L4]
+[52] 可以发现后者的矩阵就是 $ \boldsymbol{\mathbf{R}} $ 的转置即 $ \boldsymbol{\mathbf{R}} ^{\mathrm{T}} $。
+[53] 事实上，任何 $2\times2$ 的实数正交归一矩阵都可以表示平面旋转变换，
+[54] 所以我们证明了正交归一矩阵的一个重要的性质：
+
+[/SCOPE:s_matrix_elements]
+[SCOPE:s_theorem1|description|定理1]
+[55] 定理 1
+[56] 正交矩阵的逆矩阵等于它的转置。
+
+跨文章引用:
+  [L2] 平面旋转变换 → Rot2DT
+[/SCOPE:s_theorem1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_rot_matrix",
+    "target_scope": "s_arbitrary_rotation",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "旋转矩阵推导后，讨论绕任意点旋转"
+  },
+  {
+    "source_scope": "s_rot_matrix",
+    "target_scope": "s_active_passive",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "旋转矩阵推导后，讨论主动与被动理解"
+  },
+  {
+    "source_scope": "s_active_passive",
+    "target_scope": "s_matrix_elements",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "被动理解引出矩阵元意义"
+  },
+  {
+    "source_scope": "s_matrix_elements",
+    "target_scope": "s_theorem1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "矩阵元意义推导出正交矩阵性质"
+  }
+]

@@ -1,0 +1,57 @@
+[SCOPE:root|description|矢量场（矢量分析）]
+文章名: Vfield
+标题: 矢量场（矢量分析）
+
+[SCOPE:s_intro|description|矢量场定义与例子]
+[0] 对空间中指定范围的每一点 $P$ 赋予一个矢量 $ \boldsymbol{\mathbf{v}} $，就在该空间中形成了一个矢量场。
+[1] 例如，电荷附近的任意一点都存在一个电场矢量，这就构成了一个矢量场。
+[2] 管道中任意一点的水流都存在一个速度矢量，它们也构成一个矢量场。
+[3] 其他例子如力场，电场，磁场。
+
+[/SCOPE:s_intro]
+[SCOPE:s_rect|description|直角坐标系表示]
+[4] 矢量场在不同的参考系中有不同的表示方法。
+[SCOPE:s_rect_let|let_bind|直角坐标系变量]
+[5] 在空间直角坐标系中，矢量场可以用矢量的三个分量关于 $x,y,z$ 三个坐标的函数表示。
+[6] 点 $P(x,y,z)$ 处的矢量分量为（$ \boldsymbol\cdot $ 表示点乘）
+[7] \begin{equation}
+\begin{cases}
+v_x(x,y,z) = \boldsymbol{\mathbf{v}} \boldsymbol\cdot \hat{\boldsymbol{\mathbf{x}}} \\
+v_y(x,y,z) = \boldsymbol{\mathbf{v}} \boldsymbol\cdot \hat{\boldsymbol{\mathbf{y}}} \\
+v_z(x,y,z) = \boldsymbol{\mathbf{v}} \boldsymbol\cdot \hat{\boldsymbol{\mathbf{z}}}
+\end{cases}~,
+\end{equation}
+[8] 也可以作为
+[9] 单位正交基 [链接 L0]
+[10] 的线性组合写成一个整体
+[11] \begin{equation}
+\begin{aligned}
+\boldsymbol{\mathbf{v}} &= ( \boldsymbol{\mathbf{v}} \boldsymbol\cdot \hat{\boldsymbol{\mathbf{x}}} )\, \hat{\boldsymbol{\mathbf{x}}} + ( \boldsymbol{\mathbf{v}} \boldsymbol\cdot \hat{\boldsymbol{\mathbf{y}}} )\, \hat…[truncated]…boldsymbol\cdot \hat{\boldsymbol{\mathbf{z}}} )\, \hat{\boldsymbol{\mathbf{z}}} \\
+&= v_x(x,y,z)\, \hat{\boldsymbol{\mathbf{x}}} + v_y(x,y,z)\, \hat{\boldsymbol{\mathbf{y}}} + v_z(x,y,z)\, \hat{\boldsymbol{\mathbf{z}}} ~.
+\end{aligned} \end{equation}
+
+[/SCOPE:s_rect]
+[/SCOPE:s_rect_let]
+[SCOPE:s_sphere_let|let_bind|球坐标系变量]
+[SCOPE:s_sphere|description|球坐标系表示]
+[12] 在球坐标系中，也可以把每个点的矢量根据该点处的三个单位矢量 $ \hat{\boldsymbol{\mathbf{r}}} $， $ \hat{\boldsymbol{\mathbf{\theta}}} $， $ \hat{\boldsymbol{\mathbf{\phi}}} $ 分解为三个分量。
+[13] 基底的线性组合为
+[14] \begin{equation}
+\boldsymbol{\mathbf{v}} = v_r(r,\theta ,\phi)\, \hat{\boldsymbol{\mathbf{r}}} + v_\theta(r,\theta ,\phi) \, \hat{\boldsymbol{\mathbf{\theta}}} + v_\phi(r,\theta ,\phi)\, \hat{\boldsymbol{\mathbf{\phi}}} ~.
+\end{equation}
+[15] 需要特别注意，$ \hat{\boldsymbol{\mathbf{r}}} $， $ \hat{\boldsymbol{\mathbf{\theta}}} $， $ \hat{\boldsymbol{\mathbf{\phi}}} $ 也是关于 $(r,\theta ,\phi )$ 的函数，
+[16] 所以对 $ \boldsymbol{\mathbf{v}} $ 求导（或偏导）时必须根据矢量的求导法则进行。
+
+[/SCOPE:s_sphere_let]
+[/SCOPE:s_sphere]
+[SCOPE:s_field_lines|description|场线]
+[17] 场线是矢量场的一种可视化工具。
+[18] 我们可以顺着矢量场的方向画出多条有方向的不相交曲线，使得曲线上任意一点的切线方向都等于该点处矢量场的方向。
+[19] 对于无散场，场线没有起点和终点；
+[20] 对于无旋场，场线不会闭合。
+[21] 【未完成】链接，说明
+
+跨文章引用:
+  [L0] 单位正交基 → OrNrB
+[/SCOPE:s_field_lines]
+[/SCOPE:root]

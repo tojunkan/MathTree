@@ -1,0 +1,252 @@
+{
+  "article_name": "CrosMt",
+  "statements": [
+    {
+      "stmt_id": "st_intro_vectors",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_main_let1",
+      "exposed_entities": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_transform",
+      "subtype": "conclusion",
+      "clause_range": [
+        2,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_main_let1",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_matrix_A",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_main_let1",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_antisymmetric",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_main_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_B",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_main_let2",
+      "exposed_entities": [
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_B",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_main_let2",
+      "exposed_entities": [
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_sign_opposite",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_main_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rotation_setup",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_rotation_let",
+      "exposed_entities": [
+        "S",
+        "S'",
+        "R",
+        "u",
+        "v",
+        "u'",
+        "v'"
+      ]
+    },
+    {
+      "stmt_id": "st_rotation_relation",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rotation_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cross_invariant",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_rotation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rotation_equation",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rotation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_U_definition",
+      "subtype": "definition",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_rotation",
+      "exposed_entities": [
+        "U",
+        "U'"
+      ]
+    },
+    {
+      "stmt_id": "st_transformed_equation",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rotation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_final_identity",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rotation",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_intro_vectors",
+      "target": "st_linear_transform",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_vectors",
+      "target": "st_matrix_A",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_matrix_A",
+      "target": "st_antisymmetric",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_B",
+      "target": "st_linear_B",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_linear_B",
+      "target": "st_sign_opposite",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rotation_setup",
+      "target": "st_rotation_relation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rotation_setup",
+      "target": "st_cross_invariant",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cross_invariant",
+      "target": "st_rotation_equation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rotation_equation",
+      "target": "st_U_definition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_U_definition",
+      "target": "st_transformed_equation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_transformed_equation",
+      "target": "st_final_identity",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

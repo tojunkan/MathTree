@@ -1,0 +1,165 @@
+{
+  "article_name": "Int",
+  "statements": [
+    {
+      "stmt_id": "st_primitive_question",
+      "subtype": "question",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_primitive",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_primitive_intro",
+      "subtype": "remark",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_primitive",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_primitive_def",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_primitive",
+      "exposed_entities": [
+        "F(x)",
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        7,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "f(x)",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof",
+      "subtype": "remark",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_indef_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_indef",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_indef_def",
+      "subtype": "definition",
+      "clause_range": [
+        20,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_indef",
+      "exposed_entities": [
+        "f(x)",
+        "F(x)",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_indef_remark2",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_indef",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop_linearity",
+      "subtype": "theorem",
+      "clause_range": [
+        28,
+        31
+      ],
+      "truth_value": "true",
+      "scope_id": "s_prop",
+      "exposed_entities": [
+        "a_n",
+        "f_n(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_methods_intro",
+      "subtype": "remark",
+      "clause_range": [
+        32,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_methods",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_primitive_def",
+      "target": "st_thm1_statement",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_indef_def",
+      "target": "st_primitive_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_statement",
+      "target": "st_primitive_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_statement",
+      "target": "st_primitive_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1是关于原函数的性质"
+    },
+    {
+      "source": "st_indef_def",
+      "target": "st_primitive_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "不定积分是原函数的全体"
+    }
+  ],
+  "unresolved": []
+}

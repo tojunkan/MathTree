@@ -1,0 +1,305 @@
+{
+  "article_name": "PoisD",
+  "statements": [
+    {
+      "stmt_id": "st_def_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "f(λ,k)",
+        "λ"
+      ]
+    },
+    {
+      "stmt_id": "st_def_let_assump1",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let",
+      "exposed_entities": [
+        "Δt",
+        "ΔP"
+      ]
+    },
+    {
+      "stmt_id": "st_def_let_def_alpha",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let",
+      "exposed_entities": [
+        "α"
+      ]
+    },
+    {
+      "stmt_id": "st_def_let_assump2",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let",
+      "exposed_entities": [
+        "T"
+      ]
+    },
+    {
+      "stmt_id": "st_def_let_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def_let",
+      "exposed_entities": [
+        "λ"
+      ]
+    },
+    {
+      "stmt_id": "st_meanvar_remark",
+      "subtype": "remark",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_meanvar",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_meanvar_deriv",
+      "subtype": "remark",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_meanvar",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derive_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_derive",
+      "exposed_entities": [
+        "α"
+      ]
+    },
+    {
+      "stmt_id": "st_derive_let_def_lambda",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_derive_let",
+      "exposed_entities": [
+        "λ",
+        "T",
+        "Δt"
+      ]
+    },
+    {
+      "stmt_id": "st_derive_let_concl1",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derive_let",
+      "exposed_entities": [
+        "ΔP"
+      ]
+    },
+    {
+      "stmt_id": "st_derive_concl2",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derive",
+      "exposed_entities": [
+        "f(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_derive_concl3",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derive",
+      "exposed_entities": [
+        "P0(T)"
+      ]
+    },
+    {
+      "stmt_id": "st_derive_example",
+      "subtype": "example",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "s_derive",
+      "exposed_entities": [
+        "T_{1/2}"
+      ]
+    },
+    {
+      "stmt_id": "st_derive_concl4",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derive",
+      "exposed_entities": [
+        "P1(T)"
+      ]
+    },
+    {
+      "stmt_id": "st_derive_concl5",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derive",
+      "exposed_entities": [
+        "P2(T)"
+      ]
+    },
+    {
+      "stmt_id": "st_derive_concl6",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derive",
+      "exposed_entities": [
+        "Pk(T)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def_assump",
+      "target": "st_def_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_let_assump1",
+      "target": "st_def_let_def_alpha",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_let_def_alpha",
+      "target": "st_def_let_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_let_assump2",
+      "target": "st_def_let_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derive_assump",
+      "target": "st_derive_let_def_lambda",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derive_let_def_lambda",
+      "target": "st_derive_let_concl1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derive_let_concl1",
+      "target": "st_derive_concl2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derive_concl2",
+      "target": "st_derive_concl3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derive_concl3",
+      "target": "st_derive_concl4",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derive_concl4",
+      "target": "st_derive_concl5",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derive_concl5",
+      "target": "st_derive_concl6",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_def_conclusion",
+      "target": "st_derive_concl6",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义中的概率公式与推导结果一致"
+    }
+  ],
+  "unresolved": [
+    "Scope s_meanvar 内容未完成，无法提取有效 Statement。",
+    "Scope s_def_let 内部变量定义与结论的关系不明确，假设与结论之间的逻辑链可能不完整。"
+  ]
+}

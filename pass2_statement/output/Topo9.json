@@ -1,0 +1,316 @@
+{
+  "article_name": "Topo9",
+  "statements": [
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "A",
+        "B",
+        "A\\amalg B"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let1",
+      "exposed_entities": [
+        "A",
+        "B",
+        "A'",
+        "B'"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_concl1",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1_let1",
+      "exposed_entities": [
+        "A\\amalg B"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let2",
+      "exposed_entities": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_concl2",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1_let2",
+      "exposed_entities": [
+        "A\\amalg B"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let2",
+      "exposed_entities": [
+        "S^1",
+        "S^n"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "X",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_space_pair",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "(X, A)"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_map",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "f",
+        "(X, A)",
+        "(Y, B)"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_mapping_space",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "(Y, B)^{(X, A)}",
+        "Y^X"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_product",
+      "subtype": "definition",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "(X, A)\\times(Y,B)"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_special",
+      "subtype": "remark",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_let",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3_let",
+      "exposed_entities": [
+        "X",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_def3",
+      "subtype": "definition",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "(X, x_0)",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_let",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4_let",
+      "exposed_entities": [
+        "(X, x_0)",
+        "(Y, y_0)"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_wedge",
+      "subtype": "definition",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "(X\\vee Y, x_0\\vee y_0)"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_smash",
+      "subtype": "definition",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "(X\\land Y, x_0\\land y_0)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let1",
+      "target": "st_ex1_concl1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let2",
+      "target": "st_ex1_concl2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2_space_pair",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2_map",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2_mapping_space",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2_product",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_let",
+      "target": "st_def3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def4_let",
+      "target": "st_def4_wedge",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def4_let",
+      "target": "st_def4_smash",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

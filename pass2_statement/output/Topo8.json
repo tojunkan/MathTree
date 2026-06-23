@@ -1,0 +1,220 @@
+{
+  "article_name": "Topo8",
+  "statements": [
+    {
+      "stmt_id": "st_compact_open_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_compact_open",
+      "exposed_entities": [
+        "X",
+        "Y",
+        "Y^X",
+        "K",
+        "U",
+        "M_{K,U}",
+        "T"
+      ]
+    },
+    {
+      "stmt_id": "st_equiv_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_equiv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_properties_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        16,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_properties_assump1",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_properties",
+      "exposed_entities": [
+        "X",
+        "Y^X",
+        "e"
+      ]
+    },
+    {
+      "stmt_id": "st_properties_concl1",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_properties",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_properties_assump2",
+      "subtype": "assumption",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_properties",
+      "exposed_entities": [
+        "f",
+        "X",
+        "Z",
+        "Y"
+      ]
+    },
+    {
+      "stmt_id": "st_properties_concl2",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_properties",
+      "exposed_entities": [
+        "f_tilde"
+      ]
+    },
+    {
+      "stmt_id": "st_properties_assump3",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_properties",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_properties_concl3",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_properties",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_properties_assump4",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_properties",
+      "exposed_entities": [
+        "Z"
+      ]
+    },
+    {
+      "stmt_id": "st_properties_concl4",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_properties",
+      "exposed_entities": [
+        "E"
+      ]
+    },
+    {
+      "stmt_id": "st_properties_assump5",
+      "subtype": "assumption",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_properties",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_properties_concl5",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_properties",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_properties_assump1",
+      "target": "st_properties_concl1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_properties_assump2",
+      "target": "st_properties_concl2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_properties_assump3",
+      "target": "st_properties_concl3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_properties_assump4",
+      "target": "st_properties_concl4",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_properties_assump5",
+      "target": "st_properties_concl5",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_equiv_theorem",
+      "target": "st_compact_open_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "等价性定理是紧开拓扑在度量空间下的特例"
+    },
+    {
+      "source": "st_properties_theorem",
+      "target": "st_compact_open_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "重要性质基于紧开拓扑"
+    }
+  ],
+  "unresolved": []
+}

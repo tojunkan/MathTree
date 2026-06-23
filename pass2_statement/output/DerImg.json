@@ -1,0 +1,94 @@
+{
+  "article_name": "DerImg",
+  "statements": [
+    {
+      "stmt_id": "st_example1",
+      "subtype": "example",
+      "clause_range": [
+        0,
+        11
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let_f",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b",
+        "c",
+        "d",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_derivative",
+      "subtype": "conclusion",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "f'(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_factorization",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "x_1",
+        "x_2"
+      ]
+    },
+    {
+      "stmt_id": "st_second_derivative_test",
+      "subtype": "condition",
+      "clause_range": [
+        7,
+        11
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let_f",
+      "target": "st_derivative",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_f",
+      "target": "st_factorization",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivative",
+      "target": "st_factorization",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

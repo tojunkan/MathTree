@@ -1,0 +1,129 @@
+{
+  "article_name": "ChExpn",
+  "statements": [
+    {
+      "stmt_id": "st_identity",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        6
+      ],
+      "truth_value": "true",
+      "scope_id": "s_identity",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof1_let",
+      "exposed_entities": [
+        "a+b",
+        "n",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_proof1_method1",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof1_method2",
+      "subtype": "conclusion",
+      "clause_range": [
+        10,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof1_range",
+      "subtype": "remark",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof2_identity",
+      "subtype": "theorem",
+      "clause_range": [
+        19,
+        24
+      ],
+      "truth_value": "true",
+      "scope_id": "s_proof2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_proof1_assump",
+      "target": "st_proof1_method1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof1_assump",
+      "target": "st_proof1_method2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof1_method1",
+      "target": "st_proof1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof1_method2",
+      "target": "st_proof1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_proof1_conclusion",
+      "target": "st_identity",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明1推出恒等式"
+    },
+    {
+      "source": "st_proof2_identity",
+      "target": "st_identity",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明2推出恒等式"
+    }
+  ],
+  "unresolved": []
+}

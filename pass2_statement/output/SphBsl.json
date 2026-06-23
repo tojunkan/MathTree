@@ -1,0 +1,357 @@
+{
+  "article_name": "SphBsl",
+  "statements": [
+    {
+      "stmt_id": "st_sph_bessel_eq",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_definition",
+      "exposed_entities": [
+        "x",
+        "y",
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_def_j_y",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_definition",
+      "exposed_entities": [
+        "j_l(x)",
+        "y_l(x)",
+        "J_l",
+        "Y_l"
+      ]
+    },
+    {
+      "stmt_id": "st_def_hankel",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_definition",
+      "exposed_entities": [
+        "h_l^{(1)}(x)",
+        "h_l^{(2)}(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_def_rayleigh",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_definition",
+      "exposed_entities": [
+        "j_l(x)",
+        "y_l(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_examples_j_y",
+      "subtype": "example",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": "true",
+      "scope_id": "s_definition",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_origin_values",
+      "subtype": "theorem",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_parity",
+      "subtype": "theorem",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivative",
+      "subtype": "theorem",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_asymptotic",
+      "subtype": "theorem",
+      "clause_range": [
+        25,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_legendre_relation",
+      "subtype": "theorem",
+      "clause_range": [
+        29,
+        31
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": [
+        "P_l(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_clebsch_gordan",
+      "subtype": "theorem",
+      "clause_range": [
+        32,
+        34
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_radial_norm",
+      "subtype": "theorem",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": "true",
+      "scope_id": "s_integral",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_integral_j",
+      "subtype": "theorem",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": "true",
+      "scope_id": "s_integral",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_integral_j_parity",
+      "subtype": "theorem",
+      "clause_range": [
+        38,
+        40
+      ],
+      "truth_value": "true",
+      "scope_id": "s_integral",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_integral_j_j",
+      "subtype": "theorem",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": "true",
+      "scope_id": "s_integral",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_integral_j_k",
+      "subtype": "theorem",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": "true",
+      "scope_id": "s_integral",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fourier_transform",
+      "subtype": "theorem",
+      "clause_range": [
+        43,
+        44
+      ],
+      "truth_value": "true",
+      "scope_id": "s_integral",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_modified_eq",
+      "subtype": "definition",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_modified",
+      "exposed_entities": [
+        "x",
+        "y",
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_def_i_k",
+      "subtype": "definition",
+      "clause_range": [
+        47,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_modified",
+      "exposed_entities": [
+        "i_l(x)",
+        "k_l(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_asymptotic_modified",
+      "subtype": "theorem",
+      "clause_range": [
+        52,
+        53
+      ],
+      "truth_value": "true",
+      "scope_id": "s_modified",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_sph_bessel_eq",
+      "target": "st_def_j_y",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_j_y",
+      "target": "st_def_hankel",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_j_y",
+      "target": "st_def_rayleigh",
+      "edge_type": "equivalent",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_j_y",
+      "target": "st_examples_j_y",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_origin_values",
+      "target": "st_parity",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_parity",
+      "target": "st_derivative",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivative",
+      "target": "st_asymptotic",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_asymptotic",
+      "target": "st_legendre_relation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_legendre_relation",
+      "target": "st_clebsch_gordan",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_asymptotic",
+      "target": "st_radial_norm",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_radial_norm",
+      "target": "st_integral_j",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_integral_j",
+      "target": "st_integral_j_parity",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_integral_j_parity",
+      "target": "st_integral_j_j",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_integral_j_j",
+      "target": "st_integral_j_k",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_integral_j_k",
+      "target": "st_fourier_transform",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_modified_eq",
+      "target": "st_def_i_k",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_i_k",
+      "target": "st_asymptotic_modified",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

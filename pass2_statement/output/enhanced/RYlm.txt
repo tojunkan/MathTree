@@ -1,0 +1,46 @@
+[SCOPE:root|description|实球谐函数]
+文章名: RYlm
+标题: 实球谐函数
+
+[0] 贡献者： addis
+[1] 预备知识 球谐函数
+[SCOPE:s_def|description|实球谐函数定义]
+[SCOPE:s_let_1|let_bind|定义变量]
+[2] 1球谐函数 $Y_{l,m}( \hat{\boldsymbol{\mathbf{r}}} )$ 中唯一的复数因子是 $ \mathrm{e} ^{\pm \mathrm{i} m\phi}$（见球谐函数表），如果我们需要一套实数的球谐函数作为基底（例如用于展开实函数），可以通过欧拉公式（式 3 ）把该因子变为 $ \sin\left(m\phi\right) $ 和 $ \cos\left(m\phi\right) $
+[3] \begin{equation}
+\mathrm{e} ^{\pm \mathrm{i} m \phi} = \cos\left(m\phi\right) \pm \mathrm{i} \sin\left(m\phi\right) ~.
+\end{equation}
+[SCOPE:s_let_2|let_bind|实球谐函数定义式]
+[4] 定义实球谐函数为
+[5] \begin{equation}
+\mathcal Y_{l,m}( \hat{\boldsymbol{\mathbf{r}}} ) = \left\{\begin{aligned}
+&(-1)^{m}\sqrt{2} A_{l,m} P_l^m(\cos \theta) \cos\left(m\phi\right) &&(m > 0)\\
+&A_{l,m} P_l^m(\cos \theta) &&(m = 0)\\
+&(-1)^{m}\sqrt{2} A_{l,m} P_l^m(\cos \theta) \sin\left(m\phi\right) &&(m < 0)~.
+\end{aligned}\right. \end{equation}
+[/SCOPE:s_let_2]
+[6] 其中 $P_l^m$ 是连带勒让德函数，归一化系数为
+[7] \begin{equation}
+A_{l,m} = \sqrt{\frac{2l + 1}{4\pi }\frac{(l - m)!}{(l + m)!}}~.
+\end{equation}
+[/SCOPE:s_let_1]
+[8] 与球谐函数的关系为
+[9] \begin{equation}
+\mathcal Y_{l,m}( \hat{\boldsymbol{\mathbf{r}}} ) = \left\{\begin{aligned}
+&\frac{1}{\sqrt{2}}[(-1)^{m} Y_{l,m}( \hat{\boldsymbol{\mathbf{r}}} ) + Y_{l,-m}( \hat{\boldsymbol{\mathbf{r}}} )] &&(m > 0)\\
+&Y_{l,0}( \hat{\boldsymbol{\mathbf{r}}} ) &&(m = 0)\\
+&\frac{1}{\sqrt{2}\ \mathrm{i} }[(-1)^{m} Y_{l,-m}( \hat{\boldsymbol{\mathbf{r}}} ) - Y_{l,m}( \hat{\boldsymbol{\mathbf{r}}} )] &&(m < 0)~.
+\end{aligned}\right. \end{equation}
+[10] 上式两个方括号中第一项 $\sim \mathrm{e} ^{ \mathrm{i} \phi}$，第二项 $\sim \mathrm{e} ^{- \mathrm{i} \phi}$，$(-1)^m$ 是为了抵消 Condon–Shortley 相位（子节 3 ）。
+[11] 所以 $m > 0$ 时 $\mathcal Y_{l,m} \sim \cos\left(m\phi\right) $，$m < 0$ 时 $\mathcal Y_{l,m} \sim \sin\left(m\phi\right) $，$m = 0$ 时与 $\phi$ 无关。
+[12] 把式 2 与球谐函数的定义（式 1 ）相比可知，在球谐函数表中，要把复球谐函数变为实球谐函数，只需要把奇数 $m$ 前面的 $\mp$ 去掉，再把 $ \mathrm{e} ^{\pm \mathrm{i} m\phi}$ 分别替换为 $\sqrt{2} \cos\left(m\phi\right) $ 和 $\sqrt{2} \sin\left(m\phi\right) $ 即可。
+[13] 故我们不再重复给出 $\mathcal Y_{l,m}$ 列表。
+[14] 由于不同的 $Y_{l,m}$ 是正交归一的，
+[15] 所以式 4 把两个球谐函数相加后，需要在前面乘以 $1/\sqrt{2}$ 保持正交归一条件：
+[16] \begin{equation}
+\int \mathcal Y_{l',m'} ^* ( \hat{\boldsymbol{\mathbf{r}}} ) \mathcal Y_{l,m}( \hat{\boldsymbol{\mathbf{r}}} ) \,\mathrm{d}{\Omega} = \delta_{l,l'}\delta_{m,m'}~.
+\end{equation}
+[17] 根据式 4 ，复球谐函数的许多其他性质都容易类推到实球谐函数，这里不再赘述。
+[/SCOPE:s_def]
+[18] 1. ^ 参考 Wikipedia 相关页面。
+[/SCOPE:root]

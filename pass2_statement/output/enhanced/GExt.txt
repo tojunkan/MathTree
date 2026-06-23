@@ -1,0 +1,491 @@
+[SCOPE:root|description|Galois 扩张]
+文章名: GExt
+标题: Galois 扩张
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=Galois 扩张
+  [1] type=example heading=例 1 title=
+  [2] type=theorem heading=定理 1 title=
+  [3] type=theorem heading=定理 2 title=
+  [4] type=theorem heading=定理 3 title=
+  [5] type=theorem heading=定理 4 title=
+  [6] type=theorem heading=定理 5 title=
+  [7] type=theorem heading=定理 6 title=
+  [8] type=definition heading=定义 2 title=Galois 群
+  [9] type=theorem heading=定理 7 title=
+  [10] type=definition heading=定义 3 title=不变子域
+  [11] type=theorem heading=定理 8 title=（Artin）
+  [12] type=theorem heading=定理 9 title=
+  [13] type=lemma heading=引理 1 title=
+  [14] type=theorem heading=定理 10 title=
+  [15] type=theorem heading=定理 11 title=
+  [16] type=theorem heading=定理 12 title=
+  [17] type=theorem heading=定理 13 title=
+  [18] type=theorem heading=定理 14 title=Galois 理论基本定理（Fundamental Theorem of Galois Theory）
+
+[0] 完成了对正规扩张和可分扩张的讨论，我们引入极为核心的 Galois 扩域。
+[1] 在上述讨论中，我们时常涉及域自同构，也看到了域自同构和多项式的根之间对应的关系。
+[2] 对域自同构的结构的研究，将把我们引向著名的古典数学难题 “多项式方程的根式解”。
+
+[SCOPE:s_def1|description|定义 1 Galois 扩张]
+[3] 定义 1 Galois 扩张
+[4] 若域扩张 $\mathbb{K}/\mathbb{F}$ 是正规且可分的，
+[5] 那么称之为一个伽罗华扩张（Galois extension），或译作伽罗瓦扩张。
+[6] 此时称 $\mathbb{K}$在$\mathbb{F}$上是 Galois 的（$\mathbb{K}$ is Galois over $\mathbb{F}$）。
+[7] 由于特征为零的域都是完美域，
+[8] 因此对这类域，正规扩张都是 Galois 扩张。
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|例 1]
+[9] $\mathbb{Q}(2^{1/3})/\mathbb{Q}$ 不是 Galois 扩域，因为它不正规，不包含 $ \operatorname {irr}(2^{1/3}, \mathbb{Q})(x)=x^3-2$ 的两个复数根。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_thm1|description|定理 1]
+[10] 定理 1
+[11] 有限域都是其素域的 Galois 扩域。
+[12] 证明：
+[13] 有限域是其素域的有限扩张，而有限扩张都是代数扩张（推论 1 ）。
+[14] 由于有限域都是完美域（推论 4 ），
+[15] 故 $\mathbb{Z}_p$ 的代数扩张都是可分扩张。
+[16] 参照有限域的讨论可知，有限域都是其素域的分裂域，
+[17] 从而是正规扩张。
+[18] 证毕。
+[19] 据正规扩张和可分扩张的知识，我们容易得到 Galois 扩张的几条性质：
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理 2]
+[20] 定理 2
+[21] 设 $\mathbb{K}/\mathbb{M}/\mathbb{F}$ 是域扩张链，且 $\mathbb{K}/\mathbb{F}$ 是 Galois 扩张，
+[22] 那么 $\mathbb{K}/\mathbb{M}$ 也是 Galois 扩张。
+[23] 证明用可分扩张的继承性引理 1 和正规扩张的继承性定理 2 得到。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|定理 3]
+[24] 定理 3
+[25] 设 $\mathbb{K}/\mathbb{M}/\mathbb{F}$ 是域扩张链，其中 $\mathbb{K}/\mathbb{F}$ 是 Galois 扩张，$\mathbb{M}/\mathbb{F}$ 是正规扩张，
+[26] 那么 $\mathbb{M}/\mathbb{F}$ 是 Galois 扩张。
+[27] 证明：
+[28] 由定义 4 易得，$\mathbb{K}/\mathbb{F}$ 是可分扩张且 $\mathbb{M}\subseteq\mathbb{K}$，可推得 $\mathbb{M}/\mathbb{F}$ 也是可分扩张。
+[29] 证明。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|定理 4]
+[30] 定理 4
+[31] 如果 $\mathbb{K}/\mathbb{F}$ 是 Galois 扩域，且域合成 $\mathbb{EK}$ 存在，
+[32] 那么 $\mathbb{EK}/\mathbb{EF}$ 是 Galois 扩域。
+[33] 证明：
+[34] 据定理 3 ，$\mathbb{EK}/\mathbb{EF}$ 是正规扩域。
+[35] 考虑到 $\mathbb{K}$ 的元素全都是 $\mathbb{F}$ 的可分元素，
+[36] 从而是 $\mathbb{EF}$ 的可分元素，而 $\mathbb{EK}=\mathbb{EF}(\mathbb{K})$，可知 $\mathbb{EK}/\mathbb{EF}$ 是可分扩张。
+[37] 证毕。
+
+[/SCOPE:s_thm4]
+[SCOPE:s_thm5|description|定理 5]
+[38] 定理 5
+[39] 设 $\mathbb{K}/\mathbb{F}$ 和 $\mathbb{E}/\mathbb{F}$ 都是 Galois 扩域，且域合成 $\mathbb{EK}$ 存在，
+[40] 则 $\mathbb{EK}/\mathbb{F}$ 是 Galois 扩域。
+[41] 证明：
+[42] 已知定理 4 成立。
+[43] 由 $\mathbb{EK}/\mathbb{EF}$ 是正规扩张，及 $\mathbb{F}[x]\subseteq\mathbb{EF}[x]$，知 $\mathbb{EK}/\mathbb{F}$ 是正规扩张。
+[44] 由可分元素的封闭性推论 4 知 $\mathbb{EK}/\mathbb{F}$ 是可分扩张。
+[45] 证毕。
+
+[/SCOPE:s_thm5]
+[SCOPE:s_thm6|description|定理 6]
+[46] 定理 6
+[47] 域 $\mathbb{K}$ 的 Galois 扩域之交，还是它的 Galois 扩域
+[48] 证明：
+[49] 由正规扩张和可分扩张相交还是正规扩张和可分扩张，得证。
+[50] 证毕。
+
+[/SCOPE:s_thm6]
+[51] 回顾例 6 ，集合间的全体双射配合复合运算能构成群。
+[52] 既然域的自同构也是双射，我们也可以研究这些自同构构成的群。
+[53] 不过，相比于一般的域扩张，我们重点关注性质最良好的 Galois 扩张的情况。
+
+[SCOPE:s_def2|description|定义 2 Galois 群]
+[54] 定义 2 Galois 群
+[55] 给定 Galois 域扩张 $\mathbb{K}/\mathbb{F}$，称 $\mathbb{K}$ 上全体保 $\mathbb{F}$ 自同构构成的群为该扩张的Galois 群，记为 $ \operatorname {Gal}(\mathbb{K}/\mathbb{F})$，或 $ \operatorname {Gal}(\mathbb{K}:\mathbb{F})$。
+[56] 随便举一个具体的例子：复数域 $\mathbb{C}$ 之于实数域 $\mathbb{R}$ 是一个 Galois 扩域：正规性来自 $\mathbb{C}=\overline{\mathbb{R}}$ 的事实，可分性是由于 $\mathbb{R}$ 是完美域。
+[57] 那么 $ \operatorname {Gal}(\mathbb{C}/\mathbb{R})$ 是哪个群？
+[58] 或者最基础的问题，这个群有几个元素？
+[59] 单回答这个问题也许不难，不过我们可以直接得出一般的 Galois 群元素数量规则：
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm7|description|定理 7]
+[60] 定理 7
+[61] 如果 $\mathbb{K}/\mathbb{F}$ 是 Galois 扩域，
+[62] 那么
+[63] \begin{equation}
+\left\lvert \operatorname {Gal}(\mathbb{K}/\mathbb{F}) \right\rvert = [\mathbb{K}:\mathbb{F}]~.
+\end{equation}
+[64] 证明：
+[65] 当 $[\mathbb{K}:\mathbb{F}]$ 有限时，正规扩张等价于分裂域，且由于可分扩张，
+[66] 因此适用定理 5 的等号情况，得证。
+[67] 当 $[\mathbb{K}:\mathbb{F}]$ 无限时，任取 $n$ 个根在 $\mathbb{K}-\mathbb{F}$ 中的多项式 $f_i\in\mathbb{F}[x]$，得到 $\prod f_i\in\mathbb{F}[x]$ 的分裂域 $\mathbb{F}_1$，
+[68] 则 $[\mathbb{K}:\mathbb{F}]>[\mathbb{F}_1:\mathbb{F}]>n$。
+[69] $\mathbb{F}_1\mathbb{F}$ 适用有限情况，其 Galois 群的元素数量等于其扩张次数，而由于 $[\mathbb{K}:\mathbb{F}]$ 无限，还能再取根在 $\mathbb{K}-\mathbb{F}_1$ 中的多项式 $g_i\in\mathbb{F}[x]\subseteq \mathbb{F}_1[x]$，构成更大的分裂域，得到更多自同构，
+[70] 因此必有
+[71] \begin{equation}
+\operatorname {Gal}(\mathbb{K}/\mathbb{F})> \operatorname {Gal}(\mathbb{F}_1/\mathbb{F})=[\mathbb{F}_1:\mathbb{F}]>n~.
+\end{equation}
+[72] 由 $n$ 的任意性，
+[73] 则可知 $ \operatorname {Gal}(\mathbb{K}/\mathbb{F})=\infty$。
+[74] 证毕。
+[75] 由于 $\mathbb{C}$ 是 $x^2+1\in\mathbb{R}[x]$ 的分裂域，
+[76] 故易证扩张次数为 $2$，结合定理 7 就能确定 $ \operatorname {Gal}(\mathbb{C}/\mathbb{R})$ 只有两个元素。
+[77] 显然，除了恒等映射以外，求共轭映射也是一个保 $\mathbb{R}$ 自同构，那这就已经找全了。
+
+[/SCOPE:s_thm7]
+[78] 给定 Galois 子域，总能唯一确定一个 Galois 群，其定义见定义 2 。
+[79] 于是，我们得到了从 Galois 子域集合到 Galois 群的一个映射。
+[80] 给定域的自同构群，总能唯一确定一个不变子域，其定义见定义 3 。
+[81] 于是，我们得到了从自同构集合到 Galois 子域集合的一个映射。
+[82] 现在的问题是，上述这两个集合映射是不是双射？
+[83] 即 Galois 子域和 Galois 群之间有没有一一对应关系？
+[84] 直觉上好像是的，
+[85] 但我们依然需要严谨的讨论来确认。
+
+[SCOPE:s_def3|description|定义 3 不变子域]
+[86] 定义 3 不变子域
+[87] 给定域 $\mathbb{F}$，设 $G$ 是 $\mathbb{F}$ 的全体自同构群。
+[88] 取 $G$ 的子群 $H$，
+[89] 则集合 $\{a\in\mathbb{F}\mid \sigma(a)=a, \forall \sigma\in H\}$ 构成一个域，称为 $\mathbb{F}$ 的 $H$ 不变子域（fixed field of $H$），或译作 $H$ 固定子域，记为 $ \operatorname {Inv}_\mathbb{F}(H)$ 或 $ \operatorname {Fix}_\mathbb{F}(H)$。
+[90] 如果取 $H= \operatorname {Gal}(\mathbb{C}/\mathbb{R})$，
+[91] 那么 $ \operatorname {Fix}_{\mathbb{C}}(H)=\mathbb{R}$。
+[92] 同样地，我们也可以直接给出更一般的情况：
+
+[/SCOPE:s_def3]
+[SCOPE:s_thm8|description|定理 8 (Artin)]
+[93] 定理 8 （Artin）
+[94] 给定域 $\mathbb{K}$，$G$ 是它的全体自同构群的有限子群。
+[95] 则 $\mathbb{K}/ \operatorname {Fix}_\mathbb{K}(G)$ 是 Galois 扩张，且 $ \operatorname {Gal}(\mathbb{K}/ \operatorname {Fix}_\mathbb{K}(G))=G$。
+[96] 证明：
+[SCOPE:s_thm8_let1|let_bind|Artin 证明中的变量 alpha]
+[97] 任取$\alpha\in\mathbb{K}$。
+[98] 由于 $G$ 是有限群，
+[99] 故其轨道是有限的，不妨记为 $G\alpha=\{\alpha_i\}_{i=1}^n$，其中 $\alpha_1=\alpha$，各 $\alpha_i$ 彼此不等。
+[/SCOPE:s_thm8_let1]
+[SCOPE:s_thm8_let2|let_bind|Artin 证明中的多项式 f_alpha]
+[100] 构造多项式 $f_\alpha(x)=\prod_{i=1}^n(x-\alpha_i)$。
+[/SCOPE:s_thm8_let2]
+[101] 对于任意$\sigma\in G$，都有 $\sigma G=G$，
+[102] 因此 $\sigma(\{\alpha_i\})=\{\alpha_i\}$，
+[103] 即 $\sigma$ 是 $\{\alpha_i\}$ 的一个置换。
+[104] 于是，$f_\alpha$ 的各系数都在 $\sigma$ 下不变，
+[105] 即都是 $ \operatorname {Fix}_\mathbb{K}(G)$ 的元素。
+[106] 因此，$f_\alpha$ 是 $\alpha$ 在 $ \operatorname {Fix}_\mathbb{K}(G)$ 上的零化多项式。
+[107] 注意 $\alpha$ 的任意性。
+[108] 因此 $f$ 的最小多项式的根全都在 $\mathbb{K}$ 中，
+[109] 故 $\mathbb{K}/ \operatorname {Fix}_\mathbb{K}(G)$ 是正规扩张。
+[110] 由于各 $\alpha_i$ 不相等，
+[111] 故 $\alpha$ 是 $ \operatorname {Fix}_\mathbb{K}(G)$ 的可分元，
+[112] 故 $\mathbb{K}/ \operatorname {Fix}_\mathbb{K}(G)$ 是可分扩张。
+[113] 由此得证$\mathbb{K}/ \operatorname {Fix}_\mathbb{K}(G)$ 是 Galois 扩张。
+[114] 由不变子域的定义，显然 $G\subseteq \operatorname {Gal}(\mathbb{K}/ \operatorname {Fix}_\mathbb{K}(G))$。
+[115] 由于任意元素 $\alpha\in\mathbb{K}$ 的轨道中元素数量不会超过 $ \left\lvert G \right\rvert $，$f_\alpha$ 的次数就是 $\alpha$ 轨道中的元素数量，以及 $f_\alpha$ 是 $\alpha$ 的零化多项式，可知任意$\alpha$ 的最小多项式次数不会超过 $ \left\lvert G \right\rvert $。
+[116] 因此，应用推论 3 ，可知 $[\mathbb{K}: \operatorname {Fix}_\mathbb{K}(G)]\leq \left\lvert G \right\rvert $。
+[117] 由定理 7 ，可知 $ \left\lvert \operatorname {Gal}(\mathbb{K}/ \operatorname {Fix}_\mathbb{K}(G)) \right\rvert =[\mathbb{K}: \operatorname {Fix}_\mathbb{K}(G)]\leq \left\lvert G \right\rvert $，
+[118] 从而 $ \operatorname {Gal}(\mathbb{K}/ \operatorname {Fix}_\mathbb{K}(G))\subseteq G$。
+[119] 于是得证$G = \operatorname {Gal}(\mathbb{K}/ \operatorname {Fix}_\mathbb{K}(G))$。
+[120] 证毕。
+[121] 定理 8 暗示了自同构群和其不变子域的一一对应关系，
+[122] 即 “给定有限自同构群 $G$，
+[123] 则能被 $G$ 保持不变的元素，就只能被 $G$ 保持不变”——但是只针对 $G$ 有限的情况。
+[124] 这也体现在以下性质中，注意此处不再需要有限性，以及描述反过来了：
+
+[/SCOPE:s_thm8]
+[SCOPE:s_thm9|description|定理 9]
+[125] 定理 9
+[126] 设 $\mathbb{K}/\mathbb{F}$ 是一个 Galois 扩张。
+[127] 则 $ \operatorname {Gal}(\mathbb{K}/\mathbb{F})$ 的不变子域就是 $\mathbb{F}$。
+[128] 证明：
+[SCOPE:s_thm9_let|let_bind|定理 9 证明中的变量]
+[129] 记 $ \operatorname {Gal}(\mathbb{K}/\mathbb{F})=G$，其不变子域为 $\mathbb{J}= \operatorname {Fix}_\mathbb{K}(G)$。
+[130] 由 Galois 群的定义，$\mathbb{F}\subseteq\mathbb{J}$。
+[131] 任取 $\alpha\in\mathbb{K}-\mathbb{F}$，记 $f_\alpha= \operatorname {Irr}(\alpha, \mathbb{F})$。
+[/SCOPE:s_thm9_let]
+[132] 则 $f_\alpha$ 的次数大于 1，且是可分多项式，
+[133] 故 $\alpha$ 有关于 $\mathbb{F}$ 的共轭元 $\beta\neq \alpha$，且正规性保证了 $\beta\in\mathbb{K}$ 中。
+[134] 因此由定理 5 第 2 条可知，存在 $\sigma\in \operatorname {Gal}(\mathbb{K}/\mathbb{F})$ 使得 $\sigma(\alpha)=\beta$。
+[135] 于是 $\alpha\not\in \mathbb{J}$。
+[136] 因此 $\mathbb{J}\subseteq\mathbb{F}$。
+[137] 综上，$\mathbb{J}=\mathbb{F}$。
+[138] 证毕。
+[139] 定理 9 可以简述为：“给定子域 $\mathbb{F}$，全体保 $\mathbb{F}$ 不变的同构，只能保 $\mathbb{F}$ 不变”。
+
+[/SCOPE:s_thm9]
+[140] 我们归纳一下前面说到的两个定理。
+[141] 定理 8 是说 “给定有限自同构群 $G$，
+[142] 则 $G$ 的不变子域的 Galois 群就是 $G$”。
+[143] 定理 9 是说 “给定子域 $\mathbb{F}$，
+[144] 则 $\mathbb{F}$ 的 Galois 群的不变子域就是 $\mathbb{F}$”。
+[145] 这两句话，都没有完整指出 Galois 群和不变子域的一一对应关系。
+[146] 如果取无限自同构真子群 $G$，而它的不变子域的 Galois 群严格大于 $G$，这不违反以上两句话。
+
+[147] 这一小节中，我们深入讨论上一小节引出的 “自同构群与不变子域的对应关系”。
+
+[SCOPE:s_lemma1|description|引理 1]
+[148] 引理 1
+[149] 给定 Galois 扩张 $\mathbb{K}/\mathbb{F}$，取它的三个中间域 $\mathbb{M}_1, \mathbb{M}_2, \mathbb{M}_3$，并令 $ \operatorname {Gal}(\mathbb{K}/\mathbb{M}_i)=H_i$。
+[150] 则下列命题成立：
+[151] 1。
+[152] $\mathbb{M}_1\subseteq \mathbb{M}_2 \iff H_1\supseteq H_2$；
+[153] 2。
+[154] $\mathbb{M}_1=\mathbb{M}_2\mathbb{M}_3 \iff H_1=H_2\cap H_3$。
+[155] 证明：
+[156] $\mathbb{M}_1\subseteq\mathbb{M}_2 \iff$ 保 $\mathbb{M}_2$ 不变的同构也必保 $\mathbb{M}_1$ 不变 $\iff H_1\supseteq H_2$。
+[157] $\mathbb{M}_1=\mathbb{M}_2\mathbb{M}_3\implies \mathbb{M}_1\supseteq\mathbb{M}_2\cup\mathbb{M}_3\implies H_1\subseteq H_2\cap H_3$。
+[158] $\mathbb{M}_1=\mathbb{M}_2\mathbb{M}_3\implies$ 保 $\mathbb{M}_2$ 和 $\mathbb{M}_3$ 都不变的同构，必保 $\mathbb{M}_1$ 不变 $\implies H_2\cap H_3\subseteq H_1$。
+[159] 综合这两条逻辑链，得 $\mathbb{M}_1=\mathbb{M}_2\mathbb{M}_3 \implies H_1=H_2\cap H_3$。
+[160] $H_1=H_2\cap H_3\iff$“自同构保 $\mathbb{M}_1$ 不变当且仅当它保 $\mathbb{M}_2$ 和 $\mathbb{M}_3$ 都不变”$\implies \mathbb{M}_1\subseteq\mathbb{M}_2\mathbb{M}_3$1。
+[161] $H_1=H_2\cap H_3\iff$“自同构保 $\mathbb{M}_1$ 不变当且仅当它保 $\mathbb{M}_2$ 和 $\mathbb{M}_3$ 都不变”$\implies \mathbb{M}_1\supseteq\mathbb{M}_2\mathbb{M}_3$2。
+[162] 综合这两条逻辑链，得 $H_1=H_2\cap H_3 \implies \mathbb{M}_1=\mathbb{M}_2\mathbb{M}_3$。
+[163] 证毕。
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_thm10|description|定理 10]
+[164] 定理 10
+[165] 给定有限Galois 扩张 $\mathbb{K}/\mathbb{F}$，取它的两个中间域 $\mathbb{M}_1, \mathbb{M}_2$，并令 $ \operatorname {Gal}(\mathbb{K}/\mathbb{M}_i)=H_i$。
+[166] 则下列命题成立：
+[167] 1。
+[168] $ \operatorname {Gal}(\mathbb{K}/\mathbb{M}_1\cap\mathbb{M}_2)=< H_1, H_2>$3。
+[169] 2。
+[170] $\mathbb{M}_1$ 和 $\mathbb{M}_2$ 关于 $\mathbb{F}$ 共轭 $\iff H_1$ 和 $H_2$ 在 $ \operatorname {Gal}(\mathbb{K}/\mathbb{F})$ 中共轭。
+[171] 证明：
+[172] 由于 $H_1$ 和 $H_2$ 中的同构都能保 $\mathbb{M}_1$ 和 $\mathbb{M}_2$ 不变，
+[173] 故 $ \operatorname {Gal}(\mathbb{K}/\mathbb{M}_1\cap\mathbb{M}_2)\supseteq< H_1, H_2>$。
+[174] 由于是有限扩张及可分扩张，
+[175] 故据推论 2 ，$\mathbb{M}_i=\mathbb{M}_1\cap\mathbb{M}_2(\alpha_i)$。
+[176] 显然，$\alpha_2\not\in\mathbb{M}_1$。
+[177] 设 $f\in \operatorname {Gal}(\mathbb{K}/\mathbb{M}_1\cap\mathbb{M}_2)$，再任取 $h\in \operatorname {Gal}(\mathbb{K}/\mathbb{M}_1)$，
+[178] 则据定理 6 ，$h$ 可开拓为 $\mathbb{K}\to\mathbb{K}$ 的保 $\mathbb{M}_1$ 自同构，其中 $h(\alpha_2)=f(\alpha_2)$。
+[179] 于是 $h^{-1}\circ f\in \operatorname {Gal}(\mathbb{K}/\mathbb{M}_2)$。
+[180] 因此，$f$ 必定是 $ \operatorname {Gal}(\mathbb{K}/\mathbb{M}_i)$ 中元素相乘的结果。
+[181] $\implies$：
+[182] 由题设，存在 $\sigma\in \operatorname {Gal}(\mathbb{K}/\mathbb{F})$，使得 $\sigma \mathbb{M}_1=\mathbb{M}_2$。
+[183] 任取 $f\in H_1$，
+[184] 则易证 $\sigma f\sigma^{-1}\in H_2$。
+[185] 因此 $\sigma H_1\sigma^{-1}=H_2$4。
+[186] $\impliedby$：
+[187] 由题设，存在 $\sigma\in \operatorname {Gal}(\mathbb{K}/\mathbb{F})$，使得 $\sigma H_1\sigma^{-1}=H_2$。
+[188] 任取 $a\in\mathbb{M}_{1}$，
+[189] 则 $H_2 \sigma a=\sigma H_1\sigma^{-1}\sigma a=\sigma H_1 a=\sigma a$。
+[190] 因此，$\sigma a\in \operatorname {Fix}_\mathbb{K}(H_2)$，或者说 $\sigma\mathbb{M}_1\subseteq \operatorname {Fix}_\mathbb{K}(H_2)$。
+[191] 由定理 9 ，$ \operatorname {Fix}_\mathbb{K}(H_2)=\mathbb{M}_2$。
+[192] 故 $\sigma\mathbb{M}_1\subseteq\mathbb{M}_2$。
+[193] 对偶地，可证得 $\mathbb{M}_1\supseteq\sigma^{-1}\mathbb{M}_2$。
+[194] 因此 $\sigma\mathbb{M}_1=\mathbb{M}_2$。
+[195] 证毕。
+[196] 接下来的性质，和群同态基本定理非常相似。
+
+[/SCOPE:s_thm10]
+[SCOPE:s_thm11|description|定理 11]
+[197] 定理 11
+[198] 设 $\mathbb{K}/\mathbb{F}$ 是Galois 扩张（不要求有限），且存在中间域 $\mathbb{M}$。
+[199] 则 $\mathbb{M}/\mathbb{F}$ 是正规扩张 $\iff$ $ \operatorname {Gal}(\mathbb{K/\mathbb{M}})\vartriangleleft \operatorname {Gal}(\mathbb{K/\mathbb{F}})$，且 $ \operatorname {Gal}(\mathbb{M}/\mathbb{F})\cong \operatorname {Gal}(\mathbb{K}/\mathbb{F})/ \operatorname {Gal}(\mathbb{K}/\mathbb{M})$。
+[200] 证明：
+[201] $\mathbb{M}/\mathbb{F}$ 是正规扩张 $\iff$ 对于任意 $\sigma\in \operatorname {Gal}(\mathbb{K}/\mathbb{F})$，都有 $\sigma\mathbb{M}=\mathbb{M}$ $\iff$ 对于任意 $f\in \operatorname {Gal}(\mathbb{K}/\mathbb{M})$，都有 $\sigma f \sigma^{-1}\in \operatorname {Gal}(\mathbb{K}/\mathbb{M})$5 $\iff \operatorname {Gal}(\mathbb{K/\mathbb{M}})\vartriangleleft \operatorname {Gal}(\mathbb{K/\mathbb{F}})$。
+[202] 利用映射的限制，构造 $ \operatorname {Gal}(\mathbb{K}/\mathbb{F})\to \operatorname {Gal}(\mathbb{M}/\mathbb{F})$ 的映射，记为 $\varphi$，其定义为：$\varphi(\sigma) = \sigma\mid_{\mathbb{M}}$。
+[203] 显然，由于是限制映射，$\varphi$ 是一个群同态。
+[204] 取 $\sigma\in \operatorname {Gal}(\mathbb{K}/\mathbb{F})$，
+[205] 则 $\varphi(\sigma)= \operatorname {id}\mid_{\mathbb{M}}$ 当且仅当 $\sigma$ 保 $\mathbb{M}$ 不变，
+[206] 即 $\sigma\in \operatorname {Gal}(\mathbb{K}/\mathbb{M})$。
+[207] 因此，$ \operatorname {ker}\varphi= \operatorname {Gal}(\mathbb{K}/\mathbb{M})$。
+[208] 于是得证 $ \operatorname {Gal}(\mathbb{M}/\mathbb{F})\cong \operatorname {Gal}(\mathbb{K}/\mathbb{F})/ \operatorname {Gal}(\mathbb{K}/\mathbb{M})$。
+[209] 证毕。
+[210] 注意一点：由定理 3 ，$\mathbb{M}/\mathbb{F}$ 是正规扩张 $\iff$ $\mathbb{M}/\mathbb{F}$ 是Galois扩张。
+
+[/SCOPE:s_thm11]
+[SCOPE:s_thm12|description|定理 12]
+[211] 定理 12
+[212] 设 $\mathbb{K}/\mathbb{F}$ 是有限Galois 扩张，且存在中间域 $\mathbb{M}$。
+[213] 则 $ \left\lvert \operatorname {Gal}(\mathbb{K}/\mathbb{F}) \right\rvert / \left\lvert \operatorname {Gal}(\mathbb{K}/\mathbb{M}) \right\rvert =[\mathbb{M}:\mathbb{F}]$。
+[214] 证明：
+[215] 由推论 2 ，有限 Galois 扩张都是单代数扩张。
+[216] 由定理 2 ，$\mathbb{K}/\mathbb{M}$ 也是有限 Galois 扩张。
+[SCOPE:s_thm12_let|let_bind|定理 12 证明中的变量]
+[217] 设 $\mathbb{K}=\mathbb{F}(\alpha)$，
+[218] 则 $\mathbb{K}=\mathbb{M}(\alpha)$。
+[219] 记 $f= \operatorname {Irr}(\alpha, \mathbb{F})$，$h= \operatorname {Irr}(\alpha, \mathbb{M})$。
+[/SCOPE:s_thm12_let]
+[220] 由定理 5 ，$ \left\lvert \operatorname {Gal}(\mathbb{K}/\mathbb{F}) \right\rvert =\deg f$，$ \left\lvert \operatorname {Gal}(\mathbb{K}/\mathbb{F}) \right\rvert =\deg h$。
+[221] 由定理 2 ，$[\mathbb{K}:\mathbb{F}]=\deg f$，$[\mathbb{K}:\mathbb{F}]=\deg h$。
+[222] 又由定理 4 ，$[\mathbb{M}:\mathbb{F}]=[\mathbb{K}/\mathbb{F}]/[\mathbb{K}/\mathbb{M}]$。
+[223] 综上，
+[224] \begin{equation}
+\left\lvert \operatorname {Gal}(\mathbb{K}/\mathbb{F}) \right\rvert / \left\lvert \operatorname {Gal}(\mathbb{K}/\mathbb{M}) \right\rvert =\deg f/\deg h=[\mathbb{M}:\mathbb{F}]~
+\end{equation}
+[225] 证毕。
+[226] 定理 12 实际上可以去掉 “有限” 的要求，参见引理 2 。
+
+[/SCOPE:s_thm12]
+[SCOPE:s_thm13|description|定理 13]
+[227] 定理 13
+[228] 设 $\mathbb{K}/\mathbb{F}$ 是有限Galois 扩张，$\mathbb{E}/\mathbb{F}$ 是域扩张，且域合成 $\mathbb{KE}$ 存在。
+[229] 则 $\mathbb{KE}/\mathbb{E}$ 和 $\mathbb{K}/\mathbb{K}\cap\mathbb{E}$ 都是有限 Galois 扩张，且 $ \operatorname {Gal}(\mathbb{KE}/\mathbb{E})\cong \operatorname {Gal}(\mathbb{K}/\mathbb{K}\cap\mathbb{E})$。
+[230] 证明：
+[231] 由于 $\mathbb{E}\mathbb{F}=\mathbb{E}$，据定理 4 ，知 $\mathbb{KE}/\mathbb{E}$ 是 Galois 扩域。
+[SCOPE:s_thm13_let|let_bind|定理 13 证明中的基]
+[232] 设 $\{\alpha_i\}_{i=1}^n$ 是 $\mathbb{K}$ 作为 $\mathbb{F}$ 上线性空间的基，
+[233] 即 $\mathbb{K}$ 中元素都形如 $\sum c_i\alpha_i$，其中 $c_i\in\mathbb{F}$；
+[234] 那么 $\mathbb{KE}$ 中元素都形如 $\sum e_ic_i\alpha_i$，其中 $e_i\in\mathbb{E}$；
+[235] 且有 $e_ic_i\in\mathbb{E}$。
+[236] 于是，$\{\alpha_i\}_{i=1}^n$ 也是 $\mathbb{K}$ 作为 $\mathbb{E}$ 上线性空间的基，
+[/SCOPE:s_thm13_let]
+[237] 从而得证有限性。
+[238] $\mathbb{K}\cap\mathbb{E}$ 是 $\mathbb{K}/\mathbb{F}$ 的中间域，
+[239] 故由定理 2 知 $\mathbb{K}/\mathbb{K}\cap\mathbb{E}$ 是 Galois 扩张，由定理 4 知有限性。
+[240] 下证 $ \operatorname {Gal}(\mathbb{KE}/\mathbb{E})\cong \operatorname {Gal}(\mathbb{K}/\mathbb{K}\cap\mathbb{E})$。
+[241] 注意 $\mathbb{KE}\cap \mathbb{K}=\mathbb{K}$。
+[242] 构造群同态$\varphi: \operatorname {Gal}(\mathbb{KE}/\mathbb{E})\to \operatorname {Gal}(\mathbb{K}/\mathbb{K}\cap\mathbb{E})$，定义为 $\varphi (\sigma) = \sigma\mid_{\mathbb{K}}$。
+[243] 显然这是一个满同态。
+[244] 如果存在 $\sigma_1, \sigma_2\in \operatorname {Gal}(\mathbb{KE}/\mathbb{E})$，使得 $\varphi(\sigma_1)=\varphi(\sigma_2)$，
+[245] 则 $\sigma_1\sigma_2^{-1}$ 保 $\mathbb{K}$ 不变。
+[246] 又因为 $\sigma_1$ 和 $\sigma_2$ 都保 $\mathbb{E}$ 不变，
+[247] 故 $\sigma_1\sigma_2^{-1}$ 保 $\mathbb{KE}$ 不变。
+[248] 由此可知，$\sigma_1=\sigma_2$。
+[249] 因此 $\varphi$ 是单同态。
+[250] 综上，$\varphi$ 是一个群同构。
+[251] 证毕。
+
+[/SCOPE:s_thm13]
+[SCOPE:s_thm14|description|定理 14 Galois 理论基本定理]
+[252] 定理 14 Galois 理论基本定理（Fundamental Theorem of Galois Theory）
+[253] 设 $\mathbb{K}/\mathbb{F}$ 是一个有限的 Galois 扩张，
+[254] 则以下命题成立：
+[255] 1。
+[256] 设存在中间域 $\mathbb{M}$，
+[257] 则 $\mathbb{K}/\mathbb{M}$ 也是有限 Galois 扩张，且 $\mathbb{M}= \operatorname {Fix}_\mathbb{K}( \operatorname {Gal}(\mathbb{K}/\mathbb{M}))$。
+[258] 2。
+[259] 设 $H$ 是 $ \operatorname {Gal}(\mathbb{K}/\mathbb{F})$ 的子群，
+[260] 则 $\mathbb{M}= \operatorname {Fix}_\mathbb{K}(H)$ 是 $\mathbb{K}/\mathbb{F}$ 的中间域，且 $ \operatorname {Gal}(\mathbb{K}/\mathbb{M})=H$。
+[261] 证明：
+[262] 据定理 13 ，取 $\mathbb{M}=\mathbb{E}$ 即得 $\mathbb{K}/\mathbb{M}$ 是有限 Galois 扩张。
+[263] 又由定理 9 ，得 $ \operatorname {Gal}(\mathbb{K}/\mathbb{M})$ 的不变子域就是 $\mathbb{M}$。
+[264] 显然，$H$ 保 $\mathbb{F}$ 不变，
+[265] 所以 $H$ 的不变子域包含 $\mathbb{F}$，
+[266] 从而 $ \operatorname {Fix}_\mathbb{K}(H)$ 是 $\mathbb{K}/\mathbb{F}$ 的中间域。
+[267] 由推论 2 ，存在 $\alpha\in\mathbb{K}$ 使得 $\mathbb{K}=\mathbb{F}(\alpha)$。
+[268] 又由定理 4 和定理 5 知，$ \operatorname {Gal}(\mathbb{K}/\mathbb{F})$ 本身就是有限群，
+[269] 因此适用 Artin定理 8 ，
+[270] 从而得证。
+[271] 证毕。
+[/SCOPE:s_thm14]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是定义1的特例"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2由定义1推出"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3由定义1推出"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理4由定义1推出"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理5由定义1推出"
+  },
+  {
+    "source_scope": "s_thm6",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理6由定义1推出"
+  },
+  {
+    "source_scope": "s_thm7",
+    "target_scope": "s_def2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理7给出Galois群阶与扩张次数关系"
+  },
+  {
+    "source_scope": "s_thm8",
+    "target_scope": "s_def3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理8给出不变子域与Galois群的关系"
+  },
+  {
+    "source_scope": "s_thm9",
+    "target_scope": "s_def2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理9给出Galois群的不变子域"
+  },
+  {
+    "source_scope": "s_lemma1",
+    "target_scope": "s_def2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "引理1给出中间域与子群的关系"
+  },
+  {
+    "source_scope": "s_thm10",
+    "target_scope": "s_lemma1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理10推广引理1"
+  },
+  {
+    "source_scope": "s_thm11",
+    "target_scope": "s_def2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理11给出正规扩张与正规子群的关系"
+  },
+  {
+    "source_scope": "s_thm12",
+    "target_scope": "s_thm7",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理12给出阶的比值"
+  },
+  {
+    "source_scope": "s_thm13",
+    "target_scope": "s_thm4",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理13推广定理4"
+  },
+  {
+    "source_scope": "s_thm14",
+    "target_scope": "s_thm8",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "基本定理综合Artin定理和定理9"
+  },
+  {
+    "source_scope": "s_thm14",
+    "target_scope": "s_thm9",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "基本定理综合Artin定理和定理9"
+  }
+]

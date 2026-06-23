@@ -1,0 +1,488 @@
+{
+  "article_name": "HsDerv",
+  "statements": [
+    {
+      "stmt_id": "st_avg_rate_intro",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivative_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivative_name",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivative_def",
+      "exposed_entities": [
+        "导数"
+      ]
+    },
+    {
+      "stmt_id": "st_derivative_remark",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivative_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_scope_intro",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivative_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_velocity_scenario",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_velocity",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_avg_velocity",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_let_velocity",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_instant_velocity_intro",
+      "subtype": "remark",
+      "clause_range": [
+        24,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_velocity",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_speedometer_formula",
+      "subtype": "definition",
+      "clause_range": [
+        33,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_velocity",
+      "exposed_entities": [
+        "v",
+        "N",
+        "t",
+        "d",
+        "Δy",
+        "Δx"
+      ]
+    },
+    {
+      "stmt_id": "st_speedometer_as_instant",
+      "subtype": "remark",
+      "clause_range": [
+        41,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_velocity",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_transition_to_def",
+      "subtype": "remark",
+      "clause_range": [
+        54,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivative_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivative_def_condition",
+      "subtype": "assumption",
+      "clause_range": [
+        56,
+        56
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_derivative_def",
+      "exposed_entities": [
+        "f(x)",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_derivative_def_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        55,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_derivative_def",
+      "exposed_entities": [
+        "f'(x_0)",
+        "Δx"
+      ]
+    },
+    {
+      "stmt_id": "st_derivative_def_explain",
+      "subtype": "remark",
+      "clause_range": [
+        60,
+        84
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_derivative_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_secant",
+      "subtype": "definition",
+      "clause_range": [
+        85,
+        89
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivative_geom",
+      "exposed_entities": [
+        "割线"
+      ]
+    },
+    {
+      "stmt_id": "st_geom_tangent",
+      "subtype": "definition",
+      "clause_range": [
+        90,
+        91
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivative_geom",
+      "exposed_entities": [
+        "切线"
+      ]
+    },
+    {
+      "stmt_id": "st_geom_tangent_remark",
+      "subtype": "remark",
+      "clause_range": [
+        92,
+        93
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivative_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_slope_sign",
+      "subtype": "remark",
+      "clause_range": [
+        94,
+        97
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivative_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_derivative_slope",
+      "subtype": "conclusion",
+      "clause_range": [
+        98,
+        100
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivative_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_tangent_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        102,
+        103
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivative_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_tangent_properties",
+      "subtype": "remark",
+      "clause_range": [
+        104,
+        106
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivative_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_approx",
+      "subtype": "remark",
+      "clause_range": [
+        109,
+        116
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivative_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivative_func_def",
+      "subtype": "definition",
+      "clause_range": [
+        117,
+        118
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivative_func",
+      "exposed_entities": [
+        "f'(x)",
+        "导函数"
+      ]
+    },
+    {
+      "stmt_id": "st_original_func",
+      "subtype": "definition",
+      "clause_range": [
+        119,
+        119
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivative_func",
+      "exposed_entities": [
+        "原函数"
+      ]
+    },
+    {
+      "stmt_id": "st_derivative_func_remark",
+      "subtype": "remark",
+      "clause_range": [
+        120,
+        131
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivative_func",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivative_func_continuity",
+      "subtype": "assumption",
+      "clause_range": [
+        132,
+        132
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivative_func",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivative_func_behavior",
+      "subtype": "conclusion",
+      "clause_range": [
+        133,
+        139
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivative_func",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_indefinite_integral",
+      "subtype": "definition",
+      "clause_range": [
+        140,
+        146
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivative_func",
+      "exposed_entities": [
+        "不定积分",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_notation_intro",
+      "subtype": "remark",
+      "clause_range": [
+        148,
+        153
+      ],
+      "truth_value": null,
+      "scope_id": "s_notation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lagrange_notation",
+      "subtype": "definition",
+      "clause_range": [
+        155,
+        157
+      ],
+      "truth_value": null,
+      "scope_id": "s_notation",
+      "exposed_entities": [
+        "y'",
+        "f'(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_leibniz_notation",
+      "subtype": "definition",
+      "clause_range": [
+        158,
+        161
+      ],
+      "truth_value": null,
+      "scope_id": "s_notation",
+      "exposed_entities": [
+        "dy/dx"
+      ]
+    },
+    {
+      "stmt_id": "st_newton_notation",
+      "subtype": "definition",
+      "clause_range": [
+        162,
+        164
+      ],
+      "truth_value": null,
+      "scope_id": "s_notation",
+      "exposed_entities": [
+        "ẏ"
+      ]
+    },
+    {
+      "stmt_id": "st_partial_notation",
+      "subtype": "definition",
+      "clause_range": [
+        165,
+        166
+      ],
+      "truth_value": null,
+      "scope_id": "s_notation",
+      "exposed_entities": [
+        "f_x"
+      ]
+    },
+    {
+      "stmt_id": "st_euler_notation",
+      "subtype": "definition",
+      "clause_range": [
+        167,
+        169
+      ],
+      "truth_value": null,
+      "scope_id": "s_notation",
+      "exposed_entities": [
+        "Df(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_difference_notation",
+      "subtype": "definition",
+      "clause_range": [
+        170,
+        170
+      ],
+      "truth_value": null,
+      "scope_id": "s_notation",
+      "exposed_entities": [
+        "Δf(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_notation_usage",
+      "subtype": "remark",
+      "clause_range": [
+        171,
+        178
+      ],
+      "truth_value": null,
+      "scope_id": "s_notation",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_avg_rate_intro",
+      "target": "st_derivative_name",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_velocity_scenario",
+      "target": "st_avg_velocity",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivative_def_condition",
+      "target": "st_derivative_def_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geom_secant",
+      "target": "st_geom_tangent",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geom_tangent",
+      "target": "st_geom_derivative_slope",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geom_derivative_slope",
+      "target": "st_geom_tangent_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivative_func_def",
+      "target": "st_original_func",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivative_func_continuity",
+      "target": "st_derivative_func_behavior",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivative_func_def",
+      "target": "st_indefinite_integral",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

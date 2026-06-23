@@ -1,0 +1,170 @@
+[SCOPE:root|description|正交归一基底]
+文章名: OrNrB
+标题: 正交归一基底
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=二维空间中的几何向量
+  [1] type=exercise heading=习题 1 title=
+
+[0] 本文存在未完成的内容。
+[1] 【未完成】目前写的是有限维度版本，需要调整成一般的内积空间
+
+[SCOPE:s_orthonormal_bases|description|正交归一基底]
+[2] 我们已经知道了向量基底的概念，如果内积空间中一组向量基底中的每个向量模长都为 $1$ 且每两个向量都正交，
+[3] 则我们把这组基底称为正交归一基底（orthonormal bases），也叫单位正交基。
+[SCOPE:s_orthonormal_let|let_bind|正交归一基底变量]
+[4] 若把这组正交归一基底记为 $x_1, x_2 \dots x_N$，
+[5] 则正交归一可以用内积表示为
+[6] \begin{equation}
+\langle x_i, x_j \rangle = \delta_{ij} ~,\qquad i,j = 1,\dots, N~.
+\end{equation}
+[/SCOPE:s_orthonormal_let]
+[7] 其中 $\delta_{ij}$ 是
+[8] 克罗内克 delta 函数 [链接 L0]
+[9] 。
+[10] 简单来说就是任意两个不同的基底内积为零，以及任意基底与自身的内积为 1。
+[11] 单位正交基是某个空间的基底，
+[12] 所以该空间中任意向量 $v$ 在单位正交基上的展开
+[13] \begin{equation}
+v = \sum_{i = 1}^N c_i \, x_i ~,\qquad i = 1, \dots, N~.
+\end{equation}
+[14] 其中 $c_i$ 就是 $v$ 的各个坐标。
+[15] 由正交归一性可以证明（见下文）
+[16] \begin{equation}
+c_i = \langle v, x_i \rangle ~,\qquad i = 1, \dots, N~.
+\end{equation}
+[17] 式 2 [链接 L1]
+[18] \begin{equation}
+v = \sum_{i = 1}^N (\langle v, x_i \rangle) \, x_i~, \qquad i = 1, \dots, N~.
+\end{equation}
+[19] 最常见的例子就是几何向量在直角坐标系的 $x, y, z$ 三个单位正交向量上的展开：
+[20] \begin{equation}
+v = (\langle v, x \rangle)\, x + (\langle v, y \rangle)\, y + (\langle v, z \rangle)\, z = x \, x + y \, y + z \, z~.
+\end{equation}
+
+[/SCOPE:s_orthonormal_bases]
+[SCOPE:s_proof|description|证明坐标公式]
+[SCOPE:s_proof_let|let_bind|证明中引入变量]
+[21] 我们来证明式 3 ：用 $x_k$ 同时乘以式 2 两边，得
+[22] \begin{equation}
+\langle v, x_k \rangle = \sum_{i = 1}^N c_i \langle x_i, x_k \rangle = \sum_{i = 1}^N c_i \delta_{ik} = c_k ~,\qquad k = 1, \dots, N~.
+\end{equation}
+[/SCOPE:s_proof_let]
+[23] 最后一步使用了
+[24] 式 2 [链接 L2]
+[25] 。
+[26] 证毕。
+[27] 式 6 的过程可以看作是用 “与 $x_k$ 内积” 的操作把式 6 求和中需要的一项筛选出来。
+[28] 注意只有使用正交归一基底才可以进行这样的筛选。
+[29] 一个反例是斜坐标系（例 2 ）不能使用式 2 计算坐标，因为它的基底不正交。
+
+[/SCOPE:s_proof]
+[SCOPE:s_schmidt|description|施密特正交归一化]
+[30] 【未完成】目前写的是有限维度版本，需要增加无限维度的情况
+[31] 若在 $M$ 维向量空间中任意给出 $N \leqslant M$ 个线性无关的向量，如何得到一组正交归一化的基底呢？
+[32] 我们可以用施密特正交归一化（Schmidt orthonormalization）。
+[33] 先看一个二维的例子
+
+[/SCOPE:s_schmidt]
+[SCOPE:s_example1|description|例1 二维空间中的几何向量]
+[34] 例 1 二维空间中的几何向量
+[SCOPE:s_example1_let1|let_bind|例1 初始向量]
+[35] 已知两个几何向量 $v_1, v_2$ 坐标分别为 $(2, 1)$，$(1, 2)$。
+[/SCOPE:s_example1_let1]
+[36] 这两个向量不共线，说明它们线性无关。
+[37] 但容易看出它们既不归一也不正交，下面来进行施密特正交归一化。
+[SCOPE:s_example1_let2|let_bind|例1 归一化后向量]
+[38] 先把 $v_1$ 归一化，并记为 $u_1$
+[39] \begin{equation}
+u_1 = \frac{v_1}{ \left\lVert v_1 \right\rVert } = \frac{1}{\sqrt{5}} (2, 1)~.
+\end{equation}
+[40] \begin{equation}
+\langle v_2, u_1 \rangle = \frac{4}{\sqrt{5}}~,
+\end{equation}
+[41] \begin{equation}
+v_2^\parallel = (\langle v_2, u_1 \rangle)u_1 = \frac{4}{5} (2, 1)~.
+\end{equation}
+[42] \begin{equation}
+v_2^\bot = v_2 - v_2^\parallel = \left(-\frac35, \frac65 \right) ~,
+\end{equation}
+[43] \begin{equation}
+u_2 = \frac{v_2^\bot}{ \left\lVert v_2^\bot \right\rVert } = \frac{1}{3\sqrt{5}} (-3, 6)~.
+\end{equation}
+[/SCOPE:s_example1_let2]
+[44] 若给出 $M$ 维向量空间中的 $N$ 个（$N \leqslant M$）线性无关向量
+[45] 将第 1 个向量归一化得到第 1 个基底
+[46] 将第 2 个向量分解为与第 1 个向量平行和垂直的两个分量，并将垂直分量归一化得到第 2 个基底
+[47] 将第 3 个向量分解为三个部分，
+[48] 即分别平行于前两个基底的分量和一个垂直分量，并将垂直分量归一化得到第 3 个基底
+[49] 对第 $n = 4, \dots , N$ 个基底重复该步骤，得到第 $n$ 个基底
+[50] 用公式来表示这个过程，就是：
+[51] \begin{equation}
+v_1^\bot = v_1~.
+\end{equation}
+[52] \begin{equation}
+u_i = \frac{v_i^\bot}{ \left\lVert v_i^\bot \right\rVert } \qquad i = 1, \dots ,N~,
+\end{equation}
+[53] \begin{equation}
+v_i^\parallel = \sum _{j=1}^{i-1} (\langle v_i, u_j \rangle) u_j \qquad (i = 2, \dots N)~,
+\end{equation}
+[54] \begin{equation}
+v_i^\bot = v_i - v_i^\parallel \qquad i = 2, \dots N~.
+\end{equation}
+
+[/SCOPE:s_example1]
+[SCOPE:s_exercise1|description|习题1]
+[55] 习题 1
+[56] 对三维空间中的向量 $(2, 1, 1)$，$(1, 2, 1)$ 和 $(1, 1, 2)$ 进行施密特正交归一化。
+
+[/SCOPE:s_exercise1]
+[SCOPE:s_derivation|description|推导施密特公式]
+[57] 这里来解释式 14 和式 15 。
+[SCOPE:s_derivation_let|let_bind|推导中引入变量]
+[58] 我们假设已经知道 $i-1$ 个正交归一的向量，由于 $N$ 维空间中必然存在 $N$ 个正交归一基底，我们可以设剩下 $u_i$ 的也已经知道（或者可以任意取）。
+[59] 于是 $v_i$ 可以用基底展开为
+[60] \begin{equation}
+v_i = \sum _{j=1}^N c_j u_j~.
+\end{equation}
+[/SCOPE:s_derivation_let]
+[61] 式 14 [链接 L3]
+[62] 得到前 $i-1$ 项之和
+[63] \begin{equation}
+v_i^\parallel = \sum _{j=1}^{i-1} c_ju_j~,
+\end{equation}
+[64] 式 15 [链接 L4]
+[65] 就是第 $i$ 项到第 $N$ 项之和
+[66] \begin{equation}
+v_i^\bot = \sum _{j=i}^{N} c_ju_j~.
+\end{equation}
+[67] 所以对 $j = 1, \dots , i-1$，都有 $\langle v_i^\bot, u_j \rangle = 0$。
+[68] 也就是说和已有的 $i-1$ 个基底都正交。
+
+跨文章引用:
+  [L0] 克罗内克 delta 函数 → Kronec
+[/SCOPE:s_derivation]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_proof",
+    "target_scope": "s_orthonormal_bases",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "证明是正交归一基底定义的一个应用"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_schmidt",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是施密特正交归一化的二维特例"
+  },
+  {
+    "source_scope": "s_derivation",
+    "target_scope": "s_schmidt",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推导解释了施密特公式的由来"
+  }
+]

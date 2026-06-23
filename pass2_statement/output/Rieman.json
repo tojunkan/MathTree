@@ -1,0 +1,412 @@
+{
+  "article_name": "Rieman",
+  "statements": [
+    {
+      "stmt_id": "st_darboux_sum_def",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_darboux_sum_def",
+      "exposed_entities": [
+        "达布和",
+        "上积分和",
+        "下积分和"
+      ]
+    },
+    {
+      "stmt_id": "st_darboux_sum_let",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_darboux_sum_let",
+      "exposed_entities": [
+        "P",
+        "x_i",
+        "n",
+        "m_i",
+        "M_i",
+        "s",
+        "S"
+      ]
+    },
+    {
+      "stmt_id": "st_darboux_sum_prop",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_darboux_sum_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1",
+      "subtype": "theorem",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "x_i",
+        "x_{i+1}",
+        "x'",
+        "s",
+        "s'",
+        "m_i",
+        "m_{1i}",
+        "m_{2i}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_ineq",
+      "subtype": "assumption",
+      "clause_range": [
+        35,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2",
+      "subtype": "theorem",
+      "clause_range": [
+        41,
+        42
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        44,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "s_1",
+        "S_1",
+        "s_2",
+        "S_2",
+        "s_3",
+        "S_3"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_ineq1",
+      "subtype": "assumption",
+      "clause_range": [
+        47,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_ineq2",
+      "subtype": "assumption",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_cor",
+      "subtype": "conclusion",
+      "clause_range": [
+        52,
+        57
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "I_*",
+        "I^*"
+      ]
+    },
+    {
+      "stmt_id": "st_darboux_int_def",
+      "subtype": "definition",
+      "clause_range": [
+        58,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_darboux_int_def",
+      "exposed_entities": [
+        "达布下积分",
+        "达布上积分"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3",
+      "subtype": "theorem",
+      "clause_range": [
+        61,
+        64
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_let",
+      "subtype": "assumption",
+      "clause_range": [
+        62,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3_let",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b",
+        "lambda",
+        "S",
+        "s"
+      ]
+    },
+    {
+      "stmt_id": "st_necessity_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        66,
+        68
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3_necessity_let",
+      "exposed_entities": [
+        "I",
+        "epsilon",
+        "delta",
+        "sigma"
+      ]
+    },
+    {
+      "stmt_id": "st_necessity_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        69,
+        74
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm3_necessity",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sufficiency_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        75,
+        75
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3_sufficiency_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sufficiency_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        76,
+        80
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm3_sufficiency",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_amplitude_def",
+      "subtype": "definition",
+      "clause_range": [
+        82,
+        83
+      ],
+      "truth_value": null,
+      "scope_id": "s_amplitude_def",
+      "exposed_entities": [
+        "振幅",
+        "omega_i"
+      ]
+    },
+    {
+      "stmt_id": "st_amplitude_equiv",
+      "subtype": "conclusion",
+      "clause_range": [
+        84,
+        85
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_amplitude_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_amplitude_remark",
+      "subtype": "remark",
+      "clause_range": [
+        86,
+        86
+      ],
+      "truth_value": null,
+      "scope_id": "s_amplitude_def",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_darboux_sum_let",
+      "target": "st_darboux_sum_prop",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_ineq",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let",
+      "target": "st_thm2_ineq1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_ineq1",
+      "target": "st_thm2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_ineq2",
+      "target": "st_thm2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_concl",
+      "target": "st_thm2_cor",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_let",
+      "target": "st_thm3",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_necessity_assump",
+      "target": "st_necessity_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sufficiency_assump",
+      "target": "st_sufficiency_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_amplitude_def",
+      "target": "st_amplitude_equiv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_amplitude_equiv",
+      "target": "st_amplitude_remark",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1",
+      "target": "st_darboux_sum_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1是达布和的性质"
+    },
+    {
+      "source": "st_thm2",
+      "target": "st_darboux_sum_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2是达布和的性质"
+    },
+    {
+      "source": "st_thm3",
+      "target": "st_darboux_int_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理3给出定积分存在的充要条件，涉及达布积分"
+    },
+    {
+      "source": "st_amplitude_def",
+      "target": "st_thm3",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "振幅定义用于重新表述定理3的条件"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,153 @@
+[SCOPE:root|description|渐近展开]
+文章名: Asympt
+标题: 渐近展开
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=渐近展开
+  [1] type=example heading=例 1 title=泰勒展开
+  [2] type=example heading=例 2 title=发散级数部分和
+
+[SCOPE:s_def1|description|定义 1 渐近展开]
+[0] 在数学中，渐近展开（asymptotic expansion） 是用一列较简单的函数来逐次逼近给定的函数的办法。
+[1] 它的形式定义如下：
+
+[2] 定义 1 渐近展开
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[3] 设自变量 $x$ 趋于某点 $a$ (有限或无限) 时，函数序列 $\{\phi_{n}(x)\}$ 满足
+[4] $$
+\phi_{n+1}(x)=o(\phi_n(x)),\,x\to a~.
+$$
+[5] 则对于给定的函数 $f$，称 $f(x)$ 在 $x\to a$ 时有渐近展开式
+[6] \begin{equation}
+f(x)\simeq c_0\phi_0(x)+c_1\phi_1(x)+...+c_n\phi_n(x)+...,\,x\to a~
+\end{equation}
+[7] \begin{equation}
+f(x)=c_0\phi_0(x)+c_1\phi_1(x)+...+c_n\phi_n(x)+o(\phi_n(x)),\,x\to a~.
+\end{equation}
+[/SCOPE:s_def1_let]
+[8] 一般常用的序列是单项式序列或者一般的幂函数序列。
+[9] 渐近展开的四则运算性质是容易验证的。
+[10] 有如下注意事项：
+[11a] (x)\equiv 0$ 和函数 $g
+[11b] (x)= \mathrm{e} ^{-1/x^2}$ 都有渐近展开
+[12] $$
+0+0x+0x^2+...~.
+$$
+[13] 渐近级数可以收敛也可以发散。
+[14] 式 1 只是一个形式等式，它的真正含义是式 2 ， 而式 2 只表示对于固定的 $n$，当 $x\to a$ 时，$f(x)$ 与渐近级数的第 $n$ 项部分和相差一个高阶无穷小。
+[15] 通过直接计算，可以看出渐近展开式可以逐项积分。
+[16] 但一般来说渐近展开式不可以逐项微分。
+[17] 例如，$f(x)=e^{-x} \sin\left(e^{2x}\right) $ 当 $x\to+\infty$ 时趋于零，
+[18] 但它的导数却根本没有极限。
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|例 1 泰勒展开]
+[19] 例 1 泰勒展开
+[20] 泰勒展开就是渐近展开的例子。
+[21] 泰勒级数不必收敛，
+[22] 即便收敛也不必收敛到函数本身。
+[23] 在函数 $ \mathrm{e} ^{-1/x^2}$ 的例子中，原点处的泰勒级数与函数本身的差永远是函数本身，
+[24] 但显然这个差在 $x\to0$ 时衰减得比 $x$ 的任意正幂都快。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例 2 发散级数部分和]
+[25] 例 2 发散级数部分和
+[SCOPE:s_ex2_let|let_bind|例 2 的变量]
+[26] 如果 $f(x)$ 在 $x\geq1$ 时是单调不减函数，
+[27] 那么有
+[28] $$
+\sum_{k=1}^nf(k)=\int_1^n f(x)dx+O(f(n))+O(1),\,n\to\infty~.
+$$
+[/SCOPE:s_ex2_let]
+[29] 例如，如果取 $f(x)=1/x$，
+[30] 那么有熟知的公式
+[31] $$
+\sum_{k=1}^n\frac{1}{k}=\log n+O(1)~.
+$$
+[32] 实际上当然还可以借助更复杂的分析技巧写得再精确些，例如我们知道 $-\log n+\sum_{k=1}^n1/k$ 的极限是存在的，也就是欧拉常数 $\gamma=0.57721566...$。
+[33] 更精细的渐近展开式可以由欧拉-麦克劳林公式给出。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_euler|description|欧拉的例子]
+[SCOPE:s_euler_let|let_bind|欧拉例子的变量]
+[34] 考察非初等的函数
+[35] $$
+f(x)=\int_0^\infty\frac{e^{-t}}{x+t}dt~,
+$$
+[36] 当 $x\to+\infty$ 时的行为。
+[/SCOPE:s_euler_let]
+[37] 欧拉将 $1/(x+t)$ 展开为几何级数
+[38] $\sum_{k=0}^\infty {(-1)^kt^k}/{x^{k+1}}$，
+[39] 代入并计算得到如下的形式等式：
+[40] \begin{equation}
+f(x)=\sum_{k=0}^\infty\frac{(-1)^kk!}{x^{k+1}}~.
+\end{equation}
+[41] 当然，欧拉的时代还没有收敛性的观念。
+[42] 式 3 [链接 L0]
+[43] 右边的级数对于任何 $x$ 都不收敛，之所以出现这样的问题是因为 $t$ 的几何级数收敛半径是有限的，
+[44] 于是将几何级数逐项积分的计算违反分析学的准则。
+[45] 然而，从今天的观点看，这个等式仍然在渐近展开的意义下成立。
+[46] 实际上，通过换元可得
+[47] $$
+f(x)=e^{x}\int_x^\infty \frac{e^{-t}}{t}dt~.
+$$
+[48] 反复进行分部积分，得到
+[49] $$
+f(x)=\sum_{k=0}^n\frac{(-1)^kk!}{x^{k+1}}
++(n+1)!e^x\int_x^\infty\frac{e^{-t}}{t^{n+2}}dt~.
+$$
+[SCOPE:s_euler_est|let_bind|误差估计的变量]
+[50] 最后的这个积分可估算如下：当 $t>x$ 时 $1/t^{n+2}<1/x^{n+2}$，
+[51] 于是
+[52] \begin{equation}
+\int_x^\infty\frac{e^{-t}}{t^{n+2}}dt
+\leq\frac{1}{x^{n+2}}\int_x^\infty e^{-t}dt
+=\frac{e^{-x}}{x^{n+2}}~.
+\end{equation}
+[53] 这样就有
+[54] $$
+f(x)=\sum_{k=0}^n\frac{(-1)^kk!}{x^{k+1}}
++O\left(\frac{1}{x^{n+2}}\right),\,x\to+\infty~.
+$$
+[/SCOPE:s_euler_est]
+[55] 这表示
+[56] 式 3 [链接 L1]
+[57] 在渐近展开的意义下成立。
+[58] 特别地，这个渐近级数尽管发散，
+[59a] (x)$ 的值，因为根据估计式 4 ，$f
+[59b] (x)$ 同渐近级数 $n$ 项部分和之差的绝对值不超过
+[60] $$
+\frac{(n+1)!}{x^{n+2}}~,
+$$
+[61] 而对于大的 $x$，当 $n< x$ 时这个误差项随着 $n$ 的增大而减小，只有当 $n$ 大致超过 $x$ 时误差才会重新开始增大。
+[62] 因此，如果将渐近级数截断到大约 $x$ 项，
+[63] 则部分和与 $f(x)$ 之差将不超过 $1/2^x$。
+[64] 对于大的 $x$ 来说，这足以给出相当精确的近似值。
+[65] 由这个例子可以看出渐近展开的意义：可以用一个发散级数去很好地逼近一个收敛的对象。
+[/SCOPE:s_euler]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "泰勒展开是渐近展开的特例"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "发散级数部分和是渐近展开的例子"
+  },
+  {
+    "source_scope": "s_euler",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "欧拉的例子是渐近展开的具体应用"
+  }
+]

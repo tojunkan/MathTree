@@ -1,0 +1,35 @@
+[SCOPE:root|description|量词相关的推理规则]
+文章名: prelo3
+标题: 量词相关的推理规则
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=量词相关的推理规则
+
+[SCOPE:s_def|description|定义 1 量词相关的推理规则]
+[0] 定义 1 量词相关的推理规则
+[SCOPE:s_let|let_bind|变元与常元]
+[1] 量词相关的推理规则有以下四条，用 $x$，$y$ 表示变元，而 $c$ 表示常元，
+[2] 则可以分别表示为：
+[/SCOPE:s_let]
+[3] $\forall -$ 规则（US 规则，又称 UI 规则）：
+[4] \begin{equation}
+\forall x A(x) \Rightarrow A(y) ~,
+\end{equation}
+[5] \begin{equation}
+\forall x A(x) \Rightarrow A(c) ~.
+\end{equation}
+[6] $\exists -$ 规则（ES 规则，又称 EI 规则）：
+[7] \begin{equation}
+\exists x A(x) \Rightarrow A(c) ~.
+\end{equation}
+[8] 注意此处只能使用常元，此处 $c$ 是使 $A(x)$ 成立的那常元。
+[9] $\forall +$ 规则（UG 规则）：
+[10] \begin{equation}
+A(y) \Rightarrow \forall x A(x) ~.
+\end{equation}
+[11] $\exists +$ 规则（EG 规则）：
+[12] \begin{equation}
+A(c) \Rightarrow \exists x A(x) ~.
+\end{equation}
+[/SCOPE:s_def]
+[/SCOPE:root]

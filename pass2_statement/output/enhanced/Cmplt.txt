@@ -1,0 +1,133 @@
+[SCOPE:root|description|完备公理（戴德金分割）]
+文章名: Cmplt
+标题: 完备公理（戴德金分割）
+
+环境标记 (hints):
+  [0] type=exercise heading=习题 1 title=
+  [1] type=theorem heading=定理 1 title=实数的完备性
+  [2] type=exercise heading=习题 2 title=
+  [3] type=theorem heading=定理 2 title=实数的唯一性
+  [4] type=exercise heading=习题 3 title=
+
+[0] 本文存在未完成的内容。
+[1] 应当并入实数的完备公理
+[2] 从这里开始，我们将不再区分有理数和由有理数确定的戴德金分割。
+[3] 通过戴德金分割，我们得以填补有理数集中的"空隙", 从而得到了实数集。
+[4] 纯粹从四则运算的角度，还不能看出实数与有理数之间有何区别。
+[5] 然而如果引入一些超出四则运算范围的操作，
+[6] 即可看出实数与有理数的决定性区别：实数集是完备（complete） 的，或者模糊地说，实数集里"没有空隙".
+
+[7] 怎么刻画"不存在缝隙"这样的直观特性呢？
+[8] 仍旧以数 $\sqrt{2}$ 为例。
+[9] 我们记得这个数的下类是 $L=\{l\leq0\}\cup\{l>0:l^2<2\}$, 上类是 $R=\{r>0:r^2>2\}$. $L$ 和 $R$ 的并集就是有理数集 $\mathbb{Q}$, 而由于 2 并非任何有理数的平方，
+[10] 因此 $L$ 和 $R$ 之间"空无一物", 分割 $L|R$ 并不是由一个实际存在的分点确定的。
+[11] 但实数集却与此不同：在区间 $(-\infty,\sqrt{2})$ 和 $(\sqrt{2},+\infty)$ 之间的确存在着一个分点 $\sqrt{2}$.
+[12] 一般来说，如果像定义戴德金分割那样对实数集 $\mathbb{R}$ 进行操作，
+[13] 那么得不到任何新的对象：每一个这样的分割都必定是由一个分点确定的。
+[14] 实际上，如果将实数集 $\mathbb{R}$ 分成不相交的两部分 $A\cup B$, 满足
+[15a] 如果 $a\in A$,
+[15b] 则任何小于 $a$ 的实数 $a'$ 都属于 $A$.
+[16a] 如果 $b\in B$,
+[16b] 则任何大于 $b$ 的实数 $b'$ 都属于 $B$.
+[17a] 如果 $a\in A$, $b\in B$,
+[17b] 则必有 $a\leq b$.
+[18] $A$ 不包含最大的元素;
+[19] 那么 $L=A\cap\mathbb{Q}$ 满足戴德金分割下类的定义，
+[20] 从而 $R=B\cap\mathbb{Q}$ 自动满足分割上类的定义，
+[21] 于是 $L|R$ 自动成为一个戴德金分割，它自然就确定了一个实数 $x$. 这个实数 $x$ 自然就是"分割"$A\cup B$ 的分点，它满足如下的性质：
+[22] 对于 $a\in A$, $b\in B$, 总有 $a\leq x\leq B$. 而且，实际上更有 $A=(-\infty,x)$, $B=[x,+\infty)$.
+
+[SCOPE:s_ex1|description|习题1]
+[23] 习题 1
+[24] 证明这一点。
+[25] 提示：如果存在 $a\in A$ 使得 $a>x$, 那么开区间 $(x,a)$ 中存在有理数 $q$.
+[26] 仿照这个思路，我们便能证明如下的定理：
+
+[/SCOPE:s_ex1]
+[SCOPE:s_thm1|description|实数的完备性]
+[27] 定理 1 实数的完备性
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[28] 设 $A,B$ 是实数集的子集，使得对于任意的 $a\in A$, $b\in B$ 都有 $a\leq b$. 那么存在实数 $x$ 使得对于任意的 $a\in A$, $b\in B$ 都有 $a\leq x\leq b$.
+[/SCOPE:s_thm1_let]
+[29] 上面的这个性质"两个集合中间一定有一个元素"被称作"完备公理" (the axiom of completeness).
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex2|description|习题2]
+[30] 习题 2
+[31] 证明实数的完备性，
+[32] 即定理 1. 提示：考虑集合 $A$ 中所有元素的下类的并集，它仍然还是一个下类。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_axioms|description|实数的公理刻画]
+[33] 在得到了完备公理后，我们便可以给出实数集合的公理刻画了。
+[SCOPE:s_axioms_let|let_bind|实数模型R]
+[34] 我们称一个带有二元运算 $+$, $\cdot$ 和序关系 $<$ 的集合 $\mathfrak{R}$ 为一个实数模型，如果上述运算和序关系满足下列一组公理：
+
+[/SCOPE:s_axioms_let]
+[SCOPE:s_axioms_abel|description|阿贝尔群公理]
+[35] 交换律：对于任何 $x,y\in\mathfrak{R}$ 皆有 $x+y=y+x$.
+[36] 结合律：对于任何 $x,y,z\in\mathfrak{R}$ 皆有 $x+(y+z)=(x+y)+z$.
+[37] 零元素：存在一个元素 $0\in \mathfrak{R}$ 使得对于任何 $x,y\in\mathfrak{R}$ 皆有 $x+0=x$.
+[38] 负元素：对于任何 $x\in\mathfrak{R}$, 都存在它的负元素 $-x\in\mathfrak{R}$ 使得 $x+(-x)=0$.
+
+[/SCOPE:s_axioms_abel]
+[SCOPE:s_axioms_field|description|域公理]
+[39] 交换律：对于任何 $x,y\in\mathfrak{R}$ 皆有 $x\cdot y=y\cdot x$.
+[40] 结合律：对于任何 $x,y,z\in\mathfrak{R}$ 皆有 $x\cdot (y\cdot z)=(x\cdot y)\cdot z$.
+[41] 分配律：对于任何 $x,y,z\in\mathfrak{R}$ 皆有 $x\cdot (y+z)=x\cdot y+x\cdot z$.
+[42] 单位元：存在元素 $1\in\mathfrak{R}$, 使得对于任何 $x\in\mathfrak{R}$ 皆有 $x\cdot 1=x$.
+[43] 逆元素：对于任何不等于 0 的 $x\in\mathfrak{R}$, 都存在 $x^{-1}\in\mathfrak{R}$ 使得 $x^{-1}\cdot x=1$.
+
+[/SCOPE:s_axioms_field]
+[SCOPE:s_axioms_order|description|全序公理]
+[44] 任意二元素 $x,y\subset\mathfrak{R}$ 之间有且仅有下列三种关系之一：$x< y$, $x=y$, $x>y$.
+[45a] 如果 $x,y,z\in\mathfrak{R}$ 且有 $x< y$, $y< z$,
+[45b] 则$x< z$.
+[46a] 如果 $x,y\in\mathfrak{R}$ 且 $x< y$,
+[46b] 则对于任何 $z\in\mathfrak{R}$ 皆有 $x+z< y+z$.
+[47a] 如果 $x,y\in\mathfrak{R}$ 且 $x< y$,
+[47b] 则对于任何 $z>0$ 皆有 $x\cdot z< y\cdot z$.
+
+[/SCOPE:s_axioms_order]
+[SCOPE:s_axioms_complete|description|完备公理]
+[48] 设 $A,B\subset\mathfrak{R}$, 使得对于任意 $a\in A$ 和任意 $b\in B$ 皆有 $a\leq b$, 那么存在元素 $c\in\mathfrak{R}$ 使得对于任意 $a\in A$ 和任意 $b\in B$ 皆有 $a\leq c\leq b$.
+[/SCOPE:s_axioms_complete]
+[49] 从中学课本已经知道，可以用各种不同的方式来表示实数，例如十进制小数，
+[50] 但这些表示是相互等价的。
+[51] 严格地来说，这就是如下定理：
+
+[/SCOPE:s_axioms]
+[SCOPE:s_thm2|description|实数的唯一性]
+[52] 定理 2 实数的唯一性
+[53] 任意两个满足实数公理的实数模型都是同构的。
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[54] 在这里，"同构" (isomorphic) 的意思是说：如果 $\mathfrak{R}_1$ 和 $\mathfrak{R}_2$ 是两个实数模型，
+[55] 那么存在一个双射 $f:\mathfrak{R}_1\to \mathfrak{R}_2$, 使得 $f$ 保持元素之间的加法和乘法运算（即 $f$ 是域同构）, 而且还保持序关系。
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_let]
+[SCOPE:s_ex3|description|习题3]
+[56] 习题 3
+[57] 试证明实数的唯一性定理。
+[58] 提示：若给定了一个实数模型，
+[59] 那么可以从加法单位元 0 和乘法单位元 1 开始，先在其中构造出整数和有理数，然后利用完备公理说明所有的元素都可以被视为戴德金分割的分点; 这样一来，所有的实数模型都同构于戴德金分割模型。
+[/SCOPE:s_ex3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_axioms_complete",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是完备公理在实数集上的具体形式"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_axioms",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "唯一性定理依赖于公理刻画"
+  }
+]

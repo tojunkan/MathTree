@@ -1,0 +1,66 @@
+{
+  "article_name": "Gamma2",
+  "statements": [
+    {
+      "stmt_id": "st_lim_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_lim",
+      "exposed_entities": [
+        "Gamma(z)",
+        "z"
+      ]
+    },
+    {
+      "stmt_id": "st_int_def",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_int",
+      "exposed_entities": [
+        "Gamma(z+1)",
+        "z"
+      ]
+    },
+    {
+      "stmt_id": "st_weier_def",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_weier",
+      "exposed_entities": [
+        "Gamma(z)",
+        "z",
+        "gamma"
+      ]
+    }
+  ],
+  "edges": [],
+  "cross_scope_edges": [
+    {
+      "source": "st_lim_def",
+      "target": "st_int_def",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "极限定义与积分定义等价（在收敛域内）"
+    },
+    {
+      "source": "st_lim_def",
+      "target": "st_weier_def",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "极限定义与Weierstrass定义等价"
+    }
+  ],
+  "unresolved": []
+}

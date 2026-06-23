@@ -1,0 +1,193 @@
+[SCOPE:root|description|泛函分析笔记 1]
+文章名: FnalNt
+标题: 泛函分析笔记 1
+
+[0] 本文参考：[1]
+
+[SCOPE:s_banach_space|description|1.1 Linear Spaces and Dimension]
+[1] $\mathbb R$ 和 $\mathbb C$ 分别表示实数域和复数域，$\mathbb K$ 表示二者中的一个
+[2] $\mathbb K^N$ 表示 $N$ 元 tuple $(\xi_1, \xi_2, \dots, \xi_N)$
+[3] 某区间上的连续函数 $u:[a, b] \to \mathbb{R}$ 可以表示为 $C[a, b]$
+[4] $\mathbb{K}$ 上（over $\mathbb K$）的矢量空间（linear space 就是 vector space) 表示只能以 $\mathbb K$ 的元乘以某个矢量
+[5] $C[a, b]$ 是无穷维矢量空间
+
+[/SCOPE:s_banach_space]
+[SCOPE:s_normed_space|description|1.2 Normed Spaces and Convergence]
+[6] 用 $ \left\lVert u \right\rVert > 0$ 表示范数（norm）
+[7] 定义了范数的空间就叫赋范空间（normed space），满足 (1) $ \left\lVert u \right\rVert \geqslant 0$，(2) $ \left\lVert u \right\rVert = 0$ iff $u = 0$，(3) $ \left\lVert \alpha u \right\rVert = \left\lvert \alpha \right\rvert \left\lVert u \right\rVert $，(4) $ \left\lVert u + v \right\rVert \leqslant \left\lVert u \right\rVert + \left\lVert v \right\rVert $
+[8] 定义两个矢量之间的距离（distance） 为 $ \left\lVert u - v \right\rVert $
+[9] 模可以用于定义极限 $\lim_{n\to\infty} u_n = u$ 为 $\lim_{n\to\infty} \left\lVert u_n - u \right\rVert = 0$，
+[10] 即 $u_n$ 收敛到 $u$
+[11] 上一条中，(1) $u$ 是唯一的，(2) $u_n$ 是有界的（bounded），(3) $ \left\lVert u_n \right\rVert \to \left\lVert u \right\rVert $，(4) $u_n + v_n \to u + v$，(5) $\alpha_n u_n \to \alpha u$
+[12a] 柯西序列（Cauchy sequence）：对任意 $\varepsilon > 0$，存在 $N$
+[12b] 当 $n, m \geqslant N$，则有 $ \left\lVert u_n - u_m \right\rVert < \varepsilon$
+[13] 在赋范空间中，每个收敛序列都是柯西序列
+
+[/SCOPE:s_normed_space]
+[SCOPE:s_banach_space_def|description|1.3 Banach Spaces and the Cauchy Convergence Criterion]
+[14] 赋范空间 $X$ 是 Banach 空间当且仅当每个柯西数列都收敛（到 $X$ 的元素）
+[15] 在 Banach 空间中，收敛序列都是柯西序列1
+[16] 空间 $X := C[a, b]$ 是实数 Banach 空间，定义范数为 $ \left\lVert u \right\rVert := \max_{a \leqslant x \leqslant b} \left\lvert u(x) \right\rvert $。
+[17a] (x) - u
+[17b] (x) \right\rvert \to 0$。
+[18] 也就是 $u_n(x)$ 一致收敛到 $u$
+[19] 如果柯西序列 $u_n$ 的子序列 $u_{n'} \to u$，
+[20] 那么 $u_n \to u$
+[21a] 若 $\sum_{j=1}^\infty \left\lVert u_{j+1} - u_j \right\rVert < \infty$，2
+[21b] 则$u_n$ 是柯西序列
+[22] 集合 $U_\varepsilon (u_0) := \{u \in X: \left\lVert u - u_0 \right\rVert < \varepsilon\}$ 叫做 $u_0$ 的 $\varepsilon$-邻域（neighborhood）
+
+[/SCOPE:s_banach_space_def]
+[SCOPE:s_open_closed|description|1.4 Open and Closed Sets]
+[23] $X$ 的子集 $M$ 是开集当且仅当对任意 $u \in M$ 都存在邻域是 $M$ 的子集
+[24] $X$ 的子集 $M$ 是闭集当且仅当 $M$ 中的每个序列的极限都属于 $M$
+[25] $X$ 的子集 $M$ 是闭的（closed）当且仅当 $X - M$ 是开的（open）
+
+[/SCOPE:s_open_closed]
+[SCOPE:s_operators|description|1.5 Operators]
+[26] $M$ 和 $Y$ 是集合，$u \in M, v \in Y$ 算符 $A: M \to Y$ 代表映射 $v = Au$，其中 $M$ 是定义域（domain of definition），也记为 $D(A)$。
+[27] 值域（range）是 $A(M) := \{v \in Y: v = Au, u \in M\}$，也记为 $R(A)$
+[28] $A$ 叫满射（surjective） 当且仅当 $A(M) = Y$; $A$ 叫做单射（injective） 当且仅当 $Au = Av$ 蕴含 $u = v$; $A$ 叫做双射（bijective） 如果前面两者都符合
+[29] 如果 $A$ 是双射（bijective），
+[30] 则存在逆算符 $A^{-1}: Y \to M$，定义为 $A^{-1} v = u$ 当且仅当 $Au = v$
+[31] 算符也叫函数
+[32a] $A: M \subseteq X \to Y$ 表示 $A: M \to Y$ 且 $M \subseteq X$
+[32b] 当 $Y = \mathbb K$，则把 $A$ 叫做泛函（functional）
+
+[/SCOPE:s_operators]
+[SCOPE:s_continuity|description|1.9 Continuity]
+[33] Sequentially continuous：$\lim_{n\to\infty} u_n = u$（$u\in M$）意味着 $\lim_{n\to\infty} Au_n = Au$
+[34] continuous operator：对任意 $u\in M$，以及 $\varepsilon>0$，存在 $\delta >0$ 使得 $ \left\lVert v-u \right\rVert <\delta$（$v\in M$）意味着 $ \left\lVert Av-Au \right\rVert <\varepsilon$
+[35] uniformly continuous operator：上面的 $\delta$ 不取决于 $u$
+[36] Lipschitz continuous：存在 $L > 0$ 使得 $ \left\lVert Av-Au \right\rVert \le L \left\lVert v-u \right\rVert $ 对所有 $u,v \in M$ 都成立
+[37] continuous 和 sequentially continuous 是充要条件
+[38] 两个连续算符的复合算符 $C = A \circ B$ 也是连续的
+[39] 两个集合叫 homeomorphic（注意不是 homomorphic）当且仅当存在一个算符，满足连续，双射，且逆算符也连续
+
+[/SCOPE:s_continuity]
+[SCOPE:s_convexity|description|1.10 Convexity]
+[40] 凸集（convex set）：线性空间中的子集 $M$ 是凸的当且仅当 $u, v\in M$ 且 $0\le\alpha\le1$ 意味着 $\alpha u+(1-\alpha)v\in M$（两点之间的连线也属于集合）
+[41a] (u)+(1-\alpha)f
+[41b] (v)$ 对所有 $u, v\in M$ 和 $0\le\alpha\le1$ 都成立
+[42] 赋范空间中的函数 $f(u) := \left\lVert u \right\rVert $ 是凸函数
+[43] linear subspace，closed linear subspace
+[44] 显然所有线性子空间都是凸的
+[45] linear hull：$ \operatorname {span} M$，closure：$\bar M$，convex hull：$ \operatorname {co} M$
+[46] $u \in \operatorname {co} M$：对固定的 $n = 1, 2,\dots$，$u = \alpha_1u_1 + \dots + \alpha_n u_n$，其中 $u_1,\dots,u_n\in M$，$0\le\alpha_1,\dots,\alpha_n\le1$，$\alpha_1+\dots+\alpha_n = 1$
+
+[/SCOPE:s_convexity]
+[SCOPE:s_compactness|description|1.11 Compactness]
+[47] 如果赋范空间的集合 $M$ 满足每个序列都有收敛的子序列，
+[48] 那么 $M$ 就是相对紧的（relatively compact）
+[49] 如果赋范空间的集合 $M$ 满足每个序列都有收敛的子序列且收敛到 $M$ 中，
+[50] 那么 $M$ 就是紧的（compact）
+[51] 如果存在 $r \geqslant 0$ 使任意 $u \in M$ 都有 $ \left\lVert u \right\rVert \leqslant r$，
+[52] 那么 $M$ 就是有界的（bounded）
+[53] $M$ 是紧的当且仅当它是相对紧的且闭合
+[54] 每个紧集都是有界的
+[55] $\mathbb K^N$ 上的子集若使用 $ \left\lVert u \right\rVert := \left\lvert u \right\rvert _\infty$，
+[56] 那么它是相对紧的当且仅当它是有界的
+[57] Arzela-Ascoli theorem：令 $X := C[a, b]$，且 $ \left\lVert u \right\rVert := \max_{a\leqslant x\leqslant b} \left\lvert u(x) \right\rvert $。
+[58] 那么若 $M \subseteq X$ 有界且一致连续，
+[59] 那么 $M$ 就是相对紧的
+[60] Weierstrass 定理：令 $f: M\to \mathbb R$ 为赋范空间中非空紧子集 $M$ 上的连续函数，
+[61] 那么 $f$ 在 $M$ 上存在一个最大值和最小值
+[62] 令 $X, Y$ 为 $\mathbb K$ 上的赋范空间，令 $A: M \subseteq X \to Y$ 中 $M$ 为非空紧集，$A$ 为连续算符。
+[63] 那么 $A$ 是一致连续的
+[64] finite $\varepsilon$ net 对任意 $\varepsilon > 0$，存在有限多个点 $v_1, \dots, v_J \in M$ 使得 $\min_{1\le j\le J} \left\lVert u-v_j \right\rVert \le \varepsilon$（$\forall u\in M$）
+[65] $A: M \subseteq X \to Y$ 称为紧的（compact） 当且仅当 $A$ 是连续的且 $A$ 将有界集变换到相对紧集
+[66a] (x) := \int_a^b F(x, y, u
+[66b] (y)) \,\mathrm{d}{y} $ 是紧的，其中 $-\infty < a < b < \infty$，$u
+[66c] (x)$ 有界
+[67] 紧算符都是有界的（来自网络）。
+
+[/SCOPE:s_compactness]
+[SCOPE:s_minkowski|description|1.13 The Minkowski Functional and Homeomorphisms]
+[68] 赋范空间 $X$ 中的两个范数叫做 equivalent 当且仅当存在正数 $\alpha$ 和 $\beta$ 使得 $\alpha \left\lVert u \right\rVert \leqslant \left\lVert u \right\rVert _1 \leqslant \beta \left\lVert u \right\rVert $ 对所有的 $u \in X$ 成立
+[69] 有限维空间的任意两个范数都是 equivalent 的
+[70] 每个有限维赋范空间都是 Banach space.
+[71] 如果 $u_0, \dots, u_N$ 满足 $u_1 - u_0, u_2 - u_0,\dots, u_N - u_0$ 线性无关，
+[72] 那么就说它们在一般位置（general position）。
+[73] 这个性质与 $u_0, \dots, u_N$ 的顺序无关
+[74] $N$-单纯形（$N$-simplex）是 $\mathcal S := \operatorname {co} \left\{u_0, \dots, u_N \right\} $（$ \operatorname {co}$ is convex hull），其中 $u_0, \dots, u_N$ 在一般位置。
+[75] $0$-单纯形是一个点
+[76] 单纯形的 barycenter 是 $b := \sum_{j=0}^N u_j / (N+1)$
+[77] $\mathcal S$ 的 $k$-face 是单纯形中 $k+1$ 个不同 vertices 的 convex hull
+[78] $ \operatorname {diam} M := \sup_{u, v\in M} \left\lVert u - v \right\rVert $ is the diameter of $M$, and $ \operatorname {dist}(u, M) := \inf_{w \in M} \left\lVert u - w \right\rVert $ is the distance of the point $u$ from the point $M$
+
+[/SCOPE:s_minkowski]
+[SCOPE:s_brouwer|description|1.14 The Brouwer Fixed-Point Theorem]
+[79] 当 $M$ 是有限维赋范空间中紧的，凸的，非空的子集，连续算符 $A: M \to N$ 拥有 fixed point
+
+[/SCOPE:s_brouwer]
+[SCOPE:s_schauder|description|1.15 The Schauder Fixed-Point Theorem]
+[80] 紧算符 $A: M \to M$ 有一个 fixed point 如果 $M$ 是 Banach 空间的一个有界的，闭的，突的，非空的子集
+
+[/SCOPE:s_schauder]
+[SCOPE:s_linear_operators|description|1.20 Linear Operators]
+[81] 线性算符 $A: L \subseteq X\to Y$ 是线性的当且仅当 $A (\alpha u + \beta v) = \alpha Au + \beta Av$
+[82] 用 $L(X, Y)$ 表示线性连续算符 $A: X \to Y$，$X$ 是 $\mathbb K$ 上的赋范空间，$Y$ 是 $\mathbb K$ 上的 Banach 空间。
+[83] $L(X, Y)$ 是 $\mathbb K$ 上的 Banach 空间，范数就是算符的范数
+[84] 有限维矢量空间中的线性算符可以表示为矩阵，所有这些算符都是连续的
+[85] 算符的零空间（null space） 为 $N(A) := \left\{u \in X: Au = 0 \right\} $
+[86] 线性算符 $A$ 是连续的，当且仅当存在 $c > 0$ 使 $ \left\lVert Au \right\rVert \leqslant c \left\lVert u \right\rVert $ 对所有 $u$ 都成立。
+[87] 即当且仅当 $A$ 是有界的
+[88] 线性算符是单射的当且仅当 $N(A) = {0}$
+[89] 定义线性连续算符 $A: X \to Y$ 的算符范数（operator norm） 为 $ \left\lVert A \right\rVert := \sup_{ \left\lVert v \right\rVert \leqslant 1} \left\lVert A v \right\rVert $
+[90] 当 $X \ne {0}$，有 $ \left\lVert A \right\rVert := \sup_{ \left\lVert v \right\rVert = 1} \left\lVert A v \right\rVert $
+
+[/SCOPE:s_linear_operators]
+[SCOPE:s_dual_space|description|1.21 The Dual Space]
+[91] 令 $X$ 为 $\mathbb K$ 上的一个赋范空间，一个线性的连续算符 $f: X \to \mathbb K$ 称为线性连续泛函（linear continuous functional）
+[92] 所有 $X$ 上的线性连续泛函叫做 $X$ 的对偶空间（dual space） $X^*$，$X^* = L(X, \mathbb K)$
+[93] $f \in X^*$ 作用在 $u \in X$ 上可以记为 $ \left\langle f, u \right\rangle := f(u)$
+[94] $f\in X^*$ 的范数为 $ \left\lVert f \right\rVert := \sup_{ \left\lVert v \right\rVert \leqslant 1} \left\lvert f(v) \right\rvert $，
+[95] 所以 $ \left\lvert f(u) \right\rvert \leqslant \left\lVert f \right\rVert \left\lVert u \right\rVert $
+[96] 令 $X$ 为 $\mathbb K$ 上的赋范空间，
+[97] 那么对偶空间 $X^*$ 使用上述范数就是 $\mathbb K$ 上的 Banach 空间
+
+[/SCOPE:s_dual_space]
+[SCOPE:s_banach_algebra|description|1.23 Banach Algebras and Operator Functions]
+[98] By a Banach algebra $\mathcal B$ over $\mathbb K$ we understand a Banach space over $\mathbb K$, where an additional multiplication $AB$ is defined such that $AB \in \mathcal B$ for all $A, B \in \mathcal B$. More over, for $A, B, C \in \mathcal B$ a…[truncated]…, $\alpha(AB) = (\alpha A)B = A(\alpha B)$, $ \left\lVert AB \right\rVert \leqslant \left\lVert A \right\rVert \left\lVert B \right\rVert $. Exist $E \in \mathcal B$ such that $AE = EA$ for all $A \in \mathcal B$ and $ \left\lVert E \right\rVert = 1$
+[99] define operator function through $F(A) := \sum_{j=0}^\infty a_j A^j$, and $F(z) = \sum_{j=0}^\infty a_j z^j, z\in \mathbb K$
+[100] Let $X$ be a Banach space over $\mathbb K$. For each $A \in L(X, X)$ with $ \left\lVert A \right\rVert < r$, $F(A) \in L(X, X)$
+
+[/SCOPE:s_banach_algebra]
+[SCOPE:s_spectrum|description|1.25 Application to the Spectrum]
+[101] 考虑 $Au = \lambda u, u \in X, \lambda \in \mathbb C$
+[102] 令 $A\in L(X,X)$，$X$ 是非空的复 Banach 空间。
+[103] $\lambda$ 是本征值（eigen value） 当 $u\ne 0$
+[104] 预解集（resolvent set） $\rho(A)$：使得 $(A-\lambda I)^{-1}: X \to X$ 存在且 $\in L(X,X)$ 的复数 $\lambda$ 的集合。
+[105] $(A-\lambda I)^{-1}$ 叫做 resolvent
+[106] 预解集中的 $\lambda$ 代入本征方程只能解得矢量 $u=0$
+[107] $\sigma(A) := \mathbb C - \rho(A)$ 叫做谱（spectrum）
+[108] 谱是 $\mathbb C$ 中的紧子集且 $ \left\lvert \lambda \right\rvert \leqslant \left\lVert A \right\rVert $ 对所有 $\lambda\in\sigma(A)$ 成立
+[109] 每个本征值都属于谱
+[110] 预解集 $\rho(A)$ 是一个开集
+[111] Banach 空间 $X$ 上的一个算符 $B: X\to X$ 如果值域 $R(B)$ 是闭的且零空间是有限维的，
+[112] 那么他就是 semi-Fredholm 的
+[113] 本质谱（essential spectrum） $\sigma_e(A)$ 包括所有使得 $(A - \lambda I)$ 不是 semi-Fredholm 的 $\lambda$
+[114] $\sigma_e(A) \subseteq \sigma(A)$
+[115] $\sigma_e(A)$ 就是所有具有无穷简并（degeneracy）的本征值的集合
+[116] 如果 $X$ 是有限维的，
+[117] 那么 $A$ 的本质谱是空的
+
+[/SCOPE:s_spectrum]
+[SCOPE:s_density|description|1.26 Density and Approximation]
+[118] $M \subseteq X$ 被称为在 $X$ 中稠密的（dense） 当且仅当 $\bar M = X$，其中 $\bar M$ 是 $M$ 的闭包
+[119] 可数的（countable）, 至多可数（at most countable）
+[120] $X$ 叫可分的（separable） 的当且仅当它存在至多可数的稠密子集 $M \subseteq X$
+[121] Weierstrass 近似理论: $X := C[a, b]$，$-\infty < a < b < \infty$。
+[122] 所有实系数多项式的集合在 $X$ 内稠密
+[123] $C[a, b]$ 是可分的
+[124] 任何有限维赋范空间都是可分的
+[125] 令 $X$ 为可分的赋范空间。
+[126] 存在一个序列 $ \left\{X_n \right\} $（$X_n$ 是 $X$ 的有限维线性子空间），使得 $X_1 \subseteq X_2 \subseteq \dots \subseteq X$ 以及 $\bigcup_{n=1}^\infty X_n = X$
+
+[/SCOPE:s_density]
+[SCOPE:s_problems|description|Problems]
+[127] 令 $C^k[a, b]$（$k=1,2,\dots$）为连续函数 $u:[a, b]\to\mathbb R$，满足 $k$ 阶导数连续。
+[128a] (j)}
+[128b] (x) \right\rvert $
+[/SCOPE:s_problems]
+[/SCOPE:root]

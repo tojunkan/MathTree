@@ -1,0 +1,71 @@
+[SCOPE:root|description|Wigner D 矩阵、球谐函数的旋转]
+文章名: WigDmt
+标题: Wigner D 矩阵、球谐函数的旋转
+
+[SCOPE:s_intro|description|Wigner D 矩阵定义]
+[SCOPE:s_intro_let|let_bind|引入球谐函数和旋转算符]
+[0] 1若我们把球谐函数 $Y_{l, m}( \hat{\boldsymbol{\mathbf{r}}} )$ 绕原点进行某种旋转，得到的函数可以表示成球谐函数的线性组合，且只需要同一个 $l$ 子空间中的球谐函数，若将旋转算符（主动）记为 $\mathcal{R}$，
+[1] 则
+[2] \begin{equation}
+\mathcal R \left\lvert l, m \right\rangle = \sum_{m'} \left\lvert l, m' \right\rangle \left\langle l, m' \middle| \mathcal R \middle| l, m \right\rangle ~,
+\end{equation}
+[/SCOPE:s_intro_let]
+[3] 我们把系数矩阵称为
+[4] Wigner D 矩阵
+[5] \begin{equation}
+D_{m', m}^l = \left\langle l, m' \middle| \mathcal R \middle| l, m \right\rangle ~.
+\end{equation}
+[6] 由于旋转算符是正交算符，
+[7] 所以 Wigner D 矩阵是
+[8] 酉矩阵 [链接 L0]
+[9] 。
+[10] 注意该矩阵一般是复数的，因为作为基底的球谐函数一般是复数的。
+
+[/SCOPE:s_intro]
+[SCOPE:s_expr|description|Wigner D 矩阵表达式]
+[SCOPE:s_expr_let|let_bind|引入欧拉角]
+[11] 一种定义旋转的方法就是利用 $zyz$ 欧拉角, 即先将 $ \left\lvert l, m \right\rangle $ 绕 $z$ 轴逆时针旋转 $\gamma$ 角，再绕 $y$ 轴逆时针旋转 $\beta$ 角，最后绕 $z$ 轴旋转 $\alpha$ 角。
+[12] 我们将旋转算符记为 $\mathcal R(\alpha, \beta, \gamma)$。
+[/SCOPE:s_expr_let]
+[SCOPE:s_dmat|description|Wigner d 矩阵]
+[13] 由球谐函数的定义式 1 ，第一个旋转得到 $ \exp\left(- \mathrm{i} m \gamma\right) \left\lvert l, m \right\rangle $。
+[14] 第二个旋转为
+[15] \begin{equation}
+\mathcal R(0, \beta, 0) \left\lvert l, m \right\rangle = \sum_{m'} \left\langle l, m' \middle| \mathcal R(0, \beta, 0) \middle| l, m \right\rangle \left\lvert l, m' \right\rangle ~.
+\end{equation}
+[16] 我们把系数矩阵称为
+[17] Wigner d 矩阵
+[18] ，是 Wigner D 矩阵的一个特例。
+[19] \begin{equation}
+d_{m', m}^l(\beta) = D_{m', m}^l(0, \beta, 0) = \left\langle l, m' \middle| \mathcal R(0, \beta, 0) \middle| l, m \right\rangle ~.
+\end{equation}
+[SCOPE:s_dmat_let|let_bind|引入求和变量 s]
+[20] 其表达式为（推导略）
+[21] \begin{equation} \begin{aligned}
+d_{m', m}^l (\beta) = &\sqrt{(l + m')! (l - m')! (l + m)! (l - m)!} \ \ \times\\
+&\sum_s \frac{(-1)^{m' - m + s} \left(\cos \frac{\beta}{2} \right) ^{2l + m - m' - 2s} \left(\sin\frac{\beta}{2} \right) ^{m' - m + 2s}}{(l + m - s)! s! (m' - m + s)! (l - m' - s)!}
+\end{aligned} ~.\end{equation}
+[22] 其中 $s$ 的取值范围需要保证被阶乘的数为非负。
+[/SCOPE:s_dmat]
+[/SCOPE:s_dmat_let]
+[23] 第二次旋转完以后我们得到若干个 $ \left\lvert l, m' \right\rangle $ 的线性组合，要再次绕 $z$ 轴旋转 $\alpha$ 角，只需要把它们分别乘以 $ \exp\left(- \mathrm{i} m' \alpha\right) $ 即可。
+[24] 所以 Wigner D 矩阵的完整表达式为
+[25] \begin{equation}
+D_{m', m}^l(\alpha, \beta, \gamma) = \mathrm{e} ^{- \mathrm{i} m' \alpha} d_{m', m}^l(\beta) \mathrm{e} ^{- \mathrm{i} m \gamma}~.
+\end{equation}
+
+跨文章引用:
+  [L0] 酉矩阵 → UniMat
+[/SCOPE:s_expr]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_dmat",
+    "target_scope": "s_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Wigner d 矩阵是 Wigner D 矩阵在 α=0, γ=0 时的特例"
+  }
+]

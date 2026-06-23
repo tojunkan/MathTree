@@ -1,0 +1,341 @@
+[SCOPE:root|description|李群的李代数]
+文章名: LieGA
+标题: 李群的李代数
+
+环境标记 (hints):
+  [0] type=lemma heading=引理 1 title=提升映射与向量场的交换性
+  [1] type=lemma heading=引理 2 title=微分和李括号的交换性
+  [2] type=definition heading=定义 1 title=左不变向量场
+  [3] type=theorem heading=定理 1 title=
+  [4] type=exercise heading=习题 1 title=
+  [5] type=definition heading=定义 2 title=李群的李代数
+  [6] type=theorem heading=定理 2 title=复李群的复李代数
+  [7] type=example heading=例 1 title=矩阵李群的李代数
+  [8] type=theorem heading=定理 3 title=
+  [9] type=corollary heading=推论 1 title=
+  [10] type=example heading=例 2 title=
+  [11] type=corollary heading=推论 2 title=
+
+[0] 【未完成】需要证明 $\mathfrak{gl}(n,\mathbb{R})\to T_I\operatorname{GL}(n,\mathbb{R})\to\operatorname{Lie}(\operatorname{GL}(n,\mathbb{R}))$ 给出同构关系
+
+[1] 【未完成】这个话题应该移动到更相关的位置；
+[2] 需新增覆叠映射词条
+[3] 我们先回顾光滑向量场的两条性质。
+
+[SCOPE:s_lemma1|description|引理1 提升映射与向量场的交换性]
+[4] 引理 1 提升映射与向量场的交换性
+[SCOPE:s_lemma1_let|let_bind|引理1的变量]
+[5] 设 $F:M\to N$ 是一个微分同胚，
+[6] 那么对于任意光滑函数 $f\in C^{\infty}(M)$ 和光滑向量场 $X\in\mathfrak{X}(M)$，都有：
+[7] \begin{equation}
+(Xf)\circ F^{-1}=F_*(X)(f\circ F^{-1})~,
+\end{equation}
+[/SCOPE:s_lemma1_let]
+[8] 引理 1 根据 “向量场对光滑函数作用” 的定义就可以证出。
+[9] 【未完成】引用流形上的李括号的定义
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_lemma2|description|引理2 微分和李括号的交换性]
+[10] 引理 2 微分和李括号的交换性
+[SCOPE:s_lemma2_let|let_bind|引理2的变量]
+[11] 设 $F:M\to N$ 是一个微分同胚，
+[12] 那么对于任意光滑向量场 $X, Y\in\mathfrak{X}(M)$，有 $F_*([X, Y])=[F_*(X), F_*(Y)]$。
+[/SCOPE:s_lemma2_let]
+[13] 证明：
+[14] 我们只需要证明 $F_*(XY)(f\circ F^{-1})=F_*(X)F_*(Y)(f\circ F^{-1})$ 对于任意 $f\in C^{\infty}(M)$ 成立即可。
+[15] 由引理 1 ，
+[16] \begin{equation}
+\begin{aligned}
+F_*(XY)(f\circ F^{-1})&=(XYf)\circ F^{-1}\\
+&=F_*(X)(Yf\circ F^{-1})\\
+&=F_*(X)(F_*(Y)(f\circ F^{-1}))\\
+&=F_*(X)F_*(Y)(f\circ F^{-1})~.
+\end{aligned}
+\end{equation}
+[17] 证毕。
+
+[/SCOPE:s_lemma2]
+[SCOPE:s_def1|description|定义1 左不变向量场]
+[18] 定义 1 左不变向量场
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[19] 给定李群 $G$，对于任意 $g\in G$，定义映射 $l_g:G\to G$ 为左平移映射，
+[20] 即对于任意 $p\in G$，都有 $l_g(p)=gp$。
+[21] 根据李群的定义，$l_g$ 是一个光滑映射，
+[22] 因此可以求其微分 $l_{g*}:TG\to TG$，该微分把一个 $p\in G$ 处的切向量映射为 $gp$ 处的切向量。
+[23] 如果存在 $G$ 上的切向量场 $X$1，使得对于任意$g\in G$，都有 $l_{g*}(X_p)=X_{gp}$；
+[24] 换句话说，就是 $l_{g*}(X)=X$，
+[25] 那么称 $X$ 为 $G$ 上的一个左不变切向量场（left-invariant tangent vector field）。
+[/SCOPE:s_def1_let]
+[26] 定义 1 已经直白地说明了，一个左不变向量场 $X$ 唯一地由其在单位元处的取值 $X_e$ 决定的，
+[27] 即 $X_p=l_{p*}(X_e)$。
+[28] 同时，任意给定 $X_e$，都能由此生成唯一的左不变向量场 $X$。
+[29] 这样，左不变向量场的性质被其在单位元处的取值完全决定，单位元就好像存储了全息信息一样，局部就可以描述整体。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理1]
+[30] 定理 1
+[31] 左不变切向量场必为光滑向量场。
+[32] 证明：
+[33] 思路是证明 $X$ 在任意图中都是光滑的。
+[34] 考虑左不变场的性质，只需要证明在某一个图中的情况即可，其它图中可以进行类比2。
+[35] 证明的核心是李群中群运算导出光滑映射。
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[36] 考虑李群 $G$ 上的左不变切向量场 $X$。
+[37] 由式 1 ，$X$ 完全由 $X_p$ 决定。
+[38a] (e)}=\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }\phi(c
+[38b] (t))$，其中 $c
+[38c] (t)$ 是 $I\to G$ 的光滑映射，且 $c(0)=e$，
+[39] 则
+[40] \begin{equation}
+\phi^*(X)_{\phi(p)}=\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }\phi(p\cdot c(t))~.
+\end{equation}
+[/SCOPE:s_thm1_let]
+[41] 由李群的定义，$p\cdot c(t)$ 是 $G\times I\to G$ 的光滑映射3。
+[42] 不过这一条不重要。
+[43] 这个才是重要的：把自变量改为 $\phi(p)$ 和 $t$，令 $g(x, y)=x\cdot y$ 为 $G\times G\to G$ 的光滑映射，
+[44] 则4
+[45] \begin{equation}
+\phi^{-1}(\phi(p))\cdot \phi^{-1}(\phi(c(t)))=g\circ(\phi^{-1}\times c)~
+\end{equation}
+[46] 为 $\mathbb{R}^n\times I\to G$ 的光滑映射。
+[47a] (t))=\phi[\phi^{-1}(\phi
+[47b] (p))\cdot \phi^{-1}(\phi(c
+[47c] (t)))]$ 是 $\mathbb{R}^n\times I\to \mathbb{R}^n$ 的光滑映射。
+[48] 因此式 3 是光滑映射的导函数，
+[49] 故是 $\mathbb{R}^n\times I\to \mathbb{R}^n$ 的光滑映射。
+[50] 即，$\phi^*(X)$ 是 $\mathbb{R}^n$ 上的光滑向量场。
+[51] 故 $X$ 是 $\phi^{-1}(\mathbb{R}^n)$ 上的光滑向量场，进而 $X$ 是 $G$ 上的光滑向量场。
+[52] 证毕。
+[/SCOPE:s_thm1]
+[53] 接下来这条性质是引入李代数的关键。
+
+[SCOPE:s_exercise1|description|习题1]
+[54] 习题 1
+[SCOPE:s_exercise1_let|let_bind|习题1的变量]
+[55] 如果 $X, Y$ 是左不变切向量场，
+[56] 那么 $[X, Y]=XY-YX$ 也是。
+[/SCOPE:s_exercise1_let]
+[57] 利用引理 2 ，取左平移映射为所用的微分同胚，证明这一点。
+
+[/SCOPE:s_exercise1]
+[58] 前两节的结论让我们知道了如下事实：李群 $G$ 上全体左不变切向量场的集合，$L(G)$，构成了光滑向量场 $\mathfrak{X}(G)$ 的一个子线性空间。
+[59] 同时，由于左不变切向量场可以被局部描述，我们可以通过单位元上的切空间 $T_eG$ 来描述 $L(G)$；
+[60] 换句话说，$T_eG$ 和 $L(G)$ 是同构的。
+
+[SCOPE:s_def2|description|定义2 李群的李代数]
+[61] 定义 2 李群的李代数
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[62] 令 $X, Y\in L(G)$ 是李群 $G$ 上的两个左不变向量场，任取 $p\in G$。
+[63] 定义 $X_p, Y_p\in T_pG$ 的李括号为
+[64] \begin{equation}
+[X_p, Y_p]=[X, Y]_p~.
+\end{equation}
+[/SCOPE:s_def2_let]
+[65] 李群的李代数
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm2|description|定理2 复李群的复李代数]
+[66] 定理 2 复李群的复李代数
+[67] 复李群定义 3 的李代数是复李代数。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_example1|description|例1 矩阵李群的李代数]
+[68] 例 1 矩阵李群的李代数
+[SCOPE:s_example1_let1|let_bind|例1的变量1]
+[69] 设 $M(n,\mathbb R)$ 是一个 $\mathbb{R}$ 上的 $n$ 阶矩阵李群，同时也可视作一个李代数，李括号由矩阵乘法导出。
+[70] 可以证明其李代数 $\mathfrak gl(n,R)$ 同构于 $ \operatorname {Lie}GL(n,\mathbb R)$。
+[71] \begin{equation}
+\mathfrak gl(n,\mathbb R) = \{ \mathcal{X} \mid \mathrm{e} ^{t\mathcal{X}}\in GL(n,\mathbb R), \forall t\in\mathbb{R} \}~.
+\end{equation}
+[72] 事实上，$ \mathrm{e} ^{t\mathcal{X}}$ 可对应由切向量 $\mathcal{X}\in \operatorname {T}_e GL(n,\mathbb R)$ 生成的左不变切向量场的积分曲线。
+
+[/SCOPE:s_example1_let1]
+[73a] (n)$ 及特殊酉群 $SU
+[73b] (n)$。
+[74] 下面简单推导它们的李代数。
+[75] 由于 $SO(n)$ 是 $GL(n,\mathbb R)$ 的子流形，
+[76] 因此把李代数视作单位元的切空间时，前者的李代数 $\mathfrak {so}(n,\mathbb R)$5亦是后者 $\mathfrak gl(n,\mathbb R)$ 的子集。
+[SCOPE:s_example1_let2|let_bind|例1的变量2]
+[77] 设任意 $X\in \mathfrak {so}(n,\mathbb R)$，我们有：
+[78] \begin{equation}
+\begin{aligned}
+( \mathrm{e} ^{X})^T&= \mathrm{e} ^{X^T}=( \mathrm{e} ^{X})^{-1}= \mathrm{e} ^{-X}\\
+~,
+\end{aligned}
+\end{equation}
+[79] 因此 $\mathfrak {so}(n,\mathbb R)$ 由
+[80] n 阶实反对称矩阵
+[81] 构成。
+[/SCOPE:s_example1_let2]
+[82] 对于三维实正交矩阵，常约定李代数的基为
+[83] \begin{equation}J_1= \begin{pmatrix}0&0&0\\0&0&-1\\0&1&0\end{pmatrix} ,\quad J_2= \begin{pmatrix}0&0&1\\0&0&0\\-1&0&0\end{pmatrix} ,\quad J_3= \begin{pmatrix}0&-1&0\\1&0&0\\0&0&0\end{pmatrix} ~,\end{equation}
+[84] 读者可验证，上述基的线性组合确实能导出所有的 n 阶实反对称矩阵。
+[85a] (t)= \mathrm{e} ^{tX_i}\mid t\in \mathbb R\}$ 为 $SO
+[85b] (n)$ 的光滑曲线，分别代表绕 $x,y,z$ 轴的旋转，$t$ 为对应的旋转角，这可以通过指数函数的级数展开来验证。
+[86] 比如验证
+[87] \begin{equation}
+\mathrm{e} ^{ \mathrm{i} J_3}= \begin{pmatrix}\cos t&-\sin t&0\\\sin t&\cos t&0\\0&0&1\end{pmatrix} ~.
+\end{equation}
+[88] 于是，我们可以得到基的李括号关系：
+[89] \begin{equation}
+[J_i,J_j]=\epsilon_{ijk}J_k~.
+\end{equation}
+[90] 同样地，我们利用指数映射来观察 $\mathfrak {su}(n,\mathbb R)$ 的结构。
+[SCOPE:s_example1_let3|let_bind|例1的变量3]
+[91] 首先设任意 $Y\in \mathfrak {su}(n,\mathbb R)$，利用 $SU(n,\mathbb R)$ 的定义得：
+[92] \begin{equation}
+\begin{aligned}
+( \mathrm{e} ^Y)^{\dagger}&= \mathrm{e} ^{Y^{\dagger}}= \mathrm{e} ^{-Y}\\
+\operatorname {det} \mathrm{e} ^{Y}&= \mathrm{e} ^{ \operatorname {Tr}Y}=1\\
+~.
+\end{aligned}
+\end{equation}
+[93] 于是 $n$ 阶
+[94] 无迹
+[95] 反厄米矩阵
+[96] 构成 $\mathfrak {su}(n,\mathbb R)$。
+[/SCOPE:s_example1_let3]
+[97] 以二维为例，无迹反厄米矩阵的一般形式为
+[98] \begin{equation}
+\begin{pmatrix}a \mathrm{i} &b+c \mathrm{i} \\-b+c \mathrm{i} &-a \mathrm{i} \end{pmatrix} ,\quad\forall a,b,c\in \mathbb R~.
+\end{equation}
+[99] 因此，$\mathfrak su(2,\mathbb R)$ 的基为
+[100] \begin{equation}
+J'_1= \begin{pmatrix}0&1\\-1&0\end{pmatrix} ,\quad J'_2= \begin{pmatrix}0& \mathrm{i} \\ \mathrm{i} &0\end{pmatrix} ,\quad J'_3= \begin{pmatrix} \mathrm{i} &0\\0&- \mathrm{i} \end{pmatrix} ~.
+\end{equation}
+[101] 相应的，我们可以得到李括号关系为
+[102] \begin{equation}
+[J'_i,J'_j]=2\epsilon_{ijk} J'_k~.
+\end{equation}
+[103] 为了表示起来更加简洁，重定义李代数的基，使得 $S_i=1/2J'_i$，可以得到与
+[104] 式 10 [链接 L0]
+[105] 相同的李括号关系。
+[106] \begin{equation}
+[S_i,S_j]=\epsilon_{ijk} S_k~.
+\end{equation}
+[107] 可见，$SU(2)$ 与 $SO(3)$ 有同构的李代数。
+[108] 在物理上，为了让以上李代数的基有物理意义，通常乘以 $- \mathrm{i} $，使得结果为厄米矩阵，比如此时式 13 便变为泡利矩阵。
+[109] 同时指数映射为 $ \mathrm{e} ^{ \mathrm{i} t X}$。
+
+[/SCOPE:s_example1]
+[110] 如果 $G,H$ 都是李群，且有李群同态关系 $f:G\to H$，
+[111] 那么 $f_*$ 可以诱导李群上的李代数同态。
+
+[SCOPE:s_thm3|description|定理3]
+[112] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[113] 设 $ \operatorname {Lie}G=\mathfrak g, \operatorname {Lie}H=\mathfrak h$，且 $f:G\to H$ 是李群同态。
+[114] 对于任意 $X\in \mathfrak g$，都有唯一 $Y\in \mathfrak h$ 与之 $f-$ 关联。
+[115] 进而 $f_*:\mathfrak g\to h$ 是李代数同态。
+[/SCOPE:s_thm3_let]
+[116] 证明：
+[117] 对于任意 $X_e$，我们有 $Y_e=f_*X_e$。
+[118] 利用左平移映射的切映射，延拓 $Y_e$ 为左不变切向量场，
+[119] 即定义里的 $Y_p=l_{p*}Y_e$。
+[120] 接下来我们只需证明 $Y$ 确实与 $X$ 有 $f$ 关联即可。
+[121] 由李群同态关系得
+[122] \begin{equation}
+\begin{aligned}
+f(g_1g_2)&=f(g_1)f(g_2)\\
+f\circ l_{g_1}(g_2)&=l_{f(g_1)}\circ f(g_2)~,
+\end{aligned}
+\end{equation}
+[123] 则 $f_*\circ l_{g*}=l_{f(g)*}\circ f_*$。
+[124] 又因为
+[125] \begin{equation}
+\begin{aligned}
+f_*X_p&=f_*\circ l_{p*}X_e\\
+&=l_{f(p)*}\circ f_*X_e\\
+&=Y_{f(p)}~,
+\end{aligned}
+\end{equation}
+[126] 所以 $Y$ 与 $X$ 有 $f-$ 关联。
+[127] 定理的第一部分得证。
+[128] 接下来证明，若任意 $Y_i,Y_j\in \mathfrak{X}(H)$ 与任意 $X_i,X_j\in \mathfrak{X}(G)$ 分别有 $f$ 关联，
+[129] 即 $f_*X_i=Y_i$，
+[130] 则对应李括号也有 $f$ 关联，满足 $f_*[X_i,X_j]=[f_*X_i,f_*X_j]=[Y_i,Y_j]$。
+[131] 设 $h\in C^{\infty} (H)$，由定理 1 得，
+[132] \begin{equation}
+\begin{aligned}
+(f_*[X_1,X_2])h&=[X_1,X_2](h\circ f)\\
+&=(X_1X_2-X_2X_1)(h\circ f)\\
+&=X_1(Y_2h)\circ f-X_2(Y_1h)\circ f\\
+&=([Y_1,Y_2]h)\circ f~.
+\end{aligned}
+\end{equation}
+[133] 因此，$[X_i,X_j]$ 与 $[Y_i,Y_j]$ 有 $f-$ 关联。
+[134] 代入我们定理中的情况，便是李代数同态关系。
+[135] 定理第二部分得证。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_cor1|description|推论1]
+[136] 推论 1
+[SCOPE:s_cor1_let|let_bind|推论1的变量]
+[137] 设 $G,H$ 都是李群，且存在覆叠同态：$F:G\to H$，
+[138] 那么 $F_*: \operatorname {Lie}G\to \operatorname {Lie}H$ 是同构。
+
+[/SCOPE:s_cor1]
+[/SCOPE:s_cor1_let]
+[SCOPE:s_example2|description|例2]
+[139] $\mathfrak {su}(2)\oplus \mathfrak {su}(2)\cong \mathfrak{so}(4)$
+[140] 由推论 1 和定理 2 可证。
+
+[/SCOPE:s_example2]
+[SCOPE:s_cor2|description|推论2]
+[141] 推论 2
+[142] 同构的李群有同构的李代数。
+[/SCOPE:s_cor2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_lemma2",
+    "target_scope": "s_lemma1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "引理2的证明使用了引理1"
+  },
+  {
+    "source_scope": "s_exercise1",
+    "target_scope": "s_lemma2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "习题1的证明需要引理2"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理1证明左不变向量场光滑，基于定义1"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3的证明使用了定理1"
+  },
+  {
+    "source_scope": "s_example2",
+    "target_scope": "s_cor1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "例2由推论1和定理2可证"
+  },
+  {
+    "source_scope": "s_example2",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "例2由推论1和定理2可证"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_cor1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论2是推论1的特例"
+  }
+]

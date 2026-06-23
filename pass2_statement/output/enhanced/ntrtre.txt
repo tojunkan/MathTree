@@ -1,0 +1,107 @@
+[SCOPE:root|description|数论三角和与高斯和]
+文章名: ntrtre
+标题: 数论三角和与高斯和
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=Gauss 数论三角和
+  [1] type=corollary heading=推论 1 title=
+  [2] type=corollary heading=推论 2 title=
+  [3] type=theorem heading=定理 1 title=Gauss 和的等价定义
+
+[0] 由于 $e^{\pi \mathrm{i} } = -1$，利用 $e^{2\pi \mathrm{i} } = 1$ 可以构造出诸多三角和。
+[1] 在数论中我们记
+[2] \begin{equation}
+e(t) := e^{2\pi \mathrm{i} t} ~,
+\end{equation}
+[3] 则对于 $t$ 的有理值，当 $x \equiv y \pmod m$ 时，将有
+[4] \begin{equation}
+e\left(\frac{x}{m}\right) = e\left(\frac{y}{m}\right) ~.
+\end{equation}
+[5] 这是数论三角和的重要性质。
+
+[SCOPE:s_def1|description|Gauss 数论三角和]
+[6] 定义 1 Gauss 数论三角和
+[SCOPE:s_def1_let1|let_bind|定义 S(m,n)]
+[7] 定义 $S(m, n)$ 为高斯（数论三角）和，1
+[8] \begin{equation}
+S(m, n) := \sum_{h = 0}^{n-1} e\left(\frac{h^2m}{n}\right) ~.
+\end{equation}
+[/SCOPE:s_def1_let1]
+[9] Gauss 和在二次剩余中应用较多。
+[SCOPE:s_def1_let2|let_bind|考虑任意 r]
+[10] 考虑对于任意 $r$，
+[11] \begin{equation}
+e\left(\frac{(h + rn)^2m}{n}\right) = e\left(\frac{h^2m}{n}\right) ~,
+\end{equation}
+[12] 故我们可以不将 $h$ 限定在从 $0$ 到 $(n-1)$ 取遍，而只要 $h$ 取遍一个完全剩余系即可。
+[13] 此时用记号 $h(n)$ 表示取遍一个 $n$ 的完全剩余系。
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let2]
+[SCOPE:s_cor1|description|推论 1]
+[14] 推论 1
+[15] \begin{equation}
+S(m, n) := \sum_{h(n)} e\left(\frac{h^2 m}{n}\right) ~.
+\end{equation}
+[16] 下面引出由线性同余中的定理 3 的一个推论。
+
+[/SCOPE:s_cor1]
+[SCOPE:s_cor2|description|推论 2]
+[17] 推论 2
+[SCOPE:s_cor2_let1|let_bind|假设 (n,n')=1]
+[18] 若 $(n, n') = 1$，
+[/SCOPE:s_cor2_let1]
+[19] 则
+[20] \begin{equation}
+S(m, nn') = S(mn', n) \times S(mn, n') ~.
+\end{equation}
+[SCOPE:s_cor2_let2|let_bind|考虑 h 和 h']
+[21] 证明：考虑 $h$ 取遍 $n$ 的一个完全剩余系而 $h'$ 取遍 $n'$ 的一个完全剩余系，
+[22] 则由定理 3 将立刻得到 $h_0 = hn' +h'n$ 取遍 $nn'$ 的完全剩余系。而
+[23] \begin{equation}
+mh_0^2 = m(h'n + hn')^2 \equiv mh^2n'^2 + mh'^2n^2 \pmod{nn'} ~,
+\end{equation}
+[24] \begin{equation}
+\begin{aligned}
+S(mn', n) \times S(mn, n') &= \left[ \sum_{h(n)} e\left(\frac{h^2mb'}{n}\right) \right] \times \left[\sum_{h'(n')} e\left(\frac{h'^2mn}{n'}\right)\right] \\
+&= \sum_{h(n), h'(n')} \left[ e\left(\frac{h^2 mn'}{n} + \frac{h'^2 mn}{n'}\right)\right] \\
+&= \sum_{h(n), h'(n')} \left[ e\left( \frac{m(h^2 n'^2 + h'^2 n^2)}{nn'} \right)\right]\\
+&= \sum_{h_0(nn')} e\left( \frac{m h_0^2}{nn'} \right) = S(m, nn')~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_cor2]
+[/SCOPE:s_cor2_let2]
+[SCOPE:s_thm1|description|Gauss 和的等价定义]
+[25] 定理 1 Gauss 和的等价定义
+[26] 利用 Legendre 符号，对素数 $n$ 的 Gauss 和 $S(1, n)$ 给出了一个等价定义：
+[27] \begin{equation}
+S(1, n) = \sum_{h=0}^{n-1} \left(\frac hp\right) e\left(\frac{h}{n}\right) ~.
+\end{equation}
+[/SCOPE:s_thm1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是定义1的另一种写法"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论2是定义1的乘积性质"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "定理1给出Gauss和的等价定义"
+  }
+]

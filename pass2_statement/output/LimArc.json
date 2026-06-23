@@ -1,0 +1,302 @@
+{
+  "article_name": "LimArc",
+  "statements": [
+    {
+      "stmt_id": "st_geometry_intro",
+      "subtype": "remark",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geometry_let_O_R",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_geometry_let",
+      "exposed_entities": [
+        "O",
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_geometry_let_arc",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_geometry_let",
+      "exposed_entities": [
+        "θ",
+        "AB",
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_geometry_def_E",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_geometry_let",
+      "exposed_entities": [
+        "E"
+      ]
+    },
+    {
+      "stmt_id": "st_geometry_arc_length",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_geometry",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geometry_chord_length",
+      "subtype": "conclusion",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_geometry",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geometry_inequality",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_geometry",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geometry_error_trend",
+      "subtype": "conclusion",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_geometry",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_limit_statement",
+      "subtype": "conjecture",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_limit_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_limit_note",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_limit_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_limit_ratio_limit",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_limit_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_limit_substitution",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_limit_derivation_let",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_limit_sinx_over_x",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_limit_derivation_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_limit_importance",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_limit_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_limit_approx_physics",
+      "subtype": "remark",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_limit_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_limit_taylor_note",
+      "subtype": "remark",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_limit_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_unfinished_tan",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ref_wikipedia",
+      "subtype": "remark",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_geometry_let_O_R",
+      "target": "st_geometry_arc_length",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geometry_let_arc",
+      "target": "st_geometry_arc_length",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geometry_let_O_R",
+      "target": "st_geometry_chord_length",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geometry_let_arc",
+      "target": "st_geometry_chord_length",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geometry_let_O_R",
+      "target": "st_geometry_inequality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geometry_let_arc",
+      "target": "st_geometry_inequality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geometry_let_O_R",
+      "target": "st_geometry_error_trend",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geometry_let_arc",
+      "target": "st_geometry_error_trend",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geometry_arc_length",
+      "target": "st_limit_ratio_limit",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geometry_chord_length",
+      "target": "st_limit_ratio_limit",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geometry_inequality",
+      "target": "st_limit_ratio_limit",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geometry_error_trend",
+      "target": "st_limit_ratio_limit",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_limit_substitution",
+      "target": "st_limit_sinx_over_x",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_limit_ratio_limit",
+      "target": "st_limit_sinx_over_x",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

@@ -1,0 +1,214 @@
+[SCOPE:root|description|公理化集合论]
+文章名: SetAxi
+标题: 公理化集合论
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=理发师悖论
+  [1] type=theorem heading=定理 1 title=
+  [2] type=lemma heading=引理 1 title=
+  [3] type=theorem heading=定理 2 title=
+  [4] type=theorem heading=定理 3 title=
+
+[0] 本文存在未完成的内容。
+
+[1] 通常来说，我们都采取朴素集合论的观点，认为集合是一个最基本的数学概念，不需要严格的定义。
+[2] 但是，罗素悖论（antinomy of Russell）使得这一观念受到挑战。
+[3] 罗素悖论可以叙述为：已知对于任何一个集合1，都能判定自己是否属于这个集合。
+[4] 所以，我们可以将不属于自己的集合收集起来构成一个集合。
+[5] 因此就应该存在一个集合 $\mathcal{A}=\{A|A\notin A\}$，其中 $A$ 是一个集合。
+[6] 但是，如果认为 $\mathcal{A}\in\mathcal{A}$，
+[7] 那么根据定义，$\mathcal{A}\notin\mathcal{A}$；
+[8] 反过来，如果认为 $\mathcal{A}\notin\mathcal{A}$，根据定义又有 $\mathcal{A}\in\mathcal{A}$。
+[9] 这就构成一个悖论。
+[10] 罗素悖论有许多通俗版本：
+
+[SCOPE:s_barber|description|理发师悖论]
+[11] 例 1 理发师悖论
+[12] 一个小镇里的理发师乐于助人，他说：“我会给所有不给自己理发的人理发。”
+[13] 请问：理发师是否可以给自己理发？
+[14] 罗素悖论的存在使人们认识到，朴素集合论并不像他们想象中的那么严谨。
+[15] 为了解决罗素悖论，人们利用公理对集合进行一系列限制，
+[16] 从而使得在新的公理系统中无法构造出罗素悖论中的集合。
+
+[/SCOPE:s_barber]
+[SCOPE:s_zf|description|ZF 公理系统]
+[17] ZF 公理系统中认为所有的元素都可以看作是集合。
+[18] 区分它们可以用一个简单的方法，看 “$\in$” “$\notin$” 符号，左边应看作元素，右边应看作集合。
+[19] 在不同的书上 ZF 公理系统的这些公理可能有不同的顺序和表述，如果学校考试需要请以具体的教科书为准。
+[20] 下面是 ZF 公理系统的全部公理2：
+[SCOPE:s_zf_let1|let_bind|存在公理变量]
+[21] 本体论承诺（存在公理） $\exists x: x=x.$ 这告诉我们，存在一个集合。
+[/SCOPE:s_zf_let1]
+[SCOPE:s_zf_let2|let_bind|空集存在公理变量]
+[22] 公理 0（空集存在公理） 表述为：$\exists A, \forall x: \neg ( x \in A).$ 即存在一个集合使得没有集合是它的元素。
+[/SCOPE:s_zf_let2]
+[23] 这是可以由分离公理模式证明的，
+[24] 故将其列为公理 0，而在实际的 ZF 公理系统中是没有这条公理的，这作为定理或真命题的形式存在。
+[25] 公理 1（外延公理） 一个集合完全由其元素决定。
+[26] 如果两集合所有元素相等，
+[27] 则这两个集合相等。
+[SCOPE:s_zf_let3|let_bind|外延公理变量]
+[28] 表述为：给定任意集合 $A$ 和集合 $B$，$A=B$ 当且仅当：给定任意集合中的元素 $x$，$x \in A$ 当且仅当 $x \in B$。
+[/SCOPE:s_zf_let3]
+[29] 这又被成为容积公理。
+[SCOPE:s_zf_let4|let_bind|无序对公理变量]
+[30] 公理 2（无序对公理） 对于任意两个集合 $x,y$，存在一个集合 $A$，使得对于任意 $w\in A$，$w=x$ 或 $w=y$。
+[/SCOPE:s_zf_let4]
+[31] 这又被成为配对公理。
+[SCOPE:s_zf_let5|let_bind|并集公理变量]
+[32] 公理 3（并集公理）对于任意一个集合 $A$，存在一个集合 $B$ 使 $x\in B$ 当且仅当存在一个集合 $y\in A$ 使 $x\in y$。
+[/SCOPE:s_zf_let5]
+[SCOPE:s_zf_let6|let_bind|幂集公理变量]
+[33] 公理 4（幂集公理） 对任意集合 $x$，存在集合 $y$，使得 $y$ 中有集合 $z$（表述为 $z \in y$）当且仅当对于 $z$ 的所有元素 $w$，$w\in x$。
+[/SCOPE:s_zf_let6]
+[34] 公理 5（无穷公理） 存在归纳集。
+[SCOPE:s_zf_let7|let_bind|无穷公理变量]
+[35] （存在一个集合，空集是其元素，且对其任意元素 $x$，$x^+ = x\cup \{x\}$ 也是其元素）也就是说，存在一集合 $x$，它有无穷多元素。
+[36] 考虑皮亚诺公理，有时候也会把无穷公理表述为：
+[37] 存在一个集合 $\mathbb{N}$，使得 $\varnothing\in\mathbb{N}$，且对任意 $x\in \mathbb{N}$，$x\cup\{x\}\in\mathbb{N}$。
+[/SCOPE:s_zf_let7]
+[38] 把这个集合命名为 $\mathbb{N}$ 是因为根据皮亚诺公理，它就是自然数集合。
+[SCOPE:s_zf_let8|let_bind|正则公理变量]
+[39] 公理 6（正则公理）对于任意非空集合 $A$，存在一个 $x\in A$ 使 $x\cap A=\varnothing$。
+[/SCOPE:s_zf_let8]
+[40] 这里空集的存在性由空集存在公理保证。
+[41] 接下来的公理实际上是无数条公理的结合3，被称为公理模式：
+[42a] (z)$，存在集合 $B$，使 $z\in B$ 当且仅当 $z\in A$ 而且 $P
+[42b] (z)$ 为真。
+[43] 也就是说，我们可以构造一个集合 $\{z\in A | P(z)\}$。
+[44] 这在一些书上被称为分离公理（模式），或是内涵公理，值得注意的是，这是一个公理模式，是可以由其他公理推导出的。
+[45] 但是这是必不可少的，因为在 “直觉主义” 的视角下，排中律（也就是：要么 $A$ 成立、要么非 $A$ 成立）并不成立。
+[46] 实际在证明过程中由于排中律而引起问题的地方在于需要证明：非空集合必有元素。
+[47] 这定理的证明需要由空集存在公理保证。
+[48] 但如果将分离公理模式作为公理加入到公理化体系中，
+[49] 那么空集存在公理可以由分离公理模式证明得出，
+[50] 从而可以不需要空集存在公理。
+[51a] (z)$，存在集合 $B$，使 $y\in B$ 当且仅当存在 $z\in A$ 而且 $F
+[51b] (z)=y$. 这又被称为置换公理模式。
+[52] 也就是说，由 $F(z)$ 定义的某函数的定义域在一集合 $A$ 中时，他的值域可以被限定在另一集合 $B$ 中。
+
+[/SCOPE:s_zf]
+[SCOPE:s_thm1|description|定理 1]
+[53] 定理 1
+[54] 在 ZF 公理系统中，不存在所有集合的集合。
+[55] 本定理是正则公理的直接推论。
+[SCOPE:s_thm1_reductio|reductio|定理 1 反证法]
+[56] 证明：假如这个集合存在，
+[SCOPE:s_thm1_let|let_bind|定理 1 变量]
+[57] 那么利用分离公理模式，我们可以构造所有非空集合的集合，设这个集合为 $A$，
+[58] 那么对任意 $x\in A$，由于存在集合 $y\in x$，
+[59] 故至少有 $y\in x\cap A$，也就是说 $x\cap A\neq\varnothing$。
+[/SCOPE:s_thm1_let]
+[60] 这与正则公理矛盾。
+[/SCOPE:s_thm1_reductio]
+[61] 证毕。
+[62] 也可以用下面证明的引理：不存在以自身为元素的集合。
+[63] 于是所有的集合不能构成一个集合，否则其将以自己为元素，这样就解决了该命题。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_lemma1|description|引理 1]
+[64] 引理 1
+[65] 不存在一个集合 $A$，使得它的唯一元素为 $A$ 本身。
+[66] 即不存在以自身为元素的集合。
+[SCOPE:s_lemma1_reductio|reductio|引理 1 反证法]
+[67] 证明：由于 $\varnothing$ 无元素，仅考虑非空集合。
+[SCOPE:s_lemma1_let|let_bind|引理 1 变量]
+[68] 设存在一个非空集 $A$ 使得 $A \in A$，
+[69] 则由无序对公理可以得到存在集合 $\{A\}$，他仅有一个元素 $A$，由正则公理 $A\cap \{A\} = \varnothing = \varnothing$，而由 $A \in \{A\}, A \in A$ 得到 $A \in (A \cap \{A\})$，矛盾！
+[/SCOPE:s_lemma1_let]
+[70] 故不存在以自身为元素的集合。
+
+[/SCOPE:s_lemma1]
+[/SCOPE:s_lemma1_reductio]
+[SCOPE:s_thm2|description|定理 2]
+[71] 定理 2
+[72] 对于任何集合 $A$，$A\notin A$。
+[SCOPE:s_thm2_reductio|reductio|定理 2 反证法]
+[73] 证明：如不然，利用分离公理模式可以构造一个 引理 1 所述的集合。
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_reductio]
+[SCOPE:s_thm3|description|定理 3]
+[74] 定理 3
+[75] 不存在集合 $\{A|A\notin A\}$.
+[76] 由 定理 1 和 定理 2 可得。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_ac|description|选择公理和 ZFC 公理系统]
+[77] 选择公理（Axiom of Choice，又称 AC 公理）的出现源于罗素曾经提到过的以下问题：
+[78] 现有无穷多个人，每个人都有无穷多只袜子，我们要从每个人手中各挑选出一只袜子，而这些袜子是没有差别的。
+[79] 在没有选择公理之前，对于这些没有差别的袜子，我们无法保证有一种选法（虽然这是违反直觉的）。
+[80] 所以有了选择公理的出现：
+[SCOPE:s_ac_let|let_bind|选择公理变量]
+[81] 对于任意一个集族 $\mathscr X$：
+[82] $$\forall \mathscr X \left[\varnothing \not \in \mathscr X \Rightarrow \exists f: \mathscr X \rightarrow \bigcup \mathscr X, \forall A \in \mathscr X: \left(f(A) \in A\right)\right] ~.$$
+[/SCOPE:s_ac_let]
+[83] 需要指出的是，空集是作为 $\mathscr X$ 的一个子集出现的，而不是元素。
+[84] AC 与上面所述的 ZF $1-8$ 一同构成了 ZFC 公理系统。
+[85] AC 与良序定理在 ZF 的前提下等价，二者选其中之一即可组成 ZFC 公理系统。
+[86] AC 还有等价的表述形式：
+[87] 给定由相互不交的非空集合组成的任何集合，存在一个集合，它与每个非空集合恰好有一个公共元素。
+[88] 设 $\mathscr X$ 为一个由非空集合所组成的集合。
+[89] 那么可以从每一个在 $\mathscr X$ 中的集合中，都选择一个元素和其所在的集合配成有序对来组成一个新的集合。
+
+[/SCOPE:s_ac]
+[SCOPE:s_cardinal|description|基数]
+[90] 集合的基数可以理解为对集合内元素数量的一种衡量。
+[91] 对于一个集合 $\mathscr A$，用符号 $\left|\mathscr A\right|$ 表示。
+[92] 具体的，对于有限集，其基数定义为这个集合内的元素的数量。
+[93] 对于无限集而言，首先需要定义基数的比较方式：
+[SCOPE:s_cardinal_let1|let_bind|基数比较变量]
+[94] 对于两个集合 $\mathscr P$ 与 $\mathscr Q$：
+[95] 若存在双射 $\mathscr f: \mathscr P \rightarrow \mathscr Q$，
+[96] 则称他们有相同基数，
+[97] 即 $|\mathscr P| = |\mathscr Q|$，又将其称为 $\mathscr P$ 与 $\mathscr Q$ 等势；
+[98] 若存在单射 $\mathscr g: \mathscr P \rightarrow \mathscr Q$，
+[99] 则说 $|\mathscr P| \le |\mathscr Q|$。
+[/SCOPE:s_cardinal_let1]
+[SCOPE:s_cardinal_let2|let_bind|后继基数变量]
+[100] 特别的，对于任意基数 $\mathscr X$，总存在一个比它更大的基数 $\mathscr X^+$，
+[101] 因此也存在一个恰巧比它大的基数 $\mathscr X^+_0$，而这个基数 $\mathscr X^+_0$ 与原基数 $\mathscr X$ 间不存在其他基数。
+[102] 称这个基数为它的后继基数。
+[103] 我们定义阿列夫-0（$\aleph_0$）为自然数集的基数。
+[104] 之后的每个后继基数定义为：$\aleph_{n+1}=2^{\aleph_n}$。
+
+[/SCOPE:s_cardinal]
+[/SCOPE:s_cardinal_let2]
+[SCOPE:s_continuum|description|连续统假设]
+[105] 称 $\mathscr A$ 为可数集或可列集，当且仅当 $|\mathscr A| \le \aleph_0$。
+[106] 连续统假设说的是，实数集与自然数集不等势，且实数集的基数为 $\aleph_1$。
+[107] 也就是可列集基数和实数基数之间没有别的基数。
+[/SCOPE:s_continuum]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理 1 的证明中提到了引理 1"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理 2 的证明使用了引理 1"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理 3 由定理 1 和定理 2 可得"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理 3 由定理 1 和定理 2 可得"
+  }
+]

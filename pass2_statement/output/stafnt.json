@@ -1,0 +1,397 @@
+{
+  "article_name": "stafnt",
+  "statements": [
+    {
+      "stmt_id": "st_def_standard_form",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "n",
+        "p_i",
+        "a_i",
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_fta_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_fta",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euclid_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_euclid",
+      "exposed_entities": [
+        "p",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_euclid_assume",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_euclid_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euclid_corollary",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euclid_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prime_divisor",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euclid_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_two_representations",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_euclid_proof_let1",
+      "exposed_entities": [
+        "n",
+        "p_i",
+        "a_i",
+        "q_j",
+        "b_j",
+        "k",
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_each_pi_is_qj",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euclid_proof_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_each_qj_is_pi",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euclid_proof_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_k_equals_l",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euclid_proof_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_pi_equals_qi",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euclid_proof_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_contra_assume_ai_gt_bi",
+      "subtype": "assumption",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_euclid_proof_contra",
+      "exposed_entities": [
+        "i"
+      ]
+    },
+    {
+      "stmt_id": "st_contra_contradiction",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euclid_proof_contra",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ai_not_gt_bi",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euclid_proof_contra",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bi_not_gt_ai",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euclid_proof_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ai_equals_bi",
+      "subtype": "conclusion",
+      "clause_range": [
+        36,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euclid_proof_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prime_sum_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": "true",
+      "scope_id": "s_prime_sum",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prime_sum_assume_converge",
+      "subtype": "assumption",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_prime_sum_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exist_j",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        42
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_prime_sum_reductio",
+      "exposed_entities": [
+        "j"
+      ]
+    },
+    {
+      "stmt_id": "st_Dx_upper_bound",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_prime_sum_reductio",
+      "exposed_entities": [
+        "x",
+        "D(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_Dx_representation",
+      "subtype": "assumption",
+      "clause_range": [
+        47,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_prime_sum_let2",
+      "exposed_entities": [
+        "n",
+        "k",
+        "m",
+        "a_i",
+        "j"
+      ]
+    },
+    {
+      "stmt_id": "st_contradiction_inequality",
+      "subtype": "conclusion",
+      "clause_range": [
+        55,
+        55
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_prime_sum_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prime_sum_diverges",
+      "subtype": "conclusion",
+      "clause_range": [
+        57,
+        57
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_prime_sum",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_euclid_assume",
+      "target": "st_euclid_corollary",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euclid_corollary",
+      "target": "st_prime_divisor",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_two_representations",
+      "target": "st_each_pi_is_qj",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_two_representations",
+      "target": "st_each_qj_is_pi",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_each_pi_is_qj",
+      "target": "st_k_equals_l",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_each_qj_is_pi",
+      "target": "st_k_equals_l",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_k_equals_l",
+      "target": "st_pi_equals_qi",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_contra_assume_ai_gt_bi",
+      "target": "st_contra_contradiction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_contra_contradiction",
+      "target": "st_ai_not_gt_bi",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ai_not_gt_bi",
+      "target": "st_bi_not_gt_ai",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_bi_not_gt_ai",
+      "target": "st_ai_equals_bi",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prime_sum_assume_converge",
+      "target": "st_exist_j",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exist_j",
+      "target": "st_Dx_upper_bound",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_Dx_representation",
+      "target": "st_contradiction_inequality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_contradiction_inequality",
+      "target": "st_prime_sum_diverges",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_fta_statement",
+      "target": "st_euclid_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "唯一分解定理是欧几里得第一定理的推论"
+    },
+    {
+      "source": "st_ai_equals_bi",
+      "target": "st_fta_statement",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "欧几里得第一定理的证明推导出算术基本定理"
+    }
+  ],
+  "unresolved": []
+}

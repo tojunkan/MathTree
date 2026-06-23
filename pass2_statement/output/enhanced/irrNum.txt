@@ -1,0 +1,100 @@
+[SCOPE:root|description|无理数（数论）]
+文章名: irrNum
+标题: 无理数（数论）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=有理数与无理数
+  [1] type=theorem heading=定理 1 title=
+  [2] type=theorem heading=定理 2 title=
+  [3] type=theorem heading=定理 3 title=
+
+[SCOPE:s_def|description|有理数与无理数]
+[0] 定义 1 有理数与无理数
+[1] 能表示为互素的整数 $a$ 与 $b\neq 0$ 的比值 $a/b$ 的数称为有理数。
+[2] 非有理数，也就是不能表示为互素整数 $a$ 与 $b\neq 0$ 的比值 $a/b$ 的数称为无理数。
+
+[/SCOPE:s_def]
+[SCOPE:s_thm1|description|定理1]
+[3] 定理 1
+[4] $\sqrt{2}$ 无理。
+[SCOPE:s_thm1_reductio|reductio|反证法假设√2有理]
+[5] 证明：假设若 $\sqrt 2$ 有理，
+[SCOPE:s_thm1_let|let_bind|设√2=a/b]
+[6] 则对于 $\sqrt 2 = a/b$，
+[7] 即方程 $a^2=2b^2$ 有整数解，且 $(a, b) = 1$。
+[8] 而注意到等式右侧是 $2$ 的整数倍，是偶数，
+[9] 故 $a$ 也是偶数，
+[10] 即 $a=2c$，这会使得 $(2c)^2 = 2b^2$，可化为 $2c^2=b^2$，同样是的 $b$ 是偶数而 $a, b$ 就有公约数 $2$，与 $(a, b) = 1$ 矛盾！
+[/SCOPE:s_thm1_reductio]
+[/SCOPE:s_thm1_let]
+[11] 得证。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理2]
+[12] 定理 2
+[13] 对于整数 $N$，$\sqrt[m]{N}$ 无理，
+[14] 除非 $N$ 是某整数 $n$ 的 $m$ 次方。
+[SCOPE:s_thm2_let|let_bind|设√[m]{N}=a/b]
+[SCOPE:s_thm2_reductio|reductio|反证法假设√[m]{N}有理]
+[15] 证明：仍考虑 $\sqrt[m]{N} = a/b$，$(a, b) = 1$，可化为
+[16] \begin{equation}
+a^m = N b^m, ~ (a, b) = 1 ~,
+\end{equation}
+[17] 而考虑 $a^m$ 的各素因子与次幂 $p^k$，
+[18] 则 $p^{mk} | (Nb^m)$，显然 $N$ 不能是 $p^{mk}$ 否则 $N$ 就是 $p^k$ 的 $m$ 次方，这就使得总会有 $p | b^m$ 从而 $p|b$，
+[19] 从而 $(a, b)$ 至少有 $p$ 而不等于 $1$，矛盾！
+[/SCOPE:s_thm2_let]
+[/SCOPE:s_thm2_reductio]
+[20] 故得证。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|定理3]
+[21] 定理 3
+[22] 对于关于 $x$ 的首 $1$ 整系数多项式
+[23] \begin{equation}
+x^n + c_1 x^{n-1} + c_2 x^{n-2} + \cdots + c_n = 0 ~,
+\end{equation}
+[24] 证明：我们可以假设 $c_n \neq 0$，否则可以提取出因式 $x$ 而继续重复这操作直到 $c_n = 0$。
+[SCOPE:s_thm3_let|let_bind|设x0=a/b]
+[25] 此时当 $x_0$ 有理时，设 $x_0 = a/b$ 且 $(a , b) = 1$，
+[26] 则可化为
+[27] \begin{equation}
+a^n + c_1 a^{n-1} b + c_2 a^{n-2} b^2 + \cdots + c_nb^n = 0~,
+\end{equation}
+[SCOPE:s_thm3_reductio|reductio|反证法假设b有素因子]
+[28] 这就说明 $b | a^n$，
+[29] 于是对于任何 $b$ 的素因子 $p$ 都有 $p|a^m$ 即 $p | a$，就使得 $(a, b)$ 至少为 $p$，矛盾！
+[/SCOPE:s_thm3_reductio]
+[30] 故 $b$ 无素因子，
+[31] 即 $b = 1$，而此时 $x_0$ 是整数。
+[32] 故 $x_0$ 有理时必然为整数，
+[33] 即 $x_0$ 要么无理，要么是整数。
+[/SCOPE:s_thm3_let]
+[34] 证毕！
+[/SCOPE:s_thm3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1_reductio",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "反证法推出矛盾，从而原命题成立"
+  },
+  {
+    "source_scope": "s_thm2_reductio",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "反证法推出矛盾"
+  },
+  {
+    "source_scope": "s_thm3_reductio",
+    "target_scope": "s_thm3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "反证法推出b无素因子"
+  }
+]

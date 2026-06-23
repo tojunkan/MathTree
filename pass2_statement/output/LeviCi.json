@@ -1,0 +1,137 @@
+{
+  "article_name": "LeviCi",
+  "statements": [
+    {
+      "stmt_id": "st_lc_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_lc_def",
+      "exposed_entities": [
+        "epsilon_{i_1,i_2,...,i_N}",
+        "N",
+        "i_1,...,i_N"
+      ]
+    },
+    {
+      "stmt_id": "st_lc_zero",
+      "subtype": "condition",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_lc_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lc_nonzero",
+      "subtype": "condition",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_lc_def",
+      "exposed_entities": [
+        "N_p"
+      ]
+    },
+    {
+      "stmt_id": "st_lc_summary",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lc_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_3d_lc_intro",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_3d_lc",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_3d_lc_values",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_3d_lc",
+      "exposed_entities": [
+        "epsilon_{ijk}"
+      ]
+    },
+    {
+      "stmt_id": "st_3d_det",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_3d_lc",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_3d_cross",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_3d_lc",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_lc_zero",
+      "target": "st_lc_summary",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lc_nonzero",
+      "target": "st_lc_summary",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_3d_lc_values",
+      "target": "st_3d_det",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_3d_lc_values",
+      "target": "st_3d_cross",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_3d_lc_values",
+      "target": "st_lc_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "三阶LC符号是N维LC符号的特例"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,184 @@
+[SCOPE:root|description|皮卡映射]
+文章名: PicMap
+标题: 皮卡映射
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=皮卡映射
+  [1] type=theorem heading=定理 1 title=微分方程的解是皮卡映射的不动点
+  [2] type=theorem heading=定理 2 title=
+  [3] type=exercise heading=习题 1 title=
+  [4] type=definition heading=定义 2 title=逐次皮卡近似
+  [5] type=example heading=例 1 title=指数函数
+
+[0a] (t))$ 的切线平行于曲线 $\varphi$ 上点 $\varphi
+[0b] (t)$ 处给定的向量。
+[1] 具体来说，设 $U$ 是 $\mathbb R^n$ 的一区域，其上每一点 $x$ 都定义了一个依赖于时间的向量 $v(x,t)$（或称为 $U$ 上定义了依赖于时间的向量场 $v$）。
+[2] 给定 $U$ 中的曲线 $\varphi:I\rightarrow U$($I$ 为 $t$ 轴上一区间)，
+[3a] (t)$ 对应的向量为 $v(\varphi
+[3b] (t),t)$。
+[4] 于是新曲线 $f(\varphi)$ 是这样的曲线，其在每一 $\tau$ 时的点 $f(\varphi(\tau))$ 的切向量满足 $ \frac{\mathrm{d}{}}{\mathrm{d}{t}} \big|_{t=\tau}(f\circ \varphi)=v(\varphi(\tau),\tau)$1。
+[5] 描述这样的曲线 $\varphi$ 到新曲线 $f(\varphi)$ 的映射称为皮卡映射（Picard 映射）。
+
+[SCOPE:s_def1|description|定义 1 皮卡映射]
+[6] 定义 1 皮卡映射
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[7] 设 $V$ 是 $U\times R$ 的一区域，在其上定义了一到 $\mathbb TU$ 的向量场2（定义 11 ）
+[8] \begin{equation}
+v:V\rightarrow\mathbb TU~.
+\end{equation}
+[9] \begin{equation}
+(A\varphi)(t)\equiv x_0+\int_{t_0}^{t}v(\varphi(\tau),\tau) \,\mathrm{d}{\tau} ~
+\end{equation}
+[/SCOPE:s_def1_let]
+[10] 皮卡映射（Picard Map）
+[11] 因为向量场 $v$ 可微，
+[12] 即表明 $v$ 连续，
+[13] 于是 $A\varphi$ 可导，
+[14] 因此 式 2 可写成微分形式
+[15] \begin{equation}
+\frac{\mathrm{d}{}}{\mathrm{d}{t}} ((A\varphi)(t))=v(\varphi(t),t)~.
+\end{equation}
+[16] 式 2 [链接 L0]
+[17] 等价于初始条件满足 $(A\varphi)(t_0)=x_0$ 的微分方程（
+[18] 式 3 [链接 L1]
+[19] ）. 由向量场 $v$ 确定的微分方程的定义（
+[20] 定义 13 [链接 L2]
+[21] ），
+[22] 于是
+[23] $\varphi$ 是满足初始条件 $\varphi(t_0)=x_0$ 的由向量场 $v$ 确定的微分方程的解，当且仅当 $\varphi=A\varphi$。
+[24] 由映射不动点的定义，
+[25] 向量场对应微分方程的解就是皮卡映射的不动点
+[26] 。
+[27] 这可以描述为下面定理
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理 1 微分方程的解是皮卡映射的不动点]
+[28] 定理 1 微分方程的解是皮卡映射的不动点
+[29] 设 $v$ 是区域 $U\in\mathbb R^{n+1}$ 中定义的向量场，
+[30] 则 $\varphi$ 是 $v$ 确定的微分方程
+[31] \begin{equation}
+\dot x=v(x,t)~
+\end{equation}
+[32] 定义 1
+[33] 于是，微分方程有解，当且仅当皮卡映射存在不动点。
+[34] 下面定理表明，在一定条件下，皮卡映射是个压缩映射。
+[35] 【图解】图 1：柱体和锥体
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[36] 如图 1 ，接下来，我们设数 $a,b$ 确定柱体 $\Gamma=\{x,t: \left\lvert t-t_0 \right\rvert \leq a, \left\lvert x-x_0 \right\rvert \leq b\}$，其位于区域 $U$ 内。
+[37] 于是由 $v$ 在 $\Gamma$ 上连续可微（设为 $C^r$ 类，$r\geq1$）和 $\Gamma$ 是欧式空间中的闭区域，立刻有 $ \left\lvert v \right\rvert , \left\lvert v_* \right\rvert $ 在 $\Gamma$ 上能达到其上确界，设为 $K,L$，
+[38] 即 $ \left\lvert v \right\rvert \leq K, \left\lvert v_* \right\rvert \leq L$。
+[/SCOPE:s_thm1_let]
+[39] 于是过内点 $(t_1,x_1)\in\Gamma$ 的积分曲线（初时点为 $(t_1,t_2)$）在 $x$ 处的速度向量的模 $\leq K$，
+[40] 即该积分曲线位于锥体 $\mathcal K_{(t_1,x_1)}\equiv\{x,t: \left\lvert t-t_1 \right\rvert \leq a', \left\lvert x-x_1 \right\rvert \leq K \left\lvert t-t_1 \right\rvert \}$ 内，其中数 $a'$ 足够小，使得锥体 $\mathcal K_{(t_1,x_1)}$ 位于柱体 $\Gamma$ 内，其中 $(t_1,x_1)$ 和 $(t_0,x_0)$ 的关系在于可选取 $a'$ 足够小，使得 $\mathcal K_{(t_0,x_0)}$ 保持可平行移动到 $\mathcal K_{(t_1,x_1)}$ 而使得 $\mathcal K_{(t_1,x_1)}$ 在 $\Gamma$ 内3。
+[41] （这段话里构造闭区域 $\Gamma$，是为了使 $v$ 在其上有界，而 $\mathcal K_{(t_1,x_1)}$ 是为了说明过初始点 $(t_1,x_1)\in\Gamma$ 的积分曲线在 $\mathcal K_{(t_1,x_1)}$ 描述的区域内。）
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理 2]
+[42] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理 2 的变量]
+[43] 设 $M$ 是由依赖于参量 $x_1,t_1$，定义域为柱体 $ \left\lvert x-x_1 \right\rvert \leq b', \left\lvert t-t_1 \right\rvert \leq a'$，满足 $ \left\lvert \varphi(x_1,t_1,t) \right\rvert \leq \left\lvert x_1 \right\rvert +K \left\lvert t-t_1 \right\rvert $ 的连续函数 $\varphi(x_1,t_1,t)$ 构成的度量空间，其上的度量 $d$ 定义为
+[44] \begin{equation}
+d(\varphi_1(x_1,t_1,t),\varphi_2(x_1,t_1,t))\equiv \left\lVert \varphi_1-\varphi_2 \right\rVert =\max_{\begin{aligned} \left\lvert x-x_1 \right\rvert \leq b,\\ \left\lvert t-t_1 \right\rvert \leq a\end{aligned}} \left\lvert \varphi_1(x_1,t_1,t)-\varphi_2(x_1,t_1,t) \right\rvert ~.
+\end{equation}
+[45] \begin{equation}
+(A\varphi)(x_1,t_1,t)\equiv x_1+\int_{t_1}^{t}v(\varphi(x_1,t_1,\tau),\tau) \,\mathrm{d}{\tau} ~
+\end{equation}
+[/SCOPE:s_thm2_let]
+[46] 压缩映射
+[SCOPE:s_thm2_proof|description|定理 2 的证明]
+[47] 证明：首先验证 $A$ 将 $M$ 映射到自身，就是要验证对任意 $\varphi$，$A\varphi$ 连续且 $ \left\lvert A\varphi(x_1,t_1,t) \right\rvert \leq \left\lvert x_1 \right\rvert +K \left\lvert t-t_1 \right\rvert $；
+[48] 连续性由对参数连续的函数的积分是对参数及积分上限也是连续获得；
+[49] 后一点由下面获得
+[50] \begin{equation}
+\begin{aligned}
+\left\lvert (A\varphi)(x_1,t_1,t) \right\rvert &= \left\lvert x_1+\int_{t_1}^t v(\varphi(x_1.t_1,\tau),\tau) \,\mathrm{d}{\tau} \right\rvert \leq \left\lvert x_1 \right\rvert + \left\lvert \int_{t_1}^t v(\varphi(x_1,t_1,\tau),\tau) \,\mathrm{d}{\tau} \right\rvert \\
+&\leq \left\lvert x_1 \right\rvert + \left\lvert \int_{t_1}^t K \,\mathrm{d}{\tau} \right\rvert \\
+&\leq \left\lvert x_1 \right\rvert +K \left\lvert t-t_1 \right\rvert ~.
+\end{aligned}
+\end{equation}
+[51] 所以 $AM\in M$。
+[52] 其次，要证压缩映射，
+[53] 即验证
+[54] \begin{equation}
+\left\lVert A\varphi_1-A\varphi_2 \right\rVert \leq\lambda \left\lVert \varphi_1-\varphi_2 \right\rVert ,\quad 0<\lambda<1~.
+\end{equation}
+[55] 直接计算便是：
+[56] \begin{equation}
+\begin{aligned}
+\left\lVert A\varphi_1-A\varphi_2 \right\rVert &=\max_{\begin{aligned} \left\lvert x-x_1 \right\rvert \leq b,\\ \left\lvert t-t_1 \right\rvert \leq a\end{aligned}} \left\lvert \int_{t_1}^t v(\varphi_1(x,\tau),\tau)-v(…[truncated]…ft\lvert x-x_1 \right\rvert \leq b,\\ \left\lvert t-t_1 \right\rvert \leq a\end{aligned}} \left\lvert La' \left\lVert \varphi_1-\varphi_2 \right\rVert \right\rvert \\
+&= La' \left\lVert \varphi_1-\varphi_2 \right\rVert ~.
+\end{aligned}
+\end{equation}
+[57] 上面的第三行用了
+[58] 定理 2 [链接 L3]
+[59] 。
+[60] 由于 $a'$ 足够小，可使 $La'<1$，
+[61] 于是此时 $A$ 为压缩映射。
+[62] 证毕！
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_proof]
+[SCOPE:s_exer1|description|习题 1]
+[63] 习题 1
+[64] 试证明定理 2 的 $M$ 是一完备度量空间。
+[65] 提示：柱体 $\Gamma$ 是欧氏空间闭区域，根据康托定理，其上的连续映射一致连续，而一致连续映射的序列收敛于连续映射。
+
+[/SCOPE:s_exer1]
+[66] 逐次皮卡近似是指连续施行皮卡映射。
+[67] 考虑逐次皮卡近似是因为其和微分方程的解存在有着对应关系。
+
+[SCOPE:s_def2|description|定义 2 逐次皮卡近似]
+[68] 定义 2 逐次皮卡近似
+[SCOPE:s_def2_let|let_bind|定义 2 的变量]
+[69] 设 $A$ 是皮卡映射，
+[70] 则称序列
+[/SCOPE:s_def2_let]
+[71] \begin{equation}
+\{A^n\varphi\}=\{\varphi, A\varphi, A^2\varphi,\cdots,\}~
+\end{equation}
+[72] 逐次皮卡近似
+
+[/SCOPE:s_def2]
+[SCOPE:s_example1|description|例 1 指数函数]
+[73] 例 1 指数函数
+[SCOPE:s_example1_let|let_bind|例 1 的变量]
+[74] 设向量场定义为 $v(x,t)=x$ ,且给定曲线 $\varphi(t)=x_0$，取 $t_0=0$,于是此时皮卡近似为
+[/SCOPE:s_example1_let]
+[75] \begin{equation}
+\begin{aligned}
+\varphi(t)&=x_0,\\
+A\varphi(t)&=x_0+\int_{0}^{t}x_0 \,\mathrm{d}{t} =x_0(1+t),\\
+A^2\varphi(t)&=x_0+\int_{0}^{t}x_0(1+t) \,\mathrm{d}{t} =x_0(1+t+\frac{1}{2}t^2),\\
+&\vdots\\
+A^n\varphi(t)&=x_0\sum_{i=0}^n\frac{t^i}{i!}\\
+\lim_{n\rightarrow\infty}A^n\varphi&=e^tx_0
+~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_example1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1 的结论是定义1 的特例"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2 证明皮卡映射是压缩映射，从而推出不动点存在"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1 是逐次皮卡近似的具体例子"
+  }
+]

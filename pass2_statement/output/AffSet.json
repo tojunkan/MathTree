@@ -1,0 +1,284 @@
+{
+  "article_name": "AffSet",
+  "statements": [
+    {
+      "stmt_id": "st_def1_affine_comb",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "V",
+        "x_1",
+        "x_2",
+        "x_i",
+        "a_i"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_affine_set",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "C",
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_existence",
+      "subtype": "theorem",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "C",
+        "V",
+        "U",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_step1_U_subspace",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_step1",
+      "exposed_entities": [
+        "U",
+        "x_0",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_step2_C_eq_x_plus_U",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        25
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_step2",
+      "exposed_entities": [
+        "C",
+        "x",
+        "U"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_step3_U_independent",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_step3",
+      "exposed_entities": [
+        "U",
+        "x_0",
+        "x'",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_step4_U_unique",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_step4",
+      "exposed_entities": [
+        "U",
+        "U'",
+        "x_0",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_dimension",
+      "subtype": "definition",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "C",
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_equiv",
+      "subtype": "theorem",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "C",
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_necessity",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_nec",
+      "exposed_entities": [
+        "C",
+        "x_1",
+        "x_2"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_sufficiency",
+      "subtype": "conclusion",
+      "clause_range": [
+        44,
+        53
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_suf",
+      "exposed_entities": [
+        "C",
+        "x_i",
+        "a_i"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1_x_plus_U_affine",
+      "subtype": "corollary",
+      "clause_range": [
+        56,
+        57
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": [
+        "U",
+        "V",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        58,
+        64
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cor1",
+      "exposed_entities": [
+        "x_1",
+        "x_2",
+        "y_1",
+        "y_2"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_affine_comb",
+      "target": "st_def1_affine_set",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_step1_U_subspace",
+      "target": "st_thm1_existence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_step2_C_eq_x_plus_U",
+      "target": "st_thm1_existence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_step3_U_independent",
+      "target": "st_thm1_existence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_step4_U_unique",
+      "target": "st_thm1_existence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_necessity",
+      "target": "st_thm2_equiv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_sufficiency",
+      "target": "st_thm2_equiv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor1_proof",
+      "target": "st_cor1_x_plus_U_affine",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_existence",
+      "target": "st_def1_affine_set",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1是仿射集的性质，基于定义1"
+    },
+    {
+      "source": "st_def2_dimension",
+      "target": "st_thm1_existence",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "维度定义依赖于定理1中向量子空间的唯一性"
+    },
+    {
+      "source": "st_thm2_equiv",
+      "target": "st_def1_affine_set",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "定理2给出仿射集的等价刻画"
+    },
+    {
+      "source": "st_cor1_x_plus_U_affine",
+      "target": "st_thm2_equiv",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论1是定理2的直接应用"
+    }
+  ],
+  "unresolved": []
+}

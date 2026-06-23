@@ -1,0 +1,41 @@
+[SCOPE:root|description|四象限 Arctan 函数（atan2）]
+文章名: Arctan
+标题: 四象限 Arctan 函数（atan2）
+
+[SCOPE:s_definition|description|Arctan 定义]
+[0] 我们经常会遇到这样一个问题：已知平面直角坐标系上一点 $P$，坐标为 $(x, y)$，求射线 $OP$ 与 $x$ 轴正方向的夹角 $\theta$。
+[1] 首先我们要给这个夹角取一个范围，一般来说既可以取 $[0, 2\pi)$ 也可以取 $(-\pi, \pi]$，
+[2] 但如无特殊说明，我们统一使用后者。
+[3] 一些教材中直接用 $\theta = \arctan\left(y/x\right) $，$\theta \in (-\pi/2, \pi/2)$ 来表示这一关系，这是不严谨的，因为只能表示半个圆周。
+[4] 我们下面来定义一个符合要求的新函数，记为 $ \operatorname{Arctan} (y, x)$。
+[5] 在许多计算机编程语言中 $\arctan$ 被记为 atan，$ \operatorname{Arctan} $ 被记为 atan2。
+[6] 也有一些文献使用 $ \operatorname {Tan}^{-1}$。
+[SCOPE:s_let_arctan|let_bind|定义变量 x, y]
+[7] 其中定义为 $x, y \in \mathbb R$，
+[8] 即任意实数，值域为 $(-\pi, \pi]$。
+[9] \begin{equation}
+\operatorname{Arctan} (y,x) \equiv
+\begin{cases}
+\arctan\left(y/x\right) \quad &(x > 0)\\
+\arctan\left(y/x\right) + \pi &(x < 0,\,y \geqslant 0)\\
+\arctan\left(y/x\right) - \pi &(x < 0,\,y < 0)\\
+\pi /2 &(x = 0, \,y > 0)\\
+-\pi /2 &(x = 0, \,y < 0)\\
+0 & (x=0,\,y=0)~.
+\end{cases}
+\end{equation}
+[/SCOPE:s_let_arctan]
+[10] 小时百科统一使用该定义，
+[11] 但也有一些其他文献将其定义为上式加 $\pi$，使值域为 $(0, 2\pi]$，或者认为 $x = 0, y = 0$ 无定义（不属于定义域）。
+
+[/SCOPE:s_definition]
+[SCOPE:s_partial_derivatives|description|偏导数]
+[12] 函数在除了在原点和 $x$ 轴的负半轴，在其它定义域都是连续且光滑的，
+[13] 即存在连续的无穷阶偏导。
+[14] 一阶偏导为
+[15] \begin{equation}
+\frac{\partial}{\partial{x}} \operatorname{Arctan} (y, x) = \frac{-y}{x^2 + y^2} ~,\qquad
+\frac{\partial}{\partial{y}} \operatorname{Arctan} (y, x) = \frac{x}{x^2 + y^2}~.
+\end{equation}
+[/SCOPE:s_partial_derivatives]
+[/SCOPE:root]

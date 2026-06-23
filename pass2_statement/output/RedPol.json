@@ -1,0 +1,150 @@
+{
+  "article_name": "RedPol",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "p(x)",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_irreducible",
+      "subtype": "remark",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_relation",
+      "subtype": "remark",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "p(x)",
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "p(x)",
+        "f(x)",
+        "g(x)",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_case1",
+      "subtype": "condition",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_thm1_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_case2",
+      "subtype": "condition",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_thm1_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_induction_remark",
+      "subtype": "remark",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "p(x)",
+        "f_1(x)",
+        "f_2(x)",
+        "f_s(x)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_assump",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_case1",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_case2",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm2_assump",
+      "target": "st_thm1_assump",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2是定理1的推广，由归纳法得到"
+    }
+  ],
+  "unresolved": []
+}

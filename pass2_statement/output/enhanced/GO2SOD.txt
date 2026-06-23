@@ -1,0 +1,196 @@
+[SCOPE:root|description|化一般常微分方程组为标准方程组]
+文章名: GO2SOD
+标题: 化一般常微分方程组为标准方程组（常微分方程）
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=theorem heading=定理 2 title=
+
+[SCOPE:s_intro|description|引言]
+[0] 如子节 3 所说，存在及唯一定理是对标准常微分方程组所证明的，而一般常微分方程组都可化为这一方程组，本节就来给出这一转化程序。
+
+[/SCOPE:s_intro]
+[SCOPE:s_single_eq_let|let_bind|引入变量 y, y', ..., y^{(n)}]
+[SCOPE:s_single_eq|description|一个常微分方程化为标准微分方程组]
+[1] 在仅含一个常微分方程的情形，
+[2] 即将一般常微分方程
+[3] \begin{equation}
+F(x,y,y',\cdots,y^{(n)})=0~.
+\end{equation}
+[4] 化为具有标准常微分方程组
+[5] 定义 1 [链接 L0]
+[6] 的形式：
+[7] \begin{equation}
+y_i'=f_i(x,y_i,\cdots,y_m),\quad i=1,\cdots,m~
+\end{equation}
+[8] 我们总可以从方程式 1 的已解出最高阶导数的方程开始，
+[9] 即
+[10] \begin{equation}
+y^{(n)}=f(x,y,y',\cdots,y^{(n-1)})~.
+\end{equation}
+[11] 这是因为，从
+[12] 式 1 [链接 L1]
+[13] 式 3 [链接 L2]
+[14] 的过程不属于微分方程领域，而属于函数论领域。
+[15] 这一过程中，某些问题被归结为微分方程领域，比如
+[16] 式 1 [链接 L3]
+[17] 中关于 $y^{(n)}$ 是二次的，
+[18] 因此 $y^{(n)}$ 是其余变量的二值函数（假设这二值不同），实际上得到的是两个形如
+[19] 式 3 [链接 L4]
+[20a] (n)},y_2^{
+[20b] (n)}$。
+[21] 但是，
+[22] 式 1 [链接 L5]
+[23] 将 $y_1,y_2$ 并成一个 $y$ 了，不能分解成两个形如
+[24] 式 3 [链接 L6]
+[25] 的方程组，这就需要讨论
+[26] 式 1 [链接 L7]
+[27] 。
+[28] 关于这种方程的研究，引向微分方程的
+[29] 奇解
+[30] 概念，而我们并不讨论这一问题。
+[31] 故这里只需记住，从
+[32] 式 1 [链接 L8]
+[33] 总能获得
+[34] 式 3 [链接 L9]
+
+[/SCOPE:s_single_eq_let]
+[/SCOPE:s_single_eq]
+[SCOPE:s_thm1|description|定理1]
+[SCOPE:s_thm1_let1|let_bind|定理1变量：y, z_i]
+[35] 定理 1
+[36] \begin{equation}
+y^{(n)}=f(x,y,y',\cdots,y^{(n-1)})~.
+\end{equation}
+[37] \begin{equation}
+\left\{\begin{aligned}
+&z_1'=z_2\\
+&z_2'=z_3\\
+&\cdots\\
+&z_{n-1}'=z_n\\
+&z_n'=f(x,z_1,\cdots,z_n)
+\end{aligned}\right. ~
+\end{equation}
+[38] \begin{equation}
+z_1=y~,\;z_2=y'~,\;\cdots~,\;z_n=y^{(n-1)}~.
+\end{equation}
+[/SCOPE:s_thm1_let1]
+[SCOPE:s_thm1_proof|description|定理1证明]
+[39] 证明：
+[SCOPE:s_thm1_dir1|description|式4⇒式5]
+[40] 1。
+[41] 式 4 $\Rightarrow$ 式 5
+[SCOPE:s_thm1_let2|let_bind|证明中设y满足式4]
+[42] 设 $y$ 满足式 4 ，对式 6 求导，得到
+[/SCOPE:s_thm1_let2]
+[43] \begin{equation}
+z_i'=y^{(i)}~,\quad i=1~,\cdots,n~
+\end{equation}
+[44] 式 6 [链接 L10]
+[45] 式 4 [链接 L11]
+[46] 式 7 [链接 L12]
+[47] 右端，
+[48] 即得
+[49] 式 5 [链接 L13]
+[/SCOPE:s_thm1_dir1]
+[SCOPE:s_thm1_dir2|description|式5⇒式4]
+[50] 2。
+[51] 式 5 $\Rightarrow$ 式 4
+[52] 设 $z_1,\cdots,z_n$ 满足式 5 ，取 $z_1=y$，得
+[53] \begin{equation}
+z_2=y'~.
+\end{equation}
+[54] 如此迭代入
+[55] 式 5 [链接 L14]
+[56] \begin{equation}
+z_i=y^{(i-1)}~,\quad i=1,\cdots,n~
+\end{equation}
+[57] 式 9 [链接 L15]
+[58] 式 5 [链接 L16]
+[59] 最后一式，
+[60] 即得
+[61] 式 4 [链接 L17]
+[/SCOPE:s_thm1_dir2]
+[62] 证毕！
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_proof]
+[SCOPE:s_general_system_let|let_bind|引入变量 y_i, y_i^{(n_i)}]
+[SCOPE:s_general_system|description|一般常微分方程组化为标准微分方程组]
+[63] 基于同样的理由，对于一般的常微分方程，我们总能从解出最高阶导数的方程组出发，
+[64] 即
+[65] \begin{equation}
+\begin{aligned}
+&y_i^{(n_i)}=f_i \left(x,y_1,y_1',\cdots,y_1^{(n_1-1)},\cdots,y_m,y_m',\cdots,y_m^{(n_m-1)} \right) ~\\
+& i=1,\cdots m~
+\end{aligned}~,
+\end{equation}
+[66] 对一般的情形，有下面的定理成立
+
+[/SCOPE:s_general_system_let]
+[/SCOPE:s_general_system]
+[SCOPE:s_thm2|description|定理2]
+[SCOPE:s_thm2_let|let_bind|定理2变量：y_i, z_i]
+[67] 定理 2
+[68] \begin{equation}
+\begin{aligned}
+&y_i^{(n_i)}=f_i \left(x,y_1,y_1',\cdots,y_1^{(n_1-1)},\cdots,y_m,y_m',\cdots,y_m^{(n_m-1)} \right) ~,\\
+& i=1,\cdots m
+\end{aligned}~
+\end{equation}
+[69] \begin{equation}
+\left\{\begin{aligned}
+&z_1'=z_2\\
+&z_2'=z_3\\
+&\cdots\\
+&z_{n_1-1}'=z_{n_1}\\
+&z_{n_1}'=f_1(x,z_1,\cdots,z_{\sum_{i=1}^{m}n_i})\\
+&\cdots\\
+&z_{\sum_{i=1}^{m-1}n_i+1}'=z_{\sum_{i=1}^{m-1}n_i+2}\\
+&z_{\sum_{i=1}^{m-1}n_i+2}'=z_{\sum_{i=1}^{m-1}n_i+3}\\
+&\cdots\\
+&z_{\sum_{i=1}^{m}n_i-1}'=z_{\sum_{i=1}^{m}n_i}\\
+&z_{\sum_{i=1}^{m}n_i}'=f_m(x,z_1,\cdots,z_{\sum_{i=1}^{m}n_i})
+\end{aligned}\right. ~
+\end{equation}
+[70] \begin{equation}
+\left\{\begin{aligned}
+&z_1=y_1,\cdots,z_{n_1}=y_1^{(n_1-1)}\\
+&z_{n_1+1}=y_2,\cdots,z_{n_1+n_2}=y_2^{(n_2-1)}\\
+&\cdots\\
+&z_{\sum_{i}^{m-1}n_i+1}=y_m,\cdots,z_{\sum_{i}^{m}n_i}=y_m^{(n_m-1)}
+\end{aligned}\right. ~
+\end{equation}
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm2_proof|description|定理2证明]
+[71] 证明和定理 1 完全类似。
+[72] 由常微分方程组阶的定义子节 1 ，可知方程组式 11 是 $m$ 个关于 $y_i$ 为 $n_i$ 阶的 $\sum\limits_{i=1}^{m}n_i$ 阶微分方程组，而式 13 是 $\sum\limits_{i=1}^{m}n_i$ 个关于 $z_i$ 为 1 阶的 $\sum\limits_{i=1}^m n_i$ 阶的微分方程组。
+[73] 而这两方程组等价。
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_single_eq",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是单个方程情形的具体化"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_general_system",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2是一般方程组情形的具体化"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2是定理1的推广"
+  }
+]

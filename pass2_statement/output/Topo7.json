@@ -1,0 +1,244 @@
+{
+  "article_name": "Topo7",
+  "statements": [
+    {
+      "stmt_id": "st_quotient_set",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_quotient_set",
+      "exposed_entities": [
+        "X",
+        "~",
+        "X/~"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_let_A",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_let_equiv",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let",
+      "exposed_entities": [
+        "~"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_let_equiv",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "~"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_mobius",
+      "subtype": "example",
+      "clause_range": [
+        28,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex4_klein",
+      "subtype": "example",
+      "clause_range": [
+        34,
+        40
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex5_projective",
+      "subtype": "example",
+      "clause_range": [
+        41,
+        55
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_quotient_topology_let",
+      "subtype": "assumption",
+      "clause_range": [
+        56,
+        56
+      ],
+      "truth_value": null,
+      "scope_id": "s_quotient_topology_let",
+      "exposed_entities": [
+        "(X,T)",
+        "~",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_quotient_topology_def",
+      "subtype": "definition",
+      "clause_range": [
+        57,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "s_quotient_topology_let",
+      "exposed_entities": [
+        "T_~"
+      ]
+    },
+    {
+      "stmt_id": "st_quotient_topology_name",
+      "subtype": "definition",
+      "clause_range": [
+        58,
+        58
+      ],
+      "truth_value": null,
+      "scope_id": "s_quotient_topology",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex6_let",
+      "subtype": "assumption",
+      "clause_range": [
+        60,
+        65
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex6_let",
+      "exposed_entities": [
+        "A",
+        "~",
+        "f",
+        "P",
+        "R",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_ex6_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        66,
+        66
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex6",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cone_def",
+      "subtype": "definition",
+      "clause_range": [
+        72,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_cone_let",
+      "exposed_entities": [
+        "X",
+        "I",
+        "CX~"
+      ]
+    },
+    {
+      "stmt_id": "st_double_cone_def",
+      "subtype": "definition",
+      "clause_range": [
+        74,
+        74
+      ],
+      "truth_value": null,
+      "scope_id": "s_cone_let",
+      "exposed_entities": [
+        "SX~"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex1_let_A",
+      "target": "st_ex1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let_equiv",
+      "target": "st_ex1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_let_equiv",
+      "target": "st_ex2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_quotient_topology_let",
+      "target": "st_quotient_topology_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex6_let",
+      "target": "st_ex6_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

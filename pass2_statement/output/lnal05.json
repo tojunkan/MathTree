@@ -1,0 +1,304 @@
+{
+  "article_name": "lnal05",
+  "statements": [
+    {
+      "stmt_id": "st_euclid_intro",
+      "subtype": "remark",
+      "clause_range": [
+        5,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_euclid",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euclid_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_euclid_let1",
+      "exposed_entities": [
+        "e_i"
+      ]
+    },
+    {
+      "stmt_id": "st_euclid_cond1",
+      "subtype": "condition",
+      "clause_range": [
+        11,
+        13
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_euclid",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euclid_cond2",
+      "subtype": "condition",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_euclid",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euclid_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_euclid_let2",
+      "exposed_entities": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_euclid_conclusion1",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        25
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euclid",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euclid_conclusion2",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euclid",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euclid_conclusion3",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euclid",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_other_intro",
+      "subtype": "remark",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_other",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        36,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let1",
+      "exposed_entities": [
+        "e_i"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let2",
+      "exposed_entities": [
+        "P"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_def",
+      "subtype": "definition",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "P"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_special1",
+      "subtype": "remark",
+      "clause_range": [
+        39,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        41,
+        44
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "M",
+        "Q"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_group",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        48
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_rank",
+      "subtype": "remark",
+      "clause_range": [
+        49,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_question",
+      "subtype": "exercise",
+      "clause_range": [
+        52,
+        53
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_hint",
+      "subtype": "remark",
+      "clause_range": [
+        54,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_euclid_let1",
+      "target": "st_euclid_cond1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euclid_let1",
+      "target": "st_euclid_cond2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euclid_let2",
+      "target": "st_euclid_conclusion1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euclid_cond1",
+      "target": "st_euclid_conclusion1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euclid_cond2",
+      "target": "st_euclid_conclusion1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euclid_conclusion1",
+      "target": "st_euclid_conclusion2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euclid_conclusion2",
+      "target": "st_euclid_conclusion3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let1",
+      "target": "st_def1_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let2",
+      "target": "st_def1_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_def",
+      "target": "st_def1_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_formula",
+      "target": "st_def1_group",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_question",
+      "target": "st_ex1_hint",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_def1_def",
+      "target": "st_euclid_conclusion3",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义1中的欧几里得正交矩阵是特例"
+    }
+  ],
+  "unresolved": []
+}

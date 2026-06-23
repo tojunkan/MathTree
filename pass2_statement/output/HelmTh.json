@@ -1,0 +1,350 @@
+{
+  "article_name": "HelmTh",
+  "statements": [
+    {
+      "stmt_id": "st_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        6
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_F",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem_let",
+      "exposed_entities": [
+        "F(r)",
+        "F_d(r)",
+        "F_c(r)",
+        "H(r)"
+      ]
+    },
+    {
+      "stmt_id": "st_def_rho_j",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem_let",
+      "exposed_entities": [
+        "rho(r)",
+        "j(r)"
+      ]
+    },
+    {
+      "stmt_id": "st_def_Fd",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem_let",
+      "exposed_entities": [
+        "F_d(r)"
+      ]
+    },
+    {
+      "stmt_id": "st_def_Fc",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem_let",
+      "exposed_entities": [
+        "F_c(r)"
+      ]
+    },
+    {
+      "stmt_id": "st_def_H",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem_let",
+      "exposed_entities": [
+        "H(r)"
+      ]
+    },
+    {
+      "stmt_id": "st_nonunique",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_no_other",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_special_case",
+      "subtype": "condition",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_analogy",
+      "subtype": "remark",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_question",
+      "subtype": "question",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_answer_no",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_infinity",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_answer_yes",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_intro",
+      "subtype": "remark",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_div",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_curl",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_H",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_alt_intro",
+      "subtype": "remark",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_alt_rep",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_alt_lemma",
+      "subtype": "lemma",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_alt_rep_let",
+      "exposed_entities": [
+        "V(r)",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_alt_representation",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_alt_rep",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_alt_remark",
+      "subtype": "remark",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_alt_rep",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_F",
+      "target": "st_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_rho_j",
+      "target": "st_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_Fd",
+      "target": "st_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_Fc",
+      "target": "st_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_H",
+      "target": "st_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_infinity",
+      "target": "st_answer_yes",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_intro",
+      "target": "st_proof_div",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_intro",
+      "target": "st_proof_curl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_intro",
+      "target": "st_proof_H",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_alt_lemma",
+      "target": "st_alt_representation",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_proof_div",
+      "target": "st_theorem",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明部分支持定理的结论"
+    },
+    {
+      "source": "st_proof_curl",
+      "target": "st_theorem",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明部分支持定理的结论"
+    },
+    {
+      "source": "st_proof_H",
+      "target": "st_theorem",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明部分支持定理的结论"
+    }
+  ],
+  "unresolved": []
+}

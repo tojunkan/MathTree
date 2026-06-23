@@ -1,0 +1,470 @@
+{
+  "article_name": "LSpace",
+  "statements": [
+    {
+      "stmt_id": "st_def1_main",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "X",
+        "u",
+        "v",
+        "w",
+        "a",
+        "b",
+        "0_X",
+        "-v"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "X",
+        "u",
+        "v",
+        "w",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_axiom_add_comm",
+      "subtype": "axiom",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_axiom_add_assoc",
+      "subtype": "axiom",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_axiom_zero",
+      "subtype": "axiom",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "0_X"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_axiom_inv",
+      "subtype": "axiom",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "-v"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_axiom_dist1",
+      "subtype": "axiom",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_axiom_dist2",
+      "subtype": "axiom",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_axiom_assoc_scalar",
+      "subtype": "axiom",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1_main",
+      "subtype": "corollary",
+      "clause_range": [
+        37,
+        45
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_cor1_let",
+      "exposed_entities": [
+        "a",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1_concl1",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cor1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1_concl2",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cor1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1_concl3",
+      "subtype": "conclusion",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cor1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exer1",
+      "subtype": "exercise",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exer1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_main",
+      "subtype": "example",
+      "clause_range": [
+        49,
+        57
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "c_n",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let",
+      "exposed_entities": [
+        "c_n",
+        "c_{n-1}",
+        "c_1",
+        "c_0",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_main",
+      "subtype": "example",
+      "clause_range": [
+        58,
+        68
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "A",
+        "F",
+        "f",
+        "g",
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        59,
+        61
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "A",
+        "F",
+        "f",
+        "g",
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_exer2_main",
+      "subtype": "exercise",
+      "clause_range": [
+        70,
+        81
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exer2",
+      "exposed_entities": [
+        "c_1",
+        "c_N"
+      ]
+    },
+    {
+      "stmt_id": "st_exer2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        71,
+        71
+      ],
+      "truth_value": null,
+      "scope_id": "s_exer2_let",
+      "exposed_entities": [
+        "c_1",
+        "c_N"
+      ]
+    },
+    {
+      "stmt_id": "st_exer3",
+      "subtype": "exercise",
+      "clause_range": [
+        82,
+        83
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exer3",
+      "exposed_entities": [
+        "x^k"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_main",
+      "subtype": "definition",
+      "clause_range": [
+        85,
+        89
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "V",
+        "v",
+        "w",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        86,
+        88
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "V",
+        "v",
+        "w",
+        "a",
+        "b"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_axiom_add_comm",
+      "target": "st_def1_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_axiom_add_assoc",
+      "target": "st_def1_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_axiom_zero",
+      "target": "st_def1_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_axiom_inv",
+      "target": "st_def1_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_axiom_dist1",
+      "target": "st_def1_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_axiom_dist2",
+      "target": "st_def1_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_axiom_assoc_scalar",
+      "target": "st_def1_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor1_let",
+      "target": "st_cor1_concl1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor1_let",
+      "target": "st_cor1_concl2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor1_let",
+      "target": "st_cor1_concl3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let",
+      "target": "st_ex1_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_let",
+      "target": "st_ex2_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exer2_let",
+      "target": "st_exer2_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2_main",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex1_main",
+      "target": "st_def1_main",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "多项式空间是向量空间的一个例子"
+    },
+    {
+      "source": "st_ex2_main",
+      "target": "st_def1_main",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "函数空间是向量空间的一个例子"
+    },
+    {
+      "source": "st_exer1",
+      "target": "st_def1_main",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "几何向量空间是向量空间的特例"
+    },
+    {
+      "source": "st_exer2_main",
+      "target": "st_def1_main",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "列向量空间是向量空间的特例"
+    },
+    {
+      "source": "st_cor1_main",
+      "target": "st_def1_main",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "推论1由定义1推出"
+    },
+    {
+      "source": "st_exer3",
+      "target": "st_ex1_main",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "习题3是例1的进一步结论"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,85 @@
+[SCOPE:root|description|Weibull 分布]
+文章名: Weibul
+标题: Weibull 分布
+
+[SCOPE:s_weibull_desc|description|Weibull 分布介绍]
+[0] 贡献者： 周思益
+[1] Weibull 分布是一种概率分布。
+[2] 这种概率分布非常灵活，可以对各种类型的数据进行建模，是可靠性数据建模中最常用的分布。
+[3] 它可以对左偏斜数据，右偏斜数据，对称数据进行建模。
+[4] 因为这种特性，工程师常用它来评估物体的可靠性和材料强度。
+[/SCOPE:s_weibull_desc]
+[SCOPE:s_geometric|description|几何分布与指数分布]
+[SCOPE:s_geometric_let1|let_bind|几何分布变量]
+[5] 如果一个机器,每次使用有 $p$ 的概率损坏，
+[6] 那么它的使用到 $k$ 次时被损坏的概率为
+[7] \begin{equation}
+P(X=k)=p(1-p)^{k-1}~.
+\end{equation}
+[/SCOPE:s_geometric_let1]
+[SCOPE:s_geometric_let2|let_bind|连续时间变量]
+[8] 如果我们考虑的是一段时间 $t$，这段时间每个小间隔 $\Delta t$ 的时间内都有 $p$ 的概率被损坏，
+[9] 那么，在时间 $t$ 到 $t+\Delta t$ 的时间范围内机器被损坏的概率为
+[10] \begin{equation}
+P(X)=p(1-p)^{\frac{t}{\Delta t}-1}~.
+\end{equation}
+[11] 当 p 非常小的时候，我们可以使用如下的数学公式对上面的式子进行化简
+[12] \begin{equation}
+\lim _{p \rightarrow 0}(1-p)^{\frac{1}{p}}=e^{-1}~.
+\end{equation}
+[13] 化简之后的结果为
+[14] \begin{equation}
+P(X)=p(1-p)^{\frac{1}{p}\left(\frac{t}{\Delta t}-1\right) p} \sim p e^{-\frac{t}{\Delta t} p}~.
+\end{equation}
+[/SCOPE:s_geometric]
+[/SCOPE:s_geometric_let2]
+[SCOPE:s_weibull_derivation|description|Weibull 分布推导]
+[15] Weibull 分布最简单的情况回到指数分布。
+[SCOPE:s_weibull_let1|let_bind|引入 p0 和 γ]
+[16] 如果单次损坏概率与使用次数成指数关系，
+[17] \begin{equation}
+p=p_0 k^\gamma~.
+\end{equation}
+[/SCOPE:s_weibull_let1]
+[SCOPE:s_weibull_let2|let_bind|离散情况变量]
+[18] 使用到第 $k$ 次损坏的概率是
+[19] \begin{equation}
+P(X=k)=p_0 k^\gamma\left(1-p_0 1^\gamma\right)\left(1-p_0 2^\gamma\right) \ldots\left(1-p_0(k-1)^\gamma\right)~.
+\end{equation}
+[/SCOPE:s_weibull_let2]
+[SCOPE:s_weibull_let3|let_bind|连续情况变量]
+[20] 连续的情况是
+[21] \begin{equation}
+P(X)=p_0 \frac{t}{\Delta t}^\gamma\left(1-p_0 1^\gamma\right)\left(1-p_0 2^\gamma\right) \ldots\left(1-p_0\left(\frac{t}{\Delta t}-1\right)^\gamma\right)~.
+\end{equation}
+[22] 对上面的式子取对数
+[23] \begin{equation}
+\ln P(X)=\ln \left(p_0 \frac{t}{\Delta t}^\gamma\right)+\sum_{i=1}^{t / \Delta t-1} \ln \left(1-p_0 i^\gamma\right)~.
+\end{equation}
+[24] 我们使用下面的近似
+[25] \begin{equation}
+\ln \left(1-p_0 i^\gamma\right) \sim-p_0 i^\gamma~.
+\end{equation}
+[26] 式 8 可以化简为
+[27] \begin{equation}
+\ln P(X) \sim \ln \left(p_0 \frac{t}{\Delta t}^\gamma\right)-p_0 \sum_{i=1}^{t / \Delta t-1} i^\gamma~.
+\end{equation}
+[28] 接下来计算求和
+[29] \begin{equation}
+\sum_{i=1}^{t / \Delta t} i^\gamma \sim \int_0^{t / \Delta t} x^\gamma \mathrm{d} x=\frac{1}{\gamma+1}\left(\frac{t}{\Delta t}\right)^{\gamma+1}~.
+\end{equation}
+[30] 这样就得到了 Weibull 分布的概率密度函数。
+[/SCOPE:s_weibull_derivation]
+[/SCOPE:s_weibull_let3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_weibull_derivation",
+    "target_scope": "s_geometric",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Weibull 分布推导基于几何分布和指数分布"
+  }
+]

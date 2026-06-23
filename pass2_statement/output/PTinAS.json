@@ -1,0 +1,482 @@
+{
+  "article_name": "PTinAS",
+  "statements": [
+    {
+      "stmt_id": "st_para_intro_question",
+      "subtype": "question",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_para_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_para_intro_let_v0_M0_M1",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_para_intro_let",
+      "exposed_entities": [
+        "v_0",
+        "M_0",
+        "M_1",
+        "v_0^i"
+      ]
+    },
+    {
+      "stmt_id": "st_para_intro_direct_move_meaningless",
+      "subtype": "remark",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_para_intro_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_para_intro_parallel_transport_def",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_para_intro_let",
+      "exposed_entities": [
+        "v_0",
+        "M_0M_1"
+      ]
+    },
+    {
+      "stmt_id": "st_para_formula_let1_path",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_para_formula_let1",
+      "exposed_entities": [
+        "x^i(t)",
+        "t",
+        "x(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_para_formula_parallel_transport_condition",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_para_formula",
+      "exposed_entities": [
+        "v_0",
+        "M(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_para_formula_local_frame_change",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_para_formula",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_para_formula_v_i_t",
+      "subtype": "assumption",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_para_formula",
+      "exposed_entities": [
+        "v^i(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_para_formula_smoothness",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_para_formula",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_para_formula_expand_v0",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_para_formula",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_para_formula_x_depends_t",
+      "subtype": "remark",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_para_formula",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_para_formula_differentiation",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_para_formula",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_para_formula_total_diff",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_para_formula",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_para_formula_partial_ij_x",
+      "subtype": "definition",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_para_formula",
+      "exposed_entities": [
+        "\\partial_{ij}x"
+      ]
+    },
+    {
+      "stmt_id": "st_para_formula_let2_Gamma",
+      "subtype": "assumption",
+      "clause_range": [
+        32,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_para_formula_let2",
+      "exposed_entities": [
+        "\\Gamma^k_{ij}"
+      ]
+    },
+    {
+      "stmt_id": "st_para_formula_Gamma_symmetry",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_para_formula_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_para_formula_Gamma_depends_M",
+      "subtype": "conclusion",
+      "clause_range": [
+        37,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_para_formula_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_para_formula_combine_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        41
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_para_formula",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_para_formula_linear_independence",
+      "subtype": "assumption",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_para_formula",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_para_formula_final_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        44
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_para_formula",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_para_formula_alternative_form",
+      "subtype": "remark",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_para_formula",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_para_def1_definition",
+      "subtype": "definition",
+      "clause_range": [
+        47,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_para_def1",
+      "exposed_entities": [
+        "平行移动公式"
+      ]
+    },
+    {
+      "stmt_id": "st_conn_coeff_explain",
+      "subtype": "remark",
+      "clause_range": [
+        49,
+        55
+      ],
+      "truth_value": null,
+      "scope_id": "s_conn_coeff",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_conn_def2_definition",
+      "subtype": "definition",
+      "clause_range": [
+        56,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "s_conn_def2",
+      "exposed_entities": [
+        "\\Gamma^i_{jk}"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        58,
+        59
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_nec_assumption",
+      "subtype": "assumption",
+      "clause_range": [
+        63,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1_nec_let",
+      "exposed_entities": [
+        "x^i",
+        "e_i"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem1_nec_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        65,
+        68
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1_nec",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_suf_assumption",
+      "subtype": "assumption",
+      "clause_range": [
+        71,
+        71
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1_suf",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_suf_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        72,
+        74
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1_suf",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_para_intro_let_v0_M0_M1",
+      "target": "st_para_intro_parallel_transport_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_para_formula_let1_path",
+      "target": "st_para_formula_parallel_transport_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_para_formula_parallel_transport_condition",
+      "target": "st_para_formula_v_i_t",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_para_formula_v_i_t",
+      "target": "st_para_formula_expand_v0",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_para_formula_expand_v0",
+      "target": "st_para_formula_differentiation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_para_formula_differentiation",
+      "target": "st_para_formula_total_diff",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_para_formula_total_diff",
+      "target": "st_para_formula_let2_Gamma",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_para_formula_let2_Gamma",
+      "target": "st_para_formula_Gamma_symmetry",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_para_formula_let2_Gamma",
+      "target": "st_para_formula_Gamma_depends_M",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_para_formula_Gamma_symmetry",
+      "target": "st_para_formula_combine_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_para_formula_Gamma_depends_M",
+      "target": "st_para_formula_combine_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_para_formula_combine_eq",
+      "target": "st_para_formula_final_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_para_formula_linear_independence",
+      "target": "st_para_formula_final_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_nec_assumption",
+      "target": "st_theorem1_nec_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_suf_assumption",
+      "target": "st_theorem1_suf_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_para_formula_final_eq",
+      "target": "st_para_def1_definition",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推导引出定义1"
+    },
+    {
+      "source": "st_para_formula_final_eq",
+      "target": "st_conn_coeff_explain",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推导引出联络系数"
+    },
+    {
+      "source": "st_conn_coeff_explain",
+      "target": "st_conn_def2_definition",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "说明引出定义2"
+    },
+    {
+      "source": "st_theorem1_nec_conclusion",
+      "target": "st_theorem1_statement",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "必要性证明"
+    },
+    {
+      "source": "st_theorem1_suf_conclusion",
+      "target": "st_theorem1_statement",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "充分性证明"
+    }
+  ],
+  "unresolved": []
+}

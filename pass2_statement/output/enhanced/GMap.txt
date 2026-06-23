@@ -1,0 +1,83 @@
+[SCOPE:root|description|高斯映射]
+文章名: GMap
+标题: 高斯映射
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=高斯映射
+  [1] type=definition heading=定义 2 title=形状算子
+  [2] type=theorem heading=定理 1 title=高斯映射的自伴性
+  [3] type=theorem heading=定理 2 title=形状算子的性质
+  [4] type=definition heading=定义 3 title=共轭
+  [5] type=theorem heading=定理 3 title=
+
+[0] 【未完成】高斯映射和形状算子的关系可能需要解释（形状算子是高斯映射的微分的负数）；
+[1] 自伴性的证明尚缺；
+[2] Meusnier 定理的证明或解释尚缺。
+
+[SCOPE:s_def1|description|高斯映射]
+[3] 定义 1 高斯映射
+[SCOPE:s_def1_let|let_bind|高斯映射的变量]
+[4] 给定可定向曲面 $S\subseteq\mathbb{R}^3$ 和其一个定向 $N$。
+[5] 由于定向的值都是单位向量，
+[6] 因此 $N$ 是一个 $S\to S^2$ 的映射，称为 $S$ 的一个高斯映射（Gauss map）。
+[/SCOPE:s_def1_let]
+[7] 高斯映射是为了研究曲面的内蕴性质而诞生的，在现代微分几何中通常又改用形状算子来描述。
+[8] 形状算子本质上就是高斯映射的微分，不过前面加了一个负号，这是为了在将来的一些计算中消除产生的负号。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|形状算子]
+[9] 定义 2 形状算子
+[SCOPE:s_def2_let|let_bind|形状算子的变量]
+[10] 给定流形（曲面）$S$ 上一点 $p$，
+[11] 则 $p$ 处的形状算子 $L_p$ 是一个 $T_pS\to T_pS$ 的一个映射。
+[12a] (t)$，都有 $L_p( \boldsymbol{\mathbf{v}} )=-\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }N(\alpha
+[12b] (t))$，其中 $N$ 是 $S$ 上的一个定向。
+[/SCOPE:s_def2_let]
+[13] 高斯映射的一个关键性质是自伴（self-adjoint），表述如下：
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|高斯映射的自伴性]
+[14] 定理 1 高斯映射的自伴性
+[SCOPE:s_thm1_let|let_bind|自伴性的变量]
+[15] 给定高斯映射 $N:S\to S^2$，且 $ \boldsymbol{\mathbf{x}} (u, v)$ 是 $S$ 的一个局部坐标系，
+[16] 则有 $N_u\cdot \boldsymbol{\mathbf{x}} _v=N_v\cdot \boldsymbol{\mathbf{x}} _u$。
+[/SCOPE:s_thm1_let]
+[17] 这一点和形状算子的自伴性是等价的。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|形状算子的性质]
+[18] 定理 2 形状算子的性质
+[SCOPE:s_thm2_let|let_bind|形状算子性质的变量]
+[19] 给定流形（曲面）$S$ 上一点 $p$ 处的形状算子 $L_p$，
+[20] 则对于 $S$ 上任意切向量场 $X, Y$，都有 $L_p(X)\cdot Y=D_XY\cdot N$。
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_let]
+[SCOPE:s_def3|description|共轭]
+[21] 定义 3 共轭
+[SCOPE:s_def3_let|let_bind|共轭的变量]
+[22] 如果 $T_pS$ 上的两个向量 $ \boldsymbol{\mathbf{v}} _1$ 和 $ \boldsymbol{\mathbf{v}} _2$ 满足 $L_p( \boldsymbol{\mathbf{v}} _1)\cdot \boldsymbol{\mathbf{v}} 2=L_p( \boldsymbol{\mathbf{v}} _2)\cdot \boldsymbol{\mathbf{v}} 1=0$，
+[23] 那么称 $ \boldsymbol{\mathbf{v}} _1$ 和 $ \boldsymbol{\mathbf{v}} _2$ 是共轭（conjugate）的向量，它们所在的方向也是彼此共轭的。
+[/SCOPE:s_def3_let]
+[24] 高斯映射与高斯曲率的联系，由以下定理揭示：
+
+[/SCOPE:s_def3]
+[SCOPE:s_thm3|description|定理3]
+[25] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[26] 对于曲面 $S$ 上的一点 $p$，如果其高斯曲率 $K(p)\not=0$，
+[27] 那么 $K(p)=\lim\limits_{A\to 0}\frac{A'}{A}$，其中 $A$ 是一块包含了 $p$ 的邻域的面积，$A'$ 是 $N(A)$ 的面积。
+[/SCOPE:s_thm3]
+[/SCOPE:s_thm3_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "自伴性等价于形状算子的自伴性"
+  }
+]

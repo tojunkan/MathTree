@@ -1,0 +1,291 @@
+{
+  "article_name": "AltCov",
+  "statements": [
+    {
+      "stmt_id": "st_ad_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        25
+      ],
+      "truth_value": "true",
+      "scope_id": "s_abel_dirichlet",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ad_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_ad_let",
+      "exposed_entities": [
+        "a_n",
+        "b_n"
+      ]
+    },
+    {
+      "stmt_id": "st_ad_case1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_ad_case1",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_ad_case1_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ad_case1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ad_case2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_ad_case2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ad_case2_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ad_case2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ad_proof",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_abel_dirichlet",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ad_case1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_ad_case1_let",
+      "exposed_entities": [
+        "S_N",
+        "B_N"
+      ]
+    },
+    {
+      "stmt_id": "st_ad_case1_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_ad_case1",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_ad_case1_proof_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ad_case1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ad_case2_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_ad_case2",
+      "exposed_entities": [
+        "a",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_ad_case2_proof_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ad_case2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ad_final_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_abel_dirichlet",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example",
+      "subtype": "example",
+      "clause_range": [
+        26,
+        39
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_example_let",
+      "exposed_entities": [
+        "a_n",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_example_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_proof",
+      "subtype": "remark",
+      "clause_range": [
+        31,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_remark",
+      "subtype": "remark",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ad_assump",
+      "target": "st_ad_case1_assump",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ad_assump",
+      "target": "st_ad_case2_assump",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ad_case1_assump",
+      "target": "st_ad_case1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ad_case2_assump",
+      "target": "st_ad_case2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ad_case1_concl",
+      "target": "st_ad_final_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ad_case2_concl",
+      "target": "st_ad_final_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ad_case1_proof_assump",
+      "target": "st_ad_case1_proof_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ad_case2_proof_assump",
+      "target": "st_ad_case2_proof_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_assump",
+      "target": "st_example_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example",
+      "target": "st_ad_theorem",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_example",
+      "target": "st_ad_theorem",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1应用阿贝尔-迪利克雷判别法"
+    }
+  ],
+  "unresolved": []
+}

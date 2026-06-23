@@ -1,0 +1,326 @@
+[SCOPE:root|description|狄拉克 delta 函数]
+文章名: Delta
+标题: 狄拉克 delta 函数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=狄拉克 $\delta$ 函数
+  [1] type=definition heading=定义 2 title=狄拉克 $\delta$ 函数 2
+  [2] type=exercise heading=习题 1 title=高斯函数
+  [3] type=example heading=例 1 title=sinc 函数
+  [4] type=example heading=例 2 title=
+  [5] type=example heading=例 3 title=
+  [6] type=exercise heading=习题 2 title=
+  [7] type=example heading=例 4 title=
+
+[SCOPE:s_intro|description|引入]
+[0] 1在物理中我们经常会遇到一些模型，如质点和点电荷等，这类模型使用了极限的思想（如令体积趋于无穷小）。
+[1] 如果考察质点的密度或点电荷的电荷密度，将得到无穷大，然而将其密度（电荷密度）在空间中积分却又能得到有限的质量与电荷。
+[2] 为了描述这样的密度（电荷密度）分布，我们引入狄拉克 $\delta$ 函数（Dirac delta function）。
+[3] $\delta(x)$ 并不是数学中一个严格意义上的函数，而是在泛函分析中被称为广义函数（generalized function）或分布（distribution），详见泛函分析教材如 [1]。
+[4] 【图解】图 1：$\delta(x - x_0)$ 函数列的简单例子
+[SCOPE:s_intro_let|let_bind|引入参数 h]
+[5] 我们来给出 $\delta$ 函数的一个模糊概念：考虑一个含有参数 $h$ 的函数（图 1 左 1）
+[6] \begin{equation}
+f_h(x) =
+\begin{cases}
+h & \left( \left\lvert x - x_0 \right\rvert \leqslant \frac{1}{2h} \right) \\
+0 & \left( \left\lvert x - x_0 \right\rvert > \frac{1}{2h} \right)
+\end{cases}\qquad (h > 0)~.
+\end{equation}
+[7] 其中 $h, x_0$ 是常数。
+[8] 由函数图像易得函数曲线下面的面积始终为 $\int_{-\infty}^{+\infty} f_h(x) \,\mathrm{d}{x} = 1$。
+[9] 现在我们可以不断让 $h$ 变大，长方形的高将趋于无穷大，宽将趋于零，而定积分结果不变。
+[10] 粗略地说，$\delta(x - x_0)$ 就是代表上面的 $f_h(x)$ 中 $h$ 无限变大的过程。
+[/SCOPE:s_intro_let]
+[11] 当然，我们还可以选取其他含有参数 $h$ 的函数来逼近 $\delta$ 函数，如图 1 中的另外两种情况。
+[12] 一些物理教材会把 $\delta(x)$ 的性质简单记为（一般默认 $x_0 = 0$，下同）
+[13] \begin{equation}
+\delta(x) =
+\begin{cases}
++\infty & (x = 0)\\
+0 & (x \ne 0)
+\end{cases}~,
+\end{equation}
+[14] \begin{equation}
+\int_{-\infty}^{+\infty} \delta(x) \,\mathrm{d}{x} = 1~.
+\end{equation}
+[15] 这是十分不严谨的，因为如果直接用
+[16] 式 2 [链接 L0]
+[17] 定义函数
+[18] $\delta(x)$，
+[19] 那么上述 $h$ 逐渐变大的图像将彻底丢失，且不可能得到
+[20] 式 3 [链接 L1]
+[21] 。
+[22] 况且接下来也会看到 $x \ne x_0$ 时极限 $\lim_{h\to \infty}f_h(x)$ 也未必存在，更未必为零（
+[23] 例 1 [链接 L2]
+
+[/SCOPE:s_intro]
+[SCOPE:s_def1|description|定义 1]
+[24] 2这里我们给出一种严谨的定义：把 $\delta$ 函数看作是满足一定条件的函数序列（delta sequence），
+[25] 即无穷个函数像数列一样按一定顺序排列。
+
+[26] 定义 1 狄拉克 $\delta$ 函数
+[SCOPE:s_def1_let|let_bind|定义 1 变量]
+[27a] (x), \delta_2
+[27b] (x), \dots$ 为一组连续实函数的序列。
+[/SCOPE:s_def1_let]
+[28] 若 $\delta_n(x)$ 满足以下条件，
+[29] 那么我们把该函数列称为狄拉克 $\delta$ 函数（列）：
+[30] \begin{equation}
+\lim_{n\to\infty}\int_{-\infty}^{+\infty} \delta_n(x) \,\mathrm{d}{x} = 1~.
+\end{equation}
+[31] \begin{equation}
+\lim_{n\to\infty} \int_{a}^{b} \delta_n(x) \,\mathrm{d}{x} = 0~.
+\end{equation}
+[32] 事实上，教材上（如 [2]）常使用以下定义，
+[33] 但这两种定义是等价的3。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义 2]
+[34] 定义 2 狄拉克 $\delta$ 函数 2
+[SCOPE:s_def2_let|let_bind|定义 2 变量]
+[35a] (x), \delta_2
+[35b] (x), \dots$ 为一个连续实函数的序列。
+[/SCOPE:s_def2_let]
+[36] 若 $\delta_n(x)$ 满足以下两个条件，
+[37] 那么我们把该函数列称为狄拉克 $\delta$ 函数（列）：
+[38] 对所有性质良好（例如在 $x = 0$ 连续）的 $f(x)$，都有
+[39] \begin{equation}
+\lim_{n\to\infty}\int_{-\infty}^{+\infty} \delta_n(x)f(x) \,\mathrm{d}{x} = f(0)~.
+\end{equation}
+
+[/SCOPE:s_def2]
+[SCOPE:s_exer1|description|习题 1]
+[40] 习题 1 高斯函数
+[41] 证明高斯分布函数 可以构成以下 $\delta$ 函数列
+[42] \begin{equation}
+\delta_n(x) = \sqrt{\frac{n}{\pi}} \mathrm{e} ^{-n x^2} \qquad (n = 1, 2, \dots)~.
+\end{equation}
+
+[/SCOPE:s_exer1]
+[SCOPE:s_ex1|description|例 1]
+[43] 例 1 sinc 函数
+[44] 可以证明 $ \operatorname{sinc} $ 函数可以构成以下 $\delta$ 函数列
+[45] \begin{equation}
+\delta_n(x) = \frac{n}{\pi} \operatorname{sinc} (n x) \qquad (n = 1, 2, \dots)~.
+\end{equation}
+[46] 【图解】图 2：例 1 中的 $n \operatorname{sinc} (n x)$，注意 $n$ 变大时该函数的 “轮廓” 并不会变窄而是保持近似 $1/x$ 的形状
+
+[/SCOPE:s_ex1]
+[SCOPE:s_prop1|description|性质 1]
+[47] 若一个等式中出现了所谓的 $\delta$ 函数 $\delta(x)$，
+[48a] (x)$ 替换为符合定义 1 的任意函数列 $\delta_n
+[48b] (x)$，再令等式两边在取极限 $n\to\infty$ 时成立。
+[49a] (x)$ 一个重要的性质是：对任意在 $x = x_0$ 处连续函数 $f
+[49b] (x)$，有
+[50] \begin{equation}
+\int_{-\infty}^{+\infty} f(x) \delta(x - x_0) \,\mathrm{d}{x} = f(x_0)~.
+\end{equation}
+[51] 使用函数列 $\delta_n(x)$，该等式的严格意义是（注意该极限和积分不可交换，极限必须在最外面）
+[52] \begin{equation}
+\lim_{n\to\infty}\int_{-\infty}^{+\infty} f(x) \delta_n(x - x_0) \,\mathrm{d}{x} = f(x_0)~.
+\end{equation}
+[53] 由于我们假设
+[54] 定义 1 [链接 L3]
+[55] 定义 2 [链接 L4]
+[56] 等效，这是成立的。
+
+[/SCOPE:s_prop1]
+[SCOPE:s_prop2|description|性质 2]
+[57] \begin{equation}
+\delta(ax) = \frac{1}{ \left\lvert a \right\rvert } \delta(x)~.
+\end{equation}
+[58] 式 1 [链接 L5]
+[59] 的几何上来不严谨地证明这个性质：与 $\delta(x)$ 相比较，$\delta(ax)$ 的图像在 $x$ 方向变窄了 $ \left\lvert a \right\rvert $ 倍，
+[60] 所以函数曲线下的面积变为原来的 $1/ \left\lvert a \right\rvert $ 倍，
+[61] 故 $ \left\lvert a \right\rvert \delta(ax)$ 下的面积是 $1$，证毕。
+
+[/SCOPE:s_prop2]
+[SCOPE:s_prop3|description|性质 3]
+[62] 作为式 11 的拓展，令 $f(x)$ 的根为 $x_1, x_2, \dots$，在这些根处的导数为 $f'(x_i)$，
+[63] 那么
+[64] \begin{equation}
+\delta[f(x)] = \sum_i \frac{1}{ \left\lvert f'(x_i) \right\rvert } \delta(x - x_i)~,
+\end{equation}
+[65] 式 11 [链接 L6]
+
+[/SCOPE:s_prop3]
+[SCOPE:s_prop4|description|性质 4]
+[66] 对性质良好的函数 $g(x)$ 有
+[67] \begin{equation}
+g(x)\delta(x) = g(0)\delta(x)~.
+\end{equation}
+[68a] (x)$，$\int f
+[68b] (x) g
+[68c] (x)\delta
+[68d] (x) \,\mathrm{d}{x} = f(0)g(0) = \int f
+[68e] (x)g(0)\delta
+[68f] (x) \,\mathrm{d}{x} $。
+[69] 证毕。
+
+[/SCOPE:s_prop4]
+[SCOPE:s_app|description|应用]
+[70] 再次强调我们不能 “按字面意思” 理解任何含有 $\delta(x)$ 的等式。
+
+[/SCOPE:s_app]
+[SCOPE:s_ex2|description|例 2]
+[71] 在傅里叶分析中，时常会看到
+[72] \begin{equation}
+\int_{-\infty}^{+\infty} \mathrm{e} ^{ \mathrm{i} kx} \,\mathrm{d}{x} = 2\pi \delta(k)~.
+\end{equation}
+[73] \begin{equation}
+\delta_n(k) = \frac{1}{2\pi}\int_{-n}^{n} \mathrm{e} ^{ \mathrm{i} kx} \,\mathrm{d}{x} = \frac{ \sin\left(n k\right) }{\pi k} = \frac{n}{\pi} \operatorname{sinc} (n k)~.
+\end{equation}
+[74] 式 14 是傅里叶分析中重要的公式，稍微变形可得
+[75] \begin{equation}
+\int_{-\infty}^{+\infty} \left(\frac{ \mathrm{e} ^{ \mathrm{i} k'x}}{\sqrt{2\pi}} \right) ^* \frac{ \mathrm{e} ^{ \mathrm{i} kx}}{\sqrt{2\pi}} \,\mathrm{d}{x} = \delta(k-k')~.
+\end{equation}
+[76] 其中星号代表复共轭。
+[77] 由于函数的
+[78] 内积 [链接 L7]
+[79a] (x) g
+[79b] (x) \,\mathrm{d}{x} $ 的形式，该式说明两列简谐波（
+[80] 子节 4
+[81] ）存在某种意义上的
+[82] 正交归一
+[83] ，详见 “
+[84] 连续正交归一基底与傅里叶变换 [链接 L8]
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|例 3]
+[85] 事实上式 14 不止一种理解，例 2 中限制积分上下限的方法相当于给式 14 的被积函数乘以窗口函数
+[86] \begin{equation}
+g(x) = \left\{\begin{aligned}
+&1 && ( \left\lvert x \right\rvert \leq n)\\
+&0 && ( \left\lvert x \right\rvert > n)~.
+\end{aligned}\right. \end{equation}
+[87] \begin{equation}
+g(x) = \mathrm{e} ^{-x^2/(4n)}~.
+\end{equation}
+[88] \begin{equation}
+\int_{-\infty}^\infty \mathrm{e} ^{-x^2/(4n)} \mathrm{e} ^{ \mathrm{i} k x} \,\mathrm{d}{x} = 2\pi \sqrt{\frac{n}{\pi}} \mathrm{e} ^{-n x^2}~.
+\end{equation}
+[89] 习题 1
+[90] 式 14
+
+[/SCOPE:s_ex3]
+[SCOPE:s_exer2|description|习题 2]
+[91] 习题 2
+[92] \begin{equation}
+\begin{aligned}&\quad\int_{-\infty}^{+\infty} \sin\left(k'x\right) \sin\left(kx\right) \,\mathrm{d}{x} = \int_{-\infty}^{+\infty} \cos\left(k'x\right) \cos\left(kx\right) \,\mathrm{d}{x} \\
+&= \pi\delta(k' - k) - \pi\delta(k' + k)~.
+\end{aligned}
+\end{equation}
+[93] 式 14
+
+[/SCOPE:s_exer2]
+[SCOPE:s_ex4|description|例 4]
+[94] \begin{equation}
+\int_{-\infty}^{+\infty} \delta(x-x_1) \delta(x-x_2) \,\mathrm{d}{x} = \delta(x_1 - x_2)~.
+\end{equation}
+[95a] (x)$，令 $I_n = \int_{-\infty}^{+\infty} \delta_n
+[95b] (x) \,\mathrm{d}{x} $，有 $\lim_{n\to\infty} I_n = 1$。
+[SCOPE:s_ex4_let|let_bind|例 4 变量]
+[96] 再令
+[97] \begin{equation}
+f_n(x_1, x_2) = \int_{-\infty}^{+\infty} \delta_n(x-x_1) \delta_n(x-x_2) \,\mathrm{d}{x} ~.
+\end{equation}
+[/SCOPE:s_ex4_let]
+[98] 未完成：以下证明不严谨，待更正
+[99] \begin{equation}
+\lim_{n\to\infty }\int_{-\infty}^{+\infty} f_n(x_1, x_2) \,\mathrm{d}{x_2} = 1~.
+\end{equation}
+[100] \begin{equation}
+\begin{aligned}
+&\lim_{n\to\infty }\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} \delta_n(x-x_1) \delta_n(x-x_2) \,\mathrm{d}{x} \,\mathrm{d}{x_2} \\
+&= \lim_{n\to\infty }\int_{-\infty}^{+\infty} \delta_n(x-x_1) \int_{-\infty}^{+\infty} \delta_n(x-x_2) \,\mathrm{d}{x_2} \,\mathrm{d}{x} \\
+&= \lim_{n\to\infty } I_n \int_{-\infty}^{+\infty} \delta_n(x-x_1) \,\mathrm{d}{x} \\
+&= \lim_{n\to\infty } I_n^2 = 1~,
+\end{aligned}
+\end{equation}
+
+跨文章引用:
+  [L7] 内积 → InerPd
+  [L8] 连续正交归一基底与傅里叶变换 → COrNoB
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_def1",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "两种定义等价"
+  },
+  {
+    "source_scope": "s_exer1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "高斯函数是 delta 函数列的一个例子"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "sinc 函数是 delta 函数列的一个例子"
+  },
+  {
+    "source_scope": "s_prop1",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "性质 1 由定义 1 推出"
+  },
+  {
+    "source_scope": "s_prop2",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "性质 2 由定义 1 推出"
+  },
+  {
+    "source_scope": "s_prop3",
+    "target_scope": "s_prop2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "性质 3 是性质 2 的推广"
+  },
+  {
+    "source_scope": "s_prop4",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "性质 4 由定义 1 推出"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例 2 展示了 delta 函数在傅里叶分析中的应用"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_ex2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "例 3 是例 2 的另一种理解"
+  },
+  {
+    "source_scope": "s_exer2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题 2 是 delta 函数的另一个例子"
+  },
+  {
+    "source_scope": "s_ex4",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "例 4 尝试证明一个性质，但证明不完整"
+  }
+]

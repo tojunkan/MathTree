@@ -1,0 +1,227 @@
+[SCOPE:root|description|三维空间中的曲线]
+文章名: Curv3D
+标题: 三维空间中的曲线
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=单位切向量
+  [1] type=definition heading=定义 2 title=主法向量
+  [2] type=definition heading=定义 3 title=副法向量
+  [3] type=definition heading=定义 4 title=密切平面
+  [4] type=definition heading=定义 5 title=曲率
+  [5] type=definition heading=定义 6 title=扭率
+  [6] type=theorem heading=定理 1 title=Frenet-Serret 公式
+
+[SCOPE:s_intro|description|引言]
+[0] 三维欧几里得空间是我们最为熟悉的空间，其性质也非常好，易于研究。
+[1] 本节讨论的是三维空间中的 $C^2$ 参数曲线 $f: I = (a, b) \to \mathbb{R}^3$ 的性质，介绍了 Frenet 向量组以及该组中向量之间的关系，并引入了曲率、挠率等概念。
+
+[/SCOPE:s_intro]
+[SCOPE:s_frenet_group|description|Frenet 向量组介绍]
+[2] 【图解】图 1：Frenet 向量组示意图。
+[3] 途中三个蓝色向量就是红色曲线在某一点处的 Frenet 向量组，分别是单位切向量 $T$、单位主法向量 $N$ 和单位副法向量 $B$。
+[4] Frenet 向量组是三维欧几里得空间 $\mathbb{R}^3$ 中特有的概念，是刻画可微曲线性质的优良工具。
+[SCOPE:s_frenet_let|let_bind|引入曲线 f 和弧长参数 s]
+[5] Frenet 向量组中的第一个向量，是单位切向量。
+[6] 关于 $t$ 对曲线 $f(t)$ 求导就能得到切向量，如果把 $t$ 看作时间，
+[7] 那么切向量 $\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }f(t)$ 也可以看成是曲线上一点的切速度。
+[8] 单位切向量就是方向与切速度相同，
+[9] 但长度为 $1$ 的向量。
+[10a] (t)/ \left\lvert \frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }f
+[10b] (t) \right\rvert $。
+[11] 但更简单的方法是，令切速度的大小恒为 $1$，或者说只讨论切速度大小恒为 $1$ 的情况，
+[12] 即弧长参数曲线定义 4 ；
+[13] 我们将用字母 $s$ 来表示弧长参数。
+
+[/SCOPE:s_frenet_group]
+[/SCOPE:s_frenet_let]
+[SCOPE:s_def1|description|定义 1 单位切向量]
+[14] 定义 1 单位切向量
+[SCOPE:s_def1_let|let_bind|引入 f(s) 和 T(s)]
+[15a] (s)$，记 $T
+[15b] (s)=\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{s} }f
+[15c] (s)$，称为曲线在参数为 $s$ 处的单位切向量（unit tangent vector）。
+[/SCOPE:s_def1_let]
+[16] Frenet 向量组中的第二个向量，是单位主法向量。
+[17] 对于处处可微的曲线，切向量总是存在的，
+[18] 但是主法向量不一定存在。
+[19] 主法向量的定义如下：
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义 2 主法向量]
+[20] 定义 2 主法向量
+[SCOPE:s_def2_let|let_bind|引入 N(s) 和 κ(s)]
+[21a] (s)$，其单位切向量为 $T
+[21b] (s)$。
+[22] 如果 $\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{s} }T(s)$ 不为零，
+[23a] (s) N
+[23b] (s)=\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{s} }T
+[23c] (s)$ 为曲线在 $s$ 处的主法向量（normal vector）。
+[24] 其中 $N(s)$ 是单位向量，$\kappa$ 是一个正数，称作曲线在这一点处的曲率（curvature）。
+[/SCOPE:s_def2_let]
+[25] 由于使用弧长参数以后，单位切向量的大小不变，
+[26a] (s)$ 恒与 $T
+[26b] (s)$ 垂直。
+[27] $N(s)$ 就是那第二个成员，单位主法向量。
+[28] Frenet 向量组中的最后一个成员，是单位副法向量，是用前两个向量叉乘而来的。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|定义 3 副法向量]
+[29] 定义 3 副法向量
+[SCOPE:s_def3_let|let_bind|引入 B(s)]
+[30a] (s)=T
+[30b] (s)\times N
+[30c] (s)$ 为曲线在 $s$ 处的单位副法向量（unit binormal vector）。
+[/SCOPE:s_def3_let]
+[31] 以上定义的副法向量必然是单位向量，因为 $T$ 和 $N$ 都是单位向量且正交。
+[32] Frenet 向量组可以用于构成所谓的Frenet 坐标架，也称活动坐标架。
+[33] 相比预先规定的自然坐标系，活动坐标架忽略了曲线在空间中的具体位置，更简洁和方便地表示了曲线本身的局部性质。
+
+[/SCOPE:s_def3]
+[SCOPE:s_def4|description|定义 4 密切平面]
+[34] 定义 4 密切平面
+[35a] (s)$ 和 $N
+[35b] (s)$ 两向量在点 $f
+[35c] (s)$ 处所张成的二维空间，称为曲线在这一点处的密切平面（osculating plane）。
+[36] 对于平面曲线，
+[37] 即整体都在一个平面上的曲线，其所在的平面就是每个点的密切平面。
+
+[/SCOPE:s_def4]
+[SCOPE:s_curvature_torsion|description|曲率和扭率介绍]
+[38] 曲率已经在定义 2 中定义清楚了，是表征单位切向量旋转速率的数字。
+[39] 要说明的是，如果单位切向量在某点处不变化，
+[40] 那么主法向量的概念就不复存在，也就没有 Frenet 向量组的后两位成员了。
+[41] 在这种情况下，我们说曲线在这一点处的曲率为 $0$。
+[42] 更一致的曲率定义方法如下：
+
+[/SCOPE:s_curvature_torsion]
+[SCOPE:s_def5|description|定义 5 曲率]
+[43] 定义 5 曲率
+[SCOPE:s_def5_let|let_bind|引入 κ(s) 定义]
+[44a] (s)$，其单位切向量为 $T
+[44b] (s)$。
+[45a] (s)= \left\lvert \frac{ \,\mathrm{d}{}} { \,\mathrm{d}{s} }T
+[45b] (s) \right\rvert $ 为曲线在 $s$ 处的曲率（curvature）。
+[/SCOPE:s_def5_let]
+[46] 当 Frenet 向量组存在时，还有一个重要的概念叫扭率或挠率，在有的文献中也会被称为第二曲率。
+[47a] (s)$ 和 $N
+[47b] (s)$ 平行。
+[48] 首先，因为单位副法向量的长度不变，
+[49a] (s)$ 和 $B
+[49b] (s)$ 垂直。
+[50] 由于 $B=T\times N$，
+[51] 故
+[52] \begin{equation}
+\begin{aligned}
+\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{s} }B(s)&=[\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{s} }T(s)]\times N(s)+T(s)\times\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{s} }N(s)\\&=T(s)\times\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{s} }N(s)~,
+\end{aligned}
+\end{equation}
+[53a] (s)$ 垂直于 $T
+[53b] (s)$。
+[54] 因此，$\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{s} }B(s)$ 垂直于 $T$ 和 $B$，必然和 $N$ 在一条线上了。
+
+[/SCOPE:s_def5]
+[SCOPE:s_def6|description|定义 6 扭率]
+[55] 定义 6 扭率
+[SCOPE:s_def6_let|let_bind|引入 τ(s)]
+[56a] (s)$，令其 Frenet 向量组为 $T
+[56b] (s), N
+[56c] (s), B(S)$。
+[57a] (s)=-\tau N
+[57b] (s)$，
+[58] 那么称实数 $\tau$ 为曲线在 $s$ 处的扭率（torsion）。
+[/SCOPE:s_def6_let]
+[59] 曲率描述了曲线单位切向量方向变化的速率，越快则曲线弯曲程度越强。
+[60] 扭率则描述了曲线偏离平面曲线的程度，也就是其扭曲程度；
+[61] 也可以理解为，扭率描述了密切平面旋转的速率。
+
+[/SCOPE:s_def6]
+[SCOPE:s_frenet_serret|description|Frenet-Serret 公式]
+[SCOPE:s_frenet_serret_let|let_bind|引入曲线 f 和曲率扭率]
+[62a] (s)$，如果处处有非零曲率 $\kappa
+[62b] (s)$，且其扭率为 $\tau
+[62c] (s)$（可以为零），
+[63] 则它一定有 Frenet 向量组。
+[/SCOPE:s_frenet_serret_let]
+[64] $T$，$N$ 和 $B$ 具有如下关系：
+
+[65] 定理 1 Frenet-Serret 公式
+[66a] (s), N
+[66b] (s), B
+[66c] (s)\}$，我们有如下关系：
+[67] \begin{equation}
+\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{s} }T(s)=\kappa N(s)~,
+\end{equation}
+[68] \begin{equation}
+\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{s} }N(s)=-\kappa(s) T(s)+\tau(s) B(s)~,
+\end{equation}
+[69] \begin{equation}
+\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{s} }B(s)=-\tau(s) N(s)~.
+\end{equation}
+[70] 用矩阵的形式可以更简洁地表示为
+[71] \begin{equation}
+\begin{pmatrix}T'\\N'\\B'\end{pmatrix} = \begin{pmatrix}0&\kappa&0\\-\kappa&0&\tau\\0&-\tau&0\end{pmatrix} \begin{pmatrix}T\\N\\B\end{pmatrix} ~.
+\end{equation}
+[72] 矩阵表示也更好记忆。
+[SCOPE:s_frenet_serret_proof|description|Frenet-Serret 公式证明]
+[73] 证明：
+[74] 根据 $N$ 的定义，直接可得式 2 。
+[75] 根据扭率的定义，直接可得式 4 。
+[76] 考虑到三个向量的方向关系，以及它们都是单位向量的事实，我们可以得到 $N=B\times T$。
+[77] 因此，$\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{s} }N=\frac{ \,\mathrm{d}{B} }{ \,\mathrm{d}{s} }\times T+B\times\frac{ \,\mathrm{d}{T} }{ \,\mathrm{d}{s} }=-\tau N\times T+B\times\kappa N=\tau B-\kappa T$。
+[78] 证毕。
+[/SCOPE:s_frenet_serret]
+[/SCOPE:s_frenet_serret_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "主法向量定义依赖单位切向量"
+  },
+  {
+    "source_scope": "s_def3",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "副法向量定义依赖主法向量"
+  },
+  {
+    "source_scope": "s_def4",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "密切平面定义依赖 T 和 N"
+  },
+  {
+    "source_scope": "s_def5",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "曲率定义依赖主法向量"
+  },
+  {
+    "source_scope": "s_def6",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "扭率定义依赖副法向量"
+  },
+  {
+    "source_scope": "s_frenet_serret",
+    "target_scope": "s_def5",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Frenet-Serret 公式使用曲率"
+  },
+  {
+    "source_scope": "s_frenet_serret",
+    "target_scope": "s_def6",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Frenet-Serret 公式使用扭率"
+  }
+]

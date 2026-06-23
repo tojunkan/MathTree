@@ -1,0 +1,697 @@
+{
+  "article_name": "LstSqr",
+  "statements": [
+    {
+      "stmt_id": "st_intro",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_line_fit_need",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_line_fit",
+      "exposed_entities": [
+        "x_i",
+        "y_i",
+        "N",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_line_fit_question",
+      "subtype": "question",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_line_fit",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_line_fit_method",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_line_fit",
+      "exposed_entities": [
+        "S_2"
+      ]
+    },
+    {
+      "stmt_id": "st_line_fit_S2_function",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_line_fit",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_line_fit_minimize",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_line_fit",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_line_fit_condition",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_line_fit",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_line_fit_eqn",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_line_fit",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_line_fit_det_goal",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_line_fit_det",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_line_fit_det_let",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_line_fit_det",
+      "exposed_entities": [
+        "x_bar"
+      ]
+    },
+    {
+      "stmt_id": "st_line_fit_det_proof",
+      "subtype": "theorem",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": "true",
+      "scope_id": "s_line_fit_det",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_line_fit_det_end",
+      "subtype": "remark",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_line_fit_det",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_line_fit_min_exists",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_line_fit",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_line_fit_solve",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_line_fit",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_line_fit_residual",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_line_fit",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_figure_caption",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_matrix_form",
+      "subtype": "theorem",
+      "clause_range": [
+        25,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "root",
+      "exposed_entities": [
+        "A",
+        "x",
+        "b",
+        "x_hat"
+      ]
+    },
+    {
+      "stmt_id": "st_example_intro",
+      "subtype": "example",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_let",
+      "subtype": "assumption",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_example_eqns",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        41
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_remark",
+      "subtype": "remark",
+      "clause_range": [
+        44,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_poly_fit_todo",
+      "subtype": "remark",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_poly_fit",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_poly_fit_extension",
+      "subtype": "remark",
+      "clause_range": [
+        48,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_poly_fit",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_poly_fit_let",
+      "subtype": "assumption",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_poly_fit",
+      "exposed_entities": [
+        "c_2",
+        "c_1",
+        "c_0",
+        "x_i",
+        "y_i",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_poly_fit_variance",
+      "subtype": "definition",
+      "clause_range": [
+        50,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_poly_fit",
+      "exposed_entities": [
+        "S_2"
+      ]
+    },
+    {
+      "stmt_id": "st_poly_fit_condition",
+      "subtype": "assumption",
+      "clause_range": [
+        52,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_poly_fit",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_poly_fit_eqns",
+      "subtype": "conclusion",
+      "clause_range": [
+        54,
+        54
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_poly_fit",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_poly_fit_pattern",
+      "subtype": "remark",
+      "clause_range": [
+        55,
+        56
+      ],
+      "truth_value": null,
+      "scope_id": "s_poly_fit",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_poly_fit_matlab",
+      "subtype": "remark",
+      "clause_range": [
+        57,
+        58
+      ],
+      "truth_value": null,
+      "scope_id": "s_poly_fit",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_poly_fit_matrix_form",
+      "subtype": "theorem",
+      "clause_range": [
+        59,
+        60
+      ],
+      "truth_value": "true",
+      "scope_id": "s_poly_fit",
+      "exposed_entities": [
+        "X",
+        "c",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_poly_fit_det_goal",
+      "subtype": "assumption",
+      "clause_range": [
+        61,
+        61
+      ],
+      "truth_value": null,
+      "scope_id": "s_poly_fit_det",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_poly_fit_det_proof",
+      "subtype": "theorem",
+      "clause_range": [
+        61,
+        61
+      ],
+      "truth_value": "true",
+      "scope_id": "s_poly_fit_det",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_poly_fit_det_end",
+      "subtype": "remark",
+      "clause_range": [
+        62,
+        62
+      ],
+      "truth_value": null,
+      "scope_id": "s_poly_fit_det",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_weierstrass",
+      "subtype": "theorem",
+      "clause_range": [
+        63,
+        63
+      ],
+      "truth_value": "true",
+      "scope_id": "s_poly_fit",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_harmonic_fit_let",
+      "subtype": "assumption",
+      "clause_range": [
+        64,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_harmonic_fit",
+      "exposed_entities": [
+        "A",
+        "phi_0",
+        "C",
+        "c_1",
+        "c_2",
+        "c_3"
+      ]
+    },
+    {
+      "stmt_id": "st_harmonic_fit_variance",
+      "subtype": "definition",
+      "clause_range": [
+        64,
+        65
+      ],
+      "truth_value": null,
+      "scope_id": "s_harmonic_fit",
+      "exposed_entities": [
+        "S_2"
+      ]
+    },
+    {
+      "stmt_id": "st_harmonic_fit_condition",
+      "subtype": "assumption",
+      "clause_range": [
+        66,
+        66
+      ],
+      "truth_value": null,
+      "scope_id": "s_harmonic_fit",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_harmonic_fit_eqns",
+      "subtype": "conclusion",
+      "clause_range": [
+        67,
+        67
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_harmonic_fit",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_harmonic_fit_global_min",
+      "subtype": "conclusion",
+      "clause_range": [
+        68,
+        68
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_harmonic_fit",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_harmonic_fit_general",
+      "subtype": "remark",
+      "clause_range": [
+        69,
+        69
+      ],
+      "truth_value": null,
+      "scope_id": "s_harmonic_fit",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_harmonic_question",
+      "subtype": "question",
+      "clause_range": [
+        70,
+        72
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_harmonic_fit_question",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_harmonic_S2_quadratic",
+      "subtype": "assumption",
+      "clause_range": [
+        73,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_harmonic_fit_question",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_harmonic_global_min_condition",
+      "subtype": "conclusion",
+      "clause_range": [
+        74,
+        74
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_harmonic_fit_question",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_harmonic_multiple_solutions",
+      "subtype": "assumption",
+      "clause_range": [
+        75,
+        75
+      ],
+      "truth_value": null,
+      "scope_id": "s_harmonic_fit_question",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_harmonic_infinite_solutions",
+      "subtype": "conclusion",
+      "clause_range": [
+        76,
+        77
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_harmonic_fit_question",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_line_fit_need",
+      "target": "st_line_fit_question",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_line_fit_need",
+      "target": "st_line_fit_method",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_line_fit_method",
+      "target": "st_line_fit_minimize",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_line_fit_condition",
+      "target": "st_line_fit_eqn",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_line_fit_det_goal",
+      "target": "st_line_fit_det_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_line_fit_det_let",
+      "target": "st_line_fit_det_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_line_fit_det_proof",
+      "target": "st_line_fit_min_exists",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_line_fit_eqn",
+      "target": "st_line_fit_min_exists",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_line_fit_min_exists",
+      "target": "st_line_fit_solve",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_let",
+      "target": "st_example_eqns",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_eqns",
+      "target": "st_example_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_poly_fit_let",
+      "target": "st_poly_fit_variance",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_poly_fit_condition",
+      "target": "st_poly_fit_eqns",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_poly_fit_det_goal",
+      "target": "st_poly_fit_det_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_poly_fit_det_proof",
+      "target": "st_poly_fit_eqns",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_harmonic_fit_let",
+      "target": "st_harmonic_fit_variance",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_harmonic_fit_condition",
+      "target": "st_harmonic_fit_eqns",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_harmonic_fit_eqns",
+      "target": "st_harmonic_fit_global_min",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_harmonic_S2_quadratic",
+      "target": "st_harmonic_global_min_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_harmonic_multiple_solutions",
+      "target": "st_harmonic_infinite_solutions",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_line_fit_det_proof",
+      "target": "st_line_fit_min_exists",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "行列式非零推出唯一解"
+    },
+    {
+      "source": "st_poly_fit_det_proof",
+      "target": "st_poly_fit_eqns",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "唯一解证明"
+    },
+    {
+      "source": "st_harmonic_infinite_solutions",
+      "target": "st_harmonic_fit_global_min",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "讨论全局最优性"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,185 @@
+{
+  "article_name": "HeFor",
+  "statements": [
+    {
+      "stmt_id": "st_def1_hermitian_form",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "V",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_prove",
+      "subtype": "example",
+      "clause_range": [
+        3,
+        6
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "f",
+        "F",
+        "e_i",
+        "e_j",
+        "f_{ij}"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_hermitian_matrix",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_statement",
+      "subtype": "example",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "e_i",
+        "e'_i",
+        "F",
+        "F'"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_remark_real",
+      "subtype": "remark",
+      "clause_range": [
+        18,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_positive_definite_quadratic",
+      "subtype": "definition",
+      "clause_range": [
+        22,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "f",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_positive_definite_form",
+      "subtype": "definition",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex1_prove",
+      "target": "st_ex1_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_statement",
+      "target": "st_ex2_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_proof",
+      "target": "st_ex2_remark_real",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex1_prove",
+      "target": "st_def1_hermitian_form",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是定义1的具体化"
+    },
+    {
+      "source": "st_def2_hermitian_matrix",
+      "target": "st_ex1_prove",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义2是例1结论的命名"
+    },
+    {
+      "source": "st_ex2_statement",
+      "target": "st_def2_hermitian_matrix",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2证明定义2的性质在基变换下保持"
+    },
+    {
+      "source": "st_def3_positive_definite_quadratic",
+      "target": "st_def1_hermitian_form",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义3是定义1的特殊化（正定）"
+    },
+    {
+      "source": "st_def4_positive_definite_form",
+      "target": "st_def3_positive_definite_quadratic",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义4是定义3对应的线性型"
+    }
+  ],
+  "unresolved": []
+}

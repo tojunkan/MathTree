@@ -1,0 +1,175 @@
+{
+  "article_name": "CrossP",
+  "statements": [
+    {
+      "stmt_id": "st_goal",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": "true",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let_D",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_vectors",
+      "exposed_entities": [
+        "D"
+      ]
+    },
+    {
+      "stmt_id": "st_proj_B_C_D",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_projection",
+      "exposed_entities": [
+        "B'",
+        "C'",
+        "D'"
+      ]
+    },
+    {
+      "stmt_id": "st_parallel_proj",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_projection",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_Dprime_eq_sum",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_projection",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cross_eq_proj",
+      "subtype": "theorem",
+      "clause_range": [
+        16,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cross_property",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_need_prove",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_final_step",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_orthogonal",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_final_step",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cross_ortho_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_final_step",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_scale_rotate_preserve",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_final_step",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_area_remark",
+      "subtype": "remark",
+      "clause_range": [
+        32,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_area_discussion",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_parallel_proj",
+      "target": "st_Dprime_eq_sum",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_orthogonal",
+      "target": "st_cross_ortho_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cross_ortho_result",
+      "target": "st_scale_rotate_preserve",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_need_prove",
+      "target": "st_scale_rotate_preserve",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_cross_eq_proj",
+      "target": "st_need_prove",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "主证明引用叉乘性质"
+    },
+    {
+      "source": "st_scale_rotate_preserve",
+      "target": "st_goal",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "主证明推出最终结论"
+    }
+  ],
+  "unresolved": []
+}

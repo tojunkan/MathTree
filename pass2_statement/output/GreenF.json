@@ -1,0 +1,480 @@
+{
+  "article_name": "GreenF",
+  "statements": [
+    {
+      "stmt_id": "st_general_eq",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_general",
+      "exposed_entities": [
+        "y(x)",
+        "f(x)",
+        "Q"
+      ]
+    },
+    {
+      "stmt_id": "st_green_def",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_general",
+      "exposed_entities": [
+        "G(x',x)",
+        "delta(x-x')"
+      ]
+    },
+    {
+      "stmt_id": "st_solution_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": "true",
+      "scope_id": "s_general",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_general_remark",
+      "subtype": "remark",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_general",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_setup",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": [
+        "L",
+        "T",
+        "y(x)",
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_example_eq",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_direct_solution",
+      "subtype": "remark",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_green_def",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": [
+        "G(x',x)",
+        "delta(x-x')"
+      ]
+    },
+    {
+      "stmt_id": "st_example_interpretation",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_decomposition",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_linearity",
+      "subtype": "assumption",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_solution_integral",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_green_triangle",
+      "subtype": "theorem",
+      "clause_range": [
+        30,
+        35
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_final_solution",
+      "subtype": "theorem",
+      "clause_range": [
+        36,
+        37
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_integration_by_parts",
+      "subtype": "remark",
+      "clause_range": [
+        38,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_exercise_hint",
+      "subtype": "remark",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_solve_left",
+      "subtype": "assumption",
+      "clause_range": [
+        43,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_example_solve",
+      "exposed_entities": [
+        "C1"
+      ]
+    },
+    {
+      "stmt_id": "st_solve_right",
+      "subtype": "assumption",
+      "clause_range": [
+        47,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_example_solve",
+      "exposed_entities": [
+        "C2"
+      ]
+    },
+    {
+      "stmt_id": "st_solve_continuity",
+      "subtype": "assumption",
+      "clause_range": [
+        51,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_example_solve",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_solve_jump",
+      "subtype": "assumption",
+      "clause_range": [
+        54,
+        56
+      ],
+      "truth_value": null,
+      "scope_id": "s_example_solve",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_solve_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        57,
+        60
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example_solve",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exercise_problem",
+      "subtype": "exercise",
+      "clause_range": [
+        61,
+        65
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_goal",
+      "subtype": "theorem",
+      "clause_range": [
+        66,
+        68
+      ],
+      "truth_value": "true",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_steps",
+      "subtype": "conclusion",
+      "clause_range": [
+        69,
+        70
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intuitive_setup",
+      "subtype": "assumption",
+      "clause_range": [
+        71,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_intuitive",
+      "exposed_entities": [
+        "G_i(x)",
+        "f_i(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_intuitive_linearity",
+      "subtype": "conclusion",
+      "clause_range": [
+        74,
+        75
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intuitive",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intuitive_decomposition",
+      "subtype": "assumption",
+      "clause_range": [
+        76,
+        77
+      ],
+      "truth_value": null,
+      "scope_id": "s_intuitive",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intuitive_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        78,
+        81
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intuitive",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intuitive_interpretation",
+      "subtype": "remark",
+      "clause_range": [
+        82,
+        85
+      ],
+      "truth_value": null,
+      "scope_id": "s_intuitive",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_general_eq",
+      "target": "st_green_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_green_def",
+      "target": "st_solution_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_setup",
+      "target": "st_example_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_eq",
+      "target": "st_example_green_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_green_def",
+      "target": "st_example_decomposition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_decomposition",
+      "target": "st_example_linearity",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_linearity",
+      "target": "st_example_solution_integral",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_solution_integral",
+      "target": "st_example_green_triangle",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_green_triangle",
+      "target": "st_example_final_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_solve_left",
+      "target": "st_solve_continuity",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_solve_right",
+      "target": "st_solve_continuity",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_solve_continuity",
+      "target": "st_solve_jump",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_solve_jump",
+      "target": "st_solve_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_goal",
+      "target": "st_proof_steps",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intuitive_setup",
+      "target": "st_intuitive_linearity",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intuitive_linearity",
+      "target": "st_intuitive_decomposition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intuitive_decomposition",
+      "target": "st_intuitive_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intuitive_solution",
+      "target": "st_intuitive_interpretation",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_example_eq",
+      "target": "st_general_eq",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "弦的例子是一般理论的特例"
+    },
+    {
+      "source": "st_proof_steps",
+      "target": "st_solution_formula",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明一般理论中的解公式"
+    },
+    {
+      "source": "st_intuitive_solution",
+      "target": "st_proof_goal",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "直观解释证明"
+    }
+  ],
+  "unresolved": []
+}

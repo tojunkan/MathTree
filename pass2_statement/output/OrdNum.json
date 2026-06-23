@@ -1,0 +1,272 @@
+{
+  "article_name": "OrdNum",
+  "statements": [
+    {
+      "stmt_id": "st_ordtype_def",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "序型",
+        "序数",
+        "超限数"
+      ]
+    },
+    {
+      "stmt_id": "st_ord_compare",
+      "subtype": "remark",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "M",
+        "M'",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_cond_a",
+      "subtype": "condition",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_concl_iso",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "保序映射"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_cond_b",
+      "subtype": "condition",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_concl_iso2",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "同构映射"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "M",
+        "M'"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_concl",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "序型",
+        "序数",
+        "超限数"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "M1",
+        "M2",
+        "θ1",
+        "θ2"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_concl",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "有序和",
+        "M1+M2",
+        "θ1+θ2"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1",
+      "subtype": "theorem",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1",
+      "subtype": "corollary",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def4_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "M1",
+        "M2",
+        "θ1",
+        "θ2"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2",
+      "subtype": "theorem",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor2",
+      "subtype": "corollary",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_assump",
+      "target": "st_def1_cond_a",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_cond_a",
+      "target": "st_def1_concl_iso",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_assump",
+      "target": "st_def1_cond_b",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_cond_b",
+      "target": "st_def1_concl_iso2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_assump",
+      "target": "st_def2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_assump",
+      "target": "st_def3_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def4_assump",
+      "target": "st_thm2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor1",
+      "target": "st_thm1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor2",
+      "target": "st_thm2",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

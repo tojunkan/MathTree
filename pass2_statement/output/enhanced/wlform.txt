@@ -1,0 +1,50 @@
+[SCOPE:root|description|公式（数理逻辑）]
+文章名: wlform
+标题: 公式（数理逻辑）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=原子公式
+  [1] type=definition heading=定义 2 title=（合式）公式
+  [2] type=definition heading=定义 3 title=公式的类型
+  [3] type=definition heading=定义 4 title=公式的等价
+  [4] type=definition heading=定义 5 title=公式的蕴含
+
+[SCOPE:s_atomic|description|原子公式]
+[0] 定义 1 原子公式
+[1] 单个命题常量或命题变元成为一个原子公式。
+[2] 公式也可以用命题的连接词连接，意义与命题是同样的。
+
+[/SCOPE:s_atomic]
+[SCOPE:s_wff|description|（合式）公式]
+[3] 定义 2 （合式）公式
+[4] （合式）公式按以下规则递归地定义：
+[5] 原子公式是合式公式。
+[SCOPE:s_wff_let|let_bind|合式公式的变量]
+[6] 若 $A$ 是一个合式公式，
+[7] 则 $\neq A$ 也是一个合式公式。
+[8] 若 $A$ 与 $B$ 都是合式公式，
+[9] 则 $(A \land B)$、$(A \lor B)$、$(A \to B)$ 与 $(A \leftrightarrow B)$ 都是合式公式。
+[/SCOPE:s_wff_let]
+[10] 有限次的 $1$、$2$、$3$ 组合出来的都是合式公式。
+[11] 由此可以发现，只要使得所有命题变元都变为命题常元，也就是确定了解释，
+[12] 则公式也就变为了一个命题。
+
+[/SCOPE:s_wff]
+[SCOPE:s_types|description|公式的类型]
+[13] 定义 3 公式的类型
+[14] 矛盾式（永假式）：公式在各种的可能情况下均为假，均不成立。
+[15] 重言式（永真式）：公式在各种的可能情况下均为真，均成立。
+[16] 可满足式：公式存在至少一种可能的解释使得公式成立。
+
+[/SCOPE:s_types]
+[SCOPE:s_equiv|description|公式的等价]
+[17] 定义 4 公式的等价
+[18] 两个公式在所有可能解释的情况下真值均相同，就称这两个公式等价，用符号 $\Leftrightarrow$ 或 $=$。
+
+[/SCOPE:s_equiv]
+[SCOPE:s_implies|description|公式的蕴含]
+[19] 定义 5 公式的蕴含
+[20] 类似于公式的等价，公式间的蕴含也用 $\Rightarrow$ 表示。
+[21] 表示各个可能解释下两个公式对应在该解释下对应的命题都符合蕴含关系。
+[/SCOPE:s_implies]
+[/SCOPE:root]

@@ -1,0 +1,452 @@
+{
+  "article_name": "UniCo2",
+  "statements": [
+    {
+      "stmt_id": "st_intro_question",
+      "subtype": "question",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_answer",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let",
+      "exposed_entities": [
+        "f(x,y)=x^y"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_calc",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "{f_n(x)}",
+        "(a,b)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_reduce",
+      "subtype": "assumption",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_let1",
+      "subtype": "definition",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof_let1",
+      "exposed_entities": [
+        "f_n(a)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_unif_cauchy",
+      "subtype": "assumption",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_cauchy_a",
+      "subtype": "conclusion",
+      "clause_range": [
+        39,
+        40
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_converge_a",
+      "subtype": "conclusion",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof_let2",
+      "exposed_entities": [
+        "f(x)=0"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_goal",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_unif_eps",
+      "subtype": "assumption",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_bound",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        51,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "f_n(x)=x^n"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_calc",
+      "subtype": "conclusion",
+      "clause_range": [
+        52,
+        52
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        55,
+        56
+      ],
+      "truth_value": null,
+      "scope_id": "s_cor1_let",
+      "exposed_entities": [
+        "{f_n}",
+        "I",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1_conclusion",
+      "subtype": "corollary",
+      "clause_range": [
+        57,
+        57
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        59,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "{f_n(x)}",
+        "f(x)",
+        "[a,b]"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        60,
+        62
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_let",
+      "subtype": "assumption",
+      "clause_range": [
+        66,
+        67
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3_let",
+      "exposed_entities": [
+        "{f_n(x)}",
+        "x_0",
+        "[a,b]",
+        "{f'_n(x)}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_conclusion1",
+      "subtype": "theorem",
+      "clause_range": [
+        68,
+        68
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_conclusion2",
+      "subtype": "theorem",
+      "clause_range": [
+        69,
+        71
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex1_let",
+      "target": "st_ex1_calc",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_calc",
+      "target": "st_ex1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_reduce",
+      "target": "st_thm1_proof_goal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_let1",
+      "target": "st_thm1_proof_cauchy_a",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_unif_cauchy",
+      "target": "st_thm1_proof_cauchy_a",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_cauchy_a",
+      "target": "st_thm1_proof_converge_a",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_let2",
+      "target": "st_thm1_proof_goal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_unif_eps",
+      "target": "st_thm1_proof_bound",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_bound",
+      "target": "st_thm1_proof_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_let",
+      "target": "st_ex2_calc",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor1_let",
+      "target": "st_cor1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let",
+      "target": "st_thm2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_let",
+      "target": "st_thm3_conclusion1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_let",
+      "target": "st_thm3_conclusion2",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex1_conclusion",
+      "target": "st_intro_answer",
+      "edge_type": "counterexample_of",
+      "category": "logic",
+      "note": "例1是极限不可换序的反例"
+    },
+    {
+      "source": "st_thm1_conclusion",
+      "target": "st_intro_answer",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理1给出极限换序的充分条件"
+    },
+    {
+      "source": "st_ex2_calc",
+      "target": "st_thm1_conclusion",
+      "edge_type": "counterexample_of",
+      "category": "logic",
+      "note": "例2说明定理1的条件不能去掉"
+    },
+    {
+      "source": "st_cor1_conclusion",
+      "target": "st_thm1_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论1是定理1的特例"
+    },
+    {
+      "source": "st_thm2_conclusion",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理2是极限换序在积分中的应用"
+    },
+    {
+      "source": "st_thm3_conclusion1",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理3是极限换序在微分中的应用"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,73 @@
+[SCOPE:root|description|爱森斯坦判别式]
+文章名: EsstCr
+标题: 爱森斯坦判别式
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=整数环上的爱森斯坦判别式
+  [1] type=theorem heading=定理 2 title=整环上的爱森斯坦判别式
+
+[SCOPE:s_thm1|description|整数环上的爱森斯坦判别式]
+[0] 定理 1 整数环上的爱森斯坦判别式
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[1] 设有整系数多项式 $f(x)=f_0+f_1x+f_2x^2+\cdots+f_nx^n$，若存在素数 $p$ 使得：
+[2] $p\nmid f_n$；
+[3] 对于 $i\in\{0, 1, 2, \cdots, n-1\}$，都有 $p|f_i$；
+[4] $p^2\nmid f_0$。
+[5] 那么 $f(x)$ 就是不可约多项式。
+[/SCOPE:s_thm1_let]
+[6] 证明：
+[SCOPE:s_thm1_reductio|reductio|反证法]
+[7] 反设 $f(x)$ 可约，
+[SCOPE:s_thm1_reductio_let|let_bind|反设中的多项式因子]
+[8] 则可以写成 $f(x)=(h_0+h_1x+h_2x^2+\cdots+h_rx^r)(g_0+g_1x+g_2x^2+\cdots+g_sx^s)$。
+[9] 由于 $f(x)=f_0+f_1x+f_2x^2+\cdots+f_nx^n$，
+[10] 故1
+[11] \begin{equation}f_i=\sum\limits_{j+k=i}h_jg_k~.\end{equation}
+[12] 利用条件 3：注意到 $f_0=h_0g_0$，而 $p^2\nmid f_0=h_0g_0$，
+[13] 故 $h_0$ 和 $g_0$ 中有一个是不能被 $p$ 整除的。
+[14] 不妨设 $p\nmid h_0$。
+[15] 利用条件 2：由于 $p\mid f_0=h_0g_0$，
+[16] 故 $p\mid g_0$。
+[17] 又由于 $p\mid f_1=h_0g_1+h_1g_0$ 且 $p\mid g_0$，
+[18] 故 $p\mid h_0g_1$；
+[19] 再由于 $p\nmid h_0$，
+[20] 故 $p\mid g_1$。
+[21] 归纳：类似地，$p\mid f_2=h_0g_2+h_1g_1+h_2g_0$，而 $p\mid g_1, p\mid g_0$ 和 $p\nmid h_0$ 又能推出 $p\mid g_2$。
+[22] 以此类推，可以得到 $p\mid g_s$。
+[23] 利用条件 1：由于 $p\nmid f_n=h_rg_s$，
+[24] 故应有 $p\nmid g_s$，与上一步矛盾！
+[/SCOPE:s_thm1_reductio_let]
+[25] 由此可知反设不成立。
+[/SCOPE:s_thm1_reductio]
+[26] 证毕。
+[27] 虽然判别式的表达看起来很复杂，
+[28] 但是从证明过程可以看出来，三个条件的设置都自有其考虑。
+[29] 爱森斯坦判别式不止是可以用于整系数多项式，也可用于任意整环上的多项式。
+[30] 整系数多项式的爱森斯坦判别式只需要整除知识即可理解，而任意整环上的形式则需要素理想的概念。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|整环上的爱森斯坦判别式]
+[31] 定理 2 整环上的爱森斯坦判别式
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[32] 设整环 $R$ 上有多项式 $f(x)=f_0+f_1x+f_2x^2+\cdots+f_nx^n$，若存在 $R$ 的素理想$P$，使得：
+[33] $f_n\not\in P$；
+[34] 对于 $i\in\{0, 1, 2, \cdots, n-1\}$，都有 $f_i\in P$；
+[35] $f_0\not\in P^2$，其中 $P^2=\{p_1p_2|p_i\in P\}$。
+[36] 那么 $f(x)$ 就是不可约多项式。
+[/SCOPE:s_thm2_let]
+[37] 其证明可以通过改写定理 1 的过程得到，把每一个形如 $p|a$ 的式子都写为 $a\in P$ 即可，其中 $a$ 只是个符号，可以表示任意 $f_i, g_i, h_i$ 等。
+[38] 读者可自行对比尝试证明。
+[39] 注意素数和整数环 $\mathbb{Z}$ 的素理想之间的关系。
+[/SCOPE:s_thm2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "整环上的判别式是整数环上的推广，整数环是整环的特例。"
+  }
+]

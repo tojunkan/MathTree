@@ -1,0 +1,340 @@
+{
+  "article_name": "Deter",
+  "statements": [
+    {
+      "stmt_id": "st_intro_det_use",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_def_N",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "A",
+        "|A|"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_cond_lin",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_concl_lin",
+      "subtype": "conclusion",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_phys",
+      "subtype": "remark",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_2x2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let_2x2",
+      "exposed_entities": [
+        "A",
+        "a_{i,j}"
+      ]
+    },
+    {
+      "stmt_id": "st_2x2_def",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let_2x2",
+      "exposed_entities": [
+        "|A|"
+      ]
+    },
+    {
+      "stmt_id": "st_3x3_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let_3x3",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_3x3_def",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let_3x3",
+      "exposed_entities": [
+        "|A|",
+        "det A"
+      ]
+    },
+    {
+      "stmt_id": "st_geo_real",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_geo",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geo_2d_area",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_geo",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geo_2d_sign",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_geo",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geo_3d_vol",
+      "subtype": "theorem",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": "true",
+      "scope_id": "s_geo",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geo_3d_sign",
+      "subtype": "theorem",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "true",
+      "scope_id": "s_geo",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exercise_claim",
+      "subtype": "exercise",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exercise_highdim",
+      "subtype": "remark",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_exercise",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exercise_transpose",
+      "subtype": "remark",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_exercise",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exercise_geom_lin",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_exercise",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_gendef_terms",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_general_def",
+      "exposed_entities": [
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_gendef_prod",
+      "subtype": "definition",
+      "clause_range": [
+        26,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_general_def",
+      "exposed_entities": [
+        "π_{n,i}"
+      ]
+    },
+    {
+      "stmt_id": "st_gendef_sign",
+      "subtype": "definition",
+      "clause_range": [
+        31,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_general_def",
+      "exposed_entities": [
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_gendef_formula",
+      "subtype": "definition",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_general_def",
+      "exposed_entities": [
+        "det A"
+      ]
+    },
+    {
+      "stmt_id": "st_levi_civita_formula",
+      "subtype": "definition",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_levi_civita",
+      "exposed_entities": [
+        "ε_{i1...iN}"
+      ]
+    },
+    {
+      "stmt_id": "st_levi_civita_equiv",
+      "subtype": "theorem",
+      "clause_range": [
+        36,
+        38
+      ],
+      "truth_value": "true",
+      "scope_id": "s_levi_civita",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_intro_cond_lin",
+      "target": "st_intro_concl_lin",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_2x2_assump",
+      "target": "st_2x2_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_3x3_assump",
+      "target": "st_3x3_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_gendef_terms",
+      "target": "st_gendef_prod",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_gendef_prod",
+      "target": "st_gendef_sign",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_gendef_sign",
+      "target": "st_gendef_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_gendef_formula",
+      "target": "st_levi_civita_formula",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "行列式的一般定义与Levi-Civita符号定义等价"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,200 @@
+{
+  "article_name": "PolReq",
+  "statements": [
+    {
+      "stmt_id": "st_theorem1",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_y",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1_let",
+      "exposed_entities": [
+        "y(x)",
+        "y_0",
+        "y_1",
+        "J(y)"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_deltaJ",
+      "subtype": "conclusion",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1_let",
+      "exposed_entities": [
+        "δJ"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_extremum",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "y(x)",
+        "J(y)",
+        "ε"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_sign",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1",
+      "subtype": "lemma",
+      "clause_range": [
+        9,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1_let",
+      "exposed_entities": [
+        "d",
+        "α",
+        "ε_α"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_reductio_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1_reductio",
+      "exposed_entities": [
+        "d"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_reductio_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1_proof_let",
+      "exposed_entities": [
+        "t",
+        "η(x)",
+        "J(y+tη)"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        36,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "root",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_y",
+      "target": "st_conclusion_deltaJ",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_extremum",
+      "target": "st_conclusion_sign",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_assump",
+      "target": "st_lemma1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_reductio_assump",
+      "target": "st_lemma1_reductio_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_assump",
+      "target": "st_proof_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_theorem1",
+      "target": "st_lemma1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理 1 的证明引用引理 1"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,215 @@
+[SCOPE:root|description|共轭空间中的强拓扑]
+文章名: STop
+标题: 共轭空间中的强拓扑
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=强拓扑
+  [1] type=theorem heading=定理 1 title=
+  [2] type=theorem heading=定理 2 title=
+  [3] type=definition heading=定义 2 title=共轭空间的零邻域
+  [4] type=definition heading=定义 3 title=强拓扑
+  [5] type=theorem heading=定理 3 title=强拓扑满足第一分离公理与局部凸
+
+[0] 在共轭空间中可以定义拓扑使之成为拓扑线性空间，一种最自然的方法就是从赋范空间获得启示，由之在共轭空间上定义的拓扑便是强拓扑。
+
+[SCOPE:s_strong_norm|description|赋范空间中的强拓扑]
+[1] 由例 1 可知，赋范空间是一个拓扑线性空间，
+[2] 因此其上自然由线性连续泛函的定义。
+[3] 而赋范空间上根据
+[4] \begin{equation}
+\left\lVert f \right\rVert :=\sup_{x\neq0}\frac{ \left\lvert f(x) \right\rvert }{ \left\lVert x \right\rVert }~
+\end{equation}
+[5] 可引入线性连续泛函的范数，证明
+[6] 式 1 [链接 L0]
+[7] 范数 [链接 L1]
+[8] 的定义和
+[9] 例 1 [链接 L2]
+[10] 的证明完全一样。
+[11] 因此赋范空间的共轭空间可赋予赋范空间的自然结构。
+[12] 范数可以用来定义度量，度量有一个自然定义开集的方式，
+[13] 即在赋范空间上有一个自然定义的拓扑，在赋范空间的共轭空间中这样定义的拓扑就是强拓扑。
+
+[/SCOPE:s_strong_norm]
+[SCOPE:s_def1|description|定义1 强拓扑]
+[14] 定义 1 强拓扑
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[15] 设 $E$ 是赋范空间，
+[16] 则其共轭空间 $E^*$ 上由式 1 定义的范数相应的拓扑称为 $E^*$ 的强拓扑。
+[/SCOPE:s_def1_let]
+[17] 当希望把 $E^*$ 当作赋范空间时，我们将其写作 $(E^*, \left\lVert * \right\rVert )$。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理1]
+[18] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[19] 设 $E$ 是赋范空间，
+[20] 则 $(E^*, \left\lVert * \right\rVert )$ 是完备的。
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm1_proof|description|定理1的证明]
+[SCOPE:s_thm1_proof_let|let_bind|定理1证明中的变量]
+[21] 证明：设 $\{f_n\}$ 是线性连续泛函的柯西序列（定义 1 ）。
+[22] 那么对任意 $\epsilon>0$，存在 $N$，使得对所有的 $n,m>N$ 有 $ \left\lVert f_n-f_m \right\rVert <\epsilon$。
+[23] 由此，对任意 $x\in E$ 得到
+[24] \begin{equation}
+\left\lvert f_n(x)-f_m(x) \right\rvert \leq \left\lVert f_n-f_m \right\rVert \cdot \left\lVert x \right\rVert <\epsilon \left\lVert x \right\rVert ,~
+\end{equation}
+[25] 即对任意 $x\in E$，数列 $\{f_n(x)\}$ 收敛（$ \left\lVert x \right\rVert $ 是某一确定的实数，而 $\epsilon$ 任意）。
+[26a] (x):=\lim\limits_{n\rightarrow\infty}f_n
+[26b] (x)$。
+[/SCOPE:s_thm1_proof_let]
+[27] 则由
+[28] \begin{equation}
+\begin{aligned}
+f(\alpha x+\beta y)=&\lim_{n\rightarrow\infty}(\alpha x+\beta y)\\
+=&\lim_{n\rightarrow\infty} \left[\alpha f_n(x)+\beta f_n(y) \right] \\
+=&\alpha f(x)+\beta f(y),
+\end{aligned}~
+\end{equation}
+[29] 得 $f$ 是线性的。
+[30] 此外，取
+[31] 式 2 [链接 L3]
+[32] 的 $m\rightarrow\infty$，
+[33] 则
+[34] \begin{equation}
+\left\lvert f(x)-f_n(x) \right\rvert \leq \epsilon \left\lVert x \right\rVert .~
+\end{equation}
+[35] 由此得 $f-f_n$ 有界（$ \left\lVert x \right\rVert $ 有限，$\epsilon>0$ 任意）。
+[36] 因而 $f=f_n+(f-f_n)$ 有界（$\{f_n(x)\}$ 对任意 $x$ 收敛）。由
+[37] 定理 3 [链接 L4]
+[38] ，$f$ 连续。
+[39] 另外，由
+[40] 式 4 [链接 L5]
+[41] 得 $ \left\lVert f-f_n \right\rVert \leq\epsilon$，
+[42] 即 $\{f_n\}$ 收敛于 $f$。
+[43] 证毕！
+[/SCOPE:s_thm1_proof]
+[44] 该定理表明，无论赋范空间是否完备，其共轭空间都完备。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理2]
+[45] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[46] 若赋范空间 $E$ 不完备，而 $\bar{E}$ 是 $E$ 的完备化空间，
+[47] 则 $E^*,\bar{E}^*$ 同构。
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm2_proof|description|定理2的证明]
+[SCOPE:s_thm2_proof_let|let_bind|定理2证明中的变量]
+[48] 证明： 因为 $\bar{E}$ 是 $E$ 的完备化空间，
+[49] 所以对任一 $x\in \bar{E}$，存在 $E$ 中的收敛于 $x$ 的序列 $\{x_n\}$（由定理 1 ，它是柯西序列）。
+[50] 设 $f$ 是 $E$ 上的线性连续泛函，
+[51] 则 $\{f(x_n)\}$ 是柯西数列，
+[52] 因而必收敛（实数集上的柯西序列必收敛），定义 $\bar f(x):=\lim\limits_{n\rightarrow\infty}f(x_n)$，
+[/SCOPE:s_thm2_proof_let]
+[53] 则 $\bar f$ 就是 $f$ 在 $\bar E$ 上的连续延拓。
+[54a] (x)\neq g
+[54b] (x)$，而由 $E$ 中收敛到 $x$ 的柯西序列 $\{x_n\}$，恒有 $\bar f(x_n)=g(x_n)$，取极限就是 $\bar f
+[54c] (x)=g
+[54d] (x)$，这一矛盾就说明连续延拓是唯一的。
+[55] 显然 $\bar f\in(\bar E)^*$，且 $ \left\lVert \bar f \right\rVert = \left\lVert f \right\rVert $（由式 1 推得）。
+[56] 另外，任一 $(\bar E)^*$ 中的线性连续泛函是其在 $E$ 上限制得到的泛函的延拓，
+[57] 因此，映射 $f\mapsto\bar f$ 是 $E$ 到 $(\bar E)^*$ 的同构映射。
+[58] 事实上，$f\mapsto\bar f$ 的线性性质可通过
+[59] \begin{equation}
+\begin{aligned}
+&f(x_n)+g(x_n)-(\bar f(x)+\bar g(x))\\
+&=(f(x_n)-\bar f(x))+(g(x_n)-\bar g(x))\\
+&<\epsilon/2+\epsilon/2=\epsilon
+\end{aligned}~
+\end{equation}
+[60] 证毕！
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_proof]
+[SCOPE:s_strong_tvs|description|拓扑线性空间的强拓扑]
+[61] 我们看到，赋范空间中的强拓扑是由于式 1 定义了其共轭空间上的范数引进的。
+[62] 在强拓扑下，赋范空间的共轭空间也是拓扑线性空间。
+[63] 赋范空间的共轭空间的零邻域自然定义为满足条件
+[64] \begin{equation}
+\left\lVert f \right\rVert <\epsilon~
+\end{equation}
+[65] 的泛函的集合。
+[66] 由式 1 $ \left\lVert f \right\rVert \left\lVert x \right\rVert \geq \left\lvert f(x) \right\rvert ,x\neq0$。
+[67] 因此，零邻域的定义相当于说：当 $x$ 遍历单位球 $ \left\lVert x \right\rVert =1$ 时，我们把 $ \left\lvert f(x) \right\rvert <\epsilon$ 的线性泛函取为赋范空间的共轭空间的零邻域。
+[68] 取所有可能的 $\epsilon$，便得到确定零邻域系1。
+[69] 由于拓扑线性空间的拓扑由零邻域系完全确定（定理 1 ），
+[70] 所以这一确定零邻域系给出了赋范空间的共轭空间的拓扑。
+[71] 对应到一般的拓扑线性空间 $E$，单位球面自然被任意有界集 $A$ 代替，而 $E^*$ 的零邻域则定义为满足 $ \left\lvert f(x) \right\rvert <\epsilon,x\in A$ 的线性泛函的集合。
+
+[/SCOPE:s_strong_tvs]
+[SCOPE:s_def2|description|定义2 共轭空间的零邻域]
+[72] 定义 2 共轭空间的零邻域
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[73] 设 $E^*$ 是拓扑线性空间 $E$ 的共轭空间，$A\subset E$ 中的有界集，$\epsilon>0$ 是任一数，
+[74] 则称
+[75] \begin{equation}
+U_{\epsilon,A}=\{f|f\text{是 $E$ 的线性连续泛函且} \left\lvert f(x) \right\rvert <\epsilon\}~
+\end{equation}
+[/SCOPE:s_def2_let]
+[76] 类似的，采用不同的 $\epsilon,A$，变得到了共轭空间中的确定零邻域系，它们可以确定共轭空间的拓扑，这一拓扑称为共轭空间的强拓扑。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|定义3 强拓扑]
+[77] 定义 3 强拓扑
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[78] 设 $E^*$ 是拓扑线性空间 $E$ 的共轭空间，$A\subset E$ 中的有界集。
+[79] 则称
+[/SCOPE:s_def3_let]
+[80] \begin{equation}
+\{U_{\epsilon,A}|A\text{有界},\epsilon>0\}~
+\end{equation}
+
+[/SCOPE:s_def3]
+[SCOPE:s_thm3|description|定理3]
+[81] 定理 3 强拓扑满足第一分离公理与局部凸
+[82] $E^*$ 的强拓扑必定满足第一分离公理 $T_1$ 和局部凸性。
+
+跨文章引用:
+  [L1] 范数 → norm
+[/SCOPE:s_thm3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的证明引用定义1的范数"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2的证明引用定理1的柯西序列收敛性"
+  },
+  {
+    "source_scope": "s_strong_tvs",
+    "target_scope": "s_strong_norm",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "从赋范空间推广到一般拓扑线性空间"
+  },
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_strong_tvs",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义2是定义3的基础"
+  },
+  {
+    "source_scope": "s_def3",
+    "target_scope": "s_def2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定义3由定义2的零邻域系定义"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3是关于定义3的强拓扑的性质"
+  }
+]

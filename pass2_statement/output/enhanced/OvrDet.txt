@@ -1,0 +1,21 @@
+[SCOPE:root|description|超定线性方程组的最小二乘法解]
+文章名: OvrDet
+标题: 超定线性方程组的最小二乘法解
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+
+[SCOPE:s_theorem1|description|定理 1]
+[SCOPE:s_theorem1_let|let_bind|定理 1 的变量]
+[0] 定理 1
+[1] 当 $ \boldsymbol{\mathbf{A}} $ 的各列线性无关时，式 4 必有唯一解。
+[2] 证明：对 $ \boldsymbol{\mathbf{A}} $ 做列变换不会改变行列式 $ \left\lvert \boldsymbol{\mathbf{A}} ^\dagger \boldsymbol{\mathbf{A}} \right\rvert $ 的值（对 $ \boldsymbol{\mathbf{A}} $ 做行变换或对 $ \boldsymbol{\mathbf{B}} $ 做列变换分别相当于对 $ \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{B}} $ 做相同的行变换或列变换）。
+[/SCOPE:s_theorem1_let]
+[3] 所以可以通过列变换使 $ \boldsymbol{\mathbf{A}} $ 的各列正交且非零，
+[4] 于是 $ \boldsymbol{\mathbf{A}} ^\dagger \boldsymbol{\mathbf{A}} $ 变为对角矩阵，且对角元都大于零，
+[5] 所以行列式也大于零。
+[6] 证毕。
+[7] 对比式 1 可以发现式 4 只是在左右两侧同时乘以 $ \boldsymbol{\mathbf{A}} $ 的厄米共轭。
+[8] 所以任何能满足式 1 的解也可以通过式 4 解得。
+[/SCOPE:s_theorem1]
+[/SCOPE:root]

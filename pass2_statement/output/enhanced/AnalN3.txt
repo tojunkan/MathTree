@@ -1,0 +1,517 @@
+[SCOPE:root|description|Rudin 数学分析笔记 3]
+文章名: AnalN3
+标题: Rudin 数学分析笔记 3
+
+[0] 本文参考 Rudin [1]。
+
+[SCOPE:s_chap9|description|Chap 9. 多元函数]
+[SCOPE:s_9_1|description|9.1 向量空间等]
+[1a] (a) 向量空间
+[1b] (b) 线性组合；
+[2a] 若 $S \subset R^n$，$E$ 是 $S$ 内元素的所有线性组合的集
+[2b] 则说 $S$ 生成 $E$。
+[3a] (c) 线性无关
+[3b] (d) 维度
+[3c] (e) 基；
+[4] 坐标
+[/SCOPE:s_9_1]
+[5] 9.3 基底和线性无关向量的一些定理
+[SCOPE:s_9_4|description|9.4 线性变换]
+[6] 9.4 线性变换（线性算子）
+[7] 9.5 线性算子是 1-1 的当且仅当值域是定义域
+[/SCOPE:s_9_4]
+[SCOPE:s_9_6|description|9.6 L(X,Y) 等]
+[8] 9.6 (a) $L(X,Y)$ 代表所有 $X$ 到 $Y$ 的线性变换构成的集。
+[9] $L(X,X)$ 写成 $L(X)$。
+[10] 线性变换的线性组合。
+[11] (b) 线性变换的乘积。
+[12] (c) 范数 $ \left\lVert A \right\rVert $ 为所有数 $ \left\lvert A \boldsymbol{\mathbf{x}} \right\rvert $ 的最小上界，其中 $x$ 取遍 $R^n$ 中所有 $ \left\lvert \boldsymbol{\mathbf{x}} \right\rvert \leqslant 1$ 的向量。
+[13] 对 $x\in R^n$ 有不等式 $ \left\lvert A \boldsymbol{\mathbf{x}} \right\rvert \leqslant \left\lVert A \right\rVert \left\lvert \boldsymbol{\mathbf{x}} \right\rvert $
+[/SCOPE:s_9_6]
+[SCOPE:s_9_7|description|9.7 范数性质]
+[14] 9.7 (a) $A\in L(R^n,R^m)$，
+[15] 则 $ \left\lVert A \right\rVert <\infty$ 且 $A$ 是一致连续映射。
+[16] (b) $ \left\lVert A+B \right\rVert \leqslant \left\lVert A \right\rVert + \left\lVert B \right\rVert $，$ \left\lVert cA \right\rVert = \left\lvert c \right\rvert \left\lVert A \right\rVert $。
+[17] 以 $ \left\lVert A-B \right\rVert $ 作为距离，
+[18] 那么 $L(R^n,R^m)$ 就是一个度量空间。
+[19] (c) $ \left\lVert BA \right\rVert \leqslant \left\lVert B \right\rVert \left\lVert A \right\rVert $
+[/SCOPE:s_9_7]
+[SCOPE:s_9_8|description|9.8 可逆线性算子]
+[20] 9.8 设 $\Omega$ 为 $R^n$ 上所有可逆线性算子的集合。
+[21] (a) 若 $A\in\Omega$，$B\in L(R^n)$，而且 $ \left\lVert B-A \right\rVert \cdot \left\lVert A^{-1} \right\rVert <1$，
+[22] 则 $B\in \Omega$。
+[23] (b) $\Omega$ 是 $L(R^n)$ 的开子集，映射 $A\to A^{-1}$ 在 $\Omega$ 上是连续的。
+[/SCOPE:s_9_8]
+[SCOPE:s_9_9|description|9.9 矩阵]
+[24] 9.9 矩阵：$A \boldsymbol{\mathbf{x}} _j = \sum_{i=1}^m a_{ij} \boldsymbol{\mathbf{y}} _i$（$1\leqslant j\leqslant n$）；
+[25] $ \left\lVert A \right\rVert \leqslant \left\{\sum_{i,j}a_{ij}^2 \right\} ^{1/2}$
+[/SCOPE:s_9_9]
+[SCOPE:s_9_11|description|9.11 可微定义]
+[SCOPE:s_9_11_let|let_bind|9.11 变量]
+[26] 9.11 设 $E$ 是 $R^n$ 中的开集，$ \boldsymbol{\mathbf{f}} : E\to R^m$，$x\in E$。
+[27a] 如果存在把 $R^n$ 映入 $R^m$ 的线性变换 $A$，使得 $\lim_{ \boldsymbol{\mathbf{h}} \to 0} \left\lvert \boldsymbol{\mathbf{f}} ( \boldsymbol{\mathbf{x}} + \boldsymbol{\mathbf{h}} ) - \boldsymbol{\mathbf{f}} ( \boldsymbol{\mathbf{x}} ) - A \boldsymbol{\mathbf{h}} \right\rvert /{ \left\lvert \boldsymbol{\mathbf{h}} \right\rvert } = 0$
+[27b] 则说 $ \boldsymbol{\mathbf{f}} $ 在 $ \boldsymbol{\mathbf{x}} $ 处可微，并写成1 $ \boldsymbol{\mathbf{f}} '( \boldsymbol{\mathbf{x}} ) = A$。
+[/SCOPE:s_9_11_let]
+[28] （注：$A_{ij} = \partial f_i/\partial x_j $）
+[29] 一元函数的可导和可微等价。
+[/SCOPE:s_9_11]
+[SCOPE:s_9_13|description|9.13 余项]
+[30] 9.13 上面的极限能被写成 $ \boldsymbol{\mathbf{f}} ( \boldsymbol{\mathbf{x}} + \boldsymbol{\mathbf{h}} ) - \boldsymbol{\mathbf{f}} ( \boldsymbol{\mathbf{x}} ) = \boldsymbol{\mathbf{f}} '( \boldsymbol{\mathbf{x}} ) \boldsymbol{\mathbf{h}} + \boldsymbol{\mathbf{…[truncated]…{\mathbf{h}} )$，其中余项 $ \boldsymbol{\mathbf{r}} ( \boldsymbol{\mathbf{h}} )$ 满足 $\lim_{ \boldsymbol{\mathbf{h}} \to0} \left\lvert \boldsymbol{\mathbf{r}} ( \boldsymbol{\mathbf{h}} ) \right\rvert / \left\lvert \boldsymbol{\mathbf{h}} \right\rvert = 0$。
+[/SCOPE:s_9_13]
+[SCOPE:s_9_16|description|9.16 偏导数]
+[31] 9.16 偏导数
+[/SCOPE:s_9_16]
+[SCOPE:s_9_17|description|9.17 可微与偏导]
+[32] 9.17 若 $ \boldsymbol{\mathbf{f}} $ 在点 $x\in E$ 可微，
+[33] 那么偏导数 $D_jf_i(x)$ 存在，且 $ \boldsymbol{\mathbf{f}} '( \boldsymbol{\mathbf{x}} ) \boldsymbol{\mathbf{e}} _j = \sum_{i=1}^m (D_jf_i)( \boldsymbol{\mathbf{x}} ) \boldsymbol{\mathbf{u}} _i$（$1\leqslant j\leqslant n$）
+[/SCOPE:s_9_17]
+[SCOPE:s_9_18|description|9.18 例：链式法则]
+[SCOPE:s_9_18_let|let_bind|9.18 变量]
+[34] 9.18 例：设 $\gamma$ 是把开区间 $(a,b)\subset R^1$ 映入开集 $E\subset R^n$ 内的可微映射，
+[35] 即 $\gamma$ 是 $E$ 内的可微曲线。
+[36] 令 $f$ 为域 $E$ 上的实值可微函数。
+[37] 于是 $f$ 是从 $E$ 到 $R^1$ 内的可微映射。
+[38a] (t) = f(\gamma
+[38b] (t))$（$a< t< b$）。
+[/SCOPE:s_9_18_let]
+[39a] (t) = \boldsymbol{\mathbf{f}} '(\gamma
+[39b] (t))\gamma'
+[39c] (t)$（$a< t< b$）。
+[40] 梯度 $( \boldsymbol\nabla f)( \boldsymbol{\mathbf{x}} ) = \sum_{i=1}^n (D_i f)( \boldsymbol{\mathbf{x}} ) \boldsymbol{\mathbf{e}} _i$
+[/SCOPE:s_9_18]
+[SCOPE:s_9_20|description|9.20 连续可微]
+[41] 9.20 设 $ \boldsymbol{\mathbf{f}} $ 是开集 $E\subset R^n$ 到 $R^m$ 内的可微映射。
+[42a] 如果 $ \boldsymbol{\mathbf{f}} '$ 是把 $E$ 映入 $L(R^n,R^m)$ 的连续映射
+[42b] 则说 $ \boldsymbol{\mathbf{f}} $ 是在 $E$ 内连续可微的。
+[43] 更明确地，它要求对每个 $x\in E$ 以及 $\epsilon > 0$，存在 $\delta >0$，使当 $y\in E$ 以及 $ \left\lvert \boldsymbol{\mathbf{x}} - \boldsymbol{\mathbf{y}} \right\rvert <\delta$ 时，$ \left\lVert \boldsymbol{\mathbf{f}} '( \boldsymbol{\mathbf{y}} )- \boldsymbol{\mathbf{f}} '( \boldsymbol{\mathbf{x}} ) \right\rVert < \epsilon$。
+[44] 我们也说 $ \boldsymbol{\mathbf{f}} $ 是 $\mathscr C'$ 映射，或者 $ \boldsymbol{\mathbf{f}} \in \mathscr'(E)$。
+[/SCOPE:s_9_20]
+[SCOPE:s_9_21|description|9.21 偏导连续等价]
+[45] 9.21 设 $ \boldsymbol{\mathbf{f}} $ 把开集 $E\subset R^n$ 映入 $R^m$ 内。
+[46] 那么当且仅当 $ \boldsymbol{\mathbf{f}} $ 的所有偏导数 $D_jf_i$（$i\leqslant i\leqslant m, 1\leqslant j\leqslant n$）在 $E$ 上都存在并且连续时，$ \boldsymbol{\mathbf{f}} \in \mathscr C'(E)$。
+[/SCOPE:s_9_21]
+[SCOPE:s_9_22|description|9.22 凝缩函数]
+[SCOPE:s_9_22_let|let_bind|9.22 变量]
+[47] 9.22 设 $X$ 是度量为 $d$ 的度量空间。
+[48a] (x),\varphi
+[48b] (y))\leqslant cd(x,y)$，
+[/SCOPE:s_9_22_let]
+[49] 那么，就说 $\varphi$ 是 $X$ 到 $X$ 内的一个凝缩函数。
+[/SCOPE:s_9_22]
+[SCOPE:s_9_23|description|9.23 不动点定理]
+[50] 9.23 如果 $X$ 是完备度量空间，$\varphi$ 是 $X$ 到 $X$ 内的凝缩函数，
+[51] 那么存在唯一满足 $\varphi(x)=x$ 的 $x\in X$。
+[52] 也就是说 $\varphi$ 有唯一的不动点。
+[/SCOPE:s_9_23]
+[SCOPE:s_9_24|description|9.24 反函数定理]
+[53] 粗略地说，反函数定理说的是，一个连续可微映射 $ \boldsymbol{\mathbf{f}} $，在使线性变换 $ \boldsymbol{\mathbf{f}} '( \boldsymbol{\mathbf{x}} )$ 可逆的点 $ \boldsymbol{\mathbf{x}} $ 的邻域内是可逆的。
+[54] （且反函数也是连续可微的）
+[SCOPE:s_9_24_let|let_bind|9.24 变量]
+[55] 9.24 设 $ \boldsymbol{\mathbf{f}} $ 把开集 $E\subset R^n$ 映入 $R^m$ 内的 $\mathscr C'$ 映射，对某个 $a\in E$，$ \boldsymbol{\mathbf{f}} '( \boldsymbol{\mathbf{a}} )$ 可逆，且 $ \boldsymbol{\mathbf{b}} = \boldsymbol{\mathbf{f}} ( \boldsymbol{\mathbf{a}} )$。
+[/SCOPE:s_9_24_let]
+[56] 那么 (a) 在 $R^n$ 内存在开集 $U$ 和 $V$，使得 $a\in U, b\in V$，$ \boldsymbol{\mathbf{f}} $ 在 $U$ 上是 1-1 的，并且 $f(U) = V$；
+[57] (b) 若 $ \boldsymbol{\mathbf{g}} $ 是 $ \boldsymbol{\mathbf{f}} $ 的逆，他在 $V$ 内由 $ \boldsymbol{\mathbf{g}} (f( \boldsymbol{\mathbf{x}} )) = x$（$ \boldsymbol{\mathbf{x}} \in U$）确定，
+[58] 那么 $ \boldsymbol{\mathbf{g}} \in \mathscr C'(V)$。
+[/SCOPE:s_9_24]
+[SCOPE:s_9_28|description|9.28 隐函数定理]
+[SCOPE:s_9_28_let|let_bind|9.28 变量]
+[59] 9.28 隐函数定理：设 $\mathbf{f}$ 是开集 $E \subset R^{n+m}$ 到 $R^{n}$ 内的 $\mathscr{C}^{\prime}$ 映射，且在某点 $(\boldsymbol a, \boldsymbol b) \in$ $E$ 使 $\mathbf{f}(\boldsymbol{a}, \boldsymbol{b})=\mathbf{0}$。
+[60] 令 $A=\mathbf{f}^{\prime}(\boldsymbol{a}, \boldsymbol{b})$, 并假定 $A_{x}$ 可逆。
+[/SCOPE:s_9_28_let]
+[61] 那么，存在着开集 $U \subset R^{n+m}$ 及 $W \subset R^{m},(\boldsymbol{a}, \boldsymbol{b}) \in U$ 而 $\boldsymbol{b} \in W$, 它们有以下的性质：对应于每个 $y \in W$, 有惟一的 $x$, 它合于 $(x, y) \in U \quad$ 且 $\mathbf{f}(x, y)=0$. 如果把这 $x$ 定义成 $\mathbf{g}(y)$, 那么 $\mathbf{g}$ 是 $W$…[truncated]… $R^{n}$ 内的 $\mathscr{C}^{\prime}$ 映射，$\mathbf{g}(\boldsymbol{b})=\boldsymbol{a}$, $\mathbf{f}(\mathbf{g}(\boldsymbol{y}), \boldsymbol{y})=\mathbf{0} \quad(\boldsymbol{y} \in W)$ 并且 $\mathbf{g}^{\prime}(\boldsymbol{b})=-\left(A_{x}\right)^{-1} A_{y}$
+[/SCOPE:s_9_28]
+[SCOPE:s_9_38|description|9.38 雅可比行列式]
+[62] 9.38 如果 $ \boldsymbol{\mathbf{f}} $ 把开集 $E\subset R^n$ 映入 $R^n$ 内，且 $ \boldsymbol{\mathbf{f}} $ 在点 $ \boldsymbol{\mathbf{x}} \in E$ 可微，$ \boldsymbol{\mathbf{f}} '( \boldsymbol{\mathbf{x}} )$ 的行列式就叫做 $ \boldsymbol{\mathbf{f}} $ 在 $ \boldsymbol{\mathbf{x}} $ 的雅可比行列式（Jacobian）。
+[63] 记为 $J_f( \boldsymbol{\mathbf{x}} ) = \det f'( \boldsymbol{\mathbf{x}} )$。
+[64] 如果 $(y_1,\dots,y_n)= \boldsymbol{\mathbf{f}} (x_1,\dots, x_n)$，我们又把 $J_f( \boldsymbol{\mathbf{x}} )$ 记为 $ \partial (y_1,\dots,y_n)/\partial (x_1,\dots, x_n) $。
+
+[/SCOPE:s_chap9]
+[/SCOPE:s_9_38]
+[SCOPE:s_chap10|description|Chap 10. 微分形式的积分]
+[SCOPE:s_10_1|description|10.1 k-方格积分]
+[SCOPE:s_10_1_let|let_bind|10.1 变量]
+[65] 10.1 设 $I^k$ 是 $R^k$ 中的 $k$-方格，它由满足 $a_i\leqslant x_i \leqslant b_i$（$i=1,\dots,k$）的一切 $ \boldsymbol{\mathbf{x}} =(x_1,\dots,x_k)$ 组成，$I^j$ 是 $R^j$ 中的 $j$-方格，它由前 $j$ 个不等式来确定，$f$ 是 $I^k$ 上的连续函数。
+[66] 令 $f = f_k$，而用下式定义 $I^{k-1}$ 上的函数 $f_{k-1}$：$f_{k-1}(x_1,\dots,x_{k-1}) = \int_{a_k}^{b_k} f_k(x_1,\dots,x_{k-1},x_k) \,\mathrm{d}{x_k} $。
+[/SCOPE:s_10_1_let]
+[67] $f_k$ 在 $I^k$ 上的一致连续性表明 $f_{k-1}$ 在 $I^{k-1}$ 上连续。
+[68] 因此，我们能够重复应用这种手续，得到 $I^j$ 上的连续函数 $f_j$，……$k$ 步以后，就能得到一个数 $f_0$，我们就把这个数叫做 $f$ 在 $I^k$ 上的积分，并写成 $\int_{I^k} f( \boldsymbol{\mathbf{x}} ) \,\mathrm{d}{ \boldsymbol{\mathbf{x}} } $ 或者 $\int_{I^k} f$。
+[/SCOPE:s_10_1]
+[SCOPE:s_10_2|description|10.2 积分与顺序无关]
+[69] 10.2 对每个 $f\in \mathscr C(I^k)$（连续有界复函数），积分结果与顺序无关。
+[/SCOPE:s_10_2]
+[SCOPE:s_10_3|description|10.3 支集]
+[70] 10.3 $R^k$ 上一个（实或复）函数 $f$ 的支集（support），是使 $f(x)\ne 0$ 的一切点集的闭包。
+[71] 如果 $f$ 是带有紧支集的连续函数，令 $I^k$ 是含有 $f$ 的支集的任意 $k$-方格，并定义 $\int_{R^k}f = \int_{I^k}f$。
+[72] 这样定义的积分显然与 $I^k$ 的选择无关。
+[/SCOPE:s_10_3]
+[SCOPE:s_10_4|description|10.4 k-单形]
+[73] 10.4 令 $Q^k$ 是由 $R^k$ 中符合 $x_1+\dots+x_k\leqslant 1$ 且 $x_i >0$（$i=1,\dots,k$）的一切点 $ \boldsymbol{\mathbf{x}} =(x_1,\dots,x_k)$ 组成的 $k$-单形。
+[/SCOPE:s_10_4]
+[SCOPE:s_10_5|description|10.5 本源映射]
+[74] 10.5 本源映射：$ \boldsymbol{\mathbf{G}} ( \boldsymbol{\mathbf{x}} ) = \boldsymbol{\mathbf{x}} + [g( \boldsymbol{\mathbf{x}} )-x_m] \boldsymbol{\mathbf{e}} _m$。
+[/SCOPE:s_10_5]
+[SCOPE:s_10_6|description|10.6 对换]
+[75] 10.6 在 $R^n$ 上，只把标准基的某一对成员交换，而其他成员不变的线性算子 $B$ 叫做对换。
+[76] $B$ 也可以看成是交换两个坐标，而基不变。
+[/SCOPE:s_10_6]
+[SCOPE:s_10_10_let|let_bind|10.10 变量]
+[SCOPE:s_10_10|description|10.10 k-曲面]
+[77] 10.10 设 $E$ 是 $R^n$ 中的开集。
+[78] $E$ 中的 $k$-曲面（$k$-surface）是从紧集 $D\subset R^k$ 到 $E$ 内的 $\mathscr C'$ 映射 $\Phi$。
+[79] $D$ 叫做 $\Phi$ 的参数域（parameter domain）。
+[80] $D$ 中的点记为 $ \boldsymbol{\mathbf{u}} = (u_1,\dots, u_k)$。
+[/SCOPE:s_10_10_let]
+[/SCOPE:s_10_10]
+[SCOPE:s_10_11|description|10.11 微分形式]
+[SCOPE:s_10_11_let|let_bind|10.11 变量]
+[81] 10.11 设 $E$ 是 $R^n$ 中的开集。
+[82] $E$ 中的 $k\geqslant 1$ 次微分形式（differential form）（简称为 $E$ 中的 $k$-形式）是一个函数，用符号表示为 $\omega = \sum a_{i_1\dots i_k}( \boldsymbol{\mathbf{x}} ) \,\mathrm{d}{x_{i_1}} \wedge \dots \wedge \,\mathrm{d}{x_{i_k}} $（指标 $i_1,\dots,i_k$ 各自从 $1$ 到 $n$ 独立变化）的，它给 $E$ 中的每个 $k$-曲面 $\Phi$ 规定一个数 $\int_\Phi \omega = \int_D \sum a_{i_1,\dots,i_k}(\Phi( \boldsymbol{\mathbf{u}} )) \partial (x_{i_1},\dots,x_{i_k})/\partial (u_1,\dots,u_k) \,\mathrm{d}{ \boldsymbol{\mathbf{u}} } $，其中 $D$ 是 $\Phi$ 的参数域。
+[/SCOPE:s_10_11_let]
+[83] 假设 $a_{i_1,\dots,i_k}$ 为 $E$ 上的连续实函数。
+[84] 如果 $\Phi$ 的分量为 $\phi_1, \dots, \phi_n$，
+[85] 那么上面的雅可比行列式就由 $(u_1,\dots,u_k)\to (\phi_{i_1}( \boldsymbol{\mathbf{u}} ),\dots,\phi_{i_k}( \boldsymbol{\mathbf{u}} ))$。
+[86] 如果函数 $a_{i_1}\dots a_{i_k}$ 都属于 $\mathscr C'$ 或者 $\mathscr C''$，
+[87] 那么就说 $k$-形式 $\omega$ 属于 $\mathscr C'$ 类 或者 $\mathscr C''$ 类。
+[/SCOPE:s_10_11]
+[SCOPE:s_10_12|description|10.12 例子]
+[88a] (a) $\omega=y \,\mathrm{d}{x} +x \,\mathrm{d}{y} $ 那么 $\int_\gamma \omega = \int_0^1 [\gamma_1
+[88b] (t)\gamma'_2
+[88c] (t)+\gamma_2
+[88d] (t)\gamma'_1
+[88e] (t)] \,\mathrm{d}{t} = \gamma_1(1)\gamma_2(1)-\gamma_1(0)\gamma_2(0)$ 对闭合曲线为零。
+[89] $1$-形式的积分时常叫做线积分。
+[90] (b) $\int_\gamma x \,\mathrm{d}{y} $ 是逆时针曲线所围面积，$\int_\gamma y \,\mathrm{d}{x} $ 是顺时针曲线所围面积。
+[91] (c) $R^3$ 上的 $3$-曲面 $\Phi(r,\theta,\varphi)=(r\sin\theta\cos\varphi,r\sin\theta\sin\varphi, r\cos\theta)$。
+[92] $J_\Phi(r,\theta,\varphi) = r^2\sin\theta$ 因此 $\int_\Phi \,\mathrm{d}{x} \wedge \,\mathrm{d}{y} \wedge \,\mathrm{d}{z} = \int_D J_\Phi = 4\pi/3$。
+[/SCOPE:s_10_12]
+[SCOPE:s_10_13|description|10.13 形式相等]
+[93] 10.13 $w,w_1,w_2$ 是 $E$ 中的 $k$-形式。
+[94a] 当且仅当对于 $E$ 中的每个 $k$-曲面 $\Phi$，$\omega_1(\Phi)=\omega_2(\Phi)$ 时
+[94b] 则写成 $\omega_1 =\omega_2$。
+[95] 特别低，$\omega=0$ 表示对 $E$ 中每个 $k$-曲面 $\Phi$，$\omega(\Phi)=0$。
+[96] 令 $c\in R$，
+[97] 那么 $c\omega$ 由 $\int_\Phi c\omega=c\int_\Phi \omega$ 确定，而 $\omega = \omega_1+\omega_2$ 表示……$-\omega$ 表示。
+[98] 考虑 $\omega=a(x) \,\mathrm{d}{x_{i_1}} \wedge\dots\wedge \,\mathrm{d}{x_{i_k}} $，令 $\bar\omega$ 是对调两个脚标所得的 $k$-形式。
+[99] 由（雅可比）行列式的性质，$\bar\omega=-\omega$。
+[100a] 特别地
+[100b] 如果微分形式的某一项出现了两个相同的下表，则有 $\omega=0$。
+[/SCOPE:s_10_13]
+[SCOPE:s_10_14|description|10.14 递增k-指标]
+[101] 10.14 设 $i_1,\dots,i_k$ 为正整数，$1\leqslant i_1< i_2<\dots< i_k\leqslant n$，又设 $I$ 是 $k$ 元有序组（$k$-序组）$\{i_1,\dots,i_k\}$，
+[102] 那么我们称 $I$ 为递增 $k$-指标，采用简短的记法 $ \,\mathrm{d}{x_I} = \,\mathrm{d}{x_{i_1}} \wedge\dots\wedge \,\mathrm{d}{x_{i_k}} $。
+[103] 这些形式的 $ \,\mathrm{d}{x_I} $ 叫做 $R^n$ 中的基本 $k$-形式。
+[104] 恰好存在 $n!/k!(n-k)!$ 个。
+[105] 如果微分形式中每个 $k$-元组变为递增 $k$-指标，
+[106] 那么就得到 $\omega$ 的标准表示 $\omega=\sum_I b_I( \boldsymbol{\mathbf{x}} ) \,\mathrm{d}{x_I} $，其中求和遍历一切递增 $k$-指标 $I$。
+[/SCOPE:s_10_14]
+[SCOPE:s_10_15|description|10.15 唯一性定理]
+[107] 10.15 唯一性定理
+[/SCOPE:s_10_15]
+[SCOPE:s_10_16|description|10.16 基本k-形式乘积]
+[108] 10.16 基本 $k$-形式的乘积：设 $I=\{i_1,\dots,i_p\}$，$J=\{j_1,\dots,j_q\}$。
+[109] ……积是 $R^n$ 中的 $(p+q)$-形式，$ \,\mathrm{d}{x_I} \wedge \,\mathrm{d}{x_J} = \,\mathrm{d}{x_{i_1}} \wedge \dots \wedge \,\mathrm{d}{x_{i_p}} \wedge \,\mathrm{d}{x_{j_1}} \wedge \dots \wedge \,\mathrm{d}{x_{j_q}} $。
+[110] 如果 $I,J$ 有公共元素，
+[111] 那么结果为零。
+[112] 如果没有公共元素，把元素递增排列，得到的 $(p+q)$-指标写作 $[I,J]$。
+[113] 那么 $ \,\mathrm{d}{x_{[I,J]}} $ 是基本 $(p+q)$-形式。
+[114] ……
+[/SCOPE:s_10_16]
+[SCOPE:s_10_17|description|10.17 乘法]
+[115] 10.17 乘法：$\omega,\lambda$ 分别是……$p$-形式和 $q$-形式，标准表示为 $\omega=\sum_I b_I( \boldsymbol{\mathbf{x}} ) \,\mathrm{d}{x_I} $，$\lambda=\sum_J c_J( \boldsymbol{\mathbf{x}} ) \,\mathrm{d}{x_J} $。
+[116] 其中……。
+[117] 他们的乘积定义为 $\omega\wedge\lambda = \sum_{I,J}b_I( \boldsymbol{\mathbf{x}} )c_J( \boldsymbol{\mathbf{x}} ) \,\mathrm{d}{x_I} \,\mathrm{d}{x_J} $。
+[/SCOPE:s_10_17]
+[SCOPE:s_10_18|description|10.18 微分算子d]
+[118] 10.18 $\omega$ 是……$k$-形式。
+[119] 定义微分算子 $d$，它给每个 $\omega$ 联系上一个 $(k+1)$-形式。
+[120] $E$ 中的 $\mathscr C'$ 类的 $0$-形式，恰好是实函数 $f\in \mathscr C'(E)$，定义 $ \,\mathrm{d}{f} =\sum_{i=1}^n (D_i f)( \boldsymbol{\mathbf{x}} ) \,\mathrm{d}{x_i} $。
+[121a] 如果 $\omega=\sum b_I( \boldsymbol{\mathbf{x}} ) \,\mathrm{d}{x_I} $ 是 $k$-形式 $\omega$ 的标准表示，而对每个递增 $k$-指标 $I$ 来说 $b_I\in \mathscr C'(E)$
+[121b] 则定义 $ \,\mathrm{d}{\omega} = \sum_I (db_I)\wedge \,\mathrm{d}{x_I} $。
+[/SCOPE:s_10_18]
+[SCOPE:s_10_26|description|10.26 仿射映射与标准单形]
+[SCOPE:s_10_26_let|let_bind|10.26 变量]
+[122] 10.26 对向量空间 $X,Y$，令 $f:X\to Y$。
+[123a] 如果 $ \boldsymbol{\mathbf{f}} - \boldsymbol{\mathbf{f}} ( \boldsymbol{\mathbf{0}} )$ 是线性的
+[123b] 则称 $ \boldsymbol{\mathbf{f}} $ 为仿射的（affine）。
+[124] 也就是说要求存在某个 $A\in L(X,Y)$ 使得 $ \boldsymbol{\mathbf{f}} ( \boldsymbol{\mathbf{x}} ) = \boldsymbol{\mathbf{f}} (0)+A \boldsymbol{\mathbf{x}} $。
+[125] 定义标准单形（standard simplex） $Q^k$ 为由形如 $ \boldsymbol{\mathbf{u}} = \sum_{i=1}^k \alpha_k \boldsymbol{\mathbf{e}} _i$ 使 $\alpha_i\geqslant 0$（$i=1,\dots,k$）并且 $\sum \alpha_i\leqslant 1$ 的一切 $ \boldsymbol{\mathbf{u}} \in R^k$ 组成的集。
+[126] 有向仿射 $k$-单形（oriented affine $k$-simplex） $\sigma = [ \boldsymbol{\mathbf{p}} _0, \boldsymbol{\mathbf{p}} _1,\dots, \boldsymbol{\mathbf{p}} _k]$ 是用 $Q^k$ 作参数域，由仿射映射 $\sigma(\alpha_1 \boldsymbol{\mathbf{e}} _1+\dots+\alpha_k \boldsymbol{\mathbf{e}} _k) = \boldsymbol{\mathbf{p}} _0 + \sum_{i=1}^k \alpha_i( \boldsymbol{\mathbf{p}} _i- \boldsymbol{\mathbf{p}} _0)$。
+[/SCOPE:s_10_26_let]
+[127] 给出的 $R^n$ 中的 $k$-曲面。
+[128] 注意……
+[/SCOPE:s_10_26]
+[SCOPE:s_10_28|description|10.28 仿射k-链]
+[129] 10.28 开集 $E\subset R^n$ 中的仿射 $k$-链 $\Gamma$ 是 $E$ 中有限多个有向仿射 $k$-单形 $\sigma_1,\dots,\sigma_r$ 的集体。
+[130] 这些 $k$-单形不必各不相同。
+[131] 设 $\omega$ 是 $E$ 中的 $k$-形式，定义 $\int_\Gamma \omega = \sum_{i=1}^r \int_{\sigma_i}\omega$。
+[/SCOPE:s_10_28]
+[SCOPE:s_10_30|description|10.30 C''类k-链]
+[132] 10.30……复合映射 $\Phi=T\circ\sigma$ 是 $V$ 中的以 $Q^k$ 为参数域的 $k$ 曲面。
+[133] 称 $\Phi$ 为 $\mathscr C''$ 类的有向 $k$-单形。
+[134] $V$ 中 $\mathscr C''$ 类的有向 $k$-单形 $\Phi_1,\dots,\Phi_r$ 的有限集 $\Psi$ 叫做 $V$ 中的 $\mathscr C''$ 类的 $k$-链。
+[/SCOPE:s_10_30]
+[SCOPE:s_10_33|description|10.33 Stokes定理]
+[135] 10.33 Stokes 定理：设 $\Psi$ 是开集 $V\subset R^m$ 中的 $\mathscr C''$ 类 $k$-链，$\omega$ 是 $V$ 中的 $\mathscr C'$ 类 $(k-1)$-形式，
+[136] 那么 $\int_\Psi \,\mathrm{d}{\omega} =\int_{\partial \Psi}\omega$。
+
+[/SCOPE:s_chap10]
+[/SCOPE:s_10_33]
+[SCOPE:s_chap11|description|Chap 11. Lebesgue理论]
+[SCOPE:s_11_1|description|11.1 环与σ-环]
+[137] 对集合 $A, B$，定义 $A-B$ 为 $\{x|x\in A, x\notin B\}$。
+[138] 11.1 设 $\mathscr R$ 是由集构成的一个类（family of sets）2，并且由 $A\in \mathscr R$，$B\in \mathscr R$ 能推出 $A\bigcup B\in \mathscr R$，$A- B\in \mathscr R$。
+[139] 就说 $\mathscr R$ 是环（ring）。
+[140] 由于 $A\bigcap B=A-(A-B)$，必然有 $A\bigcap B\in \mathscr R$。
+[141a] 如果一旦 $A_n\in \mathscr R$，$n=1,2,3,\dots$
+[141b] 则有 $\bigcup_{n=1}^\infty A_n \in \mathscr R$，
+[142] 那么 $\mathscr R$ 就叫 $\sigma$-环。
+[/SCOPE:s_11_1]
+[SCOPE:s_11_2|description|11.2 集函数]
+[143] 11.2 如果 $\phi$ 能给每个集合 $A\in \mathscr R$ 指派广义实数系内的一个数 $\phi(A)$，就说它是定义在 $\mathscr R$ 上的集函数（set function）。
+[144] 如果能从 $A\cap B=0$ 得出 $\phi(A\bigcup B)=\phi(A)+\phi(B)$，
+[145] 那么 $\phi$ 就是可加的（additive）。
+[146a] 如果能从 $A_i\bigcap A_j = 0$（$i\ne j$) 得出 $\phi(\bigcup_{n=1}^\infty A_n) = \sum_{n=1}^\infty \phi(A_n)$，$\phi$
+[146b] 则是可数可加的（countably additive）。
+[147] 注意这与 $A_n$ 的排列次序无关，
+[148] 所以重排定理表明等式右边只要收敛就绝对收敛。
+[149a] 如果不收敛，它的部分和
+[149b] 则趋于 $\pm\infty$。
+[/SCOPE:s_11_2]
+[SCOPE:s_11_4|description|11.4 区间与初等集]
+[150] 11.4 $R^p$ 中的区间（interval）指的是满足 $a_i\leqslant x_i\leqslant b_i$（$i=1,\dots,p$）的点 $x=(x_1,\dots,x_p)$ 的集合，或者把任意或全部 $\leqslant$ 改为 $<$ 的集合。
+[151] 允许任意 $a_i=b_i$。
+[152] 规定空集属于区间。
+[153a] 若 $A$ 是有限个区间的并
+[153b] 则说 $A$ 是初等集（elementary set）。
+[154] 令 $I$ 是区间，定义 $m(I)=\Pi_{i=1}^p (b_i-a_i)$。
+[155a] 如果 $A=I_1\bigcup \dots \bigcup I_n$，并且这些区间两两不相交
+[155b] 则令 $m(A)=m(I_1)+\dots+m(I_n)$。
+[156] 用 $\mathscr E$ 表示所有初等集的类。
+[157] (12) $\mathscr E$ 是环，
+[158] 但不是 $\sigma$-环。
+[159] (13) 如果 $A\in \mathscr E$，
+[160] 那么 $A$ 必定是有限个不相交的区间的并。
+[161] (15) $m$ 在 $\mathscr E$ 上可加。
+[162] 当 $p=1,2,3$ 时，$m$ 分别是长度，面积和体积。
+[/SCOPE:s_11_4]
+[SCOPE:s_11_5|description|11.5 正规集函数]
+[163] 11.5 设 $\phi$ 是 $\mathscr E$ 上的非负可加的集函数。
+[164a] 如果对于每个 $A\in \mathscr E$ 和 $\varepsilon>0$，存在闭集 $F\in \mathscr E$ 和开集 $G\in\mathscr E$ 满足 $F\subset A\subset G$，并且 $\phi(G)-\varepsilon \leqslant \phi(A) \leqslant \phi(F) + \varepsilon$
+[164b] 则说 $\phi$ 是正规的（regular）。
+[/SCOPE:s_11_5]
+[SCOPE:s_11_6|description|11.6 m是正规的]
+[165] 11.6 集函数 $m$ 是正规的。
+[/SCOPE:s_11_6]
+[SCOPE:s_11_7|description|11.7 外测度]
+[166] ……
+[SCOPE:s_11_7_let|let_bind|11.7 变量]
+[167] 11.7 设 $\mu$ 在 $\mathscr E$ 上可加，正规，非负且有限。
+[168] $E$ 是 $R^p$ 中的任何集。
+[169] 考虑由初等开集 $A_n$ 组成的 $E$ 的覆盖 $E\subset \bigcup_{n=1}^\infty A_n$。
+[170] 定义 $\mu^*(E) = \inf \sum_{n=1}^\infty \mu(A_n)$，此处的下确界是对 $E$ 的一切初等开集组成的可数覆盖来取的。
+[/SCOPE:s_11_7_let]
+[171] $\mu^*(E)$ 叫做 $E$ 对应于 $\mu$ 的外测度（outer measure）。
+[172] “测度” 的拼音是（ce4 du4）。
+[173] 对于所有的 $E$，$\mu^*(E)\geqslant 0$，且当 $E_1\subset E_2$ 时，$\mu^*(E_1) \leqslant \mu^*(E_2)$。
+[/SCOPE:s_11_7]
+[SCOPE:s_11_8|description|11.8 外测度性质]
+[174] 11.8 (a) 对每个 $A\in \mathscr E$，$\mu^*(A)=\mu(A)$。
+[175] 这说明 $\mu^*$ 把 $\mu$ 从初等集拓展到 $R^n$ 上的一般集合 (b) 次加性（subadditivity）：如果 $E\subset R^n$，$E=\bigcup_1^\infty E_n$，
+[176] 那么 $\mu^*(E)\leqslant \sum_{n=1}^\infty \mu^*(E_n)$。
+[/SCOPE:s_11_8]
+[SCOPE:s_11_9|description|11.9 可测集定义]
+[177] 11.9 对任意 $A,B \subset R^p$，定义 $S(A,B)=(A-B)\bigcup (B-A)$，$d(A,B)=\mu^*(S(A,B))$。
+[178a] 如果 $\lim_{n\to\infty} d(A,A_n)=0$
+[178b] 则记 $A_n\to A$。
+[179a] 若有一列初等集 $\{A_n\}$ 满足 $A_n\to A$
+[179b] 则说 $A$ 是有限 $\mu$ 可测的（finitely $\mu$-measurable），记为 $A\in \mathfrak M_F(\mu)$。
+[180a] 若 $A$ 是可数多个有限 $\mu$ 可测集的并
+[180b] 则说 $A$ 是 $\mu$ 可测的（$\mu$-measurable），记为 $A\in \mathfrak M(\mu)$。
+[181] $S(A,B)$ 是所谓的 “对称差（symmetric difference）”。
+[182] $d(A,B)$ 是一个距离函数。
+[/SCOPE:s_11_9]
+[SCOPE:s_11_10|description|11.10 测度推广]
+[183] 11.10 $\mathfrak M(\mu)$ 是 $\sigma$-环，$\mu^*$ 在 $\mathfrak M(\mu)$ 上可数可加。
+[184] ……就把原来定义在 $\mathscr E$ 上的 $\mu$ 推广成 $\sigma$-环 $\mathfrak M(\mu)$ 上的可数可加集函数了。
+[185] 这个推广了的集函数叫做一个测度（measure）。
+[186] $\mu=m$ 的特殊情形叫做 $R^p$ 上的 Lebesgue 测度。
+[/SCOPE:s_11_10]
+[SCOPE:s_11_12|description|11.12 测度空间]
+[187] 11.12 如果集合 $X$ 存在子集（称为可测集）组成的 $\sigma$-环 $\mathfrak M$，以及其上的一个非负可数可加集函数 $\mu$（称为测度），就说 $X$ 是测度空间（measure space）。
+[188] 如果还有 $X\in \mathfrak M$，
+[189] 那么 $X$ 称为可测空间（measurable space）。
+[190] （私货）可测空间的 $\sigma$-环就是 $\sigma$-代数。
+[191] 概率论中，事件可以看作是集合，而事件发生的概率是可加（或可数可加）集函数。
+[/SCOPE:s_11_12]
+[SCOPE:s_11_13|description|11.13 可测函数]
+[192] 11.13 设 $f$ 是可测空间 $X$ 上的函数，在广义实数系内取值。
+[193a] 如果 $\{x|f(x)>a\}$ 对于每个实数 $a$ 可测
+[193b] 则说函数 $f$ 是可测的（measurable）。
+[/SCOPE:s_11_13]
+[SCOPE:s_11_17|description|11.17 可测函数序列]
+[194] 11.17 设 $\{f_n\}$ 是一列可测函数。
+[195a] (x)=\sup f_n
+[195b] (x)$（$n=1,2,3,\dots$），$h
+[195c] (x)=\limsup_{n\to\infty} f_n
+[195d] (x)$。
+[196] 那么 $g,h$ 可测。
+[197] 推论 (a) 假若 $f,g$ 可测，
+[198] 那么 $\max(f,g)$ 和 $\min(f,g)$ 可测。
+[199] 如果 $f^+=\max(f,0)$，$f^-=-\min(f,0)$，
+[200] 那么 $f^+,f^-$ 都可测。
+[201] ……(b) 可测函数序列的极限函数是可测函数。
+[/SCOPE:s_11_17]
+[SCOPE:s_11_18|description|11.18 复合可测]
+[202a] (x)=F(f
+[202b] (x),g
+[202c] (x))$（$x\in X$），
+[203] 那么 $h$ 可测。
+[204] 特别地，$f+g$ 和 $fg$ 可测。
+[/SCOPE:s_11_18]
+[SCOPE:s_11_19|description|11.19 简单函数]
+[205] 11.19 设 $s$ 是 $X$ 上的实值函数。
+[206a] 如果 $s$ 的值域是有限集
+[206b] 则说 $s$ 为简单函数（simple function）。
+[207] 设 $E\subset X$，令 $K_E(x)= \left\{ \begin{aligned} &1 \quad (x\in E)\\ & 0 \quad (x\notin E) \end{aligned} \right. $。
+[208] $K_E$ 称为 $E$ 的特征函数（characteristic function）。
+[/SCOPE:s_11_19]
+[SCOPE:s_11_20|description|11.20 简单函数逼近]
+[209] 11.20 设 $f$ 为 $X$ 上的实函数。
+[210a] (x)\to f
+[210b] (x)$。
+[211] 若 $f$ 可测，可选 $\{s_n\}$ 为可测函数序列。
+[212] 若 $f\geqslant 0$，可以选 $\{s_n\}$ 为单调增序列
+[/SCOPE:s_11_20]
+[SCOPE:s_11_21|description|11.21 Lebesgue积分定义]
+[213a] (x) = \sum_{i=1}^n c_i K_{E_i}
+[213b] (x)$（$x\in X, c_i>0$）可测，而且 $E\in \mathfrak M$。
+[214] 我们定义 $I_E(s) = \sum_{i=1}^n c_i \mu(E\bigcap E_i)$。
+[215] 如果 $f$ 可测且为非负的，我们定义 $\int_E f \,\mathrm{d}{\mu} = \sup I_E(s)$。
+[216] 这里 $\sup$ 是对所有满足 $0\leqslant s\leqslant f$ 的简单函数 $s$ 而取的。
+[217] 这就是 $f$ 关于测度 $\mu$ 在集 $E$ 上的 Lebesgue 积分，积分可以取 $+\infty$。
+[/SCOPE:s_11_21]
+[SCOPE:s_11_22|description|11.22 一般可测函数积分]
+[218] 11.22 设 $f$ 为可测函数，考虑两积分 $\int_E f^\pm \,\mathrm{d}{\mu} $。
+[219] 如果其中至少有一个有限，我们定义 $\int_E f \,\mathrm{d}{\mu} = \int_E f^+ \,\mathrm{d}{\mu} - \int_E f^- \,\mathrm{d}{\mu} $。
+[220] 若两个积分都有限，
+[221a] 那么左边也有限，就说 $f$ 在 $E$ 上对 $\mu$ 是 Lebesgue 可积的，记为 $f\in \mathscr L(\mu)$
+[221b] 若 $\mu=m$，则说在 $E$ 上 $f\in \mathscr L$。
+[/SCOPE:s_11_22]
+[SCOPE:s_11_23|description|11.23 积分性质]
+[222a] (a) 若 $f$ 在 $E$ 上有界可测，而且 $\mu(E)<+\infty$, 那么在 $E$ 上 $f \in \mathscr{L}(\mu)$.
+[222b] (b) 如果 $x \in E$ 时 $a \leqslant f
+[222c] (x) \leqslant b$, 而且 $\mu(E)<+\infty$, 那么 $a \mu(E) \leqslant \int_{E} f \mathrm{~d} \mu \leqslant b \mu(E)$
+[222d] (c) 如果在 $E$ 上 $f$ 与 $g …[truncated]…\int_{E} f \mathrm{~d} \mu \leqslant \int_{E} g \mathrm{~d} \mu$.
+[222e] (d) 如果在 $E$ 上 $f \in \mathscr{L}(\mu)$, 那么对于每个有限常数 $c$, 在 $E$ 上 $c f \in \mathscr{L}(\mu)$, 而且 $\int_{E} c f \mathrm{~d} \mu=c \int_{E} f \mathrm{~d} \mu$.
+[222f] (e) 如果 $\mu(E)=0$, 而 $f$ 可测，
+[223] 那么 $\int_{E} f \mathrm{~d} \mu=0$. (f) 如果在 $E$ 上 $f \in \mathscr{L}(\mu), A \in \mathfrak{M}$, 且 $A \subset E$, 那么在 $A$ 上 $f \in \mathscr{L}(\mu)$.
+[/SCOPE:s_11_23]
+[SCOPE:s_11_24|description|11.24 集函数可数可加]
+[224] 11.24 (a) 设在 $X$ 上 $f$ 非负可测。
+[225a] 若 $A \in \mathfrak{M}$, 定义 $\phi(A)=\int_{A} f \mathrm{~d} \mu$,
+[225b] 则$\phi$ 在 $\mathfrak{M}$ 上可数可加。
+[226] (b) 如果在 $X$ 上 $f \in \mathscr{L}(\mu)$, 这结论也成立。
+[227a] 若 $A \in \mathfrak{M}, B \subset A$, 而且 $\mu(A-B)=0$,
+[227b] 则$\int_{A} f \mathrm{~d} \mu=\int_{B} f \mathrm{~d} \mu$.
+[/SCOPE:s_11_24]
+[SCOPE:s_11_25|description|11.25 几乎处处]
+[228] 11.25 上述推论说明，零测度集在积分时可以忽略。
+[229a] 若集 $\{x \mid f(x) \neq g(x)\} \cap E$ 是零测度的
+[229b] 则写作：在 $E$ 上 $f \sim g$. 这样，$f \sim f ; f \sim g$ 意味着 $g \sim f$; 由 $f \sim g, g \sim h$ 能推出 $f \sim h$. 这就是说，关系 $\sim$ 是等价关系。
+[230] 若在 $E$ 上 $f \sim g$, 显然可得 $\int_{A} f \mathrm{~d} \mu=\int_{A} g \mathrm{~d} \mu$, 只要这些积分对每个可测子集 $A \subset E$ 存在。
+[231] 若一性质 $P$ 对于每个点 $x \in E-A$ 成立，并且 $\mu(A)=0$, 习惯上说 $P$ 几乎对 于一切 $x \in E$ 成立，或 $P$ 在 $E$ 上几乎处处成立。
+[232] （“几乎处处” 这个概念自然依赖于所考虑的特定测度。
+[233] 在文献中，
+[234] 除非有什么别的附笔，一般指的是 Lebesgue 测度。
+[235] ）若在 $E$ 上 $f \in \mathscr{L}(\mu)$, 显然 $f(x)$ 必然在 $E$ 上几乎处处有限。
+[/SCOPE:s_11_25]
+[SCOPE:s_11_26|description|11.26 绝对可积]
+[236] 11.26 定理 若在 $E$ 上 $f \in \mathscr{L}(\mu)$, 那么在 $E$ 上 $|f| \in \mathscr{L}(\mu)$, 而且 $\left|\int_{E} f \mathrm{~d} \mu\right| \leqslant \int_{E}|f| \mathrm{d} \mu$. 因为 $f$ 的可积性包含着 $|f|$ 的可积性，
+[237] 所以 Lebesgue 积分常常被称为绝对收敛积分. 自然还可以定义非绝对收敛的积分，而且在处理某些问题时这样做是重要的。
+[238] 但是这种积分缺乏勒贝格积分的某些最有用的性质，在分析中起的作用比较次要些。
+[/SCOPE:s_11_26]
+[SCOPE:s_11_27|description|11.27 比较判别]
+[239] 11.27 设 $f$ 在 $E$ 上可测，$|f| \leqslant g$, 并且在 $E$ 上 $g \in \mathscr{L}(\mu)$. 那么在 $E$ 上 $f \in \mathscr{L}(\mu)$.
+[/SCOPE:s_11_27]
+[SCOPE:s_11_28|description|11.28 单调收敛定理]
+[240a] (x) \leqslant f_{2}
+[240b] (x) \leqslant \cdots \quad(x \in E)$. $n \rightarrow \infty$ 时用，$f_{n}
+[240c] (x) \rightarrow f
+[240d] (x) \quad(x \in E)$ 来定义 $f$. 那么 $\int_{E} f_{n} \mathrm{~d} \mu \rightarrow \int_{E} f \mathrm{~d} \mu \quad(n \rightarrow \infty)$
+[/SCOPE:s_11_28]
+[SCOPE:s_11_29|description|11.29 积分线性]
+[241] 11.29 假设 $f=f_{1}+f_{2}$, 在 $E$ 上 $f_{i} \in \mathscr{L}(\mu)(i=1,2)$, 那么在 $E$ 上 $f \in \mathscr{L}(\mu)$, 并且 $\int_{E} f \mathrm{~d} \mu=\int_{E} f_{1} \mathrm{~d} \mu+\int_{E} f_{2} \mathrm{~d} \mu$
+[/SCOPE:s_11_29]
+[SCOPE:s_11_30|description|11.30 级数积分交换]
+[242a] (x)=\sum_{n=1}^{\infty} f_{n}
+[242b] (x), \quad(x \in E)$ 那么 $\int_{E} f \mathrm{~d} \mu=\sum_{n=1}^{\infty} \int_{E} f_{n} \mathrm{~d} \mu$.
+[/SCOPE:s_11_30]
+[SCOPE:s_11_31|description|11.31 Fatou定理]
+[243a] (x)=\lim _{n \rightarrow \infty} \inf _{n}
+[243b] (x) \quad(x \in E)$, 那么 $\int_{E} f \mathrm{~d} \mu \leqslant \liminf _{n \rightarrow \infty} \int_{E} f_{\mathrm{n}} \mathrm{d} \mu$
+[/SCOPE:s_11_31]
+[SCOPE:s_11_32|description|11.32 控制收敛定理]
+[244a] 11.32 Lebesgue 控制收敛定理 假设 $E \in \mathfrak{M},\left\{f_{n}\right\}$ 是可测函数序列
+[244b] 当 $n \rightarrow \infty$ 时 $f_{n}(x) \rightarrow f(x) \quad(x \in E)$, 如果在 $E$ 上有函数 $g \in \mathscr{L}(\mu)$, 使 $\left|f_{n}(x)\right| \leqslant g(x) \quad(n=1,2,3, \cdots, x \in E)$,，则$\lim _{n \rightarrow \infty} \int_{E} f_{n} \mathrm{~d} \mu=\int_{E} f \mathrm{~d} \mu$.
+[245a] (x) \rightarrow f
+[245b] (x)$, 必然 $\lim _{n \rightarrow \infty} \int_{E} f_{n} \mathrm{~d} \mu=\int_{E} f \mathrm{~d} \mu$ 成立。
+[246] 一致有界收敛序列常常被称为有界收敛序列。
+[247] 令可测空间 $X$ 是实轴上的区间 $[a, b]$, 取 $\mu=m$ (Lebesgue 测度), 并且 $\mathfrak{M}$ 是 $[a, b]$ 的 Lebesgue 可测子集之类。
+[248] 习惯上采用熟悉的符号 $\int_{a}^{b} f \mathrm{~d} x$ 代替 $\int_{X} f \mathrm{~d} m$, 来表示 $f$ 在 $[a, b]$ 上的 Lebesgue 积分。
+[249] 为了区别 Riemann 积分与 Lebesgue 积分，我们现在把前者表示为 $\mathscr{R} \int_{a}^{b} f \mathrm{~d} x$.
+[/SCOPE:s_11_32]
+[SCOPE:s_11_33|description|11.33 Riemann与Lebesgue]
+[250a] (a) 如果在 $[a, b]$ 上 $f \in\mathscr{R}$, 必然在 $[a, b]$ 上 $f \in \mathscr{L}$ 而且 $\int_{a}^{b} f \mathrm{~d} x=\mathscr{R} \int_{a}^{b} f \mathrm{~d} x$.
+[250b] (b) 假定 $f$ 在 $[a , b]$ 上有界，
+[251] 那么在 $[a,b]$ 上 $f \in \mathscr{R}$, 当且仅当 $f$ 在 $[a, b]$ 上几乎处处连续。
+[252] 积分和微分之间常见的联系，大部可以转入 Lebesgue 理论中来。
+[253a] 若在 $[a, b]$ 上 $f \in \mathscr{L}$, 并且 $F(x)=\int_{a}^{x} f \mathrm{~d} t \quad(a \leqslant x \leqslant b)$
+[253b] 则在 $[a, b]$ 上几乎处处 $F^{\prime}(x)=f(x)$. 反之，若 $F$ 在 $[a, b]$ 的每一点处可微，并且在 $[a, b]$ 上 $F^{\prime} \in \mathscr{L}$, 则 $F(x)-F(a)=\int_{a}^{x} F^{\prime}(t) \quad(a \leqslant x \leqslant b)$
+[/SCOPE:s_11_33]
+[SCOPE:s_11_34|description|11.34 L^2空间]
+[254] 11.34 设 $X$ 是可测空间。
+[255a] 如果复函数 $f$ 可测并且 $\int_{x}|f|^{2} \mathrm{~d} \mu<+\infty$,
+[255b] 则说在 $X$ 上 $f \in \mathscr{L}^{2}(\mu)$, 如果 $\mu$ 是 Lebesgue 测度，就说 $f \in \mathscr{L}^{2}$. 当 $f \in \mathscr{L}^{2}(\mu)$ 时，(从现在起，省略 “在 $X$ 上” 三个字) 定义 $\|f\|=\left\{\int_{X}|f|^{2} \mathrm{~d} \mu\right\}^{\frac{1}{2}}$, 而把 $\|f\|$ 叫做 $\int$ 的 $\mathscr{L}^{2}(\mu)$ 范数。
+[/SCOPE:s_11_34]
+[SCOPE:s_11_35|description|11.35 Schwarz不等式]
+[256] 11.35 假设 $f, g \in \mathscr{L}^{2}(\mu)$. 那么 $f g \in \mathscr{L}(\mu)$, 并且 $\int_{x}|f g| \mathrm{d} \mu \leqslant\|f\|\|g\|$
+[/SCOPE:s_11_35]
+[SCOPE:s_11_36|description|11.36 三角不等式]
+[257] 11.36 定理 如果 $f, g \in \mathscr{L}^{2}(\mu)$, 那么 $f+g \in \mathscr{L}^{2}(\mu)$, 而且 $\|f+g\| \leqslant\|f\|+\|g\|$.
+[/SCOPE:s_11_36]
+[SCOPE:s_11_37|description|11.37 度量空间]
+[258a] (x)=g
+[258b] (x)$ 对一切 $x$ 成立，而只是几乎对一切 $x$ 成立。
+[259] 所以如果把只在一个零 测度集上不相同的函数等同起来，$\mathscr{L}^{2}(\mu)$ 便是一个度量空间。
+[260] 现在我们在实轴的一个区间上对于 Lebesgue 测度来考虑 $\mathscr{L}^{2}$.
+[/SCOPE:s_11_37]
+[SCOPE:s_11_38|description|11.38 连续函数稠密]
+[261] 11.38 连续函数在 $[a, b]$ 上构成 $\mathscr{L}^{2}$ 的一个稠密子集。
+[262] 更明确地：对于 $[a, b]$ 上的任何 $f \in \mathscr{L}^{2}$, 和任何 $\varepsilon>0$, 总 有 $[a, b]$ 上的连续函数 $g$, 使得 $\|f-g\|=\left\{\int_{a}^{b}|f-g|^{2} \mathrm{~d} x\right\}^{\frac{1}{2}}<\varepsilon$
+[/SCOPE:s_11_38]
+[SCOPE:s_11_39|description|11.39 正规正交系]
+[263] 11.39 我们说复函数序列 $\left\{\phi_{n}\right\}$ 是可测空间 $X$ 上函数的正规正交系，就是要求 $\int_{X} \phi_{m} \bar{\phi}_{n} \mathrm{~d} \mu=  \begin{cases}0 & (n \neq m), \\ 1 & (n=m) .\end{cases} $ 特别地，我们必有 $\phi_{n} \in \mathscr{L}^{2}(\mu)$. 若是 $f \in \mathscr{L}^{2}(\mu)$ 而且 $c_{n}=\int_{x} f \bar{\phi}_{n}\mathrm{d}u \quad(n=1,2,3, \cdots)$, 便照定义 8.10 那样，写成 $f \sim \sum_{n=1}^{\infty} c_{n} \phi_{n}$.
+[264] 三角 Fourier 级数的定义同样可以在 $[-\pi, \pi]$ 上扩充到 $\mathscr{L}^{2}$ (或甚至扩充到 $\mathscr{L}$). 定理 8.11 与 8.12 (Bessel 不等式) 对任何 $f \in \mathscr{L}^{2}(\mu)$ 成立。
+[/SCOPE:s_11_39]
+[SCOPE:s_11_40|description|11.40 Fourier级数收敛]
+[265] 11.40 假设在 $[-\pi, \pi]$ 上 $f \in \mathscr{L}^{2}$, $f(x) \sim \sum_{-\infty}^{\infty} c_{n} e^{i n x}$, 令 $s_{n}$ 是 (99) 的第 $n$ 个部分和。
+[266] 那么 $\lim _{x \rightarrow \infty}\left\|f-s_{n}\right\|=0$, $\sum_{-\infty}^{\infty}\left|c_{n}\right|^{2}=\frac{1}{2 \pi} \int_{-\pi}^{\pi}|f|^{2} \mathrm{~d} x$
+[267] 如果 $\mathscr{L}^{2}$ 里的两个函数能取得相同的 Fourier 级数，
+[268] 那么它们至多在一个零测度集上不相同。
+[/SCOPE:s_11_40]
+[SCOPE:s_11_42|description|11.42 L^2完备]
+[269] 11.42 $\mathscr{L}^{2}(\mu)$ 是完备度量空间。
+[/SCOPE:s_11_42]
+[SCOPE:s_11_43|description|11.43 Riesz-Fischer定理]
+[270] 11.43 Riesz-Fischer 定理 设 $\left\{\phi_{n}\right\}$ 是 $X$ 上的正规正交系。
+[271] 假定 $\Sigma\left|c_{n}\right|^{2}$ 收敛，再设 $s_{n}=c_{1} \phi_{1}+\cdots+c_{n} \phi_{n}$, 必然存在一个函数 $f \in \mathscr{L}^{2}(\mu)$, 使 $\left\{s_{n}\right\}$ 在 $\mathscr{L}^{2}(\mu)$ 内收敛于 $f$, 并且 $f \sim \sum_{n=1}^{\infty} {c}_{n} \phi_{n}$
+[/SCOPE:s_11_43]
+[SCOPE:s_11_44|description|11.44 完备正交系]
+[272] 11.44 定义 $\left\{\phi_{n}\right\}$ 是正规正交集，$f \in \mathscr{L}^{2}(\mu)$. 如果由等式 $\int_{x} f \bar{\phi}_{k} \mathrm{~d} \mu=0 \quad(n=1,2,3, \cdots)$ 能推出 $\|f\|=0$, 就说 $\left\{\phi_{n}\right\}$ 是完备的。
+[/SCOPE:s_11_44]
+[SCOPE:s_11_45|description|11.45 Parseval等式]
+[273] 11.45 设 $\left\{\phi_{n}\right\}$ 是完备正规正交系。
+[274] 如果 $f \in \mathscr{L}^{2}(\mu)$, 并且 $f \sim \sum_{n=1}^{\infty} c_{n} \phi_{n}$, 必然 $\int_{X}|f|^{2} \mathrm{~d} \mu=\sum_{n=1}^{\infty}\left|c_{n}\right|^{2}$
+[/SCOPE:s_chap11]
+[/SCOPE:s_11_45]
+[/SCOPE:root]

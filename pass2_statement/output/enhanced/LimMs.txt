@@ -1,0 +1,191 @@
+[SCOPE:root|description|依测度收敛]
+文章名: LimMs
+标题: 依测度收敛
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=依测度收敛
+  [1] type=theorem heading=定理 1 title=
+  [2] type=theorem heading=定理 2 title=
+  [3] type=example heading=例 1 title=
+  [4] type=theorem heading=定理 3 title=F. Riesz 定理
+  [5] type=exercise heading=习题 1 title=
+
+[0] 我们已经知道，函数有 “逐点收敛” 和 “一致收敛” 等不同的收敛方式。
+[1] 逐点收敛的概念最简单，
+[2] 但是性质不太好；
+[3] 一致收敛的性质就非常好。
+[4] 现在我们有了外测度的概念，就可以构造一种新的收敛方式。
+
+[SCOPE:s_def1|description|定义1 依测度收敛]
+[5] 定义 1 依测度收敛
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[6] 设 $E\subseteq \mathbb{R}^n$ 是可测集，$f$ 和 $f_i$ 都是其上的几乎处处有限的可测函数，其中 $i$ 取遍全体正整数。
+[/SCOPE:s_def1_let]
+[7] 如果对于任意固定的 $\epsilon>0$，有
+[8] \begin{equation}
+\lim\limits_{i\to\infty} \operatorname {m}\{x\in E| \left\lvert f_i(x)-f(x) \right\rvert \geq\epsilon\}=0~.
+\end{equation}
+[9] 依测度收敛
+[10a] (x)$ 偏离 $f
+[10b] (x)$ 超过精度范围的 $x$ 称为 “不听话” 的点，
+[11] 那么随着 $i$ 增大，不听话的点构成的集合的外测度趋于零。
+[12a] (x)$ 偏离 $f
+[12b] (x)$ 超过精度范围的 $x$ 称为 “不听话” 的点，
+[13] 那么随着 $i$ 增大，不听话的点构成的集合趋于空集。
+[14] 发现没？
+[15] 简单说法里，一致收敛和依测度收敛的简单解释，只有最后一句有差别。
+[16] 从这个差别可以容易看出，一致收敛能推出依测度收敛。
+[17] 更进一步，几乎处处一致收敛也能推出依测度收敛。
+[18] 我们把上述讨论总结成以下定理：
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理1]
+[19] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[20] 设 $E\subseteq \mathbb{R}^n$ 是测度有限的可测集，$f$ 和各 $f_i$ 都是其上的几乎处处有限的可测函数，其中 $i$ 取遍全体正整数。
+[/SCOPE:s_thm1_let]
+[21] 如果 $f_i$一致收敛到 $f$a. e. ，
+[22] 那么 $f_i\overset{ \operatorname {m}}\to f$。
+[23] 在讨论依测度收敛的相关问题的时候，“几乎处处” 和 “处处” 可以看成是等价的，因为这两个限定词在测度意义上没有任何区别。
+[24] 实际上，几乎处处收敛也是能推出依测度收敛的：
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理2]
+[25] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[26] 设 $E\subseteq \mathbb{R}^n$ 是测度有限的可测集，$f$ 和各 $f_i$ 都是其上的几乎处处有限的可测函数，其中 $i$ 取遍全体正整数。
+[/SCOPE:s_thm2_let]
+[27] 如果 $f_i\to f $a. e.，
+[28] 那么 $f_i\overset{ \operatorname {m}}\to f$。
+[SCOPE:s_thm2_proof|description|定理2的证明]
+[29] 证明：
+[SCOPE:s_thm2_reduce|description|归约到f=0]
+[30] 只需讨论 $f$ 在 $E$ 上恒等于 $0$ 的情况。
+[/SCOPE:s_thm2_reduce]
+[SCOPE:s_thm2_let_eps|let_bind|固定epsilon]
+[31] 任意固定一个 $\epsilon>0$。
+[/SCOPE:s_thm2_let_eps]
+[SCOPE:s_thm2_let_delta|let_bind|由Egoroff定理取E_delta]
+[32] 由 Egoroff 定理，对于任意 $\delta>0$，存在可测集 $E_\delta$，使得其测度小于 $\delta$ 且 $\{f_n\}$ 在 $E-E_\delta$ 上一致收敛到 $f=0$。
+[33] 因此，存在正整数 $N_\delta$，使得只要正整数 $n>N_\delta$，就有 $ \left\lvert f_n(x) \right\rvert <\epsilon$ 在 $E-E_\delta$ 上处处成立。
+[/SCOPE:s_thm2_let_delta]
+[SCOPE:s_thm2_let_seq|let_bind|取delta_k序列]
+[34] 因此，只需要取 $\delta_k=1/2^k$1，得到各 $N_{\delta_k}$（记 $N_{\delta_k}=n_k$），
+[35] 那么 $ \left\lvert f_{n}(x) \right\rvert <\epsilon$ 在 $E-E_{\delta_k}$ 上处处成立，其中 $n>n_k$ 且 $ \operatorname {m}E_{\delta_k}<{\delta_k}$。
+[36] 因此，当 $n>n_k$ 时总有 $ \operatorname {m}\{x\in E| \left\lvert f_n(x) \right\rvert \geq\epsilon\}\leq \operatorname {m}E_{\delta_k}<\delta_k$。故
+[37] \begin{equation}
+\lim\limits_{n\to 0} \operatorname {m}\{x\in E| \left\lvert f_n(x) \right\rvert \geq\epsilon\}=0~.
+\end{equation}
+[/SCOPE:s_thm2_let_seq]
+[38] 即得证。
+[39] 证毕。
+[/SCOPE:s_thm2_proof]
+[40] 反过来，依测度收敛是不能推出几乎处处收敛的。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_ex1|description|例1]
+[41] 考虑区间 $[0, 1)$ 上的函数列 $\{f_n\}$。
+[SCOPE:s_ex1_let_D|let_bind|取小数函数D]
+[42] 为方便表述，定义一个取小数函数$D(x)$，
+[43] 即对于实数 $x$，$D(x)=x-[x]$ 是 $x$ 的小数部分。
+[44] 易见 $D(x)\in [0, 1)$ 恒成立。
+[45] 将取小数函数应用到区间上，记 $D([a, b])=\{D(x)|x\in[a, b]\}$。
+[46] 比如，$D([0.5, 1.1])=[0, 0.1]\cup[0.5, 1)$。
+[47] 为了方便想象，你也可以认为取小数函数就是把整个实数轴都卷成周长为 $1$ 的一个圆环。
+[/SCOPE:s_ex1_let_D]
+[SCOPE:s_ex1_let_seq|let_bind|数列a_k, b_k]
+[48] 定义数列 $\{a_k\}$，其中 $a_0=0$，$a_k=a_{k-1}+1/k-1/2^k$。
+[49] 再定义数列 $\{b_k\}$，其中 $b_k=a_{k+1}+1/2^{k+1}$。
+[50] 你可以试着写出这两个数列的前几项，看看它们都在什么位置，这有助于理解接下来的构造。
+[51] 取区间列 $[a_k, b_k]$，
+[52] 则对于任意 $x\in[0, 1)$，总存在无限多个 $k$，使得 $x\in D([a_k, b_k])$。
+[53] 这是因为 $a_k$ 趋近于无穷，导致 $D(a_k)$ 在 $[0, 1)$ 中反复循环；
+[54] 而 $b_k>a_{k+1}$，使得区间列 $\{[a_k, b_k]\}$ 覆盖了所有正数，或者说在每个循环中 $D([a_k, b_k])$ 都能覆盖整个 $[0, 1)$。
+[55] 又因为 $ \operatorname {m}[a_k, b_k]=1/k$，知 $\lim\limits_{k\to \infty} \operatorname {m}[a_k, b_k]=0$。
+[/SCOPE:s_ex1_let_seq]
+[SCOPE:s_ex1_let_fn|let_bind|函数列f_k]
+[56a] (x)\}$，其中当 $x\in D([a_k, b_k])$ 时 $f_k
+[56b] (x)=1$，其余情况均有 $f_k
+[56c] (x)=0$。
+[57] 再定义 $f$，其在 $[0, 1)$ 上恒为 $0$。
+[58] 则按照上述构造，$f_k$ 依测度趋近于 $f$，
+[59] 但是它又处处不趋近于 $f$。
+[/SCOPE:s_ex1_let_fn]
+[60a] 当我们想到函数列的收敛时，最自然的想法
+[60b] 则是处处收敛。
+[61] 现在我们知道了，依测度收敛比处处收敛还弱，例 1 甚至构造了一个处处不收敛但依然依测度收敛的例子。
+
+[/SCOPE:s_ex1]
+[62] 但依测度收敛也不是一无是处，它依然具有以下非常有用的性质：
+
+[SCOPE:s_thm3|description|定理3 F. Riesz定理]
+[63] 定理 3 F. Riesz 定理
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[64] 如果在可测集 $E$ 上 $f_n\overset{m}\to f$，
+[/SCOPE:s_thm3_let]
+[65] 则必存在 $\{f_n\}$ 的子序列 $\{f_{n_k}\}$，使之几乎处处收敛于 $f$。
+[SCOPE:s_thm3_proof|description|定理3的证明]
+[66] 证明：
+[SCOPE:s_thm3_let_eps|let_bind|取epsilon_k序列]
+[67] 取一列单调递减趋近于零的正数 $\{\epsilon_k\}$。
+[/SCOPE:s_thm3_let_eps]
+[SCOPE:s_thm3_let_Nk|let_bind|取N_k]
+[68] 由于 $f_n\overset{m}\to f$，
+[69] 故对于每个 $\epsilon_k$，总存在一个 $N_k$ 使得只要 $n\geq N_k$，就有 $ \operatorname {m} \left(\{x\in E| \left\lvert f_n-f \right\rvert \geq\epsilon_k\} \right) <1/2^k$。
+[70] 以这些 $N_k$ 为编号，构建子序列 $\{f_{N_k}\}$。
+[/SCOPE:s_thm3_let_Nk]
+[SCOPE:s_thm3_let_Sk|let_bind|记S_k]
+[71a] (x)-f
+[71b] (x) \right\rvert \geq \epsilon_k\}=S_k$。
+[72] 如果 $x\in E$ 是 $f_{N_k}$ 的不收敛点，
+[73] 那么按照构造规则，它必然在每一个 $\bigcup^\infty_{k=1}S_k$ 中。
+[74] 而由于 $ \operatorname {m}S_k<1/2^k$，可知 $ \operatorname {m} \left(\bigcup^\infty_{k=n}S_k \right) \leq \sum^{\infty}_{k=n} \operatorname {m}S_k<1/2^{n-1}$。
+[75] 因此 $\{f_{N_k}\}$ 中不收敛于$f$ 的点构成的集合 $\bigcap^\infty_{n=1}\bigcup^\infty_{k=n}S_k$ 是一个零测集。
+[76] 定理得证。
+[/SCOPE:s_thm3_let_Sk]
+[77] 证毕。
+[/SCOPE:s_thm3]
+[/SCOPE:s_thm3_proof]
+[78] 最后，我们以一个习题作为本节内容的收尾：
+
+[SCOPE:s_exercise1|description|习题1]
+[79] 习题 1
+[SCOPE:s_exercise1_let|let_bind|习题1的变量]
+[80] 若函数列 $\{f_n\}$ 和两个函数 $g$、$h$ 都是定义在 $E$ 上的可测函数，且在 $E$ 上，$f_n$ 同时依测度收敛于 $g$ 和 $h$。
+[/SCOPE:s_exercise1_let]
+[81] 那么 $g$ 和 $h$ 几乎处处相等。
+[82] 证明该命题。
+[/SCOPE:s_exercise1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是一致收敛推出依测度收敛，是定义1的特例"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2是几乎处处收敛推出依测度收敛，是定义1的特例"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "counterexample_of",
+    "category": "logic",
+    "note": "例1是依测度收敛但不处处收敛的反例"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3说明依测度收敛蕴含存在子列几乎处处收敛"
+  }
+]

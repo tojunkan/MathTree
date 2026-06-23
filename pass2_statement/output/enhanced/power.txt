@@ -1,0 +1,346 @@
+[SCOPE:root|description|幂运算与幂函数（高中）]
+文章名: power
+标题: 幂运算与幂函数（高中）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=幂运算
+  [1] type=theorem heading=定理 1 title=幂运算法则
+  [2] type=example heading=例 1 title=求 $2^\pi$
+  [3] type=definition heading=定义 2 title=幂函数
+  [4] type=exercise heading=习题 1 title=描述 $f(x)=x^{-\frac{4}{5}}$ 的图像
+
+[0a] (x) = ax$、反比例函数 $\displaystyle f
+[0b] (x) = \frac{k}{x}$ 和二次函数 $f
+[0c] (x) = ax^2+bx+c$，其实都是幂函数组合得到的特例。
+[1] 可以这么说，幂函数是初中唯一接触过的函数。
+[2] 在高中阶段，将扩展这些知识，进一步研究幂函数的更一般形式。
+
+[3] 幂函数的定义是基于幂运算的。
+[4] 幂运算是继加法、减法、乘法和除法之后的另一种重要的数学运算。
+
+[SCOPE:s_power_op_def|description|幂运算定义]
+[SCOPE:s_power_op_let|let_bind|幂运算变量 a,b,c]
+[5] 定义 1 幂运算
+[6] \begin{equation}
+a^b=c~.
+\end{equation}
+[7] 在研究 c 与 a 的关系时称为幂运算（power operation，或乘方运算），其中 a 称为底数（base），b 称为指数（powe，指数运算中一般称 Exponent），c 称为幂值（Exponential Value），要求 $a,b$ 不同时为 $0$。
+[8] $b=2$ 时称为平方，$b=3$ 时称为立方，$\displaystyle b=\frac{1}{2}$ 时称为开方，$b=-1$ 时称为倒数。
+[/SCOPE:s_power_op_let]
+[9] 在研究 c 与 b 的关系时称为指数运算（exponentiation），此时 c 称为真数（argument），要求 $a>0,a\neq1$。
+[10] 尽管有两个名字，
+[11] 但他们是同一种运算，只是关注点不同。
+[12] 为了逻辑一致性，幂运算在实数内的合法范围要求如下：
+[13] $0$ 当分母的运算是非法的，
+[14] 因此，幂运算要求 $0^{-k},k\in \mathbb{N}$ 时不存在。
+[15] 在实数域上负数的偶数次方根均无意义，
+[16] 因此，幂运算要求 $\displaystyle(-x)^\frac{1}{2k}$，在 $k\in \mathbb{N},x\in\mathbb{R}^+$ 时不存在。
+[17] 在实数域上负数的无理数次幂不存在，
+[18] 因此，幂运算要求 $\displaystyle(-x)^q$，在 $q\text{为无理数},x\in\mathbb{R}^+$ 时不存在1。
+[19] 最开始的时候，形如 $a^b$ 幂运算用来表示一个数 $a$ 自乘 $b$ 次，或者说 $b$ 个 $a$ 相乘，这也是初中学过的含义。
+[20] 这时的 $a$ 可以是任何数，
+[21] 但 $b$ 却只能是自然数。
+[22] 然而，就像形如 $a\times b$ 乘法运算最开始表示的是 $b$ 个 $a$ 相加一样，随着扩展 $b$ 的取值范围，也就是给不同类型的 $b$ 给予不同的含义，幂运算包含了一些其他内容。
+[23] 扩展后指数部分可以是任意实数。
+[24a] 如果尚不了解原理或感到陌生，直接默认其成立熟练使用
+[24b] 则可，下面的运算均要求合法的前提下进行：
+
+[/SCOPE:s_power_op_def]
+[SCOPE:s_power_law|description|幂运算法则]
+[SCOPE:s_power_law_let|let_bind|幂运算法则变量 a,b,m,n]
+[25] 定理 1 幂运算法则
+[26] 分数次幂：$a^{\frac{1}{n}} = \sqrt[n]{a} \quad a \geq 0$
+[27] 负次幂：$\displaystyle a^{-1}=\frac{1}{a},a\neq0$
+[28] 零次幂：$a^0=1,a\neq0$
+[29] 一次幂：$a^1=a$
+[30] 积的幂：$(a \cdot b)^n = a^n \cdot b^n$
+[31] 拆分指数的和：$a^{m+n}=a^m \cdot a^n$
+[32] 拆分指数的积：$a^{m \cdot n}= (a^m)^n =(a^n)^m $
+[33] 这里独立说一下正实数的无理数次幂，它的定义是由极限得到的。
+[/SCOPE:s_power_law_let]
+[34] 如果有两列数字分别为 $p_i,q_i$，满足对任意的 $i$ 都有 $p_i< b< q_i$，如果随着 $i$ 增加 $a^{p_i},a^{q_i}$ 之间的区别越来越小，直至二者几乎相等，
+[35] 那么就认为 $a^b$ 就是那个确定的实数。
+[36] 这里采用了比较模糊的表述，在高中教材中也是如此描述。
+[37] 它实际上反映了极限运算的本质。
+[38] 此处参照例 1 有一个感性认识就可以。
+
+[/SCOPE:s_power_law]
+[SCOPE:s_example_2pi|description|求 2^π]
+[39] 例 1 求 $2^\pi$
+[40] 已知 $3.1<\pi<3.2$，$3.14<\pi<3.15$，$3.141<\pi<3.142$，$3.1415<\pi<3.1416$……随着精度的增加，两边的数值都更接近 $\pi$。
+[41] 从而，$2^{3.1}<2^\pi<2^{3.2}$，$2^{3.14}<2^\pi<2^{3.15}$，$2^{3.141}<2^\pi<2^{3.142}$，$2^{3.1415}<2^\pi<2^{3.1416}$……两侧的数值也逐渐相等，
+[42] 于是那个最终相等的实数就是 $2^\pi$。
+
+[/SCOPE:s_example_2pi]
+[43] 将指数作为参数，底数作为自变量的函数就称为幂函数，幂函数的名称指的就是自变量的幂次是函数值，注意不要与指数函数相混淆。
+
+[SCOPE:s_power_func_def|description|幂函数定义]
+[SCOPE:s_power_func_let|let_bind|幂函数变量 x,a]
+[44] 定义 2 幂函数
+[45] \begin{equation}
+f(x) = x^a~.
+\end{equation}
+[46] 幂函数（Power function）
+[47] $a$ 会影响函数的性质的各个方面，在学习时需要时刻注意。
+[/SCOPE:s_power_func_let]
+[48] 由于幂函数的样式很多，直接研究每个具体的形式会很混乱。
+[49] 但对 $y=x^a$，在 $x>0$ 时，总是有定义的，而且此时 $y$ 一定为正。
+[50] 因此，函数一定会在第一象限有图象。
+[51] 本文会先讨论定义域以及奇偶性，奠定好研究基础，然后再专注研究其在第一象限的规律。
+[52] 这也反映了一般分析函数的过程。
+
+[/SCOPE:s_power_func_def]
+[SCOPE:s_domain_parity|description|定义域与奇偶性]
+[53a] 下面的讨论
+[53b] 若 $a\in\mathbb{Q}$，则以 $\displaystyle a=\frac{n}{m}$（$n,m$ 互质，$m>0$）的形式进行。
+
+[SCOPE:s_domain|description|定义域]
+[SCOPE:s_domain_let|let_bind|定义域变量 n,m]
+[54] 通常来讲，幂函数的定义域是 $x\in\mathbb{R}$，根据前面提到的幂运算非法情况，定义域需要调整：
+[55] $n\leq0$ 时，幂函数的定义域为 $({-\infty},0)\cup(0,{+\infty})$。
+[56] ${m}$ 为偶数时，幂函数的定义域为 $[0,{+\infty})$。
+[57] $a$ 为无理数时，幂函数的定义域为 $[0,{+\infty})$。
+[/SCOPE:s_domain_let]
+[58] 在正式的研究开始之前，还需要先提及一个特例，当 $a = 0$ 时，幂函数会退化为常值函数 $f(x) = 1(x\neq0)$，该函数在所有非 $0$ 处值恒为 $1$，图像是一个在 $0$ 处无定义的水平直线。
+[59] 它是在定义域上恒为正的偶函数。
+[60] 这里有必要讨论一下 $0^0$。
+[61] 严格来说，$0^0$ 在高中阶段是未定义的，
+[62] 但在大部分场合（例如幂级数展开）会默认其值为 $1$。
+[63] 事实上，如果从幂运算的最基础定义来讲，一般会先定义 $0^0=1$ 来保证归纳得到的其他幂次不会出现多余的参数。
+[64] 这里也可以理解为，幂运算是比指数运算更底层的运算，
+[65] 因此要优先保证幂运算 $x^0=1$ 成立，而非 $0^x=0$ 成立。
+
+[/SCOPE:s_domain]
+[SCOPE:s_parity|description|奇偶性]
+[SCOPE:s_parity_let|let_bind|奇偶性变量 a,k,b]
+[66] 根据定义域的讨论，只有 $m$ 为奇数时，定义域才是关于 $0$ 对称的，
+[67] 因此，针对奇偶性的讨论将会在 $m$ 是奇数的前提下进行。
+[68] 由幂运算的定义始终有 $(-x)^2=x^2,(-x)^1=-(x)^1$，
+[69] 即 $a=2$ 时是偶函数，$a=1$ 时是奇函数。
+[70] 下面以此为基础讨论其他形式的幂次的奇偶性：
+[SCOPE:s_parity_cases|cases|奇偶性分情况]
+[71] 若 $a$ 为正整数，
+[72] 则取 $a=2k+b$，$k$ 为任意自然数，$b=0$ 时 $a$ 为偶数，$b=1$ 时 $a$ 为奇数。
+[/SCOPE:s_parity_let]
+[73] 从而 $(-x)^{2k+b}=(-1)^b(x)^{2k+b}$，结果取决于 $b$ 的取值。
+[74] 代入可知，$a$ 为偶数时是偶函数，$a$ 为奇数时是奇函数。
+[75] 若 $a$ 为负整数，
+[76] 则取 $t=x^{-1}$，有 $x^a=t^{|a|}$，结论与上一条相同。
+[77] 若 $a$ 为分数，
+[78] 则取 $t=x^\frac{1}{m}$，有 $x^\frac{n}{m}=t^{n}$，结论与之前两条相同。
+[79] 整理一下，幂函数的奇偶性分为三种情况：
+[80] 偶函数：$n$ 是偶数，$m$ 是奇数。
+[81] 奇函数：$n$ 是奇数，$m$ 是奇数。
+[82] 非奇非偶：$m$ 是偶数或 $a$ 为无理数。
+[83] 事实上，这也是奇偶性名称最直观的体现，它与 $n$ 的奇偶性相同。
+[84] $n=0$ 时也符合这里的条件。
+[/SCOPE:s_parity_cases]
+[85] 总结本章的内容可知，幂函数的形态与 $n,m$ 是否同号以及奇偶关系有关，
+[86] 因此在遇到幂函数时，首先要关注的就是这两个数字的性质。
+
+[/SCOPE:s_domain_parity]
+[/SCOPE:s_parity]
+[SCOPE:s_first_quadrant|description|在第一象限的幂函数]
+[87] 在第一象限时，$x>0$。
+[88] 后面的讨论是在这个基础上的。
+[89] 根据 $x^a$ 运算的性质，在 $a>0$ 时满足：
+[90] $x>1\implies x^a>1$
+[91] $0< x<1\implies 0< x^a<1$
+
+[SCOPE:s_monotonicity|description|单调性]
+[SCOPE:s_monotonicity_let|let_bind|单调性变量 x1,x2,p]
+[92] 对于 $f(x)=x^a$，任取 $x_1>x_2$，
+[93] 则平均变化率为
+[94] \begin{equation}
+\frac{f(x_1)-f(x_2)}{x_1-x_2}=\frac{(x_2)^a\left(\left(\frac{x_1}{x_2}\right)^a-1\right)}{(x_1-x_2)}~.
+\end{equation}
+[95] 由于式 3 中的分母和 $(x_2)^a$ 为正，
+[96] 因此讨论 $\left(\frac{x_1}{x_2}\right)^a$ 与 $1$ 的关系。
+[97] 设 $\displaystyle p=\frac{x_1}{x_2}$，由于 $x_1>x_2$，可知 $p>1$。
+[/SCOPE:s_monotonicity_let]
+[98] 从而，$a>0$ 时，$p^a>1$，$a<0$ 时，$\displaystyle p^a=\left(\frac{1}{p}\right)^{|a|}<1$。
+[99] 综上，$a>0$ 时，式 3 的值大于 $0$，函数在第一象限是递增的；
+[100] 反之 $a<0$ 时，函数则是递减的。
+
+[/SCOPE:s_monotonicity]
+[SCOPE:s_relation|description|不同a的函数图象关系]
+[SCOPE:s_relation_let|let_bind|关系变量 a1,a2]
+[101] 当 $a_1>a_2$ 时，有 $a_1-a_2>0$。
+[102] 此时，对 $x>1$，有 $x^{a_1-a_2}>1$，
+[/SCOPE:s_relation_let]
+[103] 即 $\displaystyle \frac{x^{a_1}}{x^{a_2}}>1$，由于在第一象限 $x^{a_2}>0$，
+[104] 从而有 $x^{a_1}>x^{a_2}$；
+[105] 同理，对 $0< x<1$，$x^{a_1}< x^{a_2}$。
+[106] 形象地来说，在第一象限内，如果在 $x=1$ 的右侧从下到上画一条垂线，
+[107] 则会先穿过 $a$ 值较小的函数图象，后穿过 $a$ 值较大的函数图象；
+[108] 在 $x=1$ 的左侧从下到上画一条垂线，
+[109] 则会先穿过 $a$ 值较大的函数图象，后穿过 $a$ 值较小的函数图象。
+
+[/SCOPE:s_relation]
+[SCOPE:s_other_props|description|其他性质]
+[110] 将定义域限定在 $(0,+\infty)$ 时，由于 $\displaystyle(x^a)^{\frac{1}{a}}=x$，
+[111] 所以 $\displaystyle x^{\frac{1}{a}}$ 与 $x^a$ 互为反函数。
+[112] 也即二者的图象关于 $y=x$ 对称，而这条对称轴本身也是 $a=1$ 的情况，
+[113] 即它与自身互为反函数。
+[114] 顺便一提，有两个特殊的局部：$x$ 在 $0$ 附近时，如果 $a>0$，
+[115] 则 $x^a$ 趋于 $0$，如果 $a<0$，
+[116] 则 $x^a$ 趋于无穷。
+[117] 当 $x$ 趋向于无穷时，如果 $a>0$，
+[118] 则 $x^a$ 趋于无穷，如果 $a<0$，
+[119] 则 $x^a$ 趋于 $0$。
+[120] 这是根据幂运算的性质得到的。
+[121] 关于 “趋于”、“无穷”、“附近” 这三个词，现在只需要有一个感性的理解就可以了，它是符合几何直观的。
+[122] 关于这三个词的具体内涵，会在大学阶段学习。
+
+[/SCOPE:s_other_props]
+[SCOPE:s_summary|description|第一象限图像总结]
+[123] 把前面的分析组合起来考虑，如果将第一象限以 $x=1,y=x,y=1$ 三条线分成六个区域。
+[124] 这三条线的交点是 $(1,1)$，由于不论 $a$ 取何值，$1^a=1$，
+[125] 因而幂函数一定会过点 $(1,1)$。
+[126] 如果将 $x=1,y=x$ 之间大于 $1$ 的部分记作区域 $\rm{I}$，
+[127] 则可顺时针得到 $\rm{I, II, III, IV, V, VI}$ 一共六个区域：
+[128] *2$a\to+\infty$ 时，幂函数像一条折线，在 $(0,1)$ 上为 $0$，在 $1$ 处突然变为 $x=1$，之后都没有定义了（因为是无穷）。
+[129] $a>1$ 时，幂函数通过区域 $\rm{I,IV}$
+[130] $a=1$ 时，幂函数为 $y=x$
+[131] $0< a<1$ 时，幂函数通过区域 $\rm{II,V}$
+[132] $a=0$ 时，幂函数为 $y=1,(x\neq0)$
+[133] $a<0$ 时，幂函数通过区域 $\rm{III,VI}$
+[134] *$a\to-\infty$ 时，幂函数像一条折线，在 $1$ 处为 $x=1$，在 $(1,+\infty)$ 上为 $0$，之前都没有定义了（因为是无穷）。
+[135] 函数是光滑的，并且 $|a|$ 越大，越会靠近直线 $x=1$，$|a|$ 越小，越会靠近直线 $y=1$。
+[136] 全部画在一起时如图 1 展示了幂函数 $f(x) = x^a$ 第一象限的函数图象。
+[137] 【图解】图 1：实参数的幂函数（相同颜色的函数互为反函数）
+[138] 之前说过，幂函数的图像有规律，
+[139] 但很复杂。
+[140] 现在终于将所有的规律都探索完毕了。
+[141] 还有最后一步就是针对一个具体的表达式，在画出第一象限、分析定义域和奇偶性的基础上，补全其他象限的图。
+[142] 没有必要一次全都列出，
+[143] 因此以一道习题为例进行演示，你也可以自己试试。
+
+[/SCOPE:s_first_quadrant]
+[/SCOPE:s_summary]
+[SCOPE:s_exercise|description|习题1]
+[SCOPE:s_exercise_let|let_bind|习题变量 n,m]
+[144] 习题 1 描述 $f(x)=x^{-\frac{4}{5}}$ 的图像
+[145] 根据前面的分析，$n=-4,m=5,a<0$，
+[146] 所以函数的定义域是 $({-\infty},0)\cup(0,{+\infty})$，是偶函数，函数图像关于 $y$ 轴对称。
+[/SCOPE:s_exercise_let]
+[147] 在第一象限的区域 $\rm{III,VI}$ 中，
+[148] 即在 $(0,1)$ 区间内的图像在 $y=1$ 上方，在 $(1,+\infty)$ 区间内的图像在 $y=1$ 下方。
+[149] 在 $(0,{+\infty})$ 上递减，在 $({-\infty},0)$ 上递增。
+[150] 是两条分别过点 $(-1,1),(1,1)$ 的光滑曲线。
+[151] （*在 $0$ 两侧函数趋于无穷，在无穷处函数值趋于 $0$。）
+
+[/SCOPE:s_exercise]
+[SCOPE:s_complex_ext|description|复数域扩展]
+[152] 在实数域上，无理数次幂和偶次方根只定义在正数上。
+[153] 因此，函数只在第一象限有图象，
+[154] 但是根据欧拉公式，引入复数后将函数拓展到复数域中可以有一些新知，下面略窥这些新想法。
+[155] 请注意，下面的内容在高中阶段完全不需要理解，甚至在本科基础阶段都不会涉及。
+[156] 此处给出只是为了扩展视野，如果想要具体了解需要学习复变函数。
+[157] 下面的所有推导都基于复数的指数形式。
+
+[SCOPE:s_neg_even_root|description|负数偶次方根]
+[SCOPE:s_neg_even_root_let|let_bind|负数偶次方根变量 x,k]
+[158] 假设要计算负负实数的偶次方根 $(-x)^{\frac{1}{4}},x>0$，使用幂运算公式：
+[159] \begin{equation}
+\begin{split}
+\displaystyle
+(-x)^{\frac{1}{4}} &= \left( |x| \mathrm{e} ^{ \mathrm{i} \pi(1+2k)} \right)^{\frac{1}{4}} \\
+&=|x|^{\frac{1}{4}} \cdot \mathrm{e} ^{ \mathrm{i} \pi\frac{1+2k}{4}}\\
+&=|x|^{\frac{\pi}{4}} \cos\left(\frac{1+2k}{4}\pi\right) + \mathrm{i} |x|^{\frac{\pi}{4}} \sin\left(\frac{1+2k}{4}\pi\right) ,k\in\mathbb{Z}~.
+\end{split}
+\end{equation}
+[/SCOPE:s_neg_even_root_let]
+[160] 由于正、余弦函数的周期性，与无理数部分不同，这只会产生四个不同的解，分别为：
+[161] $\displaystyle k = 0,\quad |x|^{\frac{1}{4}} \left( \cos\frac{\pi}{4} + i\sin\frac{\pi}{4} \right) = |x|^{\frac{1}{4}} \cdot \frac{\sqrt{2}}{2} \left( 1 + \mathrm{i} \right)$
+[162] $\displaystyle k = 1,\quad |x|^{\frac{1}{4}} \left( \cos\frac{3\pi}{4} + i\sin\frac{3\pi}{4} \right) = |x|^{\frac{1}{4}} \cdot \frac{\sqrt{2}}{2} \left( -1 + \mathrm{i} \right)$
+[163] $\displaystyle k = 2,\quad |x|^{\frac{1}{4}} \left( \cos\frac{5\pi}{4} + i\sin\frac{5\pi}{4} \right) = |x|^{\frac{1}{4}} \cdot \frac{\sqrt{2}}{2} \left( -1 - \mathrm{i} \right)$
+[164] $\displaystyle k = 3,\quad |x|^{\frac{1}{4}} \left( \cos\frac{7\pi}{4} + i\sin\frac{7\pi}{4} \right) = |x|^{\frac{1}{4}} \cdot \frac{\sqrt{2}}{2} \left( 1 - \mathrm{i} \right)$
+[165] 其实，有理数次幂函数 $x^{n/m}$（$x\in \mathbb R$，$n$ 为整数，$m$ 为正整数）总是有 $m$ 个可能的值
+[166] \begin{equation}
+x^{n/m} = \left\{\begin{aligned}
+& \left\lvert x^n \right\rvert ^{1/m} \mathrm{e} ^{ \mathrm{i} 2\pi k/m} & (x^n > 0)\\
+& \left\lvert x^n \right\rvert ^{1/m} \mathrm{e} ^{ \mathrm{i} 2\pi (k+1/2)/m} & (x^n < 0)
+\end{aligned}\right. \qquad (k = 0,1,\dots, m-1)~.
+\end{equation}
+
+[/SCOPE:s_neg_even_root]
+[SCOPE:s_irrational_power|description|无理数次幂]
+[SCOPE:s_irrational_power_let|let_bind|无理数次幂变量 x,k]
+[167] 假设要计算负实数的无理数（$\pi$）次幂 $(-x)^\pi,(x>0)$，使用幂运算公式：
+[168] \begin{equation}
+\begin{split}
+\displaystyle
+(-x)^\pi &= \left( |x| \mathrm{e} ^{ \mathrm{i} \pi(1+2k)} \right)^\pi \\
+&=|x|^\pi \cdot \mathrm{e} ^{ \mathrm{i} \pi^2(1+2k)}\\
+&=|x|^\pi \cos\left(\pi^2(1+2k)\right) + \mathrm{i} |x|^\pi \sin\left(\pi^2(1+2k)\right) ,k\in\mathbb{Z}~.
+\end{split}
+\end{equation}
+[/SCOPE:s_irrational_power_let]
+[169] 可以看出，负实数的 $\pi$ 次幂是复数，且由于 $\pi^2(1+2k)$ 与正、余弦函数的周期 $2\pi$ 之比并非有理数，这使得得到的复数有无穷多个。
+[170] 其他无理数次幂也依此计算。
+[171] 事实上，在这样的观点下，正实数的无理数次幂，除了幅角主值对应的是一个实数之外，其余的都是复数。
+[172] 上面的内容带你对复变函数初窥门径，希望能够让你感受到数学的魅力。
+[/SCOPE:s_complex_ext]
+[/SCOPE:s_irrational_power]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_power_law",
+    "target_scope": "s_power_op_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "幂运算法则基于幂运算定义"
+  },
+  {
+    "source_scope": "s_example_2pi",
+    "target_scope": "s_power_law",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是幂运算法则中无理数次幂的实例"
+  },
+  {
+    "source_scope": "s_power_func_def",
+    "target_scope": "s_power_op_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "幂函数定义基于幂运算"
+  },
+  {
+    "source_scope": "s_domain_parity",
+    "target_scope": "s_power_func_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义域与奇偶性是幂函数的性质"
+  },
+  {
+    "source_scope": "s_first_quadrant",
+    "target_scope": "s_power_func_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "第一象限性质是幂函数的性质"
+  },
+  {
+    "source_scope": "s_exercise",
+    "target_scope": "s_domain_parity",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题应用定义域与奇偶性结论"
+  },
+  {
+    "source_scope": "s_exercise",
+    "target_scope": "s_first_quadrant",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题应用第一象限结论"
+  },
+  {
+    "source_scope": "s_complex_ext",
+    "target_scope": "s_power_op_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "复数域扩展基于幂运算定义"
+  }
+]

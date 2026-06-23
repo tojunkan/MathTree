@@ -1,0 +1,117 @@
+{
+  "article_name": "ManPro",
+  "statements": [
+    {
+      "stmt_id": "st_def_product_manifold",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "M",
+        "N",
+        "P",
+        "U",
+        "phi",
+        "V",
+        "varphi"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_M_N",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_let",
+      "exposed_entities": [
+        "M",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_P_cartesian",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_let",
+      "exposed_entities": [
+        "P"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_product_topology",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_charts",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_let",
+      "exposed_entities": [
+        "U",
+        "phi",
+        "V",
+        "varphi"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_product_manifold",
+      "subtype": "conclusion",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_let",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_M_N",
+      "target": "st_conclusion_product_manifold",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_P_cartesian",
+      "target": "st_conclusion_product_manifold",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_product_topology",
+      "target": "st_conclusion_product_manifold",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_charts",
+      "target": "st_conclusion_product_manifold",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

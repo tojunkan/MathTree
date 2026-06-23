@@ -1,0 +1,137 @@
+[SCOPE:root|description|洛伦兹群的李代数]
+文章名: lielot
+标题: 洛伦兹群的李代数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+
+[SCOPE:s_review|description|简单回顾]
+[0] 洛伦兹群是一种广义正交群 $O(1,3)$（有时也可以用 $O(3,1)$ 来表示洛伦兹群，两种表示是等价的），它描述了在狭义相对论中不同惯性系之间的坐标变换。
+[1] 洛伦兹群保持时空间隔不变，
+[2] 即两个事件之间的 $\Delta t^2-|\Delta \boldsymbol{\mathbf{r}} |^2$，这也源自于 $O(1,3)$ 群的定义：
+[3] \begin{equation}
+\forall \Lambda \in O(1,3),\quad \Lambda^T \begin{pmatrix}
+1&&&\\
+&-1&&\\
+&&-1&\\
+&&&-1
+\end{pmatrix}\Lambda =\begin{pmatrix}
+1&&&\\
+&-1&&\\
+&&-1&\\
+&&&-1
+\end{pmatrix}~,
+\end{equation}
+[4] \begin{equation}
+\Lambda^\mu{}_{\nu} \eta_{\mu\rho}\Lambda^{\rho}{}_{\sigma}=\eta_{\nu\sigma}~.
+\end{equation}
+[5] 如果用洛伦兹四矢量
+[6] 1
+[7] $x^\mu$ 作用于上式的左右两侧，可以得到
+[8] \begin{equation}
+\begin{aligned}
+&x^\nu \Lambda^{\mu}{}_\nu \eta_{\mu\rho} \Lambda^\rho{}_\sigma y^\sigma=\eta_{\nu\sigma} x^\nu y^\sigma\\
+&\Rightarrow (\Lambda x)\cdot (\Lambda y)=x\cdot y~.
+\end{aligned}
+\end{equation}
+[9] 即狭义相对论时空中的任意两个四矢量的内积（度规为闵可夫斯基度规 $\eta_{\mu\nu}=\rm diag\{1,-1,-1,-1\}$）在洛伦兹变换下不变。
+[10] 也就是说，$O(1,3)$ 的另一种等价的表述是：
+
+[/SCOPE:s_review]
+[SCOPE:s_def|description|定义 1]
+[11] 定义 1
+[12] $O(1,3)$ 是闵氏时空上所有保闵科夫斯基度规的线性变换所构成的群。
+[13] 一些更丰富的物理涵义可以参考洛伦兹群文章，包括协变矢量与逆变矢量、洛伦兹四矢量、洛伦兹标量的定义。
+
+[/SCOPE:s_def]
+[SCOPE:s_liealgebra|description|洛伦兹群的李代数]
+[14] 洛伦兹群包括两种连续变换（旋转、推促）和两种离散变换（时间反演和空间反演），而旋转共有 $3$ 个自由度，推促共有 $3$ 个自由度，说明洛伦兹群是个 $6$ 维的李群，其李代数也是 $6$ 维的实李代数。
+[15] 为了了解洛伦兹群的一个连通分支的性质，研究其李代数是非常重要的。
+[16] 下面我们将研究其李代数的性质。
+[SCOPE:s_let_generators|let_bind|生成元]
+[17] 首先写出它的李代数的生成元：
+[18] 根据矩阵李群的求李代数的一般方法，我们可以假设无穷小变换 $\Lambda=I+\epsilon X$，
+[19] 那么
+[20] \begin{equation}
+\begin{aligned}
+&\Lambda^T \eta \Lambda = (I+\epsilon X^T)\eta (I+\epsilon X)=\eta~,\\
+&\epsilon (X^T \eta + \eta X)+O(\epsilon^2)=0~,
+\end{aligned}
+\end{equation}
+[21] 由此可以得到 $X^T\eta+\eta X=0$，
+[22] 即 $\eta X \eta = -X^T$。
+[23] 由此我们可以写出满足条件的六个生成元：
+[24] \begin{equation}
+\begin{aligned}
+&L^1=
+\begin{pmatrix}
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & -1\\
+0 & 0 & 1 & 0
+\end{pmatrix}
+,\quad
+L^2=
+\begin{pmatrix}
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 1\\
+0 & 0 & 0 & 0\\
+0 & -1 & 0 & 0
+\end{pmatrix}
+,\quad
+L^3=
+\…[truncated]…\end{pmatrix}
+,\quad
+K^2=\begin{pmatrix}
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 0\\
+1 & 0 & 0 & 0\\
+0 & 0 & 0 & 0
+\end{pmatrix}
+,\quad K^3=\begin{pmatrix}
+0 & 0 & 0 & 1\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+1 & 0 & 0 & 0
+\end{pmatrix}~.
+\end{aligned}
+\end{equation}
+[25] 注意这里的生成元与一般物理里面的使用习惯可能差一个 $i$ 的系数，这是由于物理中对生成元的定义的不同。
+[/SCOPE:s_let_generators]
+[SCOPE:s_commutators|description|对易关系]
+[26] 下面我们写出这些生成元之间的对易关系：
+[27] \begin{equation}
+[L^i,L^j]=\epsilon^{ijk}L^k,\quad
+[L^i,K^j]=\epsilon^{ijk}K^k,\quad
+[K^i,K^j]=-\epsilon^{ijk}L^k~,
+\end{equation}
+[28] 这组对易关系实际上表达了洛伦兹群的一个连通分支的所有信息。
+[/SCOPE:s_commutators]
+[SCOPE:s_exponential|description|指数映射]
+[29] 我们可以通过指数映射从矩阵李代数重新得到矩阵李群的元素。
+[30] \begin{equation}
+\begin{aligned}
+e^{tL_1}&=(I+\frac{t^2L_1^2}{2!}-\frac{t^4L_1^2}{4!}+\cdots)+(tL_1+\frac{-t^3L_1}{3!}+\frac{t^5L_1}{5!}+\cdots)~,\\
+&=I+(\cos t-1)(-L_1^2)+\sin t L_1~,\\
+&=
+\begin{pmatrix}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & \cos…[truncated]…& \sinh t & 0\\
+0 & 1 & 0 & 0\\
+\sinh t & 0 & \cosh t & 0\\
+0 & 0 & 0 & 1
+\end{pmatrix}~.
+\\
+e^{t K_3}&=\begin{pmatrix}
+\cosh t & 0 & 0 & \sinh t\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+\sinh t & 0 & 0 & \cosh t
+\end{pmatrix}~.
+\end{aligned}
+\end{equation}
+[31] 可以看到，$L_1,L_2,L_3$ 实际上就是旋转变换的生成元，而 $K_1,K_2,K_3$ 是推促变换的生成元。
+[/SCOPE:s_liealgebra]
+[/SCOPE:s_exponential]
+[/SCOPE:root]

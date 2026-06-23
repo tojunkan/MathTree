@@ -1,0 +1,340 @@
+[SCOPE:root|description|实数集的完备公理]
+文章名: RCompl
+标题: 实数集的完备公理
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=确界原理
+  [1] type=theorem heading=定理 2 title=单调有界收敛定理
+  [2] type=theorem heading=定理 3 title=（闭）区间套定理
+  [3] type=theorem heading=定理 4 title=Heine-Borel 有限覆盖定理
+  [4] type=theorem heading=定理 5 title=Bolzano 致密性定理
+  [5] type=theorem heading=定理 6 title=Weierstrass 聚点定理
+  [6] type=theorem heading=定理 7 title=Cauchy 收敛准则
+  [7] type=exercise heading=习题 1 title=
+  [8] type=exercise heading=习题 2 title=
+
+[SCOPE:s_intro|description|引言]
+[0] 我们常见到一种争论，$0.\dot{9}$ 到底等不等于 $1$。
+[1] 实际上这个问题无法证明，而是被当作定义实数的公理之一，我们称之为完备性公理。
+[2] 你可以留意一下各种各样所谓的 “证明”，认为 $0.\dot{9}\neq 1$ 的论证通常都是否认了完备公理，而认为 $0.\dot{9}=1$ 的都默认了完备公理。
+[3] 用 $0.\dot{9}=1$ 来当作完备公理很不好用，我们通常使用本节介绍的的完备公理来描述实数的完备性，这些公理彼此是等价的，并且都可以推出 $0.\dot{9}=1$。
+[4] 我们先列举几条完备公理，再展开证明它们互推的逻辑链条。
+
+[5] 由于几个完备公理是等价的，可以互推，
+[6] 因此实际建立理论时只挑其中一个作为公理体系的一部分，其它的都当作定理，这也导致我们也常把这几条公理称为 “定理”。
+[7] 因此，我们使用 “定理” 的格式来列举这几条完备公理。
+
+[/SCOPE:s_intro]
+[SCOPE:s_thm1|description|确界原理]
+[8] 定理 1 确界原理
+[9] 实数集的任何非空有界子集，必有一个实数上确界（见上确界与下确界）。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|单调有界收敛定理]
+[10] 定理 2 单调有界收敛定理
+[11] 单调有界数列必有极限。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|（闭）区间套定理]
+[12] 定理 3 （闭）区间套定理
+[SCOPE:s_thm3_let|let_bind|区间套变量]
+[13] 设 $a_n$ 是单调递增数列，$b_n$ 是单调递减数列，$b_n-a_n$ 恒为正数且收敛到 $0$，且 $[a_{n+1}, b_{n+1}]$ 都是 $[a_n, b_n]$ 的真子集。
+[14] 称这样的集合 $\{[a_n, b_n]_{n=1}^\infty\}$ 为一个（闭）区间套。
+[15] 对于任意的区间套 $\{[a_n, b_n]\}$，存在唯一的实数 $x_0$ 使得 $x_0\in [a_n, b_n]$ 对任意正整数 $n$ 成立。
+
+[/SCOPE:s_thm3]
+[/SCOPE:s_thm3_let]
+[SCOPE:s_thm4|description|Heine-Borel 有限覆盖定理]
+[16] 定理 4 Heine-Borel 有限覆盖定理
+[SCOPE:s_thm4_let|let_bind|有限覆盖变量]
+[17] 设 $[a, b]$ 是一个区间，$C$ 是 $[a, b]$ 的一个开覆盖1，
+[18] 那么 $C$ 中存在有限个开集，使得其并集包含了 $[a, b]$。
+
+[/SCOPE:s_thm4]
+[/SCOPE:s_thm4_let]
+[SCOPE:s_thm5|description|Bolzano 致密性定理]
+[19] 定理 5 Bolzano 致密性定理
+[20] 有界无穷数列必有收敛子列。
+
+[/SCOPE:s_thm5]
+[SCOPE:s_thm6|description|Weierstrass 聚点定理]
+[21] 定理 6 Weierstrass 聚点定理
+[22] 有界无穷点集必有聚点（定义 1 ）。
+
+[/SCOPE:s_thm6]
+[SCOPE:s_thm7|description|Cauchy 收敛准则]
+[23] 定理 7 Cauchy 收敛准则
+[SCOPE:s_thm7_let|let_bind|Cauchy 数列变量]
+[24] 数列 $\{a_k\}$ 收敛，当且仅当对于任意 $\epsilon>0$，存在 $N_\epsilon$ 使得对于任意 $m, n>N_\epsilon$，都有 $ \left\lvert a_m-a_n \right\rvert <\epsilon$。
+[/SCOPE:s_thm7_let]
+[25] 以上七条就是最常见的实数完备公理，任取其一都可以用来定义实数的完备性、而把其它的当成定理。
+
+[/SCOPE:s_thm7]
+[SCOPE:s_proof12|description|定理1→定理2]
+[26] 首先，确界原理也等价于 “有界子集必有下确界”，只需要对子集里各实数取负值构成新的有界子集，取到新子集的上确界再取负值，就得到原子集的下确界了。
+[27] 因此我们这里不妨设单调有界数列是单调不减的，单调不增的证明方式完全一致。
+[SCOPE:s_proof12_let|let_bind|证明中的变量]
+[28] 取单调不增有界数列的全体函数值 $\{a_n\}$，构成实数集的一个子集 $S$。
+[29] 由于是有界数列，
+[30] 故 $S$ 是有界点集。
+[31] 于是由定理 1 ，$S$ 有一个上确界 $a$。
+[32] 由数列单调性，$ \left\lvert a-a_n \right\rvert $ 随着 $n$ 的增大而减小。
+[33] 同时由上确界的定义，对于任意的 $\epsilon>0$，都存在 $N_\epsilon$，使得只要 $n>N_\epsilon$ 就有 $ \left\lvert a-a_n \right\rvert <\epsilon$，而这就是 $\{a_n\}$ 收敛于 $a$ 的定义。
+
+[/SCOPE:s_proof12]
+[/SCOPE:s_proof12_let]
+[SCOPE:s_proof23|description|定理2→定理3]
+[34] 区间套中的 $\{a_n\}$ 和 $\{b_n\}$ 都是单调有界数列2，由定理 2 可知它们都收敛。
+[SCOPE:s_proof23_let|let_bind|证明中的变量]
+[35] 设 $\{a_n\}$ 收敛到 $a$，$\{b_n\}$ 收敛到 $b$。
+[36] 由单调性，对任意 $n$ 都有 $ \left\lvert b_n-a_n \right\rvert \geq \left\lvert b-a \right\rvert $ 以及 $a, b\in [a_n, b_n]$。
+[37] 但是由区间套的定义，$ \left\lvert b_n-a_n \right\rvert $ 趋于零，
+[38] 故 $ \left\lvert b-a \right\rvert =0$，
+[39] 即 $a=b$。
+[40] 这么一来，$a=b$ 就是区间套中唯一的公共元素。
+
+[/SCOPE:s_proof23]
+[/SCOPE:s_proof23_let]
+[SCOPE:s_proof34|description|定理3→定理4]
+[SCOPE:s_proof34_reductio|reductio|反证法假设]
+[SCOPE:s_proof34_let|let_bind|开覆盖 S]
+[41] 反设存在 $[a, b]$ 的一个开覆盖 $S$，使得 $S$ 的任何有限子集都不能覆盖 $[a, b]$。
+[42] 不失一般性地，设 $S$ 中的元素都是开区间3。
+[/SCOPE:s_proof34_let]
+[SCOPE:s_proof34_let2|let_bind|区间套构造]
+[43] 将 $[a, b]$ 二等分为 $[a, \frac{a+b}{2}]$ 和 $[\frac{a+b}{2}, b]$，
+[44] 那么由假设，这两个二等分闭区间中至少有一个不能被 $S$ 中的有限子集覆盖。
+[45] 取一个不能被有限覆盖的二等分区间，记它为 $[a_1, b_1]$。
+[46] 由于 $[a_1, b_1]$ 也是不能被 $S$ 的有限子集覆盖的闭区间，
+[47] 故我们可以同样取出它的一个二等分区间 $[a_2, b_2]$，使得这个新的二等分区间不能被 $S$ 的有限子集覆盖。
+[48] 以此类推，我们可以取出一系列 $[a_k, b_k]$，其中每一个都不能被 $S$ 的有限子集覆盖。
+[49] 由于每一步都是取二等分，
+[50] 故 $ \left\lvert b_k-a_k \right\rvert =\frac{ \left\lvert b-a \right\rvert }{2^k}$，
+[51] 因此 $[a_k, b_k]$ 是一个区间套。
+[52] 由区间套定理，存在唯一的 $x_0\in[a, b]$ 使得 $x_0\in[a_k, b_k]$ 对所有 $k$ 成立。
+[53] 由于 $S$ 是覆盖，
+[54] 故 $S$ 中至少有一个元素是包含 $x_0$ 的，设这个元素是区间 $(a_0, b_0)$。
+[55] 设 $\min( \left\lvert x_0-a_0 \right\rvert , \left\lvert x_0-b_0 \right\rvert )=r$，
+[56] 那么取 $k$ 使得 $ \left\lvert b_k-a_k \right\rvert < r$，所对应的 $[a_k, b_k]$ 就是 $(a_0, b_0)\in S$ 的子集，
+[57] 于是 $[a_k, b_k]$ 就被 $S$ 的有限子集覆盖了，矛盾！
+[/SCOPE:s_proof34_reductio]
+[/SCOPE:s_proof34_let2]
+[58] 因此反设不成立，$S$ 必有有限子覆盖。
+
+[/SCOPE:s_proof34]
+[SCOPE:s_proof45|description|定理4→定理5]
+[SCOPE:s_proof45_let|let_bind|数列变量]
+[59] 设 $\{x_k\}$ 是一个有界数列，
+[60] 即存在实数 $a< b$ 使得 $a< x_k< b$ 对任意 $k$ 都成立。
+[/SCOPE:s_proof45_let]
+[61] 如果 $s\in(a, b)$ 不是 $\{x_k\}$ 任何子列的收敛点，
+[62] 那么必然存在 $r_s>0$ 使得 $\{x_k\}\cap (s-r_s, s+r_s)=\{s\}$，
+[63] 即数列中没有除了 $s$ 本身外的元素到 $s$ 的距离小于 $r_s$4。
+[SCOPE:s_proof45_reductio|reductio|反证法假设]
+[64] 反设 $\{x_k\}$ 没有收敛子列，
+[65] 即任何 $s\in(a, b)$ 都不是其收敛点。
+[SCOPE:s_proof45_let2|let_bind|开覆盖构造]
+[66] 按上段论述，我们就可以对每一个 $s$ 取一个半径 $r_s$，使得 $(s-r_s, s+r_s)$ 中只有数列的一个元素。
+[67] 对所有 $s\in(a, b)$ 都取这样的区间，
+[68] 则我们就得到了 $[a, b]$ 的一个开覆盖。
+[69] 由有限覆盖定理，存在有限多个 $s$ 和 $r_s$ 的组合，使得对应的 $\{(s-r_s, s+r_s)\}$ 是有限子覆盖。
+[70] 这么一来，$\{x_k\}$ 的取值就在这些 $s$ 中，
+[71] 即只有有限多取值。
+[72] 但是我们有可数无穷多个 $x_k$，
+[73] 所以其中必有无穷多个等于同一个 $s$，它们就能构成一个收敛子列。
+[/SCOPE:s_proof45_let2]
+[74] 矛盾！
+[/SCOPE:s_proof45_reductio]
+[75] 因此反设不成立，$\{x_k\}$ 必有收敛子列。
+
+[/SCOPE:s_proof45]
+[SCOPE:s_proof56|description|定理5→定理6]
+[76] 因为有无穷多个点，
+[77] 所以我们可以每次取一个出来，每次取的都和前面不重复。
+[78] 这样，我们就得到一个有界无穷数列。
+[79] 由致密性定理，该数列必有收敛点。
+[80] 该收敛点就是该点集的聚点。
+
+[/SCOPE:s_proof56]
+[SCOPE:s_proof67|description|定理6→定理7]
+[81] 回顾数列收敛的定义：$\{a_n\}$ 收敛，当且仅当存在实数 $a$ 使得 $\lim\limits_{n\to \infty} \left\lvert a_n-a \right\rvert =0$。
+[82] 我们要证明当定理 6 成立时，定理 7 的设定（Cauchy 收敛准则）等价于数列收敛的定义。
+[SCOPE:s_proof67_let|let_bind|证明中的变量]
+[83] 给定数列 $\{a_k\}$，使得 $\epsilon>0$，存在 $N_\epsilon$ 使得对于任意 $m, n>N_\epsilon$，都有 $ \left\lvert a_m-a_n \right\rvert <\epsilon$。
+[84] 于是这个数列是有界数列，其值域是一个有界无穷点集。
+[85] 由聚点定理，存在一个 $x_0$，使得它是 $\{a_k\}$ 值域的一个聚点。
+[86] 任取 $\epsilon>0$，由聚点的定义，必然存在无穷多个 $a_k$ 使得 $ \left\lvert a_k-x_0 \right\rvert <\epsilon$；
+[87] 由题设，存在 $N_\epsilon$ 使得对于任意 $m, n>N_\epsilon$，都有 $ \left\lvert a_m-a_n \right\rvert <\epsilon$。
+[88] 综合起来，存在一个 $M_\epsilon$，使得对于任意 $r>M_\epsilon$，都有 $ \left\lvert a_r-a_{M_\epsilon} \right\rvert <\epsilon$，且 $ \left\lvert a_{M_\epsilon}-x_0 \right\rvert <\epsilon$。
+[89] 因此 $ \left\lvert a_r-x_0 \right\rvert <2\epsilon$。
+[90] 重新整理一下以上表述，就是：任取 $\epsilon>0$，存在 $M_\epsilon$，使得对于任意 $r>M_\epsilon$，都有 $ \left\lvert a_r-x_0 \right\rvert <2\epsilon$。
+[91] 这正是 $\{a_k\}$ 收敛于 $x_0$ 的定义。
+[92] 因此 定理 7 的设定可以推出数列收敛。
+[93a] 反过来
+[93b] 如果数列收敛，则Cauchy 收敛准则也成立。
+
+[/SCOPE:s_proof67]
+[/SCOPE:s_proof67_let]
+[SCOPE:s_proof71|description|定理7→定理1]
+[SCOPE:s_proof71_let|let_bind|集合与数列变量]
+[94] 取一个非空有界实数集 $S$，已知它有一个上界 $a_0$。
+[95] 由于 $S$ 非空，
+[96] 故存在 $b_0< a_0$，且 $b_0\in S$。
+[/SCOPE:s_proof71_let]
+[SCOPE:s_proof71_cases|cases|a1存在性分情况]
+[97a] 在线段 $b_0a_0$ 上取中点 $x$，看这个中点是不是 $S$ 的上界
+[97b] 如果不是，则再取 $x$ 和 $a_0$ 的中点，以此类推，直到取的某一个中点是上界，把这个中点记为 $a_1$。
+[98] 当然，我们不能保证 $a_1$ 一定存在，
+[99] 因此要分类讨论。
+[SCOPE:s_proof71_case1|description|a1不存在]
+[100a] 如果 $a_1$ 不存在，等价于任何小于 $a_0$ 的实数都不是 $S$ 的上界，那这说明 $a_0$
+[100b] 则是 $S$ 的上确界了，
+[101] 故上确界存在。
+[/SCOPE:s_proof71_case1]
+[SCOPE:s_proof71_case2|description|a1存在]
+[102] 以下假设 $a_1$ 是存在的。
+[SCOPE:s_proof71_let2|let_bind|数列构造]
+[103] 取 $a_1=\frac{2^{s}-1}{2^{s}}b_0+\frac{1}{2^{s}}a_0$ 和 $b_1>\frac{2^{{s}-1}-1}{2^{{s}-1}}b_0+\frac{1}{2^{{s}-1}}a_0$，使得 $b_1\in S$。
+[104] 这里的 $s$ 就是我们取中点直到得到 $a_1$ 的次数。
+[105] 接下来，对线段 $b_1a_1$ 进行相同的逐次取中点操作，直到得到第一个是 $S$ 上界的中点 $a_2$，取比 $a_2$ 的前一个中点大的 $b_2\in S$。
+[106] 如果其中有任何一个 $a_k$ 无法取到，
+[107] 那么 $a_{k-1}$ 就是 $S$ 的上确界，
+[108] 故我们以下假设 $a_k$ 总能取到。
+[/SCOPE:s_proof71_cases]
+[/SCOPE:s_proof71_case2]
+[109] 以此类推，得到两个数列 $\{a_k\}$ 和 $\{b_k\}$。
+[110] 考虑到 $\sum\limits_{k=1}^\infty \frac{1}{2^k}=1$，而由我们取中点的过程可知 $ \left\lvert a_{k+1}-a_k \right\rvert <\frac{ \left\lvert a_0-b_0 \right\rvert }{2^k}$，加上 $\{a_k\}$ 是递减数列，
+[111] 因此可知对于任意正整数 $m$ 都有 $ \left\lvert a_{k+m}-a_k \right\rvert <\frac{ \left\lvert a_0-b_0 \right\rvert }{2^{k-1}}$，
+[112] 即 $\{a_k\}$ 满足柯西收敛准则。
+[113] 由定理 7 ，可知必存在 $a\in\mathbb{R}$ 是 $\{a_k\}$ 的极限。
+[/SCOPE:s_proof71_let2]
+[114] 下证 $a$ 就是 $S$ 的上确界。
+[SCOPE:s_proof71_reductio|reductio|反证a是上确界]
+[115] 反设 $a$ 不是 $S$ 的上确界，
+[116] 即存在 $x< a$ 是 $S$ 的上界。
+[117] 由于总存在正整数 $k$ 使得 $ \left\lvert a_k-b_k \right\rvert < \left\lvert a-x \right\rvert $，这就和 $a_k>a, x\geq b_k$ 矛盾了。
+[/SCOPE:s_proof71_reductio]
+[118] 故反设不成立，$a$ 就是 $S$ 的上确界。
+
+[/SCOPE:s_proof71]
+[SCOPE:s_summary|description|总结]
+[119] 我们按定理 1 $\to$定理 2 $\to$定理 3 $\to$定理 4 $\to$定理 5 $\to$定理 6 $\to$定理 7 $\to$定理 1 的顺序完成了证明闭环。
+[120] 这个顺序只是笔者任意选定的，读者也可以尝试其中任意两个定理的互相证明，比如定理 5 和定理 6 之间的互相证明。
+[121] 每个定理，或者说公理，都从各自的角度刻画了 “实数不存在缝隙” 这一性质。
+[122] 它们都和完备公理（戴德金分割）中的定理 1 等价。
+
+[/SCOPE:s_summary]
+[SCOPE:s_ex1|description|习题1]
+[123] 习题 1
+[124] 证明确界原理定理 1 和实数的完备公理定理 1 等价。
+[125] 实际建立实数理论时，本节介绍的七条公理，或者也可以加上定理 1 ，任选其一来描述实数的完备性即可，又或者利用本节的结论将它们看成同一个公理的不同描述，实践中哪个方便证明就用哪个。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|习题2]
+[126] 习题 2
+[127] 使用本节以及完备公理（戴德金分割）中介绍的八条公理，证明 $0.\dot{9}=1$。
+[128] 注意 $0.\dot{9}$ 被 4 定义为数列 $\{0.9, 0.99, 0.999, 0.9999\cdots\}$ 的极限。
+[/SCOPE:s_ex2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_proof12",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理1推出定理2"
+  },
+  {
+    "source_scope": "s_proof23",
+    "target_scope": "s_thm3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2推出定理3"
+  },
+  {
+    "source_scope": "s_proof34",
+    "target_scope": "s_thm4",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3推出定理4"
+  },
+  {
+    "source_scope": "s_proof45",
+    "target_scope": "s_thm5",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理4推出定理5"
+  },
+  {
+    "source_scope": "s_proof56",
+    "target_scope": "s_thm6",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理5推出定理6"
+  },
+  {
+    "source_scope": "s_proof67",
+    "target_scope": "s_thm7",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理6推出定理7"
+  },
+  {
+    "source_scope": "s_proof71",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理7推出定理1"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_thm2",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "所有定理等价"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm3",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "所有定理等价"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm4",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "所有定理等价"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_thm5",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "所有定理等价"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_thm6",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "所有定理等价"
+  },
+  {
+    "source_scope": "s_thm6",
+    "target_scope": "s_thm7",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "所有定理等价"
+  },
+  {
+    "source_scope": "s_thm7",
+    "target_scope": "s_thm1",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "所有定理等价"
+  }
+]

@@ -1,0 +1,266 @@
+[SCOPE:root|description|线性映射与矩阵的代数关系]
+文章名: linmat
+标题: 线性映射与矩阵的代数关系
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=矩阵的秩
+  [1] type=definition heading=定义 2 title=线性变换的秩
+  [2] type=theorem heading=定理 1 title=像空间 $=$ 列空间
+  [3] type=theorem heading=定理 2 title=线性方程组的解的结构性定理
+  [4] type=exercise heading=习题 1 title=
+  [5] type=theorem heading=定理 3 title=
+  [6] type=definition heading=定义 3 title=线性变换的范数
+  [7] type=definition heading=定义 4 title=矩阵的范数
+  [8] type=theorem heading=定理 4 title=
+  [9] type=theorem heading=定理 5 title=
+  [10] type=theorem heading=定理 6 title=
+  [11] type=corollary heading=推论 1 title=
+  [12] type=corollary heading=推论 2 title=
+
+[SCOPE:s_intro|description|引言]
+[SCOPE:s_intro_let|let_bind|引入矩阵空间和线性变换空间]
+[0] 在本页中，我们将所有 $m$ 行 $n$ 列的实矩阵组成的集合记为 $\mathbb{R}^{m\times n}$，并记从 $\mathbb{R}^{n}$ 到 $\mathbb{R}^{m}$ 的一切线性变换全体构成的空间为 $L(\mathbb{R}^{n},\mathbb{R}^{m}).$
+[/SCOPE:s_intro_let]
+[1] $\mathbb{R}^{m\times n}$ 中的矩阵与 $L(\mathbb{R}^{n},\mathbb{R}^{m})$
+[2] 中的线性变换是代数同构的关系。
+[3] 矩阵可以看成线性变换，线性变换在取定一组基底后，可以表示为矩阵。
+[4] 为明确起见，本页所说的线性变换都是指有限维空间之间的线性变换，
+[5] 即 $L(\mathbb{R}^{n},\mathbb{R}^{m})$ 中的映射。
+
+[/SCOPE:s_intro]
+[SCOPE:s_def1|description|定义1 矩阵的秩]
+[6] 定义 1 矩阵的秩
+[7] 矩阵的秩 既可以定义为其行向量组的秩（称为行秩）, 也可以定义为其列向量组的秩（称为 列秩）,
+[8] 这是因为矩阵的行秩和列秩被证明是相等的。
+[9] 注：矩阵行向量组形成的空间称为 行空间, 行向量组的秩也正是行空间的维数;
+[10] 列向量组形成的空间称为 列空间, 列向量组的秩也正是列空间的维数。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义2 线性变换的秩]
+[11] 定义 2 线性变换的秩
+[12] 线性变换的秩 定义为其像空间的维数。
+[13] 下面的定理表明，矩阵与线性变换的秩在某种意义下是等同的。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|定理1 像空间=列空间]
+[14] 定理 1 像空间 $=$ 列空间
+[15] 如果将矩阵看成线性变换，
+[16] 那么该变换的像空间的维数，恰是矩阵的列空间的维数。
+[SCOPE:s_thm1_proof|description|定理1的证明]
+[SCOPE:s_thm1_let|let_bind|引入矩阵A]
+[17] 证明：设 $A\in\mathbb{R}^{m\times n}$, $A$ 也可以看成从 $\mathbb{R}^{n}$ 到 $\mathbb{R}^{m}$
+[18] 的线性变换，
+[/SCOPE:s_thm1_let]
+[19] 那么取定 $\mathbb{R}^{n}$ 的标准基 $(e_{1},e_{2},\ldots,e_{n})$ 后，
+[20] $A$ 的像空间就由 $\{Ae_{1},Ae_{2},\ldots,Ae_{n}\}$ 张成，
+[21] 因此像空间的维数就是 $\{Ae_{1},Ae_{2},\ldots,Ae_{n}\}$
+[22] 的极大无关组的个数，也就是 $\{Ae_{1},Ae_{2},\ldots,Ae_{n}\}$ 的秩; 而每个 $Ae_{i}$
+[23] 正好又是矩阵 $A$ 的第 $i$ 列，这就说明了 $A$ 的像空间的维数等于它的列空间的维数。
+[24] $\square$
+[/SCOPE:s_thm1_proof]
+[25] 注：上述证明过程表明，对于看成线性变换的矩阵来说，其像空间正好就是其列空间。
+[26] 矩阵是行满秩的，当且仅当其线性变换是满射。
+[27] (行秩等于列秩，列空间等于像空间)
+[28] 矩阵是列满秩的，当且仅当其线性变换是单射。
+[29] (列空间等于像空间，维数定理，核空间为零)
+[30] 方阵是满秩的，当且仅当它是可逆的，当且仅当其线性变换是双射。
+[31] 在介绍线性方程组的解的结构性定理时，很多书是采用初等行变换来证明的，这显然是有利于初学者接受的，
+[32] 但是不够优雅. 这里我们仅需巧妙地运用 定理 1 就能导出线性方程组的解的结构，
+[33] 并且能对齐次和非齐次线性方程组做统一的处理。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理2 线性方程组的解的结构性定理]
+[34] 定理 2 线性方程组的解的结构性定理
+[SCOPE:s_thm2_let|let_bind|引入矩阵A和向量b]
+[35] 设 $A\in\mathbb{R}^{m\times n},$ $b\in\mathbb{R}^{n\times1}$ 且 $b\neq0$.
+[/SCOPE:s_thm2_let]
+[36] ① $Ax=0$ 有唯一解（即零解）$\Leftrightarrow$ $\ker A=\{0\}$ $\Leftrightarrow$
+[37] $A$ 是单射 $\Leftrightarrow$ $A$ 列满秩 $\Leftrightarrow$ $\mathrm{rank}$
+[38] $A=n.$
+[39] ② $Ax=0$ 有无穷个解（即有非零解）$\Leftrightarrow$ $A$ 不是单射 $\Leftrightarrow$
+[40] $A$ 列不满秩 $\Leftrightarrow\mathrm{rank}$ $A< n.$
+[41] ③ $Ax=b$ 无解 $\Leftrightarrow$ $b\notin\mathrm{Im}A$ $\Leftrightarrow$
+[42] $b\notin${$A$ 的列空间} $\Leftrightarrow$ $b$ 无法被 $A$ 的列向量组线性表出
+[43] $\Leftrightarrow$ $\mathrm{rank}$ $A<$ $\mathrm{rank}$ $(A:b).$
+[44] ④ $Ax=b$ 有解 $\Leftrightarrow$ $b\in\mathrm{Im}A$ $\Leftrightarrow$
+[45] $b\in${$A$ 的列空间} $\Leftrightarrow$ $b$ 可以被 $A$ 的列向量组线性表出 $\Leftrightarrow$
+[46] $\mathrm{rank}$ $A=$ $\mathrm{rank}$ $(A:b).$
+[47] ⑤ $Ax=b$ 有唯一解 $\Leftrightarrow$ $b\in\mathrm{Im}A$ 且 $A$ 是单射 $\Leftrightarrow$
+[48] $\mathrm{rank}$ $A=$ $\mathrm{rank}$ $(A:b)=n$ (结合 ①、④)
+[49] ⑥ $Ax=b$ 有无穷多解 $\Leftrightarrow$ $b\in\mathrm{Im}A$ 且 $A$ 不是单射
+[50] $\Leftrightarrow$ $\mathrm{rank}$ $A=$ $\mathrm{rank}$ $(A:b)< n$
+[51] (结合 ②、④)
+[52] 注：以上结果展示了将矩阵和线性变换视作 代数同构 的强大作用。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_ex1|description|习题1]
+[53] 习题 1
+[54] 对非齐次线性方程组 $A_{m\times n}x=b$, 设 $\mathrm{rank}A=r$, 则（$\quad$）
+[55] $(\mathrm{A})$ $r=m$ 时，方程组 $Ax=b$ 有解
+[56] $(\mathrm{B})$ $r=n$ 时，方程组 $Ax=b$ 有唯一解
+[57] $(\mathrm{C})$ $n=m$ 时，方程组 $Ax=b$ 有唯一解
+[58] $(\mathrm{D})$ $r< n$ 时，方程组 $Ax=b$ 有无穷多解
+[59] 答案：见末尾1
+
+[/SCOPE:s_ex1]
+[SCOPE:s_thm3|description|定理3]
+[60] 定理 3
+[SCOPE:s_thm3_let|let_bind|引入矩阵A,B]
+[61a] 若 $A\in\mathbb{R}^{n\times m}$, $B\in\mathbb{R}^{m\times n}$, 且 $AB=I_n$,
+[61b] 则$A$ 作为线性算子是满射，$B$ 作为线性算子是单射。
+[/SCOPE:s_thm3_let]
+[SCOPE:s_thm3_proof|description|定理3的证明]
+[62] 证明：先证 $A$ 是满射。
+[63] 由已知得 $B\in L(\mathbb{R}^{n},\mathbb{R}^{m})$, $A\in L(\mathbb{R}^{m},\mathbb{R}^{n})$.
+[64] 若 $A$ 不满，$\mathrm{Im}A$ 真包含于 $\mathbb{R}^{n}$ 中，
+[65] 但是 $AB=I_{n}$
+[66] 说明 $\dim(\mathrm{Im}A)=n$, 矛盾。
+[67] 再证 $B$ 是单射。
+[68a] 若 $Bx=0$,
+[68b] 则$x=I_{n}x=(AB)x=A(Bx)=A0=0$, 说明 $\mathrm{Ker}B=\{0\}$.
+[69] $\square$
+[/SCOPE:s_thm3_proof]
+[70] 上面的定理有如下两个推论：
+[71] 矩阵有右逆，当且仅当其线性变换是满射。
+[72] 矩阵有左逆，当且仅当其线性变换是单射。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_norm_intro|description|范数引言]
+[73] 线性空间上的范数是指其上的一个满足 非负正定性、正齐次性、三角不等式 的实值函数，记作 $\left\Vert \cdot\right\Vert ~~$
+[74] （参见 “范数、赋范空间” 的 定义 1 ）. 对 $\mathbb{R}^n$ 中的一个向量 $x$, 我们一般将其看成列向量，并用 $|x|$ 来表示它的 欧氏范数 (也称为 模), 即
+[75] $$ |x|=\sqrt{x_1^2+x^2_2+\cdots+x_n^2}, \qquad\forall \,x\in \mathbb{R}^n~.
+$$
+
+[/SCOPE:s_norm_intro]
+[SCOPE:s_def3|description|定义3 线性变换的范数]
+[76] 定义 3 线性变换的范数
+[SCOPE:s_def3_let|let_bind|引入线性变换A]
+[77] 设 $A\in L(\mathbb{R}^{n},\mathbb{R}^{m})$, 定义
+[/SCOPE:s_def3_let]
+[78] \[
+[79a] (x)|=\max_{x\neq0}{\displaystyle \frac{|A
+[79b] (x)|}{x}}~.
+[80] \]
+[81] 注：可以证明 $L(\mathbb{R}^{n},\mathbb{R}^{m})$ 中的这个范数不仅满足非负正定性、正齐次性、三角不等式，
+[82] 还满足
+[83] $(\mathrm{iv})$ 向量范数相容性：$\left\Vert A(x)\right\Vert \leqslant\left\Vert A\right\Vert \left|x\right|$;
+[84] $(\mathrm{v})$ 复合运算相容性：$\left\Vert B\circ A\right\Vert \leqslant\left\Vert B\right\Vert \left\Vert A\right\Vert $.
+
+[/SCOPE:s_def3]
+[SCOPE:s_def4|description|定义4 矩阵的范数]
+[85] 定义 4 矩阵的范数
+[SCOPE:s_def4_let|let_bind|引入矩阵A]
+[86] 设 $A\in\mathbb{R}^{m\times n}$, 定义
+[/SCOPE:s_def4_let]
+[87] \begin{equation}
+\left\Vert A\right\Vert =\max_{|x|=1}|Ax|=\max_{x\neq0}{\displaystyle \frac{|Ax|}{x}}~.
+\end{equation}
+[88] 注：可以证明矩阵的这个范数不仅满足非负正定性、正齐次性、三角不等式，还满足
+[89] $(\mathrm{iv})$ 向量范数相容性：$\left\Vert Ax\right\Vert \leqslant\left\Vert A\right\Vert \left|x\right|$;
+[90] $(\mathrm{v})$ 乘法运算相容性：$\left\Vert BA\right\Vert \leqslant\left\Vert B\right\Vert \left\Vert A\right\Vert $.
+
+[/SCOPE:s_def4]
+[SCOPE:s_thm4|description|定理4]
+[91] 定理 4
+[SCOPE:s_thm4_let|let_bind|引入矩阵A]
+[92] 矩阵 $A$ 的范数 $\left\Vert A\right\Vert $ 可由以下公式计算：
+[/SCOPE:s_thm4_let]
+[93] \[
+[94] \left\Vert A\right\Vert =\sqrt{\mu_{1}}~,
+[95] \]
+[96] 其中 $\mu_{1}$ 为矩阵 $A^{T}A$ 的最大本征值。
+[97] 注：矩阵按 定义 4 所定义的范数称为 矩阵的标准范数. 除此之外，矩阵 $A\in\mathbb{R}^{m\times n}$ 还常用以下范数：
+[98] 矩阵按（式 1 ） 定义的范数称为矩阵的标准范数。
+[99] 除此之外，矩阵 $A\in\mathbb{R}^{m\times n}$ 常用以下范数：
+[100] \[
+[101] \left\Vert A\right\Vert _{1}=\max_{1\leqslant j\leqslant m}\{\sum_{i=1}^{n}|a_{ij}|\},\quad\left\Vert A\right\Vert _{\infty}=\max_{1\leqslant i\leqslant n}\{\sum_{j=1}^{n}|a_{ij}|\},\quad\left\Vert A\right\Vert _{F}=\left(\sum_{i,j=1}^{n}|a_{ij}|^{2}\right)^{\frac{1}{2}}~
+[102] \]
+[103] 分别称为矩阵的 列和范数、行和范数、Frobenius 范数 (简称 F 范数).
+[104] 可以证明，矩阵的范数自然会满足（也应该满足）非负正定性、正齐次性、三角不等式，
+[105] 但是却不一定要满足 $(\mathrm{iv})$ 和 $(\mathrm{v})$。
+[106] 比如，矩阵的列和范数与行和范数都不满足 $(\mathrm{iv})$，
+[107] 但满足 $(\mathrm{v})$；
+[108] 而矩阵的 F 范数则既满足 $(\mathrm{iv})$, 也满足 $(\mathrm{v})$.
+
+[/SCOPE:s_thm4]
+[SCOPE:s_thm5|description|定理5]
+[109] 定理 5
+[110] 任意两个矩阵的范数是相互等价的。
+[111] 注：等价范数的定义参见《范数、赋范空间》一节。
+
+[/SCOPE:s_thm5]
+[SCOPE:s_thm6|description|定理6]
+[112] 定理 6
+[SCOPE:s_thm6_let|let_bind|引入方阵A]
+[113] 设 $A$ 是 $n\times n$ 方阵，且 $\left\Vert A\right\Vert <1$, 则矩阵 $I-A$
+[/SCOPE:s_thm6_let]
+[114] 可逆，且
+[115] \[
+[116] I-A=\sum_{k=0}^{\infty}A^{k}~,
+[117] \]
+[118] 即 ${\displaystyle \lim_{k\rightarrow\infty}}\left\Vert I-A-{\displaystyle \sum_{i=0}^{k}A^{i}}\right\Vert =0.$
+[119] 并且此时成立不等式
+[120] \[
+[121] \left\Vert (I-A)^{-1}\right\Vert \leqslant{\displaystyle \frac{1}{1-\left\Vert A\right\Vert }~.}
+[122] \]
+[123] 注：这在形式上与等比级数非常像，比如
+[124] \[
+[125] {\displaystyle \frac{1}{1-x}=1+x+x^{2}+\cdots+x^{k}+\cdots=\sum_{k=0}^{\infty}A^{k}\quad\quad|x|<1}~,\]
+
+[/SCOPE:s_thm6]
+[SCOPE:s_cor1|description|推论1]
+[126] 推论 1
+[127] 可逆矩阵的小扰动仍是可逆矩阵；
+[128] 等价地，可逆线性变换的小扰动仍是可逆线性变换。
+[SCOPE:s_cor1_let|let_bind|引入矩阵A,P]
+[129] 注: 若矩阵 $A\in\mathbb{R}^{n\times n}$ 可逆，取矩阵 $P\in\mathbb{R}^{n\times n}$
+[130] 使其范数小于 $\frac{1}{\left\Vert A^{-1}\right\Vert }$, 则
+[/SCOPE:s_cor1_let]
+[131] \[
+[132] \left\Vert A^{-1}P\right\Vert \leqslant\left\Vert A^{-1}\right\Vert \left\Vert P\right\Vert <\left\Vert A^{-1}\right\Vert \cdot{\displaystyle \frac{1}{\left\Vert A^{-1}\right\Vert }=1~,}
+[133] \]
+[134] 那么根据定理 1 知 $I+A^{-1}P$ 可逆，
+[135] 从而
+[136] \[
+[137] A+P=A(I+A^{-1}P)~
+[138] \]
+[139] 也可逆。
+
+[/SCOPE:s_cor1]
+[SCOPE:s_cor2|description|推论2]
+[140] 推论 2
+[141] 可逆矩阵函数在连续点附近仍是可逆的。
+[/SCOPE:s_cor2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的结论是矩阵的秩与线性变换的秩的关系，但这里引用定义1的列空间概念"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1将像空间与列空间等同，从而联系了线性变换的秩与矩阵的秩"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2的证明依赖于定理1"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm6",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推论1的证明使用了定理6"
+  }
+]

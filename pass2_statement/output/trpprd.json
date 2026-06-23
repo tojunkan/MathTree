@@ -1,0 +1,180 @@
+{
+  "article_name": "trpprd",
+  "statements": [
+    {
+      "stmt_id": "st_scalar_def",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_scalar_let",
+      "exposed_entities": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_scalar_geom_intro",
+      "subtype": "remark",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_scalar_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_scalar_geom_meaning",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_scalar_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vector_def",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_vector_let",
+      "exposed_entities": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_jacobi_identity",
+      "subtype": "theorem",
+      "clause_range": [
+        22,
+        25
+      ],
+      "truth_value": "true",
+      "scope_id": "s_jacobi",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vector_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": "true",
+      "scope_id": "s_vector_triple",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        34,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let",
+      "exposed_entities": [
+        "a",
+        "b",
+        "c",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_gamma_constant",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_gamma_let",
+      "exposed_entities": [
+        "gamma"
+      ]
+    },
+    {
+      "stmt_id": "st_gamma_one",
+      "subtype": "conclusion",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_gamma_calc",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        51,
+        51
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_geometric_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_scalar_def",
+      "target": "st_scalar_geom_meaning",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_assump",
+      "target": "st_gamma_constant",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_gamma_constant",
+      "target": "st_gamma_one",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_gamma_one",
+      "target": "st_proof_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_conclusion",
+      "target": "st_vector_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_scalar_def",
+      "target": "st_scalar_geom_meaning",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "标量三重积的几何意义是其定义的一个特例说明"
+    },
+    {
+      "source": "st_proof_conclusion",
+      "target": "st_vector_formula",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "几何证明推导出向量三重积公式（式4）"
+    }
+  ],
+  "unresolved": []
+}

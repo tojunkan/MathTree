@@ -1,0 +1,460 @@
+{
+  "article_name": "BiDist",
+  "statements": [
+    {
+      "stmt_id": "st_def1_bernoulli",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "E",
+        "A",
+        "\\overline{A}"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_n_trials",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_success_failure",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "x_i"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_X_sum",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "X",
+        "x_i"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_binom_intro",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "X",
+        "n",
+        "p",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_sample_space",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "\\omega",
+        "\\Omega"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_distribution_derivation",
+      "subtype": "theorem",
+      "clause_range": [
+        19,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_binom_named",
+      "subtype": "definition",
+      "clause_range": [
+        29,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_sum_one",
+      "subtype": "theorem",
+      "clause_range": [
+        32,
+        35
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_name_origin",
+      "subtype": "remark",
+      "clause_range": [
+        36,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_discrete",
+      "subtype": "remark",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_examples",
+      "subtype": "example",
+      "clause_range": [
+        39,
+        42
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "X",
+        "Y",
+        "Z",
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_calc",
+      "subtype": "example",
+      "clause_range": [
+        44,
+        47
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        48,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3",
+      "exposed_entities": [
+        "X",
+        "Y",
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        50,
+        54
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bernoulli_dist_def",
+      "subtype": "definition",
+      "clause_range": [
+        55,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_bernoulli_table",
+      "subtype": "remark",
+      "clause_range": [
+        58,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bernoulli_usage",
+      "subtype": "remark",
+      "clause_range": [
+        60,
+        62
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_n_bernoulli_sum",
+      "subtype": "theorem",
+      "clause_range": [
+        63,
+        66
+      ],
+      "truth_value": "true",
+      "scope_id": "root",
+      "exposed_entities": [
+        "X_i",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_expectation_derivation",
+      "subtype": "theorem",
+      "clause_range": [
+        67,
+        69
+      ],
+      "truth_value": "true",
+      "scope_id": "root",
+      "exposed_entities": [
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_variance_derivation",
+      "subtype": "theorem",
+      "clause_range": [
+        70,
+        72
+      ],
+      "truth_value": "true",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bernoulli_moments",
+      "subtype": "corollary",
+      "clause_range": [
+        73,
+        74
+      ],
+      "truth_value": "true",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_graph_comment",
+      "subtype": "remark",
+      "clause_range": [
+        75,
+        85
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex4_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        87,
+        89
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex4",
+      "exposed_entities": [
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_ex4_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        90,
+        93
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_normal_approx",
+      "subtype": "theorem",
+      "clause_range": [
+        94,
+        95
+      ],
+      "truth_value": "true",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_normal_approx_detail",
+      "subtype": "remark",
+      "clause_range": [
+        96,
+        103
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "x_i"
+      ]
+    },
+    {
+      "stmt_id": "st_poisson_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        106,
+        109
+      ],
+      "truth_value": "true",
+      "scope_id": "s_poisson",
+      "exposed_entities": [
+        "\\lambda",
+        "N",
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_poisson_proof",
+      "subtype": "theorem",
+      "clause_range": [
+        110,
+        116
+      ],
+      "truth_value": "true",
+      "scope_id": "s_poisson",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_poisson_approx_remark",
+      "subtype": "remark",
+      "clause_range": [
+        117,
+        117
+      ],
+      "truth_value": null,
+      "scope_id": "s_poisson",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_bernoulli",
+      "target": "st_def1_n_trials",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_n_trials",
+      "target": "st_def1_success_failure",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_success_failure",
+      "target": "st_def1_X_sum",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_binom_intro",
+      "target": "st_def2_sample_space",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_sample_space",
+      "target": "st_def2_distribution_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_distribution_derivation",
+      "target": "st_def2_binom_named",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_binom_named",
+      "target": "st_def2_sum_one",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_assumptions",
+      "target": "st_ex3_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex4_assumptions",
+      "target": "st_ex4_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_poisson_theorem",
+      "target": "st_poisson_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_poisson_proof",
+      "target": "st_poisson_approx_remark",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_poisson_theorem",
+      "target": "st_def2_distribution_derivation",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "泊松定理是二项分布的极限情况"
+    }
+  ],
+  "unresolved": []
+}

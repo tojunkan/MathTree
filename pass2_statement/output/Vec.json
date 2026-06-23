@@ -1,0 +1,260 @@
+{
+  "article_name": "Vec",
+  "statements": [
+    {
+      "stmt_id": "st_def1_intro",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "M",
+        "X",
+        "TM"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_def",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_smooth_cond",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "p",
+        "U_p",
+        "varphi_p"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_smooth_def",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_set",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "mathfrak{X}(M)"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_equiv",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_remark_deriv",
+      "subtype": "remark",
+      "clause_range": [
+        24,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let",
+      "exposed_entities": [
+        "X",
+        "Y",
+        "mathfrak{X}(M)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_XY_not_vector",
+      "subtype": "conclusion",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_commutator_is_vector",
+      "subtype": "conclusion",
+      "clause_range": [
+        55,
+        56
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "[X,Y]"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_lie_bracket_def",
+      "subtype": "definition",
+      "clause_range": [
+        57,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "[X,Y]"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        70,
+        70
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_linear_space",
+      "subtype": "conclusion",
+      "clause_range": [
+        71,
+        71
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "mathfrak{X}(M)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_remark_module",
+      "subtype": "remark",
+      "clause_range": [
+        74,
+        80
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let_assump",
+      "target": "st_def1_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let_assump",
+      "target": "st_def1_smooth_cond",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_smooth_cond",
+      "target": "st_def1_smooth_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let_assump",
+      "target": "st_def1_set",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_smooth_def",
+      "target": "st_def1_set",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let_assump",
+      "target": "st_def1_equiv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let_assump",
+      "target": "st_ex1_XY_not_vector",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let_assump",
+      "target": "st_ex1_commutator_is_vector",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_commutator_is_vector",
+      "target": "st_ex1_lie_bracket_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_let_assump",
+      "target": "st_ex2_linear_space",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

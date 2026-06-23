@@ -1,0 +1,217 @@
+{
+  "article_name": "Heron",
+  "statements": [
+    {
+      "stmt_id": "st_heron_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        1,
+        3
+      ],
+      "truth_value": "true",
+      "scope_id": "s_heron_qin",
+      "exposed_entities": [
+        "a",
+        "b",
+        "c",
+        "s",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_qin_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_heron_qin",
+      "exposed_entities": [
+        "a",
+        "b",
+        "c",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_cross_method",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_cross",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_assume",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation_let",
+      "exposed_entities": [
+        "a",
+        "b",
+        "c",
+        "α",
+        "β",
+        "γ"
+      ]
+    },
+    {
+      "stmt_id": "st_derivation_step1",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "A",
+        "γ"
+      ]
+    },
+    {
+      "stmt_id": "st_derivation_step2",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_qin_note",
+      "subtype": "remark",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_measurements",
+      "subtype": "assumption",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "AB",
+        "AC",
+        "BC",
+        "BD",
+        "CD"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_semiperimeters",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "S",
+        "s_ΔABC",
+        "s_ΔBCD"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_areas",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "S_ΔABC",
+        "S_ΔBCD"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_total_area",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "S"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_heron_formula",
+      "target": "st_qin_formula",
+      "edge_type": "equivalent",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_assume",
+      "target": "st_derivation_step1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_step1",
+      "target": "st_derivation_step2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_measurements",
+      "target": "st_example1_semiperimeters",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_semiperimeters",
+      "target": "st_example1_areas",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_areas",
+      "target": "st_example1_total_area",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_derivation_step2",
+      "target": "st_heron_formula",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "推导得出海伦公式"
+    },
+    {
+      "source": "st_heron_formula",
+      "target": "st_example1_areas",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1应用海伦公式"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,169 @@
+{
+  "article_name": "WuChy",
+  "statements": [
+    {
+      "stmt_id": "st_triangle_let",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_triangle_let",
+      "exposed_entities": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_triangle_ineq",
+      "subtype": "lemma",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": "true",
+      "scope_id": "s_triangle",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mean_let",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_mean_let",
+      "exposed_entities": [
+        "x",
+        "H_n",
+        "G_n",
+        "A_n",
+        "Q_n"
+      ]
+    },
+    {
+      "stmt_id": "st_mean_ineq",
+      "subtype": "lemma",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_mean",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bernoulli_let",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_bernoulli_let",
+      "exposed_entities": [
+        "x",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_bernoulli_ineq",
+      "subtype": "lemma",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": "true",
+      "scope_id": "s_bernoulli",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_young_let",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_young_let",
+      "exposed_entities": [
+        "p",
+        "q",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_young_ineq",
+      "subtype": "lemma",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_young",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cauchy_let",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_cauchy_let",
+      "exposed_entities": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_cauchy_ineq",
+      "subtype": "theorem",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cauchy",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_triangle_let",
+      "target": "st_triangle_ineq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_mean_let",
+      "target": "st_mean_ineq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_bernoulli_let",
+      "target": "st_bernoulli_ineq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_young_let",
+      "target": "st_young_ineq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cauchy_let",
+      "target": "st_cauchy_ineq",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

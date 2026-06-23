@@ -1,0 +1,250 @@
+[SCOPE:root|description|分离性公理成立的充要条件]
+文章名: DisAx
+标题: 分离性公理成立的充要条件
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=$T_1$ 分离性公理成立的充要条件
+  [1] type=theorem heading=定理 2 title=$T_3$ 分离性公理成立的充要条件
+  [2] type=theorem heading=定理 3 title=
+  [3] type=definition heading=定义 1 title=正则空间
+  [4] type=theorem heading=定理 4 title=
+  [5] type=definition heading=定义 2 title=正规空间
+  [6] type=theorem heading=定理 5 title=
+  [7] type=theorem heading=定理 6 title=
+  [8] type=corollary heading=推论 1 title=
+
+[SCOPE:s_intro|description|引言]
+[0] [1] 拓扑空间是较度量空间更一般的对象，很多度量空间的概念可以拓广到拓扑空间。
+[1] 然而正因为这一一般性，拓扑空间会出现本质上不同于度量空间的情况。
+[2] 例如，有限点集可能不是闭的，收敛序列的极限点可能不唯一等等。
+[3] 为了获得和度量空间更相近的空间来，需要添加一些补充条件。
+[4] 分离性公理就是人们提出的一类重要条件，它衡量了拓扑空间中点的分离程度。
+[5] 本节将给出其中几个分离性公理成立的充要条件。
+
+[/SCOPE:s_intro]
+[SCOPE:s_thm1|description|定理1 T1分离性公理成立的充要条件]
+[6] 第一分离性公理 $T_1$ 是指对拓扑空间中的任意两个不同点，每一点都存在不包含另一点的邻域。
+[7] 这样的拓扑空间被称为 $T_1$ 空间。
+
+[8] 定理 1 $T_1$ 分离性公理成立的充要条件
+[9] 第一分离性公理 $T_1$ 成立的充要条件是：空间中任意单点集都是闭的。
+[10] 证明：
+[SCOPE:s_thm1_let_nec|let_bind|必要性中的变量]
+[11] 必要性：假设第一分离性公理成立，设 $x\neq y$，
+[12] 则存在 $y$ 的邻域 $O_y$，使得
+[13] \begin{equation}
+x\notin O_y~.
+\end{equation}
+[14] 由闭包的定义，$y\notin [x]$
+[15] 1
+[16] ，
+[17] 即任意不同于 $x$ 的点都不在 $[x]$ 中，
+[18] 因此 $[x]=x$。
+[/SCOPE:s_thm1_let_nec]
+[19] 因此任意单点集都是闭的。
+[SCOPE:s_thm1_let_suf|let_bind|充分性中的变量]
+[20] 充分性：假设任意单点集都是闭的。
+[21] 设 $x\neq y$，
+[22] 则那么 $x$ 的补集 $C(x)$ 是开的，并且 $y\in C(X),x\notin C(X)$，
+[23a] (x)$ 是 $y$ 的满足 $x\notin C
+[23b] (x)$ 的邻域。
+[24a] (y)$ 是 $x$ 的满足 $y\notin C
+[24b] (y)$ 的邻域。
+[25] 因此第一分离性公理成立。
+[/SCOPE:s_thm1_let_suf]
+[26] 证毕！
+[/SCOPE:s_thm1]
+[27] 第三分离性公理 $T_3$ 是指任一点和不包含它的闭集都各自有一邻域存在，使得两邻域不相交。
+[28] 包含一个集合的邻域是指这个邻域包含一个包含该集合的开集。
+
+[SCOPE:s_thm2|description|定理2 T3分离性公理成立的充要条件]
+[29] 定理 2 $T_3$ 分离性公理成立的充要条件
+[30] 第三分离性公理 $T_3$ 成立的充要条件是：任意单点集 $x$ 和其邻域 $O_x$，都存在 $x$ 的邻域 $ O'_x$，使得 $[O'_x]\subset O_x$。
+[31] 证明：
+[SCOPE:s_thm2_let_nec|let_bind|必要性中的变量]
+[32] 必要性：假设 $T_3$ 分离性公理成立。
+[33] 对任意 $x$ 和其邻域 $O_x$，存在开集 $U\subset O_x$ 包含 $x$。
+[34] 于是 $C(U)$ 是闭的，
+[35] 因此由 $T_3$ 公理，存在开集 $U_x, O$，使得
+[36] \begin{equation}
+x\in U_x,\quad C(U)\subset O,\quad U_x\cap O=\emptyset~.
+\end{equation}
+[37] \begin{equation}
+U_x\subset C(O)=[C(O)]\subset U\subset O_x.~
+\end{equation}
+[38] $U_x$ 刚好是所需要的 $O_x'$。
+[/SCOPE:s_thm2_let_nec]
+[SCOPE:s_thm2_let_suf|let_bind|充分性中的变量]
+[39] 充分性： 假设任意单点集 $x$ 和其邻域 $O_x$，都存在 $x$ 的邻域 $ O'_x$，使得 $[O'_x]\subset O_x$。
+[40] 设 $x$ 是任意点，$A$ 是不包含 $x$ 的任一闭集。
+[41] 那么 $C(A)$ 是包含 $x$ 的邻域。
+[42] 于是由假设，存在 $x$ 的邻域 $O$，使得
+[43] \begin{equation}
+[O]\subset C(A)~.
+\end{equation}
+[44] 于是 $C([O])$ 是包含 $A$ 的邻域。
+[45] 且 $C([O])\cap O=\emptyset $。
+[46] 显然 $O,C([O])$ 正是所需要的。
+[/SCOPE:s_thm2_let_suf]
+[47] 证毕！
+[/SCOPE:s_thm2]
+[48] 正规分离性公理是指任意两个不相交的闭集都各自有一邻域存在，使得两邻域不相交。
+
+[SCOPE:s_thm3|description|定理3 正规分离性公理成立的充要条件]
+[49] 定理 3
+[50] 正规分离性公理成立的充要条件是：任意闭集 $A$ 和其邻域 $O_A$，都存在 $A$ 的邻域 $ O'_A$，使得 $[O'_A]\subset O_A$。
+[51] 证明：
+[SCOPE:s_thm3_let_nec|let_bind|必要性中的变量]
+[52] 必要性：假设正规分离性公理成立。
+[53] 对任意闭集 $A$ 和其邻域 $O_A$，存在开集 $U\subset O_A$ 包含 $A$。
+[54] 于是 $C(U)$ 是闭的，
+[55] 因此由正规性公理，存在开集 $U_A, O$，使得
+[56] \begin{equation}
+A\in U_A,\quad C(U)\subset O,\quad U_A\cap O=\emptyset~.
+\end{equation}
+[57] \begin{equation}
+U_A\subset C(O)=[C(O)]\subset U\subset O_A.~
+\end{equation}
+[58] $U_A$ 刚好是所需要的 $O_A'$。
+[/SCOPE:s_thm3_let_nec]
+[SCOPE:s_thm3_let_suf|let_bind|充分性中的变量]
+[59] 充分性： 假设任意闭集 $A$ 和其邻域 $O_A$，都存在 $A$ 的邻域 $ O'_A$，使得 $[O'_A]\subset O_A$。
+[60] 设 $A,B$ 是任意两不相交的闭集，
+[61] 那么 $C(A)$ 是包含 $B$ 的邻域。
+[62] 于是由假设，存在 $B$ 的邻域 $O$，使得
+[63] \begin{equation}
+[O]\subset C(A)~.
+\end{equation}
+[64] 于是 $C([O])$ 是包含 $A$ 的邻域。
+[65] 且 $C([O])\cap O=\emptyset $。
+[66] 显然 $O,C([O])$ 正是所需要的。
+[/SCOPE:s_thm3_let_suf]
+[67] 证毕！
+
+[/SCOPE:s_thm3]
+[SCOPE:s_prop|description|关于T2的说明]
+[68] 上面未提及第二分离性公理 $T_2$（即任意两个点都各自存在不包含另一点的邻域）成立的充要条件，事实上 $T_2$ 只是比 $T_1$ 更强的条件，
+[69] 即凡 $T_2$ 空间都是 $T_1$ 的，因为 $T_2$ 公理中的两个邻域本身就是不包含另一个点的。
+
+[/SCOPE:s_prop]
+[SCOPE:s_def1|description|定义1 正则空间]
+[70] 定义 1 正则空间
+[71] 满足 $T_1,T_3$ 公理的空间称为正则空间。
+[72] 满足 $T_2$ 公理的空间称为Hausdorff 空间，下面定理给出了它和正则空间的关系
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm4|description|定理4 正则空间是Hausdorff空间]
+[73] 定理 4
+[74] 正则空间是 Hausdorff 空间。
+[75] 证明：
+[SCOPE:s_thm4_let|let_bind|定理4中的变量]
+[76] 设 $x\neq y$ 是正则空间中的任意两点。
+[77] 于是由定理 1 ，单点集 $y$ 是闭的。
+[78] 显然 $x\notin y$，
+[79] 于是由公理 $T_3$，存在开集 $O_x,O_y$，使得
+[80] \begin{equation}
+x\in O_x, \quad y\in y\subset O_y, \quad O_x\cap O_y=\emptyset.~
+\end{equation}
+[81] 因此，正则空间满足 $T_2$，
+[82] 从而是 Hausdorff 空间。
+[/SCOPE:s_thm4_let]
+[83] 证毕！
+[84] 然而，上述定理的逆命题是不成立的。
+
+[/SCOPE:s_thm4]
+[SCOPE:s_def2|description|定义2 正规空间]
+[85] 定义 2 正规空间
+[86] 满足正规分离性公理的 $T_1$ 空间称为正规的(Normal)。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm5|description|定理5 正规空间满足T3]
+[87] 定理 5
+[88] 正规空间满足 $T_3$ 分离性公理。
+[SCOPE:s_thm5_let|let_bind|定理5中的变量]
+[89] 证明：设 $x$ 是任一正规空间中的一点，$A$ 是不包含 $x$ 的正规空间中的闭集。
+[90] 由定理 1 ，单点集 $x$ 是闭集，
+[91] 因此由正规分离性定理，存在开集 $O_x,O_A$ 满足
+[92] \begin{equation}
+x\in x\subset O_x, \quad A\subset O_A,\quad O_x\cap O_A=\emptyset.~
+\end{equation}
+[93] 这表明了 $T_3$ 分离性公理对正规空间成立。
+[/SCOPE:s_thm5_let]
+[94] 证毕！
+
+[/SCOPE:s_thm5]
+[SCOPE:s_thm6|description|定理6 度量空间是正规空间]
+[95] 定理 6
+[96] 度量空间是正规空间。
+[SCOPE:s_thm6_let|let_bind|定理6中的变量]
+[97] 证明：设 $X,Y$ 是度量空间中的两个不相交的闭集。
+[98] 于是由定理 5 ，对每一 $x\in X$，都存在 $x$ 的邻域 $O_x$，使得 $O_x\cap Y=\emptyset$。
+[99] 于是存在开球 $B(x,r)\subset O_x$，其中 $r>0$。
+[100] 因此，每一 $x$ 和 $Y$ 的距离为某一正数 $d_x$。
+[101] 类似的，每一 $y\in Y$ 和 $X$ 的距离是某一正数 $d_y$。
+[102] 显然，下面两个开集分别包含 $X,Y$
+[103] \begin{equation}
+U=\bigcup_{x\in X} B(x,d_x/2),\quad V=\bigcup_{y\in Y} B(y,d_y/2)~.
+\end{equation}
+[/SCOPE:s_thm6_let]
+[SCOPE:s_thm6_reductio|reductio|反证法证明U∩V=∅]
+[104] 下面证明它们的交是空的。
+[SCOPE:s_thm6_reductio_let|let_bind|反证法中的变量]
+[105] 假设 $z\in U\cap V$，
+[106] 于是存在 $x_0\in X,y_0\in Y$，使得 $d(z,x_0)< d_{x_0}/2,d(z,y_0)< d_{y_0}/2$。
+[107] 不是一般性，设 $d_{x_0}\leq d_{y_0}$，
+[108] 因此
+[109] \begin{equation}
+d(x_0,y_0)\leq d(z,x_0)+d(z,y_0)< d_{x_0}/2+d_{y_0}/2\leq d_{y_0}.~
+\end{equation}
+[110] 即，$x_0$ 属于 $B(y_0,d_{y_0})$，
+[111] 但这与 $d_{y_0}$ 的定义矛盾，
+[/SCOPE:s_thm6_reductio_let]
+[112] 于是 $U\cap V=\emptyset$。
+[/SCOPE:s_thm6_reductio]
+[113] 于是度量空间满足正规性公理。
+[114] 此外，度量空间中任意两不同点都被某两个不相交的开球分开，
+[115] 因而满足 $T_1$ 分离性公理。
+[116] 于是命题得证。
+[117] 证毕！
+
+[/SCOPE:s_thm6]
+[SCOPE:s_cor1|description|推论1 度量空间的子空间是正规空间]
+[118] 推论 1
+[119] 任一度量空间的子空间仍是正规空间。
+[120] 证明：任一度量空间的子空间仍是度量空间，
+[121] 因此定理 6 保证了命题的正确性。
+[122] 证毕！
+[/SCOPE:s_cor1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理4的证明中用到定理1的结论"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理5的证明中用到定理1的结论"
+  },
+  {
+    "source_scope": "s_thm6",
+    "target_scope": "s_thm5",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理6的证明中用到定理5的结论"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm6",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1的证明中用到定理6的结论"
+  }
+]

@@ -1,0 +1,102 @@
+[SCOPE:root|description|自治系统解的特点]
+文章名: AuSy
+标题: 自治系统解的特点
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=theorem heading=定理 2 title=不同轨线不相交
+
+[SCOPE:s_thm1|description|定理1]
+[0] 定理 1
+[SCOPE:s_thm1_let1|let_bind|定理1的变量]
+[1] 若 $y_i=\varphi_i(x)$ 是方程组式 1 的解，
+[2] 则 $y_i=\varphi^*_i(x)=\varphi_i(x+c)$ 也是方程组式 1 的解，其中 $c$ 是任意常数。
+[/SCOPE:s_thm1_let1]
+[3] 证明：由复合函数求导法则，成立
+[4] \begin{equation}
+\begin{aligned}
+{\varphi^*_i}'(x)&= \frac{\mathrm{d}{\varphi^*_i(x)}}{\mathrm{d}{x}} = \frac{\mathrm{d}{\varphi_i(x+c)}}{\mathrm{d}{x}} \\
+&= \frac{\mathrm{d}{\varphi_i(x+c)}}{\mathrm{d}{(x+c)}} \frac{\mathrm{d}{(x+c)}}{\mathrm{d}{x}} =\varphi'_i(x+c)~.
+\end{aligned}
+\end{equation}
+[5] 由于 $y_i=\varphi_i(x)$ 是解，
+[6] 所以
+[7] \begin{equation}
+\begin{aligned}
+\varphi'_i(x+c)=f_i(\varphi_1(x+c),\cdots,\varphi_n(x+c))~,
+\end{aligned}
+\end{equation}
+[8] 恒成立。
+[9] 式 3 [链接 L1]
+[10] 带入上式，
+[11] 即得
+[12] \begin{equation}
+{\varphi^*_i}'(x)=f_i(\varphi^*_1(x),\cdots,\varphi^*_n(x))~.
+\end{equation}
+[13] 证毕！
+[SCOPE:s_thm1_let2|let_bind|最大存在区间变量]
+[14] 显然，若解 $\varphi_1(x)$ 有最大存在区间 $(m_1,m_2)$，
+[15] 则 $\varphi^*(x)$ 有最大存在区间 $(m_1-c,m_2-c)$.
+[/SCOPE:s_thm1_let2]
+[16] 自治系统（式 1 ）的解定义在 $n$ 维空间上，随 $x$ 的变化 $y^i$ 在空间描出一条曲线，这条曲线称为轨线。
+[17] 若把解看成轨线而非运动过程，
+[18] 则需要指出在轨线上指出运动的方向，因为相反的运动方向式 1 右边差一负号。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理2 不同轨线不相交]
+[19] 定理 2 不同轨线不相交
+[SCOPE:s_thm2_let1|let_bind|定理2的变量]
+[20] 若两轨线 $\varphi_i,\psi_i$ 有一公共点，
+[21] 即 $\varphi_i(x_1)=\psi_i(x_1)$，
+[22] 则
+[23] \begin{equation}
+\psi_i(x)=\varphi_i(x+x_1-x_2)~.
+\end{equation}
+[/SCOPE:s_thm2_let1]
+[24] 证明：由定理 1 ，$\varphi^*_i(x)=\varphi_i(x+x_1-x_2)$ 也是解。
+[25] 由于 $\varphi^*_i(x_2)=\varphi_i(x_1)=\phi_i(x_2)$，知 $\varphi^*_i,\phi_i$ 有相同初始值 $x_2$。
+[26] 根据唯一性定理，它们是相同的。
+[27] 即式 6 成立。
+[28] 证毕！
+[SCOPE:s_thm2_let2|let_bind|物理系统变量]
+[29] 在物理中，物理系统的哈密顿函数 $H$ 定义了物理系统在相空间的矢量场 $( \frac{\partial H}{\partial p_i} ,- \frac{\partial H}{\partial q_i} )$ , 物理系统满足正则方程（式 5 ）：
+[30] \begin{equation}
+\dot q_i= \frac{\partial H}{\partial p_i} ,\quad \dot o_i=- \frac{\partial H}{\partial q_i} ~.
+\end{equation}
+[31] 若令 $x=t,y=(q_1,\cdots,q_n,p_1,\cdots,p_n),f=( \frac{\partial H}{\partial p_1} ,\cdots, \frac{\partial H}{\partial p_n} ,- \frac{\partial H}{\partial q_1,\cdots,- \frac{\partial H}{\partial q_n} } )$，
+[32] 则上式成为常微分方程组
+[33] 式 2 [链接 L2]
+[34] ，正则方程的解也称为物理系统的场线（由于正则方程和场方程，亦即欧拉拉格朗日方程等价）。
+[/SCOPE:s_thm2_let2]
+[35] 定理 2 [链接 L3]
+[36] 表明物理系统不同的场线不相交。
+[37] 人们一般熟悉电磁场的场线的概念，其上点的切线方向和电磁场在该点的方向相同，若用 $ \boldsymbol{\mathbf{A}} $ 表示电磁场（电场或磁场），
+[38] 那么其场线满足方程
+[39] \begin{equation}
+\frac{ \,\mathrm{d}{x} }{A_x}=\frac{ \,\mathrm{d}{y} }{A_y}=\frac{ \,\mathrm{d}{z} }{A_z}~,
+\end{equation}
+[40] 上式等价于
+[41] \begin{equation}
+\frac{\mathrm{d}{x}}{\mathrm{d}{s}} =A_x,\quad \frac{\mathrm{d}{y}}{\mathrm{d}{s}} =A_y,\quad \frac{\mathrm{d}{z}}{\mathrm{d}{s}} =A_z~,
+\end{equation}
+[42] 其中 $s$ 代表场线的参数，也可以想象为弧长参量，可以发现，它只是
+[43] 式 2 [链接 L4]
+[44] 的一个特例。
+[45] 定理 2 [链接 L5]
+[46] 再次表明了我们的论断。
+
+跨文章引用:
+  [L0] 基本知识（常微分方程） → ODEPr
+[/SCOPE:s_thm2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2的证明引用定理1的结论"
+  }
+]

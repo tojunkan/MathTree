@@ -1,0 +1,315 @@
+{
+  "article_name": "Series",
+  "statements": [
+    {
+      "stmt_id": "st_basic_let",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_basic_let",
+      "exposed_entities": [
+        "a_n",
+        "n",
+        "S_N"
+      ]
+    },
+    {
+      "stmt_id": "st_basic_necessary_condition",
+      "subtype": "theorem",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_basic",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cauchy_criterion",
+      "subtype": "theorem",
+      "clause_range": [
+        11,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cauchy_let",
+      "exposed_entities": [
+        "a_n",
+        "N_epsilon"
+      ]
+    },
+    {
+      "stmt_id": "st_cauchy_corollary",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_cauchy",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1",
+      "subtype": "exercise",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_intro",
+      "subtype": "remark",
+      "clause_range": [
+        18,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_harmonic",
+      "subtype": "example",
+      "clause_range": [
+        21,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2_let1",
+      "exposed_entities": [
+        "n",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_asymptotic",
+      "subtype": "remark",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_p_alpha",
+      "subtype": "remark",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let2",
+      "exposed_entities": [
+        "alpha"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_intro",
+      "subtype": "remark",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_p_series",
+      "subtype": "example",
+      "clause_range": [
+        34,
+        37
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3_let1",
+      "exposed_entities": [
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_p_log",
+      "subtype": "example",
+      "clause_range": [
+        38,
+        41
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3_let2",
+      "exposed_entities": [
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_geometric",
+      "subtype": "example",
+      "clause_range": [
+        42,
+        46
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3_let3",
+      "exposed_entities": [
+        "q"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_telescoping",
+      "subtype": "example",
+      "clause_range": [
+        47,
+        54
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3_let4",
+      "exposed_entities": [
+        "b_n",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_discussion_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        55,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "s_discussion",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_discussion_remark2",
+      "subtype": "remark",
+      "clause_range": [
+        58,
+        63
+      ],
+      "truth_value": null,
+      "scope_id": "s_discussion",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_discussion_example",
+      "subtype": "example",
+      "clause_range": [
+        64,
+        77
+      ],
+      "truth_value": "true",
+      "scope_id": "s_discussion_let",
+      "exposed_entities": [
+        "a_n",
+        "S"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_basic_let",
+      "target": "st_basic_necessary_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_basic_let",
+      "target": "st_cauchy_criterion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cauchy_criterion",
+      "target": "st_cauchy_corollary",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_ex2_harmonic",
+      "target": "st_cauchy_criterion",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_p_series",
+      "target": "st_basic_let",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_p_log",
+      "target": "st_basic_let",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_geometric",
+      "target": "st_basic_let",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_telescoping",
+      "target": "st_basic_let",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_discussion_remark1",
+      "target": "st_basic_let",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_discussion_remark2",
+      "target": "st_basic_let",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_discussion_example",
+      "target": "st_basic_let",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_cauchy_criterion",
+      "target": "st_basic_let",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "柯西判据是级数收敛的充要条件，基于基本定义。"
+    },
+    {
+      "source": "st_ex2_harmonic",
+      "target": "st_cauchy_criterion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1用柯西判据证明调和级数发散。"
+    },
+    {
+      "source": "st_ex3_p_series",
+      "target": "st_basic_let",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "重要的收敛级数作为基本定义的例子。"
+    },
+    {
+      "source": "st_discussion_remark1",
+      "target": "st_basic_let",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义辨析基于基本定义。"
+    }
+  ],
+  "unresolved": []
+}

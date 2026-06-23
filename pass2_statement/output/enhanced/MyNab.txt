@@ -1,0 +1,41 @@
+[SCOPE:root|description|一种矢量算符的运算方法]
+文章名: MyNab
+标题: 一种矢量算符的运算方法
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=example heading=例 2 title=
+  [2] type=example heading=例 3 title=
+
+[SCOPE:s_ex1|description|例1]
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[0] 证明 $ \boldsymbol{\nabla}\boldsymbol{\times} (U \boldsymbol{\mathbf{A}} ) = ( \boldsymbol\nabla U) \boldsymbol\times \boldsymbol{\mathbf{A}} + U \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{A}} $。
+[/SCOPE:s_ex1_let]
+[1] \begin{equation} \begin{aligned}
+{}[ \boldsymbol{\nabla}\boldsymbol{\times} (U \boldsymbol{\mathbf{A}} )]_{\partial(UA)}
+&= [ \boldsymbol{\nabla}\boldsymbol{\times} (U \boldsymbol{\mathbf{A}} )]_{A\partial U} + [ \boldsymbol{\nabla}\boldsymbol{\times…[truncated]…[U \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{A}} ]_{U\partial A}\\
+&= ( \boldsymbol\nabla U) \boldsymbol\times \boldsymbol{\mathbf{A}} + U \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{A}} ~,
+\end{aligned} \end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2]
+[SCOPE:s_ex2_let|let_bind|例2的变量]
+[2] 化简 $ \boldsymbol{\nabla}\boldsymbol{\times} ( \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{E}} )$。
+[/SCOPE:s_ex2_let]
+[3] \begin{equation}
+{}[ \boldsymbol{\nabla}\boldsymbol{\times} ( \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{E}} )]_{\partial^2 E} = [ \boldsymbol\nabla ( \boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{E}} ) - \boldsymbol{\nabla}^2 \boldsymbol{\mathbf{E}} ]_{\partial^2 E}
+= \boldsymbol\nabla ( \boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{E}} ) - \boldsymbol{\nabla}^2 \boldsymbol{\mathbf{E}} ~.
+\end{equation}
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|例3]
+[SCOPE:s_ex3_let|let_bind|例3的变量]
+[4] 证明 $ \boldsymbol\nabla ( \boldsymbol{\mathbf{F}} \boldsymbol\cdot \boldsymbol{\mathbf{G}} ) = \boldsymbol{\mathbf{F}} \boldsymbol\times ( \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{G}} ) + \boldsymbol{\mathbf{G}} \boldsymbol\times ( \boldsymbol{\nabla}\boldsymbol{\times} { \boldsymbol{\mathbf{F}} }) + ( \boldsymbol{\mathbf{F}} \boldsymbol\cdot \boldsymbol\nabla ) \boldsymbol{\mathbf{G}} + ( \boldsymbol{\mathbf{G}} \boldsymbol\cdot \boldsymbol\nabla ) \boldsymbol{\mathbf{F}} $。
+[/SCOPE:s_ex3_let]
+[5] 从右向左证明，上式等于
+[6] \begin{equation} \begin{aligned}
+&\quad [ \boldsymbol{\mathbf{F}} \boldsymbol\times ( \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{G}} )]_{F\partial G} + [ \boldsymbol{\mathbf{G}} \boldsymbol\times ( \boldsymbol{\nabla}\boldsymbol{\time…[truncated]…}} )]_{F\partial G}\\
+&= [ \boldsymbol\nabla ( \boldsymbol{\mathbf{F}} \boldsymbol\cdot \boldsymbol{\mathbf{G}} )]_{\partial (FG)} = \boldsymbol\nabla ( \boldsymbol{\mathbf{F}} \boldsymbol\cdot \boldsymbol{\mathbf{G}} )~,
+\end{aligned} \end{equation}
+[/SCOPE:s_ex3]
+[/SCOPE:root]

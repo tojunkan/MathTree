@@ -1,0 +1,163 @@
+{
+  "article_name": "CFinAf",
+  "statements": [
+    {
+      "stmt_id": "st_def1_region",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "A",
+        "M",
+        "Omega"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_connected",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_curvilinear",
+      "subtype": "definition",
+      "clause_range": [
+        18,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "Omega",
+        "f_k",
+        "x'^i"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_note",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1",
+      "subtype": "theorem",
+      "clause_range": [
+        30,
+        32
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2",
+      "subtype": "theorem",
+      "clause_range": [
+        54,
+        55
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        56,
+        61
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3",
+      "subtype": "definition",
+      "clause_range": [
+        66,
+        71
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "Omega",
+        "x^i",
+        "partial_i x"
+      ]
+    },
+    {
+      "stmt_id": "st_def4",
+      "subtype": "definition",
+      "clause_range": [
+        74,
+        75
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "Omega",
+        "partial_i x"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3",
+      "subtype": "theorem",
+      "clause_range": [
+        90,
+        97
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1",
+      "target": "st_def2_curvilinear",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2",
+      "target": "st_thm1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3",
+      "target": "st_def4",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

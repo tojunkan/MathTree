@@ -1,0 +1,945 @@
+{
+  "article_name": "HsGeBa",
+  "statements": [
+    {
+      "stmt_id": "st_intro_1",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_point_def",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_basic_elements",
+      "exposed_entities": [
+        "point",
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_line_def",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_basic_elements",
+      "exposed_entities": [
+        "line",
+        "straight line"
+      ]
+    },
+    {
+      "stmt_id": "st_ray_segment_def",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_basic_elements",
+      "exposed_entities": [
+        "ray",
+        "segment"
+      ]
+    },
+    {
+      "stmt_id": "st_length_def",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_basic_elements",
+      "exposed_entities": [
+        "length",
+        "distance"
+      ]
+    },
+    {
+      "stmt_id": "st_midpoint_def",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_basic_elements",
+      "exposed_entities": [
+        "midpoint"
+      ]
+    },
+    {
+      "stmt_id": "st_angle_def",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_basic_elements",
+      "exposed_entities": [
+        "angle",
+        "vertex",
+        "sides",
+        "measure of angle"
+      ]
+    },
+    {
+      "stmt_id": "st_degree_system_def",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_basic_elements",
+      "exposed_entities": [
+        "degree",
+        "minute",
+        "second",
+        "Degree System",
+        "full angle"
+      ]
+    },
+    {
+      "stmt_id": "st_angle_classification",
+      "subtype": "definition",
+      "clause_range": [
+        22,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_basic_elements",
+      "exposed_entities": [
+        "acute angle",
+        "right angle",
+        "obtuse angle",
+        "straight angle"
+      ]
+    },
+    {
+      "stmt_id": "st_perpendicular_def",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_relations",
+      "exposed_entities": [
+        "perpendicular",
+        "AB",
+        "CD"
+      ]
+    },
+    {
+      "stmt_id": "st_parallel_def",
+      "subtype": "definition",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_relations",
+      "exposed_entities": [
+        "parallel",
+        "AB",
+        "CD"
+      ]
+    },
+    {
+      "stmt_id": "st_distance_point_line_def",
+      "subtype": "definition",
+      "clause_range": [
+        34,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_relations",
+      "exposed_entities": [
+        "distance",
+        "perpendicular line",
+        "perpendicular foot"
+      ]
+    },
+    {
+      "stmt_id": "st_perp_bisector_def",
+      "subtype": "definition",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_relations",
+      "exposed_entities": [
+        "perpendicular bisector"
+      ]
+    },
+    {
+      "stmt_id": "st_perp_bisector_converse",
+      "subtype": "theorem",
+      "clause_range": [
+        39,
+        40
+      ],
+      "truth_value": "true",
+      "scope_id": "s_relations",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_angle_bisector_def",
+      "subtype": "definition",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_relations",
+      "exposed_entities": [
+        "angle bisector"
+      ]
+    },
+    {
+      "stmt_id": "st_angle_bisector_prop",
+      "subtype": "theorem",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": "true",
+      "scope_id": "s_relations",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_supplementary_def",
+      "subtype": "definition",
+      "clause_range": [
+        44,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_relations",
+      "exposed_entities": [
+        "supplementary angles"
+      ]
+    },
+    {
+      "stmt_id": "st_complementary_def",
+      "subtype": "definition",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_relations",
+      "exposed_entities": [
+        "complementary angles"
+      ]
+    },
+    {
+      "stmt_id": "st_parallel_postulate_original",
+      "subtype": "axiom",
+      "clause_range": [
+        48,
+        49
+      ],
+      "truth_value": "true",
+      "scope_id": "s_parallel_postulate",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_parallel_uniqueness",
+      "subtype": "axiom",
+      "clause_range": [
+        51,
+        51
+      ],
+      "truth_value": "true",
+      "scope_id": "s_parallel_postulate",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proclus_axiom",
+      "subtype": "axiom",
+      "clause_range": [
+        52,
+        53
+      ],
+      "truth_value": "true",
+      "scope_id": "s_parallel_postulate",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_playfair_axiom",
+      "subtype": "axiom",
+      "clause_range": [
+        54,
+        54
+      ],
+      "truth_value": "true",
+      "scope_id": "s_parallel_postulate",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_triangle_angle_sum",
+      "subtype": "theorem",
+      "clause_range": [
+        55,
+        55
+      ],
+      "truth_value": "true",
+      "scope_id": "s_parallel_postulate",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_non_euclidean_intro",
+      "subtype": "remark",
+      "clause_range": [
+        56,
+        65
+      ],
+      "truth_value": null,
+      "scope_id": "s_parallel_postulate",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_triangle_def",
+      "subtype": "definition",
+      "clause_range": [
+        66,
+        66
+      ],
+      "truth_value": null,
+      "scope_id": "s_triangle",
+      "exposed_entities": [
+        "triangle"
+      ]
+    },
+    {
+      "stmt_id": "st_triangle_angle_sum_used",
+      "subtype": "theorem",
+      "clause_range": [
+        67,
+        68
+      ],
+      "truth_value": "true",
+      "scope_id": "s_triangle",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_height_def",
+      "subtype": "definition",
+      "clause_range": [
+        69,
+        70
+      ],
+      "truth_value": null,
+      "scope_id": "s_basic_concepts",
+      "exposed_entities": [
+        "height",
+        "base"
+      ]
+    },
+    {
+      "stmt_id": "st_area_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        71,
+        73
+      ],
+      "truth_value": "true",
+      "scope_id": "s_basic_concepts",
+      "exposed_entities": [
+        "S_triangle",
+        "h",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_orthocenter_def",
+      "subtype": "definition",
+      "clause_range": [
+        74,
+        79
+      ],
+      "truth_value": null,
+      "scope_id": "s_basic_concepts",
+      "exposed_entities": [
+        "orthocenter"
+      ]
+    },
+    {
+      "stmt_id": "st_median_def",
+      "subtype": "definition",
+      "clause_range": [
+        80,
+        80
+      ],
+      "truth_value": null,
+      "scope_id": "s_basic_concepts",
+      "exposed_entities": [
+        "median"
+      ]
+    },
+    {
+      "stmt_id": "st_centroid_def",
+      "subtype": "definition",
+      "clause_range": [
+        81,
+        81
+      ],
+      "truth_value": null,
+      "scope_id": "s_basic_concepts",
+      "exposed_entities": [
+        "centroid"
+      ]
+    },
+    {
+      "stmt_id": "st_isosceles_def",
+      "subtype": "definition",
+      "clause_range": [
+        82,
+        85
+      ],
+      "truth_value": null,
+      "scope_id": "s_basic_concepts",
+      "exposed_entities": [
+        "isosceles triangle",
+        "legs",
+        "vertex angle",
+        "base angles",
+        "base"
+      ]
+    },
+    {
+      "stmt_id": "st_equilateral_def",
+      "subtype": "definition",
+      "clause_range": [
+        86,
+        87
+      ],
+      "truth_value": null,
+      "scope_id": "s_basic_concepts",
+      "exposed_entities": [
+        "equilateral triangle"
+      ]
+    },
+    {
+      "stmt_id": "st_similarity_def",
+      "subtype": "definition",
+      "clause_range": [
+        88,
+        90
+      ],
+      "truth_value": null,
+      "scope_id": "s_triangle_relations",
+      "exposed_entities": [
+        "similarity"
+      ]
+    },
+    {
+      "stmt_id": "st_similarity_criteria",
+      "subtype": "theorem",
+      "clause_range": [
+        91,
+        94
+      ],
+      "truth_value": "true",
+      "scope_id": "s_triangle_relations",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_congruence_def",
+      "subtype": "definition",
+      "clause_range": [
+        95,
+        97
+      ],
+      "truth_value": null,
+      "scope_id": "s_triangle_relations",
+      "exposed_entities": [
+        "congruence"
+      ]
+    },
+    {
+      "stmt_id": "st_right_triangle_def",
+      "subtype": "definition",
+      "clause_range": [
+        98,
+        102
+      ],
+      "truth_value": null,
+      "scope_id": "s_right_triangle",
+      "exposed_entities": [
+        "right triangle",
+        "hypotenuse",
+        "adjacent",
+        "opposite",
+        "theta"
+      ]
+    },
+    {
+      "stmt_id": "st_pythagorean_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        103,
+        106
+      ],
+      "truth_value": "true",
+      "scope_id": "s_pythagorean",
+      "exposed_entities": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_pythagorean_iff",
+      "subtype": "theorem",
+      "clause_range": [
+        107,
+        112
+      ],
+      "truth_value": "true",
+      "scope_id": "s_pythagorean",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_pythagorean_triple_def",
+      "subtype": "definition",
+      "clause_range": [
+        113,
+        114
+      ],
+      "truth_value": null,
+      "scope_id": "s_pythagorean",
+      "exposed_entities": [
+        "Pythagorean triple",
+        "(3,4,5)",
+        "(5,12,13)",
+        "(7,24,25)"
+      ]
+    },
+    {
+      "stmt_id": "st_pythagorean_triple_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        115,
+        118
+      ],
+      "truth_value": "true",
+      "scope_id": "s_pythagorean",
+      "exposed_entities": [
+        "m",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_trig_def",
+      "subtype": "definition",
+      "clause_range": [
+        119,
+        123
+      ],
+      "truth_value": null,
+      "scope_id": "s_pythagorean",
+      "exposed_entities": [
+        "Trigonometric Functions",
+        "sine",
+        "cosine",
+        "tangent",
+        "sin",
+        "cos",
+        "tan",
+        "theta",
+        "A",
+        "B",
+        "C",
+        "|BC|",
+        "|AC|",
+        "|AB|"
+      ]
+    },
+    {
+      "stmt_id": "st_trig_remark",
+      "subtype": "remark",
+      "clause_range": [
+        124,
+        126
+      ],
+      "truth_value": null,
+      "scope_id": "s_pythagorean",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_trig_table",
+      "subtype": "remark",
+      "clause_range": [
+        127,
+        131
+      ],
+      "truth_value": null,
+      "scope_id": "s_pythagorean",
+      "exposed_entities": [
+        "alpha",
+        "30",
+        "45",
+        "60"
+      ]
+    },
+    {
+      "stmt_id": "st_circle_def",
+      "subtype": "definition",
+      "clause_range": [
+        132,
+        134
+      ],
+      "truth_value": null,
+      "scope_id": "s_circle",
+      "exposed_entities": [
+        "circle",
+        "center",
+        "O",
+        "radius",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_chord_arc_central_angle_def",
+      "subtype": "definition",
+      "clause_range": [
+        135,
+        146
+      ],
+      "truth_value": null,
+      "scope_id": "s_circle",
+      "exposed_entities": [
+        "chord",
+        "arc",
+        "minor arc",
+        "major arc",
+        "central angle",
+        "perigon",
+        "A",
+        "B",
+        "O"
+      ]
+    },
+    {
+      "stmt_id": "st_inscribed_angle_def",
+      "subtype": "definition",
+      "clause_range": [
+        147,
+        151
+      ],
+      "truth_value": null,
+      "scope_id": "s_circle",
+      "exposed_entities": [
+        "inscribed angle",
+        "A",
+        "B",
+        "C",
+        "O"
+      ]
+    },
+    {
+      "stmt_id": "st_inscribed_triangle_def",
+      "subtype": "definition",
+      "clause_range": [
+        152,
+        155
+      ],
+      "truth_value": null,
+      "scope_id": "s_circle",
+      "exposed_entities": [
+        "inscribed triangle",
+        "circumcircle",
+        "circumcenter"
+      ]
+    },
+    {
+      "stmt_id": "st_circumscribed_triangle_def",
+      "subtype": "definition",
+      "clause_range": [
+        156,
+        159
+      ],
+      "truth_value": null,
+      "scope_id": "s_circle",
+      "exposed_entities": [
+        "circumscribed triangle",
+        "incircle",
+        "incenter"
+      ]
+    },
+    {
+      "stmt_id": "st_excircle_def",
+      "subtype": "definition",
+      "clause_range": [
+        160,
+        161
+      ],
+      "truth_value": null,
+      "scope_id": "s_circle",
+      "exposed_entities": [
+        "excircle",
+        "excenter"
+      ]
+    },
+    {
+      "stmt_id": "st_diameter_def",
+      "subtype": "definition",
+      "clause_range": [
+        162,
+        169
+      ],
+      "truth_value": null,
+      "scope_id": "s_circle",
+      "exposed_entities": [
+        "diameter",
+        "d",
+        "semicircle"
+      ]
+    },
+    {
+      "stmt_id": "st_pi_def",
+      "subtype": "definition",
+      "clause_range": [
+        170,
+        172
+      ],
+      "truth_value": null,
+      "scope_id": "s_circle",
+      "exposed_entities": [
+        "pi",
+        "pi"
+      ]
+    },
+    {
+      "stmt_id": "st_circumference_area",
+      "subtype": "theorem",
+      "clause_range": [
+        173,
+        176
+      ],
+      "truth_value": "true",
+      "scope_id": "s_circle",
+      "exposed_entities": [
+        "C",
+        "S"
+      ]
+    },
+    {
+      "stmt_id": "st_analytic_geom_intro",
+      "subtype": "remark",
+      "clause_range": [
+        177,
+        177
+      ],
+      "truth_value": null,
+      "scope_id": "s_analytic_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_distance_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        178,
+        179
+      ],
+      "truth_value": "true",
+      "scope_id": "s_analytic_geom",
+      "exposed_entities": [
+        "A",
+        "B",
+        "x1",
+        "y1",
+        "x2",
+        "y2",
+        "d"
+      ]
+    },
+    {
+      "stmt_id": "st_midpoint_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        180,
+        181
+      ],
+      "truth_value": "true",
+      "scope_id": "s_analytic_geom",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_slope_intercept_def",
+      "subtype": "definition",
+      "clause_range": [
+        183,
+        185
+      ],
+      "truth_value": null,
+      "scope_id": "s_slope_intercept",
+      "exposed_entities": [
+        "k",
+        "b",
+        "y",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_point_slope_def",
+      "subtype": "definition",
+      "clause_range": [
+        186,
+        188
+      ],
+      "truth_value": null,
+      "scope_id": "s_point_slope",
+      "exposed_entities": [
+        "x0",
+        "y0",
+        "k",
+        "y",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_parallel_condition",
+      "subtype": "theorem",
+      "clause_range": [
+        189,
+        191
+      ],
+      "truth_value": "true",
+      "scope_id": "s_point_slope",
+      "exposed_entities": [
+        "k1",
+        "k2"
+      ]
+    },
+    {
+      "stmt_id": "st_perpendicular_condition",
+      "subtype": "theorem",
+      "clause_range": [
+        189,
+        192
+      ],
+      "truth_value": "true",
+      "scope_id": "s_point_slope",
+      "exposed_entities": [
+        "k1",
+        "k2"
+      ]
+    },
+    {
+      "stmt_id": "st_two_point_def",
+      "subtype": "definition",
+      "clause_range": [
+        193,
+        195
+      ],
+      "truth_value": null,
+      "scope_id": "s_two_point",
+      "exposed_entities": [
+        "x1",
+        "y1",
+        "x2",
+        "y2",
+        "y",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_circle_eq_def",
+      "subtype": "definition",
+      "clause_range": [
+        196,
+        198
+      ],
+      "truth_value": null,
+      "scope_id": "s_circle_eq",
+      "exposed_entities": [
+        "a",
+        "b",
+        "r",
+        "x",
+        "y"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_parallel_postulate_original",
+      "target": "st_parallel_uniqueness",
+      "edge_type": "equivalent",
+      "category": "logic"
+    },
+    {
+      "source": "st_parallel_postulate_original",
+      "target": "st_proclus_axiom",
+      "edge_type": "equivalent",
+      "category": "logic"
+    },
+    {
+      "source": "st_parallel_postulate_original",
+      "target": "st_playfair_axiom",
+      "edge_type": "equivalent",
+      "category": "logic"
+    },
+    {
+      "source": "st_parallel_postulate_original",
+      "target": "st_triangle_angle_sum",
+      "edge_type": "equivalent",
+      "category": "logic"
+    },
+    {
+      "source": "st_perp_bisector_def",
+      "target": "st_perp_bisector_converse",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_angle_bisector_def",
+      "target": "st_angle_bisector_prop",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_pythagorean_theorem",
+      "target": "st_pythagorean_iff",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_pythagorean_triple_def",
+      "target": "st_pythagorean_triple_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_parallel_condition",
+      "target": "st_perpendicular_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

@@ -1,0 +1,249 @@
+{
+  "article_name": "SymEig",
+  "statements": [
+    {
+      "stmt_id": "st_main_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        2,
+        4
+      ],
+      "truth_value": "true",
+      "scope_id": "s_main",
+      "exposed_entities": [
+        "A",
+        "v_1",
+        "v_N"
+      ]
+    },
+    {
+      "stmt_id": "st_main_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_main_let",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_main_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        2,
+        4
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_main_let",
+      "exposed_entities": [
+        "v_1",
+        "v_N"
+      ]
+    },
+    {
+      "stmt_id": "st_real_eig_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_real_eig",
+      "exposed_entities": [
+        "lambda_i"
+      ]
+    },
+    {
+      "stmt_id": "st_real_eig_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_real_eig_let",
+      "exposed_entities": [
+        "A",
+        "v_i",
+        "lambda_i"
+      ]
+    },
+    {
+      "stmt_id": "st_real_eig_deriv1",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_real_eig_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_real_eig_deriv2",
+      "subtype": "conclusion",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_real_eig_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_real_eig_real_vectors",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_real_eig",
+      "exposed_entities": [
+        "v_i"
+      ]
+    },
+    {
+      "stmt_id": "st_ortho_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ortho",
+      "exposed_entities": [
+        "v_1",
+        "v_2"
+      ]
+    },
+    {
+      "stmt_id": "st_ortho_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_ortho_let",
+      "exposed_entities": [
+        "v_1",
+        "v_2"
+      ]
+    },
+    {
+      "stmt_id": "st_ortho_deriv1",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ortho_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ortho_deriv2",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ortho_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ortho_hermitian_def",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_ortho",
+      "exposed_entities": [
+        "A"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_main_assump",
+      "target": "st_main_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_real_eig_assump",
+      "target": "st_real_eig_deriv1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_real_eig_deriv1",
+      "target": "st_real_eig_deriv2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_real_eig_deriv2",
+      "target": "st_real_eig_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_real_eig_assump",
+      "target": "st_real_eig_real_vectors",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ortho_assump",
+      "target": "st_ortho_deriv1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ortho_assump",
+      "target": "st_ortho_deriv2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ortho_deriv1",
+      "target": "st_ortho_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ortho_deriv2",
+      "target": "st_ortho_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_real_eig_conclusion",
+      "target": "st_main_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "实数证明是主定理的一部分"
+    },
+    {
+      "source": "st_ortho_conclusion",
+      "target": "st_main_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "正交证明是主定理的一部分"
+    }
+  ],
+  "unresolved": [
+    "文本[0]和[5]表示文章未完成，但未提供具体内容，无法建立Statement。",
+    "链接L0、L1、L2、L3未提供具体内容，无法解析。"
+  ]
+}

@@ -1,0 +1,374 @@
+{
+  "article_name": "QuatN",
+  "statements": [
+    {
+      "stmt_id": "st_intro_claim",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_let",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let",
+      "exposed_entities": [
+        "q",
+        "n_hat",
+        "theta"
+      ]
+    },
+    {
+      "stmt_id": "st_rotation_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro_let",
+      "exposed_entities": [
+        "v'"
+      ]
+    },
+    {
+      "stmt_id": "st_inv_conj",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let",
+      "exposed_entities": [
+        "q^{-1}",
+        "tilde_q"
+      ]
+    },
+    {
+      "stmt_id": "st_example_theta0",
+      "subtype": "example",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_rotation",
+      "subtype": "example",
+      "clause_range": [
+        14,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro_let",
+      "exposed_entities": [
+        "v",
+        "q",
+        "q^{-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_let",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let",
+      "exposed_entities": [
+        "q",
+        "v",
+        "n_hat",
+        "theta"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_special",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_corr_let",
+      "subtype": "assumption",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_corr_let",
+      "exposed_entities": [
+        "q1",
+        "q2",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_corr_eq",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_corr_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_corr_derivation",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof_corr_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_composition_claim",
+      "subtype": "theorem",
+      "clause_range": [
+        34,
+        39
+      ],
+      "truth_value": "true",
+      "scope_id": "s_composition",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_composition_let",
+      "subtype": "assumption",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_composition_let",
+      "exposed_entities": [
+        "q1",
+        "q2",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_composition_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        41,
+        42
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_composition_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rotmat_let",
+      "subtype": "assumption",
+      "clause_range": [
+        43,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_rotation_matrix_let",
+      "exposed_entities": [
+        "q",
+        "s",
+        "v",
+        "theta"
+      ]
+    },
+    {
+      "stmt_id": "st_rotmat_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        45,
+        48
+      ],
+      "truth_value": "true",
+      "scope_id": "s_rotation_matrix_let",
+      "exposed_entities": [
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_rotmat_special",
+      "subtype": "example",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": "true",
+      "scope_id": "s_rotation_matrix",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rotmat_composition",
+      "subtype": "theorem",
+      "clause_range": [
+        50,
+        51
+      ],
+      "truth_value": "true",
+      "scope_id": "s_rotation_matrix",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_timederiv_let",
+      "subtype": "assumption",
+      "clause_range": [
+        52,
+        55
+      ],
+      "truth_value": null,
+      "scope_id": "s_time_derivative_let",
+      "exposed_entities": [
+        "R",
+        "omega",
+        "Omega"
+      ]
+    },
+    {
+      "stmt_id": "st_timederiv_claim",
+      "subtype": "theorem",
+      "clause_range": [
+        56,
+        59
+      ],
+      "truth_value": "true",
+      "scope_id": "s_time_derivative_let",
+      "exposed_entities": [
+        "q(t)",
+        "dot_q"
+      ]
+    },
+    {
+      "stmt_id": "st_timederiv_derivation",
+      "subtype": "conclusion",
+      "clause_range": [
+        60,
+        70
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_time_derivative_let",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_intro_let",
+      "target": "st_rotation_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_let",
+      "target": "st_inv_conj",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_let",
+      "target": "st_proof_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_corr_let",
+      "target": "st_corr_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_corr_eq",
+      "target": "st_corr_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_composition_let",
+      "target": "st_composition_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rotmat_let",
+      "target": "st_rotmat_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_timederiv_let",
+      "target": "st_timederiv_claim",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_timederiv_let",
+      "target": "st_timederiv_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_proof_result",
+      "target": "st_rotation_formula",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明旋转公式依赖前面的定义"
+    },
+    {
+      "source": "st_composition_proof",
+      "target": "st_rotation_formula",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "复合旋转基于旋转表示"
+    },
+    {
+      "source": "st_rotmat_formula",
+      "target": "st_rotation_formula",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "旋转矩阵由四元数导出"
+    },
+    {
+      "source": "st_timederiv_claim",
+      "target": "st_rotmat_formula",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "时间导数基于旋转矩阵"
+    }
+  ],
+  "unresolved": []
+}

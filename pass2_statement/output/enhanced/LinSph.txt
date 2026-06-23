@@ -1,0 +1,60 @@
+[SCOPE:root|description|直线和球的交点]
+文章名: LinSph
+标题: 直线和球的交点
+
+[0] 贡献者： addis
+[1] 预备知识 Matlab 的函数，一元二次方程
+[SCOPE:s_main|description|直线和球的交点]
+[SCOPE:s_let_vars|let_bind|变量定义]
+[2] 直线参数方程可以用几何矢量表示为 $ \boldsymbol{\mathbf{P}} _0 + \lambda \hat{\boldsymbol{\mathbf{v}}} $，其中 $ \hat{\boldsymbol{\mathbf{v}}} $ 是单位矢量。
+[3] 球心为 $ \boldsymbol{\mathbf{P}} _c$，半径为 $R$，
+[4] 那么直线和球相交的点满足
+[/SCOPE:s_let_vars]
+[5] \begin{equation}
+( \boldsymbol{\mathbf{P}} _0 + \lambda \hat{\boldsymbol{\mathbf{v}}} - \boldsymbol{\mathbf{P}} _c)^2 = R^2~.
+\end{equation}
+[6] 其中左边的平方表示矢量和自身的内积，
+[7] 即矢量模长的平方。
+[8] 展开后得到关于 $\lambda$ 的二次方程
+[9] \begin{equation}
+\lambda^2 + 2 \hat{\boldsymbol{\mathbf{v}}} \boldsymbol\cdot ( \boldsymbol{\mathbf{P}} _0 - \boldsymbol{\mathbf{P}} _c) \lambda + ( \boldsymbol{\mathbf{P}} _0 - \boldsymbol{\mathbf{P}} _c)^2 - R^2 = 0~.
+\end{equation}
+[10] 直接使用求根公式得
+[11] \begin{equation}
+\lambda = \frac{-b \pm \sqrt{b^2 - 4c}}{2}~.
+\end{equation}
+[12] 其中
+[13] \begin{equation}
+b = 2 \boldsymbol{\mathbf{v}} \boldsymbol\cdot ( \boldsymbol{\mathbf{P}} _0 - \boldsymbol{\mathbf{P}} _c)~,
+\qquad
+c = ( \boldsymbol{\mathbf{P}} _0 - \boldsymbol{\mathbf{P}} _c)^2 - R^2~.
+\end{equation}
+[SCOPE:s_code|description|Matlab代码]
+[14] 以下给出 Matlab 代码
+[15] 未完成：应该支持多条直线而不是多个球……
+[16] 代码 1：LSph2P.m
+[17] % 计算直线和球的焦点
+[18] % numel(L)=6, size(P)=[N,3], numel(R)=1
+[19] function [P1,P2] = LSph2P(L6, P, R)
+[20] L6 = L6(:)';
+[21] P0 = L6(1:3); v0 = L6(4:6)/norm(L6(4:6));
+[22] P0_P = P0-P;
+[23] b = 2*P0_P*v0';
+[24] c = dot(P0_P, P0_P, 2) - R^2;
+[25] d = b.^2 - 4*c;
+[26] if d < 0
+[27] P1 = []; P2 = []; return;
+[28] end
+[29] d = sqrt(d);
+[30] P1 = 0.5*(-b -d).*v0 + P0;
+[31] if d == 0
+[32] P2 = []; return;
+[33] end
+[34] P2 = 0.5*(-b +d).*v0 + P0;
+[35] end
+
+跨文章引用:
+  [L0] 内积 → Dot
+[/SCOPE:s_main]
+[/SCOPE:s_code]
+[/SCOPE:root]

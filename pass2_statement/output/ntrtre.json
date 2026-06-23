@@ -1,0 +1,294 @@
+{
+  "article_name": "ntrtre",
+  "statements": [
+    {
+      "stmt_id": "st_intro",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_e",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "e(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_prop_e",
+      "subtype": "theorem",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": "true",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_prop",
+      "subtype": "remark",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_S",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "S(m,n)",
+        "h",
+        "n",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_gauss",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_consider_r",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let2",
+      "exposed_entities": [
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_eq_period",
+      "subtype": "theorem",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_conclusion_residue",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def1_let2",
+      "exposed_entities": [
+        "h(n)"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1",
+      "subtype": "corollary",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_cor1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_cor2",
+      "exposed_entities": [
+        "n",
+        "n'"
+      ]
+    },
+    {
+      "stmt_id": "st_cor2_conclusion",
+      "subtype": "corollary",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor2_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_cor2_let2",
+      "exposed_entities": [
+        "h",
+        "h'"
+      ]
+    },
+    {
+      "stmt_id": "st_cor2_proof_step1",
+      "subtype": "theorem",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor2_let2",
+      "exposed_entities": [
+        "h0"
+      ]
+    },
+    {
+      "stmt_id": "st_cor2_proof_eq",
+      "subtype": "theorem",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor2_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor2_proof_calc",
+      "subtype": "theorem",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor2_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1",
+      "subtype": "theorem",
+      "clause_range": [
+        25,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "S(1,n)",
+        "h",
+        "p"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_consider_r",
+      "target": "st_eq_period",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_eq_period",
+      "target": "st_conclusion_residue",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor2_assump",
+      "target": "st_cor2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor2_proof_assump",
+      "target": "st_cor2_proof_step1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor2_proof_step1",
+      "target": "st_cor2_proof_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor2_proof_eq",
+      "target": "st_cor2_proof_calc",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor2_proof_calc",
+      "target": "st_cor2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_cor1",
+      "target": "st_def_S",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论1是定义1的另一种写法"
+    },
+    {
+      "source": "st_cor2_conclusion",
+      "target": "st_def_S",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论2是定义1的乘积性质"
+    },
+    {
+      "source": "st_thm1",
+      "target": "st_def_S",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "定理1给出Gauss和的等价定义"
+    }
+  ],
+  "unresolved": []
+}

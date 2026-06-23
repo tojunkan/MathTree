@@ -1,0 +1,348 @@
+{
+  "article_name": "ODELap",
+  "statements": [
+    {
+      "stmt_id": "st_deriv_theorem_intro",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_deriv_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_deriv_let",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_deriv_let",
+      "exposed_entities": [
+        "f(t)",
+        "F(s)"
+      ]
+    },
+    {
+      "stmt_id": "st_deriv_theorem_stmt",
+      "subtype": "theorem",
+      "clause_range": [
+        5,
+        8
+      ],
+      "truth_value": "true",
+      "scope_id": "s_deriv_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_deriv_calc",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_deriv_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_corollary_stmt",
+      "subtype": "corollary",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_corollary",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_shift_let",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_shift_let",
+      "exposed_entities": [
+        "f(t)",
+        "F(s)"
+      ]
+    },
+    {
+      "stmt_id": "st_shift_theorem_stmt",
+      "subtype": "theorem",
+      "clause_range": [
+        14,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_shift_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_stmt",
+      "subtype": "example",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "t^n"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_proof",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_stmt",
+      "subtype": "example",
+      "clause_range": [
+        22,
+        23
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example2",
+      "exposed_entities": [
+        "e^{at}"
+      ]
+    },
+    {
+      "stmt_id": "st_example3_stmt",
+      "subtype": "example",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example3",
+      "exposed_entities": [
+        "cos(ωt)",
+        "sin(ωt)"
+      ]
+    },
+    {
+      "stmt_id": "st_example3_remark",
+      "subtype": "remark",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_example3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example4_intro",
+      "subtype": "remark",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_example4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example4_let",
+      "subtype": "assumption",
+      "clause_range": [
+        31,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_example4_let",
+      "exposed_entities": [
+        "f(t)",
+        "F(s)"
+      ]
+    },
+    {
+      "stmt_id": "st_example4_eq",
+      "subtype": "assumption",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_example4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example4_transform",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        35
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example4_algebra",
+      "subtype": "conclusion",
+      "clause_range": [
+        36,
+        42
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example4_inverse",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example4_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example4_initial",
+      "subtype": "assumption",
+      "clause_range": [
+        48,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_example4_let2",
+      "exposed_entities": [
+        "f(0)",
+        "f'(0)"
+      ]
+    },
+    {
+      "stmt_id": "st_example4_remark2",
+      "subtype": "remark",
+      "clause_range": [
+        49,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_example4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_unfinished",
+      "subtype": "remark",
+      "clause_range": [
+        52,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_deriv_let",
+      "target": "st_deriv_theorem_stmt",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_shift_let",
+      "target": "st_shift_theorem_stmt",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example4_let",
+      "target": "st_example4_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example4_eq",
+      "target": "st_example4_transform",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example4_transform",
+      "target": "st_example4_algebra",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example4_algebra",
+      "target": "st_example4_inverse",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example4_inverse",
+      "target": "st_example4_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example4_initial",
+      "target": "st_example4_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_corollary_stmt",
+      "target": "st_deriv_theorem_stmt",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_stmt",
+      "target": "st_deriv_theorem_stmt",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_stmt",
+      "target": "st_shift_theorem_stmt",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_example3_stmt",
+      "target": "st_shift_theorem_stmt",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_example4_solution",
+      "target": "st_corollary_stmt",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

@@ -1,0 +1,56 @@
+[SCOPE:root|description|Wilson 定理]
+文章名: wilsth
+标题: Wilson 定理
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=威尔逊定理
+  [1] type=theorem heading=定理 2 title=Legendre 符号的计算方法
+
+[SCOPE:s_wilson|description|威尔逊定理]
+[SCOPE:s_wilson_let|let_bind|威尔逊定理的变量]
+[0] 定理 1 威尔逊定理
+[1] 威尔逊定理（Wilson 定理）指，对于一个素数 $p$ 有 $(p-1)! \equiv -1 \pmod p$。
+[/SCOPE:s_wilson_let]
+[2] 证明：对于 $2$ 显然成立。
+[3] 否则对于奇素数 $p$，对 Legendre 符号中的定理 1 取特例，当 $a=1$ 时，
+[4] 则将化为 $x^2 \equiv 1 \pmod p$，有解 $x = \pm 1$，
+[5] 从而 $1$ 是 $p$ 的一个二次剩余而 $\left(\frac 1p\right)=1$，得证！
+[/SCOPE:s_wilson]
+[6] 利用 Wilson 定理与定理 1 可以得到 Legendre 符号的计算方法。
+
+[SCOPE:s_legendre|description|Legendre 符号的计算方法]
+[SCOPE:s_legendre_let|let_bind|Legendre 符号的变量]
+[7] 定理 2 Legendre 符号的计算方法
+[8] \begin{equation}
+\left(\frac ap\right) \equiv a^{(p-1)/2} \pmod p ~.
+\end{equation}
+[/SCOPE:s_legendre_let]
+[9] 证明：由于定理 1 ：
+[10] \begin{equation}
+(p-1)! \equiv -\left(\frac ap\right) a^{(p-1)/2} \pmod p ~,
+\end{equation}
+[11] 对等式两边同时乘以 Legendre 符号 $\left(\frac ap\right)$，利用 $\left(\frac ap\right)^2 = 1$ 得到
+[12] \begin{equation}
+(p-1)!\left(\frac ap\right) \equiv - a^{(p-1)/2} \pmod p ~,
+\end{equation}
+[13] 而利用 Wilson 定理，$(p-1)! \equiv -1 \pmod p$，
+[14] 故
+[15] \begin{equation}
+-\left(\frac ap\right) \equiv - a^{(p-1)/2} \pmod p ~,
+\end{equation}
+[16] \begin{equation}
+\left(\frac ap\right) \equiv a^{(p-1)/2} \pmod p ~.
+\end{equation}
+[/SCOPE:s_legendre]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_legendre",
+    "target_scope": "s_wilson",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Legendre 符号的计算方法证明中使用了 Wilson 定理"
+  }
+]

@@ -1,0 +1,91 @@
+[SCOPE:root|description|流形上的代数结构]
+文章名: MnfAlg
+标题: 流形上的代数结构
+
+环境标记 (hints):
+  [0] type=exercise heading=习题 1 title=证明光滑切向量场确实是光滑函数环的模
+  [1] type=definition heading=定义 1 title=参考系
+
+[SCOPE:s_incomplete|description|未完成声明]
+[0] 【未完成】本文尚在草稿阶段。
+[SCOPE:s_let_M|let_bind|设 M 为光滑实流形]
+[1] 本节中，设 $M$ 为一光滑实流形。
+
+[/SCOPE:s_incomplete]
+[/SCOPE:s_let_M]
+[SCOPE:s_linear_space|description|作为实数域上的线性空间]
+[2] 对于任意 $p\in M$，我们已经讨论了切空间 $T_pM$ 的性质，也就是流形上一点处的代数结构。
+[3] 由于一个切向量场是给流形上每一点赋予一个切向量，我们可以很自然地将一点处的切向量之间的和推广为切向量场之间的和。
+[4] 这就提醒我们，也许可以将向量场整体视为一个向量，构成一个线性空间。
+[5] 为了得到线性空间，还需要一个运算：数乘。
+[6] 一个向量场整体乘以一个实数，就是每个点的切向量都乘以这个实数。
+[7] 这样，数乘、向量和都有了，$M$ 上的全体切向量场的集合就构成了一个实数域上的线性空间。
+[8] 由于我们希望自由地进行微分运算，通常只讨论光滑切向量场。
+[9] 光滑切向量场构成的线性空间，我们在切向量场文章中已经提到过了。
+
+[/SCOPE:s_linear_space]
+[SCOPE:s_module|description|作为光滑函数环上的模]
+[10] 切向量场上的运算，是由每个点处切向量的运算推广而来的。
+[11] 前面在数乘推广时我们默认了每个点都乘以同一个实数，
+[12] 那么可不可以每个点都乘以不同的数呢？
+[13] 换句话说，数乘时用的 “数”，可以是任意函数吗？
+[14] 答案是肯定的，只不过如果使用函数来进行数乘就没法得到线性空间了，因为流形上的函数并不是一个域。
+[SCOPE:s_let_f|let_bind|设 f 为函数]
+[15] 如果一个函数 $f$ 不恒为零，
+[16] 但是有零点，
+[17a] (p)\cdot g
+[17b] (p)=1$ 对任意 $p\in M$ 成立。
+[/SCOPE:s_let_f]
+[18] $M$ 上的全体函数，只构成一个环，
+[19] 因此切向量场的集合是函数环上的一个模。
+[20] 同样地，我们只考虑光滑切向量场和光滑函数。
+[21] $M$ 上全体光滑切向量场的集合记为 $\mathfrak{X}(M)$；
+[22] 全体光滑函数的和记为 $C^{\infty}$，有时候也记为 $\mathbb{F}$。
+
+[/SCOPE:s_module]
+[SCOPE:s_exercise1|description|习题1 证明光滑切向量场确实是光滑函数环的模]
+[23] 习题 1 证明光滑切向量场确实是光滑函数环的模
+[24] 证明：在欧几里得空间中，光滑函数乘以光滑切向量场，得到的还是光滑切向量场。
+[25] 推论：流形上光滑函数和光滑切向量场的乘积还是光滑切向量场，
+[26] 从而知数乘是合理的定义。
+[27] 光滑切向量场作为模，和线性空间不同，不一定能找到一组基。
+[28] 但是由于流形局部同胚于欧几里得空间，
+[29] 因此依然可以找到局部区域的基。
+
+[/SCOPE:s_exercise1]
+[SCOPE:s_definition1|description|定义1 参考系]
+[30] 定义 1 参考系
+[SCOPE:s_let_U_phi|let_bind|设 (U, φ) 是图]
+[31] 设 $(U, \varphi)$ 是 $M$ 上的一个图，
+[/SCOPE:s_let_U_phi]
+[SCOPE:s_let_ei|let_bind|设 e_i 为局部参考系]
+[32] 则 $U$ 上一定存在 $ \operatorname {dim}M$ 个光滑切向量场 $ \hat{\boldsymbol{\mathbf{e}}} _i$，使得对于 $U\subseteq M$ 上任意一个光滑切向量场 $ \boldsymbol{\mathbf{v}} $，都存在光滑函数 $f^i$，使得 $ \boldsymbol{\mathbf{v}} =f^i \hat{\boldsymbol{\mathbf{e}}} _i$1。
+[33] 这样的一组基 $\{ \hat{\boldsymbol{\mathbf{e}}} _i\}$，被称为 $U$ 上的一个局部参考系（local frame）。
+[/SCOPE:s_definition1]
+[/SCOPE:s_let_ei]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_module",
+    "target_scope": "s_linear_space",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "模是线性空间的推广，线性空间是模的特例"
+  },
+  {
+    "source_scope": "s_exercise1",
+    "target_scope": "s_module",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "习题1证明模结构"
+  },
+  {
+    "source_scope": "s_definition1",
+    "target_scope": "s_module",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "参考系是模的局部基"
+  }
+]

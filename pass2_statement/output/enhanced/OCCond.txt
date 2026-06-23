@@ -1,0 +1,45 @@
+[SCOPE:root|description|斜截条件]
+文章名: OCCond
+标题: 斜截条件
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+
+[SCOPE:s_theorem1|description|定理1]
+[0] 定理 1
+[SCOPE:s_let1|let_bind|曲线与积分]
+[1a] (x)$ 及 $y=\psi
+[1b] (x)$ 上的任意点的 $C_1$ 类的曲线中，如果曲线 $\gamma:y=y
+[1c] (x)$ 给出积分
+[2] \begin{equation}
+J(\gamma)=\int_{\gamma}F(x,y,y') \,\mathrm{d}{x} ~
+\end{equation}
+
+[/SCOPE:s_let1]
+[3] 由子节 1 中的注意及定理 1 。
+[4] 给出积分式 2 的曲线必定是极端曲线，且要在诸极端曲线中找到使 $J$ 达到极值的弧，对于任意的 $\delta x_0,\delta x_1$，有
+[5] \begin{equation}
+\,\mathrm{d}{J} =-[(F-y'F_{y'})^{(0)}\delta {x_0}+ F_{y'}^{(0)}\delta y_0]+[(F-y'F_{y'})^{(1)}\delta {x_1}+F_{y'}^{(1)}\delta y_1]=0~.
+\end{equation}
+[SCOPE:s_let2|let_bind|端点变量]
+[6a] (x),y=\psi
+[6b] (x)$ 上，
+[7] 那么
+[8] \begin{equation}
+y_0=\varphi(x_0),y_1=\psi(x_1)~,
+\end{equation}
+[9] \begin{equation}
+\delta y_0=\varphi'\delta x_0,\quad \delta y_1=\psi'\delta x_1~,
+\end{equation}
+[/SCOPE:s_let2]
+[10] \begin{equation}
+\,\mathrm{d}{J} =-[F+(\varphi'-y')F_{y'}]^{(0)}\delta {x_0}+[F+(\psi'-y')F_{y'}]^{(1)}\delta {x_1}=0~.
+\end{equation}
+[11] 由于，$\delta x_0,\delta x_1$ 的任意性，
+[12] 所以
+[13] \begin{equation}
+[F+(\varphi'-y')F_{y'}]^{(0)}=0,\quad [F+(\psi'-y')F_{y'}]^{(1)}=0~.
+\end{equation}
+[14] 定理得证！
+[/SCOPE:s_theorem1]
+[/SCOPE:root]

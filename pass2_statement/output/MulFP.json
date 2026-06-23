@@ -1,0 +1,306 @@
+{
+  "article_name": "MulFP",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "r(φ,φ')",
+        "φ",
+        "φ'",
+        "C1"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_phi_delta",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof",
+      "exposed_entities": [
+        "φ",
+        "δφ",
+        "ε邻区",
+        "C1_bar"
+      ]
+    },
+    {
+      "stmt_id": "st_concl_delta_phi_Omega",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_expansion",
+      "subtype": "conclusion",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": [
+        "η"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_part",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": [
+        "δJ"
+      ]
+    },
+    {
+      "stmt_id": "st_necessary_condition",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_line_AB",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof",
+      "exposed_entities": [
+        "AB",
+        "Ox_i"
+      ]
+    },
+    {
+      "stmt_id": "st_integration_by_parts",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_delta_J_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_statement",
+      "subtype": "lemma",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "M",
+        "η"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_contra",
+      "subtype": "assumption",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "M",
+        "A",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_rectangle_R",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "R",
+        "a_i",
+        "b_i"
+      ]
+    },
+    {
+      "stmt_id": "st_eta_def",
+      "subtype": "definition",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "η"
+      ]
+    },
+    {
+      "stmt_id": "st_eta_properties",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_contra_integral",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_contradiction",
+      "subtype": "conclusion",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_proved",
+      "subtype": "conclusion",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_phi_delta",
+      "target": "st_concl_delta_phi_Omega",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_phi_delta",
+      "target": "st_expansion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_expansion",
+      "target": "st_linear_part",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_linear_part",
+      "target": "st_necessary_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_line_AB",
+      "target": "st_integration_by_parts",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_integration_by_parts",
+      "target": "st_delta_J_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_contra",
+      "target": "st_contra_integral",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rectangle_R",
+      "target": "st_contra_integral",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_eta_def",
+      "target": "st_eta_properties",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_eta_properties",
+      "target": "st_contra_integral",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_contra_integral",
+      "target": "st_contradiction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_contradiction",
+      "target": "st_lemma1_proved",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_lemma1_proved",
+      "target": "st_necessary_condition",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明中引用引理1得出结论"
+    }
+  ],
+  "unresolved": []
+}

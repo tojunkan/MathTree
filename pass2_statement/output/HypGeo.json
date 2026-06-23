@@ -1,0 +1,297 @@
+{
+  "article_name": "HypGeo",
+  "statements": [
+    {
+      "stmt_id": "st_geom_series_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_hypgeo",
+      "exposed_entities": [
+        "z",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_hypgeo_intro",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_hypgeo",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_hypgeo_def",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_hypgeo_let",
+      "exposed_entities": [
+        "F(a,b;c;z)",
+        "a",
+        "b",
+        "c",
+        "z",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_pochhammer_def",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_hypgeo_let",
+      "exposed_entities": [
+        "(a)_n",
+        "a",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_ab_nonneg",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_hypgeo_let",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_concl_finite",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_hypgeo_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_c_nonneg",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_hypgeo_let",
+      "exposed_entities": [
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_concl_infinite",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_hypgeo_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_special_case",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_hypgeo_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_genhypgeo_def",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_genhypgeo_let",
+      "exposed_entities": [
+        "_pF_q",
+        "a_1,...,a_p",
+        "b_1,...,b_q",
+        "z",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_pochhammer_reminder",
+      "subtype": "remark",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_genhypgeo_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_hypgeo_special_case_gen",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_genhypgeo_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_hypgeo_notation",
+      "subtype": "remark",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_genhypgeo_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_special_case_gen",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_genhypgeo_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exp_special_case",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_genhypgeo_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_confluent_def",
+      "subtype": "definition",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_genhypgeo_let",
+      "exposed_entities": [
+        "_1F_1(a;b;z)"
+      ]
+    },
+    {
+      "stmt_id": "st_confluent_series",
+      "subtype": "definition",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_genhypgeo_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_confluent_asymptotic",
+      "subtype": "definition",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_genhypgeo_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_confluent_cfrac",
+      "subtype": "definition",
+      "clause_range": [
+        33,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_genhypgeo_let",
+      "exposed_entities": [
+        "c_n"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_ab_nonneg",
+      "target": "st_concl_finite",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_c_nonneg",
+      "target": "st_concl_infinite",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_hypgeo_def",
+      "target": "st_geom_special_case",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_genhypgeo_def",
+      "target": "st_hypgeo_special_case_gen",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_genhypgeo_def",
+      "target": "st_geom_special_case_gen",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_genhypgeo_def",
+      "target": "st_exp_special_case",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_genhypgeo_def",
+      "target": "st_confluent_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_hypgeo_def",
+      "target": "st_genhypgeo_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "超几何函数是广义超几何函数在 p=2,q=1 时的特例"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,185 @@
+[SCOPE:root|description|线性最小二乘法]
+文章名: LstSqr
+标题: 线性最小二乘法
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+
+[0] 本文存在未完成的内容。
+
+[SCOPE:s_line_fit|description|直线拟合]
+[SCOPE:s_line_fit_let|let_bind|直线拟合变量]
+[1] 在许多情况下，我们需要将一组散点数据 $x_i, y_i \ \ (i = 1\dots N)$ 拟合成特定形式的函数曲线。
+[2] 其中最常见的情况之一是拟合一条直线，形式为 $y = ax + b$。
+[3] 例如给出（图 1），如何确定直线方程的两个最佳系数 $a$ 和 $b$ 呢？
+[/SCOPE:s_line_fit_let]
+[4] 我们可以通过方差来计算拟合的误差，方差越小则说明拟合得越好。
+[5] \begin{equation}
+S_2 = \sum_{i = 1}^N (a x_i + b - y_i)^2~.
+\end{equation}
+[6] 对于给定的 $N$ 个 $x_i, y_i$，方差是 $a$ 和 $b$ 的二元函数。
+[7] 我们只需找到这个二元函数的最小值点即可。
+[8] 由于函数处处光滑，最小值点必定满足 $ \partial S_2/\partial a = \partial S_2/\partial b = 0$。将
+[9] 式 1 [链接 L0]
+[10] 代入，得到一个线性方程组。
+[11] \begin{equation}
+\left\{\begin{aligned}
+& \left(\sum_i x_i^2 \right) a + \left(\sum_i x_i \right) b = \sum_i x_i y_i \\
+& \left(\sum_i x_i \right) a + N b = \sum_i y_i \end{aligned}\right. ~.
+\end{equation}
+[SCOPE:s_line_fit_det|description|行列式非零证明]
+[12] 我们来计算系数行列式，如果能证明行列式恒不等于零，
+[13] 则方程组必有唯一解。
+[SCOPE:s_line_fit_det_let|let_bind|平均值变量]
+[14] 若令 $\bar x$ 为 $N$ 个 $x_i$ 的平均值，考虑到 $x_i$ 互不相等，容易证明
+[15] \begin{equation}
+N\sum_i x_i^2 - \left(\sum_i x_i \right) ^2 = N\sum_i (x_i - \bar x)^2 > 0~,
+\end{equation}
+[/SCOPE:s_line_fit_det_let]
+[16] 证毕。
+[/SCOPE:s_line_fit_det]
+[17] 由于方差恒大于零，可知其必定存在最小值，
+[18] 所以系数的唯一解必定是方差函数的极小值点。
+[19] 接下来解线性方程组即可得到系数 $a, b$。
+[20] 将解出的 $a,b$ 重新代入
+[21] 式 1 [链接 L1]
+[22] 可以得出最小方差的值，用于判断拟合结果的好坏。
+
+[/SCOPE:s_line_fit]
+[23] 【图解】图 1：最小二乘法。
+[24] 仿自 J. Leon 的 Linear Algebra with Applications
+[25] 若 $ \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{b}} $ 无解，
+[26] 则基于最小二乘法的近似解 $ \boldsymbol{\mathbf{\hat x}} $ 是：
+[27] \begin{equation}
+\boldsymbol{\mathbf{\hat x}} = ( \boldsymbol{\mathbf{A}} ^T \boldsymbol{\mathbf{A}} )^{-1} \boldsymbol{\mathbf{A}} ^T \boldsymbol{\mathbf{b}} ~.
+\end{equation}
+
+[SCOPE:s_example|description|例1]
+[28] 线性拟合散点（1,1）,(2,2),(3,2)。
+[29] 图 2：线性拟合散点
+[SCOPE:s_example_let|let_bind|例1变量]
+[30] 设 $y=ax+b$，
+[31] 即
+[/SCOPE:s_example_let]
+[32] $
+[33] \begin{cases}
+a+b&=1\\
+2a+b&=2\\
+3a+b&=2\\
+\end{cases}
+[34] \Rightarrow
+[35] \begin{bmatrix}
+1&1\\
+2&1\\
+3&1\\
+\end{bmatrix}
+[36] \begin{bmatrix}
+a\\
+b\\
+\end{bmatrix}
+[37] =
+[38] \begin{bmatrix}
+1\\
+2\\
+2\\
+\end{bmatrix}
+[39] \Rightarrow
+[40] \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{b}} ~.
+[41] $
+[42] $\therefore \hat { \boldsymbol{\mathbf{x}} } = ( \boldsymbol{\mathbf{A}} ^T \boldsymbol{\mathbf{A}} )^{-1} \boldsymbol{\mathbf{A}} ^T \boldsymbol{\mathbf{b}} $，
+[43] 即可解出 a, b.
+[44] 一些初级的 AI 通过拟合高维直线、曲线来建立模型。
+[45] （A 是输入，b 是输出，x 即为模型的各系数）。
+
+[/SCOPE:s_example]
+[SCOPE:s_poly_fit|description|多项式拟合]
+[46] 【未完成】应该先列出超定线性方程组，系数就直接是范德蒙矩阵，在上面开一小节讲解如何用最小二乘法得到近似解（搬运）。
+[47] 参考 Wikipedia 相关页面。
+[48] 直线可以看作一阶多项式，
+[49] 所以我们只需要把上面直线拟合的方法拓展一下即可。
+[SCOPE:s_poly_fit_let|let_bind|多项式拟合变量]
+[50] 以二次多项式 $c_2 x^2 + c_1 x + c_0$ 为例，方差为
+[51] \begin{equation}
+S_2(c_2, c_1, c_0) = \sum_{i = 1}^N (c_2 x_i^2 + c_1 x_i + c_0 - y_i)^2~.
+\end{equation}
+[/SCOPE:s_poly_fit_let]
+[52] 分别令方差对 $c_2, c_1, c_0$ 的偏导为零，得线性方程组
+[53] 【未完成】系数矩阵应该左右翻转再上下翻转
+[54] \begin{equation}
+\left\{\begin{aligned}
+& \left(\sum_i x_i^4 \right) c_2 + \left(\sum_i x_i^3 \right) c_1 + \left(\sum_i x_i^2 \right) c_0 & &= \sum_i y_i x_i^2 \\
+& \left(\sum_i x_i^3 \right) c_2 + \left(\sum_i x_i^2 \right) c_1 + \left(\sum_i x_i \right) c_0 & &= \sum_i y_i x_i \\
+& \left(\sum_i x_i^2 \right) c_2 + \left(\sum_i x_i \right) c_1 + \quad N c_0 & &= \sum_i y_i \end{aligned}\right. ~.
+\end{equation}
+[55] 观察系数矩阵可以看出它是一个方阵，每条斜线上 $x_i$ 的指数相等，且相邻斜线上 $x_i$ 的指数依次递减。
+[56] 按照此规律容易写出 $N$ 次多项式拟合的方程组。
+[57] Matlab 代码见 “
+[58] 最小二乘法数值拟合（多项式） [链接 L2]
+[59] 式 6 也可以用范德蒙矩阵 $ \boldsymbol{\mathbf{X}} $ 表示为
+[60] \begin{equation}
+( \boldsymbol{\mathbf{X}} ^{\mathrm{T}} \boldsymbol{\mathbf{X}} ) \boldsymbol{\mathbf{c}} = \boldsymbol{\mathbf{b}} ~.
+\end{equation}
+[SCOPE:s_poly_fit_det|description|多项式拟合唯一解证明]
+[61] 可以证明当且仅当 $x_i$ 的个数大于多项式的阶数时该式存在唯一解：当 $x_i$ 各不相同时，范德蒙矩阵的各列都线性无关，根据定理 1 ，系数行列式 $ \left\lvert \boldsymbol{\mathbf{X}} ^{\mathrm{T}} \boldsymbol{\mathbf{X}} \right\rvert > 0$，方程有唯一解。
+[62] 证毕。
+[/SCOPE:s_poly_fit_det]
+[63] 此外，根据魏尔施特拉斯逼近定理，闭区间上的连续函数都可以使用多项式逼近，随着阶数增加，多项式会一致收敛于要拟合的函数。
+
+[/SCOPE:s_poly_fit]
+[SCOPE:s_harmonic_fit|description|简谐波拟合]
+[SCOPE:s_harmonic_fit_let|let_bind|简谐波拟合变量]
+[64] 若要拟合 $A \cos\left(x + \varphi_0\right) + C$ 形式的函数，可以先利用两角和公式把函数化为 $c_1 \cos x + c_2 \sin x + c_3$ 的等效形式（因为前者并不是待定系数的线性组合，得到的方程组也不是线性方程组），方差公式为
+[65] \begin{equation}
+S_2 = \sum_i (c_1 \cos x_i + c_2 \sin x_i + c_3 - y_i)^2~.
+\end{equation}
+[/SCOPE:s_harmonic_fit_let]
+[66] 要求极值，分别令方差对 $c_1, c_2, c_3$ 的偏导为零，得线性方程组
+[67] \begin{equation}
+\left\{\begin{aligned}
+& \left(\sum_i \cos^2 x_i \right) c_1 + \left(\sum_i \sin x_i \cos x_i \right) c_2 + \left(\sum_i \cos x_i \right) c_3 & &= \sum_i y_i \cos x_i\\
+& \left(\sum_i \sin x_i \cos x_i \right) c_1 + \left(\sum_i \sin^2 x_i \right) c_2 + \left(\sum_i \sin x_i \right) c_3 & &= \sum_i y_i \sin x_i\\
+& \left(\sum_i \cos x_i \right) c_1 \quad + \quad \left(\sum_i \sin x_i \right) c_2 \quad + \quad N c_3 & &= \sum_i y_i\\
+\end{aligned}\right. ~.
+\end{equation}
+[68] 和多项式拟合同理，该方程的解总能得到方差的全局最小值。
+[69] 同理，只要能列出关于 $c_i$ 的线性方程组就都可以。
+[SCOPE:s_harmonic_fit_question|description|全局最优性讨论]
+[70] 该方程存在的一个问题是，各个 $c_i$ 偏导为零，就一定会是全局最小值吗？
+[71] 我们不能证明任意线性拟合中系数行列式都不为零，
+[72] 那么会不会解出的是局部最小值，最大值，甚至鞍点呢？
+[73] 首先要明确的是方差 $S_2$ 是一个关于 $c_i$ 的二次函数，处处可导，
+[74] 所以全局最小值必定满足各阶偏导为零。
+[75] 再来考虑有多个解的情况，根据线性方程组解的结构，若线性方程组存在多于一个解，
+[76] 那么这些解必定不可能是离散的而是会存在无穷个解构成一个连续的平面，在该平面上由于各方向偏导处处为零，$S_2$ 必定处处相等，
+[77] 所以所有解都是全局最优解。
+
+跨文章引用:
+  [L2] 最小二乘法数值拟合（多项式） → LSpoly
+[/SCOPE:s_harmonic_fit]
+[/SCOPE:s_harmonic_fit_question]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_line_fit_det",
+    "target_scope": "s_line_fit",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "行列式非零推出唯一解"
+  },
+  {
+    "source_scope": "s_poly_fit_det",
+    "target_scope": "s_poly_fit",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "唯一解证明"
+  },
+  {
+    "source_scope": "s_harmonic_fit_question",
+    "target_scope": "s_harmonic_fit",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "讨论全局最优性"
+  }
+]

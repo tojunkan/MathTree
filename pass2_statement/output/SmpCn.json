@@ -1,0 +1,81 @@
+{
+  "article_name": "SmpCn",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "X",
+        "p",
+        "S^1",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1",
+      "subtype": "theorem",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_1",
+      "subtype": "example",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "R^2"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_2",
+      "subtype": "example",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "R^N",
+        "S^N"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_1",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_2",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

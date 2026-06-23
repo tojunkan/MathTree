@@ -1,0 +1,419 @@
+{
+  "article_name": "Bessel",
+  "statements": [
+    {
+      "stmt_id": "st_bessel_eq_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_bessel_def",
+      "exposed_entities": [
+        "x",
+        "y",
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_order_l",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_bessel_let",
+      "exposed_entities": [
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_two_solutions",
+      "subtype": "theorem",
+      "clause_range": [
+        6,
+        10
+      ],
+      "truth_value": "true",
+      "scope_id": "s_bessel_def",
+      "exposed_entities": [
+        "J_l(x)",
+        "Y_l(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_assume_x_l",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_bessel_def",
+      "exposed_entities": [
+        "x",
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_J_series",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_bessel_def",
+      "exposed_entities": [
+        "J_l(x)",
+        "Gamma"
+      ]
+    },
+    {
+      "stmt_id": "st_Y_def",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_bessel_def",
+      "exposed_entities": [
+        "Y_l(x)",
+        "J_l(x)",
+        "J_{-l}(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_half_order",
+      "subtype": "theorem",
+      "clause_range": [
+        21,
+        23
+      ],
+      "truth_value": "true",
+      "scope_id": "s_bessel_def",
+      "exposed_entities": [
+        "J_{1/2}(x)",
+        "J_{-1/2}(x)",
+        "Y_{1/2}(x)",
+        "Y_{-1/2}(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_var_sub_let",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_var_sub_let",
+      "exposed_entities": [
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_var_sub_eq",
+      "subtype": "theorem",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": "true",
+      "scope_id": "s_var_sub",
+      "exposed_entities": [
+        "u",
+        "x",
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_var_sub_solutions",
+      "subtype": "theorem",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_var_sub",
+      "exposed_entities": [
+        "sqrt(x)J_l(x)",
+        "sqrt(x)Y_l(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_hankel_def",
+      "subtype": "definition",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_hankel",
+      "exposed_entities": [
+        "H_l^{(1)}(x)",
+        "H_l^{(2)}(x)",
+        "J_l(x)",
+        "Y_l(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_Z_let",
+      "subtype": "assumption",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_properties_let",
+      "exposed_entities": [
+        "Z"
+      ]
+    },
+    {
+      "stmt_id": "st_neg_order",
+      "subtype": "theorem",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": [
+        "Z_l(x)",
+        "Z_{-l}(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_recurrence",
+      "subtype": "theorem",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": [
+        "Z_l(x)",
+        "Z_{l-1}(x)",
+        "Z_{l+1}(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_derivative",
+      "subtype": "theorem",
+      "clause_range": [
+        34,
+        35
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": [
+        "dZ_l/dx",
+        "Z_{l-1}(x)",
+        "Z_{l+1}(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_asymptotic_J",
+      "subtype": "theorem",
+      "clause_range": [
+        36,
+        37
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": [
+        "J_l(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_asymptotic_Y",
+      "subtype": "theorem",
+      "clause_range": [
+        36,
+        38
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": [
+        "Y_l(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_orthogonality",
+      "subtype": "theorem",
+      "clause_range": [
+        39,
+        41
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": [
+        "J_l",
+        "u_{l,m}",
+        "J_{l+1}"
+      ]
+    },
+    {
+      "stmt_id": "st_continuous_orthogonality",
+      "subtype": "theorem",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": [
+        "J_l",
+        "k1",
+        "k2"
+      ]
+    },
+    {
+      "stmt_id": "st_modified_eq",
+      "subtype": "definition",
+      "clause_range": [
+        44,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_modified",
+      "exposed_entities": [
+        "x",
+        "y",
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_modified_solutions",
+      "subtype": "definition",
+      "clause_range": [
+        46,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_modified",
+      "exposed_entities": [
+        "I_l(x)",
+        "K_l(x)",
+        "J_l(ix)",
+        "H_l^{(1)}(ix)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_order_l",
+      "target": "st_bessel_eq_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_assume_x_l",
+      "target": "st_J_series",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assume_x_l",
+      "target": "st_Y_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assume_x_l",
+      "target": "st_half_order",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_var_sub_let",
+      "target": "st_var_sub_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_var_sub_eq",
+      "target": "st_var_sub_solutions",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_Z_let",
+      "target": "st_neg_order",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_Z_let",
+      "target": "st_recurrence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_Z_let",
+      "target": "st_derivative",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_Z_let",
+      "target": "st_asymptotic_J",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_Z_let",
+      "target": "st_asymptotic_Y",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_Z_let",
+      "target": "st_orthogonality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_Z_let",
+      "target": "st_continuous_orthogonality",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_var_sub_solutions",
+      "target": "st_two_solutions",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "变量替换基于贝塞尔方程"
+    },
+    {
+      "source": "st_hankel_def",
+      "target": "st_two_solutions",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "汉克尔函数由贝塞尔函数定义"
+    },
+    {
+      "source": "st_neg_order",
+      "target": "st_two_solutions",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "性质适用于贝塞尔函数"
+    },
+    {
+      "source": "st_modified_solutions",
+      "target": "st_two_solutions",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "修正贝塞尔函数与贝塞尔函数相关"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,116 @@
+[SCOPE:root|description|重积分、面积分、体积分（简明微积分）]
+文章名: IntN
+标题: 重积分、面积分、体积分（简明微积分）
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=抛物线下的体积
+  [1] type=example heading=例 2 title=不均匀物体的质量
+
+[0] 本文存在未完成的内容。
+
+[SCOPE:s_area_intro|description|面积分概念]
+[1] 面积分也叫二重积分，可以看做一元函数定积分的一种拓展。
+[2] 从几何上来理解，如果一元函数的定积分是计算一定区间内被积函数曲线与坐标轴之间的面积，
+[3] 那么二重积分就是计算一定二维区域内被积函数曲面与坐标轴平面之间的体积（式 1 ）。
+[4] 【图解】图 1：$f(x, y)$ 曲面下的体积
+[SCOPE:s_area_let|let_bind|面积分变量]
+[5] 对一元函数的定积分，我们需要指定积分的下限和上限，
+[6] 那么对于面积分，我们需要指定 $x$-$y$ 平面上的一块定积分的区域 $\mathcal S$。
+[7] 例如式 1 表示的面积分的区域就是一个正方形。
+[8] 与一元函数的情况相同，我们把积分区域划分成许多小长方形，每个小长方形的面积为 $\Delta x_i \Delta y_j$。
+[9] 把二重积分对应的体积用一个个柱体来近似，每个柱体的体积为 $\Delta x_i \Delta y_j f(x_i, y_i)$ 其中 $(x_i, y_i)$ 是长方形中任意一点。
+[10a] 当这些小长方形趋近无穷小时
+[10b] 则得到了精确的体积。
+[11] 用双重极限表示为
+[12] \begin{equation}
+V = \lim_{\substack{\Delta x_i\to 0\\ \Delta y_j\to 0}} \sum_{i, j} f(x_i,y_j) \Delta x_i \Delta y_j~.
+\end{equation}
+[13] 用积分符号可以把上式简记为
+[14] \begin{equation}
+V = \iint_{\mathcal{S}} f(x,y) \,\mathrm{d}{x} \,\mathrm{d}{y} ~,
+\end{equation}
+[15] 注意积分区域 $\mathcal S$ 可以是任何形状的。
+[16] 我们通过一个例子来说明具体如何计算面积分
+
+[/SCOPE:s_area_intro]
+[/SCOPE:s_area_let]
+[SCOPE:s_example1|description|例1 抛物线下的体积]
+[17] 例 1 抛物线下的体积
+[SCOPE:s_example1_let|let_bind|例1变量]
+[18] 二元函数 $f(x,y) = x^2 + y^2$，可以在直角坐标系 $xyz$ 代表一个抛物面。
+[19a] (x) = -x$，$y_2
+[19b] (x) = x$ 以及 $x = 1$ 所围成的三角形。
+[20] 现在我们以这个三角形为底取一个无限高的三棱柱，求三棱柱被 $f(x,y)$ 截去的有限部分的体积 $V$。
+[21] 那如何计算这个积分呢？
+[22] 我们可以先计算任意 $x$ 处的横截面积 $S(x)$。
+[23] 这个横截面与曲面相交的曲线方程为 $f(x,y)$（把 $x$ 看做常数，$y$ 看做变量），横截面积为
+[24] \begin{equation}
+S(x) = \int_{y_1(x)}^{y_2(x)} f(x,y) \,\mathrm{d}{y} = \frac13 [y_2^3(x) - y_1^3(x)] + x^2[y_2(x) - y_1(x)] = \frac83 x^3~.
+\end{equation}
+[25] \begin{equation}
+V = \lim_{\Delta x_i\to 0} \sum_{i} S(x_i) \Delta x_i = \int_0^1 S(x) \,\mathrm{d}{x} = \frac23 (1^4 -0^4) = \frac23~.
+\end{equation}
+[26] \begin{equation}
+V = \lim_{\Delta x_i\to 0} \sum_{i} \left[\lim_{\Delta y_j\to 0}\sum_{j} f(x_i,y_j) \Delta y_j \right] \Delta x_i~.
+\end{equation}
+[27] \begin{equation}
+V = \int_0^1 \left[\int_{y_1(x)}^{y_2(x)} f(x,y) \,\mathrm{d}{y} \right] \,\mathrm{d}{x} ~.
+\end{equation}
+[28] \begin{equation}
+V = \int_0^1 \,\mathrm{d}{x} \int_{y_1(x)}^{y_2(x)} \,\mathrm{d}{y} f(x,y)~.
+\end{equation}
+[29a] (x)$ 和 $y_2
+[29b] (x)$。
+[30] 积分的结果中只含有 $x$，这时再对 $x$ 进行定积分即可。
+
+[/SCOPE:s_example1]
+[/SCOPE:s_example1_let]
+[SCOPE:s_volume_intro|description|体积分概念]
+[31] 体积分也叫三重积分，类比面积分不难理解其概念
+
+[/SCOPE:s_volume_intro]
+[SCOPE:s_example2|description|例2 不均匀物体的质量]
+[32] 例 2 不均匀物体的质量
+[SCOPE:s_example2_let|let_bind|例2变量]
+[33] 一个几何体由 $x = 0, y = 0, z = 0$ 三个平面和 $x + y + z = 1$ 平面包围而成，其密度为 $f(x,y,z) = x + y + z$，求几何体的总质量 $M$。
+[34] 用定积分的思想，我们可以延三个方向把几何体划分成许多小块 $(i,j,k)$，每个小块的长宽高分别为 $\Delta x_i, \Delta y_j, \Delta z_k$。
+[35] $x_i, y_j, z_k$ 分别为区间 $\Delta x_i, \Delta y_j, \Delta z_k$ 中的任意一点。
+[36] 物体的总质量可以用极限表示为
+[37] \begin{equation}
+V = \lim_{\substack{\Delta x_i\to 0\\ \Delta y_j\to 0\\ \Delta z_k\to 0}} \sum_{i, j, k} f(x_i,y_j,z_k) \Delta x_i \Delta y_j \Delta z_k~.
+\end{equation}
+[38] 三重极限
+[39] \begin{equation}
+V = \iiint_{\mathcal{V}} f(x,y,z) \,\mathrm{d}{x} \,\mathrm{d}{y} \,\mathrm{d}{z} ~,
+\end{equation}
+[40] \begin{equation} \begin{aligned}
+\sigma(x,y) &= \int_{0}^{1-x-y} (x+y+z) \,\mathrm{d}{z} \\
+&= (x + y)[z_2(x,y) - z_1(x,y)] + \frac12 [z_2^2(x,y) - z_1^2(x,y)]\\
+&= (x + y)(1-x-y) + \frac12 (1-x-y)^2\\
+&= \frac12 (1 - x^2 - y^2) - xy~.
+\end{aligned} \end{equation}
+[41] \begin{equation} \begin{aligned}
+\lambda(x) &= \int_{0}^{1-x} \sigma(x,y) \,\mathrm{d}{y} \\
+&= \frac12 (1-x^2) (1-x) - \frac16 (1-x)^3 - \frac12 x(1-x)^2\\
+&= \frac{x^3}{6} - \frac{x}{2} + \frac13~,
+\end{aligned} \end{equation}
+[42] \begin{equation} \begin{aligned}
+M &= \int_{0}^{1} \lambda(x) \,\mathrm{d}{x} = \left[\frac{1}{24} x^4 - \frac14 x^2 + \frac13 x \right] _0^1 = \frac18~.
+\end{aligned} \end{equation}
+[43] \begin{equation}
+M = \lim_{\Delta x_i\to 0} \sum_{i} \left[\lim_{\Delta y_j\to 0}\sum_{j} \left(\lim_{\Delta z_k\to 0} \sum_{k} f(x_i,y_j,z_k) \Delta z_k \right) \Delta y_j \right] \Delta x_i~.
+\end{equation}
+[44] 可见从内到外的三个极限分别为三个变量的一元定积分，
+[45] 即
+[46] \begin{equation}
+M = \int_{0}^{1} \,\mathrm{d}{x} \int_{0}^{1-x} \,\mathrm{d}{y} \int_{0}^{1-x-y} \,\mathrm{d}{z} f(x,y,z)~.
+\end{equation}
+[47] 在柱坐标和球坐标下，函数 $f(x,y,z)$ 变为 $f(r,\theta,z)$ 和 $f(r,\theta,\phi)$，而体积元 $ \,\mathrm{d}{x} \,\mathrm{d}{y} \,\mathrm{d}{z} $ 变为 $r \,\mathrm{d}{r} \,\mathrm{d}{\theta} \,\mathrm{d}{z} $ 式 8 和 $r^2\sin\theta \,\mathrm{d}{r} \,\mathrm{d}{\theta} \,\mathrm{d}{\phi} $ 式 9 .故三重积分式 9 在柱坐标和球坐标下分别表示为
+[48] \begin{equation}
+\iiint_{\mathcal{V}}f(r,\theta,z)r \,\mathrm{d}{r} \,\mathrm{d}{\theta} \,\mathrm{d}{z} \quad \&\quad
+\iiint_{\mathcal{V}}f(r,\theta,\phi)r^2\sin\theta \,\mathrm{d}{r} \,\mathrm{d}{\theta} \,\mathrm{d}{\phi} ~.
+\end{equation}
+[49] 【未完成】链接一下柱坐标，球坐标系中的面积分
+[/SCOPE:s_example2]
+[/SCOPE:s_example2_let]
+[/SCOPE:root]

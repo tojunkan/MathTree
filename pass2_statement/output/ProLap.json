@@ -1,0 +1,407 @@
+{
+  "article_name": "ProLap",
+  "statements": [
+    {
+      "stmt_id": "st_linear_let",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_let",
+      "exposed_entities": [
+        "f1(t)",
+        "f2(t)",
+        "c1",
+        "c2"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_linear",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_proof",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_application",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "omega"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_sin",
+      "subtype": "example",
+      "clause_range": [
+        13,
+        15
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_cos",
+      "subtype": "example",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivative_let",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivative_let",
+      "exposed_entities": [
+        "f(t)",
+        "f'(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_derivative_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_derivative",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivative_proof",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivative",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivative_high_order",
+      "subtype": "theorem",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_derivative",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivative_remark",
+      "subtype": "remark",
+      "clause_range": [
+        27,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivative",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_integral_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": "true",
+      "scope_id": "s_integral",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_integral_let",
+      "subtype": "assumption",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_integral_let",
+      "exposed_entities": [
+        "psi(t)",
+        "f(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_integral_proof",
+      "subtype": "remark",
+      "clause_range": [
+        31,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_integral",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_similarity_let",
+      "subtype": "assumption",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_similarity_let",
+      "exposed_entities": [
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_similarity_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": "true",
+      "scope_id": "s_similarity",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_similarity_exercise",
+      "subtype": "remark",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_similarity",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_shift_let",
+      "subtype": "assumption",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_shift_let",
+      "exposed_entities": [
+        "lambda"
+      ]
+    },
+    {
+      "stmt_id": "st_shift_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": "true",
+      "scope_id": "s_shift",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_shift_exercise",
+      "subtype": "remark",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_shift",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_delay_let",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_delay_let",
+      "exposed_entities": [
+        "t0"
+      ]
+    },
+    {
+      "stmt_id": "st_delay_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": "true",
+      "scope_id": "s_delay",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_delay_proof",
+      "subtype": "remark",
+      "clause_range": [
+        42,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_delay",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_convolution_let",
+      "subtype": "assumption",
+      "clause_range": [
+        52,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_convolution_let",
+      "exposed_entities": [
+        "f1(t)",
+        "f2(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_convolution_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        54,
+        54
+      ],
+      "truth_value": "true",
+      "scope_id": "s_convolution",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_convolution_proof",
+      "subtype": "remark",
+      "clause_range": [
+        55,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_convolution",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exercise1",
+      "subtype": "exercise",
+      "clause_range": [
+        65,
+        70
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_linear_let",
+      "target": "st_linear_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_let",
+      "target": "st_example1_sin",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_let",
+      "target": "st_example1_cos",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivative_let",
+      "target": "st_derivative_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivative_let",
+      "target": "st_derivative_high_order",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_integral_let",
+      "target": "st_integral_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_similarity_let",
+      "target": "st_similarity_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_shift_let",
+      "target": "st_shift_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_delay_let",
+      "target": "st_delay_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_convolution_let",
+      "target": "st_convolution_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_example1_sin",
+      "target": "st_linear_formula",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是线性性质的应用"
+    }
+  ],
+  "unresolved": []
+}

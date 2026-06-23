@@ -1,0 +1,269 @@
+{
+  "article_name": "COrNoB",
+  "statements": [
+    {
+      "stmt_id": "st_notation",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_orthonormal_basis",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_discrete",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "|x_i⟩",
+        "⟨f|g⟩"
+      ]
+    },
+    {
+      "stmt_id": "st_orthonormal_condition",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_discrete",
+      "exposed_entities": [
+        "⟨x_i|x_j⟩",
+        "δ_{i,j}"
+      ]
+    },
+    {
+      "stmt_id": "st_completeness_assumption",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_discrete",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_expansion",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_discrete",
+      "exposed_entities": [
+        "|f⟩",
+        "c_j"
+      ]
+    },
+    {
+      "stmt_id": "st_coefficient_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_discrete",
+      "exposed_entities": [
+        "c_i",
+        "⟨x_i|f⟩"
+      ]
+    },
+    {
+      "stmt_id": "st_geometric_analogy",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_discrete",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_continuous_intro",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_continuous",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fourier_transform_def",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_continuous",
+      "exposed_entities": [
+        "g(k)",
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_continuous_basis_def",
+      "subtype": "definition",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_continuous",
+      "exposed_entities": [
+        "|k⟩",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_basis_not_in_X",
+      "subtype": "remark",
+      "clause_range": [
+        25,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_continuous",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_continuous_orthonormal_condition",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_continuous",
+      "exposed_entities": [
+        "⟨k'|k⟩",
+        "δ(k'-k)"
+      ]
+    },
+    {
+      "stmt_id": "st_continuous_orthonormal_remark",
+      "subtype": "remark",
+      "clause_range": [
+        39,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_continuous",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fourier_dirac",
+      "subtype": "definition",
+      "clause_range": [
+        41,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_continuous",
+      "exposed_entities": [
+        "g(k)",
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_continuous_analogy",
+      "subtype": "remark",
+      "clause_range": [
+        44,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_continuous",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_expansion_continuous",
+      "subtype": "assumption",
+      "clause_range": [
+        48,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_continuous",
+      "exposed_entities": [
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_coefficient",
+      "subtype": "conclusion",
+      "clause_range": [
+        51,
+        59
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_continuous",
+      "exposed_entities": [
+        "g(k)"
+      ]
+    },
+    {
+      "stmt_id": "st_general_continuous",
+      "subtype": "remark",
+      "clause_range": [
+        60,
+        60
+      ],
+      "truth_value": null,
+      "scope_id": "s_continuous",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_completeness_assumption",
+      "target": "st_expansion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_expansion",
+      "target": "st_coefficient_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_continuous_basis_def",
+      "target": "st_continuous_orthonormal_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_expansion_continuous",
+      "target": "st_proof_coefficient",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_continuous_orthonormal_condition",
+      "target": "st_orthonormal_condition",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "连续基底是离散基底的推广"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,93 @@
+[SCOPE:root|description|洛必达法则]
+文章名: LHopiR
+标题: 洛必达法则
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=$\left(\frac{0}{0}\right)$ 型洛必达法则
+  [1] type=theorem heading=定理 2 title=$\left(\frac{\infty}{\infty}\right)$ 型洛必达法则
+  [2] type=exercise heading=习题 1 title=
+  [3] type=exercise heading=习题 2 title=
+
+[SCOPE:s_thm1|description|(0/0)型洛必达法则]
+[0] 定理 1 $\left(\frac{0}{0}\right)$ 型洛必达法则
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[1a] (x),g
+[1b] (x)$ 在 $a$ 点的某一去心邻域 $U^\circ(a,\delta)$ 上可导，而且满足：
+[2a] (x)=\lim\limits_{x\rightarrow a}g
+[2b] (x)=0$;
+[3] $g'(x)\neq 0, \forall x\in U^\circ(a,\delta)$;
+[4a] (x)}{g'
+[4b] (x)}=l$（$l$ 为有限数或 $+\infty$ 或 $-\infty$）;
+[5] \begin{equation}
+\lim\limits_{x\rightarrow a}\frac{f(x)}{g(x)}=\lim\limits_{x\rightarrow a}\frac{f'(x)}{g'(x)}=l~.
+\end{equation}
+[/SCOPE:s_thm1_let]
+[6] 洛必达法则可以通过柯西中值定理证明。
+[7] 【未完成】证明补充
+[8a] (x),sg=\lim\limits_{x\rightarrow a}g'
+[8b] (x)$ 存在且 $sg\neq 0$，可以通过函数的一阶近似式来理解：$f
+[8c] (x)=sf\cdot (x-a)+ \mathcal{O}\left(x-a \right) ,g
+[8d] (x)=sg\cdot (x-a)+ \mathcal{O}\left(x-a \right) $，
+[9a] (x)/g
+[9b] (x)=sf/sg=\lim\limits_{x\rightarrow a}f'
+[9c] (x)/g'
+[9d] (x)$。
+[10] 利用泰勒展开公式作近似或者直接用洛必达法则，是求解分式函数极限问题的常用方法。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|(∞/∞)型洛必达法则]
+[11] 定理 2 $\left(\frac{\infty}{\infty}\right)$ 型洛必达法则
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[12a] (x),g
+[12b] (x)$ 在 $a$ 点的某一去心邻域 $U^\circ(a,\delta)$ 上可导，而且满足：
+[13] $\lim\limits_{x\rightarrow a} g(x)=\infty$;
+[14] $g'(x)\neq 0,\forall x\in U^\circ(a,\delta)$;
+[15a] (x)}{g'
+[15b] (x)}=l$（$l$ 为有限数或 $\pm\infty,\infty$）;
+[16] \begin{equation}
+\lim\limits_{x\rightarrow a}\frac{f(x)}{g(x)}=\lim\limits_{x\rightarrow a}\frac{f'(x)}{g'(x)}=l~.
+\end{equation}
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_let]
+[SCOPE:s_ex1|description|习题1]
+[17] 习题 1
+[18] 计算 $\lim\limits_{x\rightarrow 0}\frac{\sin x}{x}$。
+[19] 直接对分子分母同时求导就可以求得：
+[20] \begin{equation}
+\lim\limits_{x\rightarrow 0}\frac{\sin x}{x}=\lim\limits_{x\rightarrow 0}\frac{\cos x}{1}=1~,
+\end{equation}
+[21] 这告诉我们 $\sin x$ 和 $x$ 在 $x\rightarrow 0$ 时是等价无穷小量（需引用文章）。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|习题2]
+[22] 习题 2
+[23] 计算 $\lim\limits_{x\rightarrow 0}\frac{e^x-1-\sin x}{e^{\sin x} - \cos x - x}$。
+[24] 提示：用洛必达法则，对分子和分母同时求两次导，答案为 $0.5$。
+[25] 这里我们也可以通过对分子分母作二阶近似来计算。
+[26] 利用 $e^x=1+x+x^2/2+ \mathcal{O}\left(x^2 \right) ,\sin x=x+ \mathcal{O}\left(x^2 \right) ,\cos x=1-x^2/2+ \mathcal{O}\left(x^2 \right) $ 对原式进行化简：
+[27] \begin{equation}
+\begin{aligned}
+&e^{\sin x}=e^{x+ \mathcal{O}\left(x^2 \right) }=1+x+x^2/2+ \mathcal{O}\left(x^2 \right) ~,\\
+&\lim\limits_{x\rightarrow 0}\frac{e^x-1-\sin x}{e^{\sin x} - \cos x - x}=\lim\limits_{x\rightarrow 0}\frac{x^2/2+ \mathcal{O}\left(x^2 \right) }{x^2+ \mathcal{O}\left(x^2 \right) }=\frac{1}{2}~.
+\end{aligned}
+\end{equation}
+[28] 在这个例子中，用一次洛必达法则不再能满足我们的要求，
+[29] 于是我们用了第二次洛必达法则，对分子分母再次求导。
+[30] 这对应着将分子分母的函数用关于 $x$ 的二阶近似公式来表示。
+[31] 从这里我们能看出洛必达法则与泰勒展开公式的联系。
+[32] 事实上，带皮亚诺余项的泰勒展开式可以轻易地由洛必达法则得到。
+[33] 【未完成】文章：big O 记号
+[/SCOPE:s_ex2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "∞/∞型是0/0型的推广？实际上两者并列，但这里作为定理2引用定理1？原文无直接引用，但结构上并列。"
+  }
+]

@@ -1,0 +1,102 @@
+[SCOPE:root|description|度量空间]
+文章名: Metric
+标题: 度量空间
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=度量空间
+  [1] type=definition heading=定义 2 title=度量的等价性
+  [2] type=theorem heading=定理 1 title=强等价强于拓扑等价
+  [3] type=example heading=例 1 title=平凡度量
+  [4] type=example heading=例 2 title=欧几里得空间
+  [5] type=example heading=例 3 title=
+  [6] type=corollary heading=推论 1 title=
+
+[SCOPE:s_def1|description|度量空间]
+[0] 定义 1 度量空间
+[SCOPE:s_def1_let|let_bind|度量空间变量]
+[1] 一个集合 $X$ 中任意两个元素 $u, v$ 间若定义了满足以下条件的距离函数（distance function） $d: X \times X \to \mathbb{R}$，那它就是一个度量空间（metric space）。
+[2] 集合中的每个元素就叫空间中的一个点。
+[/SCOPE:s_def1_let]
+[3] 正定性：$d(u, v) \geq 0$，$d(u, v)=0$ 当且仅当 $u=v$
+[4] 对称性：$d(u, v) = d(v, u)$
+[5] 三角不等式：$d(u, v) \leqslant d(u, w) + d(w, v)$
+[6] 【未完成】笛卡尔积的用法
+[7] 【未完成】距离有 $[0, +\infty)$ 和 $[0, \infty]$ 两种定义，在拓扑等价的意义下可以互相转换。
+[8] 其中 “三角不等式” 就是通常所说的 “三角形两边之和不小于第三边”，移向后就变为 “两边之差不大于第三边”。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|度量的等价性]
+[9] 定义 2 度量的等价性
+[SCOPE:s_def2_let|let_bind|等价性变量]
+[10] 空间 $X$ 上的两个度量 $d_1$ 和 $d_2$ 称为强等价的（strongly equivalent），如果有正实数 $C_1, C_2 \in \mathbb{R}_+$ 使得如下不等式对于任何 $x, y \in X$ 都成立：
+[11] $$
+C_1 d_1(x, y) \leq d_2(x, y) \leq C_2 d_1(x, y)~.
+$$
+[/SCOPE:s_def2_let]
+[12a] 另一方面
+[12b] 如果空间上的两个度量导出相同的拓扑的话，我们，则称这两个度量是拓扑等价的（topologically equivalent）
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|强等价强于拓扑等价]
+[13] 定理 1 强等价强于拓扑等价
+[14] 【未完成】证明
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex1|description|平凡度量]
+[15] 例 1 平凡度量
+[16] 未完成：0,1 版本 和 0, +infty 版本
+[17] 未完成：拓扑等价：都是离散拓扑
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|欧几里得空间]
+[18] 例 2 欧几里得空间
+[SCOPE:s_ex2_let|let_bind|欧几里得空间变量]
+[19] $N$ 维欧几里得空间 $\mathbb R^N$ 中通常定义距离函数为
+[20] \begin{equation}
+d(x, y) = \sqrt{\sum_{i=1}^N (x_i - y_i)^2}~,
+\end{equation}
+[/SCOPE:s_ex2_let]
+[21] 特殊地，实数域 $\mathbb R$ 通常的距离函数为 $d(x, y) = \left\lvert x - y \right\rvert $。
+[22] 日常生活中，我们关于距离的直观概念都是建立在例 2 的基础上的，
+[23] 但度量空间是非常广义和抽象的。
+[24] 例如上例中 $d(x, y) = \left\lvert x^3 - y^3 \right\rvert $ 也可以是 $\mathbb R$ 的距离函数；
+[25] 又例如我们可以把一些函数的集合看成一个度量空间：
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|函数空间度量]
+[SCOPE:s_ex3_let|let_bind|函数空间变量]
+[26] 所有 $f:\mathbb R \to \mathbb R$ 函数的集合是一个度量空间，如果定义距离函数为
+[27] \begin{equation}
+d(f, g) = \sup_x{ \left\lvert f(x) - g(x) \right\rvert }~.
+\end{equation}
+[/SCOPE:s_ex3_let]
+[28] 未完成：证明
+
+[/SCOPE:s_ex3]
+[SCOPE:s_cor1|description|子空间]
+[29] 推论 1
+[SCOPE:s_cor1_let|let_bind|子空间变量]
+[30] 度量空间 $X$ 的子集 $A$ 若继承 $X$ 的距离函数，
+[31] 那么 $A$ 也是一个度量空间，称为 $X$ 的子空间（subspace）。
+[/SCOPE:s_cor1_let]
+[32] 证明显然。
+
+[/SCOPE:s_cor1]
+[SCOPE:s_compare|description|对比线性空间]
+[33] 虽然例 2 和例 3 的集合也可以用于定义线性空间，
+[34] 但二者却有较大区别：比起线性空间，度量空间有距离或长度的概念而线性空间却不一定（见范数）。
+[35] 线性空间必须定义 “加法” 和 “标量积” 两种运算而度量空间不必。
+[36] 线性空间的 “零元” 在度量空间也不必存在。
+[/SCOPE:s_compare]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是关于强等价和拓扑等价的关系，依赖于定义2"
+  }
+]

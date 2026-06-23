@@ -1,0 +1,232 @@
+[SCOPE:root|description|定积分的性质]
+文章名: DIntP
+标题: 定积分的性质
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=定向区间
+  [1] type=theorem heading=定理 1 title=
+  [2] type=theorem heading=定理 2 title=
+  [3] type=theorem heading=定理 3 title=
+  [4] type=theorem heading=定理 4 title=
+  [5] type=theorem heading=定理 5 title=
+  [6] type=corollary heading=推论 1 title=
+  [7] type=theorem heading=定理 6 title=
+  [8] type=theorem heading=定理 7 title=
+
+[SCOPE:s_def1|description|定向区间]
+[0] 定义 1 定向区间
+[1] 满足不等式
+[2] \begin{equation}
+a\leq x\leq b\quad or\quad a\geq x\geq b~
+\end{equation}
+[3] 定向区间
+[SCOPE:s_def1_let|let_bind|定向区间变量]
+[4] 对 $a>b$ 时的定向区间 $[a,b]$ 上的积分的定义，可以用完全类似的方法定义，只需从 $a$ 到 $b$ 的方向插入分点：
+[5] \begin{equation}
+x_0=a>x_1>\cdots>x_n=n~,
+\end{equation}
+[6] 于是，若积分和
+[7] \begin{equation}
+\sigma=\sum_{i=0}^{n-1}f(\xi_i)\Delta x_i,\quad\Delta x_i=x_{i+1}-x_i<0~.
+\end{equation}
+[8] 在 $\lambda=\max \left\{\Delta x_i|i=0,\cdots n-1 \right\} $ 趋于 0 时的极限（
+[9] 定义 1 [链接 L0]
+[10] ）存在，
+[11] 则该极限就是 $f(x0$ 在定向区间 $[a,b]$ 上的定积分，并记作
+[12] \begin{equation}
+\int_a^b f(x) \,\mathrm{d}{x} =\lim_{\lambda\rightarrow0}\sigma~.
+\end{equation}
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_thm1|description|定理1]
+[13] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1变量]
+[14] 若 $f(x)$ 在区间 $[b,a]$ 上可积，
+[15] 则它们在 $[a,b]$ 也可积，并且
+[16] \begin{equation}
+\int_a^b f(x) \,\mathrm{d}{x} =-\int_b^a f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[/SCOPE:s_thm1_let]
+[17] 证明：
+[18] 只需对 $[a,b],[b,a]$ 取同样的分点和 $\xi_i$，
+[19] 则它们的积分和仅仅差一负号，
+[20] 因此其极限也只差一负号。
+[21] 证毕！
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理2]
+[22] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2变量]
+[23] $\int_a^a f(x) \,\mathrm{d}{x} =0$
+[/SCOPE:s_thm2_let]
+[24] 证明：
+[25] 此时 $[a,a]$ 上所有的分点和 $\xi_i$ 都是 $a$，而 $\Delta x_i=0$ 且 $f(a)$ 有限，
+[26] 所以积分和每一项都是 0。
+[27] 证毕！
+[28] 当然，如果定向区间 $[a,b]$ 的定义不允许 $a=b$，
+[29a] (x) \,\mathrm{d}{x} $ 定义为 $\lim\limits_{b\rightarrow a}\int_a^b f
+[29b] (x) \,\mathrm{d}{x} $，此时也有定理 2 的性质。
+[30] 所以两种定义带来的结果都是等价的，如何理解都可。
+[31] 为方便下面的证明，使用的符号 $\sum\limits_{c}^d f(\xi)\Delta x$ 代表 $\sum\limits_{i=0}^{n-1} f(\xi_i)\Delta x_i$ 其中 $x_0=c,x_{n-1}=d$，可以理解成矢量 $f(\xi)=(f(\xi_0),\cdots,f(\xi_{n-1}))$ 和 $\Delta x=(\Delta x_0,\cdots,\Delta x_{n-1})$ 的内积，其中 $x_0=c,x_{n-1}=d.$
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|定理3]
+[32] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理3变量]
+[33] 设 $f(x)$ 在区间 $[a,b]$ 上可积，
+[34] 那么对任意的 $c,d,e\in[a,b]$，成立
+[35] \begin{equation}
+\int_c^d f(x) \,\mathrm{d}{x} =\int_c^e f(x) \,\mathrm{d}{x} +\int_e^d f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[/SCOPE:s_thm3_let]
+[36] 证明：
+[37] 由定理 1 ，只需对 $c< d$ 的情形证明即可。
+[38] 由定理 6 ，$f(x)$ 在 $[a,b]$ 上的每一部分区间都可积。
+[39] 设 $e\in [c,d]$，并令 $e$ 是分点之一，
+[40] 于是
+[41] \begin{equation}
+\sum_{c}^d f(\xi)\Delta x=\sum_c^e f(\xi)\Delta x+\sum_e^d f(\xi)\Delta x~.
+\end{equation}
+[42] 两边取极限就得所需证的等式。
+[43] 设 $e\notin[c,d]$，不失一般性，令 $e\leq c$，
+[44] 于是由上一情形
+[45] \begin{equation}
+\begin{aligned}
+&\int_e^d f(x) \,\mathrm{d}{x} =\int_e^c f(x) \,\mathrm{d}{x} +\int_c^d f(x) \,\mathrm{d}{x} \\
+&\Downarrow\\
+&\int_c^d f(x) \,\mathrm{d}{x} =-\int_e^c f(x) \,\mathrm{d}{x} +\int_e^d f(x) \,\mathrm{d}{x} =\int_c^e f(x) \,\mathrm{d}{x} +\int_e^d f(x) \,\mathrm{d}{x} ~.
+\end{aligned}
+\end{equation}
+[46] 证毕！
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|定理4]
+[47] 定理 4
+[SCOPE:s_thm4_let|let_bind|定理4变量]
+[48a] (x),g
+[48b] (x)$ 在区间 $[a,b]$ 上可积，
+[49] 则
+[50a] (x) \,\mathrm{d}{x} =k\int_a^b f
+[50b] (x) \,\mathrm{d}{x} $，($k$ 是常数);
+[51a] (x)\pm g
+[51b] (x)] \,\mathrm{d}{x} =\int_a^b f
+[51c] (x) \,\mathrm{d}{x} \pm\int_a^b g
+[51d] (x) \,\mathrm{d}{x} $.
+[/SCOPE:s_thm4_let]
+[52] 证明：
+[53] 利用积分和出发证明即可：
+[54] \begin{equation}
+\begin{aligned}
+&\sum_{a}^bkf(\xi)\Delta x=k\sum_{a}^bf(\xi)\Delta x;\\
+&\sum_a^b \left[f(\xi)\pm g(\xi) \right] \Delta x=\sum_a^bf(\xi)\Delta x\pm \sum_a^bg(\xi)\Delta x~.
+\end{aligned}
+\end{equation}
+[55] 上面两边取极限便得所需证的等式。
+[56] 证毕！
+
+[/SCOPE:s_thm4]
+[SCOPE:s_thm5|description|定理5]
+[57] 定理 5
+[SCOPE:s_thm5_let|let_bind|定理5变量]
+[58] 如果在 $[a,b]$ 上可积函数 $f(x)$ 是非负的，并且 $a< b$，
+[59] 则
+[60] \begin{equation}
+\int_a^b f(x) \,\mathrm{d}{x} \geq0~,
+\end{equation}
+[61] \begin{equation}
+\int_a^b f(x) \,\mathrm{d}{x} >0~.
+\end{equation}
+[/SCOPE:s_thm5_let]
+[62] 证明：
+[63] 写出达布下和
+[64] \begin{equation}
+s=\sum_{a}^bm\Delta x~.
+\end{equation}
+[65] 由于 $f(\xi),\Delta x\geq0$，
+[66] 所以和的每一项都非负，由定积分存在条件和
+[67] 式 9 [链接 L1]
+[68] \begin{equation}
+0\leq s\leq\int_a^b f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[69] 式 11 [链接 L2]
+[70] 的证明，完全一样，由于在某一区间分划下，达布下和大于 0，可以该分划的分点为基础获得新的 $\lambda\rightarrow0$ 的分划，由达布下和的性质
+[71] 定理 1 [链接 L3]
+[72] 式 9 [链接 L4]
+[73] $0< s\leq\int_a^b f(x) \,\mathrm{d}{x} .$
+[74] 证毕！
+[75] 由该定理容易得到下面推论
+
+[/SCOPE:s_thm5]
+[SCOPE:s_cor1|description|推论1]
+[76] 推论 1
+[SCOPE:s_cor1_let|let_bind|推论1变量]
+[77a] (x),g
+[77b] (x)$ 在 $[a,b]$ 上可积，并且 $f
+[77c] (x)\leq g
+[77d] (x),a< b$ (或 $f
+[77e] (x)< g
+[77f] (x)$ )，
+[78] 则
+[/SCOPE:s_cor1_let]
+[79] \begin{equation}
+\int_a^b f(x) \,\mathrm{d}{x} \leq\int_a^b g(x) \,\mathrm{d}{x} \qquad (or \int_a^b f(x) \,\mathrm{d}{x} <\int_a^b g(x) \,\mathrm{d}{x} )~.
+\end{equation}
+
+[/SCOPE:s_cor1]
+[SCOPE:s_thm6|description|定理6]
+[80] 定理 6
+[SCOPE:s_thm6_let|let_bind|定理6变量]
+[81] 设 $f(x)$ 为 $[a,b]$ 上的可积函数，且 $a< b$，
+[82] 则
+[83] \begin{equation}
+\left\lvert \int_a^b f(x) \,\mathrm{d}{x} \right\rvert \leq\int_a^b \left\lvert f(x) \right\rvert \,\mathrm{d}{x} ~.
+\end{equation}
+[/SCOPE:s_thm6_let]
+[84] 证明：
+[85] 由数的绝对值满足的三角不等式 $ \left\lvert a_1+a_2 \right\rvert \leq \left\lvert a_1 \right\rvert + \left\lvert a_2 \right\rvert $，容易通过数学归纳法证得
+[86] \begin{equation}
+\left\lvert \sum_i a_i \right\rvert \leq\sum_i \left\lvert a_i \right\rvert ~.
+\end{equation}
+[87] \begin{equation}
+\left\lvert \sum_a^b f(x)\Delta x \right\rvert \leq\sum_a^b \left\lvert f(x) \right\rvert \Delta x~.
+\end{equation}
+[88] 右边的式子的可积性由
+[89] 定理 4 [链接 L5]
+[90] 得到。
+[91] 两边取极限便得到
+[92] 式 15 [链接 L6]
+[93] 证毕！
+
+[/SCOPE:s_thm6]
+[SCOPE:s_thm7|description|定理7]
+[94] 定理 7
+[SCOPE:s_thm7_let|let_bind|定理7变量]
+[95] 如果 $f(x)$ 在 $[a,b]$ 上可积，其中 $a< b$，并且在该区间上恒有
+[96] \begin{equation}
+m< f(x)< M~,
+\end{equation}
+[97] \begin{equation}
+m(b-a)\leq\int_a^b f(x) \,\mathrm{d}{x} \leq M(b-a)~.
+\end{equation}
+[/SCOPE:s_thm7_let]
+[98] 证明：
+[99] 由下面明显的不等式
+[100] \begin{equation}
+m(b-a)=m\sum_a^b\Delta x\leq\sum_a^b f(\xi)\Delta x\leq M\sum_a^b\Delta x=M(b-a)~.
+\end{equation}
+[101] 取极限即得。
+[102] 证毕！
+[/SCOPE:s_thm7]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm5",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是定理5的直接推论"
+  }
+]

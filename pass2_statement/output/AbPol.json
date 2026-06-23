@@ -1,0 +1,368 @@
+{
+  "article_name": "AbPol",
+  "statements": [
+    {
+      "stmt_id": "st_abs_min",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_abs",
+      "exposed_entities": [
+        "J[γ]",
+        "γ0"
+      ]
+    },
+    {
+      "stmt_id": "st_abs_max",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_abs",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rel_intro",
+      "subtype": "remark",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_rel",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rel_example",
+      "subtype": "example",
+      "clause_range": [
+        6,
+        8
+      ],
+      "truth_value": "true",
+      "scope_id": "s_rel",
+      "exposed_entities": [
+        "A",
+        "B",
+        "S0",
+        "D0"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_curves",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "y(x)",
+        "y1(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_distance",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_equiv",
+      "subtype": "theorem",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_seq",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "y_n(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_unif_conv",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_J",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "J(y)",
+        "F(x,y,y')"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_example",
+      "subtype": "example",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "n",
+        "sin(nx)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_curves",
+      "subtype": "assumption",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "y(x)",
+        "y1(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_distance",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        33,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_neighbor_def",
+      "subtype": "definition",
+      "clause_range": [
+        38,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_neighbor",
+      "exposed_entities": [
+        "y(x)",
+        "epsilon"
+      ]
+    },
+    {
+      "stmt_id": "st_strong_weak_J",
+      "subtype": "assumption",
+      "clause_range": [
+        44,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_strong_weak",
+      "exposed_entities": [
+        "J",
+        "F(x,y,y')",
+        "γ0"
+      ]
+    },
+    {
+      "stmt_id": "st_strong_max",
+      "subtype": "definition",
+      "clause_range": [
+        47,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_strong_weak",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_strong_min",
+      "subtype": "definition",
+      "clause_range": [
+        52,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_strong_weak",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_weak_max",
+      "subtype": "definition",
+      "clause_range": [
+        53,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_strong_weak",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exer1_claim1",
+      "subtype": "exercise",
+      "clause_range": [
+        56,
+        56
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exer1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exer1_claim2",
+      "subtype": "exercise",
+      "clause_range": [
+        57,
+        57
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exer1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_abs_min",
+      "target": "st_abs_max",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_curves",
+      "target": "st_def1_distance",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_curves",
+      "target": "st_def1_equiv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_seq",
+      "target": "st_def1_unif_conv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_J",
+      "target": "st_def1_remark",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_example",
+      "target": "st_ex1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_curves",
+      "target": "st_def2_distance",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_strong_weak_J",
+      "target": "st_strong_max",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_strong_weak_J",
+      "target": "st_strong_min",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_strong_weak_J",
+      "target": "st_weak_max",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_abs_min",
+      "target": "st_strong_max",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "绝对极值是强与弱相对极值的特例"
+    },
+    {
+      "source": "st_strong_max",
+      "target": "st_abs_min",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "习题1结论：绝对极值蕴含强与弱相对极值"
+    }
+  ],
+  "unresolved": []
+}

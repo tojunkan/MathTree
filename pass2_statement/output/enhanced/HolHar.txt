@@ -1,0 +1,43 @@
+[SCOPE:root|description|解析函数与散度旋度]
+文章名: HolHar
+标题: 解析函数与散度旋度
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=theorem heading=定理 2 title=
+
+[SCOPE:s_thm1|description|定理 1]
+[0] 定理 1
+[SCOPE:s_thm1_let_g|let_bind|定义 g]
+[1] 函数 $f:\mathbb C\to\mathbb C$ 在某区域解析的充分必要条件是：$ \boldsymbol{\mathbf{g}} (x,y)$ 是二维调和场，
+[/SCOPE:s_thm1_let_g]
+[2] 即散度和旋度都为零。
+[3] 证明留做习题。
+[SCOPE:s_thm1_let_phi|let_bind|引入势函数 phi]
+[4] 由于 $ \boldsymbol{\mathbf{g}} $ 的旋度为零，必定存在势函数 $\phi$，使
+[5] \begin{equation}
+u = \frac{\partial \phi}{\partial x} \qquad -v = \frac{\partial \phi}{\partial y} ~,
+\end{equation}
+[6] \begin{equation}
+\boldsymbol{\nabla}^2 \phi = 0~.
+\end{equation}
+[7] 即 $ \boldsymbol{\mathbf{g}} $ 必定可以表示为调和函数的梯度。
+[/SCOPE:s_thm1_let_phi]
+[SCOPE:s_thm1_let_h|let_bind|定义 h]
+[8] 我们再来看 $ \mathrm{i} f^*(z)$ 代表的矢量场 $ \boldsymbol{\mathbf{h}} (x,y)$。
+[9] \begin{equation}
+\mathrm{i} f^*(z) = \mathrm{i} (u - v \mathrm{i} ) = v + u \mathrm{i} ~,
+\end{equation}
+[10] \begin{equation}
+\boldsymbol{\mathbf{h}} (x,y) = v(x,y) \hat{\boldsymbol{\mathbf{x}}} + u(x,y) \hat{\boldsymbol{\mathbf{y}}} ~.
+\end{equation}
+[11] 由柯西公式易得 $ \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{h}} = \boldsymbol{\mathbf{0}} $。
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_let_h]
+[SCOPE:s_thm2|description|定理 2]
+[12] 定理 2
+[13] 函数 $f:\mathbb C\to\mathbb C$ 在某区域解析的充分必要条件是：$ \boldsymbol{\mathbf{g}} (x,y), \boldsymbol{\mathbf{h}} (x,y)$ 旋度都为零。
+[14] 证明留做习题。
+[/SCOPE:s_thm2]
+[/SCOPE:root]

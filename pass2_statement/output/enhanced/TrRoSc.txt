@@ -1,0 +1,108 @@
+[SCOPE:root|description|平移、旋转与缩放的组合变换]
+文章名: TrRoSc
+标题: 平移、旋转与缩放的组合变换
+
+[SCOPE:s_active|description|主动理解]
+[SCOPE:s_active_let|let_bind|主动理解变量]
+[0] 主动理解即坐标系只有一个，$ \boldsymbol{\mathbf{r}} = (x, y)$ 变换后得到另一个向量 $ \boldsymbol{\mathbf{r}} ' = (x',y')$。
+[1] 旋转矩阵（逆时针为正）为 $ \boldsymbol{\mathbf{R}} (\theta)$，
+[2] 即 $ \boldsymbol{\mathbf{r}} ' = \boldsymbol{\mathbf{R}} (\theta) \boldsymbol{\mathbf{r}} $ 把 $ \boldsymbol{\mathbf{r}} $ 关于坐标原点旋转 $\theta$ 弧度得到 $ \boldsymbol{\mathbf{r}} '$。
+[3] 缩放常数 $s$ 可以把一点关于原点收缩：$ \boldsymbol{\mathbf{r}} ' = s \boldsymbol{\mathbf{r}} = (sx, sy)$。
+[4] 平移向量 $ \boldsymbol{\mathbf{d}} = (d_x,d_y)$ 可以描述平移 $ \boldsymbol{\mathbf{r}} ' = \boldsymbol{\mathbf{r}} + \boldsymbol{\mathbf{d}} = (x+d_x,y+d_y)$。
+[/SCOPE:s_active_let]
+[SCOPE:s_active_example|description|三种顺序示例]
+[5] 如果三种变换依次作用在 $ \boldsymbol{\mathbf{r}} $ 上，
+[6] 但顺序不同，会导致最终结果相差一个平移。
+[7] 例如：
+[8] “平移，旋转，缩放” 为
+[9] \begin{equation}
+\boldsymbol{\mathbf{r}} ' = s \boldsymbol{\mathbf{R}} ( \boldsymbol{\mathbf{r}} + \boldsymbol{\mathbf{d}} ) = s \boldsymbol{\mathbf{R}} \boldsymbol{\mathbf{r}} + s \boldsymbol{\mathbf{R}} \boldsymbol{\mathbf{d}} ~.
+\end{equation}
+[10] “旋转，平移，缩放” 为
+[11] \begin{equation}
+\boldsymbol{\mathbf{r}} ' = s( \boldsymbol{\mathbf{R}} \boldsymbol{\mathbf{r}} + \boldsymbol{\mathbf{d}} ) = s \boldsymbol{\mathbf{R}} \boldsymbol{\mathbf{r}} + s \boldsymbol{\mathbf{d}} ~.
+\end{equation}
+[12] “缩放，平移，旋转” 为
+[13] \begin{equation}
+\boldsymbol{\mathbf{r}} ' = \boldsymbol{\mathbf{R}} (s \boldsymbol{\mathbf{r}} + \boldsymbol{\mathbf{d}} ) = s \boldsymbol{\mathbf{R}} \boldsymbol{\mathbf{r}} + \boldsymbol{\mathbf{R}} \boldsymbol{\mathbf{d}} ~.
+\end{equation}
+[14] 可见使用
+[15] 矩阵乘法分配律 [链接 L0]
+[16] 拆括号后，得到 “旋转，缩放，平移” 变换。
+[17] 第一项的旋转缩放都是相同的，只有平移常数不同。
+[18] 也就是说，
+[19] 任何一种顺序都可以覆盖所有可能组合变换
+[20] 另外注意旋转和缩放都是线性变换，且二者顺序可交换，
+[21] 即 $s( \boldsymbol{\mathbf{R}} \boldsymbol{\mathbf{r}} ) = \boldsymbol{\mathbf{R}} (s \boldsymbol{\mathbf{r}} )$，
+[22] 但平移并不是线性变换。
+
+[/SCOPE:s_active]
+[/SCOPE:s_active_example]
+[SCOPE:s_inverse|description|逆变换]
+[SCOPE:s_inverse_let|let_bind|逆变换变量]
+[23] 容易发现，这三个变换的逆变换分别为 $ \boldsymbol{\mathbf{R}} ^{-1}$，$1/s$ 和 $- \boldsymbol{\mathbf{d}} $。
+[/SCOPE:s_inverse_let]
+[24] 组合变换的逆变换就是按照相反的顺序依次做逆变换。
+[25] 例如式 3 中 “缩放，平移，旋转” 的逆变换为 “逆旋转，逆平移，逆缩放”
+[26] \begin{equation}
+\boldsymbol{\mathbf{r}} = \frac1s ( \boldsymbol{\mathbf{R}} ^{-1} \boldsymbol{\mathbf{r}} ' - \boldsymbol{\mathbf{d}} )~.
+\end{equation}
+
+[/SCOPE:s_inverse]
+[SCOPE:s_arbitrary_rotation|description|关于任意点旋转]
+[27] 一些初学者在学习旋转矩阵时会疑惑为什么只能关于原点旋转。
+[28] 因为矩阵只能表示线性变换，而关于任意点的旋转不是线性变换。
+[SCOPE:s_arbitrary_rotation_let|let_bind|旋转中心变量]
+[29] 假设旋转中心为 $ \boldsymbol{\mathbf{c}} $，
+[/SCOPE:s_arbitrary_rotation_let]
+[30] 那么要关于该点旋转可以表示为（式 5 ）
+[31] \begin{equation}
+\boldsymbol{\mathbf{r}} ' = \boldsymbol{\mathbf{R}} ( \boldsymbol{\mathbf{r}} - \boldsymbol{\mathbf{c}} ) + \boldsymbol{\mathbf{c}} = \boldsymbol{\mathbf{R}} \boldsymbol{\mathbf{r}} + ( \boldsymbol{\mathbf{c}} - \boldsymbol{\mathbf{R}} \boldsymbol{\mathbf{c}} )~.
+\end{equation}
+[32] 第一个等号是说，要关于某点旋转，我们可以先用平移把旋转中心移动到原点，旋转完成后再移回去。
+[33] 而第二个等号告诉我们，
+[34] 关于某点旋转等效于关于原点旋转再进行一个平移
+[35] 。
+[36] 这就是为什么我们在讨论三种变换的组合时只需要默认旋转是关于原点就可以包含所有情况。
+
+[/SCOPE:s_arbitrary_rotation]
+[SCOPE:s_passive|description|被动理解]
+[SCOPE:s_passive_let|let_bind|被动理解变量]
+[37] 被动理解的意思是，存在两个坐标系 $S,S'$，当 $S'$ 相对 $S$ 旋转，缩放或平移后，$S$ 中一个向量 $ \boldsymbol{\mathbf{r}} $ 在 $S'$ 中的坐标是什么。
+[38] 也就是同一个向量在不同坐标系中的坐标如何变换。
+[/SCOPE:s_passive_let]
+[39] 【未完成】用 $ \boldsymbol{\mathbf{R}} ^{-1}$，$1/s$ 和 $- \boldsymbol{\mathbf{d}} $ 即可！
+[/SCOPE:s_passive]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_active_example",
+    "target_scope": "s_active_let",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "示例基于之前定义的变量"
+  },
+  {
+    "source_scope": "s_inverse",
+    "target_scope": "s_active",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "逆变换是主动变换的逆"
+  },
+  {
+    "source_scope": "s_arbitrary_rotation",
+    "target_scope": "s_active",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "关于任意点旋转可化为关于原点旋转加平移"
+  },
+  {
+    "source_scope": "s_passive",
+    "target_scope": "s_active",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "被动理解与主动理解本质相同"
+  }
+]

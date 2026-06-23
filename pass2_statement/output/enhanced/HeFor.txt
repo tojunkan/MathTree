@@ -1,0 +1,124 @@
+[SCOPE:root|description|埃尔米特型]
+文章名: HeFor
+标题: 埃尔米特型
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=埃尔米特型
+  [1] type=example heading=例 1 title=埃尔米特型对应矩阵元的性质
+  [2] type=definition heading=定义 2 title=埃尔米特矩阵
+  [3] type=example heading=例 2 title=埃尔米特矩阵在不同基底下仍是埃尔米特的
+  [4] type=definition heading=定义 3 title=正定埃尔米特二次型
+  [5] type=definition heading=定义 4 title=正定埃尔米特型
+
+[SCOPE:s_def1|description|定义1 埃尔米特型]
+[0] 定义 1 埃尔米特型
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1] 设 $V$ 是定义在复数域 $\mathbb{C}$ 上的矢量空间，其上的半双线性型称为埃尔米特型（Hermitian），若
+[2] \begin{equation}
+f( y, x)=f^*( x, y)~,
+\end{equation}
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_ex1|description|例1 埃尔米特型对应矩阵元的性质]
+[3] 例 1 埃尔米特型对应矩阵元的性质
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[4] 试证明埃尔米特型 $f$ 对应的矩阵 $F$ 的系数满足 $f_{ij}=f_{ji}^*$。
+[5] 其中 $f_{ij}=f( e_i, e_j)$。
+[6] 这就是说 $ \boldsymbol{\mathbf{F}} ^\dagger= \boldsymbol{\mathbf{F}} $，其中 $ \boldsymbol{\mathbf{F}} ^\dagger= \left( \boldsymbol{\mathbf{F}} ^T \right) ^*$。
+[/SCOPE:s_ex1_let]
+[7] 证明：由埃尔米特型定义知
+[8] \begin{equation}
+\begin{aligned}
+\sum_{i,j}x_i^*y_j f_{ij}&=f( x, y)=f^*( y, x)\\
+&= \left(\sum_{i,j}y_j^* x_i f_{ji} \right) ^*=\sum_{i,j}y_j x_i^*f_{ji}^*~,
+\end{aligned}
+\end{equation}
+[9] 按照二次型对应的线性型与对应矩阵的命名的惯例（即名为 $name$ 型的线性型对应的矩阵称 $name$ 矩阵），有下面定义
+
+[/SCOPE:s_ex1]
+[SCOPE:s_def2|description|定义2 埃尔米特矩阵]
+[10] 定义 2 埃尔米特矩阵
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[11] 称矩阵 $ \boldsymbol{\mathbf{A}} $ 为埃尔米特矩阵，若 $ \boldsymbol{\mathbf{A}} ^\dagger= \boldsymbol{\mathbf{A}} $，其中，$ \boldsymbol{\mathbf{A}} ^\dagger= \left( \boldsymbol{\mathbf{A}} ^T \right) ^*$
+
+[/SCOPE:s_def2]
+[/SCOPE:s_def2_let]
+[SCOPE:s_ex2|description|例2 埃尔米特矩阵在不同基底下仍是埃尔米特的]
+[12] 例 2 埃尔米特矩阵在不同基底下仍是埃尔米特的
+[SCOPE:s_ex2_let|let_bind|例2的变量]
+[13] 也就是说要证明对基底 $ e_i$ 下的埃尔米特型 $f$ 对应的矩阵 $ \boldsymbol{\mathbf{F}} = \boldsymbol{\mathbf{F}} ^\dagger$，要证在基底 $ e'_i$ 下对应的矩阵 $ \boldsymbol{\mathbf{F}} '$ 仍满足 $ \boldsymbol{\mathbf{F}} '= \boldsymbol{\mathbf{F}} '^\dagger$。
+[14] 证明：设 $ \boldsymbol{\mathbf{A}} $ 是基底 $ e_i$ 到基底 $ e'_i$ 的转换矩阵。
+[/SCOPE:s_ex2_let]
+[15] 由 $f$ 是半双线性型，知（例 1 ）
+[16] \begin{equation}
+\boldsymbol{\mathbf{F}} '= \boldsymbol{\mathbf{A}} ^\dagger \boldsymbol{\mathbf{FA}} ~,
+\end{equation}
+[17] \begin{equation}
+( \boldsymbol{\mathbf{F}} ')^\dagger=( \boldsymbol{\mathbf{A}} ^\dagger \boldsymbol{\mathbf{FA}} )^\dagger= \boldsymbol{\mathbf{A}} ^\dagger \boldsymbol{\mathbf{F}} ^\dagger \boldsymbol{\mathbf{A}} = \boldsymbol{\mathbf{A}} ^\dagger \boldsymbol{\mathbf{FA}} = \boldsymbol{\mathbf{F}} '~.
+\end{equation}
+[18] 埃尔米特型 $f( x, y)$ 自然对应埃尔米特二次型 $f( x, x)$。
+[19] 因为
+[20] \begin{equation}
+f( x, x)= f^*( x, x) ~,
+\end{equation}
+[21] 所以埃尔米特二次型只取实数值。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_def3|description|定义3 正定埃尔米特二次型]
+[22] 定义 3 正定埃尔米特二次型
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[23] 埃尔米特二次型 $f( x, x)$ 称为正定的，若对 $\forall x$ 有
+[24] \begin{equation}
+f( x, x)\geq0~,
+\end{equation}
+[25] \begin{equation}
+f( x, x)=0\Rightarrow x= 0~.
+\end{equation}
+
+[/SCOPE:s_def3]
+[/SCOPE:s_def3_let]
+[SCOPE:s_def4|description|定义4 正定埃尔米特型]
+[26] 定义 4 正定埃尔米特型
+[27] 与正定埃尔米特二次型对应的埃尔米特型称为正定埃尔米特型。
+[/SCOPE:s_def4]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是定义1的具体化"
+  },
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_ex1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义2是例1结论的命名"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2证明定义2的性质在基变换下保持"
+  },
+  {
+    "source_scope": "s_def3",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义3是定义1的特殊化（正定）"
+  },
+  {
+    "source_scope": "s_def4",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义4是定义3对应的线性型"
+  }
+]

@@ -1,0 +1,91 @@
+[SCOPE:root|description|巴拿赫定理]
+文章名: BanThm
+标题: 巴拿赫定理
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=一致有界原理（共鸣定理，Uniform Boundedness Principle）
+  [1] type=theorem heading=定理 2 title=开映像原理（Open Mapping Theorem）
+  [2] type=theorem heading=定理 3 title=闭图像定理（Closed Graph Theorem）
+
+[0] 在巴拿赫空间的理论中，巴拿赫定理（Banach theorems）是一组关于巴拿赫空间上的有界线性算子的定理。
+[1] 它们都依赖于巴拿赫空间的完备性，并且在分析数学中有广泛的应用。
+[2] 可参考 Kôsaku Yosida: Functional analysis. Grundlehren der mathematischen Wissenschaften 123, Springer-Verlag, 1980 (6th ed.).
+
+[SCOPE:s_ubp|description|一致有界原理]
+[3] 定理 1 一致有界原理（共鸣定理，Uniform Boundedness Principle）
+[SCOPE:s_ubp_let|let_bind|一致有界原理的变量]
+[4] 设 $X$ 是巴拿赫空间，$Y$ 是赋范线性空间，$\mathfrak{F}\subset\mathfrak{B}(X,Y)$ 是有界线性算子的族。
+[5] 如果对于任何 $x\in X$ 皆有 $\sup_{T\in\mathfrak{F}}\|Tx\|_Y<\infty$，
+[/SCOPE:s_ubp_let]
+[6] 那么实际上必有
+[7] $$
+\sup_{T\in\mathfrak{F}}\|T\|_{\mathfrak{B}(X,Y)}
+=\sup_{T\in\mathfrak{F}}\left(\sup_{\|x\|_X\leq 1}\|Tx\|_Y\right)<\infty~.
+$$
+[8] 也就是说，从巴拿赫空间出发的线性算子的族，如果是逐点有界的，
+[9] 则一定是一致有界的。
+[10] 这个定理的证明用到了贝尔纲定理（Baire category theorem），而这依赖于 $X$ 的完备性。
+[11] 如果 $X$ 不完备，
+[12] 则定理不成立。
+[SCOPE:s_ubp_counter|description|一致有界原理的反例]
+[SCOPE:s_ubp_counter_let|let_bind|反例中的变量]
+[13] 一个反例如下：取 $X$ 为仅有有限项非零的序列组成的空间，并赋以范数 $\|x\|=\max_{k}|x_k|$。
+[14] 这个空间不是完备的。
+[15] 定义 $T_n:X\to X$ 为
+[16] $$
+T_nx=(x_1,2x_2,...,nx_n,0,...)~,
+$$
+[/SCOPE:s_ubp_counter_let]
+[17] 则 $\|T_n\|=n$，
+[18] 因此族 $\{T_n\}$ 不是一致有界的，
+[19] 但对于任何固定的 $x\in X$，当 $n$ 充分大时，$T_nx$ 将恒等于常值，
+[20] 因此对于任何固定的 $x\in X$，都有 $\sup_n\|T_nx\|<\infty$。
+[/SCOPE:s_ubp_counter]
+[21] 该定理的一个应用是说明：连续函数的傅里叶级数不必逐点收敛。
+
+[/SCOPE:s_ubp]
+[SCOPE:s_omt|description|开映像原理]
+[22] 定理 2 开映像原理（Open Mapping Theorem）
+[SCOPE:s_omt_let|let_bind|开映像原理的变量]
+[23] 设 $X,Y$ 是巴拿赫空间，$T:X\to Y$ 是连续线性算子，而且是满映射。
+[/SCOPE:s_omt_let]
+[24] 则 $T$ 是开映射，
+[25] 即 $X$ 中的开集经 $T$ 变为 $Y$ 中的开集。
+[26] 这个定理的证明也用到了贝尔纲定理（Baire category theorem），而这依赖于 $X,Y$ 的完备性。
+[27] 如果 $X$ 不完备，
+[28] 则定理不成立。
+[SCOPE:s_omt_counter|description|开映像原理的反例]
+[29] 实际上有很简单的反例可以作为说明：如果 $Z\subset X$ 是稠密的真子空间，
+[30] 那么自然的嵌入映射 $Z\to X$ 就显然不是开映射。
+[/SCOPE:s_omt_counter]
+[31] 开映像原理有如下的直接推论：如果 $T$ 是巴拿赫空间 $X,Y$ 之间的连续线性算子，且值域 $\text{Ran}(T)$ 是 $Y$ 的闭子空间，
+[32] 则商映射 $X/\text{Ker}(T)\to \text{Ran}(T)$ 是同构。
+[33] 另外，开映像原理还说明：一个线性空间上的两个范数若都是完备的，
+[34] 则这两个范数必然等价。
+
+[/SCOPE:s_omt]
+[SCOPE:s_cgt|description|闭图像定理]
+[35] 定理 3 闭图像定理（Closed Graph Theorem）
+[SCOPE:s_cgt_let|let_bind|闭图像定理的变量]
+[36] 设 $T:X\to Y$ 是巴拿赫空间之间的闭算子。
+[/SCOPE:s_cgt_let]
+[37] 则 $T$ 是连续的。
+[38] 这个定理实际上可作为开映像原理的推论：如果 $\text{G}(T)\subset X\times Y$ 是闭子空间，
+[39] 则 $X$ 在图范数 $[|x|]_T=\|x\|_X+\|Tx\|_Y$ 下成为巴拿赫空间。
+[40] 但巴拿赫空间之间的映射 $I:(X,[|\cdot|]_T)\to(X,\|\cdot\|_X),\,I(x)=x$ 是连续的单满射，
+[41] 从而根据开映像原理它也是开映射，
+[42] 因此其逆映射是连续的。
+[43] 这表示 $T$ 是有界算子。
+[/SCOPE:s_cgt]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cgt",
+    "target_scope": "s_omt",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "闭图像定理是开映像原理的推论"
+  }
+]

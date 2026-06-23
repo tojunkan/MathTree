@@ -1,0 +1,244 @@
+[SCOPE:root|description|积分表]
+文章名: ITable
+标题: 积分表
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=example heading=例 2 title=
+  [2] type=example heading=例 3 title=
+  [3] type=example heading=例 4 title=
+  [4] type=example heading=例 5 title=
+  [5] type=example heading=例 6 title=
+  [6] type=example heading=例 7 title=
+  [7] type=example heading=例 8 title=
+  [8] type=example heading=例 9 title=
+  [9] type=example heading=例 10 title=
+  [10] type=example heading=例 11 title=
+  [11] type=example heading=例 12 title=
+
+[0] 这里给出一个基本积分表和一个常用积分表，前者建议熟记。
+[1] 部分积分有的给出计算步骤，没有给出则是由基本初等函数的导数直接逆向得出。
+[2] 所有的不定积分公式都可以通过求导验证。
+[3] 应用换元积分法，表中任何积分都可以拓展为
+[4] \begin{equation}
+\int f(ax+b) \,\mathrm{d}{x} = \frac1a F(ax+b) + C~.
+\end{equation}
+
+[SCOPE:s_basic|description|基本积分表]
+[5] \begin{equation}
+\int x^a \,\mathrm{d}{x} = \frac{1}{a + 1} x^{a + 1} + C \quad(a \in R, a \ne - 1)~.
+\end{equation}
+[6] \begin{equation}
+\int \frac{1}{x} \,\mathrm{d}{x} = \ln \left\lvert x \right\rvert + C \quad\text{（例 6）}~.
+\end{equation}
+[7] \begin{equation}
+\int \cos x \,\mathrm{d}{x} = \sin x + C ~.
+\end{equation}
+[8] \begin{equation}
+\int \sin x \,\mathrm{d}{x} = - \cos x + C~.
+\end{equation}
+[9] \begin{equation}
+\int \tan x \,\mathrm{d}{x} = -\ln \left\lvert \cos x \right\rvert + C \quad\text{（例 2）}~.
+\end{equation}
+[10] \begin{equation}
+\int \cot x \,\mathrm{d}{x} = \ln \left\lvert \sin x \right\rvert + C \quad\text{（例 3）}~.
+\end{equation}
+[11] \begin{equation}
+\int \frac{1}{\cos^2 x} \,\mathrm{d}{x} = \tan x + C~.
+\end{equation}
+[12] \begin{equation}
+\int \frac{1}{1 + x^2} \,\mathrm{d}{x} = \arctan x + C~.
+\end{equation}
+[13] \begin{equation}
+\int \mathrm{e} ^x \,\mathrm{d}{x} = \mathrm{e} ^x + C~.
+\end{equation}
+[14] \begin{equation}
+\int x{ \mathrm{e} ^x} \,\mathrm{d}{x} = \mathrm{e} ^x (x-1) + C \quad\text{（例 7）}~.
+\end{equation}
+[15] \begin{equation}
+\int a^x \,\mathrm{d}{x} = \frac{1}{\ln a} a^x + C \quad\text{（例 1）}~.
+\end{equation}
+
+[/SCOPE:s_basic]
+[SCOPE:s_common|description|常用积分表]
+[16] \begin{equation}
+\int \sin^2 x \,\mathrm{d}{x} = \frac12 (x - \sin x\cos x) + C \quad\text{（例 4）}~.
+\end{equation}
+[17] \begin{equation}
+\int \cos^2 x \,\mathrm{d}{x} = \frac12 (x + \sin x \cos x) + C \quad\text{（例 5）}~.
+\end{equation}
+[18] \begin{equation}
+\int \sec x \,\mathrm{d}{x} = \ln \left\lvert \tan x + \sec x \right\rvert + C \quad\text{（例 11）}~.
+\end{equation}
+[19] \begin{equation}
+\int \ln x \,\mathrm{d}{x} = x\ln x - x + C \quad\text{（例 8）}~.
+\end{equation}
+[20] \begin{equation}
+\int \sqrt{a^2 - x^2} \,\mathrm{d}{x} = \frac12 \left(x\sqrt{a^2 - x^2} + a^2\arcsin\frac xa \right) + C \quad\text{（例 9）}~.
+\end{equation}
+[21] \begin{equation}
+\int \frac{1}{\sqrt{1-x^2}} \,\mathrm{d}{x} = \arcsin\left(x\right) + C \quad\text{（例 10）}~.
+\end{equation}
+[22] \begin{equation}
+\int \frac{1}{\sqrt{1+x^2}} \,\mathrm{d}{x} = \ln\left(x+\sqrt{1+x^2}\right) + C = \sinh^{-1} x + C \quad\text{（例 12）}~.
+\end{equation}
+
+[/SCOPE:s_common]
+[SCOPE:s_definite|description|定积分]
+[23] \begin{equation}
+\int_0^{\pi/2} \cos^{n}\theta \,\mathrm{d}{\theta}
+= \frac{\sqrt{\pi}}{2} \frac{\Gamma(n/2+1/2)}{\Gamma(n/2+1)}~,
+\end{equation}
+[24] 其中 $n$ 是满足 $ \operatorname{Re} [n] > -1$ 的任意复数
+[25] 1
+
+[/SCOPE:s_definite]
+[SCOPE:s_ex1|description|例1]
+[26] \begin{equation}
+\int a^x \,\mathrm{d}{x} ~.
+\end{equation}
+[27] \begin{equation}
+\int \mathrm{e} ^{ \ln\left(a\right) x} \,\mathrm{d}{x} = \frac{1}{\ln a} \mathrm{e} ^{ \ln\left(a\right) x} + C = \frac{1}{\ln a}a^x + C~.
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2]
+[28] \begin{equation}
+\int \tan x \,\mathrm{d}{x} ~.
+\end{equation}
+[29] \begin{equation}
+\int f[u(x)]u'(x) \,\mathrm{d}{x} = F[u(x)] + C~.
+\end{equation}
+[30] \begin{equation}
+\int \tan x \,\mathrm{d}{x} = \int f[u(x)] u'(x) \,\mathrm{d}{x} = F[u(x)] + C = -\ln \left\lvert \cos x \right\rvert + C~.
+\end{equation}
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|例3]
+[31] 类似例 2 ，$\cot x = \cos x/\sin x$，令 $u(x) = \sin x$，
+[32a] (x)$，对比得 $f
+[32b] (x) = 1/x$，原函数为 $F
+[32c] (x) = \ln \left\lvert x \right\rvert $（式 3 ），
+[33] 所以
+[34] \begin{equation}
+\int \cot x \,\mathrm{d}{x} = F[u(x)] + C = \ln \left\lvert \sin x \right\rvert + C~.
+\end{equation}
+
+[/SCOPE:s_ex3]
+[SCOPE:s_ex4|description|例4]
+[35] \begin{equation}
+\int \sin^2 x \,\mathrm{d}{x} ~.
+\end{equation}
+[36] 式 10
+[37] \begin{equation} \begin{aligned}
+\int \sin^2 x \,\mathrm{d}{x} &= \int \frac12 \,\mathrm{d}{x} - \frac12\int \cos 2x \,\mathrm{d}{x} \\
+&= \frac{x}{2} - \frac14 \sin\left(2x\right) = \frac12 (x - \sin x \cos x) + C~.
+\end{aligned} \end{equation}
+
+[/SCOPE:s_ex4]
+[SCOPE:s_ex5|description|例5]
+[38] \begin{equation}
+\int \cos^2 x \,\mathrm{d}{x} ~.
+\end{equation}
+[39] \begin{equation} \begin{aligned}
+\int \cos^2 x \,\mathrm{d}{x} &= \int \frac12 \,\mathrm{d}{x} + \frac12\int \cos\left(2x\right) \,\mathrm{d}{x} \\
+&= \frac{x}{2} + \frac14 \sin\left(2x\right) = \frac12 (x + \sin x \cos x) + C~.
+\end{aligned} \end{equation}
+
+[/SCOPE:s_ex5]
+[SCOPE:s_ex6|description|例6]
+[40] \begin{equation}
+\int \frac1x \,\mathrm{d}{x} ~.
+\end{equation}
+[41] \begin{equation}
+\int \frac1x \,\mathrm{d}{x} = \ln \left\lvert x \right\rvert + C~.
+\end{equation}
+[42] \begin{equation}
+\int \frac1x \,\mathrm{d}{x} =
+\begin{cases}
+\ln x + C_1 & (x > 0)\\
+\ln\left(-x\right) + C_2 & (x < 0)
+\end{cases}~.
+\end{equation}
+
+[/SCOPE:s_ex6]
+[SCOPE:s_ex7|description|例7]
+[43] \begin{equation}
+\int x \mathrm{e} ^x \,\mathrm{d}{x} ~.
+\end{equation}
+[44] \begin{equation}
+\int F(x)g(x) \,\mathrm{d}{x} = F(x)G(x) - \int f(x)G(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[45] 式 10
+[46] \begin{equation}
+\int x \mathrm{e} ^x \,\mathrm{d}{x} = x \mathrm{e} ^x - \int 1\cdot \mathrm{e} ^x \,\mathrm{d}{x} = \mathrm{e} ^x(x - 1) + C~.
+\end{equation}
+
+[/SCOPE:s_ex7]
+[SCOPE:s_ex8|description|例8]
+[47] \begin{equation}
+\int \ln x \,\mathrm{d}{x} ~.
+\end{equation}
+[48] 方法一：
+[49] \begin{equation}
+\int f(x) \,\mathrm{d}{x} = \int f[x(t)] \,\mathrm{d}{[x(t)]} = \int f[x(t)]x'(t) \,\mathrm{d}{t} ~.
+\end{equation}
+[50] \begin{equation}
+\int \ln x \,\mathrm{d}{x} = \int \ln\left( \mathrm{e} ^t\right) \mathrm{e} ^t \,\mathrm{d}{t} = \int t \mathrm{e} ^t \,\mathrm{d}{t} ~.
+\end{equation}
+[51] \begin{equation}
+\int \ln x \,\mathrm{d}{x} = \mathrm{e} ^t (t-1) + C = \mathrm{e} ^{\ln x} (\ln x -1) + C = x (\ln x-1) + C~.
+\end{equation}
+[52] 方法二：
+[53] \begin{equation}
+\int \ln x \,\mathrm{d}{x} = x\ln x - \int x\cdot \frac1x \,\mathrm{d}{x} = x\ln x - x + C~.
+\end{equation}
+
+[/SCOPE:s_ex8]
+[SCOPE:s_ex9|description|例9]
+[54] \begin{equation}
+\int \sqrt{a^2 - x^2} \,\mathrm{d}{x} ~.
+\end{equation}
+[55] \begin{equation}
+\int a\cos t \,\mathrm{d}\left(a\sin t \right) = a^2 \int \cos^2 t \,\mathrm{d}{t} ~.
+\end{equation}
+[56] \begin{equation}
+\int \sqrt{a^2 - x^2} \,\mathrm{d}{x} = \frac12 \left(x\sqrt{a^2 - x^2} + a^2\arcsin\frac{x}{a} \right) + C~.
+\end{equation}
+
+[/SCOPE:s_ex9]
+[SCOPE:s_ex10|description|例10]
+[57] 例 10
+[58] \begin{equation}
+\int \frac{1}{\sqrt{1-x^2}} \,\mathrm{d}{x} ~.
+\end{equation}
+[59] \begin{equation}
+\int \frac{1}{\sqrt{1-\sin^2 t}} \,\mathrm{d}\left(\sin t \right) = \int \,\mathrm{d}{t} = t + C = \arcsin x + C~.
+\end{equation}
+
+[/SCOPE:s_ex10]
+[SCOPE:s_ex11|description|例11]
+[60] 例 11
+[61] \begin{equation}
+\int \sec x \,\mathrm{d}{x} ~.
+\end{equation}
+[62] \begin{equation} \begin{aligned}
+\int \sec x \,\mathrm{d}{x} &= \int \frac{\sec^2 x + \sec x\tan x}{\sec x + \tan x} \,\mathrm{d}{x} = \int \frac{u'(x)}{u} \,\mathrm{d}{x} = \int \frac1u \,\mathrm{d}{u} \\
+&= \ln \left\lvert u \right\rvert +C = \ln \left\lvert \sec x + \tan x \right\rvert +C~.
+\end{aligned} \end{equation}
+
+[/SCOPE:s_ex11]
+[SCOPE:s_ex12|description|例12]
+[63] 例 12
+[64] \begin{equation}
+\int \frac{1}{\sqrt{1+x^2}} \,\mathrm{d}{x} ~.
+\end{equation}
+[65] \begin{equation}
+\int \frac{1}{\sqrt{1+\tan^2 t}} \,\mathrm{d}\left(\tan t \right) = \int \frac{1}{\sec t} \sec^2 t \,\mathrm{d}{t}
+= \ln \left\lvert \tan t + \sec t \right\rvert + C~.
+\end{equation}
+[66] \begin{equation}
+\int \frac{1}{\sqrt{1+x^2}} \,\mathrm{d}{x} = \ln\left(x + \sqrt{1+x^2}\right) + C~.
+\end{equation}
+[/SCOPE:s_ex12]
+[/SCOPE:root]

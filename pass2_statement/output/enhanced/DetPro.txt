@@ -1,0 +1,184 @@
+[SCOPE:root|description|行列式的性质]
+文章名: DetPro
+标题: 行列式的性质
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=theorem heading=定理 2 title=
+  [2] type=theorem heading=定理 3 title=
+  [3] type=theorem heading=定理 4 title=
+  [4] type=theorem heading=定理 5 title=
+  [5] type=theorem heading=定理 6 title=
+  [6] type=theorem heading=定理 7 title=
+  [7] type=theorem heading=定理 8 title=
+  [8] type=theorem heading=定理 9 title=
+  [9] type=theorem heading=定理 10 title=
+
+[SCOPE:s_t1|description|定理1]
+[0] 定理 1
+[1] 若行列式中某行或某列全为 0，其结果等于 0。
+[2] 证明：根据定义（式 4 ），行列式展开后，相加的每一项都含有每一行（或每一列）的一个元素，
+[3] 所以当某列全为 0，
+[4] 则结果为 0。
+[5] 几何理解：若平行体的某条边长等于 0，其体积也等于 0。
+
+[/SCOPE:s_t1]
+[SCOPE:s_t2|description|定理2]
+[6] 定理 2
+[7] 矩阵的任意一列（或任意一行）乘以常数，行列式的值也要乘以该常数。
+[8] 证明：思路和定理 1 的证明一样，行列式展开后，相加的每一项都含有每一行（或每一列）的一个元素，
+[9] 所以当某列全部元素乘以常数，
+[10] 则相加的每一项都乘以该常数。
+[11] 几何理解：将平行体任意一条边长乘以一个常数，它的体积也需要乘以该常数。
+
+[/SCOPE:s_t2]
+[SCOPE:s_t3|description|定理3]
+[12] 定理 3
+[13] 将行列式的两列交换，结果取相反数。
+[14] 证明：根据行列式的定义，交换两行或两列会给展开后的每一项的奇偶性会发生改变，导致行列式的值取相反数。
+
+[/SCOPE:s_t3]
+[SCOPE:s_t4|description|定理4]
+[15] 定理 4
+[16] 若将行列式的某行或某行的每一个元素都表示为两个数之和，
+[17] 那么它就可以表示为两个行列式相加：
+[18] \begin{equation}
+\begin{aligned}
+&\quad\begin{vmatrix}
+a_{1,1} & a_{1,2} & \dots & a_{1,N}\\
+\dots & \dots & \dots & \dots\\
+b_{i,1} + c_{i,1} & b_{i, 2} + c_{i, 2} & \dots & b_{i,N} + c_{i,N}\\
+\dots & \dots & \dots & \dots\\
+a_{N,1} & a_{N,2} & \do…[truncated]…{vmatrix}
++
+\begin{vmatrix}
+a_{1,1} & a_{1,2} & \dots & a_{1,N}\\
+\dots & \dots & \dots & \dots\\
+c_{i,1} & c_{i, 2} & \dots & c_{i,N}\\
+\dots & \dots & \dots & \dots\\
+a_{N,1} & a_{N,2} & \dots & a_{N,N}\\
+\end{vmatrix}
+\end{aligned}~
+\end{equation}
+[19] 证明：行列式展开后，相加的每一项都含有每一行（或每一列）的一个元素，
+[20] 所以显然成立。
+[21] 几何理解：若把平行体的一条边变为两条折线，
+[22] 那么可以作出两个叠加的平行体，体积之和等于原来的体积。
+
+[/SCOPE:s_t4]
+[SCOPE:s_t5|description|定理5]
+[23] 定理 5
+[24] 把矩阵的第 $i$ 行（列）加上 “第 $j$ 行（列）乘任意常数 $\lambda$”，行列式的值不变。
+[25] 证明：根据定理 4 和定理 2 ，我们可以把这样操作后的行列式拆分为两个行列式，第一个与原来相同；
+[26] 第二个在原来的基础上把第 $i$ 行替换为第 $j$ 行，再把行列式的值乘以 $\lambda$。
+[27] 而第二个行列式由于存在两行相同，结果为 0。
+[28] 几何理解：以平行四边形为例，由于其体积是底乘以高，令 $ \boldsymbol{\mathbf{v}} _1$ 为底，$ \boldsymbol{\mathbf{v}} _2$ 在垂直于 $ \boldsymbol{\mathbf{v}} _1$ 方向的投影为高，
+[29] 则将 $ \boldsymbol{\mathbf{v}} _2$ 变为 $ \boldsymbol{\mathbf{v}} _2 + \lambda \boldsymbol{\mathbf{v}} _1$（$\lambda$ 为常数）后高不变，
+[30] 所以面积不变。
+[31] 高维情况同理。
+
+[/SCOPE:s_t5]
+[SCOPE:s_t6|description|定理6]
+[32] 定理 6
+[33] 若行列式中的行矢或列线性相关，行列式的值为 0。
+[34] 线性相关意味着存在某一行 $i$，可以表示为其他行的线性组合。
+[35] 那么我们可以通过将这些其他的行依次乘以常数，然后加到第 $i$ 行上，使得第 $i$ 行全为 0。
+[36] 根据定理 5 ，这么做不改变行列式的值，而根据式 1 ，行列式的值为 0。
+[37] 几何理解：二维情况下两矢量线性相关意味着他们共线，平行四边形面积为 0。
+[38] 三维情况下线性相关意味着三个矢量共面，平行四面体体积为 0。
+[39] 高维情况也可类比。
+
+[/SCOPE:s_t6]
+[SCOPE:s_t7|description|定理7]
+[40] 定理 7
+[41] 行列式的值为 0 当且仅当行列式中存在线性相关的列（行）。
+
+[/SCOPE:s_t7]
+[SCOPE:s_t8|description|定理8]
+[42] 定理 8
+[43] 矩阵转置（将所有 $a_{i,j}$ 与 $a_{j,i}$ 交换）后行其列式的值不变。
+[44] 这个定理没有显然的几何理解，可以直接用行列式的定义证明（式 4 ）。
+[45] 根据这个定理，以上凡是涉及到 “行” 的定理和说明，都可以替换为 “列”，请读者自行回顾一次。
+
+[/SCOPE:s_t8]
+[SCOPE:s_t9|description|定理9]
+[46] 定理 9
+[47] 两方阵相乘的行列式等于他们的行列式相乘
+[48] \begin{equation}
+\left\lvert \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{B}} \right\rvert = \left\lvert \boldsymbol{\mathbf{A}} \right\rvert \left\lvert \boldsymbol{\mathbf{B}} \right\rvert ~.
+\end{equation}
+[49] 证明：容易证明对 $ \boldsymbol{\mathbf{A}} $ 做行变换或对 $ \boldsymbol{\mathbf{B}} $ 做列变换分别相当于对 $ \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{B}} $ 做相同的行变换或列变换，
+[50] 所以根据定理 5 ，变换后式 2 两边的值都不改变。
+[51] 用行变换和列变换把 $ \boldsymbol{\mathbf{A}} $ 和 $ \boldsymbol{\mathbf{B}} $ 都变为对角矩阵后，证明显然（留做习题）。
+
+[/SCOPE:s_t9]
+[SCOPE:s_t10|description|定理10]
+[52] 定理 10
+[53] 若 $A$ 的逆矩阵 $A^{-1}$ 存在，
+[54] 那么
+[55] \begin{equation}
+\left\lvert \boldsymbol{\mathbf{A}} \right\rvert =\frac{1}{ \left\lvert \boldsymbol{\mathbf{A}} ^{-1} \right\rvert }~.
+\end{equation}
+[56] 证明：
+[57] $ \left\lvert \boldsymbol{\mathbf{I}} \right\rvert = \left\lvert \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{A}} ^{-1} \right\rvert = \left\lvert \boldsymbol{\mathbf{A}} \right\rvert \left\lvert \boldsymbol{\mathbf{A}} ^{-1} \right\rvert =1$，
+[58] 所以
+[59] $ \left\lvert \boldsymbol{\mathbf{A}} \right\rvert =\frac{1}{ \left\lvert \boldsymbol{\mathbf{A}} ^{-1} \right\rvert }~.$
+
+[/SCOPE:s_t10]
+[SCOPE:s_extra|description|拓展]
+[60] 行列式的代数性质可以抽象为外代数（见例 6 以及例子后的解释），进而用于定义外微分，描述微分形式的代数性质。
+[/SCOPE:s_extra]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_t5",
+    "target_scope": "s_t4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理5的证明用到定理4"
+  },
+  {
+    "source_scope": "s_t5",
+    "target_scope": "s_t2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理5的证明用到定理2"
+  },
+  {
+    "source_scope": "s_t6",
+    "target_scope": "s_t5",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理6的证明用到定理5"
+  },
+  {
+    "source_scope": "s_t6",
+    "target_scope": "s_t1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理6的证明用到定理1"
+  },
+  {
+    "source_scope": "s_t7",
+    "target_scope": "s_t6",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "定理7是定理6的逆否命题"
+  },
+  {
+    "source_scope": "s_t9",
+    "target_scope": "s_t5",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理9的证明用到定理5"
+  },
+  {
+    "source_scope": "s_t10",
+    "target_scope": "s_t9",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理10的证明用到定理9"
+  }
+]

@@ -1,0 +1,271 @@
+[SCOPE:root|description|Möbius 函数（数论）]
+文章名: MbusF
+标题: Möbius 函数（数论）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=Möbius 函数
+  [1] type=theorem heading=定理 1 title=Möbius 的积性
+  [2] type=theorem heading=定理 2 title=求和性质
+  [3] type=corollary heading=推论 1 title=求积性质
+  [4] type=theorem heading=定理 3 title=Möbius 反演公式
+  [5] type=theorem heading=定理 4 title=Euler 函数的 Möbius 变换
+  [6] type=theorem heading=定理 5 title=
+  [7] type=theorem heading=定理 6 title=积性函数的 Möbius 变换
+  [8] type=theorem heading=定理 7 title=von Mangoldt 函数的 Möbius 变换
+  [9] type=exercise heading=习题 1 title=
+
+[SCOPE:s_def1|description|Möbius 函数]
+[0] 定义 1 Möbius 函数
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[1] 对于任意正整数 $n=\prod_{k=1}^r p_k^{f_k}$，其 Möbius 函数 $\mu:\mathbb{Z}^+\to\{-1, 0, 1\}$ 定义为：
+[2] \begin{equation}
+\mu(n)=\mu(\prod_{k=1}^r p_k^{f_k})=
+\left\{\begin{aligned}
+&1 &\quad &(\text{如果}n=1)\\
+&(-1)^r &\quad &(\text{如果}f_k=1\text{恒成立})\\
+&0 &\quad &(\text{如果有一个}f_k>1)~.
+\end{aligned}\right.
+\end{equation}
+[/SCOPE:s_def1_let]
+[3] 简单来说，一个正整数的质因子中如果有幂次超过 $2$ 的，
+[4] 则它的 Möbius 函数为 $0$；
+[5] 其余情况，
+[6] 则由不同质因子数量的奇偶性决定，奇则为 $-1$，偶则为 $+1$。
+[7] Möbius 函数有以下性质：
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|Möbius 的积性]
+[8] 定理 1 Möbius 的积性
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[9] 给定互素的正整数 $a, b$，
+[10a] (a)\mu
+[10b] (b)$。
+[/SCOPE:s_thm1_let]
+[11] 只需要检查 $ab, a, b$ 各自的质因数即可得证定理 1 。
+[12] 显然，要求互素是因为，不互素时 $a, b$ 会有公共质因数，此时 $\mu(ab)=0$。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|求和性质]
+[13] 定理 2 求和性质
+[14] \begin{equation}
+\sum_{d\mid n}\mu(d)=
+\left\{\begin{aligned}
+&1 \quad (n=1)\\
+&0 \quad (n>1)~.
+\end{aligned}\right.
+\end{equation}
+[15] 证明：
+[SCOPE:s_thm2_let|let_bind|定理 2 的变量 S]
+[16] 设 $S$ 是 $n$ 的全体质因子构成的集合（$n=1$ 时 $S=\varnothing$）。
+[17] 每个 $d$ 都是 $n$ 的若干质因子求积的结果，而我们只需考虑其中各质因子最多只出现一次的情况。
+[18] 因此，我们所考虑的 $d$，和 $S$ 的子集一一对应，
+[19] 即 $d$ 就是这个子集中各素数相乘的结果。
+[20] 式 2 极为遍历所有 $S$ 的子集的求和。
+[/SCOPE:s_thm2_let]
+[21] 当 $n=1$ 时，易验证式 2 第一行成立。
+[22] 下设 $n$ 至少有一个质因子。
+[SCOPE:s_thm2_let2|let_bind|定理 2 的变量 a_i]
+[23] 记 $S=\{a_i\}_{i=1}^r$。
+[24] 则由 $k$ 个 $a_i$ 相乘而得的 $d$，一共有 $C^k_r$ 个，它们均满足 $\mu(d)=(-1)^k$。
+[/SCOPE:s_thm2_let2]
+[25] 于是
+[26] \begin{equation}
+\sum_{d\mid n}\mu(d)=\sum_{k=0}^r(-1)^kC^k_r~.
+\end{equation}
+[27] 二项式定理 [链接 L0]
+[28] \begin{equation}
+\sum_{k=0}^r(-1)^kC^k_r=(1-1)^r=0~.
+\end{equation}
+[29] 证毕
+[30] 需要指出，这其实就是容斥原理的数论形式。
+[31] 将式 2 作为指数，
+[32] 即得求积的性质：
+
+[/SCOPE:s_thm2]
+[SCOPE:s_cor1|description|求积性质]
+[33] 推论 1 求积性质
+[SCOPE:s_cor1_let|let_bind|推论 1 的变量]
+[34] 任取正实数 $a$，
+[35] 则
+[/SCOPE:s_cor1_let]
+[36] \begin{equation}
+\prod_{d\mid n}a^{\mu(d)}=
+\left\{\begin{aligned}
+&a \quad (n=1)\\
+&1 \quad (n>1)~.
+\end{aligned}\right.
+\end{equation}
+
+[/SCOPE:s_cor1]
+[SCOPE:s_thm3|description|Möbius 反演公式]
+[37] 定理 3 Möbius 反演公式
+[SCOPE:s_thm3_let|let_bind|定理 3 的变量]
+[38a] (n)=\sum_{d\mid n}f
+[38b] (d)$，$P
+[38c] (n)=\prod_{d\mid n}f
+[38d] (d)$。
+[/SCOPE:s_thm3_let]
+[39] 则有
+[40] \begin{equation}
+f(n) = \sum_{d\mid n}\mu(d)S \left(\frac{n}{d} \right) ~,
+\end{equation}
+[41] \begin{equation}
+f(n) = \prod_{d\mid n} \left(P(\frac{n}{d}) \right) ^{\mu(d)}~.
+\end{equation}
+[42] 证明：
+[43] 由定理 2 ，$\sum_{dk\mid n}\mu(d)\neq 0$ 当且仅当 $k=n$。
+[44] 于是
+[45] \begin{equation}
+\begin{aligned}
+\sum_{d\mid n}\mu(d)S \left(\frac{n}{d} \right) &=\sum_{d\mid n}\sum_{dk\mid n}\mu(d)f(k)\\
+&=\sum_{k\mid n}\sum_{dk\mid n}\mu(d)f(k)\\
+&=f(n)~.
+\end{aligned}
+\end{equation}
+[46a] (k) \right) ^{\mu
+[46b] (d)}\neq 1$ 当且仅当 $k=n$。
+[47] 于是
+[48] \begin{equation}
+\begin{aligned}
+\prod_{d\mid n} \left(P(\frac{n}{d}) \right) ^{\mu(d)}&=\prod_{d\mid n} \left(\prod_{dk\mid n}f(k) \right) ^{\mu(d)}\\
+&=\prod_{d\mid n}\prod_{dk\mid n} \left(f(k) \right) ^{\mu(d)}\\
+&=\prod_{k\mid n}\prod_{dk\mid n} \left(f(k) \right) ^{\mu(d)}\\
+&=f(n)~.
+\end{aligned}
+\end{equation}
+[49] 证毕。
+[50a] (n)=\sum_{d\mid n}f
+[50b] (d)$ 这样的形式被称为 $f
+[50c] (d)$ 的 Möbius 变换，而 $\sum_{d\mid n}\mu
+[50d] (d)S \left(\frac{n}{d} \right) $ 就是 Möbius 逆变换。
+[51] 作为应用，我们来计算一下几个常见的数论函数的 Möbius 变换并给出一些类似的恒等式。
+[52] 特别重要的是 Euler 函数的 Möbius 变换。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|Euler 函数的 Möbius 变换]
+[53] 定理 4 Euler 函数的 Möbius 变换
+[SCOPE:s_thm4_let|let_bind|定理 4 的变量]
+[54a] (n)=n$ 的 Möbius 逆变换是 Euler 函数 $\varphi
+[54b] (n)$，
+[55] 即有如下恒等式：
+[56] \begin{equation}
+\varphi(n) = \sum_{d\mid n}\mu(d)\frac{n}{d}~.
+\end{equation}
+[/SCOPE:s_thm4_let]
+[57] \begin{equation}
+\sum_{d\mid n}\varphi(d) = n~.
+\end{equation}
+[58] 证明：
+[59] 证明是 Möbius 函数求和性质的简单应用。
+[60] \begin{equation}
+\begin{aligned}
+\varphi(n)&=\sum_{1\leq l\leq n,(l,n)=1}1\\
+&=\sum_{l=1}^n\sum_{d\mid(l,n)}\mu(d)\\
+&=\sum_{l=1}^n\sum_{d\mid l,d\mid n}\mu(d)\\
+&=\sum_{d\mid n}\mu(d)\sum_{1\leq l\leq n,d|l}1\\
+&=\sum_{d\mid n}\mu(d)\frac{n}{d}~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_thm4]
+[SCOPE:s_thm5|description|定理 5]
+[61] 定理 5
+[SCOPE:s_thm5_let|let_bind|定理 5 的变量]
+[62a] (n)=1,e
+[62b] (n)=n,e_\lambda
+[62c] (n)=n^\lambda$ 的 Möbius 变换分别是除数函数,除数和函数和除数幂和函数 $d
+[62d] (n),\sigma
+[62e] (n),\sigma_\lambda
+[62f] (n)$.
+[/SCOPE:s_thm5_let]
+[63] 证明由定义直接给出。
+[64] 为了后面的证明，我们先证明积性函数的 Möbius 变换仍是积性函数。
+
+[/SCOPE:s_thm5]
+[SCOPE:s_thm6|description|积性函数的 Möbius 变换]
+[65] 定理 6 积性函数的 Möbius 变换
+[SCOPE:s_thm6_let|let_bind|定理 6 的变量]
+[66] 若 $f(n)$ 是积性函数，
+[67] 那么 $f(n)$ 的 Möbius 变换仍是积性函数。
+[68] 证明：
+[69] 任取互素的整数 $m,n$，我们有
+[/SCOPE:s_thm6_let]
+[70] \begin{equation}
+\begin{aligned}
+\sum_{d\mid m}f(d)\sum_{l\mid n}f(l)&=\sum_{d\mid m}\sum_{l\mid n}f(d)f(l)\\
+&=\sum_{d\mid m}\sum_{l\mid n}f(dl)\\
+&=\sum_{d\mid mn}f(d)~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_thm6]
+[SCOPE:s_thm7|description|von Mangoldt 函数的 Möbius 变换]
+[71] 定理 7 von Mangoldt 函数的 Möbius 变换
+[SCOPE:s_thm7_let|let_bind|定理 7 的变量]
+[72] von Mangoldt 函数 $\Lambda(n)$ 的 Möbius 变换是对数函数 $\log n$，
+[73] 即有如下恒等式：
+[74] \begin{equation}
+\sum_{d\mid n}\Lambda(n)=\log{n}~.
+\end{equation}
+[75] 证明：
+[76] 依照积性函数的 Möbius 变换仍是积性函数，我们只需对素数幂证明定理。
+[77] 下令 $n=p^s$.
+[/SCOPE:s_thm7_let]
+[78] \begin{equation}
+\begin{aligned}
+\sum_{d\mid n}\Lambda(n)&=\sum_{l=0}^s \Lambda(p^s)\\
+&=\sum_{l=1}^s \log p\\
+&=\log p^s\\
+&=\log n~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_thm7]
+[SCOPE:s_ex1|description|习题 1]
+[79] 习题 1
+[80a] (n)/n$ 的 Möbius 变换是 $\varphi
+[80b] (n)/n$.
+
+跨文章引用:
+  [L0] 二项式定理 → BiNor
+[/SCOPE:s_ex1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_cor1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "求和性质推出求积性质"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "求和性质用于反演公式证明"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "求积性质用于反演公式乘积形式证明"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm4",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "反演公式用于推导 Euler 函数变换"
+  },
+  {
+    "source_scope": "s_thm6",
+    "target_scope": "s_thm7",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "积性函数的 Möbius 变换仍是积性函数用于 von Mangoldt 函数证明"
+  }
+]

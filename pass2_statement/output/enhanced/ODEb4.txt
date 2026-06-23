@@ -1,0 +1,197 @@
+[SCOPE:root|description|高阶线性微分方程的降阶]
+文章名: ODEb4
+标题: 高阶线性微分方程的降阶
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=example heading=例 2 title=
+  [2] type=example heading=例 3 title=第二宇宙速度
+
+[SCOPE:s_intro|description|引言]
+[0] 在拉普拉斯变换与常系数线性微分方程中，我们讨论了高阶常系数线性微分方程的解法，通过拉普拉斯变换，将高阶微分方程化为代数方程进行求解。
+[1] 但是很多时候，单个的高阶微分方程也是可以化为多个一阶方程的，
+[2] 从而可以应用一阶常系数线性微分方程组（常微分方程）中的方法来进行求解。
+[3] 一般地，$n$ 阶微分方程可以写为
+[4] \begin{equation}
+F(t, x(t),\ \ \frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }x(t),\ \cdots, \ \frac{\mathrm{d}^n}{ \,\mathrm{d}{t} ^n}x(t))=0~,
+\end{equation}
+[5] 接下来，我们介绍几种可以降阶的方程。
+
+[/SCOPE:s_intro]
+[SCOPE:s_type1|description|第一种降阶方法]
+[6] 如果式 1 不显含 $x$ 的 $k$ 次及以下导函数，
+[7] 即方程形式为
+[8] \begin{equation}
+F(t, \frac{\mathrm{d}^{k+1}}{ \,\mathrm{d}{t} ^{k+1}}x(t),\ \frac{\mathrm{d}^{k+2}}{ \,\mathrm{d}{t} ^{+2}}x(t),\ \cdots,\ \frac{\mathrm{d}^n}{ \,\mathrm{d}{t} ^n}x(t))=0~,
+\end{equation}
+[SCOPE:s_type1_let|let_bind|设 y = x^(k)]
+[9] 那么我们可以设 $y=\frac{\mathrm{d}^k}{ \,\mathrm{d}{t} ^k}x$，解出 $y$ 以后再求 $k$ 次积分得到 $x$。
+
+[/SCOPE:s_type1]
+[/SCOPE:s_type1_let]
+[SCOPE:s_ex1|description|例1]
+[10] 求解方程
+[11] \begin{equation}
+\left(
+\frac{\mathrm{d}^4}{ \,\mathrm{d}{t} ^4}+\frac{1}{t}\frac{\mathrm{d}^3}{ \,\mathrm{d}{t} ^3}
+\right)
+x(t)=0~,
+\end{equation}
+[SCOPE:s_ex1_let|let_bind|令 y = x''']
+[12] 令 $y=\frac{\mathrm{d}^3}{ \,\mathrm{d}{t} ^3}x(t)$，
+[/SCOPE:s_ex1_let]
+[13] 则式 3 化为
+[14] \begin{equation}
+\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{t} }+\frac{1}{t}y=0~,
+\end{equation}
+[15] \begin{equation}
+y=\pm\frac{C}{t}~.
+\end{equation}
+[16] 三次积分后得到
+[17] \begin{equation}
+x=t^2(C_1\ln \left\lvert t \right\rvert -C_2)+C_3t+C_4~.
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_type2|description|第二种降阶方法]
+[18] 如果式 1 不显含 $t$，
+[19] 即方程形式为
+[20] \begin{equation}
+F(x(t), \frac{\mathrm{d}}{ \,\mathrm{d}{t} }x(t), \frac{\mathrm{d}^2}{ \,\mathrm{d}{t} ^2}x(t)+\cdots+\frac{\mathrm{d}^n}{ \,\mathrm{d}{t} ^n}x(t))=0~,
+\end{equation}
+[SCOPE:s_type2_let|let_bind|设 y = dx/dt]
+[21] 那么我们可以设 $y=\frac{ \,\mathrm{d}{x} }{ \,\mathrm{d}{t} }$，以 $y$ 为未知函数。
+[/SCOPE:s_type2_let]
+[22] 此时 $\frac{\mathrm{d}^2}{ \,\mathrm{d}{t} ^2}x=\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }y=\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }\frac{ \,\mathrm{d}{x} }{ \,\mathrm{d}{t} }=y\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }$。
+[23] 类似地，$\frac{\mathrm{d}^3}{ \,\mathrm{d}{t} ^3}x=y \left(\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} } \right) ^2+y^2\frac{\mathrm{d}^2}{ \,\mathrm{d}{x} ^2}$。
+[24] 一般地，我们可以证明任何 $\frac{\mathrm{d}^k}{ \,\mathrm{d}{t} ^k}x$ 都可以用 $y$ 和 $y$ 关于 $x$ 的各阶导函数表示出来。
+[25] 这样改造以后的
+[26] 式 7 [链接 L0]
+[27] 就成为形如
+[28] \begin{equation}
+G(y, \frac{ \,\mathrm{d}{}} { \,\mathrm{d}{x} }y+\cdots+\frac{\mathrm{d}^{n-1}}{ \,\mathrm{d}{t} ^{n-1}})=0~
+\end{equation}
+[29] 的方程，降了一阶。
+
+[/SCOPE:s_type2]
+[SCOPE:s_ex2|description|例2]
+[30] 考虑方程
+[31] \begin{equation}
+x\frac{\mathrm{d}^2 x}{ \,\mathrm{d}{t} ^2}+\frac{ \,\mathrm{d}{x} }{ \,\mathrm{d}{t} }=0~,
+\end{equation}
+[SCOPE:s_ex2_let|let_bind|设 y = dx/dt]
+[32] \begin{equation}
+xy\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }+y=0~,
+\end{equation}
+[/SCOPE:s_ex2_let]
+[33] \begin{equation}
+y \,\mathrm{d}{x} +xy \,\mathrm{d}{y} =0~.
+\end{equation}
+[SCOPE:s_ex2_cases|cases|y=0 与 y≠0]
+[34] 容易验证，$y=0$ 是式 10 的一个特解。
+[35] $y=0$ 时有
+[36] \begin{equation}
+\frac{ \,\mathrm{d}{x} }{ \,\mathrm{d}{t} }=0~,
+\end{equation}
+[37] \begin{equation}
+x=C~.
+\end{equation}
+[38] 现在考虑 $y\neq 0$ 的情况，此时可以把 $y$ 约掉，得到
+[39] \begin{equation}
+\,\mathrm{d}{x} +x \,\mathrm{d}{y} =0~,
+\end{equation}
+[40] \begin{equation}
+y=C-\ln \left\lvert x \right\rvert ~,
+\end{equation}
+[41] \begin{equation}
+\frac{ \,\mathrm{d}{x} }{ \,\mathrm{d}{t} }=C-\ln \left\lvert x \right\rvert ~.
+\end{equation}
+[42] 求积分即可得到 $x\neq 0$ 时的通解。
+[43] 注意，$\int\frac{1}{C-\ln \left\lvert x \right\rvert } \,\mathrm{d}{x} $ 无法用初等函数表示出来，这里写出这个积分形式就算得到通解了。
+[/SCOPE:s_ex2_cases]
+[44] 事实上，很多微分方程都没法写成初等函数的表达式，比如最常见的单摆运动方程（未进行线性近似的原始形式），
+[45] 因此实践中常注重数值计算，以及相应的解的稳定性问题。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|例3 第二宇宙速度]
+[46] 例 3 第二宇宙速度
+[47] 在地球表面，引力的变化很小，
+[48] 所以我们可以近似把它看成匀强引力场，方便计算。
+[49] 但是如果考虑范围远不止是地球表面，就不得不考虑引力随距离的变化了。
+[50a] 我们现在考虑的问题是
+[50b] 如果一个质点的速度始终平行于地球到该质点的位移（，则一维情况），
+[51] 那么质点的运动轨迹是什么样的？
+[SCOPE:s_ex3_let1|let_bind|定义常数和变量]
+[52] 令 $R$ 为地球半径，$M$ 为地球质量，$G$ 为万有引力常数，$r$ 为质点到地球质心的距离。
+[/SCOPE:s_ex3_let1]
+[53] 我们只考虑 $r\geq R$ 的情况，忽略空气阻力，
+[54] 那么此时质点仅受地球引力作用，
+[55] 故可以列出运动方程：
+[56] \begin{equation}
+\frac{\mathrm{d}^2}{ \,\mathrm{d}{t} ^2}r(t)=-\frac{GM}{r^2}~.
+\end{equation}
+[SCOPE:s_ex3_let2|let_bind|令 v = dr/dt]
+[57] 令 $\frac{ \,\mathrm{d}{r} }{ \,\mathrm{d}{t} }=v$，
+[/SCOPE:s_ex3_let2]
+[58] 那么方程可以改写为（注意，被抛弃的变量是时间 $t$）
+[59] \begin{equation}
+v\frac{ \,\mathrm{d}{v} }{ \,\mathrm{d}{r} }=-\frac{GM}{r^2}~.
+\end{equation}
+[60] 解式 18 得
+[61] \begin{equation}
+v=\pm\sqrt{\frac{2GM}{r}+C}~.
+\end{equation}
+[62] 考虑在地面上垂直向上发射的火箭，初速度为 $v_0$，
+[63] 即初值条件为 $v|_{r=R}=v_0$，
+[64] 那么代入式 19 可以计算出常数 $C$：
+[65] \begin{equation}
+C=v_0^2-\frac{2GM}{R}~,
+\end{equation}
+[66] \begin{equation}
+v=\pm\sqrt{v_0^2+2GM(\frac{1}{r}-\frac{1}{R})}~.
+\end{equation}
+[67] 式 21
+[SCOPE:s_ex3_cond|conditional|火箭摆脱地球引力条件]
+[68] 如果我们希望火箭摆脱地球引力，再也不回来，
+[69] 那么在离开地球的过程中 $v$ 应该恒大于 $0$。
+[70] 由于 $1/r$ 可以任意小，我们要求的条件就变为
+[71] \begin{equation}
+v_0^2-\frac{2GM}{R}\geq 0~,
+\end{equation}
+[72] \begin{equation}
+v_0\geq\sqrt{\frac{2GM}{R}}~.
+\end{equation}
+[/SCOPE:s_ex3_cond]
+[73] 这里的 $\sqrt{\frac{2GM}{R}}$ 就是火箭彻底摆脱地球引力的最小初速度，被称为第二宇宙速度，又叫逃逸速度。
+[74] 查阅资料后代入 $G=6.67\times10^{-11} \operatorname {N}\cdot \operatorname {m}^2/ \operatorname {kg}^2$，$M=5.965\times10^{24} \operatorname {kg}$ 和 $R=6.371\times10^{6}m$，计算出第二宇宙速度的数值为
+[75] \begin{equation}
+\sqrt{\frac{2GM}{R}}=11.176 \operatorname {km}/ \operatorname {s}~.
+\end{equation}
+[76] 通常只取到 $11.2 \operatorname {km}/ \operatorname {s}$。
+[/SCOPE:s_ex3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_type1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是第一种降阶方法的具体应用"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_type2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2是第二种降阶方法的具体应用"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_type2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例3应用第二种降阶方法求解物理问题"
+  }
+]

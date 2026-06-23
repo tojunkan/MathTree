@@ -1,0 +1,116 @@
+[SCOPE:root|description|秩—零化度定理]
+文章名: MatLS2
+标题: 秩—零化度定理
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=corollary heading=推论 1 title=秩-零化度定理
+  [2] type=corollary heading=推论 2 title=
+  [3] type=corollary heading=推论 3 title=
+
+[SCOPE:s_thm1|description|定理 1]
+[0] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[1] 令 $A:X \to Y$ 的零空间为 $X_0$，$X_1$ 为 $X_0$ 在 $X$ 中任意一个补空间（即 $X_0\oplus X_1 = X$，定义 1 ），令值空间 $Y_1 = A(X)$，
+[2] 那么映射 $A:X_1\to Y_1$ 是一一对应的（即双射）。
+[/SCOPE:s_thm1_let]
+[3] 证明见下文。
+[4] 我们可以形象地把定理 1 用图 1 表示，图中每个三角形代表一个矢量空间，由于 $X_0, X_1$ 是互补的，它们只相交于零矢量。
+[5] 注意对于给定的映射 $A$，$X_0$ 和 $Y_1$ 是确定的，而 $X_0$ 的补空间 $X_1$ 可以随意选取。
+[6a] 特殊地
+[6b] 若 $X_0$ 是零维空间，则$X_0 = \left\{0 \right\} $，
+[7] 则补空间 $X_1 = X$。
+[8] 此时可以把图 1 中表示 $X_0$ 的三角形去掉。
+[9] 该定理可以更好地帮助我们理解线性方程组解的结构：当 $ \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{b}} $ 的解集等于一个特解加齐次解集，齐次解。
+[10] $ \boldsymbol{\mathbf{b}} $ 是 $Y_1$ 中的某向量，特解是 $X_1$ 中映射到 $ \boldsymbol{\mathbf{b}} $ 的向量，而齐次解就是零空间 $X_0$。
+[11] 我们记
+
+[/SCOPE:s_thm1]
+[SCOPE:s_cor1|description|推论 1 秩-零化度定理]
+[12] 推论 1 秩-零化度定理
+[SCOPE:s_cor1_let|let_bind|推论 1 的变量]
+[13] 线性映射 $f: X \to Y$ 满足
+[14] \begin{equation}
+\dim(X) = \operatorname {nullity}(f) + \operatorname {rank}(f)~.
+\end{equation}
+[/SCOPE:s_cor1_let]
+[15] 定义 3
+[16] 定义 2
+[17] 证明：见式 1 ，由于 $X_1$ 与 $Y_1$ 一一对应，$X_1$ 的维数也是 $ \operatorname {rank}(A)$，又因为 $X_0\oplus X_1 = X$，$X$ 的维数等于 $X_0, X_1$ 维数之和（推论 1 ）。
+[18] 证毕。
+
+[/SCOPE:s_cor1]
+[SCOPE:s_cor2|description|推论 2]
+[19] 推论 2
+[SCOPE:s_cor2_let|let_bind|推论 2 的变量]
+[20] 线性映射 $A:X\to Y$ 中值空间 $A(X) \subseteq Y$ 的维数小于或等于定义域空间 $X$ 的维数。
+[/SCOPE:s_cor2_let]
+[21] 证明：式 1 中 $\dim(X), \operatorname {nullity}(A), \operatorname {rank}(A) > 0$，
+[22] 所以有 $ \operatorname {rank}(A) \leqslant \dim(X)$。
+
+[/SCOPE:s_cor2]
+[SCOPE:s_cor3|description|推论 3]
+[23] 推论 3
+[SCOPE:s_cor3_let|let_bind|推论 3 的变量]
+[24] 线性映射 $A:X\to Y$ 是单射（即 $A:X\to A(X)$ 是双射）当且仅当零空间 $X_0$ 中只有零向量。
+[/SCOPE:s_cor3_let]
+[25] 说明：零空间 $X_0$ 只有零矢量一个元素当且仅当式 1 中 $\dim(X) = \operatorname {rank}(A)$ 或 $ \operatorname {nullity}(A) = 0$。
+[26] 证明：前者证明后者：使用推论 1 以及单射的定义，可得 $0\in X$ 是零空间中的唯一向量。
+[27] 后者证明前者：$ \operatorname {nullity}(A) = 0$ 即定理 1 中的 $X = X_1$，与值空间 $Y_1 = A(X)$ 有一一对应关系。
+[28] 证毕。
+
+[/SCOPE:s_cor3]
+[SCOPE:s_proof|description|定理 1 的证明]
+[29] 要证明定理 1 ，首先证明 $A(X_1) = A(X)$。
+[SCOPE:s_proof_let1|let_bind|证明中的变量 x, x0, x1]
+[30] 任意 $x\in X$ 可以表示为 $x = x_0 + x_1$，其中 $x_0\in X_0$，$x_1\in X_1$。
+[31] $Ax = A x_0 + A x_1 = A x_1$。
+[/SCOPE:s_proof_let1]
+[32] 这说明任意 $y_1 \in Y_1 = A(X)$ 都能找到 $x_1$ 使 $A x_1 = y_1$，
+[33] 所以 $A(X_1) = Y_1$。
+[SCOPE:s_proof_let2|let_bind|证明中的变量 u, v]
+[34] 现在证明 $X_1$ 和 $Y_1$ 一一对应：令 $u, v \in X_1$，我们要证明如果 $Au = Av$ 那么 $u = v$。
+[/SCOPE:s_proof_let2]
+[35] 算符 $A$ 是线性的，
+[36] 所以 $A(u-v) = 0$，
+[37] 所以 $u - v \in X_0$。
+[38] 由封闭性，$u - v \in X_1$。
+[39] 由于补空间只交于零矢量 $X_0 \cap X_1 = \left\{0 \right\} $，
+[40] 所以 $u - v = 0$，
+[41] 即 $u = v$。
+[42] 证毕。
+[/SCOPE:s_proof]
+[43] 【未完成】线性方程组文章中说明：线性方程组的解空间就是特解加上齐次解 $X_0$。
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论 1 引用定理 1 的结论"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_cor1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推论 2 由推论 1 直接推出"
+  },
+  {
+    "source_scope": "s_cor3",
+    "target_scope": "s_cor1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推论 3 使用推论 1 证明"
+  },
+  {
+    "source_scope": "s_proof",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明支持定理 1"
+  }
+]

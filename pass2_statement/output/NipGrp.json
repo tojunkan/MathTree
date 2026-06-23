@@ -1,0 +1,266 @@
+{
+  "article_name": "NipGrp",
+  "statements": [
+    {
+      "stmt_id": "st_def1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_concl",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "G",
+        "H",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_concl",
+      "subtype": "theorem",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_sub_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1_sub",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_quot_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1_quot",
+      "exposed_entities": [
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_quot_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1_quot",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma2_assump1",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma2",
+      "exposed_entities": [
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma2_assump2",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma2",
+      "exposed_entities": [
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma2_concl",
+      "subtype": "theorem",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma2_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma2_proof",
+      "exposed_entities": [
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma2_proof_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma2_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        43,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "S_3",
+        "A_3",
+        "pi"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_concl",
+      "subtype": "example",
+      "clause_range": [
+        49,
+        50
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_assump",
+      "target": "st_def1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_assump",
+      "target": "st_lemma1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_assump",
+      "target": "st_lemma1_sub_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_assump",
+      "target": "st_lemma1_quot_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_quot_assump",
+      "target": "st_lemma1_quot_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma2_assump1",
+      "target": "st_lemma2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma2_assump2",
+      "target": "st_lemma2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma2_proof_assump",
+      "target": "st_lemma2_proof_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_assump",
+      "target": "st_example1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_lemma1_sub_concl",
+      "target": "st_def1_concl",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "子群幂零是幂零群定义的特例"
+    },
+    {
+      "source": "st_lemma1_quot_concl",
+      "target": "st_def1_concl",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "商群幂零是幂零群定义的特例"
+    },
+    {
+      "source": "st_lemma2_concl",
+      "target": "st_def1_concl",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "引理2给出幂零的充分条件"
+    },
+    {
+      "source": "st_example1_concl",
+      "target": "st_lemma2_concl",
+      "edge_type": "counterexample_of",
+      "category": "logic",
+      "note": "例1说明引理2中N⊆C(G)的条件不能去掉"
+    }
+  ],
+  "unresolved": []
+}

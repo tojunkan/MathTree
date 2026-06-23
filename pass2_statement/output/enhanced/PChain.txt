@@ -1,0 +1,83 @@
+[SCOPE:root|description|复合函数的偏导、链式法则（多元微积分）]
+文章名: PChain
+标题: 复合函数的偏导、链式法则（多元微积分）
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=example heading=例 2 title=
+
+[SCOPE:s_ex1|description|例 1]
+[SCOPE:s_ex1_let|let_bind|例 1 的变量]
+[0] 令 $u(x,y) = x + y$，$v(x,y) = x - y$，$f(u, v) = u^2 + v^2$，求 $ \partial f/\partial x $ 和 $ \partial f/\partial y $。
+[/SCOPE:s_ex1_let]
+[1] 解：直接套用式 1 得
+[2] \begin{equation}
+\frac{\partial f}{\partial x} = 2u \cdot 1 + 2v \cdot 1 = 4x~,
+\end{equation}
+[3] \begin{equation}
+\frac{\partial f}{\partial y} = 2u \cdot 1 + 2v \cdot (-1) = 4y~.
+\end{equation}
+[4] 为了验证，我们也可以直接写出
+[5] \begin{equation}
+f(x, y) = (x+y)^2 + (x-y)^2 = 2x^2 + 2y^2~.
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_explicit|description|显含与隐含]
+[6] 在物理中，尤其在分析力学中，我们通常会遇见显含（explicitly depends on）的概念。当
+[7] \begin{equation}
+f(u_1, \dots, u_M)~
+\end{equation}
+[8] 中的某个 $u_i$ 满足 $ \partial f/\partial u_i $ 不恒为零时，我们说 $f$
+[9] 显含
+[10] $u_i$。
+[11a] 特殊地
+[11b] 当某个 $u_i(x_1, \dots, x_N) = x_j$ 时，我们，则说函数 $f$
+[12] 显含
+[13] $x_j$，否则就说 $f$
+[14] 不显含
+[15] $x_j$。
+[16] 若 $f$ 不显含 $x_j$，
+[17] 但某个 $u_i$ 满足 $ \partial u_i/\partial x_j $ 不恒为零，我们就说 $f$ 隐含（implicitly depends on） $x_j$。
+
+[/SCOPE:s_explicit]
+[SCOPE:s_ex2|description|例 2]
+[SCOPE:s_ex2_let1|let_bind|例 2 变量组 1]
+[18] 一个质点延着一条静止轨道 $y = 0$ 运动，它的动能为 $E(v_x) = m v_x^2$。
+[19] 虽然速度 $v_x$ 是时间 $t$ 的函数，
+[20] 但我们说 $E(v_x)$ 不显含时间。
+[/SCOPE:s_ex2_let1]
+[SCOPE:s_ex2_let2|let_bind|例 2 变量组 2]
+[21] 若轨道在 $y$ 方向具有随时间变化的速度 $v_y(t) = a t^2$，如果把动能记为 $E(v_x, v_y) = m(v_x^2 + v_y^2)$，
+[22] 那么该函数仍然不显含 $t$。
+[/SCOPE:s_ex2_let2]
+[SCOPE:s_ex2_let3|let_bind|例 2 变量组 3]
+[23] 仍然令 $v_y(t) = a t^2$，
+[24] 但把动能记为 $E(v_x, t) = m v_x^2 + m (a t^2)^2$，
+[25] 那么该函数就显含 $t$。
+[/SCOPE:s_ex2_let3]
+[26] 虽然在后两种情况中物理情景都是一样的，
+[27] 但 $E(v_x, v_y)$ 和 $E(v_x, t)$ 在数学上却是两个不同的函数，使用了通用函数名 $E$。
+[28] 这两个函数分别是 $f(x, y) = m(x^2 + y^2)$ 和 $g(x, y) = mx^2 + ma^2 y^4$，显然不是同一个函数。
+[29] 它们都显含 $x, y$，不显含其他任何变量。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_total_derivative|description|全导数]
+[30] 特殊地，当所有的 $u_i$ 都只是一个变量 $x$ 的函数时，我们可以求全导数 $ \mathrm{d}{f}/\mathrm{d}{x} $。
+[31] 这时可以分为 $f$ 隐含 $x$ 和显含 $x$ 来讨论。
+
+跨文章引用:
+  [L0] 全微分关系 → TDiff
+[/SCOPE:s_total_derivative]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_explicit",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例 2 是显含与隐含概念的具体例子"
+  }
+]

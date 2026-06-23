@@ -1,0 +1,328 @@
+[SCOPE:root|description|正规子群和商群]
+文章名: NormSG
+标题: 正规子群和商群
+
+环境标记 (hints):
+  [0] type=exercise heading=习题 1 title=
+  [1] type=corollary heading=推论 1 title=
+  [2] type=definition heading=定义 1 title=正规子群
+  [3] type=example heading=例 1 title=$\mathbb{Z}$ 的正规子群和商群
+  [4] type=example heading=例 2 title=置换群和交错群
+  [5] type=example heading=例 3 title=中心
+  [6] type=definition heading=定义 2 title=正规化子
+  [7] type=lemma heading=引理 1 title=
+  [8] type=theorem heading=定理 1 title=
+  [9] type=theorem heading=定理 2 title=
+  [10] type=corollary heading=推论 2 title=
+  [11] type=exercise heading=习题 2 title=
+
+[SCOPE:s_intro|description|引言：左陪集运算封闭性条件]
+[0] 在上文中，我们在群上定义了元素和子集间、子集和子集间的运算，还知道了左陪集是一种等价类划分。
+[SCOPE:s_intro_let|let_bind|引入变量 G, H, x, y]
+[1] 假设我们有群 $G$ 和它的子群 $H$，能不能用 $H$ 的全部左陪集当元素，构成一个集合，并在上面定义一个和 $G$ 的运算相关的群运算呢？
+[2] 最直接的想法，就是直接进行左陪集之间的运算：对于左陪集 $A$ 和 $B$，有 $AB=\{ab|a\in A, b\in B\}$。
+[3] 但是一般来说，如果 $G$ 的运算不是可交换的，我们这样算出来的 $AB$ 甚至不一定是一个左陪集，
+[4] 那么这个左陪集之间的运算甚至不满足封闭性，自然不能是个群运算了。
+[5] 如何让左陪集之间的运算满足封闭性呢？
+[6] 假设我们有 $x, y\in G$，它们对应的左陪集分别是 $xH$ 和 $yH$。
+[7] 由于 $xH=\{xh_1|h_1\in H\}$，$yH=\{yh_2|h_2\in H\}$，
+[8] 那么根据定义有：$xHyH=\{xh_1yh_2|h_1, h_2\in H\}$。
+[9] 每一个 $xh_1yh_2$ 都在左陪集 $xh_1yH$ 中，我们希望每一个 $h_1$ 对应的 $xh_1yH$ 都是同一个左陪集。
+[10] 在定理 2 的证明中我们提到了一个判断两元素是否在同一个左陪集中的方法。
+[11] 现在假设 $xh_1y$ 和 $xh_2y$ 在同一个左陪集里，应用判断方法得到：$(xh_1y)^{-1}(xh_2y)\in H$。
+[12] 由于 $(xh_1y)^{-1}=y^{-1}h_1^{-1}x^{-1}$，我们有：
+[13] \begin{equation}
+y^{-1}h_1^{-1}x^{-1}xh_2y\in H~,
+\end{equation}
+[14] 也就是说
+[15] \begin{equation}
+y^{-1}h^{-1}_1h_2y\in H~.
+\end{equation}
+[16] 由于这里的 $y$ 是 $G$ 中任意元素，$h_1$ 和 $h_2$ 是 $H$ 中任意元素，
+[17] 故我们要求 $y^{-1}Hy\subseteq H$ 对于任何 $y\in G$ 都成立，其中 $y^{-1}Hy = \left\{y^{-1}h_i y|h_i \in H \right\} $。
+[18] 巧的是，让 $H$ 满足了这个要求之后，封闭性就满足了。
+
+[/SCOPE:s_intro]
+[/SCOPE:s_intro_let]
+[SCOPE:s_ex1|description|习题 1]
+[19] 习题 1
+[SCOPE:s_ex1_let|let_bind|引入变量 G, H, g, x, y]
+[20] 证明：对于群 $G$ 和它的子群 $H$，如果 $H$ 满足对于任意的 $g\in G$，都有 $g^{-1}Hg\subseteq H$，
+[21] 那么对于任意的 $x, y\in G$，$xHyH$ 中的元素都在同一个左陪集中。
+
+[/SCOPE:s_ex1]
+[/SCOPE:s_ex1_let]
+[SCOPE:s_cor1|description|推论 1]
+[22] 推论 1
+[23] 由于群运算的唯一性，从 $g^{-1}Hg\subseteq H$ 我们还可以推知 $|g^{-1}Hg|=|H|$，
+[24] 因此所需要的条件等价于 $g^{-1}Hg=H$，
+[25] 即 $Hg = gH$，也就是左陪集等于右陪集。
+
+[/SCOPE:s_cor1]
+[SCOPE:s_def1|description|定义 1 正规子群]
+[26] 定义 1 正规子群
+[SCOPE:s_def1_let|let_bind|引入变量 G, H, x, y, z]
+[27] 满足推论 1 中条件的子群，被称作正规子群（normal subgroup）。
+[28] 我们把 “$H$ 是 $G$ 的正规子群” 简记为 $H\vartriangleleft G$ 或 $G\vartriangleright H$1。
+[29] 现在我们考察一下，如果 $H$ 满足了条件，
+[30] 那么在左陪集的集合中通过 $G$ 的运算而导出的集合间的运算，是不是一个群运算。
+[31] 封闭性：由习题 1 知，该运算有封闭性。
+[32] 结合性：由于 $G$ 的运算具有结合性可知，设 $x, y, z\in G$，
+[33] 那么 $(xh_1yh_2)zh_3=xh_1(yh_2zh_3)$ 对任意的 $h_n\in H$ 都成立，
+[34] 故而 $(xHyH)zH=xH(yHzH)$ 成立。
+[35] 单位元存在性：$H$ 就是单位元。
+[36] 逆元存在性：$xHx^{-1}H=HH=H$。
+[37] 这样一来，在左陪集的集合上也诱导了一个群运算，构成了一个群。
+[38] 我们把这个群叫做群 $G$ 模去正规子群 $H$ 的商群（quotient group），记作 $G/H$。
+[39] 由拉格朗日定理（定理 3 ）的证明过程可知，$|G/H|={|G|}/{|H|}$。
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_ex2|description|例 1 Z 的正规子群和商群]
+[40] 例 1 $\mathbb{Z}$ 的正规子群和商群
+[SCOPE:s_ex2_let|let_bind|引入变量 Z, n]
+[41] $n\mathbb{Z}$ 是 $\mathbb{Z}$ 的正规子群，这对任何 $n$ 都成立。
+[42] 证明很简单，因为 $\mathbb{Z}$ 是交换群，
+[43] 所以元素位置可以自由互换，
+[44] 因此 $g^{-1}Hg=g^{-1}gH=H$ 对任何子集都成立，
+[45] 因此交换群的子群都是正规子群。
+[46] 考虑 $\mathbb{Z}$ 模去 $3\mathbb{Z}$ 得到的商群，我们记为 $\mathbb{Z}/3\mathbb{Z}=\mathbb{Z}_3$。
+[47] 这个商群一共有 $3$ 个元素，每个元素都是一个左陪集：$0+3\mathbb{Z}=3\mathbb{Z}=\{\cdots, -6, -3, 0, 3, 6, \cdots\}$，$1+3\mathbb{Z}=\{\cdots, -5, -2, 1, 4, 7, \cdots\}$ 和 $2+3\mathbb{Z}=\{\cdots, -4, -1, 2, 5, 8, \cdots\}$。
+[48] 换句话说，集合 $\mathbb{Z}_3=\{3\mathbb{Z}, 1+3\mathbb{Z}, 2+3\mathbb{Z}\}$。
+[49] 注意，虽然 $\mathbb{Z}_3$ 的元素是集合，我们仍然要把它们看成一个个的元素。
+[50] 事实上，$\mathbb{Z}_n$ 的群结构和一个有着 $n$ 个数字的钟表（例 2 ）是一模一样的，
+[51] 因此我们也用 $\mathbb{Z}_n$ 来表示循环群。
+
+[/SCOPE:s_ex2]
+[/SCOPE:s_ex2_let]
+[SCOPE:s_ex3|description|例 2 置换群和交错群]
+[52] 例 2 置换群和交错群
+[SCOPE:s_ex3_let|let_bind|引入变量 S_n, A_n, n]
+[53] 我们知道，置换群 $S_n$（例 3 ）是 $n$ 个元素的变换所构成的群。
+[54] 为了简洁地表达变换，我们可以用以下记号：
+[55] $(1,2,3)$ 表示一个变换，它是将 $1$ 号桶中的球放入 $2$ 号桶，$2$ 号桶中的放入 $3$ 号桶，$3$ 号桶中的又放入 $1$ 号桶。
+[56] 显然，$(2,3,1)$ 表示的是同一个变换。
+[57] $(1,2,3)(4,5)$ 表示的是先进行 $(1,2,3)$ 变换，再进行 $(4,5)$ 变换。
+[58] 显然，这两个变换没有涉及相同数字，
+[59] 所以它们是彼此分离的，可以交换：$(1,2,3)(4,5)=(4,5)(1,2,3)$。
+[60] 如果两个变换有相同数字，
+[61] 那么我们可以把它们合并为一个括号：$(1,2)(2,3)$ 代表先 “把 $1$ 号桶中的球放入 $2$ 号桶，$2$ 号桶中的放入 $1$ 号桶”，再 “把 $2$ 号桶中的球放入 $3$ 号桶，$3$ 号桶中的放入 $2$ 号桶”，最终结果是 “$1$ 号桶中的球放入 $3$ 号桶，$2$ 号桶中的放入 $1$ 号桶，$3$ 号桶中的球放入 $2$ 号桶”，也就是说，$(1,2)(2,3)=(1,3,2)$。
+[62] 注意 $(1,2,3)\not=(1,3,2)$。
+[63] 只涉及到两个元素之间的变换显然是最简单的，我们称之为对换。
+[64] 一切变换都是由若干个对换相乘（复合运算）得到的。
+[65] 可以证明（例 1 ），每进行一次对换，桶中球的 “逆序数” 的奇偶性会改变。
+[66] 初始状态下的逆序数是 $0$，一个偶数；
+[67] 因此如果一个变换可以被奇数个对换组合得到，
+[68] 那么这个变换会使得桶中球的逆序数变成奇数，这个变换就叫做奇变换；
+[69] 同样地，偶数个对换组合得到的变换称为偶变换，它会使得桶中球的逆序数仍为偶数。
+[70] 偶变换之间的复合仍然能得到偶变换，
+[71] 因此全体偶变换构成置换群 $S_n$ 的一个子群，称为交错群（alternating group），记为 $A_n$。
+[72] 交错群是置换群的一个正规子群，元素数量是置换群的一半——也就是说，$|S_n/A_n|=2$ 对任何 $n$ 都成立。
+
+[/SCOPE:s_ex3]
+[/SCOPE:s_ex3_let]
+[SCOPE:s_ex4|description|例 3 中心]
+[73] 例 3 中心
+[SCOPE:s_ex4_let|let_bind|引入变量 G, S, C(S), C(G), h]
+[74] 给定群 $G$ 和它的一个子集 $S$，记 $C(S)$ 为 $G$ 中所有能和 $S$ 中元素交换的元素之集合，
+[75] 即 $C(S)=\{g\in G|\forall s\in S, gs=sg\}$，称之为 $S$ 在 $G$ 中的中心化子（centralizer），有时为了强调也记为 $C_G(S)$。
+[76] 特别地，称 $C(G)$ 是 $G$ 的中心（center）。
+[77] 考虑到对于任意 $c\in C(G)$ 和任意 $g\in G$ 都有 $cg=gc$，
+[78] 那么任取 $h\in G$，也必有 $hch^{-1}g=hh^{-1}cg=cg=gc=gchh^{-1}=ghch^{-1}$，
+[79] 即 $hch^{-1}\in C(G)$。
+[80] 因此，$C(G)\lhd G$。
+[81] 任意给定群 $G$ 的子群 $H$，它不一定是正规子群，
+[82] 但我们可以适当 “修剪” 群 $G$ 来获得一个子群，使得 $H$ 在这个子群里是正规子群。
+[83] 这样的子群就是以下定义的正规化子：
+
+[/SCOPE:s_ex4]
+[/SCOPE:s_ex4_let]
+[SCOPE:s_def2|description|定义 2 正规化子]
+[84] 定义 2 正规化子
+[SCOPE:s_def2_let|let_bind|引入变量 G, S, H, N(S)]
+[85] 给定群 $G$ 和它的一个子集 $S$。
+[86] 如果 $H$ 是包含 $S$ 的最小的子群2，记 $N(S)=\{n\in G|nH=Hn\}$，
+[87] 那么 $N(S)$ 构成一个子群，而 $H\vartriangleright N(S)$。
+[88] 称 $N(S)$ 是 $S$ 的正规化子（normalizer）。
+[89] 注意区分中心化子和正规化子的定义，对于同样的 $S$，其正规化子比中心化子的定义要弱一些，并且正规化子本身不一定是 $G$ 的正规子群。
+
+[/SCOPE:s_def2]
+[/SCOPE:s_def2_let]
+[SCOPE:s_lem1|description|引理 1]
+[90] 引理 1
+[SCOPE:s_lem1_let|let_bind|引入变量 G, N, g]
+[91] 给定群 $G$ 及其正规子群 $N$，
+[92] 则对于任意 $g\in G$ 有：
+[93] \begin{equation}
+NgN=gN~.
+\end{equation}
+[94] proof.
+[95] 因为这是陪集运算，
+[96] 所以在 $N$ 里取代表元素单位元 $e$，
+[97] 则 $NgN=g=gN$。
+[98] 又或者右乘 $g^{-1}$ 并利用正规子群的定义即可得。
+
+[/SCOPE:s_lem1]
+[/SCOPE:s_lem1_let]
+[SCOPE:s_thm1|description|定理 1]
+[99] 定理 1
+[SCOPE:s_thm1_let|let_bind|引入变量 G, N, H, K, g_i, h_i]
+[100] 设 $N$ 为 $G$ 的正规子群，$H$ 是 $G$ 的另一个子群。
+[101] 那么 $K=\{gN|g\in G,gN\cap H\neq \varnothing \}$ 是 $G/N$ 的一个子群，并且在同构意义下是 $HN/N$。
+[102] proof.
+[103] 【图解】图 1：子群与左陪集相交示意图。
+[104] 如图，构成整个图的最大正方形表示群 $G$，中心的红色小正方形表示 $G$ 的子集 $N$，旋转 $45^\circ$ 的蓝色正方形表示 $G$ 的子集 $H$，注意 $H$ 的范围也包括红色部分。
+[105] 其它和 $N$ 一样大的正方形表示 $N$ 在 $G$ 中的各左陪集。
+[106] $K$ 是从 $H$ 的所有左陪集中取与 $N$ 相交的等价类。
+[107] 设对于任意 $g_iN\in K$ 有 $h_i\in g_iN\cap H$，
+[108] 则 $g_iN=h_iN$。
+[109] 要证明 $K$ 是 $G/N$ 的一个子群，取等价元素研究即可。
+[110] 设任意 $h_i,h_j\in K$ 且 $h_iN\neq h_jN$，因为 $h_i^{-1}h_j\in H$，
+[111] 因而 $h_i^{-1}Nh_jN=h_i^{-1}h_jN\in K$，第一步得证。
+[112] 正如图 1 所示，在把 $G$ 切分成关于 $N$ 的等价类后，$H$ 的元素全部落在不同左陪集上，为蓝色部分，对应的左陪集为 $K$3。
+[113] 下面证明 $K$ 中元素作为 $G/N$ 的部分等价类和 $HN/N$ 一一对应。
+[114] 首先证明 $K$ 实际上就是 $HN$，由上述知，只需证明在 $G$ 下是子群即可。
+[115] 设任意两个左陪集为 $h_1N,h_2N$，
+[116] 则 $(h_1N)^{-1}h_2N=Nh_1^{-1}h_2N$。
+[117] 由引理 1 得：$(h_1N)^{-1}h_2N=h_1^{-1}h_2N\in K$，
+[118] 因此 $HN$ 是 $G$ 的子群，
+[119] 所以 $N$ 也是 $HN$ 的正规子群，证毕。
+[120] 也就是说，取原群的任一子群与商群相交，可以得到商群的子群。
+[121] 子群的商群之间可以一一对应：
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm2|description|定理 2]
+[122] 定理 2
+[SCOPE:s_thm2_let|let_bind|引入变量 G, N, H, h, n, N', f]
+[123] $N$ 是群 $G$ 是正规子群，$H$ 是另一个子群，
+[124] 则有：
+[125] \begin{equation}
+(HN/N)\cong H/(H\cap N)~.
+\end{equation}
+[126] proof.
+[127] 易证 $H\cap N$ 确实是 $H$ 的正规子群。
+[128] 设任意 $h\in H,n\in N,H\cap N=N'$，下面证明 $f(hnN)=f(hN)=hN'$ 是一个同构映射。
+[129] 从定义知，该映射是满射。
+[130] 若对于任意 $h_1,h_2\in H$ 有 $f(h_1N)=f(h_2N)$，
+[131] 则 $h_1N'=h_2N'$，
+[132] 因此 $h_1^{-1}h_2\in N'=H\cap N$，
+[133] 所以 $h_1N=h_2N$，这是一个单射。
+[134] 因为 $f(h_1NNh_2N)=f(h_1h_2N)=h_1h_2N'=f(h_1N)f(h_2N)$，
+[135] 所以该映射保同态，是同构映射。
+[136] 该映射实际上是把图 1 的蓝色部分映射到其所在正方形上，把 $H\cap N$ 映射到绿色部分。
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_let]
+[SCOPE:s_cor2|description|推论 2]
+[137] 推论 2
+[138] $G,N,H$ 定义同上。
+[139] 若 $HN=G$，
+[140] 则 $G/N\cong H/(H\cap N)$。
+
+[/SCOPE:s_cor2]
+[SCOPE:s_ex5|description|习题 2]
+[141] 习题 2
+[SCOPE:s_ex5_let|let_bind|引入变量 G, N, Q, pi]
+[142] 给定群 $G$ 及其正规子群 $N$，令 $Q$ 是 $G/N$ 的正规子群，证明：
+[143] $\pi^{-1} \left(Q \right) $ 也是 $G$ 的正规子群，且
+[144] \begin{equation}
+\left(G/N \right) /Q \cong G/ \left(\pi^{-1} \left(Q \right) \right) . ~
+\end{equation}
+
+[/SCOPE:s_ex5]
+[/SCOPE:s_ex5_let]
+[SCOPE:s_summary|description|小结]
+[145] 对于任何群 $G\vartriangleright H$，所有左陪集的元素数量都是 $|H|$，包括 $H$ 本身。
+[146] 这些左陪集彼此没有交集，
+[147] 但群 $G$ 是所有左陪集的并集，我们由此得到了拉格朗日定理，揭示了一个任何群都具有的简洁的结构特征。
+[148] 商群 $G/H$ 的元素数量，正是 $G$ 和 $H$ 的元素数量的商。
+[149a] 当子群 $H$ 满足，对于任意的 $g\in G$ 都有 $g^{-1}Hg=H$ 时，$H$
+[149b] 则成了一个正规子群。
+[150] 只有正规子群才能生成商群；
+[151] 非正规的子群划分出来的等价类，按照二元关系中提到的方法构成的商集，却并不能用 $G$ 的运算来导出一个群运算。
+[152] 当然，你也可以把这个商集看成和 $G$ 完全无关的集合，给它独立定义一个群运算，
+[153] 但那样这个群就和 $G$ 没有一点关系了，不能叫做 $G$ 的商群。
+[154] $G/H$ 的群运算是 $G$ 的运算导出来的，
+[155] 所以继承了 $G$ 中很多相似的性质；
+[156] 但是 $G/H$ 把同一个左陪集中各个元素的差别都抹去了，相当于一个简化版的 $G$。
+[157] 所以说，商群继承了原群的部分特征，
+[158] 但是没有完全继承。
+[159] 两个定义相似的概念：中心化子和正规化子。
+[160] 接下来当我们讲到群之间的映射的时候，商群与原群 “似而不同” 的结构非常重要。
+[/SCOPE:s_summary]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_intro",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推论1由引言条件推出等价条件"
+  },
+  {
+    "source_scope": "s_def1",
+    "target_scope": "s_cor1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定义1基于推论1的条件"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是正规子群和商群在Z上的特例"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2是正规子群在置换群中的特例"
+  },
+  {
+    "source_scope": "s_ex4",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例3是正规子群在中心上的特例"
+  },
+  {
+    "source_scope": "s_lem1",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "引理1由正规子群定义推出"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_lem1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理1证明中用到引理1"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2是定理1的进一步结论"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论2是定理2在HN=G时的特例"
+  },
+  {
+    "source_scope": "s_ex5",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "习题2是定理2的推广"
+  }
+]

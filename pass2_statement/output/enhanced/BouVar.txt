@@ -1,0 +1,332 @@
+[SCOPE:root|description|有界变差]
+文章名: BouVar
+标题: 有界变差
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=在任意两个不同的实数之间，存在一个有理数和一个无理数。
+  [1] type=example heading=例 1 title=设 $f(x)=x\sin\left(1/x\right)$ 为 $0< x\leq1$ 且 $f(0)=0$。证明 $f$ 在 $[0,1]$ 上有界且连续，但不是有界变差 $V[f;0,1]=+\infty$。
+  [2] type=exercise heading=习题 1 title=设 $f(x)=x\cos\left(\pi/x\right)$ 为 $0< x\leq1$ 且 $f(0)=0$。证明 $f$ 在 $[0,1]$ 上有界且连续，但不是有界变差 $V[f;0,1]=+\infty$。
+  [3] type=theorem heading=定理 2 title=
+  [4] type=example heading=例 2 title=证明：
+  [5] type=theorem heading=定理 3 title=
+  [6] type=example heading=例 3 title=证明：
+  [7] type=example heading=例 4 title=如果 $[a^{\prime},b^{\prime}]$ 是 $[a,b]$ 的子区间，则证明 $P[a^{\prime},b^{\prime}]\leq P[a,b]$ 和 $N[a^{\prime},b^{\prime}]\leq N[a,b]$。
+  [8] type=theorem heading=定理 4 title=
+  [9] type=corollary heading=推论 1 title=约当 Jordan 定理
+  [10] type=example heading=例 5 title=将 $f(x)=\cos^{2}x$，$0\leq x\leq2\pi$ 表示为两个递增函数之差。
+
+[SCOPE:s_thm1|description|定理1]
+[0] 定理 1 在任意两个不同的实数之间，存在一个有理数和一个无理数。
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[1] 可取 $x_{1}$ 为介于 $a$ 和 $b$ 之间的一个无理数。
+[2] 然后取 $x_{2}$ 为介于 $x_{1}$ 和 $b$ 之间的一个有理数。
+[3] 以此类推，取 $x_{2i+1}$ 为介于 $x_{2i}$ 和 $b$ 之间的一个无理数，取 $x_{3i}$ 为介于 $x_{2i-1}$ 和 $b$ 之间的一个有理数。
+[4] 最后，$x_{n+2}=b$。
+[5] 因此，我们已经创建了一个从 $a$ 开始并且在有理数和无理数之间交替的分割，直到最后以 $b$ 结束。
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm1_let2|let_bind|定理1的求和]
+[6] 现在考虑和 $\sum_{i=1}^{n+2}|f(x_{i})-f(x_{i-1})|$，我们知道它至多等于 $f$ 在 $[a,b]$ 上的变差。
+[7] 因此：
+[/SCOPE:s_thm1_let2]
+[8] \begin{align}
+V(f,[a,b])&\geq\sum_{i=1}^{n+2}|f(x_{i})-f(x_{i-1})| \\ &\geq\sum_{i=2}^{n+1}|f(x_{i})-f(x_{i-1})| \\ &=|f(x_{2})-f(x_{1})|+\cdots+|f(x_{n+1})-f(x_{n})| \\ &=|1-0|+|0-1|+\cdots+|1-0| \\ &=1+1+1+\cdots+1=n ~.
+\end{align}
+[9] 因此 $V(f,[a,b])$ 是任意大的，
+[10] 因此 $V(f,[a,b])=\infty$。
+[SCOPE:s_thm1_let3|let_bind|定理1的Lipschitz]
+[11] 例子 4：定义在 $[a,b]$ 上的函数 $f$ 被称为在 $[a,b]$ 上满足 Lipschitz 条件，如果存在常数 $C$ 使得
+[12] \begin{align}
+|f(x)-f(y)|\leq C|x-y|, \
+\forall x,y\in[a,b]~.
+\end{align}
+[13] 这样的函数显然是有界变差的，$V[f;a,b]\leq C(b-a)$。
+[14] 例如，如果 $f$ 在 $[a,b]$ 上有连续的导数，
+[15] 那么（根据中值定理）$f$ 在 $[a,b]$ 上满足 Lipschitz 条件。
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_let3]
+[SCOPE:s_ex1|description|例1]
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[16] 例 1 设 $f(x)=x\sin\left(1/x\right)$ 为 $0< x\leq1$ 且 $f(0)=0$。
+[/SCOPE:s_ex1_let]
+[SCOPE:s_ex1_proof|description|例1的证明]
+[17] 证明 $f$ 在 $[0,1]$ 上有界且连续，
+[18] 但不是有界变差 $V[f;0,1]=+\infty$。
+[19] 对于 $0 < x \leq 1$，我们知道 $-1 \leq \sin\left(\frac{1}{x}\right) \leq 1$，
+[20] 因此 $-x \leq x\sin\left(\frac{1}{x}\right) \leq x$，在 $[0,1]$ 上 $f(x)$ 有界。
+[SCOPE:s_ex1_proof_cases|cases|例1证明的分情况]
+[SCOPE:s_ex1_proof_cases_let|let_bind|x≠0]
+[21] 考虑 $x \neq 0$ 的情况。
+[22] 在这种情况下，$f(x) = x \sin\left(1/x\right) $ 是两个连续函数的乘积，其中 $x$ 是一个连续函数，而 $ \sin\left(1/x\right) $ 也是连续的。
+[23] 因此，它们的乘积 $f(x)$ 在 $x \neq 0$ 的情况下是连续的。
+[/SCOPE:s_ex1_proof_cases_let]
+[SCOPE:s_ex1_proof_cases_let2|let_bind|x=0]
+[24] 在 $x = 0$ 处，有
+[25] \begin{equation}
+\lim_{{x \to 0}} f(x) = \lim_{{x \to 0}} x \sin\left(\frac{1}{x}\right) = 0~.
+\end{equation}
+[26] 因此，$f(x)$ 在 $[0,1]$ 上是连续的。
+[/SCOPE:s_ex1_proof_cases]
+[/SCOPE:s_ex1_proof_cases_let2]
+[SCOPE:s_ex1_proof_let|let_bind|例1证明的变量]
+[27] 注意到分割 $\Gamma = \{x_n\}=\{\frac{1}{n\pi+\pi/2}\}$ 我们有,
+[/SCOPE:s_ex1_proof_let]
+[28] \begin{align} f(x_n)=x_n \sin\left(1/x_n\right) =\left\{\begin{matrix}x_n& \ \text{even}\\ -x_n& \ \text{odd}\end{matrix}\right.\qquad\text{for}\ n\geq0 ~.
+\end{align}
+[29] \begin{align}
+\sum_{n=1}^m|f(x_n)-f(x_{n-1})|&=\sum_{n=1}^m|(-1)^n(x_n+x_{n-1})|\\
+&= \sum_{n=1}^m(x_n+x_{n-1})\\&=x_m+x_0+2\sum_{n=1}^{m-1}x_n\\\geq \sum_{n=1}^{m-1} x_n&=\sum_{n=1}^{m-1} \frac{1}{n\pi+\pi/2}~.
+\end{align}
+[30] \begin{align}
+\sum_{n=1}^{m-1}\frac{1}{n\pi+\pi/2}\to\infty\qquad\mathrm{as}\qquad m\to\infty~.
+\end{align}
+
+[/SCOPE:s_ex1]
+[/SCOPE:s_ex1_proof]
+[SCOPE:s_ex2|description|习题1]
+[31] 习题 1 设 $f(x)=x\cos\left(\pi/x\right)$ 为 $0< x\leq1$ 且 $f(0)=0$。
+[32] 证明 $f$ 在 $[0,1]$ 上有界且连续，
+[33] 但不是有界变差 $V[f;0,1]=+\infty$。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_thm2|description|定理2]
+[34] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[35] 如果 $f$ 在 $[a,b]$ 上的变差有界，
+[36] 那么 $f$ 在 $[a,b]$ 上有界。
+[37] 设 $f$ 和 $g$ 在 $[a,b]$ 上的变差有界。
+[38] 那么对于任意实常数 $c$，$cf$，$f+g$ 和 $fg$ 在 $[a,b]$ 上的变差也有界。
+[39] 此外，如果存在 $\varepsilon>0$ 使得对于 $[a,b]$ 中的 $x$，$|g(x)|\geq\varepsilon$，
+[40] 那么 $f/g$ 在 $[a,b]$ 上的变差也有界。
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm2_proof|description|定理2的证明]
+[41] 例 2 证明：
+[SCOPE:s_thm2_proof_let|let_bind|定理2证明的变量]
+[42] 假设 $f$ 在 $[a,b]$ 上是有界变差的。
+[43] 对于任意 $x\in[a,b]$，考虑仅由三个点组成的分割 $\left\{a,x,b\right\}$，
+[44] 则：
+[45a] (x)-f
+[45b] (a)\right|+\left|f
+[45c] (b)-f
+[45d] (x)\right|\ \leq\ V(f;a,b) \\ \Rightarrow\ \left|f
+[45e] (x)-f
+[45f] (a)\right|\ \leq\ V(f;a,b) \\ \left|f
+[45g] (x)\right|=\left|f
+[45h] (a)+f
+[45i] (x)-f
+[45j] (a)\right| \\ \leq\left|f
+[45k] (a)\right|+\left|f
+[45l] (x)-f
+[45m] (a)\right| \\ \leq\left|f
+[45n] (a)\right|+\left|f(f;a,b)\right|\ <\ \infty \\ \Rightarrow\ f\ \ \ \text{is bounded on}\ [a,b] ~. \end{align}
+[/SCOPE:s_thm2_proof_let]
+[SCOPE:s_thm2_proof_let2|let_bind|定理2证明的变量2]
+[46] 设 $f$ 和 $g$ 是 $[a,b]$ 上的两个有界变差函数。
+[47] 对于 $[a,b]$ 的任意分割 $P$，我们有：
+[48] \begin{align} \sum\bigl{|}(f+g)(x_{i})-(f+g)(x_{i-1})\bigr{|}&=\sum\bigl{|}\bigl{\{}\,f(x_{i})+g(x_{i})\bigr{\}}-\bigl{\{}f(x_{i-1})+g(x_{i-1})\bigr{\}}\bigr{|} \\ &=\sum\bigl{|}f(x_{i})-f(x_{i-1})+g(x_{i})-g(x_{i-1})\bigr{|} \\ &\leq\sum\bigl{|}f(x_{i})-f(x_{i-1})\bigr{|}+\sum\bigl{|}g(x_{i})-g(x_{i-1})\bigr{|} \\ &\leq V(f;a,b)+V(g;a,b) \\ \Rightarrow V(f+g;a,b)\ &\leq\ V(f;a,b)+V(g;a,b) ~.\end{align}
+[49] 这表明函数 $f+g$ 是有界变差的。
+[/SCOPE:s_thm2_proof_let2]
+[SCOPE:s_thm2_proof_let3|let_bind|定理2证明的变量3]
+[50] 由于 $f+f+\cdots$ 是有界变差的，对于任何实常数 $c$，$cf$（即 $\sum^c f$）也是有界变差的。
+[51a] (g)+k\left.V
+[51b] (f)\right. ~.\end{align}
+[52] 所以 $fg$ 在 $[a,b]$ 上是有界变差的。
+[/SCOPE:s_thm2_proof_let3]
+[SCOPE:s_thm2_proof_let4|let_bind|定理2证明的变量4]
+[53] 此外，如果 $f/g$ 在 $[a,b]$ 上是有界变差的，
+[54] 那么存在 $\varepsilon>0$，使得对于 $[a,b]$ 中的每个 $x$，都有 $|g(x)|\geq\varepsilon$。
+[55] 对于 $[a,b]$ 的任何分割 $P$，我们有
+[56] \begin{align} \sum\left|\frac{1}{g}(x_{i})-\frac{1}{g}(x_{i-1})\right|&=\sum\left|\frac{1}{g(x_{i})}-\frac{1}{g(x_{i-1})}\right| \\ &=\sum\left|\frac{g(x_{i-1})-g(x_{i})}{g(x_{i})g(x_{i-1})}\right| \\ &\leq\frac{1}{k^{2}}\sum\left|g(x_{i-1})-g(x_{i})\right|&\leq\frac{1}{k^{2}}V\left(f;a,b\right) ~. \end{align}
+[57] 因此 $\frac{1}{g}$ 在 $[a,b]$ 上是有界变差的。
+[58] 于是 $f\cdot \frac{1}{g}$ 在 $[a,b]$ 上是有界变差的。
+
+[/SCOPE:s_thm2_proof]
+[/SCOPE:s_thm2_proof_let4]
+[SCOPE:s_thm3|description|定理3]
+[59] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[60] 如果 $[a^{\prime},b^{\prime}]$ 是 $[a,b]$ 的子区间，
+[61] 则 $V[a^{\prime},b^{\prime}]\leq V[a,b]$；
+[62] 即，随着区间的增加，变差也增加。
+[63] 如果 $a< c< b$，
+[64] 则 $V[a,b]=V[a,c]+V[c,b]$；
+[65] 即，相邻区间上的变差是可加的。
+[/SCOPE:s_thm3_let]
+[SCOPE:s_thm3_proof|description|定理3的证明]
+[SCOPE:s_thm3_proof_let|let_bind|定理3证明的变量]
+[66] 开始证明之前，注意到如果 $\Gamma$ 是 $\Gamma$ 的细分，
+[67] 即 $\Gamma$ 包含了 $\Gamma$ 的所有分割点以及一些额外的点，
+[68] 那么 $S_{\Gamma}\leq S_{\bar{\Gamma}}$。
+[/SCOPE:s_thm3_proof_let]
+[69] 这是在 $\bar{\Gamma}$ 包含 $\Gamma$ 的所有点加上一个额外点的情况下，由三角不等式得出的。
+
+[/SCOPE:s_thm3]
+[/SCOPE:s_thm3_proof]
+[SCOPE:s_ex3|description|例3]
+[70] 例 3 证明：
+
+[/SCOPE:s_ex3]
+[SCOPE:s_ex4|description|例4]
+[71] 例 4 如果 $[a^{\prime},b^{\prime}]$ 是 $[a,b]$ 的子区间，
+[72] 则证明 $P[a^{\prime},b^{\prime}]\leq P[a,b]$ 和 $N[a^{\prime},b^{\prime}]\leq N[a,b]$。
+
+[/SCOPE:s_ex4]
+[SCOPE:s_thm4|description|定理4]
+[73] 定理 4
+[SCOPE:s_thm4_let|let_bind|定理4的变量]
+[74] 如果 $P$、$N$ 或 $V$ 中的任何一个有限，
+[75] 则三者皆有限。
+[76] 此外，我们有,
+[77] \begin{align}
+P\,+\,N\,=\,V,\qquad P\,-\,N\,=\,f(b)\,-\,f(a)~.
+\end{align}
+[78] 或者等价地，
+[79] \begin{align}
+P\,=\,\frac{1}{2}[V\,+\,f(b)\,-\,f(a)],\qquad N\,=\,\frac{1}{2}[V\,-\,f(b)\,+\,f(a)]~.
+\end{align}
+
+[/SCOPE:s_thm4]
+[/SCOPE:s_thm4_let]
+[SCOPE:s_cor1|description|推论1]
+[80] 推论 1 约当 Jordan 定理
+[SCOPE:s_cor1_let|let_bind|推论1的变量]
+[81] 如果一个函数 $f$ 在闭区间 $[a,b]$ 上具有有界变差，
+[82] 那么它可以被写成 $[a,b]$ 上两个有界增函数之差。
+[83] 反之亦然。
+[84] 这个定理指出了一个函数有界变差的一个等价条件，
+[85] 即函数可以表示为两个有界增函数之差。
+[/SCOPE:s_cor1_let]
+[SCOPE:s_cor1_proof|description|推论1的证明]
+[SCOPE:s_cor1_proof_let|let_bind|推论1证明的变量]
+[86] 证明: 假设 $f=f_{1},-f_{2}$，其中 $f_{1}$ 和 $f_{2}$ 在 $[a,b]$ 上有界且递增。
+[87] 那么 $f_{1}$ 和 $f_{2}$ 在 $[a,b]$ 上是有界变差的，
+[88] 因此根据定理 2(ii)，$f$ 也是如此。
+[/SCOPE:s_cor1_proof_let]
+[SCOPE:s_cor1_proof_let2|let_bind|推论1证明的变量2]
+[89] 反之，假设 $f$ 在 $[a,b]$ 上是有界变差的。
+[90] 根据定理 3(i)，$f$ 在每个区间 $[a,x]$，$a\leq x\leq b$ 上都是有界变差的。
+[91a] (x)$ 和 $N
+[91b] (x)$ 在 $[a,b]$ 上是有界且递增的。
+[92a] (x)=[P
+[92b] (x)+f
+[92c] (a)]-N
+[92d] (x)$。
+[93] 由于 $P(x)$ 是有界且递增的，
+[94a] (x)+f
+[94b] (a)$ 也是如此，推论随之而来。
+[/SCOPE:s_cor1_proof_let2]
+[95] 如果上面证明对于你来说难懂，我建议你阅读下面简单巧妙的证明：
+[SCOPE:s_cor1_proof_let3|let_bind|推论1证明的变量3]
+[96a] (x)=V(f;a,x)$，$x\in(a,b]$，$v
+[96b] (a)=0$。
+[97a] (x)=v
+[97b] (x)-[v
+[97c] (x)-f
+[97d] (x)]$。
+[98a] (x)$ 和 $v
+[98b] (x)-f
+[98c] (x)$ 是递增的。
+[99] 对于任意的 $x_{1}< x_{2}$，我们有
+[100] \begin{align}
+v(x_{2})-v(x_{1})=V(f;x_1,x_2)\geq0\Leftrightarrow v(x_{2})\geq v(x_{1}) ~.
+\end{align}
+[101] 因此 $v(x)$ 是递增函数。
+[102] \begin{align}
+f(x_{2})-f(x_{1})\leq|f(x_{2})-f(x_{1})|\leq V(f;x_1,x_2)=v(x_{2})-v(x_{1}) \\ \Leftrightarrow v(x_{1})-f(x_{1})\leq v(x_{2})-f(x_{2}) ~.
+\end{align}
+[103a] (x)-f
+[103b] (x)$ 是递增函数。
+[104a] (x)=g
+[104b] (x)-h
+[104c] (x)$，其中 $g$ 和 $h$ 是递增的。
+[105] 由于 $h$ 是递增的，$-h$ 是递减的，
+[106a] (x)=g
+[106b] (x)+(-h
+[106c] (x))$ 是两个单调函数(有界变差)的和。
+[107] 需要注意的是，由于递增函数的负值是递减的，$f$ 是有界变差的 当且仅当 它是一个有界递增函数和一个有界递减函数的和。
+
+[/SCOPE:s_cor1]
+[/SCOPE:s_cor1_proof]
+[/SCOPE:s_cor1_proof_let3]
+[SCOPE:s_ex5|description|例5]
+[SCOPE:s_ex5_let|let_bind|例5的变量]
+[108] 例 5 将 $f(x)=\cos^{2}x$，$0\leq x\leq2\pi$ 表示为两个递增函数之差。
+[109a] (x) = v
+[109b] (x) - [v
+[109c] (x)-f
+[109d] (x)]$, 那么问题在于确定 $v
+[109e] (x)$ 为递增函数。
+[/SCOPE:s_ex5_let]
+[SCOPE:s_ex5_cases_let|let_bind|例5分情况的变量]
+[SCOPE:s_ex5_cases|cases|例5的分情况]
+[110] 将 $[0,2\pi]$ 分成四个子区间 $I_{1}=[0,\frac{\pi}{2}]$，$I_{2}=[\frac{\pi}{2},\pi]$，$I_{3}=[\pi,\frac{3\pi}{2}]$ 和 $I_{4}=[\frac{3\pi}{2},2\pi]$。
+[111] 函数 $f(x)$ 在 $I_{1}$ 和 $I_{3}$ 上从 $0$ 减小到 $1$，在 $I_{2}$ 和 $I_{4}$ 上从 $0$ 增加到 $1$，
+[112] 因此 $f$ 在任何这些子区间上的总变差都是 $1$。
+[113] 要确定 $V_{0}^{x}(f)$，我们需要研究 $x$ 在哪个区间内的不同情况。
+[114] 为了说明原理，假设 $x\in I_{3}$，
+[115] 那么，
+[116] \begin{align}
+V_{0}^{x}(f)&=V_{0}^{\frac{\pi}{2}}(f)+V_{\frac{\pi}{2}}^{\pi}(f)+|f(x)-f(\pi)| \\ &=1+1+|\cos^{2}x-1|=3-\cos^{2}x ~.
+\end{align}
+[117] \begin{align}
+v(x)=\left\{\begin{array}{ll}1-\cos^2x&0\leq x\leq\frac{\pi}{2}\\ 1+\cos^2x&\frac{\pi}{2}\leq x\leq\pi\\ 3-\cos^2x&\pi\leq x\leq\frac{3\pi}{2}\\ 3+\cos^2x&\frac{3\pi}{2}\leq x\leq2\pi\end{array}\right. \ ~.
+\end{align}
+[/SCOPE:s_ex5]
+[/SCOPE:s_ex5_cases_let]
+[/SCOPE:s_ex5_cases]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_ex2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1和习题1类似"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm2_proof",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2的证明"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm3_proof",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3的证明"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_cor1_proof",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推论1的证明"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1引用定理2"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1引用定理3"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1引用定理4"
+  }
+]

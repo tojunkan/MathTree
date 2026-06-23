@@ -1,0 +1,362 @@
+[SCOPE:root|description|对易厄米矩阵与共同本征矢]
+文章名: Commut
+标题: 对易厄米矩阵与共同本征矢
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=example heading=例 1 title=计算对易厄米矩阵的共同本征矢
+
+[SCOPE:s_theorem1|description|定理1]
+[SCOPE:s_let_AB|let_bind|设A,B为厄米算符]
+[0] 定理 1
+[1] 对有限维矢量空间 $V$ 中两个厄米算符 $A$ 和 $B$，以下命题互为充分必要条件
+[/SCOPE:s_let_AB]
+[2] $A,B$ 对易（$[A,B] = 0$）。
+[3] $V$ 中存在一组正交归一基底，同时是 $A, B$ 的本征矢。
+[4] $A$ 在 $B$ 的每个本征子空间（子节 1 ）中闭合。
+[5] 即 $B$ 的任意本征矢，经过 $A$ 的映射后仍然是 $B$ 的本征矢，且对应本征值不变。
+[6] $B$ 在 $A$ 的每个本征子空间中闭合。
+[7] 我们可以分为简并和非简并的情况讨论。
+[8] 容易得出若 $A$ 和 $B$ 至少有一个没有简并，
+[9] 那么命题 2 中的共同正交归一基底是唯一的（乘以任意相位因子 $ \mathrm{e} ^{ \mathrm{i} \theta}$ 除外）。
+[10] 若 $A,B$ 都存在简并，
+[11] 那么可能不唯一，此时只需要在 $A$ 的每个本征子空间内都求出 $B$ 的本征矢构成的正交归一基底即可（详见下文）。
+[12] 在矢量空间的定义中，闭合是指某空间的一个或两个矢量经过某种运算后的结果仍然属于该空间。
+[13] 在命题 3 中，闭合具体指的是 $B$ 的任何一个本征子空间中的矢量，在经过 $A$ 的映射后，仍然属于该子空间。
+
+[SCOPE:s_proof_2to1|description|证明条件2→1]
+[SCOPE:s_let_vi|let_bind|设共同本征矢vi]
+[14] 设厄米算符 $A$ 和 $B$ 有一组共同的本征矢 $\{v_i\}$，
+[15] 则它们是当前空间的一组基底，且同时满足 $A$ 和 $B$ 的本征方程
+[16] \begin{equation}
+\begin{cases}
+A v_i = a_i v_i\\
+B v_i = b_i v_i
+\end{cases}~
+\end{equation}
+[/SCOPE:s_let_vi]
+[17] 对任何 $v_i$， 都有
+[18] \begin{equation}
+A (B v_i) = A (b_i v_i) = b_iA v_i = a_i b_i v_i~,
+\end{equation}
+[19] \begin{equation}
+B (A v_i) = B (a_i v_i) = a_i B v_i = a_i b_i v_i~.
+\end{equation}
+[20] 所以 $AB v_i = BA v_i$ 对所有 $v_i$ 成立。
+[21] 由于任何矢量 $u \in X$ 都可以用基底 $\{v_i\}$ 展开，
+[22] 于是
+[23] \begin{equation}
+AB u = AB \sum_i c_i v_i = \sum_i c_i AB v_i = \sum_i c_i BA v_i = BA u~,
+\end{equation}
+[24] \begin{equation}
+[{A},{B}] = AB - BA = 0~.
+\end{equation}
+[25] 即两算符对易。
+[26] 证毕。
+
+[/SCOPE:s_proof_2to1]
+[SCOPE:s_proof_1to2|description|证明条件1→2]
+[27] 要证明 $1 \to 2$， 只需证明 $A$ 的一套本征矢都满足 $B$ 的本征方程即可。
+
+[SCOPE:s_nondeg|description|非简并情况]
+[SCOPE:s_let_vi2|let_bind|设A的本征矢vi]
+[28] 先解出算符 $A$ 的本征方程 $A v_i = a_i v_i$， 如果 $A$ 算符不发生简并（$B$ 是否简都可以），
+[29] 那么本征 $a_i$ 值各不相同，且给定一个本征值 $a_i$ 其归一化的本征矢只可能是 $v_i$（可乘以一个任意相位因子 $ \mathrm{e} ^{ \mathrm{i} \theta}$）。
+[/SCOPE:s_let_vi2]
+[30] 因为算符对易，有
+[31] \begin{equation}
+A (B v_i) = B (A v_i) = a_i (B v_i)~.
+\end{equation}
+[32] 把式中的 $B v_i$ 看成一个新的矢量，上式说明 $B v_i$ 是算符 $A$ 和本征值 $a_i$ 的另一个本征矢。
+[33] 根据以上分析，$B v_i$ 必定是 $v_i$ 乘以某个复常数（命名为 $b_i$），
+[34] 即
+[35] \begin{equation}
+B v_i = b_i v_i~.
+\end{equation}
+[36] 这就说明任何 $v_i$ 也都是 $B$ 的本征矢。
+[37] 证毕。
+
+[/SCOPE:s_nondeg]
+[SCOPE:s_deg|description|简并情况]
+[SCOPE:s_let_deg|let_bind|设简并参数]
+[38] 假设算符 $A$ 的所有本征值为 $a_i$（各不相同），任意一个 $a_i$ 有 $n_i$ 重简并（$B$ 是否存在简并都可以）。
+[39a] 若 $n_i = 1$， 对应唯一一个 $v_i$，
+[39b] 则根据上文对非简并情况的推理，$v_i$ 就已经是 $B$ 的本征矢了。
+[40] 若 $n_i > 1$，$a_i$ 对应的所有本征矢（未归一化）组成一个 $n_i$ 维希尔伯特子空间，
+[41] 即本征子空间。
+[42] 所以要在每个本征子空间中寻找共同本征矢，只需在每个子空间中寻找 $B$ 的本征矢即可。
+[/SCOPE:s_let_deg]
+[43] 令 $u$ 为本征值为 $a_i$ 的本征子空间中的任意矢量，利用对易关系有
+[44] \begin{equation}
+A (B u) = B (A u) = a_i (B u)~.
+\end{equation}
+[45] 这条式子说明 $B u$ 是 $A$ 和 $a_i$ 的一个本征矢，
+[46] 即 $B u$ 仍然在 $a_i$ 的本征子空间中。
+[47] 所以 $B$ 对子空间来说是一个闭合的厄米算符，
+[48] 所以在该子空间中必有一组正交归一的本征矢基底。
+[49] 在 $A$ 的每个本征子空间中都找出 $B$ 的基底，就可以组合成 $A, B$ 的共同本征矢基底。
+[50] 证毕。
+[51] 【未完成】以下的内容应该归到厄米算符里面讲
+[52] （厄米算符在希尔伯特空间中是无穷维的矩阵，
+[53] 但是如果一个厄米算符在一个子空间中闭合，
+[54] 那么就可以通过以下方法找到 N 个线性无关的本征矢。
+[55] 先在空间中任意选取 $n_i$ 个线性无关的正交本征矢 $v_{i1}, v_{i2}\dots v_{i n_i}$ 作为子空间的基底（本征矢的简并）），并可以用基底 $v_{i1}, v_{i2}\dots v_{i n_i}$ 展开。
+[56] 令 $B v_{ij} = \sum_{k=1}^{n_i} W_{jk}v_{ik}$（$W_{jk} = \left\langle v_{ij} \right\rvert B \left\lvert v_{ik} \right\rangle $，可以是复数），
+[57] 则 $B$ 在该子空间可以表示成一个 $n_i$ 维的方形矩阵（记为 $W$）。
+[58] 以 $v_{i1}, v_{i2} \dots v_{i n_i}$ 为子空间的基底，子空间内任意函数 $\phi = x_1 v_{i1} + x_2 v_{i2}\dots$ 可以记为 $ \left\lvert \phi \right\rangle = (x_1, x_2, \dots, x_{n_i}) ^{\mathrm{T}} $。
+[59] 根据算符的矩阵表示
+[60] ，$B$ 在子空间的矩阵元就是系数 $W_{jk}$，
+[61] \begin{equation}
+W = \begin{pmatrix}
+W_{11} & \ldots & W_{1 n_i}\\
+\vdots & \ddots & \vdots \\
+W_{n_i 1} & \ldots & W_{n_i n_i}
+\end{pmatrix}~,
+\end{equation}
+[62] 所以 $B$ 在子空间范围内的本征方程的矩阵形式就是
+[63] \begin{equation}
+W \left\lvert \phi_k \right\rangle = b_{ik} \left\lvert \phi_k \right\rangle ~,
+\end{equation}
+[64] 所以 $B$ 在子空间的本征值就是 $W$ 的本征值，本征矢就是 $W$ 的本征矢对应的波函数。
+[65] 最后要证明的就是 $W$ 矩阵必然存在 $n_i$ 个本征矢。
+[66] 由于 $B$ 是厄米算符， $W$ 必然是厄米矩阵，而 $n_i$ 维的厄米矩阵必然存在 $n_i$ 个两两正交的复数本征矢和实数本征值（厄米接矩阵）。
+[67] 综上所述，对每一个 $n_i$ 重简并的 $a_i$， 都存在 $n_i$ 个两两正交的本征矢作为 $A$， $B$ 算符的共同本征矢。
+[68] 证毕。
+
+[/SCOPE:s_proof_1to2]
+[/SCOPE:s_deg]
+[SCOPE:s_compute|description|具体计算步骤]
+[69] 若给出两个对易的厄米矩阵 $ \boldsymbol{\mathbf{A}} , \boldsymbol{\mathbf{B}} $，计算共同本征矢的方法如下，注意所有步骤中的本征矢都是正交归一化的，本征矢矩阵的每一列是一个本征矢。
+[70] 求 $ \boldsymbol{\mathbf{A}} $ 的本征值和本征矢矩阵 $ \boldsymbol{\mathbf{P}} $，把本征值相同的列放在一起。
+[71] 计算相似变换 $ \boldsymbol{\mathbf{B}} _1 = \boldsymbol{\mathbf{P}} ^\dagger \boldsymbol{\mathbf{B}} \boldsymbol{\mathbf{P}} $ 得块对角矩阵。
+[72] 每个对角块的维数等于对应本征值的简并重数。
+[73] 解 $ \boldsymbol{\mathbf{B}} _1$ 每一对角块 $ \boldsymbol{\mathbf{C}} _i$ 的本征矢矩阵 $ \boldsymbol{\mathbf{D}} _i$ 和对应的本征值，用相同顺序把 $ \boldsymbol{\mathbf{D}} _i$ 排列成块对角矩阵 $ \boldsymbol{\mathbf{Q}} $ 即 $ \boldsymbol{\mathbf{B}} _1$ 本征矢矩阵。
+[74] 把本征值按相同顺序排列得到 $ \boldsymbol{\mathbf{B}} _1$ 的本征值，也是 $ \boldsymbol{\mathbf{B}} $ 的本征值。
+[75] $ \boldsymbol{\mathbf{R}} = \boldsymbol{\mathbf{P}} \boldsymbol{\mathbf{Q}} $ 的每一列就是 $ \boldsymbol{\mathbf{A}} , \boldsymbol{\mathbf{B}} $ 的一个共同本征矢，本征值就分别是步骤 1 和 3 求得的本征值。
+
+[/SCOPE:s_compute]
+[SCOPE:s_example1|description|例1]
+[76] 例 1 计算对易厄米矩阵的共同本征矢
+[77] \begin{equation}
+\boldsymbol{\mathbf{A}} = \begin{pmatrix}3 & 0 & 0 & 0 & 0\\
+0 & -1 & 0 & 2 & -2 \mathrm{i} \\
+0 & 0 & 6 & 0 & 0\\
+0 & 2 & 0 & -1 & -2 \mathrm{i} \\
+0 & 2 \mathrm{i} & 0 & 2 \mathrm{i} & -1\end{pmatrix} ~,
+\qquad
+\boldsymbol{\mathbf{B}} = \begin{pmatrix}11 & -1 & 0 & -1 & \mathrm{i} \\
+-1 & 9 & 0 & -1 & - \mathrm{i} \\
+0 & 0 & 12 & 0 & 0\\
+-1 & -1 & 0 & 11 & \mathrm{i} \\
+- \mathrm{i} & \mathrm{i} & 0 & - \mathrm{i} & 9
+\end{pmatrix} ~.
+\end{equation}
+[78] \begin{equation}
+\boldsymbol{\mathbf{P}} = \begin{pmatrix}0 & 0 & 0 & 0 & 1\\
+0 & \mathrm{i} /\sqrt{2} & -1/\sqrt{6} & - \mathrm{i} /\sqrt{3} & 0\\
+1 & 0 & 0 & 0 & 0\\
+0 & 0 & \sqrt{2/3} & - \mathrm{i} /\sqrt{3} & 0\\
+0 & 1/\sqrt{2} & - \mathrm{i} /\sqrt{6} & 1/\sqrt{3} & 0
+\end{pmatrix} ~.\end{equation}
+[79] 接下来计算块对角矩阵，对角块的大小和简并重数相同，$ \boldsymbol{\mathbf{C}} _1, \boldsymbol{\mathbf{C}} _2, \boldsymbol{\mathbf{C}} _3$ 分别为 $1\times 1$，$2\times 2$，$2\times 2$。
+[80] \begin{equation}
+\boldsymbol{\mathbf{B}} _1 = \boldsymbol{\mathbf{P}} ^\dagger \boldsymbol{\mathbf{B}} \boldsymbol{\mathbf{P}} =
+\begin{pmatrix}
+12 & 0 & 0 & 0 & 0\\
+0 & 8 & 0 & 0 & 0\\
+0 & 0 & 12 & 0 & 0\\
+0 & 0 & 0 & 9 & - \mathrm{i} \sqrt{3}\\
+0 & 0 & 0 & \mathrm{i} \sqrt{3} & 11
+\end{pmatrix} ~.
+\end{equation}
+[81] 第一块没有简并，若看成 1 维矩阵，本征矢 “矩阵” 为 $ \boldsymbol{\mathbf{C}} _1 = (1)$，本征值为 $12$。
+[82] 第二块 $ \boldsymbol{\mathbf{C}} _2 =  \begin{pmatrix}8 & 0\\ 0 & 12\end{pmatrix}  $ 已经对角化了，本征矢矩阵为单位矩阵 $  \begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix}  $，本征值为 $8, 12$。
+[83] 第三块为 $ \boldsymbol{\mathbf{C}} _3 =  \begin{pmatrix}9 & - \mathrm{i} \sqrt{3}\\ \mathrm{i} \sqrt{3} & 11\end{pmatrix}  $ 本征矢矩阵为 $  \begin{pmatrix}- \mathrm{i} /2 & \sqrt{3}\, \mathrm{i} /2\\ \sqrt{3}/2 & 1/2\end{pmatrix}  $，本征值为 $12, 8$。
+[84] 把三个本征矢矩阵拼成块对角矩阵得
+[85] \begin{equation}
+\boldsymbol{\mathbf{Q}} = \begin{pmatrix}
+1 & 0 & 0 & 0 & 0\\
+0 & 1 & 0 & 0 & 0\\
+0 & 0 & 1 & 0 & 0\\
+0 & 0 & 0 & - \mathrm{i} /2 & \sqrt{3}\, \mathrm{i} /2\\
+0 & 0 & 0 & \sqrt{3}/2 & 1/2
+\end{pmatrix} ~.
+\end{equation}
+[86] 最后求得共同本征矢矩阵为
+[87] \begin{equation}
+\boldsymbol{\mathbf{R}} = \boldsymbol{\mathbf{P}} \boldsymbol{\mathbf{Q}} = \begin{pmatrix}
+0 & 0 & 0 & \sqrt{3}/2 & 1/2 \\
+0 & \mathrm{i} /\sqrt{2} & -1/\sqrt{6} & -1/(2\sqrt{3}) & 1/2\\
+1 & 0 & 0 & 0 & 0\\
+0 & 0 & \sqrt{2/3} & -1/(2\sqrt{3}) & 1/2\\
+0 & 1/\sqrt{2} & - \mathrm{i} /\sqrt 6 & - \mathrm{i} /(2\sqrt{3}) & \mathrm{i} /2
+\end{pmatrix} ~.\end{equation}
+
+[88] 我们把矩阵看成是线性变换，矩阵 $ \boldsymbol{\mathbf{A}} , \boldsymbol{\mathbf{B}} $ 看作算符 $A:X\to X$ 和 $B:X\to X$ 关于正交归一基底 $ \left\{x_i \right\} $ 的变换矩阵，
+[89] 即矩阵元为 $ \left\langle x_i \middle| A \middle| x_j \right\rangle $ 和 $ \left\langle x_i \middle| B \middle| x_j \right\rangle $。
+[90] $A$ 的一组正交归一本征矢记为 $ \left\{p_i \right\} $，$ \boldsymbol{\mathbf{P}} $ 的第 $j$ 列就是 $p_j$ 关于基底 $ \left\{x_i \right\} $ 的坐标，$ \left\langle x_i \middle| p_j \right\rangle $。
+[91] 以上我们已经证明了算符 $A, B$ 对易就必定具有共同本征矢。
+[92a] 但第 1 步计算 $A$ 的一组正交归一本征矢 $ \left\{p_i \right\} $ 时
+[92b] 若存在简并，则$ \left\{p_i \right\} $ 的选择有无穷多种。
+[93] 因为 $A$ 的每个本征值都对应一个本征子空间，当一个本征子空间是一维的时候（非简并），上文已经证明它同时是 $B$ 的本征矢，当一个本征空间是多维时（简并），这个子空间中的正交归一基底可以任意选取（子节 3 ）。
+[94] 也就是说每个子空间中的正交归一基底 $ \left\{p_i \right\} $ 进行任意幺正变换。
+[95] 于是问题的关键在于如何在每个子空间中选取正交归一基底或对随机选取的基底做幺正变换使得它们同样是 $B$ 的本征矢。
+[96] 由于 $B$ 在每个子空间中闭合，
+[97] 所以我们只需要在每个子空间中分别解出 $B$ 的正交归一本征矢 $v_i$ 就是共同本征矢。
+[98] 第 1 步中我们可以把 $ \left\{p_i \right\} $ 根据本征值划分为几组，例如 $p_1, p_2$ 本征值相同，是第一个子空间（二维）的正交归一基底；
+[99] $p_3, p_4, p_5$ 本征值相同，第二个子空间的（三维）的基底……
+[100] 第 2 步中 $ \boldsymbol{\mathbf{B}} _1$ 就是算符 $B$ 以 $ \left\{p_i \right\} $ 为基底的矩阵，相似变换 $ \boldsymbol{\mathbf{P}} ^\dagger \boldsymbol{\mathbf{B}} \boldsymbol{\mathbf{P}} $ 就是 $B$ 从 $ \left\{x_i \right\} $ 到 $ \left\{p_i \right\} $ 的基底变换矩阵元为 $ \left\langle p_i \middle| B \middle| p_j \right\rangle $。
+[101] 为什么它一定是块对角的呢？
+[102] 因为上文证明了 $B$ 在 $A$ 的每个本征子空间中是闭合的，
+[103] 即每个子空间中的任意矢量经过 $B$ 映射仍然落在同一个子空间中。
+[104] 例如如果第一个子空间的基底是 $p_1, p_2$，
+[105] 那么 $B p_1$ 和 $B p_2$ 就仍然可以表示为 $p_1, p_2$ 的线性组合，
+[106] 所以投影后句只有 $ \left\langle p_i \middle| B \middle| p_j \right\rangle $（$i,j=1,2$）不为零。
+[107] 每一个对角块 $ \boldsymbol{\mathbf{C}} _i$ 就是 $B$ 在该子空间中的矩阵，
+[108] 所以自然每个 $ \boldsymbol{\mathbf{C}} _i$ 的维数就等于对应子空间的维数。
+[109] 第 3 步中解出 $ \boldsymbol{\mathbf{C}} _i$ 的本征矢矩阵 $ \boldsymbol{\mathbf{D}} _i$ 后，把每列代表的本征矢就是 $A, B$ 的共同本征矢 $v_i$。
+[110] 但要注意 $ \boldsymbol{\mathbf{B}} _1$、$ \boldsymbol{\mathbf{C}} _i$ 和 $ \boldsymbol{\mathbf{D}} _i$ 使用的都是 $ \left\{p_i \right\} $ 基底而不是 $ \boldsymbol{\mathbf{A}} $ 和 $ \boldsymbol{\mathbf{B}} $ 所在的基底 $ \left\{x_i \right\} $，
+[111] 所以第 4 步需要做基底变换。
+[112] 把 $ \boldsymbol{\mathbf{D}} _i$ 排列成块对角矩阵 $ \boldsymbol{\mathbf{Q}} $，就相当于在整个空间中看待 $ \boldsymbol{\mathbf{D}} _i$ 中的列矢量 $v_i$ 而不是在每个子空间中，这并不改变 $v_i$。
+[113] 本征值和基底无关（链接到相似变换），
+[114] 所以 $ \boldsymbol{\mathbf{C}} _i$ 的本征值排列后就是 $B$ 的本征值。
+[115] 第 4 步就是要把 $ \boldsymbol{\mathbf{Q}} $ 从 $ \left\{p_i \right\} $ 基底切换为原来 $A, B$ 所在的基底 $ \left\{x_i \right\} $，幺正变换 $ \boldsymbol{\mathbf{P}} \boldsymbol{\mathbf{Q}} $ 就是把 $ \boldsymbol{\mathbf{Q}} $ 的每一列从 $ \left\{p_i \right\} $ 基底的坐标变为 $ \left\{x_i \right\} $ 基底的坐标。
+
+[/SCOPE:s_example1]
+[SCOPE:s_algebra|description|代数证明]
+[116] 【未完成】待审核调整
+[117] 我们将证明下面的事实：
+[118] 改用 $ \boldsymbol{\mathbf{P}} $ 中的基底后，算符 $A$ 变为对角矩阵 $ \boldsymbol{\mathbf{P}} \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{P}} ^{-1}$，算符 $B$ 变为块对角矩阵 $ \boldsymbol{\mathbf{B}} _1$。
+[119] $ \boldsymbol{\mathbf{B}} _1$ 中每个块的维数就是对应本征子空间的维数。
+[120] 使 $ \boldsymbol{\mathbf{A}} $ 对角化的 $ \boldsymbol{\mathbf{P}} $ 的选择不止一种，对本征值相同的所有列进行幺正变换同样能使 $ \boldsymbol{\mathbf{A}} $ 对角化，而 $ \boldsymbol{\mathbf{Q}} \boldsymbol{\mathbf{P}} $ 就是一个这样的变换。
+[121] 证明：
+[122] 在具体计算 1 中，求得酉矩阵 $ \boldsymbol{\mathbf{P}} $ 后，$ \boldsymbol{\mathbf{P}} $ 将 $ \boldsymbol{\mathbf{A}} $ 对角化。
+[123] 并且 $ \boldsymbol{\mathbf{B}} $ 经过同样的变换，两个新的矩阵也是可交换的。
+[124] 这是因为
+[125] \begin{equation}
+\boldsymbol{\mathbf{(P^{-1}AP)(P^{-1}BP)}} = \boldsymbol{\mathbf{P^{-1}APP^{-1}BP}} = \boldsymbol{\mathbf{P^{-1}BAP}} = \boldsymbol{\mathbf{(P^{-1}BP)(P^{-1}AP)}} ~,
+\end{equation}
+[126] 因此不妨假定 $ \boldsymbol{\mathbf{A}} $ 已经对角化了（此时 $ \boldsymbol{\mathbf{B}} $ 已由 $ \boldsymbol{\mathbf{P}} $ 变换为 $ \boldsymbol{\mathbf{B_1}} $），
+[127] 即元素 $a_{ij}$ 适合条件
+[128] \begin{equation}
+a_{ij}=0,\quad \mathrm{when} \quad i\neq j
+~
+\end{equation}
+[129] 以 $b_{ij}$ 表 $ \boldsymbol{\mathbf{B_1}} $ 的元素，这两个矩阵可交换的条件可写为
+[130] \begin{equation}
+a_{is}b_{sj}=b_{is}a_{sj}~,
+\end{equation}
+[131] 上式已经默认使用爱因斯坦求和标记。
+[132] 对任意 $i,j$ 利用
+[133] 式 17 [链接 L0]
+[134] ，这个条件变成
+[135] \begin{equation}
+(a_{ii}-a_{jj})b_{ij}=0
+~.
+\end{equation}
+[136] 如果所有的数 $a_{ii}$ 全不同，
+[137] 那么由上式直接推知，$b_{ij}=0$ 当 $i\neq=j$ 时。
+[138] 这就是说，矩阵 $ \boldsymbol{\mathbf{B_1}} $ 也是对角形式，我们的结论就证明了。
+[139] 现在来看一般情形，
+[140] 即数 $a_{ii}$ 中有相同的。
+[141] 为确定起见，我们假定这些数分为两组，每一组全一样：
+[142] \begin{equation}
+a_{11}=\cdots=a_{mm};\quad a_{m+1,m+1}=\cdots=a_{nn}~
+\end{equation}
+[143] 或可将 $ \boldsymbol{\mathbf{A}} $ 写成块对角矩阵形式
+[144] \begin{equation}
+\boldsymbol{\mathbf{A}} = \begin{pmatrix} \boldsymbol{\mathbf{A_1,A_2}} \end{pmatrix} ~.
+\end{equation}
+[145] \begin{equation}
+\boldsymbol{\mathbf{A_1}} =\mathrm{diag}(a_{11},\cdots,a_{mm})~,\quad
+\boldsymbol{\mathbf{A_2}} =\mathrm{diag}(a_{m+1,m+1},\cdots,a_{nn})~.
+\end{equation}
+[146] 由式 19 可以知道，元素 $b_{ij}$ 只有在 $i,j$ 同时大于 $m$ 或同时不大于 $m$ 的情形才可能不为零。
+[147] 因此，矩阵 $ \boldsymbol{\mathbf{B_1}} $ 是块对角矩阵：
+[148] \begin{equation}
+\boldsymbol{\mathbf{B_1}} = \begin{pmatrix} \boldsymbol{\mathbf{B'_1}} , \boldsymbol{\mathbf{B'_2}} \end{pmatrix} ~.
+\end{equation}
+[149] 其中，$ \boldsymbol{\mathbf{B_1}} $ 是一个 $m$ 阶的厄米矩阵，$ \boldsymbol{\mathbf{B_2}} $ 是 $(n-m)$ 阶的厄米矩阵。
+[150] 这便是具体计算里的第 2 步。
+[151] 在不改变 $ \boldsymbol{\mathbf{A}} $ 的对角形式之下，我们可以在由前 $m$ 个单位向量所生成的子空间中作任意一个酉变换，再由后 $n-m$ 个单位向量所生成的子空间也作一个酉变换。
+[152] 选酉变换 $ \boldsymbol{\mathbf{V_1,V_2}} $ 把 $ \boldsymbol{\mathbf{B_1,B_2}} $ 化为对角形式。
+[153] 总的来说，在整个 $n$ 维空间我们就有一个块对角形式的酉变换
+[154] \begin{equation}
+\boldsymbol{\mathbf{Q}} = \begin{pmatrix} \boldsymbol{\mathbf{V_1,V_2}} \end{pmatrix} ~
+\end{equation}
+[155] 这便是具体计算中的 3.
+[156] 根据上面所说，在新的坐标系下，矩阵 $ \boldsymbol{\mathbf{A}} $ 保持对角形式：
+[157] \begin{equation}
+\begin{aligned}
+\boldsymbol{\mathbf{Q^{-1}AQ}} &= \begin{pmatrix} \boldsymbol{\mathbf{V_1,V_2}} \end{pmatrix} ^{-1} \begin{pmatrix} \boldsymbol{\mathbf{A_1,A_2}} \end{pmatrix} \begin{pmatrix} \boldsymbol{\mathbf{V_1,V_2}} \end{pmatri…[truncated]…x} \boldsymbol{\mathbf{V_1^{-1}A_1V_1,V_2^{-1}A_2V_2}} \end{pmatrix} \\
+&= \begin{pmatrix} \boldsymbol{\mathbf{A_1V_1^{-1}V_1,A_2V_2^{-1}V_2}} \end{pmatrix} = \begin{pmatrix} \boldsymbol{\mathbf{A_1,A_2}} \end{pmatrix} ~.
+\end{aligned}
+\end{equation}
+[158] 而矩阵 $ \boldsymbol{\mathbf{B_1}} $ 变成了：
+[159] \begin{equation}
+\begin{aligned}
+\boldsymbol{\mathbf{Q^{-1}P^{-1}BPQ}} &= \boldsymbol{\mathbf{Q^{-1}B_1Q}} = \begin{pmatrix} \boldsymbol{\mathbf{V_1,V_2}} \end{pmatrix} ^{-1} \begin{pmatrix} \boldsymbol{\mathbf{B'_1,B'_2}} \end{pmatrix} \begin{pmatrix} \boldsymbol{\mathbf{V_1,V_2}} \end{pmatrix} \\
+&= \begin{pmatrix} \boldsymbol{\mathbf{V_1^{-1}B'_1V_1,V_2^{-1}B'_2V_2}} \end{pmatrix} \\
+\end{aligned}
+~
+\end{equation}
+[160] 这就是说，它也成为了对角形式。
+[161] 由上式可知，$ \boldsymbol{\mathbf{PQ}} $ 的每一列就是 $ \boldsymbol{\mathbf{A,B}} $ 的一个共同本征矢。
+[162] 这便是具体计算里的 4。
+[163] 这就证明了我们的命题。
+[/SCOPE:s_theorem1]
+[/SCOPE:s_algebra]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_proof_2to1",
+    "target_scope": "s_theorem1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明2→1是定理1的一部分"
+  },
+  {
+    "source_scope": "s_proof_1to2",
+    "target_scope": "s_theorem1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明1→2是定理1的一部分"
+  },
+  {
+    "source_scope": "s_nondeg",
+    "target_scope": "s_proof_1to2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "非简并是简并的特例"
+  },
+  {
+    "source_scope": "s_deg",
+    "target_scope": "s_proof_1to2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "简并情况完成证明"
+  },
+  {
+    "source_scope": "s_compute",
+    "target_scope": "s_theorem1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "具体计算是定理的应用"
+  },
+  {
+    "source_scope": "s_algebra",
+    "target_scope": "s_theorem1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "代数证明是定理的另一种证明"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_compute",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是计算步骤的实例"
+  }
+]

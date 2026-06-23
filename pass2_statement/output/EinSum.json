@@ -1,0 +1,458 @@
+{
+  "article_name": "EinSum",
+  "statements": [
+    {
+      "stmt_id": "st_intro_motivation",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_notation_index_rep",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_notation",
+      "exposed_entities": [
+        "a^1_2"
+      ]
+    },
+    {
+      "stmt_id": "st_notation_general_matrix",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_notation",
+      "exposed_entities": [
+        "a^i_j",
+        "a^i",
+        "a_i"
+      ]
+    },
+    {
+      "stmt_id": "st_notation_nested_matrices",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_notation",
+      "exposed_entities": [
+        "a^i_j",
+        "a^i_{\\phantom{1}j}",
+        "a^{\\phantom{1}i}_j"
+      ]
+    },
+    {
+      "stmt_id": "st_notation_equiv_order",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_notation",
+      "exposed_entities": [
+        "a^i_j",
+        "a^i_{\\phantom{1}j}",
+        "a^{\\phantom{1}i}_j",
+        "T_{ijk}"
+      ]
+    },
+    {
+      "stmt_id": "st_notation_nested_example",
+      "subtype": "remark",
+      "clause_range": [
+        16,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_notation",
+      "exposed_entities": [
+        "a^{ij}",
+        "m_{ij}",
+        "m^{i\\phantom{1}k}_{\\phantom{1}j}"
+      ]
+    },
+    {
+      "stmt_id": "st_mul_intro",
+      "subtype": "remark",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_mul",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mul_assump_A_B",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_mul",
+      "exposed_entities": [
+        "A^i_j",
+        "B^i_j",
+        "C^i_j"
+      ]
+    },
+    {
+      "stmt_id": "st_mul_def_C",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_mul",
+      "exposed_entities": [
+        "C^i_j",
+        "A^i_k",
+        "B^k_j"
+      ]
+    },
+    {
+      "stmt_id": "st_mul_assump_BA",
+      "subtype": "assumption",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_mul",
+      "exposed_entities": [
+        "D^i_j"
+      ]
+    },
+    {
+      "stmt_id": "st_mul_def_D",
+      "subtype": "definition",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_mul",
+      "exposed_entities": [
+        "D^i_j",
+        "B^i_k",
+        "A^k_j"
+      ]
+    },
+    {
+      "stmt_id": "st_mul_observation",
+      "subtype": "remark",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_mul",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_einstein_convention_def",
+      "subtype": "definition",
+      "clause_range": [
+        31,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_mul",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_dummy_index_def",
+      "subtype": "definition",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_mul",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_real_index_def",
+      "subtype": "definition",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_mul",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_dummy_rename",
+      "subtype": "remark",
+      "clause_range": [
+        39,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_mul",
+      "exposed_entities": [
+        "A^i_k",
+        "A^i_s"
+      ]
+    },
+    {
+      "stmt_id": "st_dummy_range",
+      "subtype": "remark",
+      "clause_range": [
+        41,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_mul",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_heading",
+      "subtype": "example",
+      "clause_range": [
+        43,
+        43
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_rep",
+      "subtype": "definition",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "A^i_j"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_mul",
+      "subtype": "definition",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "A^i_j",
+        "B^i_k",
+        "C^k_j"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_trace",
+      "subtype": "definition",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "A^i_i"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_heading",
+      "subtype": "example",
+      "clause_range": [
+        48,
+        48
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_euclidean",
+      "subtype": "remark",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "v^i",
+        "u^i"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_issue",
+      "subtype": "remark",
+      "clause_range": [
+        50,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_orthonormal",
+      "subtype": "assumption",
+      "clause_range": [
+        52,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_skew",
+      "subtype": "assumption",
+      "clause_range": [
+        53,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "g_{ij}"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_g_def",
+      "subtype": "definition",
+      "clause_range": [
+        55,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "g_{ij}"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_conclusion",
+      "subtype": "remark",
+      "clause_range": [
+        58,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_convention_vector",
+      "subtype": "definition",
+      "clause_range": [
+        60,
+        61
+      ],
+      "truth_value": null,
+      "scope_id": "s_convention",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_convention_minkowski",
+      "subtype": "definition",
+      "clause_range": [
+        62,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_convention",
+      "exposed_entities": [
+        "x^0",
+        "x^1",
+        "x^2",
+        "x^3",
+        "x^4"
+      ]
+    },
+    {
+      "stmt_id": "st_abstract_ref",
+      "subtype": "remark",
+      "clause_range": [
+        65,
+        66
+      ],
+      "truth_value": null,
+      "scope_id": "s_abstract",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_mul_assump_A_B",
+      "target": "st_mul_def_C",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_mul_assump_BA",
+      "target": "st_mul_def_D",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_rep",
+      "target": "st_ex1_mul",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_mul",
+      "target": "st_ex1_trace",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_orthonormal",
+      "target": "st_ex2_g_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_skew",
+      "target": "st_ex2_g_def",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex1_mul",
+      "target": "st_mul_def_C",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是矩阵乘法的具体例子"
+    },
+    {
+      "source": "st_ex2_g_def",
+      "target": "st_mul_def_C",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2是内积的例子，涉及求和约定"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,50 @@
+[SCOPE:root|description|比较定理]
+文章名: CompT
+标题: 比较定理
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=比较定理
+
+[SCOPE:s_theorem|description|比较定理]
+[0] 定理 1 比较定理
+[SCOPE:s_let_vars|let_bind|变量引入]
+[1] 若 $v_1,v_2$ 是实轴区间 $U$ 上定义的两实连续函数，且 $v_1< v_2$。
+[2] 又设 $\varphi_1,\varphi_2$ 分别是微分方程
+[3] \begin{equation}
+\frac{\mathrm{d}{\varphi_1}}{\mathrm{d}{t}} |_{t=\tau}=v_1(\varphi_1(\tau)), \quad \frac{\mathrm{d}{\varphi_2}}{\mathrm{d}{t}} |_{t=\tau}=v_2(\varphi_2(\tau))~.
+\end{equation}
+[4] \begin{equation}
+\left\{\begin{aligned}
+&\varphi_1(t)\geq\varphi_2(t),\quad t\leq t_0\\
+&\varphi_1(t)\leq\varphi_2(t),\quad t\geq t_0
+\end{aligned}\right.~
+\end{equation}
+[/SCOPE:s_let_vars]
+[SCOPE:s_reductio|reductio|反证法证明]
+[5] 证明:
+[6] 我们来证式 2 中的第一式，而第二式只需用同样的方法证明即可。
+[SCOPE:s_let_T|let_bind|定义T]
+[7] 设 $T$ 是对于 $\tau< t\leq t_0$ 中的一切 $t$ 使
+[8] \begin{equation}
+\varphi_1(t)\geq\varphi_2(t),\quad t\leq t_0~.
+\end{equation}
+[9] 成立的数 $\tau$ 的集合的下确界（
+[10] 上确界与下确界 [链接 L0]
+[11] ）。
+[/SCOPE:s_let_T]
+[12] 由假设知 $a\leq T\leq t_0$。
+[13] 由连续性知 $\varphi_1(T)=\varphi_2(T)$，且由条件
+[14] \begin{equation}
+\frac{\mathrm{d}{\varphi_1}}{\mathrm{d}{t}} |_{t=T}< \frac{\mathrm{d}{\varphi_2}}{\mathrm{d}{t}} |_{t=T}~,
+\end{equation}
+[15] 因此对充分接近 $T$ 的一切 $t< T$ 的点，有 $\varphi_1>\varphi_2$。
+[16] 故若 $a< T$，
+[17] 则 $T$ 不能是下确界。
+[18] 这一矛盾表明，$T=a$。
+[19] 证毕！
+
+跨文章引用:
+  [L0] 上确界与下确界 → SupInf
+[/SCOPE:s_theorem]
+[/SCOPE:s_reductio]
+[/SCOPE:root]

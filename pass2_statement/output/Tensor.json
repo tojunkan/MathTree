@@ -1,0 +1,431 @@
+{
+  "article_name": "Tensor",
+  "statements": [
+    {
+      "stmt_id": "st_intro_tensor_linear_map",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_examples",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_func_def",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_func",
+      "exposed_entities": [
+        "V",
+        "f",
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_func_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_func",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_func_basis",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_func_let",
+      "exposed_entities": [
+        "e_i",
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_func_mapping",
+      "subtype": "assumption",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_func_let",
+      "exposed_entities": [
+        "m_i"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_func_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_linear_func_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_func_dot_product",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_linear_func_let",
+      "exposed_entities": [
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_func_coord",
+      "subtype": "remark",
+      "clause_range": [
+        37,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_func_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_func_1_linear",
+      "subtype": "remark",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_func",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bilinear_func_def",
+      "subtype": "definition",
+      "clause_range": [
+        43,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_bilinear_func",
+      "exposed_entities": [
+        "V",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_bilinear_func_alt",
+      "subtype": "remark",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_bilinear_func",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bilinear_func_basis",
+      "subtype": "assumption",
+      "clause_range": [
+        48,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_bilinear_func_let",
+      "exposed_entities": [
+        "e_i",
+        "e'_i"
+      ]
+    },
+    {
+      "stmt_id": "st_bilinear_func_matrix",
+      "subtype": "conclusion",
+      "clause_range": [
+        52,
+        54
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_bilinear_func_let",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_bilinear_func_sym",
+      "subtype": "definition",
+      "clause_range": [
+        56,
+        56
+      ],
+      "truth_value": null,
+      "scope_id": "s_bilinear_func",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_power",
+      "subtype": "example",
+      "clause_range": [
+        62,
+        79
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "F",
+        "v",
+        "P"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_matrix",
+      "subtype": "example",
+      "clause_range": [
+        85,
+        92
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bilinear_func_vecmat",
+      "subtype": "remark",
+      "clause_range": [
+        93,
+        102
+      ],
+      "truth_value": null,
+      "scope_id": "s_bilinear_func_rep",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_tensor_order_2",
+      "subtype": "remark",
+      "clause_range": [
+        103,
+        110
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bilinear_func_interpret",
+      "subtype": "remark",
+      "clause_range": [
+        111,
+        119
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_inertia",
+      "subtype": "example",
+      "clause_range": [
+        120,
+        139
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": [
+        "omega",
+        "L",
+        "I"
+      ]
+    },
+    {
+      "stmt_id": "st_ex4_polarizability",
+      "subtype": "example",
+      "clause_range": [
+        140,
+        195
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex4",
+      "exposed_entities": [
+        "P",
+        "E",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_k_linear_func_def",
+      "subtype": "definition",
+      "clause_range": [
+        200,
+        203
+      ],
+      "truth_value": null,
+      "scope_id": "s_k_linear_func",
+      "exposed_entities": [
+        "V",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_k_linear_func_remark",
+      "subtype": "remark",
+      "clause_range": [
+        204,
+        204
+      ],
+      "truth_value": null,
+      "scope_id": "s_k_linear_func",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_tensor_def",
+      "subtype": "definition",
+      "clause_range": [
+        206,
+        207
+      ],
+      "truth_value": null,
+      "scope_id": "s_tensor_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_order_remarks",
+      "subtype": "remark",
+      "clause_range": [
+        208,
+        222
+      ],
+      "truth_value": null,
+      "scope_id": "s_order",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_summary_remarks",
+      "subtype": "remark",
+      "clause_range": [
+        223,
+        231
+      ],
+      "truth_value": null,
+      "scope_id": "s_summary",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_linear_func_basis",
+      "target": "st_linear_func_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_linear_func_mapping",
+      "target": "st_linear_func_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_linear_func_formula",
+      "target": "st_linear_func_dot_product",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_bilinear_func_basis",
+      "target": "st_bilinear_func_matrix",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_bilinear_func_def",
+      "target": "st_bilinear_func_sym",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_power",
+      "target": "st_bilinear_func_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_inertia",
+      "target": "st_bilinear_func_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex4_polarizability",
+      "target": "st_bilinear_func_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_bilinear_func_def",
+      "target": "st_linear_func_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "2-线性函数是线性函数的推广"
+    },
+    {
+      "source": "st_k_linear_func_def",
+      "target": "st_bilinear_func_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "k-线性函数是2-线性函数的推广"
+    },
+    {
+      "source": "st_tensor_def",
+      "target": "st_k_linear_func_def",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "张量定义为k-线性函数"
+    },
+    {
+      "source": "st_ex1_power",
+      "target": "st_bilinear_func_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "功率是2-线性函数的例子"
+    },
+    {
+      "source": "st_ex3_inertia",
+      "target": "st_bilinear_func_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "转动惯量是2-线性函数的例子"
+    },
+    {
+      "source": "st_ex4_polarizability",
+      "target": "st_bilinear_func_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "电极化率是2-线性函数的例子"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,129 @@
+[SCOPE:root|description|群的扩张]
+文章名: GrpExt
+标题: 群的扩张
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=definition heading=定义 1 title=群的扩张
+  [2] type=definition heading=定义 2 title=正合序列
+  [3] type=exercise heading=习题 1 title=群的扩张（另一定义）
+  [4] type=example heading=例 2 title=
+  [5] type=example heading=例 3 title=
+  [6] type=example heading=例 4 title=
+
+[SCOPE:s_ex1|description|例 1]
+[0] 考虑循环群 $\mathbb{Z}/4\mathbb{Z}$ 和 Klein 群 $K_4=\mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}$。
+[1] 二者都含 $4$ 个元素，都有正规子群 $\mathbb{Z}/2\mathbb{Z}$，
+[2] 但 $\mathbb{Z}/4\mathbb{Z}\neq \mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}$，
+[3] 故不能循环群 $\mathbb{Z}/4\mathbb{Z}$ 写成它的商群和正规子群的直积。
+[4] 如何正确表达求商群的逆运算呢？
+[5] 如果说求商群 $G/N$ 是把正规子群 $N$ 的每个左陪集都看成一个元素，抹去其运算细节，
+[6] 那么反过来，把 $G/N$ 中的每个元素都扩张为一个群，就能得到 $G$，我们称这个过程为群的扩张。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_def1|description|定义 1 群的扩张]
+[7] 定义 1 群的扩张
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[8] 给定群 $K$ 和 $N$，如果存在一个群 $G$ 和群同态 $f:G\to K$，使得 $ \operatorname {ker}f\cong N$，
+[9] 则称 $G$ 为群 $K$ 过群 $N$ 的扩张（extension）。
+[/SCOPE:s_def1_let]
+[10] 称 $N$ 为该扩张的扩张核，或简称为核。
+[11] 群的扩张还可以用一种更简洁的语言来表达。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义 2 正合序列]
+[12] 定义 2 正合序列
+[SCOPE:s_def2_let1|let_bind|正合序列的变量]
+[13] 给定群 $G_i$，如果存在同态 $f_i:G_i\to G_{i+1}$，使得 $ \operatorname {Im}f_i= \operatorname {ker}f_{i+1}$，
+[14] 则称如下的序列
+[15] \begin{equation}
+\cdots \xrightarrow{f_{i-2}} G_{i-1} \xrightarrow{f_{i-1}} G_i \xrightarrow{f_i} G_{i+1} \xrightarrow{f_{i+1}}\cdots~
+\end{equation}
+[16] 正合序列（exact sequence）
+[/SCOPE:s_def2_let1]
+[17] 不至于混淆时，也可以省略不写箭头上方的同态。
+[SCOPE:s_def2_let2|let_bind|短正合序列的变量]
+[18] 令 $1$ 表示平凡群，
+[19] 则称
+[20] \begin{equation}
+1\xrightarrow{}H\xrightarrow{\lambda}G\xrightarrow{\mu}K\xrightarrow{}1~
+\end{equation}
+[21] 短正合序列（short exact sequence）
+[22] 按照正合序列的定义，短正合序列中 $\lambda$ 必是单射，这意味着 $H$ 同构于 $G$ 的某个子群；
+[23] 同时根据群同态基本定理（习题 2 ），$K\cong G/H$，这意味着我们可以用短正合序列来定义群的扩张：
+
+[/SCOPE:s_def2]
+[/SCOPE:s_def2_let2]
+[SCOPE:s_exer1|description|习题 1 群的扩张（另一定义）]
+[24] 习题 1 群的扩张（另一定义）
+[25] 证明：“群 $G$ 是群 $K$ 过群 $H$ 的扩张” 当且仅当 “存在短正合序列 $1\xrightarrow{}H\xrightarrow{\lambda}G\xrightarrow{\mu}K\xrightarrow{}1$”。
+[26] 接下来，我们看一些群扩张的例子，加深体会。
+
+[/SCOPE:s_exer1]
+[SCOPE:s_ex2|description|例 2]
+[27] 例 1 中的两个群，分别可以写成以下扩张：
+[28] \begin{equation}
+\left\{
+\begin{aligned}
+&1\xrightarrow{}\mathbb{Z}/2\mathbb{Z}\xrightarrow{\lambda_1}K_4\xrightarrow{\mu_1}\mathbb{Z}/2\mathbb{Z}\xrightarrow{}1, \\
+&1\xrightarrow{}\mathbb{Z}/2\mathbb{Z}\xrightarrow{\lambda_2}K_4\xrightarrow{\mu_2}\mathbb{Z}/2\mathbb{Z}\xrightarrow{}1~.
+\end{aligned}
+\right.
+\end{equation}
+[29] 这个例子说明，同一个群过同一个群的扩张，方式不唯一。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|例 3]
+[SCOPE:s_ex3_let|let_bind|例 3 的变量]
+[30] 考虑满同态$\mu: \operatorname {S}_3\to\mathbb{Z}/2\mathbb{Z}$，其中奇置换都映射到 $1$，偶置换映射到 $0$。
+[31] 考虑 $ \operatorname {ker}\mu=\{(1), (1\ 2\ 3), (1\ 3\ 2)\}=\mathbb{Z}/3\mathbb{Z}$，易得短正合序列：
+[32] \begin{equation}
+1\xrightarrow{}\mathbb{Z}/3\mathbb{Z}\xrightarrow{\lambda} \operatorname {S}_3\xrightarrow{\mu}\mathbb{Z}/2\mathbb{Z}\xrightarrow{}1~.
+\end{equation}
+[/SCOPE:s_ex3_let]
+[33] 这个序列说明，结构简单的阿贝尔群也能扩张出结构复杂的非阿贝尔群。
+
+[/SCOPE:s_ex3]
+[SCOPE:s_ex4|description|例 4]
+[34] 从群扩张的角度，可以清晰地看出正交群和自旋群的结构差异：
+[35] \begin{equation}
+1\xrightarrow{} \operatorname {SO}_3\xrightarrow{} \operatorname {O}_n\xrightarrow{}\mathbb{Z}/2\mathbb{Z}\xrightarrow{}1~.
+\end{equation}
+[36] \begin{equation}
+1\xrightarrow{}\mathbb{Z}/2\mathbb{Z}\xrightarrow{} \operatorname {Spin}_n\xrightarrow{} \operatorname {SO}_3\xrightarrow{}1~.
+\end{equation}
+[37] 直观来说，正交群 $ \operatorname {O}_n$ 可以看成是给特殊正交群整体加了一个 “镜像”，自旋群 $ \operatorname {Spin}_n$ 则是给特殊正交群的每个元素加了一个 “镜像”。
+[/SCOPE:s_ex4]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_exer1",
+    "target_scope": "s_def1",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "习题1证明定义1与短正合序列定义等价"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_ex1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2是例1的具体化"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例3是短正合序列的例子"
+  },
+  {
+    "source_scope": "s_ex4",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例4是短正合序列的例子"
+  }
+]

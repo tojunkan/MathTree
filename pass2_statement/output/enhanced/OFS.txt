@@ -1,0 +1,340 @@
+[SCOPE:root|description|正交函数系 2]
+文章名: OFS
+标题: 正交函数系 2
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=example heading=例 2 title=
+  [2] type=example heading=例 3 title=傅里叶变换
+
+[SCOPE:s_def|description|正交函数系定义]
+[0] 12
+[SCOPE:s_def_let1|let_bind|定义中的变量]
+[1] 若函数系
+[2] \begin{equation}
+\left\{\varphi_n(x) \right\} \quad(n\in \mathbb{N})~
+\end{equation}
+[3] 中各函数及其平方在区间 $ \left[a,b \right] $ 上皆可积分，且满足
+[4] \begin{equation}
+\int_a^b\varphi_n(x)\varphi_m(x) \,\mathrm{d}{x} =
+\left\{
+\begin{aligned}
+&0\quad &(m\neq n)\\
+&\lambda_n>0\quad &(m=n)~,
+\end{aligned}
+\right.
+\end{equation}
+[5] 则称函数系 $ \left\{\varphi_n(x) \right\} $ 为
+[6] 正交函数系
+[7] 。
+[8] 当 $\lambda_n=1(n\in\mathbb{N})$ 时，该函数系称为
+[9] 正交规范系
+[10] 正交标准系
+[11] )。
+[12] 显然，任意的正交函数系都可化为正交规范系
+[13] \begin{equation}
+\left\{\frac{\varphi_n(x)}{\sqrt{\lambda_n}} \right\} \quad(n\in \mathbb{N})~.
+\end{equation}
+[/SCOPE:s_def_let1]
+[SCOPE:s_def_let2|let_bind|傅里叶系数变量]
+[14] 设 $f(x)$ 是任一实函数，在区间 $[a,b]$ 内是连续的，
+[15] 则数值
+[16] \begin{equation}
+c_k=\frac{1}{\lambda_k}\int_a^b f(x)\varphi_k(x) \,\mathrm{d}{x} \quad (k\in \mathbb{N})~
+\end{equation}
+[17] 称为函数 $f(x)$ 关于函数系
+[18] 式 1 [链接 L0]
+[19] 傅里叶系数
+[20] 。
+[21] 由 $c_k$ 的定义，我们有等式
+[22] \begin{equation}
+\int_a^b \left[f(x)-\sum_{k=1}^nc_k\varphi_k(x) \right] ^2 \,\mathrm{d}{x} =\int_a^b \left[f(x) \right] ^2 \,\mathrm{d}{x} -\sum_{k=1}^nc_k^2\lambda_k~.
+\end{equation}
+[23] 根据式 5 ，可得
+[24] \begin{equation}
+\sum_{k=1}^\infty c_k^2\lambda_k\leq\int_a^b \left[f(x) \right] ^2 \,\mathrm{d}{x} ~.
+\end{equation}
+[25] 对于正交规范系，$\lambda_k=1$，此时
+[26] 式 6 [链接 L1]
+[27] 便是所谓的
+[28] 贝塞尔（bessel）不等式
+[29] 若对任何在区间 $[a,b]$ 定义的连续函数 $f(x)$，式 6 中的等号成立，
+[30] 则称函数系 $ \left\{\varphi_n(x) \right\} $ 是完整的(或完备的)。
+
+[/SCOPE:s_def]
+[/SCOPE:s_def_let2]
+[SCOPE:s_example1|description|例1 三角函数系]
+[SCOPE:s_example1_let1|let_bind|三角函数系变量]
+[31] 在区间 $[-\pi,\pi]$ 上，三角函数系
+[32] \begin{equation}
+\left\{1,\cos nx,\sin nx \right\} \quad(n\in \mathbb{Z^{+}})~
+\end{equation}
+[33] 是正交函数系。
+[/SCOPE:s_example1_let1]
+[SCOPE:s_example1_proof|description|三角函数系正交证明]
+[34] 证明：
+[35] 由于
+[36] \begin{equation}
+\begin{aligned}
+\cos nx\cdot\cos mx&=\frac{1}{2} \left[ \cos\left(n+m\right) x+ \cos\left(n-m\right) x \right] ,\\
+\cos^2 nx&=\frac{1}{2}[ \cos\left(2nx\right) +1],\\
+\sin nx\cdot\sin mx&=\frac{1}{2} \left[ \cos\left(n-m\right) x- \c…[truncated]…x \right] ,\\
+\sin^2 nx&=\frac{1}{2}[1- \cos\left(2nx\right) ],\\
+\sin nx\cdot\cos mx&=\frac{1}{2} \left[ \sin\left(n+m\right) x+ \sin\left(n-m\right) x \right] ,\\
+\sin nx\cdot\cos nx&=\frac{1}{2} \sin\left(2nx\right) .
+\end{aligned}~
+\end{equation}
+[37] 所以当 $m\neq n$ 时，
+[38] \begin{equation}
+\begin{aligned}
+&\int_{-\pi}^\pi\cos nx \cdot \cos mx \,\mathrm{d}{x} \\
+&=\frac{1}{2} \left[\frac{ \sin\left(n+m\right) x}{n+m}+\frac{ \sin\left(n-m\right) x}{n-m} \right] {\huge |}_{-\pi}^{\pi}\\
+&=0,\\
+&\int_{-\pi}^\pi\sin nx \cdo…[truncated]…huge |}_{-\pi}^{\pi}\\
+&=0,\\
+&\int_{-\pi}^\pi\sin nx \cdot \cos mx \,\mathrm{d}{x} \\
+&=-\frac{1}{2} \left[\frac{ \cos\left(n+m\right) x}{n+m}+\frac{ \cos\left(n-m\right) x}{n-m} \right] {\huge |}_{-\pi}^{\pi}\\
+&=0.\\
+\end{aligned}
+~
+\end{equation}
+[39] 而 $m=n$ 时，
+[40] \begin{equation}
+\begin{aligned}
+&\int_{-\pi}^\pi\cos^2 nx \,\mathrm{d}{x} =\frac{1}{2} \left[\frac{ \sin\left(2nx\right) }{2n}+x \right] {\huge |}_{-\pi}^{\pi}=\pi,\\
+&\int_{-\pi}^\pi\sin^2 nx \,\mathrm{d}{x} =\frac{1}{2} \left[x-\frac{ \sin\left(2nx\right) }{2n} \right] {\huge |}_{-\pi}^{\pi}=\pi,\\
+&\int_{-\pi}^\pi\sin nx \cdot \cos nx \,\mathrm{d}{x} =-\frac{ \cos\left(2nx\right) }{4n}{\huge |}_{-\pi}^{\pi}=0.
+\end{aligned}
+~
+\end{equation}
+[41] 此外 $\int_{\pi}^{\pi} \,\mathrm{d}{x} =2\pi$。
+[42] 证毕！
+[/SCOPE:s_example1_proof]
+[SCOPE:s_example1_let2|let_bind|标准系变量]
+[43] 由式 3 和证明可看出，三角正交函数系 $\{1, \cos\left(nx\right) , \sin\left(nx\right) |n\in \mathbb Z^{+}\}$ 的标准系是
+[44] \begin{equation}
+\left\{\frac{1}{\sqrt{2\pi}},\frac{ \cos\left(nx\right) }{\sqrt{\pi}},\frac{ \sin\left(nx\right) }{\sqrt{\pi}}{\huge|}n\in \mathbb Z^{+} \right\} ~.
+\end{equation}
+[/SCOPE:s_example1_let2]
+[SCOPE:s_example1_let3|let_bind|超越方程正根构造的正交系变量]
+[45] 由超越方程
+[46] \begin{equation}
+\tan\xi=c\xi \quad(c\; \mathrm{is\; a\; constant})~
+\end{equation}
+[47] 的所有正根组成的集合 $ \left\{\xi_n\vert n\in\mathbb{Z}^+ \right\} $
+[48] 构造的函数系
+[49] \begin{equation}
+\sin\frac{\xi_1}{l}x,\ \sin\frac{\xi_2}{l}x,\ \cdots,\ \sin\frac{\xi_n}{l}x,\ \cdots~
+\end{equation}
+[50] 在区间 $ \left[0,l \right] $ 上是正交函数系。
+[/SCOPE:s_example1_let3]
+[SCOPE:s_example1_let4|let_bind|另一个超越方程正根构造的正交系变量]
+[51] 同样，以超越方程
+[52] \begin{equation}
+\cot\xi=c\xi \quad(c\; \mathrm{is\; a\; constant})~
+\end{equation}
+[53] 的所有正根组成的集合 $ \left\{\xi'_n\vert n\in\mathbb{Z}^+ \right\} $
+[54] 构造的函数系
+[55] \begin{equation}
+\cos\frac{\xi'_1}{l}x,\ \cos\frac{\xi'_2}{l}x,\ \cdots,\ \cos\frac{\xi'_n}{l}x,\ \cdots~
+\end{equation}
+[56] 在区间 $ \left[0,l \right] $ 上也是正交函数系。
+[/SCOPE:s_example1_let4]
+[57] 勒让德多项式
+[58] \begin{equation}
+X_0(x)=1,X_n(x)=\frac{1}{2^nn!} \frac{\mathrm{d}^{n}{ \left(x^2-1 \right) ^n}}{\mathrm{d}{x}^{n}} \qquad(n=1,2,\cdots)~
+\end{equation}
+[59] 是在区间 $ \left[-1,1 \right] $ 是正交函数系，且 $\lambda_n=\frac{2}{2n+1}$
+[60] 以贝塞尔函数 $J_0(x)$ 的所有正根构成的集合 $ \left\{\xi_n\vert n\in\mathbb{Z}^+ \right\} $
+[61] 构造的函数系 $ \left\{\sqrt{x}J_0(\xi_n x) \right\} $ 在区间 $ \left[0,1 \right] $ 上是正交函数系。
+
+[/SCOPE:s_example1]
+[SCOPE:s_orthogonalization|description|线性无关函数的正交化]
+[62] 在线性代数里面，通过斯密特正交化(子节 2 )手续，可由 $N$ 个线性无关的向量构造出同样多个两两正交且标准的向量，使原来的向量可由新向量线性表出。
+[63] 这一切对函数来说完全适用。
+[SCOPE:s_orthogonalization_let1|let_bind|线性无关函数变量]
+[64] $N$ 个在区间 $[a,b]$ 上定义的连续函数 $\psi_i(x)\quad (i=1,\cdots ,N)$ 称为在区间 $[a,b]$ 线性无关的，若含常系数 $a_i$ 的关系式
+[65] \begin{equation}
+\sum_i^N a_i\psi_i(x)=0~,
+\end{equation}
+[66] 仅当 $a_i=0$ 时成立。
+[/SCOPE:s_orthogonalization_let1]
+[SCOPE:s_orthogonalization_let2|let_bind|正交化过程变量]
+[67a] (x)}$ 线性表示的正交标准化的函数 ${\varphi_i
+[67b] (x)}$。
+[68] 记（显然，这里 $ \left\langle *,* \right\rangle $ 相当于矢量空间中的内积）
+[69] \begin{equation}
+\left\langle f,F \right\rangle =\int_a^b f(x)F(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[70a] (x)}$ 的正交化过程可按如下方式进行（为简洁起见，将函数 $f
+[70b] (x)$ 简记为 $f$）
+[71] \begin{equation}
+\begin{aligned}
+&&\varphi_1=\frac{\psi_1}{\sqrt{ \left\langle \psi_1,\psi_1 \right\rangle }}\\
+\chi_2&=\psi_2- \left\langle \varphi_1,\psi_2 \right\rangle \varphi_1,\quad&\varphi_2=\frac{\chi_2}{\sqrt{ \left\langle \chi_2,\chi_2 \rig…[truncated]…ngle \chi_3,\chi_3 \right\rangle }}\\
+&\vdots &\vdots
+\\
+\chi_N&=\psi_N-\sum_{i=1}^N \left\langle \varphi_i,\psi_N \right\rangle \varphi_i,\quad&\varphi_N=\frac{\chi_N}{\sqrt{ \left\langle \chi_N,\chi_N \right\rangle }}~.
+\end{aligned}
+\end{equation}
+[72] 在函数 $\chi_i$ 中，没有一个可变为恒等于 0，
+[73] 即 $ \left\langle \chi_i,\chi_i \right\rangle \neq 0$。
+[74] 因为比如说 $\chi_2=0$，
+[75] 则 $\varphi_1$ 与 $\psi_2$ 线性相关
+[76] \begin{equation}
+\psi_2- \left\langle \varphi_1,\psi_2 \right\rangle \varphi_1=0~.
+\end{equation}
+[77] 这归结为 $\psi_1$ 与 $\psi_2$ 之间线性相关，这与条件 $\psi_1$ 和 $\psi_2$ 的线性无关矛盾。
+
+[/SCOPE:s_orthogonalization]
+[/SCOPE:s_orthogonalization_let2]
+[SCOPE:s_complex_let|let_bind|复函数变量]
+[SCOPE:s_complex|description|推广到复函数情形]
+[78] 上面关于实函数的一切，可立即推广到实变量 $x$ 的复函数情形
+[79] \begin{equation}
+\varphi_n(x)=\rho_n(x)+ \mathrm{i} \sigma_n(x)\quad(n\in \mathbb{Z}^+)~.
+\end{equation}
+[80] 这时函数系的正交标准性由下式表达
+[81] \begin{equation}
+\left\langle \varphi_m,\varphi_n \right\rangle =\int_a^b\varphi_m^*\varphi_n \,\mathrm{d}{x} =\left\{
+\begin{aligned}
+&0 \quad (p\neq q)\\
+&1 \quad (p=q)~.
+\end{aligned}\right.
+\end{equation}
+[82a] (x)$ 关于函数 $f
+[82b] (x)$ 的傅里叶系数为
+[83] \begin{equation}
+c_n= \left\langle \varphi_n,f \right\rangle ~.
+\end{equation}
+[84] 我们处处以模平方代替原值平方，
+[85] 式 5 [链接 L2]
+[86] \begin{equation}
+\int_a^b \left\lvert f-\sum_{k=1}^nc_k\varphi_k \right\rvert ^2 \,\mathrm{d}{x} =\int_a^b \left\lvert f \right\rvert ^2 \,\mathrm{d}{x} -\sum_{k=1}^n \left\lvert c_k \right\rvert ^2~,
+\end{equation}
+[87] 而贝塞尔不等式将是
+[88] \begin{equation}
+\sum_{k=1}^\infty \left\lvert c_k \right\rvert ^2\leq\int_a^b \left\lvert f \right\rvert ^2 \,\mathrm{d}{x} ~.
+\end{equation}
+
+[/SCOPE:s_complex_let]
+[/SCOPE:s_complex]
+[SCOPE:s_example1_1|description|例1 复指数函数系]
+[SCOPE:s_example1_1_let|let_bind|复指数函数系变量]
+[89] $\{e^{ \mathrm{i} nx}|n\in\mathbb Z\}$ 是 $[-\pi,\pi]$ 上的正交函数系。
+[/SCOPE:s_example1_1_let]
+[SCOPE:s_example1_1_proof|description|复指数函数系正交证明]
+[90] 证明：
+[91] \begin{equation}
+\begin{aligned}
+\int_{-\pi}^\pi e^{ \mathrm{i} nx}e^{- \mathrm{i} mx} \,\mathrm{d}{x} &=\int_{-\pi}^\pi e^{ \mathrm{i} (n-m)x} \,\mathrm{d}{x} \\&=- \mathrm{i} \frac{e^{ \mathrm{i} (n-m)x}}{n-m}{\huge|}_{-\pi}^{\pi}\\
+&=0,\quad n\neq m,\\
+\int_{-\pi}^\pi e^{ \mathrm{i} nx}e^{- \mathrm{i} nx} \,\mathrm{d}{x} &=\int_{-\pi}^\pi \,\mathrm{d}{x} =2\pi.
+\end{aligned}~
+\end{equation}
+[92] 由证明还可看出，$ \left\{\frac{e^{ \mathrm{i} nx}}{\sqrt{2\pi}}{\huge|}n\in\mathbb Z \right\} $ 是它的正交标准系。
+
+[/SCOPE:s_example1_1]
+[/SCOPE:s_example1_1_proof]
+[SCOPE:s_example2|description|例2 周期推广]
+[SCOPE:s_example2_let1|let_bind|周期推广变量]
+[93] 例 1 的函数系是在 $[-\pi,\pi]$ 上的，它刚好是该函数系的函数 $e^{ \mathrm{i} x}$ 的最小周期。
+[94] 然而更常见的周期往往不被限定为 $2\pi$，为此，我们希望能将它推广到周期为 $2L$ 的情形，
+[95] 从而积分区间为 $[-L,L]$。
+[96] 若将函数的定义区间 $[-L,L]$ 变到区间 $[-\pi,\pi]$，
+[97] 那么就可以继续使用前面的函数系。
+[98] 设 $f(x)$ 是定义在区间 $[-L,L]$ 上的周期为 $2L$ 的函数，
+[99] 那么 $F(x)=f(\frac{L}{\pi}x)$ 是定义在区间 $[-\pi,\pi]$ 上的周期函数。
+[100] 因此可对 $F(x)$ 使用函数系 $\{e^{ \mathrm{i} nx}|n\in\mathbb Z\}$ 展开。
+[101] 若得到了 $F(x)$ 的展开式，
+[102a] (x)$ 就可以利用 $f
+[102b] (x)=F(\frac{\pi}{L}x)$ 确定。设
+[103] \begin{equation}
+F(x)=\sum_{n=-\infty}^\infty c_ne^{ \mathrm{i} n x},~
+\end{equation}
+[104] \begin{equation}
+f(x)=\sum_{n=-\infty}^\infty c_ne^{ \mathrm{i} n\frac{\pi}{L} x}.~
+\end{equation}
+[/SCOPE:s_example2_let1]
+[SCOPE:s_example2_let2|let_bind|标准正交系变量]
+[105] \begin{equation}
+\begin{aligned}
+\int_{-L}^L e^{ \mathrm{i} n\frac{\pi}{L}x}e^{- \mathrm{i} m\frac{\pi}{L}x} \,\mathrm{d}{x} &=\int_{-L}^L e^{ \mathrm{i} (n-m)\frac{\pi}{L}x} \,\mathrm{d}{x} \\
+&=- \mathrm{i} \frac{Le^{ \mathrm{i} (n-m)\frac{\pi}{L}x}}{(n-m)\pi}{\huge|}_{-L}^{L}\\
+&=0,\quad n\neq m,\\
+\int_{-L}^L e^{ \mathrm{i} n\frac{\pi}{L}x}e^{- \mathrm{i} n\frac{\pi}{L}x} \,\mathrm{d}{x} &=\int_{-L}^L \,\mathrm{d}{x} =2L.
+\end{aligned}~
+\end{equation}
+[106] 同样的，这表明 $\{\frac{1}{\sqrt{2L}}e^{ \mathrm{i} n\frac{\pi}{L} x}|n\in\mathbb Z\}$ 是 $[-L,L]$ 上的标准正交函数系。
+
+[/SCOPE:s_example2]
+[/SCOPE:s_example2_let2]
+[SCOPE:s_example3_let|let_bind|傅里叶变换变量]
+[SCOPE:s_example3|description|例3 傅里叶变换]
+[107] 例 3 傅里叶变换
+[108] 我们考察例 2 中 $L\rightarrow\infty$ 的展开式式 28 的形式。
+[109] 注意到
+[110] \[
+[111] \sum_{n=-\infty}^\infty c_ne^{ \mathrm{i} n\frac{\pi}{L} x}~
+[112] \]
+[113] 中若令 $z_n=n\frac{\pi}{L}$，
+[114] 那么 $\Delta z_n:=z_{n+1}-z_n=\frac{\pi}{L}$。
+[115] 并注意 $c_n=\frac{1}{2L} \left\langle \varphi_n,f \right\rangle $，其中 $\varphi_n(x):=e^{ \mathrm{i} z_n x}$。
+[116] 因此式 28 可写为
+[117] \begin{equation}
+\begin{aligned}
+f(x)&=\sum_{n=-\infty}^\infty \frac{Lc_n}{\pi}e^{ \mathrm{i} z_n x}\Delta z_n\\
+&=\sum_{n=-\infty}^\infty \frac{1}{2\pi} \left\langle \varphi_n,f \right\rangle e^{ \mathrm{i} z_n x}\Delta z_n.
+\end{aligned}~
+\end{equation}
+[118] \begin{equation}
+\int_{-\infty}^\infty F_x(z) \,\mathrm{d}{z} ~
+\end{equation}
+[119] 式 30
+[120] 式 31
+[121] \begin{equation}
+\begin{aligned}
+f(x)&=\int_{-\infty}^\infty F_x(z) \,\mathrm{d}{z} \\
+&=\int_{-\infty}^\infty\frac{1}{2\pi} \left\langle \varphi_z,f \right\rangle e^{ \mathrm{i} z x} \,\mathrm{d}{z} \\
+&=\frac{1}{2\pi}\int_{-\infty}^\infty\mathcal F(z)e^{ \mathrm{i} z x} \,\mathrm{d}{z} \\
+\end{aligned}~
+\end{equation}
+[122] \begin{equation}
+\mathcal F(z):= \left\langle \varphi_z,f \right\rangle =\int_{-\infty}^\infty f(x)e^{- \mathrm{i} zx} \,\mathrm{d}{x} .~
+\end{equation}
+[123] 式 32
+[/SCOPE:s_example3_let]
+[/SCOPE:s_example3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "三角函数系是正交函数系的一个例子"
+  },
+  {
+    "source_scope": "s_example1_1",
+    "target_scope": "s_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "复指数函数系是正交函数系的一个例子"
+  },
+  {
+    "source_scope": "s_example2",
+    "target_scope": "s_example1_1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "周期推广到2L，是例1的推广"
+  },
+  {
+    "source_scope": "s_example3",
+    "target_scope": "s_example2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "傅里叶变换是周期趋于无穷时的极限情况"
+  }
+]

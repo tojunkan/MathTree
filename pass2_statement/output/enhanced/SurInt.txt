@@ -1,0 +1,79 @@
+[SCOPE:root|description|曲面积分、通量]
+文章名: SurInt
+标题: 曲面积分、通量
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=匀速水流场的流量
+  [1] type=example heading=例 2 title=
+
+[SCOPE:s_ex1|description|例1 匀速水流场的流量]
+[0] 例 1 匀速水流场的流量
+[1] 图 1：匀速水流场的流量
+[SCOPE:s_ex1_let1|let_bind|常矢量场与平面]
+[2] 水流中各点的速度可以看做一个矢量场 $ \boldsymbol{\mathbf{v}} ( \boldsymbol{\mathbf{r}} )$，假设 $ \boldsymbol{\mathbf{v}} ( \boldsymbol{\mathbf{r}} ) = \boldsymbol{\mathbf{v}} _0$ 是一个常矢量。
+[3] 在矢量场中取一个平面，平面的法向量与 $ \boldsymbol{\mathbf{v}} _0$ 的夹角为 $\theta$，在平面上选一个面积为 $S$ 的区域，求单位时间通过该区域的水流的体积。
+[4] 先来考虑 $\theta = 0$ 的情况，在 $\Delta t$ 时间内，流过区域的水是一个柱体，其底面积为 $S$，高为 $v_0\Delta t$，
+[5] 所以体积为 $v_0 S\Delta t$，
+[6] 所以单位时间的体积等于流速乘以面积 $v_0 S$。
+[7] 我们再来考虑 $\theta \ne 0$ 的情况，$\Delta t$ 时间内流过区域的水是一个斜柱体，由图 1 可知其体积等于横截面积 $S\cos\theta$ 乘以斜边长度 $v_0\Delta t$ 即 $V = v_0 S\cos\theta\Delta t$，
+[8] 所以单位时间流过的体积为 $v_0 S\cos\theta$。
+[9] 可见随着 $\theta$ 增大，流量变小，直到 $\theta = \pi/2$ 时流量为 $0$。
+[/SCOPE:s_ex1_let1]
+[SCOPE:s_ex1_let2|let_bind|一般矢量场与曲面]
+[10] 现在试想速度场 $ \boldsymbol{\mathbf{v}} ( \boldsymbol{\mathbf{r}} )$ 不是常矢量，且有限的平面改为有限的曲面，要计算单位时间流过曲面的体积，我们可以先将曲面划分成无穷多个小曲面，每个曲面上的流速看做常矢量，再按照上述的办法计算并求和即可。
+[11] 现在我们来定义一个矢量场在一个曲面上的曲面积分1（或通量）。
+[12] 假设矢量场与曲面都处处光滑，令矢量场为 $ \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} )$，给曲面定义一个正方向，并将曲面划分为许多面积为 $\Delta S_i$ 的小面元，令其法向量为 $ \hat{\boldsymbol{\mathbf{n}}} _i$（与曲面正方向同侧），
+[13] 则一块面元可以表示为 $\Delta \boldsymbol{\mathbf{S}} _i = \Delta S_i \hat{\boldsymbol{\mathbf{n}}} _i$。
+[14] 当面元很小时可以假设其内部的矢量场为常矢量 $ \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} _i)$，
+[15] 则面积分被定义为
+[16] \begin{equation}
+\int \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} ) \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{S}} } = \lim_{\Delta S_i\to 0} \sum_i \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} _i) \boldsymbol\cdot \Delta \boldsymbol{\mathbf{S}} _i~.
+\end{equation}
+
+[/SCOPE:s_ex1]
+[/SCOPE:s_ex1_let2]
+[SCOPE:s_rect|description|直角坐标系中的曲面积分]
+[17] 直角坐标系中的曲面可以表示为 $f(x,y,z) = 0$ 其法向量 $ \hat{\boldsymbol{\mathbf{n}}} (x,y,z)$ 等于 $\pm \boldsymbol\nabla f(x,y,z)$ 归一化。
+[18] 令矢量场为 $ \boldsymbol{\mathbf{F}} (x,y,z)$，应如何具体计算曲面积分呢？
+[SCOPE:s_rect_let|let_bind|曲面z=g(x,y)与面元]
+[19] 以下我们来讨论曲面可以表示为 $z = g(x,y)$ 的情况2。
+[20] 将曲面沿 $x,y$ 方向划分成许多面元，使每个面元在 $x,y$ 平面上的投影都是一个小长方形，面积为 $\Delta x_i, \Delta y_j$，面元上任意一点的坐标为 $[x_i, y_j, g(x_i,y_j)]$。
+[21] 面元面积与投影面积的关系为 $\Delta S_{ij} \cos\theta = \Delta x_i \Delta y_j$，其中 $\theta$ 是面元的法向量与 $z$ 轴的夹角，
+[22] 所以 $\cos\theta = \hat{\boldsymbol{\mathbf{n}}} \hat{\boldsymbol{\mathbf{z}}} = n_z$。
+[23] 所以，矢量场在每个面元上的通量为
+[24] \begin{equation}
+\boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} _{ij}) \boldsymbol\cdot \Delta \boldsymbol{\mathbf{S}} _{ij} = \left(\frac{n_x}{n_z}F_x + \frac{n_y}{n_z}F_y + F_z \right) \Delta x_i \Delta y_j~,
+\end{equation}
+[25] 其中 $ \hat{\boldsymbol{\mathbf{n}}} , \boldsymbol{\mathbf{F}} $ 的个分量在 $[x_i, y_j, g(x_i,y_j)]$ 处取值。
+[26] 由式 1 的定义，曲面积分为
+[27] \begin{equation}
+\begin{aligned}
+\int \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} ) \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{S}} } &= \lim_{\substack{\Delta x_i\to 0\\ \Delta y_i\to 0}} \sum_{ij} \boldsymbol{\mathbf{F}} ( \boldsymbol{…[truncated]…boldsymbol\cdot \Delta \boldsymbol{\mathbf{S}} _{ij}\\
+& = \iint \frac{n_x}{n_z}F_x \,\mathrm{d}{x} \,\mathrm{d}{y} + \iint \frac{n_y}{n_z}F_y \,\mathrm{d}{x} \,\mathrm{d}{y} + \iint F_z \,\mathrm{d}{x} \,\mathrm{d}{y} ~.
+\end{aligned} \end{equation}
+[28] 这样，我们就把曲面积分转换成了三个二重积分。
+[29] 这三个二重积分分别等于矢量场的三个分量对曲面通量的贡献。
+[30] 特殊地，若曲面方程可以记为 $z = g_1(x,y), x = g_2(y,z), y = g_3(x,z)$ 中的任意一种形式，我们也可以将曲面积分记为
+[31] \begin{equation}
+\int \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} ) \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{S}} } = \iint F_x \,\mathrm{d}{y} \,\mathrm{d}{z} + \iint F_y \,\mathrm{d}{x} \,\mathrm{d}{z} + \iint F_z \,\mathrm{d}{x} \,\mathrm{d}{y} ~.
+\end{equation}
+
+[/SCOPE:s_rect]
+[/SCOPE:s_rect_let]
+[SCOPE:s_ex2_let|let_bind|例2的变量]
+[SCOPE:s_ex2|description|例2]
+[32] 求场 $ \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} ) = \boldsymbol{\mathbf{r}} $ 在曲面（正方向向上）$z = x^2 + y^2 \quad (x, y\in [-1,1])$ 上的通量。
+[33] 我们先求曲面的法向量，令 $f(x,y,z) = x^2 + y^2 - z$，
+[34] 则法向量的方向为 $ \boldsymbol\nabla f = (2x, 2y, -1)$ 由于曲面的正方向向上，我们将 $ \boldsymbol\nabla f$ 取相反数然后归一化得到法向量
+[35] \begin{equation}
+\hat{\boldsymbol{\mathbf{n}}} = \frac{-2x}{\sqrt{4x^2 + 4y^2 + 1}} \hat{\boldsymbol{\mathbf{x}}} + \frac{-2y}{\sqrt{4x^2 + 4y^2 + 1}} \hat{\boldsymbol{\mathbf{y}}} + \frac{1}{\sqrt{4x^2 + 4y^2 + 1}} \hat{\boldsymbol{\mathbf{z}}} ~.
+\end{equation}
+[36] \begin{equation}
+\begin{aligned}
+\int \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} ) \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{S}} } &=
+-\iint 2x^2 \,\mathrm{d}{x} \,\mathrm{d}{y} - \iint 2y^2 \,\mathrm{d}{x} \,\mathrm{d}{y} + \iint (x^…[truncated]…2) \,\mathrm{d}{x} \,\mathrm{d}{y} \\
+&= - \left. \frac43 x^3 \right\rvert _{-1}^1 - \left. \frac43 y^3 \right\rvert _{-1}^1 + \left. \frac23 x^3 \right\rvert _{-1}^1 + \left. \frac23 y^3 \right\rvert _{-1}^1 = -\frac83~.
+\end{aligned} \end{equation}
+[/SCOPE:s_ex2_let]
+[/SCOPE:s_ex2]
+[/SCOPE:root]

@@ -1,0 +1,55 @@
+[SCOPE:root|description|一维齐次亥姆霍兹方程]
+文章名: HmhzEq
+标题: 一维齐次亥姆霍兹方程
+
+[0] 本文需要更多参考文献。
+[SCOPE:s_eq|description|方程形式]
+[1] 一维齐次亥姆霍兹方程可以记为
+[2] \begin{equation}
+\frac{\mathrm{d}^{2}{y}}{\mathrm{d}{t}^{2}} + \omega^2 y = 0~,
+\end{equation}
+[SCOPE:s_eq_let|let_bind|omega为实数]
+[3] 这里 $\omega$ 为实数。
+
+[/SCOPE:s_eq]
+[/SCOPE:s_eq_let]
+[SCOPE:s_solution|description|通解]
+[SCOPE:s_solution_let1|let_bind|假设指数解]
+[4] 这个方程属于二阶常系数线性齐次方程，可以假设 $ \mathrm{e} ^{rt}$ 为方程的解，代入原方程得特征方程
+[5] \begin{equation}
+r^2 + \omega^2 = 0~.
+\end{equation}
+[/SCOPE:s_solution_let1]
+[6] 解得 $r = \pm \mathrm{i} \omega$，
+[7] 即方程在复数域的通解为
+[8] \begin{equation}
+y = C_1 \mathrm{e} ^{ \mathrm{i} \omega t} + C_2 \mathrm{e} ^{- \mathrm{i} \omega t}~,
+\end{equation}
+[SCOPE:s_solution_let2|let_bind|复常数C1,C2]
+[9] 其中 $C_1, C_2$ 是复常数。
+[/SCOPE:s_solution_let2]
+[SCOPE:s_solution_let3|let_bind|实部虚部常数]
+[10] 如果选择恰当的 $C_1$ 和 $C_2$，可以使通解变为实数函数。令
+[11] \begin{equation}
+C_1 = C_{1R} + \mathrm{i} C_{1I}~, \qquad
+C_2 = C_{2R} + \mathrm{i} C_{2I}~.
+\end{equation}
+[/SCOPE:s_solution_let3]
+[12] 把 $y(t)$ 分解为实部和虚部，令虚部为零，可得所有可能的实数解
+[13] \begin{equation}
+\begin{aligned}
+y(t) &= [(C_{1R} + C_{2R}) \cos\omega t + (C_{2I} - C_{1I}) \sin\omega t] \\
+& + \mathrm{i} [(C_{1R} - C_{2R}) \sin \omega t + (C_{1I} + C_{2I}) \cos \omega t]~.
+\end{aligned}
+\end{equation}
+[14] 令虚部为 $0$，
+[15] 则 $C_{1R} = C_{2R}$，$C_{1I} = -C_{2I}$。
+[16] \begin{equation}
+y = 2C_{1R}\cos\omega t + 2C_{2I}\sin\omega t~,
+\end{equation}
+[17] 所以最一般的实数通解具有 $A\cos\omega t + B\sin\omega t$ 的形式，对比系数
+[18] \begin{equation}
+A = 2C_{1R} = 2C_{2R}~,\quad B = 2C_{2I} = -2C_{1I}~.
+\end{equation}
+[/SCOPE:s_solution]
+[/SCOPE:root]

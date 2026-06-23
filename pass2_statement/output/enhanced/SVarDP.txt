@@ -1,0 +1,54 @@
+[SCOPE:root|description|分离变量法与张量积空间]
+文章名: SVarDP
+标题: 分离变量法与张量积空间
+
+[0] 贡献者： 待更新
+[1] 预备知识 拉普拉斯方程
+[SCOPE:s_main|description|分离变量法解释]
+[2] 我们可以从张量积空间和本征问题的角度来理解分离变量法。
+[3] 第一我们假设考虑的方程是线性的。
+[4] 即解可以表示为齐次解的线性组合加一个非齐次解。
+[5] 以球坐标的拉普拉斯方程为例，这是一个齐次方程
+[6] \begin{equation}
+\boldsymbol{\nabla}^2 u = \frac{1}{r^2} \frac{\partial}{\partial{r}} \left(r^2 \frac{\partial u}{\partial r} \right) + \frac{1}{r^2 \sin\theta} \frac{\partial}{\partial{\theta}} \left(\sin \theta \frac{\partial u}{\partial \theta} \right) + \frac{1}{r^2 \sin^2 \theta} \frac{\partial^{2}{u}}{\partial{\phi}^{2}} = 0~.
+\end{equation}
+[SCOPE:s_let_u|let_bind|设 u 为张量积形式]
+[7] 我们可以将 $u$ 所在的三维函数空间看做是三个变量各自的函数空间的张量积空间，张量积空间中的基底为三个单变量函数空间中的基底的张量积
+[8] \begin{equation}
+u(r, \theta, \phi) = f(r) g(\theta) h(\phi)~.
+\end{equation}
+[/SCOPE:s_let_u]
+[9] 要分离变量，可以从最简单的变量开始，分离出该变量的算符，然后求该算符的本征方程的一组本征函数（本征矢），作为该变量的函数空间的基底。
+[10] 这样，该算符就可以被替换为常数。
+[11] 替换后，尝试分离下一个变量的算符，以此类推。
+[SCOPE:s_let_phi|let_bind|分离 phi 变量]
+[12] 拉普拉斯方程中，首先最容易分离的是关于 $\phi$ 的算符
+[13] \begin{equation}
+\frac{\partial^{2}}{\partial{\phi}^{2}} ~,
+\end{equation}
+[14] 令该算符的本征函数 $h_m(\phi)$ 为 $\phi$ 函数空间的基底，令本征值为常数 $-m^2$
+[15] \begin{equation}
+\frac{\partial^{2}{h}}{\partial{\phi}^{2}} = -m^2 h~.
+\end{equation}
+[/SCOPE:s_let_phi]
+[SCOPE:s_let_theta|let_bind|分离 theta 变量]
+[16] 将算符替换为本征值，然后容易发现后两项中都有公共的 $1/r^2$ 因子，提取出来就可以分离出只含有 $\theta$ 的算符
+[17] \begin{equation}
+\frac{1}{\sin\theta} \frac{\partial}{\partial{\theta}} \left(\sin \theta \frac{\partial}{\partial{\theta}} \right) - \frac{m^2}{\sin^2 \theta}~,
+\end{equation}
+[18] 令该算符的本征函数 $g_l(\theta)$ 为 $\theta$ 函数空间的基底，令本征值为常数 $-l(l+1)$。
+[/SCOPE:s_let_theta]
+[SCOPE:s_let_r|let_bind|分离 r 变量]
+[19] 最后，我们剩下仅关于 $r$ 的方程，同样可以表示为本征方程
+[20] \begin{equation}
+\frac{\partial}{\partial{r}} \left(r^2 \frac{\partial f}{\partial r} \right) = l(l+1) f~,
+\end{equation}
+[21] 令 $f_l(r)$ 为 $r$ 函数空间的基底。
+[/SCOPE:s_let_r]
+[22] 根据施图姆—刘维尔定理，三组本征基底都是正交且完备的，
+[23] 所以张量积空间中的基底也是正交完备的
+[24] \begin{equation}
+u_{l,m}(r, \theta, \phi) = f_l(r) g_l(\theta) h_m(\phi)~.
+\end{equation}
+[/SCOPE:s_main]
+[/SCOPE:root]

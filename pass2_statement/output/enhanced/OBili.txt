@@ -1,0 +1,176 @@
+[SCOPE:root|description|斜对称双线性型的规范型]
+文章名: OBili
+标题: 斜对称双线性型的规范型
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=辛平面
+  [1] type=theorem heading=定理 1 title=
+  [2] type=corollary heading=推论 1 title=
+
+[SCOPE:s_intro|description|引言与核的讨论]
+[0] 在二次型一节中，已经知道每一对称双线性型 $f$ 对应一个二次型 $q$，并且每一对称双线性型 $f$ 都有一规范基底，在此基底下，二次型 $q$ 呈现一种简单的形式
+[1] \begin{equation}
+q( \boldsymbol{\mathbf{x}} )=\sum_{i}f_{ii}x_i^2~,
+\end{equation}
+[2] 现在我们转向斜对称的双线性型
+[3] 定义 2 [链接 L0]
+[4] ，也就是满足
+[5] \begin{equation}
+f( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} )=-f( \boldsymbol{\mathbf{y}} , \boldsymbol{\mathbf{x}} )\quad (\forall \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} \in V)~
+\end{equation}
+[6] 的 2-线性函数。
+[SCOPE:s_intro_let1|let_bind|引入斜对称双线性型 f 及其矩阵]
+[7] 对于斜对称双线性型 $f$，设其对应矩阵为 $F=(f_{ij})$，
+[8] 那么
+[9] \begin{equation}
+f( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} )=X^{T}FY=\sum_{1\leq i< j\leq n}f_{ij}(x_iy_j-x_jy_i)~.
+\end{equation}
+[/SCOPE:s_intro_let1]
+[SCOPE:s_intro_let2|let_bind|引入核 V0 和补空间 V1]
+[10a] 若 $V_0$ 是斜对称双线性型 $f$ 的核，也
+[10b] 则是子空间
+[11] \begin{equation}
+V_0=\mathrm{Ker} f=\{ \boldsymbol{\mathbf{v}} \in V|f( \boldsymbol{\mathbf{v}} , \boldsymbol{\mathbf{x}} )=0,\forall \boldsymbol{\mathbf{x}} \in V\}~.
+\end{equation}
+[12] 那么 $f$ 在 $V_0$ 的补空间（
+[13] 定义 1 [链接 L1]
+[14] ）$V_1$ 上的限制 $f|_{V_1}$ 必为非退化的斜对称型。
+[/SCOPE:s_intro_let2]
+[15] 这是因为，如果 $ \boldsymbol{\mathbf{a}} \neq0\in V_1$ 且 $f( \boldsymbol{\mathbf{a}} , \boldsymbol{\mathbf{x}} _1)=0$ 对所有的 $ \boldsymbol{\mathbf{x}} _1\in V$ 都成立（这句话意味着 $f$ 是退化的，因为它将非零向量 $ \boldsymbol{\mathbf{a}} $ 映射到零向量），
+[16] 那么任意向量 $ \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{x}} _0+ \boldsymbol{\mathbf{x}} _1\in V \;( \boldsymbol{\mathbf{x}} _0\in V_0)$，有
+[17] \begin{equation}
+f( \boldsymbol{\mathbf{a}} , \boldsymbol{\mathbf{x}} )=f( \boldsymbol{\mathbf{a}} , \boldsymbol{\mathbf{x}} _0+ \boldsymbol{\mathbf{x}} _1)=f( \boldsymbol{\mathbf{a}} , \boldsymbol{\mathbf{x}} _0)+f( \boldsymbol{\mathbf{a}} , \boldsymbol{\mathbf{x}} _1)=-f( \boldsymbol{\mathbf{x}} _0, \boldsymbol{\mathbf{a}} )=0~.
+\end{equation}
+[18] 这就是说 $ \boldsymbol{\mathbf{a}} \in V_0$，而这是不可能的。
+[19] 上面论断使得我们可将对 $f$ 的研究归结为非退化的情形。
+[20] 即认为 $f:V\times V\rightarrow\mathbb{F}$ 是个非退化的双线性型。
+
+[/SCOPE:s_intro]
+[SCOPE:s_def1|description|辛平面]
+[21] 定义 1 辛平面
+[22] 若斜对称双线性型 $f$ 在矢量空间 $V$ 的二维子空间 $W$ 上的限制 $f|_W\neq0$，
+[23] 则二维子空间 $W$ 称为 $V$ 中的辛平面。
+[24] 辛平面也可描述为：对任意向量 $ \boldsymbol{\mathbf{e}} '_1\neq0$，必存在一向量 $ \boldsymbol{\mathbf{e}} '_2$ 使得 $f( \boldsymbol{\mathbf{e}} '_1, \boldsymbol{\mathbf{e}} '_2)\neq0$。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理1]
+[25] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[26] 设 $V$ 是个实空间（也就是 $\mathbb{F}=\mathbb{R}$），其上有一个非退化的斜对称的双线性型 $f$。
+[27] 那么，$\mathrm{dim}\;V=2m$ 且 $V$ 是 $m$ 个对于 $f$ 而言两两斜正交的辛平面的直和。
+[/SCOPE:s_thm1_let]
+[28] 也就是说（定义 1 ）
+[29] \begin{equation}
+\begin{aligned}
+&V=\langle \boldsymbol{\mathbf{e}} _1,\cdots, \boldsymbol{\mathbf{e}} _n\rangle=\langle \boldsymbol{\mathbf{e}} '_1, \boldsymbol{\mathbf{e}} '_2\rangle\oplus\cdots\oplus\langle \boldsymbol{\mathbf{e}} '_{2m-1}, \bolds…[truncated]…}} '_{2i-1}+\beta \boldsymbol{\mathbf{e}} '_{2i},\gamma \boldsymbol{\mathbf{e}} '_{2j-1}+\delta \boldsymbol{\mathbf{e}} '_{2j})=0\quad (i\neq j)~\\
+&f( \boldsymbol{\mathbf{e}} '_{2i-1}, \boldsymbol{\mathbf{e}} '_{2i})=1~.
+\end{aligned}
+\end{equation}
+[SCOPE:s_thm1_induction|cases|归纳法：n=2 与 n>2]
+[SCOPE:s_thm1_proof|description|定理1的证明]
+[30] 证明：对 $n=\mathrm{dim} V$ 用归纳法。
+[SCOPE:s_thm1_base|description|n=2 情形]
+[31] 当 $n=2$ 时，显然对辛平面 $W=\langle \boldsymbol{\mathbf{e}} '_1, \boldsymbol{\mathbf{e}} '_2\rangle$ 成立。
+[/SCOPE:s_thm1_base]
+[SCOPE:s_thm1_step|description|n>2 情形]
+[SCOPE:s_thm1_step_let1|let_bind|引入 e'_1, e'_2 及扩充基底]
+[32] 当 $n>2$，$W$ 在 $V$ 中的斜正交空间 $W^{\perp}$ 为
+[33] \begin{equation}
+W^{\perp}=\langle \boldsymbol{\mathbf{x}} \in V|f( \boldsymbol{\mathbf{e}} '_i, \boldsymbol{\mathbf{x}} )=0,i=1,2\rangle~.
+\end{equation}
+[34] 把 $ \boldsymbol{\mathbf{e}} '_1, \boldsymbol{\mathbf{e}} '_2$ 扩充成空间 $V$ 的基底：
+[35] \begin{equation}
+V=\langle \boldsymbol{\mathbf{e}} '_1, \boldsymbol{\mathbf{e}} '_2,\cdots, \boldsymbol{\mathbf{e}} '_n\rangle, \boldsymbol{\mathbf{x}} =x'_1 \boldsymbol{\mathbf{e}} '_1+\cdots+x'_n \boldsymbol{\mathbf{e}} '_n~.
+\end{equation}
+[/SCOPE:s_thm1_step_let1]
+[SCOPE:s_thm1_step_let2|let_bind|引入解空间维度]
+[36] \begin{equation}
+\begin{aligned}
+&f( \boldsymbol{\mathbf{e}} '_1, \boldsymbol{\mathbf{x}} )=\sum_{i\neq 1}f'_{1i}x'_i=0~,\\
+&f( \boldsymbol{\mathbf{e}} '_2, \boldsymbol{\mathbf{x}} )=\sum_{i\neq 2}f'_{2i}x'_i=0~.
+\end{aligned}
+\end{equation}
+[37] 是秩为 2 的方程组（因为 $f$ 是非退换的，与之对应的矩阵 $F$ 的行自然线性无关）。
+[38] 于是该方程组解空间 $\langle \boldsymbol{\mathbf{e}} '_1, \boldsymbol{\mathbf{e}} '_2\rangle^{\perp}$ 的维度是 n-2（
+[39] 推论 1
+[40] ）。
+[/SCOPE:s_thm1_step_let2]
+[41] 因为
+[42] \begin{equation}
+\langle \boldsymbol{\mathbf{e}} '_1, \boldsymbol{\mathbf{e}} '_2\rangle\cap\langle \boldsymbol{\mathbf{e}} '_1, \boldsymbol{\mathbf{e}} '_2\rangle^{\perp}\in \mathrm{Ker} f~,
+\end{equation}
+[43] 而 $f$ 非退化意味着对任意非零向量 $ \boldsymbol{\mathbf{a}} \in V$，至少有一向量 $ \boldsymbol{\mathbf{b}} $，使得 $f( \boldsymbol{\mathbf{a}} , \boldsymbol{\mathbf{b}} )\neq0$，这表明 $\mathrm{Ker} f= \boldsymbol{\mathbf{0}} $。
+[44] 因此
+[45] \begin{equation}
+\langle \boldsymbol{\mathbf{e}} '_1, \boldsymbol{\mathbf{e}} '_2\rangle\cap\langle \boldsymbol{\mathbf{e}} '_1, \boldsymbol{\mathbf{e}} '_2\rangle^{\perp}= \boldsymbol{\mathbf{0}} ~,
+\end{equation}
+[46] \begin{equation}
+V=\langle \boldsymbol{\mathbf{e}} '_1, \boldsymbol{\mathbf{e}} '_2\rangle\oplus\langle \boldsymbol{\mathbf{e}} '_1, \boldsymbol{\mathbf{e}} '_2\rangle^{\perp}~.
+\end{equation}
+[47] 而且 $f$ 在 $\langle \boldsymbol{\mathbf{e}} '_1, \boldsymbol{\mathbf{e}} '_2\rangle^{\perp}$ 上的限制是个非退化的斜对称型。
+[SCOPE:s_thm1_step_contra|reductio|反证法证明限制非退化]
+[48] 事实上，在相反的情形，存在非零向量 $ \boldsymbol{\mathbf{a}} \in \langle \boldsymbol{\mathbf{e}} '_1, \boldsymbol{\mathbf{e}} '_2\rangle^{\perp}$，使得对任意 $ \boldsymbol{\mathbf{x}} _1\in\langle \boldsymbol{\mathbf{e}} '_1, \boldsymbol{\mathbf{e}} '_2\rangle^{\perp}$，都有
+[49] \begin{equation}
+f( \boldsymbol{\mathbf{a}} , \boldsymbol{\mathbf{x}} _1)=0~.
+\end{equation}
+[50] 那么 $\forall \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{x}} _0+ \boldsymbol{\mathbf{x}} _1\in V, \boldsymbol{\mathbf{x}} _0\in\langle \boldsymbol{\mathbf{e}} '_1, \boldsymbol{\mathbf{e}} '_2\rangle$，成立
+[51] \begin{equation}
+f( \boldsymbol{\mathbf{a}} , \boldsymbol{\mathbf{x}} )=f( \boldsymbol{\mathbf{a}} , \boldsymbol{\mathbf{x}} _0+ \boldsymbol{\mathbf{x}} _1)=f( \boldsymbol{\mathbf{a}} , \boldsymbol{\mathbf{x}} _0)+f( \boldsymbol{\mathbf{a}} , \boldsymbol{\mathbf{x}} _1)=0~,
+\end{equation}
+[52] 这与 $f$ 非退化矛盾。
+[/SCOPE:s_thm1_step_contra]
+[53] 按归纳假设，$\langle \boldsymbol{\mathbf{e}} '_1, \boldsymbol{\mathbf{e}} '_2\rangle^{\perp}$ 是个偶数维空间，而且是两两正交的辛曲面的直和。
+[54] 可知有某个整数 $m$ 使 $n=\mathrm{dim}\;V=2m$ 而且有一基底 $( \boldsymbol{\mathbf{e}} _i'')$ 且 $ \boldsymbol{\mathbf{e}} ''_1= \boldsymbol{\mathbf{e}} '_1, \boldsymbol{\mathbf{e}} ''_2= \boldsymbol{\mathbf{e}} '_2$，使得
+[55] \begin{equation}
+\begin{aligned}
+&V=\langle \boldsymbol{\mathbf{e}} ''_1, \boldsymbol{\mathbf{e}} ''_2\rangle\oplus\cdots\oplus\langle \boldsymbol{\mathbf{e}} ''_{2m-1}, \boldsymbol{\mathbf{e}} ''_{2m}\rangle\\
+&f(\alpha \boldsymbol{\mathbf{e}} ''_{2i-1}+\beta \boldsymbol{\mathbf{e}} ''_{2i},\gamma \boldsymbol{\mathbf{e}} ''_{2j-1}+\delta \boldsymbol{\mathbf{e}} ''_{2j})=0\quad (i\neq j)\\
+&f( \boldsymbol{\mathbf{e}} ''_{2i-1}, \boldsymbol{\mathbf{e}} ''_{2i})=1~.
+\end{aligned}
+\end{equation}
+[56] 证毕!
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_induction]
+[/SCOPE:s_thm1_proof]
+[/SCOPE:s_thm1_step]
+[SCOPE:s_cor1|description|推论1]
+[57] 推论 1
+[58] 任意非退化的斜对称的 $2m\times2m$ 阶的矩阵必然合同于
+[59] \begin{equation}
+J=\begin{pmatrix}
+0&-1&\cdots&0&0\\
+1&0&\cdots&0&0\\
+\vdots&\vdots&\cdots&\vdots&\vdots\\
+0&0&\cdots&0&-1\\
+0&0&\cdots&1&0
+\end{pmatrix}~,
+\end{equation}
+[60] 在对 $f$ 两两斜正交的辛平面基底 $\langle \boldsymbol{\mathbf{e}} '_1, \boldsymbol{\mathbf{e}} '_2\rangle\oplus\cdots\oplus\langle \boldsymbol{\mathbf{e}} '_{2m-1}, \boldsymbol{\mathbf{e}} '_{2m}\rangle$ 下，
+[61] \begin{equation}
+f( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} )=f_{12}(x'_1y'_2-x'_2y'_1)+\cdots+f_{2m-1,2m}(x'_{2m-1}y'_{2m}-x'_{2m}y'_{2m-1})~,
+\end{equation}
+[62] 这时称斜对称型 $f$ 具有
+[63] 规范型
+[64] ，相应的基底称为 $f$ 的
+[65] 规范基底
+[/SCOPE:s_cor1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的结论涉及辛平面，引用定义1"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是定理1的矩阵形式"
+  }
+]

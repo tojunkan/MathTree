@@ -1,0 +1,237 @@
+{
+  "article_name": "CauRie",
+  "statements": [
+    {
+      "stmt_id": "st_def1_derivative",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "f(z)",
+        "f'(z)"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_holomorphic",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "D",
+        "f(z)",
+        "全纯函数",
+        "解析函数"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_meromorphic",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "亚纯函数"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "z",
+        "x",
+        "y",
+        "f(z)",
+        "u(x,y)",
+        "v(x,y)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_CR",
+      "subtype": "theorem",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "w",
+        "z",
+        "x",
+        "y",
+        "u",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_CR_satisfied",
+      "subtype": "example",
+      "clause_range": [
+        25,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_nec_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_nec",
+      "exposed_entities": [
+        "w",
+        "u",
+        "v",
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    {
+      "stmt_id": "st_nec_x_dir",
+      "subtype": "assumption",
+      "clause_range": [
+        36,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_nec",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_nec_y_dir",
+      "subtype": "assumption",
+      "clause_range": [
+        39,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_nec",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_nec_CR_necessary",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_nec",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_suff_let",
+      "subtype": "assumption",
+      "clause_range": [
+        50,
+        55
+      ],
+      "truth_value": null,
+      "scope_id": "s_suff",
+      "exposed_entities": [
+        "f'(z)",
+        "a(z)",
+        "b(z)",
+        "w",
+        "z",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_suff_CR_sufficient",
+      "subtype": "conclusion",
+      "clause_range": [
+        56,
+        66
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_suff",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_nec_x_dir",
+      "target": "st_nec_CR_necessary",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_nec_y_dir",
+      "target": "st_nec_CR_necessary",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_suff_let",
+      "target": "st_suff_CR_sufficient",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let",
+      "target": "st_ex1_CR_satisfied",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_nec_CR_necessary",
+      "target": "st_thm1_CR",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "必要性推导得出柯西—黎曼条件是可导的必要条件"
+    },
+    {
+      "source": "st_suff_CR_sufficient",
+      "target": "st_thm1_CR",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "充分性推导得出柯西—黎曼条件是可导的充分必要条件"
+    },
+    {
+      "source": "st_ex1_CR_satisfied",
+      "target": "st_thm1_CR",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "指数函数满足柯西—黎曼条件"
+    }
+  ],
+  "unresolved": []
+}

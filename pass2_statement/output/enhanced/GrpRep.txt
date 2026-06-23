@@ -1,0 +1,165 @@
+[SCOPE:root|description|群表示]
+文章名: GrpRep
+标题: 群表示
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=群的（线性）表示
+  [1] type=definition heading=定义 2 title=形式代数
+  [2] type=definition heading=定义 3 title=群作用诱导的群表示
+  [3] type=example heading=例 1 title=平凡表示
+  [4] type=definition heading=定义 4 title=等变映射，同构映射
+  [5] type=definition heading=定义 5 title=不变映射
+  [6] type=definition heading=定义 6 title=不变子空间
+  [7] type=definition heading=定义 7 title=子表示
+
+[0] 字面上讲，表示（representation）是用一个易于理解的表达方法来描述一些数学对象。
+[1] 比如说，对于学龄前的小朋友，想理解 $1+1=2$ 的概念可能过于抽象，不利于理解，这个时候可以使用 “一个苹果加一个苹果等于两个苹果” 来表示相同的概念，会更容易理解。
+[2] 数学上讲，表示论是研究对称性的学科，它把一个抽象的代数结构的元素映射成一个相对具体线性变换。
+[3] 其中群是表示论所研究的最简单的代数结构，这个学科就被称为群表示论。
+[4] [1] [2]
+
+[SCOPE:s_def1|description|群的（线性）表示]
+[5] 定义 1 群的（线性）表示
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[6] 设有群 $G$ 和一个线性空间 $V$，记 $V$ 上的全体可逆线性变换为 $ \operatorname {GL}(V)$1。
+[7] 如果存在同态$\phi: G\rightarrow \operatorname {GL}(V)$，
+[8] 那么我们称 $(V, \phi)$ 是群 $G$ 在 $V$ 上的一个群表示。
+[/SCOPE:s_def1_let]
+[9a] (g)
+[9b] (v)$ 简记做 $g \cdot v$。
+[10] 【未完成】群表示的等价定义，参考群作用
+[11] 注：有些时候我们会直接称 $V$ 是群表示，此时群表示是一个代数结构；
+[12] 有时候我们又会称 $\rho$ 为群表示，此时群表示是一个函数。
+[13] 为了避免歧义，可以称 $V$ 为表示空间，$\rho$ 为表示映射。
+[14] 群表示是一种特殊的群作用定义 1 ，而且一个群作用可以诱导出一个与之相关的群表示。
+[15a] (g)v_\nu=D
+[15b] (g)_{\nu\mu}v_\mu$
+[16a] (e)=1$,$D
+[16b] (a)=\rm{e}^{\frac{2\pi i}{3}}$,$D(a^2)=\rm{e}^{\frac{4\pi i}{3}}$,可见群的表示矩阵的乘法规则与群乘法表相同。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|形式代数]
+[17] 定义 2 形式代数
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[18] 设有域 $\mathbb{F}$ 和集合 $S$，我们可以定义一个 $\mathbb{F}$-代数，其元素为 $S$ 中元素的形式线性组合，记做
+[19] $$
+\mathbb{F}[S]: = \left\{ \sum a_i s_i \mid \text{有限个非零} a_i \right\}~.
+$$
+[/SCOPE:s_def2_let]
+[20] 【未完成】例子
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|群作用诱导的群表示]
+[21] 定义 3 群作用诱导的群表示
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[22] 设有群 $G$ 到集合 $S$ 的群作用 $\rho: G \to \operatorname {Aut}(S)$，我们可以得到一个 $G$ 在 $\mathbb{F}[S]$ 上表示 $(\mathbb{F}[S], \phi)$，
+[23] $$\begin{aligned}
+\phi: G &\to \operatorname {GL}(\mathbb{F}[S]) \\
+\phi(g)(\sum a_i s_i) &= \sum a_i \rho(g)(s_i)~.
+\end{aligned}$$
+
+[/SCOPE:s_def3]
+[/SCOPE:s_def3_let]
+[SCOPE:s_ex1|description|平凡表示]
+[24] 例 1 平凡表示
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[25] 类似平凡作用例 1 ，对任何群 $G$，任何向量空间 $V$，我们可以定义平凡表示 $\rho(g) := \text{id}_V$。
+[/SCOPE:s_ex1_let]
+[26] 【未完成】正则表示
+[27] 【未完成】更多例子
+
+[/SCOPE:s_ex1]
+[28] 就像我们研究所有的代数结构一样，我们也要为群的表示之间定义 “同态” 的概念。
+[29] 类似于所有代数结构上的同态，线性表示的同态也是保持 “运算结果”，也就是表示对群的作用不变的映射。
+
+[SCOPE:s_def4|description|等变映射，同构映射]
+[30] 定义 4 等变映射，同构映射
+[SCOPE:s_def4_let|let_bind|定义4的变量]
+[31] $G$ 的两个表示 $(V, \phi), (W, \psi)$ 之间的一个 $G$-等变映射（或简称等变映射，$G$-映射）是它们之间的线性映射 $f: V \to W$，满足对任意的 $g \in G$
+[32] $$
+\psi(g) \circ f = f \circ \phi(g)~,
+$$
+[33] 或者更简单的记做
+[34] $$
+g \cdot f(v) = f(g \cdot v)~.
+$$
+[/SCOPE:s_def4_let]
+[35a] 如果 $f$ 可逆的话，$f$ 被称为同构映射，如果两个表示之间存在一个同构映射的话
+[35b] 则称这两个表示是同构的。
+[36] 注：等变映射的英译为 equivariant map，有时也称交结映射intertwing map。
+
+[/SCOPE:s_def4]
+[SCOPE:s_def5|description|不变映射]
+[37] 定义 5 不变映射
+[SCOPE:s_def5_let|let_bind|定义5的变量]
+[38] 如果 $G$-等变映射 $f: (V, \phi) \to (W, \psi)$ 中的 $(W, \psi)$ 是平凡的，
+[39] 那么 $f$ 就被称为 $G$-不变的，或者 $(G, \phi)$-不变的。
+[/SCOPE:s_def5_let]
+[40] 【未完成】商表示、不可约表示
+
+[/SCOPE:s_def5]
+[41] 【未完成】这里的内容可能有问题，待讨论
+[42] 类似所有的代数结构，我们可以引入在 $V$ 的子空间上引入子表示的概念，
+[43] 但是显然需要对子空间有一定的限制条件。
+
+[SCOPE:s_def6|description|不变子空间]
+[44] 定义 6 不变子空间
+[SCOPE:s_def6_let|let_bind|定义6的变量]
+[45] 设 $(V,\varphi)$ 是群 $G$ 的一个表示。
+[46] $V$ 的一个子空间 $U$ 如果是线性变换 $\varphi(g)$ 的不变子空间，$\forall g\in G$，
+[47] 即对任意 $g\in G$ 有 $\varphi(g)(U)\subseteq U$，
+[48] 那么称 $U$ 是表示 $\varphi$ 的不变子空间或$G$ 不变子空间。
+[/SCOPE:s_def6_let]
+[49] 【未完成】参考一般的不变子空间
+[50] 从而在不变子空间 $U$ 上，$\varphi(g)|U$ 仍是线性变换且可逆（不是不变就没法可逆），我们就可以得到相应的子表示。
+
+[/SCOPE:s_def6]
+[SCOPE:s_def7|description|子表示]
+[51] 定义 7 子表示
+[SCOPE:s_def7_let|let_bind|定义7的变量]
+[52] 设 $(V,\varphi)$ 是群 $G$ 的一个表示。
+[53] $U\neq\{0\}$ 是 $G$ 不变子空间，令
+[54] \begin{equation}
+\varphi_U(g) := \varphi(g)|U,\quad\forall g\in G~,
+\end{equation}
+[/SCOPE:s_def7_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def3",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义3使用形式代数构造"
+  },
+  {
+    "source_scope": "s_def4",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "等变映射定义在表示之间"
+  },
+  {
+    "source_scope": "s_def5",
+    "target_scope": "s_def4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "不变映射是等变映射的特例"
+  },
+  {
+    "source_scope": "s_def6",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "不变子空间定义在表示上"
+  },
+  {
+    "source_scope": "s_def7",
+    "target_scope": "s_def6",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "子表示基于不变子空间"
+  }
+]

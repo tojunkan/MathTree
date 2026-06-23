@@ -1,0 +1,113 @@
+[SCOPE:root|description|曲线的切触]
+文章名: CofCur
+标题: 曲线的切触
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=切触
+  [1] type=theorem heading=定理 1 title=
+
+[SCOPE:s_intro|description|引言]
+[0] 研究二图形在某个点的贴近程度具有重要意义，它不仅反映图形几何位置的特点，更重要的是在研究在某点附近图形的性质时，利用在该点具有相当贴近程度的图形来代替原来的图形可使问题简化。
+[1] 例如，研究曲线在某点附近的性质时，我们往往用切线代替该曲线从而使问题简化。
+[2] 切触（Contact）便是刻画两图形在某一点附近贴近程度的重要概念，它属于局部微分几何，两图形切触阶越高，图形贴近的程度也就越高。
+[3] 本节主要介绍曲线的切触。
+
+[/SCOPE:s_intro]
+[SCOPE:s_def1|description|定义1 切触]
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[4] 设 $\Gamma_1,\Gamma_2$ 两曲线有公共点 $P_0$，而 $P_1,P_2$ 依次为曲线 $\Gamma_1,\Gamma_2$ 上与 $P_0$ 邻近的点，且弧长 $\overset{\Huge\frown}{P_0P_1}=\overset{\Huge\frown}{P_0P_2}=\Delta s$。
+[5] 若曲线 $\Gamma_1,\Gamma_2$ 在点 $P_0$ 处相切，我们总选择它们的正向，使得它们在 $P_0$ 的切矢量方向一致。
+
+[/SCOPE:s_def1_let]
+[6] 定义 1 切触
+[7] 若线段 $\overline{P_1P_2}$ 的长是关于 $\Delta s$ 的 $n+1$ 阶无穷小（子节 4 ），
+[8] 即
+[9] \begin{equation}
+\lim_{\Delta s\rightarrow0}\frac{ \left\lvert \overline{P_1P_2} \right\rvert }{\Delta s^{m}}=0\quad(m\leq n),\quad\lim_{\Delta s\rightarrow0}\frac{ \left\lvert \overline{P_1P_2} \right\rvert }{\Delta s^{n+1}}\neq0~,
+\end{equation}
+[10] 下面来解释切触是如何体现曲线间的贴近程度的。
+
+[/SCOPE:s_def1]
+[SCOPE:s_geom|description|曲线切触的几何意义]
+[SCOPE:s_geom_let|let_bind|几何意义的变量]
+[11] 以 $r$ 表示曲线上点的向径，且两曲线上弧长 $s$ 都是从 $P_0$ 量起的，
+[12] 于是 $\Delta s=s$。
+[13] 设 $\Gamma_1,\Gamma_2$ 的参数方程依次为
+[14] \begin{equation}
+r=r_1(s),\quad r=r_2(s)~.
+\end{equation}
+[/SCOPE:s_geom_let]
+[15a] (s),r_2
+[15b] (s)$ 有任意阶的连续导数，
+[16] 于是由
+[17] 泰勒公式 [链接 L0]
+[18] \begin{equation}
+\begin{aligned}
+r_1(s)=\sum_{i=0}^\infty \frac{r^{(i)}_1(0)}{i!}s^i~,\\
+r_2(s)=\sum_{i=0}^\infty \frac{r^{(i)}_2(0)}{i!}s^i~,
+\end{aligned}
+\end{equation}
+[19] 显然 $r_1(0)=r_2(0)$ 是 $P_0$ 点对应向径。
+[20] 上面两式相减得
+[21] \begin{equation}
+\overrightarrow{P_1P_2}=r_2(s)-r_1(s)=\sum_{i=1}^\infty \frac{r^{(i)}_2(0)-r^{(i)}_1(0)}{i!}s^i~.
+\end{equation}
+[SCOPE:s_geom_cases|cases|切线与切触阶]
+[22] 若 $r'_1(0)$ 与 $r'_2(0)$ 不平行，
+[23] 那么 $ \left\lvert \overline{P_1P_2} \right\rvert $ 是 $s$ 的一阶无穷小，而两曲线在 $P_0$ 点不相切，而只是相交。
+[24] 若 $r'_1(0)$ 与 $r'_2(0)$ 平行，
+[25] 那么由于向径对弧长的一阶导数是单位矢量，
+[26] 所以 $r'_1(0)=r'_2(0)$。
+[27] 于是 $ \left\lvert \overline{P_1P_2} \right\rvert $ 至少是 $s$ 的二阶无穷小，两曲线在 $P_0$ 点相切。
+[28] 此时，若
+[29] \begin{equation}
+r''_1(0)=r_2''(0),\quad\cdots,\quad r^{(n)}_1(0)=r^{(n)}_2(0),\quad r^{(n+1)}_1(0)\neq r^{(n+1)}_2(0)~.
+\end{equation}
+[30] 则 $\overline{P_1P_2}$ 是 $s$ 的 $n+1$ 阶无穷小，根据
+[31] 定义 1 [链接 L1]
+[32] ，$\Gamma_1,\Gamma_2$ 在 $P_0$ 点有 $n$ 阶切触。
+[33] 反之，若 $\overline{P_1P_2}$ 是 $s$ 的 $n$ 阶切触，
+[34] 则由定义 1 并注意式 4 ，有
+[35] \begin{equation}
+\begin{aligned}
+&\lim_{\Delta s\rightarrow0}\frac{ \left\lvert \overline{P_1P_2} \right\rvert }{\Delta s^{m}}=0\quad(m\leq n)\quad\Rightarrow \quad r^{(m)}_1(0)=r^{(m)}_2(0)~,\\
+&\lim_{\Delta s\rightarrow0}\frac{ \left\lvert \overline{P_1P_2} \right\rvert }{\Delta s^{n+1}}\neq0\quad\Rightarrow\quad r^{(n+1)}_1(0)=r^{(n+1)}_2(0)~.
+\end{aligned}
+\end{equation}
+[36] 也就是说，下面定理成立
+
+[/SCOPE:s_geom]
+[/SCOPE:s_geom_cases]
+[SCOPE:s_thm1|description|定理1]
+[37] 定理 1
+[38a] (x),r_2
+[38b] (s)$ 在交点 $P_0$ 处有 $n$ 阶切触的充要条件是
+[39] \begin{equation}
+r'_1(0)=r'_2(0),\quad r''_1(0)=r_2''(0),\quad\cdots,\quad r^{(n)}_1(0)=r^{(n)}_2(0),\quad r^{(n+1)}_1(0)\neq r^{(n+1)}_2(0)~.
+\end{equation}
+[40] 这就是说，若两曲线在交点处有 $n$ 阶切触，
+[41] 则它们在交点处直到 $n$ 阶微商都相等。
+[42] 其几何意义是 $1$ 阶切触代表两曲线在交点处相切，二阶切触表明不光相切，在交点处切线的切线也相切，$\cdots$，$n$ 阶切触不光有 $n-1$ 阶切触的性质，还有在交点处曲线 $r^{(n-1)}$ 的切线也是相切的。
+
+跨文章引用:
+  [L0] 泰勒公式 → Tayl
+[/SCOPE:s_thm1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是定义1的充要条件表述"
+  },
+  {
+    "source_scope": "s_geom",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "几何意义推导出定义1的等价条件"
+  }
+]

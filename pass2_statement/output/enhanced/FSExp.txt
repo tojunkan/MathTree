@@ -1,0 +1,179 @@
+[SCOPE:root|description|傅里叶级数（指数）]
+文章名: FSExp
+标题: 傅里叶级数（指数）
+
+[SCOPE:s_intro|description|引言与定义]
+[SCOPE:s_intro_let|let_bind|变量 f, l]
+[0] $f(x)$ 是自变量为实数的复变函数，若满足狄利克雷条件，
+[1] 则可在区间 $[- l,l]$ 展开成复数的傅里叶级数
+[2] \begin{equation}
+f(x) = \sum_{n = - \infty }^{ + \infty } c_n \exp\left( \mathrm{i} \frac{n\pi }{l}x\right) ~.
+\end{equation}
+[/SCOPE:s_intro_let]
+[3] 其中 $c_n$ 是复常数，可以用
+[4] 定积分 [链接 L0]
+[5] \begin{equation}
+c_n = \frac{1}{2l} \int_{ - l}^l f(x) \exp\left(- \mathrm{i} \frac{n\pi }{l}x\right) \,\mathrm{d}{x} ~.
+\end{equation}
+[6] 当 $f(x)$ 为实函数时，$c_n$ 与 $c_{-n}$ 互为复共轭。
+[7] 当 $f(x)$ 为偶函数或奇函数时，分别有 $c_{-n} = c_n$ 或 $c_{-n} = -c_n$。
+[8] 要特别注意的是，严格来说式 1 并不能用等号。
+[9a] (x)$ 在某点不连续，在该点处等式右边的级数未必会收敛到 $f
+[9b] (x)$。
+[10] 对此本文并不过多讨论，且为了方便仍然使用等号。
+
+[/SCOPE:s_intro]
+[SCOPE:s_geom_let|let_bind|变量 t, omega_n, T_n]
+[SCOPE:s_geom|description|几何理解]
+[11] 若把式 1 中的 $x$ 改成时间 $t$，
+[12] 那么 $f(t)$ 可以看作是复平面上一个点随时间的运动。
+[13] 而根据欧拉公式（式 3 ），式 1 中的每一项，
+[14] 则是平面上一个矢量的匀速圆周运动（$n=0$ 的项是例外，它不随时间变化）。
+[15] 由于复数的加法相当于复平面上矢量的相加（图 1 ），
+[16] 那么 $f(t)$ 所代表的运动就是从坐标原点出发，把所有这些做圆周运动的矢量首尾相接后，最后一个矢量的末端的运动。
+[17] 【图解】图 1：动画见这里。
+[18] 这里的曲线使用小时百科的图标。
+[19] 代码见 “用傅里叶级数画曲线（Matlab）”。
+[20] 根据式 1 ，第 $n$ 个圆周运动的角速度为 $\omega_n = n\pi/l$，注意逆时针为正，顺时针为负。
+[21] 周期为 $T_n = 2\pi/\omega = 2l/n$（$n\ne 0$）。
+[22] 也就是说在一个周期内，$n=1$ 的圆周运动在时间 $T = 2l$ 内逆时针转一圈，$n=2$ 的逆时针转两圈，$n=-1$ 的顺时针转一圈，$n=-2$ 的顺时针转两圈……
+
+[/SCOPE:s_geom_let]
+[/SCOPE:s_geom]
+[SCOPE:s_derive|description|推导]
+[23] 类比三角傅里叶级数的情况。
+[SCOPE:s_derive_let|let_bind|基底 f_n, 内积]
+[24] 这时，完备正交归一的函数基底变为
+[25] \begin{equation}
+f_n(x) = \exp\left( \mathrm{i} \frac{n\pi }{l}x\right) \quad{n \in N}~.
+\end{equation}
+[26a] (x)$ 与 $g
+[26b] (x)$ 的内积为
+[27] \begin{equation}
+\left\langle f \middle| g \right\rangle = \int_{-l}^{l} f(x) ^* g(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[28] 可证明函数基底（
+[29] 式 3 [链接 L1]
+[30] ）正交且模长为 $2l$，用克罗内克 $\delta$ 函数表示为
+[31] \begin{equation}
+\left\langle f_m \middle| f_n \right\rangle = 2l \delta_{mn}~.
+\end{equation}
+[/SCOPE:s_derive_let]
+[32] 与三角傅里叶级数同理，可得
+[33] 式 1 [链接 L2]
+[34] 式 2 [链接 L3]
+
+[/SCOPE:s_derive]
+[SCOPE:s_tri_rel|description|与三角傅里叶级数的关系]
+[35] 根据欧拉公式（式 3 ），可以写出正余弦函数和复指数函数的关系
+[36] \begin{equation}
+\cos x = \frac{ \mathrm{e} ^{ \mathrm{i} x} + \mathrm{e} ^{- \mathrm{i} x}}{2}, \qquad
+\sin x = \frac{ \mathrm{e} ^{ \mathrm{i} x} - \mathrm{e} ^{- \mathrm{i} x}}{2 \mathrm{i} }~.
+\end{equation}
+[37] 三角傅里叶级数的系数
+[38] 式 2 [链接 L4]
+[39] 式 3 [链接 L5]
+[40] 可以用指数傅里叶级数的系数表示
+[41] \begin{equation}
+\begin{aligned}
+a_n &= \frac{1}{l}\int_{ - l}^l f( x ) \cos\left(\frac{n\pi }{l}x\right) \,\mathrm{d}{x} \\
+&= \frac{1}{2l}\int_{ - l}^l f( x ) \exp\left( \mathrm{i} \frac{n\pi }{l}x\right) \,\mathrm{d}{x} + \frac{1}{2l}\int_{ - l}^l f( x ) \exp\left(- \mathrm{i} \frac{n\pi}{l}x\right) \,\mathrm{d}{x} \\
+&= c_n + c_{-n}~.
+\end{aligned} \end{equation}
+[42] \begin{equation} \begin{aligned}
+b_n &= \mathrm{i} (c_n - c_{-n})~.
+\end{aligned} \end{equation}
+[43] 注意这里全都有 $n\geqslant 0$。
+[44] 由以上两式，也可以解得
+[45] \begin{equation}
+c_n = \frac{a_n - \mathrm{i} b_n}{2}, \qquad
+c_{-n} = \frac{a_n + \mathrm{i} b_n}{2}~.
+\end{equation}
+
+[/SCOPE:s_tri_rel]
+[SCOPE:s_special|description|实函数，奇函数，和偶函数的情况]
+[46] 特殊地，当 $f(x)$ 为实函数时，由于 $a_n$ 和 $b_n$ 必定是实数，根据式 9 可知
+[47] \begin{equation}
+c_{-n} = c_{n} ^* ~.
+\end{equation}
+[48] 即正负系数互为复共轭。
+[49] 当 $f(x)$ 为偶函数或奇函数时，三角傅里叶级数分别只有 $a_n$ 或 $b_n$ 不为零
+[50] ，同样根据
+[51] 式 9 [链接 L6]
+[52] 可得，两种情况分别对应
+[53] \begin{equation}
+c_{-n} = c_n =\frac{a_n}{2}, \qquad
+c_{-n} = -c_n = \mathrm{i} \frac{b_n}{2}~.
+\end{equation}
+[54] 由以上两式可得，如果 $f(x)$ 既是实函数又是偶函数时，$c_n$ 和 $c_{-n}$ 是相等的实数，如果既是实函数又是奇函数，$c_n$ 和 $c_{-n}$ 是相反的纯虚数。
+
+[/SCOPE:s_special]
+[SCOPE:s_prop|description|性质]
+[55] \begin{equation}
+\int_{-l}^l \left\lvert f^2(x) \right\rvert \,\mathrm{d}{x} = 2l\sum_n \left\lvert c_n \right\rvert ^2~.
+\end{equation}
+[56] 证明：用
+[SCOPE:s_prop_let|let_bind|变量 |f>, |n>]
+[57] 狄拉克符号 [链接 L7]
+[58] 记为 $ \left\lvert f \right\rangle = \sum_n c_n \left\lvert n \right\rangle $，利用基底的正交性（
+[59] 式 5 [链接 L8]
+[60] \begin{equation}
+\left\langle f \middle| f \right\rangle = \sum_i c_i^* \left\langle i \right\rvert \sum_j c_j \left\lvert j \right\rangle = 2l \sum_{i,j} \left\lvert c_i \right\rvert ^2 \delta_{i,j} = 2l \sum_n \left\lvert c_n \right\rvert ^2~.
+\end{equation}
+[/SCOPE:s_prop_let]
+[61] 如果把基底为正交归一化（每个基底 $ \left\lvert n \right\rangle $ 除以 $\sqrt{2l}$，使得 $ \left\langle i \middle| j \right\rangle = \delta_{i,j}$，
+[62] 则有更简洁的关系
+[63] \begin{equation}
+\int_{-l}^l \left\lvert f^2(x) \right\rvert \,\mathrm{d}{x} = \sum_n \left\lvert c_n \right\rvert ^2~.
+\end{equation}
+[64] Parseval 定理
+
+[/SCOPE:s_prop]
+[SCOPE:s_arbitrary|description|任意区间的展开]
+[65] 类比子节 4 中的讨论，要用指数傅里叶级数展开 $[a, b]$ 区间的函数 $f(x)$，一种方法是令 $l = (b - a)/2$，并把式 2 的积分区间改为 $[a, b]$ 即可。
+[66] 或者也可以取 $l > (b - a)/2$ 的任意实数。
+
+跨文章引用:
+  [L0] 定积分 → DefInt
+  [L7] 狄拉克符号 → braket
+[/SCOPE:s_arbitrary]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_derive",
+    "target_scope": "s_intro",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推导基于引言中的定义"
+  },
+  {
+    "source_scope": "s_tri_rel",
+    "target_scope": "s_intro",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "关系推导基于引言中的定义"
+  },
+  {
+    "source_scope": "s_special",
+    "target_scope": "s_tri_rel",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "特殊函数情况是三角关系式的特例"
+  },
+  {
+    "source_scope": "s_prop",
+    "target_scope": "s_intro",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "性质证明基于引言中的定义"
+  },
+  {
+    "source_scope": "s_arbitrary",
+    "target_scope": "s_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "任意区间是标准区间[-l,l]的推广"
+  }
+]

@@ -1,0 +1,103 @@
+[SCOPE:root|description|齐次函数的欧拉定理]
+文章名: Homeul
+标题: 齐次函数的欧拉定理
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=齐次函数
+  [1] type=example heading=例 1 title=
+  [2] type=theorem heading=定理 1 title=齐次函数的欧拉定理
+  [3] type=corollary heading=推论 1 title=
+
+[SCOPE:s_def1|description|齐次函数定义]
+[0] 定义 1 齐次函数
+[SCOPE:s_def1_let|let_bind|定义中的变量]
+[1] 假设 $f: V \to W $ 是域 $ F $ 内的两个向量空间之间的函数。
+[2] 我们说 $f$ 是 $k$ 次齐次函数，如果对于所有非零的 $\alpha \in F$ 和 $\mathbf{v} \in V$，都有：
+[3] \begin{equation}
+f(\alpha \mathbf{v}) = \alpha^k f(\mathbf{v}) ~.
+\end{equation}
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_ex1|description|例1]
+[4] $f(x,y,z)=x^5y^2z^3$ 是 $10$ 次齐次函数，因为 $(\alpha x)^5(\alpha y)^2(\alpha z)^3=\alpha^{10}x^5y^2z^3$。
+[5] $f(x,y)=x^5 + 2 x^3 y^2 + 9 x y^4$ 是 $5$ 次齐次函数。
+[6] 齐次函数的欧拉定理表述如下：
+
+[/SCOPE:s_ex1]
+[SCOPE:s_thm1|description|齐次函数的欧拉定理]
+[7] 定理 1 齐次函数的欧拉定理
+[SCOPE:s_thm1_let|let_bind|定理中的变量]
+[8] 若 $k$ 齐次函数 $ f:\mathbb{R}^n \to \mathbb{R}$ 是可导的，
+[9] 那么
+[10] \begin{equation}
+{\displaystyle \mathbf {x} \cdot \nabla f(\mathbf {x} )=kf(\mathbf {x} )~.\qquad }
+\end{equation}
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm1_proof|description|欧拉定理证明]
+[SCOPE:s_thm1_proof_let|let_bind|证明中引入的变量]
+[11] 证明：记 $f=f(x_{1},\ldots ,x_{n})=f(\mathbf {x} )$，把以下等式两端对 $\alpha$ 求导：
+[12] \begin{equation}
+{\displaystyle f(\alpha \mathbf {x} )=\alpha ^{k}f(\mathbf {x} )}~.
+\end{equation}
+[13] 利用复合函数求导法则，可得：
+[14] \begin{equation}
+{\frac {\partial }{\partial (\alpha x_{1})}}f(\alpha \mathbf {x} ){\frac {\mathrm {d} }{\mathrm {d} \alpha }}(\alpha x_{1})+\cdots +{\frac {\partial }{\partial (\alpha x_{n})}}f(\alpha \mathbf {x} ){\frac {\mathrm {d} }{\mathrm {d} \alpha }}(\alpha x_{n})=k\alpha ^{k-1}f(\mathbf {x} )~.
+\end{equation}
+[15] \begin{equation}
+x_{1}{\frac {\partial }{\partial (\alpha x_{1})}}f(\alpha \mathbf {x} )+\cdots +x_{n}{\frac {\partial }{\partial (\alpha x_{n})}}f(\alpha \mathbf {x} )=k\alpha ^{k-1}f(\mathbf {x} )~.
+\end{equation}
+[16] \begin{equation}
+\mathbf {x} \cdot \nabla f(\alpha \mathbf {x} )=k\alpha ^{k-1}f(\mathbf {x} )~,
+\end{equation}
+[17] 令 $\alpha=1$ 得证。
+[/SCOPE:s_thm1_proof_let]
+[18] 证毕。
+[/SCOPE:s_thm1_proof]
+[19] 类似上面的推导过程，我们还可以得到如下推论：
+
+[/SCOPE:s_thm1]
+[SCOPE:s_cor1|description|推论1]
+[20] 推论 1
+[SCOPE:s_cor1_let|let_bind|推论中的变量]
+[21] 若 $f:\mathbb{R}^n \to \mathbb{R}$ 是可导的，且是 $ k $ 阶齐次函数。
+[22] 则它的一阶偏导数 $\partial f/\partial x_i$ 是 $k-1$ 阶齐次函数。
+[/SCOPE:s_cor1_let]
+[SCOPE:s_cor1_proof_let|let_bind|推论证明中引入的变量]
+[SCOPE:s_cor1_proof|description|推论1证明]
+[23] 证明：记 $ f=f(x_{1},\ldots ,x_{n})=f(\mathbf {x} )$，并把以下等式两端对 $x_{i}$ 求导：
+[24] \begin{equation}
+f(\alpha \mathbf {x} )=\alpha ^{k}f(\mathbf {x} )~.
+\end{equation}
+[25] 利用复合函数求导法则，可得：
+[26] \begin{equation}
+\frac {\partial }{\partial x_{i}}f(\alpha \mathbf {x} ){\frac {\mathrm {d} }{\mathrm {d} x_{i}}}(\alpha x_{i})=\alpha ^{k}{\frac {\partial }{\partial x_{i}}}f(\mathbf {x} ){\frac {\mathrm {d} }{\mathrm {d} x_{i}}}(x_{i})~.
+\end{equation}
+[27] \begin{equation}
+\alpha {\frac {\partial }{\partial x_{i}}}f(\alpha \mathbf {x} )=\alpha ^{k}{\frac {\partial }{\partial x_{i}}}f(\mathbf {x} )~,
+\end{equation}
+[28] \begin{equation}
+{\frac {\partial }{\partial x_{i}}}f(\alpha \mathbf {x} )=\alpha ^{k-1}{\frac {\partial }{\partial x_{i}}}f(\mathbf {x} )~.
+\end{equation}
+[/SCOPE:s_cor1]
+[/SCOPE:s_cor1_proof_let]
+[/SCOPE:s_cor1_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "欧拉定理基于齐次函数定义"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论是定理的直接结果"
+  }
+]

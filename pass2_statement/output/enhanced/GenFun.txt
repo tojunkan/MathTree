@@ -1,0 +1,139 @@
+[SCOPE:root|description|复值测度与广义函数]
+文章名: GenFun
+标题: 复值测度与广义函数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=非负测度
+  [1] type=definition heading=定义 2 title=复值测度
+  [2] type=example heading=例 1 title=计数测度
+  [3] type=example heading=例 2 title=Dirac 测度
+  [4] type=definition heading=定义 3 title=测度的绝对连续
+
+[SCOPE:s_def1|description|非负测度]
+[0] 定义 1 非负测度
+[SCOPE:s_def1_let|let_bind|非负测度的变量]
+[1] 设 $S$ 是一个集合，$\mathcal{A}$ 是由 $S$ 的子集构成的一个 $\sigma$-代数2。
+[2] 称映射 $\mu:\mathcal{A}\to [0, +\infty]$ 是 $(S, \mathcal{A})$ 上的一个非负测度（non-negative measure），如果它满足：
+[/SCOPE:s_def1_let]
+[3] $\mu(\varnothing)=0$；
+[4] 对于两两不交的至多可数个 $A_i\in\mathcal{A}$，有
+[5] \begin{equation}
+\mu \left(\bigcup_i A_i \right) = \sum_i \mu(A_i)~.
+\end{equation}
+[6] 三元组 $(S, \mathcal{A}, \mu)$ 也被称为一个测度空间（measure space）。
+[7] 注意，定义中测度 $\mu$ 的值域是 $[0, +\infty]$ 而非 $[0, +\infty)$，意味着测度值也可以取广义实数 $+\infty$。
+[8] 由于测度值非负，
+[9] 因此在不至于混淆的时候，也可以用 $\infty$ 代替 $+\infty$。
+[10] 有非负测度，意味着测度的概念还可以继续推广：
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|复值测度]
+[11] 定义 2 复值测度
+[12] 将非负测度的定义域从 $[0, +\infty]$ 改为 $\mathbb{C}$，
+[13] 即得到复值测度。
+
+[/SCOPE:s_def2]
+[SCOPE:s_ex1|description|计数测度]
+[14] 例 1 计数测度
+[SCOPE:s_ex1_let|let_bind|计数测度的变量]
+[15] 设 $S$ 为任意集合，定义 $(S, 2^S)$ 上的一个测度 $\mu$ 如下：
+[16] \begin{equation}
+\mu(A)=
+\left\{\begin{aligned}
+\left\lvert A \right\rvert ,\quad \left\lvert A \right\rvert <\aleph_0\\
++\infty,\quad \left\lvert A \right\rvert \geq\aleph_0
+\end{aligned}\right. ~
+\end{equation}
+[/SCOPE:s_ex1_let]
+[17] 计数测度
+[18] 定义 1 比 Lebesgue 测度的定义抽象多了，
+[19] 因此有必要举一个和 Lebesgue 测度截然不同的例子，来体现其 “更一般更抽象” 的特点：
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|Dirac 测度]
+[20] 例 2 Dirac 测度
+[SCOPE:s_ex2_let|let_bind|Dirac 测度的变量]
+[21] 令 $\mathcal{B}$ 为 $\mathbb{R}^n$ 中的 Borel 集合3。
+[22] 取 $\mathbb{R}^n$ 中的一点 $x_0$，定义 $(\mathbb{R}^n, \mathcal{B})$ 上的测度 $\sigma_{x_0}$ 为：
+[23] \begin{equation}
+\sigma_{x_0}(A)= \left\{\begin{aligned}
+1, \quad x_0\in A\\
+0, \quad x_0\not\in A
+\end{aligned}\right. ~
+\end{equation}
+[/SCOPE:s_ex2_let]
+[24] Dirac 测度
+[25] Dirac 测度显然连平移不变性都不具备，和 Lebesgue 外测度截然不同。
+[26] 你可能也注意到了，Dirac 测度和 Dirac 函数看起来很相似——没错，Dirac 函数本质上就不是一个函数，而是一个测度。
+[27] 但这话乍一听很奇怪，函数是给集合上每个点赋予一个数字，测度是给各子集赋予数字，两者是怎么联系起来的呢？
+[28] 这就需要利用 Lebesgue 外测度作为脚手架，来衔接二者了。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_def3|description|测度的绝对连续]
+[29] 定义 3 测度的绝对连续
+[SCOPE:s_def3_let1|let_bind|绝对连续的变量]
+[30] 设 $\mu$ 和 $\nu$ 都是 $(S, \mathcal{A})$ 上的测度，且只要 $\nu(A)=0$，就必有 $\mu(A)=0$，
+[31] 那么称测度 $\mu$ 关于测度 $\nu$ 绝对连续，记为 $\mu\ll\nu$。
+[/SCOPE:s_def3_let1]
+[32] 如果 $\mu\ll\nu$ 且 $\nu\ll\mu$，
+[33] 则称 $\mu$ 与 $\nu$ 等价。
+[34] 【未完成】需补充或引用Radon-Nikodym 定理相关文章。
+[SCOPE:s_def3_let2|let_bind|Radon-Nikodym 的变量]
+[35] Radon-Nikodym 定理显示，如果 $\mu\ll\nu$，且 $\nu$ 是 $\sigma$-有限测度4，
+[36] 那么 $\mu$ 就可以和一个函数 $f:S\to [0, +\infty]$ 相联系起来：
+[37] \begin{equation}
+\mu(A) = \int_A f \,\mathrm{d}{\nu} ~.
+\end{equation}
+[38] 我们可以取所研究的二元组 $(S, \mathcal{A})$ 为 $(\mathbb{R}^n, \mathcal{B})$，$\nu$ 为 Lebesgue 外测度，
+[39] 于是 $\int_A f \,\mathrm{d}{\nu} $ 就是 $f$ 的 Lebesgue 积分。
+[40] 我们可以把 $f$ 称为 $\mu$ 的关于 $\nu$ 的密度（density）。
+[41] 反过来，对于一个 Lebesgue 可积函数 $f$，我们总可以定义与之相关的测度：
+[42] \begin{equation}
+\mu(A) = \int_A f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[43] 如果 $f$ 是测度 $\mu$ 的密度，
+[44] 那么任意函数 $\varphi$ 关于测度 $\mu$ 的积分就可以写为：
+[45] \begin{equation}
+\int_A \varphi \,\mathrm{d}{\mu} = \int_A f(x)\varphi(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[46] 于是，我们可以将测度 $\mu$ 引申为一个泛函：
+[47] \begin{equation}
+\mu(\varphi) = \int_{\mathbb{R}^n} f(x)\varphi(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[48] 今后，我们将不再区分测度 $\mu$ 及其关于 Lebesgue 测度的密度 $f$。
+[49] 泛函 $\mu(\varphi)$ 有时候也表示为 $f(\varphi)$。
+[/SCOPE:s_def3]
+[/SCOPE:s_def3_let2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "复值测度是非负测度的推广"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "计数测度是非负测度的例子"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Dirac 测度是非负测度的例子"
+  },
+  {
+    "source_scope": "s_def3",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "绝对连续是测度之间的关系"
+  }
+]

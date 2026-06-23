@@ -1,0 +1,194 @@
+[SCOPE:root|description|双线性函数]
+文章名: BiFunc
+标题: 双线性函数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+  [1] type=example heading=例 1 title=
+  [2] type=example heading=例 2 title=
+  [3] type=definition heading=定义 2 title=
+  [4] type=definition heading=定义 3 title=
+  [5] type=theorem heading=定理 1 title=
+  [6] type=definition heading=定义 4 title=
+  [7] type=theorem heading=定理 2 title=
+
+[SCOPE:s_def1|description|定义 1]
+[0] 定义 1
+[SCOPE:s_def1_let1|let_bind|定义 1 的变量]
+[1] 设 $V$ 是域 $\mathbb F$ 上的线性空间，映射 $f:V\times V\rightarrow\mathbb F$ 若满足对于任意 $ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} , \boldsymbol{\mathbf{z}} \in V,a,b\in \mathbb F$ 有：
+[2] \begin{equation}
+\begin{aligned}
+f(a \boldsymbol{\mathbf{x}} +b \boldsymbol{\mathbf{y}} , \boldsymbol{\mathbf{z}} )&=af( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{z}} )+bf( \boldsymbol{\mathbf{y}} , \boldsymbol{\mathbf{z}} )=0\\
+f( \boldsymbol{\mathbf{z}} ,a \boldsymbol{\mathbf{x}} +b \boldsymbol{\mathbf{y}} )&=af( \boldsymbol{\mathbf{z}} , \boldsymbol{\mathbf{x}} )+bf( \boldsymbol{\mathbf{z}} , \boldsymbol{\mathbf{y}} )=0
+\end{aligned}~,
+\end{equation}
+[/SCOPE:s_def1_let1]
+[3a] 显然
+[3b] 当固定一个向量不变时，双线性函数，则是 $V$ 上的一个线性函数。
+[4] 双线性函数可以用矩阵表示。
+[SCOPE:s_def1_let2|let_bind|基与度量矩阵]
+[5] 设 $\{ \boldsymbol{\mathbf{e}} _i\}$ 为 $V$ 上的一组基，任意向量 $ \boldsymbol{\mathbf{x}} =a^i \boldsymbol{\mathbf{e}} _i, \boldsymbol{\mathbf{y}} =b^i \boldsymbol{\mathbf{e}} _i$，
+[6] 则 $f(a^i \boldsymbol{\mathbf{e}} _i,b^j \boldsymbol{\mathbf{e}} _j)=a^ib^jf( \boldsymbol{\mathbf{e}} _i, \boldsymbol{\mathbf{e}} _j)= \boldsymbol{\mathbf{x}} ^TA \boldsymbol{\mathbf{y}} $。
+[7] 称 $A$ 是 $f$ 在基 $\{ \boldsymbol{\mathbf{e}} _i\}$ 下的度量矩阵。
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let2]
+[SCOPE:s_ex1|description|例 1]
+[8] \begin{equation}
+\boldsymbol{\mathbf{x}} ^TA \boldsymbol{\mathbf{y}} =\begin{pmatrix}
+a_1 &a_2 &a_3
+\end{pmatrix}
+\begin{pmatrix}
+f( \boldsymbol{\mathbf{e}} _1, \boldsymbol{\mathbf{e}} _1)& f( \boldsymbol{\mathbf{e}} _1, \boldsymbol{\mathbf{e}} _2) &…[truncated]…boldsymbol{\mathbf{e}} _3, \boldsymbol{\mathbf{e}} _1) & f( \boldsymbol{\mathbf{e}} _3, \boldsymbol{\mathbf{e}} _2) &f( \boldsymbol{\mathbf{e}} _3, \boldsymbol{\mathbf{e}} _3)
+\end{pmatrix}
+\begin{pmatrix}
+b^1 &b^2 &b^3
+\end{pmatrix}~.
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例 2]
+[9] 欧几里得内积是特殊的度量矩阵，表示为单位矩阵 $\boldsymbol E$。
+[10] 内积具有双线性、正定性和对称性。
+[11] 我们可以把只保留双线性的度量矩阵看作广义内积。
+[12] 在前文我们已经知道，相似变换可以改变线性映射和向量的表示。
+[13] 度量矩阵的意义便在于保持向量内积在新基下不变。
+[SCOPE:s_ex2_let|let_bind|过渡矩阵 Q]
+[14] 设 $Q$ 为过渡矩阵，$B$ 为 $f$ 在新基下的表示，由内积不变得 $ \boldsymbol{\mathbf{x}} ^TA \boldsymbol{\mathbf{y}} =x^T(Q^{-1})^TBQ^{-1} \boldsymbol{\mathbf{y}} $，
+[15] 则 $B=Q^{T}AQ$。
+[/SCOPE:s_ex2_let]
+[16] 也就是说，合同变换实际上是改变双线性函数的度量矩阵表示。
+[17] 由于合同变换不改变矩阵的秩，
+[18] 因此把秩称作 $f$ 的矩阵秩。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_def2|description|定义 2]
+[19] 定义 2
+[20] 设 $f$ 是域 $f$ 上线性空间 $V$ 的双线性函数，称 $V$ 的下述子集
+[21] \begin{equation}
+\{ \boldsymbol{\mathbf{x}} \in V \mid f( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} )=0, \forall \boldsymbol{\mathbf{y}} \in V\}~
+\end{equation}
+[22] 易见，左根和右根在数乘和加法下封闭，是 $V$ 的子空间。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|定义 3]
+[23] 定义 3
+[24] 若 $f$ 在 $V$ 上的左根和有根都为 ${ \boldsymbol{\mathbf{0}} }$，
+[25] 则称 $f$ 在 $V$ 上非退化。
+[26] 称不满足该条件的 $f$ 是退化的。
+[27] $f$ 的矩阵秩是判断其退化性的直接依据。
+
+[/SCOPE:s_def3]
+[SCOPE:s_thm1|description|定理 1]
+[28] 定理 1
+[29] $f$ 在 $V$ 上非退化 $\Leftrightarrow f$ 满秩。
+[30] 证明：
+[31] 非退化意味着左根和右根都为 $ \boldsymbol{\mathbf{0}} $。
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[32] 设任意向量 $ \boldsymbol{\mathbf{y}} =b^j \boldsymbol{\mathbf{e}} _j$，左根 $ \boldsymbol{\mathbf{x}} =a^i \boldsymbol{\mathbf{e}} _i$ 满足 $f(a^i \boldsymbol{\mathbf{e}} _i,b^j \boldsymbol{\mathbf{e}} _j)=b^ja^if( \boldsymbol{\mathbf{e}} _i, \boldsymbol{\mathbf{e}} _j)=0$，
+[33] 则必有 $a^if( \boldsymbol{\mathbf{e}} _i, \boldsymbol{\mathbf{e}} _j)= \boldsymbol{\mathbf{x}} ^T A=(A^Tx)^T= \boldsymbol{\mathbf{0}} $。
+[/SCOPE:s_thm1_let]
+[34] 解集为 $ \boldsymbol{\mathbf{0}} $ 意味着 $f$ 是个单射，
+[35] 即满秩。
+[36] 同理可证，右根为 $ \boldsymbol{\mathbf{0}} $ 当且仅当 $f$ 满秩。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_def4|description|定义 4]
+[37] 定义 4
+[SCOPE:s_def4_let|let_bind|定义 4 的变量]
+[38] $f,V, \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} $ 同上设。
+[/SCOPE:s_def4_let]
+[39] 若满足 $f( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} )=f( \boldsymbol{\mathbf{y}} , \boldsymbol{\mathbf{x}} )$，
+[40] 则称 $f$ 是对称的，；
+[41] 若满足 $f( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} )=-f( \boldsymbol{\mathbf{y}} , \boldsymbol{\mathbf{x}} )$，
+[42] 则称 $f$ 是反对称（斜对称）的；
+[43a] 若满足 $f( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{x}} )=0$
+[43b] 则称 $f$ 是交错的。
+[44] 交错性相当于幂零性，在特征不为 $2$ 的域下是可以推出反对称性的，由 $f( \boldsymbol{\mathbf{x}} + \boldsymbol{\mathbf{y}} , \boldsymbol{\mathbf{x}} + \boldsymbol{\mathbf{y}} )=0$ 可得。
+[45] 而在特征为 $2$ 的域下相当于是对称性。
+[46] 因此，本篇下述只研究对称性和反对称性双线性函数的性质。
+[47] 如果 $f$ 是对称的，
+[48] 则有 $f(a^i \boldsymbol{\mathbf{e}} _i,b^j \boldsymbol{\mathbf{e}} _j)=a^ib^jf( \boldsymbol{\mathbf{e}} _i, \boldsymbol{\mathbf{e}} _j)=f(b^j \boldsymbol{\mathbf{e}} _j,a^i \boldsymbol{\mathbf{e}} _i)=a^ib^jf( \boldsymbol{\mathbf{e}} _j, \boldsymbol{\mathbf{e}} _i)$，
+[49] 则其度量矩阵是对称的。
+[50] 同理可证，若 $f$ 是反对称的，
+[51] 则其度量矩阵是反对称的。
+[52] $f$ 是对称的 $\Leftrightarrow$ 其度量矩阵是对称的。
+[53] $f$ 是反对称的 $\Leftrightarrow$ 其度量矩阵是反对称的。
+[54] 由于对称矩阵相似于对角矩阵，且其过渡矩阵是正交矩阵，
+[55] 因此这也是个合同变换的过程。
+[56] 所以对于线性空间 $V$ 上的对称双线性函数 $f$，我们总能找到一组基，使其度量矩阵在该基下为对角矩阵。
+[57] 反对称双线性函数也有较为简单的度量矩阵形式。
+
+[/SCOPE:s_def4]
+[SCOPE:s_thm2|description|定理 2]
+[58] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理 2 的变量]
+[59] 设域 $K$ 的特征不为 $2$，$V$ 是域 $K$ 的 $n$ 维线性空间，$f$ 是 $V$ 上的反对称双线性函数。
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm2_let2|let_bind|基向量]
+[60] 则存在一组基 $ \boldsymbol{\mathbf{\varepsilon}} _1, \boldsymbol{\mathbf{\varepsilon}} _2, \boldsymbol{\mathbf{\eta}} '_3... \boldsymbol{\mathbf{\eta}} '_n$，使得 $f$ 的度量矩阵具有如下形式：
+[61] \begin{equation}
+\operatorname{diag}\left\{\left(\begin{array}{rr}
+0 & 1 \\
+-1 & 0
+\end{array}\right), \cdots,\left(\begin{array}{rr}
+0 & 1 \\
+-1 & 0
+\end{array}\right), 0, \cdots, 0\right\} \text {, }
+~.\end{equation}
+[/SCOPE:s_thm2_let2]
+[62] 证明：1
+[63] 由对称矩阵的性质可知，$n< 3$ 时定理自然成立。
+[64] 下面假设维度小于 $n$ 时成立，需要证明维度为 $n$ 时定理依然成立。
+[65] 由于 $f$ 是反对称的，
+[SCOPE:s_thm2_let3|let_bind|证明中的变量]
+[66] 因此必然至少有两个向量其内积不为 $0$，如 $f( \boldsymbol{\mathbf{\varepsilon}} _1, \boldsymbol{\mathbf{x}} _2)=k\neq 0$，设 $ \boldsymbol{\mathbf{\varepsilon}} _2=k^{-1} \boldsymbol{\mathbf{x}} _2$，
+[67] 则可得 $f( \boldsymbol{\mathbf{\varepsilon}} _1, \boldsymbol{\mathbf{\varepsilon}} _2)=1$。
+[68] 拓展这两个向量至 $V$ 上的一组基：
+[69] \begin{equation}
+\boldsymbol{\mathbf{\varepsilon}} _1, \boldsymbol{\mathbf{\varepsilon}} _2, \boldsymbol{\mathbf{\eta}} _3,... \boldsymbol{\mathbf{\eta}} _n~,
+\end{equation}
+[70] 设 $f( \boldsymbol{\mathbf{\eta}} _i, \boldsymbol{\mathbf{\varepsilon}} _1)=k_i,f( \boldsymbol{\mathbf{\eta}} _i, \boldsymbol{\mathbf{\varepsilon}} _2)=k'_i$，并令
+[71] \begin{equation}
+\boldsymbol{\mathbf{\eta}} '_i= \boldsymbol{\mathbf{\eta}} _i-k'_i \boldsymbol{\mathbf{\varepsilon}} _1+k_i \boldsymbol{\mathbf{\varepsilon}} _2,i=3...n~,
+\end{equation}
+[72] \begin{equation}
+\begin{aligned}
+f( \boldsymbol{\mathbf{\eta}} '_i, \boldsymbol{\mathbf{\varepsilon}} _1)&=f( \boldsymbol{\mathbf{\eta}} _i, \boldsymbol{\mathbf{\varepsilon}} _1)+k_if( \boldsymbol{\mathbf{\varepsilon}} _2,\varepsilon_1)\\
+&=k_i-k_i=0…[truncated]…( \boldsymbol{\mathbf{\eta}} '_i, \boldsymbol{\mathbf{\varepsilon}} _2)&=f( \boldsymbol{\mathbf{\eta}} _i, \boldsymbol{\mathbf{\varepsilon}} _2)-k'_if( \boldsymbol{\mathbf{\varepsilon}} _1,\varepsilon_2)\\
+&=k'_i-k'_i=0
+\end{aligned}~.
+\end{equation}
+[/SCOPE:s_thm2_let3]
+[73] 因此 $ \boldsymbol{\mathbf{\eta}} '_i\in \left( \operatorname {Span}\{ \boldsymbol{\mathbf{\varepsilon}} _1, \boldsymbol{\mathbf{\varepsilon}} _2\}\right)^{\bot}$。
+[74] 可以证明 $\{ \boldsymbol{\mathbf{\varepsilon}} _1, \boldsymbol{\mathbf{\varepsilon}} _2, \boldsymbol{\mathbf{\eta}} '_3... \boldsymbol{\mathbf{\eta}} '_n\}$ 依然构成 $V$ 上的一组基。
+[75] 因此 $V=\{ \boldsymbol{\mathbf{\varepsilon}} _1, \boldsymbol{\mathbf{\varepsilon}} _2\}\oplus \operatorname {Span}\{ \boldsymbol{\mathbf{\eta}} '_i\}_{i=3}^n$。
+[76] 由题设可知，$f$ 在 $ \operatorname {Span}\{ \boldsymbol{\mathbf{\eta}} '_i\}_{i=3}^n$ 上存在一组基，使得在该子空间上的度量矩阵为定理所示形式，又因 $f( \boldsymbol{\mathbf{\eta}} '_i,\varepsilon_1)=f( \boldsymbol{\mathbf{\eta}} '_i,\varepsilon_2)=0$ 及 $f( \boldsymbol{\mathbf{\varepsilon}} _1,
+[77] \boldsymbol{\mathbf{\varepsilon}} _2)=1$，定理得证。
+[/SCOPE:s_thm2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1 非退化与满秩等价，是定义3 的非退化性质的刻画"
+  },
+  {
+    "source_scope": "s_def4",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "对称/反对称双线性函数是双线性函数的特例"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2 给出反对称双线性函数的规范形"
+  }
+]

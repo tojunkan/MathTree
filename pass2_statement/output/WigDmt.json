@@ -1,0 +1,230 @@
+{
+  "article_name": "WigDmt",
+  "statements": [
+    {
+      "stmt_id": "st_intro_let",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let",
+      "exposed_entities": [
+        "Y_{l,m}",
+        "\\mathcal{R}",
+        "l",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_eq1",
+      "subtype": "conclusion",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intro_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_def_D",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "D_{m',m}^l"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_unitary",
+      "subtype": "conclusion",
+      "clause_range": [
+        6,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_complex",
+      "subtype": "remark",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_expr_let",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_expr_let",
+      "exposed_entities": [
+        "\\alpha",
+        "\\beta",
+        "\\gamma",
+        "\\mathcal{R}(\\alpha,\\beta,\\gamma)"
+      ]
+    },
+    {
+      "stmt_id": "st_dmat_first_rot",
+      "subtype": "conclusion",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_dmat",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_dmat_second_rot",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_dmat",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_dmat_def_d",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_dmat",
+      "exposed_entities": [
+        "d_{m',m}^l(\\beta)"
+      ]
+    },
+    {
+      "stmt_id": "st_dmat_let",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_dmat_let",
+      "exposed_entities": [
+        "s"
+      ]
+    },
+    {
+      "stmt_id": "st_dmat_expr_d",
+      "subtype": "theorem",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_dmat_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_expr_final_rot",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_expr",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_expr_full_D",
+      "subtype": "theorem",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": "true",
+      "scope_id": "s_expr",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_intro_let",
+      "target": "st_intro_eq1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_let",
+      "target": "st_intro_def_D",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_def_D",
+      "target": "st_intro_unitary",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_expr_let",
+      "target": "st_dmat_first_rot",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_expr_let",
+      "target": "st_dmat_second_rot",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_dmat_second_rot",
+      "target": "st_dmat_def_d",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_dmat_let",
+      "target": "st_dmat_expr_d",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_dmat_def_d",
+      "target": "st_expr_final_rot",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_expr_final_rot",
+      "target": "st_expr_full_D",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_dmat_def_d",
+      "target": "st_intro_def_D",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "Wigner d 矩阵是 Wigner D 矩阵在 α=0, γ=0 时的特例"
+    }
+  ],
+  "unresolved": []
+}

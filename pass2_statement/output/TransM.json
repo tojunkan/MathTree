@@ -1,0 +1,104 @@
+{
+  "article_name": "TransM",
+  "statements": [
+    {
+      "stmt_id": "st_transition_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_transition",
+      "exposed_entities": [
+        "V",
+        "e_i",
+        "e'_i",
+        "Q"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_proof",
+      "subtype": "example",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_coord_derivation",
+      "subtype": "theorem",
+      "clause_range": [
+        10,
+        18
+      ],
+      "truth_value": "true",
+      "scope_id": "s_coord",
+      "exposed_entities": [
+        "v",
+        "c",
+        "c'",
+        "Q"
+      ]
+    },
+    {
+      "stmt_id": "st_lin_trans_derivation",
+      "subtype": "theorem",
+      "clause_range": [
+        19,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lin_trans",
+      "exposed_entities": [
+        "T",
+        "Q",
+        "v",
+        "c",
+        "c'",
+        "M",
+        "M'"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_example1_proof",
+      "target": "st_transition_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_coord_derivation",
+      "target": "st_transition_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_lin_trans_derivation",
+      "target": "st_coord_derivation",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_coord_derivation",
+      "target": "st_transition_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "坐标变换是转移矩阵的应用"
+    },
+    {
+      "source": "st_lin_trans_derivation",
+      "target": "st_coord_derivation",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "线性变换矩阵变换依赖于坐标变换"
+    }
+  ],
+  "unresolved": []
+}

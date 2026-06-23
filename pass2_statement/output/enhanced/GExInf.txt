@@ -1,0 +1,213 @@
+[SCOPE:root|description|无穷 Galois 扩张与 Krull 定理]
+文章名: GExInf
+标题: 无穷 Galois 扩张与 Krull 定理
+
+环境标记 (hints):
+  [0] type=lemma heading=引理 1 title=
+  [1] type=lemma heading=引理 2 title=
+  [2] type=theorem heading=定理 1 title=
+  [3] type=theorem heading=定理 2 title=
+  [4] type=definition heading=定义 1 title=Krull 拓扑
+  [5] type=theorem heading=定理 3 title=
+
+[SCOPE:s_lemma1|description|引理 1]
+[0] 引理 1
+[SCOPE:s_lemma1_let|let_bind|引理 1 的变量]
+[1] 设 $\mathbb{K}/\mathbb{F}$ 是 Galois 扩张，且存在中间域 $\mathbb{M}$。
+[2] 则 $\mathbb{M}/\mathbb{F}$ 是 Galois 扩张 $\iff$ $\mathbb{M}/\mathbb{F}$ 是正规扩张 $\iff$ $ \operatorname {Gal}(\mathbb{K}/\mathbb{M})\vartriangleleft \operatorname {Gal}(\mathbb{K}/\mathbb{F})$。
+[/SCOPE:s_lemma1_let]
+[3] 引理 1 实际上就是定理 11 ，
+[4] 因此证明参见该定理。
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_lemma2|description|引理 2]
+[5] 引理 2
+[SCOPE:s_lemma2_let|let_bind|引理 2 的变量]
+[6] 设 $\mathbb{K}/\mathbb{F}$ 是 Galois 扩张，且存在中间域 $\mathbb{M}$。
+[7] 则 $[ \operatorname {Gal}(\mathbb{K}/\mathbb{F}): \operatorname {Gal}(\mathbb{K}/\mathbb{M})]=[\mathbb{M}:\mathbb{F}]$。
+[/SCOPE:s_lemma2_let]
+[8] 证明：
+[9] 取 $f, g\in \operatorname {Gal}(\mathbb{K}/\mathbb{F})$，
+[10] 则 $f$ 和 $g$ 模 $ \operatorname {Gal}(\mathbb{K}/\mathbb{M})$ 同余当且仅当$f^{-1}g\in \operatorname {Gal}(\mathbb{K}/\mathbb{M})$，或者说 $f$ 和 $g$ 限制在 $\mathbb{M}$ 上是相同的。
+[11] 因此，$ \operatorname {Gal}(\mathbb{K}/\mathbb{M})$ 的每个左陪集对应一个 $\mathbb{M}/\mathbb{F}$ 的映射。
+[12] 证毕。
+[13] 这条引理很像定理 12 ，只不过不再要求是有限扩张了。
+[14] 这显得定理 12 似乎没有存在的必要，然而我们依然将它保留了，体现 “有限 Galois 扩张就是单扩张” 的思路。
+
+[/SCOPE:s_lemma2]
+[SCOPE:s_thm1|description|定理 1]
+[15] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[16] 设 $\mathbb{K}/\mathbb{F}$ 是 Galois 扩域，$\mathcal{M}=\{ \operatorname {Gal}(\mathbb{K}/\mathbb{M})\mid \mathbb{M}/\mathbb{F}\text{是有限扩张}\}$1。
+[17] 则有：
+[/SCOPE:s_thm1_let]
+[18] 1。
+[19] $\forall H\in\mathcal{M}$，$[ \operatorname {Gal}(\mathbb{K}/\mathbb{F}): H]$2是有限的；
+[20] 2。
+[21] $\bigcap_{H\in\mathcal{M}}=\{e\}$。
+[22] 这里 $e$ 是群的单位元，
+[23] 即 $\mathbb{K}$ 上的恒等映射 $ \operatorname {id}_{\mathbb{K}}$。
+[24] 3。
+[25] $\forall H_1, H_2\in\mathcal{M}$，有 $H_1\cap H_2\in\mathcal{M}$；
+[26] 4。
+[27] $\forall H\in\mathcal{M}$，$\exists N\vartriangleleft \operatorname {Gal}(\mathbb{K}/\mathbb{F})$，且 $N\subseteq H$；
+[SCOPE:s_thm1_proof|description|定理 1 的证明]
+[28] 证明：
+[29] 由引理 2 直接可得。
+[SCOPE:s_thm1_proof_let1|let_bind|取 sigma 和 alpha]
+[30] 任取 $\sigma\in \operatorname {Gal}(\mathbb{K}/\mathbb{F})$，只要 $\sigma\not= \operatorname {id}_{\mathbb{K}}$，
+[31] 那么就存在 $\alpha\in\mathbb{K}-\mathbb{F}$ 使得 $\sigma(\alpha)\neq\alpha$。
+[SCOPE:s_thm1_proof_let2|let_bind|取 M = F(alpha)]
+[32] 取 $\mathbb{M}=\mathbb{F}(\alpha)$，
+[33] 则 $\sigma\not\in \operatorname {Gal}(\mathbb{K}/\mathbb{F})$。
+[34] 故 $\sigma\not\in \bigcap_{H\in\mathcal{M}}$。
+[/SCOPE:s_thm1_proof_let1]
+[/SCOPE:s_thm1_proof_let2]
+[35] 由引理 1 ，$H_1\cap H_2$ 是 $\mathbb{M}_1\mathbb{M}_2$ 的 Galois 群。
+[36] 有限域的合成可以看成 $\mathbb{M}_1$ 用 $\mathbb{M}_2$ 的元素反复进行有限次单扩张的结果。
+[37] 由于是 Galois 扩张，
+[38] 故这些单扩张全都是代数扩张，
+[39] 从而是有限扩张，
+[40] 从而 $\mathbb{M}_1\mathbb{M}_2/\mathbb{F}$ 是有限扩张。
+[SCOPE:s_thm1_proof_let3|let_bind|取 M']
+[41] 由引理 1 ，只需要证明存在 $\mathbb{M}'$，使得 $\mathbb{M}'\supseteq\mathbb{M}$ 且 $\mathbb{M}'/\mathbb{F}$ 是正规扩张。
+[42] 取 $\mathbb{M}'$ 为 $\mathbb{M}$ 关于 $\mathbb{F}$ 的所有共轭域之合成即可。
+[/SCOPE:s_thm1_proof_let3]
+[43] 证毕。
+[/SCOPE:s_thm1_proof]
+[44] 你可能会想到，定理 1 的第 4 条完全可以取 $N=\{e\}$ 来证明，也就是取 $\mathbb{M}'=\mathbb{K}$，这就导致情况过于平凡，似乎定理第 4 条没有存在的必要。
+[45] 但我们实际采用的证明过程说明非平凡的情况也是存在的。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_krull_top|description|Krull 拓扑的构造]
+[SCOPE:s_krull_top_let|let_bind|集合 X, Y, M]
+[46] 考虑任意集合 $X$ 和 $Y$，令 $M\subseteq X^Y$。
+[47] 任取 $f\in M$，以及 $X$ 的有限子集 $S$，令
+[/SCOPE:s_krull_top_let]
+[48] \begin{equation}
+V(f, S) = \{g\in M\mid g(s)=f(s), \forall s\in S\}~,
+\end{equation}
+[49] 即 $V(f, S)$ 是全体属于 $M$ 且限制在 $S$ 上与 $f$ 相等的映射的集合。
+[50] 任取 $h\in V(f, S)\cap V(g, T)$，
+[51] 则易得 $V(f, S)\cap V(g, T) = V(h, S\cup T)$3。
+[52] 于是，全体 $V(f, S)$ 的集合对于有限交封闭，
+[53] 从而据子节 2 的讨论知，全体 $V(f, S)$ 的集合是一个拓扑基（定义 2 ）。
+[54] 这样全体 $V(f, S)$ 的集合就定义了 $M$ 上的一个拓扑，称之为 $M$ 上的有限拓扑（finite topology）。
+
+[/SCOPE:s_krull_top]
+[SCOPE:s_thm2|description|定理 2]
+[55] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理 2 的变量]
+[56] 考虑 Galois 扩张 $\mathbb{K}/\mathbb{F}$。令
+[57] \begin{equation}
+\begin{aligned}
+\mathcal{N} &= \{\sigma N\mid N\in\mathcal{M}, \sigma\in \operatorname {Gal}(\mathbb{K}/\mathbb{F}), N\vartriangleleft \operatorname {Gal}(\mathbb{K}/\mathbb{F})\}\\
+\mathcal{L} &= \{\sigma H\mid H\in\mathcal{M}, \sigma\in \operatorname {Gal}(\mathbb{K}/\mathbb{F})\}\\
+\mathcal{R} &= \{H\sigma \mid H\in\mathcal{M}, \sigma\in \operatorname {Gal}(\mathbb{K}/\mathbb{F})\}~,
+\end{aligned}
+\end{equation}
+[/SCOPE:s_thm2_let]
+[58] 定理 1
+[59] 则 $\mathcal{N}$、$\mathcal{L}$ 和 $\mathcal{R}$ 都是 $ \operatorname {Gal}(\mathbb{K}/\mathbb{F})$ 上有限拓扑的拓扑基。
+[SCOPE:s_thm2_proof|description|定理 2 的证明]
+[60] 证明：
+[61] 只需证明 $\mathcal{N}$ 的情况即可，因为 $\mathcal{N}\subseteq \mathcal{L}\cap\mathcal{R}$。
+[SCOPE:s_thm2_proof_let1|let_bind|取 M 和 alpha]
+[62] 任取 $\mathbb{K}/\mathbb{M}$ 的中间域 $\mathbb{M}$，使得 $\mathbb{M}/\mathbb{F}$ 是有限扩张。
+[63] 考虑 $\mathcal{M}$ 的定义，以及 “有限可分扩张都是单扩张”（推论 2 ），可知存在 $\alpha$ 使得 $\mathbb{M}=\mathbb{F}(\alpha)$。
+[/SCOPE:s_thm2_proof_let1]
+[SCOPE:s_thm2_proof_let2|let_bind|取 sigma1, sigma2]
+[64] 因此，如果 $\sigma_i\in \operatorname {Gal}(\mathbb{K}/\mathbb{F})$ 使得 $\sigma_1(\alpha)=\sigma_2(\alpha)$，
+[65] 那么 $\sigma_1\sigma_2^{-1}\in \operatorname {Gal}(\mathbb{K}/\mathbb{M})$。
+[66] 换句话说，$\mathbb{K}$ 的两个自同构模 $ \operatorname {Gal}(\mathbb{K}/\mathbb{M})$ 同余（在 $ \operatorname {Gal}(\mathbb{K}/\mathbb{M})$ 的同一个左陪集里），当且仅当它们把 $\alpha$ 映射为同一个元素。
+[/SCOPE:s_thm2_proof_let2]
+[67] 于是，取 $\mathbb{K}$ 的有限子集$\{\alpha\}$，有
+[68] \begin{equation}
+V(\sigma, \{\alpha\}) = \sigma \operatorname {Gal}(\mathbb{K}/\mathbb{M})~.
+\end{equation}
+[69] 因此，$\mathcal{N}$、$\mathcal{L}$ 和 $\mathcal{R}$ 都是 $ \operatorname {Gal}(\mathbb{K}/\mathbb{F})$ 上有限拓扑的子族。
+[70] 下证任意 $V(\sigma, S)$ 总能由 $\mathcal{N}$ 求并得到。
+[SCOPE:s_thm2_proof_let3|let_bind|取 sigma 和 S]
+[71] 任取 $\sigma\in \operatorname {Gal}(\mathbb{K}/\mathbb{F})$，以及 $\mathbb{K}$ 的有限子集 $S$。
+[72] 则 $\mathbb{F}(S)/\mathbb{F}$ 是有限扩张。
+[/SCOPE:s_thm2_proof_let3]
+[73] 由定理 1 第 4 条，可以取 $\mathbb{F}(S)$ 关于 $\mathbb{F}$ 的全体共轭域之合成 $\mathbb{M}\subseteq\mathbb{F}(S)$，使得 $\mathbb{K}/\mathbb{M}$ 是 Galois 扩张。
+[74] 同样由于 “有限可分扩张都是单扩张”，存在 $\alpha$ 使得 $\mathbb{M}=\mathbb{F}(\alpha)$。
+[75] 于是，$V(\sigma, S)=V(\sigma, \{\alpha\})=\sigma \operatorname {Gal}(\mathbb{K}/\mathbb{M})$。
+[76] 证毕。
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_proof]
+[SCOPE:s_def1|description|定义 1 Krull 拓扑]
+[77] 定义 1 Krull 拓扑
+[78] 定理 1 中所描述的 $ \operatorname {Gal}(\mathbb{K}/\mathbb{F})$ 上的拓扑，又被称为Krull 拓扑。
+[79] 任取 $H\in\mathcal{M}$，根据定理 2 ，它是个开集。
+[80] 同时它的补集 $H^C$ 是各 $\sigma H$ 的并，其中 $\sigma\not\in H$，而 $\sigma H$ 也都是开集，
+[81] 因此 $H^C$ 是开集——于是 $H$ 还是闭集。
+[82] 同理，$\sigma H$ 也是既开又闭的。
+[83a] 如果 $ \operatorname {Gal}(\mathbb{K}/\mathbb{F})$ 本身
+[83b] 则是有限群，
+[84] 那么可以类比式 3 的原理，推知 Krull 拓扑是个离散拓扑。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm3|description|定理 3]
+[85] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理 3 的变量]
+[86] 设 $\mathbb{K}/\mathbb{F}$ 是 Galois 扩张，
+[87] 则 $ \operatorname {Gal}(\mathbb{K}/\mathbb{F})$ 的 Krull 拓扑是紧致的、Hausdorff 的和完全不连通的。
+[/SCOPE:s_thm3_let]
+[SCOPE:s_thm3_proof|description|定理 3 的证明]
+[88] 证明：
+[SCOPE:s_thm3_proof_let1|let_bind|取 sigma1, sigma2, alpha]
+[89] 任取 $\sigma_i\in \operatorname {Gal}(\mathbb{K}/\mathbb{F})$，且 $\sigma_1\neq \sigma_2$。
+[90] 则存在 $\alpha\in\mathbb{K}-\mathbb{F}$，使得 $\sigma_1(\alpha)\neq\sigma_2(\alpha)$。
+[/SCOPE:s_thm3_proof_let1]
+[91] 于是取开集 $V(\sigma_i, \{\alpha\})$，
+[92] 即可分离这两个点 $\sigma_i$，得证 Hausdorff 性。
+[SCOPE:s_thm3_proof_let2|let_bind|取 H]
+[93] 令 $H= \operatorname {Fix}_\mathbb{K}(\mathbb{F}(\alpha))$，
+[94] 则 $\sigma_1\in\sigma_1H$。
+[/SCOPE:s_thm3_proof_let2]
+[95] 由于 $\sigma_1^{-1}\sigma_2(\alpha)\neq \alpha$，
+[96] 故 $\sigma_1H\neq\sigma_2H$。
+[97] 而我们已经知道，$\sigma_iH$ 是既开又闭的，也就是连通分支。
+[98] 由于 $\sigma_i$ 的任意性，这意味着任意两个不同的自同构总在不同的连通分支中，
+[99] 故任意连通分支只有一个元素，得证完全不连通性。
+[100] 【未完成】紧致性有点复杂，之后补充。
+[101] 可能需要用到 Tychonoff 定理。
+[102] 证毕。
+[/SCOPE:s_thm3]
+[/SCOPE:s_thm3_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_lemma1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "引理 1 用于定理 1 的证明"
+  },
+  {
+    "source_scope": "s_lemma2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "引理 2 用于定理 1 的证明"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理 1 用于定理 2 的证明"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理 2 用于定义 Krull 拓扑"
+  }
+]

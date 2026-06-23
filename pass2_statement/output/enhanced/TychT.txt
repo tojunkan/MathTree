@@ -1,0 +1,177 @@
+[SCOPE:root|description|Tychonoff 定理]
+文章名: TychT
+标题: Tychonoff 定理
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=Tychonoff 定理
+  [1] type=exercise heading=习题 1 title=
+  [2] type=theorem heading=定理 2 title=
+  [3] type=corollary heading=推论 1 title=Alexander 子基定理
+
+[0] 紧空间具有仅次于有限空间的优良性质。
+[1] 然而，一个有限空间的无限次积空间通常是无限集（只要这个有限空间的元素数大于 $1$），我们可能会猜想，一个紧空间的无限次积空间可能会失去紧性。
+[2] 然而 Tychonoff 定理表明，对于积拓扑，紧空间的任意次笛卡尔积仍然是紧空间，紧性被保留了。
+[3] 我们先列出该定理，然后讨论并给出其证明。
+
+[SCOPE:s_tychonoff|description|定理 1 Tychonoff 定理]
+[4] 定理 1 Tychonoff 定理
+[SCOPE:s_tychonoff_let|let_bind|Tychonoff 定理的变量]
+[5] 给定一族拓扑空间 $\{(X_\alpha, \mathcal{T}_\alpha)\}_{\alpha\in \Lambda}$，如果对每个 $\alpha\in\Lambda$，$(X_\alpha, \mathcal{T}_\alpha)$ 都是紧空间，
+[6] 那么乘积空间 $(\prod_{\alpha\in\Lambda}X_\alpha, \mathcal{T})$ 也是紧空间。
+[7] 这里 $\mathcal{T}$ 是各 $\mathcal{T}_\alpha$ 的积拓扑。
+
+[/SCOPE:s_tychonoff]
+[/SCOPE:s_tychonoff_let]
+[8] 考虑最简单的积拓扑：两个紧空间 $(X_1, \mathcal{T}_1)$ 和 $(X_2, \mathcal{T}_2)$ 的积拓扑。
+[9] 为了方便视觉化理解，我们可以把 $X_1$ 和 $X_2$ 分别画成一根轴，
+[10] 于是它们的积空间就是一个平面。
+[11] 把各 $X_i$ 的开集都想象成一条线段，
+[12] 于是 $X_i$ 的紧致性可以描述为 “任意覆盖了整条轴的线段集合，总存在有限子覆盖”。
+[13] 那么 $X_i$ 的紧致性能继承到 $X_1\times X_2$ 上吗？
+[14] 乍一看似乎没关联，因为 $X_1\times X_2$ 的开集和 $X_i$ 开集的联系似乎只有投影。
+[15] 如果记 $\{U_\alpha\}$ 是 $X_1\times X_2$ 的一族开覆盖，
+[16] 那么投影后的 $\{\pi_i(U_\alpha)\}$ 就是 $X_i$ 的一族开覆盖。
+[17] 由 $X_i$ 的紧致性虽然能得出 $\{\pi_i(U_\alpha)\}$ 存在有限子覆盖 $\{\pi_i(U_i)\}_{i\in I}$（$I$ 是某个有限指标集），
+[18] 但没法保证 $\{U_i\}_{i\in I}$ 是 $X_1\times X_2$ 的覆盖。
+[19] 不过，稍加优化我们会发现，由于开集都是基本开集的并、基本开集都是开集，可以得到 “任意开覆盖都有有限子覆盖” 等价于 “任意拓扑基覆盖都有有限子覆盖”，这里拓扑基覆盖是指取拓扑基中的基本开集来覆盖。
+[20] 那是不是用拓扑基覆盖可以证明呢？
+[21] 不行，没有解决上述问题。
+[22] 尽管如此，我们还是把这个结论记下来：
+
+[SCOPE:s_exercise1|description|习题 1]
+[23] 习题 1
+[24] 证明：对于拓扑空间 $X$ 的任意子空间 $A$，选定一个拓扑基后，下列命题等价：
+[25] $A$ 的任意开覆盖都有有限子覆盖；
+[26] $A$ 的任意拓扑基覆盖都有有限子覆盖。
+[27] 再优化思路：“任意拓扑基覆盖都有有限子覆盖” 可以等价于 “任意子基覆盖都有有限子覆盖” 吗？
+[28] 这里的子基覆盖就是指用子基中的元素紧性覆盖。
+[29] 答案是肯定的。
+
+[/SCOPE:s_exercise1]
+[SCOPE:s_theorem2|description|定理 2]
+[30] 定理 2
+[SCOPE:s_theorem2_let|let_bind|定理 2 的变量]
+[31] 对于拓扑空间 $X$ 和它的子空间 $A$，选定一个子基和它生成的拓扑基后，下列命题等价：
+[32] $A$ 的任意拓扑基覆盖都有有限子覆盖；
+[33] $A$ 的任意子基覆盖都有有限子覆盖。
+[/SCOPE:s_theorem2_let]
+[34] 证明：
+[35] 1. $\implies$ 2. 是显然的，因为子基的元素都是拓扑基的元素，
+[36] 从而子基覆盖都是拓扑基覆盖。
+[37] 下证 2. $\implies$1.。
+[SCOPE:s_theorem2_reductio|reductio|定理 2 的反证法]
+[38] 反设存在 $A$ 的拓扑基覆盖，它没有有限子覆盖。
+[SCOPE:s_theorem2_zorn|let_bind|Zorn 引理引入极大覆盖]
+[39] 由Zorn 引理，在全体 “没有有限子覆盖” 的拓扑基覆盖构成的集合中，存在 “极大” 的拓扑基覆盖1。
+[40] 即，如果 $\{B_\alpha\}$ 是一个上述的极大拓扑基覆盖，
+[41] 那么对于任意基本开集 $B_0\not\in\{B_\alpha\}$，覆盖 $\{B_0\}\cup\{B_\alpha\}$ 是有有限子覆盖的。
+[42] 给定子基 $\mathcal{S}$，以及 $A$ 的一个极大的没有有限子覆盖的拓扑基覆盖 $\{B_\alpha\}_{\alpha\in \Lambda}$。
+[/SCOPE:s_theorem2_zorn]
+[SCOPE:s_theorem2_let2|let_bind|引入 x 和 S_k]
+[43] 取指标集 $I\subseteq \Lambda$，定义为：拓扑基的元素 $B_i$ 也是子基的元素，当且仅当 $i\in I$。
+[44] 由于 $A$ 的子基覆盖都有有限子覆盖，而按定义，上述拓扑基覆盖 $\{B_\alpha\}_{\alpha\in \Lambda}$ 没有有限子覆盖，
+[45] 因此 $\bigcup_{i\in I} B_i$ 无法覆盖 $A$。
+[46] 于是存在 $x\in A-\bigcup_{i\in I} B_i$。
+[47] 又因为 $\bigcup_{\alpha\in \Lambda}B_\alpha$ 覆盖 $A$，
+[48] 故存在 $\alpha_0\in\Lambda$ 使得 $x\in B_{\alpha_0}$。
+[49] 由于该拓扑基由给定子基 $\mathcal{S}$ 导出，
+[50] 因此 $B_{\alpha_0}$ 是有限多个子基的元素的交集。
+[51] 因此存在 $S_1, S_2, \cdots, S_n\in\mathcal{S}$ 使得
+[52] \begin{equation}
+x\in S_1\cap S_2\cap\cdots\cap S_n \subseteq B_{\alpha_0}~.
+\end{equation}
+[53] 按照 $x$ 的取法，可知 $S_1, S_2, \cdots, S_n$ 不等于任何 $B_\alpha$，
+[54] 因此由于 $\{B_\alpha\}_{\alpha\in\Lambda}$ 的极大性，可知对于任意的 $k\in\{1, 2, \cdots n\}$，拓扑基覆盖 $\{B_\alpha\}_{\alpha\in\Lambda}\cup \{S_k\}$ 都有有限子覆盖。
+[/SCOPE:s_theorem2_let2]
+[55] 于是存在 $n$ 个有限覆盖
+[56] \begin{equation}
+A\subseteq S_k\cup \left(B_{\alpha_1, k}\cup B_{\alpha_2, k}\cup\cdots\cup B_{\alpha_{m_k}, k} \right) ~,
+\end{equation}
+[57] 其中各 $B_{\alpha_1, k}$ 都等于一个 $B_\alpha$。
+[58] 这 $n$ 个有限覆盖的交仍然是覆盖：
+[59] \begin{equation}
+A\subseteq \bigcap_{k=1}^n \left(S_k\cup \left(B_{\alpha_1, k}\cup B_{\alpha_2, k}\cup\cdots\cup B_{\alpha_{m_k}, k} \right) \right) ~.
+\end{equation}
+[60] 联立式 1 和式 3 ，得
+[61] \begin{equation}
+\begin{aligned}
+A&\subseteq \left(\bigcap_{k=1}^n S_k \right) \cup \left(\bigcap_{k=1}^n \left(B_{\alpha_1, k}\cup B_{\alpha_2, k}\cup\cdots\cup B_{\alpha_{m_k}, k} \right) \right) \\
+&\subseteq B_{\alpha_0}\cup \left(\bigcap_{k=1}^n…[truncated]… k}\cup B_{\alpha_2, k}\cup\cdots\cup B_{\alpha_{m_k}, k} \right) \right) \\
+&\subseteq B_{\alpha_0}\cup \left(\bigcup_{k=1}^n \left(B_{\alpha_1, k}\cup B_{\alpha_2, k}\cup\cdots\cup B_{\alpha_{m_k}, k} \right) \right)
+\end{aligned} ~.
+\end{equation}
+[62] 式 4 最右边是有限多个 $B_\alpha$ 的并，也就是说是 $A$ 的有限子覆盖——这与 “$\{B_\alpha\}_{\alpha\in\Lambda}$ 没有有限子覆盖” 矛盾！
+[63] 反设不成立。
+[/SCOPE:s_theorem2_reductio]
+[64] 证毕。
+[65] 定理 2 的证明中，拓扑基可以替换为全体开集，基本开集全都替换为开集，证明不变。
+[66] 总之，习题 1 和定理 2 结合，能得到一个好用的工具：
+
+[/SCOPE:s_theorem2]
+[SCOPE:s_corollary1|description|推论 1 Alexander 子基定理]
+[67] 推论 1 Alexander 子基定理
+[68] 对于拓扑空间 $X$ 和它的子集 $A$，$A$ 是紧集当且仅当某个子基的任意子基覆盖都有有限子覆盖。
+
+[/SCOPE:s_corollary1]
+[SCOPE:s_proof_tychonoff|description|Tychonoff 定理的证明]
+[69] 证明思路是利用单个 $X_\alpha$ 上开集对投影的逆映射构造子基，得到子基覆盖。
+[70] 此子基若有一系列底面在 $X_\alpha$ 上的柱子，其底面覆盖 $X_\alpha$，
+[71] 则这一系列柱子就覆盖了整个 $X$，
+[72] 从而 $X_\alpha$ 的紧性继承到 $X$ 上。
+[73] 再证明另一种情况不存在，
+[74] 即此子基任意一个面都不能被柱子底面覆盖。
+[SCOPE:s_proof_let|let_bind|证明中的变量]
+[75] 任取一族紧拓扑空间 $\{(X_\alpha, \mathcal{T}_\alpha)\}_{\alpha\in \Lambda}$，记它们的乘积空间为 $(X, \mathcal{T})$，其中 $X=\prod_{\alpha\in\Lambda}X_\alpha$。
+[76] 记 $\bigwedge_\alpha x_\alpha$ 为 $X$ 中一点，其中各 $x_\alpha$ 都是 $X_\alpha$ 中的点。
+[77] 积拓扑的一个子基为
+[78] \begin{equation}
+\mathcal{B} = \{\pi_\alpha^{-1}(U_\alpha)\mid \alpha\in\Lambda, U_\alpha\in \mathcal{T}_\alpha\}~,
+\end{equation}
+[79] 其中 $\pi_\alpha$ 是 $X\to X_\alpha$ 的投影。
+[/SCOPE:s_proof_let]
+[SCOPE:s_proof_reductio|reductio|证明中的反证法]
+[SCOPE:s_proof_let2|let_bind|引入 S_alpha 和 x_alpha0]
+[80] 从 $\mathcal{B}$ 中取 $X$ 的一个覆盖 $\mathcal{S}$，再定义
+[81] \begin{equation}
+\mathcal{S}_\alpha = \{\pi_\alpha^{-1}(U_\alpha)\mid U_\alpha\in \mathcal{T}_\alpha\}~,
+\end{equation}
+[82] 即 $\mathcal{S}$ 中由 $X_\alpha$ 的开集取投影的逆映射所得的原像之集合。
+[83] 如果对于某个 $\alpha$，$S_\alpha$ 所对应的 $U_\alpha$ 之并已经覆盖了 $\pi_\alpha(X_\alpha)$，
+[84] 那么由 $X_\alpha$ 的紧性知存在有限子覆盖 $\{U_{\alpha_i}\}_{i=1}^{n_\alpha}$，
+[85] 于是 $\pi_\alpha^{-1}\bigcup_{i=1}^{n_\alpha}$ 也覆盖了 $\pi_\alpha^{-1}(\pi_\alpha(X_\alpha))\supseteq X_\alpha$。
+[86] 简而言之，底面都在 $X_\alpha$ 的一族柱子的底面覆盖 $X_\alpha$，
+[87] 则这族柱子覆盖整个空间。
+[88] 于是接下来应该设，对于任意 $\alpha$，$S_\alpha$ 对应的 $U_\alpha$ 并不覆盖 $X_\alpha$。
+[89] 于是，可以从每个 $X_\alpha$ 中选出一个没有被 $S_\alpha$ 的底覆盖到的点 $x_{\alpha_0}$，构造出点 $\bigwedge_{\alpha_0}x_{\alpha_0}$。
+[/SCOPE:s_proof_let2]
+[90] 则这个点没有被 $\mathcal{S}$ 覆盖，矛盾。
+[91] 因此假设不成立。
+[/SCOPE:s_proof_reductio]
+[92] 综上得证。
+[/SCOPE:s_proof_tychonoff]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_theorem2",
+    "target_scope": "s_exercise1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2结合习题1得到Alexander子基定理"
+  },
+  {
+    "source_scope": "s_corollary1",
+    "target_scope": "s_theorem2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Alexander子基定理是定理2的直接推论"
+  },
+  {
+    "source_scope": "s_proof_tychonoff",
+    "target_scope": "s_tychonoff",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明部分推出定理1"
+  }
+]

@@ -1,0 +1,208 @@
+[SCOPE:root|description|二次型（线性代数）]
+文章名: qua
+标题: 二次型（线性代数）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+  [1] type=definition heading=定义 2 title=合同
+  [2] type=definition heading=定义 3 title=二次型的等价性
+  [3] type=theorem heading=定理 1 title=
+  [4] type=theorem heading=定理 2 title=惯性定理
+
+[SCOPE:s_def1|description|定义 1]
+[0] 定义 1
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[1] 二次型是关于变量的二次齐次多项式。
+[2] 即满足 $q(k \boldsymbol{\mathbf{v}} )=k^2 q( \boldsymbol{\mathbf{v}} )$，对于任意 $ \boldsymbol{\mathbf{v}} =(v_1,v_2...v_n),k\in \mathbb F$。
+[/SCOPE:s_def1_let]
+[3] 比如：
+[4] \begin{equation}
+q( \boldsymbol{\mathbf{v}} )=av_1x_2+bv_2v_1+cv_1^2+dv_2^2~.
+\end{equation}
+[5] \begin{equation}
+q( \boldsymbol{\mathbf{v}} )= \boldsymbol{\mathbf{v}} ^TQ \boldsymbol{\mathbf{v}} ~.
+\end{equation}
+[6] 二次型相应的指标表达式为 $q( \boldsymbol{\mathbf{v}} )=\sum\limits_{i,j}Q^i_j v^j v^i$。
+[7] 矩阵元素 $Q^i_j$ 为结果中 $v^j v^i$ 的系数。
+[8] 由于 $v^j v^i=v^i v^j$，
+[9] 因此 $Q^i_j+Q^j_i$ 为实际相应项的系数，满足该条件的矩阵可以有很多个。
+[10] \begin{equation}
+\begin{aligned}
+& \left(\begin{array}{ll}
+x & y
+\end{array}\right)\left(\begin{array}{cc}
+1 & 2 \\
+0 & -1
+\end{array}\right)\left(\begin{array}{l}
+x \\
+y
+\end{array}\right) \\
+= & x^2+2 x y+0 y x-y^2 \\
+= & x^2+x y+y x-y^2 \\
+= & \left(\begin{array}{ll}
+x & y
+\end{array}\right)\left(\begin{array}{cc}
+1 & 1 \\
+1 & -1
+\end{array}\right)\left(\begin{array}{l}
+x \\
+y
+\end{array}\right)
+\end{aligned}~.
+\end{equation}
+[11] 但二次型总能对应唯一一个对称矩阵
+[12] 1
+
+[/SCOPE:s_def1]
+[13] 当我们用上述定义表示二次型时，如果基向量组变换，二次型的形式亦有所不同。
+[14] 具体而言，如果利用过渡矩阵 $B$ 改变基向量组，由相似变换的知识可知，在新基下向量 $ \boldsymbol{\mathbf{v'}} =B^{-1} \boldsymbol{\mathbf{v}} $，
+[15] 那么新的二次型形式为：
+[16] \begin{equation}
+\boldsymbol{\mathbf{v}} ^T Q \boldsymbol{\mathbf{v}} =(B \boldsymbol{\mathbf{v}} )^T Q(B \boldsymbol{\mathbf{v}} )= \boldsymbol{\mathbf{v}} ^T (B)^{T}QB \boldsymbol{\mathbf{v}} ~.
+\end{equation}
+[17] 因此，新的二次型形式对应矩阵 $Q'=B^{T}QB$，这就是常说的合同变换。
+[18] 合同变换的结果是同一二次型在不同基下的表示
+[19] 2
+
+[SCOPE:s_def2|description|定义 2 合同]
+[20] 定义 2 合同
+[SCOPE:s_def2_let|let_bind|定义 2 的变量]
+[21] 如果存在可逆方阵 $C$ 使得
+[22] \begin{equation}
+B=C^T AC~
+\end{equation}
+[/SCOPE:s_def2_let]
+[23] 可以证明合同关系是一种等价划分。
+[24] 即满足反身性、传递性与对称性，等价划分实际上是在划分不同的二次型，等价类内二次型有不同的矩阵形式而已。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|定义 3 二次型的等价性]
+[25] 定义 3 二次型的等价性
+[SCOPE:s_def3_let|let_bind|定义 3 的变量]
+[26] 给定线性空间的二次型 $q_i$，如果 $q_1,q_2$ 在某两个基下矩阵形式相同，
+[27] 则称这两个二次型等价。
+[/SCOPE:s_def3_let]
+[28] 通过坐标变换，二次型可以简化为最简单的一种形式：对角矩阵。
+[29] 在对角矩阵下，二次型形式只有平方项，这就是所说的标准二次型。
+[30] 如果二次型 $q$
+[31] 等价于标准二次型 $p$，
+[32] 那么称 $p$ 是 $q$ 的标准形。
+[33] 由于实对称矩阵总能通过合同变换化为对角矩阵。
+[34] 因此实数域上的二次型总有标准形。
+
+[/SCOPE:s_def3]
+[SCOPE:s_thm1|description|定理 1]
+[35] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[36] 给定实数域上的二次型 $V^T QV$，
+[/SCOPE:s_thm1_let]
+[37] 那么它总有标准形。
+[38] 由于合同变换的结果总为对称矩阵，
+[39] 因此证明过程相对简洁，只需要利用对角元，通过初等变换把上三角的非对角元部分化为 0 即可3。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_posdef|description|二次型的正定性]
+[40] 二次型正定意味着 $f( \boldsymbol{\mathbf{v}} )>0$，负定则意味着 $f( \boldsymbol{\mathbf{v}} )< 0$。
+[41] 为了方便，我们可以进一步把实对称矩阵化为对角元为 $\pm 1$，非对角元为 $0$ 的形式，比如想要把第 $n$ 个对角化化为 $\pm 1$，
+[42] 则合同变换为第 $n$ 列乘以 $k$ 和第 $n$ 行乘以 $k$，在实数域上 $k^2>0$，
+[43] 因此二次型正定意味着对角元都为 $1$。
+[44] 上述形式还意味着基向量组是 “标准正交” 的。
+[45] 比如“正定”即对角矩阵为 $E$，
+[46] 则二次型 $ \boldsymbol{\mathbf{v}} ^{T}Q \boldsymbol{\mathbf{v}} = \boldsymbol{\mathbf{v}} ^{T} \boldsymbol{\mathbf{v}} $。
+[47] 因此，二次型实际上是同向量内积的推广。
+[48] 可以证明，二次型的 “正负号” 数量不会随基的改变而改变。
+
+[/SCOPE:s_posdef]
+[SCOPE:s_inertia|description|定理 2 惯性定理]
+[49] 定理 2 惯性定理
+[SCOPE:s_inertia_let|let_bind|惯性定理的变量]
+[50] 给定实数域$\mathbb R$ 上的有限维线性空间 $V$ 和其上一个二次型 $f$。
+[51] 令 $E=\{ \boldsymbol{\mathbf{e}} _i\}$ 和 $F=\{ \boldsymbol{\mathbf{\theta}} _i\}$ 是 $V$ 上的两组关于 $f$ 的标准正交基，$Q,P$ 分别为 $f$ 在 $\{ \boldsymbol{\mathbf{e}} _i\}$ 和 $\{ \boldsymbol{\mathbf{\theta}} _i\}$ 上的标准二次型。
+[52] 定义
+[53] \begin{equation}
+\begin{aligned}
+E^{+} & =\left\{\mathbf{e}_i \in E \mid Q^i_i>0\right\} \\
+E^{-} & =\left\{\mathbf{e}_i \in E \mid Q^i_i<0\right\} \\
+E^0 & =\left\{\mathbf{e}_i \in E \mid Q^i_i=0\right\}
+\end{aligned}~.
+\end{equation}
+[54] \begin{equation}
+\begin{aligned}
+F^{+} & =\left\{\mathbf{e}_i \in E \mid P^i_i>0\right\} \\
+F^{-} & =\left\{\mathbf{e}_i \in E \mid P^i_i<0\right\} \\
+F^0 & =\left\{\mathbf{e}_i \in E \mid P^i_i=0\right\}
+\end{aligned}~.
+\end{equation}
+[/SCOPE:s_inertia_let]
+[55] \begin{equation}
+\left\{
+\begin{aligned}
+\mid E^{+}\mid&=\mid F^{+}\mid\\
+\mid E^{-}\mid&=\mid F^{-}\mid\\
+\operatorname {Span}\, E^{0}&= \operatorname {Span}\, F^{0}\\
+\end{aligned}\right.~.
+\end{equation}
+[SCOPE:s_inertia_proof|description|惯性定理的证明]
+[56] Proof4.
+[SCOPE:s_inertia_proof_let|let_bind|证明中的变量]
+[57] 为了证明方便，这里拓展二次型的概念到广义内积5，
+[58] 即对称双线性函数，这是为了符合内积的对称性 $( \boldsymbol{\mathbf{v}} , \boldsymbol{\mathbf{w}} )=( \boldsymbol{\mathbf{w}} , \boldsymbol{\mathbf{v}} )$，以及线性 $( \boldsymbol{\mathbf{v}} _1+ \boldsymbol{\mathbf{v}} _2, \boldsymbol{\mathbf{w}} )=( \boldsymbol{\mathbf{v}} _1, \boldsymbol{\mathbf{w}} )+( \boldsymbol{\mathbf{v}} _2, \boldsymbol{\mathbf{w}} )$。
+[59] 对称矩阵总能保证该性质成立。
+[60] 设 $q( \boldsymbol{\mathbf{v}} )=v^T Q v$，拓展至广义内积
+[61] \begin{equation}
+f( \boldsymbol{\mathbf{v}} , \boldsymbol{\mathbf{w}} )=v^T Q w~.
+\end{equation}
+[/SCOPE:s_inertia_proof_let]
+[62] 首先验证第三条，设 $V_1$ 为 $\{ \boldsymbol{\mathbf{u}} \mid f( \boldsymbol{\mathbf{v}} , \boldsymbol{\mathbf{u}} )=0,\forall \boldsymbol{\mathbf{v}} \in V\}$，证明思路为 $ \operatorname {Span}E_0=V_1= \operatorname {Span}F_0$。
+[SCOPE:s_inertia_proof_reductio1|reductio|反证法证明 V1 ⊆ Span E0]
+[63] 容易验证，$ \operatorname {Span}E_0\subseteq V_1$，现在通过反证法证明 $ V_1\subseteq \operatorname {Span}E_0$。
+[SCOPE:s_inertia_proof_reductio1_let|let_bind|反证法中的变量]
+[64] 假设 $ \boldsymbol{\mathbf{x}} \in V_1, \boldsymbol{\mathbf{x}} \notin \operatorname {Span}E_0$，
+[65] 则 $ \boldsymbol{\mathbf{v}} $ 必至少含有一个 $E^0$ 以外的基向量，设为 $ \boldsymbol{\mathbf{e}} _i$，
+[/SCOPE:s_inertia_proof_reductio1_let]
+[66] 因此 $f( \boldsymbol{\mathbf{v}} , \boldsymbol{\mathbf{e}} _i)=0$，
+[67] 则与假设矛盾。
+[68] 所以 $ \operatorname {Span}E_0=V_1$。
+[/SCOPE:s_inertia_proof_reductio1]
+[69] 由于内积结果和具体的基无关，同理可证 $V_1= \operatorname {Span}F_0$，
+[70] 则第三条得证。
+[SCOPE:s_inertia_proof_reductio2|reductio|反证法证明 |E+| = |F+|]
+[71] 现在证明第一条，只需要否定 $\mid E^{+}\mid<\mid F^{+}\mid$ 和 $\mid E^{+}\mid>\mid F^{+}\mid$ 的情况即可。
+[SCOPE:s_inertia_proof_reductio2_let|let_bind|反证法中的变量]
+[72] 现在假设 $\mid E^{+}\mid<\mid F^{+}\mid$，这意味着 $E^0\cup E^{+} \cup F^{+}$ 必然线性相关，不然整体维度会大于空间维度。
+[73] 设 $ \boldsymbol{\mathbf{x}} ^0\in E^0, \boldsymbol{\mathbf{x}} ^+\in E^{+}, \boldsymbol{\mathbf{y}} ^{-}\in F^{-}$，由于线性相关，至少存在一组向量使得：
+[74] \begin{equation}
+\boldsymbol{\mathbf{x}} ^0+ \boldsymbol{\mathbf{x}} ^{+}+ \boldsymbol{\mathbf{y}} ^{-}=0~.
+\end{equation}
+[/SCOPE:s_inertia_proof_reductio2_let]
+[75] 此时有 $f( \boldsymbol{\mathbf{x}} ^0+ \boldsymbol{\mathbf{x}} ^{+}, \boldsymbol{\mathbf{x}} ^0+ \boldsymbol{\mathbf{x}} ^{+})> 0$，
+[76] 但由上式得 $f( \boldsymbol{\mathbf{x}} ^0+ \boldsymbol{\mathbf{x}} ^{+}, \boldsymbol{\mathbf{x}} ^0+ \boldsymbol{\mathbf{x}} ^{+})=f(- \boldsymbol{\mathbf{y}} ^{-},- \boldsymbol{\mathbf{y}} ^{-})< 0$，矛盾，
+[77] 因此题设不成立。
+[78] 同理可证第二种情况不成立。
+[/SCOPE:s_inertia_proof_reductio2]
+[79] 基于相同的思路，可以证明第三条在复数域下依然成立，而第一第二条不成立。
+[80] 惯性定理让我们找到了实二次型合同变换中的基本不变量。
+[81] 一一般称对角元为 $1$ 的数量为正惯性指数，从定义知这是该空间中内积为 $1$ 的基向量数量；
+[82] 类似的，对角元为 $-1$ 的数量为负惯性指数。
+[83] 因此同一二次型在进行合同变换时不改变正负符号差、符号差、标准型的秩。
+[/SCOPE:s_inertia]
+[/SCOPE:s_inertia_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_inertia",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "惯性定理是定理1在实数域上的推广"
+  },
+  {
+    "source_scope": "s_inertia_proof",
+    "target_scope": "s_inertia",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明推出定理"
+  }
+]

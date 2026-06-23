@@ -1,0 +1,130 @@
+[SCOPE:root|description|实二次型]
+文章名: RQuaF
+标题: 实二次型
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=实二次型
+  [1] type=definition heading=定义 2 title=标准型
+  [2] type=theorem heading=定理 1 title=
+  [3] type=theorem heading=定理 2 title=惯性定理
+  [4] type=definition heading=定义 3 title=惯性指数
+
+[0] 在二次型的规范型一节里，已经知道，在任意域 $\mathbb F$ 上的二次型都具有规范型（或对角型）定义 3 。
+[1] 一般来说，规范型是二次型最简单的形式。
+[2] 但是，在域为实数域，
+[3] 即 $\mathbb F=\mathbb R$ 时，可以让规范型式 6
+[4] \begin{equation}
+q({x})=\lambda_1 x_1^2+\cdots+\lambda_r x_r^2~
+\end{equation}
+[5] 的所有系数 $\lambda_i$ 均为 $\pm 1$。
+
+[SCOPE:s_def1|description|实二次型]
+[6] 定义 1 实二次型
+[SCOPE:s_def1_let|let_bind|实二次型的变量]
+[7] 若二次型 $q$ 所配备的矢量空间 $V$ 定义在实数域 $\mathbb R$ 上，
+[8] 则 $q$ 称为实二次型。
+[/SCOPE:s_def1_let]
+[9] 适当置换基底矢量，可认为前 $s$ 个系数 $\lambda_1,\cdots,\lambda_s$ 是正的，而其余的系数是负的。
+[10] 进行替换
+[11] \begin{equation}
+\begin{aligned}
+&x'_i=\sqrt{\lambda_i}x_i\;&(1\leq i\leq s)~,\\
+&x'_i=\sqrt{-\lambda_i}x_i\;&(s+1\leq i\leq r)~,\\
+&x'_i=x_i\; &(r+1\leq i\leq n)~.
+\end{aligned}
+\end{equation}
+[12] \begin{equation}
+q({x})=\sum_{i=1}^{s}{x'_i}^2-\sum_{i=s+1}^{r} {x'_{i}}^{2}~.
+\end{equation}
+[13] 而若对于有理数域 $\mathbb Q$，在 $\sqrt{\lambda_i}$ 为无理数时并不能作这样的简化。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|标准型]
+[14] 定义 2 标准型
+[15] 称可以按公式
+[16] \begin{equation}
+q( x)=\sum_{i=1}^{s}{x_i}^2-\sum_{i=s+1}^{r} {x_{i}}^{2}~
+\end{equation}
+[17] 由上面的讨论立刻得
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|定理1]
+[18] 定理 1
+[19] 实矢量空间 $V$ 上的所有二次型 $q$ 均可化为标准型。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|惯性定理]
+[20] 定理 2 惯性定理
+[SCOPE:s_thm2_let|let_bind|惯性定理的变量]
+[21] 实二次型 $q$ 的标准型式 4 中的整数 $r$ 和 $s$，$s\leq r\leq n$ 仅依赖于 $q$，
+[22] 即与规范基底的选择无关。
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm2_reductio|reductio|反证法证明s不变]
+[23] 证明： 由于 $r$ 不变，
+[24] 故只需证明 $s$ 不变。
+[SCOPE:s_thm2_let2|let_bind|另一基底]
+[25] 设另有一基底 $( e'_1,\cdots, e'_n)$，在其上 $q$ 具有标准型
+[26] \begin{equation}
+q( x)=\sum_{i=1}^{t}{x'_i}^2-\sum_{i=t+1}^{r} {x'_{i}}^{2}~
+\end{equation}
+[27] 不是一般性，令 $t< s$。
+[/SCOPE:s_thm2_let2]
+[SCOPE:s_thm2_let3|let_bind|子空间L和L']
+[28] 对子空间
+[29] \begin{equation}
+L=\langle e_1,\cdots, e_s\rangle_\mathbb{R},\quad L'=\langle e'_{t+1},\cdots, e'_n\rangle_\mathbb{R}~,
+\end{equation}
+[/SCOPE:s_thm2_let3]
+[30] 因为 $\mathrm{dim}\;(L+L')\leq s+n-t\leq n=$，
+[31] 那么
+[32] \begin{equation}
+\begin{aligned}
+\mathrm{dim}\;(L\cap L')&=\mathrm{dim}\; L+\mathrm{dim}\; L'-\mathrm{dim}\;(L+L')\\
+&\geq s+(n-t)-n=s-t> 0~.
+\end{aligned}
+\end{equation}
+[33] 可见，存在一非零矢量 $ a\in(L\cap L')$:
+[34] \begin{equation}
+0\neq a=\sum_{i=1}^s a_i e_i=\sum_{i=t+1}^n a'_i e'_i~.
+\end{equation}
+[35] 式 4 [链接 L0]
+[36] \begin{equation}
+q( a)=\sum_{i=1}^s a_i^2>0~.
+\end{equation}
+[37] 式 5 [链接 L1]
+[38] \begin{equation}
+q( a)=-\sum_{i=t+1}^n a_i^2\leq 0~.
+\end{equation}
+[39] 式 9 [链接 L2]
+[40] 式 10 [链接 L3]
+[41] 联立得出矛盾。
+[42] 因此，只能是 $s=t$。
+[43] 证毕！
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_reductio]
+[SCOPE:s_def3|description|惯性指数]
+[44] 定义 3 惯性指数
+[45] 称实二次型的秩为惯性指数，数 $s$ 为正惯性指数，$r-s$ 为负惯性指数。
+[46] 注意：对于复二次型，
+[47] 即 $\mathbb F=\mathbb C$ 的情形，正负惯性指数失去任何意义，因为它的规范型完全可以做成所有的 $\lambda_i$ 都为 $1$（或 $-1$）。
+[/SCOPE:s_def3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1断言实二次型可化为标准型，标准型由定义2给出。"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "惯性定理是关于实二次型的定理。"
+  }
+]

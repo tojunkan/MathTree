@@ -1,0 +1,150 @@
+[SCOPE:root|description|张量的坐标变换]
+文章名: TrTnsr
+标题: 张量的坐标变换
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=张量的坐标变换
+
+[SCOPE:s_intro|description|引言]
+[0] 在张量文章中我们看到，张量表示为矩阵依赖于相关的各线性空间中基的选择。
+[1] 选定了线性空间的基以后，线性空间中的各向量都可以用其坐标所构成的列矩阵来表示；
+[2] 同样地，选定了两个线性空间各自的基以后，一个二阶张量也可以表示为一个矩阵。
+[3] 一般地，我们把选定了线性空间各自的基以后用来表示张量的矩阵，称作张量的坐标，分量或坐标分量。
+[4] 正如爱因斯坦求和约定一节中所说，零阶张量的坐标表示为一个 $1\times 1$ 矩阵，一阶张量的坐标表示为一个 $n\times 1$ 或 $1\times n$ 矩阵，一个二阶张量的坐标表示为一个 $n\times n$ 矩阵。
+[5] 三阶及以上的张量就没法用我们已经熟知的矩阵来表示和运算了，
+[6] 因此我们不可避免地要应用爱因斯坦求和约定。
+[7] 从初学者的角度出发，本节将先用传统线性代数的语言描述一阶、二阶张量的坐标变换规则，然后使用爱因斯坦求和约定来描述一般的张量坐标变换规则。
+[8] 如果你还不熟悉爱因斯坦求和约定，建议详细阅读，比对两种表示方法的异同。
+
+[/SCOPE:s_intro]
+[SCOPE:s_first_order_traditional|description|一阶张量的坐标变换（传统）]
+[9] 一阶张量是将一个向量映射为一个数，
+[10] 因此只涉及一个线性空间，最为简单。
+[SCOPE:s_first_order_traditional_let|let_bind|一阶张量变量]
+[11] 给定 $k$ 维线性空间 $V$，及其上一个张量 $f:V\rightarrow\mathbb{R}$。
+[12] 如果 $V$ 的基是 $\{ \boldsymbol{\mathbf{e}} _1, \cdots \boldsymbol{\mathbf{e}} _k\}$，
+[13] 那么坐标为 $ \boldsymbol{\mathbf{c}} =(x_1\cdots x_k) ^{\mathrm{T}} $ 的向量 $ \boldsymbol{\mathbf{v}} $ 被映射为：
+[14] \begin{equation}
+f( \boldsymbol{\mathbf{v}} )=\sum\limits_{i=1}^k x_if( \boldsymbol{\mathbf{e}} _i)~.
+\end{equation}
+[15] 因此，$f$ 可以表示为 $V$ 中的一个行向量 $ \boldsymbol{\mathbf{F}} $，坐标为 $(f( \boldsymbol{\mathbf{e}} _1), \cdots, f( \boldsymbol{\mathbf{e}} _k))$。
+[16] 对于 $V$ 中任何向量 $ \boldsymbol{\mathbf{v}} $，都有 $f( \boldsymbol{\mathbf{v}} )= \boldsymbol{\mathbf{F}} \boldsymbol{\mathbf{c}} $（按矩阵乘法）。
+[17] 若取另一个基 $\{ \boldsymbol{\mathbf{e}} _1', \cdots, \ \boldsymbol{\mathbf{e}} _k'\}$，其中过渡矩阵为 $ \boldsymbol{\mathbf{Q}} $。
+[18] 如果在新的基下 $ \boldsymbol{\mathbf{v}} $ 的坐标变为 $ \boldsymbol{\mathbf{c}} '$，
+[19] 那么 $ \boldsymbol{\mathbf{Q}} \boldsymbol{\mathbf{c}} '= \boldsymbol{\mathbf{c}} $1。
+[20] 设在新的基下，$f$ 表示为行向量 $ \boldsymbol{\mathbf{F}} '$，
+[21] 那么应有 $f( \boldsymbol{\mathbf{v}} )= \boldsymbol{\mathbf{F}} \boldsymbol{\mathbf{c}} = \boldsymbol{\mathbf{F}} ' \boldsymbol{\mathbf{c}} '$。
+[22] 考虑到 $ \boldsymbol{\mathbf{Q}} \boldsymbol{\mathbf{c}} '= \boldsymbol{\mathbf{c}} $，我们可知对于任何坐标 $ \boldsymbol{\mathbf{c}} , \boldsymbol{\mathbf{c}} '$ 都有 $ \boldsymbol{\mathbf{F}} \boldsymbol{\mathbf{Q}} \boldsymbol{\mathbf{c}} '= \boldsymbol{\mathbf{F}} ' \boldsymbol{\mathbf{c}} '$，
+[23] 因此
+[24] \begin{equation}
+\boldsymbol{\mathbf{F}} \boldsymbol{\mathbf{Q}} = \boldsymbol{\mathbf{F}} '~.
+\end{equation}
+[25] 这就是一阶张量的坐标变换。
+
+[/SCOPE:s_first_order_traditional]
+[/SCOPE:s_first_order_traditional_let]
+[SCOPE:s_second_order_traditional|description|二阶张量的坐标变换（传统）]
+[26] 二阶张量涉及两个同构的线性空间 $V$，而且是在物理学中最为常见的张量形式，
+[27] 因此我们将详细讨论该情况。
+[SCOPE:s_second_order_traditional_let|let_bind|二阶张量变量]
+[28] 在这里，我们把二阶张量 $f$ 理解为从 $V_1$ 和 $V_2$ 到标量域 $\mathbb{K}$ 的一个线性映射，其中 $V_1$ 和 $V_2$ 同构，$ \operatorname {dim}V_1= \operatorname {dim}V_2=k$。
+[29] 给 $V_1$ 指定一组基 $\{ \boldsymbol{\mathbf{a}} _1, \boldsymbol{\mathbf{a}} _2, \cdots, \boldsymbol{\mathbf{a}} _n\}$，给 $V_2$ 指定一组基 $\{ \boldsymbol{\mathbf{b}} _1, \boldsymbol{\mathbf{b}} _2, \cdots, \boldsymbol{\mathbf{b}} _n\}$，在这两组基下，张量 $f$ 被表示为一个矩阵 $ \boldsymbol{\mathbf{F}} $，而向量 $ \boldsymbol{\mathbf{v}} _1\in V_1$ 和 $ \boldsymbol{\mathbf{v}} _2\in V_2$ 在这两组基下的坐标列矩阵分别为 $ \boldsymbol{\mathbf{c}} ( \boldsymbol{\mathbf{v}} _1)$ 和 $ \boldsymbol{\mathbf{c}} ( \boldsymbol{\mathbf{v}} _2)$。
+[30] 此时，$f( \boldsymbol{\mathbf{v_1}} , \boldsymbol{\mathbf{v_2}} )= \boldsymbol{\mathbf{c}} ( \boldsymbol{\mathbf{v_1}} ) ^{\mathrm{T}} \boldsymbol{\mathbf{F}} \boldsymbol{\mathbf{c}} ( \boldsymbol{\mathbf{v_2}} )$。
+[31] 如果给 $V_1$ 和 $V_2$ 进行基变换，过渡矩阵分别为 $ \boldsymbol{\mathbf{P}} $ 和 $ \boldsymbol{\mathbf{Q}} $，
+[32] 则在新的基下，两向量的坐标分别为 $ \boldsymbol{\mathbf{c}} '( \boldsymbol{\mathbf{v}} _1)= \boldsymbol{\mathbf{P}} ^{-1} \boldsymbol{\mathbf{c}} ( \boldsymbol{\mathbf{v}} _1)$ 和 $ \boldsymbol{\mathbf{c}} '( \boldsymbol{\mathbf{v}} _2)= \boldsymbol{\mathbf{Q}} ^{-1} \boldsymbol{\mathbf{c}} ( \boldsymbol{\mathbf{v}} _2)$。
+[33] 此时有 $f( \boldsymbol{\mathbf{v_1}} , \boldsymbol{\mathbf{v_2}} )= \boldsymbol{\mathbf{c}} ( \boldsymbol{\mathbf{v_1}} ) ^{\mathrm{T}} \boldsymbol{\mathbf{F}} \boldsymbol{\mathbf{c}} ( \boldsymbol{\mathbf{v_2}} )= \boldsymbol{\mathbf{c}} '( \boldsymbol{\mathbf{v_1}} ) ^{\mathrm{T}} \boldsymbol{\mathbf{P}} ^{\mathrm{T}} \boldsymbol{\mathbf{F}} \boldsymbol{\mathbf{Q}} \boldsymbol{\mathbf{c}} '( \boldsymbol{\mathbf{v_2}} )$。
+[34] 因此在新基下，$f$ 的矩阵为 $ \boldsymbol{\mathbf{P}} ^{\mathrm{T}} \boldsymbol{\mathbf{F}} \boldsymbol{\mathbf{Q}} $。
+
+[/SCOPE:s_second_order_traditional]
+[/SCOPE:s_second_order_traditional_let]
+[35] 高阶张量的坐标变换就无法简单地用矩阵的乘法来表示，
+[36] 因此我们采用爱因斯坦求和约定。
+
+[SCOPE:s_first_order_einstein_let|let_bind|一阶张量变量（爱因斯坦）]
+[SCOPE:s_first_order_einstein|description|一阶张量的坐标变换（爱因斯坦）]
+[37] 给定 $k$ 维线性空间 $V$，及其上一个张量 $f:V\rightarrow\mathbb{R}$。
+[38] 如果 $V$ 的基是 $\{ \boldsymbol{\mathbf{e}} _1, \cdots \boldsymbol{\mathbf{e}} _k\}$，在这组基下，张量 $f$ 的坐标为 $T_{i}$，
+[39] 那么我们应有 $T_{i}=f( \boldsymbol{\mathbf{e}} _i)$。
+[40] 对 $V$ 进行基的变换，如果过渡矩阵是 $a_{i}^j$，
+[41] 即新的基中基向量 $ \boldsymbol{\mathbf{e}} '_{i}=a_{i}^j \boldsymbol{\mathbf{e}} _j$，
+[42] 那么我们易得：
+[43] \begin{equation}
+T'_{i}=f( \boldsymbol{\mathbf{e}} '_i)=f(a_{i}^j \boldsymbol{\mathbf{e}} _j)=a_{i}^jf( \boldsymbol{\mathbf{e}} _j)=a_{i}^jT_{j}~.
+\end{equation}
+[44] 注意指标的位置，以及哪些指标是用于求和的赝指标。
+
+[/SCOPE:s_first_order_einstein_let]
+[/SCOPE:s_first_order_einstein]
+[SCOPE:s_second_order_einstein_let|let_bind|二阶张量变量（爱因斯坦）]
+[SCOPE:s_second_order_einstein|description|二阶张量的坐标变换（爱因斯坦）]
+[45] 给定线性空间 $V_1$ 和 $V_2$，其中 $ \operatorname {dim}V_1= \operatorname {dim}V_2=k$。
+[46] 令 $f:V_1\times V_2\rightarrow\mathbb{F}$ 是一个二阶张量。
+[47] 给 $V_1$ 指定一组基 $\{ \boldsymbol{\mathbf{a}} _1, \boldsymbol{\mathbf{a}} _2, \cdots, \boldsymbol{\mathbf{a}} _n\}$，给 $V_2$ 指定一组基 $\{ \boldsymbol{\mathbf{b}} _1, \boldsymbol{\mathbf{b}} _2, \cdots, \boldsymbol{\mathbf{b}} _n\}$，在这两组基下，张量 $f$ 的坐标是 $T_{ij}=f( \boldsymbol{\mathbf{a}} _i, \boldsymbol{\mathbf{b}} _j)$。
+[48] 如果给 $V_1$ 和 $V_2$ 进行基变换，过渡矩阵分别为 $m^{i}_j$ 和 $n^{i}_j$，
+[49] 则在新的基下，$ \boldsymbol{\mathbf{a}} '_i=m^{k}_i \boldsymbol{\mathbf{a}} _k$，$ \boldsymbol{\mathbf{b}} '_j=n^{l}_j \boldsymbol{\mathbf{b}} _l$，
+[50] 因此张量 $f$ 在新基下的坐标为：
+[51] \begin{equation}
+T'_{ij}=f( \boldsymbol{\mathbf{a}} '_i, \boldsymbol{\mathbf{b}} '_j)=f(m^{k}_i \boldsymbol{\mathbf{a}} _k, n^{l}_j \boldsymbol{\mathbf{b}} _l)=m^{k}_in^{l}_jf( \boldsymbol{\mathbf{a}} _k, \boldsymbol{\mathbf{b}} _l)=m^{k}_in^{l}_jT_{kl}~.
+\end{equation}
+[52] 同样，注意指标的位置，以及哪些指标是用于求和的赝指标。
+
+[/SCOPE:s_second_order_einstein_let]
+[/SCOPE:s_second_order_einstein]
+[53] 相信从式 3 和式 4 中你已经比较得出了一般张量的坐标变换规律，
+[54] 因此我们不再详细展示计算过程，而是直接将坐标变换的方法表述如下：
+
+[SCOPE:s_theorem|description|定理1 张量的坐标变换]
+[55] 定理 1 张量的坐标变换
+[SCOPE:s_theorem_let|let_bind|定理变量]
+[56] 给定域 $\mathbb{F}$ 上的一组有限个线性空间 $\{V_\alpha\}^n_{\alpha=1}$，设 $f:V_1\times\cdots\times V_n\rightarrow\mathbb{F}$。
+[57] 给各 $V_\alpha$ 指定一组基，使得 $f$ 在这些基下的坐标为 $T_{i_1i_2\cdots i_n}$。
+[58] 如果对每个 $V_\alpha$ 进行过渡矩阵为 $m^k_{i\alpha}$ 的基变换，
+[59] 那么在变换后的基下，$f$ 的坐标为
+[60] \begin{equation}
+T'_{i_1i_2\cdots i_n}=m^{k_1}_{i_1}m^{k_2}_{i_2}\cdots m^{k_n}_{i_n}T_{k_1k_2\cdots k_n}~.
+\end{equation}
+[61] 注意该式对各 $k_1, k_2, \cdots, k_n$ 求和。
+[62] 以上变换仅仅是对于张量的坐标而言，并不改变张量本身。
+[63] 今天的物理学家所说的张量变换，通常是指不同坐标下同一个张量的坐标表示之间的转换。
+[64] 因此有的物理学家会将张量定义为 “像张量一样变换的量（a tensor is something that transforms as a tensor）”，比如朗道。
+[65] 这句定义听上去有些循环论证，
+[66] 但它的意思其实是 “像 $T'_{i_1i_2\cdots i_n}=m^{k_1}_{i_1}m^{k_2}_{i_2}\cdots m^{k_n}_{i_n}T_{k_1k_2\cdots k_n}$ 一样变换”。
+[67] 这个定义使得许多理论物理学家认为仿射联络（或参考仿射联络）并不是张量。
+[68] 事实上，他们所说的这个张量是指流形上的张量场，而仿射联络确实不是一个张量场；
+[69] 仿射联络本身是一个三阶张量，只不过它所涉及的向量并不是流形上每个点的切向量（因此不是张量场），而是向量场本身。
+[70] 也就是说仿射联络是把一个向量场本身看成一个向量后所进行的线性映射。
+[/SCOPE:s_theorem]
+[/SCOPE:s_theorem_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_first_order_einstein",
+    "target_scope": "s_first_order_traditional",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "两种表示等价"
+  },
+  {
+    "source_scope": "s_second_order_einstein",
+    "target_scope": "s_second_order_traditional",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "两种表示等价"
+  },
+  {
+    "source_scope": "s_theorem",
+    "target_scope": "s_first_order_einstein",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理是一般情况，一阶是特例"
+  },
+  {
+    "source_scope": "s_theorem",
+    "target_scope": "s_second_order_einstein",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理是一般情况，二阶是特例"
+  }
+]

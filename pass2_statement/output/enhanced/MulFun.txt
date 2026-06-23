@@ -1,0 +1,123 @@
+[SCOPE:root|description|积性函数]
+文章名: MulFun
+标题: 积性函数
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=除数函数的积性
+  [1] type=definition heading=定义 1 title=积性函数
+  [2] type=example heading=例 2 title=
+  [3] type=definition heading=定义 2 title=完全积性函数
+  [4] type=example heading=例 3 title=
+  [5] type=theorem heading=定理 1 title=积性函数的性质
+
+[SCOPE:s_ex1|description|除数函数的积性]
+[SCOPE:s_ex1_let|let_bind|例1变量]
+[0] 例 1 除数函数的积性
+[1] 我们很容易算出除数函数 $d(n)$ 当 $n$ 从 $1$ 到 $20$ 的值，分别是 1,2,2,3,1,4,2,4,3,4,2,6,2,4,4,5,2,6,2,6.
+[2] 可以发现这些恒等式：
+[/SCOPE:s_ex1_let]
+[3] \begin{equation}
+d(6)=d(2)d(3),d(12)=d(3)d(4),d(17)=d(1)d(17),\cdots~
+\end{equation}
+[4] 你可能会猜测
+[5] \begin{equation}
+d(xy)=d(x)d(y)~,
+\end{equation}
+[6] \begin{equation}
+d(4)\neq d(2)d(2),d(12)\neq d(2)d(6), \cdots~
+\end{equation}
+[7] 实际上，上面的猜测中 $x,y$ 互素时才成立。
+[8] 这可以通过 $d(n)$ 的下列计算式说明：
+[9] \begin{equation}
+d(n)=\prod\limits_{p^{\alpha\!\:_p}\| n}(1+\alpha_p)~.
+\end{equation}
+[10] 其中 $p^{k_p}\| n$ 表示 $n$ 的质因数分解中 $p$ 的指标为 $k_p$。
+[11] 该式可由唯一分解和乘法原理很快得到。
+[12] 于是，我们抽象出下列定义：
+
+[/SCOPE:s_ex1]
+[SCOPE:s_def1|description|积性函数]
+[13] 定义 1 积性函数
+[SCOPE:s_def1_let|let_bind|定义1变量]
+[14] 如果数论函数 $f(n)$ 使
+[15] \begin{equation}
+f(ab)=f(a)f(b),(a,b)=1~.
+\end{equation}
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_ex2|description|例2]
+[16a] (n),u
+[16b] (n),e
+[16c] (n),d
+[16d] (n),\sigma
+[16e] (n),\mu
+[16f] (n),\varphi
+[16g] (n),\lambda
+[16h] (n)$ 都是积性的。
+[17] 当然不要求互素的也有：
+
+[/SCOPE:s_ex2]
+[SCOPE:s_def2|description|完全积性函数]
+[18] 定义 2 完全积性函数
+[SCOPE:s_def2_let|let_bind|定义2变量]
+[19] 如果数论函数 $f(n)$ 使
+[20] \begin{equation}
+f(ab)=f(a)f(b)~.
+\end{equation}
+
+[/SCOPE:s_def2]
+[/SCOPE:s_def2_let]
+[SCOPE:s_ex3|description|例3]
+[21a] (n),u
+[21b] (n),e
+[21c] (n),\lambda
+[21d] (n)$ 都是完全积性的。
+
+[/SCOPE:s_ex3]
+[SCOPE:s_thm1|description|积性函数的性质]
+[22] 定理 1 积性函数的性质
+[SCOPE:s_thm1_let|let_bind|定理1变量]
+[23] $f(n)$ 是积性的,则：
+[24] $f(1)=1$.
+[25a] (a)f
+[25b] (b)$.
+[26a] (n)=\sum\limits_{d|n}f
+[26b] (d)$ 也是积性的。
+[27] 证明留给读者。
+[28] 这里需要指出的是，第三条性质表明，积性函数的Möbius 变换也是积性的。
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1引出定义1"
+  },
+  {
+    "source_scope": "s_def1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "完全积性函数是积性函数的特例"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2列举积性函数实例"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例3列举完全积性函数实例"
+  }
+]

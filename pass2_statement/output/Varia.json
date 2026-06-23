@@ -1,0 +1,239 @@
+{
+  "article_name": "Varia",
+  "statements": [
+    {
+      "stmt_id": "st_diff_intro",
+      "subtype": "remark",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_diff_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_diff_def1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_diff_def1",
+      "exposed_entities": [
+        "f",
+        "x_1",
+        "x_n"
+      ]
+    },
+    {
+      "stmt_id": "st_diff_def1_eq",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_diff_def1",
+      "exposed_entities": [
+        "f",
+        "x_1",
+        "x_n",
+        "h_1",
+        "h_n"
+      ]
+    },
+    {
+      "stmt_id": "st_diff_def2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_diff_def2",
+      "exposed_entities": [
+        "x_1",
+        "x_n",
+        "h_1",
+        "h_n",
+        "t"
+      ]
+    },
+    {
+      "stmt_id": "st_diff_def2_phi",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_diff_def2",
+      "exposed_entities": [
+        "phi",
+        "f",
+        "x_1",
+        "x_n",
+        "h_1",
+        "h_n",
+        "t"
+      ]
+    },
+    {
+      "stmt_id": "st_var_def1_assump1",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_var_def1",
+      "exposed_entities": [
+        "J",
+        "F",
+        "x",
+        "y",
+        "y'",
+        "C_1",
+        "C_n"
+      ]
+    },
+    {
+      "stmt_id": "st_var_def1_assump2",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_var_def1",
+      "exposed_entities": [
+        "y",
+        "overline_y",
+        "eta"
+      ]
+    },
+    {
+      "stmt_id": "st_var_def1_derivation",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_var_def1",
+      "exposed_entities": [
+        "delta_J",
+        "F'_y",
+        "F'_y'",
+        "eta",
+        "eta'"
+      ]
+    },
+    {
+      "stmt_id": "st_var_def2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_var_def2",
+      "exposed_entities": [
+        "y",
+        "eta",
+        "t"
+      ]
+    },
+    {
+      "stmt_id": "st_var_def2_phi",
+      "subtype": "definition",
+      "clause_range": [
+        48,
+        55
+      ],
+      "truth_value": null,
+      "scope_id": "s_var_def2",
+      "exposed_entities": [
+        "varphi",
+        "J",
+        "y",
+        "eta",
+        "t"
+      ]
+    },
+    {
+      "stmt_id": "st_var_y_def",
+      "subtype": "definition",
+      "clause_range": [
+        56,
+        60
+      ],
+      "truth_value": null,
+      "scope_id": "s_var_y",
+      "exposed_entities": [
+        "delta_y",
+        "eta",
+        "overline_y",
+        "y"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_diff_def1_assump",
+      "target": "st_diff_def1_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_diff_def2_assump",
+      "target": "st_diff_def2_phi",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_var_def1_assump1",
+      "target": "st_var_def1_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_var_def1_assump2",
+      "target": "st_var_def1_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_var_def2_assump",
+      "target": "st_var_def2_phi",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_diff_def2_phi",
+      "target": "st_diff_def1_eq",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "微分两个定义等价"
+    },
+    {
+      "source": "st_var_def2_phi",
+      "target": "st_var_def1_derivation",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "变分两个定义等价"
+    },
+    {
+      "source": "st_var_y_def",
+      "target": "st_var_def1_derivation",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "函数的变分是泛函变分的特例"
+    }
+  ],
+  "unresolved": []
+}

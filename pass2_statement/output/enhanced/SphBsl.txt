@@ -1,0 +1,163 @@
+[SCOPE:root|description|球贝塞尔函数]
+文章名: SphBsl
+标题: 球贝塞尔函数
+
+[SCOPE:s_definition|description|球贝塞尔方程与解的定义]
+[SCOPE:s_let_l|let_bind|参数 l]
+[0] 1球贝塞尔方程（spherical Bessel's equation）为
+[1] \begin{equation}
+x^2 \frac{\mathrm{d}^{2}{y}}{\mathrm{d}{x}^{2}} + 2x \frac{\mathrm{d}{y}}{\mathrm{d}{x}} + [x^2 - l(l + 1)]y = 0~.
+\end{equation}
+[/SCOPE:s_let_l]
+[2] 【图解】图 1：球贝塞尔函数和球汉克尔函数（来自 Wikipedia）
+[SCOPE:s_let_jy|let_bind|第一类和第二类球贝塞尔函数]
+[3a] (x)$ 和第二类球贝塞尔函数 $y_l
+[3b] (x)$，见图 1 。
+[4] 它们可以通过贝塞尔函数 $J_l$，$Y_l$ 来定义
+[5] \begin{equation}
+j_l(x) = \sqrt{\frac{\pi}{2x}} J_{l+1/2}(x)~,
+\qquad
+y_l(x) = \sqrt{\frac{\pi}{2x}} Y_{l+1/2}(x)~.
+\end{equation}
+[/SCOPE:s_let_jy]
+[SCOPE:s_let_hankel|let_bind|球汉克尔函数]
+[6] 同样也可以定义两类
+[7] 球汉克尔函数（spherical Hankel's function）
+[8] \begin{equation}
+h_l^{(1)}(x) = \sqrt {\frac{\pi }{2x}} H_{l+1/2}^{(1)}(x) = j_l(x) + \mathrm{i} y_l(x)~,
+\end{equation}
+[9] \begin{equation}
+h_l^{(2)}(x) = \sqrt{\frac{\pi }{2x}} H_{l+1/2}^{(2)}(x) = j_l(x) - \mathrm{i} y_l(x)~.
+\end{equation}
+[/SCOPE:s_let_hankel]
+[SCOPE:s_let_rayleigh|let_bind|Rayleigh 公式]
+[10] 另一种等效的定义方式使用
+[11] Rayleigh's 方程
+[12] \begin{equation}
+j_l(x) = (-x)^l \left(\frac{1}{x} \frac{\mathrm{d}}{\mathrm{d}{x}} \right) ^l \frac{\sin x}{x}~,
+\end{equation}
+[13] \begin{equation}
+y_l(x) = -(-x)^l \left(\frac{1}{x} \frac{\mathrm{d}}{\mathrm{d}{x}} \right) ^l \frac{\cos x}{x}~.
+\end{equation}
+[/SCOPE:s_let_rayleigh]
+[14] $l$ 为整数的球贝塞尔函数都可以用正弦余弦函数表示，例如
+[15] \begin{align}
+&j_0(x) = \frac{\sin x}{x}~,\\
+&j_1(x) = \frac{\sin x}{x^2} - \frac{\cos x}{x}~,\\
+&j_2(x) = \left(\frac{3}{x^2} - 1 \right) \frac{\sin x}{x} - \frac{3\cos x}{x^2}~,\\
+&j_3(x) = \left(\frac{15}{x^3} - \frac{6}{x} \right) \frac{\sin x}{x} - \left(\frac{15}{x^2}-1 \right) \frac{\cos x}{x}~.
+\end{align}
+[16] \begin{align}
+&y_0(x) = -\frac{\cos x}{x}~,\\
+&y_1(x) = -\frac{\cos x}{x^2} - \frac{\sin x}{x}~,\\
+&y_2(x) = \left(-\frac{3}{x^2}+1 \right) \frac{\cos x}{x} - \frac{3\sin x}{x^2}~,\\
+&y_3(x) = \left(-\frac{15}{x^3}+\frac{6}{x} \right) \frac{\cos x}{x} - \left(\frac{15}{x^2} - 1 \right) \frac{\sin x}{x}~.
+\end{align}
+[17] 更多项可以用 Mathematica 命令如
+[18] 2
+
+[/SCOPE:s_definition]
+[SCOPE:s_properties|description|性质]
+[19] 原点值
+[20] \begin{equation}
+j_l(0) = \delta_{l,0} ~,\qquad y_l(0) = -\infty~.
+\end{equation}
+[21] 奇偶性：当 $l$ 为偶数，$j_l, y_l$ 分别是偶函数和奇函数，而 $l$ 为奇数时则相反。
+[22] \begin{equation}
+j_l(-x) = (-1)^l j_l(x)~,
+\qquad
+y_l(-y) = -(-1)^l y_l(x)~.
+\end{equation}
+[SCOPE:s_let_f|let_bind|f 代表任意球贝塞尔函数]
+[23] 一阶导数满足（$f$ 是 $j, y, h^{(1)}, h^{(2)}$ 中的任意一种）
+[24] \begin{equation}
+f'_l(z) = f_{l-1}(z) - \frac{l+1}{z} f_l(z)~.
+\end{equation}
+[/SCOPE:s_let_f]
+[SCOPE:s_let_asymp|let_bind|渐进形式]
+[25] 渐进形式
+[26] 当 $x \gg 1$ 时，球贝塞尔函数的渐进表达式为
+[27] \begin{equation}
+j_l(x) \to \sin\left(x - l\pi /2\right) /x~,
+\qquad
+y_l(x) \to - \cos\left(x - l\pi /2\right) /x~,
+\end{equation}
+[28] \begin{equation}
+h_l^{(1)}(x) \to ( - \mathrm{i} )^{l+1} \mathrm{e} ^{ \mathrm{i} x}/x~,
+\qquad
+h_l^{(2)}(x) \to \mathrm{i} ^{l + 1} \mathrm{e} ^{- \mathrm{i} x}/x~.
+\end{equation}
+[/SCOPE:s_let_asymp]
+[SCOPE:s_let_legendre|let_bind|与勒让德多项式的关系]
+[29] 与勒让德多项式的关系（
+[30] 式 9 [链接 L0]
+[31] \begin{equation}
+j_l(\rho) = \frac{(- \mathrm{i} )^l}{2} \int_{-1}^1 P_l(x) \mathrm{e} ^{ \mathrm{i} \rho x} \,\mathrm{d}{x} ~.
+\end{equation}
+[32] 分解（$[\dots]$ 表示
+[33] Clebsch–Gordan 系数 [链接 L1]
+[34] \begin{equation}
+j_l(x_1 \pm x_2) = \sum_{l_1,l_2} \mathrm{i} ^{l_1\pm l_2-l} \frac{(2l_1+1)(2l_2+1)}{2l+1}
+\begin{bmatrix}l_1 & l_2 & l\\ 0 & 0 & 0\end{bmatrix} ^2 j_{l_1}(x_1) j_{l_2}(x_2)~.
+\end{equation}
+
+[/SCOPE:s_properties]
+[/SCOPE:s_let_legendre]
+[SCOPE:s_integral|description|积分性质]
+[35] 由渐进形式可得径向归一化积分为（$\delta$ 是狄拉克 $\delta$ 函数，推导见式 20 ）
+[36] \begin{equation}
+\begin{aligned}
+\int_0^\infty k'r j_l(k'r) \cdot kr j_l(kr) \,\mathrm{d}{r} &= \int_0^\infty \sin\left(k'r - l\pi/2\right) \sin\left(kr - l\pi/2\right) \,\mathrm{d}{r} \\
+& = \frac{\pi}{2}\delta(k'-k) \qquad (k, k' > 0)~,
+\end{aligned}
+\end{equation}
+[37] \begin{equation}
+\int_{0}^{\infty} j_l(x) \,\mathrm{d}{x} = \frac{\pi l!}{2^{l+1} [(l/2)!]^2}~.
+\end{equation}
+[38] 使用奇偶性
+[39] 式 16 [链接 L2]
+[40] \begin{equation}
+\int_{-\infty}^{+\infty} j_l(x) \,\mathrm{d}{x} = \left\{\begin{aligned}
+&\frac{\pi l!}{2^l [(l/2)!]^2} &\quad (l = \text{偶数})\\
+&0 &\quad (l = \text{奇数})
+\end{aligned}\right. ~.\end{equation}
+[41] \begin{equation}
+\int_{-\infty}^{+\infty} j_l(x) j_{l'}(x) \,\mathrm{d}{x} = \frac{\pi}{2l+1}\delta_{l,l'}~,
+\end{equation}
+[42] \begin{equation}
+\int_0^\infty j_l(k' r) j_l(kr) \,\mathrm{d}{r} = \frac{\pi}{2(2l+1)} \frac{k_<^l}{k_>^{l+1}}~.
+\end{equation}
+[43] 傅里叶变换 [链接 L3]
+[44] \begin{equation}
+\int_{-\infty}^{+\infty} \mathrm{e} ^{ \mathrm{i} k x} j_l(x) \,\mathrm{d}{x} = \pi \mathrm{i} ^l P_l(k)~.
+\end{equation}
+
+[/SCOPE:s_integral]
+[SCOPE:s_modified|description|修正球贝塞尔函数]
+[SCOPE:s_let_ik|let_bind|修正球贝塞尔函数 i_l, k_l]
+[45] 修正球贝塞尔方程为
+[46] \begin{equation}
+x^2 \frac{\mathrm{d}^{2}{y}}{\mathrm{d}{x}^{2}} + 2x \frac{\mathrm{d}{y}}{\mathrm{d}{x}} - [x^2 + l(l + 1)]y = 0~.
+\end{equation}
+[47] 两个线性无关解称为
+[48] 第一类修正球贝塞尔函数（modified spherical Bessel function of the first kind）
+[49] 第二类修正球贝塞尔函数
+[50] \begin{equation}
+i_l(x) = \sqrt{\frac{\pi }{2x}} I_{l+1/2}(x) = \mathrm{i} ^{-l} j_l( \mathrm{i} x)~,
+\end{equation}
+[51] \begin{equation}
+k_l(x) = \sqrt{\frac{2}{\pi x}} K_{l+1/2}(x) = \frac{\pi }{2} \mathrm{i} ^{l + 2} h_l^{(1)}( \mathrm{i} x)~,
+\end{equation}
+[/SCOPE:s_let_ik]
+[52] 渐进形式为
+[53] \begin{equation}
+i_l(x) \to \frac{ \mathrm{e} ^x}{2x}~,
+\qquad
+k_l(x) \to \frac{\pi}{2} \frac{ \mathrm{e} ^{-x}}{x}~.
+\end{equation}
+
+跨文章引用:
+  [L1] Clebsch–Gordan 系数 → SphCup
+  [L3] 傅里叶变换 → FTExp
+[/SCOPE:s_modified]
+[/SCOPE:root]

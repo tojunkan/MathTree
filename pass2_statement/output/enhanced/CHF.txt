@@ -1,0 +1,99 @@
+[SCOPE:root|description|柯西—阿达玛公式]
+文章名: CHF
+标题: 柯西—阿达玛公式
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=柯西—阿达玛公式
+
+[0] 1柯西—阿达玛公式（Cauchy-Hadamard formula）是计算幂级数收敛半径的一般公式。
+
+[SCOPE:s_theorem|description|定理1 柯西—阿达玛公式]
+[1] 定理 1 柯西—阿达玛公式
+[SCOPE:s_theorem_let|let_bind|幂级数变量]
+[2] 设有幂级数
+[3] \begin{equation}
+\sum_{n=0}^\infty c_n(z-a)^n~.
+\end{equation}
+[/SCOPE:s_theorem_let]
+[4] 证明并不困难。
+[SCOPE:s_case1|cases||z-a|>R 情形]
+[SCOPE:s_case1_let|let_bind|delta 变量]
+[5] 如果 $|z-a|>R$，
+[6] 那么可取 $\delta>0$ 如此之小，使得 $|z-a|>R(1+\delta)$，
+[/SCOPE:s_case1_let]
+[7] 从而有
+[8] $$
+|c_n||z-a|^n>(|c_n|^{1/n}R(1+\delta))^n~.
+$$
+[9] 而按照上极限的定义，有无穷多个 $n$ 使得
+[10] $$
+|c_n|^{1/n}>\frac{1}{R(1+\delta)}~.
+$$
+[11] 于是式 1 的一般项不趋于零，
+[12] 从而这级数不可能收敛。
+[/SCOPE:s_case1]
+[SCOPE:s_case2|cases||z-a|<R 情形]
+[SCOPE:s_case2_let|let_bind|delta 变量]
+[13] 而如果 $|z-a|< R$，
+[14] 那么可取 $\delta>0$ 如此之小，使得 $|z-a|< R(1+2\delta)^{-1}$; 而按照上极限的定义，从某个 $n$ 开始总有 $|c_n|^{1/n}<(1+\delta)/R$，
+[/SCOPE:s_case2_let]
+[15] 因此对于充分大的 $n$ 就有
+[16] $$
+|c_n||z-a|^n\leq\frac{(1+\delta)^n}{(1+2\delta)^n}~.
+$$
+[17] 从而幂级数的一般项由收敛的几何级数控制。
+
+[/SCOPE:s_theorem]
+[/SCOPE:s_case2]
+[SCOPE:s_applications|description|应用举例]
+[SCOPE:s_app_let1|let_bind|逐项微分积分级数]
+[18] 对于幂级数
+[19] $$
+\sum_{n=0}^\infty c_n(z-a)^n~,
+$$
+[20] 逐项微分和逐项积分的级数分别是
+[21] $$
+\sum_{n=1}^\infty nc_n(z-a)^{n-1},\,
+\sum_{n=0}^\infty \frac{c_n}{n+1}(z-a)^{n+1}~.
+$$
+[/SCOPE:s_app_let1]
+[22] 按照柯西—阿达玛公式，这两个幂级数的收敛半径都与原幂级数相同。
+[23] 因此逐项微分或逐项积分不改变幂级数的收敛半径。
+[SCOPE:s_app_let2|let_bind|lambda 级数]
+[24] 对于 $\lambda>0$，按照柯西—阿达玛公式，幂级数
+[25] $$
+\sum_{n=0}^\infty\frac{z^n}{n^{n/\lambda}}~
+$$
+[26] 的收敛半径是无穷大，而且实际上存在 $A,B>0$ 使得
+[27] $$
+\left|\sum_{n=0}^\infty\frac{z^n}{n^{n/\lambda}}\right|
+\leq Ae^{B|z|^\lambda}~.
+$$
+[/SCOPE:s_app_let2]
+[SCOPE:s_app_let3|let_bind|d1(n) 级数]
+[28] 以 $d_1(n)$ 表示 $n$ 的非 1 因子个数。
+[29] 幂级数
+[30] $$
+\sum_{n=1}^\infty d_1(n)z^n~
+$$
+[31] 的系数涨落很没有规律：当 $n$ 为素数时 $d_1(n)=1$，而一般的正整数却可能有很多个因子。
+[32] 但显然 $1\leq d_1(n)< n$，
+[33] 因此
+[34] $$
+\lim_{n\to\infty}d_1(n)^{1/n}=1~,
+$$
+[35] 所以按照柯西—阿达玛公式，此幂级数的收敛半径是 1。
+[/SCOPE:s_applications]
+[/SCOPE:s_app_let3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_applications",
+    "target_scope": "s_theorem",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "应用举例引用定理结论"
+  }
+]

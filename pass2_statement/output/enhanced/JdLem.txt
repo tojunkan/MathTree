@@ -1,0 +1,257 @@
+[SCOPE:root|description|Jordan 引理]
+文章名: JdLem
+标题: Jordan 引理
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=Jordan 引理
+  [1] type=lemma heading=引理 1 title=小圆弧引理
+  [2] type=lemma heading=引理 2 title=大圆弧引理
+  [3] type=example heading=例 1 title=
+  [4] type=example heading=例 2 title=瑕积分的例子
+
+[0] Jordan 引理可以结合留数定理，利用围道积分来处理一些复杂的实函数定积分。
+
+[SCOPE:s_jordan|description|Jordan 引理]
+[1] 定理 1 Jordan 引理
+[SCOPE:s_jordan_let|let_bind|Jordan 引理的变量]
+[2a] (z)$ 是一个连续的1函数，且总有 $\lim\limits_{ \left\lvert z \right\rvert \to\infty}g
+[2b] (z)=0$，
+[3] 那么对于任何正实数 $a$ 就有
+[4] \begin{equation}
+\lim\limits_{R\to \infty}\int_{C(R)}g(z) \mathrm{e} ^{az \mathrm{i} } \,\mathrm{d}{z} =0~.
+\end{equation}
+[/SCOPE:s_jordan_let]
+[5] 证明：
+[6] $C(R)$ 上从 $\theta_1$ 到 $\theta_2$ 的一段圆弧上的积分为：
+[7] \begin{equation}
+\begin{aligned}
+\int_{C(R)|_{\theta_1}^{\theta^2}}g(z) \mathrm{e} ^{az \mathrm{i} } \,\mathrm{d}{z} &=\int_{\theta_1}^{\theta_2}g( R \mathrm{e} ^{\theta \mathrm{i} } ) \mathrm{e} ^{aR \mathrm{e} ^{\theta \mathrm{i} } \mathrm{i} }\fra…[truncated]…\mathrm{i} }+\theta) \mathrm{i} } \,\mathrm{d}{\theta} \\
+&=R \mathrm{i} \int_{\theta_1}^{\theta_2}g(R \mathrm{e} ^{\theta \mathrm{i} }) \mathrm{e} ^{(aR\cos\theta+\theta) \mathrm{i} -aR\sin\theta} \,\mathrm{d}{\theta} ~.
+\end{aligned}
+\end{equation}
+[8a] (z) \,\mathrm{d}{z} \right\rvert \leq \int_{C(R)} \left\lvert f
+[8b] (z) \right\rvert \,\mathrm{d}{z} $，可知
+[9] \begin{equation}
+\begin{aligned}
+& \left\lvert R \mathrm{i} \int_{\theta_1}^{\theta_2}g(R \mathrm{e} ^{\theta \mathrm{i} }) \mathrm{e} ^{(aR\cos\theta+\theta) \mathrm{i} -aR\sin\theta} \,\mathrm{d}{\theta} \right\rvert \\
+=&R \left\lvert \int_{\theta…[truncated]…theta+\theta) \mathrm{i} -aR\sin\theta} \right\rvert \,\mathrm{d}{\theta} \\
+=&R\int_{\theta_1}^{\theta_2} \left\lvert g(R \mathrm{e} ^{\theta \mathrm{i} }) \right\rvert \mathrm{e} ^{-aR\sin\theta} \,\mathrm{d}{\theta} ~.
+\end{aligned}
+\end{equation}
+[10] 由于 $\lim\limits_{ \left\lvert z \right\rvert \to\infty}g(z)=0$，对于任何 $\epsilon>0$，总存在 $R_\epsilon$ 使得只要 $R>R_\epsilon$ 就有 $ \left\lvert g(R \mathrm{e} ^{\theta \mathrm{i} })) \right\rvert <\epsilon$，
+[11] 即此时有
+[12] \begin{equation}
+R\int_{\theta_1}^{\theta_2} \left\lvert g(R \mathrm{e} ^{\theta \mathrm{i} }) \right\rvert \mathrm{e} ^{-aR\sin\theta} \,\mathrm{d}{\theta} < R\epsilon\int_{\theta_1}^{\theta_2} \mathrm{e} ^{-aR\sin\theta} \,\mathrm{d}{\theta} ~.
+\end{equation}
+[13] 我们希望对整个 $C(R)$ 积分，也就是 $\theta_1=0$ 和 $\theta_2=\pi$。
+[14] 但是由于 $ \mathrm{e} ^{-aR\sin\theta}$ 的对称性，我们只需要计算其中一半的周期：
+[15] \begin{equation}
+\int_{0}^{\pi} \mathrm{e} ^{-aR\sin\theta} \,\mathrm{d}{\theta} =2\int^{\pi/2}_{0} \mathrm{e} ^{-aR\sin\theta} \,\mathrm{d}{\theta} ~.
+\end{equation}
+[16] 又由于在 $[0, \pi/2]$ 上，$\sin\theta>\frac{2\theta}{\pi}$，
+[17] 故
+[18] \begin{equation}
+\int^{\pi/2}_{0} \mathrm{e} ^{-aR\sin\theta} \,\mathrm{d}{\theta} <\int^{\pi/2}_{0} \mathrm{e} ^{-aR\frac{2\theta}{\pi}} \,\mathrm{d}{\theta} =\frac{\pi}{2aR}(1- \mathrm{e} ^{-aR})~.
+\end{equation}
+[19] 将式 5 和式 6 代入式 4 ，再代回式 3 ，
+[20] 即得
+[21] \begin{equation}
+\begin{aligned}
+& \left\lvert R \mathrm{i} \int_{\theta_1}^{\theta_2}g(R \mathrm{e} ^{\theta \mathrm{i} }) \mathrm{e} ^{(aR\cos\theta+\theta) \mathrm{i} -aR\sin\theta} \,\mathrm{d}{\theta} \right\rvert \\
+<&\epsilon(1- \mathrm{e} ^{-aR})\frac{\pi}{a}\\
+<&\frac{\pi}{a}\epsilon~.
+\end{aligned}
+\end{equation}
+[22] 由于 $\epsilon$ 可以任意小，都有足够大的 $R$ 能满足式 7 ，且绝对值恒为非负数，
+[23] 因此
+[24] \begin{equation}
+\left\lvert \lim\limits_{R\to \infty}\int_{C(R)}g(z) \mathrm{e} ^{az \mathrm{i} } \,\mathrm{d}{z} \right\rvert =0~,
+\end{equation}
+[25] 于是有
+[26] \begin{equation}
+\lim\limits_{R\to \infty}\int_{C(R)}g(z) \mathrm{e} ^{az \mathrm{i} } \,\mathrm{d}{z} =0~.
+\end{equation}
+[27] 证毕。
+
+[/SCOPE:s_jordan]
+[28] 在给出实例之前，我们先放上两个实用的引理。
+
+[SCOPE:s_small_arc|description|小圆弧引理]
+[29] 引理 1 小圆弧引理
+[SCOPE:s_small_arc_let|let_bind|小圆弧引理的变量]
+[30a] (z)$，使 $zf
+[30b] (z)$ 至少在一个以原点为圆心的圆盘里连续。
+[31] 考虑一段以原点为圆心的圆弧路径 $C(r)$，半径为 $r$，角度从 $\theta_1$ 到 $\theta_2$，方向为逆时针。
+[32] 则当 $r\to 0$ 时，有
+[33] \begin{equation}
+\int_{C(r)}f(z) \,\mathrm{d}{z} = \mathrm{i} (\theta_2-\theta_1) \lim\limits_{z\to 0}\left(zf(z)\right)~.
+\end{equation}
+[/SCOPE:s_small_arc_let]
+[34] 证明：
+[35] 由于 $ \mathrm{i} z$ 是 $z$ 逆时针旋转 $90^\circ$ 的结果，
+[36] 故在 $C(r)$ 上逆时针积分时，各点 $z$ 处有 $ \,\mathrm{d}{z} = \mathrm{i} z \,\mathrm{d}{\theta} $，其中 $\theta$ 是从起点绕圆弧到 $z$ 点的角度；
+[37] 换句话说，$\theta$ 是个实值函数，且 $ \,\mathrm{d}{\theta} = \left\lvert \,\mathrm{d}{z} \right\rvert / \left\lvert z \right\rvert $。
+[38] \begin{equation}
+\begin{aligned}
+\int_{C(r)}f(z) \,\mathrm{d}{z} &=\int_{C(r)} \mathrm{i} zf(z) \,\mathrm{d}{\theta} \\~.
+\end{aligned}
+\end{equation}
+[39] 由于 $zf(z)$ 在去心圆盘里连续，
+[40] 故当 $r\to 0$ 时，$z\to 0$ 且 $zf(z)$ 收敛到一个常数，
+[41] 即 $\lim_{z\to 0}zf(z)$ 存在。
+[42] 因此在 $r\to 0$ 极限下，被积部分趋于一个常数，我们就可以把它提出来，得到
+[43] \begin{equation}
+\begin{aligned}
+\int_{C(r)}f(z) \,\mathrm{d}{z} &= \mathrm{i} \lim_{z\to 0}zf(z)\int_{C(r)} \,\mathrm{d}{\theta} \\
+&= \mathrm{i} \left(\theta_2-\theta_1 \right) \lim_{z\to 0}\left(zf(z)\right)~.
+\end{aligned}
+\end{equation}
+[44] 证毕。
+
+[/SCOPE:s_small_arc]
+[SCOPE:s_large_arc|description|大圆弧引理]
+[45] 引理 2 大圆弧引理
+[SCOPE:s_large_arc_let|let_bind|大圆弧引理的变量]
+[46a] (z)$，设 $f
+[46b] (z)$ 在 $\infty$ 点的邻域内连续，仍考虑 “转圈”，在 $\theta_1 \le \arg z \le \theta_2$ 的过程中，当 $|z| \rightarrow \infty$ 时，$z f
+[46c] (z)$ 一致趋于 $K$，
+[47] 则
+[48] \begin{equation}
+\lim_{R \rightarrow +\infty} \int_{C(R)} f(z) \,\mathrm{d}{z} = \mathrm{i} (\theta_2 - \theta_1) \lim_{|z| \rightarrow \infty} (z f(z)) = \mathrm{i} (\theta_2 - \theta_1) K ~,
+\end{equation}
+[/SCOPE:s_large_arc_let]
+[49] 证明：
+[50] 首先有下面积分等式显然成立：
+[51] $$\int_{C(R)} \frac{ \,\mathrm{d}{z} }{z} = i \left(\theta_2 - \theta_1\right) ~,$$
+[52] 所以
+[53a] (z) \,\mathrm{d}{z} - \mathrm{i} K (\theta_2 - \theta_1)\right| = \left| \int_{C(R)} \left[ f
+[53b] (z) - \frac{K}{z} \right] \,\mathrm{d}{z} \right| \le \int_{C(R)} \left| z f
+[53c] (z) - K \right| \cdot \frac{| \,\mathrm{d}{z} |}{|z|}~.$$
+[54a] (z)$ 一致地趋于 $K$，这表明，$\forall \epsilon > 0, \exists \mathcal M(\epsilon) > 0$（$\mathcal M(\epsilon)$ 与 $\arg z$ 无关），当 $|z| = R > \mathcal M(\epsilon)$ 时，$|zf
+[54b] (z) - K| < \epsilon$。
+[55] 所以
+[56] $$\left| \int_{C(R)} f(z) \,\mathrm{d}{z} - \mathrm{i} K(\theta_2 - \theta_1) \right| \le \epsilon (\theta_2 - \theta_1) ~,$$
+[57] 也就是
+[58] $$\lim_{R \rightarrow \infty} \int_{C(R)} f(z) \,\mathrm{d}{z} = \mathrm{i} (\theta_2 - \theta_1) K ~.$$
+[59] 证毕。
+
+[/SCOPE:s_large_arc]
+[SCOPE:s_example1|description|例 1]
+[SCOPE:s_example1_let|let_bind|例 1 的变量]
+[60] 定义 $ \operatorname{sinc} $ 函数为
+[61] \begin{equation}
+\operatorname{sinc} x =
+\left\{\begin{aligned}
+&\frac{\sin x}{x} &\quad & (x \ne 0)\\
+&\quad 1 && (x = 0)~.
+\end{aligned}\right. \end{equation}
+[62] 我们来求 $\int_{-\infty}^{\infty} \operatorname{sinc} x \,\mathrm{d}{x} $，或者记为 $\int_{\mathbb{R}} \operatorname{sinc} x \,\mathrm{d}{x} $，表示在整个实数轴上积分。
+[63] 将问题改写为复函数上，对任意 $z\in\mathbb{R}$ 有
+[64] \begin{equation}
+\operatorname{sinc} z = \operatorname{Im} \frac{ \mathrm{e} ^{ \mathrm{i} z}}{z} \quad (z \ne 0)~.
+\end{equation}
+[/SCOPE:s_example1_let]
+[SCOPE:s_example1_cases|cases|例 1 的围道积分]
+[65] 然后我们考虑 $\frac{ \mathrm{e} ^{ \mathrm{i} z}}{z}$ 在复平面上的围道积分，来解决式 15 在实数轴上的积分问题。
+[66] 和实数轴上的 $ \operatorname{sinc} x$ 不同，复平面上的 $\frac{ \mathrm{e} ^{ \mathrm{i} z}}{z}$ 在 $z=0$ 处有一个奇点，而围道上不应该有奇点。
+[67] 因此我们这里要用一个小技巧，绕开原点。
+[68] 由于 $ \operatorname{sinc} x$ 是实数轴上的连续函数，
+[69] 因此
+[70] \begin{equation}
+\int_{-\infty}^\infty \operatorname{sinc} x \,\mathrm{d}{x} =\lim\limits_{\epsilon\to 0^+} \left(\int_{-\infty}^\epsilon \operatorname{sinc} x \,\mathrm{d}{x} +\int_{-\epsilon}^\infty \operatorname{sinc} x \,\mathrm{d}{x} \right) ~.
+\end{equation}
+[71] 所以我们可以用如图 1 的回路来进行积分。
+[72] 图 1：例 1 的回路积分示意图。
+[73] 积分路径是图示半径为 $R$ 的上半圆弧（下简称大圆弧）、两条 $x$ 轴上向右的有向线段以及半径为 $\epsilon$ 的下半圆弧（下简称小圆弧）。
+[74] 按照图 1 所描述的回路去计算回路积分，
+[75] 则两条有向线段和下半小圆弧路径上的积分，在 $R\to\infty$ 和 $\epsilon\to 0$ 的极限下就是我们要的结果。
+[76] 但我们不能直接算出来。
+[77] 我们能算出来的是两条有向线段、下半小圆弧和上半大圆弧构成的回路的路径积分，利用留数定理即可知其积分值为
+[78] \begin{equation}
+2\pi \mathrm{i} \operatorname {Res}_0\frac{ \mathrm{e} ^{ \mathrm{i} z}}{z}=2\pi \mathrm{i} ~.
+\end{equation}
+[79] 当 $R\to \infty$ 时，由 Jordan 引理（定理 1 ）可知上半大圆弧上的积分值趋于 $0$，
+[80] 故在此极限下回路积分就是两条有向线段和下半小圆弧路径上的积分。
+[81] 但是我们要算的是两条有向线段上的积分，在 $\epsilon\to 0$ 下的极限，得排除掉小圆弧上的积分值。
+[82] 那么小圆弧上的积分值是多少呢？
+[83] 应用小圆弧引理 1 ，记下半小圆弧对应的路径为 $C(r)$，可知
+[84] \begin{equation}
+\lim_{\epsilon\to 0}\int_{C(r)}\frac{ \mathrm{e} ^{ \mathrm{i} z}}{z} \,\mathrm{d}{z} =\lim_{z\to 0} \mathrm{i} \mathrm{e} ^{ \mathrm{i} z}(2\pi-\pi)=\pi \mathrm{i} ~.
+\end{equation}
+[85] 因此，两条有向线段上的路径积分值就是 $2\pi \mathrm{i} -\pi \mathrm{i} =\pi \mathrm{i} $。
+[86] 注意这个运算过程中有两个极限，一个 $R\to\infty$ 结合 Jordan 引理抹去了大圆弧的影响，一个 $\epsilon\to 0$ 结合小圆弧引理得到了 $\frac{ \mathrm{e} ^{ \mathrm{i} z}}{z}$ 沿着整个实数轴积分的结果。
+[87] 由于在实数轴上的 $ \operatorname{sinc} x= \operatorname{Im} \frac{ \mathrm{e} ^{ \mathrm{i} z}}{z}$，
+[88] 因此
+[89] \begin{equation}
+\begin{aligned}
+\int_{\mathbb{R}} \operatorname{sinc} x \,\mathrm{d}{x} &= \operatorname{Im} \int_{\mathbb{R}}\frac{ \mathrm{e} ^{ \mathrm{i} z}}{z} \,\mathrm{d}{z} \\
+&= \operatorname{Im} \pi \mathrm{i} \\
+&=\pi~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_example1_cases]
+[90] 例 1 是非常重要的例题，在我们严格讨论狄拉克 delta 函数时有很大作用。
+
+[/SCOPE:s_example1]
+[SCOPE:s_example2|description|例 2]
+[91] 例 2 瑕积分的例子
+[SCOPE:s_example2_let|let_bind|例 2 的变量]
+[92] 求瑕积分 $\int_{-\infty}^\infty \frac{1}{(x^2+1)} \,\mathrm{d}{x} $。
+[93] 同样地，我们考虑复变函数 $f(z)=\frac{1}{(z^2+1)}$ 的积分。
+[/SCOPE:s_example2_let]
+[94] 由于 $f(z) \mathrm{e} ^{-z \mathrm{i} }$ 在整个除去实数轴的上半平面是处处连续的，
+[95] 因此根据定理 1 ，有
+[96] \begin{equation}
+\lim\limits_{R\to \infty}\int_{C(R)}f(z) \,\mathrm{d}{z} =0~.
+\end{equation}
+[97] $f(z)$ 一共有两个极点，$\pm \mathrm{i} $。
+[98] $f$ 在 $ \mathrm{i} $ 处的留数为
+[99] \begin{equation}
+\begin{aligned}
+\operatorname {Res}_ \mathrm{i} f(z)&=\lim\limits_{z\to \mathrm{i} }\frac{1}{z+ \mathrm{i} }\\
+&=\frac{1}{2 \mathrm{i} }~.
+\end{aligned}
+\end{equation}
+[100] 因此根据留数定理有：
+[101] \begin{equation}
+\begin{aligned}
+\int_{C(R)}f(z) \,\mathrm{d}{z} +\int_{-R}^R f(z) \,\mathrm{d}{z} =\pi~,
+\end{aligned}
+\end{equation}
+[102] 取极限后仍有：
+[103] \begin{equation}
+\begin{aligned}
+\lim\limits_{R\to \infty} \left(\int_{C(R)}f(z) \,\mathrm{d}{z} +\int_{-R}^R f(z) \,\mathrm{d}{z} \right) =\pi~,
+\end{aligned}
+\end{equation}
+[104] 将式 20 代入式 23 ，得到
+[105] \begin{equation}
+\int^\infty_{-\infty} f(x) \,\mathrm{d}{x} =\pi~.
+\end{equation}
+[/SCOPE:s_example2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_jordan",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例 1 引用 Jordan 引理"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_small_arc",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例 1 引用小圆弧引理"
+  },
+  {
+    "source_scope": "s_example2",
+    "target_scope": "s_jordan",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例 2 引用 Jordan 引理"
+  }
+]

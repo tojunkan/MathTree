@@ -1,0 +1,365 @@
+{
+  "article_name": "ODEa3",
+  "statements": [
+    {
+      "stmt_id": "st_exact_cond",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_exact_let",
+      "exposed_entities": [
+        "u(x,y)",
+        "M(x,y)",
+        "N(x,y)"
+      ]
+    },
+    {
+      "stmt_id": "st_exact_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_exact_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exact_def",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_exact_def",
+      "exposed_entities": [
+        "恰当方程"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_setup",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "y",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_check",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_solve",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_extra",
+      "subtype": "remark",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_integral_factor_intro",
+      "subtype": "remark",
+      "clause_range": [
+        32,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_integral_factor_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_integral_factor_def",
+      "subtype": "definition",
+      "clause_range": [
+        36,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_integral_factor_def",
+      "exposed_entities": [
+        "f(x,y)",
+        "积分因子"
+      ]
+    },
+    {
+      "stmt_id": "st_integral_factor_cond",
+      "subtype": "assumption",
+      "clause_range": [
+        40,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_integral_factor_let",
+      "exposed_entities": [
+        "M(x,y)",
+        "N(x,y)",
+        "f(x,y)"
+      ]
+    },
+    {
+      "stmt_id": "st_integral_factor_pde",
+      "subtype": "conclusion",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_integral_factor_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_integral_factor_remark",
+      "subtype": "remark",
+      "clause_range": [
+        45,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_integral_factor_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_onevar_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_integral_factor_onevar_let",
+      "exposed_entities": [
+        "M(x,y)",
+        "N(x,y)",
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_onevar_deriv",
+      "subtype": "conclusion",
+      "clause_range": [
+        51,
+        56
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_integral_factor_onevar",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_onevar_cond_x",
+      "subtype": "theorem",
+      "clause_range": [
+        57,
+        57
+      ],
+      "truth_value": "true",
+      "scope_id": "s_integral_factor_onevar",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_onevar_cond_y",
+      "subtype": "theorem",
+      "clause_range": [
+        58,
+        58
+      ],
+      "truth_value": "true",
+      "scope_id": "s_integral_factor_onevar",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_setup",
+      "subtype": "assumption",
+      "clause_range": [
+        59,
+        61
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2_let",
+      "exposed_entities": [
+        "M=xy^2",
+        "N=xy"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_factor",
+      "subtype": "conclusion",
+      "clause_range": [
+        62,
+        64
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2_let",
+      "exposed_entities": [
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_solve",
+      "subtype": "conclusion",
+      "clause_range": [
+        65,
+        71
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_setup",
+      "subtype": "assumption",
+      "clause_range": [
+        72,
+        76
+      ],
+      "truth_value": null,
+      "scope_id": "s_example3_let",
+      "exposed_entities": [
+        "P(x)",
+        "Q(x)",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_example3_factor",
+      "subtype": "conclusion",
+      "clause_range": [
+        77,
+        79
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example3_let",
+      "exposed_entities": [
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_example3_solve",
+      "subtype": "conclusion",
+      "clause_range": [
+        80,
+        86
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example3",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_exact_cond",
+      "target": "st_exact_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_setup",
+      "target": "st_example1_check",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_check",
+      "target": "st_example1_solve",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_integral_factor_cond",
+      "target": "st_integral_factor_pde",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_onevar_assump",
+      "target": "st_onevar_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_setup",
+      "target": "st_example2_factor",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_factor",
+      "target": "st_example2_solve",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example3_setup",
+      "target": "st_example3_factor",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example3_factor",
+      "target": "st_example3_solve",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_example1_solve",
+      "target": "st_exact_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1演示恰当方程的解法"
+    },
+    {
+      "source": "st_integral_factor_def",
+      "target": "st_exact_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "积分因子将非恰当方程转化为恰当方程"
+    },
+    {
+      "source": "st_example2_solve",
+      "target": "st_onevar_cond_x",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2演示一元积分因子的应用"
+    },
+    {
+      "source": "st_example3_solve",
+      "target": "st_onevar_cond_x",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例3演示一元积分因子解一阶线性方程"
+    }
+  ],
+  "unresolved": []
+}

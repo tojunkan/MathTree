@@ -1,0 +1,104 @@
+[SCOPE:root|description|复正定矩阵]
+文章名: DefMat
+标题: 复正定矩阵
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=definition heading=定义 1 title=
+  [2] type=theorem heading=定理 2 title=
+  [3] type=theorem heading=定理 3 title=
+  [4] type=example heading=例 1 title=
+
+[SCOPE:s_thm1|description|定理1]
+[0] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[1] 对任意厄米矩阵 $ \boldsymbol{\mathbf{A}} $ 以及任意复数列向量 $ \boldsymbol{\mathbf{v}} $，$ \boldsymbol{\mathbf{v}} ^\dagger \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{v}} $ 必为实数。
+[2] 证明： 把 $ \boldsymbol{\mathbf{v}} ^\dagger \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{v}} $ 看作 $1\times 1$ 的矩阵，需要证明 $( \boldsymbol{\mathbf{v}} ^\dagger \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{v}} ) ^\dagger = \boldsymbol{\mathbf{v}} ^\dagger \bold…[truncated]…l{\mathbf{v}} ^\dagger \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{v}} ) ^\dagger = \boldsymbol{\mathbf{v}} ^\dagger \boldsymbol{\mathbf{A}} ^\dagger \boldsymbol{\mathbf{v}} $，而厄米矩阵满足 $ \boldsymbol{\mathbf{A}} ^\dagger = \boldsymbol{\mathbf{A}} $，得证。
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_let]
+[3] 正定矩阵（positive definite matrix）定义如下。
+
+[SCOPE:s_def1|description|定义1]
+[4] 定义 1
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[5] 若一个厄米矩阵 $ \boldsymbol{\mathbf{A}} $，对任意非零复数列向量 $ \boldsymbol{\mathbf{v}} $ 都满足
+[6] \begin{equation}
+\boldsymbol{\mathbf{v}} ^\dagger \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{v}} > 0~,
+\end{equation}
+[7] 正定矩阵
+[/SCOPE:s_def1_let]
+[8] 类似地，也可以定义半正定矩阵（把式 1 中 $>$ 替换为 $\geqslant$），负定矩阵（把 $>$ 替换为 $<$），半负定矩阵。
+[9] 其中 $ \boldsymbol{\mathbf{v}} ^\dagger $ 表示 $ \boldsymbol{\mathbf{v}} $ 的厄米共轭（即先转置再把每个矩阵元取复共轭）。
+[10] 当 $ \boldsymbol{\mathbf{A}} $ 是对称矩阵时，它对应一个对称 2-线性函数，$q(v) = \boldsymbol{\mathbf{v}} ^{\mathrm{T}} \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{v}} $ 是对应的二次型。
+[11] 当 $ \boldsymbol{\mathbf{A}} $ 为厄米矩阵时，
+[12] 则对应一个对称的半双线性形式。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm2|description|定理2]
+[13] 定理 2
+[14] 一个矩阵 $ \boldsymbol{\mathbf{A}} $ 是正定矩阵当且仅当其本征值都大于零。
+[15] 半正定矩阵和（半）负定矩阵的定义也类似。
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[16] 证明：令 $ \boldsymbol{\mathbf{A}} $ 的本征矢为 $\{ \hat{\boldsymbol{\mathbf{u}}} _i\}$（一组正交归一基底），对应本征值为 $\lambda_i$（实数），令非零矢量为 $ \boldsymbol{\mathbf{v}} = \sum_i c_i \hat{\boldsymbol{\mathbf{u}}} _i$（$c_i$ 不全为零）。
+[17] 那么
+[18] \begin{equation}
+\boldsymbol{\mathbf{v}} ^\dagger \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{v}} = \sum_i \lambda_i \left\lvert c_i \right\rvert ^2~,
+\end{equation}
+[19] 可见若所有 $\lambda_i > 0$，结果必然是正的。
+[20] 若要求对任意不全为零的 $c_1,c_2,\dots$ 等式都大于零，
+[21] 那么也能反推出所有 $\lambda_i > 0$。
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm3|description|定理3]
+[22] 定理 3
+[23] 正定（负定）矩阵都是满秩的。
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[24] 证明：对于非零 $ \boldsymbol{\mathbf{x}} $，$ \boldsymbol{\mathbf{x}} ^\dagger \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{x}} \ne \boldsymbol{\mathbf{0}} $，说明 $ \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{x}} \ne \boldsymbol{\mathbf{0}} $，
+[25] 所以齐次方程组 $ \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{0}} $ 唯一的解就是 $ \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{0}} $，
+[26] 所以矩阵是满秩的，证毕。
+
+[/SCOPE:s_thm3]
+[/SCOPE:s_thm3_let]
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[SCOPE:s_ex1|description|例1]
+[27] 求二维厄米矩阵
+[28] \begin{equation}
+H = \begin{pmatrix}a & b\\ b^* & d\end{pmatrix} ~
+\end{equation}
+[29] 用特征多项式直接求本征值
+[30] \begin{equation}
+(\lambda - a)(\lambda - d) - \left\lvert b \right\rvert ^2 = 0~.
+\end{equation}
+[31] \begin{equation}
+ad > \left\lvert b \right\rvert ^2, \qquad
+a > 0~.
+\end{equation}
+[/SCOPE:s_ex1_let]
+[/SCOPE:s_ex1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2给出正定矩阵的本征值刻画，是定义1的等价条件。"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3给出正定矩阵的满秩性质，是定义1的推论。"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是正定矩阵定义的具体例子。"
+  }
+]

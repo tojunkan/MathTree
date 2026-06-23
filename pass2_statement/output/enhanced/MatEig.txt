@@ -1,0 +1,333 @@
+[SCOPE:root|description|矩阵的本征问题]
+文章名: MatEig
+标题: 矩阵的本征问题
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=二维矩阵的本征方程
+  [1] type=theorem heading=定理 1 title=
+  [2] type=corollary heading=推论 1 title=
+  [3] type=theorem heading=定理 2 title=
+  [4] type=theorem heading=定理 3 title=
+  [5] type=exercise heading=习题 1 title=
+  [6] type=theorem heading=定理 4 title=
+  [7] type=corollary heading=推论 2 title=
+  [8] type=exercise heading=习题 2 title=
+  [9] type=theorem heading=定理 5 title=
+
+[SCOPE:s_intro|description|本征方程引入]
+[SCOPE:s_intro_let|let_bind|引入矩阵A和变量]
+[0] 若已知矩阵 $ \boldsymbol{\mathbf{A}} $，我们把线性方程组
+[1] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{v}} = \lambda \boldsymbol{\mathbf{v}} ~.
+\end{equation}
+[2] 称为矩阵 $ \boldsymbol{\mathbf{A}} $ 的
+[3] 本征方程（eigen equation）
+[4] 。
+[5] 式中 $ \boldsymbol{\mathbf{A}} $ 是已知的，而 $\lambda$ 和 $ \boldsymbol{\mathbf{v}} $ 是未知的。
+[/SCOPE:s_intro_let]
+[6] 显然，当 $ \boldsymbol{\mathbf{v}} = \boldsymbol{\mathbf{0}} $ 时方程恒成立，
+[7] 所以我们通常只对非零解感兴趣。
+[8] 也就是说，我们希望找到一些
+[9] 非零向量
+[10] $ \boldsymbol{\mathbf{v}} $，使得矩阵 $ \boldsymbol{\mathbf{A}} $ 乘以该向量以后方向不变
+[11] 1
+[12] 。
+[13] 对于每个这样的向量，我们用一个标量 $\lambda$ 来描述其模长的改变。
+[14] 我们把这些向量叫做
+[15] 本征矢（eigen vector）
+[16] ，把对应的 $\lambda$ 叫做
+[17] 本征值（eigen value）
+[18] 。
+[19] 一些教材也翻译成
+[20] 特征矢
+[21] 特征值
+[22] 。
+[23] 小时百科中，eigen 译作 “本征”，而 characteristic 译作 “特征”。
+
+[/SCOPE:s_intro]
+[SCOPE:s_geom|description|几何意义]
+[24] 几何上来讲，实数矩阵对应的线性变换相当于把坐标网格做旋转、拉伸、翻折等操作。
+[25] 所以一般而言，一个非零向量在变换后长度和方向都会改变。
+[26] 但也可能存在一些特殊的非零向量，使得变换后只可能改变长度而不改变方向。
+[27] 这些向量就是本征方程的解。
+[28] 注意这种几何理解仅适用于实数矩阵以及实数本征值和本征矢的解。
+
+[/SCOPE:s_geom]
+[SCOPE:s_solve|description|求解本征方程]
+[SCOPE:s_solve_let1|let_bind|引入单位矩阵I]
+[29] 若令 $ \boldsymbol{\mathbf{I}} $ 为 $N\times N$ 的单位矩阵2，
+[/SCOPE:s_solve_let1]
+[30] 则本征方程式 1 移项后得到一个齐次线性方程组
+[31] \begin{equation}
+( \boldsymbol{\mathbf{A}} - \lambda \boldsymbol{\mathbf{I}} ) \boldsymbol{\mathbf{v}} = \boldsymbol{\mathbf{0}} ~.
+\end{equation}
+[32] 括号中的矩阵相当于把矩阵 $ \boldsymbol{\mathbf{A}} $ 的对角线上的元都减去 $\lambda$ 得到的方阵。
+[33] 要确保方程有非零解，只需令系数矩阵 $ \boldsymbol{\mathbf{A}} - \lambda \boldsymbol{\mathbf{I}} $ 不是满
+[34] 秩 [链接 L0]
+[35] 的，
+[36] 即行列式为零
+[37] \begin{equation}
+\left\lvert \boldsymbol{\mathbf{A}} - \lambda \boldsymbol{\mathbf{I}} \right\rvert = 0~.
+\end{equation}
+[38] 这是一个关于 $\lambda$ 的 $N$ 阶多项式，称为
+[39] 特征多项式（characteristic polynomial）
+[40] 。
+[41] 并不是所有矩阵都有本征向量和相应本征值，比如非特殊角的旋转变换并不能把任意向量旋转到与原向量平行。
+[42] 但是根据代数学基本定理，复数域上的特征多项式（一元 n 次方程）必有 n 个根（重根的重数包括在内），
+[43] 即有 $n$ 个本征值。
+[44] 对于 $n$ 阶矩阵 $ \boldsymbol{\mathbf{A}} $，如果 $\lambda$ 为特征方程的单根，称 $\lambda$ 为 $ \boldsymbol{\mathbf{A}} $ 的
+[45] 单本征值
+[46] ；
+[47] 如果 $\lambda$ 是 $k$ 重根，称之为 $ \boldsymbol{\mathbf{A}} $ 的
+[48] $k$ 重本征值
+[49] ，并称 $k$ 为 $\lambda$ 的代数重数。
+[SCOPE:s_solve_let2|let_bind|引入本征值标记]
+[50] 把本征值记为 $\lambda_i$（$i = 1, 2\dots N$）。
+[/SCOPE:s_solve_let2]
+[51] 将它们依次代入式 2 ，就可以分别解出对应的本征矢。
+[52] 通常把式 2 的解空间称为矩阵 $ \boldsymbol{\mathbf{A}} $ 对应于本征值 $\lambda$ 的本征子空间，记为 $V_{\lambda}$，称该子空间的维数为几何重数，
+[53] 即线性无关的本征向量。
+[54] 根据方程的线性可知，本征子空间的任意向量都是本征矢。
+[55] 在物理上，如果本征子空间维度是 $1$，我们称相应的本征值是非简并（non-degenerate）的，若几何重数 $n_i$ 大于 1，
+[56] 则称 $\lambda_i$ 是 $n_i$ 重简并（degenerate）的，把 几何重数 $n_i$ 叫做简并数（degeneracy）。
+[57] 可以证明，任意本征值的几何重数不大于代数重数。
+
+[/SCOPE:s_solve]
+[SCOPE:s_example1|description|例1 二维矩阵的本征方程]
+[58] 例 1 二维矩阵的本征方程
+[SCOPE:s_example1_let|let_bind|引入二维矩阵A]
+[59] 给出任意二维实数矩阵
+[60] \begin{equation}
+\boldsymbol{\mathbf{A}} = \begin{pmatrix}a & b \\ c & d\end{pmatrix} ~.
+\end{equation}
+[/SCOPE:s_example1_let]
+[61] \begin{equation}
+\begin{vmatrix}a-\lambda & b \\ c & d-\lambda\end{vmatrix} = (\lambda-a)(\lambda-d) - bc = 0~.
+\end{equation}
+[62] \begin{equation}
+\lambda_\pm = \frac{(a + d) \pm \sqrt{(a-d)^2 + 4bc}}{2}~.
+\end{equation}
+[63] 本征矢为
+[64] \begin{equation}
+\boldsymbol{\mathbf{v}} _\pm = C \begin{pmatrix}b\\ \lambda_\pm - a\end{pmatrix} = C \begin{pmatrix}\lambda_\pm - d\\ c\end{pmatrix} ~,
+\end{equation}
+[65] 下面列举与本征值相关的常用结论。
+
+[/SCOPE:s_example1]
+[SCOPE:s_thm1|description|定理1]
+[66] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[67] 设 $\lambda_1,\lambda_2...\lambda_m$ 是方阵 $ \boldsymbol{\mathbf{A}} $ 的 $m$ 个互不相同的本征值，分别对应本征向量 $ \boldsymbol{\mathbf{x}} _1, \boldsymbol{\mathbf{x}} _2... \boldsymbol{\mathbf{x}} _m$。
+[/SCOPE:s_thm1_let]
+[68] 则 $ \boldsymbol{\mathbf{x}} _1, \boldsymbol{\mathbf{x}} _2... \boldsymbol{\mathbf{x}} _m$ 线性无关。
+[69] 证明：
+[70] 用数学归纳法证明。
+[71] $m=1$ 显然成立。
+[72] 设 $i=m-1$ 成立，需要证明 $i=m$ 成立。
+[SCOPE:s_thm1_reductio|reductio|反证法部分]
+[73] 用反证法，假设 $i=m$ 时，$ \boldsymbol{\mathbf{x}} _1, \boldsymbol{\mathbf{x}} _2... \boldsymbol{\mathbf{x}} _m$ 线性相关，设有若干不全部为 0 的系数使得：
+[74] \begin{equation}
+\boldsymbol{\mathbf{x}} _m=a^1 \boldsymbol{\mathbf{x}} _1+a^2 \boldsymbol{\mathbf{x}} _2+...a^{m-1} \boldsymbol{\mathbf{x}} _{m-1}~,
+\end{equation}
+[75] \begin{equation}
+A \boldsymbol{\mathbf{x}} _m=a^1\lambda_1 \boldsymbol{\mathbf{x}} _1+a^2\lambda_2 \boldsymbol{\mathbf{x}} _2+...a^{m-1}\lambda \boldsymbol{\mathbf{x}} _{m-1}=\lambda_m \boldsymbol{\mathbf{x}} _m~.
+\end{equation}
+[76] 式 8 [链接 L1]
+[77] 中的 $a^i(i=1,2...m-1)$ 不全为 0。
+[78] 所以至少有部分本征值满足 $\lambda_i=\lambda_m$，这与题设矛盾，
+[79] 因而定理成立。
+[/SCOPE:s_thm1_reductio]
+[80] 上述定理可以推广为几何重数大于 $1$ 的情况，
+[81] 即：
+
+[/SCOPE:s_thm1]
+[SCOPE:s_cor1|description|推论1]
+[82] 推论 1
+[SCOPE:s_cor1_let|let_bind|推论1的变量]
+[83] 设 $\lambda_1,\lambda_2...\lambda_m$ 是方阵 $ \boldsymbol{\mathbf{A}} $ 的 $m$ 个互不相同的本征值，分别对应本征向量组 $\{ \boldsymbol{\mathbf{x}} _{1i}\},\{ \boldsymbol{\mathbf{x}} _{1i}\}...\{ \boldsymbol{\mathbf{x}} _{mi}\}$，$i$ 的最大值取遍几何重数。
+[/SCOPE:s_cor1_let]
+[84] 则 $\{ \boldsymbol{\mathbf{x}} _{1i}\},\{ \boldsymbol{\mathbf{x}} _{1i}\}...\{ \boldsymbol{\mathbf{x}} _{mi}\}$ 线性无关。
+[85] 证明思路一致。
+
+[/SCOPE:s_cor1]
+[SCOPE:s_thm2|description|定理2]
+[86] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[87] 设 $\lambda$ 是方阵 $ \boldsymbol{\mathbf{A}} $ 的一个本征值，$ \boldsymbol{\mathbf{x}} $ 是对应的本征向量。
+[/SCOPE:s_thm2_let]
+[88] 则有：
+[89] 当 $ \boldsymbol{\mathbf{A}} $ 可逆时，$\frac{1}{\lambda }$ 是 $ \boldsymbol{\mathbf{A}} ^{-1}$ 的本征值；
+[90] 当 $ \boldsymbol{\mathbf{A}} $ 可逆时，$\frac{|A|}{\lambda }$ 是伴随矩阵 $ \boldsymbol{\mathbf{A}} ^{*}$ 的本征值；
+[91] $f(x)$ 是 $x$ 的一元多项式，
+[92] 则 $f(\lambda)$ 是 $f( \boldsymbol{\mathbf{A}} )$ 的一个本征值，并且 $ \boldsymbol{\mathbf{x}} $ 依然是矩阵 $ \boldsymbol{\mathbf{A}} ^{-1}, \boldsymbol{\mathbf{A}} ^{*},f( \boldsymbol{\mathbf{A}} )$ 的分别对应于本征值 $\frac{1}{\lambda},\frac{| \boldsymbol{\mathbf{A}} |}{\lambda},f(\lambda)$ 的本征向量。
+[93] Proof.
+[SCOPE:s_thm2_proof1|description|定理2第一点证明]
+[94] 现证第一点。
+[95] 由于 $ \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{A}} ^{-1} \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{A}} ^{-1} \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{x}} =\lambda \boldsymbol{\mathbf{A}} ^{-1} \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{x}} $，
+[96] 因此 $ \boldsymbol{\mathbf{x}} $ 依然是 $ \boldsymbol{\mathbf{A}} ^{-1}$ 的本征向量，且本征值为 $\lambda^{-1} $。
+[97] 从线性变换的角度上看，$ \boldsymbol{\mathbf{A}} $ 使得 $ \boldsymbol{\mathbf{x}} $“伸长” 为原来的 $\lambda$ 倍，其逆操作必定是缩小为原来的 $\lambda^{-1}$，才能保证本征向量不变。
+[/SCOPE:s_thm2_proof1]
+[98] 第二点易证，留作习题。
+[SCOPE:s_thm2_proof3|description|定理2第三点证明]
+[99] 下证第三点，为证明方便，使用爱因斯坦求和约定。
+[SCOPE:s_thm2_proof3_let|let_bind|引入多项式f]
+[100] 设 $f(x)=a_nx^n$，
+[/SCOPE:s_thm2_proof3_let]
+[101] 则 $f( \boldsymbol{\mathbf{A}} )=a_i \boldsymbol{\mathbf{A}} ^i,f(\lambda)=a_n\lambda ^n$。
+[102] 显然我们有 $f( \boldsymbol{\mathbf{A}} ) \boldsymbol{\mathbf{x}} =a_i \boldsymbol{\mathbf{A}} ^i \boldsymbol{\mathbf{x}} =a_i\lambda^i \boldsymbol{\mathbf{x}} =f(\lambda) \boldsymbol{\mathbf{x}} $，得证。
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_proof3]
+[SCOPE:s_diag|description|对角化与相似变换]
+[103] 求解矩阵的本征方程的过程有时候也叫做矩阵的对角化（diagonalization），因为方阵可对角化的充要条件是 $A$ 有 $n$ 个线性无关的本征向量。
+
+[/SCOPE:s_diag]
+[SCOPE:s_thm3|description|定理3]
+[104] 定理 3
+[105] $n$ 阶方阵 $A$ 可对角化的充要条件是 $A$ 有 $n$ 个线性无关的本征向量。
+[106] Proof.
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[107] 设 $Q=( \boldsymbol{\mathbf{x}} _1, \boldsymbol{\mathbf{x}} _2...
+[108] \boldsymbol{\mathbf{x}} _n)$ 是实现该相似变换的过渡矩阵，相似变换为：
+[/SCOPE:s_thm3_let]
+[109] \begin{equation}
+\begin{aligned}
+AQ&=QB\\
+A( \boldsymbol{\mathbf{x}} _1, \boldsymbol{\mathbf{x}} _2...
+\boldsymbol{\mathbf{x}} _n)&=Q \operatorname {diag}(\lambda_1,\lambda_2...\lambda_n)\\
+(A \boldsymbol{\mathbf{x}} _1,A \boldsymbol{\mathbf{x}} _2...
+A \boldsymbol{\mathbf{x}} _n)&=(\lambda_1 \boldsymbol{\mathbf{x}} _1,\lambda_2 \boldsymbol{\mathbf{x}} _2...\lambda_n \boldsymbol{\mathbf{x}} _n)\\
+\end{aligned}~.
+\end{equation}
+[110] 必要性的证明同理。
+[111] 因此，过渡矩阵的每一列都是 $A$ 的本征向量。
+[112] 由于过渡矩阵可逆，
+[113] 因而这 $n$ 个本征向量线性无关。
+[114a] 如果能找到使 $ \boldsymbol{\mathbf{A}} $ 为对角矩阵的 $ \boldsymbol{\mathbf{Q}} $
+[114b] 则相当于解出了本征方程式 1 ，这就是 “对角化” 名字的由来。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_invar|description|相似不变量]
+[115] 相似变换不改变矩阵的本征值和本征向量，因为这仅仅是改变线性映射和向量的 “表示”，$f( \boldsymbol{\mathbf{x}} )=\lambda \boldsymbol{\mathbf{x}} $ 这个关系是不随基的改变而改变的。
+[116] 当然，你也可以利用相似变换后矩阵和向量坐标关系的变化来证明这一点。
+[117] 由此我们可以进一步总结基本的相似不变量：矩阵的秩、行列式、本征值。
+[118] 实际上，矩阵的迹也是相似不变量。
+[SCOPE:s_invar_let|let_bind|引入过渡矩阵S]
+[119] 设过渡矩阵为 $S$，
+[/SCOPE:s_invar_let]
+[120] 则有 $ \operatorname {Tr}(S^{-1}AS)= \operatorname {Tr}(SS^{-1}A)= \operatorname {Tr}A$。
+
+[/SCOPE:s_invar]
+[SCOPE:s_exer1|description|习题1]
+[121] 习题 1
+[122] 用其他方式证明迹是相似不变量。
+[123] （提示：用指标表示法。）
+[124] 实际上，还有两个常见的相似不变量，可以让我们明晰矩阵元和本征值的关系。
+
+[/SCOPE:s_exer1]
+[SCOPE:s_thm4|description|定理4]
+[125] 定理 4
+[SCOPE:s_thm4_let|let_bind|定理4的变量]
+[126] 设 $n$ 阶方阵 $ \boldsymbol{\mathbf{A}} =(a^i_j)$ 的 $n$ 个本征值为 $\lambda_1,\lambda_2,...\lambda_n$，
+[/SCOPE:s_thm4_let]
+[127] 则
+[128] $\prod\limits^n_{i=1}\lambda_i=| \boldsymbol{\mathbf{A}} |$
+[129] $\lambda_1+\lambda_2+...\lambda_n= \operatorname {Tr}A =a^1_1+a^2_2+...a^n_n$
+[130] Proof.
+[131] 关键是展开矩阵的特征多项式。
+[132] \begin{equation}
+\begin{aligned}
+|\lambda \boldsymbol{I}-\boldsymbol{A}| & =\left|\begin{array}{cccc}
+\lambda-a^1_{1} & -a^1_{2} & \cdots & -a^1_{n} \\
+-a^2_{1} & \lambda-a^2_{2} & \cdots & -a^2_{ n} \\
+\vdots & \vdots & & \vdots \\
+-a^n_{ 1} & -a^n_{ 2} & \cdots & \lambda-a^n_{ n}
+\end{array}\right| \\
+&=a_i\lambda^i\\
+& =(\lambda-\lambda_1)(\lambda-\lambda_2)...(\lambda-\lambda_n)=0~.
+\end{aligned}
+\end{equation}
+[133] 在第二种展开方式里，$\prod\limits^n_{i=1}\lambda_i$ 的系数为 $(-1)^n$，
+[134] 因此我们只需要在第一种展开方式里找不含有 $\lambda$ 的项即可。
+[135] 首先想到的是对角元连乘，里面有一项 $(-1)^{n}\prod \limits^n_{i=1}a^i_i$。
+[136] 在其他的展开项里，总含有 $\prod \limits^k_{i=1}(\lambda-a^i_i)$，其中 $k\le n-2$。
+[137] 可以进一步展开多项式，选取不含有 $\lambda$ 的项。
+[138] 由于保留了矩阵元前的系数 $-1$，
+[139] 所以最终得到的是 $(-1)^n | \boldsymbol{\mathbf{A}} |$，第一点得证。
+[140] 现在证明第二点。
+[141] 同样的，在第二种展开方式里我们可以看到这一项实际上是 $(\lambda)^{n-1}(\lambda_1+\lambda_2...+\lambda_n)$。
+[142] 由于除了对角元连乘以外的项里连乘数目 $k\le n-2$，
+[143] 因此这一项只在对角元连乘项里，展开这一项便可得证。
+
+[/SCOPE:s_thm4]
+[SCOPE:s_cor2|description|推论2]
+[144] 推论 2
+[SCOPE:s_cor2_let|let_bind|推论2的变量]
+[145] 设 $ \boldsymbol{\mathbf{A}} $ 是 $n$ 阶矩阵，
+[/SCOPE:s_cor2_let]
+[146] 则 $| \boldsymbol{\mathbf{A}} |=0$ 的充要条件是数 $0$ 为矩阵 $ \boldsymbol{\mathbf{A}} $ 的本征值。
+
+[/SCOPE:s_cor2]
+[SCOPE:s_exer2|description|习题2]
+[147] 习题 2
+[148] 证明三角矩阵（上三角或下三角）的对角元为本征值。
+[149] 证明严格上三角矩阵为幂零矩阵，
+[150] 即矩阵自乘若干次后为零矩阵。
+[151] 提示：用 Hamilton-Cayley 定理。
+
+[/SCOPE:s_exer2]
+[SCOPE:s_thm5|description|定理5]
+[152] 定理 5
+[SCOPE:s_thm5_let|let_bind|定理5的变量]
+[153] 设 $A$ 为复数域上的矩阵，任意本征值的几何重数都小于或等于对应的代数重数。
+[/SCOPE:s_thm5_let]
+[SCOPE:s_thm5_proof|description|定理5证明]
+[154] 证明：
+[SCOPE:s_thm5_proof_let|let_bind|证明中的变量]
+[155] 设 $A$ 为 $n$ 维线性空间上的任意矩阵，$\lambda$ 为其某个特征值，对应有 $r$ 维特征子空间。
+[156] 又设 $\{ \hat{\boldsymbol{\mathbf{e}}} _i\}_{i=1}^m$ 为特征子空间的基，扩充到全空间，使得 $V$ 的基为
+[157] \begin{equation}
+\{ \hat{\boldsymbol{\mathbf{e}}} _i\}_{i=1}^r\cup \{ \hat{\boldsymbol{\mathbf{\theta}}} _i\}_{i=r+1}^m~,
+\end{equation}
+[/SCOPE:s_thm5_proof_let]
+[158] 则在这组基下，$A$ 表示为
+[159] \begin{equation}
+\begin{pmatrix}A_{11}&A_{12}\\0&A_{22}\end{pmatrix} ~,
+\end{equation}
+[160] 其中 $A_{11}$ 为 $A$ 在 $\lambda_0-$ 特征子空间上的限制，$A_{12},A_{22}$ 的列向量给出了 $f(\theta_i)$。
+[161] 因为复数域上的矩阵必然可以上三角化，
+[162] 所以在选择恰当特征基后，$A_{11}$ 的形式为主对角线是 $\lambda_0$ 的上三角矩阵。
+[163] 于是
+[164] \begin{equation}
+\det (A-\lambda E)=\det (A_{11}-\lambda E)\det (A_{22}-\lambda E)=(\lambda_0-\lambda)^r\det (A_{22}-\lambda E)~,
+\end{equation}
+[165] 因此代数重数大于或等于 $r$，得证。
+[166] 读者亦可利用定理 1 把 $A$ 化作 Jordan 标准形。
+[167] 在这种形式下，$\lambda$ 的代数重数是出现在主对角线的次数，倘若 $\lambda$ 对应 $r$ 阶 Jordan 块，
+[168] 那么出现 $r$ 次。
+[169] 然而一个 Jordan 只对应一个特征向量，
+[170] 因此几何重数必然是小于或等于代数重数的。
+
+跨文章引用:
+  [L0] 秩 → MatRnk
+[/SCOPE:s_thm5]
+[/SCOPE:s_thm5_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是定理1的推广"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_thm4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论2是定理4的直接推论"
+  }
+]

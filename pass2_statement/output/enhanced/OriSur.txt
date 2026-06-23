@@ -1,0 +1,69 @@
+[SCOPE:root|description|可定向曲面]
+文章名: OriSur
+标题: 可定向曲面
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=可定向曲面
+  [1] type=theorem heading=定理 1 title=曲面可定向的充要条件
+  [2] type=definition heading=定义 2 title=曲面的定向
+  [3] type=theorem heading=定理 2 title=
+
+[SCOPE:s_def1|description|可定向曲面定义]
+[0] 定义 1 可定向曲面
+[SCOPE:s_def1_let|let_bind|曲面S和局部坐标系]
+[1] 给定一个正则曲面 $S$，如果我们可以用一族局部坐标系 $\{ \boldsymbol{\mathbf{x}} _i\}$ 完全覆盖 $S$1，且任意两个局部坐标系之间，如果交集非空，
+[2] 则 Jacobi 行列式必恒正的，
+[/SCOPE:s_def1_let]
+[3] 那么我们说这是一个可定向曲面（oriented surface）。
+[4] 如果不存在这样的一族局部坐标系，
+[5] 那么我们说这个曲面是不可定向的（nonorientable）。
+[6] 莫比乌斯带就是一个常见的不可定向曲面。
+[7] 判断一个曲面是否可定向，可以使用以下定理：
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|曲面可定向的充要条件]
+[8] 定理 1 曲面可定向的充要条件
+[SCOPE:s_thm1_let|let_bind|曲面S]
+[9] 一个正则曲面 $S\subseteq \mathbb{R}^3$ 可定向，当且仅当，其上存在一个可微的单位法向量场。
+[/SCOPE:s_thm1_let]
+[10] 这个条件包含三个部分，“可微” 的，“单位” 以及 “法向量”。
+[11] “法向量” 意味着这个向量场里的每一个向量都垂直于曲面，“单位” 意味着这些法向量的长度都是 $1$，而 “可微” 意味着，任取曲面的局部坐标系，这个法向量场可以看成坐标系里的一个向量值函数，而这个向量值函数是连续的。
+[12] 这一充要条件还引出了表示曲面定向的方法：
+
+[/SCOPE:s_thm1]
+[SCOPE:s_def2|description|曲面的定向定义]
+[13] 定义 2 曲面的定向
+[SCOPE:s_def2_let|let_bind|曲面S]
+[14] 可定向曲面 $S$ 上有且仅有两个不同的可微单位法向量场，都被称为 $S$ 的定向（orientation）。
+[/SCOPE:s_def2_let]
+[15] 最常见的一种可定向曲面，是用函数定义的。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm2|description|定理2]
+[16] 定理 2
+[SCOPE:s_thm2_let|let_bind|曲面S和函数f]
+[17a] 如果一个正
+[17b] 则曲面 $S$ 是由连续可微函数 $f:\mathbb{R}^3\to \mathbb{R}$ 定义的，
+[18] 即 $S=\{ \boldsymbol{\mathbf{r}} \in\mathbb{R}|f( \boldsymbol{\mathbf{r}} )=0\}$，且 $ \boldsymbol{\mathbf{r}} $ 是 $f$ 的一个正则点，
+[/SCOPE:s_thm2_let]
+[19] 那么 $S$ 必是可定向的。
+[/SCOPE:s_thm2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "定理1给出可定向的充要条件，与定义1等价"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2断言由函数定义的曲面可定向，是定义1的一个推论"
+  }
+]

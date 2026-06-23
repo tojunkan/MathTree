@@ -1,0 +1,304 @@
+{
+  "article_name": "CmtGrp",
+  "statements": [
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "G",
+        "a",
+        "b",
+        "[a,b]"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_commutator",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "[a,b]"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "G",
+        "H",
+        "K",
+        "[H,K]"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_commutator_subgroup",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "[H,K]"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_remark2",
+      "subtype": "remark",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_let",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_example_let",
+      "exposed_entities": [
+        "F4",
+        "x",
+        "y",
+        "z",
+        "w"
+      ]
+    },
+    {
+      "stmt_id": "st_example_claim",
+      "subtype": "example",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "G",
+        "H",
+        "K"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_let",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof_let",
+      "exposed_entities": [
+        "g",
+        "h",
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_step1",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_step2",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "N",
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_proof_let",
+      "subtype": "assumption",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_proof_let",
+      "exposed_entities": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        35
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        37,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_commutator",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2_commutator_subgroup",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_let",
+      "target": "st_example_claim",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_let",
+      "target": "st_thm1_proof_step1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_let",
+      "target": "st_thm1_proof_step2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let",
+      "target": "st_thm2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof_let",
+      "target": "st_thm2_proof_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_conclusion",
+      "target": "st_def2_commutator_subgroup",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1的结论是换位子群是正规子群，基于定义2"
+    },
+    {
+      "source": "st_thm2_conclusion",
+      "target": "st_def2_commutator_subgroup",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2刻画换位子群与商群交换性的关系"
+    }
+  ],
+  "unresolved": []
+}

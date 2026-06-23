@@ -1,0 +1,98 @@
+[SCOPE:root|description|球套定理]
+文章名: SNesT
+标题: 球套定理
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=球套
+  [1] type=theorem heading=定理 1 title=球套定理
+
+[SCOPE:s_def|description|球套定义]
+[0] 定义 1 球套
+[SCOPE:s_def_let|let_bind|球套定义的变量]
+[1] 设 $(X,d)$ 是度量空间，序列 $\{B_n\}$ ($B_n:=B(x_n,r_n)$)中的每一个 $B_i$ 都是 $X$ 中的球。
+[2] 若 $B_{i+1}\subset B_{i},i=1,2,\ldots$，
+[3] 则称 $\{B_n\}$ 为 $X$ 上的球套。
+[/SCOPE:s_def_let]
+[4] 若球套中每一球都是闭球，
+[5] 则球套称为闭球套；
+[6] 若每一球都是开球，
+[7] 则称为开球套。
+
+[/SCOPE:s_def]
+[SCOPE:s_thm|description|球套定理]
+[SCOPE:s_thm_let|let_bind|定理的变量]
+[8] 定理 1 球套定理
+[9] 度量空间 $(X,d)$ 是完备的充要条件是：$X$ 中半径趋于 0 的任一闭球套的有非空的交。
+[10] 即若 $\{B_n\}$ 是 $X$ 闭球套，且 $\lim\limits_{n\rightarrow\infty}r_n=0$，
+[11] 那么 $\bigcap\limits_n B_n\neq\emptyset$。
+[/SCOPE:s_thm_let]
+[12] 证明：
+[SCOPE:s_nec|description|必要性]
+[SCOPE:s_nec_let1|let_bind|必要性假设]
+[13] 必要性：设 $(X,d)$ 是完备的，并设 $\{B_n\}$ 是其上的任一闭球套，其中 $B_n$ 的球心为 $x_n$，半径为 $r_n$。
+[/SCOPE:s_nec_let1]
+[14] 则序列 $\{x_n\}$ 是柯西序列。
+[15] 事实上，当 $m>n$ 时，$d(x_m,x_n)< r_n$（根据球套的定义），而 $\lim\limits_{n\rightarrow\infty}r_n=0$。
+[16] 这就是说，任一 $\epsilon>0$，存在 $N$，只要 $n\geq N$，就有 $d(x_m,x_n)<\epsilon$，
+[17] 因此 $\{x_n\}$ 是柯西序列。
+[SCOPE:s_nec_let2|let_bind|极限 x]
+[18] 由于完备性，$\{x_n\}$ 的极限存在，设 $x=\lim\limits_{n\rightarrow\infty}x_n$。
+[/SCOPE:s_nec_let2]
+[19] $B_n$ 显然包含所有的点 $x_i,i\geq n$，
+[20] 于是 $x$ 的任一邻域都包含有 $B_n$ 的点，
+[21] 因而 $x\in B_n,n=1,2,\ldots$，进而
+[22] $x\in\bigcap\limits_n B_n$。
+[23] 即闭球套有非空的交。
+[/SCOPE:s_nec]
+[SCOPE:s_suf|description|充分性]
+[SCOPE:s_suf_let1|let_bind|柯西序列]
+[24] 充分性：设 $\{x_n\}$ 是柯西序列。
+[/SCOPE:s_suf_let1]
+[25] 若能以该序列构造（通过 $\{x_n\}$ 的某一子序列）半径趋于 0 的闭球套，
+[26] 则由定理假设知该闭球套具有公共点。
+[27] 由于该公共点的每一邻域都包含从某一项 $n$ 开始的（子序列的）所有点，
+[28] 那么它就是（子序列的）极限点。
+[29] 从而 $\{x_n\}$ 收敛到该极限点。
+[30] 我们构造如下：
+[SCOPE:s_suf_let2|let_bind|子序列构造]
+[31] 在 $\{x_n\}$ 中选取这样的点 $x_{n_1}$ 作为半径为 1 的闭球 $B_1$ 的中心，使得一切 $n\geq n_1$，$d(x_n,x_{x_1})<1/2$（根据柯西序列定义 1 ）。
+[32] 然后在 $\{x_n\}$ 中选取 $x_{n_2}$ 作为半径为 1/2 的闭球 $B_2$ 的中心，使得 $n_2>n_1$，且对一切 $n\geq n_2$，$d(x_n,x_{x_2})<1/2^2$。
+[33] 以此类推，我们总是选取满足 $n_{k+1}>n_k$，且对一切 $n\geq n_{k+1}$，$d(x_n,x_{n_{k+1}})<1/2^{k+1}$ 的 $x_{n_{k+1}}$ 作为半径为 $1/2^k$ 的球 $B_{k+1}$ 的中心。
+[/SCOPE:s_suf_let2]
+[34] 由于对 $k=1,\ldots,$ 成立
+[35] \begin{equation}
+\begin{aligned}
+d(z,x_{n_k})&\leq d(z,x_{n_{k+1}})+d(x_{n_k},x_{n_{k+1}})\\
+&<1/2^{k+1}+1/2^k\\
+&=3/2^{k+1}\\
+&<1/2^{k-1}.
+\end{aligned}~
+\end{equation}
+[36] 所以上面构造的闭球序列是闭球套。
+[SCOPE:s_suf_let3|let_bind|极限点 z]
+[37] 因此，它们有非空的交，
+[38] 从而就是序列 $\{x_{n_k}\}$ 的极限点。
+[/SCOPE:s_suf_let3]
+[39] 从而就是柯西序列 $\{x_n\}$ 的极限。
+[/SCOPE:s_thm]
+[/SCOPE:s_suf]
+[40] 证毕！
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_nec",
+    "target_scope": "s_thm",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "必要性证明推出定理的结论"
+  },
+  {
+    "source_scope": "s_suf",
+    "target_scope": "s_thm",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "充分性证明推出定理的结论"
+  }
+]

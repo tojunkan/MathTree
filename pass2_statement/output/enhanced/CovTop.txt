@@ -1,0 +1,66 @@
+[SCOPE:root|description|覆叠空间]
+文章名: CovTop
+标题: 覆叠空间
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=覆叠映射和覆叠空间
+  [1] type=theorem heading=定理 1 title=连通空间的覆叠
+  [2] type=example heading=例 1 title=
+
+[0] 覆叠空间是一种常见的简化空间描述的方式，可以更轻松地描述许多复杂空间的性质。
+[1] 覆叠的思想在微分几何中极为重要，而在理论物理中也偶尔会使用该方法。
+
+[SCOPE:s_def1|description|覆叠映射和覆叠空间]
+[2] 定义 1 覆叠映射和覆叠空间
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[3] 设有拓扑空间之间的满连续映射 $p:C\rightarrow X$。
+[4] 如果对于任意的 $x\in X$，存在开集 $U_x\in\mathcal{T}_X$ 且 $x\in U_x$，使得 $p^{-1}(U_x)$ 是 $C$ 中若干不相交开子集的并，并且每个这样的开子集都通过 $p$ 和 $U_x$ 同胚，
+[5] 那么称 $C$ 是 $X$ 的覆叠空间（covering space），$p$ 是其覆叠映射（covering map）或覆叠投影（covering projection）开集 $U_x$ 是点 $x$ 的典范邻域。
+[/SCOPE:s_def1_let]
+[6] 覆叠映射 $p$ 的逆把典范邻域 $U_x$ 映射为若干个和 $U_x$ 同胚的开集，这也可以表示为存在一个离散空间$F_x$ 使得 $p^{-1}(U_x)\approx U_x\times F_x$。
+[7] 需要注意的是，覆叠空间并不保证任何邻域都是典范邻域，
+[8] 即不是任何开集 $U$ 的逆映射 $p^{-1}(U)$ 都同构于 $U\times F$。
+[9] 如果 $X$ 是一个连通空间的话，我们还可以得知对于任何典范邻域 $U_x$ 对应的离散空间 $F_x$，其基数 $ \left\lvert F_x \right\rvert $ 都是一样的。
+[10] 这由以下定理严格描述：
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|连通空间的覆叠]
+[11] 定理 1 连通空间的覆叠
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[12] 设 $p:C\rightarrow X$ 是一个覆叠映射，$X$ 是连通的。
+[13] 对于任意的 $x, y\in X$，如果记它们的典范邻域分别是 $U_x$ 和 $U_y$，且 $p^{-1}(U_x)\approx U_x\times F_x$ 和 $p^{-1}(U_y)\approx U_y\times F_y$，
+[14] 则有 $ \left\lvert F_x \right\rvert = \left\lvert F_y \right\rvert $。
+[/SCOPE:s_thm1_let]
+[15] 定理 1 意味着如果 $X$ 连通，
+[16] 那么其覆叠映射把它同构到 $ \left\lvert F_x \right\rvert $ 个自身的拷贝上去了，其中 $F_x$ 是任意点 $x\in X$ 的典范邻域对应的离散空间。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex1|description|例1]
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[17] 取实度量空间 $\mathbb{R}$ 和复平面上的单位圆 $S^1=\{e^{2\pi \mathrm{i} t}\in\mathbb{C}|t\in\mathbb{R}\}$。
+[18] 建立映射 $p:\mathbb{R}\rightarrow S^1$，其中 $p(t)=e^{2\pi \mathrm{i} t}$，
+[19] 则 $p$ 是一个覆叠映射，$\mathbb{R}$ 是 $S^1$ 的覆叠空间。
+[/SCOPE:s_ex1_let]
+[20] 图 1：$\mathbb{R}$ 到 $S^1$ 的覆叠映射示意图。
+[21] 绿色段分别表示 $S^1$ 上的一个典范邻域和它关于覆叠映射 $p$ 的原像。
+[22] 对整数 $n$，$p$ 都把 $(n, n+1/4)$ 映射到如图所示的四分之一圆弧上，且 $p(n)=1$，$p(n+1/4)= \mathrm{i} $。
+[/SCOPE:s_ex1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是定义1在连通空间下的推论"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是定义1的具体实例"
+  }
+]

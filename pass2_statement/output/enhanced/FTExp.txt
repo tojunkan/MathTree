@@ -1,0 +1,265 @@
+[SCOPE:root|description|傅里叶变换]
+文章名: FTExp
+标题: 傅里叶变换
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=实函数、奇函数、偶函数的傅里叶变换
+  [1] type=example heading=例 1 title=高斯分布的傅里叶变换
+  [2] type=example heading=例 2 title=
+  [3] type=example heading=例 3 title=方波
+
+[SCOPE:s_thm1|description|实函数、奇函数、偶函数的傅里叶变换]
+[0] 定理 1 实函数、奇函数、偶函数的傅里叶变换
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[1a] (x)$ 是实函数，当且仅当 $g^*
+[1b] (k) = g(-k)$。
+[/SCOPE:s_thm1_let]
+[2a] (x)$ 是实函数，当且仅当 $f^*
+[2b] (x) = f(-x)$。
+[3a] (x)$ 是奇（偶）函数，当且仅当 $g
+[3b] (k)$ 是奇（偶）函数。
+[4a] (x)$ 同时是实函数和偶函数，当且仅当 $g
+[4b] (k)$ 同时是实函数和偶函数。
+[5a] (x)$ 同时是实函数和奇函数，当且仅当 $g
+[5b] (k)$ 同时是虚函数和奇函数。
+[6] 证明第 1 条：
+[7a] (x)$ 为实函数的充要条件是 $f
+[7b] (x) = f^*
+[7c] (x)$，代入式 1 得
+[8] \begin{equation}
+g(k) = \frac{1}{\sqrt{2\pi }} \int_{-\infty }^{+\infty } f^*(x) \mathrm{e} ^{- \mathrm{i} kx} \,\mathrm{d}{x} ~.
+\end{equation}
+[9] 两边取复共轭，得
+[10] \begin{equation}
+g^*(k) = g(-k)~.
+\end{equation}
+[11] 注意 $g(k)$ 的实部是偶函数，虚部是奇函数，
+[12] 因此往往只需要 $k$ 的正半轴即可得到所有信息。
+[13] 上式就是 $f(x)$ 为实函数的充要条件，要证明充分性，将
+[14] 式 4 [链接 L0]
+[15] 式 2 [链接 L1]
+[16a] (x) = f^*
+[16b] (x)$。
+[17] 证毕。
+[18] （其余证明留做习题：提示，偶函数的傅里叶变换相当于 $\cos$ 变换）
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex1|description|高斯分布的傅里叶变换]
+[19] 例 1 高斯分布的傅里叶变换
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[20] 要计算高斯函数
+[21] \begin{equation}
+f(x) = \mathrm{e} ^{-ax^2} \quad (a > 0)~
+\end{equation}
+[/SCOPE:s_ex1_let]
+[22] \begin{equation}
+g(k) = \frac{1}{\sqrt{2a}} \exp\left(-\frac{k^2}{4a}\right) ~,
+\end{equation}
+[23] 在光学和量子力学中，时常需要给 $f(x)$ 乘以一个简谐波以及平移，
+[24] 即
+[25] \begin{equation}
+f'(x) = \mathrm{e} ^{-a(x-x_0)^2} \mathrm{e} ^{ \mathrm{i} k_0 (x-x_0)} \quad (a > 0)~.
+\end{equation}
+[26] 式 16
+[27] 式 17
+[28] \begin{equation} g'(x) = \frac{1}{\sqrt{2a}} \exp\left(-\frac{(k-k_0)^2}{4a}\right) \mathrm{e} ^{- \mathrm{i} x_0 k}~.
+\end{equation}
+[29] 一维自由粒子的高斯波包（量子）
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2]
+[30] \begin{equation}
+f(x) = \begin{cases}
+\exp\left( \mathrm{i} k_0 x\right) \cos^2(ax) & ( \left\lvert x \right\rvert < \frac{\pi}{2a})~.\\
+0 & (\text{其他})
+\end{cases}
+\end{equation}
+[31] \begin{equation} g(k) = \frac{\sqrt{2\pi}a}{4a^2 - (k - k_0)^2} \operatorname{sinc} \left[\frac{\pi (k - k_0)}{2a} \right] ~,
+\end{equation}
+[32] 相关页面
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|方波]
+[33] 例 3 方波
+[34] 区间 $[-l,l]$，高为 $1$ 的单个方波，
+[35] \begin{equation}
+g(k) = \sqrt{\frac{2}{\pi}} \frac{ \sin\left(lk\right) }{k}~.
+\end{equation}
+
+[/SCOPE:s_ex3]
+[SCOPE:s_proof|description|傅里叶变换的证明]
+[36] 【未完成】以下证明可能存在问题，需要专业人士审核
+[37] 以下的证明可以用矢量空间和基底的概念得到更深刻的理解，详见 “
+[38] 傅里叶变换与连续正交归一基底 [链接 L2]
+[SCOPE:s_proof_let|let_bind|证明中的变量]
+[39] 我们把式 2 看作定义，用狄拉克 $\delta$ 函数来证明式 1 ，反之同理。
+[40] 把式 2 代入式 1 得
+[/SCOPE:s_proof_let]
+[41] \begin{equation}
+g(k) = \frac{1}{2\pi} \int_{-\infty}^{+\infty} \left[\int_{-\infty}^{+\infty} g(k') \mathrm{e} ^{ \mathrm{i} k' x} \,\mathrm{d}{k'} \right] \mathrm{e} ^{- \mathrm{i} k x} \,\mathrm{d}{x} ~.
+\end{equation}
+[42] 这就是我们需要证明的。
+[43] 我们把无穷的积分上下限改写为极限，
+[44] 即
+[45] \begin{equation} \begin{aligned}
+g(k) = \frac{1}{2\pi} \lim_{n\to\infty}\int_{-n}^{n} \left[\lim_{m\to\infty} \int_{-m}^{m} g(k') \mathrm{e} ^{ \mathrm{i} k' x} \,\mathrm{d}{k'} \right] \mathrm{e} ^{- \mathrm{i} k x} \,\mathrm{d}{x} ~.
+\end{aligned} \end{equation}
+[46] 如果内极限可以移动到两个积分外，有
+[47] 【未完成】极限和积分交换的条件是什么？
+[48] 是否满足？
+[49] \begin{equation} \begin{aligned}
+g(k) = \frac{1}{2\pi} \lim_{n\to\infty} \lim_{m\to\infty} \int_{-n}^{n}\int_{-m}^{m} g(k') \mathrm{e} ^{ \mathrm{i} (k'-k) x} \,\mathrm{d}{k'} \,\mathrm{d}{x} ~.
+\end{aligned} \end{equation}
+[50] 我们假设 $g(k')$ 在 $[-m,m]$ 内绝对值可积，
+[51] 那么
+[52] 有限区间的重积分可以交换顺序，变为
+[53] \begin{equation} \begin{aligned}
+&\quad\frac{1}{2\pi} \lim_{n\to\infty} \lim_{m\to\infty} \int_{-m}^{m} g(k') \int_{-n}^{n} \mathrm{e} ^{ \mathrm{i} (k'-k) x} \,\mathrm{d}{x} \,\mathrm{d}{k'} \\
+&= \lim_{n\to\infty} \lim_{m\to\infty} \int_{-m}^{m} g(k') \delta_n(k'-k) \,\mathrm{d}{k'} \\
+&= \lim_{n\to\infty} \int_{-\infty}^{\infty} g(k') \delta_n(k'-k) \,\mathrm{d}{k'} \\
+&= g(k)~.
+\end{aligned} \end{equation}
+[54] 第二个等号中，$\delta_n$ 是
+[55] 例 2 [链接 L3]
+[56] 中的 delta 函数列，最后一步使用了其性质
+[57] 式 9 [链接 L4]
+[58] 。
+[59] 证毕。
+[60] 注意这里要求对每个 $n=1,2,\dots$ 积分 $\int_{-\infty}^{\infty} g(k') \delta_n(k'-k) \,\mathrm{d}{k'} $ 都收敛。
+[61] 只有满足该要求的函数才适用该证明。
+
+[/SCOPE:s_proof]
+[SCOPE:s_properties|description|傅里叶变换的性质]
+[SCOPE:s_properties_let|let_bind|性质中的变量]
+[62] 为了书写方便我们用算符 $\mathcal F$ 和 $\mathcal F^{-1}$ 表示傅里叶变换和反变换，
+[63] 即 $\mathcal F f = g$ 以及 $\mathcal F^{-1} g = f$。
+[/SCOPE:s_properties_let]
+[64] 算符在这里可以看作 “函数的函数”，
+[65] 即自变量和函数值都是函数。
+[66] 平移：
+[67] \begin{equation}
+\mathcal F [f(x) \mathrm{e} ^{ \mathrm{i} k_0 x}] = g(k - k_0)~.
+\end{equation}
+[68] \begin{equation}
+\mathcal F[f(x - x_0)] = g(k) \mathrm{e} ^{- \mathrm{i} x_0 k}~.
+\end{equation}
+[69] 也就是说，给函数乘以 $ \mathrm{e} ^{ \mathrm{i} k_0 x}$ 因子再做傅里叶变换，等于先对函数做傅里叶变换，再向右平移 $k_0$；
+[70] 给函数再向右平移 $x_0$ 再做反傅里叶变换，等于先对函数做傅里叶变换，再乘以 $ \mathrm{e} ^{- \mathrm{i} x_0 k}$。
+[71] 证明留做习题。
+[72] 模长不变性：
+[73] \begin{equation}
+\int_{-\infty}^{+\infty} g(k)^* g(k) \,\mathrm{d}{k} = \int_{-\infty}^{+\infty} f(x)^* f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[74] 拉伸：
+[75] \begin{equation}
+\mathcal F[f(ax)] = \frac{1}{a} g \left(\frac{k}{a} \right) ~.
+\end{equation}
+[76] 也就是说把函数在 $x$ 方向压缩 $a$ 倍后，各个频率都变大 $a$ 倍，
+[77] 所以傅里叶变换会在 $k$ 方向拉伸 $a$ 倍，另外归一化不变性易得系数 $1/a$。
+[78] 导数：
+[79] \begin{equation}
+\mathcal F [f'(x)] = \mathrm{i} k g(k)~,
+\end{equation}
+[80] \begin{equation}
+\mathcal F^{-1} [g'(k)] = - \mathrm{i} x f(x)~.
+\end{equation}
+[81] 作为式 18 的拓展，有
+[82] \begin{equation}
+\int_{-\infty}^{+\infty} f_1(x)^* f_2(x) \,\mathrm{d}{x} = \int_{-\infty}^{+\infty} g_1(k)^* g_2(k) \,\mathrm{d}{k} ~.
+\end{equation}
+[83] 这可以理解为傅里叶变换不改变内积，
+[84] 所以是一个无穷维空间中的
+[85] 幺正变换 [链接 L5]
+[86] 如果 $f_1(x)$ 可以在 $x = 0$ 泰勒展开，有
+[87] \begin{equation}
+\mathcal{F}[f_1(x) f_2(x)] = f_1 \left( \mathrm{i} \frac{\partial}{\partial{k}} \right) g_2(k)~.
+\end{equation}
+[88] 如果 $g_1(k)$ 可以在 $k = 0$ 泰勒展开，有
+[89] \begin{equation}
+\mathcal{F}^{-1}[g_1(k) g_2(k)] = g_1 \left(- \mathrm{i} \frac{\partial}{\partial{x}} \right) f_2(x)~.
+\end{equation}
+[90] 式 20 [链接 L6]
+[91] 式 21 [链接 L7]
+[92] 是该性质的特殊情况（令
+[93] 式 23 [链接 L8]
+[94] 中 $f_1(x) = x$，
+[95] 式 24 [链接 L9]
+[96] 中 $g_1(k) = k$）。
+[97] 记忆方法：在傅里叶变换外面的 $ \mathrm{i} \partial/\partial k $ 相当于傅里叶变换里面的 $x$，反傅里叶变换外面的 $- \mathrm{i} \partial/\partial x $ 相当于反傅里叶变换里面的 $k$。
+[98] 平均值：
+[99] \begin{equation}
+\left\langle k \right\rangle = \int_{-\infty}^{+\infty} k \left\lvert g(k) \right\rvert ^2 \,\mathrm{d}{x} = \int_{-\infty}^{+\infty} f^*(x) \left(- \mathrm{i} \frac{\mathrm{d}}{\mathrm{d}{x}} \right) f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[100] \begin{equation}
+\left\langle x \right\rangle = \int_{-\infty}^{+\infty} x \left\lvert f(x) \right\rvert ^2 \,\mathrm{d}{x} = \int_{-\infty}^{+\infty} g^*(k) \left( \mathrm{i} \frac{\mathrm{d}}{\mathrm{d}{k}} \right) g(k) \,\mathrm{d}{k} ~.
+\end{equation}
+[101] 推导参考 “
+[102] 平均值（量子力学） [链接 L10]
+[103] 不确定性原理：
+[104] \begin{equation}
+\sigma_x \sigma_k \geqslant \frac{1}{2}~.
+\end{equation}
+[105a] (x), g
+[105b] (k)$ 的标准差，
+[106] 即
+[107] \begin{equation}
+\sigma_x^2 = \int \left\lvert f(x) \right\rvert ^2 (x-\bar x)^2 \,\mathrm{d}{x} ~.
+\end{equation}
+[108] \begin{equation}
+\sigma_k^2 = \int \left\lvert f(x) \right\rvert ^2 (k-\bar k)^2 \,\mathrm{d}{k} ~.
+\end{equation}
+[109] 对高斯函数（
+[110] 式 5 [链接 L11]
+[111] ），不等式取等号，此时 $\sigma_x^2 = 1/(4a)$。
+[112] 推导参考量子力学的 “
+[113] 不确定性原理 [链接 L12]
+
+[/SCOPE:s_properties]
+[SCOPE:s_proof_properties|description|性质的证明]
+[114] 证明式 18 ：把傅里叶变换看成傅里叶级数在 $l \to \infty$ 时的极限，使用式 14 ，右边的求和在极限下变为积分即可证明。
+[115] 详细过程留做习题。
+[116] 证明式 20 （式 21 同理）：对式 2 关于 $x$ 求导得
+[117] \begin{equation}
+f'(x) = \frac{1}{\sqrt{2\pi }} \int_{-\infty }^{+\infty } [ \mathrm{i} kg(k)] \mathrm{e} ^{ \mathrm{i} kx} \,\mathrm{d}{k} ~.
+\end{equation}
+[118] 把方括号看作一整个 $k$ 的函数，
+[119] 那么上式对应的反变换为
+[120] \begin{equation}
+\mathrm{i} kg(k) = \frac{1}{\sqrt{2\pi }} \int_{-\infty }^{+\infty } f'(x) \mathrm{e} ^{- \mathrm{i} kx} \,\mathrm{d}{x} = \mathcal F [f'(x)]~.
+\end{equation}
+[121a] (k) = F [f
+[121b] (x)]$，证毕。
+[122] 证明式 23 （式 24 同理）：过程和式 20 类似，等式右边为
+[123] \begin{equation}
+\begin{aligned}
+& \quad \frac{1}{\sqrt{2\pi }} f_1 \left( \mathrm{i} \frac{\partial}{\partial{k}} \right) \int_{-\infty }^{+\infty } f_2(x) \mathrm{e} ^{- \mathrm{i} kx} \,\mathrm{d}{x} \\
+&= \frac{1}{\sqrt{2\pi }} \int_{-\infty }^{+…[truncated]…1 \left( \mathrm{i} \frac{\partial}{\partial{k}} \right) \mathrm{e} ^{- \mathrm{i} kx} \,\mathrm{d}{x} \\
+&= \frac{1}{\sqrt{2\pi }} \int_{-\infty }^{+\infty } f_1(x) f_2(x) \mathrm{e} ^{- \mathrm{i} kx} \,\mathrm{d}{x} ~.
+\end{aligned}
+\end{equation}
+
+跨文章引用:
+  [L2] 傅里叶变换与连续正交归一基底 → COrNoB
+  [L5] 幺正变换 → Unitar
+  [L10] 平均值（量子力学） → QMavg
+  [L12] 不确定性原理 → Uncert
+[/SCOPE:s_proof_properties]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_proof",
+    "target_scope": "s_ex2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "证明中引用了例2的delta函数列"
+  },
+  {
+    "source_scope": "s_properties",
+    "target_scope": "s_ex1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "高斯函数作为性质中模长不变性和不确定性原理的例子"
+  }
+]

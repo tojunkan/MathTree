@@ -1,0 +1,328 @@
+{
+  "article_name": "MbusF",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "n",
+        "p_k",
+        "f_k",
+        "mu"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_concl",
+      "subtype": "theorem",
+      "clause_range": [
+        8,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_stmt",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_assump1",
+      "subtype": "assumption",
+      "clause_range": [
+        16,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "S",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_assump2",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "a_i",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1_stmt",
+      "subtype": "corollary",
+      "clause_range": [
+        33,
+        36
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": [
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_stmt",
+      "subtype": "theorem",
+      "clause_range": [
+        37,
+        41
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": [
+        "f",
+        "S",
+        "P"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        49
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm4_stmt",
+      "subtype": "theorem",
+      "clause_range": [
+        53,
+        57
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm4",
+      "exposed_entities": [
+        "varphi",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm4_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        58,
+        60
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm5_stmt",
+      "subtype": "theorem",
+      "clause_range": [
+        61,
+        63
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm5",
+      "exposed_entities": [
+        "e",
+        "e_lambda",
+        "d",
+        "sigma",
+        "sigma_lambda"
+      ]
+    },
+    {
+      "stmt_id": "st_thm6_stmt",
+      "subtype": "theorem",
+      "clause_range": [
+        65,
+        67
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm6",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm6_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        68,
+        70
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm6",
+      "exposed_entities": [
+        "m",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm7_stmt",
+      "subtype": "theorem",
+      "clause_range": [
+        71,
+        74
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm7",
+      "exposed_entities": [
+        "Lambda",
+        "log"
+      ]
+    },
+    {
+      "stmt_id": "st_thm7_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        75,
+        78
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm7",
+      "exposed_entities": [
+        "p",
+        "s"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1",
+      "subtype": "exercise",
+      "clause_range": [
+        79,
+        80
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "varphi",
+        "n"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_assump",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assump1",
+      "target": "st_thm2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assump2",
+      "target": "st_thm2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_stmt",
+      "target": "st_thm3_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm4_stmt",
+      "target": "st_thm4_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm6_stmt",
+      "target": "st_thm6_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm7_stmt",
+      "target": "st_thm7_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm2_concl",
+      "target": "st_cor1_stmt",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "求和性质推出求积性质"
+    },
+    {
+      "source": "st_thm2_concl",
+      "target": "st_thm3_stmt",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "求和性质用于反演公式证明"
+    },
+    {
+      "source": "st_cor1_stmt",
+      "target": "st_thm3_stmt",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "求积性质用于反演公式乘积形式证明"
+    },
+    {
+      "source": "st_thm3_stmt",
+      "target": "st_thm4_stmt",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "反演公式用于推导 Euler 函数变换"
+    },
+    {
+      "source": "st_thm6_stmt",
+      "target": "st_thm7_stmt",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "积性函数的 Möbius 变换仍是积性函数用于 von Mangoldt 函数证明"
+    }
+  ],
+  "unresolved": []
+}

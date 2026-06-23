@@ -1,0 +1,110 @@
+[SCOPE:root|description|谱投影]
+文章名: SpePrj
+标题: 谱投影
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=谱投影
+  [1] type=lemma heading=引理 1 title=
+  [2] type=theorem heading=定理 1 title=不变子空间分解
+  [3] type=theorem heading=定理 2 title=
+
+[SCOPE:s_def1|description|定义1 谱投影]
+[0] 定义 1 谱投影
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1] 设 $X$ 是复巴拿赫空间，$T:X\to X$ 是有界算子。
+[2] 设有一条简单闭道路 $\gamma$ 将谱集 $\sigma(T)$ 分成了不相交的两部分，将包含在 $\gamma$ 内部的部分记为 $\Lambda$. 则算子
+[3] $$
+P_\Lambda:=\frac{1}{2\pi i}\int_\gamma(z-T)^{-1}dz~
+$$
+[4] 称为 $T$ 在 $\Lambda$ 上的谱投影。
+[/SCOPE:s_def1_let]
+[5] 为何要像这样定义谱投影？
+[6] 原来，这其实是在推广线性代数中将空间分解为矩阵的不变子空间的操作。
+[7] 对于矩阵的情形，参见文章 例：有限维方阵, 在那里谱投影的意义可以通过直接计算看出。
+[8] 在一般的巴拿赫空间的情形，我们首先有如下命题：
+
+[/SCOPE:s_def1]
+[SCOPE:s_lemma1|description|引理1]
+[9] 引理 1
+[SCOPE:s_lemma1_let|let_bind|引理1的变量]
+[10] 如上定义的算子 $P_\Lambda$ 的确是有界的投影算子，
+[11] 即满足
+[12] $$
+P_\Lambda^2=P_\Lambda~.
+$$
+[13] 另外，$P_\Lambda$ 与 $T$ 可交换。
+[14] 由此可见，空间 $X$ 被分成了两个闭子空间 $M_\Lambda:=\text{Ran}(P_\Lambda)$ 和 $N_\Lambda:=\text{Ran}(1-P_\Lambda)$ 的直和。
+[/SCOPE:s_lemma1_let]
+[15] 由此即可得到不变子空间分解定理：
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_thm1|description|定理1 不变子空间分解]
+[16] 定理 1 不变子空间分解
+[17] 闭子空间 $M_\Lambda$ 和 $N_\Lambda$ 都是算子 $T$ 的不变子空间，而且有直和
+[18] $$
+X=M_\Lambda\oplus N_\Lambda~.
+$$
+[19] 若把算子 $T$ 限制在 $M_\Lambda$ 上，并且视之为 $M_\Lambda$ 上的算子，
+[20] 则它的谱是 $\Lambda$; 同样地，若把算子 $T$ 限制在 $N_\Lambda$ 上，并且视之为 $N_\Lambda$ 上的算子，
+[21] 则它的谱是 $\sigma(T)\setminus\Lambda$.
+[22] 这也就是说，谱集分离成多个部分即意味着空间分解为算子的不变子空间的直和。
+[23] 这就使得算子在空间上的作用更清楚了。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_isolated|description|孤立谱点]
+[SCOPE:s_isolated_let|let_bind|孤立谱点的变量]
+[24] 如果 $\lambda_0\in\sigma(T)$ 是孤立的谱点，
+[25] 那么可以认为它是预解式 $(z-T)^{-1}$ 的孤立奇点。
+[26] 仿照复变函数论，当然可以谈论它在孤立奇点处的留数和洛朗展开式。
+[27] 显然，预解式在 $\lambda_0$ 处的留数就是谱投影
+[28] $$
+P_{\lambda_0}=\frac{1}{2\pi i}\int_{|z-\lambda_0|=r}(z-T)^{-1}dz~,
+$$
+[29] 这里 $|z-\lambda_0|=r$ 是一个充分小的圆。
+[30] 正像计算洛朗级数展开式那样，也不难得出 $(z-T)^{-1}$ 在 $z=\lambda_0$ 附近的洛朗展开：
+[31] $$
+\begin{aligned}
+(z-T)^{-1}
+=\sum_{n=-\infty}^\infty(z-\lambda_0)^nA_n~,
+\quad
+A_n=\frac{1}{2\pi i}\int_{|z-\lambda_0|=r}(z-\lambda_0)^{-(n+1)}(z-T)^{-1}dz~.
+\end{aligned}
+$$
+[/SCOPE:s_isolated_let]
+[32] 有如下定理：
+
+[/SCOPE:s_isolated]
+[SCOPE:s_thm2|description|定理2]
+[33] 定理 2
+[34a] 如果 $(z-T)^{-1}$ 以 $z=\lambda_0$ 为 $m$ 阶极点，也
+[34b] 则是说它的洛朗展开式的负幂项只到 $A_{-m}(z-\lambda_0)^{-m}$, 那么 $\lambda_0$ 是 $T$ 的本征值，本征子空间的维数为 $m$. 此时有 $\text{Ker}(\lambda_0-T)=\text{Ran}P_{\lambda_0}$, 而空间 $X$ 可以分解为 $T$ 的不变子空间的直和：
+[35] $$
+X=\text{Ker}(\lambda_0-T)\oplus \text{Ran}(\lambda_0-T)^m~.
+$$
+[/SCOPE:s_thm2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_lemma1",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "引理1基于定义1的谱投影"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_lemma1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理1由引理1推出"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_isolated",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2基于孤立谱点的讨论"
+  }
+]

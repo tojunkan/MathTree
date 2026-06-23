@@ -1,0 +1,92 @@
+[SCOPE:root|description|单位分割]
+文章名: ParUni
+标题: 单位分割
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=单位分割
+  [1] type=definition heading=定义 2 title=一般集合的支撑集
+  [2] type=definition heading=定义 3 title=拓扑空间的支撑集
+  [3] type=definition heading=定义 4 title=从属
+  [4] type=definition heading=定义 5 title=突起函数
+  [5] type=example heading=例 1 title=
+  [6] type=exercise heading=习题 1 title=
+
+[SCOPE:s_def1|description|定义 1 单位分割]
+[0] 定义 1 单位分割
+[SCOPE:s_def1_let|let_bind|单位分割的变量]
+[1] 给定拓扑空间$X$。
+[2] 如果存在一组函数 $\rho_\alpha: X \to [0, 1]$，使得对于任意 $x\in X$，有：
+[/SCOPE:s_def1_let]
+[3] 只有有限多个 $\rho_\alpha(x)$ 不为零；
+[4] 全体不为零的 $\rho_\alpha(x)$ 之和为 $1$。
+[5] 则称这组函数是 $X$ 上的一个单位分割（partition of unity）
+[6] “单位分割” 这一术语不难理解：“单位” 就是指 $1$ 这个数字，“分割” 就是把它拆分开。
+[7] 单位分割中的所有函数加起来，就得到一个 $X$ 上恒等于 $1$ 的函数。
+[8] 定义中强调 “全体不为零的 $\rho_\alpha(x)$ 之和” 是出于严谨考虑，因为我们并没有定义 “不可数多个数字之和” 这一运算，而单位分割完全可以包含任意多个函数。
+[9a] 当然，第一条限制了只有有限多个函数值不为零，我们确实可以定义全体函数值之和
+[9b] 则是全体非零函数值之和，
+[10] 但那还是需要 “定义” 这一过程的，不如直接按以上定义里的表述来了。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义 2 一般集合的支撑集]
+[11] 定义 2 一般集合的支撑集
+[SCOPE:s_def2_let|let_bind|一般集合支撑集的变量]
+[12] 给定集合$S$ 和其上一个函数 $f:S\to\mathbb{R}$，记 $ \operatorname {supp} f = \{s\in S| f(s)\not=0\}$，称其为函数 $f$ 的支撑集（support），也可以简称支集。
+
+[/SCOPE:s_def2]
+[/SCOPE:s_def2_let]
+[SCOPE:s_def3|description|定义 3 拓扑空间的支撑集]
+[13] 定义 3 拓扑空间的支撑集
+[SCOPE:s_def3_let|let_bind|拓扑空间支撑集的变量]
+[14] 给定拓扑空间$X$ 和其上一个函数 $f:X\to\mathbb{R}$，
+[/SCOPE:s_def3_let]
+[15] 则 $f$ 的支撑集为 $\{s\in S| f(s)\not=0\}$ 的闭包（closure）。
+[16] 注意两种语境（一般集合还是赋予了拓扑的集合）下支撑集概念的区别。
+[17] 定义支撑集的概念，是为了方便引出 “从属” 的概念。
+[18] 这是一个单位分割（作为函数的集合）和覆盖（作为开集的集合）之间的关系。
+
+[/SCOPE:s_def3]
+[SCOPE:s_def4|description|定义 4 从属]
+[19] 定义 4 从属
+[SCOPE:s_def4_let|let_bind|从属的变量]
+[20] 给定拓扑空间$X$。
+[21] 如果 $\{\rho_\alpha\}$ 是 $X$ 上的一个单位分割，$\{U_\alpha\}$ 是 $X$ 的一个开覆盖，且有 $\forall \alpha, \operatorname {supp}\rho_\alpha\subseteq U_\alpha$，
+[/SCOPE:s_def4_let]
+[22] 那么我们说 $\{\rho_\alpha\}$ 是从属于（subordinate to）$\{U_\alpha\}$ 的。
+
+[/SCOPE:s_def4]
+[SCOPE:s_def5|description|定义 5 突起函数]
+[23] 定义 5 突起函数
+[SCOPE:s_def5_let|let_bind|突起函数的变量]
+[24] 在拓扑空间 $X$ 上，如果对于点 $x\in X$ 的某个邻域 $U$，存在一个函数 $f:X\to\mathbb{R}^+\cup\{0\}$，使得存在 $x$ 的邻域 $O\subseteq U$，有：
+[/SCOPE:s_def5_let]
+[25] $f(O)=\{1\}$；
+[26] $ \operatorname {supp} f \subseteq U$。
+[27] 则称 $f$ 是 $x$ 上 $U$ 内的一个突起函数（bump function）。
+[28] 称 $f^{-1}(1)$ 为 $f$ 的平台区。
+[29] 如果给定一个流形上的非负光滑函数 $h$，它在某区域上恒为 $0$，我们是可以利用它来构造一个突起函数的。
+[30] 我们用实数轴举一个例子来抛砖引玉，任意欧几里得空间中的例子可以通过对各个坐标分别进行相同程序得到，任意流形上的例子可以通过选择适当的图来将其局部变为欧几里得空间来重复以上程序。
+
+[/SCOPE:s_def5]
+[SCOPE:s_example1|description|例 1]
+[SCOPE:s_example1_let|let_bind|例 1 的变量]
+[31a] (t)=0$，当 $t>0$ 时 $h
+[31b] (t)=e^{-1/t}$1。
+[32] 第一步，构造阶梯函数：
+[33] \begin{equation}
+g(t)=\frac{h(t)}{h(t)+h(1-t)}~.
+\end{equation}
+[34] 第二步，用阶梯函数变形：
+[35] \begin{equation}
+f(t)=g(t)g(3-t)~.
+\end{equation}
+[/SCOPE:s_example1_let]
+[36] 这样，我们就得到了一个平台区为 $(1, 2)$、支撑集为 $[0, 3]$ 的突起函数了。
+
+[/SCOPE:s_example1]
+[SCOPE:s_exercise1|description|习题 1]
+[37] 习题 1
+[38] 画出例 1 中 $f(t)$ 的图像。
+[39] 【未完成】讨论 bump function 和单位分割存在性的关系。
+[/SCOPE:s_exercise1]
+[/SCOPE:root]

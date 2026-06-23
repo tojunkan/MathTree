@@ -1,0 +1,30 @@
+[SCOPE:root|description|直线和平面的交点]
+文章名: LPint
+标题: 直线和平面的交点
+
+[0] 贡献者： addis
+[1] 预备知识 高中解析立体几何，几何矢量
+[SCOPE:s_main|description|直线和平面的交点]
+[SCOPE:s_let|let_bind|变量定义]
+[2] 若平面上任意一点为 $ \boldsymbol{\mathbf{p}} = (p_x, p_y, p_z)$，法向量为 $ \boldsymbol{\mathbf{n}} = (n_x, n_y, n_z)$。
+[3] 直线上一点为 $ \boldsymbol{\mathbf{s}} = (s_x, s_y, s_z)$，方向为 $ \boldsymbol{\mathbf{v}} = (v_x, v_y, v_z)$，求射线与平面的交点。
+[4] 注意 $ \boldsymbol{\mathbf{n}} $ 和 $ \boldsymbol{\mathbf{v}} $ 不必是单位矢量。
+[/SCOPE:s_let]
+[5] 平面方程为
+[6] \begin{equation}
+( \boldsymbol{\mathbf{r}} - \boldsymbol{\mathbf{p}} ) \boldsymbol\cdot \boldsymbol{\mathbf{n}} = 0~.
+\end{equation}
+[7] 直线的参数方程为
+[8] \begin{equation}
+\boldsymbol{\mathbf{r}} = \lambda \boldsymbol{\mathbf{v}} + \boldsymbol{\mathbf{s}} ~.
+\end{equation}
+[9] 式 2 代入式 1 解得
+[10] \begin{equation}
+\lambda = \frac{( \boldsymbol{\mathbf{p}} - \boldsymbol{\mathbf{s}} ) \boldsymbol\cdot \boldsymbol{\mathbf{n}} }{ \boldsymbol{\mathbf{v}} \boldsymbol\cdot \boldsymbol{\mathbf{n}} }~.
+\end{equation}
+[11] 再代入式 2 得交点为
+[12] \begin{equation}
+\boldsymbol{\mathbf{r}} = \frac{( \boldsymbol{\mathbf{p}} - \boldsymbol{\mathbf{s}} ) \boldsymbol\cdot \boldsymbol{\mathbf{n}} }{ \boldsymbol{\mathbf{v}} \boldsymbol\cdot \boldsymbol{\mathbf{n}} } \boldsymbol{\mathbf{v}} + \boldsymbol{\mathbf{s}} ~.
+\end{equation}
+[/SCOPE:s_main]
+[/SCOPE:root]

@@ -1,0 +1,581 @@
+{
+  "article_name": "banach",
+  "statements": [
+    {
+      "stmt_id": "st_def_banach",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_claim",
+      "subtype": "example",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "R^N",
+        "C^N"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_let1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let1",
+      "exposed_entities": [
+        "X",
+        "C[a,b]"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_let1_norm",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let1",
+      "exposed_entities": [
+        "||f||"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_let1_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_let1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_let2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let2",
+      "exposed_entities": [
+        "||f||_{L^p}"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_let2_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_general",
+      "subtype": "example",
+      "clause_range": [
+        19,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "K",
+        "C(K)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_let_def",
+      "subtype": "definition",
+      "clause_range": [
+        23,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3_let",
+      "exposed_entities": [
+        "Omega",
+        "A",
+        "mu",
+        "||f||_{L^p(mu)}",
+        "||f||_{L^infty(mu)}"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_op_def",
+      "subtype": "remark",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_op",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_op_let1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_op_let1",
+      "exposed_entities": [
+        "X",
+        "Y",
+        "T",
+        "Dom(T)"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_op_let1_def_dom",
+      "subtype": "definition",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_op_let1",
+      "exposed_entities": [
+        "Dom(T)"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_op_let1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_op_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_op_let1_def_ext",
+      "subtype": "definition",
+      "clause_range": [
+        34,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_op_let1",
+      "exposed_entities": [
+        "T_1",
+        "T subset T_1"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_op_let2_def_graph",
+      "subtype": "definition",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_op_let2",
+      "exposed_entities": [
+        "G(T)"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_op_let2_def_graph_norm",
+      "subtype": "definition",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_op_let2",
+      "exposed_entities": [
+        "[|x|]_T"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_op_let2_def_closed",
+      "subtype": "definition",
+      "clause_range": [
+        40,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_op_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_op_let2_def_closable",
+      "subtype": "definition",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_op_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_op_let2_thm_closed_graph",
+      "subtype": "theorem",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": "true",
+      "scope_id": "s_linear_op_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_op_let2_remark_spectrum",
+      "subtype": "remark",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_op_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_properties_completion",
+      "subtype": "theorem",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_properties_equiv_norm",
+      "subtype": "theorem",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_properties_separable",
+      "subtype": "theorem",
+      "clause_range": [
+        48,
+        48
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_properties_let1_iff",
+      "subtype": "theorem",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties_let1",
+      "exposed_entities": [
+        "X",
+        "||·||",
+        "x_n"
+      ]
+    },
+    {
+      "stmt_id": "st_properties_let2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_properties_let2",
+      "exposed_entities": [
+        "X",
+        "Y"
+      ]
+    },
+    {
+      "stmt_id": "st_properties_let2_product",
+      "subtype": "theorem",
+      "clause_range": [
+        51,
+        51
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties_let2",
+      "exposed_entities": [
+        "X×Y"
+      ]
+    },
+    {
+      "stmt_id": "st_properties_let2_operator_space",
+      "subtype": "theorem",
+      "clause_range": [
+        52,
+        52
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties_let2",
+      "exposed_entities": [
+        "B(X,Y)"
+      ]
+    },
+    {
+      "stmt_id": "st_properties_let2_quotient",
+      "subtype": "theorem",
+      "clause_range": [
+        53,
+        54
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties_let2",
+      "exposed_entities": [
+        "M",
+        "X/M"
+      ]
+    },
+    {
+      "stmt_id": "st_properties_reductio_claim",
+      "subtype": "theorem",
+      "clause_range": [
+        56,
+        56
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_properties_reductio_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        57,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "s_properties_reductio_let",
+      "exposed_entities": [
+        "x_k",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_properties_reductio_let_def_Xn",
+      "subtype": "definition",
+      "clause_range": [
+        58,
+        58
+      ],
+      "truth_value": null,
+      "scope_id": "s_properties_reductio_let",
+      "exposed_entities": [
+        "X_n"
+      ]
+    },
+    {
+      "stmt_id": "st_properties_reductio_let_lemma1",
+      "subtype": "lemma",
+      "clause_range": [
+        59,
+        59
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties_reductio_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_properties_reductio_let_lemma2",
+      "subtype": "lemma",
+      "clause_range": [
+        60,
+        60
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties_reductio_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_properties_reductio_let_lemma3",
+      "subtype": "lemma",
+      "clause_range": [
+        61,
+        61
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties_reductio_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_properties_reductio_let_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        62,
+        62
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_properties_reductio_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_properties_reductio_noncompact",
+      "subtype": "theorem",
+      "clause_range": [
+        63,
+        63
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties_reductio",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex2_let1_assump",
+      "target": "st_ex2_let1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_let1_norm",
+      "target": "st_ex2_let1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_let2_assump",
+      "target": "st_ex2_let2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_properties_let2_assump",
+      "target": "st_properties_let2_product",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_properties_let2_assump",
+      "target": "st_properties_let2_operator_space",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_properties_let2_assump",
+      "target": "st_properties_let2_quotient",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_properties_reductio_let_assump",
+      "target": "st_properties_reductio_let_def_Xn",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_properties_reductio_let_def_Xn",
+      "target": "st_properties_reductio_let_lemma1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_properties_reductio_let_lemma1",
+      "target": "st_properties_reductio_let_lemma2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_properties_reductio_let_lemma2",
+      "target": "st_properties_reductio_let_lemma3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_properties_reductio_let_lemma3",
+      "target": "st_properties_reductio_let_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_properties_reductio_let_concl",
+      "target": "st_properties_reductio_claim",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_let1_concl",
+      "target": "st_ex2_general",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_let2_concl",
+      "target": "st_ex2_general",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex2_general",
+      "target": "st_def_banach",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "连续函数空间是巴拿赫空间的例子"
+    },
+    {
+      "source": "st_ex1_claim",
+      "target": "st_def_banach",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "C^N空间是巴拿赫空间的例子"
+    },
+    {
+      "source": "st_ex3_let_def",
+      "target": "st_def_banach",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "lp Lp空间是巴拿赫空间的例子"
+    },
+    {
+      "source": "st_properties_reductio_claim",
+      "target": "st_properties_reductio_noncompact",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "反证法证明无穷维代数维数不可数"
+    }
+  ],
+  "unresolved": []
+}

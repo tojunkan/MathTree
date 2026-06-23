@@ -1,0 +1,139 @@
+{
+  "article_name": "DirCon",
+  "statements": [
+    {
+      "stmt_id": "st_def_conv",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "f",
+        "g",
+        "h",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_fg",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_fg",
+      "exposed_entities": [
+        "f",
+        "g",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_assoc",
+      "subtype": "theorem",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_props",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_comm",
+      "subtype": "theorem",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": "true",
+      "scope_id": "s_props",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_dist",
+      "subtype": "theorem",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_props",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_identity",
+      "subtype": "theorem",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": "true",
+      "scope_id": "s_props",
+      "exposed_entities": [
+        "epsilon",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def_epsilon",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_props",
+      "exposed_entities": [
+        "epsilon"
+      ]
+    },
+    {
+      "stmt_id": "st_multiplicative_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_props",
+      "exposed_entities": [
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_multiplicative_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_props",
+      "exposed_entities": [
+        "h"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_fg",
+      "target": "st_def_conv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_multiplicative_assump",
+      "target": "st_multiplicative_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

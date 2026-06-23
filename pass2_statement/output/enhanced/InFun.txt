@@ -1,0 +1,117 @@
+[SCOPE:root|description|可积函数]
+文章名: InFun
+标题: 可积函数
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=连续函数必可积
+  [1] type=theorem heading=定理 2 title=有限间断点的连续函数必可积
+  [2] type=theorem heading=定理 3 title=单调有界函数必可积
+  [3] type=theorem heading=定理 4 title=
+  [4] type=theorem heading=定理 5 title=
+  [5] type=theorem heading=定理 6 title=
+  [6] type=theorem heading=定理 7 title=
+  [7] type=example heading=例 1 title=不可积函数举例
+
+[0] 子节 2 待证明
+[1] 可积函数的定义已经在定义 4 给出，严格来说，这里的可积函数称为黎曼可积函数。
+[2] 本文将给出一些常见的可积函数和可积函数的一些性质。
+
+[SCOPE:s_thm1|description|连续函数必可积]
+[3] 定理 1 连续函数必可积
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[4] 定义在区间 $[a,b]$ 上的连续函数必在区间 $[a,b]$ 上可积。
+[/SCOPE:s_thm1_let]
+[5] 证明：
+[6] 由子节 8 的康托尔定理，连续函数在闭区间上必一致连续（子节 6 ）由此可证明：即对任意 $\epsilon>0$ 可找到 $\delta>0$，使得当 $[a,b]$ 分成长度 $\Delta x_i<\delta$ 的若干部分时，所有的 $\omega_i<\epsilon/(b-a)$（$\omega_i$ 是对应区间上的振幅（定义 3 ））。
+[7] 由此
+[8] \begin{equation}
+\sum_{i=0}^{n-1}\omega_i\Delta x_i<\epsilon/(b-a)\cdot\sum_{i=0}^{n-1}\Delta x_i=\epsilon~.
+\end{equation}
+[9] 定义 1 [链接 L0]
+[10] \begin{equation}
+\lim\sum_{i=0}^{n-1}\omega_i\Delta x_i=0~
+\end{equation}
+[11] 定积分存在条件 [链接 L1]
+[12] 便证得定理。
+[13] 证毕！
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|有限间断点的连续函数必可积]
+[14] 定理 2 有限间断点的连续函数必可积
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[15] 若 $f(x)$ 是区间 $[a,b]$ 上除在有限个点外都连续的函数，
+[16] 则 $f(x)$ 可积。
+[/SCOPE:s_thm2_let]
+[17] 这里只给出该定理的一个理解方式：由维尔斯特拉斯第一定理，定义在闭区间上的函数必有界，
+[18] 于是在每个间断点 $x_{0i}$ 附近做个小区间 $(x_{0i}-\epsilon_i,x_{0i}+\epsilon_i)$,那么它们对式 2 的贡献相当于 $\sum_{i=0}^{m}\omega_{0i}2\epsilon_i\leq2m\Omega\epsilon $，其中 $\Omega,\epsilon$ 是函数在区间 $[a,b]$ 的振幅和 $\epsilon_{0i}$ 中的最大者，显然这个极限就是 0，而其它地方的函数是连续的，
+[19] 所以满足可积条件，
+[20] 所以最后的式 2 就应为 0。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|单调有界函数必可积]
+[21] 定理 3 单调有界函数必可积
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[22] 若 $f(x)$ 是区间 $[a,b]$ 上的单调有界函数，
+[23] 则 $f(x)$ 可积。
+[/SCOPE:s_thm3_let]
+[24] 证明：
+[25] 给定任一 $\epsilon>0$，令
+[26] \begin{equation}
+\delta=\frac{\epsilon}{f(b)-f(a)}~,
+\end{equation}
+[27] 于是当所有的 $\Delta x_i<\delta$ 时，立即有
+[28] \begin{equation}
+\sum_{i=0}^{n-1}\omega_i\Delta x_i<\delta\sum_{i=0}^{n-1}(f(x_{i+1})-f(x_i))=\epsilon~
+\end{equation}
+[29] \begin{equation}
+\lim_{\lambda\rightarrow0}\sum_{i=0}^{n-1}\omega_i\Delta x_i=0~.
+\end{equation}
+[30] 证毕！
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|定理4]
+[31] 定理 4
+[SCOPE:s_thm4_let|let_bind|定理4的变量]
+[32] 如果 $f(x)$ 在 $[a,b]$ 上可积，
+[/SCOPE:s_thm4_let]
+[33a] (x) \right\rvert ,kf
+[33b] (x)$（$k$ 为常数）也在该区间上可积。
+
+[/SCOPE:s_thm4]
+[SCOPE:s_thm5|description|定理5]
+[34] 定理 5
+[SCOPE:s_thm5_let|let_bind|定理5的变量]
+[35a] (x),g
+[35b] (x)$ 在 $[a,b]$ 上可积，
+[/SCOPE:s_thm5_let]
+[36] 则它们的和、差、积都可积。
+
+[/SCOPE:s_thm5]
+[SCOPE:s_thm6|description|定理6]
+[37] 定理 6
+[SCOPE:s_thm6_let|let_bind|定理6的变量]
+[38a] (x)$ 在区间 $[a,b]$ 上可积，当且仅当对于区间的分划，$f
+[38b] (x)$ 在每一部分区间上可积。
+
+[/SCOPE:s_thm6]
+[/SCOPE:s_thm6_let]
+[SCOPE:s_thm7|description|定理7]
+[39] 定理 7
+[40] 改变可积函数在有限个点上的值，并不会破坏它的可积性。
+
+[/SCOPE:s_thm7]
+[SCOPE:s_ex1|description|不可积函数举例]
+[41] 例 1 不可积函数举例
+[42] Dirichlet 函数
+[43] \begin{equation}
+D(x)=
+\left\{\begin{aligned}
+1, x\in\mathbb{Q}\\
+0, x\not\in\mathbb{Q}
+\end{aligned}\right. ~
+\end{equation}
+
+跨文章引用:
+  [L1] 定积分存在条件 → Rieman
+[/SCOPE:s_ex1]
+[/SCOPE:root]

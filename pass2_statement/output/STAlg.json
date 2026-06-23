@@ -1,0 +1,401 @@
+{
+  "article_name": "STAlg",
+  "statements": [
+    {
+      "stmt_id": "st_construct_goal",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_construct_let_V",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_construct",
+      "exposed_entities": [
+        "V",
+        "e_i"
+      ]
+    },
+    {
+      "stmt_id": "st_construct_need_multiplication",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_construct",
+      "exposed_entities": [
+        "*"
+      ]
+    },
+    {
+      "stmt_id": "st_construct_let_uvw",
+      "subtype": "assumption",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_construct",
+      "exposed_entities": [
+        "u",
+        "v",
+        "w"
+      ]
+    },
+    {
+      "stmt_id": "st_construct_associativity_condition",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_construct",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_construct_algebra_formed",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_construct",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        28,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "gamma_ij^k"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        31,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "Gamma"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let_basis_change",
+      "subtype": "assumption",
+      "clause_range": [
+        34,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "e_i'",
+        "a_i^s",
+        "b_j^t"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        38,
+        44
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_trace_intro",
+      "subtype": "remark",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_trace_let_La",
+      "subtype": "definition",
+      "clause_range": [
+        48,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_trace_let",
+      "exposed_entities": [
+        "L_a"
+      ]
+    },
+    {
+      "stmt_id": "st_def2",
+      "subtype": "definition",
+      "clause_range": [
+        51,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "f_V"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_let_ab",
+      "subtype": "assumption",
+      "clause_range": [
+        53,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        54,
+        56
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        57,
+        60
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_let_lie",
+      "subtype": "assumption",
+      "clause_range": [
+        58,
+        58
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        61,
+        68
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_intro",
+      "subtype": "example",
+      "clause_range": [
+        69,
+        72
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "e_1",
+        "e_2",
+        "e_3"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_compute",
+      "subtype": "conclusion",
+      "clause_range": [
+        73,
+        77
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_construct_let_V",
+      "target": "st_construct_need_multiplication",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_construct_need_multiplication",
+      "target": "st_construct_let_uvw",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_construct_let_uvw",
+      "target": "st_construct_associativity_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_construct_associativity_condition",
+      "target": "st_construct_algebra_formed",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_construct_algebra_formed",
+      "target": "st_def1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1",
+      "target": "st_thm1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let_basis_change",
+      "target": "st_thm1_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof",
+      "target": "st_thm1_remark",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_trace_let_La",
+      "target": "st_def2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let_ab",
+      "target": "st_ex1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let_lie",
+      "target": "st_thm2_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_statement",
+      "target": "st_thm2_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_intro",
+      "target": "st_ex2_compute",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_statement",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_conclusion",
+      "target": "st_def2",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_statement",
+      "target": "st_def2",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_compute",
+      "target": "st_thm2_statement",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_statement",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "结构张量定理依赖于结构常数定义"
+    },
+    {
+      "source": "st_ex1_conclusion",
+      "target": "st_def2",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是迹形式的具体计算"
+    },
+    {
+      "source": "st_thm2_statement",
+      "target": "st_def2",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2给出迹形式的结合性"
+    },
+    {
+      "source": "st_ex2_compute",
+      "target": "st_thm2_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2验证定理2在3维叉积李代数上的表现"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,282 @@
+{
+  "article_name": "AiryF",
+  "statements": [
+    {
+      "stmt_id": "st_definition_intro",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_definition",
+      "exposed_entities": [
+        "Ai(x)",
+        "Bi(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_integral_def_Ai",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_definition",
+      "exposed_entities": [
+        "Ai(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_integral_def_Bi",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_definition",
+      "exposed_entities": [
+        "Bi(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_convergence_remark",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_definition",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_values_at_zero",
+      "subtype": "theorem",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": [
+        "Ai(0)",
+        "Bi(0)",
+        "Gamma"
+      ]
+    },
+    {
+      "stmt_id": "st_asymptotic_positive",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_asymptotic",
+      "exposed_entities": [
+        "Ai(x)",
+        "Bi(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_asymptotic_negative",
+      "subtype": "theorem",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": "true",
+      "scope_id": "s_asymptotic",
+      "exposed_entities": [
+        "Ai(x)",
+        "Bi(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_integral_Ai",
+      "subtype": "theorem",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "true",
+      "scope_id": "s_integral",
+      "exposed_entities": [
+        "Ai(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_orthogonality",
+      "subtype": "theorem",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": "true",
+      "scope_id": "s_orthogonality",
+      "exposed_entities": [
+        "Ai(x)",
+        "delta"
+      ]
+    },
+    {
+      "stmt_id": "st_orthogonality_proof_sketch",
+      "subtype": "remark",
+      "clause_range": [
+        21,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_orthogonality",
+      "exposed_entities": [
+        "k_n",
+        "sinc"
+      ]
+    },
+    {
+      "stmt_id": "st_bessel_positive",
+      "subtype": "theorem",
+      "clause_range": [
+        28,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_bessel",
+      "exposed_entities": [
+        "Ai(x)",
+        "Bi(x)",
+        "K",
+        "I"
+      ]
+    },
+    {
+      "stmt_id": "st_bessel_negative",
+      "subtype": "theorem",
+      "clause_range": [
+        34,
+        38
+      ],
+      "truth_value": "true",
+      "scope_id": "s_bessel",
+      "exposed_entities": [
+        "Ai(x)",
+        "Bi(x)",
+        "J"
+      ]
+    },
+    {
+      "stmt_id": "st_deform_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_deformation",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_deform_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_deformation",
+      "exposed_entities": [
+        "y(x)",
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "stmt_id": "st_schrodinger_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        44,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_schrodinger",
+      "exposed_entities": [
+        "V(x)",
+        "p",
+        "q"
+      ]
+    },
+    {
+      "stmt_id": "st_schrodinger_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_schrodinger",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_schrodinger_remark",
+      "subtype": "remark",
+      "clause_range": [
+        48,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_schrodinger",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_deform_assump",
+      "target": "st_deform_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_schrodinger_assump",
+      "target": "st_schrodinger_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_orthogonality",
+      "target": "st_definition_intro",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "正交性基于艾里函数定义"
+    },
+    {
+      "source": "st_bessel_positive",
+      "target": "st_definition_intro",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "贝塞尔关系是艾里函数的另一种表示"
+    },
+    {
+      "source": "st_deform_conclusion",
+      "target": "st_definition_intro",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "变形方程的解用艾里函数表示"
+    },
+    {
+      "source": "st_schrodinger_conclusion",
+      "target": "st_deform_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "薛定谔方程化为变形方程"
+    }
+  ],
+  "unresolved": []
+}

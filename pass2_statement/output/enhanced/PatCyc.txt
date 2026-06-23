@@ -1,0 +1,185 @@
+[SCOPE:root|description|链、路、圈、回]
+文章名: PatCyc
+标题: 链、路、圈、回
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=链
+  [1] type=definition heading=定义 2 title=迹，路，圈，回
+  [2] type=example heading=例 1 title=无圈图无环，无回图无环
+  [3] type=definition heading=定义 3 title=独立
+  [4] type=definition heading=定义 4 title=$H$-链
+  [5] type=definition heading=定义 5 title=段
+  [6] type=definition heading=定义 6 title=围长，周长，弦
+  [7] type=definition heading=定义 7 title=最长路，最短路
+  [8] type=definition heading=定义 8 title=距离，直径
+  [9] type=definition heading=定义 9 title=Euler 迹
+  [10] type=definition heading=定义 10 title=Hamilton 路，Hamilton 圈
+  [11] type=definition heading=定义 11 title=有向链
+  [12] type=theorem heading=定理 1 title=
+
+[0] 本节介绍图中一类特殊的结构——链，而路、圈和回都是一类特殊的链。
+
+[1] [1] 生活中我们习惯把环环相扣的东西叫做链，图论中把点边交叉组成的序列称作链（不同位置的点和边可以相同）。
+
+[SCOPE:s_def1|description|链]
+[2] 定义 1 链
+[SCOPE:s_def1_let|let_bind|链的变量]
+[3] 设 $G=(V,E,\varphi)$ 是一个图，$v_i\in V,e_j\in E,i=0,\cdots,k,j=1\cdots n$ 分别是其上的 $n+1$ 个点和 $n$ 条边。
+[/SCOPE:s_def1_let]
+[4] 若序列1
+[5] \begin{equation}
+W=v_0 e_1v_1e_2\cdots v_{k-1} e_nv_n,~
+\end{equation}
+[6] $xy$ 链
+[7] 对于简单图而言，其链显然可以通过指定端点确定。
+[8] 人们习惯将不同时刻物体的位置在时空坐标系下的曲线叫做物体的轨迹，而将空间坐标系下的物体的运动曲线称为路径。
+[9] 尽管不同时刻物体可以在同一空间点，使得它在空间上的路径是可以相交的，
+[10] 但是它的轨迹始终都是不能相交的（因为时间只能往前）。
+[11] 在图中人们习惯将边彼此不同的链称为迹，点彼此不同的链称为路，而端点相同的 “路” 称为圈。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|迹，路，圈，回]
+[12] 定义 2 迹，路，圈，回
+[SCOPE:s_def2_let|let_bind|迹路圈回的变量]
+[13] 设 $W$ 是图 $G$ 的链，若组成 $W$ 的边彼此不同，
+[/SCOPE:s_def2_let]
+[14] 则称 $W$ 是迹(trail)。
+[15] 若组成 $W$ 的边彼此不同，
+[16] 则称 $W$ 是路(path)。
+[17] 端点相同内点不同的链称为圈(cycle)。
+[18] 端点相同的迹称为回（circult）。
+[19] 对应端点 $x,y$ 的迹和路称为 $xy$ 迹，$xy$ 路。
+[20] 注：有的文献也会把圈称为闭路，这时候的路就被定义为内点互不相同的迹了。
+[21] 还是一样的，遇到这种情况时只需要注意文献所遵循的约定就好了。
+
+[/SCOPE:s_def2]
+[SCOPE:s_ex1|description|无圈图无环，无回图无环]
+[22] 例 1 无圈图无环，无回图无环
+[23] 试证明：无圈图，无回图都是简单图。
+[24] 证明：
+[SCOPE:s_ex1_let1|let_bind|例1变量1]
+[25] 1.设 $G$ 有环 $e$，其端点为 $x$。
+[/SCOPE:s_ex1_let1]
+[26] 则 $xex$ 是 $G$ 的圈又是 $G$ 的回。
+[27] 与 $G$ 无圈（或无环）矛盾。
+[SCOPE:s_ex1_let2|let_bind|例1变量2]
+[28] 2.设 $x,y\in V(G)$，且有以它们为端点的两不同边 $e_1,e_2$，
+[/SCOPE:s_ex1_let2]
+[29] 那么
+[30] $xe_1ye_2x$ 是环又是回。
+[31] 与 $G$ 无圈（或无环）矛盾。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_def3|description|独立]
+[32] 定义 3 独立
+[SCOPE:s_def3_let|let_bind|独立的变量]
+[33] 若 $W_1,W_2$ 是两条链，若 $W_1,W_2$ 的一条链不包含另一条链的内点，
+[/SCOPE:s_def3_let]
+[34] 则称它们是独立的（independent）。
+
+[/SCOPE:s_def3]
+[SCOPE:s_def4|description|H-链]
+[35] 定义 4 $H$-链
+[SCOPE:s_def4_let|let_bind|H-链的变量]
+[36] 设 $H$ 是图，$W$ 是 $G$ 的链，若 $W$ 有端点属于 $H$，而内点不属于 $H$，
+[/SCOPE:s_def4_let]
+[37] 则称 $W$ 为 $H$-链（H-chain）。
+[38] 链的连续子序列称为段。
+
+[/SCOPE:s_def4]
+[SCOPE:s_def5|description|段]
+[39] 定义 5 段
+[SCOPE:s_def5_let|let_bind|段的变量]
+[40] 设 $W$ 是序列为 $xe_1x_1\cdots e_ky$ 的链，
+[/SCOPE:s_def5_let]
+[41] 则子序列 $x_ie_{i+1}\cdots x_{j-1}e_{j}x_j$ 称为 $W$ 的 $(x_i,x_j)$ 段（section），记作 $W(x_i,x_j)$。
+
+[/SCOPE:s_def5]
+[SCOPE:s_def6|description|围长，周长，弦]
+[42] 定义 6 围长，周长，弦
+[SCOPE:s_def6_let|let_bind|围长周长弦的变量]
+[43] 图 $G$ 中最短圈的长度叫做 $G$ 的围长（girth），记作 $g(G)$。
+[/SCOPE:s_def6_let]
+[44] 最长圈的长度叫做 $G$ 的周长（circumference）。
+[45] 图中不在圈上但连接圈中两个点的边称为圈的弦（chord）。
+
+[/SCOPE:s_def6]
+[SCOPE:s_def7|description|最长路，最短路]
+[46] 定义 7 最长路，最短路
+[SCOPE:s_def7_let|let_bind|最长最短路变量]
+[47] 设 $G$ 是图，
+[/SCOPE:s_def7_let]
+[48] 则 $G$ 中具有最大长度的路称为 $G$ 的最长路（longest path），具有最小长度的路称为 $G$ 的最短路（shortest path）。
+
+[/SCOPE:s_def7]
+[SCOPE:s_def8|description|距离，直径]
+[49] 定义 8 距离，直径
+[SCOPE:s_def8_let|let_bind|距离直径变量]
+[50] 设 $G$ 是图，$x,y\in V(G)$。
+[/SCOPE:s_def8_let]
+[51] 则称 $G$ 的最短 $xy$ 路的长度为 $x,y$ 在 $G$ 中的距离，记作 $d_G(x,y)$。
+[52] $G$ 中点间的最大距离称为 $G$ 的直径（diameter），记作 diam $G$。
+[53] 可能有这样的情况出现，
+[54] 即有一条迹通过图的所有点和所有边。
+
+[/SCOPE:s_def8]
+[SCOPE:s_def9|description|Euler 迹]
+[55] 定义 9 Euler 迹
+[SCOPE:s_def9_let|let_bind|Euler迹变量]
+[56] 设 $G$ 是一个图，
+[/SCOPE:s_def9_let]
+[57] 则 $G$ 上包含 $G$ 的所有点和所有边的迹称为$Euler$ 迹。
+[58] 闭的迹称为Euler 回。
+[59] 还可能有这样的情况出现，
+[60] 即有一条路（或圈）通过图的所有点。
+
+[/SCOPE:s_def9]
+[SCOPE:s_def10|description|Hamilton 路，Hamilton 圈]
+[61] 定义 10 Hamilton 路，Hamilton 圈
+[SCOPE:s_def10_let|let_bind|Hamilton变量]
+[62] 设 $G$ 是一个图，
+[/SCOPE:s_def10_let]
+[63] 则 $G$ 上包含 $V(G)$ 所有点的路称为$Hamilton$ 路，$G$ 上包含 $V(G)$ 所有点的圈称为$Hamilton$ 圈。
+[64] 可能会发生这样的情况，
+[65] 即链中的边都是有向的。
+[66] 特别，人们习惯称边方向一致的链为有向链。
+
+[/SCOPE:s_def10]
+[SCOPE:s_def11|description|有向链]
+[67] 定义 11 有向链
+[SCOPE:s_def11_let|let_bind|有向链变量]
+[68] 设 $W$ 是 $xy$ 链，其对应序列为
+[/SCOPE:s_def11_let]
+[69] \begin{equation}
+xe_1x_1\cdots e_ky.~
+\end{equation}
+[70] 有了有向链的定义，自然而然就有有向迹，有向路，有向圈的定义。
+
+[/SCOPE:s_def11]
+[SCOPE:s_thm1|description|定理1]
+[71] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1变量]
+[72] 设 $G$ 是图，$x\neq y\in V(G)$，$W$ 是 $G$ 的 $xy$ 链。
+[/SCOPE:s_thm1_let]
+[73] 则存在 $G$ 的 $xy$ 路，且其长度最长为 $ \left\lvert V(G) \right\rvert -1$。
+[SCOPE:s_thm1_proof|description|定理1证明]
+[74] 证明：1.把 $xy$ 链的序列中相同内点之间段（保留相同点的一个）去掉，
+[75] 则得的仍是 $xy$ 链：
+[SCOPE:s_thm1_proof_let|let_bind|证明中变量]
+[76] 设 $W=xe_1x_1\cdots e_n y$，$x_i=x_j\in W,j>i$。
+[/SCOPE:s_thm1_proof_let]
+[77] 那么去掉段 $W(x_i,x_j)$ 并保留 $x_i,x_j$ 的一个之后（比如保留 $x_j$），得到形如
+[78] \begin{equation}
+xe_1x_1\cdots e_{i}x_j e_{j+1}\cdots e_n y~
+\end{equation}
+[79] 的序列，由于段 $W(x,x_{i-1}),W(x_j,y)$ 没变，
+[80] 因此只需判断 $e_i$ 两边的点是否是 $e_i$ 的端点即可，由于 $e_i$ 的两边的点也没变，
+[81] 因此新得到的序列仍是 $xy$ 链。
+[82] 2.由于链长有限，我们可以重复 1 操作把链变成没有相同内点的链，而仍得到端点相同的链。
+[83] 由于内点不同，边也就不同，而由条件链的端点不同，
+[84] 因而得到就是连接端点的路。
+[85] 而包含 $ \left\lvert V(G) \right\rvert $ 个点的路最长为 $ \left\lvert V(G) \right\rvert -1$。
+[86] 证毕！
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_proof]
+[/SCOPE:root]

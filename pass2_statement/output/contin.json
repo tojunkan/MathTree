@@ -1,0 +1,307 @@
+{
+  "article_name": "contin",
+  "statements": [
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "f(x)",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_cond",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "f(x)",
+        "x_0",
+        "epsilon",
+        "delta"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_limit",
+      "subtype": "remark",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_interval",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_note",
+      "subtype": "remark",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_intro",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "f(x)",
+        "S",
+        "epsilon",
+        "delta",
+        "x_1",
+        "x_2"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_cond",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "f(x)",
+        "S",
+        "epsilon",
+        "delta"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_implies",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_not_implies",
+      "subtype": "theorem",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "f(x)=1/x"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_pointwise",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_not_uniform",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exercise1",
+      "subtype": "exercise",
+      "clause_range": [
+        20,
+        22
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1_let",
+      "exposed_entities": [
+        "S",
+        "f",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_equiv",
+      "subtype": "theorem",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        28,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_cond",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2_cond",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_cond",
+      "target": "st_def2_implies",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_cond",
+      "target": "st_def2_not_implies",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_let",
+      "target": "st_example1_pointwise",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_let",
+      "target": "st_example1_not_uniform",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_let",
+      "target": "st_theorem1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_statement",
+      "target": "st_theorem1_equiv",
+      "edge_type": "equivalent",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_def2_cond",
+      "target": "st_def1_cond",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "一致连续是逐点连续的加强"
+    },
+    {
+      "source": "st_example1_not_uniform",
+      "target": "st_def2_implies",
+      "edge_type": "counterexample_of",
+      "category": "logic",
+      "note": "1/x 在 (0,∞) 上逐点连续但不一致连续"
+    }
+  ],
+  "unresolved": []
+}

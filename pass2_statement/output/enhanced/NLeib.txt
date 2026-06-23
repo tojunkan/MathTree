@@ -1,0 +1,165 @@
+[SCOPE:root|description|牛顿—莱布尼兹公式（极简微积分）]
+文章名: NLeib
+标题: 牛顿—莱布尼兹公式（极简微积分）
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=计算定积分
+  [1] type=example heading=例 2 title=圆的面积
+  [2] type=example heading=例 3 title=球壳与球盖的面积
+
+[SCOPE:s_intro|description|牛顿—莱布尼兹公式介绍]
+[0] 牛顿—莱布尼兹公式描述了定积分和不定积分的关系。
+[1] 我们已知不定积分是求导的逆运算，而定积分是函数曲线与 $x$ 轴之间的面积，二者乍看起来没什么联系，
+[2] 但牛顿—莱布尼兹公式却揭示了了二者之间的重要关系。1
+[SCOPE:s_intro_let|let_bind|引入原函数 F 和 f]
+[3a] (x)$ 是 $f
+[3b] (x)$ 的一个原函数，
+[4] 则
+[5] \begin{equation}
+\int_a^b f(x) \,\mathrm{d}{x} = F(b) - F(a)~.
+\end{equation}
+
+[/SCOPE:s_intro]
+[/SCOPE:s_intro_let]
+[SCOPE:s_derivation|description|幼稚的推导]
+[6] 这里给出一个比较直观的推导方法，可能对初学者有一定启发或者帮助记忆，
+[7] 但以后会看到这是不严谨的。
+[8a] (x)$ 的原函数为左图中的 $F
+[8b] (x)$，当步长趋近 0 时，右图中的长方形面积趋近于左图中小竖线的长度。
+[9] 【未完成】图中 d 应该改为 $\Delta$
+[10] 如图 1 ，根据定积分的定义，有2
+[SCOPE:s_derivation_let1|let_bind|引入 x_i 和 Δx_i]
+[11] \begin{equation}
+\int_a^b f(x) \,\mathrm{d}{x} = \lim_{\Delta x_i\to 0}\sum_i f(x_i)\Delta x_i~.
+\end{equation}
+[12] 其中 $f(x_i)\Delta x_i$ 可看成是右图中第 $i$ 个小矩形的面积，求和是对从 $a$ 到 $b$ 的所有小矩形求和。
+[13] 现在不妨把 $x_i$ 设为第 $i$ 个小矩形左端
+[14] 3
+[15] 的 $x$ 坐标。
+[/SCOPE:s_derivation_let1]
+[16] 考虑到求导是不定积分的逆运算，有 $f(x_i)=F'(x_i)$，
+[17] 所以小矩形的面积变为
+[SCOPE:s_derivation_let2|let_bind|引入 ΔF_i]
+[18] \begin{equation}
+f(x_i)\Delta x_i = F'(x_i)\Delta x_i \approx \Delta F_i = F(x_{i+1})-F(x_i)~,
+\end{equation}
+[19] 等式右边就是左图中的第 $i$ 条垂直线段的长度。
+[/SCOPE:s_derivation_let2]
+[20] 式子中的约等号使用了微分近似（
+[21] 子节 1
+[22] ）。
+[23] 该式可以理解成，右图中的小矩形面积约等于左图中的小竖线长度，
+[24] 即原函数 $F(x)$ 在 $x_i$ 到 $x_{i+1}$ 间的增量。
+[25] 当取极限 $\Delta x_i \to 0$ 时，上式取等号。
+[26] 代回
+[27] 式 1 [链接 L0]
+[28] \begin{equation}
+\int_a^b f(x) \,\mathrm{d}{x} = \lim_{\Delta x_i\to 0}\sum_i [F(x_{i+1})-F(x_i)] = F(b)-F(a)~.
+\end{equation}
+[29a] 该式可理解为
+[29b] 如果把左图中每一段 $\Delta x_i$ 所对应的微小增量（垂直小线段的长度）$\Delta F_i$ 都加起来，再取极限 $\Delta x_i \to 0$，则是 $F(x)$ 从 $a$ 到 $b$ 的总增量。
+[30a] (b) - F
+[30b] (a)$ 记为 $ \left. F
+[30c] (x) \right\rvert _a^b$。
+
+[/SCOPE:s_derivation]
+[SCOPE:s_ex1|description|例 1 计算定积分]
+[31] 例 1 计算定积分
+[32] \begin{equation}
+\int_{-l}^l \sin^{2}\left(\frac{n\pi}{l} x\right) \,\mathrm{d}{x} ~.
+\end{equation}
+[33] 图 2：$y = \sin^{2}\left(\pi x/l\right) $ 的定积分，阴影面积恰好是长方形的一半。
+[34] 先计算对应的不定积分。
+[35] 由积分表 中的式 13 结合式 1 得不定积分为
+[36] \begin{equation}
+\int \sin^{2}\left(\frac{n\pi}{l} x\right) \,\mathrm{d}{x} = \frac{l}{2n\pi} \left[\frac{n\pi}{l} x - \sin\left(\frac{n\pi}{l} x\right) \cos\left(\frac{n\pi}{l} x\right) \right] ~,
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例 2 圆的面积]
+[37] 例 2 圆的面积
+[38] 现在我们可以用例 2 中列出的两个定积分计算圆的面积。
+[39] 先看第一个定积分，由积分表式 17 得
+[40] \begin{equation}
+\int \sqrt{R^2 - x^2} \,\mathrm{d}{x} = \frac12 \left(x\sqrt{R^2 - x^2} + R^2\arcsin\frac{x}{R} \right) + C~.
+\end{equation}
+[41] 第二个定积分要简单得多，由幂函数的积分式 2 和牛顿—莱布尼兹公式得
+[42] \begin{equation}
+\int_0^R 2\pi r \,\mathrm{d}{r} = \pi \left. r^2 \right\rvert _0^R = \pi R^2~.
+\end{equation}
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|例 3 球壳与球盖的面积]
+[43] 例 3 球壳与球盖的面积
+[44] 现在我们可以直接求例 3 中的积分
+[45] \begin{equation}
+S = 2\pi R^2 \int_0^{\pi} \sin\theta \,\mathrm{d}{\theta} = 2\pi R^2 \left. (-\cos\theta) \right\rvert _0^\pi = 4\pi R^2~.
+\end{equation}
+[46] \begin{equation}
+S = 2\pi R^2 \int_{\theta_1}^{\theta_2} \sin\theta \,\mathrm{d}{\theta} = 2\pi R^2 (\cos{\theta_1} - \cos{\theta_2})~.
+\end{equation}
+[47] \begin{equation}
+S = 2\pi R^2 (1 - \cos\alpha)~.
+\end{equation}
+
+[/SCOPE:s_ex3]
+[SCOPE:s_diff_limits|description|对定积分上下限求导]
+[48] 有时候我们会需要对定积分的上下限求导，例如
+[49] \begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}{x}} \int_a^x f(t) \,\mathrm{d}{t} ~.
+\end{equation}
+[SCOPE:s_diff_limits_let|let_bind|引入原函数 F]
+[50] 我们可以先对定积分用牛顿莱布尼兹公式，令原函数为 $F(x)$，有
+[51] \begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}{x}} \int_a^x f(t) \,\mathrm{d}{t} = \frac{\mathrm{d}}{\mathrm{d}{x}} \left[F(x) - F(a) \right] = f(x)~.
+\end{equation}
+[52] 类似地，对积分下限求导如
+[53] \begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}{x}} \int_x^a f(t) \,\mathrm{d}{t} = \frac{\mathrm{d}}{\mathrm{d}{x}} \left[F(a) - F(x) \right] = -f(x)~.
+\end{equation}
+[54] 或者对上下限同时求导如
+[55] \begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}{x}} \int_{-x}^{x} f(t) \,\mathrm{d}{t} = \frac{\mathrm{d}}{\mathrm{d}{x}} \left[F(x) - F(-x) \right] = f(x) + f(-x)~.
+\end{equation}
+[/SCOPE:s_diff_limits]
+[/SCOPE:s_diff_limits_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_derivation",
+    "target_scope": "s_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推导是公式的直观解释"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1应用公式"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2应用公式"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例3应用公式"
+  },
+  {
+    "source_scope": "s_diff_limits",
+    "target_scope": "s_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "对上下限求导基于公式"
+  }
+]

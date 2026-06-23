@@ -1,0 +1,203 @@
+{
+  "article_name": "norm",
+  "statements": [
+    {
+      "stmt_id": "st_def1_let_X",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_norm_def",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "||·||"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_normed_space",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_many_norms",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_equiv_norms",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_let_p",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let_p",
+      "exposed_entities": [
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_let_N",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let_N",
+      "exposed_entities": [
+        "R^N",
+        "C^N"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_p_norm_def",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "||·||_p"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_2_norm",
+      "subtype": "example",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "||·||_2"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_inf_norm",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "||·||_∞"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_many_norms",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_equiv_finite",
+      "subtype": "theorem",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_unfinished",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let_X",
+      "target": "st_def1_norm_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_norm_def",
+      "target": "st_def1_normed_space",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let_p",
+      "target": "st_ex1_p_norm_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let_N",
+      "target": "st_ex1_p_norm_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_p_norm_def",
+      "target": "st_ex1_2_norm",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_p_norm_def",
+      "target": "st_ex1_inf_norm",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

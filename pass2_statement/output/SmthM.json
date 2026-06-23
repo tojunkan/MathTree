@@ -1,0 +1,175 @@
+{
+  "article_name": "SmthM",
+  "statements": [
+    {
+      "stmt_id": "st_smooth_func_def",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_smooth_func",
+      "exposed_entities": [
+        "f",
+        "x_0",
+        "k",
+        "f^{(k)}(x_0)"
+      ]
+    },
+    {
+      "stmt_id": "st_smooth_func_equiv",
+      "subtype": "remark",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_smooth_func",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_multi_smooth_func_def",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_multi_smooth_func",
+      "exposed_entities": [
+        "f",
+        "x_0^1",
+        "x_0^2",
+        "x_0^n",
+        "k",
+        "i_j"
+      ]
+    },
+    {
+      "stmt_id": "st_smooth_map_def",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_smooth_map",
+      "exposed_entities": [
+        "f",
+        "x_0",
+        "f_i"
+      ]
+    },
+    {
+      "stmt_id": "st_analytic_implies_smooth",
+      "subtype": "theorem",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "true",
+      "scope_id": "s_analytic_compare",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_smooth_not_analytic",
+      "subtype": "theorem",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": "true",
+      "scope_id": "s_analytic_compare",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_smooth",
+      "subtype": "example",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "f",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_not_analytic",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_smooth_func_def",
+      "target": "st_multi_smooth_func_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_multi_smooth_func_def",
+      "target": "st_smooth_map_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_analytic_implies_smooth",
+      "target": "st_smooth_not_analytic",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_smooth",
+      "target": "st_example1_not_analytic",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_not_analytic",
+      "target": "st_smooth_not_analytic",
+      "edge_type": "counterexample_of",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_smooth_map_def",
+      "target": "st_multi_smooth_func_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "光滑映射的定义依赖于多元光滑函数"
+    },
+    {
+      "source": "st_multi_smooth_func_def",
+      "target": "st_smooth_func_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "多元光滑函数是一元光滑函数的推广"
+    },
+    {
+      "source": "st_analytic_implies_smooth",
+      "target": "st_smooth_func_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "解析函数必光滑，但光滑不一定解析"
+    },
+    {
+      "source": "st_example1_not_analytic",
+      "target": "st_smooth_not_analytic",
+      "edge_type": "counterexample_of",
+      "category": "logic",
+      "note": "例1给出光滑但不解析的函数"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,59 @@
+[SCOPE:root|description|几何向量的线性相关性]
+文章名: linDpe
+标题: 几何向量的线性相关性
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=线性相关/无关
+
+[SCOPE:s_def1|description|线性相关/无关]
+[0] 定义 1 线性相关/无关
+[1] 两个三维几何向量线性相关当且仅当它们共线，三个三维几何向量线性相关当且仅当它们共面，四个及以上个三维几何向量永远线性相关。
+[2] $n$ 个几何向量是线性无关的当且仅当它们不是线性相关的。
+[3] 如果是三个二维几何向量，因为它们共面，
+[4] 所以它们一定线性相关，而两个而维几何向量线性相关当且仅当它们共线。
+[5] 【未完成】补图
+[6] 我们也可以从代数的角度思考什么是线性相关/无关。
+[SCOPE:s_let1|let_bind|两个向量]
+[7] 两个几何向量 $ \boldsymbol{\mathbf{v}} _1, \boldsymbol{\mathbf{v}} _2$ 共线意味着存在系数 $c$ 使得
+[8] $$
+\boldsymbol{\mathbf{v}} _1 = c \boldsymbol{\mathbf{v}} _2~
+$$
+[9] 或者
+[10] $$
+c' \boldsymbol{\mathbf{v}} _1 = \boldsymbol{\mathbf{v}} _2~,
+$$
+[11] 这意味着存在不全为零系数 $c_1, c_2$ 使两个向量的线性组合等于零，
+[12] 即
+[13] \begin{equation}
+c_1 \boldsymbol{\mathbf{v}} _1 + c_2 \boldsymbol{\mathbf{v}} _2 = \boldsymbol{\mathbf{0}} ~.
+\end{equation}
+[/SCOPE:s_let1]
+[SCOPE:s_let2|let_bind|三个向量]
+[14] 对于三个几何向量 $ \boldsymbol{\mathbf{v}} _1, \boldsymbol{\mathbf{v}} _2, \boldsymbol{\mathbf{v}} _3$，它们共面意味着其中一个几何向量在另外两个几何向量生成的平面上（或者直线，如果它们共线的话），
+[15] 即
+[16] \begin{equation}
+\boldsymbol{\mathbf{v}} _3 = c \boldsymbol{\mathbf{v}} _1 + c' \boldsymbol{\mathbf{v}} _2~,
+\end{equation}
+[17] 这同样可以写成更对称的形式———存在
+[18] 不全为零
+[19] 系数 $c_1, c_2, c_3$ 使三个向量的线性组合等于零，
+[20] 即
+[21] \begin{equation}
+c_1 \boldsymbol{\mathbf{v}} _1 + c_2 \boldsymbol{\mathbf{v}} _2 + c_3 \boldsymbol{\mathbf{v}} _3 = \boldsymbol{\mathbf{0}} ~.
+\end{equation}
+[/SCOPE:s_let2]
+[22] 如果一个向量集合中的向量是线性相关的，
+[23] 那么这个集合被称为一个线性相关组；
+[24] 反之，若线性无关，
+[25] 则称为一个线性无关组。
+[26] 如果一组向量之间线性相关，
+[27] 那么至少有一个向量是 “冗余” 的，也就是说，它可以被其它向量的线性组合表示出来。
+[28] 这样一来，对于线性相关的向量组，如果用它们的线性组合来表示其它向量，
+[29] 那么表示方式都不是唯一的。
+[30] 线性无关的向量组，最重要的性质就是它们的线性组合表达式是唯一的，
+[31] 由此引入了基底和坐标等概念。
+[32] 显然，给定一个非零的线性相关组，通过逐个移除这些 “冗余” 的向量，我们总可以得到一个线性无关组。
+[33] 以后我们会看到，若将 $M$ 个 $N$ 维空间的几何向量的坐标表示为 $N\times M$ 的矩阵，可以用这个矩阵的秩 $R$ 来判断其中线性无关向量的个数。
+[34] 当且仅当 $R = M \leqslant N$ 时，这 $M$ 个向量才是线性无关的。
+[/SCOPE:s_def1]
+[/SCOPE:root]

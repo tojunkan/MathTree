@@ -1,0 +1,158 @@
+{
+  "article_name": "hlfhom",
+  "statements": [
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "f",
+        "R_1",
+        "R_2",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_condition",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "R_1",
+        "R_2",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let1",
+      "exposed_entities": [
+        "r",
+        "S_1",
+        "S_2"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let2",
+      "exposed_entities": [
+        "a_1",
+        "a_2"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let3",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let3",
+      "exposed_entities": [
+        "a_1",
+        "b_1"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let4",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let4",
+      "exposed_entities": [
+        "l_1",
+        "l_2"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_condition",
+      "target": "st_def1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let1",
+      "target": "st_thm1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let2",
+      "target": "st_thm1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let3",
+      "target": "st_thm1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let4",
+      "target": "st_thm1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

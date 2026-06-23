@@ -1,0 +1,63 @@
+[SCOPE:root|description|矢量算符]
+文章名: VecOp
+标题: 矢量算符
+
+[SCOPE:s_scalar_vector_func|description|标量函数与矢量函数]
+[SCOPE:s_scalar_func_let|let_bind|标量函数变量]
+[0] 我们先区分两种函数，第一种是普通的多元函数 $f(x, y, z)$，也叫标量函数，
+[1] 即自变量 $x, y, z$ 是实数，函数值也是实数1。
+[/SCOPE:s_scalar_func_let]
+[SCOPE:s_vector_func_let|let_bind|矢量函数变量]
+[2] 另一种是矢量函数，一般用粗体加以区分（手写的时候在上方加箭头），如 $ \boldsymbol{\mathbf{f}} (x, y, z)$，
+[3] 即函数值是一个 3 维矢量2。
+[4] 矢量函数也可以记为三个分量的形式
+[5] \begin{equation}
+\boldsymbol{\mathbf{f}} (x, y, z) = f_x(x, y, z) \hat{\boldsymbol{\mathbf{x}}} + f_y(x, y, z) \hat{\boldsymbol{\mathbf{y}}} + f_z(x, y, z) \hat{\boldsymbol{\mathbf{z}}} ~.
+\end{equation}
+
+[/SCOPE:s_scalar_vector_func]
+[/SCOPE:s_vector_func_let]
+[SCOPE:s_vector_operator|description|矢量算符]
+[SCOPE:s_nabla_let|let_bind|nabla算符定义]
+[6] 定义三维的矢量算符（vector operator）为（也叫 nabla 或 del 算符）
+[7] \begin{equation}
+\boldsymbol{\nabla} = \hat{\boldsymbol{\mathbf{x}}} \frac{\partial}{\partial{x}} + \hat{\boldsymbol{\mathbf{y}}} \frac{\partial}{\partial{y}} + \hat{\boldsymbol{\mathbf{z}}} \frac{\partial}{\partial{z}} ~.
+\end{equation}
+[/SCOPE:s_nabla_let]
+[SCOPE:s_gradient|description|梯度]
+[8] $ \boldsymbol{\nabla} $ 作用在标量函数 $f(x, y, z)$ 上的结果称为函数的
+[9] 梯度
+[10] ，是一个矢量函数
+[11] \begin{equation}
+\boldsymbol{\nabla} f(x, y, z) = \left( \hat{\boldsymbol{\mathbf{x}}} \frac{\partial}{\partial{x}} + \hat{\boldsymbol{\mathbf{y}}} \frac{\partial}{\partial{y}} + \hat{\boldsymbol{\mathbf{z}}} \frac{\partial}{\partial{z}} \right) f = \frac{\partial f}{\partial x} \hat{\boldsymbol{\mathbf{x}}} + \frac{\partial f}{\partial y} \hat{\boldsymbol{\mathbf{y}}} + \frac{\partial f}{\partial z} \hat{\boldsymbol{\mathbf{z}}} ~,
+\end{equation}
+[12] 这可以类比矢量与标量的乘法。
+[/SCOPE:s_gradient]
+[SCOPE:s_divergence|description|散度]
+[13] $ \boldsymbol{\nabla} $ 与矢量函数 $ \boldsymbol{\mathbf{f}} (x, y, z)$ 的作用通常有两种定义，第一是 “点乘”，结果称为函数的散度（divergence），是一个标量函数
+[14] \begin{equation}
+\begin{aligned}
+\boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{f}} (x, y, z) &= \left( \hat{\boldsymbol{\mathbf{x}}} \frac{\partial}{\partial{x}} + \hat{\boldsymbol{\mathbf{y}}} \frac{\partial}{\partial{y}} + \hat{\boldsym…[truncated]…eft( \hat{\boldsymbol{\mathbf{x}}} f_x + \hat{\boldsymbol{\mathbf{y}}} f_y + \hat{\boldsymbol{\mathbf{z}}} f_z \right) \\
+&= \frac{\partial f}{\partial x} + \frac{\partial f}{\partial y} + \frac{\partial f}{\partial z} ~,
+\end{aligned}
+\end{equation}
+[15] 可以类比两个矢量的
+[16] 点乘（内积） [链接 L0]
+[/SCOPE:s_divergence]
+[SCOPE:s_curl|description|旋度]
+[17] 另一种情况是 “叉乘”，结果称为函数的旋度（curl），是一个矢量函数
+[18] \begin{equation}
+\begin{aligned}
+\boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{f}} (x, y, z) &= \left( \hat{\boldsymbol{\mathbf{x}}} \frac{\partial}{\partial{x}} + \hat{\boldsymbol{\mathbf{y}}} \frac{\partial}{\partial{y}} + \hat{\boldsy…[truncated]…( \frac{\partial F_x}{\partial z} - \frac{\partial F_z}{\partial x} \right) \hat{\boldsymbol{\mathbf{y}}} + \left( \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y} \right) \hat{\boldsymbol{\mathbf{z}}} ~,
+\end{aligned}
+\end{equation}
+[19] 可以类比两个矢量的
+[20] 叉乘 [链接 L1]
+[21] 另见拉普拉斯算符。
+
+跨文章引用:
+  [L0] 点乘（内积） → Dot
+  [L1] 叉乘 → Cross
+[/SCOPE:s_vector_operator]
+[/SCOPE:s_curl]
+[/SCOPE:root]

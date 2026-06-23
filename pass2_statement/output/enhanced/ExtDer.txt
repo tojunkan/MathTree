@@ -1,0 +1,183 @@
+[SCOPE:root|description|外导数]
+文章名: ExtDer
+标题: 外导数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=外导数
+  [1] type=exercise heading=习题 1 title=旋度和散度
+
+[0] 外导数是一种流形上的微分形式外代数1上的映射，其术语分为两部分，“外” 和 “导数”。
+[1] “外”，指的是它把各 $\Omega^k(M)$ 中的元素映射到 $\Omega^k(M)$之外；
+[2] “导数”，指的是它具有和求导类似的性质。
+[3] 实际上，矢量分析中的求导就是外导数的一个特例——你可能会问，求导并不具有 “外” 的特点，怎么就是特例了呢？
+[4] 我们会在本节中解释这一点。
+
+[SCOPE:s_def1|description|外导数定义]
+[5] 定义 1 外导数
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[6] 给定流形 $M$，其外微分代数是 $\Omega (M)$。
+[7] 定义映射 $ \,\mathrm{d}{:} \Omega (M)\rightarrow\Omega (M)$，满足：
+[8] $\forall \omega\in\Omega^k(M)$，有 $ \,\mathrm{d}{\omega} \in\Omega^{k+1}(M)$。
+[/SCOPE:s_def1_let]
+[9] 对于光滑函数 $f\in C^\infty(M)$，$ \,\mathrm{d}{f} $ 就是 $f$ 的方向导数（1-形式）。
+[10] 线性性：任取 $a, b\in \mathbb{R}$ 和 $\omega, \mu\in\Omega(M)$，有 $ \,\mathrm{d}\left(a\omega+b\mu \right) =a \,\mathrm{d}{\omega} +b \,\mathrm{d}{\mu} $。
+[11] Leibniz 性：对于 $\omega\in\Omega^k(M), \mu\in\Omega(M)$，我们有 $ \,\mathrm{d}\left(\omega\wedge\mu \right) = \,\mathrm{d}{\omega} \wedge\mu+(-1)^k\omega\wedge \,\mathrm{d}{\mu} $。
+[12] 幂零性：任取 $\omega\in\Omega(M)$，都有 $ \,\mathrm{d}\left( \,\mathrm{d}{\omega} \right) =0$。
+[13] 称这个映射为 $\Omega (M)$ 或者说 $M$ 上的一个外导数（exterior derivative），又称外微分。
+[14] 定义中的 Leibniz 性要特别注意，其中 $(-1)^k$ 项是为了配合外代数的反对称性。
+
+[/SCOPE:s_def1]
+[15] 在外代数中我们提到过，$\mathbb{R}^3$ 和 $\bigwedge^2\mathbb{R}^3$ 同构。
+[16] 在流形 $\mathbb{R}^3$ 上，2-形式构成的线性空间 $\Omega^1(\mathbb{R}^3)\cong\mathbb{R}^3$，因为是由基 $\{ \,\mathrm{d}{x} , \,\mathrm{d}{y} , \,\mathrm{d}{z} \}$ 张成的。
+[17] 这样，我们也可以定义 $\Omega^2(\mathbb{R}^3)$ 到 $\Omega^1(\mathbb{R}^3)$ 之间的同构。
+[18] 这个同构的存在，意味着我们可以把旋度和散度视为外导数的特例。
+[19] 我们观察以下例子来说明这一点：
+
+[SCOPE:s_example_curl|description|旋度作为外导数特例]
+[SCOPE:s_curl_let|let_bind|旋度中的变量]
+[20] 考虑 $\mathbb{R}^3$ 中任意的 1-形式 $\omega_x \,\mathrm{d}{x} +\omega_y \,\mathrm{d}{y} +\omega_z \,\mathrm{d}{z} $，其中各 $\omega_i$ 是 0-形式，
+[21] 即光滑函数。
+[22] 考虑到外导数对于光滑函数就是方向导数，我们可以得知，对于任意的 $a\in\{x,y,z\}$，有 $ \,\mathrm{d}{\omega} _a=\partial_x\omega_a \,\mathrm{d}{x} +\partial_y\omega_a \,\mathrm{d}{y} +\partial_z\omega_a \,\mathrm{d}{z} $。
+[/SCOPE:s_curl_let]
+[23] 这样，我们就可以计算出：
+[24] \begin{equation}
+\begin{aligned}
+\,\mathrm{d}\left(\omega_x \,\mathrm{d}{x} +\omega_y \,\mathrm{d}{y} +\omega_z \,\mathrm{d}{z} \right) ={}&(\partial_y\omega_z-\partial_z\omega_y) \,\mathrm{d}{y} \wedge \,\mathrm{d}{z} +\\&(\partial_z\omega_x-\partial_x\omega_z) \,\mathrm{d}{z} \wedge \,\mathrm{d}{x} +\\&(\partial_x\omega_y-\partial_y\omega_x) \,\mathrm{d}{x} \wedge \,\mathrm{d}{y} ~.
+\end{aligned}
+\end{equation}
+[25] 如果我们把 $ \,\mathrm{d}{y} \wedge \,\mathrm{d}{z} $、$ \,\mathrm{d}{z} \wedge \,\mathrm{d}{x} $、$ \,\mathrm{d}{x} \wedge \,\mathrm{d}{y} $ 分别看成三维直角坐标系的三个 $x, y, z$ 方向单位向量，
+[26] 那么式 1 右边各项系数刚好对应向量场 $  \begin{pmatrix}\omega_x, \omega_y, \omega_z\end{pmatrix}  ^{\mathrm{T}} $ 的旋度。
+[27] 因此，我们把三维欧几里得空间中的旋度，看成是 $\Omega^1(\mathbb{R}^3)\rightarrow\Omega^2(\mathbb{R}^3)$ 的外导数。
+
+[/SCOPE:s_example_curl]
+[SCOPE:s_example_div|description|散度作为外导数特例]
+[SCOPE:s_div_let|let_bind|散度中的变量]
+[28] 考虑 $\mathbb{R}^3$ 中任意的 2-形式 $\omega_x \,\mathrm{d}{y} \wedge \,\mathrm{d}{z} +\omega_y \,\mathrm{d}{z} \wedge \,\mathrm{d}{x} +\omega_z \,\mathrm{d}{x} \wedge \,\mathrm{d}{y} $。
+[29] 同样，考虑到 $ \,\mathrm{d}{\omega} _a=\partial_x\omega_a \,\mathrm{d}{x} +\partial_y\omega_a \,\mathrm{d}{y} +\partial_z\omega_a \,\mathrm{d}{z} $，我们可以计算得：
+[/SCOPE:s_div_let]
+[30] \begin{equation}
+\begin{aligned}
+& \,\mathrm{d}\left(\omega_x \,\mathrm{d}{y} \wedge \,\mathrm{d}{z} +\omega_y \,\mathrm{d}{z} \wedge \,\mathrm{d}{x} +\omega_z \,\mathrm{d}{x} \wedge \,\mathrm{d}{y} \right) \\={}&(\partial_x\omega_x+\partial_y\omega_y+\partial_z\omega_z) \,\mathrm{d}{x} \wedge \,\mathrm{d}{y} \wedge \,\mathrm{d}{z} ~.
+\end{aligned}
+\end{equation}
+[31] 观察结果的系数可见，2-形式的外导数实际上就是其散度。
+[32] 因此，我们把三维欧几里得空间中的散度，看成是 $\Omega^2(\mathbb{R}^3)\rightarrow\Omega^3(\mathbb{R}^3)$ 的外导数。
+
+[/SCOPE:s_example_div]
+[SCOPE:s_exercise1|description|习题1]
+[33] 习题 1 旋度和散度
+[34] 利用外导数的定义，证明式 1 和式 2 .
+
+[/SCOPE:s_exercise1]
+[SCOPE:s_gradient|description|梯度作为外导数特例]
+[35] 由定义 1 的第二条，三维欧几里得空间中的梯度，是 $\Omega^0(\mathbb{R}^3)\rightarrow\Omega^1(\mathbb{R}^3)$ 的外导数。
+[36] 自此，三维空间中的梯度、旋度和散度都可以统一为一个概念了：外导数。
+[37] 值得注意的是，矢量分析中的定理 “梯度的旋度为零” 和 “旋度的散度为零”，可以统一理解为外导数的幂零性：$\mathrm{d}^2=0$。
+
+[/SCOPE:s_gradient]
+[SCOPE:s_3d_special|description|三维空间的特殊性]
+[38] 尝试求解下列代数方程：
+[39] \begin{equation}
+\frac{n(n-1)}{2}=n~.
+\end{equation}
+[40] 答案是 $0$ 和 $3$，对吧？
+[41] 非零解只有 $3$，这就是三维空间的特殊之处，也是三维向量分析如此丰富的原因。
+[42] 只有在三维空间中，我们才能用以上外导数的概念来导出散度、旋度等概念。
+[43] 式 3 究竟是什么呢？
+[44] $n$ 代表的是一个线性空间 $V$ 的维度，而 $n(n-1)/2$ 代表的是 $\bigwedge^2 V$ 的维度。
+[45] 式 3 想求解的是，什么情况下 $V$ 会和 $\bigwedge^2 V$ 同构，而 “非零解只有 $3$” 意味着唯一的情况就是，“$V$ 是一个三维空间”。
+[46] 向量叉乘的 “右手定则”，实际上就是一个同构 $f:\bigwedge^2 V\to V$，其中 $V$ 是 $M$ 上各点的微分形式空间，或者说 “余切向量空间”，而 $f( \,\mathrm{d}{y} \wedge \,\mathrm{d}{z} )= \,\mathrm{d}{x} , f( \,\mathrm{d}{z} \wedge \,\mathrm{d}{x} )= \,\mathrm{d}{y} , f( \,\mathrm{d}{x} \wedge \,\mathrm{d}{y} )= \,\mathrm{d}{z} $。
+[47] 我们当然可以定义其它的同构，比如 $f( \,\mathrm{d}{y} \wedge \,\mathrm{d}{z} )=- \,\mathrm{d}{x} , f( \,\mathrm{d}{z} \wedge \,\mathrm{d}{x} )=- \,\mathrm{d}{y} , f( \,\mathrm{d}{x} \wedge \,\mathrm{d}{y} )=- \,\mathrm{d}{z} $ 的同构，此时导出的向量叉乘遵循的就是 “左手定则” 了。
+
+[/SCOPE:s_3d_special]
+[48] 本小节我们希望讨论的是，如果我们已知某个微分形式 $\omega$ 是如何作用于各切向量的，
+[49] 那么 $ \,\mathrm{d}{\omega} $ 又是如何作用的。
+
+[SCOPE:s_calc_outer|description|外积的计算]
+[50] 首先要讨论的是 $1-$ 形式的外积。
+[SCOPE:s_calc_outer_let|let_bind|外积中的变量]
+[51] 设 $\omega, \mu$ 为两个 $1-$ 形式，为了满足 $\omega\wedge\mu=-\mu\wedge\omega$，我们令
+[52] \begin{equation}
+\omega\wedge\mu(X, Y)=\omega(X)\mu(Y)-\mu(X)\omega(Y)~
+\end{equation}
+[53] 对所有 $X, Y\in \mathfrak{X}(M)$ 成立。
+[/SCOPE:s_calc_outer_let]
+[54] 把这条推广开来，就是对于 $m-$ 形式 $\omega$ 和 $n-$ 形式 $\mu$，有如下关系：
+[55] \begin{equation}
+\begin{aligned}
+&\omega\wedge\mu(X_1, X_2, \cdots, X_m, X_{m+1}, \cdots, X_{m+n})\\
+=&\sum_{\sigma\in S_{m+n}} \operatorname {sgn}\sigma[\omega(X_{\sigma(1)}, \cdots, X_{\sigma(m)})\mu(X_{\sigma(m+1)}, \cdots, X_{\sigma(m+n)})]~.
+\end{aligned}
+\end{equation}
+[56] 其中 $\sigma$ 是置换群 $S_{m+n}$ 中的置换，$ \operatorname {sgn}\sigma$ 对于偶置换取值为 $1$，否则为 $-1$。
+[57] 如果用指标表示的话，式 4 相当于
+[58] \begin{equation}
+(\omega\wedge\mu)_{ab}=\omega_a\mu_b-\omega_b\mu_a~.
+\end{equation}
+[59] 而式 5 则相当于
+[60] \begin{equation}
+\begin{aligned}
+(\omega\wedge\mu)_{i_1i_2i_3\cdots i_{m+n}}=\sum_{\sigma\in S_{m+n}}\omega_{i_{\sigma(1)}i_{\sigma(2)}\cdots i_{\sigma(m)}}\mu_{i_{\sigma(m+1)}i_{\sigma(m+2)}\cdots i_{\sigma(m+n)}}~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_calc_outer]
+[SCOPE:s_calc_exterior|description|外导数的计算]
+[61] 现在我们要考虑的是，如果对于一切 $X, Y\in \mathfrak{X}(M)$ 都已知 $\omega(X)$，
+[62] 那么 $ \,\mathrm{d}{\omega} (X, Y)$ 是哪个函数。
+[SCOPE:s_calc_exterior_let|let_bind|外导数计算中的变量]
+[63] 设所讨论的流形维度为 $n$。
+[64] 在某坐标系下，令
+[65] \begin{equation}
+\left\{\begin{aligned}
+X&=f_1\partial_1+f_2\partial_2+\cdots+f_n\partial_n\\
+Y&=g_1\partial_1+g_2\partial_2+\cdots+g_n\partial_n\\
+\omega&=\omega_1 \,\mathrm{d}{x} _1+\omega_2 \,\mathrm{d}{x} _2+\cdots+\omega_n \,\mathrm{d}{x} _n
+\end{aligned}\right. ~
+\end{equation}
+[66] 其中各 $f_i, g_i, \omega_i$ 为 $M$ 上的光滑函数。
+[/SCOPE:s_calc_exterior_let]
+[67] 那么 $\omega(X)=f_1\omega_1+f_2\omega_2+\cdots+f_n\omega_n$，$\omega(Y)=g_1\omega_1+g_2\omega_2+\cdots+g_n\omega_n$
+[68] 坐标系给定了，$ \,\mathrm{d}{\omega} $ 可以直接算出来。
+[69] 这是因为
+[70] \begin{equation}
+\,\mathrm{d}\left(\omega_i \,\mathrm{d}{x} _i \right) =( \,\mathrm{d}{\omega} _i)\wedge \,\mathrm{d}{x} _i=\sum_{j}\partial_j\omega_i \,\mathrm{d}{x} _j\wedge \,\mathrm{d}{x} _i~.
+\end{equation}
+[71] 因此，
+[72] \begin{equation}
+\,\mathrm{d}{\omega} =\sum_{i} \,\mathrm{d}\left(\omega_i \,\mathrm{d}{x} _i \right) =\sum_{i}( \,\mathrm{d}{\omega} _i)\wedge \,\mathrm{d}{x} _i=\sum_{i, j}\partial_j\omega_i \,\mathrm{d}{x} _j\wedge \,\mathrm{d}{x} _i~.
+\end{equation}
+[73] $ \,\mathrm{d}{x} _j\wedge \,\mathrm{d}{x} _i$ 是哪个映射，我们上面已经讨论过了。
+[74] 应用式 4 ，并考虑到 $ \,\mathrm{d}{x} _i(\partial _j)=\delta_{ij}$2，可以计算出 $ \,\mathrm{d}{\omega} (X, Y)$，整理后得到
+[75] \begin{equation}
+\,\mathrm{d}{\omega} (X, Y)=X\omega(Y)-Y\omega(X)-\omega([X, Y])~.
+\end{equation}
+[76] 这里 $X\omega(Y)$ 是指切向量作用在函数 $\omega(Y)$ 上，得到一个函数；
+[77] $Y\omega(X)$ 同理。
+[/SCOPE:s_calc_exterior]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_example_curl",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "旋度是外导数在三维欧氏空间中的特例"
+  },
+  {
+    "source_scope": "s_example_div",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "散度是外导数在三维欧氏空间中的特例"
+  },
+  {
+    "source_scope": "s_gradient",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "梯度是外导数在三维欧氏空间中的特例"
+  }
+]

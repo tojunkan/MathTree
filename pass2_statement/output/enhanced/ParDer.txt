@@ -1,0 +1,151 @@
+[SCOPE:root|description|偏导数（简明微积分）]
+文章名: ParDer
+标题: 偏导数（简明微积分）
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=example heading=例 2 title=
+  [2] type=example heading=例 3 title=
+
+[SCOPE:s_ex1|description|例 1]
+[SCOPE:s_ex1_let|let_bind|例 1 变量]
+[0] 对于函数 $f(x,y) = x^2 + 2 y^2 + 2xy$，两个偏导数分别为
+[/SCOPE:s_ex1_let]
+[1] \begin{equation}
+\frac{\partial f}{\partial x} = 2x + 2y~, \qquad \frac{\partial f}{\partial y} = 4y + 2x~.
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例 2]
+[SCOPE:s_ex2_let|let_bind|例 2 变量]
+[2] 对于函数 $z = \sin\left(y\cos x\right) + \cos ^2 x$
+[/SCOPE:s_ex2_let]
+[3] \begin{equation}
+\begin{aligned}
+\frac{\partial z}{\partial x} &= - y \cos\left(y\cos x\right) \sin x - 2\cos x\sin x = - y \cos\left(y\cos x\right) \sin x - \sin 2x~,\\
+\frac{\partial z}{\partial y} &= \cos\left(y\cos x\right) \cos x~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_ex2]
+[SCOPE:s_geom|description|几何意义]
+[4] 【图解】图 1：偏导数
+[5] 类比导数的几何意义（曲线的斜率），若在三维直角坐标系中画出曲面 $f(x,y)$，
+[6] 则 $ \partial f/\partial x $ 和 $ \partial f/\partial y $ 分别是是某点处曲面延 $x$ 方向和 $y$ 方向的斜率。
+[7] 所以从某点 $(x_0, y_0)$ 延 $x$ 方向移动一个微小量 $\Delta x$，假设曲面平滑，
+[8] 则函数值增加
+[9] \begin{equation}
+\Delta f \approx \frac{\partial f}{\partial x} \Delta x~,
+\end{equation}
+[10] 写成微分关系就是
+[11] \begin{equation}
+\,\mathrm{d}{f} = \frac{\partial f}{\partial x} \,\mathrm{d}{x} \qquad (y\, \text{不变})~.
+\end{equation}
+
+[/SCOPE:s_geom]
+[SCOPE:s_genfunc|description|通用函数名]
+[12] 物理中常常会出现一种容易混淆的情况，就是当一个因变量可以有几套自变量（例如上面的 $z(u,v)$ 和 $z(x,y)$）时，通常直接用因变量（$z$）作为函数名而另外不定义函数名（$f$）。
+[13] 然而 $z(u,v)$ 与 $z(x,y)$ 中的 $z$ 并不是同一个函数。
+[14] 以下举例说明
+
+[/SCOPE:s_genfunc]
+[SCOPE:s_ex3|description|例 3]
+[SCOPE:s_ex3_let1|let_bind|例 3 变量 f]
+[15] 在二维直角坐标系中，定义一个曲面的方程为
+[16] \begin{equation}
+z=f(x,y)=x^2+y^2+2x~,
+\end{equation}
+[/SCOPE:s_ex3_let1]
+[SCOPE:s_ex3_let2|let_bind|例 3 变量 g]
+[17] \begin{equation}
+z = g(r,\theta) = f(r\cos \theta, r\sin \theta ) = r^2 + 2r\cos \theta~.
+\end{equation}
+[/SCOPE:s_ex3_let2]
+[18] \begin{equation}
+z(r,\theta) = r^2+\theta^2+2r \quad \text{(错)}~.
+\end{equation}
+[19] 通用函数名
+[20] 使用通用函数名时，要注意从语境中判断偏导数使用的是哪一套变量，例如 $ \partial z/\partial x $ 一般默认使用 $z(x,y)$ 求偏导，
+[21] 即把 $y$ 看成常数；
+[22] $ \partial z/\partial r $ 一般默认使用 $z(r,\theta)$ 求偏导，
+[23] 即把 $\theta$ 看成常数。
+[24] 或者为了明确起见可以分别把两种情况记为式 1 中的最后一种形式
+[25] \begin{equation}
+\left( \frac{\partial z}{\partial x} \right) _y~, \qquad \left( \frac{\partial z}{\partial r} \right) _\theta~.
+\end{equation}
+[26] 再看一种更复杂的情况，如
+[27] \begin{equation}
+\left( \frac{\partial z}{\partial x} \right) _\theta~.
+\end{equation}
+[28] 子节 1
+[29] \begin{equation}
+z(x,\theta) = x^2(1+\tan^2 \theta) + 2x~,
+\end{equation}
+
+[/SCOPE:s_ex3]
+[SCOPE:s_higher|description|高阶偏导]
+[SCOPE:s_higher_let|let_bind|高阶偏导变量]
+[30] 与一元函数的高阶导数类似，多元函数也可以求高阶偏导数，不同的是，由于每求一次偏导都需要指定对哪个变量。
+[31] 例如二元函数 $f(x,y)$ 的二阶偏导有：
+[/SCOPE:s_higher_let]
+[32] \begin{equation}
+\frac{\partial^{2}{f}}{\partial{x}^{2}} ~, \qquad
+\frac{\partial^2 f}{\partial x \partial y} ~, \qquad
+\frac{\partial^2 f}{\partial y \partial x} ~, \qquad
+\frac{\partial^{2}{f}}{\partial{y}^{2}} ~.
+\end{equation}
+[33a] 若高阶偏导的分母中出现不止一个变量，我们
+[33b] 则称其为
+[34] 混合偏导
+[35] 。
+[36] 混合偏导的一个重要性质就是当函数的任意混合偏导均在某点 $M_0$ 连续时，偏导的顺序可以任意改变，例如上式中有 $ \partial^2 f/\partial x \partial y = \partial^2 f/\partial y \partial x $。
+[SCOPE:s_higher_proof|description|混合偏导相等证明]
+[37] 以二元函数 $z=f(x,y)$ 为例，证明其混合偏导 $f_{xy}$ 和 $f_{yx}$ 在 $M_0(x_0,y_0)$ 连续时，$f_{xy}|_{M_0}=f_{yx}|_{M_0}$。
+[38] 【未完成】这个证明不应该出现在简明微积分
+[39] ：
+[SCOPE:s_higher_proof_let1|let_bind|证明变量 φ, ψ]
+[40] 考虑差商
+[41] \begin{equation}
+I=\frac{[f(x_0+\Delta x,y_0+\Delta y)-f(x_0+\Delta x,y_0)]-[f(x_0,y_0+\Delta y)-f(x_0,y_0)]}{\Delta x\Delta y}\\~.
+\end{equation}
+[42] \begin{equation}
+\begin{aligned}
+&\qquad\varphi(x)=f(x,y_0+\Delta y)-f(x,y_0)~,\\
+&\qquad\psi(y)=f(x_0+\Delta x,y)-f(x_0,y)~,\\
+\end{aligned}
+\end{equation}
+[/SCOPE:s_higher_proof_let1]
+[43] 那么利用微分中值定理可得
+[SCOPE:s_higher_proof_let2|let_bind|证明变量 α]
+[44] \begin{equation}
+\begin{aligned}
+&I=\frac{[f(x_0+\Delta x,y_0+\Delta y)-f(x_0+\Delta x,y_0)]-[f(x_0,y_0+\Delta y)-f(x_0,y_0)]}{\Delta x\Delta y}\\
+&\ \ =\frac{\varphi(x_0+\Delta x)-\varphi(x_0)}{\Delta x\Delta y}\\
+&\ \ =\frac{\varphi'(x_0+\alpha_1\Delta x)\Delta x}{\Delta x\Delta y}\\
+&\ \ =\frac{f_x(x_0+\alpha_1\Delta x,y_0+\Delta y)-f_x(x_0+\alpha_1\Delta x,y_0)}{\Delta y}\\
+&\ \ =f_{xy}(x_0+\alpha_1\Delta x,y_0+\alpha_2\Delta y)\qquad(0<\alpha_1,\alpha_2<1)~.\\
+\end{aligned}
+\end{equation}
+[/SCOPE:s_higher_proof_let2]
+[45] 同理，将 $I$ 重新组合可以得到
+[46] \begin{equation}
+\begin{aligned}
+&I=f_{yx}(x_0+\alpha_4\Delta x,y_0+\alpha_3\Delta y)\qquad(0<\alpha_3,\alpha_4<1)~.\\
+\end{aligned}
+\end{equation}
+[47] \begin{equation}
+\begin{aligned}
+&\qquad f_{xy}(x_0+\alpha_1\Delta x,y_0+\alpha_2\Delta y)=f_{yx}(x_0+\alpha_4\Delta x,y_0+\alpha_3\Delta y)~.\\
+\end{aligned}
+\end{equation}
+[48] 利用两个混合偏导 $f_{xy}$ 和 $f_{yx}$ 在点 $(x_0,y_0)$ 连续的条件，得到
+[49] \begin{equation}
+\begin{aligned}
+&f_{xy}(x_0,y_0)=\lim_{(\Delta x,\Delta y)\to(0,0)}f_{xy}(x_0+\alpha_1\Delta x,y_0+\alpha_2\Delta y)\\
+&\qquad\qquad\ =\lim_{(\Delta x,\Delta y)\to(0,0)}f_{yx}(x_0+\alpha_4\Delta x,y_0+\alpha_3\Delta y)\\
+&\qquad\qquad\ =f_{yx}(x_0,y_0)~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_higher]
+[/SCOPE:s_higher_proof]
+[/SCOPE:root]

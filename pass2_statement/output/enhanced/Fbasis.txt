@@ -1,0 +1,61 @@
+[SCOPE:root|description|正交函数系]
+文章名: Fbasis
+标题: 正交函数系
+
+[SCOPE:s_def_real|description|实函数正交系定义]
+[0] 定义
+[SCOPE:s_let_real|let_bind|实函数变量]
+[1] 给出一组函数（有限或无限多个），$f_i(x)\; (i = 1,2\dots)$，如果满足
+[2] \begin{equation}
+\int_a^b f_i(x) f_i(x) \,\mathrm{d}{x} \ne 0~.
+\end{equation}
+[3] 当整数 $m \ne n$ 时
+[4] \begin{equation}
+\int_a^b f_m(x) f_n(x) \,\mathrm{d}{x} = 0~,
+\end{equation}
+[5] 那么这一组函数就是区间 $[a,b]$ 内的一个正交函数系。
+[/SCOPE:s_let_real]
+[6] 这一组函数的性质可以类比矢量的正交，“两个函数相乘再积分” 这个步骤可以类比矢量的内积。
+[7] 如果两个不同的矢量正交（垂直），
+[8] 则它们的内积为零。
+[9] 如果它们的模长不为零，
+[10] 则一个矢量与自身内积不为零。
+[11] 特殊地，若给正交函数系中的每个函数的平方进行归一化，使得
+[12] \begin{equation}
+\int_a^b f_i(x) f_i(x) \,\mathrm{d}{x} = 1~.
+\end{equation}
+[13] 那么该正交函数系就是
+[14] 归一
+[15] 的。
+[16] 其性质可以表示为
+[17] \begin{equation}
+\int_a^b f_m(x) f_n(x) \,\mathrm{d}{x} = \delta_{mn}~,
+\end{equation}
+[18] 其中 $\delta_{mn}$ 是
+[19] 克罗内克 $\delta$ 函数 [链接 L0]
+
+[/SCOPE:s_def_real]
+[SCOPE:s_let_complex|let_bind|复函数变量]
+[SCOPE:s_def_complex|description|复函数正交系定义]
+[20] 若函数系中 $f_i(x)$ 的自变量为实数，函数值为复数，
+[21] 则正交的定义变为
+[22] \begin{equation}
+\int_a^b f_i^*(x) f_j(x) \,\mathrm{d}{x} = \delta_{ij}~.
+\end{equation}
+
+跨文章引用:
+  [L0] 克罗内克 $\delta$ 函数 → Kronec
+[/SCOPE:s_let_complex]
+[/SCOPE:s_def_complex]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def_complex",
+    "target_scope": "s_def_real",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "复函数正交定义是实函数正交定义的推广"
+  }
+]

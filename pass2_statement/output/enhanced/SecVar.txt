@@ -1,0 +1,70 @@
+[SCOPE:root|description|二次变分]
+文章名: SecVar
+标题: 二次变分
+
+[SCOPE:s_intro|description|二次变分的引入]
+[0] 在数学分析中，一次（或阶）微分为 0 是函数取极值的必要条件，为了获得极值是极大值或极小值的信息，可以研究二次微分。
+[1] 同样的，在泛函中，一次变分为 0 是泛函取极值的必要条件，而研究二次变分可以获得极值是极大值或极小值的信息。
+[2] 泛函 $J(y)=\int_a^bF(x,y,y') \,\mathrm{d}{x} $ 的二次变分 $\delta^2J$ 是指
+[3] \begin{equation}
+\delta^2J=\frac{1}{2}\int_a^b(F_{yy}\delta y^2+2F_{yy'}\delta y\delta y'+F_{y'y'}\delta y'^2) \,\mathrm{d}{x} ~.
+\end{equation}
+
+[/SCOPE:s_intro]
+[SCOPE:s_derivation|description|二次变分的推导]
+[SCOPE:s_let_y|let_bind|泛函 J 和曲线 y]
+[4] \begin{equation}
+J(y)=\int_a^bF(x,y,y') \,\mathrm{d}{x} ~
+\end{equation}
+[5] 为定义在有固定端点的 $C_1$ 类曲线上的泛函。
+[/SCOPE:s_let_y]
+[SCOPE:s_let_delta|let_bind|变分 δy]
+[6] 应用泰勒公式并引用符号式 17
+[7] \begin{equation}
+\delta y(x)=\overline{y}(x)-y(x)~.
+\end{equation}
+[/SCOPE:s_let_delta]
+[8a] (a)=\delta y
+[8b] (b)=0$。则
+[9] \begin{equation}
+\begin{aligned}
+J(\overline{y})-J(y)&=\int_a^b[F(x,\overline{y},\overline{y}')-F(x,y,y')] \,\mathrm{d}{x} \\
+&=\int_a^b \left[F'_y\delta y+F'_{y'}\delta y'+\frac{1}{2} \left(\tilde{F}''_{yy}\delta y^2+2\tilde{F}''_{yy'}\delta y\delta y'+\tilde{F}''_{y'y'}\delta y'^2 \right) \right] \,\mathrm{d}{x} ~.
+\end{aligned}
+\end{equation}
+[10] 其中，$\tilde{F}_{yy}=F_{yy}(x,y+\theta_1\delta y,y'+\theta_2\delta y'),\;( \left\lvert \theta_1 \right\rvert , \left\lvert \theta_2 \right\rvert \leq1)$，$\tilde{F}_{yy},F_{yy'},F_{y'y'}$ 类似。
+[11] 由于 $F$ 对其变量二阶连续，当一级距离
+[12] 定义 2 [链接 L0]
+[13] $r(\overline{y},y)$ 充分小时，就有
+[14] \begin{equation}
+\tilde F_{yy}=F_{yy}+\epsilon_1~,\quad \tilde F_{yy'}=F_{yy'}+\epsilon_2~,\quad \tilde F_{yy}=F_{y'y'}+\epsilon_3~,
+\end{equation}
+[15] 其中 $\epsilon_1,\epsilon_2,\epsilon_3$ 随 $r(\overline{y},y)$ 趋于零。
+[16] 所以
+[17] \begin{equation}
+J(\overline{y})-J(y)=\int_a^b(F'_y\delta y+F'_{y'}\delta y') \,\mathrm{d}{x} +\frac{1}{2}\int_a^b(F''_{yy}\delta y^2+2F''_{yy'}\delta y\delta y'+F''_{y'y'}\delta y'^2) \,\mathrm{d}{x} +\epsilon~.
+\end{equation}
+[18] 其中，$\epsilon=\int_a^b(\epsilon_1\delta y^2+2\epsilon_2\delta y\delta y'+\epsilon_3\delta y'^2) \,\mathrm{d}{x} $
+[19] 。
+[20] 因为 $ \left\lvert 2\delta y\delta y' \right\rvert \leq \delta y^2+\delta y'^2$，
+[21] 所以 $ \left\lvert \epsilon \right\rvert \leq \int_a^b(\epsilon_3\delta y^2+\epsilon_5\delta y'^2) \,\mathrm{d}{x} $，其中 $\epsilon_3,\epsilon_4$ 随 $r(\overline{y},y)$ 而一致趋于 0.但是
+[22] \begin{equation}
+\left\lvert \delta y \right\rvert \leq r(\overline{y},y)~,\quad \left\lvert \delta y' \right\rvert \leq r(\overline{y},y)~.
+\end{equation}
+[23] 因此，$ \left\lvert \epsilon \right\rvert \leq (\epsilon_4+\epsilon_5)(b-a)r(\overline{y},y)^2$。
+[24] 从而可见，$\epsilon$ 是比 $r(\overline{y},y)$ 更高阶的无穷小。
+[25] 式 6 [链接 L1]
+[26] 中略去这一项，就有
+[27] \begin{equation}
+J(\overline{y})-J(y)\approx\delta J+\delta^2J~.
+\end{equation}
+[28] \begin{equation}
+\begin{aligned}
+&\delta J=\int_a^b(F'_y\delta y+F'_{y'}\delta y') \,\mathrm{d}{x} ~,\\
+&\delta^2 J=\frac{1}{2}\int_a^b(F''_{yy}\delta y^2+2F''_{yy'}\delta y\delta y'+F''_{y'y'}\delta y'^2) \,\mathrm{d}{x} ~.
+\end{aligned}
+\end{equation}
+[29] 与二阶微分类似，$\delta^2J$ 被称为
+[30] 二次（阶）变分
+[/SCOPE:s_derivation]
+[/SCOPE:root]

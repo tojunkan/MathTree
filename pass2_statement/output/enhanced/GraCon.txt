@@ -1,0 +1,169 @@
+[SCOPE:root|description|图的连通性]
+文章名: GraCon
+标题: 图的连通性
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=连通
+  [1] type=theorem heading=定理 1 title=
+  [2] type=definition heading=定义 2 title=连通分支
+  [3] type=definition heading=定义 3 title=连通图
+  [4] type=definition heading=定义 4 title=强连通
+  [5] type=exercise heading=习题 1 title=
+  [6] type=definition heading=定义 5 title=强连通分支，强连通图
+  [7] type=definition heading=定义 6 title=单连通图
+  [8] type=theorem heading=定理 2 title=
+
+[SCOPE:s_def1|description|定义 1 连通]
+[0] 定义 1 连通
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[1] 设 $G$ 是图，$x,y\in V(G)$。
+[/SCOPE:s_def1_let]
+[2] 若存在连接 $x,y$ 的路，
+[3] 则称 $x,y$ 是连通的（connected）。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理 1]
+[4] 定理 1
+[5] 连通关系是图上的等价关系。
+[6] 证明：
+[SCOPE:s_thm1_let1|let_bind|自反性变量]
+[7] 1.自反性： 设 $x,x$ 连通，
+[8] 那么 $x,x$ 连通。
+[/SCOPE:s_thm1_let1]
+[SCOPE:s_thm1_let2|let_bind|对称性变量]
+[9] 2.对称性： 设 $x,y$ 连通。
+[10] 于是存在路 $xe_1\cdots e_m y$，而 $ye_m\cdots e_1 x$ 显然也是路，
+[11] 所以 $y,x$ 连通。
+[/SCOPE:s_thm1_let2]
+[SCOPE:s_thm1_let3|let_bind|传递性变量]
+[12] 3.传递性：设 $x,y$ 连通，$y,z$ 连通。
+[13] 于是存在路 $xe_1\cdots e_m y$ 和 $ye_{m+1}\cdots e_{n}z$。
+[14] 于是
+[15] \begin{equation}
+xe_1\cdots e_m ye_{m+1}\cdots e_{n}z~
+\end{equation}
+[16] 是连接 $x,z$ 的链。由
+[17] 定理 1 [链接 L0]
+[18] ，存在连接 $x,z$ 的链，
+[19] 即 $x,z$ 连通。
+[/SCOPE:s_thm1_let3]
+[20] 证毕！
+[21] 由于连通关系是 $V(G)$ 的等价关系，
+[22] 因此其可以将 $V(G)$ 分成不相交的等价类 $V_1,\cdots V_m$。
+[23] $G$ 在每一类 $V_i$ 的导图子图 $G[V_i]$ 称为 $G$ 的一个连通分支，$V_i$ 的个数 $m$ 称为 $G$ 的连通分支数。
+[24] 其可以商集的概念进行如下严格定义。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_def2|description|定义 2 连通分支]
+[25] 定义 2 连通分支
+[SCOPE:s_def2_let|let_bind|定义 2 的变量]
+[26] 设 $G$ 是图，$\overset{c}{\sim}$ 是 $V(G)$ 上的连通关系，$V_i\in V(G)/\overset{c}{\sim}$。
+[/SCOPE:s_def2_let]
+[27] 则称导出子图 $G[V_i]$ 为 $G$ 的连通分支（connected component）。
+[28] 商集 $V(G)/\overset{c}{\sim}$ 的基数称为 $G$ 的连通分支数（number of components），记作 $\omega(G)$。
+[29] 只有一个连通分支的图称为连通图。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|定义 3 连通图]
+[30] 定义 3 连通图
+[31] 若 $\omega(G)=1$，
+[32] 则称 $G$ 是连通图（connected graph），否则称为非连通图（disconnected graph）。
+
+[/SCOPE:s_def3]
+[SCOPE:s_def4|description|定义 4 强连通]
+[33] 定义 4 强连通
+[SCOPE:s_def4_let|let_bind|定义 4 的变量]
+[34] 设 $G$ 是有向图，$x,y\in V(G)$。
+[/SCOPE:s_def4_let]
+[35] 若 $G$ 中既存在从 $x$ 到 $y$ 的路，又存在从 $y$ 到 $x$ 的路，
+[36] 则称 $x,y$ 是强连通的（strongly connected）。
+
+[/SCOPE:s_def4]
+[SCOPE:s_ex1|description|习题 1]
+[37] 习题 1
+[38] 试证明强连通关系是等价关系。
+[39] （提示：仿照定理 1 的证明）。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_def5|description|定义 5 强连通分支，强连通图]
+[40] 定义 5 强连通分支，强连通图
+[SCOPE:s_def5_let|let_bind|定义 5 的变量]
+[41] 设 $G$ 是有向图，$\overset{sc}{\sim}$ 是 $V(G)$ 上的强连通关系，$V_i\in V(G)/\overset{sc}{\sim}$。
+[/SCOPE:s_def5_let]
+[42] 则称导出子图 $G[V_i]$ 为 $G$ 的强连通分支。
+[43] 商集 $V(G)/\overset{sc}{\sim}$ 的基数称为 $G$ 的强连通分支数，记作 $ \boldsymbol{\mathbf{\omega}} (G)$。
+[44] 若 $ \boldsymbol{\mathbf{\omega}} (G)=1$，
+[45] 则称 $G$ 是强连通图，否则称为非强连通图。
+
+[/SCOPE:s_def5]
+[SCOPE:s_def6|description|定义 6 单连通图]
+[46] 定义 6 单连通图
+[SCOPE:s_def6_let|let_bind|定义 6 的变量]
+[47] 设 $G$ 是有向图。
+[/SCOPE:s_def6_let]
+[48] 若 $\forall x,y\in V(G)$，$G$ 中都存在一条连接 $x,y$ 的有向路。
+[49] 则称 $G$ 是单连通的（unilateral connected）。
+[50] 显然，强连通图一定是单连通图。
+
+[/SCOPE:s_def6]
+[SCOPE:s_thm2|description|定理 2]
+[51] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理 2 的变量]
+[52] 设 $G$ 是单连通图，
+[/SCOPE:s_thm2_let]
+[53] 则 $G$ 中有一条包含所有顶点的有向链。
+[/SCOPE:s_thm2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的证明基于定义1的连通概念"
+  },
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义2的连通分支由定理1的等价关系导出"
+  },
+  {
+    "source_scope": "s_def3",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义3的连通图基于定义2的连通分支数"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题1仿照定理1的证明"
+  },
+  {
+    "source_scope": "s_def5",
+    "target_scope": "s_def4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义5的强连通分支基于定义4的强连通关系"
+  },
+  {
+    "source_scope": "s_def6",
+    "target_scope": "s_def5",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义6的单连通图与强连通图的关系"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def6",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2的结论基于定义6的单连通图"
+  }
+]

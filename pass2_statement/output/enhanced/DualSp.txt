@@ -1,0 +1,377 @@
+[SCOPE:root|description|对偶空间]
+文章名: DualSp
+标题: 对偶空间
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=线性函数
+  [1] type=definition heading=定义 2 title=线性函数的加减法
+  [2] type=definition heading=定义 3 title=线性函数的数乘
+  [3] type=theorem heading=定理 1 title=线性函数的数乘对加法的分配律
+  [4] type=definition heading=定义 4 title=对偶空间
+  [5] type=theorem heading=定理 2 title=对偶对偶空间
+  [6] type=theorem heading=定理 3 title=
+  [7] type=definition heading=定义 5 title=有限维度向量空间的对偶
+  [8] type=definition heading=定义 6 title=对偶基
+  [9] type=exercise heading=习题 1 title=
+  [10] type=theorem heading=定理 4 title=
+  [11] type=definition heading=定义 7 title=互反基
+  [12] type=example heading=例 1 title=
+  [13] type=theorem heading=定理 5 title=
+  [14] type=corollary heading=推论 1 title=
+
+[SCOPE:s_linear_func_def|description|线性函数定义]
+[0] 中学数学中一个贯穿始终的研究对象就是函数（function）。
+[1] 函数是映射（mapping）的一种，在现代数学的习惯中通常把从任意集合到一个数字集合1的映射称为一个函数。
+[2] 特别地，我们把定义线性空间时使用的域 $\mathbb{F}$ 都当作数字集合，多数情况下这些域都是实数域、复数域或者它们的子域商域2。
+[3] 如果给定一个域 $\mathbb{F}$ 上的线性空间 $V$，把 $V$ 中的任意向量 $ \boldsymbol{\mathbf{v}} $ 映射到 $\mathbb{F}$ 中的一个元素 $f( \boldsymbol{\mathbf{v}} )$ 上，
+[4] 那么映射 $f:V\rightarrow\mathbb{F}$ 就是线性空间 $V$ 上的一个函数。
+[5] 你可以任意指定函数的对应规则，
+[6] 但我们只关心所有可能的函数中最容易研究的一类，线性函数。
+[7] 通俗来说线性函数就是 “图像过原点的平直图形”，
+[8] 因此非常容易讨论。
+[9] 很多时候，尽管我们研究的不一定是平直的函数，
+[10] 但是总能在局部取平直的线性函数来考察任一点附近的函数性质，这其实就是微分的思想。
+[11] 换句话说，微分实际上是一种 “线性近似”，在给定点把可微函数近似为一个线性函数，方便讨论。
+
+[SCOPE:s_linear_func_let|let_bind|线性函数变量]
+[12] 定义 1 线性函数
+[13] 给定一个域 $\mathbb{F}$ 上的线性空间 $V$，如果映射 $f:V\rightarrow\mathbb{F}$ 满足线性性，
+[14] 即对于任意 $ \boldsymbol{\mathbf{v}} , \boldsymbol{\mathbf{u}} \in V$ 以及任意的 $a, b\in\mathbb{F}$，都有 $f(a \boldsymbol{\mathbf{v}} +b \boldsymbol{\mathbf{u}} )=af( \boldsymbol{\mathbf{v}} )+bf( \boldsymbol{\mathbf{u}} )$，
+[15] 那么我们称 $f$ 是 $V$ 上的一个线性函数（linear function）。
+[/SCOPE:s_linear_func_let]
+[16] 线性性质的好处就在于，线性函数的性质只依赖于基向量的函数值。
+[17] 就是说，当我们取定了一组基 $\{\hat{ \boldsymbol{\mathbf{e}} }_i\}$，
+[18] 那么只要知道了线性函数 $f$ 对它们的取值 $f(\hat{ \boldsymbol{\mathbf{e}} }_i)$，我们就可以利用线性性算出任意向量 $ \boldsymbol{\mathbf{v}} \in V$ 的函数值 $f( \boldsymbol{\mathbf{v}} )$，因为每一个 $ \boldsymbol{\mathbf{v}} $ 都是基向量的某个线性组合。
+[19] 如果要定义 $V$ 上一个任意的函数，我们的自由度很高，可以对每一个向量都指定一个函数值，各向量的函数值并不互相影响；
+[20] 但是对于线性函数，自由度就只有 $ \operatorname {dim} V$ 个，一旦选定了基向量的函数值，所有向量的函数值就都确定了。
+[21] 不过基向量的函数值仍然可以任意指定。
+[22] 函数之间可以进行加减法和乘法运算，这使得函数自然构成一个环，线性函数自然也不例外。
+[23] 目前我们只关心线性函数之间的加减法。
+
+[/SCOPE:s_linear_func_def]
+[SCOPE:s_linear_func_ops|description|线性函数的加减法和数乘]
+[SCOPE:s_linear_func_ops_let1|let_bind|加减法变量]
+[24] 定义 2 线性函数的加减法
+[25] 给定一个域 $\mathbb{F}$ 上的线性空间 $V$，对于两个线性函数 $f, g: V\rightarrow\mathbb{F}$，定义函数的和 $(f+g):V\rightarrow\mathbb{F}$ 如下：对于任意 $ \boldsymbol{\mathbf{v}} \in V$，有 $(f+g)( \boldsymbol{\mathbf{v}} )=f( \boldsymbol{\mathbf{v}} )+g( \boldsymbol{\mathbf{v}} )$。
+[26] 这样一来，我们就可以对函数也进行加减法，就像对数字所做的那样。
+[/SCOPE:s_linear_func_ops_let1]
+[27] 同样地，我们可以定义函数的数乘，
+[28] 即用域中的数字和函数相乘来得到新的函数。
+[29] 对于线性函数，数乘定义如下：
+
+[SCOPE:s_linear_func_ops_let2|let_bind|数乘变量]
+[30] 定义 3 线性函数的数乘
+[31] 给定一个域 $\mathbb{F}$ 上的线性空间 $V$，标量 $a\in\mathbb{F}$ 以及线性函数 $f: V\rightarrow\mathbb{F}$，定义函数的数乘 $af:V\rightarrow\mathbb{F}$ 如下：对于任何 $ \boldsymbol{\mathbf{v}} \in V$，有 $(af)( \boldsymbol{\mathbf{v}} )=a\cdot f( \boldsymbol{\mathbf{v}} )$。
+[32] 线性函数的数乘对加法具有分配律：
+
+[/SCOPE:s_linear_func_ops_let2]
+[SCOPE:s_linear_func_ops_let3|let_bind|分配律变量]
+[33] 定理 1 线性函数的数乘对加法的分配律
+[34] 给定一个域 $\mathbb{F}$ 上的线性空间 $V$，对于两个线性函数 $f, g: V\rightarrow\mathbb{F}$ 和标量 $a\in\mathbb{F}$，有：$a(f+g)=af+ag$。
+[35] 这一定理的证明是非常直接的，应用域 $\mathbb{F}$ 上的乘法分配律就可以。
+
+[/SCOPE:s_linear_func_ops]
+[/SCOPE:s_linear_func_ops_let3]
+[SCOPE:s_dual_space_def|description|对偶空间定义]
+[36] 从定义 2 和定义 3 ，以及定理 1 我们可以看出，对于一个域 $\mathbb{F}$ 上的线性空间 $V$，$V$ 上的全体线性函数也满足向量空间的定义，构成一个向量空间。
+[37] 我们把这个空间称作 $V$ 的对偶空间。
+
+[SCOPE:s_dual_space_let|let_bind|对偶空间变量]
+[38] 定义 4 对偶空间
+[39] 给定一个域 $\mathbb{F}$ 上的线性空间 $V$，记 $V^*$ 为集合 $\{V\text{上全体线性函数}\}$。
+[40] 在 $V^*$ 上定义加法和数乘如定义 2 和定义 3 ，
+[41] 那么 $V^*$ 构成一个线性空间，称作 $V$ 的对偶空间。
+[/SCOPE:s_dual_space_let]
+[42] 为了简洁地表示区分，也可以称 $V$ 为主空间。
+[43] 看起来，$V^*$ 称作线性函数空间更直接，为什么要特地取 “对偶” 一名字呢？
+[44] 初看对偶空间的定义，你可能会觉得 $V$ 和 $V^*$ 的元素之间是不对等的，$V^*$ 中的函数是用来对 $V$ 中的向量进行映射的。
+[45] 可是反过来看的话，$V$ 中向量也可以看成是 $V^*$ 中向量的映射。
+[46] 这就是说，$f\in V^*$ 可以看成是一个 $V\rightarrow\mathbb{F}$ 的映射，而 $ \boldsymbol{\mathbf{v}} \in V$ 也可以看成是 $V^*\rightarrow\mathbb{F}$ 的映射。
+
+[/SCOPE:s_dual_space_def]
+[SCOPE:s_dual_dual|description|对偶对偶空间]
+[SCOPE:s_dual_dual_let|let_bind|对偶对偶变量]
+[47] 定理 2 对偶对偶空间
+[48] 考虑一个域 $\mathbb{F}$ 上的线性空间 $V$ 及其对偶空间 $V^*$，
+[49] 那么对于任意 $ \boldsymbol{\mathbf{v}} \in V$，我们可以定义 $V^*$ 上的线性函数
+[50] \begin{equation}
+\iota_v(f): = f(v)~,
+\end{equation}
+[51] \begin{equation}
+V \subseteq V^{**}~.
+\end{equation}
+[52] 如果我们形式上进行一下简化，把 $f$ 记为向量形式 $ \boldsymbol{\mathbf{f}} $，然后把 $f( \boldsymbol{\mathbf{v}} )$ 记为 $ \boldsymbol{\mathbf{f}} \boldsymbol{\mathbf{v}} $，
+[53] 那么可以更清晰地看出它们互为彼此的线性函数：给定一个域 $\mathbb{F}$ 上的线性空间 $V$ 及其对偶空间 $V^*$，取 $a_i\in\mathbb{F}$、$ \boldsymbol{\mathbf{f}} _i\in V^*$ 和 $ \boldsymbol{\mathbf{v}} _i\in V$，
+[54] 那么从 $ \boldsymbol{\mathbf{f}} _0(a_1 \boldsymbol{\mathbf{v}} _1+a_2 \boldsymbol{\mathbf{v}} _2)=a_1 \boldsymbol{\mathbf{f}} _0 \boldsymbol{\mathbf{v}} _1+a_2 \boldsymbol{\mathbf{f}} _0 \boldsymbol{\mathbf{v}} _2$ 可知，$ \boldsymbol{\mathbf{f}} $ 是 $V$ 上的线性函数；
+[55] 从 $(a_1 \boldsymbol{\mathbf{f}} _1+a_2 \boldsymbol{\mathbf{f}} _2) \boldsymbol{\mathbf{v}} _0=a_1 \boldsymbol{\mathbf{f}} _1 \boldsymbol{\mathbf{v}} _0+a_2 \boldsymbol{\mathbf{f}} _2 \boldsymbol{\mathbf{v}} _0$ 可知，$ \boldsymbol{\mathbf{v}} $ 是 $V^*$ 上的线性函数。
+[56] 我们可以这么理解：$ \boldsymbol{\mathbf{f}} \boldsymbol{\mathbf{v}} $ 实际上就是 “取 $V$ 和 $V^*$ 中各一个元素，把它们俩对应到一个标量上” 的过程。
+[57] 因此，我们可以定义，对偶空间和主空间的对子
+[58] \begin{equation}
+\langle *, * \rangle: V^* \times V \to \mathbb{F}~
+\end{equation}
+[59] 就是把 $ \boldsymbol{\mathbf{f}} \boldsymbol{\mathbf{v}} $ 记为 $\langle \boldsymbol{\mathbf{f}} , \boldsymbol{\mathbf{v}} \rangle$
+[60] 3
+
+[/SCOPE:s_dual_dual_let]
+[61] 定理 3
+[62] 对于有限维度向量空间 $V$，我们有 $V^{**} = V$。
+[63] 证明留作习题。
+[64] 因此，对于有限维度向量空间，我们可以说两个空间互为对偶、地位平等，都是彼此的线性函数构成的线性空间4。
+[65] 因此对于有限维度向量空间，我们可以更对称地定义对偶空间的概念：
+
+[/SCOPE:s_dual_dual]
+[SCOPE:s_finite_dual_let|let_bind|有限对偶变量]
+[SCOPE:s_finite_dual_def|description|有限维度向量空间的对偶]
+[66] 定义 5 有限维度向量空间的对偶
+[67] 给定域 $\mathbb{F}$ 上两个 $n$ 维线性空间 $V$ 和 $W$。
+[68] 如果指定了一个非退化双线性映射 $m:V\times W\rightarrow\mathbb{F}$，
+[69] 那么称 $V$ 和 $W$ 是相互对偶的。
+[70] 更进一步的，我们有同构映射
+[71] \begin{equation}
+\begin{aligned}
+W &\to V^* \\
+w &\mapsto (v \mapsto f(v, w))~.
+\end{aligned}~
+\end{equation}
+[72] 【未完成】非退化双线性映射的链接
+
+[/SCOPE:s_finite_dual_let]
+[/SCOPE:s_finite_dual_def]
+[SCOPE:s_dual_basis|description|对偶基]
+[73] 本小节我们考虑有限维度的主空间 $V$。
+
+[SCOPE:s_dual_basis_let|let_bind|对偶基变量]
+[74] 定义 6 对偶基
+[75] 给定线性空间 $V$ 作为主空间，选择其一组基 $\{ \boldsymbol{\mathbf{e}} _i\}$。
+[76] 在 $V^*$ 上选择一向量组 $\{ \boldsymbol{\mathbf{f}} _i\}$，使得
+[77] \begin{equation}
+\langle \boldsymbol{\mathbf{f}} _i, \boldsymbol{\mathbf{e}} _j \rangle = \delta_{ij}~,
+\end{equation}
+[78] 对偶基（dual basis）
+
+[/SCOPE:s_dual_basis]
+[/SCOPE:s_dual_basis_let]
+[SCOPE:s_exercise1_let|let_bind|习题1变量]
+[SCOPE:s_exercise1|description|习题1]
+[79] 习题 1
+[80] 利用 “对偶向量是线性函数” 这一定义，证明定义 6 中的 $\{ \boldsymbol{\mathbf{f}} _i\}$ 构成 $V^*$ 上的一组基。
+[81] 给定线性空间 $V$ 作为主空间，再给定 $V$ 的一组基，我们就可以把 $V$ 中的向量表示为列矩阵。
+[82] 对应地，$V^*$ 中的向量表示为行矩阵，这个行矩阵是该向量在对偶基下的坐标。
+[83] 这样一来，对偶基的定义就保证了，向量和对偶向量相互作用的过程，就是这两个矩阵相乘的过程，其中对偶向量的行矩阵放在左边，向量的列矩阵放在右边。
+[84] 因为 $V$ 和 $V^*$ 的维度相同，它们也是相互同构的，它们之间的同构依赖于基的选取。
+[85] 要注意，虽然主空间中每个基都可以唯一对应一个对偶基，
+[86] 但却没有特别的理由让一个主向量对应一个对偶向量。
+[87] 哪怕是同一个主向量，在不同的基中，它对应的对偶向量也可能不同。
+[88] 所以仅仅讨论对偶空间而没有其它结构的话，只有基和对偶基之间的天然对应，而没有主向量和对偶向量之间的天然对应。
+[89a] 不过
+[89b] 如果主空间上定义了内积，则可以建立主向量和对偶向量之间的天然对应了。
+
+[/SCOPE:s_exercise1_let]
+[/SCOPE:s_exercise1]
+[SCOPE:s_theorem4_let|let_bind|定理4变量]
+[SCOPE:s_theorem4|description|定理4]
+[90] 定理 4
+[91] 给定域 $\mathbb{F}$ 上的线性空间 $V$ 及其上的内积 $g:V\times V\to \mathbb{F}$，
+[92] 则可以建立线性同构 $\sigma_g: V\to V^*$，使得
+[93] \begin{equation}
+g( \boldsymbol{\mathbf{u}} , \boldsymbol{\mathbf{v}} ) = \langle \sigma_g( \boldsymbol{\mathbf{u}} ) , \boldsymbol{\mathbf{v}} \rangle~
+\end{equation}
+[94] 事实上，不需要限定为内积，任意给定 $V$ 上的非退化对称双线性形式，都可以导出 $V$ 和 $V^*$ 之间的同构，方式和定理 4 一样，只不过用这个双线性形式取代内积。
+[95] 以下论述中我们依然使用 “内积” 这一概念，
+[96] 但都可以替换为 “非退化对称双线性形式”。
+[97] 对偶基不依赖于内积即可确定，而对偶空间之间的对应则依赖于内积。
+[98] 这提示我们，主空间上会存在一个基之间的对应，依赖于内积：
+
+[/SCOPE:s_theorem4_let]
+[/SCOPE:s_theorem4]
+[SCOPE:s_reciprocal_basis_let|let_bind|互反基变量]
+[SCOPE:s_reciprocal_basis|description|互反基]
+[99] 定义 7 互反基
+[100] 给定域 $\mathbb{F}$ 上的线性空间 $V$ 及其上的内积 $g:V\times V\to \mathbb{F}$。
+[101] 对于 $V$ 上的基 $\{ \boldsymbol{\mathbf{e}} _i\}$，若 $V$ 的基 $\{ \boldsymbol{\mathbf{\varepsilon}} _i\}$ 满足 $g( \boldsymbol{\mathbf{e}} _i, \boldsymbol{\mathbf{\varepsilon}} _j)=\delta_{ij}$，
+[102] 则称 $\{ \boldsymbol{\mathbf{\varepsilon}} _i\}$ 是 $\{ \boldsymbol{\mathbf{e}} _i\}$ 的互反基（reciprocal basis）。
+[103] 互反基是主空间的基，对偶基是对偶空间的基。
+[104] 先把给定的基天然对应到对偶基上，然后再用内积决定的线性同构把对偶基中的每个向量逐个对应回主空间，所得结果即为给定基的互反基5。
+
+[/SCOPE:s_reciprocal_basis_let]
+[/SCOPE:s_reciprocal_basis]
+[SCOPE:s_example1_let|let_bind|例1变量]
+[SCOPE:s_example1|description|例1]
+[105] 欧几里得空间（即定义了内积的有限维实线性空间）中，任何正交归一基的互反基都是它自身。
+[106] 闵可夫斯基空间中，记其闵可夫斯基 “内积” 为 $g$。
+[107] 取标准正交基 $\{ \boldsymbol{\mathbf{e}} _0, \boldsymbol{\mathbf{e}} _1, \boldsymbol{\mathbf{e}} _2, \boldsymbol{\mathbf{e}} _3\}$，其中 $g( \boldsymbol{\mathbf{e}} _0, \boldsymbol{\mathbf{e}} _0)=1$，以及对于 $i=1, 2, 3$，$g( \boldsymbol{\mathbf{e}} _i, \boldsymbol{\mathbf{e}} _i)=-1$。
+[108] 那么这个标准正交基的互反基为
+[109] \begin{equation}
+\{ \boldsymbol{\mathbf{e}} _0, - \boldsymbol{\mathbf{e}} _1, - \boldsymbol{\mathbf{e}} _2, - \boldsymbol{\mathbf{e}} _3\}~.
+\end{equation}
+
+[/SCOPE:s_example1_let]
+[/SCOPE:s_example1]
+[SCOPE:s_infinite_dim|description|无限维度的情况]
+[110] 而对于无限维度空间来说，对偶空间的定义并不符合 “对偶” 的本意，对偶空间严格 “大于” 主空间：
+
+[SCOPE:s_infinite_dim_let|let_bind|无限维变量]
+[111] 定理 5
+[112] 取无限维度向量空间 $V$ 的一组基 $\{e_\alpha\}_\alpha$，函数
+[113] \begin{equation}
+f(e_\alpha) = 1~
+\end{equation}
+[114] 换言之，“对偶基” 对于无限维度向量空间而言不再是一组基了。
+
+[/SCOPE:s_infinite_dim_let]
+[115] 推论 1
+[116] 无限维度向量空间 $V$ 真含于 $V^{**}$。
+
+[/SCOPE:s_infinite_dim]
+[SCOPE:s_matrix_rep|description|矩阵表示的习惯]
+[SCOPE:s_matrix_rep_let|let_bind|矩阵表示变量]
+[117] 在线性空间中，给定了一组基，
+[118] 则任意向量都可以表示为一串标量。
+[119] 比如说，给定基 $\{ \boldsymbol{\mathbf{e}} _1, \boldsymbol{\mathbf{e}} _2\}$，
+[120] 则任意向量都可以表示为 $a \boldsymbol{\mathbf{e}} _1+b \boldsymbol{\mathbf{e}} _2$ 的形式，其中 $a, b$ 可以是任何标量。
+[121] 由于给定主空间的基相当于同时给定了对偶空间上的对偶基，
+[122] 故任意对偶向量也可以表示为一串标量。
+[123] 通常，在讨论时，选定了主空间以及主空间上的一组基后，我们用列矩阵来表示主向量，用行矩阵来表示对偶向量。
+[124] 比如，给定基 $\{ \boldsymbol{\mathbf{e}} _1, \boldsymbol{\mathbf{e}} _2\}$，
+[125] 则主向量 $a \boldsymbol{\mathbf{e}} _1+b \boldsymbol{\mathbf{e}} _2$ 表示为
+[126] \begin{equation}
+\begin{pmatrix}
+a\\
+b
+\end{pmatrix}~,
+\end{equation}
+[127] 而对偶向量 $x \boldsymbol{\mathbf{f}} _1+y \boldsymbol{\mathbf{f}} _2$ 表示为
+[128] \begin{equation}
+\begin{pmatrix}
+x&y
+\end{pmatrix}~.
+\end{equation}
+[129] 其中，$\{ \boldsymbol{\mathbf{f}} _1, \boldsymbol{\mathbf{f}} _2\}$ 是 $\{ \boldsymbol{\mathbf{e}} _1, \boldsymbol{\mathbf{e}} _2\}$ 的对偶基。
+[130] 这种规定的好处是，对偶向量之间的相互作用可以直接用矩阵乘法表示：
+[131] \begin{equation}
+\langle a \boldsymbol{\mathbf{e}} _1+b \boldsymbol{\mathbf{e}} _2 , x \boldsymbol{\mathbf{f}} _1+y \boldsymbol{\mathbf{f}} _2 \rangle = ax+by =
+\begin{pmatrix}
+x&y
+\end{pmatrix}
+\begin{pmatrix}
+a\\
+b
+\end{pmatrix}~.
+\end{equation}
+
+[/SCOPE:s_matrix_rep_let]
+[132] 给定线性空间的基以后，内积，或者更一般的双线性形式，就都可以表示为对称
+
+[/SCOPE:s_matrix_rep]
+[SCOPE:s_dirac_let|let_bind|狄拉克符号变量]
+[SCOPE:s_dirac|description|狄拉克符号]
+[133] 狄拉克符号是一种用来描述量子态的表示方法。
+[134] 量子力学中认为每个量子态都是一个向量，定义在复数域上的线性空间中，
+[135] 因此狄拉克符号表示的都是复向量。
+[136] 狄拉克符号分为左矢和右矢，其中左矢相当于行矩阵，右矢相当于列矩阵；
+[137] 左矢和右矢在两个不同的空间中，称为左矢空间和右矢空间，这两个空间彼此对偶。
+[138] 每个量子态向量都有双重表示，一个左矢表示，一个右矢表示。
+[139] 同一个量子态的左矢和右矢是对偶向量，
+[140] 故满足以下条件：在同一个基6下，如果同一个量子态向量 $s$ 的左矢表达是 $\langle s|$，右矢表达是 $|s\rangle$，
+[141] 那么有 $\langle s|\cdot|s\rangle=1$。
+[142] 为了简便，我们也把这个表达写成 $\langle s|\cdot|s\rangle=\langle s|s\rangle$。
+[143] 一般来说，量子态空间都是无穷维希尔伯特空间，并不能把向量坐标简单表示为矩阵。
+[144] 但是我们依然可以用矩阵来做类比，在这样的类比下，如果一个表象下的一个量子态的右矢中第 $i$ 个坐标是复数 $s_i$，
+[145] 那么其左矢中第 $i$ 个坐标就是 $s_i^*$，也就是对应坐标值取其复数共轭，这样就能满足条件 $\langle s|s\rangle=1$。
+[146] 由于量子态的另一种理解方式是波函数，
+[147] 所以我们其实可以把左矢、右矢的乘积理解为波函数的乘积积分，就像最常见的函数向量一样。
+[148] 具体来说，如果有两个量子态 $s$ 和 $t$，分别对应波函数 $f_s$ 和 $f_t$，以及右矢 $|s\rangle$ 和 $|t\rangle$，
+[149] 那么我们有对应关系：
+[150] \begin{equation}\langle s|t\rangle=\int\limits_{\text{全空间}}f_s^*f_tdx~,\end{equation}
+[151] 注意左矢对应的 $f_s$ 取了复共轭。
+[/SCOPE:s_dirac_let]
+[/SCOPE:s_dirac]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_linear_func_ops",
+    "target_scope": "s_linear_func_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "线性函数的运算基于线性函数的定义"
+  },
+  {
+    "source_scope": "s_dual_space_def",
+    "target_scope": "s_linear_func_ops",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "对偶空间由线性函数空间定义"
+  },
+  {
+    "source_scope": "s_dual_dual",
+    "target_scope": "s_dual_space_def",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "对偶对偶空间定理"
+  },
+  {
+    "source_scope": "s_finite_dual_def",
+    "target_scope": "s_dual_dual",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "有限维情况下的对偶定义"
+  },
+  {
+    "source_scope": "s_dual_basis",
+    "target_scope": "s_dual_space_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "对偶基是对偶空间的具体构造"
+  },
+  {
+    "source_scope": "s_exercise1",
+    "target_scope": "s_dual_basis",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "习题1证明对偶基是基"
+  },
+  {
+    "source_scope": "s_theorem4",
+    "target_scope": "s_dual_space_def",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "内积诱导同构"
+  },
+  {
+    "source_scope": "s_reciprocal_basis",
+    "target_scope": "s_theorem4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "互反基由内积同构导出"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_reciprocal_basis",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1展示互反基"
+  },
+  {
+    "source_scope": "s_infinite_dim",
+    "target_scope": "s_dual_space_def",
+    "edge_type": "counterexample_of",
+    "category": "logic",
+    "note": "无限维时对偶空间性质不同"
+  },
+  {
+    "source_scope": "s_matrix_rep",
+    "target_scope": "s_dual_basis",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "矩阵表示基于对偶基"
+  },
+  {
+    "source_scope": "s_dirac",
+    "target_scope": "s_dual_space_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "狄拉克符号是对偶空间在量子力学中的应用"
+  }
+]

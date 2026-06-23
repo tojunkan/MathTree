@@ -1,0 +1,381 @@
+{
+  "article_name": "InMT",
+  "statements": [
+    {
+      "stmt_id": "st_thm1_intro",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": "true",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        2,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b",
+        "m",
+        "M",
+        "μ"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_assump1",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b",
+        "m",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "μ"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_let1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let1",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        12
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_let1",
+      "exposed_entities": [
+        "μ"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let2",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let2_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_let2",
+      "exposed_entities": [
+        "μ"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        17,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "a",
+        "b",
+        "m",
+        "M",
+        "μ"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_assump1",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "a",
+        "b",
+        "m",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_assump2",
+      "subtype": "assumption",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "g(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "μ"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof",
+      "subtype": "remark",
+      "clause_range": [
+        22,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_let1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let1",
+      "exposed_entities": [
+        "g(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_let1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        34
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_let1",
+      "exposed_entities": [
+        "μ"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_let2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let2",
+      "exposed_entities": [
+        "g(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_let2_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_statement",
+      "subtype": "example",
+      "clause_range": [
+        37,
+        41
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example",
+      "exposed_entities": [
+        "f(x)",
+        "c",
+        "μ",
+        "g(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_example_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": [
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_example_conclusion1",
+      "subtype": "conclusion",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example",
+      "exposed_entities": [
+        "c",
+        "μ"
+      ]
+    },
+    {
+      "stmt_id": "st_example_conclusion2",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        41
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example",
+      "exposed_entities": [
+        "c"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_assump1",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let1_assump",
+      "target": "st_thm1_let1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let2_assump",
+      "target": "st_thm1_let2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assump1",
+      "target": "st_thm2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assump2",
+      "target": "st_thm2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let1_assump",
+      "target": "st_thm2_let1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let2_assump",
+      "target": "st_thm2_let2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_assump",
+      "target": "st_example_conclusion1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_assump",
+      "target": "st_example_conclusion2",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_example_statement",
+      "target": "st_thm2_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是定理2在f连续时的特例"
+    }
+  ],
+  "unresolved": []
+}

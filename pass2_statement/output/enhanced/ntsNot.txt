@@ -1,0 +1,32 @@
+[SCOPE:root|description|数论求和记号]
+文章名: ntsNot
+标题: 数论求和记号
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=完系求和记号
+  [1] type=definition heading=定义 2 title=缩系求和记号
+
+[SCOPE:s_def1|description|完系求和记号]
+[0] 定义 1 完系求和记号
+[SCOPE:s_def1_let|let_bind|完系变量]
+[1] 若变量 $h$ 遍历某整数 $n$ 的一个完全剩余系，对 $f(h)$ 求和，
+[2] 则可以用记号 $h(n)$ 表示求和范围，
+[/SCOPE:s_def1_let]
+[3] 即
+[4] \begin{equation}
+\sum_{h(n)} f(h) ~.
+\end{equation}
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|缩系求和记号]
+[5] 定义 2 缩系求和记号
+[SCOPE:s_def2_let|let_bind|缩系变量]
+[6] 若变量 $h$ 变量某整数 $n$ 的一个缩系，对 $g(h)$ 求和，
+[7] 则可以用记号 $h^*(n)$ 表示求和范围，
+[/SCOPE:s_def2_let]
+[8] 即
+[9] \begin{equation}
+\sum_{h^*(n)} g(n) ~.
+\end{equation}
+[/SCOPE:s_def2]
+[/SCOPE:root]

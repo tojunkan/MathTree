@@ -1,0 +1,456 @@
+{
+  "article_name": "tpont",
+  "statements": [
+    {
+      "stmt_id": "st_default_assumption",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "n",
+        "⌊n⌋"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1",
+      "subtype": "theorem",
+      "clause_range": [
+        3,
+        6
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "x",
+        "ϑ(x)",
+        "ψ(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_stmt",
+      "subtype": "lemma",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "x",
+        "ψ(x)",
+        "ϑ(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_proof_assump1",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "p",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_proof_assump2",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "m",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_proof_ineq1",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "x",
+        "ϑ(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_proof_ineq2",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "x",
+        "ϑ(x^{1/m})"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_proof_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_let2_def",
+      "subtype": "definition",
+      "clause_range": [
+        26,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "M",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_let2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        30,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "p",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_let2_concl1",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "p",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_let2_concl2",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "m",
+        "ϑ"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_let2_concl3",
+      "subtype": "conclusion",
+      "clause_range": [
+        36,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "x",
+        "ϑ(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1",
+      "subtype": "corollary",
+      "clause_range": [
+        38,
+        40
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": [
+        "n",
+        "ϑ(n)"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma2_stmt",
+      "subtype": "lemma",
+      "clause_range": [
+        43,
+        45
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma2",
+      "exposed_entities": [
+        "n",
+        "p",
+        "k(n,p)",
+        "n!"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma2_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma2",
+      "exposed_entities": [
+        "n",
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma2_proof_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma2_let2_def",
+      "subtype": "definition",
+      "clause_range": [
+        48,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma2",
+      "exposed_entities": [
+        "N",
+        "n",
+        "p",
+        "α_p"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma2_let2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        51,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma2_psi_equiv",
+      "subtype": "definition",
+      "clause_range": [
+        52,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma2",
+      "exposed_entities": [
+        "x",
+        "p",
+        "m",
+        "ψ(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma2_ineq_alpha",
+      "subtype": "conclusion",
+      "clause_range": [
+        58,
+        59
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma2",
+      "exposed_entities": [
+        "p",
+        "n",
+        "α_p"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma2_ineq_lnN",
+      "subtype": "conclusion",
+      "clause_range": [
+        60,
+        60
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma2",
+      "exposed_entities": [
+        "N",
+        "p",
+        "ψ(2n)"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma2_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        61,
+        62
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma2",
+      "exposed_entities": [
+        "n",
+        "x",
+        "ψ(x)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_default_assumption",
+      "target": "st_thm1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_proof_assump1",
+      "target": "st_lemma1_proof_ineq1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_proof_assump2",
+      "target": "st_lemma1_proof_ineq2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_proof_ineq1",
+      "target": "st_lemma1_proof_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_proof_ineq2",
+      "target": "st_lemma1_proof_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_let2_def",
+      "target": "st_lemma1_let2_assump",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_let2_assump",
+      "target": "st_lemma1_let2_concl1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_let2_concl1",
+      "target": "st_lemma1_let2_concl2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_let2_concl2",
+      "target": "st_lemma1_let2_concl3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma2_proof_assump",
+      "target": "st_lemma2_proof_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma2_let2_def",
+      "target": "st_lemma2_ineq_alpha",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma2_ineq_alpha",
+      "target": "st_lemma2_ineq_lnN",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma2_ineq_lnN",
+      "target": "st_lemma2_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_remark",
+      "target": "st_lemma1_let2_def",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_lemma2_let2_remark",
+      "target": "st_lemma2_ineq_alpha",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_lemma1_stmt",
+      "target": "st_thm1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "引理1用于证明定理1"
+    },
+    {
+      "source": "st_cor1",
+      "target": "st_thm1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论1是定理1的特例"
+    },
+    {
+      "source": "st_lemma2_stmt",
+      "target": "st_cor1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "引理2用于证明推论1"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,22 @@
+[SCOPE:root|description|泛函分析笔记 4]
+文章名: FnalN4
+标题: 泛函分析笔记 4
+
+[SCOPE:s_symmetric|description|Symmetric Operators]
+[SCOPE:s_symmetric_let|let_bind|对称算符的变量]
+[0] Hilbert 空间 $X$ 上的线性算符 $A:D(A)\subseteq X\to X$ 是对称的当且仅当 $D(A)$ 在 $X$ 中稠密且 $(Au|u) = (u|Av)$ 对所有 $u,v\in D(A)$ 成立
+[/SCOPE:s_symmetric_let]
+[1] Hilbert 空间 $X$ 上的线性对称算符 $A:D(A)\subseteq X\to X$ 满足：(1) $(Au|u)$ 是实数，(2) 所有本征值为实数，(3) 不同本征值对应的本征矢正交，(4) 本征矢构成的至多可数的完备正交归一系对应的本征值包含 $A$ 的所有本征值
+
+[/SCOPE:s_symmetric]
+[SCOPE:s_hs|description|The Hilbert-Schmidt Theory]
+[SCOPE:s_hs_let|let_bind|Hilbert-Schmidt 的变量]
+[2] 令 $A:X\to X$ 为可分 Hilbert 空间中的一个非空线性对称紧算符，
+[/SCOPE:s_hs_let]
+[3] 那么 (1) $A$ 存在本征矢构成的完备正交归一系
+[4] 所有本征值 $\lambda$ 为实数，且每个 $\lambda\ne0$ 存在有限简并
+[5] 不同本征值对应的本征矢正交
+[6] 如果 $A$ 有可数个本征值（注意 $\lambda=0$ 不是本征值），
+[7] 那么本征值序列 $\lambda_n \to 0$
+[/SCOPE:s_hs]
+[/SCOPE:root]

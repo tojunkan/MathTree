@@ -1,0 +1,102 @@
+[SCOPE:root|description|三维空间中的曲面]
+文章名: RSurf
+标题: 三维空间中的曲面
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=微分
+  [1] type=definition heading=定义 2 title=局部坐标系
+  [2] type=definition heading=定义 3 title=正则曲面
+  [3] type=definition heading=定义 4 title=
+  [4] type=theorem heading=定理 1 title=
+
+[SCOPE:s_smooth_let|let_bind|光滑曲面变量]
+[SCOPE:s_smooth_surface|description|光滑曲面]
+[0] 在欧几里得 $\mathbb{R}^n$ 中定义一个连续函数，对于任意实数 $a\in\mathbb{R}$，满足方程 $f=a$ 的全体点的集合 $\{(x, y, z)|f(x, y, z)=a\}$ 就构成一个曲面（surface）。
+[1] 当 $f$ 是光滑函数时，以上曲面又被称为光滑曲面（smooth surface）。
+[2] 通常，由于 $f$ 加减一个常数以后不会改变其连续性和光滑性，
+[3] 因此我们常使用 $f=0$ 来作为定义曲面的方式。
+[4] 对于上述 $f=a$ 的曲面，只需要令 $g=f-a$，就可以用 $g=0$ 来表示 $f=a$ 的曲面了。
+
+[/SCOPE:s_smooth_let]
+[/SCOPE:s_smooth_surface]
+[5] 古典微分几何中主要研究的对象是三维空间中的正则曲面。
+[6] 直观来说，正则曲面就是没有折痕、没有尖角、不会和自身相交的曲面，这样我们可以肆无忌惮地在上面应用微积分的工具来进行研究。
+[7] 为了引出正则曲面的严格定义，我们需要先引出以下概念：
+
+[SCOPE:s_def1|description|微分]
+[8] 定义 1 微分
+[SCOPE:s_def1_let|let_bind|微分变量]
+[9] 给定光滑映射 $f:\mathbb{R}^m\to\mathbb{R}^n$，并给定 $p\in\mathbb{R}^m$，
+[10] 那么 $f$ 在 $p$ 处的一个微分（differential）被定义为切空间 $T_p\mathbb{R}^m$ 到 $T_p\mathbb{R}^n$ 的映射，且是 $f$ 的 Jacobi 矩阵。
+[11] 函数 $f$ 在点 $p$ 处的的微分记为 $ \,\mathrm{d}{f} _p$。
+[/SCOPE:s_def1_let]
+[12] 注意，下标 $p$ 是作为整个 $ \,\mathrm{d}{f} $ 符号的下标，而不仅仅是 $f$ 符号的下标。
+[13] 换一种说法，映射 $f$ 把道路映射为道路，而我们在切空间（欧几里得空间）文章里强调过，道路就是切向量，
+[14] 因此这个道路到道路的映射就被称为 $f$ 的微分。
+[15] 从这个角度来理解，还可以很容易地引入曲面之间乃至流形之间的微分，就不赘述了。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|局部坐标系]
+[16] 定义 2 局部坐标系
+[SCOPE:s_def2_let|let_bind|局部坐标系变量]
+[17] 对于集合 $V\in \mathbb{R}^3$，如果存在一个映射 $ \boldsymbol{\mathbf{x}} :U\to V$，其中 $U$ 是二维平面$\mathbb{R}^2$ 的单连通开集，满足以下三个条件：
+[18] $ \boldsymbol{\mathbf{x}} $ 看成三个标量函数（即三个分量）时，这三个分量函数都是 $\mathbb{R}^2$ 上偏导连续的。
+[19] $ \boldsymbol{\mathbf{x}} $ 是 $U$ 和 $V$ 的同胚。
+[20] 对于任意 $p\in U$，微分 $\mathrm{d} \boldsymbol{\mathbf{x}} _p$ 是一个双射。
+[21] 则称 $ \boldsymbol{\mathbf{x}} $ 是一个局部坐标系（reparametrization）。
+[/SCOPE:s_def2_let]
+[22] 由于定义中要求 $ \boldsymbol{\mathbf{x}} $ 的三个分量都是偏导连续的，$U$ 和 $V$ 同胚，
+[23] 故 $V$ 必然是一个连续可微的曲面。
+[24] 有了局部坐标系就可以定义正则曲面了：
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|正则曲面]
+[25] 定义 3 正则曲面
+[SCOPE:s_def3_let|let_bind|正则曲面变量]
+[26] 给定集合 $S\in\mathbb{R}^3$。
+[27] 如果对于任意 $p\in S$，都存在一个 $\mathbb{R}^3$ 的开集 $V\ni p$，和 $\mathbb{R}^2$ 的开集 $U$，能构造出一个局部坐标系$ \boldsymbol{\mathbf{x}} :U\to V\cap S$，
+[28] 那么称 $S$ 是一个正则曲面（regular surface）。
+[/SCOPE:s_def3_let]
+[29] 定义中为什么要用一个三维空间中的邻域 $V$ 和 $S$ 相交来构造局部坐标系，而不是直接用 $S$ 上的集合呢？
+[30] 这一方面是因为 $S$ 上限制拓扑的定义就是这样来的，另一方面是因为这样可以排除掉曲面和自身相交等情况。
+
+[/SCOPE:s_def3]
+[SCOPE:s_def4|description|临界点与正则点]
+[31] 定义 4
+[SCOPE:s_def4_let|let_bind|临界点变量]
+[32] 任取连续函数 $f:\mathbb{R}^m\to\mathbb{R}^n$，如果 $ \,\mathrm{d}{f} _p$不是满射，
+[33] 那么称 $p$ 是 $\mathbb{R}^m$ 上的临界点（critical point），而 $f(p)$ 就是临界值（critical value）。
+[/SCOPE:s_def4_let]
+[34] 有时也称临界点为驻点、稳定点等。
+[35] 非临界点的点被称为正则点（regular point），其映射值也为正则值（regular value）。
+[36] 4
+[37] 与正则点相关的一个重要定理是如下。
+
+[/SCOPE:s_def4]
+[SCOPE:s_thm1|description|定理1]
+[38] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1变量]
+[39a] 对于连续函数 $f:\mathbb{R}^3\to\mathbb{R}$
+[39b] 如果 $p$ 是正，则点，
+[40] 那么集合 $f^{-1}(f(p))$ 为一个正则曲面。
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def3",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "正则曲面定义依赖局部坐标系"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理1给出正则曲面的一个充分条件"
+  }
+]

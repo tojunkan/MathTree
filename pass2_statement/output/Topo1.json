@@ -1,0 +1,344 @@
+{
+  "article_name": "Topo1",
+  "statements": [
+    {
+      "stmt_id": "st_def1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "(X, T_X)",
+        "(Y, T_Y)",
+        "f",
+        "x_0",
+        "U",
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_exer1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_exer1",
+      "exposed_entities": [
+        "X",
+        "Y",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_exer1_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_exer1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "X",
+        "Y",
+        "f",
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "X",
+        "Y",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "X",
+        "Y",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        39,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "S^1",
+        "f",
+        "[0,1)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_conclusion",
+      "subtype": "example",
+      "clause_range": [
+        41,
+        42
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        44,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "R",
+        "I",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_conclusion",
+      "subtype": "example",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_conclusion",
+      "subtype": "example",
+      "clause_range": [
+        48,
+        49
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": [
+        "R^2",
+        "I x I"
+      ]
+    },
+    {
+      "stmt_id": "st_ex4_conclusion1",
+      "subtype": "example",
+      "clause_range": [
+        51,
+        51
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex4",
+      "exposed_entities": [
+        "R^2",
+        "S^2"
+      ]
+    },
+    {
+      "stmt_id": "st_ex4_conclusion2",
+      "subtype": "example",
+      "clause_range": [
+        52,
+        52
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex4",
+      "exposed_entities": [
+        "R^2"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        56,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "X",
+        "Y",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        58,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "f"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_assump",
+      "target": "st_def1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exer1_assump",
+      "target": "st_exer1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_assump",
+      "target": "st_def2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_assump",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_assump",
+      "target": "st_ex1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_assump",
+      "target": "st_ex2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_assump",
+      "target": "st_def3_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_exer1_conclusion",
+      "target": "st_def1_conclusion",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "习题1给出连续映射的等价定义"
+    },
+    {
+      "source": "st_thm1_conclusion",
+      "target": "st_def2_conclusion",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "定理1给出同胚的等价定义"
+    },
+    {
+      "source": "st_ex1_conclusion",
+      "target": "st_thm1_conclusion",
+      "edge_type": "counterexample_of",
+      "category": "logic",
+      "note": "例1是单向连续双射，不是同胚"
+    },
+    {
+      "source": "st_ex2_conclusion",
+      "target": "st_def2_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2展示同胚的例子"
+    },
+    {
+      "source": "st_ex3_conclusion",
+      "target": "st_def2_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例3展示同胚的例子"
+    },
+    {
+      "source": "st_ex4_conclusion1",
+      "target": "st_def2_conclusion",
+      "edge_type": "counterexample_of",
+      "category": "logic",
+      "note": "例4展示不同胚的反例"
+    },
+    {
+      "source": "st_ex4_conclusion2",
+      "target": "st_def2_conclusion",
+      "edge_type": "counterexample_of",
+      "category": "logic",
+      "note": "例4展示不同胚的反例"
+    },
+    {
+      "source": "st_def3_conclusion",
+      "target": "st_def2_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "嵌入是局部同胚"
+    }
+  ],
+  "unresolved": []
+}

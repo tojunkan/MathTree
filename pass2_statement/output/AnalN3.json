@@ -1,0 +1,1628 @@
+{
+  "article_name": "AnalN3",
+  "statements": [
+    {
+      "stmt_id": "st_9_1_def_vector_space",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_9_1",
+      "exposed_entities": [
+        "R^n",
+        "S",
+        "E",
+        "线性组合",
+        "线性无关",
+        "维度",
+        "基",
+        "坐标"
+      ]
+    },
+    {
+      "stmt_id": "st_9_4_def_linear_transform",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_9_4",
+      "exposed_entities": [
+        "线性变换",
+        "线性算子",
+        "1-1",
+        "值域",
+        "定义域"
+      ]
+    },
+    {
+      "stmt_id": "st_9_6_def_LXY",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_9_6",
+      "exposed_entities": [
+        "L(X,Y)",
+        "L(X)",
+        "线性变换",
+        "范数",
+        "A",
+        "x",
+        "R^n"
+      ]
+    },
+    {
+      "stmt_id": "st_9_7_norm_properties",
+      "subtype": "theorem",
+      "clause_range": [
+        14,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_9_7",
+      "exposed_entities": [
+        "A",
+        "B",
+        "c",
+        "L(R^n,R^m)",
+        "R^n",
+        "R^m"
+      ]
+    },
+    {
+      "stmt_id": "st_9_8_invertible_operators",
+      "subtype": "theorem",
+      "clause_range": [
+        20,
+        23
+      ],
+      "truth_value": "true",
+      "scope_id": "s_9_8",
+      "exposed_entities": [
+        "Ω",
+        "A",
+        "B",
+        "L(R^n)",
+        "A^{-1}",
+        "R^n"
+      ]
+    },
+    {
+      "stmt_id": "st_9_9_matrix",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_9_9",
+      "exposed_entities": [
+        "A",
+        "x_j",
+        "y_i",
+        "a_{ij}",
+        "m",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_9_11_def_differentiable",
+      "subtype": "definition",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_9_11",
+      "exposed_entities": [
+        "E",
+        "R^n",
+        "f",
+        "x",
+        "h",
+        "A",
+        "f'(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_9_11_remark_matrix_relation",
+      "subtype": "remark",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_9_11",
+      "exposed_entities": [
+        "A_{ij}",
+        "∂f_i/∂x_j"
+      ]
+    },
+    {
+      "stmt_id": "st_9_13_remainder",
+      "subtype": "theorem",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": "true",
+      "scope_id": "s_9_13",
+      "exposed_entities": [
+        "f",
+        "x",
+        "h",
+        "f'(x)",
+        "r(h)"
+      ]
+    },
+    {
+      "stmt_id": "st_9_16_partial_derivative",
+      "subtype": "definition",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_9_16",
+      "exposed_entities": [
+        "偏导数"
+      ]
+    },
+    {
+      "stmt_id": "st_9_17_diff_implies_partial",
+      "subtype": "theorem",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_9_17",
+      "exposed_entities": [
+        "f",
+        "x",
+        "E",
+        "D_jf_i",
+        "f'(x)",
+        "e_j",
+        "u_i"
+      ]
+    },
+    {
+      "stmt_id": "st_9_18_chain_rule_example",
+      "subtype": "example",
+      "clause_range": [
+        34,
+        39
+      ],
+      "truth_value": "true",
+      "scope_id": "s_9_18",
+      "exposed_entities": [
+        "γ",
+        "f",
+        "t",
+        "E",
+        "R^n",
+        "R^1"
+      ]
+    },
+    {
+      "stmt_id": "st_9_18_gradient",
+      "subtype": "definition",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_9_18",
+      "exposed_entities": [
+        "∇f",
+        "D_i f",
+        "e_i"
+      ]
+    },
+    {
+      "stmt_id": "st_9_20_def_continuously_diff",
+      "subtype": "definition",
+      "clause_range": [
+        41,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_9_20",
+      "exposed_entities": [
+        "f",
+        "E",
+        "R^n",
+        "R^m",
+        "f'",
+        "L(R^n,R^m)",
+        "C'",
+        "C'(E)"
+      ]
+    },
+    {
+      "stmt_id": "st_9_21_partial_cont_iff_C1",
+      "subtype": "theorem",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": "true",
+      "scope_id": "s_9_21",
+      "exposed_entities": [
+        "f",
+        "E",
+        "R^n",
+        "R^m",
+        "D_jf_i"
+      ]
+    },
+    {
+      "stmt_id": "st_9_22_def_contraction",
+      "subtype": "definition",
+      "clause_range": [
+        47,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_9_22",
+      "exposed_entities": [
+        "X",
+        "d",
+        "φ",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_9_23_fixed_point",
+      "subtype": "theorem",
+      "clause_range": [
+        50,
+        52
+      ],
+      "truth_value": "true",
+      "scope_id": "s_9_23",
+      "exposed_entities": [
+        "X",
+        "φ",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_9_24_inverse_function_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        53,
+        58
+      ],
+      "truth_value": "true",
+      "scope_id": "s_9_24",
+      "exposed_entities": [
+        "f",
+        "E",
+        "R^n",
+        "R^m",
+        "a",
+        "b",
+        "U",
+        "V",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_9_28_implicit_function_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        59,
+        61
+      ],
+      "truth_value": "true",
+      "scope_id": "s_9_28",
+      "exposed_entities": [
+        "f",
+        "E",
+        "R^{n+m}",
+        "R^n",
+        "a",
+        "b",
+        "A",
+        "A_x",
+        "U",
+        "W",
+        "g",
+        "y",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_9_38_jacobian",
+      "subtype": "definition",
+      "clause_range": [
+        62,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_9_38",
+      "exposed_entities": [
+        "f",
+        "E",
+        "R^n",
+        "x",
+        "f'(x)",
+        "J_f(x)",
+        "y_i",
+        "x_i"
+      ]
+    },
+    {
+      "stmt_id": "st_10_1_def_integral_over_k_cube",
+      "subtype": "definition",
+      "clause_range": [
+        65,
+        68
+      ],
+      "truth_value": null,
+      "scope_id": "s_10_1",
+      "exposed_entities": [
+        "I^k",
+        "I^j",
+        "f",
+        "f_k",
+        "f_{k-1}",
+        "x_i",
+        "a_i",
+        "b_i"
+      ]
+    },
+    {
+      "stmt_id": "st_10_2_integral_order_independent",
+      "subtype": "theorem",
+      "clause_range": [
+        69,
+        69
+      ],
+      "truth_value": "true",
+      "scope_id": "s_10_2",
+      "exposed_entities": [
+        "f",
+        "C(I^k)"
+      ]
+    },
+    {
+      "stmt_id": "st_10_3_support",
+      "subtype": "definition",
+      "clause_range": [
+        70,
+        72
+      ],
+      "truth_value": null,
+      "scope_id": "s_10_3",
+      "exposed_entities": [
+        "f",
+        "R^k",
+        "支集",
+        "I^k"
+      ]
+    },
+    {
+      "stmt_id": "st_10_4_k_simplex",
+      "subtype": "definition",
+      "clause_range": [
+        73,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_10_4",
+      "exposed_entities": [
+        "Q^k",
+        "R^k",
+        "x_i"
+      ]
+    },
+    {
+      "stmt_id": "st_10_5_primitive_map",
+      "subtype": "definition",
+      "clause_range": [
+        74,
+        74
+      ],
+      "truth_value": null,
+      "scope_id": "s_10_5",
+      "exposed_entities": [
+        "G",
+        "x",
+        "g",
+        "e_m"
+      ]
+    },
+    {
+      "stmt_id": "st_10_6_transposition",
+      "subtype": "definition",
+      "clause_range": [
+        75,
+        76
+      ],
+      "truth_value": null,
+      "scope_id": "s_10_6",
+      "exposed_entities": [
+        "B",
+        "R^n"
+      ]
+    },
+    {
+      "stmt_id": "st_10_10_def_k_surface",
+      "subtype": "definition",
+      "clause_range": [
+        77,
+        80
+      ],
+      "truth_value": null,
+      "scope_id": "s_10_10",
+      "exposed_entities": [
+        "E",
+        "R^n",
+        "Φ",
+        "D",
+        "R^k",
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_10_11_def_differential_form",
+      "subtype": "definition",
+      "clause_range": [
+        81,
+        87
+      ],
+      "truth_value": null,
+      "scope_id": "s_10_11",
+      "exposed_entities": [
+        "E",
+        "R^n",
+        "ω",
+        "a_{i_1...i_k}",
+        "x_i",
+        "Φ",
+        "D",
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_10_12_examples",
+      "subtype": "example",
+      "clause_range": [
+        88,
+        92
+      ],
+      "truth_value": "true",
+      "scope_id": "s_10_12",
+      "exposed_entities": [
+        "ω",
+        "γ",
+        "x",
+        "y",
+        "Φ",
+        "r",
+        "θ",
+        "φ",
+        "J_Φ"
+      ]
+    },
+    {
+      "stmt_id": "st_10_13_form_equality",
+      "subtype": "definition",
+      "clause_range": [
+        93,
+        100
+      ],
+      "truth_value": null,
+      "scope_id": "s_10_13",
+      "exposed_entities": [
+        "ω",
+        "ω_1",
+        "ω_2",
+        "Φ",
+        "c",
+        "a(x)",
+        "x_i"
+      ]
+    },
+    {
+      "stmt_id": "st_10_14_increasing_k_index",
+      "subtype": "definition",
+      "clause_range": [
+        101,
+        106
+      ],
+      "truth_value": null,
+      "scope_id": "s_10_14",
+      "exposed_entities": [
+        "I",
+        "dx_I",
+        "b_I(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_10_15_uniqueness",
+      "subtype": "theorem",
+      "clause_range": [
+        107,
+        107
+      ],
+      "truth_value": "true",
+      "scope_id": "s_10_15",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_10_16_product_basic_forms",
+      "subtype": "definition",
+      "clause_range": [
+        108,
+        114
+      ],
+      "truth_value": null,
+      "scope_id": "s_10_16",
+      "exposed_entities": [
+        "I",
+        "J",
+        "dx_I",
+        "dx_J",
+        "[I,J]"
+      ]
+    },
+    {
+      "stmt_id": "st_10_17_multiplication",
+      "subtype": "definition",
+      "clause_range": [
+        115,
+        117
+      ],
+      "truth_value": null,
+      "scope_id": "s_10_17",
+      "exposed_entities": [
+        "ω",
+        "λ",
+        "b_I",
+        "c_J",
+        "dx_I",
+        "dx_J"
+      ]
+    },
+    {
+      "stmt_id": "st_10_18_differential_operator_d",
+      "subtype": "definition",
+      "clause_range": [
+        118,
+        121
+      ],
+      "truth_value": null,
+      "scope_id": "s_10_18",
+      "exposed_entities": [
+        "ω",
+        "d",
+        "f",
+        "D_i f",
+        "x_i",
+        "b_I"
+      ]
+    },
+    {
+      "stmt_id": "st_10_26_affine_map_standard_simplex",
+      "subtype": "definition",
+      "clause_range": [
+        122,
+        128
+      ],
+      "truth_value": null,
+      "scope_id": "s_10_26",
+      "exposed_entities": [
+        "X",
+        "Y",
+        "f",
+        "A",
+        "L(X,Y)",
+        "Q^k",
+        "R^k",
+        "α_i",
+        "e_i",
+        "σ",
+        "p_0",
+        "p_i"
+      ]
+    },
+    {
+      "stmt_id": "st_10_28_affine_k_chain",
+      "subtype": "definition",
+      "clause_range": [
+        129,
+        131
+      ],
+      "truth_value": null,
+      "scope_id": "s_10_28",
+      "exposed_entities": [
+        "E",
+        "R^n",
+        "Γ",
+        "σ_i",
+        "ω"
+      ]
+    },
+    {
+      "stmt_id": "st_10_30_C2_chain",
+      "subtype": "definition",
+      "clause_range": [
+        132,
+        134
+      ],
+      "truth_value": null,
+      "scope_id": "s_10_30",
+      "exposed_entities": [
+        "Φ",
+        "T",
+        "σ",
+        "V",
+        "Q^k",
+        "Ψ"
+      ]
+    },
+    {
+      "stmt_id": "st_10_33_stokes_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        135,
+        136
+      ],
+      "truth_value": "true",
+      "scope_id": "s_10_33",
+      "exposed_entities": [
+        "Ψ",
+        "V",
+        "R^m",
+        "ω",
+        "∂Ψ"
+      ]
+    },
+    {
+      "stmt_id": "st_11_1_ring_sigma_ring",
+      "subtype": "definition",
+      "clause_range": [
+        137,
+        142
+      ],
+      "truth_value": null,
+      "scope_id": "s_11_1",
+      "exposed_entities": [
+        "A",
+        "B",
+        "R",
+        "环",
+        "σ-环"
+      ]
+    },
+    {
+      "stmt_id": "st_11_2_set_function",
+      "subtype": "definition",
+      "clause_range": [
+        143,
+        149
+      ],
+      "truth_value": null,
+      "scope_id": "s_11_2",
+      "exposed_entities": [
+        "φ",
+        "R",
+        "集函数",
+        "可加",
+        "可数可加"
+      ]
+    },
+    {
+      "stmt_id": "st_11_4_interval_elementary_set",
+      "subtype": "definition",
+      "clause_range": [
+        150,
+        162
+      ],
+      "truth_value": null,
+      "scope_id": "s_11_4",
+      "exposed_entities": [
+        "R^p",
+        "区间",
+        "初等集",
+        "m",
+        "E"
+      ]
+    },
+    {
+      "stmt_id": "st_11_5_regular_set_function",
+      "subtype": "definition",
+      "clause_range": [
+        163,
+        164
+      ],
+      "truth_value": null,
+      "scope_id": "s_11_5",
+      "exposed_entities": [
+        "φ",
+        "E",
+        "正规"
+      ]
+    },
+    {
+      "stmt_id": "st_11_6_m_regular",
+      "subtype": "theorem",
+      "clause_range": [
+        165,
+        165
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_6",
+      "exposed_entities": [
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_11_7_outer_measure",
+      "subtype": "definition",
+      "clause_range": [
+        166,
+        173
+      ],
+      "truth_value": null,
+      "scope_id": "s_11_7",
+      "exposed_entities": [
+        "μ",
+        "E",
+        "R^p",
+        "A_n",
+        "μ^*"
+      ]
+    },
+    {
+      "stmt_id": "st_11_8_outer_measure_properties",
+      "subtype": "theorem",
+      "clause_range": [
+        174,
+        176
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_8",
+      "exposed_entities": [
+        "μ^*",
+        "μ",
+        "E",
+        "E_n"
+      ]
+    },
+    {
+      "stmt_id": "st_11_9_measurable_set",
+      "subtype": "definition",
+      "clause_range": [
+        177,
+        182
+      ],
+      "truth_value": null,
+      "scope_id": "s_11_9",
+      "exposed_entities": [
+        "A",
+        "B",
+        "R^p",
+        "S(A,B)",
+        "d(A,B)",
+        "μ^*",
+        "A_n",
+        "M_F(μ)",
+        "M(μ)"
+      ]
+    },
+    {
+      "stmt_id": "st_11_10_measure_extension",
+      "subtype": "theorem",
+      "clause_range": [
+        183,
+        186
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_10",
+      "exposed_entities": [
+        "M(μ)",
+        "μ^*",
+        "μ",
+        "E",
+        "测度",
+        "Lebesgue测度"
+      ]
+    },
+    {
+      "stmt_id": "st_11_12_measure_space",
+      "subtype": "definition",
+      "clause_range": [
+        187,
+        191
+      ],
+      "truth_value": null,
+      "scope_id": "s_11_12",
+      "exposed_entities": [
+        "X",
+        "M",
+        "μ",
+        "测度空间",
+        "可测空间"
+      ]
+    },
+    {
+      "stmt_id": "st_11_13_measurable_function",
+      "subtype": "definition",
+      "clause_range": [
+        192,
+        193
+      ],
+      "truth_value": null,
+      "scope_id": "s_11_13",
+      "exposed_entities": [
+        "f",
+        "X",
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_11_17_sequence_measurable",
+      "subtype": "theorem",
+      "clause_range": [
+        194,
+        201
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_17",
+      "exposed_entities": [
+        "f_n",
+        "g",
+        "h",
+        "f",
+        "f^+",
+        "f^-"
+      ]
+    },
+    {
+      "stmt_id": "st_11_18_composition_measurable",
+      "subtype": "theorem",
+      "clause_range": [
+        202,
+        204
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_18",
+      "exposed_entities": [
+        "F",
+        "f",
+        "g",
+        "h",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_11_19_simple_function",
+      "subtype": "definition",
+      "clause_range": [
+        205,
+        208
+      ],
+      "truth_value": null,
+      "scope_id": "s_11_19",
+      "exposed_entities": [
+        "s",
+        "X",
+        "E",
+        "K_E"
+      ]
+    },
+    {
+      "stmt_id": "st_11_20_simple_approximation",
+      "subtype": "theorem",
+      "clause_range": [
+        209,
+        212
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_20",
+      "exposed_entities": [
+        "f",
+        "s_n",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_11_21_Lebesgue_integral_nonneg",
+      "subtype": "definition",
+      "clause_range": [
+        213,
+        217
+      ],
+      "truth_value": null,
+      "scope_id": "s_11_21",
+      "exposed_entities": [
+        "s",
+        "c_i",
+        "E_i",
+        "E",
+        "μ",
+        "f",
+        "∫_E f dμ"
+      ]
+    },
+    {
+      "stmt_id": "st_11_22_Lebesgue_integral_general",
+      "subtype": "definition",
+      "clause_range": [
+        218,
+        221
+      ],
+      "truth_value": null,
+      "scope_id": "s_11_22",
+      "exposed_entities": [
+        "f",
+        "E",
+        "μ",
+        "f^+",
+        "f^-",
+        "L(μ)",
+        "L"
+      ]
+    },
+    {
+      "stmt_id": "st_11_23_integral_properties",
+      "subtype": "theorem",
+      "clause_range": [
+        222,
+        223
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_23",
+      "exposed_entities": [
+        "f",
+        "g",
+        "E",
+        "μ",
+        "c",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_11_24_set_function_countably_additive",
+      "subtype": "theorem",
+      "clause_range": [
+        224,
+        227
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_24",
+      "exposed_entities": [
+        "f",
+        "X",
+        "μ",
+        "A",
+        "B",
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_11_25_almost_everywhere",
+      "subtype": "definition",
+      "clause_range": [
+        228,
+        235
+      ],
+      "truth_value": null,
+      "scope_id": "s_11_25",
+      "exposed_entities": [
+        "f",
+        "g",
+        "E",
+        "μ",
+        "几乎处处"
+      ]
+    },
+    {
+      "stmt_id": "st_11_26_absolutely_integrable",
+      "subtype": "theorem",
+      "clause_range": [
+        236,
+        238
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_26",
+      "exposed_entities": [
+        "f",
+        "E",
+        "μ",
+        "|f|"
+      ]
+    },
+    {
+      "stmt_id": "st_11_27_comparison_test",
+      "subtype": "theorem",
+      "clause_range": [
+        239,
+        239
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_27",
+      "exposed_entities": [
+        "f",
+        "g",
+        "E",
+        "μ"
+      ]
+    },
+    {
+      "stmt_id": "st_11_28_monotone_convergence",
+      "subtype": "theorem",
+      "clause_range": [
+        240,
+        240
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_28",
+      "exposed_entities": [
+        "f_n",
+        "f",
+        "E",
+        "μ"
+      ]
+    },
+    {
+      "stmt_id": "st_11_29_integral_linear",
+      "subtype": "theorem",
+      "clause_range": [
+        241,
+        241
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_29",
+      "exposed_entities": [
+        "f",
+        "f_1",
+        "f_2",
+        "E",
+        "μ"
+      ]
+    },
+    {
+      "stmt_id": "st_11_30_series_integral_swap",
+      "subtype": "theorem",
+      "clause_range": [
+        242,
+        242
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_30",
+      "exposed_entities": [
+        "f_n",
+        "f",
+        "E",
+        "μ"
+      ]
+    },
+    {
+      "stmt_id": "st_11_31_fatou",
+      "subtype": "theorem",
+      "clause_range": [
+        243,
+        243
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_31",
+      "exposed_entities": [
+        "f_n",
+        "f",
+        "E",
+        "μ"
+      ]
+    },
+    {
+      "stmt_id": "st_11_32_dominated_convergence",
+      "subtype": "theorem",
+      "clause_range": [
+        244,
+        249
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_32",
+      "exposed_entities": [
+        "E",
+        "f_n",
+        "f",
+        "g",
+        "μ",
+        "m",
+        "[a,b]"
+      ]
+    },
+    {
+      "stmt_id": "st_11_33_Riemann_Lebesgue",
+      "subtype": "theorem",
+      "clause_range": [
+        250,
+        253
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_33",
+      "exposed_entities": [
+        "f",
+        "[a,b]",
+        "R",
+        "L",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_11_34_L2_space",
+      "subtype": "definition",
+      "clause_range": [
+        254,
+        255
+      ],
+      "truth_value": null,
+      "scope_id": "s_11_34",
+      "exposed_entities": [
+        "X",
+        "f",
+        "μ",
+        "L^2(μ)",
+        "L^2",
+        "‖f‖"
+      ]
+    },
+    {
+      "stmt_id": "st_11_35_schwarz_inequality",
+      "subtype": "theorem",
+      "clause_range": [
+        256,
+        256
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_35",
+      "exposed_entities": [
+        "f",
+        "g",
+        "μ",
+        "L^2(μ)",
+        "L(μ)"
+      ]
+    },
+    {
+      "stmt_id": "st_11_36_triangle_inequality",
+      "subtype": "theorem",
+      "clause_range": [
+        257,
+        257
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_36",
+      "exposed_entities": [
+        "f",
+        "g",
+        "μ",
+        "L^2(μ)"
+      ]
+    },
+    {
+      "stmt_id": "st_11_37_metric_space",
+      "subtype": "theorem",
+      "clause_range": [
+        258,
+        260
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_37",
+      "exposed_entities": [
+        "L^2(μ)"
+      ]
+    },
+    {
+      "stmt_id": "st_11_38_continuous_dense",
+      "subtype": "theorem",
+      "clause_range": [
+        261,
+        262
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_38",
+      "exposed_entities": [
+        "[a,b]",
+        "L^2",
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_11_39_orthonormal_system",
+      "subtype": "definition",
+      "clause_range": [
+        263,
+        264
+      ],
+      "truth_value": null,
+      "scope_id": "s_11_39",
+      "exposed_entities": [
+        "φ_n",
+        "X",
+        "μ",
+        "f",
+        "c_n"
+      ]
+    },
+    {
+      "stmt_id": "st_11_40_Fourier_convergence",
+      "subtype": "theorem",
+      "clause_range": [
+        265,
+        268
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_40",
+      "exposed_entities": [
+        "f",
+        "[−π,π]",
+        "L^2",
+        "c_n",
+        "s_n"
+      ]
+    },
+    {
+      "stmt_id": "st_11_42_L2_complete",
+      "subtype": "theorem",
+      "clause_range": [
+        269,
+        269
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_42",
+      "exposed_entities": [
+        "L^2(μ)"
+      ]
+    },
+    {
+      "stmt_id": "st_11_43_Riesz_Fischer",
+      "subtype": "theorem",
+      "clause_range": [
+        270,
+        271
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_43",
+      "exposed_entities": [
+        "φ_n",
+        "X",
+        "c_n",
+        "s_n",
+        "f",
+        "L^2(μ)"
+      ]
+    },
+    {
+      "stmt_id": "st_11_44_complete_orthonormal",
+      "subtype": "definition",
+      "clause_range": [
+        272,
+        272
+      ],
+      "truth_value": null,
+      "scope_id": "s_11_44",
+      "exposed_entities": [
+        "φ_n",
+        "f",
+        "μ",
+        "L^2(μ)"
+      ]
+    },
+    {
+      "stmt_id": "st_11_45_parseval",
+      "subtype": "theorem",
+      "clause_range": [
+        273,
+        274
+      ],
+      "truth_value": "true",
+      "scope_id": "s_11_45",
+      "exposed_entities": [
+        "φ_n",
+        "f",
+        "μ",
+        "c_n"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_9_11_def_differentiable",
+      "target": "st_9_13_remainder",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_9_11_def_differentiable",
+      "target": "st_9_17_diff_implies_partial",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_9_20_def_continuously_diff",
+      "target": "st_9_21_partial_cont_iff_C1",
+      "edge_type": "equivalent",
+      "category": "logic"
+    },
+    {
+      "source": "st_9_22_def_contraction",
+      "target": "st_9_23_fixed_point",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_9_24_inverse_function_theorem",
+      "target": "st_9_28_implicit_function_theorem",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_10_1_def_integral_over_k_cube",
+      "target": "st_10_2_integral_order_independent",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_10_11_def_differential_form",
+      "target": "st_10_13_form_equality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_10_14_increasing_k_index",
+      "target": "st_10_15_uniqueness",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_10_16_product_basic_forms",
+      "target": "st_10_17_multiplication",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_10_18_differential_operator_d",
+      "target": "st_10_33_stokes_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_10_26_affine_map_standard_simplex",
+      "target": "st_10_28_affine_k_chain",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_10_28_affine_k_chain",
+      "target": "st_10_30_C2_chain",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_1_ring_sigma_ring",
+      "target": "st_11_2_set_function",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_4_interval_elementary_set",
+      "target": "st_11_5_regular_set_function",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_5_regular_set_function",
+      "target": "st_11_6_m_regular",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_7_outer_measure",
+      "target": "st_11_8_outer_measure_properties",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_8_outer_measure_properties",
+      "target": "st_11_9_measurable_set",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_9_measurable_set",
+      "target": "st_11_10_measure_extension",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_10_measure_extension",
+      "target": "st_11_12_measure_space",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_12_measure_space",
+      "target": "st_11_13_measurable_function",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_13_measurable_function",
+      "target": "st_11_17_sequence_measurable",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_17_sequence_measurable",
+      "target": "st_11_18_composition_measurable",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_19_simple_function",
+      "target": "st_11_20_simple_approximation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_20_simple_approximation",
+      "target": "st_11_21_Lebesgue_integral_nonneg",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_21_Lebesgue_integral_nonneg",
+      "target": "st_11_22_Lebesgue_integral_general",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_22_Lebesgue_integral_general",
+      "target": "st_11_23_integral_properties",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_23_integral_properties",
+      "target": "st_11_24_set_function_countably_additive",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_24_set_function_countably_additive",
+      "target": "st_11_25_almost_everywhere",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_25_almost_everywhere",
+      "target": "st_11_26_absolutely_integrable",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_26_absolutely_integrable",
+      "target": "st_11_27_comparison_test",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_27_comparison_test",
+      "target": "st_11_28_monotone_convergence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_28_monotone_convergence",
+      "target": "st_11_29_integral_linear",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_29_integral_linear",
+      "target": "st_11_30_series_integral_swap",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_30_series_integral_swap",
+      "target": "st_11_31_fatou",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_31_fatou",
+      "target": "st_11_32_dominated_convergence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_32_dominated_convergence",
+      "target": "st_11_33_Riemann_Lebesgue",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_33_Riemann_Lebesgue",
+      "target": "st_11_34_L2_space",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_34_L2_space",
+      "target": "st_11_35_schwarz_inequality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_35_schwarz_inequality",
+      "target": "st_11_36_triangle_inequality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_36_triangle_inequality",
+      "target": "st_11_37_metric_space",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_37_metric_space",
+      "target": "st_11_38_continuous_dense",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_38_continuous_dense",
+      "target": "st_11_39_orthonormal_system",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_39_orthonormal_system",
+      "target": "st_11_40_Fourier_convergence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_40_Fourier_convergence",
+      "target": "st_11_42_L2_complete",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_42_L2_complete",
+      "target": "st_11_43_Riesz_Fischer",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_43_Riesz_Fischer",
+      "target": "st_11_44_complete_orthonormal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_11_44_complete_orthonormal",
+      "target": "st_11_45_parseval",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

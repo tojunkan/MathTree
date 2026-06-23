@@ -1,0 +1,347 @@
+{
+  "article_name": "CoDer",
+  "statements": [
+    {
+      "stmt_id": "st_global_extension_claim",
+      "subtype": "theorem",
+      "clause_range": [
+        31,
+        40
+      ],
+      "truth_value": "true",
+      "scope_id": "s_global_extension",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        43,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "M",
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_extension",
+      "subtype": "conclusion",
+      "clause_range": [
+        46,
+        53
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "V_tilde"
+      ]
+    },
+    {
+      "stmt_id": "st_covariant_derivative_let",
+      "subtype": "assumption",
+      "clause_range": [
+        54,
+        56
+      ],
+      "truth_value": null,
+      "scope_id": "s_covariant_derivative_let",
+      "exposed_entities": [
+        "X(t)",
+        "c(t)",
+        "T",
+        "X_tilde"
+      ]
+    },
+    {
+      "stmt_id": "st_covariant_derivative_def",
+      "subtype": "definition",
+      "clause_range": [
+        57,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_covariant_derivative",
+      "exposed_entities": [
+        "D/dt",
+        "X(t)",
+        "c(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_covariant_derivative_properties",
+      "subtype": "theorem",
+      "clause_range": [
+        60,
+        68
+      ],
+      "truth_value": "true",
+      "scope_id": "s_covariant_derivative",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_computation_let",
+      "subtype": "assumption",
+      "clause_range": [
+        71,
+        74
+      ],
+      "truth_value": null,
+      "scope_id": "s_computation_let",
+      "exposed_entities": [
+        "e_i",
+        "X(t)",
+        "x^i(t)",
+        "T"
+      ]
+    },
+    {
+      "stmt_id": "st_computation_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        75,
+        84
+      ],
+      "truth_value": "true",
+      "scope_id": "s_computation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        87,
+        88
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1_let",
+      "exposed_entities": [
+        "X(t)",
+        "Y(t)",
+        "c(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem1_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        89,
+        92
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_definition_induced",
+      "subtype": "definition",
+      "clause_range": [
+        93,
+        93
+      ],
+      "truth_value": null,
+      "scope_id": "s_definition",
+      "exposed_entities": [
+        "TM",
+        "nabla"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        95,
+        97
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem2_let",
+      "exposed_entities": [
+        "nabla",
+        "X",
+        "Y",
+        "omega"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem2_def_1form",
+      "subtype": "definition",
+      "clause_range": [
+        98,
+        100
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem2",
+      "exposed_entities": [
+        "nabla_X omega"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem2_def_tensor",
+      "subtype": "definition",
+      "clause_range": [
+        101,
+        104
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem2",
+      "exposed_entities": [
+        "nabla_X T"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem2_proof_claim",
+      "subtype": "theorem",
+      "clause_range": [
+        107,
+        120
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem2_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_coordinate_let",
+      "subtype": "assumption",
+      "clause_range": [
+        122,
+        126
+      ],
+      "truth_value": null,
+      "scope_id": "s_coordinate_let",
+      "exposed_entities": [
+        "Gamma^k_ij",
+        "partial_i",
+        "V",
+        "omega",
+        "theta^i"
+      ]
+    },
+    {
+      "stmt_id": "st_coordinate_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        127,
+        132
+      ],
+      "truth_value": "true",
+      "scope_id": "s_coordinate",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_covariant_derivative_let",
+      "target": "st_covariant_derivative_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_covariant_derivative_def",
+      "target": "st_covariant_derivative_properties",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_computation_let",
+      "target": "st_computation_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_let",
+      "target": "st_theorem1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem2_let",
+      "target": "st_theorem2_def_1form",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem2_let",
+      "target": "st_theorem2_def_tensor",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem2_def_1form",
+      "target": "st_theorem2_proof_claim",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem2_def_tensor",
+      "target": "st_theorem2_proof_claim",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coordinate_let",
+      "target": "st_coordinate_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_let",
+      "target": "st_example1_extension",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_covariant_derivative_def",
+      "target": "st_global_extension_claim",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "协变导数的定义依赖于切向量场的整体拓展"
+    },
+    {
+      "source": "st_example1_extension",
+      "target": "st_global_extension_claim",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是整体拓展的具体实例"
+    },
+    {
+      "source": "st_computation_formula",
+      "target": "st_covariant_derivative_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "计算基于协变导数的定义"
+    },
+    {
+      "source": "st_theorem1_conclusion",
+      "target": "st_covariant_derivative_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理1是协变导数的性质"
+    },
+    {
+      "source": "st_theorem2_def_1form",
+      "target": "st_definition_induced",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理2给出张量场协变导数的定义"
+    },
+    {
+      "source": "st_theorem2_def_tensor",
+      "target": "st_definition_induced",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理2给出张量场协变导数的定义"
+    },
+    {
+      "source": "st_coordinate_formula",
+      "target": "st_theorem2_def_tensor",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "坐标表示基于定理2的定义"
+    }
+  ],
+  "unresolved": []
+}

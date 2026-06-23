@@ -1,0 +1,182 @@
+{
+  "article_name": "ConFra",
+  "statements": [
+    {
+      "stmt_id": "st_cf_form",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_cf_def",
+      "exposed_entities": [
+        "a_0",
+        "a_1",
+        "a_2",
+        "a_n"
+      ]
+    },
+    {
+      "stmt_id": "st_cf_cond_int",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_cf_let",
+      "exposed_entities": [
+        "a_i"
+      ]
+    },
+    {
+      "stmt_id": "st_cf_cond_pos",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_cf_let",
+      "exposed_entities": [
+        "a_0"
+      ]
+    },
+    {
+      "stmt_id": "st_cf_infinite",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_cf_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_gcf_def",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_cf_def",
+      "exposed_entities": [
+        "a_i"
+      ]
+    },
+    {
+      "stmt_id": "st_cf_notation1",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_cf_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cf_notation2",
+      "subtype": "remark",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_cf_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cf_property",
+      "subtype": "theorem",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cf_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_real_rep",
+      "subtype": "theorem",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cf_def",
+      "exposed_entities": [
+        "x",
+        "x_1",
+        "x_2"
+      ]
+    },
+    {
+      "stmt_id": "st_gcf_form",
+      "subtype": "definition",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_gcf_def",
+      "exposed_entities": [
+        "b_0",
+        "a_1",
+        "b_1",
+        "a_2",
+        "b_2",
+        "a_3",
+        "b_3"
+      ]
+    },
+    {
+      "stmt_id": "st_gcf_cond",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_gcf_let",
+      "exposed_entities": [
+        "a_i",
+        "b_i"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_cf_cond_int",
+      "target": "st_cf_form",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cf_cond_pos",
+      "target": "st_cf_form",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_gcf_cond",
+      "target": "st_gcf_form",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_gcf_form",
+      "target": "st_cf_form",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "广义连分数是连分数的推广"
+    }
+  ],
+  "unresolved": []
+}

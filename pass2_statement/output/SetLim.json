@@ -1,0 +1,267 @@
+{
+  "article_name": "SetLim",
+  "statements": [
+    {
+      "stmt_id": "st_intro_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let1",
+      "exposed_entities": [
+        "A_n",
+        "x",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let2",
+      "exposed_entities": [
+        "A_n",
+        "U_k",
+        "J_k",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_ulim_def_let",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_ulim_def_let",
+      "exposed_entities": [
+        "A_n",
+        "U_k"
+      ]
+    },
+    {
+      "stmt_id": "st_ulim_def",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_ulim_def",
+      "exposed_entities": [
+        "U",
+        "x",
+        "A_n"
+      ]
+    },
+    {
+      "stmt_id": "st_llim_def_let",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_llim_def_let",
+      "exposed_entities": [
+        "A_n",
+        "J_k"
+      ]
+    },
+    {
+      "stmt_id": "st_llim_def",
+      "subtype": "definition",
+      "clause_range": [
+        23,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_llim_def",
+      "exposed_entities": [
+        "J",
+        "x",
+        "A_n"
+      ]
+    },
+    {
+      "stmt_id": "st_llim_subset_ulim",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_llim_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_calc_let",
+      "subtype": "assumption",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_calc_let",
+      "exposed_entities": [
+        "A_n"
+      ]
+    },
+    {
+      "stmt_id": "st_calc_formulas",
+      "subtype": "theorem",
+      "clause_range": [
+        33,
+        40
+      ],
+      "truth_value": "true",
+      "scope_id": "s_calc",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_limit_let",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_limit_let",
+      "exposed_entities": [
+        "A_n"
+      ]
+    },
+    {
+      "stmt_id": "st_limit_existence",
+      "subtype": "theorem",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": "true",
+      "scope_id": "s_limit",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_limit_condition",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        51
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_limit",
+      "exposed_entities": [
+        "x"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_intro_let1",
+      "target": "st_intro_let2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_let2",
+      "target": "st_ulim_def_let",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ulim_def_let",
+      "target": "st_ulim_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_let2",
+      "target": "st_llim_def_let",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_llim_def_let",
+      "target": "st_llim_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_llim_def",
+      "target": "st_llim_subset_ulim",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_calc_let",
+      "target": "st_calc_formulas",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_limit_let",
+      "target": "st_limit_existence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_limit_existence",
+      "target": "st_limit_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ulim_def",
+      "target": "st_intro_let2",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "上极限定义基于之前引入的U_k"
+    },
+    {
+      "source": "st_llim_def",
+      "target": "st_intro_let2",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "下极限定义基于之前引入的J_k"
+    },
+    {
+      "source": "st_calc_formulas",
+      "target": "st_ulim_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "计算公式由上极限定义推导"
+    },
+    {
+      "source": "st_calc_formulas",
+      "target": "st_llim_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "计算公式由下极限定义推导"
+    },
+    {
+      "source": "st_limit_condition",
+      "target": "st_ulim_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "极限定义依赖于上极限"
+    },
+    {
+      "source": "st_limit_condition",
+      "target": "st_llim_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "极限定义依赖于下极限"
+    }
+  ],
+  "unresolved": []
+}

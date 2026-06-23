@@ -1,0 +1,81 @@
+[SCOPE:root|description|反函数求导（极简微积分）]
+文章名: InvDer
+标题: 反函数求导（极简微积分）
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+
+[SCOPE:s_example1|description|例 1]
+[SCOPE:s_example1_let|let_bind|例 1 的变量]
+[0] 在区间 $[0, \infty)$ 上，令函数 $f(x) = x^2$，
+[1a] (y) = \sqrt{y}$，其定义域就是 $f
+[1b] (x)$ 所有可能的值的区间 $[0, \infty)$。
+[/SCOPE:s_example1_let]
+[2] 显然，二者在各自的区间上都是处处可导的。
+[3] 已知 $f'(x) = 2x$（式 7 ），带入式 1 得反函数的导数为
+[4] \begin{equation}
+(f^{-1}(y))' = \frac{1}{2\sqrt{y}} \qquad (y \ge 0)~,
+\end{equation}
+
+[/SCOPE:s_example1]
+[SCOPE:s_condition|description|反函数存在的条件]
+[SCOPE:s_condition_let|let_bind|条件中的变量]
+[5a] (x)$， $g
+[5b] (x)$，在有定义的区间内的任何一对满足 $y = f
+[5c] (x)$ 的 $x$， $y$ 都满足 $g
+[5d] (y) = x$，
+[6a] (y)$ 是 $f
+[6b] (x)$ 的反函数。
+[/SCOPE:s_condition_let]
+[7] 只有函数 $y = f(x)$ 在某个区间内连续且单调时才可能存在反函数。
+[8] 例如例 1 中若令 $f(x)$ 的定义域为所有实数，
+[9] 那么每个 $y > 0$ 就对应两个不同的 $x$，
+[10] 从而产生歧义。
+
+[/SCOPE:s_condition]
+[SCOPE:s_derivation|description|推导]
+[11] 【图解】图 1：在同一点处，$f'= \mathrm{d}{y}/\mathrm{d}{x} $，$g'= \mathrm{d}{x}/\mathrm{d}{y} $，互为倒数
+[12] 【未完成】反函数 $x = f(y)$ 可以把图像翻折一下看，把该图变为左右两个，关于虚线对称
+[SCOPE:s_derivation_let|let_bind|推导中的变量]
+[13] 根据导数和微分的关系，$y = f(x)$ 在曲线上的某点 $(x_0, y_0)$，有
+[14] \begin{equation}
+\,\mathrm{d}{y} = f'(x_0) \,\mathrm{d}{x} ~.
+\end{equation}
+[/SCOPE:s_derivation_let]
+[15] 同一点也满足 $g(y_0) = x_0$，且
+[16] \begin{equation}
+g'(y_0) \,\mathrm{d}{y} = \,\mathrm{d}{x} ~.
+\end{equation}
+[17] 式 4 [链接 L0]
+[18] 式 5 [链接 L1]
+[19] \begin{equation}
+g'(y_0) = \frac{\mathrm{d}{x}}{\mathrm{d}{y}} = \frac{1}{f'(x_0)}~,
+\end{equation}
+[20] 图 1 [链接 L2]
+[21] 曲线上同一点处 $f'$ 和 $g'$ 互为倒数。
+[22] 把 ${x_0} = g(y_0)$ 代入上式，得
+[23] \begin{equation}
+g'(y_0) = \frac{\mathrm{d}{x}}{\mathrm{d}{y}} = \frac{1}{f'(g(y_0))}~.
+\end{equation}
+[24] 上式中，$y_0$ 可以是 $g$ 函数定义域的任意一点，
+[25] 所以
+[26] \begin{equation}
+g'(y) = \frac{1}{f'(g(y))}~.
+\end{equation}
+[27] 或者用习惯上的 $x$ 作为自变量，得
+[28] \begin{equation}
+g'(x) = \frac{1}{f'(g(x))}~,
+\end{equation}
+[/SCOPE:s_derivation]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_derivation",
+    "target_scope": "s_example1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推导引用例 1 作为例子"
+  }
+]

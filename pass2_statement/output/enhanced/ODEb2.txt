@@ -1,0 +1,240 @@
+[SCOPE:root|description|常系数线性齐次微分方程]
+文章名: ODEb2
+标题: 常系数线性齐次微分方程
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=definition heading=定义 1 title=
+  [2] type=example heading=例 1 title=
+  [3] type=example heading=例 2 title=
+  [4] type=theorem heading=定理 2 title=齐次线性微分方程的通解
+
+[0] 本节讨论的是齐次方程的解法，是常系数线性方程中最简单的情况。
+[1] 非齐次方程的几种解法请参见拉普拉斯变换与常系数线性微分方程文章。
+[2] 【未完成】引用所有常系数非齐次方程解法的文章。
+
+[SCOPE:s_complex_func|description|实数轴上的复值函数]
+[3] 首先介绍一个很有用的概念，复值函数。
+[4] 复值函数和复变函数是不一样的。
+[5] 复变函数中的 “变” 指变量，
+[6] 因此复变函数是复数域到复数域的映射；
+[7] 但复值函数的自变量还是实数，它只是实数域到复数域的映射而已。
+[8] 由于任何复数都可以写成 $a+ \mathrm{i} b$ 的形式，其中 $a, b\in\mathbb{R}$，
+[9] 因此一个复值函数可以看成是两个实值函数的组合。
+[SCOPE:s_complex_let|let_bind|复值函数变量]
+[10a] (x), g
+[10b] (x)$ 是某给定区间上的连续实值函数，
+[11a] (x)=f
+[11b] (x)+ \mathrm{i} g
+[11c] (x)$ 的极限被定义为 $\lim\limits_{x\to x_0}z
+[11d] (x)=\lim\limits_{x\to x_0}f
+[11e] (x)+ \mathrm{i} \lim\limits_{x\to x_0}g
+[11f] (x)$。
+[12a] (x)$ 的导函数是 $z'
+[12b] (x)=f'
+[12c] (x)+ \mathrm{i} g'
+[12d] (x)$。
+[/SCOPE:s_complex_let]
+[13] 复数的指数由欧拉公式定义：对于实数 $a, b$，有
+[14] \begin{equation}
+\mathrm{e} ^{a+ \mathrm{i} b}= \mathrm{e} ^a(\cos b+ \mathrm{i} \sin b)~.
+\end{equation}
+[15] 如果 $K$ 是一个常数复数，
+[16] 那么 $ \mathrm{e} ^{Kt}$ 就是一个关于实变量 $t$ 的复值函数。
+[17] 这个函数继承了实值函数 $ \mathrm{e} ^{at}$ 的很多优良性质。
+
+[/SCOPE:s_complex_func]
+[SCOPE:s_theorem1|description|定理 1]
+[18] 定理 1
+[SCOPE:s_theorem1_let|let_bind|定理 1 变量]
+[19a] (t), z_i
+[19b] (t)$ 是区间 $[a, b]$ 上可导的复值函数，
+[20] 那么我们有：
+[/SCOPE:s_theorem1_let]
+[21a] (t)+K_2z_2
+[21b] (t))=K_1z_1'
+[21c] (t)+K_2z_2'
+[21d] (t)$,
+[22a] (t)z_2
+[22b] (t))=z'_1
+[22c] (t)z_2
+[22d] (t)+z_1
+[22e] (t)z'_2
+[22f] (t)$,
+[23] $ \mathrm{e} ^{(K_1+K_2)t}= \mathrm{e} ^{K_1t} \mathrm{e} ^{K_2t}$,
+[24] $\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} } \mathrm{e} ^{Kt}=K \mathrm{e} ^{Kt}$.
+[25] 另外，如果记 $\overline{K}$ 是复数 $K$ 的共轭1，
+[26] 那么我们还有
+[27] \begin{equation}
+\mathrm{e} ^{\overline{K}}=\overline{ \mathrm{e} ^K}~.
+\end{equation}
+[28] 复值函数也可以作常系数常微分方程的解。
+[29] 考虑到常微分方程的全体解构成一个线性空间，复值函数可以看成是把这个解空间拓展为一个复数域上的线性空间。
+[30a] (x)$、$\phi
+[30b] (x)$ 是某个常微分方程的实值解，
+[31a] (x)$、$\varphi
+[31b] (x)+ \mathrm{i} \phi
+[31c] (x)$ 也都是同一个方程的解。
+
+[/SCOPE:s_theorem1]
+[32] 由字面意义，可得定义：
+
+[SCOPE:s_def1|description|定义 1]
+[33] 定义 1
+[34] \begin{equation}
+\frac{\mathrm{d}^n}{ \,\mathrm{d}{t} ^n}x(t)+a_1\frac{\mathrm{d}^{n-1}}{ \,\mathrm{d}{t} ^{n-1}}x(t)+\cdots+a_{n-1}\frac{\mathrm{d}}{ \,\mathrm{d}{t} }x(t)+a_nx(t)=0~
+\end{equation}
+[35] 常系数齐次线性微分方程
+[36] 接下来我们分情况，详细讨论定义 1 中方程的解法。
+
+[/SCOPE:s_def1]
+[SCOPE:s_no_repeated|description|无重根的特征方程]
+[37] 求导运算中最方便的函数是什么？
+[38] 是 $ \mathrm{e} ^{Kt}$，因为其结果总是正比于原来的函数。
+[SCOPE:s_no_repeated_let|let_bind|无重根变量]
+[39] 假设存在复数 $\lambda$，使得 $x(t)= \mathrm{e} ^{\lambda t}$ 是式 3 的解，
+[40] 那么我们得到
+[41] \begin{equation}
+\mathrm{e} ^{\lambda t} \left(\lambda^n+a_1\lambda^{n-1}+\cdots+a_{n-1}\lambda+a_n \right) =0~.
+\end{equation}
+[42] 由于 $ \mathrm{e} ^{\lambda t}$ 处处不为 $0$，式 4 就可以化为
+[43] \begin{equation}
+\lambda^n+a_1\lambda^{n-1}+\cdots+a_{n-1}\lambda+a_n=0~.
+\end{equation}
+[44] 式 5 就被称为式 3 的特征方程（characteristic equation）或辅助方程（auxiliary equation）。
+[45] 如果从式 5 中解出 $\lambda$2，
+[46] 那么 $x(t)= \mathrm{e} ^{\lambda t}$ 就是式 3 的一个解。
+[47] 根据预备知识中的定理 2 ，如果式 5 有 $n$ 个互不相同的解 $\lambda_i$，
+[48] 那么 $\{ \mathrm{e} ^{\lambda_i t}\}$ 就构成了式 3 的一组基解。
+[/SCOPE:s_no_repeated_let]
+[49] 这样，我们就把解常系数齐次线性微分方程化为解代数方程了。
+[50] 事实上，由于我们常把高阶求导写成低阶求导的乘积形式，比如 $\frac{\mathrm{d}^3}{ \,\mathrm{d}{t} ^3}=\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }\cdot\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }\cdot\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }$，，
+[51] 因此式 5 形式上相当于将 $\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }$ 替换为 $\lambda$ 并消去 $x(t)$ 后的结果。
+[52] 之所以我们可以将 $\lambda$ 视为一个数字去解，也是因为 $ \mathrm{e} ^{\lambda t}$ 在微分算子作用下的特殊性。
+
+[/SCOPE:s_no_repeated]
+[SCOPE:s_example1|description|例 1]
+[53] 考虑方程
+[54] \begin{equation}
+\frac{\mathrm{d}^2}{ \,\mathrm{d}{t} ^2}x(t)-\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }x(t)-2x(t)=0~.
+\end{equation}
+[55] \begin{equation}
+(\lambda-2)(\lambda+1)=0~,
+\end{equation}
+[56] 因此其通解为
+[57] \begin{equation}
+x(t)=A \mathrm{e} ^{2t}+B \mathrm{e} ^{-t}~.
+\end{equation}
+
+[/SCOPE:s_example1]
+[SCOPE:s_repeated|description|有重根的情况]
+[58] 有的时候，特征方程存在重根，导致无法解出 $n$ 个不同的 $\lambda$，这时候该怎么办呢？
+[59] 我们先观察以下例子。
+
+[/SCOPE:s_repeated]
+[SCOPE:s_example2|description|例 2]
+[SCOPE:s_example2_let|let_bind|例 2 变量]
+[60] 考虑方程
+[61] \begin{equation}
+\frac{\mathrm{d}^2}{ \,\mathrm{d}{t} ^2}x(t)-2\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }x(t)+x(t)=0~.
+\end{equation}
+[62] 其特征方程为
+[63] \begin{equation}
+(\lambda-1)^2=0~,
+\end{equation}
+[64] 尝试把 $t \mathrm{e} ^{t}$ 代进式 9 试试，我们发现这也是一个解。
+[65] 这样，我们就有了两个线性无关解，也就解出了式 9 。
+[/SCOPE:s_example2_let]
+[SCOPE:s_example2_cases|cases|重根情形分析]
+[66] 为什么例 2 中给出的 $t \mathrm{e} ^{t}$ 也构成一个解呢？
+[67] 我们首先考虑 $k$ 重根里最简单的情况，
+[SCOPE:s_example2_cases_let|let_bind|重根变量]
+[68] 即这个根为 $\lambda_0=0$。
+[69] 这意味着特征方程里有一个因子 $\lambda^k$，进而意味着式 3 里有一个因子 $\frac{\mathrm{d}^k}{ \,\mathrm{d}{t} ^k}= \left(\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} } \right) ^k$，
+[70] 故原方程的形式应为
+[71] \begin{equation}
+\left(\frac{\mathrm{d}^n}{ \,\mathrm{d}{t} ^n}+a_1\frac{\mathrm{d}^{n-1}}{ \,\mathrm{d}{t} ^{n-1}}+\cdots+a_{n-k}\frac{\mathrm{d}^k}{ \,\mathrm{d}{t} ^k} \right) x(t)=0~.
+\end{equation}
+[72] 或更直观地，
+[73] \begin{equation}
+\begin{aligned}
+& \left(\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} } \right) ^k \left(\frac{\mathrm{d}^{n-k}}{ \,\mathrm{d}{t} ^{n-k}}+a_1\frac{\mathrm{d}^{n-k-1}}{ \,\mathrm{d}{t} ^{n-k-1}}+\cdots+a_{n-k} \right) x(t)\\=&0\\
+=& \left(\frac{\mathrm{d}^{n-k}}{ \,\mathrm{d}{t} ^{n-k}}+a_1\frac{\mathrm{d}^{n-k-1}}{ \,\mathrm{d}{t} ^{n-k-1}}+\cdots+a_{n-k} \right) \left(\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} } \right) ^kx(t)~,
+\end{aligned}
+\end{equation}
+[74] 相当于我们有两个方程
+[75] \begin{equation}
+\left\{\begin{aligned}
+& \left(\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} } \right) ^kx(t)=0\\
+& \left(\frac{\mathrm{d}^{n-k}}{ \,\mathrm{d}{t} ^{n-k}}+a_1\frac{\mathrm{d}^{n-k-1}}{ \,\mathrm{d}{t} ^{n-k-1}}+\cdots+a_{n-k} \right) x(t)=0~.
+\end{aligned}\right.
+\end{equation}
+[76a] 事实上
+[76b] 如果将特征方程拆分成 $(\lambda-\lambda_1)^{k_1}(\lambda-\lambda_2)^{k_2}\cdots$ 的形式，原方程实际上，则是在解每一个 $ \left(\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }-\lambda_i \right) ^{k_i}x(t)=0$。
+[77] 因此，我们只需要考虑形如 $ \left(\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }-\lambda_0 \right) ^kx(t)=0$ 的方程即可。
+[78] 在最简单情形下，我们要考虑的方程是
+[79] \begin{equation}
+\left(\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} } \right) ^kx(t)=0~,
+\end{equation}
+[80] 易验证它的一个基本解组是 $\{1, t, t^2, \cdots, t^{k-1}\}$。
+[81] 这是因为形如 $t^m$ 的多项式函数，能够在 $ \left(\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} } \right) ^k$ 算子作用下变成 $0$，其中 $k>m$。
+[82] 那么，对于一般的情况，
+[83] 即
+[84] \begin{equation}
+\left(\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }-\lambda_0 \right) ^kx(t)=0~,
+\end{equation}
+[85] 我们要考虑的就是什么样的 $x(t)$ 能被 $ \left(\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }-\lambda_0 \right) ^k$ 变成 $0$。
+[86] 答案自然是形如 $t^m \mathrm{e} ^{\lambda_0 t}$ 的函数。
+[87] 首先观察到
+[88] \begin{equation}
+\left(\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }-\lambda_0 \right) t^m \mathrm{e} ^{\lambda_0 t}=mx^{m-1} \mathrm{e} ^{\lambda_0 t}~,
+\end{equation}
+[89] 因此每个 $ \left(\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }-\lambda_0 \right) $ 算子就像是在单独给 $t^m$ 降阶。
+[90] \begin{equation}
+\left(\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }-\lambda_0 \right) ^mt^m \mathrm{e} ^{\lambda_0 t}=m! \mathrm{e} ^{\lambda_0 t}~,
+\end{equation}
+[91] 再作用一次，就得到
+[92] \begin{equation}
+\left(\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }-\lambda_0 \right) ^{m+1}t^m \mathrm{e} ^{\lambda_0 t}=0~.
+\end{equation}
+[93] 因此，对于任意 $m< k$，$t^m \mathrm{e} ^{\lambda_0 t}$ 都是
+[94] 式 15 [链接 L0]
+[/SCOPE:s_example2_cases_let]
+[95] 这样，我们就得到齐次线性微分方程的完整通解了：
+
+[/SCOPE:s_example2]
+[/SCOPE:s_example2_cases]
+[SCOPE:s_theorem2|description|定理 2 齐次线性微分方程的通解]
+[96] 定理 2 齐次线性微分方程的通解
+[SCOPE:s_theorem2_let|let_bind|定理 2 变量]
+[97] 将齐次线性微分方程式 3 分解为如下形式：
+[98] \begin{equation}
+\left(\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }-\lambda_1 \right) ^{k_1} \left(\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }-\lambda_2 \right) ^{k_2}\cdots \left(\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }-\lambda_r \right) ^{k_r}x(t)=0~.
+\end{equation}
+[99] 那么式 3 或者说式 19 的基本解组为
+[100] \begin{equation}
+\{
+\mathrm{e} ^{\lambda_i t}, t \mathrm{e} ^{\lambda_i t}, \cdots, t^{k_i-1} \mathrm{e} ^{\lambda_i t}
+\}~,
+\end{equation}
+[/SCOPE:s_theorem2]
+[/SCOPE:s_theorem2_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_theorem2",
+    "target_scope": "s_no_repeated",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2包含无重根情形作为特例"
+  },
+  {
+    "source_scope": "s_theorem2",
+    "target_scope": "s_example2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2包含有重根情形作为特例"
+  }
+]

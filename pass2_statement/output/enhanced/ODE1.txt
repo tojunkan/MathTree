@@ -1,0 +1,269 @@
+[SCOPE:root|description|一阶线性微分方程]
+文章名: ODE1
+标题: 一阶线性微分方程
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=稀释酒精
+
+[0] 本文需要更多参考文献。
+[1] 需要补充例子
+[SCOPE:s_def|description|一阶线性微分方程定义]
+[2] 1具有以下形式的微分方程叫做一阶线性微分方程（first order linear differential equation）
+[3] \begin{equation}
+\frac{\mathrm{d}{y}}{\mathrm{d}{x}} + p(x)y = f(x)~,
+\end{equation}
+[4a] (x)$ 和 $f
+[4b] (x)$ 是已知的，函数 $y
+[4c] (x)$ 是未知的，称为方程的解。
+[5] 这三个函数的自变量都是实数，函数值可以是实数或者复数。
+[6] 若 $f(x) \equiv 0$，
+[7] 则称方程为
+[8] 齐次的（homogeneous）
+[9] ，否则就是
+[10] 非齐次的（inhomogeneous）
+[11] 。
+[12] 所以 $f(x)$ 叫做方程的
+[13] 非齐次项（inhomogeneous term）
+
+[/SCOPE:s_def]
+[SCOPE:s_linear|description|线性性质]
+[14a] (x), y_2
+[14b] (x), \dots$ 的线性组合2定义为他们分别乘以一个常数再相加
+[15] \begin{equation}
+c_1 y_1(x) + c_2 y_2(x) + \dots~
+\end{equation}
+[16] 由于求导操作是线性（
+[17] 式 6 [链接 L0]
+[18] ）的，容易证明若 $y_i(x)$（$i = 1, 2,\dots$）都是齐次方程的解，
+[19] 那么它们的线性组合也必定是齐次方程的解。
+[20] 微分方程的这种性质就叫做
+[21] 线性（linear）
+
+[/SCOPE:s_linear]
+[SCOPE:s_const_coeff_homo_let|let_bind|常系数齐次变量]
+[SCOPE:s_const_coeff_homo|description|一阶常系数齐次线性微分方程]
+[22] 当式 1 中的 $p(x) \equiv b$ 是常数时，我们说式 1 的方程是常系数的。
+[23] 先来看齐次的情况，方程为
+[24] \begin{equation}
+\frac{\mathrm{d}{y}}{\mathrm{d}{x}} + by = 0~.
+\end{equation}
+[25a] (x)$，使得它的导数和 $y
+[25b] (x)$ 自己成正比。
+[26] 一个最显然的解就是 $y(x) \equiv 0$，
+[27] 但它太简单了没什么意义，我们说这个解是
+[28] 平凡的（trivial）
+[29] 。
+[30] 对于非零解，一个直接的猜测就是自然指数函数 $y(x) = \mathrm{e} ^{ax}$ 其中 $a$ 为常数。
+[31] 把它代入
+[32] 式 3 [链接 L1]
+[33] \begin{equation}
+ay(x) + by(x) = 0~,
+\end{equation}
+[34] 所以消去 $y(x)$ 得 $b = -a$。
+[35] 再考虑到方程的线性，
+[36] 所以我们把这个解乘以任意常数 $C$ 同样是方程的解，
+[37] 所以
+[38] 式 3 [链接 L2]
+[39] 的通解为
+[40] \begin{equation}
+y(x) = C \mathrm{e} ^{-bx}~.
+\end{equation}
+
+[/SCOPE:s_const_coeff_homo_let]
+[/SCOPE:s_const_coeff_homo]
+[SCOPE:s_example1|description|例1 稀释酒精]
+[41] 例 1 稀释酒精
+[SCOPE:s_example1_let|let_bind|例1变量]
+[42] 一个容器中装有质量为 $M$（千克）的酒精，从某时刻开始以速率 $I$（千克每秒）加水，并以同样的速率从底部排水，保持容器中液体的总质量不变。
+[43] 假设容器中有某种快速搅拌装置，使两种液体时刻保持充分混合，求容器中酒精浓度 $x$（酒精质量比总质量）随时间的变化关系。
+[44] 解：令容器中酒精的质量为 $m_1$，水的质量为 $M - m_1$。
+[45] 流出容器的液体速率可以分为两部分：流出酒精的速率为 $xI$，流出水的速率为 $I - xI$。
+[46] 所以容器中酒精质量的变化率为
+[47] \begin{equation}
+m'_1 = -xI~.
+\end{equation}
+[48] \begin{equation}
+x' = \left(\frac{m_1}{M} \right) ' = \frac{m'_1}{M} = -\frac{I}{M}x~.
+\end{equation}
+[49] \begin{equation}
+x(t) = C \mathrm{e} ^{-It/M}~.
+\end{equation}
+
+[/SCOPE:s_example1]
+[/SCOPE:s_example1_let]
+[SCOPE:s_const_coeff_nonhomo|description|一阶常系数非齐次线性微分方程]
+[50] 现在，来看 $p(x) \equiv b$ 是常数时非齐次的情况，方程为
+[51] \begin{equation}
+\frac{\mathrm{d}{y}}{\mathrm{d}{x}} + by = f(x)~,
+\end{equation}
+[52] \begin{equation}
+y(x)=C \mathrm{e} ^{-bx}+ \mathrm{e} ^{-bx}\int f(x) \mathrm{e} ^{bx} \,\mathrm{d}{x} ~.
+\end{equation}
+
+[/SCOPE:s_const_coeff_nonhomo]
+[SCOPE:s_derivation_let|let_bind|常数变易法变量]
+[SCOPE:s_derivation|description|常数变易法推导常系数非齐次解]
+[53] 我们用所谓的常数变易法来求常系数非齐次线性方程式 9 的通解。
+[54] 这方法是把式 5 的通解中的 $C$ 换为 $x$ 的未知函数 $u(x)$，
+[55] 即作变换
+[56] \begin{equation}
+y(x)=u \mathrm{e} ^{-bx}~,
+\end{equation}
+[57] \begin{equation}
+\frac{\mathrm{d}{y}}{\mathrm{d}{x}} =u' \mathrm{e} ^{-bx}-bu \mathrm{e} ^{-bx}~.
+\end{equation}
+[58] 式 11 [链接 L3]
+[59] 式 12 [链接 L4]
+[60] 式 9 [链接 L5]
+[61] \begin{equation}
+u' \mathrm{e} ^{-bx}=f(x)~,
+\end{equation}
+[62] \begin{equation}
+\,\mathrm{d}{u} =f(x) \mathrm{e} ^{bx} \,\mathrm{d}{x} ~,
+\end{equation}
+[63] 两边积分，得
+[64] \begin{equation}
+u(x)=\int f(x) \mathrm{e} ^{bx} \,\mathrm{d}{x} +C~.
+\end{equation}
+[65] 式 15 [链接 L6]
+[66] 式 11 [链接 L7]
+[67] ，便得常系数非齐次线性方程
+[68] 式 9 [链接 L8]
+[69] \begin{equation}
+y(x)= \mathrm{e} ^{-bx} \left[\int f(x) \mathrm{e} ^{bx} \,\mathrm{d}{x} +C \right] ~.
+\end{equation}
+[70] 将上式写成两项之和，就得到了式 10
+[71] \begin{equation}
+y(x)=C \mathrm{e} ^{-bx}+ \mathrm{e} ^{-bx}\int f(x) \mathrm{e} ^{bx} \,\mathrm{d}{x} ~.
+\end{equation}
+[72] 右端第一项对应常系数齐次线性方程
+[73] 式 3 [链接 L9]
+[74] 的通解，第二项则是常系数非齐次线性方程
+[75] 式 9 [链接 L10]
+[76] 的一个特解（在通解
+[77] 式 16 [链接 L11]
+[78] 中取 $C=0$ 便得）。
+[79] 由此可知，一阶常系数非齐次线性方程的通解等于对应的齐次方程的通解与非齐次方程的一个特解之和。
+
+[/SCOPE:s_derivation_let]
+[/SCOPE:s_derivation]
+[SCOPE:s_general_homo|description|一阶线性齐次微分方程通解]
+[80] 我们先来看式 1 对应的齐次方程
+[81] \begin{equation}
+\frac{\mathrm{d}{y}}{\mathrm{d}{x}} + p(x)y = 0~.
+\end{equation}
+[82a] (y) \,\mathrm{d}{y} = Q
+[82b] (x) \,\mathrm{d}{x} $ 的形式），分离变量得
+[83] \begin{equation}
+\frac{ \,\mathrm{d}{y} }{y} = -p(x) \,\mathrm{d}{x} ~,
+\end{equation}
+[84] 分离变量使得两边可以分别对各自的变量积分。
+[85] 两边分别积分得
+[86] \begin{equation}
+\ln \left\lvert y \right\rvert = -\int p(x) dx + C~.
+\end{equation}
+[87] 两边取自然指数得
+[88] \begin{equation}
+y = \pm \mathrm{e} ^C \mathrm{e} ^{-\int p(x) \,\mathrm{d}{x} }~.
+\end{equation}
+[89] 把 $\pm \mathrm{e} ^C $ 整体看做一个任意常数 $C$，上式变为。
+[90] \begin{equation}
+y = C \mathrm{e} ^{-\int p(x) \,\mathrm{d}{x} }~.
+\end{equation}
+[91] 这就是一阶线性齐次微分方程
+[92] 式 18 [链接 L12]
+[93] 的通解，也叫
+[94] 式 1 [链接 L13]
+[95] 齐次解
+
+[/SCOPE:s_general_homo]
+[SCOPE:s_general_nonhomo_let|let_bind|一般非齐次变量]
+[SCOPE:s_general_nonhomo|description|一阶线性非齐次微分方程通解（一般形式）]
+[96] 重新考虑回式 1 的情况：
+[97] \begin{equation}
+y'+ P(x) y = Q(x) ~.
+\end{equation}
+[98a] (x) y = 0$ 的通解是 $C \exp\left(- \int P
+[98b] (x) \,\mathrm{d}{x} \right) $（这里 $ \exp\left(f\right) = e^f$）。
+[99] 而对于现在的这个方程我们只需要找到一个 “特解” 即可。
+[100] 也就是俗称的 “解集=通解+特解”。
+[101] 做一个常见假设：考虑 $y$ 还可以表示为 “分离变量” 的形式，
+[102] 即 $y=(C+\xi) \exp\left(- \int P(x) \,\mathrm{d}{x} \right) $。
+[103] 其中 $\xi=\xi(x)$ 贡献特解项。
+[104] 那么代回式 23 可以得到：
+[105] \begin{equation}
+\xi = \int \left[Q(x) \exp\left(\int P(x) \,\mathrm{d}{x} \right) \right] \,\mathrm{d}{x} ~.
+\end{equation}
+[106] 所以有，对于这一般形式的微分方程，有通解：
+[107] \begin{equation}
+y = \exp\left(- \int P(x) \,\mathrm{d}{x} \right) \left[\int\left(Q(x) \exp\left[ \int P(x) \,\mathrm{d}{x} \right] \,\mathrm{d}{x} \right) + C\right]~.
+\end{equation}
+
+[/SCOPE:s_general_nonhomo_let]
+[/SCOPE:s_general_nonhomo]
+[SCOPE:s_const_var_let|let_bind|常数变易法变量]
+[SCOPE:s_const_var|description|常数变易法（一般形式）]
+[108] 现在我们用常数变易法来解非齐次方程式 1 。
+[109a] (x) = \exp\left(-\int p
+[109b] (x) \,\mathrm{d}{x} \right) $。
+[110] 假设上式中的 $C$ 是一个函数 $C(x)$ 而不是常数，代入式 1 得
+[111] \begin{equation}
+C'y_0 + C[y_0' + p(x)y_0] = f(x)~.
+\end{equation}
+[112] 由于 $y_0$ 是齐次解，上式方括号中求和为 0，分离变量得
+[113] \begin{equation}
+\,\mathrm{d}{C} = \frac{f(x)}{y_0} \,\mathrm{d}{x} ~,
+\end{equation}
+[114] 两边积分得
+[115] \begin{equation}
+C(x) = \int \frac{f(x)}{y_0} \,\mathrm{d}{x} ~,
+\end{equation}
+[116] 所以一阶线性非齐次微分方程的通解为
+[117] \begin{equation}
+y = y_0 \int \frac{f(x)}{y_0} \,\mathrm{d}{x} ~,
+\end{equation}
+[118] \begin{equation}
+y_0(x) = \mathrm{e} ^{-\int p(x) \,\mathrm{d}{x} }~.
+\end{equation}
+[119] 注意待定常数包含在
+[120] 式 29 [链接 L14]
+[121] 的不定积分中，
+[122] 式 30 [链接 L15]
+[123] 中的不定积分产生的待定常数在代入
+[124] 式 29 [链接 L16]
+[125] 后可消去。
+[/SCOPE:s_const_var_let]
+[/SCOPE:s_const_var]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_const_coeff_homo",
+    "target_scope": "s_const_coeff_nonhomo",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "齐次是非齐次的特例"
+  },
+  {
+    "source_scope": "s_derivation",
+    "target_scope": "s_const_coeff_nonhomo",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推导出非齐次解公式"
+  },
+  {
+    "source_scope": "s_general_homo",
+    "target_scope": "s_general_nonhomo",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "齐次通解是非齐次通解的一部分"
+  },
+  {
+    "source_scope": "s_const_var",
+    "target_scope": "s_general_nonhomo",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "常数变易法推导一般非齐次解"
+  }
+]

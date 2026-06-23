@@ -1,0 +1,117 @@
+[SCOPE:root|description|子空间的正交关系]
+文章名: OrthSp
+标题: 子空间的正交关系
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=正交
+  [1] type=theorem heading=定理 1 title=
+  [2] type=example heading=例 1 title=
+  [3] type=exercise heading=习题 1 title=
+  [4] type=definition heading=定义 2 title=正交补空间
+  [5] type=theorem heading=定理 2 title=
+
+[SCOPE:s_def1|description|正交]
+[0] 定义 1 正交
+[SCOPE:s_def1_let1|let_bind|向量正交的变量]
+[1a] 一个内积空间 $V$ 中
+[1b] 如果两个向量 ${v_1}$ 和 ${v_2}$ 满足内积 $ \left\langle v_1, v_2 \right\rangle = 0$，我们，则称它们相互正交；
+[/SCOPE:s_def1_let1]
+[SCOPE:s_def1_let2|let_bind|子空间正交的变量]
+[2] 如果两个子空间 $V_1$ 和 $V_2$ 任意各选一个向量 ${v_1}$ 和 ${v_2}$ 都相互正交，
+[3] 那么我们就说者两个子空间相互正交。
+[/SCOPE:s_def1_let2]
+[4] 构造正交关系的一种简单的方法是，在 $V$ 中找到两组向量 $x_1, \dots, x_m$ 和 $y_1, \dots, y_m$，确保对任意 $x_i$ 和 $y_j$ 正交，
+[5] 那么 $x_1, \dots, x_m$ 张成的子空间必定和 $y_1, \dots, y_m$ 张成的子空间正交。
+[6] 从的角度来看，两个空间正交的充分必要条件是：
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理1]
+[7] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[8] 两个子空间 $V_1$ 和 $V_2$ 各选一组基底 $\{v_\alpha\}_\alpha$ 和 $\{w_\beta\}_\beta$，它们相互正交当且仅当对任意 $\alpha, \beta$ 都有 $ \left\langle v_\alpha, w_\beta \right\rangle = 0$。
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_let]
+[SCOPE:s_ex1|description|例1]
+[9] 三维几何向量空间中，建立直角坐标系，
+[10] 那么 $ \hat{\boldsymbol{\mathbf{x}}} $ 和 $ \hat{\boldsymbol{\mathbf{y}}} $ 张成的二维向量空间（平面）与 $ \hat{\boldsymbol{\mathbf{z}}} $ 张成的一维向量空间（直线）正交。
+[11] 虽然 $xy$ 平面和 $xz$ 平面是两个垂直的平面，
+[12] 但它们并不相互正交。
+[13] 例如向量 $ \hat{\boldsymbol{\mathbf{x}}} $ 是两个平面共同的向量，
+[14] 但 $ \hat{\boldsymbol{\mathbf{x}}} $ 和它本身不正交。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_exer1|description|习题1]
+[15] 习题 1
+[16] 证明两个相互正交的子空间中，只有零向量是共同向量；
+[17] 换言之，两个子空间是正交的，意味着它们两个是线性无关的（参考基底）。
+[SCOPE:s_exer1_let1|let_bind|习题1的变量1]
+[18] 若在两个相互正交的子空间 $V_1$ 和 $V_2$ 分别中取一组基底，
+[19] 那么将他们合并起来就得到了母空间中的一组基底。
+[/SCOPE:s_exer1_let1]
+[SCOPE:s_exer1_let2|let_bind|习题1的变量2]
+[20] 特别地，如果 $V_1$ 和 $V_2$ 各取一组正交归一基底 $\{v_\alpha\}_\alpha$ 和 $\{w_\beta\}_\beta$，
+[21] 那么合并之后 $\{v_\alpha, w_\beta\}_{\alpha, \beta}$ 就是直和空间 $V_1 \oplus V_2$ 中的一组正交归一基底。
+[/SCOPE:s_exer1_let2]
+[22] 但注意直和空间中的任意一组正交归一基底未必可以划分为 $V_1$，$V_2$ 空间中的两组基底。
+
+[/SCOPE:s_exer1]
+[SCOPE:s_def2|description|正交补空间]
+[23] 我们在 “直和” 中已经定义了补空间的概念，现在来定义一种特殊的补空间。
+
+[24] 定义 2 正交补空间
+[SCOPE:s_def2_let|let_bind|正交补的变量]
+[25] 在 $V$ 空间中，若 $V_1$ 和 $V_2$ 正交且 $V = V_1 \oplus V_2$，
+[26] 那么 $V_1$ 和 $V_2$ 互为对方的正交补空间（Orthogonal complement），简称正交补。
+
+[/SCOPE:s_def2]
+[/SCOPE:s_def2_let]
+[SCOPE:s_thm2|description|定理2]
+[27] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[28] 从基底的角度来看，两个有限维空间 $V_1, V_2$ 是关于 $V$ 的正交的充分必要条件是：如果从两空间各选一组基底 ${\alpha_i}$ $(i = 1, \dots, N_1)$ 和 ${\beta_i}$ $(i = 1, \dots, N_2)$，
+[29] 那么基底 $\{\alpha_1, \dots, \alpha_{N_1}, \beta_1, \dots, \beta_{N_2}\}$ 就是 $X$ 的一组正交归一基底。
+[/SCOPE:s_thm2_let]
+[30] 【未完成】正交补是唯一的
+[31] 【未完成】如何求正交补？
+[/SCOPE:s_thm2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是定义1的基底表述"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是正交定义的实例"
+  },
+  {
+    "source_scope": "s_exer1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题1基于正交定义"
+  },
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "正交补基于正交和直和"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2是正交补的基底条件"
+  }
+]

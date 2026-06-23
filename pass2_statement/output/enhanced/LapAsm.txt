@@ -1,0 +1,181 @@
+[SCOPE:root|description|拉普拉斯方法]
+文章名: LapAsm
+标题: 拉普拉斯方法
+
+环境标记 (hints):
+  [0] type=lemma heading=引理 1 title=Watson 引理
+
+[0] 在分析数学中，拉普拉斯渐近方法是一种计算含参数积分的渐近展开式的办法。
+[1] 所考察的积分一般具有如下形式：
+[2] \begin{equation}
+L(s)=\int_a^b \mathrm{e} ^{-s\Phi(x)}\psi(x)\, \,\mathrm{d}{x} ~,
+\end{equation}
+[3] 其中 $s$ 是正的实参数，考察当 $s\to+\infty$ 时积分的变化趋势。
+[4] 拉普拉斯方法背后的想法很简单：如果函数 $\Phi$ 在某点处达到极小值，
+[5] 那么当 $s$ 充分大时，只有极小值点附近的贡献才比较可观，其余部分相比起来都要小得多。
+
+[6] 拉普拉斯方法基于 Watson 引理。
+[7] 它本身也是很有用的。
+
+[SCOPE:s_watson|description|Watson 引理]
+[8] 引理 1 Watson 引理
+[SCOPE:s_watson_let|let_bind|Watson 引理的变量]
+[9] 设函数 $\phi:X\to Y$ 在 $\mathbb{R}^+$ 上连续，序列 $\left\{\lambda_n\right\}_0^\infty\left(\lambda_n>0\right)$ 单调递增，且存在 $\delta$ 右邻域 $B_{+}(0,\delta)\;(0<\delta<\pi/2)$，使得
+[10] \begin{equation}
+\phi\left(t\right)\sim\sum_{n=0}^{\infty}{c_nt^{\lambda_n-1}}\quad t\to0~.
+\end{equation}
+[11] 若有常数 $c,m>0$，满足 $\phi\left(t\right) \le me^{ct},t\to+\infty$，
+[/SCOPE:s_watson_let]
+[12] 则当 $s\to+\infty,z\in{\left\{z:\left|\arg{z}\right|\le\pi/2-\delta\right\}}$ 时，有
+[13] \begin{equation}
+\int_{\mathbb{R}^+} \mathrm{e} ^{-zt}\phi(t) \,\mathrm{d}{t} \sim\sum_{n=0}^{\infty}{c_n}\frac{\Gamma(\lambda_n)}{z^{\lambda_n}} ~.
+\end{equation}
+[14] 证：
+[15] 由 Laplace 的理论可知，
+[16] \[
+[17] F\left(z\right)=\int_{\mathbb{R}^+}{ \mathrm{e} ^{-zt}\phi\left(t\right)}\, \,\mathrm{d}{t} ~.
+[18] \]
+[19] 若函数 $\phi$ 满足定理中提到的三个条件，
+[20] 则 $F(z)$ 变换对于 $\operatorname{Re} z>c$ 是存在的。
+[21] 即：当 $\operatorname{Re} z>c$ 时，积分收敛。
+[22] 注意 式 2 意味着存在正整数 $N$，当 $n>N$ 时，对一切的 $t\in B_{+}(0,\delta)$，总有
+[23] \[
+[24] \left|\phi\left(t\right)-\sum_{n=0}^{N-1}{c_nt^{\lambda_n-1}}\right|\le Mt^{\lambda_N-1}~,
+[25] \]
+[26] 其中 $M>0$ 且为常数。
+[27] 同时 式 3 表明当时，存在正整数 $N$，当 $n>N$ 时，对一切的 $t$，总有
+[28] \[
+[29] \left|\phi\left(t\right)-\sum_{n=0}^{N-1}{c_nt^{\lambda_n-1}}\right|\le K \mathrm{e} ^{ct}t^{\lambda_N-1}~,
+[30] \]
+[31] 其中 $K>0$ 且为常数。
+[32] 于是就有
+[33] \begin{align*}
+\left|\int_{\mathbb{R}^+}{ \mathrm{e} ^{-zt}\phi\left(t\right)}\, \,\mathrm{d}{t} -\sum_{n=0}^{N-1}{c_n\int_ {\mathbb{R}^+}{ \mathrm{e} ^{-zt}t^{\lambda_n-1}}\, \,\mathrm{d}{t} }\right|\\
+\le K\int_{\mathbb{R}^+} \mathrm{e} ^{[-\operatorname{Re}z-c]t}t^{\lambda_N-1}\, \,\mathrm{d}{t} ~.
+\end{align*}
+[34] 注意到当 $\operatorname{Re}z>0$ 时
+[35] \[
+[36] \int_{\mathbb{R}^+}{ \mathrm{e} ^{-zt}t^{\lambda_n-1}}\, \,\mathrm{d}{t}
+[37] =\frac{1}{z^{\lambda_n}}\int_{\mathbb{R}^+}{ \mathrm{e} ^{-u}u^{\lambda_n-1}}\, \,\mathrm{d}{u}
+[38] =\frac{\Gamma\left(\lambda_n\right)}{z^{\lambda_n}}~,
+[39] \]
+[40] 因此
+[41] \begin{align*}
+\left|F(z)-\sum_{n=0}^{N-1}{c_n\frac{\Gamma\left(\lambda_n\right)}{z^{\lambda_n}}}\right|
+&\le K {\Gamma(\lambda_{N})\over \operatorname{[Re}z-c]^{\lambda_N}}\nonumber\\
+&=K{\Gamma(\lambda_{N})\over |z|^{\lambda_N}}\left(|z|\over \operatorname{Re}z-c\right)^{\lambda_N}\nonumber~.
+\end{align*}
+[42] 由于 $z\in{\left\{z:\left|\arg{z}\right|\le\pi/2-\delta\right\}}$，
+[43] 于是 $\operatorname{Re}z\geq |z|\sin \delta$。
+[44] 这表明当 $\left|z\right|$ 足够大时，$\operatorname{Re}z-c\geqslant1/2|z|\sin \delta$。
+[45] 因此
+[46] \[
+[47] F\left(z\right)-\sum_{n=0}^{N-1}{c_n\frac{\Gamma\left(\lambda_n\right)}{z^{\lambda_n}}}=O\left(z^{-\lambda_N}\right)~,
+[48] \]
+[49] 这就证明了 Watson's 引理。
+
+[/SCOPE:s_watson]
+[SCOPE:s_laplace|description|拉普拉斯方法]
+[50] 拉普拉斯方法是将 Watson 引理用于式 1 得到的。
+[SCOPE:s_laplace_let|let_bind|拉普拉斯方法的假设]
+[51] 作出如下假设：
+[52] 函数 $\Phi,\psi:X\to Y$ 都是光滑函数。
+[53] 函数 $\Phi(x)$ 在积分区间 $I=[a,b]$ 内部仅有一个严格的极小值点 $x_0\in(a,b)$，同时 $\Phi''(x_0)>0$，且 $x_0$ 是整个区间上的最小值点。
+[54] 式 1 对于 $s=s_0$ 绝对收敛。
+[/SCOPE:s_laplace_let]
+[55] 【图解】图 1：函数 $\Phi(x)$ 示意图
+[56] 于是 $\Phi'(x_0)=0$。
+[57] 由泰勒公式可知，存在正数 $\delta>0$，使得对于任意的 $x\in B(x_0,\delta)~,$
+[58] \[
+[59a] (x)=\Phi(x_0)+\frac{1}{2}\Phi''(x_0)(x-x_0)^2+\varphi
+[59b] (x)(x-x_0)^3~,
+[60] \]
+[61] 其中存在正数 $M>0$，使得函数 $|\varphi|\leq M$。
+[62] 当 $s$ 充分大时，邻域 $B(x_0,\delta)$ 以外的积分的贡献比 $s$ 的任何负幂次衰减得都快：根据假定 2，当 $x\in I\setminus B(x_0,\delta)$ 时，存在正数 $\varepsilon_0>0$ 使得 $\Phi(x)>\Phi(x_0)+\varepsilon_0$，
+[63] 从而邻域 $B(x_0,\delta)$ 之外的积分估计为
+[64] \begin{align*}
+\left|\int\limits_{I\setminus B(x_0,\delta)}\psi(x) \mathrm{e} ^{-s\Phi(x)}\, \,\mathrm{d}{x} \right|
+&\leq \mathrm{e} ^{-\epsilon_0(s-s_0)}\int_I|\psi(x)| \mathrm{e} ^{-s_0\Phi(x)}\, \,\mathrm{d}{x} \nonumber\\
+&\leq \mathrm{e} ^{-s_0\Phi(x_0)-\varepsilon_0s}\int_{I}|\psi(x)|\, \,\mathrm{d}{x} \nonumber~.
+\end{align*}
+[SCOPE:s_laplace_let2|let_bind|换元变量]
+[65] 而在邻域 $B(x_0,\delta)$ 内，可作如下换元：$y^2=\Phi(x)-\Phi(x_0)$，
+[66] 即
+[67] \[
+[68] y=\sqrt{\frac{\Phi''(x_0)}{2}}(x-x_0)\left(1+\frac{2}{\Phi''(x_0)}(x-x_0)\varphi(x)\right)^{1/2}~.
+[69] \]
+[70] 令 $\alpha<\beta$ 分别等于 $\pm\sqrt{\Phi(x_0\pm\delta)-\Phi(x_0)}$，又设当 $y\to0$ 时，函数 $\tilde{\psi}$ 有泰勒展开
+[71] \begin{equation}
+\tilde{\psi}(y):=\psi(x(y))\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{x} }[x(y)]\sim c_0+c_1y+\cdots \quad ~
+\end{equation}
+[72] （这里是进行了拉格朗日反演，显然有 $c_0=\psi(x_0)\sqrt{2/\Phi''(x_0)}$），
+[/SCOPE:s_laplace_let2]
+[73] 则当 $s\to+\infty$
+[74] $$
+\begin{aligned}
+\int_{B(x_0,\delta)}\psi(x) \mathrm{e} ^{-s\Phi(x)}\, \,\mathrm{d}{x}
+&= \mathrm{e} ^{-s\Phi(x_0)}\int_{\alpha}^{\beta}\tilde \psi(y) \mathrm{e} ^{-sy^2}\, \,\mathrm{d}{y} \\
+&\sim \mathrm{e} ^{-s\Phi(x_0)}\int_{0}^{\varepsilon_0}[\tilde \psi(y)+\tilde \psi(-y)] \mathrm{e} ^{-sy^2}\, \,\mathrm{d}{y} ~.
+\end{aligned}
+$$
+[75] 应用 Watson 引理，最后终于得到
+[76] 式 1 [链接 L0]
+[77] 当 $s\to+\infty$ 时的渐近展开：
+[78] \begin{equation}
+L(s)\sim \mathrm{e} ^{-s\Phi(x_0)}\sum_{n=0}^\infty c_{2n}\Gamma\left(n+\frac{1}{2}\right)s^{-n-1/2}~,
+\end{equation}
+[79] 其中 $c_n$ 由
+[80] 式 4 [链接 L1]
+[81] 给出。
+[82] 特别地，由于 $\Gamma(1/2)=\sqrt{\pi}$，
+[83] 式 1 [链接 L2]
+[84] 渐近公式的首项是
+[85] \[
+[86] L(s)= \mathrm{e} ^{-s\Phi(x_0)}\left(As^{-1/2}+O(s^{-1/2})\right)~\quad (s\to+\infty)~,
+[87] \]
+[88] 其中
+[89] \[
+[90] A=\sqrt{2\pi}\frac{\psi(x_0)}{(\Phi''(x_0))^{1/2}}~.
+[91] \]
+
+[/SCOPE:s_laplace]
+[SCOPE:s_stirling|description|斯特林公式]
+[92] 拉普拉斯方法最基本的应用就是导出 $\Gamma$ 函数的斯特林公式（Stirling formula）。
+[SCOPE:s_stirling_let|let_bind|斯特林公式的变量]
+[93] 按照定义，
+[94] \[
+[95] \Gamma(s+1)
+[96] =\int_0^\infty x^s \mathrm{e} ^{-x}\, \,\mathrm{d}{x}
+[97] =e^{(s+1)\log s}\int_0^\infty \mathrm{e} ^{-s(x-\log x)}\, \,\mathrm{d}{x} ~.
+[98] \]
+[99] 最后一步换元 $x\mapsto sx$。
+[100a] (x)\equiv1$，$\Phi
+[100b] (x)=x-\log x$。
+[/SCOPE:s_stirling_let]
+[101] 于是 $x=1$ 是 $\Phi(x)$ 唯一的极小值点，同时也是唯一的最小值点。
+[102] 代入式 5 ，就得到渐近公式
+[103] \[
+[104] \Gamma(s+1)\sim\sqrt{2\pi s}\left(\frac{s}{ \mathrm{e} }\right)^s\quad (s\to+\infty)~.
+[105] \]
+[106] 式 5 还给出了更精细的渐近级数：
+[107] \[
+[108] \Gamma(s+1)
+[109] =\sqrt{2\pi s}\left({s\over \mathrm{e} }\right)^s
+[110] \left(
+[111] 1+{1\over12s}+{1\over288 s^2}+ \cdots
+[112] \right)\quad (s\to+\infty)~,
+[113] \]
+[114] 毫无疑问这是一个可以对大的 $n$ 来近似计算 $n!$ 的公式。
+[/SCOPE:s_stirling]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_laplace",
+    "target_scope": "s_watson",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "拉普拉斯方法引用 Watson 引理"
+  }
+]

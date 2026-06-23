@@ -1,0 +1,273 @@
+{
+  "article_name": "HsIden",
+  "statements": [
+    {
+      "stmt_id": "st_identity_def",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_sec1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_identity_example",
+      "subtype": "example",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_sec1",
+      "exposed_entities": [
+        "a",
+        "b",
+        "c",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_binom_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_binom",
+      "exposed_entities": [
+        "a",
+        "b",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_power_diff",
+      "subtype": "theorem",
+      "clause_range": [
+        19,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_power",
+      "exposed_entities": [
+        "a",
+        "b",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_power_sum",
+      "subtype": "theorem",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "true",
+      "scope_id": "s_power",
+      "exposed_entities": [
+        "a",
+        "b",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_formula_vs_identity",
+      "subtype": "remark",
+      "clause_range": [
+        27,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_sec1_disc",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_max_def",
+      "subtype": "definition",
+      "clause_range": [
+        69,
+        72
+      ],
+      "truth_value": null,
+      "scope_id": "s_maxdef",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_max_formula",
+      "subtype": "remark",
+      "clause_range": [
+        73,
+        75
+      ],
+      "truth_value": null,
+      "scope_id": "s_maxdef",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_set_max_def",
+      "subtype": "definition",
+      "clause_range": [
+        81,
+        83
+      ],
+      "truth_value": null,
+      "scope_id": "s_setmax",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_func_max_def",
+      "subtype": "definition",
+      "clause_range": [
+        95,
+        99
+      ],
+      "truth_value": null,
+      "scope_id": "s_funcmax",
+      "exposed_entities": [
+        "f",
+        "x",
+        "x_0",
+        "D"
+      ]
+    },
+    {
+      "stmt_id": "st_ineq_cond_max",
+      "subtype": "condition",
+      "clause_range": [
+        102,
+        103
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ineqcond",
+      "exposed_entities": [
+        "A",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_ineq_cond_constant",
+      "subtype": "condition",
+      "clause_range": [
+        116,
+        118
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ineqcond",
+      "exposed_entities": [
+        "A",
+        "f",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_basic_ineq_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        140,
+        141
+      ],
+      "truth_value": "true",
+      "scope_id": "s_basic_ineq",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_mean_ineq_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        177,
+        180
+      ],
+      "truth_value": "true",
+      "scope_id": "s_mean_ineq",
+      "exposed_entities": [
+        "a_1",
+        "a_2",
+        "a_n"
+      ]
+    },
+    {
+      "stmt_id": "st_sort_ineq_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        195,
+        198
+      ],
+      "truth_value": "true",
+      "scope_id": "s_sort_ineq",
+      "exposed_entities": [
+        "a_1",
+        "a_2",
+        "a_n",
+        "b_1",
+        "b_2",
+        "b_n"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1",
+      "subtype": "lemma",
+      "clause_range": [
+        200,
+        204
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "a",
+        "b",
+        "m",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_cauchy_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        223,
+        225
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cauchy",
+      "exposed_entities": [
+        "u",
+        "v"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_basic_ineq_theorem",
+      "target": "st_mean_ineq_theorem",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_sort_ineq_theorem",
+      "target": "st_basic_ineq_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sort_ineq_theorem",
+      "target": "st_cauchy_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

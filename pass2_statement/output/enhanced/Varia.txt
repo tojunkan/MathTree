@@ -1,0 +1,185 @@
+[SCOPE:root|description|变分]
+文章名: Varia
+标题: 变分
+
+[0] 泛函是函数概念中自变数用函数替换的推广，而变分则是函数微分在泛函里的推广。
+[1] 简单来说，正如微分为函数改变量的主要线性部分，变分是泛函改变量的主要线性部分。
+[2] 另一方面，若将函数和泛函用参数的形式表示，
+[3a] (t)=f(x_1+th_1,\cdots,x_n+th_n) $ 的微分是 $\phi
+[3b] (t)$ 对于 $t$ 在 $t=0$ 上的微商，而泛函 $J(y+t\eta)$ 的变分是函数 $\varphi
+[3c] (t)=J(y+t\eta)$ 对于参变数 $t$ 在 $t=0$ 时的微商。
+[4] 下面来具体讨论！
+
+[SCOPE:s_diff_intro|description|微分复习引言]
+[5] 先简略复习一下多元函数微分的定义是有必要的。
+
+[/SCOPE:s_diff_intro]
+[SCOPE:s_diff_def1|description|微分第一定义]
+[SCOPE:s_diff_def1_let|let_bind|微分第一定义变量]
+[6] 设已给函数 $f(x_1,\cdots,x_n)$ 具有一阶连续偏微商，
+[/SCOPE:s_diff_def1_let]
+[7] 则有
+[8] \begin{equation}
+\begin{aligned}
+&f(x_1+h_1,\cdots,x_n+h_n)-f(x_1,\cdots,x_n)\\
+&=\sum_{i=1}^{n} \frac{\partial f(x_1,\cdots,x_n)}{\partial x_i} h_i+\epsilon~,
+\end{aligned}
+\end{equation}
+[9] 其中 $\epsilon$ 是相对于 $ \left\lvert h_i \right\rvert $ 中最大者（或 $\sqrt{h_1^2+h_2^2+\cdots+h_n^2}$）的 高阶无穷小。而
+[10] \begin{equation}
+\sum_{i=1}^{n} \frac{\partial f(x_1,\cdots,x_n)}{\partial x_i} h_i~
+\end{equation}
+[11] 是改变量 $h_1,h_2,\cdots,h_n$ 的线性函数，称为函数 $f(x_1,\cdots,x_n)$ 的
+[12] 微分
+
+[/SCOPE:s_diff_def1]
+[SCOPE:s_diff_def2|description|微分第二定义]
+[SCOPE:s_diff_def2_let|let_bind|微分第二定义变量]
+[13] $n$ 维空间中，过点 $(x_1,\cdots,x_n)$ 和 $(x_1+h_1,\cdots,x_n+h_n)$ 的直线为 $(x_1+th_1,\cdots,x_n+th_n)\;(-\infty< t<+\infty)$。
+[14] 在这条直线上函数 $f$ 化为参变数 $t$ 的函数
+[/SCOPE:s_diff_def2_let]
+[15] \begin{equation}
+\phi(t)=f(x_1+th_1,\cdots,x_n+th_n) ~,
+\end{equation}
+[16] \begin{equation}
+\begin{aligned}
+\phi'(t)&= \frac{\mathrm{d}{}}{\mathrm{d}{t}} f(x_1+th_1,\cdots,x_n+th_n) \\
+&=\sum_{i=1}^n \frac{\partial f(x_1+th_1,\cdots,x_n+th_n)}{\partial x_i} h_i~,
+\\
+\Downarrow
+\\
+\phi'(0)&=\sum_{i=1}^n \frac{\partial f(x_1,\cdots,x_n)}{\partial x_i} h_i~,
+\end{aligned}
+\end{equation}
+[17] 这就是说，微分 $\sum\limits_{i=1}^n \frac{\partial f(x_1,\cdots,x_n)}{\partial x_i} h_i$ 是 $\phi(t)$ 对于 $t$ 在 $t=0$ 上的微商。
+
+[/SCOPE:s_diff_def2]
+[SCOPE:s_var_def1|description|变分第一定义]
+[SCOPE:s_var_def1_let1|let_bind|变分第一定义变量1]
+[18] 设已给泛函
+[19] \begin{equation}
+J=\int_a^b F(x,y,y') \,\mathrm{d}{x} ~.
+\end{equation}
+[20a] (x)$ 属于具有连续微商的函数类 $C_1$（若函数 $f
+[20b] (x)$ 在其定义域上直到 $n$ 阶微商都连续，
+[21] 则称 $f(x)$ 是
+[22] $C_n$ 类
+[/SCOPE:s_var_def1_let1]
+[SCOPE:s_var_def1_let2|let_bind|变分第一定义变量2]
+[23a] (x),\overline{y}
+[23b] (x)$ 是 $C_1$ 类的，且
+[24] \begin{equation}
+\eta(x)=\overline{y}(x)-y(x)~,
+\end{equation}
+[/SCOPE:s_var_def1_let2]
+[25] 则 $\eta'(x)$ 显然是连续的。作
+[26] \begin{equation}
+J(\overline{y})-J(y)=\int_a^b \left[F(x,y+\eta,y'+\eta')-F(x,y,y') \right] \,\mathrm{d}{x} ~.
+\end{equation}
+[27] 由拉格朗日微分中值定理
+[28] 定理 2 [链接 L0]
+[29] 这里应该是多元函数的拉格朗日中值定理，应完善相关文章插入引用
+[30] 式 7 可写为
+[31] \begin{equation}
+J(\overline{y})-J(y)=\int_a^b \left[\tilde{F}'_y\eta(x)+\tilde{F}'_{y'}\eta'(x) \right] \,\mathrm{d}{x} ~,
+\end{equation}
+[32] 其中 $\tilde{F}$ 表示它的变数 $\tilde{y},\tilde{y}'$ 分别在 $y,\overline{y}$ 和 $y',\overline{y}'$ 之间。
+[33] 因为对 $a\leq x\leq b$，总假设曲线之间的距离是一级的定义 2 。有
+[34] \begin{equation}
+\begin{aligned}
+& \left\lvert \overline{y}-y \right\rvert < \left\lvert \eta(x) \right\rvert \leq r(y,\overline{y})~,\\
+& \left\lvert \overline{y}'-y \right\rvert < \left\lvert \eta'(x) \right\rvert \leq r(y,\overline{y})~.
+\end{aligned}
+\end{equation}
+[35] 由于 $F_y,F_{y'}$ 连续，任给 $\epsilon$，当 $r(y,\overline{y})$ 充分小时，将有
+[36] \begin{equation}
+\left\lvert \tilde{F}'_y-F'_y \right\rvert <\epsilon~,\quad \left\lvert \tilde{F}'_{y'}-F'_{y'} \right\rvert <\epsilon~,
+\end{equation}
+[37] \begin{equation}
+\begin{aligned}
+&J(\overline{y})-J(y)\\
+&=\int_a^b \left[F'_y\eta(x)+F'_{y'}\eta'(x) \right] \,\mathrm{d}{x} +\int_a^b \left[(\tilde{F}'_y-F'_y)\eta(x)+(\tilde{F}'_{y'}-F'_{y'})\eta'(x) \right] \,\mathrm{d}{x} \\
+&=\int_a^b \left[F'_y\eta(x)+F'_{y'}\eta'(x) \right] \,\mathrm{d}{x} +\epsilon_1r(y,\overline{y})~.
+\end{aligned}
+\end{equation}
+[38] 这里根据不等式
+[39] 式 10 [链接 L1]
+[40] ，$\epsilon_1$ 随 $r(y,\overline{y})$ 而趋于 0。
+[41a] (x)+F'_{y'}\eta'
+[41b] (x) \right] \,\mathrm{d}{x} $ 与泛函改变量只差一个比 $r(y,\overline{y})$ 更高阶的无穷小量，它显然线性的依赖于 $\eta
+[41c] (x)$，
+[42] 即是泛函 $J$ 改变量的主要线性部分，称为泛函 $J$ 的
+[43] 变分
+[44] ，记作 $\delta{J}$：
+[45] \begin{equation}
+\delta J=\int_a^b \left[F'_y(x,y,y')\eta(x)+F'_{y'}(x,y,y')\eta'(x) \right] \,\mathrm{d}{x} ~.
+\end{equation}
+[46a] (x)$ 和改变量 $\eta
+[46b] (x)$ 的泛函。
+
+[/SCOPE:s_var_def1]
+[SCOPE:s_var_def2|description|变分第二定义]
+[SCOPE:s_var_def2_let|let_bind|变分第二定义变量]
+[47a] (x)+t\eta
+[47b] (x)$，其中 $y
+[47c] (x),\eta
+[47d] (x)$ 固定，泛函 $J(y+t\eta)$ 化为 $t$ 的函数
+[/SCOPE:s_var_def2_let]
+[48] \begin{equation}
+\varphi(t)=J(y+t\eta)~.
+\end{equation}
+[49] 式 11 [链接 L2]
+[50] \begin{equation}
+J(y+t\eta)-J(y)=t\int_a^b \left(F'_y\eta+F'_{y'}\eta' \right) \,\mathrm{d}{x} +\epsilon_t~,
+\end{equation}
+[51] 其中，$\epsilon_t=\epsilon_1r(y,y+t\eta)=\epsilon_1 \left\lvert t \right\rvert r(y,y+\eta)$，且
+[52] \begin{equation}
+\lim_{t\rightarrow 0}\frac{\epsilon_t}{t}=0~,
+\end{equation}
+[53] \begin{equation}
+\varphi'(0)=\lim_{t\rightarrow 0}\frac{\varphi(t)-\varphi(0)}{t}=\lim_{t\rightarrow 0}\frac{J(y+t\eta)-J(y)}{t}=\int_a^b \left(F'_y\eta+F'_{y'}\eta' \right) \,\mathrm{d}{x} ~,
+\end{equation}
+[54] 于是变分是函数 $\varphi(t)=J(y+t\eta)$ 对于 $t$ 在 $t=0$ 时的微商。
+[55] 于是，得到变分的另一定义：变分是函数 $\varphi(t)=J(y+t\eta)$ 对于参变数 $t$ 当 $t=0$ 时的微商。
+
+[/SCOPE:s_var_def2]
+[SCOPE:s_var_y|description|函数的变分]
+[56a] (x)$ 的改变量 $\eta
+[56b] (x)$ 称为 $y
+[56c] (x)$ 的变分，记作 $\delta y
+[56d] (x)$，
+[57] 即
+[58] \begin{equation}
+\delta y(x)=\eta(x)=\overline{y}(x)-y(x)~.
+\end{equation}
+[59] 因此，变分 $\delta J$ 式 12 可写为
+[60] \begin{equation}
+\delta J=\int_a^b \left[F'_y(x,y,y')\delta y+F'_{y'}(x,y,y')\delta y' \right] \,\mathrm{d}{x} ~.
+\end{equation}
+[/SCOPE:s_var_y]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_diff_def2",
+    "target_scope": "s_diff_def1",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "微分两个定义等价"
+  },
+  {
+    "source_scope": "s_var_def2",
+    "target_scope": "s_var_def1",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "变分两个定义等价"
+  },
+  {
+    "source_scope": "s_var_y",
+    "target_scope": "s_var_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "函数的变分是泛函变分的特例"
+  }
+]

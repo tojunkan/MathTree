@@ -1,0 +1,308 @@
+{
+  "article_name": "Ode2N",
+  "statements": [
+    {
+      "stmt_id": "st_intro_eq_form",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "y",
+        "f(x)",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_solution_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_let_W",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let",
+      "exposed_entities": [
+        "W",
+        "y1",
+        "y2"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_let_y1y2",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let",
+      "exposed_entities": [
+        "y1",
+        "y2",
+        "W",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_derivation_let_form",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation_let",
+      "exposed_entities": [
+        "v1",
+        "v2",
+        "y1",
+        "y2"
+      ]
+    },
+    {
+      "stmt_id": "st_derivation_cond",
+      "subtype": "assumption",
+      "clause_range": [
+        19,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation_cond",
+      "exposed_entities": [
+        "v1'",
+        "v2'"
+      ]
+    },
+    {
+      "stmt_id": "st_derivation_derivative",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_second_derivative",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_substitute",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        34
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_simplify",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        38
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_summary",
+      "subtype": "conclusion",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_system",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        41
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "v1'",
+        "v2'"
+      ]
+    },
+    {
+      "stmt_id": "st_derivation_solution_v",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "v1'",
+        "v2'",
+        "W"
+      ]
+    },
+    {
+      "stmt_id": "st_derivation_integrate",
+      "subtype": "conclusion",
+      "clause_range": [
+        44,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "stmt_id": "st_derivation_final_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        48,
+        53
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_general_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        54,
+        54
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_note",
+      "subtype": "remark",
+      "clause_range": [
+        55,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_derivation_let_form",
+      "target": "st_derivation_derivative",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_cond",
+      "target": "st_derivation_derivative",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_derivative",
+      "target": "st_derivation_second_derivative",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_second_derivative",
+      "target": "st_derivation_substitute",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_substitute",
+      "target": "st_derivation_simplify",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_simplify",
+      "target": "st_derivation_summary",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_summary",
+      "target": "st_derivation_system",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_system",
+      "target": "st_derivation_solution_v",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_solution_v",
+      "target": "st_derivation_integrate",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_integrate",
+      "target": "st_derivation_final_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_final_formula",
+      "target": "st_derivation_general_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_general_solution",
+      "target": "st_derivation_note",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_derivation_final_formula",
+      "target": "st_intro_solution_formula",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推导得到通解公式，是 intro 中公式的推导"
+    }
+  ],
+  "unresolved": []
+}

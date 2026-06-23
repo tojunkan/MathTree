@@ -1,0 +1,113 @@
+[SCOPE:root|description|光滑映射（流形）]
+文章名: DiffTg
+标题: 光滑映射（流形）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=光滑映射
+  [1] type=definition heading=定义 2 title=微分
+  [2] type=definition heading=定义 3 title=浸入
+  [3] type=definition heading=定义 4 title=浸没
+  [4] type=example heading=例 1 title=浸入与浸没
+
+[SCOPE:s_smooth_map_def|description|光滑映射]
+[0] 我们已经熟悉了欧几里得空间中的光滑映射。
+[1] 由于流形是局部同胚于欧几里得空间的，
+[2] 因此我们可以方便地导出流形上光滑映射的概念。
+
+[3] 定义 1 光滑映射
+[SCOPE:s_smooth_map_let|let_bind|光滑映射的变量]
+[4] 给定两个流形间的映射 $f:M\to N$，如果对于任意点 $p\in M$，存在一个 $M$ 的图 $(U, \varphi)$ 和一个 $N$ 的图 $(V, \phi)$，使得 $p\in U$，$f(U)\subseteq V$，且 $\phi\circ f\circ\varphi^{-1}$ 是一个欧几里得空间之间的光滑映射，
+[5] 那么称 $f$ 是流形间的光滑映射（smooth function）。
+[/SCOPE:s_smooth_map_let]
+[6] 由于光滑流形定义中 “相容” 的要求，如果 $f$ 是流形间的光滑映射，
+[7] 那么它在任何图上导出的欧几里得空间之间的映射，都是光滑映射。
+
+[/SCOPE:s_smooth_map_def]
+[SCOPE:s_differential_def|description|微分]
+[8] 给定两个流形间的光滑映射，也就给定了流形上的道路之间的映射。
+[9] 由于道路等同于切向量，我们还可以导出一个切空间之间的映射，这个映射就被称为微分。
+
+[10] 定义 2 微分
+[SCOPE:s_differential_let|let_bind|微分的变量]
+[11] 对于两个流形 $M$ 和 $N$，给定它们之间的一个光滑映射 $f:M\to N$。
+[12] 对于 $p\in M$ 处出发的一条道路 $v:I\to M$，我们可以导出 $f(p)\in N$ 处出发的道路 $f\circ v:I\to N$。
+[13a] (p)}N$，使得对于任意 $v\in T_pM$，有 $ \,\mathrm{d}{f} _p
+[13b] (v)=f\circ v$。
+[/SCOPE:s_differential_let]
+[14] 称 $ \,\mathrm{d}{f} $ 为 $f$ 在点 $p$ 处的微分（differential）1。
+[15] $ \,\mathrm{d}{f} _p$ 是切空间之间的线性映射，
+[16a] (p)\in N$ 的局部坐标系（图）以后，也就能顺便导出 $T_pM$ 和 $T_{f
+[16b] (p)}N$ 的坐标系，
+[17] 从而可以把 $ \,\mathrm{d}{f} _p$ 表示成一个矩阵——它就是 $f$ 的 Jacobi 矩阵。
+[18] 这也是为什么我们使用 “微分” 这个术语来称呼它。
+[19] 整个流形 $M$ 上所有点处的 $ \,\mathrm{d}{f} _p$ 可以简单表示为一个 $ \,\mathrm{d}{f} :TM\to TN$。
+[20] 这样，$ \,\mathrm{d}{f} _p$ 可以视为 $ \,\mathrm{d}{f} |_p$，
+[21] 即 $ \,\mathrm{d}{f} $ 在 $p$ 点处的限制。
+[22] 由于可以用矩阵来表示微分，自然就有了秩（rank）的概念，参见线性代数中 “矩阵的秩” 的定义。
+[23] 【未完成】线性代数中 “矩阵的秩” 的定义
+
+[/SCOPE:s_differential_def]
+[SCOPE:s_immersion_def|description|浸入]
+[24] 定义 3 浸入
+[SCOPE:s_immersion_let|let_bind|浸入的变量]
+[25] 给定流形间的光滑映射 $f:M\to N$。
+[26] 如果在任意点 $p\in M$ 处都有 $ \operatorname {rank} \,\mathrm{d}{f} _p= \operatorname {dim}T_pM$，
+[/SCOPE:s_immersion_let]
+[27] 则称 $f$ 为浸入（immersion）。
+
+[/SCOPE:s_immersion_def]
+[SCOPE:s_submersion_def|description|浸没]
+[28] 定义 4 浸没
+[SCOPE:s_submersion_let|let_bind|浸没的变量]
+[29] 给定流形间的光滑映射 $f:M\to N$。
+[30] 如果在任意点 $p\in M$ 处都有 $ \operatorname {rank} \,\mathrm{d}{f} _p= \operatorname {dim}T_pN$，
+[/SCOPE:s_submersion_let]
+[31] 则称 $f$ 为浸没（submersion）。
+[32] 浸入映射的另一个等价定义是说，$ \,\mathrm{d}{f} $ 处处是单射；
+[33] 而浸没映射也可以定义为，$ \,\mathrm{d}{f} $ 处处是满射。
+[34] 这两个术语的含义，通过以下例子可以直观感受到：
+
+[/SCOPE:s_submersion_def]
+[SCOPE:s_example|description|浸入与浸没]
+[35] 例 1 浸入与浸没
+[SCOPE:s_example_let|let_bind|例子的变量]
+[36] 考虑三维欧几里得空间中的两个子流形 $S^1=\{(x, y, z)\in\mathbb{R}^3|x^2+y^2=1, z=0\}$ 和 $S^2=\{(x, y, z)\in\mathbb{R}^3|x^2+y^2+z^2=1\}$。
+[37] 定义映射 $f:S^1\to S^2$ 为 $f(x, y, 0)=(x, y, 0)$，
+[/SCOPE:s_example_let]
+[38] 那么这是一个浸入。
+[39] 定义映射 $g:S^2\to S^1$ 为 $f(x, y, z)=(x, y, 0)$，
+[40] 那么这是一个浸没。
+[/SCOPE:s_example]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_immersion_def",
+    "target_scope": "s_differential_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "浸入定义依赖于微分"
+  },
+  {
+    "source_scope": "s_submersion_def",
+    "target_scope": "s_differential_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "浸没定义依赖于微分"
+  },
+  {
+    "source_scope": "s_example",
+    "target_scope": "s_immersion_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例子说明浸入"
+  },
+  {
+    "source_scope": "s_example",
+    "target_scope": "s_submersion_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例子说明浸没"
+  }
+]

@@ -1,0 +1,238 @@
+{
+  "article_name": "groupt",
+  "statements": [
+    {
+      "stmt_id": "st_rearr_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        2,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_rearrangement",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rearr_assump_a",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_rearr_let",
+      "exposed_entities": [
+        "a",
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_rearr_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        4,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rearr_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rearr_proof_Ginv",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rearrangement",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rearr_proof_aG",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rearrangement",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mtable_def",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_multiplication_table",
+      "exposed_entities": [
+        "群乘法表"
+      ]
+    },
+    {
+      "stmt_id": "st_c3_let",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_mtable_let_c3",
+      "exposed_entities": [
+        "C3",
+        "e",
+        "d",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_c3_table",
+      "subtype": "example",
+      "clause_range": [
+        15,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_mtable_let_c3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rearr_implication",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_multiplication_table",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_classification",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_multiplication_table",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_c4_let",
+      "subtype": "assumption",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_mtable_let_c4",
+      "exposed_entities": [
+        "C4",
+        "V4"
+      ]
+    },
+    {
+      "stmt_id": "st_c4_table",
+      "subtype": "example",
+      "clause_range": [
+        28,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_mtable_let_c4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_v4_table",
+      "subtype": "example",
+      "clause_range": [
+        34,
+        39
+      ],
+      "truth_value": "true",
+      "scope_id": "s_mtable_let_v4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_abelian_note",
+      "subtype": "remark",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_mtable_let_v4",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_rearr_assump_a",
+      "target": "st_rearr_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rearr_conclusion",
+      "target": "st_rearr_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rearr_assump_a",
+      "target": "st_rearr_proof_Ginv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rearr_assump_a",
+      "target": "st_rearr_proof_aG",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rearr_theorem",
+      "target": "st_rearr_implication",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rearr_implication",
+      "target": "st_classification",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_c3_let",
+      "target": "st_c3_table",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_c4_let",
+      "target": "st_c4_table",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_c4_let",
+      "target": "st_v4_table",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_rearr_theorem",
+      "target": "st_rearr_implication",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "群乘法表部分引用重排定理"
+    }
+  ],
+  "unresolved": []
+}

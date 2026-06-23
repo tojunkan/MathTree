@@ -1,0 +1,170 @@
+[SCOPE:root|description|高维空间球坐标及其度规]
+文章名: nDSM
+标题: 高维空间球坐标及其度规
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=笛卡尔坐标
+  [1] type=definition heading=定义 2 title=高维空间的球坐标
+  [2] type=theorem heading=定理 1 title=
+  [3] type=definition heading=定义 3 title=球坐标
+
+[0] 1将三维空间笛卡尔坐标和球坐标的关系推广到高维空间，可以得到高维空间的球坐标。
+[1] 本节将推导 $N+1$ 维空间中的球坐标及其对应的度规张量。
+[2] 记号约定：本文在指标求和约定下进行。
+
+[SCOPE:s_def1|description|笛卡尔坐标]
+[3] 定义 1 笛卡尔坐标
+[SCOPE:s_def1_let|let_bind|笛卡尔坐标变量]
+[4] 在 $N+1$ 空间中，若在坐标 $(x^1,\cdots,x^{N+1})$ 下，线元平方 $ \,\mathrm{d}{s} ^2$ 可写为
+[5] \begin{equation}
+\,\mathrm{d}{s} ^2=( \,\mathrm{d}{x} ^1)^2+\cdots+( \,\mathrm{d}{x} ^{N+1})^2,~
+\end{equation}
+[/SCOPE:s_def1_let]
+[6] 笛卡尔坐标
+[7] 高维空间中的球坐标可以通过三维空间的球坐标推广得到。
+[8] 在三维空间中，笛卡尔坐标 $(x,y,z)$ 和球坐标 $(r,\theta,\varphi)$ 的关系具有这样的几何图像：$r$ 代表（由坐标原点指向对应点的矢量）对应点径矢的长度，$\theta$ 是径矢与 $z$ 轴的夹角，$\varphi$ 是径矢在 $x-y$ 平面的投影与 $x$ 轴的夹角。
+[9] 由此得到两坐标系统的转换关系
+[10] \begin{equation}
+\begin{aligned}
+&x=r\sin\theta\cos\varphi,\\
+&y=r\sin\theta\sin\varphi,\\
+&z=r\cos\theta.\\
+\end{aligned}~
+\end{equation}
+[11] 推广到 $N+1$ 维空间中，
+[12] 则 $N+1$ 维球坐标 $(r,\theta^1,\cdots,\theta^{N})$ 和笛卡尔坐标 $(x^1,\cdots,x^{N+1})$ 具有这样的联系：$r$ 代表点径矢的大小，$\theta^{N}$ 代表径矢和 $x^{N+1}$ 轴的夹角，$\theta^{N-1}$ 代表径矢在垂直与 $x^{N+1}$ 的超曲面上的投影和 $x^{N}$ 的夹角, $\theta^{N-2}$ 代表径矢在垂直于 $x^{N+1}$ 的投影矢量,再次投影在垂直于 $x^{N+1},x^{N}$ 轴的平面上，得到的投影矢量和 $x^{N-1}$ 的夹角，其它球坐标以此类推。
+[13] 因此可得 $n+1$ 空间的球坐标和笛卡尔坐标的关系。
+[14] 其可以总结在下面的球坐标的定义中。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|高维空间的球坐标]
+[15] 定义 2 高维空间的球坐标
+[SCOPE:s_def2_let|let_bind|球坐标变量]
+[16] 是 $(x^1,\cdots,x^{N+1})$ 是 $N+1$ 维空间的笛卡尔坐标，
+[17] 则称如下定义的坐标 $(r,\theta,\varphi)$ 为该空间上的球坐标。
+[18] \begin{equation}
+\begin{aligned}
+&x^{N+1}=r\cos \theta^N,\\
+&x^{N}=r\sin \theta^N\cos\theta^{N-1},\\
+&x^{N-1}=r\sin \theta^N\sin\theta^{N-1}\cos\theta^{N-2},\\
+&\cdots\\
+&x^{2}=r\sin \theta^N\sin\theta^{N-1}\ldots\sin\theta^2\cos\theta^1,\\
+&x^{1}=r\sin \theta^N\sin\theta^{N-1}\ldots\sin\theta^2\sin\theta^1.\\
+\end{aligned}~
+\end{equation}
+[/SCOPE:s_def2_let]
+[19] 细心的读者可能会有疑问：在定义 1 中定义笛卡尔坐标时，没有用到其它坐标，而在定义 2 中定义球坐标时却用到了笛卡尔坐标。
+[20] 难不成笛卡尔坐标相比其它坐标而言具有一种特权性？
+[21] 事实是，我们这里的定义只是起到教学的作用。
+[22] 球坐标和其它所有的坐标都是平等的，都不需要通过其它坐标来定义，而只要像笛卡尔坐标的定义一样，通过线元的具体形式定义即可。
+[23] 我们的目的就是要获得为什么称最终定义球坐标的线元定义的坐标为球坐标。
+[24] 现在，如果我们根据式 3 得到了球坐标的线元的表达式，
+[25] 那么我们便能够欣然接受这一事实。
+
+[/SCOPE:s_def2]
+[26] 最直接的计算就是将式 3 带入式 1 。
+[27] 然而，我们采用线元的微分形式 $ \,\mathrm{d}{s} ^2=g_{ij} \,\mathrm{d}{x} ^i \,\mathrm{d}{x} ^j$ 不变性来推导（当然没有本质的不同）。
+[28] 从而在球坐标下，成立
+[29] \begin{equation}
+\begin{aligned}
+\,\mathrm{d}{s} ^2= g_{i'j'} \,\mathrm{d}{x} ^{i'} \,\mathrm{d}{x} ^{j'}.
+\end{aligned}~
+\end{equation}
+[30] 其中 $x^{N+1'}=r,x^{i'}=\theta^i,i=1,\cdots,N$。
+[31] 显然
+[32] \begin{equation}
+g_{i'j'}=g_{ij} \frac{\partial x^i}{\partial x^{i'}} \frac{\partial x^j}{\partial x^{j'}} .~
+\end{equation}
+[33] 在笛卡尔坐标下，$g_{ij}=\delta_{ij}$.
+[34] 由式 3 可得
+[35] \begin{equation}
+\begin{aligned}
+& \frac{\partial x^{i}}{\partial x^{N+1'}} =\frac{x^{i}}{r},\\
+& \frac{\partial x^{i}}{\partial x^{j'}} =\left\{\begin{aligned}
+&0,i\geq j+2,\\
+&-x^{j+1}\tan\theta^j,i=j+1,\\
+&x^i\cot\theta^j,i\leq j.
+\end{aligned}\right.
+\end{aligned}~
+\end{equation}
+[36] 式 6 [链接 L0]
+[37] 式 5 [链接 L1]
+[38] ，并注意 $r$ 代表对应点的径矢大小，且 $\sum_\limits{i=1}^{j}(x^i)^2=(x^{j+1})^2\tan^2\theta^j$。
+[39] 便得
+[40] \begin{equation}
+\begin{aligned}
+g_{N+1',N+1'}&=\sum_{i=1}^{N+1} \left( \frac{\partial x^i}{\partial x^{N+1'}} \right) ^2=\sum_{i=1}^{N+1} \left(\frac{x^{i}}{r} \right) ^2=1.\\
+g_{j',j'}&=\sum_{i=1}^{N+1} \left( \frac{\partial x^i}{\partial x^{j'}} \…[truncated]…l x^{i+1}}{\partial x^{j'}} +\sum_{k=i+2}^{N+1} \frac{\partial x^k}{\partial x^{i'}} \frac{\partial x^k}{\partial x^{j'}} \\
+&=\sum_{k=1}^{i}(x^k)^2\cot\theta^i\cot\theta^j-(x^{i+1})^2\cot\theta^j\tan\theta^i\\
+&=0,i< j.
+\end{aligned}~
+\end{equation}
+[41] 式 3 [链接 L2]
+[42] 还可以得到 $ \left(\frac{x^{j+1}}{\cos\theta^j} \right) ^2=r^2\prod\limits_{k=j+1}^{N}\sin^2\theta^{k}$。
+[43] 因此，我们得到下面的定理
+
+[SCOPE:s_theorem1|description|定理1]
+[44] 定理 1
+[SCOPE:s_theorem1_let|let_bind|定理1变量]
+[45] 在 $n+1$ 维空间中，球坐标系式 3 的度规张量为
+[46] \begin{equation}
+\begin{aligned}
+g_{ij}&=\mathrm{diag}(\eta_i),\\
+\eta_{i}&=\left\{\begin{aligned}
+& \left(\frac{x^{i+1}}{\cos\theta^i} \right) ^2=r^2\prod\limits_{k=i+1}^{N}\sin^2\theta^{k},i\leq N,\\
+&1,i=N+1.
+\end{aligned}\right.
+\end{aligned}~
+\end{equation}
+[/SCOPE:s_theorem1_let]
+[47] 若计算球坐标系下，度规张量的行列式，
+[48] 则可得
+[49] \begin{equation}
+g=\det{g_{ij}}=r^{2N}\prod_{i=1}^N\prod\limits_{k=i+1}^{N}\sin^2\theta^{k}.~
+\end{equation}
+[50] 注意到每当 $i$ 增加 1 时，$\prod\limits_{k=i+1}^{N}\sin^2\theta^{k}$ 中的代表 $k$ 的最低项数量就少 1。
+[51] 而 $i=1$ 时，$k$ 最低项为 $\sin ^2\theta^2$，后续随着 $i$ 增加，都不再出现，
+[52] 因此 $\sin ^2\theta^2$ 出现在结果的次数为 1。
+[53] 同理，$\sin ^2\theta^3$ 出现在结果的次数为 2。
+[54] 依次类推得
+[55] \begin{equation}
+g=r^{2N}\prod\limits_{k=2}^{N}\sin^{2(k-1)}\theta^{k}.~
+\end{equation}
+[56] 仿照笛卡尔坐标的定义，现在我们可以得到不依赖于其它特点坐标的球坐标的下面定义。
+
+[/SCOPE:s_theorem1]
+[SCOPE:s_def3|description|球坐标]
+[57] 定义 3 球坐标
+[SCOPE:s_def3_let|let_bind|球坐标变量]
+[58] 在 $N+1$ 维空间中，若在坐标 $(r,\theta^1,\cdots,\theta^{N})$ 下，线元平方 $ \,\mathrm{d}{s} ^2$ 可写为
+[59] \begin{equation}
+\,\mathrm{d}{s} ^2=( \,\mathrm{d}{r} )^2+ r^2\sum_{i=1}^N\prod\limits_{k=i+1}^{N}\sin^2\theta^{k}( \,\mathrm{d}{\theta} ^i)^2,~
+\end{equation}
+[/SCOPE:s_def3]
+[/SCOPE:s_def3_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "球坐标定义基于笛卡尔坐标"
+  },
+  {
+    "source_scope": "s_theorem1",
+    "target_scope": "s_def2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理1推导球坐标下的度规"
+  },
+  {
+    "source_scope": "s_def3",
+    "target_scope": "s_theorem1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义3是定理1的线元形式"
+  }
+]

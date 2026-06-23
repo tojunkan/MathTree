@@ -1,0 +1,391 @@
+{
+  "article_name": "LPaODE",
+  "statements": [
+    {
+      "stmt_id": "st_intro_claim",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ode_sym_form",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_ode_sym",
+      "exposed_entities": [
+        "x",
+        "y_i",
+        "f_i"
+      ]
+    },
+    {
+      "stmt_id": "st_ode_sym_let",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_ode_sym_let",
+      "exposed_entities": [
+        "x_1",
+        "x_{i+1}",
+        "X_i"
+      ]
+    },
+    {
+      "stmt_id": "st_ode_sym_equiv",
+      "subtype": "conclusion",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ode_sym",
+      "exposed_entities": [
+        "varphi_i",
+        "C_i"
+      ]
+    },
+    {
+      "stmt_id": "st_ode_to_pde_let",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_ode_to_pde_let",
+      "exposed_entities": [
+        "varphi",
+        "x_1",
+        "x_2",
+        "x_{n+1}"
+      ]
+    },
+    {
+      "stmt_id": "st_ode_to_pde_deriv",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ode_to_pde",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ode_to_pde_arbitrary",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_ode_to_pde",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ode_to_pde_varphi_satisfies",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ode_to_pde",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1",
+      "exposed_entities": [
+        "varphi",
+        "x_1",
+        "x_{n+1}"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem1_proof_let",
+      "subtype": "assumption",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1_proof_let",
+      "exposed_entities": [
+        "varphi"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem1_proof_dphi",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        42
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_proof_invariance",
+      "subtype": "remark",
+      "clause_range": [
+        43,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_proof_varphi_const",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        53
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        55,
+        56
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_corollary1_statement",
+      "subtype": "corollary",
+      "clause_range": [
+        57,
+        58
+      ],
+      "truth_value": "true",
+      "scope_id": "s_corollary1",
+      "exposed_entities": [
+        "varphi_i",
+        "C_i"
+      ]
+    },
+    {
+      "stmt_id": "st_general_pde_form",
+      "subtype": "definition",
+      "clause_range": [
+        59,
+        61
+      ],
+      "truth_value": null,
+      "scope_id": "s_general_pde",
+      "exposed_entities": [
+        "Y_i",
+        "varphi",
+        "x_1",
+        "x_n"
+      ]
+    },
+    {
+      "stmt_id": "st_general_pde_let",
+      "subtype": "assumption",
+      "clause_range": [
+        62,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_general_pde_let",
+      "exposed_entities": [
+        "omega",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_general_pde_omega_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        65,
+        69
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_general_pde",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_general_pde_omega_satisfies",
+      "subtype": "conclusion",
+      "clause_range": [
+        70,
+        73
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_general_pde",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_general_pde_varphi_determined",
+      "subtype": "conclusion",
+      "clause_range": [
+        74,
+        76
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_general_pde",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_general_pde_note",
+      "subtype": "remark",
+      "clause_range": [
+        77,
+        77
+      ],
+      "truth_value": null,
+      "scope_id": "s_general_pde",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ode_sym_let",
+      "target": "st_ode_sym_equiv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ode_to_pde_let",
+      "target": "st_ode_to_pde_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ode_to_pde_arbitrary",
+      "target": "st_ode_to_pde_varphi_satisfies",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_proof_let",
+      "target": "st_theorem1_proof_dphi",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_proof_dphi",
+      "target": "st_theorem1_proof_varphi_const",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_general_pde_let",
+      "target": "st_general_pde_omega_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_general_pde_omega_eq",
+      "target": "st_general_pde_omega_satisfies",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_general_pde_omega_satisfies",
+      "target": "st_general_pde_varphi_determined",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_proof_varphi_const",
+      "target": "st_theorem1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ode_to_pde_deriv",
+      "target": "st_theorem1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ode_to_pde_varphi_satisfies",
+      "target": "st_theorem1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_statement",
+      "target": "st_theorem1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_conclusion",
+      "target": "st_corollary1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_general_pde_varphi_determined",
+      "target": "st_theorem1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_proof_invariance",
+      "target": "st_theorem1_proof_varphi_const",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_general_pde_note",
+      "target": "st_general_pde_varphi_determined",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_theorem1_statement",
+      "target": "st_ode_to_pde_deriv",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理 1 的充分性由 s_ode_to_pde 推导得出"
+    },
+    {
+      "source": "st_corollary1_statement",
+      "target": "st_theorem1_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论 1 是定理 1 的直接推论"
+    },
+    {
+      "source": "st_general_pde_omega_satisfies",
+      "target": "st_theorem1_statement",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "一般一阶线性 PDE 化为齐次后应用定理 1"
+    }
+  ],
+  "unresolved": []
+}

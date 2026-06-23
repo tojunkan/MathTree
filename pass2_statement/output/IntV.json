@@ -1,0 +1,154 @@
+{
+  "article_name": "IntV",
+  "statements": [
+    {
+      "stmt_id": "st_indef_let",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_indef_let",
+      "exposed_entities": [
+        "f(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_indef_def",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_indef_let",
+      "exposed_entities": [
+        "F(t)",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_indef_comp",
+      "subtype": "conclusion",
+      "clause_range": [
+        4,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_indef",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_let",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let",
+      "exposed_entities": [
+        "f(t)",
+        "t1",
+        "t2"
+      ]
+    },
+    {
+      "stmt_id": "st_def_def",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_comp",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "r(t)",
+        "v(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        34
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_indef_let",
+      "target": "st_indef_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_indef_def",
+      "target": "st_indef_comp",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_let",
+      "target": "st_def_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_def",
+      "target": "st_def_comp",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_let",
+      "target": "st_example1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_def_comp",
+      "target": "st_indef_comp",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定积分利用不定积分（原函数）计算"
+    },
+    {
+      "source": "st_example1_concl",
+      "target": "st_def_comp",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1应用定积分（牛顿-莱布尼兹公式）"
+    }
+  ],
+  "unresolved": []
+}

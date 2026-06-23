@@ -1,0 +1,59 @@
+[SCOPE:root|description|拉普拉斯变换]
+文章名: LapTra
+标题: 拉普拉斯变换
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=example heading=例 2 title=
+  [2] type=example heading=例 3 title=
+  [3] type=example heading=例 4 title=
+
+[SCOPE:s_ex1|description|例1]
+[0] 求 $\mathscr L[1]$。
+[1] 在 $ \operatorname{Re} p>0$（即 $\sigma>0$）的半平面上，
+[2] \begin{equation}
+\int_{0}^{\infty} 1 \cdot e^{-p t} d t=\frac{1}{p}~,
+\end{equation}
+[3] \begin{equation}
+\mathscr{L}[1]=\frac{1}{p} \quad(\operatorname{Re} p>0)~.
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2]
+[4] 求 $\mathscr L[t]$。
+[5] 在 $ \operatorname{Re} p>0$ 的半平面上
+[6] \begin{equation}
+\begin{aligned} \int_{0}^{\infty} t \mathrm{e}^{-p t} \mathrm{d} t &=-\frac{1}{p} \int_{0}^{\infty} t \mathrm{d}\left(\mathrm{e}^{-p t}\right) \\ &=-\frac{1}{p}\left[t \mathrm{e}^{-p t}\right]_{0}^{\infty}+\frac{1}{p} \int_{0}^{\infty} \mathrm{e}^{-p t} \mathrm{d} t \\ &=\frac{1}{p} \int_{0}^{\infty} \mathrm{e}^{-p t} \mathrm{d} t=\frac{1}{p^{2}} ~,\end{aligned}
+\end{equation}
+[7] \begin{equation}
+\mathscr{L}[t]=\frac{1}{p^{2}} \quad(\operatorname{Re} p>0)~.
+\end{equation}
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|例3]
+[8] 求 $\mathscr L[\mathrm e^{st}]$，$s$ 为常数。
+[9] 在 $\operatorname{Re} p>\operatorname{Re} s$ 的半平面上，
+[10] \begin{equation}
+\begin{aligned} \int_{0}^{\infty} \mathrm{e}^{s t} \mathrm{e}^{-p t} \mathrm{d} t
+&=\int_{0}^{\infty} \mathrm{e}^{-(p-s) t} \mathrm{d} t=-\frac{1}{p-s}\left[\mathrm{e}^{-(p-s) t}\right]_{0}^{\infty} \\
+&=\frac{1}{p-s}~, \end{aligned}
+\end{equation}
+[11] \begin{equation}
+\mathscr{L}\left[\mathrm{e}^{st}\right]=\frac{1}{p-s} \quad(\operatorname{Re} p>\operatorname{Re} s)~.
+\end{equation}
+
+[/SCOPE:s_ex3]
+[SCOPE:s_ex4|description|例4]
+[12] 求 $\mathscr L[t\mathrm e^{st}]$，$s$ 为常数。
+[13] 在 $\operatorname{Re} p>\operatorname{Re} s$ 的半平面上，
+[14] \begin{equation}
+\begin{aligned} \int_{0}^{\infty} t \mathrm{e}^{s t} \mathrm{e}^{-p t} \mathrm{d} t &=-\frac{1}{p-s} \int_{0}^{\infty} t \mathrm{d}\left[\mathrm{e}^{-(p-s) t}\right] \\ &=-\frac{1}{p-s}\left\{\left[t \mathrm{e}^{-(p-s) t}\right]_{0}^{\infty}-\int_{0}^{\infty} \mathrm{e}^{-(p-s) t} \mathrm{d} t\right\} \\ &=\frac{1}{(p-s)^{2}} ~,\end{aligned}
+\end{equation}
+[15] \begin{equation}
+\mathscr{S}\left[t \mathrm{e}^{s t}\right]=\frac{1}{(p-s)^{2}} \quad(\operatorname{Re} p>\operatorname{Re} s)~.
+\end{equation}
+[16] \begin{equation}
+\mathscr{L}\left[t^{n} \mathrm{e}^{n}\right]=\frac{n !}{(p-s)^{n+1}}~.
+\end{equation}
+[/SCOPE:s_ex4]
+[/SCOPE:root]

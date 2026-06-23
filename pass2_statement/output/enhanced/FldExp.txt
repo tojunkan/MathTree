@@ -1,0 +1,489 @@
+[SCOPE:root|description|域的扩张]
+文章名: FldExp
+标题: 域的扩张
+
+环境标记 (hints):
+  [0] type=exercise heading=习题 1 title=有理数域的 $\sqrt{2}$ 扩张
+  [1] type=exercise heading=习题 2 title=超越扩域
+  [2] type=definition heading=定义 1 title=域的单扩张
+  [3] type=definition heading=定义 2 title=本原元
+  [4] type=definition heading=定义 3 title=最小多项式
+  [5] type=definition heading=定义 4 title=代数元素与超越元素
+  [6] type=theorem heading=定理 1 title=
+  [7] type=definition heading=定义 5 title=域的扩张
+  [8] type=definition heading=定义 6 title=域的扩张次数
+  [9] type=theorem heading=定理 2 title=单扩张的次数 $=$ 最小多项式的次数
+  [10] type=definition heading=定义 7 title=代数扩张与超越扩张
+  [11] type=theorem heading=定理 3 title=
+  [12] type=corollary heading=推论 1 title=
+  [13] type=theorem heading=定理 4 title=
+  [14] type=corollary heading=推论 2 title=
+  [15] type=corollary heading=推论 3 title=中间域升链
+  [16] type=definition heading=定义 8 title=开拓
+  [17] type=theorem heading=定理 5 title=
+  [18] type=theorem heading=定理 6 title=
+  [19] type=example heading=例 1 title=
+  [20] type=definition heading=定义 9 title=代数闭包
+  [21] type=theorem heading=定理 7 title=
+  [22] type=corollary heading=推论 4 title=代数扩张的代数扩张还是代数扩张
+
+[0] 理想的符号 $<,>$，应该改成 $\langle, \rangle$，
+[1] 但我个人更喜欢
+[2] $(,)$
+[3] 应该区分多项式和多项式环，在修改了预备知识后应该修改
+
+[4] 如果在一个域中添加不属于域集合的元素，我们可以得到一个更大的集合。
+[5] 要让这个新集合成为域，我们就得定义新元素和原来域中元素相加和相乘的结果；
+[6] 无论怎么定义，这个结果必须满足域的公理。
+[7] 如果在集合中任何元素都无法成为某个运算结果，
+[8] 那么我们就必须再引入新的元素来作为这个结果。
+[9] 以此类推，不停地添加新元素，直到最后不需要添加新元素了，那最后这个集合就是一个新的域，它包含了原来的域。
+[10] 这个域是原来的域的扩张，并且是包含最初那个新元素的最小的域，
+[11] 因此被称为单元素扩张，简称单扩张。
+[12] 域的单扩张具体是怎么进行的呢？
+[13] 我们将从例子开始说明，最后引入域的单扩张的定义。
+
+[SCOPE:s_ex1|description|有理数域的√2扩张]
+[SCOPE:s_ex1_let|let_bind|习题1变量]
+[14] 习题 1 有理数域的 $\sqrt{2}$ 扩张
+[15] 给定有理数域 $\mathbb{Q}$，
+[16] 则 $\sqrt{2}$ 并不是 $\mathbb{Q}$ 的元素。
+[/SCOPE:s_ex1_let]
+[17] 将 $\sqrt{2}$ 添加进去，
+[18] 那么由于 $\sqrt{2}$ 是实数域 $\mathbb{R}$ 的元素，这提示我们可以把新的运算结果按照 $\mathbb{R}$ 中的运算来定义。
+[19] 这样，$\mathbb{Q}$ 中添加 $\sqrt{2}$ 的单扩域的集合就是 $\{a+b\sqrt{2}|a, b\in\mathbb{Q}\}$。
+[20] 请验证，任意 $a+b\sqrt{2}$ 都必须在扩域中；
+[21] 而这个集合也满足了加法和乘法的封闭性与逆元存在性，
+[22] 从而构成了一个域。
+[23] 于是，这个集合是包含 $\sqrt{2}$ 和全体有理数的最小的域。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|超越扩域]
+[SCOPE:s_ex2_let|let_bind|习题2变量]
+[24] 习题 2 超越扩域
+[25] 依然给定有理数域 $\mathbb{Q}$，这次添加的元素是 $\pi$。
+[26] 那么扩域应当是
+[/SCOPE:s_ex2_let]
+[27] \begin{equation}
+\left\{ \frac{\sum_{i=0}^N a_i\pi^i}{\sum_{j=0}^M b_j\pi^j} \middle| a_i, b_j\in\mathbb{Q}, b_j\text{不全为零，} N, M\in\mathbb{Z}^+ \right\}~
+\end{equation}
+[28] 验证这是一个域，并且是包含全体有理数和 $\pi$ 的最小域。
+[29] 注意 $a_i$ 全为 $0$ 的情况意味着什么。
+[30] 这是 $\mathbb{Q}$ 中添加 $\pi$ 后的单扩张。
+[31] 借助分式域和多项式环的概念，我们可以简练地定义域的单扩张如下：
+
+[/SCOPE:s_ex2]
+[SCOPE:s_def1|description|域的单扩张]
+[SCOPE:s_def1_let|let_bind|定义1变量]
+[32] 定义 1 域的单扩张
+[33] 给定域 $\mathbb{F}$ 和一个元素 $x_0$，其中 $x_0$ 在 $\mathbb{F}$ 上的最小多项式是 $f(x)$。
+[34] 定义 $\mathbb{F}$ 添加 $x_0$ 的单扩张是多项式环 $\mathbb{F}[x_0]=\mathbb{F}[x]/< f(x_0)>$ 的分式域，记为 $\mathbb{F}(x_0)$
+[/SCOPE:s_def1_let]
+[35] 在定义 1 中，如果 $x_0$ 在 $\mathbb{F}$ 中没有最小多项式，
+[36] 那么 $\mathbb{F}(x_0)$ 中的各元素彼此不同，此时我们称 $x_0$ 是 $\mathbb{F}$ 的超越元（transcendental element）；
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|本原元]
+[SCOPE:s_def2_let|let_bind|定义2变量]
+[37] 定义 2 本原元
+[38] 设 $\mathbb{K}/\mathbb{F}$ 是有限次的域扩张，如果存在 $a\in\mathbb{K}$ 使得 $\mathbb{K}=\mathbb{F}(a)$，
+[39] 则称 $a$ 是域扩张 $\mathbb{K}/\mathbb{F}$ 的本原元素（primitive element），或者说是 $\mathbb{K}$ 对 $\mathbb{F}$ 的本原元素，简称本原元，有时也称原根。
+[/SCOPE:s_def2_let]
+[40] 观察习题 1 和习题 2 中两个域扩张的特点，我们容易发现，由于加法和乘法的封闭性，添加某个元素后的单扩张，必须包含这个元素的所有多项式，系数取自域中；
+[41] 由于乘法逆元存在性，这些多项式的倒数也得包含进去。
+[42] 因此，域的单扩张可以简单理解为把新元素的多项式都添加进去的过程。
+[43] 但是两个场景是不太一样的。
+[44] $\mathbb{Q}$ 中添加 $\pi$ 的过程中，包含了所有 $\pi$ 的有理系数多项式，比如 $3.5\pi^4+2\pi^2+0.1\pi-1/3$，
+[45] 但是添加 $\sqrt{2}$ 的时候却只需要最多 $1$ 阶的多项式，像 $3.5(\sqrt{2})^3+1$ 就可以改写为 $7\sqrt{2}+1$。
+[46] 这是因为 $\sqrt{2}$ 的 $2$ 次方是一个有理数，落入了 $\mathbb{Q}$ 中，
+[47] 因此 $\sqrt{2}$ 的 $2$ 阶及以上的有理系数多项式都可以表示为最多 $1$ 阶的多项式。
+[48] 换一种更方便的表述，那就是 $x^2-2$ 这个多项式是阶数最小的能将 $\sqrt{2}$ 映射为 $0$ 的多项式。
+[49] 这就引出最小多项式的概念。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|最小多项式]
+[SCOPE:s_def3_let|let_bind|定义3变量]
+[50] 定义 3 最小多项式
+[51] 给定一个环 $R$ 和任意元素 $x_0$，其中 $x_0$不一定是 $R$ 中的元素。记
+[52] $$R[x_0]=\{\sum_{i=0}^N r_ix_0^i|r_i\in R, N\in\mathbb{Z}^+\}~.$$ 称 $R[x_0]$ 是 $x_0$ 在 $R$ 中的多项式环。
+[/SCOPE:s_def3_let]
+[53] 在 $R[x_0]$ 中，如果存在一个多项式 $f(x_0)=0$，
+[54] 那么称 $f(x_0)$ 是 $x_0$ 在 $R$ 上的零化多项式（null polynomial）；
+[55] 阶数最低的零化多项式，称为 $x_0$ 的最小多项式（minimal polynomial），或极小多项式。
+[56] 如果不存在多项式 $f$ 使得 $f(x_0)=0$，
+[57] 那么称 $x_0$ 在 $R$ 中不具有最小多项式。
+[58] 在习题 1 和习题 2 中，$\pi$ 和 $\sqrt{2}$ 的本质区别就是：在 $\mathbb{Q}$ 中，$\pi$ 没有最小多项式，
+[59] 但是 $\sqrt{2}$ 具有最小多项式 $x^2-2$。
+[60] 这决定了同一个域 $\mathbb{Q}$ 分别添加 $\pi$ 和 $\sqrt{2}$ 后的不同单扩张。
+
+[/SCOPE:s_def3]
+[SCOPE:s_def4|description|代数元素与超越元素]
+[SCOPE:s_def4_let|let_bind|定义4变量]
+[61] 定义 4 代数元素与超越元素
+[62] 给定环 $R$ 及其子环 $S$，如果元素 $a\in R$ 在 $S$ 上有最小多项式，
+[63] 则称之为 $S$ 的代数元素（algebraic element），否则称之为超越元素（transcendental element）.
+[/SCOPE:s_def4_let]
+[64] 特别地，整数环 $\mathbb{Z}$ 上的代数元素，称为代数数（algebraic number），而不是其代数元素的实数则称为超越数（transcendental number）。
+[65] 定义 4 中要给定 $R$ 来讨论其子环 $S$，是为了保证 $a$ 已经定义好了与 $S$ 中各元素的运算。
+[66a] 如果有别的办法定义，那自然不需要
+[66b] 则麻烦。
+[67] 比如我们在习题 1 中讨论的 $\mathbb{Q}(\sqrt{2})$，虽然 $\sqrt{2}$ 不在 $\mathbb{Q}$ 中，
+[68] 但我们已经定义好了它与各有理数的运算关系。
+[69] 这个运算关系是怎么确定的呢？
+[70] 那就是用其在 $\mathbb{Q}$ 上的最小多项式，$x^2-2$。
+[71] 因此，关于 $\sqrt{2}$ 的一切性质，其最小多项式 $x^2-2$ 已经阐述清楚了。
+[72] 我们可以转而用最小多项式来描述扩域的过程，这和写出 $\sqrt{2}$ 是等价的，只是用起来更方便，更广泛。
+[73] 比如说，要给 $\mathbb{Q}$ 添加一个元素 $a\not\in \mathbb{Q}$ 来进行扩域，而 $a$ 在 $\mathbb{Q}$ 上的最小多项式是 $x^6+x^5-2x^3+7.5x^2-x+9$，那研究这个多项式自然比研究 $a$ 到底是哪个实数要方便得多。
+
+[/SCOPE:s_def4]
+[SCOPE:s_thm1|description|定理1]
+[SCOPE:s_thm1_let|let_bind|定理1变量]
+[74] 定理 1
+[75] 给定域 $\mathbb{F}$，取其超越元素 $x_1$ 和 $x_2$，
+[76] 则 $\mathbb{F}(x_1)$ 与 $\mathbb{F}(x_2)$ 同构。
+[/SCOPE:s_thm1_let]
+[77] 证明思路是显然的，从 $\mathbb{F}(x_1)$ 到 $\mathbb{F}(x_2)$ 的同构映射只需要将所有出现 $x_1$ 的地方都替换成 $x_2$ 即可，比如 $\frac{1}{x_1+x_1^2}$ 映射到 $\frac{1}{x_2+x_2^2}$。
+[78] 容易想到，$x_0$ 的最小多项式必然是给定域上的不可约多项式。
+[79] 因为一旦可约，那其因子的次数都小于它，
+[80] 但总得有一个因子是 $x_0$ 的零化多项式，这就违背了 “最小” 的定义。
+
+[/SCOPE:s_thm1]
+[81] 以上，我们讨论了如何添加一个元素，并根据元素的最小多项式来得到域的单扩张。
+[82] 对一个域进行单扩张以后，再进行单扩张，如此反复，我们可以获得域的多次扩张。
+[83] 更一般地，我们有关于域扩张的如下定义：
+
+[SCOPE:s_def5|description|域的扩张]
+[SCOPE:s_def5_let|let_bind|定义5变量]
+[84] 定义 5 域的扩张
+[85] 设 $\mathbb{K}$ 是一个域，$\mathbb{F}\subseteq \mathbb{K}$ 且在 $\mathbb{K}$ 的运算下也构成域，
+[86] 那么称 $\mathbb{F}$ 是 $\mathbb{K}$ 的子域，而 $\mathbb{K}$ 是 $\mathbb{F}$ 的扩域（extension field）或者扩张（field extension）。
+[87] 将上述域的扩张记为 $\mathbb{K}/\mathbb{F}$。
+[/SCOPE:s_def5_let]
+[88] 考虑域 $\mathbb{F}$ 及其扩域 $\mathbb{K}$。
+[89] $\mathbb{K}$ 中的元素彼此之间可以相加，也可以乘以$\mathbb{F}$中的元素，这两种运算分别对应线性空间中的向量加法与数乘。
+[90] 也就是说，$\mathbb{K}$ 可以视为 $\mathbb{F}$ 上的一个线性空间。
+
+[/SCOPE:s_def5]
+[SCOPE:s_def6|description|域的扩张次数]
+[SCOPE:s_def6_let|let_bind|定义6变量]
+[91] 定义 6 域的扩张次数
+[92] 给定域的扩张 $\mathbb{K}/\mathbb{F}$。
+[93] $\mathbb{K}$ 作为 $\mathbb{F}$ 上的线性空间的维数，称为 $\mathbb{K}$ 对 $\mathbb{F}$ 的扩张次数，记为 $[\mathbb{K}:\mathbb{F}]$。
+[/SCOPE:s_def6_let]
+[94] $[\mathbb{K}:\mathbb{F}]<\infty$ 时，称之为有限扩张，否则为无限扩张。
+[95] $[\mathbb{Q}(\sqrt{2}):\mathbb{Q}]=2$，
+[96] 因此习题 1 中的扩域是一个二次扩张。
+[97] 你可以把 $1$ 和 $\sqrt{2}$ 分别想象为两个基向量，而 $\mathbb{Q}(\sqrt{2})$ 就是这两个基向量在域 $\mathbb{Q}$ 上张成的线性空间。
+[98] 相对应地，$[\mathbb{Q}(2^{1/3}):\mathbb{Q}]$ 是一个三次扩张，其基向量是 $1$、$2^{1/3}$ 和 $2^{2/3}$。
+[99] 类似地，我们可以引申出以下定理：
+
+[/SCOPE:s_def6]
+[SCOPE:s_thm2|description|单扩张的次数=最小多项式的次数]
+[SCOPE:s_thm2_let|let_bind|定理2变量]
+[100] 定理 2 单扩张的次数 $=$ 最小多项式的次数
+[101] 设域 $\mathbb{F}$ 有一个单扩张$\mathbb{F}(a)$，其中 $a$ 在 $\mathbb{F}$ 中的最小多项式为 $f$，
+[102] 则 $[\mathbb{F}(a):\mathbb{F}]= \operatorname {deg}f$。
+[/SCOPE:s_thm2_let]
+[103] 证明：
+[104] 设 $ \operatorname {deg}f=n$，
+[105] 则 $n$ 也是 $f$ 的根的数目。
+[106] 则易证1$\{1, a, a^2, a^3, \cdots, a^{n-1}\}$ 是域 $\mathbb{F}$ 上线性空间 $\mathbb{F}(a)$ 的一组基。
+[107] 证毕。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_def7|description|代数扩张与超越扩张]
+[SCOPE:s_def7_let|let_bind|定义7变量]
+[108] 定义 7 代数扩张与超越扩张
+[109] 给定域 $\mathbb{F}$ 及其扩域 $\mathbb{K}$。
+[110] 如果 $\mathbb{K}$ 中元素都是 $\mathbb{F}$ 的代数元素，
+[/SCOPE:s_def7_let]
+[111] 则称 $[\mathbb{K}:\mathbb{F}]$ 是一个代数扩张（algebraic extension），否则是一个超越扩张（transcendental extension）。
+[112] 下面这个定理给出的是单代数扩张的等价定义：
+
+[/SCOPE:s_def7]
+[SCOPE:s_thm3|description|定理3]
+[SCOPE:s_thm3_let|let_bind|定理3变量]
+[113] 定理 3
+[114] 给定域 $\mathbb{F}$ 及其单扩张 $\mathbb{F}(a)$，
+[115] 则以下条件等价：
+[/SCOPE:s_thm3_let]
+[116] 1. $a$ 是 $\mathbb{F}$ 上的代数元；
+[117] 2. $[\mathbb{F}(a):\mathbb{F}]<\infty$；
+[118] 3. $[\mathbb{F}(a):\mathbb{F}]$ 是代数扩张。
+[119] 证明：
+[120] 1 $\to$ 2：由定理 2 直接可得。
+[121a] (a)$，由于 $[\mathbb{F}
+[121b] (a):\mathbb{F}]=n<\infty$，
+[122] 故向量组 $\{1, x, x^2, \cdots, x^n\}$ 必线性相关，
+[123] 因此存在一个 $\mathbb{F}$ 上的非零多项式 $f$ 使得 $f(1, x, x^2, \cdots, x^n)=0$。
+[124] 因此任意 $x$ 必是 $\mathbb{F}$ 上的代数元。
+[125] 3 $\to$ 1：由定义 7 直接可得。
+[126] 证毕。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_cor1|description|推论1]
+[SCOPE:s_cor1_let|let_bind|推论1变量]
+[127] 推论 1
+[128] 如果 $\mathbb{K}/\mathbb{F}$ 是有限扩张，
+[129] 则必是代数扩张。
+[/SCOPE:s_cor1_let]
+[130] 证明思路类比定理 3 中的 2 $\to$ 3。
+[131] 要注意的是，推论 1 只说了是有限扩张，而不是单有限扩张，
+[132] 因此无法像定理 3 那样反过来说 “代数扩张必是有限扩张”。
+[133] 比如说，$\mathbb{Q}$ 添加所有整数的平方根以后得到的显然是代数扩张，
+[134] 但同时也是无限扩张。
+
+[/SCOPE:s_cor1]
+[SCOPE:s_thm4|description|定理4]
+[SCOPE:s_thm4_let|let_bind|定理4变量]
+[135] 定理 4
+[136] 考虑扩域 $[\mathbb{K}:\mathbb{F}]$ 和 $[\mathbb{L}:\mathbb{K}]$，
+[137] 则有
+[138] \begin{equation}
+[\mathbb{L}:\mathbb{F}]=[\mathbb{K}:\mathbb{F}][\mathbb{L}:\mathbb{K}]~.
+\end{equation}
+[/SCOPE:s_thm4_let]
+[139] 证明：
+[140] 只需要考虑 $[\mathbb{K}:\mathbb{F}]$ 和 $[\mathbb{L}:\mathbb{K}]$ 都有限的情况，证明该情况之后可自然推出无限的情况。
+[141] 设 $\{\alpha_i\}_{i=1}^{n}$ 是 $\mathbb{K}$ 在 $\mathbb{F}$ 上的基，$\{\beta_i\}_{i=1}^{m}$ 是 $\mathbb{L}$ 在 $\mathbb{K}$ 上的基。
+[142] 任意 $l\in\mathbb{L}$ 均可表示为
+[143] \begin{equation}
+l = \sum_{i=1}^m k_ib_i~,
+\end{equation}
+[144] 其中各 $k_i\in\mathbb{K}$。
+[145] 同样，各 $k_i\in\mathbb{K}$ 均可表示为
+[146] \begin{equation}
+k_i = \sum_{j=1}^n f_{ij}a_j~,
+\end{equation}
+[147] 其中各 $f_i\in\mathbb{F}$。
+[148] 于是，任意 $l\in\mathbb{L}$ 可以表示为
+[149] \begin{equation}
+l = \sum_{i=1}^m \sum_{j=1}^n f_{ij}a_jb_i~,
+\end{equation}
+[150] 也就是说，$\{a_jb_i\}$ 构成了 $\mathbb{L}$ 作为 $\mathbb{F}$ 上线性空间的基。
+[151] 稍加计算即可得 $ \left\lvert \{a_jb_i\} \right\rvert = \left\lvert \{a_j\} \right\rvert \times \left\lvert \{b_i\} \right\rvert $。
+[152] 证毕。
+[153] 定理 4 中的 $\mathbb{K}$ 通常称为扩张 $\mathbb{L}/\mathbb{F}$ 的中间域，扩张 $\mathbb{K}/\mathbb{F}$ 称为 $\mathbb{L}/\mathbb{F}$ 的子扩张。
+
+[/SCOPE:s_thm4]
+[SCOPE:s_cor2|description|推论2]
+[SCOPE:s_cor2_let|let_bind|推论2变量]
+[154] 推论 2
+[155] 如果 $[\mathbb{K}:\mathbb{F}]$ 是一个素数，
+[/SCOPE:s_cor2_let]
+[156] 那么不存在域$\mathbb{M}$ 使得 $\mathbb{F}\subsetneq\mathbb{M}\subsetneq\mathbb{K}$。
+
+[/SCOPE:s_cor2]
+[SCOPE:s_cor3|description|中间域升链]
+[SCOPE:s_cor3_let|let_bind|推论3变量]
+[157] 推论 3 中间域升链
+[158] 如果 $\mathbb{K}/\mathbb{F}$ 是有限扩张，
+[159] 那么存在下面一系列域：
+[/SCOPE:s_cor3_let]
+[160] \begin{equation}
+\mathbb{F}=\mathbb{F}_0\subseteq\mathbb{F}_1\subseteq\mathbb{F}_2\subseteq\cdots\subseteq\mathbb{F}_n=\mathbb{K}~,
+\end{equation}
+[161] 其中各 $\mathbb{F}_{i+1}$ 是 $\mathbb{F}_i$ 的单扩张。
+
+[/SCOPE:s_cor3]
+[SCOPE:s_def8|description|开拓]
+[SCOPE:s_def8_let|let_bind|定义8变量]
+[162] 定义 8 开拓
+[163] 设 $R_1$ 和 $R_2$ 分别为环 $K_1$ 和 $K_2$ 的子环。
+[164] 若 $\sigma:R_1\to R_2$ 和 $\eta:K_1\to K_2$ 都是环同构，且 $\eta|_{R_1}=\sigma$2，
+[165] 那么称 $\eta$ 是 $\sigma$ 的开拓（extension）。
+[/SCOPE:s_def8_let]
+[166] 特别地，如果有扩域 $\mathbb{K}_1/\mathbb{F}$ 和 $\mathbb{K}_2/\mathbb{F}$，
+[167] 那么 $\mathbb{K}_1$ 到 $\mathbb{K}_2$ 的保 $\mathbb{F}$ 同构（如果存在的话）是 $ \operatorname {id}_\mathbb{F}$ 的开拓。
+[168] 同构的开拓有以下性质：
+
+[/SCOPE:s_def8]
+[SCOPE:s_thm5|description|定理5]
+[SCOPE:s_thm5_let|let_bind|定理5变量]
+[169] 定理 5
+[170] 设 $\sigma:\mathbb{F}_1\to\mathbb{F}_2$ 是域同构，$\mathbb{K}_1/\mathbb{F}$ 和 $\mathbb{K}_2/\mathbb{F}$ 是域扩张。
+[171] 1. $\sigma$ 可开拓为 $\mathbb{F}_1[x]\to\mathbb{F}_2[x]$ 的环同构，为方便仍记为 $\sigma$。
+[172a] (x)\in\mathbb{F}_1[x]$ 不可约当且仅当 $\sigma
+[172b] (p)$ 不可约。
+[173a] (x)$，$a_2\in\mathbb{K}_2-\mathbb{F}_2$ 在 $\mathbb{F}_1$ 上的最小多项式为 $\sigma(f
+[173b] (x))$，
+[174] 则存在 $\sigma$ 的开拓 $\eta:\mathbb{F}_1(a_1)\to \mathbb{F}_2(a_2)$，使得 $\eta(a_1)=a_2$
+[/SCOPE:s_thm5_let]
+[175] 证明：
+[176] 显然，对于任意多项式 $f\in\mathbb{F}_1[x]$，若其表达式为 $\sum_{i=0}^n c_ix^i$，
+[177] 那么 $\sigma(f)$ 的表达式为 $\sum_{i=0}^n \sigma(c_i)x^i$。
+[178] 由于 $\sigma$ 是环同构，
+[179] 即具有高度对称性，
+[180] 因此 “当且仅当” 只需要证明充分性或必要性其一即可。
+[181] 设 $p(x)$ 可约，
+[182a] (x),g
+[182b] (x)$，使得 $p=hg$。
+[183a] (p)=\sigma
+[183b] (h)\sigma
+[183c] (g)$，
+[184] 从而 $\sigma(p)$ 也可约。
+[185] 必要性得证，定理得证。
+[186] 定义 $\eta$ 为：对于任意 $\mathbb{F}_1$ 上的多项式 $f$，有 $\eta(f(a_1))=f(a_2)$。
+[187] 由多项式环的定理 3 ，$\eta:\mathbb{F}_1(a_1)\to \mathbb{F}_2(a_2)$ 是环同构3。
+[188] 证毕。
+[189a] (f)$ 也不可约，这是第 2 条中 “$a_2$ 的最小多项式为 $\sigma
+[189b] (f)$” 有意义的前提，因为最小多项式必是不可约的。
+
+[/SCOPE:s_thm5]
+[SCOPE:s_thm6|description|定理6]
+[SCOPE:s_thm6_let|let_bind|定理6变量]
+[190] 定理 6
+[191] 设 $\overline{\mathbb{F}}/\mathbb{F}(\alpha)/\mathbb{F}$ 是代数扩域链，$\overline{\mathbb{F}}$ 是 $\mathbb{F}$ 的代数闭包，$\sigma:\mathbb{F}(\alpha)\to\overline{\mathbb{F}}$ 是保 $\mathbb{F}$ 的域单同态4。
+[192] 则 $\sigma$ 可开拓为 $\overline{\mathbb{F}}$ 的保 $\mathbb{F}$ 自同构 $\eta$。
+[/SCOPE:s_thm6_let]
+[193] 证明：
+[194] 将 $\overline{\mathbb{F}}$ 看成 $\mathbb{F}(\alpha)$ 的线性空间，任取一组基 $\{\nu_i\}$5，
+[195] 则 $\overline{\mathbb{F}}$ 的元素总形如 $\sum a_i\nu_i+\sum b_i\alpha\nu_i$，其中只有有限多个 $a_i$ 和 $b_i$ 不为零。
+[196] 定义 $\eta$ 为 $\eta(\sum a_i\nu_i+\sum b_i\alpha\nu_i) = \sum a_i\nu_i+\sum b_i\sigma(\alpha)\nu_i$ 即可。
+[197] 证毕。
+[198] 域单同态总把不可约多项式的一个根映射为另一根，
+[199] 所以单同态是根的置换，
+[200] 但不一定是所有置换都可以。
+
+[/SCOPE:s_thm6]
+[SCOPE:s_example1|description|例1]
+[SCOPE:s_example1_let|let_bind|例1变量]
+[201] 考虑扩张 $\mathbb{Q}(\sqrt{2})/\mathbb{Q}$，
+[202] 则 $\mathbb{Q}(\sqrt{2})$ 有两个保 $\mathbb{Q}$ 自同构，一个是恒等映射，另一个是将 $\sqrt{2}$ 映射为 $-\sqrt{2}$ 的映射。
+[/SCOPE:s_example1_let]
+[203] 仅仅知道 $\sigma(\sqrt{2})=-\sqrt{2}$，且对于任意有理数 $q$，$\sigma(q)=q$，就足够知道 $\sigma$ 是什么了：$\sigma(p+q\sqrt{2})=p-q\sqrt{2}$，$\forall p, q\in\mathbb{Q}$。
+
+[/SCOPE:s_example1]
+[204] 最后，借着本节中代数元与超越元的讨论，我们引出代数闭包的概念：
+
+[SCOPE:s_def9_let|let_bind|定义9变量]
+[SCOPE:s_def9|description|代数闭包]
+[205] 定义 9 代数闭包
+[206] 考虑扩域 $\mathbb{K}/\mathbb{F}$。
+[207] $\mathbb{K}$ 中所有 $\mathbb{F}$ 的代数元构成一个新的集合 $\mathbb{K}_{\mathbb{F}}$，称之为域 $\mathbb{F}$ 在域 $\mathbb{K}$ 上的代数闭包（algebraic closure）。
+
+[/SCOPE:s_def9_let]
+[/SCOPE:s_def9]
+[SCOPE:s_thm7|description|定理7]
+[SCOPE:s_thm7_let|let_bind|定理7变量]
+[208] 定理 7
+[209] 域 $\mathbb{F}$ 在域 $\mathbb{K}$ 上的代数闭包 $\mathbb{K}_{\mathbb{F}}$ 是一个域。
+[210] 证明：
+[/SCOPE:s_thm7_let]
+[211] $\mathbb{K}_{\mathbb{F}}$ 已经天然满足加法和乘法的结合性、单位元存在性以及乘法对加法的分配性。
+[212] 因此，我们只需要证明加法与乘法的封闭性和加法与乘法的逆元存在性。
+[213] 逆元存在性证明：任取 $\alpha\in\mathbb{K}_{\mathbb{F}}-\{0\}$，设其最小多项式为 $\sum_{i=0}^{n}a_ix^i$，
+[214] 那么 $-\alpha$ 也有最小多项式 $\sum_{i=0}^n(-1)^ia_ix^i$，$1/\alpha$ 也有最小多项式 $\sum_{i=0}^na_ix^{n-i}$。
+[215] 于是按定义 4 ，$-\alpha$ 与 $1/\alpha$ 都是 $\mathbb{F}$ 的代数元素，逆元存在性得证。
+[216] 封闭性证明：记 $\mathbb{F}(\alpha, \beta)=\mathbb{F}(\alpha)(\beta)=\mathbb{F}(\beta)(\alpha)$。
+[217] 如果 $\alpha,\beta\in\mathbb{K}_{\mathbb{F}}$，
+[218] 那么 $\mathbb{F}(\alpha)/\mathbb{F}$ 是一个代数扩张，$\mathbb{F}(\alpha, \beta)/\mathbb{F}(\alpha)$ 也是一个代数扩张，
+[219] 故由定理 3 知它们都是有限扩张6，
+[220] 故由定理 4 知 $\mathbb{F}(\alpha, \beta)/\mathbb{F}$ 是有限扩张，再由定理 3 或者推论 1 知它是代数扩张。
+[221] 因此，$\alpha+\beta\in\mathbb{F}(\alpha, \beta)$ 和 $\alpha\beta\in\mathbb{F}(\alpha, \beta)$ 必是代数元素，封闭性得证。
+[222] 证毕。
+[223] 由于域的代数闭包也是一个域，
+[224] 故也可称之为代数闭域。
+[225] 注意，光有 $\mathbb{F}$ 是无法讨论代数闭包的，必须有扩域 $\mathbb{K}/\mathbb{F}$ 才行。
+
+[/SCOPE:s_thm7]
+[SCOPE:s_cor4|description|代数扩张的代数扩张还是代数扩张]
+[SCOPE:s_cor4_let|let_bind|推论4变量]
+[226] 推论 4 代数扩张的代数扩张还是代数扩张
+[227] 如果 $\mathbb{L}/\mathbb{K}$ 和 $\mathbb{K}/\mathbb{F}$ 都是代数扩张，
+[228] 那么 $\mathbb{L}/\mathbb{F}$ 也是代数扩张。
+[/SCOPE:s_cor4_let]
+[229] 证明：
+[230] 任取 $x_0\in\mathbb{L}$，其在 $\mathbb{K}$ 上的最小多项式为 $g(x) = \sum_{i=0}^n k_ix^i$。
+[231] 那么 $x_0$ 在 $\mathbb{F}(k_0, k_1, \cdots, k_n)$ 上的最小多项式也是 $g(x)$。
+[232] 因此，$\mathbb{K}(x_0)/\mathbb{F}(k_0, k_1, \cdots, k_n)$ 是单代数扩张，
+[233] 故是有限扩张。
+[234] 类似地，$\mathbb{F}(k_0, k_1, \cdots, k_n)/\mathbb{F}$ 也是有限扩张。
+[235] 由定理 4 ，这意味着 $\mathbb{K}(x_0)/\mathbb{F}$ 是有限扩张，
+[236] 从而是代数扩张。
+[237] 因此，$x_0$ 是 $\mathbb{F}$ 的代数元。
+[238] 由 $x_0$ 的任意性，命题即得证。
+[239] 证毕。
+[/SCOPE:s_cor4]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2是单扩张次数与最小多项式次数的关系，依赖于定义1"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3的1→2直接由定理2得到"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def7",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3的3→1由定义7直接可得"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是定理3中2→3的推广"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_def6",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理4给出扩张次数的乘积公式"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_thm4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论2是定理4在素数次数下的特例"
+  },
+  {
+    "source_scope": "s_cor3",
+    "target_scope": "s_thm4",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推论3由定理4和有限扩张性质得到"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_def8",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理5给出开拓的存在性"
+  },
+  {
+    "source_scope": "s_thm6",
+    "target_scope": "s_thm5",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理6是定理5在代数闭包下的推广"
+  },
+  {
+    "source_scope": "s_thm7",
+    "target_scope": "s_def9",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理7证明代数闭包是域"
+  },
+  {
+    "source_scope": "s_cor4",
+    "target_scope": "s_thm7",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论4是定理7的推论"
+  }
+]

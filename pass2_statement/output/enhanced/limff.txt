@@ -1,0 +1,323 @@
+[SCOPE:root|description|函数极限的性质]
+文章名: limff
+标题: 函数极限的性质
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=函数极限的唯一性
+  [1] type=theorem heading=定理 2 title=局部保序性
+  [2] type=theorem heading=定理 3 title=局部保号性
+  [3] type=theorem heading=定理 4 title=局部有界性
+  [4] type=exercise heading=习题 1 title=
+  [5] type=theorem heading=定理 5 title=夹逼收敛原理
+  [6] type=theorem heading=定理 6 title=
+  [7] type=theorem heading=定理 7 title=
+  [8] type=theorem heading=定理 8 title=
+  [9] type=exercise heading=习题 2 title=
+  [10] type=exercise heading=习题 3 title=
+  [11] type=exercise heading=习题 4 title=
+  [12] type=theorem heading=定理 9 title=复合函数的极限
+  [13] type=exercise heading=习题 5 title=
+  [14] type=theorem heading=定理 10 title=
+
+[SCOPE:s_th1|description|函数极限的唯一性]
+[0] 定理 1 函数极限的唯一性
+[SCOPE:s_th1_let|let_bind|定理1变量]
+[1] 若函数 $f(x)$ 在 $x_0$ 处极限存在，
+[2] 则在 $x_0$ 处极限唯一。
+
+[/SCOPE:s_th1]
+[/SCOPE:s_th1_let]
+[SCOPE:s_th2|description|局部保序性]
+[3] 定理 2 局部保序性
+[SCOPE:s_th2_let|let_bind|定理2变量]
+[4a] (x),g
+[4b] (x)$ 在 $x_0$ 处极限存在，若 $f
+[4c] (x)\le g
+[4d] (x)$ 对任意的 $x\in U_0(x_0,\delta_0)$ 成立，
+[5a] (x)\le \lim\limits_{x\rightarrow x_0}g
+[5b] (x)$。
+
+[/SCOPE:s_th2]
+[/SCOPE:s_th2_let]
+[SCOPE:s_th3|description|局部保号性]
+[6] 定理 3 局部保号性
+[SCOPE:s_th3_let|let_bind|定理3变量]
+[7a] (x)$，若 $\lim\limits_{x\rightarrow x_0}f
+[7b] (x)=A>0$，
+[8] 那么存在 $x_0$ 的一个去心邻域 $U_0(x_0,\delta)$，满足对任意 $x\in U_0(x_0,\delta)$，都有 $f(x)>0$。
+
+[/SCOPE:s_th3]
+[/SCOPE:s_th3_let]
+[SCOPE:s_th4|description|局部有界性]
+[9] 定理 4 局部有界性
+[SCOPE:s_th4_let|let_bind|定理4变量]
+[10a] (x)$，$\lim\limits_{x\rightarrow x_0}f
+[10b] (x)$ 存在（不为无穷大量），
+[11] 那么存在 $x_0$ 的一个去心邻域 $U_0(x_0,\delta)$，满足存在 $M>0$，对任意 $x\in U_0(x_0,\delta)$，都有 $|f(x)|< M$，
+[12] 即 $f(x)$ 在 $U_0(x_0,\delta)$ 上有界。
+
+[/SCOPE:s_th4]
+[/SCOPE:s_th4_let]
+[SCOPE:s_ops_let|let_bind|四则运算变量]
+[SCOPE:s_ops|description|函数极限的四则运算]
+[13a] (x),g
+[13b] (x)$，分别对于六种自变量的变化情况
+[14] \begin{equation}
+x\rightarrow x_0;\ x\rightarrow x_0^+;\ x\rightarrow x_0^{-};\ x\rightarrow \infty;\ x\rightarrow +\infty;\ x\rightarrow -\infty~.
+\end{equation}
+[15a] (x)\rightarrow A,\ g
+[15b] (x)\rightarrow B$，
+[16] 那么可以证明
+[17] \begin{equation}
+\begin{aligned}
+&h_1(x)=f(x)+g(x)\rightarrow A+B~,\\
+&h_2(x)=f(x)-g(x)\rightarrow A-B~,\\
+&h_3(x)=f(x)\cdot g(x)\rightarrow A\cdot B\ (A\neq 0,B\neq 0)~,\\
+&h_4(x)=f(x)/ g(x)\rightarrow A/B\ (B\neq 0)~.
+\end{aligned}
+\end{equation}
+[18] 若广义极限 $A,B$ 为无穷大量，
+[19] 则可以规定一些特殊的四则运算，例如 $(+\infty)+(+\infty)=+\infty,\
+[20] (+\infty)\cdot (+\infty)=+\infty$ 等等。
+
+[/SCOPE:s_ops_let]
+[/SCOPE:s_ops]
+[SCOPE:s_ex1|description|习题1]
+[21] 习题 1
+[SCOPE:s_ex1_let1|let_bind|习题1第一小题变量]
+[22a] (x)$，若 $\lim\limits_{x\rightarrow x_0}f
+[22b] (x)=A$，证明：对于任意 $r< A$，存在 $x_0$ 的一个去心邻域 $U_0(x_0,\delta)$，满足对任意的 $x\in U_0(x_0,\delta)$，都有 $f
+[22c] (x)>r$。
+[23] （特别地，当 $r=0$ 时为局部保号性）
+[/SCOPE:s_ex1_let1]
+[SCOPE:s_ex1_let2|let_bind|习题1第二小题变量]
+[24] 求 $\lim\limits_{x\rightarrow +\infty}(x^2+1)/(1-2x^2)$。
+[/SCOPE:s_ex1_let2]
+[SCOPE:s_ex1_let3|let_bind|习题1第三小题变量]
+[25a] (x),g
+[25b] (x)$，若 $f
+[25c] (x)$ 在 $x_0=0$ 处极限为 $0$，而 $h
+[25d] (x)=f
+[25e] (x)/g
+[25f] (x)$ 在 $x_0=0$ 处极限为 $1$，证明 $g
+[25g] (x)$ 在 $x_0=0$ 处极限存在且也为 $0$。
+
+[/SCOPE:s_ex1]
+[/SCOPE:s_ex1_let3]
+[SCOPE:s_th5|description|夹逼收敛原理]
+[26] 类似于序列极限，函数极限也有夹逼收敛原理：
+
+[27] 定理 5 夹逼收敛原理
+[SCOPE:s_th5_let|let_bind|定理5变量]
+[28a] (x),h
+[28b] (x),g
+[28c] (x)$，
+[29a] (x)\le h
+[29b] (x)\le g
+[29c] (x),\ \forall x\in U_0(x_0,\delta_0)$，且 $\lim\limits_{x\rightarrow x_0}f
+[29d] (x)=\lim\limits_{x\rightarrow x_0} g
+[29e] (x)=A$，
+[30] 那么 $\lim\limits_{x\rightarrow x_0}h(x)=A$。
+[/SCOPE:s_th5_let]
+[31] 夹逼收敛定理可以根据函数极限的定义证明，读者可以尝试用 $\epsilon$-$\delta$ 语言进行叙述。
+[32] 回顾函数极限的定义：设函数 $f(x)$ 在 $U_0(x_0,\delta_0)$ 内有定义。
+[33] 函数极限存在的定义是：存在 $A$，使得对任意 $\epsilon >0$, 存在 $\delta>0$，当 $x\in U_0(x_0,\delta)$ 时有 $|f(x)-A|<\epsilon$。
+[34] 函数极限不存在的定义：对任意 $A$，都存在 $\epsilon>0$，使得对任意 $\delta>0$，都存在 $x\in U_0(x_0,\delta)$ 满足 $|f(x)-A|\ge \epsilon$。
+[35] 从定义上看，函数极限与序列极限存在某种联系，它们都有 “对任意……存在……当……满足” 这样的句式。
+[36] 两者的联系由以下的定理体现：
+
+[/SCOPE:s_th5]
+[SCOPE:s_th6|description|定理6]
+[37] 定理 6
+[SCOPE:s_th6_let|let_bind|定理6变量]
+[38] 设 $f(x)$ 在 $U_0(x_0,\delta_0)(\delta_0>0)$ 上有定义，
+[39] 则 $\lim\limits_{x\rightarrow x_0}f(x)=A$ 成立的充要条件是：对于 $U_0(x_0,\delta_0)$ 内任意收敛于 $x_0$ 的序列 $\{x_n\}$，都有 $\lim\limits_{n\rightarrow \infty}f(x_n)=A$。
+[/SCOPE:s_th6_let]
+[40] 对于左右极限以及自变量趋向于无穷大的极限，也有类似的定理。
+[41] 对于有特殊性质的函数，例如在 $x_0$ 的右去心邻域上单调递增，就容易猜测它在 $x_0$ 处的右极限（排除负无穷的情况）为这个右去心邻域上函数值的下确界。
+[42] 于是我们有以下定理：
+
+[/SCOPE:s_th6]
+[SCOPE:s_th7|description|定理7]
+[43] 定理 7
+[SCOPE:s_th7_let|let_bind|定理7变量]
+[44a] (x)$ 在 $U_0^+(x_0,\delta_0)(\delta_0>0)$ 上有定义，若 $f
+[44b] (x)$ 在 $U_0^+(x_0,\delta_0)$ 上单调递增，
+[45] 则
+[46] \begin{equation}
+\lim\limits_{x\rightarrow x_0^+}f(x)=\inf\{f(x):x\in U_0^+(x_0,\delta_0)\}~.
+\end{equation}
+[47] 下确界不存在
+[48] 若 $f(x)$ 在 $U_0^+(x_0,\delta_0)$ 上单调递减，
+[49] 则
+[50] \begin{equation}
+\lim\limits_{x\rightarrow x_0^+}f(x)=\sup\{f(x):x\in U_0^+(x_0,\delta_0)\}~.
+\end{equation}
+[51] 上确界不存在
+[52] 对于左极限与左去心邻域也有类似的定理。
+[53] 对广义极限该定理也成立。
+[54] 序列收敛的判定定理有柯西收敛准则；
+[55] 而对于函数极限，也可以类似地写出这样的定理。
+
+[/SCOPE:s_th7]
+[/SCOPE:s_th7_let]
+[SCOPE:s_th8|description|定理8]
+[56] 定理 8
+[SCOPE:s_th8_let|let_bind|定理8变量]
+[57] 设 $f(x)$ 在 $U_0(x_0,\delta_0)$ 内有定义，
+[58] 则 $\lim\limits_{x\rightarrow x_0}f(x)$ 存在的充要条件是：$\forall \epsilon>0,\exists\delta>0$，当 $x',x''\in U_0(x_0,\delta)$ 时，有 $|f(x')-f(x'')|<\epsilon$。
+[/SCOPE:s_th8_let]
+[59] 对于左极限与右极限，也有类似的定理。
+
+[/SCOPE:s_th8]
+[SCOPE:s_ex2|description|习题2]
+[60] 习题 2
+[SCOPE:s_ex2_let1|let_bind|习题2第一小题变量]
+[61] 证明极限 $\lim\limits_{x\rightarrow +\infty} \frac{x-1}{x+1}\cos 2\pi x$ 不存在。
+[/SCOPE:s_ex2_let1]
+[SCOPE:s_ex2_let2|let_bind|习题2第二小题变量]
+[62a] (x)= \sin\left(1/x\right) $，证明 $f
+[62b] (x)$ 在 $x_0=0$ 处极限不存在，在 $x_0\neq 0$ 处极限存在。
+[/SCOPE:s_ex2_let2]
+[SCOPE:s_ex2_let3|let_bind|习题2第三小题变量]
+[63] 构造函数 $f(x)$，满足定义域为 $\mathbb{R}$，在 $x_0=0$ 处极限存在，而在 $x_0\neq 0$ 处极限不存在。
+[/SCOPE:s_ex2_let3]
+[SCOPE:s_ex2_let4|let_bind|习题2第四小题变量]
+[64] 函数 $f(x)$ 在 $U(a,\delta_0)$ 上有定义，序列 $\{x_n\}$ 收敛于 $a$，
+[65] 则什么情况下 $\lim\limits_{n\rightarrow \infty}f(x_n)=f(a)$ 成立？
+
+[/SCOPE:s_ex2]
+[/SCOPE:s_ex2_let4]
+[SCOPE:s_ex3|description|习题3]
+[66] 习题 3
+[SCOPE:s_ex3_let1|let_bind|习题3第一小题变量]
+[67] 思考：函数 $f(x)$ 在 $U(a,\delta_0)$ 上有定义，序列 $\{x_n\}$ 收敛于 $a$，
+[68] 则什么情况下 $\lim\limits_{n\rightarrow \infty}f(x_n)=f(a)$ 成立？
+[/SCOPE:s_ex3_let1]
+[SCOPE:s_ex3_let2|let_bind|习题3第二小题变量]
+[69a] (x)=1/x,\ g
+[69b] (x)=x^2$
+[70a] (x)=1/4,\lim\limits_{x\rightarrow 2}g
+[70b] (x)=4$。
+[71a] (x))=f(\lim\limits_{x\rightarrow 2}g
+[71b] (x))=f(4)=1/4$ 呢？
+[72] 经验证是成立的。
+[73a] (x),g
+[73b] (x)$，都满足 $\lim\limits_{x\rightarrow a}f(g
+[73c] (x))=f(\lim\limits_{x\rightarrow a}g
+[73d] (x))$。
+[74] 然而答案是否定的。
+[75] 这种复合函数的极限运算需要满足一些限制条件。
+
+[/SCOPE:s_ex3]
+[/SCOPE:s_ex3_let2]
+[SCOPE:s_ex4|description|习题4]
+[76] 习题 4
+[SCOPE:s_ex4_let|let_bind|习题4变量]
+[77a] (x)=[x],g
+[77b] (x)=1-x^2$，判断 $\lim\limits_{x\rightarrow 0}f(g
+[77c] (x)) $ 与 $f(\lim\limits_{x\rightarrow 0}g
+[77d] (x))$ 是否相等。
+[/SCOPE:s_ex4_let]
+[78] 具体地，我们有以下定理：
+
+[/SCOPE:s_ex4]
+[SCOPE:s_th9|description|复合函数的极限]
+[79] 定理 9 复合函数的极限
+[SCOPE:s_th9_let|let_bind|定理9变量]
+[80a] (x)=u_0$，$\lim\limits_{u\rightarrow u_0}f
+[80b] (u)=L$，并且存在 $x_0$ 一个去心邻域 $U_0(x_0,\delta)$，使得对任意 $x\in U_0(x_0,\delta)$，有 $g
+[80c] (x)\neq u_0$。
+[81a] (x))=\lim\limits_{u\rightarrow u_0}f
+[81b] (u)=L$。
+
+[/SCOPE:s_th9]
+[/SCOPE:s_th9_let]
+[SCOPE:s_ex5|description|习题5]
+[82] 习题 5
+[SCOPE:s_ex5_let1|let_bind|习题5第一小题变量]
+[83] 证明 $\lim\limits_{x\rightarrow a}\cos x=\cos a$，$\lim\limits_{x\rightarrow a}\sin x=\sin a$。
+[84] （如果你学了函数的连续性，
+[85] 那么这个命题说的就是 $\sin x,\cos x$ 是连续函数。
+[86] 但为了严谨地说明这件事，我们不得不回归函数极限的定义。）
+[/SCOPE:s_ex5_let1]
+[SCOPE:s_ex5_let2|let_bind|习题5第二小题变量]
+[87] 第一个重要极限：
+[88] \begin{equation}
+\lim\limits_{x\rightarrow 0}\frac{\sin x}{x}=1~.
+\end{equation}
+[89] 提示：先证不等式 $\cos x<\frac{\sin x}{x}<1$，用夹逼收敛原理。
+[/SCOPE:s_ex5_let2]
+[SCOPE:s_ex5_let3|let_bind|习题5第三小题变量]
+[90] 第二个重要极限：
+[91] \begin{equation}
+\lim\limits_{x\rightarrow \infty} \left(1+\frac{1}{x} \right) ^x=e~.
+\end{equation}
+[92] 提示：利用序列极限的结果式 4 和夹逼收敛原理。
+[93] 利用以上两个结果，我们可以求更复杂的极限，例如：
+[94] \begin{equation}
+\lim\limits_{x\rightarrow 0}\frac{ \sin\left(\sin x\right) }{x},\ \lim\limits_{x\rightarrow 0}(1-2x)^{\frac{1}{x}}~.
+\end{equation}
+[95] 伍胜健《数学分析》上的证明利用了换元的操作：
+[96] \begin{equation}
+\begin{aligned}
+\lim\limits_{x\rightarrow 0}\frac{ \sin\left(\sin x\right) }{x}&=\lim\limits_{x\rightarrow 0}\frac{ \sin\left(\sin x\right) }{\sin x}\cdot \lim\limits_{x\rightarrow 0}\frac{\sin x}{x}\\
+&=\lim\limits_{y\rightarrow 0}\…[truncated]…\right) ^{(-1/2x)\cdot (-2)}\\&= \left(\lim\limits_{x\rightarrow 0} \left(1-\frac{1}{1/2x} \right) ^{(-1/2x)} \right) ^{-2}
+\\&=\left(\lim\limits_{y\rightarrow \infty} \left(1+\frac{1}{y} \right) ^{y}\right)^{-2}=e^{-2}~.
+\end{aligned}
+\end{equation}
+[97] 上面的证明中，有将 $\sin x$ 替换为了 $y$，再对 $y\rightarrow 0$ 取函数极限；
+[98] 有将 $1/2x$ 替换为 $y$，再对 $y\rightarrow \infty$ 取函数极限。
+[99] 我们称这种方法为
+[100] 换元
+[101] 。
+[102] 然而为什么能够换元呢？
+[103] 这本质上是利用了复合函数的极限的性质定理 9 。
+
+[/SCOPE:s_ex5]
+[/SCOPE:s_ex5_let3]
+[SCOPE:s_limsup|description|函数的上下极限]
+[104] 可以模仿序列的上下极限给出函数上下极限的定义：
+[SCOPE:s_limsup_let|let_bind|上下极限变量]
+[105] 设函数 $f(x)$ 在 $U_0(x_0,\delta_0)$ 处有定义。
+[106] 对任意 $0<\delta<\delta_0$，设
+[107] $$
+l(\delta)=\inf\{f(x):x\in U_0(x_0,\delta)\}~,\\
+h(\delta)=\sup\{f(x):x\in U_0(x_0,\delta)\}~,
+$$
+[108] 那么令 $l=\lim\limits_{\delta\rightarrow 0}l(\delta), h=\lim\limits_{\delta\rightarrow 0}h(\delta)$，
+[109a] (x)$，$h$ 为上极限 $ \operatorname {\overline\lim}\limits_{x\rightarrow x_0}f
+[109b] (x)$。
+[110] 可以证明 $l=\sup\{l(\delta):0<\delta<\delta_0\},h=\inf\{h(\delta):0<\delta<\delta_0\}$。
+[111] 可以利用函数的上下极限描述函数极限存在的充要条件。
+
+[/SCOPE:s_limsup]
+[/SCOPE:s_limsup_let]
+[SCOPE:s_th10|description|定理10]
+[112] 定理 10
+[SCOPE:s_th10_let|let_bind|定理10变量]
+[113] 设函数 $f(x)$ 在 $U_0(x_0,\delta_0)$ 内有定义，
+[114a] (x)$ 存在的充要条件为 $ \operatorname {\underline \lim}\limits_{x\rightarrow x_0}f
+[114b] (x)= \operatorname {\overline\lim}\limits_{x\rightarrow x_0}f
+[114c] (x)$。
+[/SCOPE:s_th10]
+[/SCOPE:s_th10_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_th3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题1第一小题是局部保号性的推广"
+  },
+  {
+    "source_scope": "s_ex5",
+    "target_scope": "s_th9",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题5中的换元法本质是复合函数极限定理的应用"
+  }
+]

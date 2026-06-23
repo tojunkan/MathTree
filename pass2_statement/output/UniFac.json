@@ -1,0 +1,272 @@
+{
+  "article_name": "UniFac",
+  "statements": [
+    {
+      "stmt_id": "st_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem",
+      "exposed_entities": [
+        "f(x)",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_exist_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_exist",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exist_base",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_exist",
+      "exposed_entities": [
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_exist_induction_hyp",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_exist_let",
+      "exposed_entities": [
+        "f(x)",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_exist_induction_step",
+      "subtype": "conclusion",
+      "clause_range": [
+        13,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_exist_let",
+      "exposed_entities": [
+        "f1(x)",
+        "f2(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_unique_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_unique",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_unique_assume_two_decomps",
+      "subtype": "assumption",
+      "clause_range": [
+        19,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_unique_let1",
+      "exposed_entities": [
+        "f(x)",
+        "p_i(x)",
+        "q_i(x)",
+        "s",
+        "t"
+      ]
+    },
+    {
+      "stmt_id": "st_unique_base_s1",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_unique",
+      "exposed_entities": [
+        "f(x)",
+        "p1(x)",
+        "q1(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_unique_induction_hyp",
+      "subtype": "assumption",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_unique_let2",
+      "exposed_entities": [
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_unique_induction_step",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        45
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_unique_let2",
+      "exposed_entities": [
+        "p_i(x)",
+        "q_i(x)",
+        "c_i"
+      ]
+    },
+    {
+      "stmt_id": "st_std_decomp_def",
+      "subtype": "definition",
+      "clause_range": [
+        49,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_std_decomp",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "p_i(x)",
+        "r_i",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_root_condition",
+      "subtype": "condition",
+      "clause_range": [
+        53,
+        55
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_std_decomp",
+      "exposed_entities": [
+        "c",
+        "k",
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_root_count",
+      "subtype": "theorem",
+      "clause_range": [
+        56,
+        56
+      ],
+      "truth_value": "true",
+      "scope_id": "s_std_decomp",
+      "exposed_entities": [
+        "F[x]",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_complex_root",
+      "subtype": "theorem",
+      "clause_range": [
+        57,
+        59
+      ],
+      "truth_value": "true",
+      "scope_id": "s_std_decomp",
+      "exposed_entities": [
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_complex_irreducible",
+      "subtype": "conclusion",
+      "clause_range": [
+        60,
+        60
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_std_decomp",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_exist_base",
+      "target": "st_exist_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exist_induction_hyp",
+      "target": "st_exist_induction_step",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exist_induction_step",
+      "target": "st_exist_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_unique_assume_two_decomps",
+      "target": "st_unique_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_unique_base_s1",
+      "target": "st_unique_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_unique_induction_hyp",
+      "target": "st_unique_induction_step",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_unique_induction_step",
+      "target": "st_unique_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_complex_root",
+      "target": "st_complex_irreducible",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_unique_conclusion",
+      "target": "st_exist_conclusion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "唯一性证明依赖于存在性结论"
+    }
+  ],
+  "unresolved": []
+}

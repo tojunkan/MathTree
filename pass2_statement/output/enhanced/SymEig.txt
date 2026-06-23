@@ -1,0 +1,84 @@
+[SCOPE:root|description|对称矩阵的本征问题]
+文章名: SymEig
+标题: 对称矩阵的本征问题
+
+[0] 本文存在未完成的内容。
+[SCOPE:s_main|description|对称矩阵的本征定理]
+[SCOPE:s_main_let|let_bind|对称矩阵及其本征变量]
+[1] 在物理中，我们遇到的本征问题中的矩阵往往是对称矩阵或厄米矩阵。
+[2] 我们下面来证明 $N$ 维对称矩阵 $ \boldsymbol{\mathbf{A}} $ 存在 $N$ 个两两正交归一的本征矢 $ \boldsymbol{\mathbf{v}} _1, \dots, \boldsymbol{\mathbf{v}} _N$，且本征值都是实数。
+[3] 另外，本征矢可以都是实数的，
+[/SCOPE:s_main_let]
+[4] 但也可以乘以一个任意复数。
+[5] 【未完成】需要把以下结论用定理的形式列出来
+
+[/SCOPE:s_main]
+[SCOPE:s_real_eig|description|证明本征值为实数]
+[SCOPE:s_real_eig_let|let_bind|实数证明中的变量]
+[6] 本征方程为
+[7] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{v}} _i = \lambda_i \boldsymbol{\mathbf{v}} _i~.
+\end{equation}
+[8] 我们先假设本征值和本征矢都可能是复数，将本征方程左边乘以 $ \boldsymbol{\mathbf{v}} _i$ 得
+[/SCOPE:s_real_eig_let]
+[9] \begin{equation}
+\boldsymbol{\mathbf{v}} _i ^\dagger \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{v}} _i = \lambda_i \boldsymbol{\mathbf{v}} _i ^\dagger \boldsymbol{\mathbf{v}} _i~.
+\end{equation}
+[10] 将等式两边取厄米共轭（注意矢量也可以看成矩阵），由
+[11] 式 3 [链接 L0]
+[12] 式 2 [链接 L1]
+[13] \begin{equation}
+\boldsymbol{\mathbf{v}} _i ^\dagger \boldsymbol{\mathbf{A}} ^{\mathrm{T}} \boldsymbol{\mathbf{v}} _i = \boldsymbol{\mathbf{v}} _i ^\dagger \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{v}} _i = \lambda_i^* \boldsymbol{\mathbf{v}} _i ^\dagger \boldsymbol{\mathbf{v}} _i~.
+\end{equation}
+[14] 对比两式，得 $\lambda_i = \lambda_i^*$，
+[15] 所以 $\lambda_i$ 必为实数。
+[16] 将本征方程记为
+[17] \begin{equation}
+( \boldsymbol{\mathbf{A}} - \lambda_i \boldsymbol{\mathbf{I}} ) \boldsymbol{\mathbf{v}} _i = \boldsymbol{\mathbf{0}} ~.
+\end{equation}
+[18] 就会发现这是一个实系数的齐次方程组，
+[19] 所以必然能把所有线性无关的解都用实数矢量表示。
+[20] 但注意把任意解 $ \boldsymbol{\mathbf{v}} _i$ 乘以一个任意复数，同样也是方程的解。
+
+[/SCOPE:s_real_eig]
+[SCOPE:s_ortho|description|证明本征矢的正交性]
+[SCOPE:s_ortho_let|let_bind|正交证明中的变量]
+[21] 简并空间内，我们可以认为地指定正交归一基底，
+[22] 所以只需要证明不同本征值对应的本征矢正交即可。
+[23] \begin{equation}
+s = \boldsymbol{\mathbf{v}} _1 ^{\mathrm{T}} ( \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{v}} _2) = \boldsymbol{\mathbf{v}} _1 ^{\mathrm{T}} (\lambda_2 \boldsymbol{\mathbf{v}} _2) = \lambda_2 \boldsymbol{\mathbf{v}} _1 ^{\mathrm{T}} \boldsymbol{\mathbf{v}} _2~.
+\end{equation}
+[/SCOPE:s_ortho_let]
+[24] 使用矩阵乘法结合律
+[25] 式 22 [链接 L2]
+[26] 式 3 [链接 L3]
+[27] \begin{equation}
+s = ( \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{v}} _1) ^{\mathrm{T}} \boldsymbol{\mathbf{v}} _2 = \lambda_1^* \boldsymbol{\mathbf{v}} _1 ^{\mathrm{T}} \boldsymbol{\mathbf{v}} _2 = \lambda_1 \boldsymbol{\mathbf{v}} _1 ^{\mathrm{T}} \boldsymbol{\mathbf{v}} _2~.
+\end{equation}
+[28] 以上两矢相等，因为 $\lambda_1 \ne \lambda_2$，
+[29] 所以 $ \boldsymbol{\mathbf{v}} _1 ^{\mathrm{T}} \boldsymbol{\mathbf{v}} _2 = 0$。
+[30] 事实上，厄米矩阵也可以定义为满足
+[31] \begin{equation}
+\boldsymbol{\mathbf{v}} _1 ^{\mathrm{T}} ( \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{v}} _2) = ( \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{v}} _1) ^{\mathrm{T}} \boldsymbol{\mathbf{v}} _2~.
+\end{equation}
+[32] 的矩阵。
+[/SCOPE:s_ortho]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_real_eig",
+    "target_scope": "s_main",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "实数证明是主定理的一部分"
+  },
+  {
+    "source_scope": "s_ortho",
+    "target_scope": "s_main",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "正交证明是主定理的一部分"
+  }
+]

@@ -1,0 +1,99 @@
+[SCOPE:root|description|交错级数的收敛性判别]
+文章名: AltCov
+标题: 交错级数的收敛性判别
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=阿贝尔-迪利克雷判别法 (Abel-Dirichlet Test)
+  [1] type=example heading=例 1 title=某些三角级数的收敛性
+
+[SCOPE:s_abel_dirichlet|description|阿贝尔-迪利克雷判别法]
+[0] 定理 1 阿贝尔-迪利克雷判别法 (Abel-Dirichlet Test)
+[SCOPE:s_ad_let|let_bind|定理变量]
+[1] 设 $\{a_n\}$ 是单调的实数序列，$\{b_n\}$ 是复数序列。
+[SCOPE:s_ad_case1|cases|情形1: a_n单调下降至零]
+[2] 如果 $\{a_n\}$ 单调下降至零，而且存在常数 $M>0$ 使得
+[/SCOPE:s_ad_let]
+[3] $$
+\left|\sum_{n=1}^N b_n\right|\leq M~.
+$$
+[4] 对于任意 $N$ 都成立，
+[5] 那么级数 $\sum_{n=1}^\infty a_nb_n$ 收敛。
+[6] 如果 $\{a_n\}$ 是单调有界序列，而级数 $\sum_{n=1}^\infty b_n$ 收敛，
+[7] 那么级数 $\sum_{n=1}^\infty a_nb_n$ 收敛。
+[8] 证明。
+[SCOPE:s_ad_case1_let|let_bind|部分和变量]
+[9] 命部分和 $S_N=\sum_{n=1}^N a_nb_n$, $B_N=\sum_{n=1}^N b_n$. 利用如下的分部求和公式：
+[10] $$
+S_N=a_NB_N+\sum_{k=1}^{N-1}B_k(a_{k}-a_{k+1})~.
+$$
+[/SCOPE:s_ad_case1_let]
+[11] 如果 $\{a_n\}$ 单调下降至零，而且存在常数 $M>0$ 使得
+[12] $$
+|B_N|=\left|\sum_{n=1}^N b_n\right|\leq M~.
+$$
+[13] 对于任意 $N$ 都成立，
+[14] 那么当 $N\to\infty$ 时 $a_NB_N\to0$, 而级数
+[15] $$
+\sum_{k=1}^{\infty}B_k(a_{k}-a_{k+1})~
+$$
+[16] 是绝对收敛的，因为它的一般项绝对值组成的级数由望远镜级数
+[17] $$
+\sum_{k=1}^{\infty}M|a_{k}-a_{k+1}|
+=M\sum_{k=1}^{\infty}(a_{k}-a_{k+1})~
+$$
+[18] 所控制（这里用到了序列 $\{a_n\}$ 是单调下降的）. 由此极限 $\lim_{N\to\infty}S_N$ 存在，
+[19] 从而级数 $\sum_{n=1}^\infty a_nb_n$ 收敛。
+[/SCOPE:s_ad_case1]
+[SCOPE:s_ad_case2|cases|情形2: a_n单调有界且∑b_n收敛]
+[20a] 如果 $\{a_n\}$ 是单调有界序列（
+[20b] 则有极限，设为 $a$）, 而级数 $\sum_{n=1}^\infty b_n$ 的和为复数 $B$, 那么根据与上一小节类似的理由，可得到级数
+[21] $$
+\sum_{k=1}^{\infty}B_k(a_{k}-a_{k+1})~
+$$
+[22] 的绝对收敛性，而当 $N\to\infty$ 时 $a_NB_N\to aB$. 由此极限 $\lim_{N\to\infty}S_N$ 存在，
+[23] 从而级数 $\sum_{n=1}^\infty a_nb_n$ 收敛。
+[24] 这样，不论在哪种情形，级数 $\sum_{n=1}^\infty a_nb_n$ 都收敛。
+[/SCOPE:s_ad_case2]
+[25] 证毕。
+
+[/SCOPE:s_abel_dirichlet]
+[SCOPE:s_example|description|某些三角级数的收敛性]
+[26] 例 1 某些三角级数的收敛性
+[SCOPE:s_example_let|let_bind|例变量]
+[27] 这是一个令人惊讶的事实：如果 $\{a_n\}$ 是单调递减至零的正数序列，
+[28] 那么只要 $x\neq 2k\pi$, 级数
+[/SCOPE:s_example_let]
+[29] $$
+\sum_{n=1}^\infty a_n \mathrm{e} ^{inx}~
+$$
+[30] 就是收敛的，不论级数 $\sum_{n=1}^\infty a_n$ 本身收敛性如何。
+[31] 实际上，利用等比级数求和法，$x\neq 2k\pi$ 时，部分和序列
+[32] $$
+\left|\sum_{n=1}^N \mathrm{e} ^{inx}\right|
+=\left|\frac{1- \mathrm{e} ^{i(N+1)x}}{1- \mathrm{e} ^{ix}}\right|
+\leq\frac{2}{\left|\sin\frac{x}{2}\right|}~.
+$$
+[33] 这样，应用阿贝尔-迪利克雷判别法的第一条，就知道级数
+[34] $$
+\sum_{n=1}^\infty a_n \mathrm{e} ^{inx}~.
+$$
+[35] 在 $x\neq 2k\pi$ 时收敛，还可以估计出收敛速度：级数的第 $N$ 个部分和同实际的和之间的差值由
+[36] $$
+\frac{2a_N}{\left|\sin\frac{x}{2}\right|}~
+$$
+[37] 所控制。
+[38] 当然，
+[39] 由此得到的收敛速度估计在 $x$ 非常接近 $2k\pi$ 时会非常粗糙。
+[/SCOPE:s_example]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_example",
+    "target_scope": "s_abel_dirichlet",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1应用阿贝尔-迪利克雷判别法"
+  }
+]

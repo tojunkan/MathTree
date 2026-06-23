@@ -1,0 +1,77 @@
+[SCOPE:root|description|高维弯曲空间中的拉普拉斯算符]
+文章名: GLapOp
+标题: 高维弯曲空间中的拉普拉斯算符
+
+[SCOPE:s_intro|description|引言与背景]
+[0] 三维空间中的拉普拉斯算符 $\Delta$ 由下式所定义：
+[1] \begin{equation}
+\Delta u:= \boldsymbol{\nabla} \cdot ( \boldsymbol{\nabla} u)=\frac{\partial^{2}{u}}{\partial{x}^{2}} + \frac{\partial^{2}{u}}{\partial{y}^{2}} + \frac{\partial^{2}{u}}{\partial{z}^{2}}.~
+\end{equation}
+[2] 其中 $u$ 是空间坐标的函数。
+[3] 拉普拉斯算符在求解许多物理问题时都会出现，包括真空中电势满足的
+[4] 泊松方程 [链接 L0]
+[5] 定态薛定谔方程 [链接 L1]
+[6] 和线性化的爱因斯坦场方程（作为 d'Alember 算子的一部分）。
+[7] 将拉普拉斯算符推广到一般的高维弯曲空间中有着现实的物理意义。
+[8] 一方面，无论我们所处的时空是广义相对论说的 4 维，还是超弦论所谓的 10 维，或者某个物理理论说的多少维，它们都在告诉我们高维时空具有重要的物理意义。
+[9] 而各种场的物理理论似乎告诉我们，在很多情形下（比如真空情形），物理理论的基本场方程必然会出现拉普拉斯算符。
+[10] 另一方面，平坦的时空仅仅是弯曲时空的一个（曲率为 0 的）特例。
+[11] 因此，一般的高维弯曲空间中拉普拉斯算符的形式有着其独特的价值。
+[SCOPE:s_intro_let|let_bind|记号约定]
+[12] 记号约定：为方便起见，假设空间维度为 $N$，坐标变量为 $x^i,i=1,\cdots,N$，而描述线元的（代表二次型的度量矩阵的）度规记作 $g_{ij}$。
+
+[/SCOPE:s_intro]
+[/SCOPE:s_intro_let]
+[SCOPE:s_derivation_let|let_bind|导出中的变量]
+[SCOPE:s_derivation|description|一般时空中拉普拉斯算符的导出]
+[13] 观察式 1 ，容易想到，拉普拉斯算符 $\Delta$ 应当保持算符 $ \boldsymbol{\nabla} $ 的点积形式。
+[14] 即应当继续由
+[15] \begin{equation}
+\Delta u:= \boldsymbol{\nabla} \cdot ( \boldsymbol{\nabla} u)~
+\end{equation}
+[16] 在一般空间中，矢量的点积是由度规定义的，
+[17] 即
+[18] \begin{equation}
+v\cdot w:=(v|w)=(e_i,e_j)v^iv^j=g_{ij}v^iv^j.~
+\end{equation}
+[19] 由于度规矩阵的可逆性，
+[20] 因此常常用其和其逆矩阵 $g^{ij}$ 来升降指标，比如 $v^i=g^{ij}v_j$。
+[21] 因此式 2 现在成为
+[22] \begin{equation}
+\Delta u=g^{ij} \boldsymbol{\nabla} _i( \boldsymbol{\nabla} _j u).~
+\end{equation}
+[23] 然而，虽然在一般 $N$ 维空间中，算符 $ \boldsymbol{\nabla} $ 作用在函数上仍有
+[24] \begin{equation}
+\boldsymbol{\nabla} u= \frac{\partial u}{\partial x^i} .~
+\end{equation}
+[25] 但是算符 $ \boldsymbol{\nabla} $ 作用在带有分量指标的矢量上时，时间的弯曲将带来额外的影响。
+[26] 此时算符 $ \boldsymbol{\nabla} $ 称为
+[27] 协变导数 [链接 L2]
+[28] ，其作用在矢量场 $v^j$ 上效果为
+[29] \begin{equation}
+\boldsymbol{\nabla} _i v^j= \frac{\partial v^j}{\partial x^i} +{\Gamma^{j}}_{ki}v^k.~
+\end{equation}
+[30] 右边额外的部分来自时空弯曲的影响，（在黎曼几何下）其可以由每一点的度规进行通过 $ \boldsymbol{\nabla} _i g_{ik}=0$ 进行定义。
+[31] 因此
+[32] \begin{equation}
+\begin{aligned}
+&g^{ij} \boldsymbol{\nabla} _i( \boldsymbol{\nabla} _j u)\\
+&= \boldsymbol{\nabla} _i(g^{ij} \boldsymbol{\nabla} _j u)\\
+&= \frac{\partial }{\partial x^i} \left(g^{ij} \boldsymbol{\nabla} _j u \right) +{\Gamma^{i}}_{k…[truncated]…} \right) g^{kj} \frac{\partial u}{\partial x^j} \\
+&=\frac{1}{\sqrt{ \left\lvert g \right\rvert }} \frac{\partial }{\partial x^i} \left(\sqrt{ \left\lvert g \right\rvert }g^{ij} \frac{\partial u}{\partial x^j} \right) .
+\end{aligned}~
+\end{equation}
+[33] 其中倒数第二式可从 $ \boldsymbol{\nabla} _i g_{ik}=0$ 和
+[34] 式 6 [链接 L3]
+[35] 结合式 4 和式 7 ，就得到在一般高维弯曲空间中的拉普拉斯算符的形式，其由下式定义：
+[36] \begin{equation}
+\Delta u=\frac{1}{\sqrt{ \left\lvert g \right\rvert }} \frac{\partial }{\partial x^i} \left(\sqrt{ \left\lvert g \right\rvert }g^{ij} \frac{\partial u}{\partial x^j} \right) .~
+\end{equation}
+
+跨文章引用:
+  [L0] 泊松方程 → EPoiEQ
+  [L1] 定态薛定谔方程 → SchEq
+  [L2] 协变导数 → CoDer
+[/SCOPE:s_derivation_let]
+[/SCOPE:s_derivation]
+[/SCOPE:root]

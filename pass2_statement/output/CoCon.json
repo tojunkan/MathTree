@@ -1,0 +1,496 @@
+{
+  "article_name": "CoCon",
+  "statements": [
+    {
+      "stmt_id": "st_root_intro",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_root_simple",
+      "subtype": "remark",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_root_basis_rule",
+      "subtype": "remark",
+      "clause_range": [
+        5,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "V",
+        "V*"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let1",
+      "exposed_entities": [
+        "R",
+        "f_a",
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_basis",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_basis_a",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let1",
+      "exposed_entities": [
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_fb_coord",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_let1",
+      "exposed_entities": [
+        "f_b",
+        "ab"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_y_coord",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_let1",
+      "exposed_entities": [
+        "y",
+        "y/a"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let2",
+      "exposed_entities": [
+        "a'"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_new_coords",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_cov_contra",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_summary",
+      "subtype": "remark",
+      "clause_range": [
+        34,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        42,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "v",
+        "w"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        46,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2_let",
+      "exposed_entities": [
+        "v",
+        "T",
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_velocity",
+      "subtype": "conclusion",
+      "clause_range": [
+        49,
+        52
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_gradient",
+      "subtype": "conclusion",
+      "clause_range": [
+        53,
+        57
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2_let",
+      "exposed_entities": [
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_root_tensor1",
+      "subtype": "remark",
+      "clause_range": [
+        58,
+        62
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        65,
+        65
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_def2",
+      "subtype": "definition",
+      "clause_range": [
+        66,
+        71
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_root_index_lift",
+      "subtype": "remark",
+      "clause_range": [
+        72,
+        81
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_root_tensor_type",
+      "subtype": "remark",
+      "clause_range": [
+        82,
+        87
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_let",
+      "subtype": "assumption",
+      "clause_range": [
+        88,
+        88
+      ],
+      "truth_value": null,
+      "scope_id": "s_example3_let",
+      "exposed_entities": [
+        "V",
+        "T^b_a",
+        "v^a",
+        "w_b"
+      ]
+    },
+    {
+      "stmt_id": "st_example3_map",
+      "subtype": "conclusion",
+      "clause_range": [
+        89,
+        90
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example3_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_transform",
+      "subtype": "conclusion",
+      "clause_range": [
+        91,
+        96
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example3_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_root_summary",
+      "subtype": "remark",
+      "clause_range": [
+        97,
+        99
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_let",
+      "subtype": "assumption",
+      "clause_range": [
+        103,
+        103
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3_let",
+      "exposed_entities": [
+        "h^{ab}_c",
+        "v^c"
+      ]
+    },
+    {
+      "stmt_id": "st_def3",
+      "subtype": "definition",
+      "clause_range": [
+        100,
+        102
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_example",
+      "subtype": "example",
+      "clause_range": [
+        104,
+        105
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def3_let",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_example1_let1",
+      "target": "st_example1_fb_coord",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_basis",
+      "target": "st_example1_fb_coord",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_basis_a",
+      "target": "st_example1_fb_coord",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_let1",
+      "target": "st_example1_y_coord",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_basis",
+      "target": "st_example1_y_coord",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_basis_a",
+      "target": "st_example1_y_coord",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_let2",
+      "target": "st_example1_new_coords",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_fb_coord",
+      "target": "st_example1_new_coords",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_y_coord",
+      "target": "st_example1_new_coords",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_new_coords",
+      "target": "st_example1_cov_contra",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_let",
+      "target": "st_example2_velocity",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_let",
+      "target": "st_example2_gradient",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example3_let",
+      "target": "st_example3_map",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example3_let",
+      "target": "st_example3_transform",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_let",
+      "target": "st_def3_example",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_example1_cov_contra",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1引出定义1"
+    },
+    {
+      "source": "st_example2_gradient",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2是定义1的实例"
+    },
+    {
+      "source": "st_def2",
+      "target": "st_def1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定义2基于定义1的上下标约定"
+    },
+    {
+      "source": "st_example3_transform",
+      "target": "st_def3",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例3是定义3的实例"
+    }
+  ],
+  "unresolved": []
+}

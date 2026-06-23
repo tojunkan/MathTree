@@ -1,0 +1,309 @@
+{
+  "article_name": "CylLap",
+  "statements": [
+    {
+      "stmt_id": "st_laplace_eq",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_laplace_eq",
+      "exposed_entities": [
+        "u(r)"
+      ]
+    },
+    {
+      "stmt_id": "st_cyl_laplace_op",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_laplace_eq",
+      "exposed_entities": [
+        "r",
+        "θ",
+        "z"
+      ]
+    },
+    {
+      "stmt_id": "st_general_solution",
+      "subtype": "theorem",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": "true",
+      "scope_id": "s_laplace_eq",
+      "exposed_entities": [
+        "f(r)",
+        "J_l",
+        "Y_l",
+        "A_l",
+        "B_l",
+        "C_l",
+        "D_l"
+      ]
+    },
+    {
+      "stmt_id": "st_constants_freedom",
+      "subtype": "remark",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_laplace_eq",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bessel_eq",
+      "subtype": "theorem",
+      "clause_range": [
+        9,
+        11
+      ],
+      "truth_value": "true",
+      "scope_id": "s_laplace_eq",
+      "exposed_entities": [
+        "x",
+        "y",
+        "m",
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_sep_assume",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_separation",
+      "exposed_entities": [
+        "R(r)",
+        "Φ(θ)",
+        "Z(z)"
+      ]
+    },
+    {
+      "stmt_id": "st_sep_eq1",
+      "subtype": "conclusion",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_separation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sep_constant_l",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_separation",
+      "exposed_entities": [
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_sep_eq2",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_separation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sep_constant_m",
+      "subtype": "assumption",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_separation",
+      "exposed_entities": [
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_sep_eq3",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_separation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sep_var_change",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_separation",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_bessel_eq_sep",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_separation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sep_summary",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_separation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_solutions_Z_Phi",
+      "subtype": "theorem",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": "true",
+      "scope_id": "s_separation",
+      "exposed_entities": [
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "stmt_id": "st_bessel_solutions",
+      "subtype": "theorem",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": "true",
+      "scope_id": "s_separation",
+      "exposed_entities": [
+        "J_l",
+        "Y_l"
+      ]
+    },
+    {
+      "stmt_id": "st_note_m_order",
+      "subtype": "remark",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_separation",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_sep_assume",
+      "target": "st_sep_eq1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sep_eq1",
+      "target": "st_sep_constant_l",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sep_constant_l",
+      "target": "st_sep_eq2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sep_eq2",
+      "target": "st_sep_constant_m",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sep_constant_m",
+      "target": "st_sep_eq3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sep_eq3",
+      "target": "st_sep_var_change",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sep_var_change",
+      "target": "st_bessel_eq_sep",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_bessel_eq_sep",
+      "target": "st_sep_summary",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sep_summary",
+      "target": "st_solutions_Z_Phi",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sep_summary",
+      "target": "st_bessel_solutions",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_laplace_eq",
+      "target": "st_cyl_laplace_op",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_cyl_laplace_op",
+      "target": "st_general_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_general_solution",
+      "target": "st_bessel_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

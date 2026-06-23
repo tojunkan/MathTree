@@ -1,0 +1,118 @@
+[SCOPE:root|description|矩阵的迹]
+文章名: trace
+标题: 矩阵的迹
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=矩阵的迹
+  [1] type=theorem heading=定理 1 title=线性
+  [2] type=theorem heading=定理 2 title=交换性
+  [3] type=theorem heading=定理 3 title=
+  [4] type=theorem heading=定理 4 title=
+  [5] type=exercise heading=习题 1 title=
+  [6] type=example heading=例 1 title=
+  [7] type=exercise heading=习题 2 title=
+
+[SCOPE:s_def1|description|定义 1 矩阵的迹]
+[0] 定义 1 矩阵的迹
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[1] 令 域 $\mathbb{F}$ 上的 $N$ 维方阵 $ \boldsymbol{\mathbf{A}} $ 的矩阵元为 $a_{ij}\in\mathbb{F}$，它的迹（trace）定义为对角线上矩阵元之和
+[2] \begin{equation}
+\operatorname {tr}(A) = \sum_{i=0}^N a_{ii}~.
+\end{equation}
+[/SCOPE:s_def1_let]
+[3] 矩阵的迹是刻画矩阵性质的一个量，它的优点在于满足以下一些性质，
+[4] 从而成为了分析矩阵的变换的利器。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理 1 线性]
+[5] 定理 1 线性
+[6] 矩阵的求迹操作是线性的，
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[7] 即对于域 $\mathbb{F}$ 上的方阵 $ \boldsymbol{\mathbf{A}} $，$ \boldsymbol{\mathbf{B}} $ 和域中元素 $c_1$，$c_2$，有
+[8] \begin{equation}
+\operatorname {tr}(c_1 \boldsymbol{\mathbf{A}} +c_2 \boldsymbol{\mathbf{B}} ) = c_1 \operatorname {tr}( \boldsymbol{\mathbf{A}} ) + c_2 \operatorname {tr}( \boldsymbol{\mathbf{B}} )~,
+\end{equation}
+[/SCOPE:s_thm1_let]
+[9] 证明留作练习。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理 2 交换性]
+[10] 定理 2 交换性
+[11] 矩阵乘法的迹满足（$ \boldsymbol{\mathbf{A}} $ 和 $ \boldsymbol{\mathbf{B}} $ 不必是方阵，
+[12] 但要求乘积是方阵。
+[13] 注意 $ \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{B}} $ 的尺寸和 $ \boldsymbol{\mathbf{B}} \boldsymbol{\mathbf{A}} $ 未必相同）
+[14] \begin{equation}
+\operatorname {tr}( \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{B}} ) = \operatorname {tr}( \boldsymbol{\mathbf{B}} \boldsymbol{\mathbf{A}} )~.
+\end{equation}
+[SCOPE:s_thm2_let|let_bind|定理 2 的变量]
+[15] 证明：令式 3 中 $ \boldsymbol{\mathbf{A}} $ 为 $M\times N$ 的矩阵，$ \boldsymbol{\mathbf{B}} $ 为 $N\times M$ 的矩阵
+[16] \begin{equation}
+\operatorname {tr}( \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{B}} ) = \sum_{i=1}^M \sum_{k=1}^N a_{ik}b_{ki} = \sum_{i=1}^M \sum_{k=1}^N b_{ki}a_{ik} = \sum_{i=1}^N \sum_{k=1}^M b_{ik}a_{ki} = \operatorname {tr}( \boldsymbol{\mathbf{B}} \boldsymbol{\mathbf{A}} )~,
+\end{equation}
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm3|description|定理 3]
+[17] 定理 3
+[18] 相似矩阵的迹相等。
+[SCOPE:s_thm3_let|let_bind|定理 3 的变量]
+[19] 证明：根据交换性式 3
+[20] $$ \operatorname {tr}( \boldsymbol{\mathbf{P}} ^{-1} \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{P}} ) = \operatorname {tr}( \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{P}} \boldsymbol{\mathbf{P}} ^{-1}) = \operatorname {tr}( \boldsymbol{\mathbf{A}} )~,$$
+[/SCOPE:s_thm3_let]
+[21] 证毕。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|定理 4]
+[22] 定理 4
+[SCOPE:s_thm4_let|let_bind|定理 4 的变量]
+[23a] 矩阵的迹等于它的所有 $N$ 个本征值 $\lambda_i$ 相加
+[23b] 如果某个本征值有 $n$ 重简并，则视为 $n$ 个本征值
+[24] \begin{equation}
+\operatorname {tr}( \boldsymbol{\mathbf{A}} ) = \sum_{i=0}^N \lambda_i~.
+\end{equation}
+
+[/SCOPE:s_thm4]
+[/SCOPE:s_thm4_let]
+[SCOPE:s_ex1|description|习题 1]
+[25] 习题 1
+[SCOPE:s_ex1_let|let_bind|习题 1 的变量]
+[26] 对于矩阵 $ \boldsymbol{\mathbf{A}} $，若记其转置为 $ \boldsymbol{\mathbf{A}} ^{\mathrm{T}} $，共轭为 $\overline{ \boldsymbol{\mathbf{A}} }$，厄米共轭为 $ \boldsymbol{\mathbf{A}} ^\dagger$，
+[27] 那么有：
+[/SCOPE:s_ex1_let]
+[28] \begin{equation}
+\operatorname {tr}(A ^{\mathrm{T}} )= \operatorname {tr}(A), \qquad \operatorname {tr}(\overline{ \boldsymbol{\mathbf{A}} })=\overline{ \operatorname {tr}( \boldsymbol{\mathbf{A}} )}~.
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_example1_let|let_bind|例 1 的变量]
+[SCOPE:s_example1|description|例 1]
+[29] $ \operatorname {tr}(AA^\dagger)=0$ 当且仅当 $ \operatorname {tr}(A)=0$。
+
+[/SCOPE:s_example1_let]
+[/SCOPE:s_example1]
+[SCOPE:s_ex2|description|习题 2]
+[30] 习题 2
+[SCOPE:s_ex2_let|let_bind|习题 2 的变量]
+[31] 对于域 $\mathbb{C}$ 上的方阵 $ \boldsymbol{\mathbf{A}} $，如果 $ \boldsymbol{\mathbf{A}} ^2= \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{A}} ^\dagger$，求证 $ \boldsymbol{\mathbf{A}} = \boldsymbol{\mathbf{A}} ^\dagger$。
+[32] 提示：使用例 1 的结论，证明 $ \boldsymbol{\mathbf{A}} - \boldsymbol{\mathbf{A}} ^\dagger=0$ 即可。
+[/SCOPE:s_ex2]
+[/SCOPE:s_ex2_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3的证明使用了定理2的交换性"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_example1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题2提示使用例1的结论"
+  }
+]

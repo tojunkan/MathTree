@@ -1,0 +1,43 @@
+[SCOPE:root|description|二项式定理（高中）]
+文章名: HsBN
+标题: 二项式定理（高中）
+
+[SCOPE:s_def|description|二项式定理定义]
+[0] \begin{equation}
+(a + b)^n = C_n^0a^n + C_n^1a^{n- 1}b + C_n^2a^{n- 2}b^2 + \cdots + C_n^ra^{n-r}b^r + \cdots + C_n^nb^n \qquad (n\in N_{+})~.
+\end{equation}
+[1] 这个公式所表示的规律叫做二项式定理（binomial theorem），
+[2] 等式右边的多项式叫做 $(a+b)^n$ 的二项展开式（binomial expansion），它一共有 $n+1$ 项，其中各项系数 $C_n^r(r = 0, 1, \cdots, n)$ 叫做展开式的二项式系数（binomial coefficient）。
+[3] 展开式中的 $C_n^ra^{n-r}b^r$ 项叫做二项展开式的通项，通项是展开式的第 $r+1$ 项。
+[4] 注意：二项式系数不是项的系数。
+
+[/SCOPE:s_def]
+[SCOPE:s_deriv|description|二项式定理推导]
+[5] 我们在初中时就学过平方和公式，$(a+b)^2 = a^2 + 2ab + b^2$ 显然这就是一个二项式，我们先从这里开始研究。
+[6] \begin{equation}
+\begin{aligned}
+(a+b)^2 &= a(a + b) + b(a + b)\\
+&= a^2 + ab + ab + b^2\\
+&= a^2 + 2ab + b^2~,
+\end{aligned}
+\end{equation}
+[7] 我们将式 2 的过程图形化。
+[8] 【图解】图 1：平方和的运算过程
+[9] 我们会发现在树状图的分支会延伸到同一深度，且各项的次数相同，在树状图延伸的过程中，每一项都会有 $a$ 和 $b$ 两种情况，
+[10] 那么二项式系数的问题就转换成了排序问题，对于 $a^rb^{n-r}$，$a$ 和 $b$ 有多少种排序方式。
+[11] 注意：这里不是排列，不符合排列定义
+[SCOPE:s_deriv_let|let_bind|推导中的变量]
+[12] 此时我们有 $n-r$ 个 $a$ 和 $r$ 个 $b$ 我们对其进行编号，将其转化为排列问题
+[13] $a_1,a_2,\cdots,a_{n-r};b_1,b_2,\cdots,b_r~.$
+[14] 则共有 $A_n^n$ 种排列，
+[15] 之后我们排除掉重复的排列，
+[16] \begin{equation}
+\begin{aligned}
+\frac{A_n^n}{A_r^rA_{n-r}^{n-r}} &= \frac{n!}{r!(n-r)!}\\
+&= \frac{A_n^r}{A_r^r}\\
+&= C_n^r~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_deriv]
+[/SCOPE:s_deriv_let]
+[/SCOPE:root]

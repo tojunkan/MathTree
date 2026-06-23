@@ -1,0 +1,116 @@
+[SCOPE:root|description|抛物线坐标系]
+文章名: ParaCr
+标题: 抛物线坐标系
+
+[SCOPE:s_intro|description|抛物线坐标系定义]
+[0] 1抛物线的极坐标方程为（式 19 ）
+[1] \begin{equation}
+r = \frac{\eta}{1 - \cos \theta }~.
+\end{equation}
+[SCOPE:s_intro_let1|let_bind|引入半通径 ξ, η]
+[2] 若选用不同的半通径 $\xi$（$\xi > 0$），将得到一系列缩放的抛物线（
+[3] 图 1 [链接 L0]
+[4] 中的绿色）。
+[5] 我们也可以把这些抛物线旋转 180 度，得到
+[6] \begin{equation}
+r = \frac{\xi}{1 + \cos \theta }~.
+\end{equation}
+[7] 这时我们把半通径记为 $\eta$（$\eta > 0$），当它取不同的值也得到一系列抛物线（
+[8] 图 1 [链接 L1]
+[9] 中的红色）。
+[10] 另外我们再定义 $\eta = 0$ 和 $\xi = 0$ 分别代表极轴的正半轴和负半轴（包括原点）。
+[/SCOPE:s_intro_let1]
+[11] 综上，通过 $\xi, \eta$ 两个坐标，我们就能确定平面上的唯一一点。
+[12] 【图解】图 1：抛物线坐标系，极轴向上（来自 Wikipedia）
+[SCOPE:s_intro_let2|let_bind|引入方位角 φ]
+[13] 若把这些曲线绕极轴旋转一周变为一系列抛物面，
+[14] 那么我们只需要再指定一个方位角 $\phi$ 就可以用坐标 $(\xi, \eta, \phi)$ 确定空间中的任意一点。
+
+[/SCOPE:s_intro]
+[/SCOPE:s_intro_let2]
+[SCOPE:s_convert|description|与直角坐标和球坐标的转换]
+[15] 一般令极轴与直角坐标的 $z$ 轴重合，
+[16] 则根据定义有
+[17] \begin{equation}
+\xi = r(1 + \cos\theta) = \sqrt{x^2 + y^2 + z^2} + z~,
+\end{equation}
+[18] \begin{equation}
+\eta = r(1 - \cos\theta) = \sqrt{x^2 + y^2 + z^2} - z~,
+\end{equation}
+[19] \begin{equation}
+\phi = \operatorname{Arctan} (y, x)~,
+\end{equation}
+[20] 其中 $ \operatorname{Arctan} $ 见 “
+[21] 四象限 Arctan 函数 [链接 L2]
+[22] ”。
+[23] 可以解得
+[24] \begin{equation}
+z = \frac{\xi - \eta}{2}~,
+\end{equation}
+[25] \begin{equation}
+x = \sqrt{\xi\eta}\cos\phi ~,\qquad
+y = \sqrt{\xi\eta}\sin\phi~.
+\end{equation}
+[26] 【未完成】另开文章
+
+[/SCOPE:s_convert]
+[SCOPE:s_orthogonal|description|正交曲线坐标系]
+[27] 可以证明抛物线坐标系是一个正交曲线坐标系，
+[28] 即图 1 中过任意一点的两条坐标曲线都垂直：
+[29] 在某点 $ \boldsymbol{\mathbf{r}} $，延 $\eta$ 曲线的切线方向为 $ \partial \boldsymbol{\mathbf{r}} /\partial \xi $，延 $\xi$ 曲线的切线方向为 $ \partial \boldsymbol{\mathbf{r}} /\partial \eta $
+[30] \begin{equation}
+\,\mathrm{d}{x} = \sqrt{\frac{\eta}{\xi}}\frac{\cos\phi}{2} \,\mathrm{d}{\xi} + \sqrt{\frac{\xi}{\eta}}\frac{\cos\phi}{2\sqrt{\xi}} \,\mathrm{d}{\eta} - \sqrt{\xi\eta}\sin\phi \,\mathrm{d}{\phi} ~,
+\end{equation}
+[31] \begin{equation}
+\,\mathrm{d}{y} = \sqrt{\frac{\eta}{\xi}}\frac{\sin\phi}{2} \,\mathrm{d}{\xi} + \sqrt{\frac{\xi}{\eta}}\frac{\sin\phi}{2} \,\mathrm{d}{\eta} + \sqrt{\xi\eta}\cos\phi \,\mathrm{d}{\phi} ~,
+\end{equation}
+[32] \begin{equation}
+\,\mathrm{d}{z} = \frac{1}{2} \,\mathrm{d}{\xi} - \frac{1}{2} \,\mathrm{d}{\eta} ~.
+\end{equation}
+[33] 任意一点的位置矢量可以表示为
+[34] \begin{equation}
+\boldsymbol{\mathbf{r}} = r \hat{\boldsymbol{\mathbf{r}}} = \sqrt{\xi\eta}\cos\phi\, \hat{\boldsymbol{\mathbf{x}}} + \sqrt{\xi\eta}\sin\phi\, \hat{\boldsymbol{\mathbf{y}}} + \frac{\xi - \eta}{2}\, \hat{\boldsymbol{\mathbf{z}}} ~,
+\end{equation}
+[35] 所以三个归一化单位矢量分别为(将 $ \boldsymbol{\mathbf{r}} $ 对三个坐标分量 $\xi \eta \phi$ 求偏导并归一化)
+[36] \begin{equation}
+\hat{\boldsymbol{\mathbf{\xi}}} = \sqrt{\frac{\eta}{\xi+\eta}}\cos\phi\, \hat{\boldsymbol{\mathbf{x}}} + \sqrt{\frac{\eta}{\xi+\eta}}\sin\phi\, \hat{\boldsymbol{\mathbf{y}}} + \sqrt{\frac{\xi}{\xi+\eta}}\, \hat{\boldsymbol{\mathbf{z}}} ~,
+\end{equation}
+[37] \begin{equation}
+\hat{\boldsymbol{\mathbf{\eta}}} = \sqrt{\frac{\xi}{\xi+\eta}}\cos\phi\, \hat{\boldsymbol{\mathbf{x}}} + \sqrt{\frac{\xi}{\xi+\eta}}\sin\phi\, \hat{\boldsymbol{\mathbf{y}}} - \sqrt{\frac{\eta}{\xi+\eta}}\, \hat{\boldsymbol{\mathbf{z}}} ~,
+\end{equation}
+[38] \begin{equation}
+\hat{\boldsymbol{\mathbf{\phi}}} = -\sin\phi \, \hat{\boldsymbol{\mathbf{x}}} + \cos\phi \, \hat{\boldsymbol{\mathbf{y}}} ~,
+\end{equation}
+[39] 容易证明它们两两正交。
+[40] 另外有
+[41] \begin{equation}
+\,\mathrm{d}{ \boldsymbol{\mathbf{r}} } = \frac{1}{2}\sqrt{\frac{\xi + \eta}{\xi}} \hat{\boldsymbol{\mathbf{\xi}}} \,\mathrm{d}{\xi}
++ \frac{1}{2}\sqrt{\frac{\xi + \eta}{\eta}} \hat{\boldsymbol{\mathbf{\eta}}} \,\mathrm{d}{\eta}
++ \sqrt{\xi\eta}\, \hat{\boldsymbol{\mathbf{\phi}}} \,\mathrm{d}{\phi} ~,
+\end{equation}
+[42] 体积元等于式中三个分量相乘
+[43] \begin{equation}
+\,\mathrm{d}{V} = \frac{1}{4} (\xi + \eta) \,\mathrm{d}{\xi} \,\mathrm{d}{\eta} \,\mathrm{d}{\phi} ~.
+\end{equation}
+
+[/SCOPE:s_orthogonal]
+[SCOPE:s_vector_ops|description|矢量算符]
+[44] 结合式 15 和式 3 到式 8 得
+[45] \begin{equation}
+\boldsymbol\nabla u = 2\sqrt{\frac{\xi}{\xi + \eta}} \frac{\partial u}{\partial \xi} + 2\sqrt{\frac{\eta}{\xi + \eta}} \frac{\partial u}{\partial \eta} + \frac{1}{\sqrt{\xi\eta}} \frac{\partial u}{\partial \phi} ~,
+\end{equation}
+[46] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{A}} = \frac{2}{\xi + \eta} \left[ \frac{\partial}{\partial{\xi}} \left(\sqrt{\xi(\xi+\eta)}A_\xi \right) + \frac{\partial}{\partial{\eta}} \left(\sqrt{\eta(\xi+\eta)}A_\eta \right) \right] + \frac{1}{\sqrt{\xi\eta}} \frac{\partial A_\phi}{\partial \phi} ~,
+\end{equation}
+[47] \begin{equation}
+\begin{aligned}
+\boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{A}} = & \left[\frac{2}{\sqrt{\xi+\eta}} \frac{\partial}{\partial{\eta}} (\sqrt{\eta}A_\phi) - \frac{1}{\sqrt{\xi\eta}} \frac{\partial A_\eta}{\partial \phi} \…[truncated]… \left[\frac{2\sqrt{\xi}}{\xi+\eta} \frac{\partial}{\partial{\xi}} (\sqrt{\xi+\eta}A_\eta) - \frac{2\sqrt{\eta}}{\xi+\eta} \frac{\partial}{\partial{\eta}} (\sqrt{\xi+\eta}A_\xi) \right] \hat{\boldsymbol{\mathbf{\phi}}} ~,
+\end{aligned}
+\end{equation}
+[48] \begin{equation} \boldsymbol{\nabla}^2 u = \frac{4}{\xi + \eta} \left[ \frac{\partial u}{\partial \xi} \left(\xi \frac{\partial}{\partial{\xi}} \right) + \frac{\partial u}{\partial \eta} \left(\eta \frac{\partial}{\partial{\eta}} \right) \right] + \frac{1}{\xi\eta} \frac{\partial^{2}{u}}{\partial{\phi}^{2}} ~.
+\end{equation}
+
+跨文章引用:
+  [L2] 四象限 Arctan 函数 → Arctan
+[/SCOPE:s_vector_ops]
+[/SCOPE:root]

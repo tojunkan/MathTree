@@ -1,0 +1,193 @@
+[SCOPE:root|description|拉普拉斯变换的性质]
+文章名: ProLap
+标题: 拉普拉斯变换的性质
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=线性性质的应用
+  [1] type=exercise heading=习题 1 title=
+
+[0] 前面我们介绍了拉普拉斯变换，
+[1] 那么这个变换到底给我们带来了什么特别的好处呢？
+[2] 我们下面就来看一下它到底具有哪些性质。
+
+[SCOPE:s_linear|description|线性性质]
+[SCOPE:s_linear_let|let_bind|线性性质的变量]
+[3a] (t)] = \bar f_1
+[3b] (p)$，$\mathscr L[f_2
+[3c] (t)] = \bar f_2
+[3d] (p)$，
+[4] 则
+[/SCOPE:s_linear_let]
+[5] \begin{equation}
+\mathscr L[c_1f_1(t)+c_2f_2(t)] = c_1\bar f_1(p) + c_2\bar f_2(p)~,
+\end{equation}
+[6] 证明起来也十分容易。
+[7] \begin{equation}
+\begin{aligned} \mathscr L[c_{1} f_{1}(t)+c_{2} f_{2}(t)] & = \int_{0}^{\infty}\left[c_{1} f_{1}(t)+c_{2} f_{2}(t)\right] \mathrm{e}^{-\rho t} \mathrm{d} t \\ &=\int_{0}^{\infty} c_{1} f_{1}(t) \mathrm{e}^{-p t} \mathrm{d} t+\int_{0}^{\infty} c_{2} f_{2}(t) \mathrm{e}^{-\rho t} \mathrm{d} t \\ &=c_{1} \bar{f}_{1}(p)+c_{2} \bar{f}_{2}(p) ~.\end{aligned}
+\end{equation}
+[8] 它能让我们干什么呢？
+[9] 我们可以把未知的函数拆成已知函数的线性组合，相加它们的拉普拉斯变换来得到所要的未知函数的拉普拉斯变换。
+[10] 例如：
+
+[/SCOPE:s_linear]
+[SCOPE:s_example1|description|例1 线性性质的应用]
+[11] 例 1 线性性质的应用
+[SCOPE:s_example1_let|let_bind|例1的变量]
+[12] 求 $\mathscr L[\sin \omega t]$，$\omega$ 为常数。
+[/SCOPE:s_example1_let]
+[13] 我们知道
+[14] \begin{equation}
+\sin \omega t=\frac{1}{2 \mathrm{i}}\left(\mathrm{e}^{\mathrm{i} \omega t}-\mathrm{e}^{-\mathrm{i} \omega t}\right)~,
+\end{equation}
+[15] \begin{equation}
+\begin{aligned} \mathscr{L}[\sin \omega t] &=\mathscr{L}\left[\frac{1}{2 \mathrm{i}}\left(\mathrm{e}^{\mathrm{i} \omega t}-\mathrm{e}^{-\mathrm{i} \omega t}\right)\right]=\frac{1}{2 \mathrm{i}} \mathscr{L}\left[\mathrm{e}^{\mathrm{i}…[truncated]…scr{L}\left[\mathrm{e}^{-\mathrm{i} \omega t}\right] \\ &=\frac{1}{2 \mathrm{i}}\left[\frac{1}{p-\mathrm{i} \omega}-\frac{1}{p+\mathrm{i} \omega}\right] \\ &=\frac{\omega}{p^{2}+\omega^{2}} \quad( \operatorname{Re} p>0) \end{aligned}~.
+\end{equation}
+[16] 同理可得
+[17] \begin{equation}
+\mathscr{L}[\cos \omega t]=\frac{p}{p^{2}+\omega^{2}} \quad(\operatorname{Re} p>0)~.
+\end{equation}
+
+[/SCOPE:s_example1]
+[SCOPE:s_derivative|description|导数定理]
+[SCOPE:s_derivative_let|let_bind|导数定理的变量]
+[18] 拉普拉斯变换的导数定理是说：
+[19] \begin{equation}
+\mathscr L[f'(t)]=p\bar f(p)-f(0)~,
+\end{equation}
+[/SCOPE:s_derivative_let]
+[20] 证明同样直接积分就可以了。
+[21] \begin{equation}
+\begin{aligned} \mathscr L[f^{\prime}(t)] & = \int_{0}^{\infty} f^{\prime}(t) \mathrm{e}^{-p t} \mathrm{d} t=\int_{0}^{\infty} \mathrm{e}^{-p t} \mathrm{d} f \\ &=\left[\mathrm{e}^{-p t} f(t)\right]_{0}^{\infty}-\int_{0}^{\infty} f(t) \mathrm{d}\left(\mathrm{e}^{-p t}\right) \end{aligned}~.
+\end{equation}
+[22] 取 $ \operatorname{Re} p>\sigma$，有 $\lim_{t\to\infty}\mathrm{e}^{-pt}f(t)=0$。
+[23] 于是可得
+[24] \begin{equation}
+\begin{aligned} \mathscr L[f^{\prime}(t)] & = -f(0)-\int_{0}^{\infty} f(t) \mathrm{d}\left(\mathrm{e}^{-\rho t}\right)=p \int_{0}^{\infty} f(t) \mathrm{e}^{-p t} \mathrm{d} t-f(0) \\ &=p \bar{f}(p)-f(0) \quad\left(\operatorname{Re} p>\sigma_{0}\right) \end{aligned}~.
+\end{equation}
+[25] 我们还可以推广到高阶导数的情形：
+[26] \begin{equation}
+\mathscr L[f^{(n)}(t)] = p^{n} f(p)-p^{n-1} f(0)-p^{n-2} f^{\prime}(0)-\cdots-p f^{(n-2)}(0)-f^{(n-1)}(0)~.
+\end{equation}
+[27] 有了导数定理，让我们来想想导数的逆运算——积分！
+[28] 有没有积分定理呢？
+[29] 有！
+
+[/SCOPE:s_derivative]
+[SCOPE:s_integral|description|积分定理]
+[30] \begin{equation}
+\mathscr L\left[\int_{0}^{t} \psi(\tau) \mathrm{d} \tau \right]=\frac{1}{p} \mathscr{L}[\psi(t)]~,
+\end{equation}
+[31] 证明其实也一样简单。
+[SCOPE:s_integral_let|let_bind|积分定理的变量]
+[32a] (t)=\int_{0}^{t} \psi(\tau) \mathrm{d} \tau$，对 $f
+[32b] (t)$ 应用导数定理，可知：
+[/SCOPE:s_integral_let]
+[33] \begin{equation}
+\mathscr[f^{\prime}(t)]=p \mathscr{L}[f(t)]-f(0)=p \mathscr{L}[f(t)]~,
+\end{equation}
+[34] 所以也就有
+[35] \begin{equation}
+\frac{1}{p} \mathscr{L}[\psi(t)]=\mathscr{L}[f(t)]=\mathscr{L}\left[\int_{0}^{t} \psi(\tau) \mathrm{d} \tau\right]~,
+\end{equation}
+[36] 这也就证明了定理。
+
+[/SCOPE:s_integral]
+[SCOPE:s_similarity|description|相似性定理]
+[SCOPE:s_similarity_let|let_bind|相似性定理的变量]
+[37] \begin{equation}
+\mathscr{L}[f(at)]=\frac{1}{a} \bar{f}\left(\frac{p}{a}\right)~.
+\end{equation}
+[/SCOPE:s_similarity_let]
+[38] 证明留作练习。
+
+[/SCOPE:s_similarity]
+[SCOPE:s_shift|description|位移定理]
+[SCOPE:s_shift_let|let_bind|位移定理的变量]
+[39] \begin{equation}
+\mathscr{L}[\mathrm{e}^{-\lambda t} f(t)]= \bar{f}(p+\lambda)~.
+\end{equation}
+[/SCOPE:s_shift_let]
+[40] 这个证明也十分简单，留作练习。
+
+[/SCOPE:s_shift]
+[SCOPE:s_delay|description|延迟定理]
+[SCOPE:s_delay_let|let_bind|延迟定理的变量]
+[41] \begin{equation}
+\mathscr{L}\left [f\left(t-t_{0}\right)\right] =\mathrm{e}^{-p t_{0}} \bar f(p)~,
+\end{equation}
+[/SCOPE:s_delay_let]
+[42] 用换元积分即可证明。
+[43] 具体来说：
+[44] \begin{equation}
+\mathscr L\left [f\left(t-t_{0}\right)\right] =\int_{0}^{\infty} f\left(t-t_{0}\right) \mathrm{e}^{-p t} \mathrm{d} t~.
+\end{equation}
+[45] 我们知道在 $t<0$ 时，默认 $f(t)$ 都是 $0$。
+[46] 那么我们做积分的时候，时间可以改为从 $t_0$ 开始积分。
+[47] 也就是说：
+[48] \begin{equation}
+\mathscr L\left [f\left(t-t_{0}\right)\right] =\int_{t_0}^{\infty} f\left(t-t_{0}\right) \mathrm{e}^{-p t} \mathrm{d} t~,
+\end{equation}
+[49] 作换元 $\xi=t-t_0$，
+[50] 那么就有
+[51] \begin{equation}
+\begin{aligned} \mathscr L\left[f\left(t-t_{0}\right)\right] &=\int_{0}^{\infty} f(\xi) \mathrm{e}^{-p\left(\xi+t_{0}\right)} \mathrm{d} \xi=\mathrm{e}^{-p t_{0}} \int_{0}^{\infty} f(\xi) \mathrm{e}^{-p \xi} \mathrm{d} \xi \\ &=\mathrm{e}^{-p t_{0}} \bar{f}(p) \end{aligned}~.
+\end{equation}
+
+[/SCOPE:s_delay]
+[SCOPE:s_convolution|description|卷积定理]
+[SCOPE:s_convolution_let|let_bind|卷积定理的变量]
+[52a] (t)] = \bar f_1
+[52b] (p), \mathscr L[f_2
+[52c] (t)] = \bar f_2
+[52d] (p)$，
+[/SCOPE:s_convolution_let]
+[53] 则
+[54] \begin{equation}
+\mathscr L[f_{1}(t) * f_{2}(t) ]= \bar{f}_{1}(p) \bar{f}_{2}(p)~,
+\end{equation}
+[55] 下面我们来证明它。
+[56] 这个证明稍复杂一些，毕竟它是二重积分：
+[57] \begin{equation}
+\begin{aligned} & \mathscr{L}\left[f_{1}(t) * f_{2}(t)\right] \\=& \int_{0}^{\infty} f_{1}(t) * f_{2}(t) \mathrm{e}^{-p t} \mathrm{d} t \\=& \int_{0}^{\infty}\left[\int_{0}^{t} f_{1}(\tau) f_{2}(t-\tau) \mathrm{d} \tau\right] \mathrm{e}^{-p t} \mathrm{d} t \end{aligned}~.
+\end{equation}
+[58] 【图解】图 1：积分限
+[59] 我们需要交换积分次序，首先我们来看一下积分区域，它就是图 1 中的绿色区域。
+[60] 由此可见，现在改变积分次序，就是说
+[61] \begin{equation}
+\begin{aligned} & \mathscr{L}\left[f_{1}(t) * f_{2}(t)\right] \\=& \int_{0}^{\infty}\left[\int_{\tau}^{\infty} f_{2}(t-\tau) \mathrm{e}^{-p t} \mathrm{d} t\right] f_{1}(\tau) \mathrm{d} \tau \end{aligned}~.
+\end{equation}
+[62] 作换元，$\xi=t-\tau$，
+[63] 那么就有
+[64] \begin{equation}
+\begin{aligned} \mathscr{L}\left[f_{1}(t) * f_{2}(t)\right] &=\int_{0}^{\infty}\left[\int_{0}^{\infty} f_{2}(\xi) \mathrm{e}^{-p \xi} \mathrm{d} \xi\right] f_{1}(\tau) \mathrm{e}^{-p \tau} \mathrm{d} \tau \\ &=\int_{0}^{\infty} f_{1}(\tau) \mathrm{e}^{-p \tau} \mathrm{d} \tau \int_{0}^{\infty} f_{2}(\xi) \mathrm{e}^{-p \xi} \mathrm{d} \xi \\ &=\bar{f}_{1}(p) \bar{f}_{2}(p) \end{aligned}~.
+\end{equation}
+
+[/SCOPE:s_convolution]
+[SCOPE:s_exercise1|description|习题1]
+[65] 习题 1
+[66] 求下列函数的拉普拉斯变换。
+[67] \begin{equation}
+\text { sh } \omega t, \quad \text { ch } \omega t~.
+\end{equation}
+[68] \begin{equation}
+\mathrm{e}^{-\lambda t} \sin \omega t, \quad \mathrm{e}^{-\lambda t} \cos \omega t~.
+\end{equation}
+[69] \begin{equation}
+\frac{1}{\sqrt{\pi t}}~.
+\end{equation}
+[70] \begin{equation}
+\delta(t-\tau)~.
+\end{equation}
+[/SCOPE:s_exercise1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_linear",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是线性性质的应用"
+  }
+]

@@ -1,0 +1,268 @@
+{
+  "article_name": "EleOpt",
+  "statements": [
+    {
+      "stmt_id": "st_elem_ops_intro",
+      "subtype": "remark",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_elem_ops",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_elem_matrices_def",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_elem_matrices",
+      "exposed_entities": [
+        "E"
+      ]
+    },
+    {
+      "stmt_id": "st_elem_matrices_inv",
+      "subtype": "conclusion",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_elem_matrices",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_stmt",
+      "subtype": "theorem",
+      "clause_range": [
+        42,
+        44
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_eq",
+      "subtype": "example",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_eq",
+      "subtype": "example",
+      "clause_range": [
+        48,
+        49
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_question",
+      "subtype": "question",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        51,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_example3",
+      "exposed_entities": [
+        "E_1"
+      ]
+    },
+    {
+      "stmt_id": "st_example3_def_inv",
+      "subtype": "definition",
+      "clause_range": [
+        52,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_example3",
+      "exposed_entities": [
+        "E_1^{-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_example3_reason",
+      "subtype": "conclusion",
+      "clause_range": [
+        53,
+        55
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_hint",
+      "subtype": "remark",
+      "clause_range": [
+        56,
+        56
+      ],
+      "truth_value": null,
+      "scope_id": "s_example3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_row_equiv_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        58,
+        58
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_row_equiv",
+      "exposed_entities": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_def_row_equiv_def",
+      "subtype": "definition",
+      "clause_range": [
+        57,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_row_equiv",
+      "exposed_entities": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_def_row_equiv_claim",
+      "subtype": "conjecture",
+      "clause_range": [
+        61,
+        61
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_def_row_equiv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_row_equiv_remark",
+      "subtype": "remark",
+      "clause_range": [
+        62,
+        62
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_row_equiv",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_elem_matrices_def",
+      "target": "st_elem_matrices_inv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example3_assump",
+      "target": "st_example3_def_inv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example3_def_inv",
+      "target": "st_example3_reason",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_row_equiv_assump",
+      "target": "st_def_row_equiv_def",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_theorem1_stmt",
+      "target": "st_elem_matrices_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1引用初等矩阵概念"
+    },
+    {
+      "source": "st_example1_eq",
+      "target": "st_theorem1_stmt",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是定理1的实例"
+    },
+    {
+      "source": "st_example2_eq",
+      "target": "st_theorem1_stmt",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2应用定理1"
+    },
+    {
+      "source": "st_example3_reason",
+      "target": "st_elem_matrices_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例3解释初等矩阵逆矩阵"
+    },
+    {
+      "source": "st_def_row_equiv_def",
+      "target": "st_elem_matrices_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "行等价定义基于初等矩阵"
+    }
+  ],
+  "unresolved": []
+}

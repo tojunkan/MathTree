@@ -1,0 +1,399 @@
+{
+  "article_name": "TenAlg",
+  "statements": [
+    {
+      "stmt_id": "st_cov_construction",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_covariant",
+      "exposed_entities": [
+        "T(V^*)",
+        "T_p^0(V)",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_cov_motivation_1",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_covariant",
+      "exposed_entities": [
+        "T_p^0(V)",
+        "T_q^0(V)",
+        "T_{p+q}^0(V)"
+      ]
+    },
+    {
+      "stmt_id": "st_cov_motivation_2",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_covariant",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cov_motivation_3",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_covariant",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cov_motivation_4",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_covariant",
+      "exposed_entities": [
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_cov_motivation_5",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_covariant",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cov_motivation_6",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_covariant",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cov_motivation_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_covariant",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cov_representation",
+      "subtype": "remark",
+      "clause_range": [
+        18,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_covariant",
+      "exposed_entities": [
+        "f",
+        "f_i",
+        "T_0^0(V)"
+      ]
+    },
+    {
+      "stmt_id": "st_cov_let",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_cov_let",
+      "exposed_entities": [
+        "f",
+        "g",
+        "f_i",
+        "g_i"
+      ]
+    },
+    {
+      "stmt_id": "st_cov_add",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cov_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cov_mul",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cov_let",
+      "exposed_entities": [
+        "h_k"
+      ]
+    },
+    {
+      "stmt_id": "st_cov_assoc",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cov_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cov_def",
+      "subtype": "definition",
+      "clause_range": [
+        29,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_covariant",
+      "exposed_entities": [
+        "T(V^*)",
+        "T_p^0(V)",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_cov_infinite_dim",
+      "subtype": "remark",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_covariant",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cov_notation",
+      "subtype": "remark",
+      "clause_range": [
+        33,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_covariant",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_contra_construction",
+      "subtype": "definition",
+      "clause_range": [
+        36,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_contravariant",
+      "exposed_entities": [
+        "T(V)",
+        "T_0^1(V)"
+      ]
+    },
+    {
+      "stmt_id": "st_contra_def",
+      "subtype": "definition",
+      "clause_range": [
+        37,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_contravariant",
+      "exposed_entities": [
+        "T(V)",
+        "T_0^p(V)",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_contra_notation",
+      "subtype": "remark",
+      "clause_range": [
+        40,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_contravariant",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_other_subspaces",
+      "subtype": "assumption",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_other",
+      "exposed_entities": [
+        "T_p^+(V)",
+        "Lambda^p(V^*)",
+        "T_p^0(V)"
+      ]
+    },
+    {
+      "stmt_id": "st_other_closure",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        45
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_other",
+      "exposed_entities": [
+        "T^+(V^*)",
+        "Lambda(V^*)"
+      ]
+    },
+    {
+      "stmt_id": "st_other_not_subalgebra",
+      "subtype": "conclusion",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_other",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_other_new_operation",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_other",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_other_polynomial",
+      "subtype": "remark",
+      "clause_range": [
+        48,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_other",
+      "exposed_entities": [
+        "T^+(V^*)"
+      ]
+    },
+    {
+      "stmt_id": "st_other_exterior",
+      "subtype": "remark",
+      "clause_range": [
+        49,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_other",
+      "exposed_entities": [
+        "Lambda(V^*)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_cov_motivation_1",
+      "target": "st_cov_motivation_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cov_motivation_2",
+      "target": "st_cov_motivation_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cov_motivation_3",
+      "target": "st_cov_motivation_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cov_motivation_4",
+      "target": "st_cov_motivation_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cov_motivation_5",
+      "target": "st_cov_motivation_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cov_motivation_6",
+      "target": "st_cov_motivation_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cov_let",
+      "target": "st_cov_add",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cov_let",
+      "target": "st_cov_mul",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cov_let",
+      "target": "st_cov_assoc",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_other_subspaces",
+      "target": "st_other_closure",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_other_subspaces",
+      "target": "st_other_not_subalgebra",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_other_not_subalgebra",
+      "target": "st_other_new_operation",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

@@ -1,0 +1,443 @@
+{
+  "article_name": "Asympt",
+  "statements": [
+    {
+      "stmt_id": "st_def1_intro",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "x",
+        "a",
+        "phi_n(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_cond",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "f(x)",
+        "c_0",
+        "c_1",
+        "c_n",
+        "phi_0(x)",
+        "phi_1(x)",
+        "phi_n(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_remark2",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_note1",
+      "subtype": "remark",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_note2",
+      "subtype": "remark",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_note3",
+      "subtype": "remark",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_prop1",
+      "subtype": "theorem",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_prop2",
+      "subtype": "theorem",
+      "clause_range": [
+        16,
+        18
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "f(x)=e^{-x} sin(e^{2x})"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_intro",
+      "subtype": "example",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_example",
+      "subtype": "example",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "e^{-1/x^2}"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_intro",
+      "subtype": "example",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "f(x)",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_example1",
+      "subtype": "example",
+      "clause_range": [
+        29,
+        31
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "f(x)=1/x"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "gamma"
+      ]
+    },
+    {
+      "stmt_id": "st_euler_let",
+      "subtype": "assumption",
+      "clause_range": [
+        34,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_euler_let",
+      "exposed_entities": [
+        "f(x)",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_euler_derivation",
+      "subtype": "conclusion",
+      "clause_range": [
+        37,
+        40
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euler_let",
+      "exposed_entities": [
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_euler_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        41,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_euler",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euler_remark2",
+      "subtype": "remark",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_euler",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euler_est_let",
+      "subtype": "assumption",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_euler_est",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euler_est_derivation",
+      "subtype": "conclusion",
+      "clause_range": [
+        48,
+        49
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euler_est",
+      "exposed_entities": [
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_euler_est_ineq",
+      "subtype": "assumption",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_euler_est",
+      "exposed_entities": [
+        "t"
+      ]
+    },
+    {
+      "stmt_id": "st_euler_est_bound",
+      "subtype": "conclusion",
+      "clause_range": [
+        51,
+        52
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euler_est",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euler_est_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        53,
+        54
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euler_est",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euler_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        55,
+        57
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euler",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euler_remark3",
+      "subtype": "remark",
+      "clause_range": [
+        58,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_euler",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euler_remark4",
+      "subtype": "remark",
+      "clause_range": [
+        65,
+        65
+      ],
+      "truth_value": null,
+      "scope_id": "s_euler",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_cond",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_let",
+      "target": "st_ex2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euler_let",
+      "target": "st_euler_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euler_est_let",
+      "target": "st_euler_est_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euler_est_ineq",
+      "target": "st_euler_est_bound",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euler_est_derivation",
+      "target": "st_euler_est_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euler_est_bound",
+      "target": "st_euler_est_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euler_est_final",
+      "target": "st_euler_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex1_intro",
+      "target": "st_def1_intro",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "泰勒展开是渐近展开的特例"
+    },
+    {
+      "source": "st_ex2_intro",
+      "target": "st_def1_intro",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "发散级数部分和是渐近展开的例子"
+    },
+    {
+      "source": "st_euler_conclusion",
+      "target": "st_def1_intro",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "欧拉的例子是渐近展开的具体应用"
+    }
+  ],
+  "unresolved": []
+}

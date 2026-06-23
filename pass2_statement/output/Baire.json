@@ -1,0 +1,241 @@
+{
+  "article_name": "Baire",
+  "statements": [
+    {
+      "stmt_id": "st_baire_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": "true",
+      "scope_id": "s_baire",
+      "exposed_entities": [
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_baire_assume_false",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_baire_let1",
+      "exposed_entities": [
+        "M_n"
+      ]
+    },
+    {
+      "stmt_id": "st_baire_construct_balls",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_baire_let2",
+      "exposed_entities": [
+        "S_0",
+        "S_1",
+        "S_2",
+        "S_n"
+      ]
+    },
+    {
+      "stmt_id": "st_baire_intersection_nonempty",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_baire_let2",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_baire_x_not_in_Mn",
+      "subtype": "conclusion",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_baire_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_baire_contradiction",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_baire_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_baire_proved",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_baire_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_isolated_def",
+      "subtype": "definition",
+      "clause_range": [
+        20,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_isolated",
+      "exposed_entities": [
+        "M",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_corollary_statement",
+      "subtype": "corollary",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": "true",
+      "scope_id": "s_corollary",
+      "exposed_entities": [
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_corollary_assume",
+      "subtype": "assumption",
+      "clause_range": [
+        26,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_corollary_let",
+      "exposed_entities": [
+        "X",
+        "x",
+        "B(y,r)",
+        "B(x',r')"
+      ]
+    },
+    {
+      "stmt_id": "st_corollary_singletons_nowhere_dense",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_corollary_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_corollary_uncountable",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_corollary",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_corollary_remark",
+      "subtype": "remark",
+      "clause_range": [
+        36,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_corollary",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_baire_assume_false",
+      "target": "st_baire_construct_balls",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_baire_construct_balls",
+      "target": "st_baire_intersection_nonempty",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_baire_construct_balls",
+      "target": "st_baire_x_not_in_Mn",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_baire_intersection_nonempty",
+      "target": "st_baire_x_not_in_Mn",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_baire_x_not_in_Mn",
+      "target": "st_baire_contradiction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_baire_contradiction",
+      "target": "st_baire_proved",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_baire_assume_false",
+      "target": "st_baire_proved",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_corollary_assume",
+      "target": "st_corollary_singletons_nowhere_dense",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_corollary_singletons_nowhere_dense",
+      "target": "st_corollary_uncountable",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_corollary_remark",
+      "target": "st_corollary_uncountable",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_corollary_uncountable",
+      "target": "st_baire_theorem",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论引用 Baire 定理"
+    }
+  ],
+  "unresolved": []
+}

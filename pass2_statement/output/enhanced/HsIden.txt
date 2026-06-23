@@ -1,0 +1,460 @@
+[SCOPE:root|description|恒等式与恒成立不等式（高中）]
+文章名: HsIden
+标题: 恒等式与恒成立不等式（高中）
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=二项式定理
+  [1] type=theorem heading=定理 2 title=等幂和差公式
+  [2] type=definition heading=定义 1 title=最值运算
+  [3] type=definition heading=定义 2 title=集合的最值
+  [4] type=definition heading=定义 3 title=函数的最值
+  [5] type=theorem heading=定理 3 title=基本不等式（简易）
+  [6] type=theorem heading=定理 4 title=均值不等式
+  [7] type=theorem heading=定理 5 title=排序不等式
+  [8] type=lemma heading=引理 1 title=若 $a\geq b,m\geq n$，则 $am+bn\geq an+bm$
+  [9] type=theorem heading=定理 6 title=柯西-施瓦茨不等式
+
+[0] 在等式与不等式中已经介绍过等式和不等式的概念，本文将专注处理恒成立的等式和不等式。
+[1] 恒成立指的是在给定的变量取值范围中，不论取哪个值，等式（或不等式）均成立。
+[2] 尽管普通的不等式方程也可说在他们的解集上恒成立，
+[3] 但一般来讲对不等式而言恒成立要求的取值范围更广泛一些。
+
+[SCOPE:s_sec1|description|1. 恒等式]
+[4] 恒成立的等式称作恒等式（identities），某些时刻为了强调恒等关系会采用 $\equiv$ 来代替 $=$。
+[5] 对于一个恒等式，等号两侧的对应参数在代数关系上也需要完全一致。
+[6] 这是恒等式的本质属性，也是待定系数法成立的基础。
+[7] 比如：若等式 $ax^2+bx+c=x^2+2x+1$ 是恒等式，
+[8] 则必有 $a=c=1,b=2$，若不是恒等式，
+[9] 则需要研究方程 $(a-1)x^2+(b-2)x+(c-1)=0$，根据 $\Delta=(b-2)^2-4(a-1)(c-1)$ 来判断解的形式。
+[10] 因此，在看到等号时，及时判断其是否为恒等式影响深远。
+
+[11] 在高中阶段，常见的恒等式包括三角恒等式、组合恒等式以及代数运算中的恒等式，包括二项式定理（Binomial theorem）和等幂和差公式（Sum and difference of powers）。
+
+[SCOPE:s_binom|description|定理1 二项式定理]
+[12] 定理 1 二项式定理
+[SCOPE:s_binom_let|let_bind|二项式定理变量]
+[13] 对两个表达式 $a$ 与 $b$ 和正整数 $n$ 有：
+[14] \begin{equation}
+\displaystyle(a+b)^n=\sum_{k=0}^n{\mathrm C}_n^ka^kb^{n-k}~.
+\end{equation}
+[/SCOPE:s_binom_let]
+[15] 求和符号
+[16] 完全平方：$(a\pm b)^2=a^2\pm2ab+b^2$
+[17] 完全立方：$(a\pm b)^2=a^3\pm 3a^2b+3ab^2\pm b^2$
+[18] 完全平方和完全立方公式的 $\pm$ 符号，可以认为是 $a+(\pm b)$，这样就能解释拆开后的 $\pm$ 出现的规律——它们都出现在 $b$ 为奇次的项前面。
+
+[/SCOPE:s_binom]
+[SCOPE:s_power|description|定理2 等幂和差公式]
+[19] 定理 2 等幂和差公式
+[SCOPE:s_power_let|let_bind|等幂和差变量]
+[20] 两个表达式 $a$ 与 $b$ 的幂次均为 $n$（$n\in\mathbb{N}$），
+[21] 则它们的差具有如下关系：
+[22] \begin{equation}
+a^n - b^n = (a - b)(a^{n-1} + a^{n-2}b + \cdots + b^{n-1})~.
+\end{equation}
+[/SCOPE:s_power_let]
+[23] \begin{equation}
+a^n + b^n = (a + b)(a^{n-1} - a^{n-2}b + a^{n-3}b^2 - \cdots + b^{n-1})~.
+\end{equation}
+[24] $n=2$ 时，称作平方差公式$a^2-b^2=(a+b)(a-b)$
+[25] $n=3$ 时，称作立方和、差公式$a^3\pm b^3=(a\pm b)(a^2\mp ab+b)$
+[26] 这个公式在因式分解中相当常用，另外，偶数次的和没有分解方式。
+
+[/SCOPE:s_power]
+[SCOPE:s_sec1_disc|description|恒等式与公式、定义]
+[27] 公式（formula）和定义（式）（definition）是两个常见且容易与恒等式混淆的概念。
+[28] 实际上，二者都属于恒等式的范畴，
+[29] 但侧重点和应用场景不同。
+[30] 恒等式的本质在于揭示数学中的普遍规律，是一种真理性陈述。
+[31] 具体来说，定义式通过明确的等号，将数学对象与其性质或关系结合在一起。
+[32a] 如果定义式不成立
+[32b] 则意味着相关定义已经发生改变。
+[33] 例如，小学时 $\pi$ 被定义为圆的周长与直径之比，这一关系必须恒成立，才能使 $\pi$ 的定义具有一致性。
+[34] 相比之下，公式更关注变量之间的联系及其在特定情境中的应用。
+[35] 公式通常在约定的范围内成立，且一般应用的条件或范围也并不苛刻。
+[36] 以圆的面积公式 $A = \pi r^2$ 为例，这不仅揭示了圆的面积与半径之间的关系，也为具体计算提供了有力工具。
+[37] 公式的主要作用在于描述变量间的依赖关系，并广泛应用于问题解决的过程中。
+[38] 除了在数学中，公式在其他学科中同样具有重要价值。
+[39] 例如：
+[40] 在力学中，牛顿第二定律公式 $F = ma$ 描述了力、质量与加速度之间的关系；
+[41] 在电学中，欧姆定律 $V = IR$ 揭示了电压、电流和电阻的依赖关系；
+[42] 在计算机科学中，算法复杂度公式 $T(n) = an^2 + bn + c$ 用于衡量算法的时间效率。
+[43] 综上所述，定义式提供了理论基础，确保数学对象的概念清晰和一致；
+[44] 而公式则更注重描述关系、解决问题的工具性。
+[45] 二者的不同点在物理领域将非常凸显。
+
+[46] 当讨论两个函数相等时，需明确 “相等” 的具体含义。
+[47] 在数学中，函数相同通常意味着它们在定义域、对应关系以及值域上完全一致，这与定义一个函数时，用一个记号 $f(x)$ 等于某个表达式一致。
+[48] 这时的等式就是恒等式。
+[49] 恒等式的一个重要性质是，它在定义域的每一点都成立，
+[50] 因此可以对等式两侧进行求导、积分等运算，而不改变恒等关系。
+[51a] (x)=g
+[51b] (x)$，若它是指恒等关系，
+[52] 那么这一表述是平凡的，因为它只意味着改了个名称符号。
+[53] 因此，这种表达式出现时通常指的是条件等式，也就是方程。
+[54] 它仅在特定条件或某些点上成立，而通过求解可以找出使等式成立的点，这些点通常对应于两个函数的交点。
+[55] 对于一般的条件等式，不可以对等式两侧进行求导、积分等操作，因为条件等式仅在特定点上成立，运算可能会破坏其成立的条件，修改等式原本表达的含义。
+[56a] (x)=2x^2$ 两侧求导可以得到 $f'
+[56b] (x)=4x$，而对 $x^2=2x+4$ 两侧求导，
+[57] 则得到 $2x=2\implies x=1$，此时并非原方程的解1。
+
+[/SCOPE:s_sec1]
+[/SCOPE:s_sec1_disc]
+[SCOPE:s_sec2|description|2. 不等式恒成立的条件]
+[58] 与等式的情况相同，存在某些不等式对任意变量值都成立，此时称不等式恒成立。
+[59] 由于不等式恒成立经常做为题目背景给出，下面会在最值概念的基础上，解释一下常见的表述方式，以防看到某个不等式恒成立时，读者无法理解它背后想要传递的内容。
+
+[60] 最值（extreme value）是生活中一个极为常见的概念，用来描述一组可以比较的量的范围。
+[61] 无论是物理上的高度、温度，还是其他可量化的数值，确定其最值可以帮助更快地掌握这些量的变化或分布情况。
+[62] 在数学中，最值通常分为最大值（maximum）和最小值（minimum）。
+[63] 对于不同的对象，最值有多种定义和表示方法，
+[64] 但无论形式如何，其核心目标始终是为了确定这些量的范围。
+[65] 例如，两个数的最值运算是最基本的情况。
+[66] 生活中经常遇到类似的场景，例如比较两个朋友的身高。
+[67] 若想知道谁更高，需要求最大值，而若想知道谁更矮，
+[68] 则需要求最小值。
+
+[SCOPE:s_maxdef|description|定义1 最值运算]
+[69] 定义 1 最值运算
+[SCOPE:s_maxdef_let|let_bind|最值运算变量]
+[70] 对于两个实数 $a,b$，最大值运算 $\max(a,b)$ 的结果定义为二者更大的值：
+[71] \begin{equation}
+\max(a,b)=\begin{cases}
+a,\qquad a\geq b\\
+b,\qquad b>a
+\end{cases}~.
+\end{equation}
+[72] \begin{equation}
+\min(a,b)=\begin{cases}
+a,\qquad a\leq b\\
+b,\qquad b< a
+\end{cases}~.
+\end{equation}
+[/SCOPE:s_maxdef_let]
+[73] 关于对两个数进行的最值运算，有个蛮有趣的通用计算规则，或许可以帮助你理解它为什么是一个运算：
+[74] \begin{equation}
+\begin{array}{c}
+\displaystyle\max(a, b) = \frac{a + b + |a - b|}{2} \\
+\displaystyle\min(a, b) = \frac{a + b - |a - b|}{2} \\
+\end{array}~.
+\end{equation}
+[75] 这个计算规则，利用了绝对值隐含的不等式性质。
+[76] 在最值运算中，可以将多个需要比较的项用括号括起来，比如 $\max(1,2,3,4)$。
+[77] 然而，这种方式对项目较多的情形来说显得繁琐而冗长。
+[78] 为了解决这个问题，可以借助集合的概念，将多个元素集合化，然后直接对集合进行最值运算，表述为 $\max\{a, b, c, d\}$，
+[79] 从而更直观地表达 “从一组数中找最大值” 的含义。
+[80] 于是有下面针对集合的最值。
+
+[/SCOPE:s_maxdef]
+[SCOPE:s_setmax|description|定义2 集合的最值]
+[81] 定义 2 集合的最值
+[SCOPE:s_setmax_let|let_bind|集合最值变量]
+[82] 对于一个全序（total order）集 $A$2，集合的最值指的是最大或最小的元素，分别记作：
+[83] \begin{equation}
+\max A\qquad\text{和}\qquad\min A~.
+\end{equation}
+[/SCOPE:s_setmax_let]
+[84] 对于有限集合，最值的确定相对简单，可以通过比较直接得到。
+[85] 而当集合包含无限多个元素时，讨论最值的范围超出了高中数学的要求，
+[86] 但可以借助区间的概念进行直观理解。
+[87] 如果一个集合是闭区间，例如 $[a, b]$，由于端点 $a$ 和 $b$ 属于集合，
+[88] 因此集合在这两个方向上都存在最值，最小值为 $a$，最大值为 $b$。
+[89] 相反，对于开区间 $(a, b)$，端点 $a$ 和 $b$ 并不属于集合。
+[90] 根据实数的稠密性，可以在任意给定的最值与端点之间找到其他满足条件的最值，
+[91] 因此无法明确确定一个最值。
+[92] 这种情况下，称集合的最值不存在。3
+[93] 除了区间之外的集合，通常会由函数给出，
+[94] 于是得到了函数的最值。
+
+[/SCOPE:s_setmax]
+[SCOPE:s_funcmax|description|定义3 函数的最值]
+[95] 定义 3 函数的最值
+[SCOPE:s_funcmax_let|let_bind|函数最值变量]
+[96a] (x)$，若存在 $x_0\in D$ 使得 $f(x_0)$ 是 $f
+[96b] (x)$ 的所有值中最大的，
+[97] 则称 $f(x_0)$ 为函数的最大值，记作：
+[98] \begin{equation}
+f(x_0) = \max_{x \in D} f(x)~.
+\end{equation}
+[99] \begin{equation}
+f(x_0) = \min_{x \in D} f(x)~.
+\end{equation}
+[/SCOPE:s_funcmax_let]
+[100] 二者其实对应的就是函数图像中的最高点和最低点。
+[101] 关于函数的最值，更多的研究会在函数部分展开。
+
+[/SCOPE:s_funcmax]
+[SCOPE:s_ineqcond|description|不等式恒成立条件]
+[SCOPE:s_ineqcond_let|let_bind|恒成立条件变量]
+[102] 若给定集合 $A$，在 $A$ 上函数满足：
+[103] \begin{equation}
+\displaystyle\max_{x\in A} f(x)\leq 0\qquad\text{或}\qquad\min_{x\in A} f(x)\geq 0~.
+\end{equation}
+[/SCOPE:s_ineqcond_let]
+[104] ，
+[105a] (x)\leq 0$ 或 $f
+[105b] (x)\geq 0$ 在 $A$ 上恒成立。
+[106] 可以这么理解，如果一组数里面最大的都是负数，
+[107] 那么剩下的也都是负数，而反过来，如果一组数里面最小的都是正数，
+[108] 那么剩下的也都是正书。
+[109a] (x)\leq g
+[109b] (x)$ 或 $f
+[109c] (x)\geq g
+[109d] (x)$ 成立的充要条件是函数 $F
+[109e] (x)=f
+[109f] (x)-g
+[109g] (x)$ 满足之前的恒成立条件。
+[110a] (x),g
+[110b] (x)$，而不是上面的方法。
+[111a] (x)\leq\min g
+[111b] (x)$ 或 $\min f
+[111c] (x)\geq\max g
+[111d] (x)$ 对于恒成立而言是充分不必要条件。
+[112a] (x)\leq\max f
+[112b] (x)\leq\min g
+[112c] (x)\leq g
+[112d] (x)$，这是一种严格的成立，就像二者中间有一个区域，谁都不越雷池一步。
+[113] 【未完成】说明图，一个是彼此交错但不超过，一个是中间严格不大于。
+[114a] (x)\leq\min g
+[114b] (x)$ 或 $\max f
+[114c] (x)\geq\max g
+[114d] (x)$ 对于恒成立而言既不充分也不必要，因为这只描述了一个值的关系，可能只有一部分点满足了大小关系，而其余则相反。
+[115] 【未完成】说明图，瘦高矮胖的正态分布
+[116] 另外如果 $g(x)=c$ 是常数，
+[117] 则之前的成立条件也可认为是：若在 $A$ 上函数满足：
+[118] \begin{equation}
+\displaystyle\max_{x\in A} f(x)\leq a\qquad\text{或}\qquad\min_{x\in A} f(x)\geq b~.
+\end{equation}
+[119] ，
+[120a] (x)\leq a$ 或 $f
+[120b] (x)\geq b$ 在 $A$ 上恒成立。
+[121] 一般出现在题目中时，往往会给出一个含参的函数，如 $f(x;a,b,c)=ax^2+bx+c$ 等。
+[122] 这时需要根据题目的条件，利用上面的成立条件来推导。
+[123] 下面给出一些常用的不同的函数或运算满足的恒成立的不等式，请在使用时注意他们成立的前提条件和取等条件：
+[124] 【图解】表1：常见的恒成立不等式
+[125] 成立前提 不等式 取等条件
+[126] $x\in\mathbb{R} $$|x|\geq0$$ x=0$
+[127] $x\in\mathbb{R} $$x^{2n}\geq0\quad(n\in\mathbb{Z})$$ x=0$
+[128] $x\in[0,+\infty) $$x^{1\over2n}\geq0\quad(n\in\mathbb{Z})$$ x=0$
+[129] $x\in\mathbb{R}$，$b^2-4ac\leq0$ 且 $a>0$4$ax^2+bx+c\geq0 $$b^2-4ac=0$ 且 $\displaystyle x=-{2a\over b}$
+
+$x\in\mathbb{R}$，$b^2-4ac\leq0$ 且 $a<0$5$ax^2+bx+c\leq0$$ b^2-4ac=0$ 且 $\displaystyle x=-{2a\over b}$
+[130] $x\in\mathbb{R} $$a^x>0\quad(a\in\mathbb{R}^+)$-
+
+$x\in\mathbb{R}$$ |\sin x|\leq 1 $$\displaystyle x={\pi\over2}+k\pi\quad (k\in\mathbb{Z})$
+
+$x\in\mathbb{R}$$ |\cos x|\leq 1 $$x=k\pi\quad (k\in\mathbb{Z})$
+
+$\displaystyle x\in[0,{\pi\over2})$$ \sin x\leq x\leq\tan x $$x=0$
+
+$\displaystyle a>b>0,c>0$$ \displaystyle{a\over b}<{a+c\over b+c}$6-
+[131a] (x)$ 为 $f
+[131b] (x)$ 的某条切线，此时，切点往往成为取等的临界条件。
+[132] 比如 $\forall x\in\mathbb{R},e^x\geq x+1$ 当且仅当 $x=0$ 时成立，又如 $\forall x\in\mathbb{R}^+,\ln x\leq x-1$ 当且仅当 $x=1$ 时成立。
+[133] 这往往会成为考题的考点。
+
+[/SCOPE:s_sec2]
+[/SCOPE:s_ineqcond]
+[SCOPE:s_sec3|description|3. 基本不等式]
+[134] 基本不等式是基于 $(a-b)^2\geq0$ 得到的一组不等关系。
+[135] 由于 $(a-b)^2\geq0$ 在实数域恒成立，
+[136] 因此由此推广得到的不等式也是在实数域恒成立的，而在复数域则不具备这种关系。
+[137] 推广的过程是通过向 $a,b$ 赋值实现的，而推广后由于不等号两边的表达式均为某种均值的形式，
+[138] 因此基本不等式也称为均值不等式，而由于存在多种均值，也有人称其为（均值）不等式链。
+
+[139] 下面给出的是高中要求的常见形式：
+
+[SCOPE:s_basic_ineq|description|定理3 基本不等式（简易）]
+[140] 定理 3 基本不等式（简易）
+[SCOPE:s_basic_ineq_let|let_bind|基本不等式变量]
+[141] \begin{equation}
+{a^2+b^2\over2}\geq ab\qquad\text{或}\qquad{a+b\over2}\geq \sqrt{ab}~.
+\end{equation}
+[/SCOPE:s_basic_ineq_let]
+[142] 证明过程是显然的，将 $(a-b)^2\geq0$ 打开并移项就可以得到，或后的写法也只是将 $a,b$ 替换成了 $\sqrt{a},\sqrt{b}$。
+[143] 但他背后的意义是深远的，一般称 $\displaystyle a+b\over2$ 为算术平均数（Arithmetic mean，或算数均值），也就是通常生活中提到平均值时所指的数，称 $\sqrt{ab}$ 为几何平均数（Geometric mean，或几何均值）。
+[144] 几何平均数通常在计算增长率时使用，比如投资某个项目，第一年的收益率是 $4\%$，第二年是 $10\%$，
+[145] 则两年的平均收益率并非 $\displaystyle {104\%+110\%\over2}-1=7\%$，而是 $\sqrt{1.04\times1.10}-1=6.96\%$。
+[146] 根据基本不等式，如果直接计算算术平均数，
+[147] 则总会高估实际的收益率。
+[148] 同时，根据 $a^2+b^2\geq2ab$ 可以得到 $2a^2+2b^2\geq a^2+2ab+b^2=(a+b)^2$，两侧同时开方则有：
+[149] \begin{equation}
+\sqrt{a^2+b^2\over2}\geq{a+b\over2}~.
+\end{equation}
+[150] 而将 $a^2+b^2\geq2ab$ 中的 $a,b$ 替换成 $\displaystyle\sqrt{1\over a},\sqrt{1\over b}$，
+[151] 则有 $\displaystyle{1\over a}+{1\over b}\geq{2\over\sqrt{ab}}$，
+[152] 即：
+[153] \begin{equation}
+{2\over\displaystyle{1\over a}+\displaystyle{1\over b}}\leq\sqrt{ab}~.
+\end{equation}
+[154] 其中，$\displaystyle \sqrt{a^2+b^2\over2}$ 称为
+[155] 平方平均数（Quadratic mean，或平方均值）
+[156] ，它的特点是越大的值影响越大，或者说给予较大的值更高的权重。
+[157] 通常用在一些 $0$ 附近的数上，来反映波动程度。
+[158] $\displaystyle{2\over\displaystyle{1\over a}+\displaystyle{1\over b}}$ 称为
+[159] 调和平均数（Harmonic mean，或调和均值）
+[160] ，通常用来计算等量变化时的速率或比率，比如一段路一半以 $60{\rm km/h}$ 的速度运动，另一半以 $30{\rm km/h}$ 的速度运动，
+[161] 那么平均速度是 $\displaystyle \frac{2}{\displaystyle\frac{1}{60} + \frac{1}{30}} = 40{\rm km/h}$，而非 $\displaystyle{60+30\over2}=45{\rm km/h}$。
+[162] 注意，本节出现的 $a,b$ 都是变量，
+[163] 因此可以给其赋予某个数或某种函数，例如取 $\displaystyle a=x,b={1\over x}$，此时有：$\displaystyle x+{1\over x}\geq2,\quad(x>0)$
+
+[/SCOPE:s_basic_ineq]
+[SCOPE:s_chain|description|*不等式链]
+[164] 下面的内容高中目前不再涉及，作为开阔视野。
+[165] 这四种均值都有广泛的应用7。
+[166] 事实上，上面的四种平均数都可以扩展至多个数，对于一列数 $a_1,a_2,\cdots,a_n$，有如表 2 所示的均值形式。
+[167] 【图解】表2：常见平均数（或均值）
+[168] 名称 常用字母 表达式 与数列的关系
+[169] 平方平均数8$Q$ $\displaystyle \sqrt{\frac{a_1^2 + a_2^2 + \cdots + a_n^2}{n}}$ $\displaystyle \sum_{i=1}^nQ^2= \sum_{i=1}^na_i^2$
+[170] 算术平均数$A$ $\displaystyle \frac{a_1 + a_2 + \cdots + a_n}{n}$ $\displaystyle \sum_{i=1}^nA= \sum_{i=1}^n{a_i}$
+[171] 几何平均数$G$ $\displaystyle \sqrt[n]{a_1 \cdot a_2 \cdot \cdots \cdot a_n}$ $\displaystyle \prod_{i=1}^nG= \prod_{i=1}^n{a_i}$
+[172] 调和平均数$H$ $\displaystyle \frac{n}{\frac{1}{a_1} + \frac{1}{a_2} + \cdots + \frac{1}{a_n}}$ $\displaystyle \sum_{i=1}^n\frac{1}{H}= \sum_{i=1}^n\frac{1}{a_i}$
+[173] 在表 2 中，有一列展示了不同均值与数列的关系。
+[174] 通过分析这一列的表达式，可以清晰地理解每种均值的具体形式是如何得出的。
+[175] 这些表达式揭示了每种均值的计算方法和背后的数学结构，同时也提示了不同均值适用的情境。
+[176] 定理 4 是从之前的简单形式推广得到的，此处不加证明地给出。
+
+[SCOPE:s_mean_ineq|description|定理4 均值不等式]
+[177] 定理 4 均值不等式
+[SCOPE:s_mean_ineq_let|let_bind|均值不等式变量]
+[178] 对于一列数 $a_1,a_2,\cdots,a_n$，有
+[/SCOPE:s_mean_ineq_let]
+[179] \begin{equation}
+Q\geq A\geq G\geq H~.
+\end{equation}
+[180] \begin{equation}
+\displaystyle\sqrt{\frac{\displaystyle\sum_{i=1}^na_i^2}{n}}\geq \frac{\displaystyle\sum_{i=1}^na_i}{n}\geq \sqrt[n]{\prod_{i=1}^na_i}\geq \frac{n}{\displaystyle\sum_{i=1}^n\frac{1}{a_i}}~.
+\end{equation}
+
+[/SCOPE:s_sec3]
+[/SCOPE:s_chain]
+[/SCOPE:s_mean_ineq]
+[SCOPE:s_sec4|description|4. *排序不等式]
+[181] 假设有两列数字 $a_1, a_2, \dots, a_n$ 和 $b_1, b_2, \dots, b_n$。
+[182] 当满足条件 $\forall 1 \leq i < j \leq n, a_i \leq a_j \land b_i \leq b_j$ 时，称这两列为顺序排列（increasingly ordered），
+[183] 即两个序列的增长方向一致。
+[184] 当满足 $\forall 1 \leq i < j \leq n, a_i \leq a_j \land b_i \geq b_j$ 时，
+[185] 则称为逆序排列（decreasingly ordered），表示两个序列的增长方向相反。
+[186] 若不满足以上任一条件的排列方式，
+[187] 则称为乱序排列（unordered），
+[188] 即增长方向无规则。
+[189] 基于上述定义，可以使用排序不等式来比较不同排列的和的大小关系。
+[190] 排序不等式表明：逆序和 $\leq$ 乱序和 $\leq$ 顺序和。
+[191] 这一不等式的证明基于数学归纳法和两非正数之积非负的性质，
+[192] 因此排序不等式的使用范围也与均值不等式相同。
+[193] 事实上，可以使用排序不等式证明基本不等式、柯西不等式、切比雪夫不等式等其他恒成立的不等式。
+[194] 它的规范表述如下：
+
+[SCOPE:s_sort_ineq|description|定理5 排序不等式]
+[195] 定理 5 排序不等式
+[SCOPE:s_sort_ineq_let|let_bind|排序不等式变量]
+[196] 设两列数字 $a_1, a_2, \cdots, a_n$ 和 $b_1, b_2, \cdots, b_n$，两列数分别满足 $a_1 \leq a_2 \leq \cdots \leq a_n$ 和 $b_1 \leq b_2 \leq \cdots \leq b_n$。
+[/SCOPE:s_sort_ineq_let]
+[197] 那么有如下不等式：
+[198] \begin{equation}
+\sum_{i=1}^n a_i b_i \geq \sum_{i=1}^n a_i b_{\sigma(i)} \geq \sum_{i=1}^n a_i b_{n+1-i}~,
+\end{equation}
+[199] 由于证明方法只使用了高中常见的方法，下面给出证明过程。
+
+[/SCOPE:s_sort_ineq]
+[SCOPE:s_lemma1|description|引理1]
+[SCOPE:s_lemma1_let|let_bind|引理1变量]
+[200] 引理 1 若 $a\geq b,m\geq n$，
+[201] 则 $am+bn\geq an+bm$
+[202] 取 $a=b+k,m=n+p$，
+[/SCOPE:s_lemma1_let]
+[203] 则 $k,p\geq0$，代入有：
+[204] \begin{equation}
+\begin{split}
+am+bn&= (b+k)m+(a-k)n \\
+&= bm+an+kp \\
+&\geq an+bm
+\end{split}~.
+\end{equation}
+[/SCOPE:s_lemma1]
+[SCOPE:s_sort_proof|description|排序不等式证明]
+[205] 下面使用数学归纳法证明排序不等式中顺序和不小于乱序和，逆序部分同理：
+[206] 1. 当 $n=1$ 时显然成立；
+[207] 2. 假设当 $n$ 时，任意乱序 $\sigma(i),(1\leq i\leq n)$ 时不等式均成立。
+[208] 当取 $n+1$ 时，$\forall 1\leq i\leq n$ 有 $a_{n+1}>a_i,b_{n+1}>b_i$，
+[209] 从而代入假设有：
+[210] \begin{equation}
+\begin{split}
+\sum_{i=1}^{n+1} a_i b_i&=\sum_{i=1}^n a_i b_i+a_{n+1}b_{n+1}\\
+&\overset{\mathrm{1}}{\geq} \sum_{i=1}^n a_i b_{\sigma(i)} +a_{n+1}b_{n+1} \\
+&\overset{\mathrm{2}}{\geq} \sum_{i=1}^{n+1} a_i b_{\sigma(i)} \\
+\end{split}~.
+\end{equation}
+[211] 其中：第一个 $\geq$ 根据假设，成立，对应 $1$ 种乱序的情况；
+[212] 第二个 $\geq$ 是交换了某个 $b_{\sigma(i)}$ 和 $b_{n+1}$，此时根据
+[213] 引理 1
+[214a] (i)}+a_{n+1}b_{n+1}\geq a_ib_{n+1} +a_{n+1}b_{\sigma
+[214b] (i)}$，分别对应 $n$ 个乱序的情况。
+[215] 综上，对某个 $\sigma(i)$ 乱序的前提下，添加 $a_{n+1}b_{n+1}$ 后新生成的 $n+1$ 种乱序情况均成立。
+[216] 由于假设任意乱序 $\sigma(i),(1\leq i\leq n)$ 均成立，
+[217] 因此对任意的新乱序 $\sigma(i),(1\leq i\leq n+1)$ 不等式均成立。
+[218] 由数学归纳法，排序不等式恒成立。
+[/SCOPE:s_sort_proof]
+[219] 证毕。
+
+[/SCOPE:s_sec4]
+[SCOPE:s_sec5|description|5. *柯西不等式]
+[220] 柯西-施瓦茨不等式（Cauchy-Schwarz Inequality），也称柯西不等式，为两个向量的内积（inner product）与它们的模长（norm）之间建立了重要的不等关系。
+[221] 柯西不等式是根据 “内积” 这种运算的定义推知的基本属性，
+[222] 因此所有满足 “内积” 定义要求的运算，或者说可以称为 “内积” 的运算，都会满足这个不等式9。
+
+[SCOPE:s_cauchy|description|定理6 柯西-施瓦茨不等式]
+[223] 定理 6 柯西-施瓦茨不等式
+[SCOPE:s_cauchy_let|let_bind|柯西不等式变量]
+[224] 对于具备内积运算的任意两个向量 $ \boldsymbol{\mathbf{u}} , \boldsymbol{\mathbf{v}} $，有
+[225] \begin{equation}
+| \boldsymbol{\mathbf{u}} \cdot \boldsymbol{\mathbf{v}} | \leq ( \boldsymbol{\mathbf{u}} \cdot \boldsymbol{\mathbf{u}} )( \boldsymbol{\mathbf{v}} \cdot \boldsymbol{\mathbf{v}} )=\| \boldsymbol{\mathbf{u}} \|\cdot\| \boldsymbol{\mathbf{v}} \|~.
+\end{equation}
+[/SCOPE:s_cauchy_let]
+[226] 范数（norm）
+[227] 鉴于这部分是为开阔视野，上面采用了比较严谨的表述，
+[228] 但涉及到很多高中未曾了解的知识。
+[229] 不必担心，在高中阶段由于只涉及到几何向量的运算，这时的内积指的就是 $ \boldsymbol{\mathbf{u}} \cdot \boldsymbol{\mathbf{v}} =| \boldsymbol{\mathbf{u}} |\cdot| \boldsymbol{\mathbf{v}} |\cos\theta$，而所谓对应的 “范数” 指的就是向量的 “模长”$| \boldsymbol{\mathbf{u}} |$。
+[230] 其实这里根据 $\cos \theta$ 的取值范围，显然可以得到结论。
+[231] 等号成立的条件是当 $\theta = 0$ 或 $\theta = \pi$ 时，
+[232] 即此时两个向量平行。
+[233] 如果以高中常见的二维向量为例，利用坐标将两个向量表示出来，
+[234] 即 $ \boldsymbol{\mathbf{u}} =(a,b), \boldsymbol{\mathbf{v}} =(c,d)$，就得到了下面的表达方法：
+[235] \begin{equation}
+|ac+bd|\leq\sqrt {a^2 + b^2}\cdot\sqrt{c^2 + d^2}\quad\text{或} \quad(ac+bd)^2\leq(a^2 + b^2)\cdot(c^2 + d^2)~.
+\end{equation}
+[236] 这种表示方法在高中的题目中更为常见。
+[237] 对于多维情况，
+[238] 即向量的坐标是由一列数构成的时，有：
+[239] \begin{equation}
+\left( \sum_{i=1}^{n} a_i b_i \right)^2\leq\left( \sum_{i=1}^{n} a_i^2 \right) \left( \sum_{i=1}^{n} b_i^2 \right) ~.
+\end{equation}
+[240] 这个不等式不仅在几何中起作用，在数学分析、线性代数、概率等领域都非常重要。
+[/SCOPE:s_sec5]
+[/SCOPE:s_cauchy]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_basic_ineq",
+    "target_scope": "s_mean_ineq",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "基本不等式是均值不等式在n=2时的特例"
+  },
+  {
+    "source_scope": "s_sort_ineq",
+    "target_scope": "s_basic_ineq",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "排序不等式可用于证明基本不等式"
+  },
+  {
+    "source_scope": "s_sort_ineq",
+    "target_scope": "s_cauchy",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "排序不等式可用于证明柯西不等式"
+  }
+]

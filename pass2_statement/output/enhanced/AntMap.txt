@@ -1,0 +1,119 @@
+[SCOPE:root|description|斜对称映射]
+文章名: AntMap
+标题: 斜对称映射
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=斜对称映射
+  [1] type=theorem heading=定理 1 title=
+  [2] type=example heading=例 1 title=外积
+
+[SCOPE:s_def1|description|定义1 斜对称映射]
+[0] 定义 1 斜对称映射
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1] 设 $X,Y$ 是任一集合，其中 $Y$ 上的任一元素 $y$ 都有一元 $-y=-1\cdot y$ 与之对应，且 $y$ 上的元素与 $-1$ 的作用满足 $\underbrace{(-1)\cdot((-1)\cdots((-1)}_{n\text{个}}\cdot y)\cdots)=(-1)^n y$。
+[2] $n$ 元映射 $f:X^n\rightarrow Y$ 叫作斜对称的，若对任意 $k=1,\cdots,n-1$，成立
+[/SCOPE:s_def1_let]
+[3] \begin{equation}
+f(\cdots,x_k,x_{k+1},\cdots)=-f(\cdots,x_{k+1},x_k,\cdots)~,
+\end{equation}
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理1]
+[4] 定理 1
+[5] 交换任意两个变量的位置，斜对称映射都变号。
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[6] 证明：设交换第 $i,j$ 个变量的位置，且 $i< j$，
+[7] 那么位于 $i,j$ 之间的自变量的个数 $l=j-i-1$。
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm1_induction|description|归纳证明]
+[8] 利用数学归纳法证明如下：$l=0$ 时正好满足斜对称的定义，
+[9] 故成立。
+[10] 设 $l\leq k$ 时定理成立，
+[11] 那么 $l=k$ 时有
+[12] \begin{equation}
+\begin{aligned}
+f(\cdots,x_i,x_{i+1},\cdots,x_{j-1},x_j,\cdots)&=-f(\cdots,x_{i+1},x_{i},\cdots,x_{j-1},x_j,\cdots)\\
+&=(-1)^2 f(\cdots,x_{i+1},x_{j},\cdots,x_{j-1},x_i,\cdots)\\
+&=(-1)^3 f(\cdots,x_{j},x_{i+1},\cdots,x_{j-1},x_i,\cdots)\\
+&=-f(\cdots,x_{j},x_{i+1},\cdots,x_{j-1},x_i,\cdots)
+\end{aligned}~.
+\end{equation}
+[13] 证毕！
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_induction]
+[SCOPE:s_ex1|description|例1 外积]
+[14] 例 1 外积
+[15] 在斜对称映射的帮助下，可以直接讨论外积（wedge）的一些性质，而不关心具体的集合。
+[16] 外积运算 $\wedge$ 具有结合性和斜对称性的性质：
+[17] 结合性：$x_1\wedge(x_2\wedge x_3)=(x_1\wedge x_2)\wedge x_3$，
+[18] 斜对称性：$x_1\wedge x_2=-x_2\wedge x_1$。
+[SCOPE:s_ex1_def|description|外积定义]
+[19] 定义映射 $f:V^k\rightarrow \Lambda^k(V)$：
+[20] \begin{equation}
+f(x_1,\cdots,x_k)=x_1\wedge\cdots\wedge x_k~.
+\end{equation}
+[21] \begin{equation}
+\Lambda^k(V)=\{x_1\wedge\cdots\wedge x_k| x_i\in V,i=1,\cdots,k\}~,
+\end{equation}
+[22] 定义 1
+[23] $\wedge$ 的结合性意味着括号怎么摆放都不重要；
+[24] 斜对称性则意味着，对 $\forall i=1,\cdots,k-1$，都成立
+[25] \begin{equation}
+\begin{aligned}
+f(x_1,\cdots,x_i,x_{i+1},\cdots,x_k)&=-f(x_1,\cdots,x_{i+1},x_i,\cdots,x_k)\\
+&\Downarrow\\
+x_1\wedge\cdots\wedge (x_i\wedge x_{i+1})\wedge\cdots\wedge x_k&=-x_1\wedge\cdots\wedge (x_{i+1}\wedge x_{i})\wedge\cdots\wedge x_k~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_ex1_def]
+[SCOPE:s_ex1_thm|description|外积定理]
+[26] 定理 1
+[27] 任意交换两个变量的位置，$f$ 变号
+[28] \begin{equation}
+x_1\wedge\cdots\wedge x_i\wedge\cdots\wedge x_j\wedge\cdots\wedge x_k=-x_1\wedge\cdots\wedge x_j\wedge\cdots\wedge x_i\wedge\cdots\wedge x_k~.
+\end{equation}
+[/SCOPE:s_ex1_thm]
+[SCOPE:s_ex1_let|let_bind|置换变量]
+[29] 设 $\pi$ 是个将集合 $\{1,\cdots,k\}$ 重新排序的映射（这样的映射成为置换）。
+[30] 比如 $k=3$，$\pi$ 将 $1,2,3$ 重新排序为 $2,1,3$，
+[31] 那么
+[32] \begin{equation}
+\pi 1=2,\quad\pi2=1,\quad \pi3=3~.
+\end{equation}
+[33] \begin{equation}
+x_{i_1}\wedge\cdots\wedge x_{i_k}~,
+\end{equation}
+[34] \begin{equation}
+x_{i_{\pi1}}\wedge\cdots\wedge x_{i_{\pi k}}~,
+\end{equation}
+[35] 两两交换
+[36] \begin{equation}
+x_{i_{\pi1}}\wedge\cdots\wedge x_{i_{\pi k}}=(-1)^p x_{i_1}\wedge\cdots\wedge x_{i_k}~.
+\end{equation}
+[37] \begin{equation}
+x_{i_{\pi1}}\wedge\cdots\wedge x_{i_{\pi k}}=\epsilon_\pi (x_{i_1}\wedge\cdots\wedge x_{i_k})~.
+\end{equation}
+[38] 任意一个乘积 $x_{i_1}\wedge\cdots\wedge x_{i_k}$ 可按因子（即 $x_i$）的升序进行排列
+[39] 关于外积，参加外代数。
+[/SCOPE:s_ex1]
+[/SCOPE:s_ex1_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是定义1的推广"
+  },
+  {
+    "source_scope": "s_ex1_thm",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "外积定理是定理1的特例"
+  }
+]

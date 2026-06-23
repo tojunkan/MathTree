@@ -1,0 +1,226 @@
+[SCOPE:root|description|柯西序列的等价]
+文章名: CauEq
+标题: 柯西序列的等价
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=definition heading=定义 1 title=
+  [2] type=theorem heading=定理 2 title=
+  [3] type=theorem heading=定理 3 title=
+  [4] type=theorem heading=定理 4 title=
+  [5] type=theorem heading=定理 5 title=
+
+[SCOPE:s_thm1|description|定理 1]
+[0] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[1] 设 $(X,d)$ 是任一度量空间，$\{x_n\},\{x'_n\}$ 是 $X$ 上的两个柯西序列（定义 1 ）。
+[2] 定义柯西序列上的二元关系 $R$：即若
+[/SCOPE:s_thm1_let]
+[3] \begin{equation}
+\lim_{n\rightarrow\infty}d(x_n,x_n')=0,~
+\end{equation}
+[4] 证明：
+[5] 自反性 $\{x_n\}R\{x_n\}$：由于 $d(x_n,x_n)=0$ 对所有 $n$ 成立，
+[6] 因此 $\lim\limits_{n\rightarrow\infty}d(x_n,x_n)=0$ 成立。
+[7] 对称性 $\{x_n\}R\{x_n'\}\Rightarrow\{x_n'\}R\{x_n\}$：由 $d$ 的对称性，$d(x_n,x_n')=d(x_n',x_n)$，
+[8] 因此由 $\{x_n\}R\{x_n'\}$ 得
+[9] \begin{equation}
+\lim_{n\rightarrow\infty}d(x_n',x_n)=\lim_{n\rightarrow\infty}d(x_n,x_n')=0.~
+\end{equation}
+[10] 传递性 $\{x_n\}R\{x_n'\},\{x'_n\}R\{y_n\}\Rightarrow\{x_n\}R\{y_n\}$：因为 $\{x_n\}R\{x_n'\},\{x'_n\}R\{y_n\}$，
+[11] 所以对任一 $\epsilon>0$，存在 $N,N'$，使得只要 $n\geq N,n'\geq N'$，就有
+[12] \begin{equation}
+d(x_n,x_n')<\epsilon/2,\quad d(x_{n'}',y_{n'})<\epsilon/2.~
+\end{equation}
+[13] 取 $N_1=\max\{N,N'\}$，
+[14] 则只要 $n>N_1$，就有
+[15] \begin{equation}
+d(x_n,y_n)< d(x_n,x'_n)+d(x'_n,y_n)<\epsilon/2+\epsilon/2=\epsilon.~
+\end{equation}
+[16] 即 $\lim\limits_{n\rightarrow\infty}d(x_n,y_n)=0$。
+[17] 证毕！
+[18] 由上面的定理，可以定义柯西序列的等价关系。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_def1|description|定义 1]
+[19] 定义 1
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[20] 设 $(X,d)$ 是任一度量空间，$\{x_n\},\{x'_n\}$ 是 $X$ 上的两个柯西序列（定义 1 ）。
+[/SCOPE:s_def1_let]
+[21] 称 $\{x_n\}$ 和 $\{x_n'\}$ 是等价的，并记作 $\{x_n\}\sim\{x'_n\}$ 若
+[22] \begin{equation}
+\lim_{n\rightarrow\infty}d(x_n,x_n')=0.~
+\end{equation}
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm2|description|定理 2]
+[23] 定理 2
+[SCOPE:s_thm2_let1|let_bind|定理 2 的变量]
+[24] 设 $C_X$ 是度量空间 $X$ 上的所有柯西序列构成的集族，
+[25] 则由等价关系 $\sim$ 定义的商集 $X^*:=C_X/\sim$ 上通过如下定义的距离 $d^*$ 是良好的：
+[26] \begin{equation}
+d^*(x^*,y^*):=\lim_{n\rightarrow\infty} d(x_n,y_n),\quad x^*,y^*\in X^*,\{x_n\}\in x^*,\{y_n\}\in y^*.~
+\end{equation}
+[/SCOPE:s_thm2_let1]
+[27] 证明：由不等式式 3 以及序列 $\{x_n\},\{y_n\}$ 是柯西序列知，对于充分大的 $n,m$，成立
+[28] \begin{equation}
+\left\lvert d(x_n,y_n)-d(x_m,y_m) \right\rvert \leq d(x_n,x_m)+d(y_n,y_m)<\epsilon.~
+\end{equation}
+[29] 于是序列 $\{s_n\}$ 是实数构成的柯西序列，其中 $s_n:=d(x_n,y_n)$。
+[30] 由 Cauchy 准则（
+[31] 定理 2 [链接 L0]
+[32] ），$\{s_n\}$ 有极限。
+[33] 这个极限不依赖于 $\{x_n\}\in x^*,\{y_n\}\in y^*$ 的选取。
+[SCOPE:s_thm2_let2|let_bind|定理 2 证明中的变量]
+[34] 事实上，设
+[35] \begin{equation}
+\{x_n\},\{x_n'\}\in x^*,\quad \{y_n\},\{y_n'\}\in y^*.~
+\end{equation}
+[/SCOPE:s_thm2_let2]
+[36] \begin{equation}
+\left\lvert d(x_n,y_n)-d(x'_n,y'_n) \right\rvert \leq d(x_n,x_n')+d(y_n,y'_n).~
+\end{equation}
+[37] 因为 $\{x_n\}\sim\{x_n'\},\{y_n\}\sim\{y_n'\}$，
+[38] 因此
+[39] \begin{equation}
+\lim_{n\rightarrow\infty}d(x_n,y_n)=\lim_{n\rightarrow\infty}d(x'_n,y'_n).~
+\end{equation}
+[40] 证毕！
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|定理 3]
+[41] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理 3 的变量]
+[42] 设 $(X,d)$ 是度量空间，$X^*,d^*$ 如定理 2 定义，
+[43] 则 $(X^*,d^*)$ 是度量空间。
+[/SCOPE:s_thm3_let]
+[44] 证明：
+[45] 正定性：
+[46] \begin{equation}
+d^*(x^*,y^*)=\lim_{n\rightarrow\infty} d(x_n,y_n)\geq0.~
+\end{equation}
+[47] 设 $d^*(x^*,y^*)=0$，并取恒等序列 $\{x_n\}\in x^*,\{y_n\}\in y^*$，
+[48] 则
+[49] \begin{equation}
+\lim_{n\rightarrow\infty} d(x_n,y_n)=0\Rightarrow d(x_n,y_n)=0\Rightarrow x_n=y_n\Rightarrow x^*=y^*.~
+\end{equation}
+[50] 对称性：
+[51] \begin{equation}
+d^*(x^*,y^*)=\lim_{n\rightarrow\infty} d(x_n,y_n)=\lim_{n\rightarrow\infty} d(y_n,x_n)=d^*(y^*,x^*).~
+\end{equation}
+[52] 三角不等式：设 $\{x_n\}\in x^*,\{y_n\}\in y^*,\{z_n\}\in Z^*$，
+[53] 则
+[54] \begin{equation}
+d(x_n,z_n)\leq d(x_n,y_n)+d(y_n,z_n).~
+\end{equation}
+[55] 上式取极限得
+[56] \begin{equation}
+\begin{aligned}
+\lim_{n\rightarrow\infty}d(x_n,z_n)&\leq \lim_{n\rightarrow\infty}d(x_n,y_n)+\lim_{n\rightarrow\infty}d(y_n,z_n),\\
+&\Downarrow\\
+d^*(x^*,z^*)&\leq d^*(x^*,y^*)+d^*(y^*,z^*).
+\end{aligned}
+~
+\end{equation}
+[57] 证毕！
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|定理 4]
+[58] 定理 4
+[SCOPE:s_thm4_let|let_bind|定理 4 的变量]
+[59] 设 $(X,d),(X^*,d^*)$ 如定理 3 定义，
+[60] 则 $(X,d)$ 和 $(X^*,d^*)$ 的某一子空间等距（定义 4 ）。
+[61] 这一等距可由将 $x\in X$ 映射到收敛于 $x$ 的类 $x^*\in X^*$ 指定。
+[/SCOPE:s_thm4_let]
+[62] 证明：设定理中描述的映射为 $f$，
+[63] 则我们只需证明 $f$ 是等距的，单的，且对任一 $x\in X$，$f(x)\in X^*$。
+[64] 任一 $x\in X$，$f(x)\in X^*$：实数上，任一 $x\in X$，$\{x_n\},x_n\equiv x$ 是柯西序列，
+[65] 因此等价类 $[\{x_n\}]\in X^*$，
+[66] 即 $f(x)\in X^*$。
+[67a] (x)\neq f
+[67b] (y)$。
+[68] 取恒等序列 $\{x_n\},\{y_n\}$，其中 $x_n\equiv x_1,y_n\equiv x_2$。
+[69] 那么由 $f(x_1)\neq f(x_2)$，得（根据柯西序列等价的定义（定义 1 ））
+[70] \begin{equation}
+\begin{aligned}
+\lim_{n\rightarrow\infty}d(x_n,y_n)&\neq 0,\\
+&\Downarrow\\
+d(x,y)&\neq0,\\
+&\Downarrow\\
+x&\neq y.
+\end{aligned}~
+\end{equation}
+[71a] (x),\{y_n\}\in f
+[71b] (y)$，
+[72] 则
+[73] \begin{equation}
+d^*(f(x),f(y))=\lim_{n\rightarrow\infty}d(x_n,y_n)=d(x,y).~
+\end{equation}
+[74] 证毕！
+[75] 由定理 4 ，我们可以把 $X$ 看作 $X^*$ 的子空间。
+
+[/SCOPE:s_thm4]
+[SCOPE:s_thm5|description|定理 5]
+[76] 定理 5
+[SCOPE:s_thm5_let|let_bind|定理 5 的变量]
+[77] 设 $(X,d),(X^*,d^*)$ 如定理 3 定义，
+[78] 则 $X$ 在 $X^*$ 中稠密（定义 1 ），
+[79] 即 $[X]=X^*$。
+[/SCOPE:s_thm5_let]
+[80] 证明：
+[81] 如前所述，$X$ 可看出 $X^*$ 的子空间，
+[82] 因此我们将直接记 $x$ 为 $X^*$ 中收敛到 $x$ 的等价类。
+[83] 设 $x^*$ 是 $R^*$ 中任一点且 $\epsilon>0$ 是任意的。
+[84] 取 $\{x_n\}\in x^*$。
+[85] 设 $N$ 是使得对一切 $n,m>N$，$\rho(x_n,x_m)<\epsilon$ 的数。
+[86] 则当 $n>N$ 时，
+[87] \begin{equation}
+d^*(x_n,x^*)=\lim_{m\rightarrow\infty} d(x_n,x_m)<\epsilon.~
+\end{equation}
+[88] 上式我们已经取了 $x_n\in X^*$（严格说是 $f(x_n)$）中收敛于 $x_n$ 的恒等代表元。由
+[89] 式 18 [链接 L1]
+[90] ，$x^*$ 的任意领域都包含 $X$ 中的某一点。
+[91] 因此 $X^*\subset [X]$，又 $[X]\subset X^*$（因为 $X$ 是度量空间 $X^*$ 的子集，$X$ 的极限点按定义都在 $X^*$ 中），
+[92] 所以 $[X]=X^*$。
+[93] 证毕！
+[/SCOPE:s_thm5]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1证明等价关系，定义1定义等价关系，定理1是定义1的基础"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2利用定理1的等价关系定义商集和距离"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3证明商集是度量空间，依赖定理2的定义"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_thm3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理4证明等距嵌入，依赖定理3的度量空间结构"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_thm4",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理5证明稠密性，依赖定理4的嵌入"
+  }
+]

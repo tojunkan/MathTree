@@ -1,0 +1,267 @@
+{
+  "article_name": "SphNab",
+  "statements": [
+    {
+      "stmt_id": "st_let_u_v",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_operators_let",
+      "exposed_entities": [
+        "u",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_gradient",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_operators",
+      "exposed_entities": [
+        "∇u"
+      ]
+    },
+    {
+      "stmt_id": "st_divergence",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_operators",
+      "exposed_entities": [
+        "∇·v"
+      ]
+    },
+    {
+      "stmt_id": "st_curl",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_operators",
+      "exposed_entities": [
+        "∇×v"
+      ]
+    },
+    {
+      "stmt_id": "st_laplacian",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_operators",
+      "exposed_entities": [
+        "∇²u"
+      ]
+    },
+    {
+      "stmt_id": "st_dr_expression",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "dr"
+      ]
+    },
+    {
+      "stmt_id": "st_laplace_decomp_let",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_laplace_decomp_let",
+      "exposed_entities": [
+        "∇²_r",
+        "∇²_Ω"
+      ]
+    },
+    {
+      "stmt_id": "st_laplace_decomp_explain",
+      "subtype": "remark",
+      "clause_range": [
+        21,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_laplace_decomp",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_Omega_decomp",
+      "subtype": "definition",
+      "clause_range": [
+        28,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_laplace_decomp",
+      "exposed_entities": [
+        "∇_Ω"
+      ]
+    },
+    {
+      "stmt_id": "st_other_pd_let",
+      "subtype": "assumption",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_other_pd",
+      "exposed_entities": [
+        "r",
+        "θ",
+        "ϕ"
+      ]
+    },
+    {
+      "stmt_id": "st_partial_r_theta_phi",
+      "subtype": "definition",
+      "clause_range": [
+        35,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_other_pd",
+      "exposed_entities": [
+        "∂r/∂x",
+        "∂r/∂y",
+        "∂r/∂z",
+        "∂θ/∂x",
+        "∂θ/∂y",
+        "∂θ/∂z",
+        "∂ϕ/∂x",
+        "∂ϕ/∂y",
+        "∂ϕ/∂z"
+      ]
+    },
+    {
+      "stmt_id": "st_chain_rule",
+      "subtype": "definition",
+      "clause_range": [
+        39,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_other_pd",
+      "exposed_entities": [
+        "∂/∂x",
+        "∂/∂y",
+        "∂/∂z"
+      ]
+    },
+    {
+      "stmt_id": "st_basis_diff_intro",
+      "subtype": "remark",
+      "clause_range": [
+        43,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_basis_diff",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_basis_diff_results",
+      "subtype": "definition",
+      "clause_range": [
+        48,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_basis_diff",
+      "exposed_entities": [
+        "∂r̂/∂r",
+        "∂r̂/∂θ",
+        "∂r̂/∂ϕ",
+        "∂θ̂/∂r",
+        "∂θ̂/∂θ",
+        "∂θ̂/∂ϕ",
+        "∂ϕ̂/∂r",
+        "∂ϕ̂/∂θ",
+        "∂ϕ̂/∂ϕ"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let_u_v",
+      "target": "st_gradient",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_u_v",
+      "target": "st_divergence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_u_v",
+      "target": "st_curl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_u_v",
+      "target": "st_laplacian",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_laplace_decomp_let",
+      "target": "st_laplace_decomp_explain",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_laplace_decomp_let",
+      "target": "st_Omega_decomp",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_other_pd_let",
+      "target": "st_partial_r_theta_phi",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_other_pd_let",
+      "target": "st_chain_rule",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_basis_diff_intro",
+      "target": "st_basis_diff_results",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": [
+    "Scope s_derivation 内推导未完成，无法建立完整的逻辑边。",
+    "Scope s_laplace_decomp 内分解的用途说明（[26-27]）未形成独立 Statement。",
+    "跨文章引用 [L4], [L5], [L6] 未在输入中提供 Scope 间关系表，无法落地为边。"
+  ]
+}

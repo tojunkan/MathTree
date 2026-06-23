@@ -1,0 +1,315 @@
+{
+  "article_name": "CDQ2Ec",
+  "statements": [
+    {
+      "stmt_id": "st_def1_main",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "E",
+        "V",
+        "rho",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_claim",
+      "subtype": "example",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_main",
+      "subtype": "lemma",
+      "clause_range": [
+        16,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "E",
+        "V",
+        "rho",
+        "o",
+        "g",
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "E",
+        "V",
+        "rho",
+        "o",
+        "g",
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_main",
+      "subtype": "theorem",
+      "clause_range": [
+        56,
+        57
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "f",
+        "E",
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_backward_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        59,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "f",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_backward_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        61,
+        62
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_forward_assump1",
+      "subtype": "assumption",
+      "clause_range": [
+        64,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_forward_assump2",
+      "subtype": "assumption",
+      "clause_range": [
+        65,
+        67
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "g",
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_forward_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        69,
+        70
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_claim",
+      "subtype": "example",
+      "clause_range": [
+        79,
+        79
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "e",
+        "E"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_main",
+      "subtype": "definition",
+      "clause_range": [
+        83,
+        85
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "E",
+        "Iso(E)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_main",
+      "subtype": "theorem",
+      "clause_range": [
+        90,
+        91
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "E",
+        "Iso(E)",
+        "T",
+        "O(n)",
+        "f",
+        "a",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        91,
+        91
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex1_assump",
+      "target": "st_ex1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_assump",
+      "target": "st_lemma1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_backward_assump",
+      "target": "st_thm1_backward_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_forward_assump1",
+      "target": "st_thm1_forward_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_forward_assump2",
+      "target": "st_thm1_forward_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_forward_assump1",
+      "target": "st_thm1_forward_assump2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_main",
+      "target": "st_thm2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_main",
+      "target": "st_lemma1_main",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理1的证明引用引理1"
+    },
+    {
+      "source": "st_thm2_main",
+      "target": "st_thm1_main",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理2的证明引用定理1"
+    },
+    {
+      "source": "st_thm2_main",
+      "target": "st_ex1_claim",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理2的证明引用例1"
+    },
+    {
+      "source": "st_thm2_main",
+      "target": "st_ex2_claim",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理2的证明引用例2"
+    }
+  ],
+  "unresolved": []
+}

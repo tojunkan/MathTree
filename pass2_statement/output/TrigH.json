@@ -1,0 +1,217 @@
+{
+  "article_name": "TrigH",
+  "statements": [
+    {
+      "stmt_id": "st_intro_hyperbolic_functions",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "sinh x",
+        "cosh x",
+        "tanh x"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_real_var",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_e_constant",
+      "subtype": "remark",
+      "clause_range": [
+        4,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_parity",
+      "subtype": "remark",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_identities_var",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_identities",
+      "exposed_entities": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_identity_1",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_identities",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_identity_2",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_identities",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_identity_3",
+      "subtype": "theorem",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_identities",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_inverse_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": "true",
+      "scope_id": "s_inverse",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_goal",
+      "subtype": "question",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_assume",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_eq1",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_eq2",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "sinh^{-1} x"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_intro_real_var",
+      "target": "st_intro_hyperbolic_functions",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_identities_var",
+      "target": "st_identity_1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_identities_var",
+      "target": "st_identity_2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_identities_var",
+      "target": "st_identity_3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_assume",
+      "target": "st_example1_eq1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_eq1",
+      "target": "st_example1_eq2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_eq2",
+      "target": "st_example1_result",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

@@ -1,0 +1,224 @@
+[SCOPE:root|description|极分解]
+文章名: PoDe
+标题: 极分解
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=theorem heading=定理 2 title=
+  [2] type=theorem heading=定理 3 title=
+  [3] type=example heading=例 1 title=
+  [4] type=corollary heading=推论 1 title=
+
+[SCOPE:s_thm1|description|定理1]
+[0] 定理 1
+[SCOPE:s_thm1_let1|let_bind|设H1,H2,U1,U2]
+[1] 给定酉空间 $V$ 及其上的线性变换 $A$，
+[2] 则存在 $V$ 上的半正定厄米变换 $H_1,H_2$ 和酉变换 $U_1,U_2$ 使得
+[3] \begin{equation}
+A=H_1U_1=H_2U_2~,
+\end{equation}
+[/SCOPE:s_thm1_let1]
+[4] 证明1：
+[5] 我们可以利用 $A^{\dagger}$ 来构造半正定的厄米变换。
+[6] 注意到 $AA^{\dagger}$ 是厄米矩阵，
+[SCOPE:s_thm1_let2|let_bind|设正交基和特征值]
+[7] 则 $V$ 存在某组标准正交基 $\{ \boldsymbol{\mathbf{e}} _i\}$，使得 $AA^{\dagger}$ 为对角矩阵，且特征值都是实数，设为 $\lambda_i$。
+[8] 设任意 $ \boldsymbol{\mathbf{x}} \in V$，由酉内积的正定性得：$ \left\langle A^{\dagger} \boldsymbol{\mathbf{x}} ,A^{\dagger} \boldsymbol{\mathbf{x}} \right\rangle = \left\langle \boldsymbol{\mathbf{x}} ,AA^{\dagger} \boldsymbol{\mathbf{x}} \right\rangle \ge 0$
+[9] ，在 $\{ \boldsymbol{\mathbf{e}} _i\}$ 下讨论，易见该正定性要求 $AA^{\dagger}$ 是半正定矩阵，其对角元大于或等于 0。
+[/SCOPE:s_thm1_let2]
+[SCOPE:s_thm1_let3|let_bind|设H]
+[10] 设 $H=\sqrt{AA^{\dagger}}$，
+[11] 即对角元为 $\sqrt{\lambda_i}$ 的半正定矩阵，以下简写为 $\lambda'_i$。
+[/SCOPE:s_thm1_let3]
+[12] 由于 $ \left\langle A^{\dagger} \boldsymbol{\mathbf{e}} _i,A^{\dagger} \boldsymbol{\mathbf{e}} _j \right\rangle = \left\langle \boldsymbol{\mathbf{e}} _i,AA^{\dagger} \boldsymbol{\mathbf{e}} _j \right\rangle =\delta_{ij}\lambda'^2_j$，
+[13] 因此 $A^{\dagger} \boldsymbol{\mathbf{e}} _i$ 相互正交。
+[14] 用 $ \boldsymbol{\mathbf{y}} _i$ 代替 $\{A \boldsymbol{\mathbf{e}} _i|\lambda_i=0\}$，保证模为 1 且依然与 $\{A \boldsymbol{\mathbf{e}} _i|\lambda_i\neq 0\}$ 相互正交。
+[SCOPE:s_thm1_let4|let_bind|设H',A',U]
+[15] 定义线性变换 $H',A'$ 分别满足：
+[16] \begin{equation}
+\left\{
+\begin{aligned}
+H' \boldsymbol{\mathbf{e}} _i&=\frac{1}{\lambda_i} \boldsymbol{\mathbf{e}} _i,\quad\lambda_i\neq 0\\
+H' \boldsymbol{\mathbf{e}} _i&= \boldsymbol{\mathbf{e}} _i,\quad\lambda_i\neq 0
+\end{aligned}
+\right.~.
+\end{equation}
+[17] \begin{equation}
+\left\{
+\begin{aligned}
+A'^{\dagger} \boldsymbol{\mathbf{e}} _i&=A^{\dagger} \boldsymbol{\mathbf{e}} _i,\quad\lambda_i\neq 0\\
+A' \boldsymbol{\mathbf{e}} _i&= \boldsymbol{\mathbf{y}} _i,\quad\lambda_i= 0
+\end{aligned}
+\right.~.
+\end{equation}
+[18] 设 $U=H'A'$。
+[/SCOPE:s_thm1_let4]
+[19] 在 $\{ \boldsymbol{\mathbf{e}} _i\}$ 下，$A'A'^{\dagger}$ 为对角矩阵，对于 $\lambda_i\neq 0$，第 $i$ 个对角元为 $\lambda_i^2$，反之则为 1。
+[20] $H'$ 从定义看也是对角矩阵，对角元为 $\frac{1}{\lambda_i}$ 或 $1$，取决于 $\lambda_i$ 是否为 0。
+[21] 因此易证，$UU^{\dagger}=H'A'A'^{\dagger}H'^{\dagger}=E$，且 $HU=HH'A'=A$。
+[22] $A^{\dagger}$ 同理有对应的表示：$A^{\dagger}=H_2U_2$，两边取伴随则得到 $A=U_2^{\dagger}H^{\dagger}_2$，是定理所求。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理2]
+[23] 定理 2
+[SCOPE:s_thm2_let1|let_bind|设H,U]
+[24] 给定酉空间 $V$ 及其上的线性变换 $A$，若半正定厄米变换 $H$ 和酉变换 $U$ 使得 $A=HU$，
+[25] 则 $UH=HU$ 当且仅当 $A$ 是正规变换。
+[/SCOPE:s_thm2_let1]
+[26] 证明：若 $A$ 是正规变换，
+[27] 则
+[28] \begin{equation}
+\begin{aligned}
+AA^{\dagger}&=HUU^{\dagger}H^{\dagger}\\
+&=AA^{\dagger}\\
+&=U^{\dagger}H^{\dagger}HU~.
+\end{aligned}
+\end{equation}
+[29] 代入酉变换定义：$UU^{\dagger}=E$，厄米变换定义：$H=H^{\dagger}$ 后得：
+[30] \begin{equation}
+H^2=U^{\dagger}H^2U~.
+\end{equation}
+[31] 易见，若 $UH=HU$，$A$ 为正规变换。
+[32] 若 $A$ 为正规变换，式 5 左右两边都左乘 $U$ 后得：$UH^2=H^2U$。
+[SCOPE:s_thm2_let2|let_bind|设分块矩阵]
+[33] 选定某组标准正交基，使得 $H$ 为对角矩阵。
+[34] 将 $H$ 分块，相同对角元为一块，$U$ 也表示为相应的分块对角矩阵。
+[35] 为证明方便，以 $4\times 4$ 矩阵为例，$\lambda_i$ 为 $H$ 的特征值。
+[/SCOPE:s_thm2_let2]
+[36] \begin{equation}
+\begin{aligned}
+H&=\begin{pmatrix}
+\lambda_1&0 & 0 & 0\\
+0& \lambda_2 & 0 & 0\\
+0 &0 & \lambda_2&0 \\
+0& 0 &0 &\lambda_2
+\end{pmatrix}\Rightarrow \begin{pmatrix}
+0& \begin{pmatrix}
+0 &0
+\end{pmatrix}& 0\\
+\begin{pmatrix}
+0\\
+0
+\end{p…[truncated]…e\\
+i
+\end{pmatrix} & \begin{pmatrix}
+f& g\\
+j& k
+\end{pmatrix} & \begin{pmatrix}
+h\\
+l
+\end{pmatrix}\\
+m & \begin{pmatrix}
+n&r
+\end{pmatrix} &q
+\end{pmatrix}=\begin{pmatrix}
+A& B&C \\
+D & E &F \\
+G & H& I
+\end{pmatrix}
+\end{aligned}~,
+\end{equation}
+[37] \begin{equation}
+H^2U=\begin{pmatrix}
+\lambda^2_1\begin{pmatrix}
+A &B &C
+\end{pmatrix}\\
+\lambda^2_2\begin{pmatrix}
+D &E &F\end{pmatrix}\\
+\lambda^2_3\begin{pmatrix}
+G &H &I
+\end{pmatrix}
+\end{pmatrix},
+U^2H=\begin{pmatrix}
+\lambda_1^2\begin{pmatrix}
+A\\
+D\\
+G
+\end{pmatrix} &\lambda_2^2 \begin{pmatrix}
+B\\
+E\\
+H
+\end{pmatrix} &\lambda_3^2\begin{pmatrix}
+C\\
+F\\
+I
+\end{pmatrix}
+\end{pmatrix}~.
+\end{equation}
+[38] 因此，$U$ 必为对角矩阵，
+[39] 则 $HU=UH$。
+[40] 同理，可证其他维度的情况。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|定理3]
+[41] 定理 3
+[SCOPE:s_thm3_let1|let_bind|设H,theta_i]
+[42] 给定 $n$ 维酉空间 $V$ 上的酉变换 $U$，存在半正定的厄米变换 $H$ 使得2$U= \mathrm{e} ^{ \mathrm{i} H}$。
+[43] 证明：由定理 2 得，$V$ 中存在一组正交基使得 $U$ 为对角矩阵。
+[44] 由 $UU^{\dagger}=E$ 可知，$U$ 的对角元是模为 1 的复数，我们将其表示为 $U(i)= \mathrm{e} ^{ \mathrm{i} \theta_i}$，
+[45] 则 $U= \mathrm{e} ^{ \mathrm{i} H},H= \operatorname {diag}(\theta_1,\theta_2...\theta_n)$。
+
+[/SCOPE:s_thm3]
+[/SCOPE:s_thm3_let1]
+[SCOPE:s_ex1|description|例1]
+[46] 用转动生成元 $\hat{L_i}$ 生成使系统绕 $i$ 轴转动的幺正变换 $\hat U= \mathrm{e} ^{ \mathrm{i} \hat{L}_i\theta}$，其中 $\theta$ 表示转动角度。
+[47] 结合定理 1 ，定理 3 ，我们可以对酉空间上的任意线性变换进行 “极分解”，类似于把复数表示为模乘以 $ \mathrm{e} ^{ \mathrm{i} \theta}$。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_cor1|description|推论1]
+[48] 推论 1
+[SCOPE:s_cor1_let1|let_bind|设H1,H2,F1,F2]
+[49] 给定酉空间 $V$ 及其上的线性变换 $A$，
+[50] 则存在 $V$ 上的半正定厄米变换 $H_1,H_2,F_1,F_2$，使得
+[51] \begin{equation}
+A=H_1 \mathrm{e} ^{ \mathrm{i} F_1}= \mathrm{e} ^{ \mathrm{i} F_2}H_2~.
+\end{equation}
+[/SCOPE:s_cor1]
+[/SCOPE:s_cor1_let1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2的证明引用定理1的结论"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3的证明引用定理2的结论"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1引用定理1"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_thm3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1引用定理3"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是定理1和定理3的直接推论"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是定理1和定理3的直接推论"
+  }
+]

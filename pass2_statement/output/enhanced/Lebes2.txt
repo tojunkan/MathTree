@@ -1,0 +1,216 @@
+[SCOPE:root|description|Lebesgue 积分的一些补充性质]
+文章名: Lebes2
+标题: Lebesgue 积分的一些补充性质
+
+环境标记 (hints):
+  [0] type=lemma heading=引理 1 title=
+  [1] type=theorem heading=定理 1 title=Levi 定理
+  [2] type=corollary heading=推论 1 title=Lebesgue 基本定理
+  [3] type=definition heading=定义 1 title=数列的上、下极限
+  [4] type=definition heading=定义 2 title=函数列的上、下极限
+  [5] type=theorem heading=定理 2 title=Fatou 引理
+  [6] type=example heading=例 1 title=
+  [7] type=theorem heading=定理 3 title=积分的绝对连续性
+
+[SCOPE:s_lemma1|description|引理 1]
+[SCOPE:s_lemma1_let|let_bind|引理 1 的变量]
+[0] 引理 1
+[1] 如果 $E$ 是零测集，
+[2] 那么 $E$ 上的任意函数都是可测的，且其积分为 $0$。
+[/SCOPE:s_lemma1_let]
+[3] 这里的函数取值可以是广义实数 $\pm\infty$。
+[4] 由描述 Lebesgue 积分几何意义的定理 4 ，容易推得以下定理：
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_levi|description|Levi 定理]
+[SCOPE:s_levi_let|let_bind|Levi 定理的变量]
+[5] 定理 1 Levi 定理
+[6] 设 $\{f_k\}$ 是可测集 $E$ 上的一列单调不减的非负可测函数，
+[7] 则有
+[/SCOPE:s_levi_let]
+[8] \begin{equation}
+\int_E \left[\lim\limits_{k\to \infty} f_k(x) \right] \,\mathrm{d}{x} = \lim\limits_{k\to \infty}\int_E f_k(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[9] 简单来说，Levi 定理就是指单调不减的非负可测函数列具有 “可极限换序” 的性质。
+[10] 由 Levi 定理可以直接得到以下推论：
+
+[/SCOPE:s_levi]
+[SCOPE:s_leb_basic|description|Lebesgue 基本定理]
+[SCOPE:s_leb_basic_let|let_bind|Lebesgue 基本定理的变量]
+[11] 推论 1 Lebesgue 基本定理
+[12] 设 $\{f_k\}^\infty_{k=1}$ 是可测集 $E$ 上的一列非负可测函数，
+[13] 则有
+[/SCOPE:s_leb_basic_let]
+[14] \begin{equation}
+\int_E \left[\sum\limits_{k=1}f_k(x) \right] \,\mathrm{d}{x} = \sum\limits_{k=1} \int_E f_k(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[15] 回忆上极限与下极限的定义 1 ，我们可以把这个定义推广到函数列上去。
+[16] 为了方便阅读，我们在这里简单解释一下上下极限的含义，已熟悉的读者可直接跳过，需要更详细解释的读者请跳转到子列极限、上极限与下极限。
+
+[/SCOPE:s_leb_basic]
+[SCOPE:s_def_supinf_seq|description|数列的上、下极限]
+[SCOPE:s_def_supinf_seq_let|let_bind|数列的变量]
+[17] 定义 1 数列的上、下极限
+[18] 给定实数列 $\{a_n\}$。
+[19] \begin{equation}
+\lim\limits_{n\to\infty} \sup\{a_i\}_{i=n}^\infty = \operatorname {\overline{\lim}}\limits_{n\to\infty} a_n~
+\end{equation}
+[/SCOPE:s_def_supinf_seq_let]
+[20] 上极限（upper limit）
+[21] 类似地，定义
+[22] \begin{equation}
+\lim\limits_{n\to\infty} \inf\{a_i\}_{i=n}^\infty = \operatorname {\underline{\lim}}\limits_{n\to\infty} a_n~
+\end{equation}
+[23] 下极限（lower limit）
+[24] 简单来说，数列的上极限就是 “上确界的极限”，下极限就是 “下确界的极限”。
+[25a] 当然，由于上确界数列 $\{\sup \{a_i\}_{i=n}^\infty\}$ 是单调不增的，也可以说上极限是 “上确界的下确界”，类似地，下极限
+[25b] 则是 “下确界的上确界”。
+[26] 后面这两种解释更适用于子列极限、上极限与下极限中的讨论。
+
+[/SCOPE:s_def_supinf_seq]
+[SCOPE:s_def_supinf_func|description|函数列的上、下极限]
+[SCOPE:s_def_supinf_func_let|let_bind|函数列的变量]
+[27] 定义 2 函数列的上、下极限
+[28] 给定一列实函数 $f_k$。
+[29] 定义其上、下极限函数在 $x$ 处的值为数列 $f_k(x)$ 的上、下极限。
+[/SCOPE:s_def_supinf_func_let]
+[30] 有了上下极限的概念，我们才可以描述清楚以下性质：
+
+[/SCOPE:s_def_supinf_func]
+[SCOPE:s_fatou|description|Fatou 引理]
+[SCOPE:s_fatou_let|let_bind|Fatou 引理的变量]
+[31] 定理 2 Fatou 引理
+[32] 设 $f_k$ 是可测集 $E$ 上的一列非负可测函数，
+[33] 则
+[/SCOPE:s_fatou_let]
+[34] \begin{equation}
+\int_E \operatorname {\underline{\lim}}\limits_{k\to \infty} f_k(x) \,\mathrm{d}{x} \leq \operatorname {\underline{\lim}}\limits_{k\to \infty}\int_E f_k(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[SCOPE:s_fatou_proof|description|Fatou 引理的证明]
+[SCOPE:s_fatou_proof_let|let_bind|证明中引入的工具函数]
+[35] 证明：
+[36] 为方便讨论，定义一个工具函数：
+[37] \begin{equation}
+g_k(x) = \inf\limits_{i\geq 0}\{f_{k+i}(x)\}~.
+\end{equation}
+[38a] (x)=\lim\limits_{k\to\infty} g_k
+[38b] (x)$。
+[/SCOPE:s_fatou_proof_let]
+[39] 另外易得，$\{g_k\}$ 是一列 $E$ 上的一列单调不减的非负可测函数。
+[40a] (x)\leq f_k
+[40b] (x)$ 处处成立。
+[41] 因此有
+[42] \begin{equation}
+\lim_{k\to\infty} \int_E g_k(x) \,\mathrm{d}{x} \leq \lim_{k\to\infty} \int_E f_k(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[43] 于是由定理 1 ，结合极限的性质可得：
+[44] \begin{equation}
+\begin{aligned}
+\int_E \operatorname {\underline{\lim}}\limits_{k\to\infty}f_k(x) \,\mathrm{d}{x} &=
+\int_E \lim_{k\to\infty} g_k(x) \,\mathrm{d}{x} \\
+&=\lim_{k\to\infty} \int_E g_k(x) \,\mathrm{d}{x} \\
+&\leq \lim_{k\to\infty} \int_E f_k(x) \,\mathrm{d}{x} ~.
+\end{aligned}
+\end{equation}
+[45] 证毕。
+[/SCOPE:s_fatou_proof]
+[46] 定理 2 有没有可能更强一些呢？
+[47] 就是说，能不能把式 5 的不等号写成等号呢？
+[48] 答案是否定的，用下面这个简单的例子就可以看出来：
+
+[/SCOPE:s_fatou]
+[SCOPE:s_example1|description|例 1]
+[SCOPE:s_example1_let|let_bind|例 1 的变量]
+[49] 考虑区间 $[0, 1]$ 上的函数列 $\{f_k\}$，其定义如下：
+[50] 当 $k$ 为奇数时，
+[51] \begin{equation}
+f_k(x)= \left\{\begin{aligned}
+&1\quad x\in[0, 1/2]\\
+&0\quad x\in[1/2, 0]~.
+\end{aligned}\right.
+\end{equation}
+[52] 当 $k$ 为偶数时，
+[53] \begin{equation}
+f_k(x)= \left\{\begin{aligned}
+&0\quad x\in[0, 1/2]\\
+&1\quad x\in[1/2, 0]~.
+\end{aligned}\right.
+\end{equation}
+[54] 则显然 $ \operatorname {\underline{\lim}}\limits_{k\to \infty}f_k(x)=0$ 处处成立，
+[/SCOPE:s_example1_let]
+[55] 故
+[56] \begin{equation}
+\int_{[0, 1]} \operatorname {\underline{\lim}}\limits_{k\to \infty}f_k(x) \,\mathrm{d}{x} = 0~,
+\end{equation}
+[57] 但由于各 $\int_{[0, 1]} f_k(x) \,\mathrm{d}{x} $ 都等于 $1/2$，
+[58] 故
+[59] \begin{equation}
+\operatorname {\underline{\lim}}\limits_{k\to \infty}\int_{[0, 1]} f_k(x) \,\mathrm{d}{x} = 1/2~.
+\end{equation}
+[60] 比较式 11 和式 12 即可知，式 5 的等号不总是成立。
+[61a] (x) \,\mathrm{d}{x} \right\rvert = \left\lvert \int_E f^+
+[61b] (x) \,\mathrm{d}{x} - \int_E f^-
+[61c] (x) \,\mathrm{d}{x} \right\rvert $ 和 $\int_E \left\lvert f
+[61d] (x) \right\rvert \,\mathrm{d}{x} = \int_E f^+
+[61e] (x) \,\mathrm{d}{x} + \int_E f^-
+[61f] (x) \,\mathrm{d}{x} $，可得柯西不等式：
+[62] \begin{equation}
+\left\lvert \int_E f(x) \,\mathrm{d}{x} \right\rvert \leq \int_E \left\lvert f(x) \right\rvert \,\mathrm{d}{x} ~.
+\end{equation}
+
+[/SCOPE:s_example1]
+[SCOPE:s_abs_cont|description|积分的绝对连续性]
+[SCOPE:s_abs_cont_let|let_bind|定理 3 的变量]
+[63] 定理 3 积分的绝对连续性
+[64] 设 $f$ 在 $E$ 上 Lebesgue 可积且几乎处处有限，
+[65] 那么对于任意的 $\epsilon>0$，总存在 $\delta>0$ 使得只要 $A\subseteq E$ 的测度 $ \operatorname {m}A<\delta$，就一定有
+[/SCOPE:s_abs_cont_let]
+[66] \begin{equation}
+\left\lvert \int_A f(x) \,\mathrm{d}{x} \right\rvert < \epsilon~.
+\end{equation}
+[SCOPE:s_abs_cont_proof|description|定理 3 的证明]
+[67] 证明：
+[68] 由柯西不等式式 13 ，可知只需要考虑 $f$ 是非负可测函数的情况即可。
+[69] 又由引理 1 ，只需要考虑 $f$ 处处有限的情况即可，
+[70] 即有界。
+[SCOPE:s_abs_cont_proof_let|let_bind|证明中引入的变量]
+[71] 下设 $f$ 是有界的非负可测函数。
+[72] 设 $f$ 的一个上界为 $s$，
+[73] 那么只需要取 $\delta<\epsilon/s$ 即可得证。
+[/SCOPE:s_abs_cont_proof_let]
+[74] 证毕。
+[/SCOPE:s_abs_cont]
+[/SCOPE:s_abs_cont_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_leb_basic",
+    "target_scope": "s_levi",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Lebesgue 基本定理是 Levi 定理的直接推论"
+  },
+  {
+    "source_scope": "s_fatou",
+    "target_scope": "s_levi",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "Fatou 引理的证明使用了 Levi 定理"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_fatou",
+    "edge_type": "counterexample_of",
+    "category": "logic",
+    "note": "例 1 说明 Fatou 引理中的不等号不能改为等号"
+  },
+  {
+    "source_scope": "s_abs_cont",
+    "target_scope": "s_lemma1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理 3 的证明使用了引理 1"
+  }
+]

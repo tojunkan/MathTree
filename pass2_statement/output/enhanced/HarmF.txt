@@ -1,0 +1,71 @@
+[SCOPE:root|description|调和场（无散无旋场）]
+文章名: HarmF
+标题: 调和场（无散无旋场）
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=corollary heading=推论 1 title=有界调和场
+  [2] type=theorem heading=定理 2 title=最大值定理
+  [3] type=corollary heading=推论 2 title=
+
+[SCOPE:s_thm1|description|定理 1]
+[0] 定理 1
+[1] 调和场的各个分量都是调和函数。
+[2] 证明：使用定义，注意偏微分的顺序可以任意改变，证毕。
+[3] 注意各个分量都是调和函数的矢量场未必是调和场，反例：$x \hat{\boldsymbol{\mathbf{x}}} + y \hat{\boldsymbol{\mathbf{y}}} $ 的分量都是调和函数，
+[4] 但散度不为零。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_cor1|description|推论 1 有界调和场]
+[5] 推论 1 有界调和场
+[6] 如果 $\mathbb R^N$ 上的调和场是有界的（模长为有限值），
+[7] 那么它是一个常矢量场。
+[8] 证明：有界调和场对调和场的各个分量也是有界的，根据定理 1 它们都是调和函数，分别使用刘维尔定理（定理 1 ）得每个分量都是常数，
+[9] 所以矢量场也是常矢量场。
+[10] 证毕。
+[11] 与调和函数类似，（非零）调和场的一个显著特点是其在无穷远处不为零（推论 2 ），由于无散无旋，它的 “场线”（例如电场线）没有起点也没有终点且不闭合，而是从无穷远来，到无穷远去。
+[12] 我们可以把它想象为某种不可压缩流体的速度场或流密度场。
+
+[/SCOPE:s_cor1]
+[SCOPE:s_thm2|description|定理 2 最大值定理]
+[13] 定理 2 最大值定理
+[14] $\mathbb R^N$ 的有限区域内的调和场的模长最大值必定出现在该区域的边界处。
+[SCOPE:s_thm2_let|let_bind|令调和场为 f = ∇·u]
+[15] 证明：令调和场为 $ \boldsymbol{\mathbf{f}} = \boldsymbol{\nabla}\boldsymbol{\cdot} u$，$u$ 是一个调和函数。
+[/SCOPE:s_thm2_let]
+[16] 易证 $ \left\lvert \boldsymbol{\mathbf{f}} \right\rvert ^2$ 也是一个调和函数。
+[17] 对其使用刘维尔定理（定理 1 ）即可，证毕。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_cor2|description|推论 2]
+[18] 推论 2
+[19] 如果 $\mathbb R^N$ 上的调和场 $ \boldsymbol{\mathbf{f}} ( \boldsymbol{\mathbf{r}} )$ 满足 $\lim_{ \left\lvert \boldsymbol{\mathbf{r}} \right\rvert \to \infty} \left\lvert \boldsymbol{\mathbf{f}} ( \boldsymbol{\mathbf{r}} ) \right\rvert = 0$，
+[20] 那么 $ \boldsymbol{\mathbf{f}} ( \boldsymbol{\mathbf{r}} ) \equiv \boldsymbol{\mathbf{0}} $。
+[21] 证明：可以先选择一个半径为 $r$ 的圆/球作为定理 2 的区域，然后令半径区域无穷即可。
+[/SCOPE:s_cor2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论 1 的证明引用定理 1"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理 2 的证明引用定理 1"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论 2 的证明引用定理 2"
+  }
+]

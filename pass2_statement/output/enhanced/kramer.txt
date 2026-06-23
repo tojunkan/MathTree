@@ -1,0 +1,117 @@
+[SCOPE:root|description|克拉默法则]
+文章名: kramer
+标题: 克拉默法则
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=解方程组
+
+[SCOPE:s_example1|description|例1 解方程组]
+[0] 例 1 解方程组
+[SCOPE:s_example1_let|let_bind|例1的变量]
+[1] 令式 1 中 $ \boldsymbol{\mathbf{A}} =  \begin{pmatrix}2 & 1\\ -1 & 3\end{pmatrix}  $，$ \boldsymbol{\mathbf{b}} =  \begin{pmatrix}4\\5\end{pmatrix}  $，求解方程组。
+[/SCOPE:s_example1_let]
+[2] 解：$ \left\lvert \boldsymbol{\mathbf{A}} \right\rvert = 7$，$ \left\lvert \boldsymbol{\mathbf{A}} _1 \right\rvert =  \begin{vmatrix}4 & 1\\ 5 & 3\end{vmatrix}  = 7$，$ \left\lvert \boldsymbol{\mathbf{A}} _2 \right\rvert =  \begin{vmatrix}2 & 4\\ -1 & 5\end{vmatrix}  = 14$。
+[3] 代入式 2 得 $ \boldsymbol{\mathbf{x}} =  \begin{pmatrix}1\\2\end{pmatrix}  $。
+[4] 在数值计算时，克拉默法则解方程组效率较低，直接用高斯消元法求逆矩阵会更快。
+
+[/SCOPE:s_example1]
+[SCOPE:s_proof|description|证明]
+[5] 以下证明2以三阶矩阵为例，
+[6] 但可以方便地推广至任意阶矩阵。
+[SCOPE:s_proof_let1|let_bind|伴随矩阵定义]
+[7] 定义伴随矩阵
+[8] \begin{equation}
+\boldsymbol{\mathbf{A}} ^*=
+\begin{pmatrix}
+A_{11}&A_{21}&A_{31}\\
+A_{12}&A_{22}&A_{32}\\
+A_{13}&A_{23}&A_{33}\\
+\end{pmatrix}~.
+\end{equation}
+[9] 其中 $A_{ij}$ 称为
+[10] 代数余子式
+[11] ，$A_{ij}$ 可以理解为去掉第 i 行与第 j 列的 $ \boldsymbol{\mathbf{A}} $ 的行列式乘以 $(-1)^{i+j}$。
+[/SCOPE:s_proof_let1]
+[SCOPE:s_proof_let2|let_bind|矩阵元素]
+[12] 根据行列式的定义，可以得出 $\det( \boldsymbol{\mathbf{A}} ) = A_{11}a_{11}+A_{12}a_{12}+A_{13}a_{13}$。
+[13] （可以沿任意行、列展开，例如 $\det( \boldsymbol{\mathbf{A}} ) = A_{11}a_{11}+A_{21}a_{21}+A_{31}a_{31}$）
+[14] 同时，伴随矩阵有一重要性质 $ \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{A}} ^* = \det( \boldsymbol{\mathbf{A}} ) \boldsymbol{\mathbf{I}} $。
+[/SCOPE:s_proof_let2]
+[15] 先证明 $ \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{A}} ^* = \det( \boldsymbol{\mathbf{A}} ) \boldsymbol{\mathbf{I}} ~,$
+[16] \begin{equation}
+\begin{aligned}
+\boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{A}} ^* &=
+\begin{pmatrix}
+a_{11}&a_{12}&a_{13}\\
+a_{21}&a_{22}&a_{23}\\
+a_{31}&a_{32}&a_{33}\\
+\end{pmatrix}
+\begin{pmatrix}
+A_{11}&A_{21}&A_{31}\\
+A_{12}&A_{22}&A_{32}\\
+A_…[truncated]…a_{23}&A_{21}a_{21}+A_{22}a_{22}+A_{23}a_{23}&A_{31}a_{21}+A_{32}a_{22}+A_{33}a_{23}\\
+A_{11}a_{31}+A_{12}a_{32}+A_{13}a_{33}&A_{21}a_{31}+A_{22}a_{32}+A_{23}a_{33}&A_{31}a_{31}+A_{32}a_{32}+A_{33}a_{33}\\
+\end{pmatrix}~.
+\end{aligned}
+\end{equation}
+[17] 其中
+[18] $A_{11}a_{11}+A_{12}a_{12}+A_{13}a_{13}$，
+[19] 即为 $ \boldsymbol{\mathbf{A}} $ 的行列式；
+[20] 而
+[21] $A_{21}a_{11}+A_{22}a_{12}+A_{23}a_{13}$，
+[22] 即相当于（沿第二行）计算
+[23] $ \begin{pmatrix}
+a_{11}&a_{12}&a_{13}\\
+a_{11}&a_{12}&a_{13}\\
+a_{31}&a_{32}&a_{33}\\
+\end{pmatrix} $
+[24] 的行列式，
+[25] 因此 $A_{21}a_{11}+A_{22}a_{12}+A_{23}a_{13}=0$。
+[26] 类似地，可以推知
+[27] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{A}} ^* =
+\begin{pmatrix}
+\det( \boldsymbol{\mathbf{A}} )&0&0\\
+0&\det( \boldsymbol{\mathbf{A}} )&0\\
+0&0&\det( \boldsymbol{\mathbf{A}} )\\
+\end{pmatrix}
+=\det( \boldsymbol{\mathbf{A}} ) \boldsymbol{\mathbf{I}} ~.
+\end{equation}
+[SCOPE:s_proof_let3|let_bind|克拉默法则公式]
+[28] 再证明 $x_i={\det( \boldsymbol{\mathbf{A}} _i)}/{\det( \boldsymbol{\mathbf{A}} )}$
+[29] \begin{equation}
+\begin{aligned}
+\boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{A}} ^{-1} \boldsymbol{\mathbf{b}} &= \frac{1}{\det( \boldsymbol{\mathbf{A}} )} \boldsymbol{\mathbf{A}} ^* \boldsymbol{\mathbf{b}} =
+\frac{1}{\det( \boldsymbol{\mathbf{A}} …[truncated]…begin{pmatrix}
+b_1\\
+b_2\\
+b_3\\
+\end{pmatrix}\\
+&=
+\frac{1}{\det( \boldsymbol{\mathbf{A}} )}
+\begin{pmatrix}
+A_{11}b_1+A_{21}b_2+A_{31}b_3\\
+A_{12}b_1+A_{22}b_2+A_{32}b_3\\
+A_{13}b_1+A_{23}b_2+A_{33}b_3\\
+\end{pmatrix}~.
+\end{aligned}
+\end{equation}
+[30] \begin{equation}
+x_1=\frac{1}{\det( \boldsymbol{\mathbf{A}} )}(A_{11}b_1+A_{21}b_2+A_{31}b_3)
+=\frac{1}{\det( \boldsymbol{\mathbf{A}} )}\det
+\begin{pmatrix}
+b_{1}&a_{12}&a_{13}\\
+b_{2}&a_{22}&a_{23}\\
+b_{3}&a_{32}&a_{33}\\
+\end{pmatrix}
+=\frac{\det( \boldsymbol{\mathbf{A}} _1)}{\det( \boldsymbol{\mathbf{A}} )}~,
+\end{equation}
+[31] 同理可证 $x_2, x_3,...$。
+[/SCOPE:s_proof_let3]
+[32] 证毕。
+
+跨文章引用:
+  [L0] 矩阵 → MatRnk
+  [L1] 线性方程组解的结构 → LinEq
+[/SCOPE:s_proof]
+[/SCOPE:root]

@@ -1,0 +1,81 @@
+[SCOPE:root|description|转移矩阵]
+文章名: TransM
+标题: 转移矩阵
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+
+[SCOPE:s_transition_let|let_bind|转移矩阵的变量]
+[SCOPE:s_transition|description|转移矩阵定义]
+[0] 给定域 $\mathbb{F}$ 上的 $n$ 维矢量空间 $V$。
+[1] 如果 $V$ 有两个基 $\{ \boldsymbol{\mathbf{e}} _i\}_{i=1}^{n}$ 和 $\{ \boldsymbol{\mathbf{e}} '_i\}_{i=1}^{n}$，
+[2] 那么由于各 $ \boldsymbol{\mathbf{e}} '_j$ 也是 $V$ 中的元素，
+[3] 故可以表示成 $ \boldsymbol{\mathbf{e}} '_j=\sum\limits_{i=1}^na_{ij} \boldsymbol{\mathbf{e}} _i$，
+[4] 因此我们可以把矢量也当作矩阵元素，写出以下矩阵等式：
+[5] \begin{equation}
+( \boldsymbol{\mathbf{e}} '_1, \cdots \boldsymbol{\mathbf{e}} '_n)=( \boldsymbol{\mathbf{e}} _1, \cdots \boldsymbol{\mathbf{e}} _n) \begin{pmatrix}a_{11},a_{12},\cdots,a_{1n}\\ a_{21},a_{22},\cdots,a_{2n}\\ \vdots\ddots\vdots\\ a_{n1},a_{n2},\cdots,a_{nn}\end{pmatrix} ~.
+\end{equation}
+[6] 矩阵 $ \boldsymbol{\mathbf{Q}} =  \begin{pmatrix}a_{11},a_{12},\cdots,a_{1n}\\ a_{21},a_{22},\cdots,a_{2n}\\ \vdots\ddots\vdots\\ a_{n1},a_{n2},\cdots,a_{nn}\end{pmatrix}  $ 就被称为基 $\{ \boldsymbol{\mathbf{e}} _i\}_{i=1}^{n}$ 到基 $\{ \boldsymbol{\mathbf{e}} '_i\}_{i=1}^{n}$ 的一个转移矩阵（transition matrix），有的地方也译作过渡矩阵。
+
+[/SCOPE:s_transition_let]
+[/SCOPE:s_transition]
+[SCOPE:s_example1|description|例1]
+[7] 证明：转移矩阵必须是可逆矩阵。
+
+[/SCOPE:s_example1]
+[8] 转移矩阵本身是表示基之间的变换的，
+[9] 但它也可以用来表示两个不同的基下各种表示的变换，比如向量的坐标、线性变换的矩阵等。
+
+[SCOPE:s_coord_let|let_bind|坐标变换的变量]
+[SCOPE:s_coord|description|不同基下坐标的变换]
+[10] 如果在基 $\{ \boldsymbol{\mathbf{e}} _i\}_{i=1}^{n}$ 中，向量 $ \boldsymbol{\mathbf{v}} $ 的坐标是列向量 $ \boldsymbol{\mathbf{c}} =  \begin{pmatrix}c_1,\cdots, c_n\end{pmatrix}  ^T$，
+[11] 那么就有
+[12] \begin{equation}
+\boldsymbol{\mathbf{v}} =( \boldsymbol{\mathbf{e}} _1, \cdots \boldsymbol{\mathbf{e}} _n) \begin{pmatrix}c_1\\ \vdots \\ c_n\end{pmatrix} ~.
+\end{equation}
+[13] 同样地，如果在基 $\{ \boldsymbol{\mathbf{e}} '_i\}_{i=1}^{n}$ 中，$ \boldsymbol{\mathbf{v}} $ 的坐标是列向量 $ \boldsymbol{\mathbf{c}} '=  \begin{pmatrix}c'_1,\cdots, c'_n\end{pmatrix}  ^T$，
+[14] 则也有
+[15] \begin{equation}
+\boldsymbol{\mathbf{v}} =( \boldsymbol{\mathbf{e}} '_1, \cdots \boldsymbol{\mathbf{e}} '_n) \begin{pmatrix}c'_1\\ \vdots \\ c_n'\end{pmatrix} ~.
+\end{equation}
+[16] 考虑到 $ \boldsymbol{\mathbf{v}} = \boldsymbol{\mathbf{v}} $，联立式 1 ，式 2 和式 3 即可得到：
+[17] \begin{equation}
+\begin{pmatrix}a_{11},a_{12},\cdots,a_{1n}\\ a_{21},a_{22},\cdots,a_{2n}\\ \vdots\ddots\vdots\\ a_{n1},a_{n2},\cdots,a_{nn}\end{pmatrix} \begin{pmatrix}c'_1\\ \vdots\\ c_n'\end{pmatrix} = \begin{pmatrix}c_1\\ \vdots\\ c_n\end{pmatrix} ~,
+\end{equation}
+[18] 式 4 也可以简单记为 $ \boldsymbol{\mathbf{Q}} \boldsymbol{\mathbf{c}} '= \boldsymbol{\mathbf{c}} $，或者 $ \boldsymbol{\mathbf{c}} '= \boldsymbol{\mathbf{Q}} ^{-1} \boldsymbol{\mathbf{c}} $。
+
+[/SCOPE:s_coord_let]
+[/SCOPE:s_coord]
+[SCOPE:s_lin_trans_let|let_bind|线性变换矩阵的变量]
+[SCOPE:s_lin_trans|description|不同基下线性变换的矩阵的变换]
+[19] 设 $T$ 是 $V$ 上的一个线性变换，基 $\{ \boldsymbol{\mathbf{e}} _i\}_{i=1}^{n}$ 到 $\{ \boldsymbol{\mathbf{e}} '_i\}_{i=1}^{n}$ 的转移矩阵是 $ \boldsymbol{\mathbf{Q}} $。
+[20] 向量 $ \boldsymbol{\mathbf{v}} $ 在基 $\{ \boldsymbol{\mathbf{e}} _i\}_{i=1}^{n}$ 和 $\{ \boldsymbol{\mathbf{e}} '_i\}_{i=1}^{n}$ 下的坐标分别是 $ \boldsymbol{\mathbf{c}} $ 和 $ \boldsymbol{\mathbf{c}} '$，而 $T$ 的矩阵分别是 $ \boldsymbol{\mathbf{M}} $ 和 $ \boldsymbol{\mathbf{M}} '$。
+[21] $T \boldsymbol{\mathbf{v}} $ 在基 $\{ \boldsymbol{\mathbf{e}} _i\}_{i=1}^{n}$ 和 $\{ \boldsymbol{\mathbf{e}} '_i\}_{i=1}^{n}$ 下的坐标就分别是 $ \boldsymbol{\mathbf{M}} \boldsymbol{\mathbf{c}} $ 和 $ \boldsymbol{\mathbf{M}} ' \boldsymbol{\mathbf{c}} '$。
+[22] 由坐标的变换可知，$ \boldsymbol{\mathbf{Q}} \boldsymbol{\mathbf{M}} ' \boldsymbol{\mathbf{c}} '= \boldsymbol{\mathbf{M}} \boldsymbol{\mathbf{c}} $，
+[23] 即 $ \boldsymbol{\mathbf{M}} ' \boldsymbol{\mathbf{c}} '= \boldsymbol{\mathbf{Q}} ^{-1} \boldsymbol{\mathbf{M}} \boldsymbol{\mathbf{c}} $。
+[24] 又因为 $ \boldsymbol{\mathbf{Q}} \boldsymbol{\mathbf{c}} '= \boldsymbol{\mathbf{c}} $，
+[25] 故有 $ \boldsymbol{\mathbf{M}} ' \boldsymbol{\mathbf{c}} '= \boldsymbol{\mathbf{Q}} ^{-1} \boldsymbol{\mathbf{M}} \boldsymbol{\mathbf{Q}} \boldsymbol{\mathbf{c}} '$。
+[26] 也就是说，如果在基 $\{ \boldsymbol{\mathbf{e}} _i\}_{i=1}^{n}$ 下，线性变换 $T$ 的矩阵是 $ \boldsymbol{\mathbf{M}} $，
+[27] 那么在基 $\{ \boldsymbol{\mathbf{e}} '_i\}_{i=1}^{n}$ 下，$T$ 的矩阵应该是 $ \boldsymbol{\mathbf{Q}} ^{-1} \boldsymbol{\mathbf{M}} \boldsymbol{\mathbf{Q}} $。
+[28] 由此可见，矩阵的相似变换就是同一个线性变换在不同基下的矩阵之间的变换。
+[/SCOPE:s_lin_trans_let]
+[/SCOPE:s_lin_trans]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_coord",
+    "target_scope": "s_transition",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "坐标变换是转移矩阵的应用"
+  },
+  {
+    "source_scope": "s_lin_trans",
+    "target_scope": "s_coord",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "线性变换矩阵变换依赖于坐标变换"
+  }
+]

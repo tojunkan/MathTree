@@ -1,0 +1,109 @@
+[SCOPE:root|description|积分中值定理]
+文章名: InMT
+标题: 积分中值定理
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=积分中值定理
+  [1] type=theorem heading=定理 2 title=推广积分中值定理
+  [2] type=example heading=例 1 title=连续函数中值定理
+
+[0] 积分中值定理可以将积分号去掉，或者将复杂的被积函数化为相对简单的被积函数，
+[1] 从而使问题简化，其应用相当的广泛。
+
+[SCOPE:s_thm1|description|积分中值定理]
+[2] 定理 1 积分中值定理
+[3a] (x)$ 在 $[a,b]$ 上可积，并且在该区间上恒有 $m< f
+[3b] (x)< M$
+[4] 则
+[5] \begin{equation}
+\int_a^b f(x) \,\mathrm{d}{x} =\mu(b-a)~,
+\end{equation}
+[6] 证明：
+[SCOPE:s_thm1_let1|let_bind|设 a<b]
+[7] 设 $a< b$，
+[8] 则由定理 7 ，
+[9] \begin{equation}
+m(b-a)\leq\int_a^b f(x) \,\mathrm{d}{x} \leq M(b-a)~,
+\end{equation}
+[10] \begin{equation}
+m\leq\frac{1}{b-a}\int_a^b f(x) \,\mathrm{d}{x} \leq M~.
+\end{equation}
+[11] \begin{equation}
+\frac{1}{b-a}\int_a^b f(x) \,\mathrm{d}{x} =\mu~,
+\end{equation}
+[12] 即可得所需求等式。
+[/SCOPE:s_thm1_let1]
+[SCOPE:s_thm1_let2|let_bind|对 a>b]
+[13] 对 $a>b$，
+[14] \begin{equation}
+\int_a^b f(x) \,\mathrm{d}{x} =-\int_b^a f(x) \,\mathrm{d}{x} =\mu(b-a)~,
+\end{equation}
+[15] 而 $a=b$ 时定理显然。
+[/SCOPE:s_thm1_let2]
+[16] 证毕！
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|推广积分中值定理]
+[17] 定理 2 推广积分中值定理
+[18a] (x),g
+[18b] (x)$ 在 $[a,b]$ 上可积，并且在该区间上恒有 $m\leq f
+[18c] (x)\leq M$
+[19] , 且 $g(x)$ 不变号，
+[20] 则
+[21] \begin{equation}
+\int_a^b f(x)g(x) \,\mathrm{d}{x} =\mu\int_a^b g(x) \,\mathrm{d}{x} ~,
+\end{equation}
+[22] 证明：
+[SCOPE:s_thm2_let1|let_bind|设 g(x)>=0 且 a<b]
+[23] 设 $g(x)\geq 0$，且 $a< b$，
+[24] 则
+[25] \begin{equation}
+mg(x)\leq f(x)g(x)\leq Mg(x)~.
+\end{equation}
+[26] 推论 1
+[27] \begin{equation}
+m\int_a^b g(x) \,\mathrm{d}{x} \leq\int_a^b f(x)g(x) \,\mathrm{d}{x} \leq M\int_a^b g(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[28] 由 $g(x)\geq0$，得
+[29] \begin{equation}
+\int_a^b g(x) \,\mathrm{d}{x} \geq0~.
+\end{equation}
+[30] 式 8 [链接 L0]
+[31] 式 9 [链接 L1]
+[32] \begin{equation}
+\mu=\frac{\int_a^b f(x)g(x) \,\mathrm{d}{x} }{\int_a^b g(x) \,\mathrm{d}{x} }~,
+\end{equation}
+[33] 式 6 [链接 L2]
+[34] \begin{equation}
+m\leq\mu\leq M~.
+\end{equation}
+[/SCOPE:s_thm2_let1]
+[SCOPE:s_thm2_let2|let_bind|g(x)<=0 情形]
+[35a] (x)\leq0$，只需用 $-g
+[35b] (x)$ 代替 $g
+[35c] (x)$ 就能转到刚才的情形，同理 $a>b$ 的情形容易由 $a< b$ 得到，$a=b$ 则定理恒成立。
+[/SCOPE:s_thm2_let2]
+[36] 证毕！
+
+[/SCOPE:s_thm2]
+[SCOPE:s_example|description|连续函数中值定理]
+[37] 例 1 连续函数中值定理
+[38] 若定理 2 的 $f(x)$ 连续，
+[39] 则在 $[a,b]$ 上，必存在某一点 $c$，使得 $f(c)=\mu$（子节 3 ）。
+[40] 于是此时定理 2 的式 6 可写为
+[41] \begin{equation}
+\int_a^b f(x)g(x) \,\mathrm{d}{x} =f(c)\int_a^b g(x) \,\mathrm{d}{x} ~,
+\end{equation}
+[/SCOPE:s_example]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_example",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是定理2在f连续时的特例"
+  }
+]

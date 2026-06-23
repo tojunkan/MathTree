@@ -1,0 +1,1670 @@
+{
+  "article_name": "KZLL",
+  "statements": [
+    {
+      "stmt_id": "st_intro_control_theory",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_purpose",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_controller",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "控制器"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_feedback",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "PV",
+        "SP",
+        "误差信号"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_other_aspects",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_automation",
+      "subtype": "remark",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_feedback_control",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "传感器",
+        "控制阀"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_block_diagram",
+      "subtype": "remark",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_transfer_function",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "传递函数"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_history_origin",
+      "subtype": "remark",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_history_routh_hurwitz",
+      "subtype": "remark",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_history_pid",
+      "subtype": "remark",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_application",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_centrifugal_governor",
+      "subtype": "remark",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_ancient",
+      "subtype": "remark",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_maxwell",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_self_oscillation",
+      "subtype": "remark",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_routh",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_hurwitz",
+      "subtype": "remark",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_flight",
+      "subtype": "remark",
+      "clause_range": [
+        27,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_ww2",
+      "subtype": "remark",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_flugge_lotz",
+      "subtype": "remark",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_stabilizers",
+      "subtype": "remark",
+      "clause_range": [
+        33,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_space_economics",
+      "subtype": "remark",
+      "clause_range": [
+        36,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_open_closed_types",
+      "subtype": "definition",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_open_closed",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_open_loop_def",
+      "subtype": "definition",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_open_closed",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_open_loop_example",
+      "subtype": "example",
+      "clause_range": [
+        42,
+        45
+      ],
+      "truth_value": "true",
+      "scope_id": "s_open_closed",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_closed_loop_def",
+      "subtype": "definition",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_open_closed",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_closed_loop_example",
+      "subtype": "example",
+      "clause_range": [
+        47,
+        50
+      ],
+      "truth_value": "true",
+      "scope_id": "s_open_closed",
+      "exposed_entities": [
+        "恒温器",
+        "PV",
+        "SP"
+      ]
+    },
+    {
+      "stmt_id": "st_bsi_definition",
+      "subtype": "definition",
+      "clause_range": [
+        52,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_open_closed",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_feedback_control_system_def",
+      "subtype": "definition",
+      "clause_range": [
+        55,
+        56
+      ],
+      "truth_value": null,
+      "scope_id": "s_open_closed",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_examples_cruise_control",
+      "subtype": "example",
+      "clause_range": [
+        57,
+        73
+      ],
+      "truth_value": "true",
+      "scope_id": "s_examples",
+      "exposed_entities": [
+        "巡航控制",
+        "汽车",
+        "速度",
+        "油门位置"
+      ]
+    },
+    {
+      "stmt_id": "st_classical_feedback_intro",
+      "subtype": "definition",
+      "clause_range": [
+        74,
+        77
+      ],
+      "truth_value": null,
+      "scope_id": "s_classical",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_classical_advantages",
+      "subtype": "remark",
+      "clause_range": [
+        78,
+        84
+      ],
+      "truth_value": null,
+      "scope_id": "s_classical",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_classical_combined",
+      "subtype": "remark",
+      "clause_range": [
+        85,
+        86
+      ],
+      "truth_value": null,
+      "scope_id": "s_classical",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_classical_pid",
+      "subtype": "remark",
+      "clause_range": [
+        87,
+        87
+      ],
+      "truth_value": null,
+      "scope_id": "s_classical",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_closed_loop_tf_intro",
+      "subtype": "definition",
+      "clause_range": [
+        88,
+        92
+      ],
+      "truth_value": null,
+      "scope_id": "s_closed_loop_tf",
+      "exposed_entities": [
+        "r(t)",
+        "y(t)",
+        "e",
+        "u",
+        "P",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_closed_loop_tf_siso_mimo",
+      "subtype": "definition",
+      "clause_range": [
+        93,
+        95
+      ],
+      "truth_value": null,
+      "scope_id": "s_closed_loop_tf",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_closed_loop_tf_let_vars",
+      "subtype": "assumption",
+      "clause_range": [
+        97,
+        97
+      ],
+      "truth_value": null,
+      "scope_id": "s_closed_loop_tf_let",
+      "exposed_entities": [
+        "C(s)",
+        "P(s)",
+        "F(s)"
+      ]
+    },
+    {
+      "stmt_id": "st_closed_loop_tf_relations",
+      "subtype": "theorem",
+      "clause_range": [
+        98,
+        101
+      ],
+      "truth_value": "true",
+      "scope_id": "s_closed_loop_tf_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_closed_loop_tf_solve",
+      "subtype": "conclusion",
+      "clause_range": [
+        102,
+        103
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_closed_loop_tf_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_closed_loop_tf_H_def",
+      "subtype": "definition",
+      "clause_range": [
+        104,
+        104
+      ],
+      "truth_value": null,
+      "scope_id": "s_closed_loop_tf_let",
+      "exposed_entities": [
+        "H(s)"
+      ]
+    },
+    {
+      "stmt_id": "st_closed_loop_tf_loop_gain",
+      "subtype": "remark",
+      "clause_range": [
+        105,
+        106
+      ],
+      "truth_value": null,
+      "scope_id": "s_closed_loop_tf_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_closed_loop_tf_approx",
+      "subtype": "conclusion",
+      "clause_range": [
+        107,
+        108
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_closed_loop_tf_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_pid_intro",
+      "subtype": "definition",
+      "clause_range": [
+        109,
+        112
+      ],
+      "truth_value": null,
+      "scope_id": "s_pid",
+      "exposed_entities": [
+        "r(t)",
+        "y(t)",
+        "e(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_pid_history",
+      "subtype": "remark",
+      "clause_range": [
+        113,
+        114
+      ],
+      "truth_value": null,
+      "scope_id": "s_pid",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_pid_most_common",
+      "subtype": "remark",
+      "clause_range": [
+        115,
+        115
+      ],
+      "truth_value": null,
+      "scope_id": "s_pid",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_pid_let_vars",
+      "subtype": "assumption",
+      "clause_range": [
+        116,
+        116
+      ],
+      "truth_value": null,
+      "scope_id": "s_pid_let",
+      "exposed_entities": [
+        "u(t)",
+        "y(t)",
+        "r(t)",
+        "e(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_pid_general_form",
+      "subtype": "definition",
+      "clause_range": [
+        117,
+        118
+      ],
+      "truth_value": null,
+      "scope_id": "s_pid_let",
+      "exposed_entities": [
+        "K_P",
+        "K_I",
+        "K_D"
+      ]
+    },
+    {
+      "stmt_id": "st_pid_tuning",
+      "subtype": "remark",
+      "clause_range": [
+        119,
+        124
+      ],
+      "truth_value": null,
+      "scope_id": "s_pid_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_pid_laplace",
+      "subtype": "theorem",
+      "clause_range": [
+        125,
+        127
+      ],
+      "truth_value": "true",
+      "scope_id": "s_pid_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_pid_tf",
+      "subtype": "definition",
+      "clause_range": [
+        128,
+        129
+      ],
+      "truth_value": null,
+      "scope_id": "s_pid_let",
+      "exposed_entities": [
+        "C(s)"
+      ]
+    },
+    {
+      "stmt_id": "st_pid_example_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        130,
+        136
+      ],
+      "truth_value": null,
+      "scope_id": "s_pid_let",
+      "exposed_entities": [
+        "A",
+        "T_P",
+        "T_F"
+      ]
+    },
+    {
+      "stmt_id": "st_pid_example_series",
+      "subtype": "theorem",
+      "clause_range": [
+        137,
+        139
+      ],
+      "truth_value": "true",
+      "scope_id": "s_pid_let",
+      "exposed_entities": [
+        "K",
+        "T_D",
+        "T_I"
+      ]
+    },
+    {
+      "stmt_id": "st_pid_example_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        140,
+        143
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_pid_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_pid_example_practical",
+      "subtype": "remark",
+      "clause_range": [
+        144,
+        146
+      ],
+      "truth_value": null,
+      "scope_id": "s_pid_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_nonlinear_branches",
+      "subtype": "definition",
+      "clause_range": [
+        147,
+        148
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_nonlinear",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_control",
+      "subtype": "definition",
+      "clause_range": [
+        148,
+        152
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_nonlinear",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_nonlinear_control",
+      "subtype": "definition",
+      "clause_range": [
+        153,
+        156
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_nonlinear",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_nonlinear_analysis",
+      "subtype": "remark",
+      "clause_range": [
+        157,
+        157
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_nonlinear",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linearization",
+      "subtype": "theorem",
+      "clause_range": [
+        158,
+        159
+      ],
+      "truth_value": "true",
+      "scope_id": "s_linear_nonlinear",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_freq_time_techniques",
+      "subtype": "definition",
+      "clause_range": [
+        161,
+        161
+      ],
+      "truth_value": null,
+      "scope_id": "s_freq_time",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_freq_domain",
+      "subtype": "definition",
+      "clause_range": [
+        162,
+        166
+      ],
+      "truth_value": null,
+      "scope_id": "s_freq_time",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_time_domain",
+      "subtype": "definition",
+      "clause_range": [
+        167,
+        171
+      ],
+      "truth_value": null,
+      "scope_id": "s_freq_time",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_state_space",
+      "subtype": "definition",
+      "clause_range": [
+        172,
+        179
+      ],
+      "truth_value": null,
+      "scope_id": "s_freq_time",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_siso_mimo_categories",
+      "subtype": "definition",
+      "clause_range": [
+        180,
+        180
+      ],
+      "truth_value": null,
+      "scope_id": "s_siso_mimo",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_siso",
+      "subtype": "definition",
+      "clause_range": [
+        181,
+        182
+      ],
+      "truth_value": null,
+      "scope_id": "s_siso_mimo",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mimo",
+      "subtype": "definition",
+      "clause_range": [
+        183,
+        185
+      ],
+      "truth_value": null,
+      "scope_id": "s_siso_mimo",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mimo_examples",
+      "subtype": "remark",
+      "clause_range": [
+        186,
+        186
+      ],
+      "truth_value": null,
+      "scope_id": "s_siso_mimo",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_stability_lyapunov",
+      "subtype": "definition",
+      "clause_range": [
+        187,
+        187
+      ],
+      "truth_value": null,
+      "scope_id": "s_stability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bibo_stable",
+      "subtype": "definition",
+      "clause_range": [
+        188,
+        189
+      ],
+      "truth_value": null,
+      "scope_id": "s_stability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_iss",
+      "subtype": "definition",
+      "clause_range": [
+        190,
+        190
+      ],
+      "truth_value": null,
+      "scope_id": "s_stability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_stability_poles",
+      "subtype": "theorem",
+      "clause_range": [
+        191,
+        193
+      ],
+      "truth_value": "true",
+      "scope_id": "s_stability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_stability_complex_poles",
+      "subtype": "remark",
+      "clause_range": [
+        194,
+        194
+      ],
+      "truth_value": null,
+      "scope_id": "s_stability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_stability_laplace_z",
+      "subtype": "remark",
+      "clause_range": [
+        195,
+        199
+      ],
+      "truth_value": null,
+      "scope_id": "s_stability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_asymptotic_stable",
+      "subtype": "definition",
+      "clause_range": [
+        200,
+        201
+      ],
+      "truth_value": null,
+      "scope_id": "s_stability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_permanent_oscillation",
+      "subtype": "theorem",
+      "clause_range": [
+        202,
+        202
+      ],
+      "truth_value": "true",
+      "scope_id": "s_stability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_critically_stable",
+      "subtype": "definition",
+      "clause_range": [
+        203,
+        205
+      ],
+      "truth_value": null,
+      "scope_id": "s_stability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_oscillation_condition",
+      "subtype": "theorem",
+      "clause_range": [
+        206,
+        206
+      ],
+      "truth_value": "true",
+      "scope_id": "s_stability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_stability_example_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        207,
+        208
+      ],
+      "truth_value": null,
+      "scope_id": "s_stability_let",
+      "exposed_entities": [
+        "x[n]",
+        "u[n]"
+      ]
+    },
+    {
+      "stmt_id": "st_stability_example_z",
+      "subtype": "theorem",
+      "clause_range": [
+        209,
+        210
+      ],
+      "truth_value": "true",
+      "scope_id": "s_stability_let",
+      "exposed_entities": [
+        "X(z)"
+      ]
+    },
+    {
+      "stmt_id": "st_stability_example_pole",
+      "subtype": "conclusion",
+      "clause_range": [
+        211,
+        212
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_stability_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_stability_example2_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        213,
+        214
+      ],
+      "truth_value": null,
+      "scope_id": "s_stability_let",
+      "exposed_entities": [
+        "x[n]"
+      ]
+    },
+    {
+      "stmt_id": "st_stability_example2_z",
+      "subtype": "theorem",
+      "clause_range": [
+        215,
+        216
+      ],
+      "truth_value": "true",
+      "scope_id": "s_stability_let",
+      "exposed_entities": [
+        "X(z)"
+      ]
+    },
+    {
+      "stmt_id": "st_stability_example2_unstable",
+      "subtype": "conclusion",
+      "clause_range": [
+        217,
+        218
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_stability_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_stability_tools",
+      "subtype": "remark",
+      "clause_range": [
+        219,
+        220
+      ],
+      "truth_value": null,
+      "scope_id": "s_stability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_stability_mechanical",
+      "subtype": "remark",
+      "clause_range": [
+        221,
+        224
+      ],
+      "truth_value": null,
+      "scope_id": "s_stability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_controllability_observability_intro",
+      "subtype": "definition",
+      "clause_range": [
+        225,
+        225
+      ],
+      "truth_value": null,
+      "scope_id": "s_controllability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_controllability_def",
+      "subtype": "definition",
+      "clause_range": [
+        226,
+        226
+      ],
+      "truth_value": null,
+      "scope_id": "s_controllability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_uncontrollable",
+      "subtype": "theorem",
+      "clause_range": [
+        227,
+        228
+      ],
+      "truth_value": "true",
+      "scope_id": "s_controllability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_stabilizable",
+      "subtype": "definition",
+      "clause_range": [
+        229,
+        231
+      ],
+      "truth_value": null,
+      "scope_id": "s_controllability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_observability_def",
+      "subtype": "definition",
+      "clause_range": [
+        232,
+        232
+      ],
+      "truth_value": null,
+      "scope_id": "s_controllability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_unobservable",
+      "subtype": "theorem",
+      "clause_range": [
+        233,
+        234
+      ],
+      "truth_value": "true",
+      "scope_id": "s_controllability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_detectable",
+      "subtype": "definition",
+      "clause_range": [
+        235,
+        236
+      ],
+      "truth_value": null,
+      "scope_id": "s_controllability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geometric_condition",
+      "subtype": "theorem",
+      "clause_range": [
+        237,
+        242
+      ],
+      "truth_value": "true",
+      "scope_id": "s_controllability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_unobservable_poles",
+      "subtype": "remark",
+      "clause_range": [
+        243,
+        243
+      ],
+      "truth_value": null,
+      "scope_id": "s_controllability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_solution_actuators_sensors",
+      "subtype": "remark",
+      "clause_range": [
+        244,
+        244
+      ],
+      "truth_value": null,
+      "scope_id": "s_controllability",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_specs_intro",
+      "subtype": "remark",
+      "clause_range": [
+        245,
+        246
+      ],
+      "truth_value": null,
+      "scope_id": "s_specs",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_specs_stability",
+      "subtype": "remark",
+      "clause_range": [
+        247,
+        250
+      ],
+      "truth_value": null,
+      "scope_id": "s_specs",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_specs_pole_placement",
+      "subtype": "remark",
+      "clause_range": [
+        251,
+        251
+      ],
+      "truth_value": null,
+      "scope_id": "s_specs",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_specs_disturbance",
+      "subtype": "remark",
+      "clause_range": [
+        252,
+        254
+      ],
+      "truth_value": null,
+      "scope_id": "s_specs",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_specs_time_response",
+      "subtype": "remark",
+      "clause_range": [
+        255,
+        256
+      ],
+      "truth_value": null,
+      "scope_id": "s_specs",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_specs_frequency",
+      "subtype": "remark",
+      "clause_range": [
+        257,
+        257
+      ],
+      "truth_value": null,
+      "scope_id": "s_specs",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_specs_performance",
+      "subtype": "remark",
+      "clause_range": [
+        258,
+        258
+      ],
+      "truth_value": null,
+      "scope_id": "s_specs",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_robustness_requirement",
+      "subtype": "definition",
+      "clause_range": [
+        259,
+        261
+      ],
+      "truth_value": null,
+      "scope_id": "s_identification",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_robustness_importance",
+      "subtype": "remark",
+      "clause_range": [
+        262,
+        263
+      ],
+      "truth_value": null,
+      "scope_id": "s_identification",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_system_identification",
+      "subtype": "definition",
+      "clause_range": [
+        264,
+        265
+      ],
+      "truth_value": null,
+      "scope_id": "s_identification",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_offline_identification",
+      "subtype": "remark",
+      "clause_range": [
+        266,
+        267
+      ],
+      "truth_value": null,
+      "scope_id": "s_identification",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_online_identification",
+      "subtype": "remark",
+      "clause_range": [
+        271,
+        273
+      ],
+      "truth_value": null,
+      "scope_id": "s_identification",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_robustness_frequency",
+      "subtype": "remark",
+      "clause_range": [
+        274,
+        275
+      ],
+      "truth_value": null,
+      "scope_id": "s_identification",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_robustness_mimo",
+      "subtype": "remark",
+      "clause_range": [
+        276,
+        277
+      ],
+      "truth_value": null,
+      "scope_id": "s_identification",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_constraints_issue",
+      "subtype": "remark",
+      "clause_range": [
+        278,
+        282
+      ],
+      "truth_value": null,
+      "scope_id": "s_identification",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_control_pole_placement",
+      "subtype": "definition",
+      "clause_range": [
+        284,
+        284
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_control",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_control_complexity",
+      "subtype": "remark",
+      "clause_range": [
+        285,
+        287
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_control",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_nonlinear_control_intro",
+      "subtype": "remark",
+      "clause_range": [
+        288,
+        290
+      ],
+      "truth_value": null,
+      "scope_id": "s_nonlinear_control",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_nonlinear_techniques",
+      "subtype": "remark",
+      "clause_range": [
+        291,
+        292
+      ],
+      "truth_value": null,
+      "scope_id": "s_nonlinear_control",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_nonlinear_neural",
+      "subtype": "remark",
+      "clause_range": [
+        293,
+        293
+      ],
+      "truth_value": null,
+      "scope_id": "s_nonlinear_control",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_decentralized_def",
+      "subtype": "definition",
+      "clause_range": [
+        295,
+        296
+      ],
+      "truth_value": null,
+      "scope_id": "s_decentralized",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_decentralized_benefits",
+      "subtype": "remark",
+      "clause_range": [
+        297,
+        298
+      ],
+      "truth_value": null,
+      "scope_id": "s_decentralized",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_stochastic_control_def",
+      "subtype": "definition",
+      "clause_range": [
+        299,
+        299
+      ],
+      "truth_value": null,
+      "scope_id": "s_deterministic_stochastic",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_deterministic_control_def",
+      "subtype": "definition",
+      "clause_range": [
+        300,
+        300
+      ],
+      "truth_value": null,
+      "scope_id": "s_deterministic_stochastic",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_main_strategies_stability",
+      "subtype": "remark",
+      "clause_range": [
+        301,
+        303
+      ],
+      "truth_value": null,
+      "scope_id": "s_main_strategies",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_main_strategies_list",
+      "subtype": "remark",
+      "clause_range": [
+        304,
+        327
+      ],
+      "truth_value": null,
+      "scope_id": "s_main_strategies",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_people_intro",
+      "subtype": "remark",
+      "clause_range": [
+        328,
+        328
+      ],
+      "truth_value": null,
+      "scope_id": "s_people",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_people_laplace",
+      "subtype": "remark",
+      "clause_range": [
+        329,
+        330
+      ],
+      "truth_value": null,
+      "scope_id": "s_people",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_people_flugge_lotz",
+      "subtype": "remark",
+      "clause_range": [
+        331,
+        331
+      ],
+      "truth_value": null,
+      "scope_id": "s_people",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_people_lyapunov",
+      "subtype": "remark",
+      "clause_range": [
+        332,
+        332
+      ],
+      "truth_value": null,
+      "scope_id": "s_people",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_people_black",
+      "subtype": "remark",
+      "clause_range": [
+        333,
+        334
+      ],
+      "truth_value": null,
+      "scope_id": "s_people",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_people_nyquist",
+      "subtype": "remark",
+      "clause_range": [
+        335,
+        335
+      ],
+      "truth_value": null,
+      "scope_id": "s_people",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_people_bellman",
+      "subtype": "remark",
+      "clause_range": [
+        336,
+        336
+      ],
+      "truth_value": null,
+      "scope_id": "s_people",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_people_kolmogorov",
+      "subtype": "remark",
+      "clause_range": [
+        338,
+        338
+      ],
+      "truth_value": null,
+      "scope_id": "s_people",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_people_wiener",
+      "subtype": "remark",
+      "clause_range": [
+        339,
+        339
+      ],
+      "truth_value": null,
+      "scope_id": "s_people",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_people_ragazzini",
+      "subtype": "remark",
+      "clause_range": [
+        340,
+        340
+      ],
+      "truth_value": null,
+      "scope_id": "s_people",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_people_pontryagin",
+      "subtype": "remark",
+      "clause_range": [
+        341,
+        341
+      ],
+      "truth_value": null,
+      "scope_id": "s_people",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_people_lions",
+      "subtype": "remark",
+      "clause_range": [
+        342,
+        342
+      ],
+      "truth_value": null,
+      "scope_id": "s_people",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_people_kalman",
+      "subtype": "remark",
+      "clause_range": [
+        343,
+        345
+      ],
+      "truth_value": null,
+      "scope_id": "s_people",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_people_nayfeh",
+      "subtype": "remark",
+      "clause_range": [
+        346,
+        346
+      ],
+      "truth_value": null,
+      "scope_id": "s_people",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_people_willems",
+      "subtype": "remark",
+      "clause_range": [
+        347,
+        349
+      ],
+      "truth_value": null,
+      "scope_id": "s_people",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_closed_loop_tf_let_vars",
+      "target": "st_closed_loop_tf_relations",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_closed_loop_tf_relations",
+      "target": "st_closed_loop_tf_solve",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_closed_loop_tf_solve",
+      "target": "st_closed_loop_tf_H_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_closed_loop_tf_H_def",
+      "target": "st_closed_loop_tf_approx",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_pid_let_vars",
+      "target": "st_pid_general_form",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_pid_let_vars",
+      "target": "st_pid_laplace",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_pid_laplace",
+      "target": "st_pid_tf",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_pid_example_assumptions",
+      "target": "st_pid_example_series",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_pid_example_series",
+      "target": "st_pid_example_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_stability_example_assumptions",
+      "target": "st_stability_example_z",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_stability_example_z",
+      "target": "st_stability_example_pole",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_stability_example2_assumptions",
+      "target": "st_stability_example2_z",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_stability_example2_z",
+      "target": "st_stability_example2_unstable",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

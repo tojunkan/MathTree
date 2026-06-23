@@ -1,0 +1,95 @@
+[SCOPE:root|description|李代数的同态与同构]
+文章名: LieMor
+标题: 李代数的同态与同构
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=李代数的同态
+  [1] type=definition heading=定义 2 title=李代数的同构
+  [2] type=definition heading=定义 3 title=李代数的同态基本定理
+  [3] type=definition heading=定义 4 title=
+  [4] type=example heading=例 1 title=伴随表示
+
+[0] 和其它代数结构一样，李代数之间可以建立同态与同构映射，其基本思想依然是保持运算结构。
+
+[SCOPE:s_def1|description|定义1 李代数的同态]
+[1] 定义 1 李代数的同态
+[SCOPE:s_def1_let|let_bind|同态定义中的变量]
+[2] 给定李代数 $\mathfrak{g}$ 和 $\mathfrak{h}$ 和线性映射$f:\mathfrak{g}\to\mathfrak{h}$，如果对于任意 $ \boldsymbol{\mathbf{g}} _1, \boldsymbol{\mathbf{g}} _2$ 还满足 $f([ \boldsymbol{\mathbf{g}} _1, \boldsymbol{\mathbf{g}} _2])=[f( \boldsymbol{\mathbf{g}} _1), f( \boldsymbol{\mathbf{g}} _2)]$，
+[/SCOPE:s_def1_let]
+[3] 那么称 $f$ 是 $\mathfrak{g}$ 到 $\mathfrak{h}$ 的一个同态（homomorphism）。
+[4] 记 $ \operatorname {ker}f =\{g\in\mathfrak{g}|f(g)=0\in\mathfrak{h}\}$，称为 $f$ 的核（kernel）。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义2 李代数的同构]
+[5] 定义 2 李代数的同构
+[6] 双射的李代数同态，称为同构（isomorphism）。
+[7] 一个李代数 $\mathfrak{g}$ 到自身的同态称为 $\mathfrak{g}$ 上的一个自同态（endomorphism）。
+[8] $\mathfrak{g}$ 上的全体自同态构成的集合，配合映射的复合作为二元运算，就可以构成一个半群，记为 $ \operatorname {End}\mathfrak{g}$。
+[9] 它只是一个半群，因为有一些自同态不是双射1，它们就没有逆映射。
+[10] $\mathfrak{g}$ 到自身的同构，称为 $\mathfrak{g}$ 上的一个自同构（automorphism），全体自同构的集合配合映射的符合可以构成一个群，记为 $ \operatorname {Aut}\mathfrak{g}$。
+[11] 同样，李代数的也有相应的同态基本定理：
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|定义3 李代数的同态基本定理]
+[12] 定义 3 李代数的同态基本定理
+[SCOPE:s_def3_let|let_bind|同态基本定理中的变量]
+[13] 令 $f:\mathfrak{g}\to \mathfrak{h}$ 为李代数同态，
+[/SCOPE:s_def3_let]
+[14] 则有
+[15] $\mathfrak{g}/ \operatorname {ker} f\cong \mathfrak{h}$；
+[16] 如果 $\mathfrak{g}_0\supseteq \operatorname {ker}f$ 是 $\mathfrak{g}$ 的理想，
+[17] 那么 $f(\mathfrak{g}_0)$ 是 $\mathfrak{h}$ 的理想。
+
+[/SCOPE:s_def3]
+[18] 同态可以用于把李代数的性质转嫁到容易处理的结构上去，方便进行讨论和计算。
+[19] 这样的同态映射就叫做 “表示”。
+
+[SCOPE:s_def4|description|定义4 线性表示]
+[20] 定义 4
+[SCOPE:s_def4_let|let_bind|线性表示定义中的变量]
+[21] 设 $\mathfrak{g}$ 是域 $\mathbb{F}$ 上的一个李代数，$V$ 为 $\mathbb{F}$ 上的一个线性空间，$ \operatorname {gl}V$ 是 $V$ 上全体线性变换的集合构成的李代数2。
+[22] 如果 $\rho:\mathfrak{g}\to \operatorname {gl}V$ 满足李代数同态，
+[/SCOPE:s_def4_let]
+[23] 那么称 $\rho$ 是 $\mathfrak{g}$ 的一个以$V$为表示空间的线性表示（linear representation）。
+[24] $ \operatorname {dim} V$ 被称为该表示的维数（dimension）；
+[25] $ \operatorname {ker}\rho$ 被称为该表示的核（kernel）。
+[26] 定义 4 中 $\mathfrak{g}$ 的每个元素都被 $\rho$ 映射到了 $V$ 的一个线性变换上，
+[27] 所以我们也可以把表示看成是李代数对表示空间的作用，这是一种群作用。
+
+[/SCOPE:s_def4]
+[SCOPE:s_example1|description|例1 伴随表示]
+[28] 例 1 伴随表示
+[SCOPE:s_example1_let|let_bind|伴随表示中的变量]
+[29] 设 $\mathfrak{g}$ 是域 $\mathbb{F}$ 上的一个李代数，$ \boldsymbol{\mathbf{x}} \in\mathfrak{g}$，定义映射 $ \operatorname {ad}_{ \boldsymbol{\mathbf{x}} } :\mathfrak{g}\to\mathfrak{g}$ 为：对于任意 $ \boldsymbol{\mathbf{y}} \in\mathfrak{g}$，有 $ \operatorname {ad}_{ \boldsymbol{\mathbf{x}} }( \boldsymbol{\mathbf{y}} )=[ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} ]$。
+[30] 这样，$ \operatorname {ad}_{ \boldsymbol{\mathbf{x}} }$ 就可以看成是李代数对自身的一个线性变换。
+[31] 令 $\rho:\mathfrak{g}\to \operatorname {gl}\mathfrak{g}$，其中 $\rho( \boldsymbol{\mathbf{x}} )= \operatorname {ad}_{ \boldsymbol{\mathbf{x}} }$。
+[/SCOPE:s_example1_let]
+[32] 称 $\rho$ 是 $\mathfrak{g}$ 上的一个伴随表示（adjoint representation）。
+[33] 由定义容易知道，$ \operatorname {ker}\rho=C(\mathfrak{g})$。
+[/SCOPE:s_example1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def3",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "同态基本定理是李代数同态的特殊结论"
+  },
+  {
+    "source_scope": "s_def4",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "线性表示是李代数同态的特例"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_def4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "伴随表示是线性表示的一个例子"
+  }
+]

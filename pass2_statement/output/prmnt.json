@@ -1,0 +1,321 @@
+{
+  "article_name": "prmnt",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "p",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_def2",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1",
+      "subtype": "corollary",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor2",
+      "subtype": "corollary",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor2",
+      "exposed_entities": [
+        "m",
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1",
+      "subtype": "theorem",
+      "clause_range": [
+        14,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let1",
+      "exposed_entities": [
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_reductio_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_reductio",
+      "exposed_entities": [
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_reductio_contra",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_reductio",
+      "exposed_entities": [
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "p_1",
+        "p_2",
+        "p_{m+1}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2",
+      "subtype": "theorem",
+      "clause_range": [
+        28,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_reductio_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_reductio_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3",
+      "subtype": "definition",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "π(n)",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3",
+      "subtype": "theorem",
+      "clause_range": [
+        37,
+        48
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_induction_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3_let2",
+      "exposed_entities": [
+        "p_n",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_induction_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm3_let2",
+      "exposed_entities": [
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_assump",
+      "target": "st_thm1_reductio_assump",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_reductio_assump",
+      "target": "st_thm1_reductio_contra",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_reductio_contra",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_reductio_assump",
+      "target": "st_thm2_reductio_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_reductio_conclusion",
+      "target": "st_thm2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_induction_assump",
+      "target": "st_thm3_induction_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_induction_conclusion",
+      "target": "st_thm3_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_cor1",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论1是素数定义的直接推论"
+    },
+    {
+      "source": "st_cor2",
+      "target": "st_def2",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论2是合数定义的直接推论"
+    },
+    {
+      "source": "st_thm1",
+      "target": "st_def1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理1依赖于素数定义"
+    },
+    {
+      "source": "st_thm2",
+      "target": "st_def1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理2依赖于素数定义"
+    },
+    {
+      "source": "st_thm3",
+      "target": "st_def3",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理3依赖于素数个数函数定义"
+    }
+  ],
+  "unresolved": []
+}

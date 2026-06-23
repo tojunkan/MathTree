@@ -1,0 +1,925 @@
+{
+  "article_name": "JdLem",
+  "statements": [
+    {
+      "stmt_id": "st_jordan_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        1,
+        4
+      ],
+      "truth_value": "true",
+      "scope_id": "s_jordan",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_jordan_assump_g",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_jordan_let",
+      "exposed_entities": [
+        "g(z)"
+      ]
+    },
+    {
+      "stmt_id": "st_jordan_assump_a",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_jordan_let",
+      "exposed_entities": [
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_jordan_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_jordan_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_jordan_proof_start",
+      "subtype": "remark",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_jordan",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_jordan_proof_ineq",
+      "subtype": "conclusion",
+      "clause_range": [
+        6,
+        12
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_jordan",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_jordan_proof_sym",
+      "subtype": "conclusion",
+      "clause_range": [
+        13,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_jordan",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_jordan_proof_ineq2",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_jordan",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_jordan_proof_combine",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_jordan",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_jordan_proof_epsilon",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_jordan",
+      "exposed_entities": [
+        "epsilon"
+      ]
+    },
+    {
+      "stmt_id": "st_jordan_proof_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_jordan",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_small_arc_lemma",
+      "subtype": "lemma",
+      "clause_range": [
+        29,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_small_arc",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_small_arc_assump_f",
+      "subtype": "assumption",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_small_arc_let",
+      "exposed_entities": [
+        "f(z)",
+        "zf(z)"
+      ]
+    },
+    {
+      "stmt_id": "st_small_arc_assump_C",
+      "subtype": "assumption",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_small_arc_let",
+      "exposed_entities": [
+        "C(r)",
+        "r",
+        "theta_1",
+        "theta_2"
+      ]
+    },
+    {
+      "stmt_id": "st_small_arc_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_small_arc_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_small_arc_proof_start",
+      "subtype": "remark",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_small_arc",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_small_arc_proof_dz",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_small_arc",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_small_arc_proof_int",
+      "subtype": "conclusion",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_small_arc",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_small_arc_proof_cont",
+      "subtype": "assumption",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_small_arc",
+      "exposed_entities": [
+        "zf(z)"
+      ]
+    },
+    {
+      "stmt_id": "st_small_arc_proof_limit",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        41
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_small_arc",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_small_arc_proof_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_small_arc",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_large_arc_lemma",
+      "subtype": "lemma",
+      "clause_range": [
+        45,
+        48
+      ],
+      "truth_value": "true",
+      "scope_id": "s_large_arc",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_large_arc_assump_f",
+      "subtype": "assumption",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_large_arc_let",
+      "exposed_entities": [
+        "f(z)",
+        "zf(z)",
+        "K"
+      ]
+    },
+    {
+      "stmt_id": "st_large_arc_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        48
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_large_arc_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_large_arc_proof_start",
+      "subtype": "remark",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_large_arc",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_large_arc_proof_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        50,
+        51
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_large_arc",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_large_arc_proof_ineq",
+      "subtype": "conclusion",
+      "clause_range": [
+        52,
+        53
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_large_arc",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_large_arc_proof_unif",
+      "subtype": "assumption",
+      "clause_range": [
+        54,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_large_arc",
+      "exposed_entities": [
+        "epsilon",
+        "M(epsilon)"
+      ]
+    },
+    {
+      "stmt_id": "st_large_arc_proof_bound",
+      "subtype": "conclusion",
+      "clause_range": [
+        55,
+        56
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_large_arc",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_large_arc_proof_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        57,
+        58
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_large_arc",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_def_sinc",
+      "subtype": "definition",
+      "clause_range": [
+        60,
+        61
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "sinc x"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_goal",
+      "subtype": "question",
+      "clause_range": [
+        62,
+        62
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_rewrite",
+      "subtype": "conclusion",
+      "clause_range": [
+        63,
+        64
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_contour_intro",
+      "subtype": "remark",
+      "clause_range": [
+        65,
+        65
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_singularity",
+      "subtype": "assumption",
+      "clause_range": [
+        66,
+        66
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_cases",
+      "exposed_entities": [
+        "z=0"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_trick",
+      "subtype": "remark",
+      "clause_range": [
+        67,
+        67
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_cont_ax",
+      "subtype": "assumption",
+      "clause_range": [
+        68,
+        68
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_cases",
+      "exposed_entities": [
+        "sinc x"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_limit_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        69,
+        70
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_contour_desc",
+      "subtype": "remark",
+      "clause_range": [
+        71,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_contour_int",
+      "subtype": "conclusion",
+      "clause_range": [
+        74,
+        75
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_cannot_direct",
+      "subtype": "remark",
+      "clause_range": [
+        76,
+        76
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_residue",
+      "subtype": "conclusion",
+      "clause_range": [
+        77,
+        78
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_jordan_apply",
+      "subtype": "conclusion",
+      "clause_range": [
+        79,
+        79
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_contour_limit",
+      "subtype": "conclusion",
+      "clause_range": [
+        80,
+        80
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_subtract_arc",
+      "subtype": "conclusion",
+      "clause_range": [
+        81,
+        81
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_small_arc_apply",
+      "subtype": "conclusion",
+      "clause_range": [
+        82,
+        84
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_line_integral",
+      "subtype": "conclusion",
+      "clause_range": [
+        85,
+        85
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_limit_remark",
+      "subtype": "remark",
+      "clause_range": [
+        86,
+        86
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_sinc_imag",
+      "subtype": "conclusion",
+      "clause_range": [
+        87,
+        87
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        88,
+        89
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        90,
+        90
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_goal",
+      "subtype": "question",
+      "clause_range": [
+        91,
+        92
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_consider",
+      "subtype": "remark",
+      "clause_range": [
+        93,
+        93
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2_let",
+      "exposed_entities": [
+        "f(z)"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_cont",
+      "subtype": "assumption",
+      "clause_range": [
+        94,
+        94
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2",
+      "exposed_entities": [
+        "f(z)e^{-zi}"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_jordan_apply",
+      "subtype": "conclusion",
+      "clause_range": [
+        95,
+        96
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_poles",
+      "subtype": "assumption",
+      "clause_range": [
+        97,
+        97
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2",
+      "exposed_entities": [
+        "i",
+        "-i"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_residue",
+      "subtype": "conclusion",
+      "clause_range": [
+        98,
+        99
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_residue_theorem",
+      "subtype": "conclusion",
+      "clause_range": [
+        100,
+        101
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_limit_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        102,
+        103
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        104,
+        105
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_jordan_assump_g",
+      "target": "st_jordan_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_jordan_assump_a",
+      "target": "st_jordan_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_jordan_proof_ineq",
+      "target": "st_jordan_proof_sym",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_jordan_proof_sym",
+      "target": "st_jordan_proof_ineq2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_jordan_proof_ineq2",
+      "target": "st_jordan_proof_combine",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_jordan_proof_combine",
+      "target": "st_jordan_proof_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_jordan_proof_epsilon",
+      "target": "st_jordan_proof_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_small_arc_assump_f",
+      "target": "st_small_arc_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_small_arc_assump_C",
+      "target": "st_small_arc_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_small_arc_proof_dz",
+      "target": "st_small_arc_proof_int",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_small_arc_proof_cont",
+      "target": "st_small_arc_proof_limit",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_small_arc_proof_int",
+      "target": "st_small_arc_proof_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_small_arc_proof_limit",
+      "target": "st_small_arc_proof_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_large_arc_assump_f",
+      "target": "st_large_arc_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_large_arc_proof_eq",
+      "target": "st_large_arc_proof_ineq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_large_arc_proof_unif",
+      "target": "st_large_arc_proof_bound",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_large_arc_proof_ineq",
+      "target": "st_large_arc_proof_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_large_arc_proof_bound",
+      "target": "st_large_arc_proof_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_cont_ax",
+      "target": "st_example1_limit_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_contour_int",
+      "target": "st_example1_residue",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_residue",
+      "target": "st_example1_jordan_apply",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_jordan_apply",
+      "target": "st_example1_contour_limit",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_contour_limit",
+      "target": "st_example1_subtract_arc",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_subtract_arc",
+      "target": "st_example1_small_arc_apply",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_small_arc_apply",
+      "target": "st_example1_line_integral",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_line_integral",
+      "target": "st_example1_sinc_imag",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_sinc_imag",
+      "target": "st_example1_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_cont",
+      "target": "st_example2_jordan_apply",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_poles",
+      "target": "st_example2_residue",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_residue",
+      "target": "st_example2_residue_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_residue_theorem",
+      "target": "st_example2_limit_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_jordan_apply",
+      "target": "st_example2_limit_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_limit_eq",
+      "target": "st_example2_final",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_example1_jordan_apply",
+      "target": "st_jordan_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例 1 引用 Jordan 引理"
+    },
+    {
+      "source": "st_example1_small_arc_apply",
+      "target": "st_small_arc_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例 1 引用小圆弧引理"
+    },
+    {
+      "source": "st_example2_jordan_apply",
+      "target": "st_jordan_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例 2 引用 Jordan 引理"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,399 @@
+{
+  "article_name": "SofLO",
+  "statements": [
+    {
+      "stmt_id": "st_intro_let_A",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let",
+      "exposed_entities": [
+        "A",
+        "C^n"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_eigenvalue_def",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let",
+      "exposed_entities": [
+        "A",
+        "x",
+        "lambda"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_spectrum_def",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_regular_def",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let",
+      "exposed_entities": [
+        "lambda"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_regular_implies_bounded",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intro_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_two_cases",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intro_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_third_possibility",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_let_A",
+      "subtype": "assumption",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_resolvent_def",
+      "subtype": "definition",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "(A-λI)^{-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_regular_def",
+      "subtype": "definition",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "lambda"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_spectrum_def",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_eigenvalue_def",
+      "subtype": "definition",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "lambda",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_let_lambda",
+      "subtype": "assumption",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "lambda"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_no_resolvent",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_not_regular",
+      "subtype": "conclusion",
+      "clause_range": [
+        36,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_in_spectrum",
+      "subtype": "conclusion",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_point_spectrum_def",
+      "subtype": "definition",
+      "clause_range": [
+        40,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        42,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_continuous_spectrum_def",
+      "subtype": "definition",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_let_A_lambda",
+      "subtype": "assumption",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "A",
+        "E",
+        "lambda"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_proof",
+      "subtype": "remark",
+      "clause_range": [
+        51,
+        56
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_intro_let_A",
+      "target": "st_intro_eigenvalue_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_let_A",
+      "target": "st_intro_spectrum_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_let_A",
+      "target": "st_intro_regular_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_regular_def",
+      "target": "st_intro_regular_implies_bounded",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_let_A",
+      "target": "st_intro_two_cases",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let_A",
+      "target": "st_def1_resolvent_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let_A",
+      "target": "st_def1_regular_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let_A",
+      "target": "st_def1_spectrum_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let_A",
+      "target": "st_def1_eigenvalue_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let_lambda",
+      "target": "st_thm1_no_resolvent",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_no_resolvent",
+      "target": "st_thm1_not_regular",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_not_regular",
+      "target": "st_thm1_in_spectrum",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let_lambda",
+      "target": "st_thm1_in_spectrum",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let_A_lambda",
+      "target": "st_thm2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_in_spectrum",
+      "target": "st_def1_spectrum_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1的结论（本征值属于谱）是定义1中谱概念的特例。"
+    },
+    {
+      "source": "st_def2_point_spectrum_def",
+      "target": "st_def1_spectrum_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "点谱是谱的子集。"
+    },
+    {
+      "source": "st_def3_continuous_spectrum_def",
+      "target": "st_def1_spectrum_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "连续谱是谱的子集。"
+    },
+    {
+      "source": "st_thm2_conclusion",
+      "target": "st_def1_regular_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理2给出正则点的充分条件。"
+    }
+  ],
+  "unresolved": []
+}

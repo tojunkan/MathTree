@@ -1,0 +1,141 @@
+[SCOPE:root|description|整环]
+文章名: Domain
+标题: 整环
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=零因子
+  [1] type=definition heading=定义 2 title=整环
+  [2] type=example heading=例 1 title=整环的例子
+  [3] type=definition heading=定义 3 title=因子和整除性
+  [4] type=definition heading=定义 4 title=单位
+  [5] type=definition heading=定义 5 title=真因子
+  [6] type=definition heading=定义 6 title=素元素
+  [7] type=definition heading=定义 7 title=不可约元素
+  [8] type=theorem heading=定理 1 title=素元素必是不可约元素
+
+[SCOPE:s_def1|description|零因子]
+[0] 定义 1 零因子
+[SCOPE:s_def1_let|let_bind|零因子定义中的变量]
+[1] 在环 $R$ 中，如果有两个非零的元素 $a, b$ 使得 $ab=0$，
+[2] 那么我们称 $a$ 是一个左零因子，而 $b$ 是一个右零因子。
+[/SCOPE:s_def1_let]
+[3a] 如果某元素
+[3b] 则使左零因子又是右零因子，
+[4] 那么我们称它是一个零因子（zero divisor）。
+[5] 简单来说，零因子就是 “相乘得到零的非零元素”，其名称的含义就是 “零的因子”。
+[6] 整数环里不存在零因子，
+[7] 但是这个概念也不难理解：考虑环 $\mathbb{Z}_{12}$，在这个环里，$3\not=0$，$4\not=0$，
+[8] 但是 $3\times 4=12=0$。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|整环]
+[9] 定义 2 整环
+[SCOPE:s_def2_let|let_bind|整环定义中的变量]
+[10] 对于环 $R$，如果它的乘法交换并且没有零因子，
+[11] 那么我们称这个环是一个整环（domain）。
+[/SCOPE:s_def2_let]
+[12] 整环的概念可以记为 “无零因子交换幺环”，用以指代它的三个关键特点：“无零因子”、“交换” 和 “有乘法单位元”。
+[13] 最后一个特点在本章的语境下显得冗余，因为我们限定环都是含有乘法单位元的；
+[14] 强调幺环只是为了避免使用其它术语体系时可能的混淆。
+
+[/SCOPE:s_def2]
+[SCOPE:s_example1|description|整环的例子]
+[15] 例 1 整环的例子
+[16] 整数环
+[17] 多项式环
+[18] 高斯整数环 $\mathbb{Z}[ \mathrm{i} ]$
+
+[/SCOPE:s_example1]
+[19] 接下来是一系列非常有用的概念，也是后续的进阶文章的基础。
+
+[SCOPE:s_def3|description|因子和整除性]
+[20] 定义 3 因子和整除性
+[SCOPE:s_def3_let|let_bind|因子定义中的变量]
+[21] 在整环 $R$ 中，如果对于 $a, b\in R$，存在 $r\in R$ 使得 $b=ar$，
+[22] 那么我们称 $a$ 整除 $b$，记为 $a|b$，同时称 $a$ 是 $b$ 的一个因子（factor）或除数（divisor）。
+
+[/SCOPE:s_def3]
+[/SCOPE:s_def3_let]
+[SCOPE:s_def4|description|单位]
+[23] 定义 4 单位
+[SCOPE:s_def4_let|let_bind|单位定义中的变量]
+[24] 对于整环 $R$，如果 $u\in R$ 有乘法逆元$u^{-1}\in R$，
+[25] 那么称 $u$ 是 $R$ 的一个单位（unit）。
+
+[/SCOPE:s_def4]
+[/SCOPE:s_def4_let]
+[SCOPE:s_def5|description|真因子]
+[26] 定义 5 真因子
+[SCOPE:s_def5_let|let_bind|真因子定义中的变量]
+[27] 在整环 $R$ 中，如果对于 $a, b\in R$，存在 $r\in R$ 使得 $b=ar$，并且 $r$ 不是一个单位，
+[28] 那么称 $a$ 是 $b$ 的一个真因子（proper factor）。
+[/SCOPE:s_def5_let]
+[29] 真因子的特点是单向性，如果 $a$ 是 $b$ 的一个真因子，
+[30] 那么绝不可能出现 $b|a$，因为真因子的定义中要求 $b=ar$ 中的 $r$ 是乘法不可逆的。
+[31] 从因子分解的角度，我们可以定义如下等价关系：如果两个元素 $a, b\in R$ 之间只差一个单位因子，
+[32] 即存在单位 $u$ 使得 $a=bu$，
+[33] 那么我们可以把 $a$ 和 $b$ 等价起来。
+[34] 检查一下，如此定义的关系满足等价关系的三个公理，
+[35] 因此是一个等价关系。
+[36] 作为一个例子，整数环中的单位只有两个，$1$ 和 $-1$，
+[37] 因此这个等价关系应用到整数环中就是把所有 $n$ 和其对应的 $-n$ 等价起来。
+[38] 在讨论因子分解时，我们常常使用这个等价划分。
+[39] 接下来介绍的两个概念，素元素和不可约元素，都是整数中素数概念的推广，只不过选用了素数的不同特点。
+
+[/SCOPE:s_def5]
+[SCOPE:s_def6|description|素元素]
+[40] 定义 6 素元素
+[SCOPE:s_def6_let|let_bind|素元素定义中的变量]
+[41] 对于整环中的元素 $p\in R$，如果它满足 “如果任何 $a, b\in R$ 使得 $p|ab$，
+[42] 则必有 $p|a$ 或者 $p|a$”，
+[43] 则称它为 $R$ 的一个素元素（prime element）。
+
+[/SCOPE:s_def6]
+[/SCOPE:s_def6_let]
+[SCOPE:s_def7|description|不可约元素]
+[44] 定义 7 不可约元素
+[SCOPE:s_def7_let|let_bind|不可约元素定义中的变量]
+[45] 对于整环中不是幺元的元素 $p\in R$，如果它在 $R$ 中没有真因子，
+[46] 那么称它为一个不可约元素（irreducible element）。
+[/SCOPE:s_def7_let]
+[47] 对于一般的整环，素元素必然是不可约元素：
+
+[/SCOPE:s_def7]
+[SCOPE:s_thm1|description|素元素必是不可约元素]
+[48] 定理 1 素元素必是不可约元素
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[49] 给定整环 $R$ 和其素元素 $p$，
+[50] 则 $p$ 必然是不可约元素。
+[/SCOPE:s_thm1_let]
+[51] 证明：
+[SCOPE:s_thm1_reductio|reductio|反证法]
+[52] 反设 $p$ 可约，
+[SCOPE:s_thm1_reductio_let|let_bind|反设中的变量]
+[53] 则存在 $p$ 的两个真因子 $a, b$ 使得 $p=ab$，
+[54] 从而 $p|ab$。
+[/SCOPE:s_thm1_reductio_let]
+[55] 由素元素的定义必须有 $p|a$ 或 $p|b$，而这和 “真因子” 的单向性矛盾。
+[56] 故设定不成立，
+[57] 即 $p$ 不可约。
+[/SCOPE:s_thm1_reductio]
+[58] 证毕。
+[/SCOPE:s_thm1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def6",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的结论是素元素是不可约元素，即素元素是不可约元素的特例。"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def7",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的结论是素元素是不可约元素，即素元素是不可约元素的特例。"
+  }
+]

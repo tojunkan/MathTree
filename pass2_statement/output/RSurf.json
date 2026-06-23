@@ -1,0 +1,327 @@
+{
+  "article_name": "RSurf",
+  "statements": [
+    {
+      "stmt_id": "st_smooth_surface_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_smooth_surface",
+      "exposed_entities": [
+        "f",
+        "a",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_regular_surface_intro",
+      "subtype": "remark",
+      "clause_range": [
+        5,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "f",
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_concl",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "df_p"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        12,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_assump1",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "V",
+        "x",
+        "U"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_cond1",
+      "subtype": "condition",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_def2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_cond2",
+      "subtype": "condition",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_def2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_cond3",
+      "subtype": "condition",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_def2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_concl",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        22,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3_let",
+      "exposed_entities": [
+        "S",
+        "p",
+        "V",
+        "U",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_concl",
+      "subtype": "definition",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3_let",
+      "exposed_entities": [
+        "S"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_remark",
+      "subtype": "remark",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def4_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4_let",
+      "exposed_entities": [
+        "f",
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_concl",
+      "subtype": "definition",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4_let",
+      "exposed_entities": [
+        "p",
+        "f(p)"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_remark",
+      "subtype": "remark",
+      "clause_range": [
+        34,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "f",
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_concl",
+      "subtype": "theorem",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "f^{-1}(f(p))"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_assump",
+      "target": "st_def1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_assump1",
+      "target": "st_def2_cond1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_assump1",
+      "target": "st_def2_cond2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_assump1",
+      "target": "st_def2_cond3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_cond1",
+      "target": "st_def2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_cond2",
+      "target": "st_def2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_cond3",
+      "target": "st_def2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_assump",
+      "target": "st_def3_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def4_assump",
+      "target": "st_def4_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_assump",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_def3_concl",
+      "target": "st_def2_concl",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "正则曲面定义依赖局部坐标系"
+    },
+    {
+      "source": "st_thm1_concl",
+      "target": "st_def3_concl",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理1给出正则曲面的一个充分条件"
+    }
+  ],
+  "unresolved": []
+}

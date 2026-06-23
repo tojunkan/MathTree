@@ -1,0 +1,119 @@
+[SCOPE:root|description|线性泛函的延拓]
+文章名: ExLina
+标题: 线性泛函的延拓
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=延拓
+  [1] type=theorem heading=定理 1 title=Hahn-Banach
+
+[SCOPE:s_def1|description|延拓]
+[0] 定义 1 延拓
+[SCOPE:s_def1_let|let_bind|延拓的变量]
+[1] 设 $L$ 是实线性空间，而 $L_0$ 是它的某一子空间，$f_0$ 是在 $L_0$ 上定义的线性泛函。
+[2] 若 $f$ 是在 $L$ 上定义的线性泛函，且对 $\forall x\in L_0$，成立 $f(x)=f(x_0)$，
+[3] 则称 $f$ 是 $f_0$（在全空间 $L$ 上）的延拓。
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_thm1|description|Hahn-Banach]
+[4] 定理 1 Hahn-Banach
+[SCOPE:s_thm1_let|let_bind|Hahn-Banach的变量]
+[5] 设 $p$ 是线性空间 $L$ 上的齐次凸泛函，$L_0$ 是 $L$ 中的线性子空间。
+[6] 如果 $f_0$ 是 $L_0$ 上的线性泛函，且从属于 $p$ 在 $L_0$ 上的限制，
+[7] 即在 $L_0$ 上
+[8] \begin{equation}
+f_0(x)\leq p(x),~
+\end{equation}
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm1_step1|description|单步延拓]
+[SCOPE:s_thm1_step1_let1|let_bind|单步延拓的变量]
+[9] 证明：首先证明，若 $L_0\neq L$，
+[10] 则 $f_0$ 可以从 $L_0$ 延拓到保持式 1 的某一更广的子空间上：事实上，设 $z\in L$ 且 $z\notin L_0$，$L'$ 是 $L_0$ 和 $z$ 生成的子空间（即包含 $L_0$ 和 $z$ 的最小子空间）。
+[11] 于是 $L'$ 中的每一元素都具有 $tz+x$ 的形式，其中 $x\in L_0$（试证明）。
+[/SCOPE:s_thm1_step1_let1]
+[SCOPE:s_thm1_step1_let2|let_bind|延拓泛函f'的构造]
+[12] 若 $f'$ 是 $L'$ 上 $f_0$ 的延拓，
+[13] 则
+[14] \begin{equation}
+f'(tz+x)=tf'(z)+f_0(x),~
+\end{equation}
+[15] 现在选取 $f'(z)$ 使得在 $L'$ 上
+[16] 式 1 [链接 L0]
+[17] 成立，
+[18a] (z)+f_0
+[18b] (x)\leq p(x+tz)$ 对一切 $x\in L_0$ 及一切实数 $t$ 恒成立。
+[19] 这等价于
+[20] \begin{equation}
+f_0 \left(\frac{x}{t} \right) +f'(z)\left\{\begin{aligned}
+&\leq p \left(\frac{x}{t}+z \right) ,\quad t\geq 0;\\
+&\geq -p \left(-\frac{x}{t}-z \right) ,\quad t\leq 0.
+\end{aligned}\right.
+~
+\end{equation}
+[21] 因此我们只要验证恒有满足
+[22] 式 3 [链接 L1]
+[23] 的 $f'(z)$ 存在即可。
+[24] 设 $y,y'\in L_0$，
+[25] 则由
+[26] 式 1 [链接 L2]
+[27] \begin{equation}
+-f_0(y')+p(y'+z)\geq -f_0(y)-p \left(-y-z \right) .~
+\end{equation}
+[28] \begin{equation}
+\begin{aligned}
+c'=\inf_{y'} \left\{f_0(y')+p(y'+z) \right\} ,\\
+c=\sup_y \left\{-f_0(y)-p \left(-y-z \right) \right\} .
+\end{aligned}~
+\end{equation}
+[29] 由 $y,y'$ 的任一性，据
+[30] 式 4 [链接 L3]
+[31] ，得 $c'\geq c$。
+[32a] (z)$ 使得 $c'\geq f'
+[32b] (z)\geq c$，并注意到
+[33] 式 4 [链接 L4]
+[34] 中 $y'=y=x/t$ 时就是
+[35] 式 3 [链接 L5]
+[36] ，
+[37] 因此如下定义的泛函
+[38] \begin{equation}
+f'(tz+x)=tf'(tz+x)+f_0(x)~
+\end{equation}
+[39] 式 3 [链接 L6]
+[40] ，其中 $c'\geq f'(z)\geq c$。
+[/SCOPE:s_thm1_step1]
+[/SCOPE:s_thm1_step1_let2]
+[SCOPE:s_thm1_step2_let|let_bind|可数生成元的变量]
+[SCOPE:s_thm1_step2|description|可数情形归纳延拓]
+[41] 其次，若在 $L$ 中可以选取生成 $L$ 的可数个元素 $x_1,\dots,x_n,\cdots$。
+[42] 则考虑递增序列
+[43] \begin{equation}
+L^{(1)}=\{L_0,x_1\},L^{(2)}=\{L^{(1)},x_2\},\cdots,~
+\end{equation}
+[44a] (k)},x_{k+1}\}$ 表示 $L$ 中包含 $L^{
+[44b] (k)}$ 与 $x^{k+1}$ 的最小线性子空间。
+[45] 于是可按归纳法构造 $L$ 上的泛函，这时，每一元素 $x\in L$ 属于某个 $L^{(k)}$，
+[46] 从而泛函可延拓到全空间 $L$。
+[/SCOPE:s_thm1_step2_let]
+[/SCOPE:s_thm1_step2]
+[47] 不可数情形下需要佐恩引理（一种选择公理）和偏序的概念进行证明，本节略去。
+[48] 证毕！
+[/SCOPE:s_thm1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1_step1",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "单步延拓是定理证明的一部分，推出最终结论"
+  },
+  {
+    "source_scope": "s_thm1_step2",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "可数情形归纳延拓推出定理结论"
+  }
+]

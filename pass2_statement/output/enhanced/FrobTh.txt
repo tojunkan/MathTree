@@ -1,0 +1,187 @@
+[SCOPE:root|description|费罗贝尼乌斯定理]
+文章名: FrobTh
+标题: 费罗贝尼乌斯定理
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=费罗贝尼乌斯定理
+  [1] type=theorem heading=定理 2 title=
+
+[SCOPE:s_intro|description|引言]
+[0] 在微分几何中，费罗贝尼乌斯定理（Frobenius' theorem） 给出了一阶拟线性偏微分方程组可积的充分必要条件。
+[1] 它有许多重要的几何推论。
+
+[/SCOPE:s_intro]
+[SCOPE:s_dist_let|let_bind|分布定义中的变量]
+[SCOPE:s_distribution|description|对合分布与可积性]
+[2] 设 $M$ 是 $n$ 维微分流形。
+[3] 一个光滑 $k$ 维分布（smooth $k$-dimensional distribution，注意这不是分析学意义下代表广义函数的分布）$\mathfrak{D}$ 是指切丛 $TM$ 的 $k$ 维光滑子丛。
+[4] 等价地说，这表示在任何一点 $p\in M$ 都给出 $T_pM$ 的 $k$ 维子空间 $\mathfrak{D}_p$，而且 $\mathfrak{D}_p$ 光滑地依赖于 $p$。
+[5] 维数为 $k$ 的光滑分布 $\mathfrak{D}$ 称为对合的（involutive），如果对于 $\mathfrak{D}$ 的任意两个光滑截面 $X,Y$，$[X,Y]$ 也还是 $\mathfrak{D}$ 的截面。
+
+[/SCOPE:s_dist_let]
+[/SCOPE:s_distribution]
+[SCOPE:s_thm1|description|定理1 费罗贝尼乌斯定理]
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[6] 定理 1 费罗贝尼乌斯定理
+[7] 设 $\mathfrak{D}$ 是 $M$ 上的 $k$ 维对合分布。
+[8] 则在任意一点 $p\in M$，都有局部坐标系 $\{x^i\}$ 使得 $\mathfrak{D}$ 在该点处由坐标向量 $\partial_1,\cdots ,\partial_k$ 张成。
+[/SCOPE:s_thm1_let]
+[9] 等价地说，在任意一点 $p$ 都有一过点 $p$ 的 $k$ 维子流形 $N_p$ 使得 $\mathfrak{D}$ 恰为 $N_p$ 的切丛。
+[10] 这样的分布称为可积的（integrable）。
+[11] 由此在小邻域内得到的子流形称为分布的积分子流形（integral submanifold），积分子流形的族称为 $M$ 局部的一个正则叶理（regular foliation）。
+[12] 它将流形 $M$ 在局部上划分成了许多相互不交叠的叶片。
+[SCOPE:s_thm1_proof|description|定理1的证明]
+[13] 定理的证明大意如下。
+[SCOPE:s_thm1_proof_let1|let_bind|证明中的局部标架]
+[14] 不妨设 $M$ 是 $\mathbb{R}^n$ 中坐标原点的小邻域。
+[15] 取这小邻域里 $\mathfrak{D}$ 的局部标架 $X_1,\cdots ,X_k$，使得 $X_i(0)=\partial_i|_0$ (这总可以通过适当的旋转和缩放做到)，并定义映射 $\Pi: M\to \mathbb{R}^k$ 为
+[16] $$
+\Pi(x^1,\cdots ,x^n)=(x^1,\cdots ,x^k)~.
+$$
+[/SCOPE:s_thm1_proof_let1]
+[17] 则对于 $p\in M$ 和 $p$ 处的切向量 $v=\sum_{i=1}^nv^i\partial_i|_p$, 有
+[18] $$
+d\Pi(p)(v)=v^1\partial_1|_{\Pi(p)}+...+v^k\partial_k|_{\Pi(p)}~.
+$$
+[19] 于是切丛的子丛 $\text{ker}d\Pi$ 的秩是 $n-k$，且在原点的小邻域内与 $\mathfrak{D}$ 互补。
+[20] 故 $(d\Pi|_{\mathfrak{D}})$ 实际上是从子丛 $\mathfrak{D}$ 到切丛 $T\Pi(M)$ 的同构，
+[21] 因此 $(d\Pi|_{\mathfrak{D}})^{-1}$ 在丛 $T\Pi(M)=\text{span}(\partial_1,\cdots ,\partial_k)$ 上是良好定义的，而且其像正是 $\mathfrak{D}$。
+[SCOPE:s_thm1_proof_let2|let_bind|证明中的V_i]
+[22] 命 $V_i=(d\Pi|_{\mathfrak{D}})^{-1}\partial_i$，
+[23] 则诸 $V_i$ 都是 $\mathfrak{D}$ 的截面，根据对合性质，$[V_i,V_j]$ 也是 $\mathfrak{D}$ 的截面，而且
+[/SCOPE:s_thm1_proof_let2]
+[24] $$
+d\Pi[V_i,V_j]=[\partial_i,\partial_j]=0~.
+$$
+[25] 于是 $[V_i,V_j]=0$，
+[26] 因此它们实际上是坐标向量场。
+[27] 因此 $\mathfrak{D}$ 是由坐标向量场张成的。
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_proof]
+[SCOPE:s_equiv|description|等价表述]
+[SCOPE:s_equiv_let|let_bind|等价表述中的变量]
+[28] 设 $\mathfrak{D}$ 是 $k$ 维光滑分布。
+[29] 如果微分 $p$-形式 $\omega$ 作用在 $\mathfrak{D}^{\otimes p}$ 的任何截面上都得到零，
+[30] 则称 $\omega$ 消没 $\mathfrak{D}$。
+[31] 显然两个消没 $\mathfrak{D}$ 的微分形式的外积仍然消没 $\mathfrak{D}$。
+[32] 所有消没 $\mathfrak{D}$ 的微分形式组成 $M$ 的外微分代数的子代数，称为 $\mathfrak{D}$ 的消没子（annihilator）。
+[/SCOPE:s_equiv_let]
+[33] 根据外微分的计算法则，
+[34] 可见 $\mathfrak{D}$ 为对合分布当且仅当对于任意消没 $\mathfrak{D}$ 的 $\omega$，$d\omega$ 仍旧消没 $\mathfrak{D}$。
+[35] 在流形 $M$ 上给定 $n-k$ 个线性无关的微分形式 $\omega_{k+1},...,\omega_{n}$ 后，方程组
+[36] $$
+\omega_{l}=0,\,l=+1,...,n-k~
+$$
+[37] 称为一个普法夫系（Pfaffian system），它确定了一个 $k$ 维分布，
+[38] 即所有被 $\omega_{k+1},...,\omega_{n}$ 消没的子空间给出的分布。
+[39] 因此，费罗贝尼乌斯定理有下列等价形式：
+
+[/SCOPE:s_equiv]
+[SCOPE:s_thm2|description|定理2]
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[40] 定理 2
+[41] 设 $\omega_{k},...,\omega_{n}$ 是 $M$ 上线性无关的微分形式，
+[42] 则普法夫系
+[/SCOPE:s_thm2_let]
+[43] $$
+\omega_{l}=0,\,l=k+1,...,n-k~
+$$
+[44] 给出可积的 $k$ 维分布当且仅当每个 $d\omega_l$ 皆由 $\omega_{k+1},...,\omega_{n}$ 生成，或等价地，
+[45] $$
+d\omega_{l}\wedge\omega_{k+1}\wedge...\wedge\omega_{n}=0,\,\forall l~.
+$$
+[46] 这称为费罗贝尼乌斯条件。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_app|description|应用举例]
+[47] 费罗贝尼乌斯定理在微分几何中有广泛的应用。
+[48] 大致来说，它是"偏导数可交换"这一事实的推广：偏微分方程组受制于偏导数可交换这一条件，
+[49] 因此可积的偏微分方程组必须满足由此导出的必要条件，而费罗贝尼乌斯定理断言这些条件也是可积的充分条件。
+[SCOPE:s_app_let1|let_bind|应用中的变量]
+[50] 考虑 $n$ 维自变量 $x=(x^1,...,x^n)$ 的 $m$ 个未知函数 $u=(u^1,...,u^m)$ 的拟线性偏微分方程组：
+[51] \begin{equation}
+\frac{\partial u^\alpha}{\partial x^i}=f_i^\alpha(x,u),\,1\leq\alpha\leq m;1\leq i\leq n~.
+\end{equation}
+[52] 这里 $f_i^\alpha(x,z)$ 是已知的函数。
+[/SCOPE:s_app_let1]
+[53] 为了确定这个方程组的解，需要的是一个 “初始条件”，
+[54] 即指定 $u$ 在某 $x_0$ 处的值。
+[55] 方程的可解性问题如下：
+[56] 设有开集 $U\subset\mathbb{R}^n$，$V\subset\mathbb{R}^m$，函数组 $f_i^\alpha(x,z)$ 定义在 $U\times V$ 上。
+[57] 则对于 $x_0\in U$ 和 $z_0\in V$，是否存在定义在 $U$ 上，取值于 $V$ 中，且满足式 1 和初始条件 $u(x_0)=z_0$ 的函数组 $u=(u^1,...,u^m)$?
+[58] 如果 $u=u(x),u(x_0)=z_0$ 是这方程组的解，
+[59] 那么根据偏导数的交换性，显然可得
+[60] \begin{equation}
+\frac{\partial f_i^\alpha}{\partial x^j}+\sum_{\beta=1}^mf_j^\beta\frac{\partial f_i^\alpha}{\partial z^\beta}
+=\frac{\partial f_j^\alpha}{\partial x^i}+\sum_{\beta=1}^mf_i^\beta\frac{\partial f_j^\alpha}{\partial z^\beta},\forall i,j,\alpha~.
+\end{equation}
+[61] 在点 $(x_0,z_0)$ 处成立。
+[62] 因此，欲使得
+[63] 式 1 [链接 L0]
+[64] 对于任何初值都可积，
+[65] 则
+[66] 式 2 [链接 L1]
+[67] 必须在 $U\times V$ 中处处成立。
+[68] 显然
+[69] 式 2 [链接 L2]
+[SCOPE:s_app_let2|let_bind|应用中的X_i]
+[70] 处处成立当且仅当向量场
+[71] $$
+X_i=\frac{\partial}{\partial x^i}+\sum_{\alpha=1}^mf_i^\alpha(x,z)\frac{\partial}{\partial z^\alpha},\,i=1,...,n~
+$$
+[72] 两两对易。
+[/SCOPE:s_app_let2]
+[73] 然而另一方面，$u=u(x)$ 是
+[74] 式 1 [链接 L3]
+[75] 的解当且仅当子流形 $\{(x,u(x)):x\in U\}$ 是 $n$ 维分布 $\text{span}(X_1,...,X_n)$ 的积分子流形。
+[76] 因此，根据费罗贝尼乌斯定理，诸 $X_i$ 两两对易实为
+[77] 式 1 [链接 L4]
+[78] 对于任何初值均可积的充要条件。故
+[79] 式 2 [链接 L5]
+[80] 在 $U\times V$ 上处处成立是
+[81] 式 1 [链接 L6]
+[82] 对于任何初值均可积的充要条件。
+[SCOPE:s_app_let3|let_bind|应用中的omega^alpha]
+[83a] 如果用普法夫系来表示
+[83b] 则更简单。命
+[84] \begin{equation}
+\omega^\alpha:=dz^\alpha-\sum_{i=1}^nf_i^\alpha dx^i,1\leq\alpha\leq m~.
+\end{equation}
+[/SCOPE:s_app_let3]
+[85] 式 1 [链接 L7]
+[86] 等价于 $U\times V$ 上的普法夫系 $\omega^\alpha=0,1\leq\alpha\leq m$，或者直接计算可见微分 1-形式 $\{\omega^\alpha\}_{\alpha=1}^m$ 消没的那些切向量恰是 $m$ 维分布 $\text{span}\{X_i\}_{i=1}^n$。
+[87] 式 2 [链接 L8]
+[88] 是这个普法夫系给出 $U\times V$ 上可积分布的充要条件，而通过简单的外微分运算可看出它进一步等价于
+[89] $$
+d\omega^\alpha=0,1\leq\alpha\leq m~.
+$$
+[90] 在整个 $U\times V$ 上恒成立。
+[91] 用这个办法来判定可积性非常方便。
+[/SCOPE:s_app]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_distribution",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的陈述依赖于分布和对合的定义"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "定理2是定理1的等价形式"
+  },
+  {
+    "source_scope": "s_app",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "应用举例中使用了定理1"
+  }
+]

@@ -1,0 +1,298 @@
+[SCOPE:root|description|函数视角下的三角函数（高中）]
+文章名: HsTFFv
+标题: 函数视角下的三角函数（高中）
+
+[SCOPE:s_intro|description|引言]
+[0] 在前面的内容中，已经接触过三角函数的定义，并基于这些定义推导出了诱导公式及同角三角函数之间的关系。
+[1] 这些推导主要依赖于任意角和三角函数的几何定义。
+[2] 然而，三角函数不仅仅是几何分析的工具，它们本质上也是一种函数，并具备一般函数的基本性质，如周期性、单调性和对称性。
+[3] 因此，本文将从函数的角度进一步分析三角函数，考察它们的性质、图像、变化趋势等。
+[4] 需要注意的是，这些视角本质上是等价的，它们都在描述同一数学对象。
+[5] 无论是几何定义还是函数分析，最终指向的都是相同的数学结构。
+[6] 这种多重视角的统一性，正是三角函数作为数学工具的强大之处。
+[7] 它不仅能够通过直观的几何形式展现对称性和变换规律，也能在函数的框架下揭示更广泛的性质，为各种数学应用提供坚实的基础。
+[8] 按照之前分析其他函数的思路，仍旧要先讨论三角函数的性质，并在此基础上推导它们的图像。
+[9] 不过下面的分析过程，并未按照之前熟悉的顺序进行，而是基于定义及已研究的恒等关系，利用这些内容快速得出相关性质。
+[10] 事实上，由于函数的关系是确定的，
+[11] 因此在研究其性质时，可以根据分析的难易程度安排顺序，而不必拘泥于固定的讨论方式。
+[12] 本文内容主要关注正弦、余弦与正切函数，其余三角函数由于与它们存在倒数关系，将适当涉及，
+[13] 但不会展开详细推导。
+
+[/SCOPE:s_intro]
+[SCOPE:s_domain|description|定义域]
+[14] 由于三角函数的自变量是任意角，
+[15] 因此理论上，它们的定义域应覆盖整个实数集。
+[16] 然而，在之前的讨论中提及过，某些三角函数在特定角度下无意义。
+[17] 例如，$\tan x$ 在 $\displaystyle x=\frac{\pi}{2}+k\pi, (k\in\mathbb{Z})$ 处没有定义。
+[18] 类似地，其他三角函数也存在某些不可取值的点。
+[19] 综上所述：
+[20] $\sin x,\cos x$ 的定义域为 $\mathbb{R}$；
+[21] $\tan x,\sec x$ 的定义域为 $\displaystyle\{x|x\neq\frac{\pi}{2}+k\pi,k\in\mathbb{Z}\}$，或写作 $\displaystyle\{x|x\neq(2k+1)\frac{\pi}{2},k\in\mathbb{Z}\}$，
+[22] 即 $x$ 不能取 $\displaystyle\frac{\pi}{2}$ 的奇数倍；
+[23] $\cot x,\csc x$ 的定义域为 $\displaystyle\{x|x\neq k\pi,k\in\mathbb{Z}\}$，
+[24] 即 $x$ 不能取 $\pi$ 的整数倍。
+
+[/SCOPE:s_domain]
+[SCOPE:s_zero|description|零点]
+[25] 根据三角函数的定义，正弦函数和正切函数的零点出现在角 $x$ 的终边与 $x$ 轴重合的情况。
+[26] 按照弧度的定义，这对应于 $x = 0+2k\pi$ 和 $x = \pi+2k\pi$，合并后可得，$\sin x$ 和 $\tan x$ 的零点为：
+[27] \begin{equation}
+x = k\pi, \qquad (k\in\mathbb{Z})~.
+\end{equation}
+[28] 这里值得注意的是，$\pi$ 可以通过正弦函数的零点来定义，
+[29] 即将 $\pi$ 定义为满足 $\sin x = 0$ 且 $x > 0$ 的最小实数 $x$。
+[30] 传统上，$\pi$ 被定义为圆的周长与直径之比，
+[31] 但这种定义依赖于欧几里得几何，当推广到更一般的数学体系时，便自然地可能引起循环定义问题。
+[32] 通过正弦函数的零点定义 $\pi$，
+[33] 则完全基于分析学框架，避免了对几何直觉的依赖，具有更强的可追溯性，而使其在更广泛的数学背景下都能成立。
+[34] 类似地，余弦函数和余切函数的零点出现在角 $x$ 的终边与 $y$ 轴重合的情况。
+[35] 对应的角度分别为 $\displaystyle{\frac{\pi}{2}} + 2k\pi$ 和 $\displaystyle{\frac{3\pi}{2}} + 2k\pi$，合并后可得 $\cos x$ 和 $\cot x$ 的零点为：
+[36] \begin{equation}
+x = \frac{\pi}{2} + k\pi, \qquad (k\in\mathbb{Z})~.
+\end{equation}
+[37] 另一方面，由于 $\sec x$ 和 $\csc x$ 可理解为单位圆外某点到原点的连线长度，
+[38] 因此它们的值最小为 $1$，不会取到零值，
+[39] 即 $\sec x$ 和 $\csc x$ 不存在零点。
+[40] 综上所述：
+[41] $\sin x, \tan x$ 的零点为 $x = k\pi, (k\in\mathbb{Z})$；
+[42] $\cos x, \cot x$ 的零点为 $\displaystyle x = \frac{\pi}{2} + k\pi, (k\in\mathbb{Z})$；
+[43] $\sec x, \csc x$ 没有零点。
+[44] 值得注意的是，三角函数的零点和奇异点（即定义域中无法取到的点）与其周期性、对称性存在紧密联系。
+[45] 而这些特殊点也都出现在终边与坐标轴重合的情况下，
+[46] 即不是象限角所限定的范围。
+
+[/SCOPE:s_zero]
+[SCOPE:s_period|description|周期性]
+[47] 根据之前的分析，所有的三角函数都是周期函数，并且 $2\pi$ 是它们的一个周期。
+[48] 下面将分析 $2\pi$ 是否是它们的最小正周期。
+[SCOPE:s_period_sin|description|正弦函数的最小正周期]
+[SCOPE:s_period_sin_let|let_bind|设T是sinx的最小正周期]
+[49] 对于 $\sin x$，设 $T$ 是其最小正周期，
+[50] 则根据周期函数的定义，满足：
+[/SCOPE:s_period_sin_let]
+[51] \begin{equation}
+\sin\left(T+x\right) = \sin x~.
+\end{equation}
+[52] 取 $x=0$，得到 $\sin T = \sin 0$。
+[53] 由于 $x=0$ 是 $\sin x$ 的一个零点，
+[54] 因此 $T$ 也必然是 $\sin x$
+[55] 的一个零点 [链接 L0]
+[56] 。
+[57] 若 $T<2\pi$，
+[58] 则 $T=\pi$，
+[59] 但根据诱导公式 $ \sin\left(\pi + x\right) = -\sin x$，可得：
+[60] \begin{equation}
+\sin\left(T + x\right) = -\sin x~.
+\end{equation}
+[61] 式 3 [链接 L1]
+[62] 式 4 [链接 L2]
+[63] ，若 $T=\pi$，
+[64] 则要求 $\sin x$ 恒等于零，与实际情况矛盾。
+[65] 因此，$\sin x$ 的最小正周期是 $T = 2\pi$。
+[/SCOPE:s_period_sin]
+[SCOPE:s_period_cos|description|余弦函数的最小正周期]
+[66] 对于 $\cos x$，同理，取 $\displaystyle x=\frac{\pi}{2}$ 代入类似的推导，也可以得出 $\cos x$ 的最小正周期为 $2\pi$。
+[/SCOPE:s_period_cos]
+[67] 由于 $\sec x$ 和 $\csc x$ 分别是 $\cos x$ 和 $\sin x$ 的倒数，而 $\displaystyle y={1\over x}$ 在定义域上都是单调的，也即存在一一映射，
+[68] 因此它们也具有相同的最小正周期。
+[SCOPE:s_period_tan|description|正切函数的最小正周期]
+[69] 对于 $\tan x$，根据诱导公式 $ \tan\left(\pi + x\right) = \tan x$ 可知 $\pi$ 是其一个周期，这和之前的正弦和余弦的情况不同。
+[SCOPE:s_period_tan_let|let_bind|设T是tanx的最小正周期]
+[70] 设 $T$ 是 $\tan x$ 的最小正周期，
+[71] 则：
+[/SCOPE:s_period_tan_let]
+[72] \begin{equation}
+\tan\left(T + x\right) = \tan x~.
+\end{equation}
+[73] 取 $x=0$，可知 $T$ 必然是 $\tan x$ 的零点。
+[74] 而根据
+[75] 式 1 [链接 L3]
+[76] ，$\tan x$ 不存在比 $\pi$ 还小的零点，
+[77] 因此 $\tan x$ 的最小正周期为 $T = \pi$。
+[78] 同理，由于 $\cot x$ 是 $\tan x$ 的倒数，它的最小正周期也为 $T = \pi$。
+[/SCOPE:s_period_tan]
+[79] 综上所述：
+[80] $\sin x, \cos x, \sec x, \csc x$ 的最小正周期为 $\displaystyle 2\pi$；
+[81] $\tan x, \cot x$ 的最小正周期为 $\pi$。
+
+[/SCOPE:s_period]
+[SCOPE:s_derivative|description|导数及单调性]
+[82] 在直观理解下，可以从几何视角直接观察三角函数的单调性，这也是高中教材常采用的方法。
+[83] 对于角 $x\in(0,2\pi)$ 的情况，单位圆上的点 $P$ 的横坐标表示 $\cos x$，纵坐标表示 $\sin x$。
+[84] 当 $x$ 处于上半平面（$0 < x < \pi$）时，随着 $x$ 增加，$P$ 的横坐标从 $1$ 变化到 $-1$，
+[85] 即 $\cos x$ 递减；
+[86] 而在下半平面（$\pi < x < 2\pi$）时，$P$ 的横坐标从 $-1$ 变化到 $1$，
+[87] 即 $\cos x$ 递增。
+[88] 综上，结合周期性可知：
+[89] 在 $0 + 2k\pi < x < \pi + 2k\pi$ 内，$\cos x$ 递减。
+[90] 在 $\pi + 2k\pi < x < 2\pi + 2k\pi$ 内，$\cos x$ 递增。
+[91] 同理，$\sin x$ 和 $\tan x$ 的单调性也可以用类似方式观察。
+[92] 尽管这种方法直观，
+[93] 但要严格证明三角函数的单调性，需要借助更严谨的数学工具。
+[94] 一般而言，可以利用单调性的定义，
+[95] 即分析函数在不同点的函数值差的符号。
+[96] 然而，由于三角函数的非线性特性，直接计算并判断符号较为复杂。
+[97] 幸运的是，在此前的学习中，已介绍过三角函数的导数。
+[98] 接下来，将基于$\sin x$ 的导数、$\cos x$ 的导数、$\tan x$ 的导数 来严格证明其单调性。
+[99] 另外，由于判定单调性需要分析导数的符号，而此前已经讨论过三角函数在各个象限的符号，这一结论将在后续推导中作为重要的参考。
+[100] 由于 $(\sin x)' = \cos x$，结合 $\cos x$ 在不同象限的符号，可得：
+[101a] 当 $x$ 位于右半平面（
+[101b] 则第一、第四象限，$\displaystyle x \in (-\frac{\pi}{2} + k\pi, \frac{\pi}{2} + k\pi), k \in \mathbb{Z}$）时，$\cos x > 0$，
+[102] 故 $\sin x$ 递增。
+[103a] 当 $x$ 位于左半平面（
+[103b] 则第二、第三象限，$\displaystyle x \in (\frac{\pi}{2} + k\pi, \frac{3\pi}{2} + k\pi), k \in \mathbb{Z}$）时，$\cos x < 0$，
+[104] 故 $\sin x$ 递减。
+[105] 同理，$(\cos x)' = -\sin x$，结合 $\sin x$ 在不同象限的符号，可得：
+[106a] 当 $x$ 位于上半平面（
+[106b] 则第一、第二象限，$x \in (0 + k2\pi, \pi + k2\pi), k \in \mathbb{Z}$）时，$-\sin x < 0$，
+[107] 故 $\cos x$ 递减。
+[108a] 当 $x$ 位于下半平面（
+[108b] 则第三、第四象限，$x \in (\pi + k2\pi, 2\pi + k2\pi), k \in \mathbb{Z}$）时，$-\sin x > 0$，
+[109] 故 $\cos x$ 递增。
+[110] 而 $(\tan x)' = \sec^2 x$，由于 $\sec x$ 在其定义域内无零点，
+[111] 故 $\sec^2 x > 0$ 恒成立。
+[112] 这表明 $\tan x$ 在每个连续区间，
+[113] 即 $\displaystyle(-\frac{\pi}{2} +k\pi, \frac{\pi}{2} +k\pi), k \in \mathbb{Z}$，上严格递增。
+[114] 然而，需要注意的是，导数恒为正只能保证函数在各个连续区间内递增，
+[115] 但因为 $\tan x$ 存在间断点，
+[116] 所以不能直接推出在整个定义域内任取两个点都满足递增关系。
+[117] 以下是其余三个三角函数的导数及其单调性：
+[118] $(\cot x)' = -\csc^2 x$。
+[119] $\cot x$ 在其定义域的连续区间，
+[120] 即 $(k\pi, (k+1)\pi), k \in \mathbb{Z}$，上递减。
+[121] $(\sec x)' = \sec x \tan x$。
+[122] $\sec x$ 在 $\displaystyle\left(-\pi + 2k\pi, -\frac{\pi}{2} +2k\pi\right), k \in \mathbb{Z}$ 和 $\displaystyle\left(-\frac{\pi}{2} + 2k\pi, 2k\pi\right), k \in \mathbb{Z}$ 上递减
+[123] $\sec x$ 在 $\displaystyle\left(2k\pi,\frac{\pi}{2} + 2k\pi\right), k \in \mathbb{Z}$ 和 $\displaystyle\left(\frac{\pi}{2} + 2k\pi, \pi+2k\pi\right), k \in \mathbb{Z}$ 上递增。
+[124] $(\csc x)' = -\csc x \cot x$。
+[125] $\csc x$ 在 $\displaystyle\left(-\frac{\pi}{2} + 2k\pi, 2k\pi\right), k \in \mathbb{Z}$ 和 $\displaystyle\left(2k\pi,\frac{\pi}{2} + 2k\pi\right), k \in \mathbb{Z}$ 上递减。
+[126] $\csc x$ 在 $\displaystyle\left(-\pi + 2k\pi, -\frac{\pi}{2} +2k\pi\right), k \in \mathbb{Z}$ 和 $\displaystyle\left(\frac{\pi}{2} + 2k\pi, \pi+2k\pi\right), k \in \mathbb{Z}$ 上递增。
+
+[/SCOPE:s_derivative]
+[SCOPE:s_parity|description|奇偶性及对称性]
+[127] 由于诱导公式本身是研究三角函数对称性的工具，并且在此前已经进行了深入分析，
+[128] 因此可以直接结合诱导公式和周期性来确定三角函数的奇偶性和对称性。
+[129] 根据诱导公式、奇偶性的定义以及三角函数的倒数关系可知：
+[130] $\sin x$ 和 $\tan x$ 满足 $f(-x) = -f(x)$，
+[131] 因此它们是奇函数。
+[132] $\cos x$ 满足 $f(-x) = f(x)$，
+[133] 因此它是偶函数。
+[134] $\csc x$ 和 $\cot x$ 由于与 $\sin x$ 和 $\tan x$ 具有相同的符号变化特性，
+[135] 因此也是奇函数；
+[136] $\sec x$ 由于与 $\cos x$ 具有相同的符号变化特性，
+[137] 因此是偶函数。
+[138] 从三角函数的奇偶性可以直接推得：
+[139] $\cos x$ 和 $\sec x$ 的对称轴为 $x=0$。
+[140] $\sin x,\tan x,\csc x,\cot x$ 的对称中心为 $(0,0)$。
+[141] 然而，对称性不仅限于此。
+[142] 根据诱导公式：
+[143] \begin{equation}
+\cos\left(x+\pi\right) = -\cos x,\quad \sin\left(x+\pi\right) = -\sin x~.
+\end{equation}
+[144] 这意味着：
+[145] $\cos x$ 左移 $\pi$ 个单位变为 $-\cos x$，而 $-\cos x$ 仍是偶函数，
+[146] 因此 $x=\pi$ 也是 $\cos x$ 的对称轴。
+[147] $\sin x$ 左移 $\pi$ 个单位变为 $-\sin x$，而 $-\sin x$ 仍是奇函数，
+[148] 因此 $(\pi,0)$ 也是 $\sin x$ 的对称中心。
+[149] 再考虑诱导公式：
+[150] \begin{equation}
+\sin\left(x+\frac{\pi}{2}\right) = \cos x~.
+\end{equation}
+[151] 这表明：
+[152] $\sin x$ 左移 $\displaystyle\frac{\pi}{2}$ 变为 $\cos x$，
+[153] 所以 $\sin x$ 具有对称轴 $\displaystyle x=\frac{\pi}{2}$ 和 $\displaystyle x=\frac{3}{2}\pi$。
+[154] 反之，$\cos x$ 右移 $\displaystyle\frac{\pi}{2}$ 变为 $\sin x$，
+[155] 因此 $\cos x$ 的对称中心为 $\displaystyle\left(-\frac{\pi}{2},0\right)$ 和 $\displaystyle\left(\frac{\pi}{2},0\right)$。
+[156] 对于 $\tan x$ 和 $\cot x$，它们是奇函数，并且在一个周期内保持单调递增或递减，
+[157] 因此不会存在对称轴。
+[158] 但根据诱导公式：
+[159] \begin{equation}
+\tan\left(x+\frac{\pi}{2}\right) = -\cot x~.
+\end{equation}
+[160] 这意味着：
+[161] $\tan x$ 左移 $\displaystyle\frac{\pi}{2}$ 变为 $-\cot x$，而 $-\cot x$ 仍是奇函数，
+[162] 因此 $\displaystyle\left(\frac{\pi}{2},0\right)$ 也是 $\tan x$ 的对称中心；
+[163] 同理，$\displaystyle\left(-\frac{\pi}{2},0\right)$ 也是 $\cot x$ 的对称中心。
+[164] 值得注意的是，类似于 $\displaystyle y=\frac{1}{x}$ 在 $x=0$ 处的情况，$\displaystyle x=\frac{\pi}{2}$ 并不属于 $\tan x$ 的定义域，而这也使得这个对称中心容易被忽略。
+[165] 上面分析的都是一个周期内的情况，由于三角函数具有周期性，其对称中心和对称轴会随周期性重复，取 $k\in\in\mathbb{Z}$，可以总结如下：
+[166] $\sin x$ 是奇函数，对称中心为 $(k\pi,0)$，对称轴为 $x = \displaystyle\frac{\pi}{2} + k\pi$。
+[167] $\cos x$ 是偶函数，对称中心为 $\displaystyle \left(\frac{\pi}{2} + k\pi,0\right)$。
+[168] 对称轴为 $x = k\pi$。
+[169] $\tan x$ 是奇函数，对称中心为 $\displaystyle \left(\frac{k}{2}\pi ,0\right)$，无对称轴。
+[170] $\cot x$ 是奇函数，对称中心为 $\displaystyle \left(\frac{k}{2}\pi ,0\right)$，无对称轴。
+[171] $\sec x$ 是偶函数1，对称中心为 $\displaystyle \left(\frac{\pi}{2} + k\pi,0\right)$。
+[172] 对称轴为 $x = k\pi$。
+[173] $\csc x$ 是奇函数，对称中心为 $(k\pi,0)$，对称轴为 $x = \displaystyle\frac{\pi}{2} + k\pi$。
+[174] 这些对称关系都是从诱导公式推出来的，而本质上与诱导公式一样，这些对称关系来源于单位圆的对称性，这也解释了为什么它们的对称中心和对称轴如此规整。
+
+[/SCOPE:s_parity]
+[SCOPE:s_range|description|值域]
+[175] 正弦和余弦函数的值域相对直观，它们对应于单位圆上点的纵坐标和横坐标，
+[176] 因此取值范围显然是 $[-1,1]$。
+[SCOPE:s_range_tan|description|正切函数的值域]
+[177] 相比之下，正切函数的值域分析稍显复杂。
+[178] 根据几何定义，在锐角情况下，正切函数对应的线段长度受终边位置影响。
+[179] 参见几何示意图，线段的一端是固定点 $X_0$，而长度取决于另一端 $T$ 的移动情况。
+[180] 分析 $\displaystyle x\in\left[0,\frac{\pi}{2}\right)$ 时的情形：
+[181] 当 $x=0$ 时，角的终边与 $x$ 轴重合，线段两个端点也重合，长度为 $0$；
+[182] 随着 $x$ 增大，终边与 $x$ 轴夹角增加，点 $T$ 沿着单位圆向上移动，可以取到直线 $x=1$ 在第一象限中的所有点，使得对应的线段长度不断增加；
+[183] 当 $\displaystyle x=\frac{\pi}{2}$ 时，终边与 $y$ 轴重合，二者平行无交点。
+[184] 同理，利用对称性，由 $ \tan\left(-x\right) = -\tan x$ 可知，$\displaystyle x\in\left(-{\pi\over2},0\right]$ 时，正切函数的取值是第四象限中对应的所有点。
+[185] 综上所述，$\tan x$ 在 $\displaystyle \left(-\frac{\pi}{2},\frac{\pi}{2}\right)$ 内可以遍历所有实数。
+[186] 尽管下述分析在高中阶段不作要求，
+[187] 但更严谨的证明方法是通过极限分析。
+[188] 由于 $\tan x$ 在每个连续区间上单调递增，结合其周期性，只需分析 $\displaystyle x\in\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$ 端点处的行为即可。
+[189] 利用 $\displaystyle \tan x = \frac{\sin x}{\cos x}$ 进行分析：
+[190a] 当 $\displaystyle x \to \frac{\pi}{2}^-$（
+[190b] 则$x$ 从左侧逼近 $\displaystyle \frac{\pi}{2}$）时，$\cos x$ 逐渐趋近于 $0$ 且 $\cos x > 0$，而 $\sin x > 0$，
+[191] 因此 $\tan x$ 趋向 $+\infty$。
+[192a] 当 $\displaystyle x \to -\frac{\pi}{2}^+$（
+[192b] 则$x$ 从右侧逼近 $\displaystyle -\frac{\pi}{2}$）时，$\cos x$ 逐渐趋近于 $0$ 且 $\cos x > 0$，而 $\sin x < 0$，
+[193] 因此 $\tan x$ 趋向 $-\infty$。
+[194] 因此，$\tan x$ 必然遍历整个 $\mathbb{R}$，
+[195] 即其值域为 $\mathbb{R}$。
+[/SCOPE:s_range_tan]
+[196] 其余三个三角函数的值域如下：
+[197] $\cot x$ 的值域为 $\mathbb{R}$。
+[198] $\sec x$ 和 $\csc x$ 的值域为 $(-\infty, -1] \cup [1, +\infty)$。
+[199] $\csc x$ 的值域为 $(-\infty, -1] \cup [1, +\infty)$。
+
+[/SCOPE:s_range]
+[SCOPE:s_graph|description|三角函数的图像]
+[200] 相信通过前面的分析，读者不仅对各个三角函数的性质有了更深入的认识，还理解了某些特殊 $x$ 取值（即与 $\displaystyle{\pi\over2}$、$\pi$、$2\pi$ 相关的值）的意义，以及 “正” 与 “余” 的命名方式和弦、切、割之间的关系。
+[201] 在这些性质的基础上，读者应该已经能够大致想象出三角函数的图像形态。
+[202] 接下来，将具体给出每个基本三角函数的图像，以便更直观地理解其变化规律。
+[203] 另外，各个函数的图像有各自的名称，例如，$f(x) = \sin x$ 的图像被称为正弦曲线（sine curve），其他依此类推。
+[204] 【图解】图 1：$\sin x$ 和 $\cos x$
+[205] 可以看到，这两个函数的图像具有相同的形态，唯一的区别是相对位置。
+[206] 从图像上看，$\cos x$ 可以通过将 $\sin x$ 向左平移 $\displaystyle{\pi\over2}$ 个单位得到。
+[207] 这一性质来源于诱导公式 $\displaystyle \sin\left(x + {\pi\over2}\right) = \cos x$，表明正弦函数与余弦函数之间存在相位差 $\displaystyle{\pi\over2}$，在正弦型函数中将对此进行进一步讨论。
+[208] 下面是正切函数和余切函数，注意他们的关系与正弦和余弦不太一样——不仅平移还要反转。
+[209] 【图解】图 2：$\tan x$ 和 $\cot x$
+[210] 作为扩展，下面也给出正割函数与余割函数的函数图像，他们也存在 $\displaystyle{\pi\over2}$ 的平移关系。
+[211] 【图解】图 3：$\sec x$ 和 $\csc x$
+[212] 另外，在三角函数的介绍中，有一个广为流传的动画：一个点沿单位圆运动，表示角度的变化，同时在单位圆的右侧和上侧，相应的线段长度被映射到直角坐标系，
+[213] 从而自然生成各个三角函数的图像。
+[214] 这种动画直观展现了三角函数与圆周运动的联系，
+[215] 但如果能够在脑海中自主重现这一过程，
+[216] 即：当看到函数图像时，能够自然而然地联想到单位圆上的点如何旋转；
+[217] 反之，在观察圆周运动时，能够迅速构建出对应的函数图像，并培养这种直觉，不仅能加深对三角函数本质的理解，也将在后续学习中发挥关键作用。
+[218] 基于函数图像，可以直观地读取某些特定角度的三角函数值。
+[219] 表 1 列出了常用的三角函数值，其中包括的都是常见的解析值，
+[220] 即可以用根式或分数形式准确表示的数值。
+[221] 在高中阶段，通常只考察前四列的值，这些值全部可以通过三角函数的恒等式推导得到，读者可以在学习后自行推导。
+[222] 【图解】表1：常用的三角函数值
+[223] $x$ $\sin x$ $\cos x$ $\tan x$ $\cot x$ $\sec x$ $\csc x$
+[224] $0$ $0$ $1$ $0$ - $1$ -
+[225] $\displaystyle\frac{\pi}{12}$ $\displaystyle\frac{\sqrt{6} - \sqrt{2}}{4}$ $\displaystyle\frac{\sqrt{6} + \sqrt{2}}{4}$ $2 - \sqrt{3}$ $2 + \sqrt{3}$ $\sqrt{6} - \sqrt{2}$ $\sqrt{6} + \sqrt{2}$
+[226] $\displaystyle\frac{\pi}{6}$ $\displaystyle\frac{1}{2}$ $\displaystyle\frac{\sqrt{3}}{2}$ $\displaystyle\frac{\sqrt{3}}{3}$ $\sqrt{3}$ $\displaystyle\frac{2}{\sqrt{3}}$ $2$
+[227] $\displaystyle\frac{\pi}{4}$ $\displaystyle\frac{\sqrt{2}}{2}$ $\displaystyle\frac{\sqrt{2}}{2}$ $1$ $1$ $\sqrt{2}$ $\sqrt{2}$
+[228] $\displaystyle\frac{\pi}{3}$ $\displaystyle\frac{\sqrt{3}}{2}$ $\displaystyle\frac{1}{2}$ $\sqrt{3}$ $\displaystyle\frac{\sqrt{3}}{3}$ $2$ $\displaystyle\frac{2}{\sqrt{3}}$
+[229] $\displaystyle\frac{5\pi}{12}$ $\displaystyle\frac{\sqrt{6} + \sqrt{2}}{4}$ $\displaystyle\frac{\sqrt{6} - \sqrt{2}}{4}$ $2 + \sqrt{3}$ $2 - \sqrt{3}$ $\sqrt{6} + \sqrt{2}$ $\sqrt{6} - \sqrt{2}$
+[230] $\displaystyle\frac{\pi}{2}$ $1$ $0$ - $0$ - $1$
+[231] 如今，借助计算机技术，计算任意角度的三角函数值已经不再需要查阅传统的数表。
+[232] 然而，正如上面展示的那样，大多数三角函数值并非有理数，
+[233] 因此计算机通常需要按照实际应用中的精度要求，通过数值方法求解。
+[234] 而如何精确计算这些值，
+[235] 则涉及另一个复杂的话题。
+[/SCOPE:s_graph]
+[/SCOPE:root]

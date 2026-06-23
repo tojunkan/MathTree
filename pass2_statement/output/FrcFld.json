@@ -1,0 +1,341 @@
+{
+  "article_name": "FrcFld",
+  "statements": [
+    {
+      "stmt_id": "st_example1_intro",
+      "subtype": "example",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "Z"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_no_inverse",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "2"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_introduce_12",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "1/2"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_cancel",
+      "subtype": "conclusion",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_32",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "3/2"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_more",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_addition",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_compact",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_field",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "Q"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_idea",
+      "subtype": "remark",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_given",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "S",
+        "T"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_definition",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "<T>"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_given",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "R",
+        "S",
+        "s",
+        "s^{-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_definition",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "S'",
+        "<R∪S'>"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_given",
+      "subtype": "assumption",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_assume",
+      "subtype": "assumption",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_map",
+      "subtype": "definition",
+      "clause_range": [
+        31,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "sigma"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_isomorphism",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_example1_no_inverse",
+      "target": "st_example1_introduce_12",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_introduce_12",
+      "target": "st_example1_cancel",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_introduce_12",
+      "target": "st_example1_32",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_introduce_12",
+      "target": "st_example1_more",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_introduce_12",
+      "target": "st_example1_addition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_introduce_12",
+      "target": "st_example1_compact",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_introduce_12",
+      "target": "st_example1_field",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_given",
+      "target": "st_def1_definition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_given",
+      "target": "st_def2_definition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_given",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_assume",
+      "target": "st_thm1_proof_map",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_assume",
+      "target": "st_thm1_proof_isomorphism",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_map",
+      "target": "st_thm1_proof_isomorphism",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_def2_definition",
+      "target": "st_def1_definition",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义2是定义1的特例，生成子集用于构造分式域。"
+    },
+    {
+      "source": "st_thm1_conclusion",
+      "target": "st_def2_definition",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理1断言分式域的唯一性，基于定义2。"
+    }
+  ],
+  "unresolved": []
+}

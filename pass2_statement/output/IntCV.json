@@ -1,0 +1,240 @@
+{
+  "article_name": "IntCV",
+  "statements": [
+    {
+      "stmt_id": "st_first_substitution_method",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_first_substitution",
+      "exposed_entities": [
+        "f",
+        "u(x)",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_first_substitution_derivative",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": "true",
+      "scope_id": "s_first_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_first_substitution_integral",
+      "subtype": "theorem",
+      "clause_range": [
+        3,
+        8
+      ],
+      "truth_value": "true",
+      "scope_id": "s_first_substitution",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_integral",
+      "subtype": "example",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "a",
+        "b",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_general_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        15,
+        18
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "a",
+        "b",
+        "f",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_other_examples",
+      "subtype": "example",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_variable_change_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        22,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_variable_change",
+      "exposed_entities": [
+        "u",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_second_substitution_intro",
+      "subtype": "definition",
+      "clause_range": [
+        27,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_second_substitution",
+      "exposed_entities": [
+        "x",
+        "t"
+      ]
+    },
+    {
+      "stmt_id": "st_second_substitution_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        28,
+        30
+      ],
+      "truth_value": "true",
+      "scope_id": "s_second_let",
+      "exposed_entities": [
+        "x",
+        "t"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_integral",
+      "subtype": "example",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example2_let",
+      "exposed_entities": [
+        "x",
+        "t"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_derivative",
+      "subtype": "theorem",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example2",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_definite_integral_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": "true",
+      "scope_id": "s_definite_integral",
+      "exposed_entities": [
+        "u",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_definite_integral_application",
+      "subtype": "example",
+      "clause_range": [
+        39,
+        41
+      ],
+      "truth_value": "true",
+      "scope_id": "s_definite_integral",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_first_substitution_derivative",
+      "target": "st_first_substitution_integral",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_general_formula",
+      "target": "st_example1_integral",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_second_substitution_formula",
+      "target": "st_second_substitution_intro",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_integral",
+      "target": "st_example2_derivative",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_definite_integral_formula",
+      "target": "st_definite_integral_application",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_example1_integral",
+      "target": "st_first_substitution_method",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是第一类换元积分法的应用"
+    },
+    {
+      "source": "st_example2_integral",
+      "target": "st_second_substitution_intro",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2是第二类换元积分法的应用"
+    },
+    {
+      "source": "st_definite_integral_formula",
+      "target": "st_first_substitution_method",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定积分换元是第一类换元积分法的推广"
+    }
+  ],
+  "unresolved": []
+}

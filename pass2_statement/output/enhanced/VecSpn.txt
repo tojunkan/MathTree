@@ -1,0 +1,359 @@
+[SCOPE:root|description|基底（线性代数）]
+文章名: VecSpn
+标题: 基底（线性代数）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=张成子空间
+  [1] type=example heading=例 1 title=三维空间中的平面
+  [2] type=exercise heading=习题 1 title=
+  [3] type=definition heading=定义 2 title=有限维向量空间
+  [4] type=definition heading=定义 3 title=向量组线性相关/无关
+  [5] type=theorem heading=定理 1 title=
+  [6] type=exercise heading=习题 2 title=
+  [7] type=theorem heading=定理 2 title=
+  [8] type=definition heading=定义 4 title=基底和基底向量
+  [9] type=example heading=例 2 title=
+  [10] type=theorem heading=定理 3 title=基底的三种等价定义
+  [11] type=theorem heading=定理 4 title=基底表示的唯一性
+  [12] type=theorem heading=定理 5 title=
+  [13] type=definition heading=定义 5 title=向量空间的维度
+  [14] type=theorem heading=定理 6 title=
+  [15] type=example heading=例 3 title=多项式空间
+  [16] type=example heading=例 4 title=收敛幂级数空间
+  [17] type=definition heading=定义 6 title=向量的坐标
+
+[0] 本文存在未完成的内容。
+[1] 向量的线性组合使得我们可以使用少量向量——称为一个向量组——来表示更多的向量。
+[2a] 如果向量空间中的一组向量可以通过线性组合得到整个向量空间中的任意向量，我们
+[2b] 则说这组向量张成了这个向量空间；
+[3a] 如果这组向量中有一个向量可以写作其他向量的线性组合，我们
+[3b] 则说这个向量组线性相关，如果不存在这么一个向量，就说这个向量组线性无关。
+[4] 在本节中，我们讨论如何用最少的向量来表示整个空间里的所有向量，并指出这就是向量空间的基底，在此基础上讨论维度等概念。
+
+[SCOPE:s_span|description|张成子空间]
+[5] 定义 1 张成子空间
+[SCOPE:s_span_let|let_bind|张成子空间变量]
+[6] 给定向量空间 $V$，用 $V$ 的若干向量构成的集合（称为向量组）$S \subseteq V$ 面，从 $S$ 中任意地选择有限个向量进行线性组合所得到的集合
+[7] \begin{equation}
+\left\{\sum_{i = 1}^N c_iv_i \middle| N \in\mathbb{N}, c_i\in\mathbb{F}, v_i \in S\right\}~
+\end{equation}
+[/SCOPE:s_span_let]
+[8] 张成（span）
+[9] 特别的，空集张成 $\{0_V\}$，$V$ 张成它本身。
+[10] 注意：$S$ 可以是无限集合也可以有限的，
+[11] 但是线性组合一定是有限项求和。
+[12] 容易证明，定义中的 $ \operatorname {span} S$ 符合子空间的定义。
+
+[/SCOPE:s_span]
+[SCOPE:s_ex1|description|三维空间中的平面]
+[13] 例 1 三维空间中的平面
+[SCOPE:s_ex1_let|let_bind|例1变量]
+[14] 比如说，三维空间 $V$ 中，任意选定两个不共线的几何向量 $ \boldsymbol{\mathbf{v}} $ 和 $ \boldsymbol{\mathbf{u}} $，这两个几何向量的所有线性组合构成的集合 $ \operatorname {span}\{ \boldsymbol{\mathbf{v}} , \boldsymbol{\mathbf{u}} \}$，是 $V$ 中的一个过原点的平面；
+[/SCOPE:s_ex1_let]
+[15] 它本身构成了一个向量空间，同时还是 $V$ 的子集，
+[16] 因此又是 $V$ 的一个子空间。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_exer1|description|习题1]
+[17] 习题 1
+[18] 把三维空间 $\mathbb{R}^3$ 的每个向量表示成 $(x,y,z)$，其中 $x,y,z\in\mathbb{R}$。
+[SCOPE:s_exer1_let|let_bind|习题1变量]
+[19] 取三个向量 $v_1 = (1,2,0)$，$v_2 = (3,2,4)$ 和 $v_3 = (1,1,1)$，
+[/SCOPE:s_exer1_let]
+[20] 那么这三个向量所张成的空间是一个点、一条线、一个平面还是整个三维空间本身？
+
+[/SCOPE:s_exer1]
+[SCOPE:s_finitedim|description|有限维向量空间]
+[21] 定义 2 有限维向量空间
+[22] 一个向量空间如果可以被有限个向量张成，我们就称它为有限维向量空间。
+[23] 在这里我们还没定义什么是 “维度”，
+[24] 所以也可以称它为 “有限张成空间”。
+[25] 要定义维度，我们首先需要定义什么是基底。
+
+[/SCOPE:s_finitedim]
+[SCOPE:s_linindep|description|向量组线性相关/无关]
+[26] 定义 3 向量组线性相关/无关
+[SCOPE:s_linindep_let|let_bind|线性相关变量]
+[27] 对于向量空间 $V$ 的一个向量组 $S$，如果存在至少一组不全为零系数 $c_i \in \mathbb{F}$ 使几个向量的线性组合等于零，
+[28] 即
+[29] \begin{equation}
+\sum_i^N c_i v_i = 0_V~,
+\end{equation}
+[/SCOPE:s_linindep_let]
+[30] 线性相关的（linearly dependent）
+[31] 线性无关的（linearly independent）
+[32] 两个向量如果构成一个线性无关组，我们就说它们是线性无关的，类似的可以定义线性相关。
+[33] 由于 $c \cdot 0_V = 0_V$，我们有：
+
+[/SCOPE:s_linindep]
+[SCOPE:s_thm1|description|定理1]
+[34] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1变量]
+[35] 对于任何一个线性无关组 $S$，$0_V \not\in S$。
+[/SCOPE:s_thm1_let]
+[36] 我们用向量组来张成空间，就是在用这些向量来表示张成空间里面的所有向量的。
+[37] 我们知道，张成空间时所使用的向量，如果它们线性相关，
+[38] 那么就会有冗余向量，也就是说其中一些向量本身就可以被剩下的向量表示出来，
+[39] 因此我们就算把冗余的向量都剔除了，剩余的向量仍然可以张成同一个空间。
+[40] 进一步，有冗余向量就意味着，张成空间里的向量可以表示成不同的线性组合。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_exer2|description|习题2]
+[41] 习题 2
+[42] 习题 1 中所给出的三个向量是线性相关的。
+[43] 请使用这个例子来讨论以下两个问题：
+[44] 用这三个向量的线性组合来表示向量 $(1,0,0)$，组合方式是唯一的吗？
+[45] 这三个向量中剔除几个向量后就不再有冗余向量？
+[46] 剔除的冗余向量有几种选择？
+[47] 如果一组向量是线性无关的，
+[48] 那么就没有这讨厌的冗余向量了，我们就可以很方便地用这组向量来讨论张成空间的性质。
+
+[/SCOPE:s_exer2]
+[SCOPE:s_thm2|description|定理2]
+[49] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2变量]
+[50] 对于向量空间 $V$，给定一组线性无关向量组 $\{v_i\}_i$。
+[/SCOPE:s_thm2_let]
+[51] 对于任何向量 $v \in \operatorname {span}(\{v_i\}_i)$，它表示线性组合的方式是唯一的。
+[SCOPE:s_thm2_proof|description|定理2证明]
+[52] 证明：
+[SCOPE:s_thm2_proof_let|let_bind|定理2证明变量]
+[53] 设 $v = \sum a_i v_i = \sum b_i v_i$，其中 $a_i, b_i\in \mathbb{F}$，而 $\mathbb{F}$ 是定义 $V$ 所用的域。
+[/SCOPE:s_thm2_proof_let]
+[54] 那么我们有：
+[55] \begin{equation}
+\sum(a_i - b_i) v_i = \sum a_i v_i - \sum b_i v_i = v - v = \boldsymbol{\mathbf{0}} ~.
+\end{equation}
+[56] 由于 $\{v_i\}_i$ 线性无关，上式就意味着每一个 $a_i-b_i$ 都是 $0$，也就是说每一个 $a_i$ 都等于 $b_i$。
+[57] 因此不可能有两种不同的组合方式能得到 $v$。
+[58] 证毕。
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_proof]
+[SCOPE:s_basis|description|基底和基底向量]
+[59] 定义 4 基底和基底向量
+[SCOPE:s_basis_let|let_bind|基底变量]
+[60] 如果向量空间 $V$ 可以表示为一组向量 $\{v_i\}_i$ 的张成空间，并且这组向量是线性无关的，
+[/SCOPE:s_basis_let]
+[61] 那么我们说 $\{v_i\}_i$ 是 $V$ 的一组基底（basis）或简称基，各 $v_i$ 被称作一个基底向量（basis vector）。
+[62] 我们可以换一个角度：对于一个张成向量组，如果它是线性相关的，总可以找出一个冗余向量，把它剔除；
+[63a] 如果剔除一个冗余向量以后还有冗余向量
+[63b] 则重复这个操作，直到不再有冗余向量为止。
+[64] 这样剔除若干步后所得到的线性无关的向量组，被称为原向量组的一个极小张成组。
+[65] 由于每一步剔除的冗余向量可以不同，最终剩下来的极小张成组也可以不同。
+
+[/SCOPE:s_basis]
+[SCOPE:s_ex2|description|例2]
+[66] 依然利用习题 1 的例子。
+[67] 向量组 $\{v_1, v_2, v_3\}$ 的极小张成组一共有三个，分别是 $\{v_1, v_2\}$，$\{v_2, v_3\}$ 和 $\{v_1, v_3\}$。
+[68a] 我们还可以从线性无关组开始
+[68b] 如果线性无关组没有张成整个空间，我们，则可以加入一个张成子空间之外的向量，新向量组仍然是线性无关的；
+[69a] 如果新向量组仍然没有张成整个空间
+[69b] 则继续这一步，直到张成了整个空间为止，我们把最终得到的向量组称为原向量组的一个极大无关组。
+[70] 由于每一步加入的无关向量可以不同，最终组合成的极大无关组也可以不同。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_thm3|description|基底的三种等价定义]
+[71] 定理 3 基底的三种等价定义
+[72] 极大无关组 等价于 极小张成组 等价于 无关张成组。
+[73] 它们都可以作为基底的定义。
+[74] 有了基底之后，向量空间中的每一个向量都可以唯一地表示成基底向量的线性组合。
+[75] 这里，每一个向量都可以被表示成基底向量的线性组合是因为定义中要求基底能张成整个向量空间，而线性组合的唯一性是因为定义中要求基底是线性无关的。
+[76] 这是极为重要的性质，它使得向量空间上的一切线性性质，比如线性函数、线性变换、张量的表示等等，都只和基底的选择有关。
+[77] 比如说，对于线性函数，一旦选定了基底，
+[78] 那么只需要计算出基底向量的函数值，我们就可以得到一切向量的函数值，而不用对每一个向量都作一番计算。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|基底表示的唯一性]
+[79] 定理 4 基底表示的唯一性
+[SCOPE:s_thm4_let|let_bind|定理4变量]
+[80] 对于向量空间 $V$，给定一组基底 $\{e_i\}_i$。
+[/SCOPE:s_thm4_let]
+[81] 对于任何向量 $v\in V$，它表示为该基底的线性组合的方式是唯一的。
+
+[/SCOPE:s_thm4]
+[82] 【未完成】重新写引入
+
+[SCOPE:s_thm5|description|定理5]
+[83] 定理 5
+[SCOPE:s_thm5_let|let_bind|定理5变量]
+[84] 有限维向量空间的所有基底的元素个数都是一样的；
+[85] 等价的，如果一个向量空间可以表示为一组有限个向量 $\{w_i\}_{i = 1}^n$ 的张成空间，
+[86] 那么 $\{w_i\}_{i = 1}^n$ 的任何两个极大线性无关组中的元素数量都是一样的。
+[/SCOPE:s_thm5_let]
+[87] 定理 5 的证明有很多方式，由于本部分的教学思路在这里还没引入线性方程组的概念，
+[88] 因此不会使用线性方程组解的性质来证明，而是用 “替换法”。
+[89] 【未完成】新词条《用线性方程组证明维度的良定义》
+[SCOPE:s_thm5_proof|description|定理5证明]
+[90] 证明：
+[SCOPE:s_thm5_proof_let|let_bind|定理5证明变量]
+[91] 假设 $S$ 是若干向量的集合，其中 $\{v_i\}_{i=1}^n$ 和 $\{ \boldsymbol{\mathbf{u}} _j\}^m_{j=1}$ 都是 $S$ 的极大线性无关组。
+[/SCOPE:s_thm5_proof_let]
+[92] 那么由于 “极大”，$\{v_i\}_{i=1}^n$ 中的向量都可以用 $\{ \boldsymbol{\mathbf{u}} _j\}^m_{j=1}$ 的线性组合来表示，反之亦然；
+[93] 由于 “线性无关”，两者的互相表示是唯一的。
+[SCOPE:s_thm5_proof_reductio|reductio|反证法假设n≠m]
+[94] 反设 $n\not=m$，不妨就设 $n>m$。
+[95] 如果从 $\{v_i\}_{i=1}^n$ 中把 $v_1$ 拿掉，
+[96] 那么必然存在若干 $u_j$ 无法被剩下的 $\{v_i\}_{i=2}^n$ 表示。
+[97] 我们把这些无法被表示的 $u_j$ 添加进 $\{v_i\}_{i=2}^n$，取代 $v_1$，这样又得到一个新的极大线性无关组1。
+[98] 对于把 $v_1$ 替换掉后的新极大无关组，再把 $v_2$ 拿掉，然后相应地替换为拿掉之后无法表示出的所有 $u_j$。
+[99] 依次进行。
+[100] 以上步骤中，由于每一次替换都只拿掉一个 $v_i$，却要替换为至少一个 $u_j$，而且每次添加的 $u_j$ 都和之前的没有交集2。
+[101] 再加上 $n>m$，
+[102] 因此替换的元素最多到 $v_m$。
+[103] 这样就得出 $\{u_j\}^m_{j=1} \cup \{v_i\}^n_{j=m+1}$ 也是一个极大无关组。
+[104] 由于这个极大无关组比 $\{u_j\}^m_{j=1}$ 多了一个非空集合 $\{v_i\}^n_{j=m+1}$，
+[105] 因此和 $\{u_j\}^m_{j=1}$ 的极大线性无关性矛盾。
+[106] 因此假设不成立，
+[107] 即 $n=m$。
+[/SCOPE:s_thm5_proof_reductio]
+[108] 令 $S=\{w_i\}_i$ 或者 $S=V$，就得到定理的证明。
+[109] 证毕。
+[/SCOPE:s_thm5_proof]
+[110] 替换法的证明仅仅用到了目前已知的少量向量性质，并不涉及方程组理论，请仔细体会其逻辑。
+[111] 事实上，本部分将会在建立了向量空间的直觉后，用向量空间的思想，
+[112] 即几何的思想，来解释实系数线性方程组的概念。
+[113] 定理 5 意味着，向量空间的不同基底总包含相同数量的基底向量。
+[114] 实际上蕴含的是非常符合直觉的一个概念，维度。
+
+[/SCOPE:s_thm5]
+[SCOPE:s_dim|description|向量空间的维度]
+[115] 定义 5 向量空间的维度
+[116] 对于有限维向量空间 $V$，其任意一个基底的元素数量，称为 $V$ 的维度（dimension），记为 $ \operatorname {dim} V$。
+[117] 特别的，零维向量空间有且只有 $\{0\}$，它的基底是空集。
+[118] 【未完成】用无关组和张成组的大小来给维度划定上下限
+[119] 在定理 5 中我们限制了 $V$ 为有限维的，无限维的情况会比较复杂。
+
+[/SCOPE:s_dim]
+[SCOPE:s_infdim|description|无限维向量空间]
+[120] 一个向量空间如果不是有限维的，就被称为无限维向量空间。
+[121] 无限维度向量空间的基底的存在性并不显然，它依赖于选择公理（等价的，Zorn's 引理）
+[122] 【未完成】词条：选择公理/Zorn's 引理
+
+[/SCOPE:s_infdim]
+[SCOPE:s_thm6|description|定理6]
+[123] 定理 6
+[SCOPE:s_thm6_let|let_bind|定理6变量]
+[124] 在假定 Zorn's 引理成立的前提下，任何向量空间都存在基底。
+[/SCOPE:s_thm6_let]
+[SCOPE:s_thm6_proof|description|定理6证明]
+[125] 证明：
+[126] 这里我们选择极大无关组理解基底。
+[SCOPE:s_thm6_proof_let|let_bind|定理6证明变量]
+[127] 对于向量空间 $V$，定义 $\mathcal{I}$ 为全体线性无关的向量组的集合，集合的包含关系使它成为了一个偏序集。
+[/SCOPE:s_thm6_proof_let]
+[128] 【未完成】偏序集
+[129] 由于 $\varnothing \in \mathcal{I}$，$\mathcal{I}$ 不是空集（Zorn's 引理的条件之一）；
+[130] 考虑 $\mathcal{I}$ 的任何一条序链（chain），
+[131] 即全序子集，$\{I_\alpha\}_\alpha$，它们的并集 $\bigcup_\alpha I_\alpha$ 也是线性无关的（因为它的任意有限子集都包含于某个 $I_\alpha$），是序链 $\{I_\alpha\}_\alpha$ 的上界（Zorn's 引理的条件之二）——根据 Zorn's 引理，$\mathcal{I}$ 存在极大值，
+[132] 即我们想要的基底。
+[133] 证毕。
+[134] 这个证明是一个非构造性证明，实践上想找出一个无穷维向量空间的基底并不容易。
+
+[/SCOPE:s_thm6]
+[/SCOPE:s_thm6_proof]
+[SCOPE:s_ex3|description|多项式空间]
+[135] 例 3 多项式空间
+[136] $\mathbb{R}[X]$ 是 $\mathbb{R}$ 上的全体一元多项式的向量空间，易知单项式的向量组
+[137] \begin{equation}
+\{1, X, X^2, \dots, X^n, \dots\}~
+\end{equation}
+[138] 【未完成】链接：关于 “它是一个向量空间” 的细节
+
+[/SCOPE:s_ex3]
+[SCOPE:s_ex4|description|收敛幂级数空间]
+[139] 例 4 收敛幂级数空间
+[140] $V$ 是 $\mathbb{R}$ 上的全体收敛的（中心在 $0$ 处）幂级数的向量空间，多项式空间是它的子空间，此时单项式的向量组仍然是一组线性无关向量组，
+[141] 但是 $\exp$ 这种超越函数无法由有限项单项式线性组合成，我们需要 “无限项求和”。
+[142] 实际上我们只能证明 $V$ 存在一组（不可数的）基底，
+[143] 但是没有办法显式的写出来。
+
+[/SCOPE:s_ex4]
+[SCOPE:s_formalspan|description|形式张成]
+[144] 从另一个角度，我们可以摆脱 “用给定空间的向量来张成一个子空间”，定义形式化的张成的概念。
+[SCOPE:s_formalspan_let|let_bind|形式张成变量]
+[145] 取任何一个集合 $S$，我们可以用 $S$ 在域 $\mathbb{F}$ 上直接构造一个 “以 $S$ 为基底的” 向量空间
+[/SCOPE:s_formalspan_let]
+[146] \begin{equation}
+V_S = \left\{ \sum_\alpha a_\alpha s_\alpha|a_\alpha\in\mathbb{F}, s_\alpha\in S \right\}~,
+\end{equation}
+[147] 其中的元素 $\sum_\alpha a_\alpha s_\alpha$ 是 $s_\alpha$ 的形式线性组合，是一个不属于 $S$ 的新元素；
+[148] 我们会把 $1 s \in V_S$ 和 $s \in S$ 等同起来，
+[149] 从而把 $S$ 视作 $V_S$ 的一个子集。
+[150] 即使 $S$ 本身拥有一些代数结构，比如它是一个向量空间的子集，在构造形式张成的时候我们都要忘记掉，仅仅把它当成一个集合。
+[151] 对于向量空间 $V$ 的张成向量组 $S$，如果 $S$ 是线性无关的，我们有 $V \cong V_S$，换言之形式张成可以被理解成一种特殊的子集张成；
+[152] 因此形式张成和子集张成一般采用一样的符号，$\langle S \rangle$，只是会把向量用正体、希腊字母或者特定的字母（一般是 $x, y, z$）等方式来表示 “忘记它们之间的线性关系”，比如
+[153] \begin{equation}
+\langle \text{v}_1, \cdots, \text{v}_n \rangle, \quad \langle x_1, \cdots, x_n \rangle~.
+\end{equation}
+[154] 如果张成向量组 $S$ 在 向量空间 $V$ 中是线性相关的，我们有满射
+[155] \begin{equation}
+V_S \twoheadrightarrow V ~
+\end{equation}
+[156] 其中 $\sum_\alpha a_\alpha s_\alpha \in V_S$（形式组合）的像为零当且仅当 $\sum_\alpha a_\alpha s_\alpha = 0 \in V$（向量组的组合）。
+[157] 换言之，（一般的）张成空间是形式张成的商空间
+[158] 【未完成】链接：商空间
+
+[/SCOPE:s_formalspan]
+[159] 【未完成】有序基底
+
+[SCOPE:s_coord|description|向量的坐标]
+[160] 定义 6 向量的坐标
+[SCOPE:s_coord_let|let_bind|坐标变量]
+[161] 对于向量空间 $V$，给定一组有序基底 $\{e_i\}_i$。
+[/SCOPE:s_coord_let]
+[162] 如果向量 $v=\sum a_i e_i$，
+[163] 那么我们称列向量 $(a_i)_i$ 是 $v$ 的一组坐标（coordinates）。
+[164] 定理 4 意味着选定基底以后，各向量的坐标是唯一的，
+[165] 但基底的选择本身不是唯一的。
+[166] 比如说，二维平面上，任何两个不平行的向量都可以构成这个空间的一个基底。
+[167] 基底的选择不一样，向量的坐标也不一样。
+[168] 对此的详细讨论请参见向量空间的表示。
+[/SCOPE:s_coord]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2是定理1的推广"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_basis",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "定理3给出基底的等价定义"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理4是定理2在基底情形下的特例"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_dim",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理5保证维度良定义"
+  },
+  {
+    "source_scope": "s_thm6",
+    "target_scope": "s_infdim",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理6保证无限维空间存在基底"
+  },
+  {
+    "source_scope": "s_coord",
+    "target_scope": "s_thm4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "坐标定义依赖定理4的唯一性"
+  }
+]

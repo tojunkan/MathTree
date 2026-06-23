@@ -1,0 +1,161 @@
+{
+  "article_name": "DSofMo",
+  "statements": [
+    {
+      "stmt_id": "st_inner_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_inner",
+      "exposed_entities": [
+        "M",
+        "M_1",
+        "M_2",
+        "M_s"
+      ]
+    },
+    {
+      "stmt_id": "st_inner_unique",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_inner",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_inner_def",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_inner",
+      "exposed_entities": [
+        "M",
+        "M_1",
+        "M_2",
+        "M_s"
+      ]
+    },
+    {
+      "stmt_id": "st_outer_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_outer",
+      "exposed_entities": [
+        "M_1",
+        "M_2",
+        "M_s",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_outer_def",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_outer",
+      "exposed_entities": [
+        "M",
+        "M_1",
+        "M_2",
+        "M_s"
+      ]
+    },
+    {
+      "stmt_id": "st_equiv_claim",
+      "subtype": "theorem",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_outer",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_inner_to_outer",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_outer",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_outer_to_inner",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_outer",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_inner_assump",
+      "target": "st_inner_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inner_unique",
+      "target": "st_inner_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_outer_assump",
+      "target": "st_outer_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inner_assump",
+      "target": "st_inner_to_outer",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inner_unique",
+      "target": "st_inner_to_outer",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_outer_assump",
+      "target": "st_outer_to_inner",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_outer_def",
+      "target": "st_inner_def",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "外直和与内直和本质上是一回事，且同构"
+    }
+  ],
+  "unresolved": []
+}

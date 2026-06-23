@@ -1,0 +1,112 @@
+[SCOPE:root|description|几何向量的点乘]
+文章名: Dot
+标题: 几何向量的点乘
+
+[SCOPE:s_geo_def|description|几何定义]
+[0] 我们先来看点乘的几何定义。
+[1] 注意该定义不需要任何坐标系的概念。
+[2] 【图解】图 1：点乘的几何定义
+[3] 两个几何向量的点乘（dot product），也叫点积、内积（inner product）或者标量积（scalar product）。
+[4] 如图 1 ，一般用一个实心圆点表示几何向量的点乘（不可省略）。
+[5] 点乘就是把两向量的模长相乘，再乘以它们的夹角1 $\theta$ 的余弦值：
+[6] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol\cdot \boldsymbol{\mathbf{B}} = \left\lvert \boldsymbol{\mathbf{A}} \right\rvert \left\lvert \boldsymbol{\mathbf{B}} \right\rvert \cos\theta ~,
+\end{equation}
+[7] 注意两个向量点乘得到的是一个标量（在这里就是实数）。
+[8] 几何定义中（
+[9] 图 1 [链接 L0]
+[10] ），既可以把点乘理解为 $ \boldsymbol{\mathbf{A}} $ 投影在 $ \boldsymbol{\mathbf{B}} $ 上的模长乘以 $ \boldsymbol{\mathbf{B}} $ 的模长，也可以理解为 $ \boldsymbol{\mathbf{B}} $ 投影在 $ \boldsymbol{\mathbf{A}} $ 上的模长乘以 $ \boldsymbol{\mathbf{A}} $ 的模长。
+[11] 在这种理解下，若量向量的夹角为钝角，投影长度需要取负值。
+[12] 可见当两向量模长固定时，若方向相同，点乘结果取最大值 $ \left\lvert \boldsymbol{\mathbf{A}} \right\rvert \left\lvert \boldsymbol{\mathbf{B}} \right\rvert $；
+[13] 若方向相反，点乘取最小值 $- \left\lvert \boldsymbol{\mathbf{A}} \right\rvert \left\lvert \boldsymbol{\mathbf{B}} \right\rvert $；
+[14] 若相互垂直，
+[15] 则点乘为 0。
+[16] 我们说两个点乘为 0 的向量互相垂直（perpendicular），或者说正交（orthogonal）。
+[17] 几何向量与自身点乘可得该向量模长的平方。
+[18] 单位向量与自己的点乘等于 1。
+
+[/SCOPE:s_geo_def]
+[SCOPE:s_coord_let|let_bind|坐标变量]
+[SCOPE:s_coord_def|description|坐标定义]
+[19] 若已知 $ \boldsymbol{\mathbf{A}} , \boldsymbol{\mathbf{B}} $ 在平面直角坐标系 $xy$ 中坐标分别为 $(A_x, A_y)$ 和 $(B_x, B_y)$，
+[20] 那么如何用坐标表示点乘运算的结果呢？
+[21] 我们把它定义为
+[22] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol\cdot \boldsymbol{\mathbf{B}} = A_x B_x + A_y B_y~.
+\end{equation}
+[23] 同理，空间向量点乘的坐标定义为
+[24] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol\cdot \boldsymbol{\mathbf{B}} = A_x B_x + A_y B_y + A_z B_z ~.
+\end{equation}
+[25] 可以想象，如果我们有 “更高维度的向量”，我们也可以直接用直角坐标定义点乘：
+[26] \begin{equation}
+A_1 B_1 + \dots + A_n B_n ~.
+\end{equation}
+
+[/SCOPE:s_coord_let]
+[/SCOPE:s_coord_def]
+[SCOPE:s_equiv_let|let_bind|等价性证明变量]
+[SCOPE:s_equiv|description|两种定义的等价性]
+[27] 假设 $ \boldsymbol{\mathbf{A}} , \boldsymbol{\mathbf{B}} $ 处于第一象限，记 $ \boldsymbol{\mathbf{A}} $ 和 $ \hat{\boldsymbol{\mathbf{x}}} $ 的夹角为 $\alpha$，$ \boldsymbol{\mathbf{B}} $ 和 $ \hat{\boldsymbol{\mathbf{x}}} $ 的夹角为 $\beta$，$ \boldsymbol{\mathbf{A}} $ 和 $ \boldsymbol{\mathbf{B}} $ 的夹角为 $\theta$，如图 2 ，根据两角和公式（式 5 ）有
+[28] \begin{equation}
+\cos\theta = \cos\left(\alpha-\beta\right) = \cos\alpha \cos\beta + \sin\alpha \sin\beta~,
+\end{equation}
+[29] \begin{equation}
+\begin{aligned}
+| \boldsymbol{\mathbf{A}} | | \boldsymbol{\mathbf{B}} | \cos\theta &= | \boldsymbol{\mathbf{A}} | \cos\alpha | \boldsymbol{\mathbf{B}} | \cos\beta + | \boldsymbol{\mathbf{A}} | \sin\alpha | \boldsymbol{\mathbf{B}} | \sin\beta \\
+&= A_x B_x + A_y B_y
+\end{aligned}~
+\end{equation}
+[30] 对于空间向量也是一样的。
+
+[/SCOPE:s_equiv_let]
+[/SCOPE:s_equiv]
+[SCOPE:s_properties|description|点乘的性质]
+[31] 点乘满足交换率：
+[32] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol\cdot \boldsymbol{\mathbf{B}} = \boldsymbol{\mathbf{B}} \boldsymbol\cdot \boldsymbol{\mathbf{A}} ~.
+\end{equation}
+[33] 由几何定义，易证。
+[34] 点乘满足分配律：
+[35] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol\cdot ( \boldsymbol{\mathbf{B}} + \boldsymbol{\mathbf{C}} ) = \boldsymbol{\mathbf{A}} \boldsymbol\cdot \boldsymbol{\mathbf{B}} + \boldsymbol{\mathbf{A}} \boldsymbol\cdot \boldsymbol{\mathbf{C}} ~,
+\end{equation}
+[36] 考虑坐标定义，我们有
+[37] \begin{equation}
+\begin{aligned}
+\boldsymbol{\mathbf{A}} \boldsymbol\cdot ( \boldsymbol{\mathbf{B}} + \boldsymbol{\mathbf{C}} ) &= A_1 (B_1 + C_1) + A_2 (B_2 + C_2) \\
+&= A_1 B_1 + A_1 C_1 + A_2 B_2 + A_2 C_2 \\
+&= (A_1 B_1 + A_2 B_2) + (A_1 C_1 + A_2 C_2) \\
+&= \boldsymbol{\mathbf{A}} \boldsymbol\cdot \boldsymbol{\mathbf{B}} + \boldsymbol{\mathbf{A}} \boldsymbol\cdot \boldsymbol{\mathbf{C}}
+\end{aligned}~
+\end{equation}
+[38] 空间向量的证明类似。
+[39] 注意点乘不满足结合律，
+[40] 即
+[41] \begin{equation}
+( \boldsymbol{\mathbf{A}} \boldsymbol\cdot \boldsymbol{\mathbf{B}} ) \boldsymbol{\mathbf{C}} \ne \boldsymbol{\mathbf{A}} ( \boldsymbol{\mathbf{B}} \boldsymbol\cdot \boldsymbol{\mathbf{C}} )~.
+\end{equation}
+[42] 前者是 $ \boldsymbol{\mathbf{C}} $ 方向的向量，后者是 $ \boldsymbol{\mathbf{A}} $ 方向的向量，显然不一定相等。
+
+[/SCOPE:s_properties]
+[SCOPE:s_distrib_let|let_bind|分配律证明变量]
+[SCOPE:s_distrib_proof|description|证明点乘的分配律]
+[43] 【图解】图 3：点乘分配律的证明
+[44] 如图 3 ，令 $ \boldsymbol{\mathbf{D}} \equiv \boldsymbol{\mathbf{B}} + \boldsymbol{\mathbf{C}} $，把 $ \boldsymbol{\mathbf{A}} \boldsymbol\cdot \boldsymbol{\mathbf{B}} $， $ \boldsymbol{\mathbf{A}} \boldsymbol\cdot \boldsymbol{\mathbf{C}} $， $ \boldsymbol{\…[truncated]…symbol\cdot \boldsymbol{\mathbf{D}} $ 分别用几何定义理解为 $ \boldsymbol{\mathbf{B}} $， $ \boldsymbol{\mathbf{C}} $， $ \boldsymbol{\mathbf{D}} $ 在 $ \boldsymbol{\mathbf{A}} $ 上的投影乘 $ \left\lvert \boldsymbol{\mathbf{A}} \right\rvert $，且令投影长度分别为 $L_B, L_C, L_D$。
+[45] 那么要证明 $ \boldsymbol{\mathbf{A}} \boldsymbol\cdot ( \boldsymbol{\mathbf{B}} + \boldsymbol{\mathbf{C}} ) = \boldsymbol{\mathbf{A}} \boldsymbol\cdot \boldsymbol{\mathbf{D}} = \boldsymbol{\mathbf{A}} \boldsymbol\cdot \boldsymbol{\mathbf{B}} + \boldsymbol{\mathbf{A}} \boldsymbol\cdot \boldsymbol{\mathbf{C}} $，只需证明 $L_D = L_B + L_C$ 即可。
+[46] 现在把 $ \boldsymbol{\mathbf{B}} $ 平移使其起点与 $ \boldsymbol{\mathbf{C}} $ 的终点对接（投影长度不变）。
+[47] 从图中立即得出 $L_D = L_B + L_C$。
+[/SCOPE:s_distrib_let]
+[/SCOPE:s_distrib_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_coord_def",
+    "target_scope": "s_geo_def",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "坐标定义与几何定义等价，在s_equiv中证明"
+  }
+]

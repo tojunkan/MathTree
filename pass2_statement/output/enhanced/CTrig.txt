@@ -1,0 +1,110 @@
+[SCOPE:root|description|三角函数（复数）]
+文章名: CTrig
+标题: 三角函数（复数）
+
+[SCOPE:s_def|description|定义]
+[0] 定义复数域的正弦函数为
+[1] \begin{equation}
+\sin z = \frac{ \mathrm{e} ^{ \mathrm{i} z} - \mathrm{e} ^{- \mathrm{i} z}}{2 \mathrm{i} }~.
+\end{equation}
+[2] 定义复数域的余弦函数为
+[3] \begin{equation}
+\cos z = \frac{ \mathrm{e} ^{ \mathrm{i} z} + \mathrm{e} ^{- \mathrm{i} z}}{2}~.
+\end{equation}
+[4] 为什么三角函数要这么定义？
+[5] 因为只有这么定义，才能既 “兼容” 实数范围内的三角函数，同时满足解析的要求，
+[6] 即以后会学习的
+[7] 柯西—黎曼条件 [链接 L0]
+
+[/SCOPE:s_def]
+[SCOPE:s_compat|description|与实数函数的兼容性]
+[8] “兼容性” 在这里指若将一个复变函数的自变量取实数，
+[9] 那么结果与使用同名的实数函数相同。
+[SCOPE:s_compat_let|let_bind|取实数 x]
+[10] 例如将式 1 中的复数 $z$ 取实数 $x$，得
+[/SCOPE:s_compat_let]
+[11] \begin{equation}
+\sin x = \frac{ \mathrm{e} ^{ \mathrm{i} x} - \mathrm{e} ^{- \mathrm{i} x}}{2 \mathrm{i} }~.
+\end{equation}
+[12] 复数域指数函数的定义 [链接 L1]
+[13] ，在这里具体指欧拉公式，得
+[14] \begin{equation}
+\mathrm{e} ^{ \mathrm{i} x} = \cos x + \mathrm{i} \sin x~,
+\end{equation}
+[15] \begin{equation}
+\mathrm{e} ^{- \mathrm{i} x} = \cos x - \mathrm{i} \sin x~,
+\end{equation}
+[16] \begin{equation}
+\frac{ \mathrm{e} ^{ \mathrm{i} x} - \mathrm{e} ^{- \mathrm{i} x}}{2 \mathrm{i} } = \frac{(\cos x + \mathrm{i} \sin x) - (\cos x - \mathrm{i} \sin x)}{2 \mathrm{i} } = \sin x~.
+\end{equation}
+[17] 同理可证
+[18] 式 2 [链接 L2]
+[19] 在实轴上成立。
+[20] 证毕。
+
+[/SCOPE:s_compat]
+[SCOPE:s_sum|description|两角和公式]
+[21] 利用欧拉公式，容易证明，复数范围内的正余弦函数同样满足两角和公式
+[22] \begin{equation}
+\sin\left(z_1 + z_2\right) = \sin {z_1}\cos {z_2} + \cos {z_1}\sin {z_2}~,
+\end{equation}
+[23] \begin{equation}
+\cos\left(z_1 + z_2\right) = \cos {z_1}\cos {z_2} - \sin {z_1}\sin {z_2}~.
+\end{equation}
+
+[/SCOPE:s_sum]
+[SCOPE:s_realimag|description|实部和虚部]
+[SCOPE:s_realimag_let|let_bind|令 z1=x, z2=iy]
+[24] 利用两角和公式，令 $z_1$ 等于实数 $x$， $z_2$ 等于虚数 $ \mathrm{i} y$，
+[/SCOPE:s_realimag_let]
+[25] 则有
+[26] \begin{equation}
+\sin z = \sin\left(x + \mathrm{i} y\right) = \sin x\cos \mathrm{i} y + \cos x\sin \mathrm{i} y~,
+\end{equation}
+[27] \begin{equation}
+\cos z = \cos\left(x + \mathrm{i} y\right) = \cos x\cos \mathrm{i} y - \sin x\sin \mathrm{i} y~.
+\end{equation}
+[28] \begin{equation}
+\cos\left( \mathrm{i} y\right) = \frac{ \mathrm{e} ^{-y} + \mathrm{e} ^y}{2} = \cosh y~,
+\end{equation}
+[29] \begin{equation}
+\sin\left( \mathrm{i} y\right) = \frac{ \mathrm{e} ^{-y} - \mathrm{e} ^y}{2 \mathrm{i} } = \mathrm{i} \frac{ \mathrm{e} ^y - \mathrm{e} ^{-y}}{2} = \mathrm{i} \sinh y~.
+\end{equation}
+[30] \begin{equation}
+\sin z = \sin\left(x + \mathrm{i} y\right) = \sin x\cosh y + \mathrm{i} \cos x\sinh y~,
+\end{equation}
+[31] \begin{equation}
+\cos z = \cos\left(x + \mathrm{i} y\right) = \cos x\cosh y - \mathrm{i} \sin x\sinh y~.
+\end{equation}
+[32] 这样，就把正余弦的实部和虚部分开来了（当然也可以根据定义直接得到两式）。
+
+跨文章引用:
+  [L0] 柯西—黎曼条件 → CauRie
+  [L1] 复数域指数函数的定义 → CExp
+[/SCOPE:s_realimag]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_compat",
+    "target_scope": "s_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "兼容性验证是定义在实数上的特例"
+  },
+  {
+    "source_scope": "s_sum",
+    "target_scope": "s_def",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "两角和公式由定义推导"
+  },
+  {
+    "source_scope": "s_realimag",
+    "target_scope": "s_sum",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "实部和虚部由两角和公式推导"
+  }
+]

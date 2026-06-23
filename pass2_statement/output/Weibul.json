@@ -1,0 +1,254 @@
+{
+  "article_name": "Weibul",
+  "statements": [
+    {
+      "stmt_id": "st_weibull_intro",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_weibull_desc",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geometric_discrete",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_geometric_let1",
+      "exposed_entities": [
+        "p",
+        "k",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_geometric_continuous",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_geometric_let2",
+      "exposed_entities": [
+        "t",
+        "Δt",
+        "p",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_approx_limit",
+      "subtype": "theorem",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_geometric_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geometric_approx",
+      "subtype": "conclusion",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_geometric_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_weibull_special_case",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_weibull_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_weibull_assump_p0_gamma",
+      "subtype": "assumption",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_weibull_let1",
+      "exposed_entities": [
+        "p",
+        "p0",
+        "k",
+        "γ"
+      ]
+    },
+    {
+      "stmt_id": "st_weibull_discrete_pmf",
+      "subtype": "definition",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_weibull_let2",
+      "exposed_entities": [
+        "X",
+        "k",
+        "p0",
+        "γ"
+      ]
+    },
+    {
+      "stmt_id": "st_weibull_continuous_pmf",
+      "subtype": "definition",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_weibull_let3",
+      "exposed_entities": [
+        "X",
+        "t",
+        "Δt",
+        "p0",
+        "γ"
+      ]
+    },
+    {
+      "stmt_id": "st_log_transform",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_weibull_let3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_log_approx",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_weibull_let3",
+      "exposed_entities": [
+        "p0",
+        "i",
+        "γ"
+      ]
+    },
+    {
+      "stmt_id": "st_simplified_log",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_weibull_let3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sum_integral",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_weibull_let3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_weibull_pdf",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_weibull_let3",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_geometric_discrete",
+      "target": "st_geometric_continuous",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_geometric_continuous",
+      "target": "st_approx_limit",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_approx_limit",
+      "target": "st_geometric_approx",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_weibull_assump_p0_gamma",
+      "target": "st_weibull_discrete_pmf",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_weibull_discrete_pmf",
+      "target": "st_weibull_continuous_pmf",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_weibull_continuous_pmf",
+      "target": "st_log_transform",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_log_approx",
+      "target": "st_simplified_log",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_simplified_log",
+      "target": "st_sum_integral",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sum_integral",
+      "target": "st_weibull_pdf",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_weibull_pdf",
+      "target": "st_geometric_approx",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "Weibull 分布推导基于几何分布和指数分布"
+    }
+  ],
+  "unresolved": []
+}

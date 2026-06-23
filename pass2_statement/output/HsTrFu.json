@@ -1,0 +1,525 @@
+{
+  "article_name": "HsTrFu",
+  "statements": [
+    {
+      "stmt_id": "st_intro_0",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let_alpha",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_alpha",
+      "exposed_entities": [
+        "α"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_1",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_2",
+      "subtype": "remark",
+      "clause_range": [
+        33,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_def1",
+      "exposed_entities": [
+        "x",
+        "P",
+        "u",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_def",
+      "subtype": "definition",
+      "clause_range": [
+        41,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "sin x",
+        "cos x",
+        "tan x"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        50,
+        70
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        73,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_def2",
+      "exposed_entities": [
+        "x",
+        "P",
+        "u",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_def",
+      "subtype": "definition",
+      "clause_range": [
+        72,
+        80
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "cot x",
+        "sec x",
+        "csc x"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        81,
+        102
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_let",
+      "subtype": "assumption",
+      "clause_range": [
+        104,
+        104
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_geom",
+      "exposed_entities": [
+        "α"
+      ]
+    },
+    {
+      "stmt_id": "st_geom_remark",
+      "subtype": "remark",
+      "clause_range": [
+        103,
+        140
+      ],
+      "truth_value": null,
+      "scope_id": "s_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_relations_let",
+      "subtype": "assumption",
+      "clause_range": [
+        141,
+        141
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_relations",
+      "exposed_entities": [
+        "α"
+      ]
+    },
+    {
+      "stmt_id": "st_relations_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        142,
+        163
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_relations",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_induction_remark",
+      "subtype": "remark",
+      "clause_range": [
+        164,
+        173
+      ],
+      "truth_value": null,
+      "scope_id": "s_induction",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_induction_let",
+      "subtype": "assumption",
+      "clause_range": [
+        174,
+        174
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_induction",
+      "exposed_entities": [
+        "α",
+        "P",
+        "u",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_induction_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        175,
+        188
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_induction",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sym_x_let",
+      "subtype": "assumption",
+      "clause_range": [
+        194,
+        198
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_sym_x",
+      "exposed_entities": [
+        "α",
+        "β",
+        "P",
+        "Q"
+      ]
+    },
+    {
+      "stmt_id": "st_sym_x_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        199,
+        200
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_symmetry_x",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sym_y_let",
+      "subtype": "assumption",
+      "clause_range": [
+        202,
+        210
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_sym_y",
+      "exposed_entities": [
+        "α",
+        "β",
+        "P",
+        "Q",
+        "α'",
+        "β'"
+      ]
+    },
+    {
+      "stmt_id": "st_sym_y_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        211,
+        221
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_symmetry_y",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sym_origin_let",
+      "subtype": "assumption",
+      "clause_range": [
+        222,
+        229
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_sym_origin",
+      "exposed_entities": [
+        "α",
+        "β",
+        "P",
+        "Q",
+        "P'",
+        "β'"
+      ]
+    },
+    {
+      "stmt_id": "st_sym_origin_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        230,
+        233
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_symmetry_origin",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sym_yx_let",
+      "subtype": "assumption",
+      "clause_range": [
+        234,
+        243
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_sym_yx",
+      "exposed_entities": [
+        "α",
+        "β",
+        "α'",
+        "β'"
+      ]
+    },
+    {
+      "stmt_id": "st_sym_yx_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        244,
+        249
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_symmetry_yx",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sym_nyx_let",
+      "subtype": "assumption",
+      "clause_range": [
+        250,
+        252
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_sym_nyx",
+      "exposed_entities": [
+        "α",
+        "β",
+        "α'",
+        "β'"
+      ]
+    },
+    {
+      "stmt_id": "st_sym_nyx_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        253,
+        254
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_symmetry_nyx",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_induction_formulas",
+      "subtype": "conclusion",
+      "clause_range": [
+        269,
+        283
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_induction",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_induction_remark2",
+      "subtype": "remark",
+      "clause_range": [
+        284,
+        295
+      ],
+      "truth_value": null,
+      "scope_id": "s_induction",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        296,
+        296
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_example1",
+      "exposed_entities": [
+        "α"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        297,
+        304
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let_alpha",
+      "target": "st_intro_1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geom_let",
+      "target": "st_geom_remark",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_relations_let",
+      "target": "st_relations_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_induction_let",
+      "target": "st_induction_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sym_x_let",
+      "target": "st_sym_x_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sym_y_let",
+      "target": "st_sym_y_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sym_origin_let",
+      "target": "st_sym_origin_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sym_yx_let",
+      "target": "st_sym_yx_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sym_nyx_let",
+      "target": "st_sym_nyx_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_let",
+      "target": "st_example1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_def1_def",
+      "target": "st_intro_1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义1是推广后的三角函数定义，基于引言中的任意角概念。"
+    },
+    {
+      "source": "st_def2_def",
+      "target": "st_def1_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义2是定义1的补充，引入另外三种三角函数。"
+    },
+    {
+      "source": "st_geom_remark",
+      "target": "st_def1_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "几何含义是对定义1的直观解释。"
+    },
+    {
+      "source": "st_relations_conclusion",
+      "target": "st_def1_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "同角关系由定义1推导得出。"
+    },
+    {
+      "source": "st_induction_formulas",
+      "target": "st_def1_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "诱导公式由定义1和单位圆对称性推导得出。"
+    },
+    {
+      "source": "st_example1_conclusion",
+      "target": "st_induction_formulas",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是诱导公式的应用实例。"
+    }
+  ],
+  "unresolved": []
+}

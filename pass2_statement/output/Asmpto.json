@@ -1,0 +1,304 @@
+{
+  "article_name": "Asmpto",
+  "statements": [
+    {
+      "stmt_id": "st_vert_def",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_vert_def",
+      "exposed_entities": [
+        "f(x)",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_vert_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_vert_let",
+      "exposed_entities": [
+        "f(x)",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_vert_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_vert_let",
+      "exposed_entities": [
+        "x=x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_oblique_def",
+      "subtype": "definition",
+      "clause_range": [
+        36,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_oblique_def",
+      "exposed_entities": [
+        "f(x)",
+        "k",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_oblique_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_oblique_let",
+      "exposed_entities": [
+        "f(x)",
+        "k",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_oblique_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_oblique_let",
+      "exposed_entities": [
+        "y=kx+b"
+      ]
+    },
+    {
+      "stmt_id": "st_horizontal_special",
+      "subtype": "conclusion",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_oblique_let",
+      "exposed_entities": [
+        "y=b"
+      ]
+    },
+    {
+      "stmt_id": "st_polar_def",
+      "subtype": "definition",
+      "clause_range": [
+        74,
+        78
+      ],
+      "truth_value": null,
+      "scope_id": "s_polar_def",
+      "exposed_entities": [
+        "r(θ)",
+        "θ_0",
+        "L"
+      ]
+    },
+    {
+      "stmt_id": "st_polar_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        75,
+        75
+      ],
+      "truth_value": null,
+      "scope_id": "s_polar_let",
+      "exposed_entities": [
+        "C",
+        "r(θ)"
+      ]
+    },
+    {
+      "stmt_id": "st_polar_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        76,
+        78
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_polar_let",
+      "exposed_entities": [
+        "θ_0",
+        "L"
+      ]
+    },
+    {
+      "stmt_id": "st_param_def",
+      "subtype": "definition",
+      "clause_range": [
+        83,
+        87
+      ],
+      "truth_value": null,
+      "scope_id": "s_param_def",
+      "exposed_entities": [
+        "C(t)",
+        "t_0",
+        "L"
+      ]
+    },
+    {
+      "stmt_id": "st_param_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        84,
+        84
+      ],
+      "truth_value": null,
+      "scope_id": "s_param_let",
+      "exposed_entities": [
+        "C(t)",
+        "x(t)",
+        "y(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_param_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        85,
+        87
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_param_let",
+      "exposed_entities": [
+        "t_0",
+        "L"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_vert",
+      "subtype": "conclusion",
+      "clause_range": [
+        96,
+        97
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "x=0"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_oblique",
+      "subtype": "conclusion",
+      "clause_range": [
+        98,
+        102
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "g(x)=4x^2+bx+c"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_vert_assump",
+      "target": "st_vert_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_oblique_assump",
+      "target": "st_oblique_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_oblique_assump",
+      "target": "st_horizontal_special",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_polar_assump",
+      "target": "st_polar_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_param_assump",
+      "target": "st_param_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_vert",
+      "target": "st_vert_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_oblique",
+      "target": "st_oblique_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_oblique_def",
+      "target": "st_vert_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "斜渐近线包含水平渐近线作为k=0的特例，但垂直渐近线是另一种类型，此处无直接关系。"
+    },
+    {
+      "source": "st_polar_def",
+      "target": "st_vert_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "极坐标定义中，垂直渐近线对应theta_0=(2k+1)pi/2的特例。"
+    },
+    {
+      "source": "st_polar_def",
+      "target": "st_oblique_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "极坐标定义中，水平渐近线对应theta_0=kpi的特例。"
+    },
+    {
+      "source": "st_param_def",
+      "target": "st_polar_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "参数方程定义推广了极坐标定义。"
+    },
+    {
+      "source": "st_example1_vert",
+      "target": "st_vert_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1中使用了垂直渐近线的定义。"
+    },
+    {
+      "source": "st_example1_oblique",
+      "target": "st_oblique_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1中使用了斜渐近线的概念，但最终得到的是曲线渐近线。"
+    }
+  ],
+  "unresolved": []
+}

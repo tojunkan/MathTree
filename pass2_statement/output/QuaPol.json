@@ -1,0 +1,217 @@
+{
+  "article_name": "QuaPol",
+  "statements": [
+    {
+      "stmt_id": "st_quadratic_form_rep",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_quadratic_form",
+      "exposed_entities": [
+        "P(x_1,...,x_N)",
+        "a_{i,j}",
+        "x_i",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_symmetry_justification",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_quadratic_form",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_extrema_derivative",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_extrema",
+      "exposed_entities": [
+        "P(x_1,...,x_N)",
+        "a_{ij}",
+        "x_j"
+      ]
+    },
+    {
+      "stmt_id": "st_extrema_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_extrema",
+      "exposed_entities": [
+        "A",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_extrema_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_extrema",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_positive_definite",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_extrema_cases",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_positive_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_extrema_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_negative_definite",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_extrema_cases",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_negative_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_extrema_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_nonhomogeneous_form",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_nonhomogeneous",
+      "exposed_entities": [
+        "P(x_1,...,x_N)",
+        "a_{i,j}",
+        "b_i",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_nonhomogeneous_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_nonhomogeneous",
+      "exposed_entities": [
+        "A",
+        "x",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_nonhomogeneous_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_nonhomogeneous",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_extrema_derivative",
+      "target": "st_extrema_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_extrema_eq",
+      "target": "st_extrema_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_positive_definite",
+      "target": "st_positive_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_negative_definite",
+      "target": "st_negative_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_nonhomogeneous_form",
+      "target": "st_nonhomogeneous_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_nonhomogeneous_eq",
+      "target": "st_nonhomogeneous_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_extrema_solution",
+      "target": "st_quadratic_form_rep",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "齐次极值基于二次型表示"
+    },
+    {
+      "source": "st_nonhomogeneous_solution",
+      "target": "st_extrema_solution",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "非齐次极值是齐次极值的推广"
+    }
+  ],
+  "unresolved": []
+}

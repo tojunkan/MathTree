@@ -1,0 +1,509 @@
+{
+  "article_name": "HsCoPr",
+  "statements": [
+    {
+      "stmt_id": "st_intro_compound_def",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "compound proposition"
+      ]
+    },
+    {
+      "stmt_id": "st_and_def",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_and_def",
+      "exposed_entities": [
+        "A",
+        "B",
+        "A ∧ B"
+      ]
+    },
+    {
+      "stmt_id": "st_or_def",
+      "subtype": "definition",
+      "clause_range": [
+        48,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_or_def",
+      "exposed_entities": [
+        "A",
+        "B",
+        "A ∨ B"
+      ]
+    },
+    {
+      "stmt_id": "st_not_def",
+      "subtype": "definition",
+      "clause_range": [
+        77,
+        79
+      ],
+      "truth_value": null,
+      "scope_id": "s_not_def",
+      "exposed_entities": [
+        "A",
+        "¬A"
+      ]
+    },
+    {
+      "stmt_id": "st_universal_def",
+      "subtype": "definition",
+      "clause_range": [
+        117,
+        118
+      ],
+      "truth_value": null,
+      "scope_id": "s_universal_def",
+      "exposed_entities": [
+        "M",
+        "x",
+        "P(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_existential_def",
+      "subtype": "definition",
+      "clause_range": [
+        127,
+        128
+      ],
+      "truth_value": null,
+      "scope_id": "s_existential_def",
+      "exposed_entities": [
+        "M",
+        "x",
+        "P(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_quant_neg_def",
+      "subtype": "definition",
+      "clause_range": [
+        138,
+        143
+      ],
+      "truth_value": null,
+      "scope_id": "s_quant_neg_def",
+      "exposed_entities": [
+        "A",
+        "B",
+        "M",
+        "x",
+        "P(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_cond_def",
+      "subtype": "definition",
+      "clause_range": [
+        171,
+        173
+      ],
+      "truth_value": null,
+      "scope_id": "s_cond_def",
+      "exposed_entities": [
+        "P",
+        "Q",
+        "P ⇒ Q"
+      ]
+    },
+    {
+      "stmt_id": "st_cond_neg_def",
+      "subtype": "definition",
+      "clause_range": [
+        177,
+        179
+      ],
+      "truth_value": null,
+      "scope_id": "s_cond_neg",
+      "exposed_entities": [
+        "A",
+        "P",
+        "Q",
+        "P ⇒ ¬Q"
+      ]
+    },
+    {
+      "stmt_id": "st_inverse_def",
+      "subtype": "definition",
+      "clause_range": [
+        224,
+        228
+      ],
+      "truth_value": null,
+      "scope_id": "s_inverse_def",
+      "exposed_entities": [
+        "P",
+        "Q",
+        "P ⇒ Q",
+        "Q ⇒ P",
+        "¬P ⇒ ¬Q"
+      ]
+    },
+    {
+      "stmt_id": "st_contrapositive_def",
+      "subtype": "definition",
+      "clause_range": [
+        273,
+        275
+      ],
+      "truth_value": null,
+      "scope_id": "s_contrapositive_def",
+      "exposed_entities": [
+        "P",
+        "Q",
+        "¬Q ⇒ ¬P"
+      ]
+    },
+    {
+      "stmt_id": "st_sufficient_def",
+      "subtype": "definition",
+      "clause_range": [
+        303,
+        306
+      ],
+      "truth_value": null,
+      "scope_id": "s_sufficient_def",
+      "exposed_entities": [
+        "P",
+        "Q"
+      ]
+    },
+    {
+      "stmt_id": "st_necessary_sufficient_def",
+      "subtype": "definition",
+      "clause_range": [
+        325,
+        327
+      ],
+      "truth_value": null,
+      "scope_id": "s_necessary_sufficient_def",
+      "exposed_entities": [
+        "P",
+        "Q",
+        "P ⇔ Q"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_negation",
+      "subtype": "conclusion",
+      "clause_range": [
+        155,
+        158
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_analysis",
+      "subtype": "conclusion",
+      "clause_range": [
+        290,
+        298
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex_compare_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        237,
+        265
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex_compare",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_exercise_negation",
+      "subtype": "conclusion",
+      "clause_range": [
+        343,
+        343
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2_exercise",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_exercise_converse",
+      "subtype": "conclusion",
+      "clause_range": [
+        345,
+        347
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2_exercise",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_exercise_inverse",
+      "subtype": "conclusion",
+      "clause_range": [
+        348,
+        350
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2_exercise",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_exercise_contrapositive",
+      "subtype": "conclusion",
+      "clause_range": [
+        351,
+        353
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2_exercise",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_and_def",
+      "target": "st_and_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_or_def",
+      "target": "st_or_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_not_def",
+      "target": "st_not_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_universal_def",
+      "target": "st_universal_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_existential_def",
+      "target": "st_existential_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_quant_neg_def",
+      "target": "st_quant_neg_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_cond_def",
+      "target": "st_cond_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_cond_neg_def",
+      "target": "st_cond_neg_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_inverse_def",
+      "target": "st_inverse_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_contrapositive_def",
+      "target": "st_contrapositive_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_sufficient_def",
+      "target": "st_sufficient_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_necessary_sufficient_def",
+      "target": "st_necessary_sufficient_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_negation",
+      "target": "st_quant_neg_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex_compare_conclusion",
+      "target": "st_inverse_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_analysis",
+      "target": "st_sufficient_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_exercise_negation",
+      "target": "st_ex2_exercise_negation",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_exercise_converse",
+      "target": "st_ex2_exercise_converse",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_exercise_inverse",
+      "target": "st_ex2_exercise_inverse",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_exercise_contrapositive",
+      "target": "st_ex2_exercise_contrapositive",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_and_def",
+      "target": "st_and_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义1是'且'小节的核心定义"
+    },
+    {
+      "source": "st_or_def",
+      "target": "st_or_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义2是'或'小节的核心定义"
+    },
+    {
+      "source": "st_not_def",
+      "target": "st_not_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义3是'非'小节的核心定义"
+    },
+    {
+      "source": "st_universal_def",
+      "target": "st_universal_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义4是全称量词命题的核心定义"
+    },
+    {
+      "source": "st_existential_def",
+      "target": "st_existential_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义5是存在量词命题的核心定义"
+    },
+    {
+      "source": "st_quant_neg_def",
+      "target": "st_quant_neg_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义6是量词命题否定的核心定义"
+    },
+    {
+      "source": "st_cond_def",
+      "target": "st_cond_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义7是条件命题的核心定义"
+    },
+    {
+      "source": "st_cond_neg_def",
+      "target": "st_cond_neg_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义8是条件命题否定的核心定义"
+    },
+    {
+      "source": "st_inverse_def",
+      "target": "st_inverse_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义9是逆命题与否命题的核心定义"
+    },
+    {
+      "source": "st_contrapositive_def",
+      "target": "st_contrapositive_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义10是逆否命题的核心定义"
+    },
+    {
+      "source": "st_sufficient_def",
+      "target": "st_sufficient_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义11是充分条件与必要条件小节的核心定义"
+    },
+    {
+      "source": "st_necessary_sufficient_def",
+      "target": "st_necessary_sufficient_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义12是充要条件的核心定义"
+    },
+    {
+      "source": "st_ex1_negation",
+      "target": "st_quant_neg_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "习题1应用了量词命题的否定规则"
+    },
+    {
+      "source": "st_ex_compare_conclusion",
+      "target": "st_inverse_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1对比了命题的否定和否命题"
+    },
+    {
+      "source": "st_ex2_analysis",
+      "target": "st_sufficient_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2展示了充分条件与必要条件的概念"
+    },
+    {
+      "source": "st_ex2_exercise_negation",
+      "target": "st_ex2_exercise_negation",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "习题2是总结部分的练习"
+    }
+  ],
+  "unresolved": []
+}

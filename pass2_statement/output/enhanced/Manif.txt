@@ -1,0 +1,183 @@
+[SCOPE:root|description|流形]
+文章名: Manif
+标题: 流形
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=图和图册
+  [1] type=definition heading=定义 2 title=实拓扑流形
+  [2] type=example heading=例 1 title=$S^n$ 流形
+  [3] type=example heading=例 2 title=莫比乌斯带
+  [4] type=definition heading=定义 3 title=光滑函数
+  [5] type=definition heading=定义 4 title=相容
+  [6] type=definition heading=定义 5 title=极大图册
+  [7] type=definition heading=定义 6 title=光滑流形（又称微分流形）
+
+[SCOPE:s_topological_manifold|description|拓扑流形]
+[0] （实）拓扑流形（real topological manifold） 是一种拓扑空间，其每个点都有一邻域与欧几里得空间中的开集同胚（homeomorphic）。
+[1] 如果这些欧几里得空间是 $n$ 维的，
+[2] 那么就叫做 $n$ 维流形。
+[3] 因此，一个拓扑流形可以看成是我们熟知的欧几里得空间 “拼接” 而成的。
+
+[SCOPE:s_def1|description|定义1 图和图册]
+[4] 定义 1 图和图册
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[5] 设 $N$ 是一个拓扑空间，满足 Hausdorff 分离性以及第二可数性1。
+[6] 如果存在开集 $U\in\mathcal{T}_N$ 和一个正整数 $n$，使得 $U$ 同胚于 $\mathbb{R}^n$，同胚映射为 $\varphi:U\rightarrow\mathbb{R}^n$，
+[7] 那么称 $(U,\varphi)$ 是 $N$ 上的一张图（chart）。
+[8] 如果图的一个集合 $\mathcal{A}=\{(U_\alpha, \varphi_\alpha)\}$ 覆盖了 $N$，
+[9] 即 $\bigcup\{U_\alpha\}=N$，
+[10] 那么称这个集合 $\mathcal{A}$ 是一个图册（atlas）。
+[11] 图 $(U, \varphi)$ 可以看成是给 $U$ 中各点 $x$ 赋予了一个坐标值 $\varphi(x)$。
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_def2|description|定义2 实拓扑流形]
+[12] 定义 2 实拓扑流形
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[13] 设 $N$ 是一个拓扑空间，满足 Hausdorff 分离性以及第二可数性，且有一个图册 $\mathcal{A}$，
+[14] 则称 $(N, \mathcal{A})$ 是一个实拓扑流形（real topological manifold），简称拓扑流形（topological manifold）。
+[/SCOPE:s_def2_let]
+[15] 需要注意，定义里不要求 $N$ 是道路连通的，
+[16] 但有的作者会要求。
+[17] 需要注意甄别。
+[18] 从这些定义可看到，流形是 “局部地” 和欧几里得空间同胚的数学对象。
+[19] 低维欧几里得空间可以很方便地用我们的几何直觉来理解，大大方便了建立对于流形的直觉。
+[20] 要注意的是，以上定义只要求了流形的每个点附近都有领域，使之局部地同胚于欧几里得空间，这样的流形被称为拓扑流形，
+[21] 但并不是我们将在微分几何中讨论的重点；
+[22] 我们将来讨论的重点概念是 “光滑流形”。
+
+[/SCOPE:s_def2]
+[SCOPE:s_example1|description|例1 S^n流形]
+[23] 例 1 $S^n$ 流形
+[SCOPE:s_example1_let|let_bind|例1的变量]
+[24] $n$ 维球面 $S^n$ 都是实流形。
+[25] 记 $S^1=\{(\cos{2\pi t},\sin{2\pi t})\in\mathbb{R}^2|t\in[0, 1]\}$，
+[26] 那么我们可以通过挖去一个点后使用正切函数来构造图：$U=S^1-\{(1,0)\}=\{(\cos{2\pi t},\sin{2\pi t})\in\mathbb{R}^2|t\in(0, 1)\}$ 可以同胚于 $\mathbb{R}$，同胚映射为 $\varphi(\cos{2\pi t},\sin{2\pi t})=\tan{\pi t-\pi/2}$；
+[27] 类似地，$V=S^1-\{(-1, 0)\}=\{(\cos{2\pi t},\sin{2\pi t})\in\mathbb{R}^2|t\in(-1/2, 1/2)\}$ 也可以同胚于 $\mathbb{R}$，同胚映射为 $\phi(\cos{2\pi t},\sin{2\pi t})= \tan{\pi t}$。
+[28] 这样一来，$\{(U, \varphi), (V, \phi)\}$ 就是 $S^1$ 的两个图的集合，并且覆盖 $S^1$，
+[29] 因此这个集合是一个图册，
+[30] 从而得出 $S^1$ 是一个实拓扑流形。
+[31] 类似地，从 $S^n$ 中分别挖去两个不同的点所得到的 $U$ 和 $V$ 都可以同胚于 $\mathbb{R}^n$，
+[32] 从而得到图册。
+
+[/SCOPE:s_example1]
+[/SCOPE:s_example1_let]
+[SCOPE:s_example2|description|例2 莫比乌斯带]
+[33] 例 2 莫比乌斯带
+[SCOPE:s_example2_let|let_bind|例2的变量]
+[34] 将莫比乌斯带表示为矩形纸带两边扭转后粘合，我们可以将其用如图所示的 $5$ 个开集 $U_i$ 覆盖，每个开集都同胚于 $\mathbb{R}^2$，
+[35] 因此我们可以利用它们来构建一个含有 $5$ 个图的图册。
+[36] 图 1：莫比乌斯带和覆盖它的五个开集。
+[37] 注意 $U1$（红色）和 $U2$（绿色）在图示中有“两块”区域，当然它们实际上是相连的。
+
+[/SCOPE:s_topological_manifold]
+[/SCOPE:s_example2]
+[/SCOPE:s_example2_let]
+[SCOPE:s_smooth_manifold|description|光滑流形]
+[38] 考虑一个拓扑流形 $N$ 的两个图 $(U, \varphi)$ 和 $(V, \phi)$。
+[39] 如果 $U\cap V\not=\varnothing$，
+[40] 那么在 $U\cap V$ 中的每个点就有两套坐标；
+[41] 当然，也可以把 $\varphi\circ\phi^{-1}:\phi(V)\rightarrow\varphi(U)$ 和 $\phi\circ\varphi^{-1}:\varphi(U)\rightarrow\phi(V)$ 看成 $\mathbb{R}^n$ 的开子集上的多元向量值函数。
+[42] 只要这个函数是可以任意进行微分的，就能方便我们研究。
+
+[SCOPE:s_def3|description|定义3 光滑函数]
+[43] 定义 3 光滑函数
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[44] 设 $f:\mathbb{R}^n\rightarrow\mathbb{R}$ 是一个 $n$ 元函数，如果 $\frac{\partial^{k_1+k_2+\cdots+k_n}}{\partial^{k_1}x^1\partial^{k_2}x^2\cdots\partial^{k_n}x^n} f$ 在一点 $x\in\mathbb{R}^n$ 处对于任意非负整数 $k_i$ 成立，
+[45] 即 $f$ 的任意阶偏导数存在，
+[46] 那么称 $f$ 在 $x$ 处光滑；
+[47] 如果 $f$ 处处光滑，也称它是一个光滑函数（smooth function），记为 $C^\infty$ 的函数。
+[48] 如果向量值函数的各分量函数都是光滑函数，
+[49] 那么也称这个向量值函数是一个光滑映射（smooth map）。
+[50] 当一个函数的 $m$ 阶偏导数存在并且连续时，我们说它是 $C^m$ 的，
+[51] 因此任意阶偏导数存在时自然被记为 $C^\infty$。
+[52] 今后我们将 “光滑” 和 $C^\infty$ 视为同义词，不加区分。
+[53] 需要注意的是，光滑和解析不是等价的概念。
+[54] 解析函数一定光滑，
+[55] 但光滑函数不一定解析，一个典型例子是例 1 。
+[56] 可参考幂级数.
+
+[/SCOPE:s_def3]
+[/SCOPE:s_def3_let]
+[SCOPE:s_def4|description|定义4 相容]
+[57] 定义 4 相容
+[SCOPE:s_def4_let|let_bind|定义4的变量]
+[58] 考虑一个拓扑流形 $N$ 的两个图 $(U, \varphi)$ 和 $(V, \phi)$。
+[59] 如果 $U\cap V\not=\varnothing$，且 $\varphi\circ\phi^{-1}:\phi(V)\rightarrow\varphi(U)$ 和 $\phi\circ\varphi^{-1}:\varphi(U)\rightarrow\phi(V)$ 都是光滑映射，
+[60] 那么我们称这两个图是相容的（compatible）。
+[/SCOPE:s_def4_let]
+[61] 从拓扑流形例子可以看出，同一个拓扑空间 $N$ 可以有不同的图册，对应的虽然是同一空间，
+[62] 但按照定义却是不同流形。
+[63] 这意味着流形不仅仅是指空间 $N$ 本身，还指它的局部坐标系结构。
+[64] 这样把拓扑流形分类通常是无意义的，实际上我们需要一个更为统一的研究对象，那就是光滑流形。
+[65] 我们接连使用以下两个定义来定义光滑流形。
+
+[/SCOPE:s_def4]
+[SCOPE:s_def5|description|定义5 极大图册]
+[66] 定义 5 极大图册
+[SCOPE:s_def5_let|let_bind|定义5的变量]
+[67] 设 $(N, \mathcal{A})$ 是一个拓扑流形。
+[68a] 如果 $N$ 的任何一个图，满足 “只要它和 $\mathcal{A}$ 中所有图都相容，它
+[68b] 则一定在 $\mathcal{A}$ 中”，
+[69] 那么就称 $\mathcal{A}$ 是一个极大图册。
+
+[/SCOPE:s_def5]
+[/SCOPE:s_def5_let]
+[SCOPE:s_def6|description|定义6 光滑流形]
+[70] 定义 6 光滑流形（又称微分流形）
+[SCOPE:s_def6_let|let_bind|定义6的变量]
+[71] 拥有极大图册的拓扑流形，被称为一个光滑流形（smooth manifold），又称微分流形（differentiable manifold）。
+[72] 光滑流形的图册，被称为该流形上的一个微分结构（differential structure）。
+[73] 这就是我们将来讨论的主要对象了。
+[74] 今后如无特别说明，小时百科中 “流形” 一词都特指 “光滑流形”。
+[75] 通常，为了方便，我们也会将流形 $(N, \mathcal{A})$ 简单记为 $N$。
+[/SCOPE:s_smooth_manifold]
+[/SCOPE:s_def6]
+[/SCOPE:s_def6_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义2 实拓扑流形是定义1 图和图册的特例（加上Hausdorff和第二可数性）"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1 S^n是实拓扑流形的例子"
+  },
+  {
+    "source_scope": "s_example2",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2 莫比乌斯带是实拓扑流形的例子"
+  },
+  {
+    "source_scope": "s_def4",
+    "target_scope": "s_def3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "相容性定义依赖于光滑映射（定义3）"
+  },
+  {
+    "source_scope": "s_def5",
+    "target_scope": "s_def4",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "极大图册定义依赖于相容性（定义4）"
+  },
+  {
+    "source_scope": "s_def6",
+    "target_scope": "s_def5",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "光滑流形定义依赖于极大图册（定义5）"
+  }
+]

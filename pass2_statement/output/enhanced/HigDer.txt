@@ -1,0 +1,43 @@
+[SCOPE:root|description|高阶导数（极简微积分）]
+文章名: HigDer
+标题: 高阶导数（极简微积分）
+
+[0] 贡献者： addis; Giacomo
+[1] 预备知识 求导法则
+[SCOPE:s_definition|description|高阶导数定义]
+[SCOPE:s_let_f|let_bind|函数变量]
+[2a] (x)$ 可导，如果导函数 $y'=f'
+[2b] (x)$ 仍可导，
+[/SCOPE:s_let_f]
+[3a] (x)$ 的导数为函数 $y=f
+[3b] (x)$ 的二阶导数，记为
+[4] \begin{equation}
+y'',\quad f''(x),\quad \frac{ \,\mathrm{d}{^2y} }{ \,\mathrm{d}{x^2} },\quad \frac{ \,\mathrm{d}{^2f} }{ \,\mathrm{d}{x^2} },\quad y''(x)~,
+\end{equation}
+[5] 即
+[6] \begin{equation}
+y''=(y')',\quad\frac{ \,\mathrm{d}{^2y} }{ \,\mathrm{d}{x^2} }= \frac{\mathrm{d}}{\mathrm{d}{x}} \left( \frac{\mathrm{d}{y}}{\mathrm{d}{x}} \right) ~.
+\end{equation}
+[7] 由导数中的定义式 4 ，可得二阶导数的计算公式
+[8] \begin{equation}
+f''(x)=\lim_{\Delta x \to 0} \frac{f'(x+ \Delta x)-f'(x)}{\Delta x}~.
+\end{equation}
+[9a] (x)$ 的导数 $y'=f'
+[9b] (x)$ 称为 $y=f
+[9c] (x)$ 的一阶导数，
+[10] 那么，一阶导数的导数就称为二阶导数。
+[11a] 若二阶导数 $y''=f''(x)$ 仍然可导，我们
+[11b] 则把二阶导数的数 $y''=f''(x)$ 的导数称为三阶导数，记为
+[12] \begin{equation}
+y''',\quad f'''(x),\quad \frac{ \,\mathrm{d}{^3y} }{ \,\mathrm{d}{x^3} },\quad \frac{ \,\mathrm{d}{^3f} }{ \,\mathrm{d}{x^3} },\quad y'''(x)~.
+\end{equation}
+[13a] 一般地
+[13b] 如果 $y=f(x)$ 的 $n-1$ 阶导数是可导的，我们，则把 $n-1$ 阶导数的导数称为果 $y=f(x)$ 的n 阶导数，记为
+[14] \begin{equation}
+y^{(n)},\quad f^{(n)}(x),\quad \frac{ \,\mathrm{d}{^ny} }{ \,\mathrm{d}{x^n} },\quad \frac{ \,\mathrm{d}{^nf} }{ \,\mathrm{d}{x^n} },\quad y^{(n)}(x)~,
+\end{equation}
+[15] 二阶和二阶以上的导数统称为高阶导数。
+[16] 利用求导公式和求导法则就可以求出高阶导数。
+[/SCOPE:s_definition]
+[17] 未完成：说明越高阶可导越光滑，无穷阶可导简称为 “光滑”
+[/SCOPE:root]

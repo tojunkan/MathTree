@@ -1,0 +1,519 @@
+{
+  "article_name": "GuaOQu",
+  "statements": [
+    {
+      "stmt_id": "st_theorem1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1",
+      "exposed_entities": [
+        "V",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem1_proof_start",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1",
+      "exposed_entities": [
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_base_case",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_base_case_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_f_zero_case",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_f_zero_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_f_nonzero_case",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exist_e1",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": [
+        "e_1"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_func",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1",
+      "exposed_entities": [
+        "f_1"
+      ]
+    },
+    {
+      "stmt_id": "st_kernel_dim",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": [
+        "L"
+      ]
+    },
+    {
+      "stmt_id": "st_induction_hypothesis",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1",
+      "exposed_entities": [
+        "e_2",
+        "e_n"
+      ]
+    },
+    {
+      "stmt_id": "st_orthogonality",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_need_lin_indep",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_reductio_assumption",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_reductio_relation",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1_reductio",
+      "exposed_entities": [
+        "alpha_1",
+        "alpha_n"
+      ]
+    },
+    {
+      "stmt_id": "st_reductio_contradiction",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1_assumption",
+      "subtype": "assumption",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_cor1",
+      "exposed_entities": [
+        "F",
+        "V",
+        "n",
+        "r",
+        "q"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cor1",
+      "exposed_entities": [
+        "e_i",
+        "lambda_1",
+        "lambda_r"
+      ]
+    },
+    {
+      "stmt_id": "st_cor2_assumption",
+      "subtype": "assumption",
+      "clause_range": [
+        34,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_cor2",
+      "exposed_entities": [
+        "F",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_cor2_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cor2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_babylon_initial_q",
+      "subtype": "assumption",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_babylon",
+      "exposed_entities": [
+        "q",
+        "x_1",
+        "x_n",
+        "f_ij"
+      ]
+    },
+    {
+      "stmt_id": "st_babylon_extract_x1",
+      "subtype": "conclusion",
+      "clause_range": [
+        39,
+        40
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_babylon",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_babylon_f11_nonzero",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_babylon",
+      "exposed_entities": [
+        "f_11"
+      ]
+    },
+    {
+      "stmt_id": "st_babylon_new_vars",
+      "subtype": "definition",
+      "clause_range": [
+        43,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_babylon",
+      "exposed_entities": [
+        "x'_1",
+        "x'_i"
+      ]
+    },
+    {
+      "stmt_id": "st_babylon_reduced_q",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_babylon",
+      "exposed_entities": [
+        "q'"
+      ]
+    },
+    {
+      "stmt_id": "st_babylon_iteration",
+      "subtype": "conclusion",
+      "clause_range": [
+        48,
+        48
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_babylon",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_babylon_f11_zero_case",
+      "subtype": "assumption",
+      "clause_range": [
+        49,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_babylon",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_babylon_no_square_case",
+      "subtype": "assumption",
+      "clause_range": [
+        51,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_babylon",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_babylon_substitution",
+      "subtype": "definition",
+      "clause_range": [
+        53,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_babylon",
+      "exposed_entities": [
+        "x'_1",
+        "x'_2"
+      ]
+    },
+    {
+      "stmt_id": "st_babylon_squares_appear",
+      "subtype": "conclusion",
+      "clause_range": [
+        55,
+        56
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_babylon",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_base_case",
+      "target": "st_base_case_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_f_zero_case",
+      "target": "st_f_zero_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_f_nonzero_case",
+      "target": "st_exist_e1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exist_e1",
+      "target": "st_linear_func",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_linear_func",
+      "target": "st_kernel_dim",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_kernel_dim",
+      "target": "st_induction_hypothesis",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_induction_hypothesis",
+      "target": "st_orthogonality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_orthogonality",
+      "target": "st_need_lin_indep",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_reductio_assumption",
+      "target": "st_reductio_relation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_reductio_relation",
+      "target": "st_reductio_contradiction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_reductio_contradiction",
+      "target": "st_need_lin_indep",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor1_assumption",
+      "target": "st_cor1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor2_assumption",
+      "target": "st_cor2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_babylon_initial_q",
+      "target": "st_babylon_extract_x1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_babylon_f11_nonzero",
+      "target": "st_babylon_new_vars",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_babylon_new_vars",
+      "target": "st_babylon_reduced_q",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_babylon_reduced_q",
+      "target": "st_babylon_iteration",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_babylon_f11_zero_case",
+      "target": "st_babylon_no_square_case",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_babylon_no_square_case",
+      "target": "st_babylon_substitution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_babylon_substitution",
+      "target": "st_babylon_squares_appear",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_cor1_conclusion",
+      "target": "st_theorem1_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论1是定理1的直接推论"
+    },
+    {
+      "source": "st_cor2_conclusion",
+      "target": "st_cor1_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论2是推论1的矩阵形式"
+    }
+  ],
+  "unresolved": []
+}

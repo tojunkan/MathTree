@@ -1,0 +1,100 @@
+[SCOPE:root|description|装备希尔伯特空间]
+文章名: RHS
+标题: 装备希尔伯特空间
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=核空间（Nuclear Space）
+  [1] type=definition heading=定义 2 title=装备 Hilbert 空间（Rigged Hilbert Space, RHS）
+
+[SCOPE:s_nuclear|description|核空间（Nuclear Space）]
+[0] 定义 1 核空间（Nuclear Space）
+[SCOPE:s_nuclear_let|let_bind|核空间的变量]
+[1] 一个核空间 $\Phi$ 是一族递降的 Hilbert 空间 $\Phi_1\supset\Phi_2\supset...$ 的交，赋予自然的拓扑，这族 Hilbert 空间满足如下条件：
+[2] $\Phi_{n+1}$ 的范数比 $\Phi_n$ 的范数更强，而且 $\Phi_n$ 是 $\Phi_{n+1}$ 在 $\Phi_n$ 的范数之下的完备化；
+[3] 对于任何 $n$，总有 $m>n$ 使得嵌入映射 $T_{m,n}:\Phi_{m}\hookrightarrow\Phi_n$ 是核算子（nuclear operator），
+[4] 即它的 Hilbert-Schmidt 迹范数是良好定义的。
+[/SCOPE:s_nuclear_let]
+[5] 从此以后，沿用 Dirac 的左右矢记号：以 $ \left\lvert \phi \right\rangle $ 代表 $\Phi$ 的元素，$ \left\langle u \right\rvert $ 代表其对偶空间 $\Phi^*$ 的元素，二者之间的配对就以 $ \left\langle u \middle| \phi \right\rangle $ 代表。
+[6] 今后还要考虑包含映射 $\Phi\hookrightarrow\mathcal{H}$，它自然诱导出包含映射 $\mathcal{H}\hookrightarrow\Phi^*$。
+[7] 为方便计，对于 $f\in\Phi\subset\mathcal{H}$，以 $ \left\lvert f \right\rangle $ 表示之; 对于 $g\in\mathcal{H}$，以 $ \left\langle g \right\rvert $ 表示 $g$ 在包含映射 $\mathcal{H}\hookrightarrow\Phi^*$ 下的像。
+
+[/SCOPE:s_nuclear]
+[SCOPE:s_rhs|description|装备 Hilbert 空间（Rigged Hilbert Space, RHS）]
+[8] 定义 2 装备 Hilbert 空间（Rigged Hilbert Space, RHS）
+[SCOPE:s_rhs_let|let_bind|RHS 的变量]
+[9] 装备 Hilbert 空间包含一可分 Hilbert 空间 $\mathcal{H}$ 与一稠密子空间 $\Phi\subset\mathcal{H}$，满足如下条件：$\Phi$ 上有一更强的拓扑 $\tau_\Phi$，使得 $(\Phi,\tau_\Phi)$ 成为一核空间，而且有 $\Phi_0=\mathcal{H}$，且自然的包含映射 $\Phi\hookrightarrow\mathcal{H}$ 在此拓扑下连续。
+[10] 注意到自然的三重偶 $\Phi\hookrightarrow\mathcal{H}\hookrightarrow\Phi^*$ 与 $\mathcal{H}$ 的内积相容，
+[11] 即如果 $f\in\Phi\subset\mathcal{H}$，$g\in\mathcal{H}$，
+[12] 则 $\langle g,f\rangle_{\mathcal{H}}= \left\langle g \middle| f \right\rangle $。
+[13] 此三重偶称为 Gelfand 三重偶（Gelfand triple）。
+[/SCOPE:s_rhs_let]
+[SCOPE:s_rhs_example|description|例子：位置表象空间]
+[14] 为什么要如此大费周章地考虑 Gelfand 三重偶？
+[SCOPE:s_rhs_example_let|let_bind|例子中的变量]
+[15] 原来，它的原型乃是 Hilbert 空间语言中的位置表象空间 $L^2(\mathbb{R}^n)$ 以及其上定义的算子 $X,i\nabla$，
+[16] 即位置算符和动量算符; 这两个算子的定义域都不是整个 $L^2(\mathbb{R}^n)$，它们最自然的定义域乃是 Schwartz 函数空间 $\mathcal{S}(\mathbb{R}^n)$，
+[17] 即所有光滑且各阶导数都迅速衰减的函数的空间，赋予 Fréchet 空间拓扑。
+[18] 位置算子和动量算子在 Schwartz 空间上都是连续算子。
+[19] 而 Schwartz 空间 $\mathcal{S}(\mathbb{R}^n)$ 本身是加权的 Sobolev 空间系
+[20] $$
+\Phi_k := \left\{f \in L^2 (\mathbb{R}^n): (-\Delta + |x|^ 2)^{k} f \in L^2 (\mathbb{R}^n) \right\} ~
+$$
+[21] 的交，而包含映射 $T_{m+n,m}:\Phi_{m+n}\to\Phi_m$ 是核算子。
+[22] 这时就有 Gelfand 三重偶 $$
+\mathcal{S}(\mathbb{R}^n)\hookrightarrow L^2(\mathbb{R}^n)\hookrightarrow \mathcal{S}'(\mathbb{R}^n)~.
+$$ 也可以注意到，上述定义的 Sobolev 范数中的算子 $-\Delta+|x|^2$ 正是谐振子的薛定谔算符。
+[/SCOPE:s_rhs_example_let]
+[23] 这个三重偶应该包含了所有物理上感兴趣的对象。
+[24] 实际上，它显然囊括了平方可积的束缚态，
+[25] 即可归一化的波函数; 也囊括了不平方可积的散射态，例如自由单色波 $e^{ik\cdot x}$。
+[26] 前者属于 $L^2(\mathbb{R}^n)$，而后者应该用 Schwartz 分布即 $\mathcal{S}'(\mathbb{R}^n)$ 的元素来代表。
+[27] 另外，物理上的"位置本征态"即 $\delta(x-x_0)$ 显然并不是数学意义下的函数，
+[28] 但它属于对偶空间 $\mathcal{S}'(\mathbb{R}^n)$，而且当然满足
+[29] $$
+X^j\delta(x-x_0)=x_0^j~,
+$$
+[30] 因为对于任何 $\phi\in\mathcal{S}(\mathbb{R}^n)$，按照定义皆有
+[31] $$
+\begin{aligned}
+\left[ \left\langle \delta(x-x_0) \right\rvert X^j\right] \left\lvert \phi \right\rangle
+&:= \left\langle \delta(x-x_0) \right\rvert \left[X^j \left\lvert \phi \right\rangle \right]\\
+&=x_0^j\phi(x_0)
+=\left[ \left\langle \delta(x-x_0) \right\rvert x_0^j\right] \left\lvert \phi \right\rangle ~.
+\end{aligned}
+$$
+[32] 由此可见，$\delta(x-x_0)$ 是坐标分量算符 $X^j$ 的本征态，本征值为 $x_0^j$。
+[33] 同理可得 $e^{ik\cdot x}$ 是动量分量算符 $i\partial_{x^j}$ 的本征态，本征值为 $-k_j$; 也是自由粒子 Hamilton 算符 $-\Delta$ 的本征态，本征值为 $|k|^2$。
+[34] 动量本征态和位置本征态正是"不可归一化的态矢量"的例子。
+[35] 这个例子正说明了为什么要引入装备 Hilbert 空间作为量子力学的舞台：物理上感兴趣的许多算符在数学意义下的 Hilbert 空间（即所有可归一化的态的空间）中可能没有本征态，或者本征态集合不完备; 但引入 RHS 之后，算符在对偶空间 $\Phi^*$ 就可以有足够多的本征态。
+[36] 在上面的例子中，任何可归一化的态 $f\in{L^2}(\mathbb{R}^n)$ 都可以写成位置本征态的叠加（这里的积分在数学上的严格定义应该是 Schwartz 分布之间的卷积）：
+[37] $$
+f(x)=\int_{\mathbb{R}^n}f(y)\delta(x-y)dy~,
+$$
+[38] 或者动量本征态/自由 Hamilton 算符本征态的叠加（这里的积分取主值）：
+[39] $$
+f(x)=\int_{\mathbb{R}^n}\hat f(k)e^{ik\cdot x}dk~.
+$$
+[40] 这些都是物理意义十分直观的结论。
+[41] 这个结果并不是偶然的。
+[42] 它是 RHS 中自伴算子谱定理的特例。
+[/SCOPE:s_rhs]
+[/SCOPE:s_rhs_example]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_rhs",
+    "target_scope": "s_nuclear",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "RHS 的定义依赖于核空间的概念。"
+  },
+  {
+    "source_scope": "s_rhs_example",
+    "target_scope": "s_rhs",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例子是 RHS 的一个具体实例。"
+  }
+]

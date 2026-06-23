@@ -1,0 +1,116 @@
+[SCOPE:root|description|条件极值问题与拉格朗日方法]
+文章名: CPLM
+标题: 条件极值问题与拉格朗日方法
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=拉格朗日方法
+
+[0] 1在前面的讨论中，我们以连接二定点或连接二给定曲线上的点的空间曲线全体为可取曲线族（子节 2 ），来研究泛函的极值。
+[1] 然而，还有很多的问题，可取曲线在已知的曲面上，或者在多个未知函数的情形，可取曲线在某个流形上。
+[2] 对应的变分问题称为条件极值问题。
+[3] 为解决该问题，拉格朗日提供了所谓的未定函数因子法。
+
+[SCOPE:s_cond_prob_let|let_bind|条件极值问题的变量]
+[SCOPE:s_cond_prob|description|条件极值问题]
+[4] 设 $\varphi(x,y,z)=0$ 是给定的曲面，$A,B$ 是其上的两点。
+[5a] (x),z=z
+[5b] (x)$ 中，确定某曲线，使积分
+[6] \begin{equation}
+J=\int_{x_0}^{x_1}F(x,y,z,y',z') \,\mathrm{d}{x} ~
+\end{equation}
+[7] 沿着它取极值。
+[8] 其中 $x_0,x_1$ 分别是起止点 $A,B$ 的 $x$ 坐标。
+
+[/SCOPE:s_cond_prob_let]
+[/SCOPE:s_cond_prob]
+[SCOPE:s_lagrange_method|description|拉格朗日方法]
+[9] 拉格朗日方法可以描述为下面的定理
+
+[10] 定理 1 拉格朗日方法
+[SCOPE:s_lagrange_let|let_bind|拉格朗日方法的变量]
+[11a] (x),z=z
+[11b] (x)$ 给出积分 $J$（式 1 ）的条件极值，
+[12] 则有一个因子 $\lambda(x)$ 存在，使得这曲线是积分
+[13] \begin{equation}
+J_1=\int_{x_0}^{x_1}\phi \,\mathrm{d}{x} ,\qquad \phi(x,y,z,y',z')=F+\lambda(x)\varphi~
+\end{equation}
+[14] 极端曲线
+[/SCOPE:s_lagrange_let]
+[SCOPE:s_lagrange_proof|description|拉格朗日方法的证明]
+[15] 证明：
+[SCOPE:s_proof_let1|let_bind|证明中的变量1]
+[16] 不失一般性，设极值是极小值。
+[17a] (x),\bar z=\bar z
+[17b] (x)$ 是另一可取曲线，
+[18] 则
+[19] \begin{equation}
+\begin{aligned}
+&\varphi(x,y,z)=\varphi(x,\bar y,\bar z)=0,\\
+&\Delta J=J(\bar y,\bar z)-J(y,z)\geq0~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_proof_let1]
+[SCOPE:s_proof_let2|let_bind|证明中的变量2]
+[20a] (x)=\bar y
+[20b] (x)-\bar z
+[20c] (x),\quad\delta z
+[20d] (x)=\bar z
+[20e] (x)-z
+[20f] (x)$ 仅仅在点 $x'\in (x_0,x_1)$ 处不为 0。令
+[21] \begin{equation}
+\sigma_1=\int_{x_0}^{x_1}\delta y \,\mathrm{d}{x} ,\quad \sigma_2=\int_{x_0}^{x_1}\delta z \,\mathrm{d}{x} ~.
+\end{equation}
+[/SCOPE:s_proof_let2]
+[22] \begin{equation}
+\begin{aligned}
+0&=\int_{x_0}^{x_1}[\varphi(x,\bar y,\bar z)-\varphi(x,y,z)] \,\mathrm{d}{x} \\
+&=\int_{x_0}^{x_1}(\bar\varphi'_y\delta y+\bar\varphi'_z\delta z) \,\mathrm{d}{x} \\
+&=\varphi'_y|_{x=x'}\sigma_1+\varphi'_z|_{x=x'}\sigma_2+\epsilon~.
+\end{aligned}
+\end{equation}
+[SCOPE:s_proof_let3|let_bind|证明中的变量3]
+[23] 其中，$\bar\varphi$ 表示在 $(x,y+\theta_1\delta y,z+\theta_2\delta z),\quad \left\lvert \theta_i \right\rvert \leq 1$ 处取的值，$\epsilon$ 是比 $ \left\lvert \sigma_1 \right\rvert , \left\lvert \sigma_2 \right\rvert $ 中最大一个更高阶的无穷小量。
+[/SCOPE:s_proof_let3]
+[24] 设 $\varphi'_z\neq0$，
+[25] 则
+[26] \begin{equation}
+\sigma_2=-\frac{\varphi'_y}{\varphi'_z}\Big|_{x=x'}\cdot\sigma_1+\epsilon_1~.
+\end{equation}
+[27] \begin{equation}
+\begin{aligned}
+\Delta J&=\int_{x_0}^{x_1} \left(F'_y- \frac{\mathrm{d}{}}{\mathrm{d}{x}} F'_{y'} \right) \delta y \,\mathrm{d}{x} +\int_{x_0}^{x_1} \left(F'_z- \frac{\mathrm{d}{}}{\mathrm{d}{x}} F'_{z'} \right) \delta z \,\mathrm{d}{x} \\
+&= \left(F'_y- \frac{\mathrm{d}{}}{\mathrm{d}{x}} F'_{y'} \right) _{x=x'}\cdot\sigma_1+ \left(F'_z- \frac{\mathrm{d}{}}{\mathrm{d}{x}} F'_{z'} \right) _{x=x'}\cdot\sigma_2+\epsilon_2\geq0~.
+\end{aligned}
+\end{equation}
+[28] 式 6 [链接 L0]
+[29] 式 7 [链接 L1]
+[30] \begin{equation}
+\left[ \left(F'_y- \frac{\mathrm{d}{}}{\mathrm{d}{x}} F'_{y'} \right) \cdot\sigma_1- \left(F'_z- \frac{\mathrm{d}{}}{\mathrm{d}{x}} F'_{z'} \right) \cdot\frac{\varphi'_y}{\varphi'_z} \right] _{x=x'}\cdot\sigma_1+\epsilon_3\geq0~.
+\end{equation}
+[31] 上式对任意充分小的 $\sigma_1$ 都成立，而 $\epsilon_3$ 比 $\sigma_1$ 更快趋于 0，
+[32] 于是由
+[33] 引理 1 [链接 L2]
+[34] \begin{equation}
+\left(F'_y- \frac{\mathrm{d}{}}{\mathrm{d}{x}} F'_{y'} \right) \cdot\sigma_1- \left(F'_z- \frac{\mathrm{d}{}}{\mathrm{d}{x}} F'_{z'} \right) \cdot\frac{\varphi'_y}{\varphi'_z}=0~.
+\end{equation}
+[35] 上式可写成
+[36] \begin{equation}
+\frac{F'_y- \frac{\mathrm{d}{}}{\mathrm{d}{x}} F'_{y'}}{\varphi'_y}=\frac{F'_z- \frac{\mathrm{d}{}}{\mathrm{d}{x}} F'_{z'}}{\varphi'_z}~.
+\end{equation}
+[SCOPE:s_proof_let4|let_bind|证明中的变量4]
+[37] 设上式等于 $-\lambda(x)$，
+[38] 于是
+[39] \begin{equation}
+\begin{aligned}
+F'_y+\lambda\varphi'_y- \frac{\mathrm{d}{}}{\mathrm{d}{x}} F'_{y'}=0~,\\
+F'_z+\lambda\varphi'_z- \frac{\mathrm{d}{}}{\mathrm{d}{x}} F'_{z'}=0~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_proof_let4]
+[40] 式 2 [链接 L3]
+[41] 的无条件问题的极端曲线满足的欧拉微分方程（
+[42] 式 2 [链接 L4]
+[43] 证毕！
+[/SCOPE:s_lagrange_method]
+[/SCOPE:s_lagrange_proof]
+[/SCOPE:root]

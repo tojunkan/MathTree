@@ -1,0 +1,147 @@
+[SCOPE:root|description|外代数]
+文章名: ExtAlg
+标题: 外代数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=外代数
+  [1] type=exercise heading=习题 1 title=
+  [2] type=exercise heading=习题 2 title=
+  [3] type=example heading=例 1 title=张量的外代数
+
+[0] 外代数是 Clifford 代数的一个特例，也可视为交错张量。
+
+[1] 给定线性空间 $V$，任取 $x, y\in V$，定义 $x\wedge y\not\in V$ 是一个新的元素，其中符号 $\wedge$ 称作外积（exterior product），有时也叫做楔积（wedge product），前者是因为这个运算得到的是 $V$ 以外的新元素，后者是由于符号长得像个楔子。
+[2] 注意，为了方便，我们没有使用线性代数中常见的粗体正体符号来表示向量。
+[3] 利用各 $x\wedge y$ 构造新的线性空间：定义 $x\wedge y=-y\wedge x$ 对所有 $x, y\in V$ 成立，这同时意味着 $x\wedge x=0$。
+[4] 定义一个加法 $+$，使得对于 $x_1, x_2, y\in V$，都有 $(x_1+x_2)\wedge y=x_1\wedge y+x_2\wedge y$；
+[5] 再定义数乘为对于任意基本域中的数字 $a$，都有 $a(x\wedge y)=(ax)\wedge y=x\wedge(ay)$。
+[6] 这样，集合 $\{x\wedge y|x, y\in V\}$ 构成一个线性空间，记为 $\bigwedge^2 V$。
+[7] 同时，为了统一考虑，记 $V=\bigwedge^1 V$。
+[8] $\bigwedge^1 V$ 和 $\bigwedge^2 V$ 之间也可以进行楔积，并且满足结合律：$x\wedge(y\wedge z)=(x\wedge y)\wedge z$，
+[9] 由此可以拿掉结合括号，定义 $x\wedge y\wedge z=x\wedge(y\wedge z)=(x\wedge y)\wedge z$。
+[10] 集合 $\{x\wedge y\wedge z|x, y, z\in V\}$ 张成的线性空间，记为 $\bigwedge^3 V$。
+[11] 同理，我们可以构造出任意阶的 $\bigwedge^k V$。
+[12] 要注意的是，如果 $k> \operatorname {dim} V$，
+[13] 那么 $\bigwedge^k V=\{0\}$（幂零性使然）。
+[14] 另外，把 $V$ 的基本域 $\mathbb{F}$ 看成一个一维线性空间，记 $\mathbb{F}=\bigwedge^0 V$。
+[15] 不同线性空间之间可以用直和组合在一起，
+[16] 因此以上这些空间也都可以作直和，得到一个 $\bigwedge V=\bigoplus^{ \operatorname {dim}V}_{k=0}\bigwedge^k V=\mathbb{F}\oplus\bigwedge^1V\oplus\bigwedge^2V\cdots$。
+[17] 这个 $\bigwedge V$，就被称作 $V$ 上的外积空间（exterior product space）或楔积空间（wedge product space）。
+[18] 总结上述限制条件，我们便得到了外代数的运算结构。
+
+[SCOPE:s_def1|description|定义1 外代数]
+[19] 定义 1 外代数
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[20] 任给域 $\mathbb{F}$ 上的线性空间 $V$，定义向量之间的乘法为外积 $\wedge$。
+[21] 对于任意 $ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} , \boldsymbol{\mathbf{z}} \in V$ 及任意 $a,b,c\in \mathbb F$，外积具有如下性质：
+[/SCOPE:s_def1_let]
+[22] 结合性：$ \boldsymbol{\mathbf{x}} \wedge ( \boldsymbol{\mathbf{y}} \wedge \boldsymbol{\mathbf{z}} )=( \boldsymbol{\mathbf{x}} \wedge \boldsymbol{\mathbf{y}} )\wedge \boldsymbol{\mathbf{z}} $；
+[23] 线性性：$a \boldsymbol{\mathbf{x}} \wedge(b \boldsymbol{\mathbf{y}} +c \boldsymbol{\mathbf{z}} )=ab \boldsymbol{\mathbf{x}} \wedge \boldsymbol{\mathbf{y}} +ac \boldsymbol{\mathbf{x}} \wedge \boldsymbol{\mathbf{z}} $；
+[24] 反对称性： $ \boldsymbol{\mathbf{x}} \wedge \boldsymbol{\mathbf{y}} =- \boldsymbol{\mathbf{y}} \wedge \boldsymbol{\mathbf{z}} $；
+[25] 非平凡性： 若 $ \boldsymbol{\mathbf{x}} \neq \boldsymbol{\mathbf{y}} $，
+[26] 则 $x\wedge y\neq \boldsymbol{\mathbf{0}} $。
+[27] 故构成 $\mathbb{F}$ 上的有限维结合代数。
+[28] 称之为 $V$ 上的外代数（exterior algebra）、楔积（wedge product）或格拉斯曼代数（Grassmann algebra）。
+[29] 外代数中的元素可以有形象的几何理解。
+[30] $\bigwedge^1 V$ 中的元素就是 $V$ 中的元素，我们可以想象成箭头。
+[31] $\bigwedge^2 V$ 中的元素可以看成箭头对，或者是箭头对表示的平行四边形。
+[32] 同样，$\bigwedge^k V$ 中的元素都可以看成是 $k$ 个箭头张成的一个 $k$ 维对象。
+[33] 外代数有一个重要的性质，我们用习题 1 和习题 2 来阐述：
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|习题1]
+[34] 习题 1
+[35] 证明：如果 $k> \operatorname {dim} V$，
+[36] 那么 $\bigwedge^kV=\{0\}$。
+[SCOPE:s_ex1_let|let_bind|习题1的变量]
+[37] 设 $\{ \boldsymbol{\mathbf{e}} _i\}^n_{i=0}$ 为线性空间 $V$ 的基。
+[/SCOPE:s_ex1_let]
+[38] 则 $\bigwedge ^k V$ 的基由 $k$ 个基向量外积得到，维度为 $C_n^k$。
+[39] 比如对于基矢组为 $\{ \boldsymbol{\mathbf{e}} _i\}^3_{i=1}$ 的三维向量空间，$\bigwedge^2 V $ 上的基为 $\{ \boldsymbol{\mathbf{e}} _1\wedge \boldsymbol{\mathbf{e}} _2, \boldsymbol{\mathbf{e}} _2\wedge \boldsymbol{\mathbf{e}} _3, \boldsymbol{\mathbf{e}} _1\wedge \boldsymbol{\mathbf{e}} _3\}$。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|习题2]
+[40] 习题 2
+[41] 证明：对于 $ \operatorname {dim} V=k$，有 $ \operatorname {dim} \bigwedge V=2^k$。
+[42] 思路提示：考虑各 $ \operatorname {dim}\bigwedge^iV$ 的值，再对比 $(1+1)^k$ 的二项式展开。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_example1|description|例1 张量的外代数]
+[43] 例 1 张量的外代数
+[44a] 若令 $\bigwedge^k V=\Lambda^k_0 T$，其中 $\Lambda^k_0(V)$ 是
+[44b] 则$(0,p)$ 型的斜对称张量（）构成的集合。
+[45] 那么此时得到的外代数便和张量里的外代数一致。
+[46] 而外积 $\wedge$ 由张量的交错化映射定义，它满足这里外积的一切性质。
+[47] 三维欧几里得空间 $\mathbb{R}^3$ 中的叉乘实际上就是外积。
+[SCOPE:s_example1_let|let_bind|例1的变量]
+[48] 这是因为，$ \operatorname {dim}\mathbb{R}^3= \operatorname {dim}\bigwedge^2\mathbb{R}^3$，这样一来，如果给定 $\mathbb{R}^3$ 的标准正交基 $\{x, y, z\}$，
+[49] 那么我们可以建立同构 $*: \bigwedge^2\mathbb{R}\rightarrow\mathbb{R}^3$，使得 $*(x\wedge y)=z, *(y\wedge z)=x, *(z\wedge x)=y$，这样就可以通过这个同构来把外积变成 $\mathbb{R}^3$ 内部的向量积。
+[/SCOPE:s_example1_let]
+[50] 这一映射也是叉乘的 “右手定则” 的来源，我们也完全可以规定 $*(x\wedge y)=-z, *(y\wedge z)=-x, *(z\wedge x)=-y$，这样定义出来的叉乘就是符合左手定则的了。
+[51] 三维线性空间是唯一可以构造反交换代数的非平凡空间，就是因为只有三维的 $V$ 才满足 $ \operatorname {dim}V= \operatorname {dim}\bigwedge^2V$，
+[52] 因而可以建立 $\bigwedge^2 V$ 和 $V$ 之间的同构，
+[53] 从而把楔积变成叉积。
+[54] 相应地，比复数更高维的可除代数只有四元数。
+[55] 外代数是一个 “分次线性空间（graded vector space）”，就是说，它作为一个线性空间，每个向量具有一个 “次数”，定义如下：每个 $\bigwedge^kV$ 中的向量，其次数（grade）就是 $k$；
+[56] 对于任意向量 $v\in \bigwedge V$，我们总可以把它拆分成各 $\bigwedge^kV$ 中基向量的线性组合，这些基向量中次数最高的就定义为 $v$ 的次数。
+
+[/SCOPE:s_example1]
+[SCOPE:s_dual|description|对偶空间的外代数]
+[57] 实流形上极为常见的外代数是微分形式生成的外代数，也就是所谓的外微分。
+[58] 由于一个微分 $k$-形式可以看成是将 $k$ 个向量场变成一个光滑函数的映射，也就是在每个切点处都是一个将 $k$ 个切向量变成一个实数的张量，
+[59] 因此要研究微分形式的外代数，首先就要搞清楚对偶空间的外代数。
+[60] 对偶空间中的元素，都是主空间中的线性函数。
+[61] $k$ 个线性函数的外积，被定义为 “将 $k$ 个主空间向量映射为一个数” 的多重线性映射。
+[62] 我们自然想到将 $k$ 个向量的映射联系到对偶空间外代数中的 $k$ 阶元素。
+[63] 具体来说，假如我们有两个多重线性映射 $f$ 和 $g$，分别是 $n$ 阶和 $m$ 阶的，
+[64] 那么我们定义 $f\wedge g$ 为如下 $n+m$ 阶多重线性映射：
+[65] \begin{equation}
+\begin{aligned}
+&f\wedge g(x_1, x_2, \cdots, x_{n+m})\\=
+&\sum\limits_{\sigma\in S_{n+m}} \operatorname {sgn}(\sigma) f(x_{\sigma(1)}, x_{\sigma(2)}, \cdots, x_{\sigma(n)})\cdot g(x_{\sigma(n+1)}, \cdots, x_{\sigma(n+m)})
+\end{aligned}~.
+\end{equation}
+[66] 其中 $\sigma$ 是一个 $n+m$ 元置换，当 $\sigma$ 为奇变换时 $ \operatorname {sgn}(\sigma)$ 为 $-1$，$\sigma$ 为偶变换时 $ \operatorname {sgn}(\sigma)$ 为 $1$。
+[67] 最简单的例子，就是两个对偶向量的外积。
+[SCOPE:s_dual_let|let_bind|对偶空间外代数的变量]
+[68] 设 $V^*$ 是线性空间 $V$ 的对偶空间，令 $f, g\in V^*$，
+[69] 那么对于任意 $ \boldsymbol{\mathbf{v}} , \boldsymbol{\mathbf{u}} \in V$，我们有：
+[/SCOPE:s_dual_let]
+[70] \begin{equation}
+f\wedge g( \boldsymbol{\mathbf{v}} , \boldsymbol{\mathbf{u}} )=f( \boldsymbol{\mathbf{v}} )g( \boldsymbol{\mathbf{u}} )-f( \boldsymbol{\mathbf{u}} )g( \boldsymbol{\mathbf{v}} )~.
+\end{equation}
+[71] 其中一共涉及置换群 $S_2$ 中的两个置换，$(1)$ 和 $(1\phantom{2}2)$，分别是偶置换和奇置换。
+[/SCOPE:s_dual]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题1是定义1中幂零性的具体化"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题2是定义1中外代数维度的推论"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是定义1在张量上的具体实现"
+  },
+  {
+    "source_scope": "s_dual",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "对偶空间的外代数是定义1在对偶空间上的应用"
+  }
+]

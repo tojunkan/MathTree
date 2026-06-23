@@ -1,0 +1,251 @@
+[SCOPE:root|description|基本初等函数的导数（简明微积分）]
+文章名: FunDer
+标题: 基本初等函数的导数（简明微积分）
+
+[SCOPE:s_basic_funcs|description|基本初等函数]
+[0] 基本初等函数由以下五类函数构成（$a$ 是常数）
+[1] 幂函数
+[2] \begin{equation}
+x^a \quad(a \in R)~.
+\end{equation}
+[3] 指数函数
+[4] \begin{equation}
+a^x \quad(a > 0, \; a \ne 1)~.
+\end{equation}
+[5] 对数函数
+[6] \begin{equation}
+\log_a x \quad(a > 0, \; a \ne 1)~.
+\end{equation}
+[7] 当底为 $a = \mathrm{e} $ 时，叫做自然对数函数，记为 $\ln x$。
+[8] 三角函数
+[9] \begin{equation}
+\sin x~, \qquad \cos x ~,\qquad \tan x~.
+\end{equation}
+[10] 反三角函数
+[11] \begin{equation}
+\arcsin x ~,\qquad \arccos x ~, \qquad \arctan x~.
+\end{equation}
+[12] 由以上函数经过有限次四则运算和有限次函数复合所构成并可用一个式子表示的函数，称为初等函数。
+[13] 例如
+[14] \begin{equation}
+y = \sqrt{1 - x^2}~,\qquad y = \sin ^2 x~,\qquad y = \sqrt{\cot \frac{x}{2}} ~.
+\end{equation}
+
+[/SCOPE:s_basic_funcs]
+[SCOPE:s_deriv_formulas|description|基本初等函数的导数公式]
+[15] 基本初等函数在其定义域内（除了区间端点）都是可导的，导函数如下
+[16] 幂函数
+[17] \begin{equation}
+(x^a)' = a x^{a - 1} \quad (a \in R)~.
+\end{equation}
+[18] 三角函数
+[19] \begin{equation}
+\sin' x = \cos x~, \qquad \cos' x = - \sin x ~,\qquad
+\tan'x = 1/\cos ^2 x = \sec ^2 x~.
+\end{equation}
+[20] 反三角函数
+[21] \begin{equation}
+\arctan' x =\frac{1}{x^2+1}~,
+\qquad
+\arcsin' x = \frac{1}{\sqrt{1-x^2}}~,
+\qquad
+\arccos' x = -\frac{1}{\sqrt{1-x^2}}~.
+\end{equation}
+[22] 指数函数
+[23] \begin{equation}
+(a^x)' = \ln\left(a\right) a^x~.
+\end{equation}
+[24] 特殊地，$( \mathrm{e} ^x)' = \mathrm{e} ^x~.$
+[25] 对数函数
+[26] \begin{equation}
+(\log_a x)' = \frac{1}{ \ln\left(a\right) x}~.
+\end{equation}
+[27] 特殊地，$\ln' x= 1/x$。
+[28] 以下给出简单的推导思路，以方便理解为主，并不严谨。
+
+[/SCOPE:s_deriv_formulas]
+[SCOPE:s_power_let|let_bind|幂函数求导变量]
+[SCOPE:s_power_deriv|description|幂函数求导]
+[29a] (x) = \lim\limits_{h \to 0} [f(x + h) - f
+[29b] (x)]/h$，而
+[30] \begin{equation}
+(x + h)^a - x^a = x^a [(1 + h/x)^a - 1]~.
+\end{equation}
+[31] 由于 $h \to 0$， $h/x \to 0$。
+[32] 令 $\varepsilon = h/x$，由非整数
+[33] 二项式定理 [链接 L0]
+[34] \begin{equation}
+(1 + \varepsilon)^a = 1 + a\varepsilon + \frac{a(a - 1)}{2!} \varepsilon ^2 + \frac{a(a - 1)(a - 2)}{3!} \varepsilon ^3\dots~
+\end{equation}
+[35] \begin{equation}
+\begin{aligned}
+(x^a)' &= x^a \lim_{\varepsilon \to 0} \frac{( 1 + \varepsilon )^a - 1}{\varepsilon x} \\
+&= x^{a - 1} \lim_{\varepsilon \to 0} \left(a + \frac{a(a - 1)}{2!}\varepsilon + \frac{a (a - 1)(a - 2)}{3!}{\varepsilon ^2}\dots \right) = a x^{a - 1}~.
+\end{aligned} \end{equation}
+[36] 括号中含有 $\varepsilon$ 的项相对于 $a$ 都是高阶无穷小，求极限时可以忽略。
+
+[/SCOPE:s_power_let]
+[/SCOPE:s_power_deriv]
+[SCOPE:s_sin_geo|description|正弦函数求导（几何法）]
+[37] 【图解】图 1：正弦函数求导
+[SCOPE:s_sin_geo_let|let_bind|几何法变量]
+[38] 如图 1 ，我们可以先画出一个单位圆，
+[39] 那么对某个角度 $\theta$，线段 $BD$ 的长度就是 $\sin\theta$。
+[40] 现在把 $\theta$ 增加一个很小的角度 $ \,\mathrm{d}{\theta} $，
+[41] 那么 $ \sin\left(\theta+ \,\mathrm{d}{\theta} \right) $ 就是 $AC$ 的长度。
+[42] 于是 $\sin$ 的增量为 $ \,\mathrm{d}{\sin\theta} $ 就是 $AC - BD$，
+[43] 即红色线段的长度。
+[44] 另外由于 $\theta$ 很小，线段 $AB$ 趋近于弧长 $AB$，且线段 $AB$ 和 $OA$，$OB$ 都趋近垂直。
+[45] 所以有微分关系
+[46] \begin{equation}
+\,\mathrm{d}{\sin\theta} = AB \cos\theta = \cos\theta \,\mathrm{d}{\theta} ~.
+\end{equation}
+[47] “两边除以 $ \,\mathrm{d}{\theta} $” 就有
+[48] \begin{equation}
+\sin'\theta = \frac{\mathrm{d}{\sin\theta}}{\mathrm{d}{\theta}} = \cos\theta~.
+\end{equation}
+
+[/SCOPE:s_sin_geo]
+[/SCOPE:s_sin_geo_let]
+[SCOPE:s_sin_algebra|description|正弦函数求导（代数法）]
+[49] 使用三角函数和差化积公式（式 16 ）
+[50] \begin{equation}
+\sin'x = \lim_{h \to 0} \frac{ \sin\left(x + h\right) - \sin x}{h} = \lim_{h \to 0} \frac{ \sin\left(h/2\right) }{h/2} \cdot \lim_{h \to 0} \cos\left(x + \frac{h}{2}\right) ~.
+\end{equation}
+[51] 小角值极限 [链接 L1]
+[52] ” 中的结论，
+[53] \begin{equation}
+\lim_{h \to 0} \frac{ \sin\left(h/2\right) }{h/2} = 1~.
+\end{equation}
+[54] \begin{equation}
+\sin'x = \lim_{h \to 0} \cos\left(x + \frac{h}{2}\right) = \cos x~.
+\end{equation}
+
+[/SCOPE:s_sin_algebra]
+[SCOPE:s_cos_deriv|description|余弦函数求导]
+[55a] (x) = g
+[55b] (x)$，且 $b$ 为任意常数，根据导数的定义 $f'(x + b) = g(x + b)$ 同样成立（证明略）。
+[56] 所以 $\sin'(x + \pi/2) = \cos\left(x + \pi/2\right) $。
+[57] 而 $ \sin\left(x + \pi/2\right) = \cos x$， $ \cos\left(x + \pi/2\right) = - \sin x$ 所以 $\cos' x = - \sin x$。
+[58] 另外，也可以直接使用类似以上正弦函数推导中的几何法和代数法（留做习题）。
+
+[/SCOPE:s_cos_deriv]
+[SCOPE:s_tan_deriv|description|正切函数求导]
+[59] 根据求导法则，因为 $\tan x = \sin x/\cos x$，
+[60] 所以
+[61] \begin{equation}
+\tan' x = \frac{\sin' x \cos x - \cos' x\sin x}{\cos^2 x} = \frac{\cos^2x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos ^2 x} = \sec ^2 x~.
+\end{equation}
+
+[/SCOPE:s_tan_deriv]
+[SCOPE:s_log_deriv|description|对数函数求导]
+[62] 先证明 $\ln' x = {1}/{x}$。
+[SCOPE:s_log_let1|let_bind|对数求导变量1]
+[63] $ \ln\left(x + h\right) - \ln x = \ln\left(1 + h/x\right) $，
+[64] 所以
+[65] \begin{equation}
+\ln 'x = \lim_{h \to 0} \frac{ \ln\left(x + h\right) - \ln x}{h} = \frac{1}{x} \lim_{h \to 0} \frac{ \ln\left(1 + h/x\right) }{h/x}~.
+\end{equation}
+[66] 令 $\varepsilon = h/x$，
+[67] 则
+[68] \begin{equation}
+\ln' x = \frac{1}{x} \lim_{\varepsilon \to 0} \frac{ \ln\left(1 + \varepsilon\right) }{\varepsilon } = \frac{1}{x} \lim_{\varepsilon \to 0} \ln\left(1 + \varepsilon\right) ^{\frac{1}{\varepsilon }} ~.
+\end{equation}
+[69] 由自然对数底的定义，$\lim\limits_{\varepsilon \to 0} (1 + \varepsilon)^{\frac{1}{\varepsilon }} = \mathrm{e} $，
+[70] 所以
+[71] \begin{equation}
+\ln 'x = \frac{\ln \mathrm{e} }{x} = \frac{1}{x}~,
+\end{equation}
+[/SCOPE:s_log_let1]
+[SCOPE:s_log_let2|let_bind|对数求导变量2]
+[72] 再证明 $\log'_a x = {1}/(x\ln a)$。
+[73] 由对数函数的性质 $\log_a b = \ln b/\ln a~,$
+[74] \begin{equation}
+\log'_a x = \left(\frac{\ln x}{\ln a} \right) ' = \frac{1}{\ln a}\ln' x = \frac{1}{x\ln a}~.
+\end{equation}
+
+[/SCOPE:s_log_deriv]
+[/SCOPE:s_log_let2]
+[SCOPE:s_exp_deriv|description|指数函数求导]
+[75] 先证明 $( \mathrm{e} ^x)' = \mathrm{e} ^x$。
+[SCOPE:s_exp_let1|let_bind|指数求导变量1]
+[76] 由于上面已经证明了 $ \ln'x = 1/x$，而 $ \mathrm{e} ^x$ 是 $\ln x$ 的反函数。
+[77a] (x) = \ln x$，$f'
+[77b] (x) = 1/x$， $f^{ - 1}
+[77c] (x) = \mathrm{e} ^x$，代入反函数的求导法则
+[78] \begin{equation}
+[f^{-1} (x)]' = \frac{1}{f'[f^{ - 1}(x)]}~,
+\end{equation}
+[79] \begin{equation}
+( \mathrm{e} ^x)' = \frac{1}{1/ \mathrm{e} ^x} = \mathrm{e} ^x~,
+\end{equation}
+[/SCOPE:s_exp_let1]
+[SCOPE:s_exp_let2|let_bind|指数求导变量2]
+[80] 再证明 $(a^x)' = a^x \ln a$。
+[81] $(a^x)' = \left[ \left( \mathrm{e} ^{\ln a} \right) ^x \right] ' = \left( \mathrm{e} ^{(\ln a) x} \right) '$。
+[82] 把 $ \mathrm{e} ^{(\ln a) x}$ 看成是 $ \mathrm{e} ^u$ 和 $u = (\ln a) x$ 的复合函数，根据复合函数的
+[83] 求导法则 [链接 L2]
+[84] ，$(a^x)' = (\ln a) a^x$
+
+[/SCOPE:s_exp_deriv]
+[/SCOPE:s_exp_let2]
+[SCOPE:s_arctan_let|let_bind|反三角函数求导变量]
+[SCOPE:s_arctan_deriv|description|反三角函数求导]
+[85a] (y)=\tan y$，$y=f^{-1}
+[85b] (x)=\arctan x$。
+[86] 利用反函数的求导法则
+[87] \begin{equation}
+[f^{-1} (x)]' = \frac{1}{f'[f^{ - 1}(x)]}~.
+\end{equation}
+[88] 再利用 $\tan x$ 的求导公式 $(\tan y)'=1/\cos^2 y$，得
+[89] \begin{equation}
+(\arctan x)'=\frac{1}{1/\cos^2 (y)}=\cos^2 y=\frac{1}{x^2+1}~.
+\end{equation}
+[90] $\arcsin' x$ 和 $\arccos' x$ 也类似，留做习题。
+
+跨文章引用:
+  [L0] 二项式定理 → BiNor
+  [L1] 小角值极限 → LimArc
+  [L2] 求导法则 → DerRul
+[/SCOPE:s_arctan_let]
+[/SCOPE:s_arctan_deriv]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_sin_algebra",
+    "target_scope": "s_sin_geo",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "代数法是几何法的另一种推导方式，结论相同。"
+  },
+  {
+    "source_scope": "s_cos_deriv",
+    "target_scope": "s_sin_algebra",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "余弦导数由正弦导数推导得出。"
+  },
+  {
+    "source_scope": "s_tan_deriv",
+    "target_scope": "s_sin_algebra",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "正切导数由正弦和余弦导数推导得出。"
+  },
+  {
+    "source_scope": "s_log_deriv",
+    "target_scope": "s_exp_deriv",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "指数导数利用对数导数及反函数求导法则。"
+  },
+  {
+    "source_scope": "s_arctan_deriv",
+    "target_scope": "s_tan_deriv",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "反正切导数利用正切导数及反函数求导法则。"
+  }
+]

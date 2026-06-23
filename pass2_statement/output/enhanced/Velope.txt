@@ -1,0 +1,128 @@
+[SCOPE:root|description|包络线]
+文章名: Velope
+标题: 包络线
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=曲线的法线族的包络
+
+[SCOPE:s_def|description|包络线定义]
+[0] 曲线族的包络是这样一条曲线，在这曲线上的每一点，都有曲线族中一条曲线与它相切。
+[1] 即是说，在这曲线上的每一点，这曲线与曲线族中通过这点的曲线有公切线。
+[2] 称这条曲线为曲线族的包络线。
+[SCOPE:s_def_let|let_bind|曲线族参数]
+[3] 若曲线族为
+[4] \begin{equation}
+F(x,y,C)=0~,
+\end{equation}
+[5] 其中 $C$ 为任意常数（参数）。
+[6] 则它的包络线上的任一点 $M(x,y)$ 必须同时满足方程组
+[7] \begin{equation}
+\left\{\begin{aligned}
+&F(x,y,C)=0\\
+&F'_C(x,y,C)=0~.
+\end{aligned}\right.
+\end{equation}
+
+[/SCOPE:s_def]
+[/SCOPE:s_def_let]
+[SCOPE:s_proof|description|包络线方程推导]
+[8] 首先确定曲线族式 1 的切线斜率，对等式式 1 求微商，并注意 $y$ 是 $x$ 的函数，$c$ 是任意常数，就得到
+[9] \begin{equation}
+F'_x+F'_y \frac{\mathrm{d}{y}}{\mathrm{d}{x}} =0~,
+\end{equation}
+[10] \begin{equation}
+\frac{\mathrm{d}{y}}{\mathrm{d}{x}} =-\frac{F'_x}{F'_y}~.
+\end{equation}
+[SCOPE:s_proof_let1|let_bind|包络线方程变量]
+[11] 设包络线方程为
+[12] \begin{equation}
+R(x,y)=0~,
+\end{equation}
+[13] 由于包络线上任一点 $M(x,y)$ 同时在曲线族中的一曲线上，
+[14] 所以包络线方程
+[15] 式 5 [链接 L0]
+[16] \begin{equation}
+R(x,y)=F(x,y,C)~.
+\end{equation}
+[17] 由此可确定 $C$ 是 $x$ 与 $y$ 的什么函数。
+[/SCOPE:s_proof_let1]
+[18] 于是我们可以找到形如
+[19] 式 1 [链接 L1]
+[20] 的曲线族的包络线方程，只不过这里 $C$ 不是常数，而是 $x$ 与 $y$ 的未知函数。
+[21] 式 6 [链接 L2]
+[SCOPE:s_proof_let2|let_bind|微分变量]
+[22] 求微分，注意 $c$ 已经不是常数，得到
+[23] \begin{equation}
+F'_x \,\mathrm{d}{x} +F'_y \,\mathrm{d}{y} +F'_C \,\mathrm{d}{C} =0~.
+\end{equation}
+[24] 由条件，包络线切线的斜率 $ \frac{\mathrm{d}{y}}{\mathrm{d}{x}} $，应当与曲线族式 1 中过这切点的曲线的切线斜率相同，
+[25] 即式 7 给出的 $ \mathrm{d}{y}/\mathrm{d}{x} $ 应当与式 4 的表达式相同。
+[26] 比较可知
+[27] \begin{equation}
+F'_C \,\mathrm{d}{C} =0~.
+\end{equation}
+[28] $ \,\mathrm{d}{C} $ 给出 $C$ 是常数，得到的是曲线族中的曲线，而不是包络，为得到包络
+[29] ，应有
+[30] \begin{equation}
+F'_C=0~.
+\end{equation}
+[/SCOPE:s_proof_let2]
+[31] 由这方程确定出 $C$ 是 $(x,y)$ 的一个函数。
+[32] 把这个用 $x$ 和 $y$ 表达的 $C$ 代入到
+[33] 式 1 [链接 L3]
+[34] 中，就得到包络的方程
+[35] 式 5 [链接 L4]
+[36] ，就是说，曲线族的包络线可由两个方程组
+[37] 式 2 [链接 L5]
+[38] 沿着包络线移动时，它与族中各条不同曲线相切，而每条曲线是由常数 $C$ 的一个值所确定的，如此就建立了，求包络线的方程时，也用式 1 的形状，而把 $C$ 算作变量的概念。
+
+[/SCOPE:s_proof]
+[SCOPE:s_example|description|例1 曲线的法线族的包络]
+[39] 例 1 曲线的法线族的包络
+[SCOPE:s_example_let|let_bind|曲线L变量]
+[40] 给定一曲线 $L$
+[41] \begin{equation}
+y=f(x)~,
+\end{equation}
+[42] \begin{equation}
+Y-y=-\frac{1}{y'} \left(X-x \right) \quad or\quad \left(X-x \right) +y' \left(Y-y \right) =0~,
+\end{equation}
+[43] 式 11
+[44] 由式 2 ，得到法线族包络线满足的方程组
+[45] \begin{equation}
+\left\{\begin{aligned}
+&\quad \left(X-x \right) +y' \left(Y-y \right) =0\\
+&-1+y''(Y-y)-y'^2=0~,
+\end{aligned}\right.
+\end{equation}
+[46] 由这两个方程消去参变量 $x$，就得到一个联系 $Y$ 与 $X$ 的方程，这便是法线族的包络的方程。
+[47] 或者，由式 12 解出 $X$ 与 $Y$，通过参变量 $x$ 来表达，便得到包络线的参数方程：
+[48] \begin{equation}
+X=x-\frac{y'(1+y'^2)}{y''}~,\qquad Y=y+\frac{1+y'^2}{y''}~.
+\end{equation}
+[49] 若已知曲线 $L$ 的参数方程，
+[50] 则由
+[51] \begin{equation}
+y'= \frac{\mathrm{d}{y}}{\mathrm{d}{x}} ~,\qquad y''= \frac{\mathrm{d}{ \frac{\mathrm{d}{y}}{\mathrm{d}{x}} }}{\mathrm{d}{x}} =\frac{ \,\mathrm{d}{^2} y \,\mathrm{d}{x} - \,\mathrm{d}{^2} x \,\mathrm{d}{y} }{ \,\mathrm{d}{x^3} }~.
+\end{equation}
+[52] 式 14
+[53] 式 13
+[54] \begin{equation}
+X=x-\frac{ \,\mathrm{d}{y} ( \,\mathrm{d}{x} ^2+ \,\mathrm{d}{y} ^2)}{ \,\mathrm{d}{^2y \,\mathrm{d}{x} } - \,\mathrm{d}{^2x} \,\mathrm{d}{y} }~,
+\qquad Y=y+\frac{ \,\mathrm{d}{x} ( \,\mathrm{d}{x} ^2+ \,\mathrm{d}{y} ^2)}{ \,\mathrm{d}{^2y} \,\mathrm{d}{x} - \,\mathrm{d}{^2x} \,\mathrm{d}{y} }~.
+\end{equation}
+[55] 曲线的法线族的包络线也称为曲线的渐曲线，而曲线也称为它的渐曲线的渐伸线。
+[/SCOPE:s_example]
+[/SCOPE:s_example_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_example",
+    "target_scope": "s_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是包络线定义的一个具体应用"
+  }
+]

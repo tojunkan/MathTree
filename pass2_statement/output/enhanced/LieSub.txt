@@ -1,0 +1,149 @@
+[SCOPE:root|description|李代数的子代数、理想与商代数]
+文章名: LieSub
+标题: 李代数的子代数、理想与商代数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=李代数的子代数
+  [1] type=definition heading=定义 2 title=李代数的理想
+  [2] type=example heading=例 1 title=理想的例子
+  [3] type=exercise heading=习题 1 title=李代数的中心
+  [4] type=definition heading=定义 3 title=李代数的内直和
+  [5] type=definition heading=定义 4 title=单李代数
+  [6] type=definition heading=定义 5 title=半单李代数
+  [7] type=theorem heading=定理 1 title=半单李代数的中心
+
+[0] 没有定义商代数
+[1] 可以考虑拆分
+
+[2] 和抽象代数中的子群、子环等类比，李代数也可以有次级结构，
+[3] 即子代数。
+[4] 设 $\mathfrak{m}, \mathfrak{n}$ 是李代数 $\mathfrak{g}$ 的非空子集，定义子集间的运算为 $\mathfrak{m}+\mathfrak{n}=\{M+N|M\in\mathfrak{m}, N\in\mathfrak{n}\}$，以及 $[\mathfrak{m}, \mathfrak{n}]=\{[M, N]|M\in\mathfrak{m}, N\in\mathfrak{n}\}$。
+[5] 那么如果 $\mathfrak{m}, \mathfrak{n}$ 和 $\mathfrak{p}$ 都是 $\mathfrak{g}$ 作为线性空间的子空间，我们容易证明以下性质：
+[6] $[\mathfrak{m}+\mathfrak{n}, \mathfrak{p}]\subseteq[\mathfrak{m}, \mathfrak{p}]+[\mathfrak{n}, \mathfrak{p}]$；
+[7] $[\mathfrak{m},\mathfrak{n}]=[\mathfrak{n}, \mathfrak{m}]$；
+[8] $[\mathfrak{m}, [\mathfrak{n}, \mathfrak{p}]]\subseteq[\mathfrak{n}, [\mathfrak{m}, \mathfrak{p}]]+[\mathfrak{p}, [\mathfrak{n}, \mathfrak{m}]]$。
+
+[SCOPE:s_subalgebra_def|description|定义 1 李代数的子代数]
+[SCOPE:s_subalgebra_let|let_bind|子代数定义的变量]
+[9] 定义 1 李代数的子代数
+[10] 若 $\mathfrak{g}$ 是李代数，$\mathfrak{h}$ 是它作为线性空间的子空间，且有 $[\mathfrak{h}, \mathfrak{h}]\subseteq\mathfrak{h}$，
+[11] 那么称 $\mathfrak{h}$ 是 $\mathfrak{g}$ 的子代数（sub (Lie) algebra）。
+[/SCOPE:s_subalgebra_let]
+[12] 尽管李代数并不成环，
+[13] 但是我们也可以仿照环的理想的定义，用吸收律来定义李代数的理想：
+
+[/SCOPE:s_subalgebra_def]
+[SCOPE:s_ideal_def|description|定义 2 李代数的理想]
+[SCOPE:s_ideal_let|let_bind|理想定义的变量]
+[14] 定义 2 李代数的理想
+[15] 若 $\mathfrak{g}$ 是李代数，$\mathfrak{h}$ 是它作为线性空间的子空间，且有 $[\mathfrak{g}, \mathfrak{h}]=\mathfrak{h}$，
+[16] 那么称 $\mathfrak{h}$ 是 $\mathfrak{g}$ 的理想（ideal）。
+[/SCOPE:s_ideal_let]
+[17] 显然，$\mathfrak{g}$ 和 $\{0\}$ 都是 $\mathfrak{g}$ 的理想，称为平凡理想（trivial ideal）。
+[18] 我们通常把定义中 $[\mathfrak{g}, \mathfrak{h}]=\mathfrak{h}$ 这一条，称为 “吸收性” 或者说 “吸收律”，方便记忆。
+[19] 从定义可以看到，李代数的理想必为其子代数。
+[SCOPE:s_ideal_properties|description|理想和子代数的性质]
+[20] 进一步，理想和子代数还满足以下性质：
+[21] 如果 $\mathfrak{h}_i$ 是子代数，
+[22] 那么 $\mathfrak{h}_1\cap\mathfrak{h}_2$ 也是子代数。
+[23] 如果 $\mathfrak{h}_1$ 是子代数而 $\mathfrak{h}_2$ 是理想，
+[24] 那么 $\mathfrak{h}_1+\mathfrak{h}_2$ 是子代数。
+[25] 如果 $\mathfrak{h}_i$ 是理想，
+[26] 那么 $\mathfrak{h}_1+\mathfrak{h}_2$、$\mathfrak{h}_1\cap\mathfrak{h}_2$ 和 $[\mathfrak{h}_1, \mathfrak{h}_2]$ 都是理想，并且有如下包含关系：
+[27] \begin{equation}
+[\mathfrak{h}_1, \mathfrak{h}_2]\subseteq\mathfrak{h}_1\cap\mathfrak{h}_2\subseteq\mathfrak{h}_i\subseteq\mathfrak{h}_1+\mathfrak{h}_2~.
+\end{equation}
+[28] 证明是很简单的，留作练习。
+[29] 注意最后的包含关系里的符号区别，其中一共三个子集符号。
+
+[/SCOPE:s_ideal_def]
+[/SCOPE:s_ideal_properties]
+[SCOPE:s_ideal_example_let|let_bind|例子中的变量]
+[SCOPE:s_ideal_example|description|例 1 理想的例子]
+[30] 例 1 理想的例子
+[31] 域 $\mathbb{F}$ 上的 $n$ 阶可逆矩阵的集合 $ \operatorname {gl}(n, \mathbb{F})$，构成一个李代数。
+[32] 考虑到对于任意矩阵 $A, B\in \operatorname {gl}(n, \mathbb{F})$，我们有 $ \operatorname {trace}(AB)= \operatorname {trace}(BA)$，
+[33] 因此必有 $ \operatorname {trace}([A, B])=0$。
+[34] 这就提示我们去考虑迹为 $0$ 的全体 $n$ 阶方阵的集合，记为 $\mathfrak{t}$，容易验证它就是 $ \operatorname {gl}(n, \mathbb{F})$ 的一个理想。
+
+[/SCOPE:s_ideal_example_let]
+[/SCOPE:s_ideal_example]
+[SCOPE:s_center_exercise_let|let_bind|习题中的变量]
+[SCOPE:s_center_exercise|description|习题 1 李代数的中心]
+[35] 习题 1 李代数的中心
+[36] 证明对于李代数 $\mathfrak{g}$，其中心（定义 3 ）$C(\mathfrak{g})$ 构成一个理想。
+
+[/SCOPE:s_center_exercise_let]
+[/SCOPE:s_center_exercise]
+[37] 【未完成】如果单独开新文章的话应该加上外直和，和内外半直和
+
+[SCOPE:s_direct_sum_def|description|定义 3 李代数的内直和]
+[SCOPE:s_direct_sum_let|let_bind|内直和定义的变量]
+[38] 定义 3 李代数的内直和
+[39] 若 $\mathfrak{g}$ 是李代数，$\mathfrak{h}_1, \mathfrak{h}_2$ 是它的理想，并且满足 $\mathfrak{h}_1 \cap \mathfrak{h}_2 = \{0\}$，
+[40] 那么称 $\mathfrak{h}_1 + \mathfrak{h}_2$ 构成一个新子李代数，记作 $\mathfrak{h}_1 \oplus \mathfrak{h}_2$。
+[/SCOPE:s_direct_sum_let]
+[41] 并有：$[\mathfrak{h}_1, \mathfrak{h}_2] = \{0\}$
+[42] 注意，作为向量空间的直和和李代数的内直积符号是一样的，需要根据语境来理解。
+
+[/SCOPE:s_direct_sum_def]
+[43] 和单群类似，我们可以定义单李代数：
+
+[SCOPE:s_simple_def|description|定义 4 单李代数]
+[SCOPE:s_simple_let|let_bind|单李代数定义的变量]
+[44] 定义 4 单李代数
+[45] 给定非交换非平凡李代数 $\mathfrak{g}$，如果它没有非平凡理想，
+[46] 即除了 $\{0\}$ 和 $\mathfrak{g}$ 自身外没有别的理想，
+[/SCOPE:s_simple_let]
+[47] 那么我们称它为一个单李代数（simple Lie algebra）。
+[48] 正如平凡群不是单群，交换李代数（$[\cdot, \cdot] = 0$）在一定程度上也很 “平凡”，我们也不把它定义成单李代数。
+
+[/SCOPE:s_simple_def]
+[SCOPE:s_semisimple_def|description|定义 5 半单李代数]
+[SCOPE:s_semisimple_let|let_bind|半单李代数定义的变量]
+[49] 定义 5 半单李代数
+[50a] 如果李代数 $\mathfrak{g}$ 能被表示成它的单子代数的直和，我们
+[50b] 则称之为半单李代数（semi-simple Lie algebra），
+[/SCOPE:s_semisimple_let]
+[51] 特别的，我们有
+
+[/SCOPE:s_semisimple_def]
+[SCOPE:s_semisimple_center_let|let_bind|定理中的变量]
+[SCOPE:s_semisimple_center_thm|description|定理 1 半单李代数的中心]
+[52] 定理 1 半单李代数的中心
+[53] 半单李代数的中心是平凡的。
+[/SCOPE:s_semisimple_center_let]
+[/SCOPE:s_semisimple_center_thm]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ideal_def",
+    "target_scope": "s_subalgebra_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "理想是子代数的特例"
+  },
+  {
+    "source_scope": "s_ideal_example",
+    "target_scope": "s_ideal_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例子说明理想定义"
+  },
+  {
+    "source_scope": "s_center_exercise",
+    "target_scope": "s_ideal_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "中心是理想的一个例子"
+  },
+  {
+    "source_scope": "s_semisimple_center_thm",
+    "target_scope": "s_semisimple_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理是关于半单李代数的性质"
+  }
+]

@@ -1,0 +1,207 @@
+{
+  "article_name": "LinCon",
+  "statements": [
+    {
+      "stmt_id": "st_def1_continuous",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "f",
+        "E",
+        "x_0",
+        "U"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        9,
+        11
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "f",
+        "E",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "f",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof",
+      "subtype": "remark",
+      "clause_range": [
+        12,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        20,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "E"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "E"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_proof",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": [
+        "E",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3",
+      "exposed_entities": [
+        "E",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_proof",
+      "subtype": "remark",
+      "clause_range": [
+        34,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_assump",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assump",
+      "target": "st_thm2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_assump",
+      "target": "st_thm3_concl",
+      "edge_type": "equivalent",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_statement",
+      "target": "st_def1_continuous",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1是定义1的特例：一点连续推出处处连续"
+    },
+    {
+      "source": "st_thm3_statement",
+      "target": "st_thm1_statement",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理3的充分性部分引用定理1"
+    }
+  ],
+  "unresolved": []
+}

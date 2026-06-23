@@ -1,0 +1,87 @@
+[SCOPE:root|description|幂级数（极简微积分）]
+文章名: powerS
+标题: 幂级数（极简微积分）
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+
+[SCOPE:s_power_series|description|幂级数定义]
+[SCOPE:s_ps_let|let_bind|幂级数变量]
+[0] 我们把形如
+[1] \begin{equation}
+f(x) = c_0 + c_1 (x - x_0)^1 + \dots = \sum_{n=0}^\infty c_n (x-x_0)^n~.
+\end{equation}
+[2] 的函数叫做
+[3] 幂级数（power series）
+[4] 。
+[5] 其中 $(x - x_0)^0$ 始终视为 $1$，
+[6] 即使取 $x = x_0$。
+[7] 幂级数是无穷级数的一种，是一个极限。
+[/SCOPE:s_ps_let]
+[8] 如果我们把前有限项的求和记为
+[9] \begin{equation}
+f_m(x) = \sum_{n=0}^m c_n (x-x_0)^n~.
+\end{equation}
+[10] 那么幂级数
+[11] 式 1 [链接 L0]
+[12] 就是极限
+[13] \begin{equation}
+f(x) = \lim_{m\to\infty} f_m(x)~.
+\end{equation}
+[14] 的简写。
+[15a] 对给定的 $x$
+[15b] 当极限存在时，我们，则说级数
+[16] 收敛（converge）
+[17] ，反之就说级数
+[18] 不收敛
+[19] 发散（diverge）
+[20] 。
+[21] 幂级数可以定义在复数域上，
+[22] 即 $c_n, x, x_0$ 都可以取
+[23] 复数 [链接 L1]
+
+[/SCOPE:s_power_series]
+[SCOPE:s_radius|description|收敛半径]
+[SCOPE:s_radius_let|let_bind|收敛半径变量]
+[24] 一种极端的情况是幂级数式 1 只在 $x = x_0$ 一点处收敛。
+[25] 除此之外，必定存在一个收敛半径（radius of convergence） $0 \leq r \leq +\infty$，使得当 $ \left\lvert x-x_0 \right\rvert < r$ 时幂级数总是收敛，当 $ \left\lvert x-x_0 \right\rvert > r$ 时幂级数总是发散（不收敛），当 $ \left\lvert x - x_0 \right\rvert = r$ 时幂级数可能收敛也可能不收敛；
+[26] 当 $r = 0$ 时，幂级数只在 $x_0$ 处收敛，当 $r = + \infty$ 时，幂级数在整个 $\mathbb{R}$（或者 $\mathbb{C}$）上收敛。
+[27a] 当 $x$ 是复数时，复平面上收敛的区域
+[27b] 则是以 $x_0$ 为圆心的一个圆盘。
+[/SCOPE:s_radius_let]
+[28] 计算收敛半径的一种简单方法是使用比值判别法
+[29] \begin{equation}
+r = \lim_{n \to \infty} \left\lvert \frac{c_n}{c_{n+1}} \right\rvert ~.
+\end{equation}
+[30] 但前提是该极限存在，普适的方法见
+[31] 柯西—阿达玛公式 [链接 L2]
+
+[/SCOPE:s_radius]
+[SCOPE:s_example1|description|例 1]
+[32] $f(x) = e^x = \sum {1 \over n!} x^n$，收敛半径为正无穷，它定义在整个复平面上；
+[33] $f(x) = {1 \over 1 - x} = \sum x^n$，收敛半径为 $1$；
+[34] $f(x) = \sum n^n x^n$，收敛半径为 $0$；
+
+跨文章引用:
+  [L1] 复数 → CplxNo
+  [L2] 柯西—阿达玛公式 → CHF
+[/SCOPE:s_example1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_radius",
+    "target_scope": "s_power_series",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "收敛半径是幂级数的性质"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_power_series",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例子"
+  }
+]

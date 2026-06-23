@@ -1,0 +1,118 @@
+[SCOPE:root|description|Liapunov 函数（稳定性直接法）]
+文章名: ODELi2
+标题: Liapunov 函数（稳定性直接法）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+  [1] type=theorem heading=定理 1 title=$V$ 函数判断稳定性
+  [2] type=theorem heading=定理 2 title=$V$ 函数判断渐进稳定性
+  [3] type=theorem heading=定理 3 title=$V$ 函数判断不稳定性
+
+[0] Liapunov 对于非线性的问题又提出了 “V 函数法”，又称 Liapunov 函数法、Liapunov 直接法。
+[1] 这个方法借助一个辅助函数直接从微分方程的动力性质研究，
+[2] 所以若知道这辅助函数之后研究稳定性将比较简单，只不过对于给定系统构造一个这样的函数是比较难的。
+
+[SCOPE:s_def1|description|定义 1]
+[3] 定义 1
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[4] 对于一个函数 $ V( \boldsymbol{\mathbf{x}} )$ 在原点 $O$ 的某一邻域内有连续的一阶偏导数，同时 $ V( \boldsymbol{\mathbf{0}} ) = 0$，定义：
+[/SCOPE:s_def1_let]
+[5] 若存在 $h>0$，当 $\Vert \boldsymbol{\mathbf{x}} \Vert < h$ 时，$V( \boldsymbol{\mathbf{x}} ) \ge 0$（$\le 0$），
+[6] 则称 $V$ 是常正（常负）函数，统称常号函数；
+[7] 若存在 $h > 0$，当 $0 < \Vert \boldsymbol{\mathbf{x}} \Vert < h$ 时，$V( \boldsymbol{\mathbf{x}} ) > 0$（$< 0$），
+[8] 则称 $V$ 是定正（定负）函数，统称定号函数；
+[9a] 若无论 $h > 0$ 多么小，当 $\Vert \boldsymbol{\mathbf{x}} \Vert < h$ 时，$V( \boldsymbol{\mathbf{x}} )$ 都既可以取到正值、又可以取到负值
+[9b] 则称 $V$ 是变号函数。
+[10] 例如，$V(x_1, x_2) = (x_1 + x_2)^2$ 是常正函数，$V(x_3, x_4) = 2 x_3^2 + x_4^2$ 是定正函数，而 $V(x_5, x_6) = x_5^2 - x_6^2$ 是变号函数。
+
+[/SCOPE:s_def1]
+[SCOPE:s_system|description|系统与 V 函数全导数]
+[SCOPE:s_system_let|let_bind|系统变量]
+[11] 考虑一个非线性定常系统
+[12] \begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}{t}} \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{f}} ( \boldsymbol{\mathbf{x}} ) ~.
+\end{equation}
+[13] 约定 $ \boldsymbol{\mathbf{f}} (x)$ 在包含坐标原点的某区域 $G \subseteq \mathbb R^n$ 内有连续的一阶偏导数，且 $ \boldsymbol{\mathbf{f}} (0) = 0$。
+[14] 其中 $ \boldsymbol{\mathbf{x}} = (x_1, x_2, \dots, x_n)$，$ \boldsymbol{\mathbf{f}} = (f_1, f_2, \dots, f_n)$。
+[/SCOPE:s_system_let]
+[15] 我们研究 $V$ 函数关于时间的全导数：
+[16] \begin{equation}
+\frac{\mathrm{d}{V( \boldsymbol{\mathbf{x}} (t))}}{\mathrm{d}{t}} = \sum_{i=1}^n \frac{\partial V( \boldsymbol{\mathbf{x}} (t))}{\partial x_i} \frac{\mathrm{d}{x_i}}{\mathrm{d}{t}} = \sum_{i=1}^n \frac{\partial V( \boldsymbol{\mathbf{x}} (t))}{\partial x_i} f_i( \boldsymbol{\mathbf{x}} (t)) ~,
+\end{equation}
+[17] \begin{equation}
+\sum_{i=1}^n \frac{\partial V( \boldsymbol{\mathbf{x}} )}{\partial x_i} f_i( \boldsymbol{\mathbf{x}} ) ~~
+\end{equation}
+[18] 是 $V$ 关于系统
+[19] 式 1 [链接 L0]
+[20] 对于 $t$ 的全导数。
+[21] 直接记
+[22] \begin{equation}
+\frac{\mathrm{d}{V}}{\mathrm{d}{t}} = \sum_{i=1}^n \frac{\partial V( \boldsymbol{\mathbf{x}} )}{\partial x_i} f_i( \boldsymbol{\mathbf{x}} ) ~.
+\end{equation}
+[23] $V$ 函数的符号可以有一个几何解释。
+[24] 不妨考虑 $V$ 是定正函数，且 $V( \boldsymbol{\mathbf{0}} ) = 0$。
+[25] 我们可以在平面画出 $V$ 函数的 “等高线”。
+[26] 若此时
+[27] \begin{equation}
+\frac{\mathrm{d}{V}}{\mathrm{d}{t}} < 0 ~,
+\end{equation}
+[28] 则沿着系统在原点附近的轨线 $\Gamma$，当 $t$ 增大时，$V$ 函数的值将严格减小，
+[29] 即 $\Gamma$ 将从外向内穿入层层等高线，而趋向原点；
+[30] 而若全导数
+[31] \begin{equation}
+\frac{\mathrm{d}{V}}{\mathrm{d}{t}} > 0 ~,
+\end{equation}
+[32] 则当 $t$ 增大时，$V$ 函数的值将严格增大，
+[33] 即轨线将从内向外穿出层层等高线，而向外发散，远离原点。
+[34] 根据几何意义就可以利用 $V$ 函数判别稳定性。
+
+[/SCOPE:s_system]
+[SCOPE:s_thm1|description|定理 1]
+[35] 定理 1 $V$ 函数判断稳定性
+[36] 对于系统 式 1 ，若存在一个定号函数 $V( \boldsymbol{\mathbf{x}} )$，使得全导数
+[37] \begin{equation}
+\frac{\mathrm{d}{V}}{\mathrm{d}{t}} ~~
+\end{equation}
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理 2]
+[38] 定理 2 $V$ 函数判断渐进稳定性
+[39] 对于系统 式 1 ，若存在一个定正（负）函数 $V( \boldsymbol{\mathbf{x}} )$，使得全导数
+[40] \begin{equation}
+\frac{\mathrm{d}{V}}{\mathrm{d}{t}} ~~
+\end{equation}
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|定理 3]
+[41] 定理 3 $V$ 函数判断不稳定性
+[42] 对于系统 式 1 ，若存在一个函数 $V( \boldsymbol{\mathbf{x}} )$，$V( \boldsymbol{\mathbf{0}} ) = 0$，使得全导数
+[43] \begin{equation}
+\frac{\mathrm{d}{V}}{\mathrm{d}{t}} ~~
+\end{equation}
+[/SCOPE:s_thm3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_system",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理 1 引用系统式 1"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_system",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理 2 引用系统式 1"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_system",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理 3 引用系统式 1"
+  }
+]

@@ -1,0 +1,720 @@
+{
+  "article_name": "HsSinF",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "f(x)",
+        "A",
+        "ω",
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_amplitude_def",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "|A|"
+      ]
+    },
+    {
+      "stmt_id": "st_phase_def",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "ωx+φ"
+      ]
+    },
+    {
+      "stmt_id": "st_cos_example",
+      "subtype": "example",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_normalization",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "A",
+        "ω",
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_phase_concept",
+      "subtype": "definition",
+      "clause_range": [
+        29,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_phase",
+      "exposed_entities": [
+        "ωx+φ"
+      ]
+    },
+    {
+      "stmt_id": "st_phase_vs_phase",
+      "subtype": "remark",
+      "clause_range": [
+        37,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_phase",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_phase_analogy",
+      "subtype": "remark",
+      "clause_range": [
+        40,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_phase",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_angular_freq_def",
+      "subtype": "definition",
+      "clause_range": [
+        52,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_phase",
+      "exposed_entities": [
+        "ω"
+      ]
+    },
+    {
+      "stmt_id": "st_initial_phase_def",
+      "subtype": "definition",
+      "clause_range": [
+        55,
+        56
+      ],
+      "truth_value": null,
+      "scope_id": "s_phase",
+      "exposed_entities": [
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_amplitude_effect",
+      "subtype": "theorem",
+      "clause_range": [
+        58,
+        61
+      ],
+      "truth_value": "true",
+      "scope_id": "s_amplitude",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_omega_effect",
+      "subtype": "theorem",
+      "clause_range": [
+        63,
+        65
+      ],
+      "truth_value": "true",
+      "scope_id": "s_omega",
+      "exposed_entities": [
+        "ω"
+      ]
+    },
+    {
+      "stmt_id": "st_period_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        66,
+        67
+      ],
+      "truth_value": "true",
+      "scope_id": "s_omega",
+      "exposed_entities": [
+        "T",
+        "ω"
+      ]
+    },
+    {
+      "stmt_id": "st_freq_relation",
+      "subtype": "theorem",
+      "clause_range": [
+        75,
+        75
+      ],
+      "truth_value": "true",
+      "scope_id": "s_omega",
+      "exposed_entities": [
+        "f",
+        "ω",
+        "T"
+      ]
+    },
+    {
+      "stmt_id": "st_varphi_effect",
+      "subtype": "theorem",
+      "clause_range": [
+        78,
+        85
+      ],
+      "truth_value": "true",
+      "scope_id": "s_varphi",
+      "exposed_entities": [
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_two_sinusoids_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        87,
+        88
+      ],
+      "truth_value": null,
+      "scope_id": "s_varphi_let",
+      "exposed_entities": [
+        "f0",
+        "f1",
+        "A0",
+        "A1",
+        "ω",
+        "φ0",
+        "φ1"
+      ]
+    },
+    {
+      "stmt_id": "st_phase_diff_def",
+      "subtype": "definition",
+      "clause_range": [
+        89,
+        90
+      ],
+      "truth_value": null,
+      "scope_id": "s_varphi",
+      "exposed_entities": [
+        "Δφ"
+      ]
+    },
+    {
+      "stmt_id": "st_phase_diff_cases",
+      "subtype": "theorem",
+      "clause_range": [
+        91,
+        100
+      ],
+      "truth_value": "true",
+      "scope_id": "s_varphi",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sum_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        102,
+        106
+      ],
+      "truth_value": "true",
+      "scope_id": "s_varphi",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_tan_phi_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        108,
+        109
+      ],
+      "truth_value": "true",
+      "scope_id": "s_varphi",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_amplitude_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        110,
+        110
+      ],
+      "truth_value": "true",
+      "scope_id": "s_varphi",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_amplitude_depends_on_delta",
+      "subtype": "theorem",
+      "clause_range": [
+        111,
+        112
+      ],
+      "truth_value": "true",
+      "scope_id": "s_varphi",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_in_phase",
+      "subtype": "theorem",
+      "clause_range": [
+        114,
+        116
+      ],
+      "truth_value": "true",
+      "scope_id": "s_varphi",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_out_of_phase",
+      "subtype": "theorem",
+      "clause_range": [
+        117,
+        119
+      ],
+      "truth_value": "true",
+      "scope_id": "s_varphi",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_orthogonal",
+      "subtype": "theorem",
+      "clause_range": [
+        120,
+        120
+      ],
+      "truth_value": "true",
+      "scope_id": "s_varphi",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_phasor_method",
+      "subtype": "remark",
+      "clause_range": [
+        125,
+        131
+      ],
+      "truth_value": null,
+      "scope_id": "s_varphi",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fivepoint_general_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        133,
+        134
+      ],
+      "truth_value": null,
+      "scope_id": "s_fivepoint_let",
+      "exposed_entities": [
+        "f(x)",
+        "A",
+        "ω",
+        "φ",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_fivepoint_method",
+      "subtype": "theorem",
+      "clause_range": [
+        135,
+        155
+      ],
+      "truth_value": "true",
+      "scope_id": "s_fivepoint",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_x_alpha_relation",
+      "subtype": "theorem",
+      "clause_range": [
+        156,
+        157
+      ],
+      "truth_value": "true",
+      "scope_id": "s_fivepoint",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_alpha_vs_varphi",
+      "subtype": "remark",
+      "clause_range": [
+        158,
+        163
+      ],
+      "truth_value": null,
+      "scope_id": "s_fivepoint",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fivepoint_table",
+      "subtype": "theorem",
+      "clause_range": [
+        164,
+        169
+      ],
+      "truth_value": "true",
+      "scope_id": "s_fivepoint",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_four_points_sufficient",
+      "subtype": "remark",
+      "clause_range": [
+        170,
+        175
+      ],
+      "truth_value": null,
+      "scope_id": "s_fivepoint",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_why_standard_form",
+      "subtype": "remark",
+      "clause_range": [
+        181,
+        189
+      ],
+      "truth_value": null,
+      "scope_id": "s_fivepoint",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_deriv_observation",
+      "subtype": "theorem",
+      "clause_range": [
+        192,
+        203
+      ],
+      "truth_value": "true",
+      "scope_id": "s_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1",
+      "subtype": "corollary",
+      "clause_range": [
+        205,
+        208
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        209,
+        215
+      ],
+      "truth_value": null,
+      "scope_id": "s_cor1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_complex_derivation",
+      "subtype": "theorem",
+      "clause_range": [
+        216,
+        231
+      ],
+      "truth_value": "true",
+      "scope_id": "s_complex",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_oscillation_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        234,
+        235
+      ],
+      "truth_value": null,
+      "scope_id": "s_oscillation_let",
+      "exposed_entities": [
+        "x(t)",
+        "A",
+        "ω",
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_oscillation_velocity",
+      "subtype": "theorem",
+      "clause_range": [
+        236,
+        237
+      ],
+      "truth_value": "true",
+      "scope_id": "s_oscillation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_oscillation_acceleration",
+      "subtype": "theorem",
+      "clause_range": [
+        238,
+        239
+      ],
+      "truth_value": "true",
+      "scope_id": "s_oscillation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_oscillation_characteristic",
+      "subtype": "theorem",
+      "clause_range": [
+        240,
+        242
+      ],
+      "truth_value": "true",
+      "scope_id": "s_oscillation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_oscillation_phase_relation",
+      "subtype": "theorem",
+      "clause_range": [
+        243,
+        249
+      ],
+      "truth_value": "true",
+      "scope_id": "s_oscillation",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1",
+      "target": "st_amplitude_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1",
+      "target": "st_phase_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1",
+      "target": "st_cos_example",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_normalization",
+      "target": "st_def1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_phase_concept",
+      "target": "st_angular_freq_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_phase_concept",
+      "target": "st_initial_phase_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_amplitude_effect",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_omega_effect",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_period_formula",
+      "target": "st_omega_effect",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_freq_relation",
+      "target": "st_period_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_varphi_effect",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_two_sinusoids_assump",
+      "target": "st_phase_diff_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_phase_diff_def",
+      "target": "st_phase_diff_cases",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_phase_diff_cases",
+      "target": "st_sum_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sum_formula",
+      "target": "st_tan_phi_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sum_formula",
+      "target": "st_amplitude_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_amplitude_formula",
+      "target": "st_amplitude_depends_on_delta",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_amplitude_depends_on_delta",
+      "target": "st_in_phase",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_amplitude_depends_on_delta",
+      "target": "st_out_of_phase",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_amplitude_depends_on_delta",
+      "target": "st_orthogonal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_fivepoint_general_assump",
+      "target": "st_fivepoint_method",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_fivepoint_method",
+      "target": "st_x_alpha_relation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_x_alpha_relation",
+      "target": "st_fivepoint_table",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_deriv_observation",
+      "target": "st_cor1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_complex_derivation",
+      "target": "st_cor1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_oscillation_assump",
+      "target": "st_oscillation_velocity",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_oscillation_velocity",
+      "target": "st_oscillation_acceleration",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_oscillation_acceleration",
+      "target": "st_oscillation_characteristic",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_oscillation_characteristic",
+      "target": "st_oscillation_phase_relation",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_cor1",
+      "target": "st_deriv_observation",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论1是三角函数高阶导数规律的归纳总结"
+    },
+    {
+      "source": "st_complex_derivation",
+      "target": "st_cor1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "复数解释推导出推论1的结论"
+    },
+    {
+      "source": "st_oscillation_characteristic",
+      "target": "st_cor1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "简谐振动是推论1的一个应用实例"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,65 @@
+[SCOPE:root|description|多元函数的傅里叶级数]
+文章名: NdFuri
+标题: 多元函数的傅里叶级数
+
+[0] 贡献者： addis
+[1] 预备知识 傅里叶级数，重积分
+[SCOPE:s_general|description|N元傅里叶展开]
+[SCOPE:s_general_let|let_bind|N元变量]
+[2] 我们知道有限长区间中一个性质足够良好（满足迪利克雷条件）函数可以展开为三角函数的线性组合，同理，一个性质足够良好的 $N$ 元函数 $f(x_1, \dots, x_N)$ 也可以展开为 $N$ 个三角函数乘积的线性组合
+[3] \begin{equation}
+f(x_1, \dots, x_N) = \sum_{n_1,\dots, n_N} C_{n_1,\dots, n_N} \exp\left( \mathrm{i} \frac{n_1\pi}{l_1} x_1\right) \dots \exp\left( \mathrm{i} \frac{n_N \pi}{l_N} x_N\right) ~.
+\end{equation}
+[4] 其中 $x_i$ 的区间长度为 $l_i$，每个指标求和时取负无穷到正无穷的所有整数。
+[/SCOPE:s_general_let]
+[5] 系数 $C_{n_1,\dots, n_N}$ 可以由 $N$ 重积分得到
+[6] \begin{equation}
+\begin{aligned}
+C_{i_1,\dots, i_N} &= \frac{1}{2^Nl_1\cdots l_N}\int_{-l_N}^{l_N}\cdots\int_{-l_1}^{l_1} \exp\left(- \mathrm{i} \frac{n_1 \pi}{l_1} x_1\right) \dots \exp\left(- \mathrm{i} \frac{n_N \pi}{l_N} x_N\right) \\
+& \times f(x_1, \dots, x_N) \,\mathrm{d}{x_1} \dots \,\mathrm{d}{x_N} ~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_general]
+[SCOPE:s_2d|description|二元傅里叶展开]
+[SCOPE:s_2d_let|let_bind|二元变量]
+[7] 为了方便讨论，我们取 $N = 2$，更高元的情况类比可得。
+[8] 区间 $x\in [0, a], y\in [0, b]$ 内的二元函数 $f(x, y)$ 的傅里叶展开为
+[/SCOPE:s_2d_let]
+[9] \begin{equation}
+f(x, y) = \sum_{m = -\infty}^\infty \sum_{n = -\infty}^\infty C_{m, n} \exp\left( \mathrm{i} \frac{m \pi}{a} x\right) \exp\left( \mathrm{i} \frac{n \pi}{b} y\right) ~.
+\end{equation}
+[10] 系数由二重积分计算
+[11] \begin{equation}
+C_{m, n} = \frac{1}{4ab}\int_{-b}^b\int_{-a}^a \exp\left(- \mathrm{i} \frac{m \pi}{a} x\right) \exp\left(- \mathrm{i} \frac{n \pi}{b} y\right) f(x, y) \,\mathrm{d}{x} \,\mathrm{d}{y} ~.
+\end{equation}
+[SCOPE:s_2d_basis|description|正交归一基底]
+[12] 可以证明一组正交归一的函数基底为
+[13] \begin{equation}
+b_{m,n}(x, y) = \frac{1}{\sqrt{2a}} \exp\left(- \mathrm{i} \frac{m \pi}{a} x\right) \frac{1}{\sqrt{2b}} \exp\left(- \mathrm{i} \frac{n \pi}{b} y\right) ~.
+\end{equation}
+[14] 定义讨论的二元函数空间的内积为
+[15] \begin{equation}
+\left\langle f_{m',n'} \middle| g_{m,n} \right\rangle = \int_0^a\int_0^b f^*_{m',n'}(x, y) g_{m,n}(x, y) \,\mathrm{d}{x} \,\mathrm{d}{y} ~.
+\end{equation}
+[16] 那么由式 5 易证基底满足正交归一化条件
+[17] \begin{equation}
+\left\langle b_{m',n'} \middle| b_{m,n} \right\rangle = \delta_{m,m'} \delta_{n,n'}~.
+\end{equation}
+[/SCOPE:s_2d]
+[/SCOPE:s_2d_basis]
+[18] 未完成：举例
+
+跨文章引用:
+  [L0] 内积 → InerPd
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_2d",
+    "target_scope": "s_general",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "二元是N元的特例"
+  }
+]

@@ -1,0 +1,346 @@
+{
+  "article_name": "RiLem",
+  "statements": [
+    {
+      "stmt_id": "st_lemma_heading",
+      "subtype": "lemma",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_X_M",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma_let1",
+      "exposed_entities": [
+        "X",
+        "M",
+        "||·||"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_lemma",
+      "subtype": "conclusion",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma_let2",
+      "exposed_entities": [
+        "α",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_intuition",
+      "subtype": "remark",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_intro",
+      "subtype": "remark",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_y_delta",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma_let3",
+      "exposed_entities": [
+        "y",
+        "δ"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_M_closed",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma_let3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_conclusion_delta_gt0",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma_let3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_epsilon_z0",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma_let3",
+      "exposed_entities": [
+        "ε",
+        "z0"
+      ]
+    },
+    {
+      "stmt_id": "st_define_x",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma_let3",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_x_norm1",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma_let3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_z_in_M",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma_let3",
+      "exposed_entities": [
+        "z"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_inequality",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma_let3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_conclusion_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma_let3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_infinite_dim",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_app_let",
+      "exposed_entities": [
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_subspaces",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_app_let",
+      "exposed_entities": [
+        "M_k"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_finite_dim_closed",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_app_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_conclusion_xk_exists",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_app_let",
+      "exposed_entities": [
+        "x_k"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_no_convergent",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_app_let",
+      "exposed_entities": [
+        "x_n"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_not_compact",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_application",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_X_M",
+      "target": "st_conclusion_lemma",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_y_delta",
+      "target": "st_conclusion_delta_gt0",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_M_closed",
+      "target": "st_conclusion_delta_gt0",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_y_delta",
+      "target": "st_assump_epsilon_z0",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_epsilon_z0",
+      "target": "st_define_x",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_define_x",
+      "target": "st_conclusion_x_norm1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_z_in_M",
+      "target": "st_conclusion_inequality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_conclusion_x_norm1",
+      "target": "st_conclusion_inequality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_conclusion_inequality",
+      "target": "st_conclusion_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_infinite_dim",
+      "target": "st_conclusion_subspaces",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_conclusion_subspaces",
+      "target": "st_assump_finite_dim_closed",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_finite_dim_closed",
+      "target": "st_conclusion_xk_exists",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_conclusion_xk_exists",
+      "target": "st_conclusion_no_convergent",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_conclusion_no_convergent",
+      "target": "st_conclusion_not_compact",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_conclusion_not_compact",
+      "target": "st_conclusion_lemma",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "应用举例使用了里斯引理的结论"
+    }
+  ],
+  "unresolved": []
+}

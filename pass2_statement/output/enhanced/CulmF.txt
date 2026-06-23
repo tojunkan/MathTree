@@ -1,0 +1,157 @@
+[SCOPE:root|description|库仑函数]
+文章名: CulmF
+标题: 库仑函数
+
+[SCOPE:s_def|description|定义]
+[SCOPE:s_def_let1|let_bind|径向方程变量]
+[0] 1在球坐标系中解库仑势场中的定态薛定谔方程，当能量 $E > 0$ 时2，会得到径向方程（式 7 ）
+[1] \begin{equation}-\frac{1}{2m} \frac{\mathrm{d}^{2}{\psi_{l}}}{\mathrm{d}{r}^{2}} + \left[-\frac{Z}{r} + \frac{l(l + 1)}{2mr^2} \right] \psi_{l} = E_{n, l} \psi_{l}~.
+\end{equation}
+[2] 可化简为
+[3] \begin{equation}
+\frac{\mathrm{d}^{2}{u_l}}{\mathrm{d}{\rho}^{2}} + \left[1 - \frac{2\eta}{\rho} - \frac{l(l+1)}{\rho^2} \right] u_l = 0~.
+\end{equation}
+[4] 其中 $\rho = kr$，
+[5] \begin{equation}
+\eta = -\frac{mZ}{k}~
+\end{equation}
+[6] Sommerfeld 参数
+[/SCOPE:s_def_let1]
+[SCOPE:s_def_let2|let_bind|库仑函数定义变量]
+[7] 这是一个二阶常系数齐次常微分方程，其两个线性无关解为第一类库仑函数（Coulomb function of the first kind） $F_l(\eta, \rho)$ 和第二类库仑函数 $G_l(\eta, \rho)$。
+[8] 当方程的系数为实数时，第一类和第二类库仑函数也是实函数。
+[9] 【图解】图 1：第一类库仑函数（$Z=1,k=1$）
+[10] 第一类库仑函数（图 1 ）的解析式为（式中两套正负号是等价的）
+[11] \begin{equation}
+F_l(\eta, \rho) = A_l(\eta) \rho^{l+1} \mathrm{e} ^{\mp \mathrm{i} \rho} M(l+1\mp \mathrm{i} \eta, 2l+2, \pm 2 \mathrm{i} \rho)~,
+\end{equation}
+[12] \begin{equation}
+A_l(\eta) = \frac{2^l \mathrm{e} ^{-\pi\eta/2} \left\lvert \Gamma(l+1+ \mathrm{i} \eta) \right\rvert }{(2l+1)!}~,
+\end{equation}
+[13] $M(a, b, z)$ 是
+[14] 库默尔（Kummer）M 函数
+[15] ，也叫第一类合流
+[16] 超几何函数 [链接 L0]
+[17] ，记为 $_1 F_1(a;b;z)$。
+[18] 库仑函数也可以用
+[19] 惠特克（Whittaker）M 函数
+[20] 来表示得更紧凑
+[21] \begin{equation}
+F_l(\eta, \rho) = \left(\frac{\mp \mathrm{i} }{2} \right) ^{l+1} A_l(\eta) M_{\pm \mathrm{i} \eta, l+\frac12} \left(\pm 2 \mathrm{i} \rho \right) ~,
+\end{equation}
+[22] 其中惠特克 $M$ 函数与库默尔 $M$ 函数的关系为
+[23] \begin{equation}
+M_{\kappa, \mu}(z) = \mathrm{e} ^{-z/2} z^{\mu + 1/2} M(\mu - \kappa + 1/2, 1 + 2\mu, z)~,
+\end{equation}
+[24] 另见 “
+[25] 库仑函数程序（Matlab 和 Mathematica） [链接 L1]
+
+[/SCOPE:s_def]
+[/SCOPE:s_def_let2]
+[SCOPE:s_phase_let|let_bind|库仑相移变量]
+[SCOPE:s_phase|description|库仑相移]
+[26] $F_l(\eta, \rho)$ 是一个实函数，且渐进形式为
+[27] \begin{equation} F_l(\eta, \rho) \overset{\rho\to \infty}{\longrightarrow} \sin \left[\rho - \frac{\pi l}{2} - \eta \ln\left(2\rho\right) + \sigma_l(\eta) \right] ~,
+\end{equation}
+[28] 其中 $\sigma_l(\eta)$ 是
+[29] 库仑相移（Coulomb phase shift）
+[30] \begin{equation}
+\sigma_l(\eta) = \arg[\Gamma(l+1+ \mathrm{i} \eta)]~,
+\end{equation}
+[31] 其中 $\arg$ 函数是复数的辐角（
+[32] 式 5 [链接 L2]
+
+[/SCOPE:s_phase_let]
+[/SCOPE:s_phase]
+[SCOPE:s_asymp_let|let_bind|渐进形式变量]
+[SCOPE:s_asymp|description|渐进形式]
+[33] 类似 $\rho$ 乘以第一类球贝塞尔函数3 $j_l(\rho)$，有
+[34] \begin{equation}
+F_l(\eta, 0) = 0 \qquad \left. \frac{\mathrm{d}{F_l(\eta, \rho)}}{\mathrm{d}{\rho}} \right\rvert _{\rho=0} =
+\begin{cases}
+A_0(\eta) &(l = 0)\\
+0 &(l > 0)
+\end{cases}~
+\end{equation}
+[35] 更一般地，当 $r\to 0$ 时有
+[36] \begin{equation} F_l(\eta, \rho) \rightarrow A_l(\eta) r^{l+1} + \mathcal{O}\left(r^{l+2} \right) ~.
+\end{equation}
+[37] 由此可见当 $r\to 0$ 时只有 $l = 0$ 时 $F_l(\eta, \rho)/r \to A_0(\eta)$ 不为零。
+
+[/SCOPE:s_asymp_let]
+[/SCOPE:s_asymp]
+[SCOPE:s_other_let|let_bind|其他类型变量]
+[SCOPE:s_other|description|其他类型的库仑函数]
+[38] 第二类库仑函数 $G_l(\eta, \rho)$ 可以由 $H_l^\pm(\eta, \rho)$ 得到，后者是两类库仑函数的线性组合4
+[39] \begin{equation}
+H_l^\pm(\eta, \rho) = G_l(\eta, \rho) \pm \mathrm{i} F_l(\eta, \rho)~.
+\end{equation}
+[40] \begin{equation}
+H_l^\pm(\eta, \rho) = (\mp \mathrm{i} )^l \mathrm{e} ^{\pi\eta/2 \pm \mathrm{i} \sigma_l(\eta)} W_{\mp \mathrm{i} \eta, l + 1/2}(\mp 2 \mathrm{i} \rho)~,
+\end{equation}
+[41] 其中 $W_{\kappa, \mu}(z)$ 是
+[42] 惠特克（Whittaker）W 函数
+[43] \begin{equation}
+W_{\kappa, \mu}(z) = \mathrm{e} ^{-z/2} z^{\mu + 1/2} U(\mu - \kappa + 1/2, 1 + 2\mu, z)~,
+\end{equation}
+[44] 其中 $U(a, b, z)$ 是
+[45] 库默尔（Kummer）U 函数
+[46] ，定义为
+[47] \begin{equation}
+U(a, b, z) = \frac{\Gamma(1 - b)}{\Gamma(a + 1 - b)} M(a, b, z) + \frac{\Gamma(b - 1)}{\Gamma(a)} z^{1 - b} M(a + 1 - b, 2 - b, z)~.
+\end{equation}
+[48] 式 14 [链接 L3]
+[49] 式 13 [链接 L4]
+[50] \begin{equation}
+H_l^\pm(\eta, \rho) = \mathrm{e} ^{\pm \mathrm{i} \theta_l(\eta, \rho)}(\mp 2 \mathrm{i} \rho)^{l + 1 \pm \mathrm{i} \eta} U(l + 1 \pm \mathrm{i} \eta, 2l + 2, \mp2 \mathrm{i} \rho)~,
+\end{equation}
+[51] \begin{equation}
+\theta_l(\eta, \rho) = \rho - \frac{l\pi}{2} - \eta \ln\left(2\rho\right) + \sigma_l(\eta)~.
+\end{equation}
+[52] 式 8 [链接 L5]
+[53] 中的渐进相位。
+
+[/SCOPE:s_other_let]
+[/SCOPE:s_other]
+[SCOPE:s_prop_let|let_bind|性质变量]
+[SCOPE:s_prop|description|性质]
+[54] $G_l(\eta,\rho)$ 的渐进形式为
+[55] \begin{equation}
+\lim_{\rho\to \infty} G_l(\eta, \rho) = \cos\theta_l(\eta, \rho)~.
+\end{equation}
+[56] 库仑函数的导数可以由惠特克函数的导数得到。
+[57] \begin{equation}
+\frac{\partial}{\partial{z}} [M_{a, b}(z)] = \left(\frac12 - \frac{a}{z} \right) M_{a, b}(z) + \frac{1}{x} \left(a + b + \frac12 \right) M_{a+1, b}(z)~,
+\end{equation}
+[58] \begin{equation}
+\frac{\partial}{\partial{z}} [W_{a, b}(z)] = \frac{1}{2z} \left[(z - 2a) W_{a, b}(z) - 2W_{a+1, b}(z) \right] ~.
+\end{equation}
+[59] 可见程序中求导数大概要比求函数值多用一倍时间（因为要求两次惠特克函数），
+[60] 但同时也顺便求出了函数值。
+[61a] 如果同时需要两类库仑函数及它们的导数，只需求 $H^+$ 函数的导数，这
+[61b] 则顺便求出了 $H^+$，再分别取实部虚部即可。
+[62] 另外只需要把 $H^+$ 做复共轭即可得到 $H^-$。
+[63] 一种验证函数值是否正确的方法是使用以下性质
+[64] \begin{equation}
+\mathcal{W}\{G, F\} = \mathcal{W}\{H^\pm, F\} = 1~,
+\end{equation}
+[65a] (x), f_2
+[65b] (x)\}$ 是二阶
+[66] 朗斯基行列式（Wronskian determinant）
+[67] \begin{equation}
+\mathcal{W}\{f_1(x), f_2(x)\} = \begin{vmatrix}
+f_1(x) & f_2(x) \\
+f_1'(x) & f_2'(x)
+\end{vmatrix} = f_1(x) f_2'(x) - f_2(x) f_1'(x)~.
+\end{equation}
+[68] 由渐进形式可得径向归一化积分5与球贝塞尔函数乘以 $kr$ 的相同（式 22 ）
+[69] \begin{equation}
+\int_0^\infty F_l(-Z/k', k' r)F_l(-Z/k, kr) \,\mathrm{d}{r} = \int_0^\infty \sin\left(k'r\right) \sin\left(kr\right) \,\mathrm{d}{r} = \frac{\pi}{2}\delta(k - k') \qquad (k, k' > 0)~.
+\end{equation}
+
+跨文章引用:
+  [L0] 超几何函数 → HypGeo
+  [L1] 库仑函数程序（Matlab 和 Mathematica） → FlCode
+[/SCOPE:s_prop_let]
+[/SCOPE:s_prop]
+[/SCOPE:root]

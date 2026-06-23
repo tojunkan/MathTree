@@ -1,0 +1,266 @@
+{
+  "article_name": "HerMat",
+  "statements": [
+    {
+      "stmt_id": "st_def_complex_matrix",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_herm_conj",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_herm_conj",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_herm_conj",
+      "exposed_entities": [
+        "A",
+        "A^\\dagger"
+      ]
+    },
+    {
+      "stmt_id": "st_let_herm_conj_elem",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_herm_conj",
+      "exposed_entities": [
+        "A",
+        "A^\\dagger",
+        "i",
+        "j"
+      ]
+    },
+    {
+      "stmt_id": "st_prop_scalar_mult",
+      "subtype": "theorem",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def_herm_conj",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop_product",
+      "subtype": "theorem",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def_herm_conj",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exercise1",
+      "subtype": "exercise",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_map_intro",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_map",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let_linear_map_ops",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_linear_map",
+      "exposed_entities": [
+        "A",
+        "A^\\dagger",
+        "X",
+        "Y"
+      ]
+    },
+    {
+      "stmt_id": "st_why_swap",
+      "subtype": "question",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_linear_map",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rectangular_explanation",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_linear_map",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_equiv_def_inner",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_map",
+      "exposed_entities": [
+        "u",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_herm_matrix_def_cond",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_herm_matrix",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_herm_matrix_def",
+      "subtype": "definition",
+      "clause_range": [
+        25,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_herm_matrix",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_herm_elem_prop",
+      "subtype": "theorem",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": "true",
+      "scope_id": "s_herm_matrix",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_diag_real",
+      "subtype": "theorem",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": "true",
+      "scope_id": "s_herm_matrix",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_equiv_def_vectors",
+      "subtype": "definition",
+      "clause_range": [
+        32,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_herm_matrix",
+      "exposed_entities": [
+        "v_i",
+        "v_j"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def_complex_matrix",
+      "target": "st_def_herm_conj",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_herm_conj_elem",
+      "target": "st_def_herm_conj",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_linear_map_intro",
+      "target": "st_let_linear_map_ops",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_linear_map_ops",
+      "target": "st_why_swap",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_why_swap",
+      "target": "st_rectangular_explanation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_linear_map_ops",
+      "target": "st_equiv_def_inner",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_herm_matrix_def_cond",
+      "target": "st_herm_matrix_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_herm_matrix_def",
+      "target": "st_herm_elem_prop",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_herm_elem_prop",
+      "target": "st_diag_real",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_herm_matrix_def",
+      "target": "st_equiv_def_vectors",
+      "edge_type": "equivalent",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

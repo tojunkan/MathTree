@@ -1,0 +1,62 @@
+{
+  "article_name": "Erfi",
+  "statements": [
+    {
+      "stmt_id": "st_def_erfi",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "erfi(x)",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_deriv_erfi",
+      "subtype": "theorem",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_int_erfi",
+      "subtype": "theorem",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": "true",
+      "scope_id": "s_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_series_erfi",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_series",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_deriv_erfi",
+      "target": "st_int_erfi",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

@@ -1,0 +1,281 @@
+[SCOPE:root|description|可测函数]
+文章名: MsbFun
+标题: 可测函数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=可测函数
+  [1] type=example heading=例 1 title=可测函数的例子
+  [2] type=theorem heading=定理 1 title=
+  [3] type=corollary heading=推论 1 title=
+  [4] type=definition heading=定义 2 title=几乎处处
+  [5] type=theorem heading=定理 2 title=
+  [6] type=theorem heading=定理 3 title=
+  [7] type=theorem heading=定理 4 title=
+  [8] type=definition heading=定义 3 title=正部和负部
+  [9] type=definition heading=定义 4 title=下方图形
+  [10] type=theorem heading=定理 5 title=
+
+[0] 为了引入新的积分思想，我们首先要讨论可测函数的相关概念。
+
+[SCOPE:s_generalized_real|description|广义实数]
+[1] 为了方便将来的讨论，我们将实数扩充为 “广义实数”（有的地方也称之为 “扩充实数”），
+[2] 即在实数集合中再添加 $\pm\infty$ 这两个元素。
+[3] $\pm\infty$ 的运算规则简述如下：
+[4] \begin{equation}
+(\pm\infty)+( \pm \infty)=\pm \infty~,
+\end{equation}
+[5] \begin{equation}
+(\pm\infty)(\pm\infty)=+\infty~,
+\end{equation}
+[6] \begin{equation}
+(\pm\infty)(\mp\infty)=-\infty~.
+\end{equation}
+[SCOPE:s_generalized_real_let|let_bind|广义实数变量]
+[7] 设 $a, b, c$ 都是实数，且 $b<0< c$，
+[8] 则还有：
+[/SCOPE:s_generalized_real_let]
+[9] \begin{equation}
+a+(\pm\infty)=\pm\infty~,
+\end{equation}
+[10] \begin{equation}
+b(\pm\infty)=\mp\infty~,
+\end{equation}
+[11] \begin{equation}
+c(\pm\infty)=\pm\infty~.
+\end{equation}
+[12] 要注意的是，由于广义实数不是微积分中的 “任意大”、“极限” 等概念，而是两个具有上述运算性质的新元素，
+[13] 因此 $(\pm\infty)+(\mp\infty)$ 是不允许的运算，多数情况下 $0\cdot(\pm\infty)$ 也是不允许的。
+[14] 另外，这两个新元素也不是拓扑意义上 “一点紧化” 的那 “一点”，请注意区别。
+[15] 最后，还要再补充一个关系：对于任意实数 $a$，都有
+[16] \begin{equation}
+-\infty< a<+\infty~.
+\end{equation}
+[17] 这样一来，我们就可以不再局限于实数集，而是在广义实数集上定义函数。
+
+[/SCOPE:s_generalized_real]
+[18] 可测函数是构造 Lebesgue 积分思想的砖块，就像 “柱子的面积” 是 Riemann 积分思想的砖块一样。
+
+[SCOPE:s_def1|description|可测函数定义]
+[19] 定义 1 可测函数
+[SCOPE:s_def1_let|let_bind|可测函数定义变量]
+[20] 设 $f$ 是 $E\subseteq\mathbb{R}^n$ 上的函数（值域为广义实数集），其定义域 $E$ 为一个可测集。
+[21] 如果对于任意实数 $a$，都有 $\{x\in E|f(x)\geq a\}$ 是可测集，
+[/SCOPE:s_def1_let]
+[22] 那么称 $f$ 是 $E$ 上的可测函数（measurable function），也可以说 $f$ 在 $E$ 上是可测的。
+
+[/SCOPE:s_def1]
+[SCOPE:s_example1|description|可测函数的例子]
+[23] 例 1 可测函数的例子
+[SCOPE:s_example1_let|let_bind|黎曼函数变量]
+[24] 黎曼函数 $R$ 的定义如下：
+[25] \begin{equation}
+R(x)=
+\left\{\begin{aligned}
+&\frac{1}{p},\quad x=\frac{q}{p}, (p, q)=1\\
+&1,\quad x=0\\
+&0,\quad x\text{为无理数}
+\end{aligned}\right. ~.
+\end{equation}
+[/SCOPE:s_example1_let]
+[26] 由于有理数只有可数个，
+[27] 故根据定理 1 ，黎曼函数中函数值不为零的点总是零测集，也即可测。
+[28] 因此黎曼函数是可测函数。
+[29] 可测函数要保持的性质是，在对值域进行分划的时候，各分划区间通过逆映射对应的 “底面” 是可测集，这样才能满足可加性。
+[30] 定义 1 中的限制看起来没有 “任意分划得到的底面都是可测集”，
+[31] 但实际上定义到这个程度已经够了，这可以从下面的定理 1 看出：
+
+[/SCOPE:s_example1]
+[SCOPE:s_thm1|description|定理1]
+[32] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1变量]
+[33] 设 $E$ 是 $\mathbb{R}^n$ 上的可测集，$f$ 是 $E$ 上的一个函数，
+[34] 则以下命题等价：
+[/SCOPE:s_thm1_let]
+[35] $f$ 是可测函数；
+[36] 对于任意实数 $a$，$\{x\in E|f(x)>a\}$ 是可测集；
+[37] 对于任意实数 $a$，$\{x\in E|f(x)\leq a\}$ 是可测集；
+[38] 对于任意实数 $a$，$\{x\in E|f(x)< a\}$ 是可测集。
+[39] 证明：
+[SCOPE:s_thm1_proof_let|let_bind|定理1证明记号]
+[40] 为方便讨论，记 $\{x\in E|f(x)\geq a\}=E_a$。
+[/SCOPE:s_thm1_proof_let]
+[41] 于是 $\{x\in E|f(x)>a\}=\bigcup_{k=1}^\infty E_{a+1/k}$，
+[42] 因此它也是可测集。
+[43] 而 $\{x\in E|f(x)< a\}=E-E_a$，
+[44] 故它也是可测集。
+[45a] (x)\leq a\}=E-\{x\in E|f
+[45b] (x)>a\}$，
+[46] 因此也是可测集。
+[47] 类似地，用这四句话中任意一个作为可测集的定义，都可以通过上述方式证明其它几句话所描述的也是可测集。
+[48] 证毕。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_cor1|description|推论1]
+[49] 推论 1
+[SCOPE:s_cor1_let|let_bind|推论1变量]
+[50] 设 $f$ 为 $E$ 上的可测函数，
+[/SCOPE:s_cor1_let]
+[51a] (x)=+\infty\}$ 和 $E_{-\infty}=\{x|f
+[51b] (x)=-\infty\}$ 都是可测集。
+
+[/SCOPE:s_cor1]
+[SCOPE:s_def2|description|几乎处处定义]
+[52] 定义 2 几乎处处
+[53] “几乎处处（almost everywhere）”，指 “除了一个零测集以外都”。
+[54a] 比如说
+[54b] 如果说两个函数几乎处处相等，那，则是说它们不相等的地方是一个零测集。
+[55] 有的时候也用 “a. e. ” 来简称。
+[56] 注意，空集也是零测集，
+[57] 所以 “几乎处处” 也包含了 “处处” 的情况。
+[58] 根据可测集的性质，我们容易得到以下定理 2 和定理 3 ，证明留作习题。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm2|description|定理2]
+[59] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2变量]
+[60] 设 $E\subseteq\mathbb{R}^n$ 是可测集，$f$ 和 $g$ 是在 $E$ 上定义的函数。
+[/SCOPE:s_thm2_let]
+[61] 如果两个函数几乎处处相等，
+[62] 那么 $f$ 可测当且仅当 $g$ 可测。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|定理3]
+[63] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理3变量]
+[64] 如果各 $E_i\subseteq\mathbb{R}^n$ 都是可测集，且 $f$ 是每个 $E_i$ 上的可测函数，
+[/SCOPE:s_thm3_let]
+[65] 那么 $f$ 也是 $\bigcup_{i=1}^\infty$ 上的可测函数。
+[66] 根据定理 1 ，我们只需要关注函数几乎处处的性质即可。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|定理4]
+[67] 定理 4
+[SCOPE:s_thm4_let|let_bind|定理4变量]
+[68] 设 $f$ 和 $g$ 都是可测集 $E\subseteq\mathbb{R}^n$ 上的可测函数，且都几乎处处有意义，
+[69] 那么 $af+bg$ 和 $f\cdot g$ 也都是可测函数，其中 $a, b$ 都是常数。
+[/SCOPE:s_thm4_let]
+[70] 证明：
+[SCOPE:s_thm4_proof_let|let_bind|定理4证明变量]
+[71] 任取实数 $y_0$，
+[72a] (x)+bg
+[72b] (x)\geq y_0\}$ 是全体 $\{x\in\mathbb{R}^n|f
+[72c] (x)\geq \frac{s}{a}, g
+[72d] (x)\geq \frac{y_0-s}{b}\}$ 的集合之并，其中 $s$ 是常数，求并时 $s$ 遍历全体广义实数。
+[/SCOPE:s_thm4_proof_let]
+[73a] (x)\geq \frac{s}{a}, g
+[73b] (x)\geq \frac{y_0-s}{b}\}$ 是两个可测集的交，
+[74] 因此都是可测集，
+[75a] (x)+bg
+[75b] (x)\geq y_0\}$ 是可测的。
+[76] 由 $y_0$ 的任意性，
+[77] 即得证 $af+bg$ 是可测函数。
+[78a] (x)=f
+[78b] (x)g
+[78c] (x)$ 的证明思路也是类似的，讨论 $f$ 和 $g$ 分别满足什么条件才能使得 $fg$ 满足 “大于等于特定常数”，
+[79] 故在此省略证明过程，留作习题。
+[80] 证毕。
+
+[/SCOPE:s_thm4]
+[SCOPE:s_def3|description|正部和负部定义]
+[81] 定义 3 正部和负部
+[SCOPE:s_def3_let|let_bind|正部负部变量]
+[82a] (x)=\max\{f
+[82b] (x), 0\}$，$f^-
+[82c] (x)=-\min\{f
+[82d] (x), 0\}$。
+[/SCOPE:s_def3_let]
+[83] 分别称 $f^+$ 和 $f^-$ 为 $f$ 的正部（positive part）和负部（negative part）。
+[84] 函数的正部可以看成是把所有为负的函数值都提升到零，像是把函数图像的下半部分 “削平” 了；
+[85] 同理，函数的负部就是把上半部分削平了，再把整个函数翻转为非负的。
+[86] 这样定义后，我们只需要讨论非负函数的性质，便可以利用正部与负部的概念把讨论结果应用到任意函数上。
+[87] 根据可测函数的定义容易得到，$f$ 可测的充要条件是 $f^+$ 和 $f^-$ 都可测；
+[88] 另外，$f$ 可测还有一个必要但不充分1条件为，$ \left\lvert f \right\rvert $ 可测。
+
+[/SCOPE:s_def3]
+[SCOPE:s_def4|description|下方图形定义]
+[89] 定义 4 下方图形
+[SCOPE:s_def4_let|let_bind|下方图形变量]
+[90] 给定可测集 $E\subseteq\mathbb{R}^n$ 上的非负函数 $f$，其图像可以在 $\mathbb{R}^{n+1}$ 中表示，
+[91] 即 $(x, f(x))$ 具有 $n+1$ 个分量。
+[92a] (x)]\}$ 称为 $f
+[92b] (x)$ 的下方图形，可记为 $G(E; f)$。
+[/SCOPE:s_def4_let]
+[93] 下方图形的定义只针对了非负函数，
+[94] 但实际上由于对称性，非正函数的性质和非负函数也无本质不同，同样可以定义上方图形；
+[95] 加之我们可以通过把 $f$ 分为正部和负部来讨论，
+[96] 所以对非负函数的下方图形的讨论已经可以展现任何实变函数的性质了。
+[97] 下面这个定理揭示了可测函数与可测集之间的联系：
+
+[/SCOPE:s_def4]
+[SCOPE:s_thm5|description|定理5]
+[98] 定理 5
+[SCOPE:s_thm5_let|let_bind|定理5变量]
+[99] 给定可测集 $E\subseteq\mathbb{R}^n$ 上的非负函数 $f$，
+[/SCOPE:s_thm5_let]
+[100] 则 $f$ 是可测函数当且仅当 $f$ 的下方图形是 $\mathbb{R}^{n+1}$ 上的可测集。
+[101] 证明：
+[102] 为方便计，我们考虑 $E\subseteq\mathbb{R}$ 上的函数，
+[103] 即一元实函数，并令自变量为 $x$ 轴，因变量为 $y$ 轴。
+[104] 多元的情况是类似的。
+[105] 首先证明必要性。
+[106] 已知 $f$ 是可测函数，
+[SCOPE:s_thm5_proof_let|let_bind|定理5证明记号]
+[107] 那么各 $E_k=G(E; f)\cap\{(x, y)|y\geq -k\}$ 都应该是可测集。
+[/SCOPE:s_thm5_proof_let]
+[108] 又因为 $\bigcup^\infty_{k=1} E_k=G(E; f)$，
+[109] 故 $G(E; f)$ 也是可测集。
+[110] 接着证明充分性。
+[111] 已知 $G(E; f)$ 是可测集，且对任意实数 $k$，$\{(x, y)|y\geq k\}$ 都是可测集。
+[112a] (x))|f
+[112b] (x)\geq k\}$ 也是可测集，
+[113] 从而任意 $\{x|f(x)\geq k\}$ 是可测集，
+[114] 即 $f$ 是可测函数。
+[115] 证毕。
+[/SCOPE:s_thm5]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1给出可测函数的等价定义"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是可测函数定义的直接结果"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2关于几乎处处相等的可测性"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3关于可测集并上的可测性"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理4关于可测函数的线性组合和乘积"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_def4",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "定理5：可测函数当且仅当下方图形可测"
+  }
+]

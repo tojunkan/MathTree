@@ -1,0 +1,48 @@
+[SCOPE:root|description|可微映射的导数]
+文章名: DoDifM
+标题: 可微映射的导数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=可微映射的导数
+  [1] type=theorem heading=定理 1 title=导数是线性映射
+
+[SCOPE:s_def1|description|可微映射的导数]
+[0] 定义 1 可微映射的导数
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1a] (x)}$ 为映射 $f$ 在点 $x$ 的导数，若 $f_*|_x$ 把过点 $x$ 的任意曲线 $\varphi$（$\varphi(0)=x$）的速度向量（定义 6 ）映到过点 $f
+[1b] (x)$ 的曲线 $f\circ\varphi$ 的速度向量，
+[2] 即
+[3] \begin{equation}
+f_*|_x( \frac{\mathrm{d}{\varphi}}{\mathrm{d}{t}} |_{t=0})= \frac{\mathrm{d}{}}{\mathrm{d}{t}} \Bigg|_{t=0}(f\circ\varphi)~.
+\end{equation}
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_thm1|description|导数是线性映射]
+[4] 定理 1 导数是线性映射
+[5] 可微映射的导数是线性映射。
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[6] 证明：
+[7] \begin{equation}
+\begin{aligned}
+&f_*|_x(a \frac{\mathrm{d}{\varphi_1}}{\mathrm{d}{t}} |_{t=0}+b \frac{\mathrm{d}{\varphi_2}}{\mathrm{d}{t}} |_{t=0})\\
+&= \frac{\mathrm{d}{}}{\mathrm{d}{t}} \Bigg|_{t=0}(f\circ(a\varphi_1+b\varphi_2))\\
+&=\sum_i \frac…[truncated]…|_{t=0}(f\circ\varphi_1)+b \frac{\mathrm{d}{}}{\mathrm{d}{t}} \Bigg|_{t=0}(f\circ\varphi_2)\\
+&=af_*|_x( \frac{\mathrm{d}{\varphi_1}}{\mathrm{d}{t}} |_{t=0})+bf_*|_x( \frac{\mathrm{d}{\varphi_2}}{\mathrm{d}{t}} |_{t=0})~.
+\end{aligned}
+\end{equation}
+[8] 证毕！
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的证明使用了定义1的导数概念"
+  }
+]

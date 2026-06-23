@@ -1,0 +1,211 @@
+[SCOPE:root|description|图的顶点度]
+文章名: DGraph
+标题: 图的顶点度
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=顶点度，出度，入度，孤立点
+  [1] type=example heading=例 1 title=
+  [2] type=definition heading=定义 2 title=平衡图
+  [3] type=definition heading=定义 3 title=最大度，最小度，平均度
+  [4] type=exercise heading=习题 1 title=
+  [5] type=definition heading=定义 4 title=正则
+  [6] type=theorem heading=定理 1 title=
+  [7] type=corollary heading=推论 1 title=
+  [8] type=corollary heading=推论 2 title=
+
+[SCOPE:s_def1|description|顶点度，出度，入度，孤立点]
+[0] 定义 1 顶点度，出度，入度，孤立点
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1] 设 $G=(V,E,\varphi)$ 是图，$v\in V$。
+[/SCOPE:s_def1_let]
+[2a] (v)$（或简记为 $d
+[2b] (v)$）。
+[3] $G$ 中以 $v$ 为起点的有向边数称为 $v$ 在 $G$ 中的出度（out degree），记作 $d_G^+(v)$。
+[4] $G$ 中以 $d$ 为终点的有向边数称为 $v$ 在 $G$ 中的入度（in degree），记作 $d_G^-(v)$。
+[5] 度为 $d$ 的点称为 $d$ 度点（d degree vertex）。
+[6] 零度点称为孤立点（isolated vertex），出度等于入度的点称为平衡点（balanced vertex）。
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|例1]
+[SCOPE:s_ex1_let1|let_bind|例1的变量G]
+[7] 设 $G$ 是有向图。
+[/SCOPE:s_ex1_let1]
+[8a] (v)=d_G^+
+[8b] (v)+d_G^-
+[8c] (v)$。
+[SCOPE:s_ex1_let2|let_bind|例1证明中的变量]
+[9] 证明：设 $E^+$ 是 $G$ 中以 $v$ 为起点的边集，$E^-$ 是 $G$ 中以 $v$ 为终点的边集。
+[/SCOPE:s_ex1_let2]
+[10] 则 $E_0=E^+\cap E^-$ 是过 $v$ 的环集。
+[11] 由于
+[12] $E^+\backslash E_0, E_0, E^-\backslash E_0$ 是 $E(v)$ 的划分，
+[13] 因此
+[14] \begin{equation}
+\left\lvert E(v) \right\rvert = \left\lvert E^+\backslash E_0 \right\rvert + \left\lvert E_0 \right\rvert + \left\lvert E^-\backslash E_0 \right\rvert .~
+\end{equation}
+[15] \begin{equation}
+d_G(v)=d_G^+(v)+d_G^-(v).~
+\end{equation}
+[16] 图的所有点当中最大的度和最小的度人们习惯用记号 $\Delta,\delta$ 分别来标记它。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_def2|description|平衡图]
+[17] 定义 2 平衡图
+[18] 每个点都为平衡点的有向图称为平衡有向图（balanced digraph），简称平衡图。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|最大度，最小度，平均度]
+[19] 定义 3 最大度，最小度，平均度
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[20] 设 $G$ 是图。
+[/SCOPE:s_def3_let]
+[21] 则称 $G$ 中顶点度的最大者称为 $G$ 的最大度（maximum degree），记作 $\Delta(G)$；
+[22] 而 $G$ 中顶点度的最小者称为最小度（minimum degree），记作 $\delta(G)$；
+[23] 所有点的度之和除于点数称为平均度（average degree），记作 $d(G)$。即
+[24] \begin{equation}
+\begin{aligned}
+&\Delta(G):=\max\{d_G(v)|v\in V\}, \\
+&\delta(G):=\min\{d_G(v)|v\in V\},\\
+&d(G):=\frac{1}{ \left\lvert V(G) \right\rvert }\sum_{v\in V}d_G(v).
+\end{aligned}~
+\end{equation}
+
+[/SCOPE:s_def3]
+[SCOPE:s_exer1|description|习题1]
+[25] 习题 1
+[26] 试证明不等式：$\delta(G)\leq d(G)\leq \Delta(G)$。
+[27a] 当所有点具有相同的度时，人们习惯用正
+[27b] 则这个词来形容图。
+[28] 当所有点的出度等于入度的时候，人们习惯用平衡形容图。
+
+[/SCOPE:s_exer1]
+[SCOPE:s_def4|description|正则]
+[29] 定义 4 正则
+[SCOPE:s_def4_let|let_bind|定义4的变量]
+[30] 若图 $G$ 中的所有点都具有相同的度 $k$，
+[/SCOPE:s_def4_let]
+[31] 则称 $G$ 是 $k$ 正则的（$k$ regular），简称正则的（regular）。
+[32] 若图 $G$ 的所有点的出度等于入度，
+[33] 则称 $G$ 是平衡的。
+[34] 特别的，$3$ 正则图称为 立方图（cubic graph）。
+
+[/SCOPE:s_def4]
+[SCOPE:s_thm1|description|定理1]
+[35] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[36] 设 $G$ 是任一无环图，
+[/SCOPE:s_thm1_let]
+[37] 则其边集和点集个数具有如下关系：
+[38] \begin{equation}
+\left\lvert E(G) \right\rvert =\frac{1}{2}d(G) \left\lvert V(G) \right\rvert .~
+\end{equation}
+[SCOPE:s_thm1_proof1|description|定理1证明方法1]
+[39] 证明：方法 1：对所有的顶点度求和，由于无环图的每一边有两个端点，计算一个点的度计数一次边，
+[40] 所以每条边刚好被计算两次。
+[41] 因此
+[42] \begin{equation}
+\left\lvert E(G) \right\rvert =\frac{1}{2}\sum_{v\in V}d_G(v)=\frac{1}{2}d(G) \left\lvert V \right\rvert .~
+\end{equation}
+[/SCOPE:s_thm1_proof1]
+[SCOPE:s_thm1_proof2|description|定理1证明方法2]
+[43] 方法 2：方法 1 具有较大的 “人为” 部分，或者说形式上不严谨，相当于用了一推所谓的人能思考的逻辑，直接给出了式 5 。
+[44] 为了形式严密起见，下面使用更精细的证明。
+[SCOPE:s_thm1_proof2_let1|let_bind|方法2的变量A]
+[45] 考虑边及其端点组成的偶对 $(e,v)$ 的全体
+[46] \begin{equation}
+A=\{(e,v)|v\in e,e\in E(G)\}.~
+\end{equation}
+[/SCOPE:s_thm1_proof2_let1]
+[SCOPE:s_thm1_proof2_let2|let_bind|方法2的变量tilde e和tilde v]
+[47] 对每一边 $e$ 定义
+[48] \begin{equation}
+\tilde e=\{(e,v)|v\in e,v\in V(G)\}.~
+\end{equation}
+[49] 对每一点 $v$ 定义
+[50] \begin{equation}
+\tilde v=\{(e,v)|v\in e,e\in E(G)\}.~
+\end{equation}
+[/SCOPE:s_thm1_proof2_let2]
+[51] \begin{equation}
+\bigcup_{e\in E}\tilde e=A=\bigcup_{v\in V}\tilde v,~
+\end{equation}
+[52] 且不同的 $e_1,e_2\in E(G),v_1,v_2\in V(G)$，$\tilde e_1\cap\tilde e_2=\varnothing,\tilde v_1\cap\tilde v_2=\varnothing$
+[53] 所以（不相交集合的基数和等于它们的并集的基数）
+[54] \begin{equation}
+\sum_{e\in E} \left\lvert \tilde e \right\rvert =\sum_{v\in V} \left\lvert \tilde v \right\rvert .~
+\end{equation}
+[55] 对无环图而言 $ \left\lvert \tilde e \right\rvert =2,\forall e\in E$，又 $ \left\lvert \tilde v \right\rvert =d_G(v)$，将它们带入上式即得
+[56] 式 5 [链接 L0]
+[57] 证毕！
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_proof2]
+[SCOPE:s_cor1|description|推论1]
+[58] 推论 1
+[59] 任意无环图中具有奇数度的顶点的个数总是偶数。
+[60] 证明：
+[61] 由定理 1 和式 3 ，
+[62] \begin{equation}
+\left\lvert E \right\rvert =\frac{1}{2}\sum_{v\in V}d_G(v).~
+\end{equation}
+[63] 由于 $ \left\lvert E \right\rvert \in\mathbb N$。
+[64] 所以
+[65] \begin{equation}
+\sum_{v\in V}d_G(v)\in 2\mathbb N.~
+\end{equation}
+[SCOPE:s_cor1_let|let_bind|推论1的变量O]
+[66] 设全体奇数度的点为 $O=\{v\in V|d_G(v)\text{为奇数}\}$，
+[/SCOPE:s_cor1_let]
+[67] 那么
+[68] \begin{equation}
+\sum_{v\in O}d_G(v)\in 2\mathbb N~
+\end{equation}
+[69] 上式左边是奇数之和，而右边是偶数。
+[70] 而只有偶数个奇数之和才能为偶数，
+[71] 所以 $ \left\lvert O \right\rvert $ 是偶数。
+[72] 证毕！
+
+[/SCOPE:s_cor1]
+[SCOPE:s_cor2|description|推论2]
+[73] 推论 2
+[74] 设 $G$ 是任意图，
+[75] 则式 4 任成立。
+[76] 证明：
+[SCOPE:s_cor2_let|let_bind|推论2的变量r]
+[77] 设 $G$ 中有 $r$ 个环，
+[/SCOPE:s_cor2_let]
+[78] 则 $ \left\lvert E \right\rvert -r$ 是去掉所有环后得到的图的边数，$d(G) \left\lvert V(G) \right\rvert -2r$ 则是得到的无环图的度，而点的个数仍是 $ \left\lvert V(G) \right\rvert $，
+[79] 所以得到的无环图的平均度为 $d(G)-\frac{2r}{V(G)}$。
+[80] 由定理 1 ，得
+[81] \begin{equation}
+\begin{aligned}
+\left\lvert E(G) \right\rvert -r&=\frac{1}{2} \left(d(G)-\frac{2r}{V(G)} \right) \left\lvert V(G) \right\rvert ,\\
+&\Downarrow\\
+\left\lvert E(G) \right\rvert &=\frac{1}{2}d(G)\cdot \left\lvert V(G) \right\rvert .
+\end{aligned}~
+\end{equation}
+[82] 证毕！
+[83] 若想使得式 4 对所有的图成立，
+[84] 那么由式 5 可知，若定义一个环算两条关联边，
+[85] 则式 4 对所有的图成立。
+[86] 这也是一些教材的做法，避免混淆的方法是：在特定的情形遵循约定的惯例即可。
+[/SCOPE:s_cor2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1引用定理1"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论2引用定理1"
+  }
+]

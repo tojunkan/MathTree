@@ -1,0 +1,528 @@
+{
+  "article_name": "clf02",
+  "statements": [
+    {
+      "stmt_id": "st_def1_outer_product",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "A",
+        "B",
+        "A∧B"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_associativity",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_nilpotent",
+      "subtype": "remark",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_orthogonal_basis",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "e_i"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_example",
+      "subtype": "example",
+      "clause_range": [
+        15,
+        24
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "e_i",
+        "θ_i",
+        "a^i",
+        "b^i"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_left_inner_product",
+      "subtype": "definition",
+      "clause_range": [
+        25,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "A",
+        "B",
+        "A⌞B"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_right_inner_product",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "A",
+        "B",
+        "A⌟B"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_remark",
+      "subtype": "remark",
+      "clause_range": [
+        32,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "e_i",
+        "θ_i",
+        "a^i",
+        "b^i",
+        "c^i"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1",
+      "subtype": "exercise",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "θ1",
+        "θ2",
+        "θ3"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_hint",
+      "subtype": "remark",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2",
+      "subtype": "exercise",
+      "clause_range": [
+        41,
+        43
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_scalar_product",
+      "subtype": "definition",
+      "clause_range": [
+        46,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "A",
+        "B",
+        "A*B"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_remark",
+      "subtype": "remark",
+      "clause_range": [
+        49,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "e_A",
+        "e_B",
+        "g_AB"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1",
+      "subtype": "theorem",
+      "clause_range": [
+        53,
+        55
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "g_AB",
+        "e_A",
+        "e_B",
+        "g_ii"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof",
+      "subtype": "remark",
+      "clause_range": [
+        56,
+        60
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_decomposition",
+      "subtype": "remark",
+      "clause_range": [
+        61,
+        61
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "stmt_id": "st_def5_projection",
+      "subtype": "definition",
+      "clause_range": [
+        62,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_def5",
+      "exposed_entities": [
+        "A",
+        "⟨A⟩_k"
+      ]
+    },
+    {
+      "stmt_id": "st_def6_grade_involution",
+      "subtype": "definition",
+      "clause_range": [
+        65,
+        67
+      ],
+      "truth_value": null,
+      "scope_id": "s_def6",
+      "exposed_entities": [
+        "A",
+        "A^*"
+      ]
+    },
+    {
+      "stmt_id": "st_def7_reversion",
+      "subtype": "definition",
+      "clause_range": [
+        68,
+        70
+      ],
+      "truth_value": null,
+      "scope_id": "s_def7",
+      "exposed_entities": [
+        "A",
+        "A^†"
+      ]
+    },
+    {
+      "stmt_id": "st_def7_remark",
+      "subtype": "remark",
+      "clause_range": [
+        71,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_def7",
+      "exposed_entities": [
+        "e_1",
+        "e_2",
+        "e_n"
+      ]
+    },
+    {
+      "stmt_id": "st_def8_conjugation",
+      "subtype": "definition",
+      "clause_range": [
+        74,
+        76
+      ],
+      "truth_value": null,
+      "scope_id": "s_def8",
+      "exposed_entities": [
+        "A",
+        "A^□"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3",
+      "subtype": "exercise",
+      "clause_range": [
+        77,
+        78
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex3",
+      "exposed_entities": [
+        "G(R^{0,1})",
+        "G(R^{0,2})"
+      ]
+    },
+    {
+      "stmt_id": "st_ex4",
+      "subtype": "exercise",
+      "clause_range": [
+        80,
+        82
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex4",
+      "exposed_entities": [
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    {
+      "stmt_id": "st_ex4_hint",
+      "subtype": "remark",
+      "clause_range": [
+        83,
+        83
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex5",
+      "subtype": "exercise",
+      "clause_range": [
+        85,
+        87
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex5",
+      "exposed_entities": [
+        "x",
+        "y",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_def9_dual",
+      "subtype": "definition",
+      "clause_range": [
+        88,
+        89
+      ],
+      "truth_value": null,
+      "scope_id": "s_def9",
+      "exposed_entities": [
+        "x",
+        "x^c",
+        "I"
+      ]
+    },
+    {
+      "stmt_id": "st_def9_remark",
+      "subtype": "remark",
+      "clause_range": [
+        90,
+        91
+      ],
+      "truth_value": null,
+      "scope_id": "s_def9",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def10_dual_outer_product",
+      "subtype": "definition",
+      "clause_range": [
+        92,
+        94
+      ],
+      "truth_value": null,
+      "scope_id": "s_def10",
+      "exposed_entities": [
+        "x",
+        "y",
+        "x∨y"
+      ]
+    },
+    {
+      "stmt_id": "st_def10_remark",
+      "subtype": "remark",
+      "clause_range": [
+        95,
+        95
+      ],
+      "truth_value": null,
+      "scope_id": "s_def10",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2",
+      "subtype": "theorem",
+      "clause_range": [
+        96,
+        99
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof",
+      "subtype": "remark",
+      "clause_range": [
+        100,
+        102
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_outer_product",
+      "target": "st_def1_associativity",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_def1_outer_product",
+      "target": "st_def1_nilpotent",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_def1_outer_product",
+      "target": "st_def1_orthogonal_basis",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_def1_outer_product",
+      "target": "st_def1_example",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_def2_left_inner_product",
+      "target": "st_def3_right_inner_product",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_def3_right_inner_product",
+      "target": "st_def3_remark",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_ex1",
+      "target": "st_ex1_hint",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_def4_scalar_product",
+      "target": "st_def4_remark",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_thm1",
+      "target": "st_thm1_proof",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_thm1",
+      "target": "st_thm1_decomposition",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_def7_reversion",
+      "target": "st_def7_remark",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_ex4",
+      "target": "st_ex4_hint",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_def9_dual",
+      "target": "st_def9_remark",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_def10_dual_outer_product",
+      "target": "st_def10_remark",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_thm2",
+      "target": "st_thm2_proof",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

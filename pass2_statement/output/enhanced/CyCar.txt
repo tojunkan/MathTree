@@ -1,0 +1,148 @@
+[SCOPE:root|description|柱坐标与直角坐标的转换]
+文章名: CyCar
+标题: 柱坐标与直角坐标的转换
+
+[SCOPE:s_coord_transform|description|坐标变换关系]
+[SCOPE:s_coord_let|let_bind|坐标变换的变量]
+[0] 当我们讨论柱坐标和直角坐标的转换时，通常令两个原点和 $z$ 轴重合，$\theta = 0$，$z = 0$ 为 $x$ 轴的正方向，$\theta = \pi/2$，$z = 0$ 为 $y$ 轴的正方向。
+[1] 这时两种坐标之间的变换关系为。
+[/SCOPE:s_coord_let]
+[2] \begin{equation}
+\begin{cases}
+x = r\cos \theta \\
+y = r\sin \theta \\
+z = z
+\end{cases}~,
+\end{equation}
+[3] \begin{equation}
+\begin{cases}
+r = \sqrt{x^2+y^2} \\
+\theta = \operatorname{Arctan} (y,x) \\
+z = z
+\end{cases}~.
+\end{equation}
+[4] 其中 $ \operatorname {Arctan}$ 是
+[5] 四象限反正切函数 [链接 L0]
+[6] ，也记为 $ \operatorname {atan2}$。
+[7] 注意根据
+[8] 式 1 [链接 L1]
+[9] ，同一个直角坐标可以对应不同的极坐标，例如将 $\theta$ 增加 $2\pi$ 的整数倍，直角坐标不变。
+[10] 但根据
+[11] 式 2 [链接 L2]
+[12] ，我们可以找到两种坐标间的
+[13] 一一对应 [链接 L3]
+
+[/SCOPE:s_coord_transform]
+[SCOPE:s_vector_transform|description|矢量变换]
+[SCOPE:s_vector_let|let_bind|矢量变换的变量]
+[14] 两组基底之间的变换关系为
+[15] \begin{equation}
+\begin{cases}
+\hat{\boldsymbol{\mathbf{r}}} = R_{11} \hat{\boldsymbol{\mathbf{x}}} + R_{12} \hat{\boldsymbol{\mathbf{y}}} + R_{13} \hat{\boldsymbol{\mathbf{z}}} \\
+\hat{\boldsymbol{\mathbf{\theta}}} = R_{21} \hat{\boldsymbol{\mathbf{…[truncated]…2} \hat{\boldsymbol{\mathbf{y}}} + R_{23} \hat{\boldsymbol{\mathbf{z}}} \\
+\hat{\boldsymbol{\mathbf{z}}} = R_{31} \hat{\boldsymbol{\mathbf{x}}} + R_{32} \hat{\boldsymbol{\mathbf{y}}} + R_{33} \hat{\boldsymbol{\mathbf{z}}}
+\end{cases}~,
+\end{equation}
+[16] \begin{equation}
+\begin{cases}
+\hat{\boldsymbol{\mathbf{x}}} = R_{11} \hat{\boldsymbol{\mathbf{r}}} + R_{21} \hat{\boldsymbol{\mathbf{\theta}}} + R_{31} \hat{\boldsymbol{\mathbf{z}}} \\
+\hat{\boldsymbol{\mathbf{y}}} = R_{12} \hat{\boldsymbol{\mathbf{…[truncated]…oldsymbol{\mathbf{\theta}}} + R_{32} \hat{\boldsymbol{\mathbf{z}}} \\
+\hat{\boldsymbol{\mathbf{z}}} = R_{13} \hat{\boldsymbol{\mathbf{r}}} + R_{23} \hat{\boldsymbol{\mathbf{\theta}}} + R_{33} \hat{\boldsymbol{\mathbf{z}}}
+\end{cases}~.
+\end{equation}
+[17] 其中 $ \boldsymbol{\mathbf{R}} $ 是关于角度 $\theta$ 的
+[18] 三维旋转矩阵 [链接 L4]
+[19] \begin{equation}
+\boldsymbol{\mathbf{R}} = \begin{pmatrix}
+\cos\theta & \sin\theta & 0\\
+-\sin\theta & \cos\theta & 0\\
+0 & 0 & 1
+\end{pmatrix} ~.
+\end{equation}
+[20] 若任意矢量 $ \boldsymbol{\mathbf{v}} $ 在直角坐标系和球坐标系中分别表示为
+[/SCOPE:s_vector_let]
+[21] \begin{equation}
+\boldsymbol{\mathbf{v}} = v_x \hat{\boldsymbol{\mathbf{x}}} + v_y \hat{\boldsymbol{\mathbf{y}}} + v_z \hat{\boldsymbol{\mathbf{z}}} ~,
+\end{equation}
+[22] \begin{equation}
+\boldsymbol{\mathbf{v}} = v_r \hat{\boldsymbol{\mathbf{r}}} + v_\theta \hat{\boldsymbol{\mathbf{\theta}}} + v_z \hat{\boldsymbol{\mathbf{z}}} ~.
+\end{equation}
+[23] 则坐标变换关系可以用矩阵乘法表示
+[24] \begin{equation}
+\begin{pmatrix}v_r \\ v_\theta \\ v_z\end{pmatrix}
+= \boldsymbol{\mathbf{R}} \begin{pmatrix}v_x \\ v_y \\ v_z\end{pmatrix} ~,
+\end{equation}
+[25] \begin{equation}
+\begin{pmatrix}v_x \\ v_y \\ v_z\end{pmatrix}
+= \boldsymbol{\mathbf{R}} ^{\mathrm{T}} \begin{pmatrix}v_r \\ v_\theta \\ v_z\end{pmatrix} ~.
+\end{equation}
+
+[/SCOPE:s_vector_transform]
+[SCOPE:s_derivation|description|推导]
+[SCOPE:s_derivation_let|let_bind|推导的变量]
+[26] 空间中一点 $P$ 的位矢在 $xy$ 平面的分量为 $r$。
+[27] 其可以进而分解成 $x$ 分量 和 $y$ 分量 $x = r\cos \theta$， $y = r\sin \theta$，而点 $P$ 垂直分量即为 $z$，这就得到了式 1 。
+[28] 有了式 1 中的三条关系，就可以很容易解出式 2 中的三条关系。
+[/SCOPE:s_derivation_let]
+[29] 现在推导变换关系式 3 。
+[30] 由于 $ \hat{\boldsymbol{\mathbf{r}}} , \hat{\boldsymbol{\mathbf{\theta}}} , \hat{\boldsymbol{\mathbf{z}}} $ 都是关于 $(r, \theta, z)$ 的函数，
+[31] 所以在考察一点 $(r, \theta, z)$ 时，$ \hat{\boldsymbol{\mathbf{r}}} $ 的柱坐标是 $(1, \theta, 0)$， 根据式 1 变换到直角坐标为
+[32] \begin{equation}
+(\cos \theta,\,\sin \theta,\,0)~.
+\end{equation}
+[33] 写成矢量的形式，就是
+[34] \begin{equation}
+\hat{\boldsymbol{\mathbf{r}}} = \cos \theta \, \hat{\boldsymbol{\mathbf{x}}} + \sin \theta \, \hat{\boldsymbol{\mathbf{y}}} ~.
+\end{equation}
+[35] 式 3 [链接 L5]
+[36] 的第二条式子，在同一个柱坐标 $(r,\theta ,z)$ 处，$ \hat{\boldsymbol{\mathbf{\theta}}} $ 的柱坐标为 $(1, \theta + \pi /2, 0)$，根据
+[37] 式 1 [链接 L6]
+[38] 变换到直角坐标再化简就得到直角坐标和对应的矢量形式为
+[39] \begin{equation}
+(-\sin \theta ,\,\cos \theta , \,0)~,
+\end{equation}
+[40] \begin{equation}
+\hat{\boldsymbol{\mathbf{\theta}}} = -\sin \theta \, \hat{\boldsymbol{\mathbf{x}}} + \cos \theta \, \hat{\boldsymbol{\mathbf{y}}} ~.
+\end{equation}
+[41] 对于 $ \hat{\boldsymbol{\mathbf{z}}} $，容易看出
+[42] \begin{equation}
+\hat{\boldsymbol{\mathbf{z}}} = \hat{\boldsymbol{\mathbf{z}}} ~.
+\end{equation}
+[43] 将基底变换
+[44] 式 3 [链接 L7]
+[45] 式 4 [链接 L8]
+[46] 分别代入
+[47] 式 7 [链接 L9]
+[48] 式 6 [链接 L10]
+[49] 得坐标变换
+[50] 式 9 [链接 L11]
+[51] 式 8 [链接 L12]
+[52] ，详见 “
+[53] 三维旋转矩阵 [链接 L13]
+
+[/SCOPE:s_derivation]
+[SCOPE:s_angle|description|两方向的夹角]
+[SCOPE:s_angle_let|let_bind|夹角问题的变量]
+[54] 若已知柱坐标系中两个方向分别为 $(\sqrt{1-z_1^2}, \theta_1, z_1)$ 和 $(\sqrt{1-z_2^2}, \theta_2, z_2)$，如何求它们之间的夹角 $\alpha$ 呢？
+[55] 我们可以先计算两个单位矢量的直角坐标，然后对它们进行内积即可得到两矢量夹角的余弦值。
+[/SCOPE:s_angle_let]
+[56] 由式 1 ，两矢量的直角坐标分别为
+[57] \begin{equation}
+(\sqrt{1-z_1^2}\cos\theta_1,\ \sqrt{1-z_1^2}\sin\theta_1,\ z_1)~,
+\qquad
+(\sqrt{1-z_2^2}\cos\theta_2,\ \sqrt{1-z_2^2}\sin\theta_2,\ z_2)~.
+\end{equation}
+[58] 利用三角恒等式（
+[59] 式 5 [链接 L14]
+[60] \begin{equation} \begin{aligned}
+\cos\alpha &= \sqrt{1-z_1^2}\sqrt{1-z_2^2}\cos\theta_1\cos\theta_2 + \sqrt{1-z_1^2}\sqrt{1-z_2^2}\sin\theta_1\sin\theta_2 + z_1z_2\\
+&=\sqrt{(1-z_1^2)(1-z_2^2)}\cos\theta_1\cos\theta_2 + \sqrt{(1-z_1^2)(1-z_2^2)}\sin\theta_1\sin\theta_2 + z_1z_2~.
+\end{aligned} \end{equation}
+
+跨文章引用:
+  [L0] 四象限反正切函数 → Arctan
+  [L3] 一一对应 → Set
+  [L4] 三维旋转矩阵 → Rot3D
+  [L13] 三维旋转矩阵 → Rot3D
+[/SCOPE:s_angle]
+[/SCOPE:root]

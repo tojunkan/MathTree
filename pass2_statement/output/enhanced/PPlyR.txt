@@ -1,0 +1,136 @@
+[SCOPE:root|description|本原多项式（高等代数）]
+文章名: PPlyR
+标题: 本原多项式（高等代数）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=本原多项式
+  [1] type=lemma heading=引理 1 title=
+  [2] type=lemma heading=引理 2 title=
+  [3] type=theorem heading=定理 1 title=
+
+[SCOPE:s_intro|description|引言]
+[0] 【未完成】文章：多项式（高等代数）
+[1] 任何一个有理系数多项式乘以一个整数，总能得到一个整系数多项式，且二者的根完全一样；
+[2] 类似地，任何整系数多项式，如果其系数有公共整数因子，那也可以用这个因子去除该多项式，得到的还是整系数多项式，且根不变。
+[3] 综上，研究有理系数多项式的根时，可以把焦点完全集中在下述 “本原多项式” 上。
+
+[/SCOPE:s_intro]
+[SCOPE:s_def1|description|定义1 本原多项式]
+[4] 定义 1 本原多项式
+[5] 若整系数多项式 $f(x)$ 的各系数之最大公因子是 $1$，
+[6] 则称 $f(x)$ 为一个本原多项式（primitive polynomial）。
+[7] 显然，每个有理系数多项式都唯一对应一个本原多项式。
+[8] 首项系数为 $1$ 的多项式（简称为首一多项式）必为本原多项式。
+[9] 下面给出有关本原多项式基本性质的两个引理：
+
+[/SCOPE:s_def1]
+[SCOPE:s_lemma1|description|引理1]
+[10] 引理 1
+[11] 若 $f$ 和 $g$ 都是本原多项式，
+[12] 则 $fg$ 也是本原多项式。
+[13] 证明：
+[SCOPE:s_lemma1_let|let_bind|引理1的变量]
+[14a] (x) = \sum_{i=0}^n a_ix^i$，$g
+[14b] (x) = \sum_{j=0}^m b_jx^j$。
+[/SCOPE:s_lemma1_let]
+[15] 由定义 1 ，任取正整数 $k>1$，都存在 $i_0, j_0$ 使得 $k\not\mid a_{i_0}b_{j_0}$。
+[16] \begin{equation}
+\begin{aligned}
+f(x)g(x) &= a_0b_0 + \sum_{i+j=1}a_ib_jx + \sum_{i+j=2}a_ib_jx^2+\cdots +a_nb_mx^{n+m}~.
+\end{aligned}
+\end{equation}
+[17] 对于上面任取的正整数 $k$，$k\mid a_0b_0$ 一共带来两种情况：$k$ 整除 $a_0, b_0$ 中的一个但不整除另一个，或 $k$ 同时整除 $a_0, b_0$。
+[18] 我们看看这两个情况分别导致什么结果：
+[SCOPE:s_lemma1_case1|cases|情况1: k|a0 且 k∤b0]
+[19] 假设 $k\mid a_0$，且 $k\not\mid b_0$。
+[20] 则当 $k\mid a_1b_0+a_0b_1$ 时，必有 $k\mid a_1$。
+[21] 于是，如果 $k\mid\sum_{i+j=d}a_ib_j$ 对于 $d< i_0+j_0$ 都成立，
+[22] 那么可推出 $k\mid a_d$ 对于 $d< i_0+j_0$ 都成立。
+[/SCOPE:s_lemma1_case1]
+[SCOPE:s_lemma1_case2|cases|情况2: k|a0 且 k|b0]
+[23] 假设 $k\mid a_0$ 且 $k\mid b_0$。
+[24] 则当 $k\mid a_2b_0+a_1b_1+a_0b_2$ 时，必有 $k\mid a_1b_1$。
+[25] 于是问题又回到原点。
+[26] 这么一来，如果各 $k\mid\sum_{i+j=d}a_ib_j$ 对于 $d< i_0+j_0$ 都成立，
+[27] 则要么所有满足 $i< i_0+j_0-1$ 的 $a_i$ 都能被 $k$ 整除，要么要么所有满足 $j< i_0+j_0-1$ 的 $b_j$ 都能被 $k$ 整除。
+[/SCOPE:s_lemma1_case2]
+[28] 现在考虑式 1 右边的第 $i_0+j_0$ 项系数。
+[29] 由上一段的结论，该系数求和式中，除去 $a_{i_0}b_{j_0}$ 以外的所有 $a_ib_j$ 都能被 $k$ 整除。
+[30] 由于已知 $k\mid a_{i_0}b_{j_0}$，
+[31] 故知 $k$ 不整除这一项。
+[32] 由 $k$ 的任意性，知式 1 各项系数的最大公因子是 $1$。
+[33] 于是 $fg$ 是本原多项式。
+[34] 证毕。
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_lemma2|description|引理2]
+[35] 引理 2
+[36a] (x)=g
+[36b] (x)h
+[36c] (x)$，$g$ 是本原多项式。
+[37] 如果 $f$ 是整系数多项式，
+[38] 那么 $h$ 是整系数多项式。
+[39] 如果 $f$ 是本原多项式，
+[40] 那么 $h$ 是本原多项式。
+[41] 证明：
+[SCOPE:s_lemma2_let|let_bind|引理2的变量]
+[42a] (x)$ 的本原多项式是 $\frac{1}{k}h
+[42b] (x)$，
+[/SCOPE:s_lemma2_let]
+[43] 则由引理 1 ，$\frac{1}{k}f(x)$ 是本原多项式。
+[44] 如果 $f$ 是本原多项式，
+[45] 则 $k=1$，
+[46] 从而 $h$ 是本原的。
+[47] 如果 $f$ 是整系数多项式，
+[48] 则 $k$ 是正整数，
+[49] 从而 $h$ 是整系数多项式（因为本原）$\frac{1}{k}h$ 乘以一个正整数 $k$ 的结果，
+[50] 因而也是整系数的。
+[51] 证毕。
+
+[/SCOPE:s_lemma2]
+[SCOPE:s_thm1|description|定理1]
+[52] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[53] 设 $f(x)=\sum_{i=0}^n a_ix^i$ 是一个本原多项式。
+[54] 如果有理数 $\frac{v}{u}$ 是它的一个根，其中整数 $u, v$ 互素，
+[/SCOPE:s_thm1_let]
+[55] 则
+[56] \begin{equation}
+u\mid a_n, v\mid a_0~.
+\end{equation}
+[57] 证明：
+[58] 由题设，$(ux-v)\mid f(x)$，且 $(ux-v)$ 是本原的。
+[59a] (x)=(ux-v)h
+[59b] (x)$，
+[60] 则由引理 2 ，知 $h(x)$ 是本原多项式。
+[61] 设 $h(x)=\sum_{j=0}^{n-1} b_ix^i$，
+[62] 则 $a_0=vb_0$，且 $a_n=ub_{n-1}$，
+[63] 于是得证式 2 。
+[64] 证毕。
+[/SCOPE:s_thm1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_lemma1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "引理1使用本原多项式的定义"
+  },
+  {
+    "source_scope": "s_lemma2",
+    "target_scope": "s_lemma1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "引理2的证明用到引理1"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_lemma2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理1的证明用到引理2"
+  }
+]

@@ -1,0 +1,267 @@
+[SCOPE:root|description|联络形式与结构定理]
+文章名: ConFom
+标题: 联络形式与结构定理
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=exercise heading=习题 1 title=
+  [2] type=definition heading=定义 1 title=对偶基
+  [3] type=exercise heading=习题 2 title=
+  [4] type=theorem heading=定理 2 title=Schmidt 标准化
+  [5] type=theorem heading=定理 3 title=反对称定理
+  [6] type=exercise heading=习题 3 title=
+  [7] type=theorem heading=定理 4 title=联络形式的结构定理2
+  [8] type=corollary heading=推论 1 title=
+  [9] type=example heading=例 1 title=the Schwarzschild Metric
+
+[0] 仿射联络的定义是高度抽象的，并不涉及具体的运算。
+[1] 我们在本节所介绍的是将来进行计算时非常关键的理论基础。
+[2] 计算的实例请参见庞加莱半平面（微分几何计算实例）。
+[3] 本文中默认 $(M, \nabla)$ 为一个带仿射联络的实流形。
+
+[SCOPE:s_connection_form|description|联络形式]
+[SCOPE:s_connection_form_let|let_bind|联络形式的变量]
+[4] 对于任意 $p\in M$，取 $p$ 的一个邻域 $U\subseteq M$，使得存在一组光滑向量场 $\{ \hat{\boldsymbol{\mathbf{e}}} _i\}$ 构成 $C^{\infty}(U)$ 上的一组基。
+[5] 这就是说，$U$ 上的每个光滑向量场都可以表示为 $f^i \hat{\boldsymbol{\mathbf{e}}} _i$ 的形式，其中各 $f^i$ 是 $U$ 上的光滑函数。
+[6] 对于任意 $X\in\mathfrak{X}(U)$，我们知道 $\nabla_X \hat{\boldsymbol{\mathbf{e}}} _i$ 也是一个光滑向量场，
+[7] 因此存在一组光滑函数$\omega^j_i(X)$，使得 $\nabla_X \hat{\boldsymbol{\mathbf{e}}} _i=\omega^j_i(X) \hat{\boldsymbol{\mathbf{e}}} _j$。
+[8] 每个光滑函数 $\omega^j_i(X)$ 都由 $X$ 唯一确定，而且由 $\nabla$ 的性质知，对于任意光滑函数 $f$ 和 $g$，光滑向量场 $X, Y$，都有 $\omega^j_i(fX+gY)=f\omega^j_i(X)+g\omega^j_i(Y)$。
+[9] 也就是说，$\omega^j_i$ 本身是 $X$ 的线性函数，也就是 $U$ 上的一个 $1$-形式。
+[10] 我们将以上讨论所得出的 $\omega^j_i$ 称为 $\nabla$ 的联络形式（connection form），$\omega^j_i$ 构成的方阵称为 $\nabla$ 的联络形式矩阵（matrix of connection forms）。
+
+[/SCOPE:s_connection_form_let]
+[11] 在线性代数中我们知道，一个向量（或者任何非零阶的张量）不能简单地理解为一组坐标数字，因为它的坐标具体取值取决于基的选择。
+[12] 而以上讨论的 $\omega^j_i$ 虽然不是数字，却也有类似的性质，
+[13] 即 “$\omega^j_i$ 具体是哪个 $1$-形式，取决于选择哪一组 $\{ \hat{\boldsymbol{\mathbf{e}}} _i\}$ 作为 $\mathfrak{X}(M)$ 的基”。
+[14] 换句话说，$\omega^j_i(X)$ 具体是哪个函数，不仅取决于 $X$，也取决于 $\{ \hat{\boldsymbol{\mathbf{e}}} _i\}$ 的选择。
+[15] 因此，尽管 $\omega_i^j$ 是微分形式，我们也把它看成一种坐标分量，
+[16] 即联络 $\nabla$ 在基 $\{ \hat{\boldsymbol{\mathbf{e}}} _i\}$ 下的局部坐标分量。
+[17] 之所以强调 “局部”，是因为我们只能保证在 $\mathfrak{X}(U)$ 中能找到一组基，而在整个 $\mathfrak{X}(M)$ 中则不一定存在基1。
+
+[18a] 如果我们知道了一个基下具体的联络形式
+[18b] 则可以计算出联络了。
+
+[SCOPE:s_thm1|description|定理1]
+[19] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[20] 设 $\{ \hat{\boldsymbol{\mathbf{e}}} _i\}$ 是 $(M, \nabla)$ 上，某邻域 $U$ 上的一组基。
+[21] 对于任意 $S=a^i \hat{\boldsymbol{\mathbf{e}}} _i, X\in\mathfrak{X}(U)$，可以计算出：
+[22] \begin{equation}
+\nabla_XS=(Xa^j+a^i\omega^j_i(X)) \hat{\boldsymbol{\mathbf{e}}} _j~.
+\end{equation}
+[/SCOPE:s_thm1_let]
+[23] 证明：
+[24] \begin{equation}
+\begin{aligned}
+\nabla_XS&=\nabla_X(a^i \hat{\boldsymbol{\mathbf{e}}} _i)\\
+&=(Xa^i) \hat{\boldsymbol{\mathbf{e}}} _i+a^i\nabla_X \hat{\boldsymbol{\mathbf{e}}} _i\\
+&=(Xa^j) \hat{\boldsymbol{\mathbf{e}}} _j+a^i\nabla_X \hat{\boldsymbol{\mathbf{e}}} _i\\
+&=(Xa^j) \hat{\boldsymbol{\mathbf{e}}} _j+a^i\omega^j_i(X) \hat{\boldsymbol{\mathbf{e}}} _j\\
+&=(Xa^j+a^i\omega^j_i(X)) \hat{\boldsymbol{\mathbf{e}}} _j~.
+\end{aligned}
+\end{equation}
+[25] 证毕。
+[26] 实际上，联络和联络形式并不一定是只能定义在流形的切丛上，它也可以定义在流形上的任何向量丛上。
+[27] 具体拓展请参见联络（向量丛）文章。
+
+[/SCOPE:s_connection_form]
+[/SCOPE:s_thm1]
+[SCOPE:s_curvature_form|description|曲率形式]
+[SCOPE:s_curvature_form_let|let_bind|曲率形式的变量]
+[28] 曲率算子的定义为 $R(X, Y)=\nabla_X\nabla_Y-\nabla_Y\nabla_X-\nabla_{[X, Y]}$。
+[29] 同样地，我们在 $U\subseteq M$ 局部取 $\{ \hat{\boldsymbol{\mathbf{e}}} _i\}$ 作为光滑向量场的基，定义出一组光滑函数 $\Omega^j_i(X, Y)$，满足：
+[30] \begin{equation}
+R(X, Y) \hat{\boldsymbol{\mathbf{e}}} _i=\Omega^j_i(X, Y) \hat{\boldsymbol{\mathbf{e}}} _j~.
+\end{equation}
+[31] 类似地，我们也可以证明 $\Omega^j_i(X, Y)$ 是关于 $X$ 和 $Y$ 的一个线性函数，
+[32] 因此 $\Omega^j_i$ 本身是一个 $U$ 上的 $2$-形式，称为 $\nabla$ 的曲率形式（curvature form）。
+[33] $\Omega^j_i$ 构成的方阵称为 $\nabla$ 的曲率形式矩阵（matrix of curvature forms）。
+
+[/SCOPE:s_curvature_form_let]
+[SCOPE:s_exercise1|description|习题1]
+[34] 习题 1
+[35] 证明对于 $U$ 上的任意光滑函数 $a^i, b$ 和光滑向量场 $X_i, Y$，有 $R(a^iX_i, bY)=a^ibR(X_i, Y)$，再由 $R$ 的反对称性，推论出 $\Omega^j_i$ 本身是一个 $2$-形式。
+
+[/SCOPE:s_curvature_form]
+[/SCOPE:s_exercise1]
+[SCOPE:s_torsion_form_let|let_bind|挠率形式的变量]
+[SCOPE:s_torsion_form|description|挠率形式]
+[36] 类似联络形式和曲率形式，我们有挠率形式的定义：
+[37] \begin{equation}
+T(X, Y)=\nabla_XY-\nabla_YX-[X, Y]:=\tau^i(X, Y) \hat{\boldsymbol{\mathbf{e}}} _i~.
+\end{equation}
+[38] 此处各 $\tau^i(X, Y)$ 依然是光滑函数，$\tau^i$ 则是 $2$-形式，
+[39] 故同样可得挠率形式（torsion form）和挠率形式矩阵（matrix of torsion forms）的概念。
+
+[/SCOPE:s_torsion_form_let]
+[/SCOPE:s_torsion_form]
+[40] 进行和联络相关的计算时的关键工具包括接下来将介绍的反对称定理和结构定理。
+[41] 在介绍这两个定理前，我们还有最后一点铺垫，一个定义和一个定理。
+
+[SCOPE:s_dual_basis|description|对偶基]
+[42] 定义 1 对偶基
+[SCOPE:s_dual_basis_let|let_bind|对偶基的变量]
+[43] 设 $\{ \hat{\boldsymbol{\mathbf{e}}} _i\}$ 是流形 $M$ 上某邻域 $U$ 上光滑向量场的基。
+[44] 定义一组 $1$-形式 $\{\theta^i\}$，使得 $ \hat{\boldsymbol{\mathbf{e}}} _j\theta^i=\delta^i_j$ 处处成立，
+[45] 那么 $\{\theta^i\}$ 构成 $U$ 上全体 $1$-形式的一组基，称为 $ \hat{\boldsymbol{\mathbf{e}}} _i$ 的对偶基（dual basis）。
+[/SCOPE:s_dual_basis_let]
+[46] 注意，对偶基的概念是对于 “基” 而不是 “基向量” 而言的，是给定一组基了以后才有了对偶基，而不是每个基向量对应一个对偶向量。
+[47] 关于对偶基的更多细节，请参见对偶空间。
+
+[SCOPE:s_exercise2|description|习题2]
+[48] 习题 2
+[49] 根据定义，证明 $\Omega^{a}{ }_{b}=\frac{1}{2} R^{a}{ }_{b c d} \hat{\boldsymbol{\mathbf{\theta}}} ^{c} \wedge \hat{\boldsymbol{\mathbf{\theta}}} ^{d}$。
+[50] 其中 $\{ \hat{\boldsymbol{\mathbf{\theta^a}}} \}$ 是对偶基。
+
+[/SCOPE:s_dual_basis]
+[/SCOPE:s_exercise2]
+[SCOPE:s_schmidt|description|Schmidt标准化]
+[51] 定理 2 Schmidt 标准化
+[52] $U$ 上的任何基都可以 Schmidt 标准化。
+[53] 标准化的意思就是说，$< \hat{\boldsymbol{\mathbf{e}}} _i, \hat{\boldsymbol{\mathbf{e}}} _j>=\delta_{ij}$ 处处成立，也就是说在每一个点处 $\{ \hat{\boldsymbol{\mathbf{e}}} _i\}$ 都构成一个标准正交基。
+[54] Schmidt 标准化的方法是线性空间中 Schmidt 标准化的直接推广，若不熟悉请见施密特正交归一化子节 2 。
+[55] 接下来，我们就可以摆出最为关键的两个定理了。
+
+[/SCOPE:s_schmidt]
+[SCOPE:s_antisym|description|反对称定理]
+[56] 定理 3 反对称定理
+[SCOPE:s_antisym_let|let_bind|反对称定理的变量]
+[57] $M$ 是黎曼流形，$\nabla$ 是丛上的联络。
+[58] 若联络与度规兼容，且 $\{ \hat{\boldsymbol{\mathbf{e}}} _i\}$ 是 $\mathfrak{X}(U)$ 上的任意标准正交基，
+[59] 那么在这组基下，联络形式矩阵 $\omega^j_i$ 必是反对称，
+[60] 即 $\omega^j_i=-\omega^i_j$。
+[61] 若任意 $p\in M$ 都有邻域 $U$ 使得联络形式矩阵 $\omega^i_j$ 在 $U$ 上反对称，
+[62] 那么 $\nabla$ 对度规是兼容的。
+[/SCOPE:s_antisym_let]
+[63] 证明：
+[64] 由于 $< \hat{\boldsymbol{\mathbf{e}}} _i, \hat{\boldsymbol{\mathbf{e}}} _j>=\delta_{ij}$，且 $\nabla_X \hat{\boldsymbol{\mathbf{e}}} _i=\omega^j_i(X) \hat{\boldsymbol{\mathbf{e}}} _j$，
+[65] 故
+[66] \begin{equation}
+\begin{aligned}
+0=X< \hat{\boldsymbol{\mathbf{e}}} _i, \hat{\boldsymbol{\mathbf{e}}} _j>&=<\omega^k_i(X) \hat{\boldsymbol{\mathbf{e}}} _k, \hat{\boldsymbol{\mathbf{e}}} _j>+< \hat{\boldsymbol{\mathbf{e}}} _i, \omega^k_j(X) \hat{\boldsymbol{\mathbf{e}}} _k>\\
+&=\omega^k_i(X)\delta_{kj}+\delta_{ik}\omega^k_j(X)\\
+&=\omega^k_i(X)\delta_{k}^j+\delta_{i}^k\omega^k_j(X)\\
+&=\omega^j_i(X)+\omega^i_j(X)~.
+\end{aligned}
+\end{equation}
+[67] 第一点证毕。
+
+[SCOPE:s_exercise3|description|习题3]
+[68] 习题 3
+[69] 证明推论：若在 $\{ \hat{\boldsymbol{\mathbf{e}}} _i\}$ 下有 $\omega^i_j=-\omega^j_i$，
+[70] 则 $\Omega^i_j=-\Omega^j_i$。
+
+[/SCOPE:s_antisym]
+[/SCOPE:s_exercise3]
+[SCOPE:s_struct_thm|description|联络形式的结构定理2]
+[SCOPE:s_struct_thm_let|let_bind|结构定理的变量]
+[71] 定理 4 联络形式的结构定理2
+[72] 曲率形式满足：$\Omega^i_j= \,\mathrm{d}{\omega} ^i_j+\omega^i_k\wedge\omega^k_j$；
+[73] 挠率形式满足：$\tau^i= \,\mathrm{d}{\theta} ^i+\omega^i_j\wedge\theta^j$。
+[74] 其中对于 $1-$ 形式 $\alpha, \beta$，有
+[75] \begin{equation}
+\alpha\wedge \beta(X, Y)=\alpha(X)\beta(Y)-\alpha(Y)\beta(X)~,
+\end{equation}
+[76] \begin{equation}
+\,\mathrm{d}{\alpha} (X, Y)=X\alpha(Y)-Y\alpha(X)-\alpha([X, Y])~.
+\end{equation}
+[77] 我们还可以将微分形式局部表示为指标形式，比如在 $U\subseteq M$ 上给定基 $\{ \hat{\boldsymbol{\mathbf{e}}} _i\}$ 后，设 $X=x^i \hat{\boldsymbol{\mathbf{e}}} _i$ 和 $Y=y^i \hat{\boldsymbol{\mathbf{e}}} _i$，
+[78] 则将 $\alpha$ 表示为 $a_i$、$\beta$ 表示为 $b_i$ 后有 $\alpha(X)=a_ix^i$。
+[79] 此时还可以将 $1$-形式的楔积和外微分表示为
+[80] \begin{equation}
+a_i\wedge b_j=a_ib_j-a_jb_i~,
+\end{equation}
+[81] \begin{equation}
+( \,\mathrm{d}{\alpha} )_{ij}=\nabla_{i}a_j-\nabla_{j}a_i~.
+\end{equation}
+[82] 现在先证明第一条定理。
+[/SCOPE:s_struct_thm_let]
+[83] \begin{equation}
+\begin{aligned}
+\nabla_X\nabla_Y \hat{\boldsymbol{\mathbf{e}}} _j& =\nabla_X(\omega_j^k(Y) \hat{\boldsymbol{\mathbf{e}}} _k) \\
+&=X\omega_j^k(Y) \hat{\boldsymbol{\mathbf{e}}} _k+\omega_j^k(Y)\nabla_X \hat{\boldsymbol{\mathbf{e}}} _k \\
+&=X\omega_j^i(Y) \hat{\boldsymbol{\mathbf{e}}} _i+\omega_j^k(Y)\omega_k^i(X) \hat{\boldsymbol{\mathbf{e}}} _i.
+\end{aligned}~,
+\end{equation}
+[84] 根据对称性，同理可得
+[85] \begin{equation}
+\nabla_Y\nabla_X \hat{\boldsymbol{\mathbf{e}}} _j =Y\omega_j^i(X) \hat{\boldsymbol{\mathbf{e}}} _i+\omega_j^k(X)\omega_k^i(Y) \hat{\boldsymbol{\mathbf{e}}} _i~.
+\end{equation}
+[86] 接着根据曲率的定义，我们有
+[87] \begin{equation}
+\begin{aligned}
+R(X,Y) \hat{\boldsymbol{\mathbf{e}}} _j& =\nabla_X\nabla_Y \hat{\boldsymbol{\mathbf{e}}} _j-\nabla_Y\nabla_X \hat{\boldsymbol{\mathbf{e}}} _j-\nabla_{[X,Y]} \hat{\boldsymbol{\mathbf{e}}} _j \\
+&=(X\omega_j^i(Y)-Y\omeg…[truncated]…\mathbf{e}}} _i \\
+&= \,\mathrm{d}{\omega} _j^i(X,Y)e_i+\omega_k^i\wedge\omega_j^k(X,Y) \hat{\boldsymbol{\mathbf{e}}} _i \\
+&=( \,\mathrm{d}{\omega} _j^i+\omega_k^i\wedge\omega_j^k)(X,Y) \hat{\boldsymbol{\mathbf{e}}} _i~,
+\end{aligned}
+\end{equation}
+[88] 第一条得证。
+[89] 证明第二条定理如下：设 $X,Y$ 是流形上的任意两个光滑切向量场，
+[90] 则我们可以把 $Y$ 表示为：$Y= \boldsymbol{\mathbf{\theta}} ^i(Y) \hat{\boldsymbol{\mathbf{e}}} _i$，
+[91] 那么我们有：
+[92] \begin{equation}
+\begin{aligned}
+\nabla_{X} Y & =\nabla_{X}\left( \boldsymbol{\mathbf{\theta}} ^{j}(Y) \hat{\boldsymbol{\mathbf{e}}} _{j}\right) \\
+& =\left(X \boldsymbol{\mathbf{\theta}} ^{j}(Y)\right) \hat{\boldsymbol{\mathbf{e}}} _{j}+ \boldsymbol…[truncated]… \hat{\boldsymbol{\mathbf{e}}} _{j} \\
+& =\left(X \boldsymbol{\mathbf{\theta}} ^{j}(Y)\right) \hat{\boldsymbol{\mathbf{e}}} _{j}+ \boldsymbol{\mathbf{\theta}} ^{j}(Y) \omega_{j}^{i}(X) \hat{\boldsymbol{\mathbf{e}}} _{i}~.
+\end{aligned}
+\end{equation}
+[93] 根据对称性，可以得到 $\nabla_{Y} X =\left(Y \boldsymbol{\mathbf{\theta}} ^{j}(X)\right) \hat{\boldsymbol{\mathbf{e}}} _{j}+ \boldsymbol{\mathbf{\theta}} ^{j}(X) \omega_{j}^{i}(Y) \hat{\boldsymbol{\mathbf{e}}} _{i}$。
+[94] 于是我们可以根据挠率的定义，证明定理中的形式：
+[95] \begin{equation}
+\begin{aligned}
+T(X, Y) & =\nabla_{X} Y-\nabla_{Y} X-[X, Y] \\
+& =\left(\left(\left(X \boldsymbol{\mathbf{\theta}} ^{i}(Y)-Y \boldsymbol{\mathbf{\theta}} ^{i}(X)- \boldsymbol{\mathbf{\theta}} ^{i}([X, Y])\right)+\left(\omega_{j}^{i}(…[truncated]…a}} ^{j}(X)\right)\right) \hat{\boldsymbol{\mathbf{e}}} _{i}\right. \\
+& =\left(d \boldsymbol{\mathbf{\theta}} ^{i}+\omega_{j}^{i} \wedge \boldsymbol{\mathbf{\theta}} ^{j}\right)(X, Y) \hat{\boldsymbol{\mathbf{e}}} _{i}.
+\end{aligned}~
+\end{equation}
+[96] 结合定理 3 与定理 4 ，我们有：
+
+[/SCOPE:s_struct_thm]
+[SCOPE:s_corollary|description|推论1]
+[97] 推论 1
+[SCOPE:s_corollary_let|let_bind|推论的变量]
+[98] 令 $M$ 是黎曼流形，$\{ \hat{\boldsymbol{\mathbf{e}}} _i\}$ 是 $\mathfrak{X}(U)$ 上的一组标准正交基。
+[99] 令 $\{ \hat{\boldsymbol{\mathbf{\theta}}} ^i\}$ 是 1 形式的对偶基。
+[100] 那么存在唯一的反对称联络形式矩阵使得
+[101] \begin{equation}
+d \theta^{i}+\omega_{j}^{i} \wedge \theta^{j}=0 \quad \text { for all } i=1, \ldots, n .~.
+\end{equation}
+[/SCOPE:s_corollary_let]
+[102] 证明：由定理 3 可知，联络形式反对称意味着该联络对度规兼容。
+[103] 那么这条推论实际上是定理 1 ，
+[104] 即黎曼联络的存在性和唯一性。
+[105] 我们可以利用该推论来求得正交基下的联络形式，然后通过第一结构定理求得对应的曲率形式。
+[106] 通过过渡矩阵和定义式式 3 近一步可以求得默认坐标系 $\{\partial_i\}$ 下的曲率张量。
+
+[/SCOPE:s_corollary]
+[SCOPE:s_example|description|例1 the Schwarzschild Metric]
+[107] 例 1 the Schwarzschild Metric
+[/SCOPE:s_example]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_connection_form",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是联络形式的具体计算"
+  },
+  {
+    "source_scope": "s_struct_thm",
+    "target_scope": "s_antisym",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "结构定理与反对称定理结合得出推论"
+  },
+  {
+    "source_scope": "s_corollary",
+    "target_scope": "s_struct_thm",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论是结构定理在标准正交基下的应用"
+  }
+]

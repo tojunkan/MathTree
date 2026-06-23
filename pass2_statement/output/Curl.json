@@ -1,0 +1,335 @@
+{
+  "article_name": "Curl",
+  "statements": [
+    {
+      "stmt_id": "st_curl_def_intro",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_curl_def",
+      "exposed_entities": [
+        "F(r)",
+        "L"
+      ]
+    },
+    {
+      "stmt_id": "st_curl_def_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_curl_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_curl_def_main",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_curl_def",
+      "exposed_entities": [
+        "curl F",
+        "S",
+        "L"
+      ]
+    },
+    {
+      "stmt_id": "st_curl_def_x",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_curl_def",
+      "exposed_entities": [
+        "x component of curl F"
+      ]
+    },
+    {
+      "stmt_id": "st_curl_def_yz",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_curl_def",
+      "exposed_entities": [
+        "y component of curl F",
+        "z component of curl F"
+      ]
+    },
+    {
+      "stmt_id": "st_curl_def_prop",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_curl_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_curl_def_general",
+      "subtype": "theorem",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": "true",
+      "scope_id": "s_curl_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_curl_rect_let",
+      "subtype": "assumption",
+      "clause_range": [
+        16,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_curl_rect",
+      "exposed_entities": [
+        "F(x,y,z)",
+        "F_x",
+        "F_y",
+        "F_z"
+      ]
+    },
+    {
+      "stmt_id": "st_curl_rect_z",
+      "subtype": "theorem",
+      "clause_range": [
+        22,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_curl_rect",
+      "exposed_entities": [
+        "G_z"
+      ]
+    },
+    {
+      "stmt_id": "st_curl_rect_xy",
+      "subtype": "theorem",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_curl_rect",
+      "exposed_entities": [
+        "G_x",
+        "G_y"
+      ]
+    },
+    {
+      "stmt_id": "st_curl_rect_det",
+      "subtype": "theorem",
+      "clause_range": [
+        29,
+        32
+      ],
+      "truth_value": "true",
+      "scope_id": "s_curl_rect",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_curl_rect_remark",
+      "subtype": "remark",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_curl_rect",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        36,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "omega",
+        "r",
+        "v(r)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_curl",
+      "subtype": "theorem",
+      "clause_range": [
+        39,
+        40
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        41,
+        42
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        43,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "F(r)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_curl",
+      "subtype": "theorem",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_curl_def_assump",
+      "target": "st_curl_def_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_curl_def_main",
+      "target": "st_curl_def_x",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_curl_def_main",
+      "target": "st_curl_def_yz",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_curl_def_x",
+      "target": "st_curl_def_prop",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_curl_def_yz",
+      "target": "st_curl_def_prop",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_curl_def_prop",
+      "target": "st_curl_def_general",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_curl_rect_let",
+      "target": "st_curl_rect_z",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_curl_rect_let",
+      "target": "st_curl_rect_xy",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_curl_rect_z",
+      "target": "st_curl_rect_det",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_curl_rect_xy",
+      "target": "st_curl_rect_det",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let",
+      "target": "st_ex1_curl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_curl",
+      "target": "st_ex1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_let",
+      "target": "st_ex2_curl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_curl_rect_det",
+      "target": "st_curl_def_general",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "直角坐标中的旋度公式是旋度定义在直角坐标系下的具体形式。"
+    },
+    {
+      "source": "st_ex1_curl",
+      "target": "st_curl_rect_det",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1应用直角坐标旋度公式计算旋转体速度场的旋度。"
+    },
+    {
+      "source": "st_ex2_curl",
+      "target": "st_curl_rect_det",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2应用直角坐标旋度公式计算无旋度旋转场。"
+    }
+  ],
+  "unresolved": []
+}

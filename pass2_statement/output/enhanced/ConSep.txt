@@ -1,0 +1,59 @@
+[SCOPE:root|description|凸集的可分离性]
+文章名: ConSep
+标题: 凸集的可分离性
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=分离性
+  [1] type=theorem heading=定理 1 title=
+  [2] type=theorem heading=定理 2 title=
+
+[SCOPE:s_def1|description|分离性]
+[0] 定义 1 分离性
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1] 设 $M,N$ 是实线性空间的两个子集，$f:L\rightarrow\mathbb R$ 是线性泛函，若存在常数 $C$ 使得任意
+[2] \begin{equation}
+f(x)\left\{\begin{aligned}\leq C,\quad x\in N\\
+\geq C,\quad x\in M
+\end{aligned}\right.~
+\end{equation}
+[/SCOPE:s_def1_let]
+[3] \begin{equation}
+\inf_{x\in M}f(x)\geq\sup_{x\in N}f(x).~
+\end{equation}
+[4] 严格分离
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理1]
+[5] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[6] 设 $f$ 是线性空间 $L$ 上的线性泛函，$M,N\subset L$，
+[7] 则以下 3 个命题等价：
+[/SCOPE:s_thm1_let]
+[8] $f$ 分离 $M,N$；
+[9] $f$ 分离 $M-N$ 与 $\{0\}$；
+[10] 任意 $x\in L$，$f$ 分离 $M-x$ 和 $N-x$。
+[11] 证明：
+[12] 这由下式直接看出：
+[13] \begin{equation}
+\begin{aligned}
+f(M)\geq C&\geq f(N)\\
+&\Updownarrow \\
+f(M-N)&\geq0\\
+&\Updownarrow \\
+f(M-x-(N-x))&=f(M-x)-f(N-x)\geq0\\
+&\Updownarrow\\
+f(M-x)&\geq f(N-x).
+\end{aligned}~
+\end{equation}
+[14] 证毕！
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理2]
+[15] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[16] 设 $M,N$ 是实线性空间 $L$ 中的凸集，且核 $J(M)\neq\emptyset,J(M)\cap N=\emptyset$，
+[17] 则存在分离 $M,N$ 的非 0 线性泛函。
+[/SCOPE:s_thm2_let]
+[18] 证明略。
+[/SCOPE:s_thm2]
+[/SCOPE:root]

@@ -1,0 +1,153 @@
+{
+  "article_name": "bilinF",
+  "statements": [
+    {
+      "stmt_id": "st_assump_V",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_V",
+      "exposed_entities": [
+        "V",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_f",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_f",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def_bilinear",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "f",
+        "V",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_uv",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_uv",
+      "exposed_entities": [
+        "u_i",
+        "v_j",
+        "a_i",
+        "b_j"
+      ]
+    },
+    {
+      "stmt_id": "st_condition_bilinearity",
+      "subtype": "condition",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_let_uv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_fixed_var",
+      "subtype": "remark",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_tensor",
+      "subtype": "remark",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_inner_product",
+      "subtype": "remark",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_V",
+      "target": "st_def_bilinear",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_f",
+      "target": "st_def_bilinear",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_uv",
+      "target": "st_condition_bilinearity",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_condition_bilinearity",
+      "target": "st_def_bilinear",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_remark_fixed_var",
+      "target": "st_def_bilinear",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_remark_tensor",
+      "target": "st_def_bilinear",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_remark_inner_product",
+      "target": "st_def_bilinear",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

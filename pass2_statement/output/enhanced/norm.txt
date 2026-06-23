@@ -1,0 +1,51 @@
+[SCOPE:root|description|向量空间上的范数]
+文章名: norm
+标题: 向量空间上的范数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=范数、赋范空间
+  [1] type=example heading=例 1 title=有限维空间上的范数
+
+[SCOPE:s_def1|description|范数、赋范空间]
+[0] 定义 1 范数、赋范空间
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1] 设 $X$ 是实数或复数域上的向量空间。
+[2] $X$ 上的范数是满足如下条件的非负函数 $ \left\lVert \cdot \right\rVert : X \to \mathbb{R}$：
+[/SCOPE:s_def1_let]
+[3] $ \left\lVert x \right\rVert \geqslant 0$（正定），
+[4] $ \left\lVert x \right\rVert = 0$ 当且仅当 $x = 0$，
+[5] $ \left\lVert \lambda x \right\rVert = |\lambda| \left\lVert x \right\rVert $，
+[6] $ \left\lVert x_1+x_2 \right\rVert \leqslant \left\lVert x_1 \right\rVert + \left\lVert x_2 \right\rVert $（三角不等式）。
+[7a] 如果一个向量空间中定义了范数，我们
+[7b] 则把它称为赋范向量空间（normed vector space），简称赋范空间（normed space）。
+[8] 一个线性空间上可能可以定义许多个范数。
+[9] 两个范数是等价的如果它们导出的度量是强等价的。
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|有限维空间上的范数]
+[10] 例 1 有限维空间上的范数
+[SCOPE:s_ex1_let_p|let_bind|p-范数的参数p]
+[11] 设 $p\geq 1$。
+[/SCOPE:s_ex1_let_p]
+[SCOPE:s_ex1_let_N|let_bind|空间维数N]
+[12] 定义 $\mathbb R^N$ 或 $\mathbb C^N$ 空间（即 $N$ 维实数或复数列向量空间）的 $p$-范数为
+[/SCOPE:s_ex1_let_N]
+[13] \begin{equation}
+\left\lVert x \right\rVert _p = \left(\sum_{i=1}^N \left\lvert x_i \right\rvert ^p \right) ^{1/p}~.
+\end{equation}
+[14] 2-范数
+[15] 欧几里得范数（Euclidean norm）
+[16] \begin{equation}
+\left\lVert x \right\rVert _2 = \sqrt{ \left\lvert x_1 \right\rvert ^2 + \left\lvert x_2 \right\rvert ^2 + \dots+|x_N|^2}~.
+\end{equation}
+[17] 在极限 $p \to \infty$ 之下，绝对值最大的 $x_i$ 对求和的贡献将远大于其他分量，
+[18] 所以可定义无穷范数（infinity norm）为
+[19] \begin{equation}
+\left\lVert \boldsymbol{\mathbf{x}} \right\rVert _\infty = \max \left\{ \left\lvert x_i \right\rvert \right\} ~.
+\end{equation}
+[20] 除此之外，有限维实或复线性空间上还可以定义许多种不同的范数。
+[21] 不过，有限维实或复线性空间上的任意两个范数必然彼此等价。
+[22] 它们都给出空间上唯一的一个自然拓扑（即使得所有线性泛函（线性函数）均连续的最疏松的拓扑）。
+[23] 未完成：举例 “定义许多种不同的范数”，或者说明它们不存在
+[/SCOPE:s_ex1]
+[/SCOPE:root]

@@ -1,0 +1,166 @@
+[SCOPE:root|description|隐函数]
+文章名: ImpFun
+标题: 隐函数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=n 维“长方体”
+  [1] type=definition heading=定义 2 title=一元隐函数在某一点附近的单值性
+  [2] type=definition heading=定义 3 title=多元隐函数在一点附近的单值性
+  [3] type=definition heading=定义 4 title=一般隐函数在一点附近的单值性
+
+[SCOPE:s_one_var|description|一元隐函数]
+[SCOPE:s_one_var_let|let_bind|一元隐函数变量]
+[0] 假定二变元 $x$ 及 $y$ 的值用方程联系着，若把这方程的一切项移到左边，
+[1] 则得到一般的形式
+[2] \begin{equation}
+F(x,y)=0~.
+\end{equation}
+[3] 此处 $F(x,y)$ 是在某一区域给定的二元函数。
+[/SCOPE:s_one_var_let]
+[4] 若函数 $y=f(x)$ 由式 1 给定，
+[5] 但未解出，
+[6] 则称其为隐函数；
+[7a] 若 $y$ 对 $x$ 的关系 $y=f(x)$ 被（直接）解出来
+[7b] 则称为显函数。
+
+[/SCOPE:s_one_var]
+[SCOPE:s_multi_var|description|多元隐函数]
+[SCOPE:s_multi_var_let1|let_bind|多元隐函数变量（n元）]
+[8] 同一元隐函数一样，若多个变元的方程
+[9] \begin{equation}
+F(x_1,\cdots,x_n,y)=0~,
+\end{equation}
+[10] 确定 $y$ 为 $n$ 个变元 $x_1,\cdots,x_n$ 的函数 $y=f(x_1,\cdots,x_n)$，若未解出具体的表达式，
+[11] 则 $y=f(x_1,\cdots,x_n)$ 称为
+[12] $n$ 元隐函数
+[/SCOPE:s_multi_var_let1]
+[SCOPE:s_multi_var_let2|let_bind|多元隐函数变量（一般）]
+[13] 在一般的情形，若 $m$ 个方程组
+[14] \begin{equation}
+\begin{aligned}
+F_1(x_1,\cdots,x_n;y_1\cdots,y_m)&=0~,\\
+&\ \vdots\\
+F_m(x_1,\cdots,x_n;y_1\cdots,y_m)&=0~.
+\end{aligned}
+\end{equation}
+[15] 确定 $m$ 个变元 $y_1,\cdots,y_m$ 为另 $n$ 个变元 $x_1,\cdots,x_n$ 的函数
+[16] \begin{equation}
+y_1=f_1(x_1,\cdots,x_n);\cdots;y_m=f_m(x_1,\cdots,x_n)~
+\end{equation}
+[17] 但未解出，
+[18] 则
+[19] 式 4 [链接 L0]
+[20] $m$ 个变元 $y_1,\cdots,y_m$ 为 $n$ 个变元 $x_1,\cdots,x_n$ 的隐函数
+
+[/SCOPE:s_multi_var]
+[/SCOPE:s_multi_var_let2]
+[SCOPE:s_single_val_let|let_bind|单值性变量]
+[SCOPE:s_single_val|description|隐函数的单值性]
+[21] 方程式 1 确定的函数 $y=f(x)$ 可以是多值函数，
+[22] 即存在某一个 $x$，使得对于几个 $y$ 值，它们与 $x$ 同时满足方程式 1 。
+[23] 我们关心的是隐函数的存在及单值性问题。
+[24] 先来解释这一问题的几何意义。
+[25] 方程式 1 在某种场合下表示为平面曲线，在这种情形，它称为隐示方程，问题归结为：曲线（或它的一部分）式 1 能否用右边单值的函数的普通方程 $y=f(x)$ 来表示。
+[26] 几何意义是，曲线（或它的一部分）与平行于 $y$ 轴的直线仅相交于一点。
+[27] 例如，方程
+[28] \begin{equation}
+\frac{x^2}{a^2}+\frac{y^2}{b^2}-1=0~
+\end{equation}
+[29] 确定一个椭圆（
+[30] 图 1 [链接 L1]
+[31] ）。
+[32] 它在 $[-a,a]$ 内显然为双值函数。
+[33] 【图解】图 1：隐示方程式 5 确定的椭圆曲线
+[34] 通常我们只关心式 1 的曲线上某一点附近的领域 $y$ 对 $x$ 的单值性。
+[35] 例如在椭圆（图 1 ）的情形，显然可以判定，方程式 5 ，除椭圆长轴上的顶点 $A,A''$ 外，在椭圆上任一点的充分小的领域内确定纵标 $y$ 为横标 $x$ 的单值函数。
+[36] 为了描述某一点附近的邻域（在直角坐标中通常为长方形邻域，比如图 1 中椭圆曲线上的小长方形邻域），需先了解一般高维空间中的长方体的表示方式。
+
+[/SCOPE:s_single_val_let]
+[/SCOPE:s_single_val]
+[SCOPE:s_def1_let|let_bind|n维长方体变量]
+[SCOPE:s_def1|description|n维长方体]
+[37] 定义 1 n 维“长方体”
+[38] $n$ 维空间中，坐标各自相互独立地满足于不等式
+[39] \begin{equation}
+a_1\leq x_1\leq b_1,\cdots a_n\leq x_n\leq b_n~
+\end{equation}
+[40] $n$ 维闭的长方体
+[41] \begin{equation}
+[a_1,b_1;\cdots;a_n,b_n]~
+\end{equation}
+[42] $n$ 维开的长方体
+[43] \begin{equation}
+(a_1,b_1;\cdots;a_n,b_n)~
+\end{equation}
+[44] 1 维长方体通常称线段，2 维长方体称为长方形（或矩形），通常空间的长方体则对应三维长方体。
+
+[/SCOPE:s_def1_let]
+[/SCOPE:s_def1]
+[SCOPE:s_def2_let|let_bind|定义2变量]
+[SCOPE:s_def2|description|一元隐函数在某一点附近的单值性]
+[45] 定义 2 一元隐函数在某一点附近的单值性
+[46] 在矩形 $(a,b;c,d)$ 内方程式 1 $F(x,y)=0$ 确定 $y$ 为 $x$ 的单值函数，若在区间 $(a,b)$ 内的 $x$ 的每一值，在区间 $(c,d)$ 内方程式 1 有且仅有一个根 $y$。
+
+[/SCOPE:s_def2_let]
+[/SCOPE:s_def2]
+[SCOPE:s_def3_let|let_bind|定义3变量]
+[SCOPE:s_def3|description|多元隐函数在一点附近的单值性]
+[47] 定义 3 多元隐函数在一点附近的单值性
+[48] 在 $n+1$ 维长方体 $(a_1,b_1;\cdots;a_n,b_n;c,d)$ 中，方程式 2 $F(x_1,\cdots,x_n,y)=0$ 确定 $y$ 为 $x_1,\cdots,x_n$ 的单值函数，若在 $n$ 维长方体 $(a_1,b_1;\cdots;a_n,b_n)$ 中任一点 $(x_1,\cdots,x_n)$，方程式 2 有且仅有一个根 $y$ 位于区间 $(c,d)$ 内。
+
+[/SCOPE:s_def3_let]
+[/SCOPE:s_def3]
+[SCOPE:s_def4_let|let_bind|定义4变量]
+[SCOPE:s_def4|description|一般隐函数在一点附近的单值性]
+[49] 定义 4 一般隐函数在一点附近的单值性
+[50] 在 $n+m$ 维长方体 $(a_1,b_1;\cdots;a_n,b_n;c_1,d_1;\cdots;c_m,d_m)$ 中，方程组式 3
+[51] \begin{equation}
+\begin{aligned}
+&F_1(x_1,\cdots,x_n;y_1\cdots,y_m)=0\\
+\vdots\\
+&F_m(x_1,\cdots,x_n;y_1\cdots,y_m)=0
+\end{aligned}~
+\end{equation}
+[52] 单值函数
+[/SCOPE:s_def4_let]
+[/SCOPE:s_def4]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义2使用1维长方体（线段）"
+  },
+  {
+    "source_scope": "s_def3",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义3使用n+1维长方体"
+  },
+  {
+    "source_scope": "s_def4",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义4使用n+m维长方体"
+  },
+  {
+    "source_scope": "s_def3",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "多元隐函数单值性是一元的推广"
+  },
+  {
+    "source_scope": "s_def4",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "一般隐函数单值性是多元的推广"
+  }
+]

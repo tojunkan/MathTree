@@ -1,0 +1,126 @@
+{
+  "article_name": "crtnt",
+  "statements": [
+    {
+      "stmt_id": "st_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": "true",
+      "scope_id": "s_crt",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_mutually_prime",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_crt_let1",
+      "exposed_entities": [
+        "m_1",
+        "m_2",
+        "m_k"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_existence",
+      "subtype": "conclusion",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_crt",
+      "exposed_entities": [
+        "a_1",
+        "a_2",
+        "a_k",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_construct_M",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_crt_let2",
+      "exposed_entities": [
+        "M",
+        "M_l"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_coprime",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_crt_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_Nl_exists",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_crt_let2",
+      "exposed_entities": [
+        "N_l"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_crt_let2",
+      "exposed_entities": [
+        "x"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_mutually_prime",
+      "target": "st_conclusion_existence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_construct_M",
+      "target": "st_proof_coprime",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_coprime",
+      "target": "st_proof_Nl_exists",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_Nl_exists",
+      "target": "st_proof_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

@@ -1,0 +1,130 @@
+[SCOPE:root|description|向量值函数的导数]
+文章名: DerV
+标题: 向量值函数的导数
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=参数曲线的切线
+
+[SCOPE:s_intro|description|引言]
+[0] 考虑增加多元向量值函数的偏导数
+
+[/SCOPE:s_intro]
+[SCOPE:s_vec_deriv|description|向量的导数]
+[SCOPE:s_vec_deriv_let|let_bind|向量函数 v(t)]
+[1] 若几何向量 $ \boldsymbol{\mathbf{v}} $ 只是一个标量 $t$ 的函数，记为 $ \boldsymbol{\mathbf{v}} (t)$，
+[2] 则 $ \boldsymbol{\mathbf{v}} $ 对 $t$ 的导数可记为以下的一种
+[3] \begin{equation}
+\frac{\mathrm{d}{ \boldsymbol{\mathbf{v}} }}{\mathrm{d}{t}} ~, \qquad \frac{\mathrm{d}}{\mathrm{d}{t}} \boldsymbol{\mathbf{v}} ~, \qquad \dot{ \boldsymbol{\mathbf{v}} }~.
+\end{equation}
+[/SCOPE:s_vec_deriv_let]
+[4] 其定义为（类比
+[5] 式 4 [链接 L0]
+[6] \begin{equation}
+\frac{\mathrm{d}{ \boldsymbol{\mathbf{v}} }}{\mathrm{d}{t}} = \lim_{\Delta t \to 0} \frac{ \boldsymbol{\mathbf{v}} ( t + \Delta t) - \boldsymbol{\mathbf{v}} (t)}{\Delta t}~,
+\end{equation}
+[7] 唯一与实函数
+[8] $f:\mathbb R \to \mathbb R$ [链接 L1]
+[9] 的导数不同的是，这里的减法是
+[10] 向量相减
+[11] ，结果还是向量。
+[12] 除以 $\Delta t$ 相当于
+[13] 向量的数乘 [链接 L2]
+[14] $1/\Delta t$，结果也是向量。
+[15] 所以 $ \mathrm{d}{ \boldsymbol{\mathbf{v}} }/\mathrm{d}{t} $ 也是一个向量关于标量 $t$ 的函数。
+[16] 从直角坐标的角度来看，$N$ 维向量可以用 $N$ 个实数表示，而两个向量相减则是它们的各个坐标分别相减，易得式 2 得到的向量导函数的各个分量等于原向量函数的各个分量分别求导（详见式 4 ）。
+[17] 例：速度和加速度（向量），匀速圆周运动的速度和加速度。
+
+[/SCOPE:s_vec_deriv]
+[SCOPE:s_geom_let|let_bind|向量函数 r(t)]
+[SCOPE:s_geom|description|几何意义]
+[18] 向量函数 $ \boldsymbol{\mathbf{r}} (t)$ 可以看成一条参数曲线，也就是把向量的起点固定在坐标原点，改变参数 $t$ 时，向量终点画出的曲线。
+
+[/SCOPE:s_geom_let]
+[/SCOPE:s_geom]
+[SCOPE:s_thm1|description|参数曲线的切线]
+[SCOPE:s_thm1_let|let_bind|参数曲线 r(t) 和 t0]
+[19] 定理 1 参数曲线的切线
+[20] 参数曲线 $ \boldsymbol{\mathbf{r}} (t)$ 在任意 $t=t_0$ 处存在不为零的导数 $\dot{ \boldsymbol{\mathbf{r}} }(t_0)$，
+[21] 则曲线在该点存在切线，且切线的方向就是导数的方向。
+[/SCOPE:s_thm1_let]
+[22] 从物理上这是容易理解的，若 $t$ 是时间，$ \boldsymbol{\mathbf{r}} $ 是一点的位置向量，
+[23] 那么 $\dot{ \boldsymbol{\mathbf{r}} }(t)$ 就是这点的速度向量，速度向量总是沿运动轨迹的切线方向。
+[24] 证明思路可以使用式 2 ：若不取极限，对每个具体的 $\Delta t$，分子 $ \boldsymbol{\mathbf{v}} (t+\Delta t)- \boldsymbol{\mathbf{v}} (t)$ 的方向就是曲线的割线的方向。
+[25] 而取极限 $\Delta t\to 0$ 时，若极限存在，
+[26] 则 $ \boldsymbol{\mathbf{v}} (t+\Delta t)$ 无限接近 $ \boldsymbol{\mathbf{v}} (t)$，割线的极限就是切线。
+[27] 注意 $\Delta t\to 0$ 的极限存在要求从正负两个方向趋近于零时极限都存在且相等，
+[28] 所以类似图 3 拐角处的情况不满足该条件。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_deriv_rules|description|向量的求导法则]
+[SCOPE:s_deriv_rules_let|let_bind|向量函数 v1, v2, u, v]
+[29] 与标量函数一样，由定义不难证明向量函数求导也是线性算符（$c_i$ 为常数）1
+[30] \begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}{t}} [c_1 \boldsymbol{\mathbf{v}} _1(t) + c_2 \boldsymbol{\mathbf{v}} _2(t) + \dots] = c_1 \frac{\mathrm{d}{ \boldsymbol{\mathbf{v}} _1}}{\mathrm{d}{t}} + c_2 \frac{\mathrm{d}{ \boldsymbol{\mathbf{v}} _2}}{\mathrm{d}{t}} \dots~
+\end{equation}
+[/SCOPE:s_deriv_rules_let]
+[31] 直角坐标中，向量函数可以看做三个分量上的标量函数且向量基底不变，
+[32] 所以由上式可得向量求导就是对每个标量函数求导。
+[33] \begin{equation}
+\frac{\mathrm{d}{ \boldsymbol{\mathbf{v}} }}{\mathrm{d}{t}} = \frac{\mathrm{d}}{\mathrm{d}{t}} [v_x(t) \hat{\boldsymbol{\mathbf{x}}} ] + \frac{\mathrm{d}}{\mathrm{d}{t}} [v_y(t) \hat{\boldsymbol{\mathbf{y}}} ] + \frac{\mathrm{d}}{\mathrm{d}{t}} [v_z(t) \hat{\boldsymbol{\mathbf{z}}} ]
+= \dot v_x(t) \hat{\boldsymbol{\mathbf{x}}} + \dot v_y(t) \hat{\boldsymbol{\mathbf{y}}} + \dot v_z(t) \hat{\boldsymbol{\mathbf{z}}} ~.
+\end{equation}
+[34] 要特别注意该式成立的条件是三个基底不随 $t$ 改变，这在其他坐标系中并不成立，例如 “
+[35] 极坐标中单位向量的偏导 [链接 L3]
+[36] 例：匀速圆周运动的速度和加速度（求导法）。
+[37] 向量数乘，内积或叉乘的求导在形式上都与标量函数的情况类似。
+[38] \begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}{t}} [f(t) \boldsymbol{\mathbf{v}} (t)] = \frac{\mathrm{d}{f}}{\mathrm{d}{t}} \boldsymbol{\mathbf{v}} + f \frac{\mathrm{d}{ \boldsymbol{\mathbf{v}} }}{\mathrm{d}{t}} ~,
+\end{equation}
+[39] \begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}{t}} [ \boldsymbol{\mathbf{u}} (t) \boldsymbol\cdot \boldsymbol{\mathbf{v}} (t)] = \frac{\mathrm{d}{ \boldsymbol{\mathbf{u}} }}{\mathrm{d}{t}} \boldsymbol\cdot \boldsymbol{\mathbf{v}} + \boldsymbol{\mathbf{u}} \boldsymbol\cdot \frac{\mathrm{d}{ \boldsymbol{\mathbf{v}} }}{\mathrm{d}{t}} ~,
+\end{equation}
+[40] \begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}{t}} [ \boldsymbol{\mathbf{u}} (t) \boldsymbol\times \boldsymbol{\mathbf{v}} (t)] = \frac{\mathrm{d}{ \boldsymbol{\mathbf{u}} }}{\mathrm{d}{t}} \boldsymbol\times \boldsymbol{\mathbf{v}} + \boldsymbol{\mathbf{u}} \boldsymbol\times \frac{\mathrm{d}{ \boldsymbol{\mathbf{v}} }}{\mathrm{d}{t}} ~.
+\end{equation}
+[SCOPE:s_deriv_rules_prod|description|乘积法则证明]
+[41] 由定义出发，不难证明以上三式，这里以
+[42] 式 6 [链接 L4]
+[43] 为例进行证明。
+[44] 根据内积定义以及标量函数的
+[45] 求导法则 [链接 L5]
+[46] \begin{equation}
+\begin{aligned}
+\frac{\mathrm{d}}{\mathrm{d}{t}} ( \boldsymbol{\mathbf{u}} \boldsymbol\cdot \boldsymbol{\mathbf{v}} ) &= \frac{\mathrm{d}}{\mathrm{d}{t}} (u_x v_x + u_y v_y + u_z v_z)\\
+&= \left( \frac{\mathrm{d}{u_x}}{\mathrm{d}{t}}…[truncated]… \right) \\
+&= \frac{\mathrm{d}{ \boldsymbol{\mathbf{u}} }}{\mathrm{d}{t}} \boldsymbol\cdot \boldsymbol{\mathbf{v}} + \boldsymbol{\mathbf{u}} \boldsymbol\cdot \frac{\mathrm{d}{ \boldsymbol{\mathbf{v}} }}{\mathrm{d}{t}} ~.
+\end{aligned} \end{equation}
+[/SCOPE:s_deriv_rules_prod]
+[47] 应用举例：动量定理，角动量定理（单个质点）。
+
+[/SCOPE:s_deriv_rules]
+[SCOPE:s_high_order|description|向量的高阶导数]
+[48] 与标量函数的高阶导数类似，对某个向量连续求 $N$ 次导数，就得到该函数的 $N$ 阶导数。
+[49] 上面在求圆周运动的加速度时，事实上我们已经计算了位置向量的导数（速度）的导数，
+[50] 即位置向量关于时间的二阶导数。
+
+跨文章引用:
+  [L1] $f:\mathbb R \to \mathbb R$ → functi
+  [L2] 向量的数乘 → GVec
+  [L3] 极坐标中单位向量的偏导 → DPol1
+  [L5] 求导法则 → DerRul
+[/SCOPE:s_high_order]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_vec_deriv",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "切线定理是向量导数概念的几何应用"
+  },
+  {
+    "source_scope": "s_deriv_rules_prod",
+    "target_scope": "s_deriv_rules",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "乘积法则的证明是求导法则的一部分"
+  }
+]

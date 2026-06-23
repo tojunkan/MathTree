@@ -1,0 +1,80 @@
+[SCOPE:root|description|柱坐标系中的拉普拉斯方程]
+文章名: CylLap
+标题: 柱坐标系中的拉普拉斯方程
+
+[SCOPE:s_laplace_eq|description|拉普拉斯方程]
+[SCOPE:s_laplace_let|let_bind|拉普拉斯方程变量]
+[0] 拉普拉斯方程
+[1] \begin{equation}
+\boldsymbol{\nabla}^2 u( \boldsymbol{\mathbf{r}} ) = 0~.
+\end{equation}
+[/SCOPE:s_laplace_let]
+[2] 用柱坐标的
+[3] 拉普拉斯算子 [链接 L0]
+[4] \begin{equation}
+\frac{1}{r} \frac{\partial}{\partial{r}} \left(r \frac{\partial u}{\partial r} \right) + \frac{1}{r^2} \frac{\partial^{2}{u}}{\partial{\theta}^{2}} + \frac{\partial^{2}{u}}{\partial{z}^{2}} = 0~.
+\end{equation}
+[5] 使用分离变量法，其通解可以记为
+[6] \begin{equation}
+f( \boldsymbol{\mathbf{r}} ) = \sum_{l,m} [A_l J_l(kr) + B_l Y_l(kr)] \mathrm{e} ^{ \mathrm{i} m \theta} (C_l \mathrm{e} ^{lz} + C_l \mathrm{e} ^{-lz})~.
+\end{equation}
+[7] 其中 $A_l, B_l, C_l, D_l$ 是待定常数，
+[8] 所以它们中只有三个自由度。
+[9] 拉普拉斯在柱坐标中分离变量后，径向方程为贝塞尔方程（式 1 ）
+[10] \begin{equation}
+x \frac{\mathrm{d}}{\mathrm{d}{x}} \left(x \frac{\mathrm{d}{y}}{\mathrm{d}{x}} \right) + (x^2 - m^2)y = 0~,
+\end{equation}
+[11] 其中 $x = lr$。
+
+[/SCOPE:s_laplace_eq]
+[SCOPE:s_separation|description|分离变量推导]
+[SCOPE:s_sep_let1|let_bind|分离变量假设]
+[12a] (r) \Phi(\theta) Z
+[12b] (z)$，代入方程得
+[/SCOPE:s_sep_let1]
+[13] \begin{equation}
+\frac{1}{rR} \frac{\partial}{\partial{r}} \left(r \frac{\partial R}{\partial r} \right) + \frac{1}{r^2 \Phi} \frac{\partial^{2}{\Phi}}{\partial{\theta}^{2}} + \frac{1}{Z} \frac{\partial^{2}{Z}}{\partial{z}^{2}} = 0~.
+\end{equation}
+[14] 前两项只是 $r$ 和 $\theta $ 的函数，第三项只是 $z$ 的函数，
+[SCOPE:s_sep_let2|let_bind|分离常数 l]
+[15] 所以它们分别为常数。令
+[16] \begin{equation}
+\frac{1}{Z} \frac{\partial^{2}{Z}}{\partial{z}^{2}} = l^2~,
+\end{equation}
+[/SCOPE:s_sep_let2]
+[17] 则前两项为
+[18] \begin{equation}
+\frac{1}{rR} \frac{\partial}{\partial{r}} \left(r \frac{\partial R}{\partial r} \right) + \frac{1}{r^2 \Phi} \frac{\partial^{2}{\Phi}}{\partial{\theta}^{2}} = - l^2~.
+\end{equation}
+[SCOPE:s_sep_let3|let_bind|分离常数 m]
+[19] 为了继续分离 $r$ 和 $\theta$，两边乘以 $r^2$， 则左边第二项只是关于 $\theta$ 的函数，剩下的部分只是关于 $r$ 的函数。令
+[20] \begin{equation}
+\frac{1}{\Phi } \frac{\mathrm{d}^{2}{\Phi}}{\mathrm{d}{\theta}^{2}} = -m^2~.
+\end{equation}
+[/SCOPE:s_sep_let3]
+[21] 则剩下的部分为 $m^2$，
+[22] 即
+[23] \begin{equation}
+r \frac{\mathrm{d}}{\mathrm{d}{r}} \left(r \frac{\mathrm{d}{R}}{\mathrm{d}{r}} \right) + (l^2 r^2 - m^2)R = 0~.
+\end{equation}
+[SCOPE:s_sep_let4|let_bind|变量替换 x=lr]
+[24a] (x) = R
+[24b] (r)$ 则
+[/SCOPE:s_sep_let4]
+[25] \begin{equation}
+x \frac{\mathrm{d}}{\mathrm{d}{x}} \left(x \frac{\mathrm{d}{y}}{\mathrm{d}{x}} \right) + (x^2 - m^2)y = 0~.
+\end{equation}
+[26] 到此为止，三个变量已经完全分离，各自的微分方程为
+[27] 式 6 [链接 L1]
+[28] 式 8 [链接 L2]
+[29] 式 9 [链接 L3]
+[30] $Z(z)$ 的通解为 $C_1 \mathrm{e} ^{lz} + C_2 \mathrm{e} ^{-lz}$， $\Phi(\theta)$ 的通解为 $ \mathrm{e} ^{ \mathrm{i} m\theta}$。
+[31a] (x), Y_l
+[31b] (x)$。
+[32] 需要注意的是，贝塞尔函数的阶数 $m$ 是角向方程 $( \mathrm{d}^{2}{\Phi}/\mathrm{d}{\theta}^{2} )/\Phi = -m^2$ 的参数，而不是径向方程的参数 $l$。
+[33] 参数 $l$ 被包含在自变量 $x$ 中。
+
+跨文章引用:
+  [L0] 拉普拉斯算子 → CylNab
+[/SCOPE:s_separation]
+[/SCOPE:root]

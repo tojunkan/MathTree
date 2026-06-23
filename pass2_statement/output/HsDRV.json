@@ -1,0 +1,154 @@
+{
+  "article_name": "HsDRV",
+  "statements": [
+    {
+      "stmt_id": "st_random_var_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_discrete_def",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_dist_need",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_dist",
+      "exposed_entities": [
+        "X",
+        "x_i",
+        "p_i"
+      ]
+    },
+    {
+      "stmt_id": "st_dist_def",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_dist",
+      "exposed_entities": [
+        "X",
+        "x_i",
+        "p_i"
+      ]
+    },
+    {
+      "stmt_id": "st_bern_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_dist_bern",
+      "exposed_entities": [
+        "X",
+        "p",
+        "q"
+      ]
+    },
+    {
+      "stmt_id": "st_bern_def",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_dist_bern",
+      "exposed_entities": [
+        "X",
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_hyper_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_hyper",
+      "exposed_entities": [
+        "N",
+        "M",
+        "n",
+        "X",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_hyper_def",
+      "subtype": "definition",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_hyper",
+      "exposed_entities": [
+        "X",
+        "N",
+        "M",
+        "n"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_bern_assump",
+      "target": "st_bern_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_hyper_assump",
+      "target": "st_hyper_def",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_bern_def",
+      "target": "st_dist_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "二点分布是分布列的特例"
+    },
+    {
+      "source": "st_hyper_def",
+      "target": "st_dist_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "超几何分布是分布列的特例"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,87 @@
+{
+  "article_name": "LinSph",
+  "statements": [
+    {
+      "stmt_id": "st_let_vars",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_vars",
+      "exposed_entities": [
+        "P0",
+        "v",
+        "Pc",
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_eq_intersection",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_main",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_expand_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        6,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_main",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_quadratic_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        10,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_main",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_code",
+      "subtype": "example",
+      "clause_range": [
+        14,
+        35
+      ],
+      "truth_value": "true",
+      "scope_id": "s_code",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let_vars",
+      "target": "st_eq_intersection",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_eq_intersection",
+      "target": "st_expand_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_expand_eq",
+      "target": "st_quadratic_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

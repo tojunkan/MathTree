@@ -1,0 +1,83 @@
+[SCOPE:root|description|全微分（简明微积分）]
+文章名: TDiff
+标题: 全微分（简明微积分）
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=测量误差
+
+[SCOPE:s_total_diff|description|全微分关系]
+[0] 以二元函数为例，在偏微分的几何意义中，若 $z = f(x,y)$ 在某点 $(x_0, y_0)$ 附近的曲面光滑1，
+[1] 那么如果考虑一个足够小的区域，可以把曲面近似为平面。
+[SCOPE:s_total_diff_let1|let_bind|设平面方程]
+[2] 设平面方程为
+[3] \begin{equation}
+z = c_0 + c_x(x - x_0) + c_y(y - y_0)~.
+\end{equation}
+[4] 当 $x=x_0$，$y=y_0$ 时显然有 $c_0 = f(x_0, y_0)$，求两个偏导，又有
+[5] \begin{equation}
+c_x = \frac{\partial f}{\partial x} ~, \qquad c_y = \frac{\partial f}{\partial y} ~.
+\end{equation}
+[/SCOPE:s_total_diff_let1]
+[SCOPE:s_total_diff_let2|let_bind|令增量]
+[6] 令坐标增量为 $\Delta x \equiv x - x_0$，$\Delta y \equiv y - y_0$， $\Delta z \equiv z - c_0$，
+[7] 则平面方程变为
+[8] \begin{equation}
+\Delta z = \frac{\partial f}{\partial x} \Delta x + \frac{\partial f}{\partial y} \Delta y~.
+\end{equation}
+[/SCOPE:s_total_diff_let2]
+[9] 令增量为无穷小，
+[10] 即
+[11] \begin{equation}
+\,\mathrm{d}{z} = \frac{\partial f}{\partial x} \,\mathrm{d}{x} + \frac{\partial f}{\partial y} \,\mathrm{d}{y} ~,
+\end{equation}
+[12] 全微分
+[13] 关系。
+[14] 全微分的意义是，从某一点开始向任意方向移动 $( \,\mathrm{d}{x} , \,\mathrm{d}{y} )$，函数的增量等于只向 $x$ 方向移动 $ \,\mathrm{d}{x} $ 的增量加上只向 $y$ 方向移动 $ \,\mathrm{d}{y} $ 的增量。
+[15] 类似地，$N$ 元函数的全微分关系为
+[16] \begin{equation}
+\,\mathrm{d}{z} = \sum_{i = 1}^{N} \frac{\partial f}{\partial x_i} \,\mathrm{d}{x_i} ~.
+\end{equation}
+[17] 事实上，偏微分也可以理解为是由该式定义的。
+
+[/SCOPE:s_total_diff]
+[SCOPE:s_approx|description|全微分近似]
+[18] 类比一元函数的微分近似 $\Delta y \approx \mathrm{d}{f}/\mathrm{d}{x} \cdot \Delta x$，若 $N$ 元函数各个变量的一阶偏导在一小块区域内变化不大，
+[19] 那么函数值的变化可近似为
+[20] \begin{equation} \begin{aligned}
+\Delta z &= f(x_1+\Delta x_1, \dots, x_N + \Delta x_N) - f(x_1, \dots, x_N) \\
+&\approx \frac{\partial f}{\partial x_1} \Delta {x_1} +\ldots + \frac{\partial f}{\partial x_N} \Delta {x_N}~.
+\end{aligned} \end{equation}
+
+[/SCOPE:s_approx]
+[SCOPE:s_example1|description|测量误差]
+[21] 例 1 测量误差
+[SCOPE:s_example1_let|let_bind|测量变量]
+[22] 测量一个边长各不相同的长方体的体积，若三边的测量值和最大测量误差分别为 $a, \sigma_a, b, \sigma_b, c, \sigma_c$（假设不确定度远小于边长），求体积的最大测量误差 $\sigma_V$ 及最大相对误差 $\sigma_V/V$。
+[23] 类比 “一元函数微分” 中的例 1 ，长方体的体积为 $V(a,b,c) = abc$，由全微分近似得
+[/SCOPE:s_example1_let]
+[24] \begin{equation}
+\sigma_V \approx \frac{\partial V}{\partial a} \sigma_a + \frac{\partial V}{\partial b} \sigma_b + \frac{\partial V}{\partial c} \sigma_c = bc \sigma_a + ac \sigma_b + ab \sigma_c~.
+\end{equation}
+[25] \begin{equation}
+\frac{\sigma_V}{V} \approx \frac{\sigma_a}{a} + \frac{\sigma_b}{b} + \frac{\sigma_c}{c}~.
+\end{equation}
+[/SCOPE:s_example1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_approx",
+    "target_scope": "s_total_diff",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "全微分近似是全微分关系的近似应用"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_approx",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "测量误差例子是全微分近似的具体应用"
+  }
+]

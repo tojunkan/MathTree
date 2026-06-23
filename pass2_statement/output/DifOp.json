@@ -1,0 +1,78 @@
+{
+  "article_name": "DifOp",
+  "statements": [
+    {
+      "stmt_id": "st_example1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "A_hat"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_defs",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "A_hat",
+        "B_hat",
+        "C_hat",
+        "D_hat",
+        "E_hat",
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_let",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_let",
+      "exposed_entities": [
+        "A_hat",
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_def",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_example1_let",
+      "target": "st_example1_defs",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_linear_let",
+      "target": "st_linear_def",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

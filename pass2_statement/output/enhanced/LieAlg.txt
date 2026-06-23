@@ -1,0 +1,242 @@
+[SCOPE:root|description|李代数]
+文章名: LieAlg
+标题: 李代数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=李代数
+  [1] type=definition heading=定义 2 title=交换李代数
+  [2] type=theorem heading=定理 1 title=结合代数导出李代数
+  [3] type=definition heading=定义 3 title=中心
+  [4] type=example heading=例 1 title=一般线性李代数
+  [5] type=example heading=例 2 title=特殊线性李代数
+  [6] type=example heading=例 3 title=三维向量叉积
+  [7] type=example heading=例 4 title=李代数的积
+  [8] type=theorem heading=定理 2 title=
+  [9] type=theorem heading=定理 3 title=结构常数的变换
+
+[0] 李代数（Lie algebra）是对域上的代数进行的一种推广。
+[1] 域上的代数是指域上的线性空间配合了一个矢量乘法，使得这个线性空间在矢量乘法下也能构成一个环。
+[2] 李代数也是域上线性空间配合了一个矢量乘法，这个矢量乘法和构成环的乘法几乎一样，
+[3] 但是有一点显著不同：将环乘法的结合律替代为 Jacobi 结合性。
+[4] 李代数在现代理论物理的时空研究中应用广泛，常用于描述光滑张量场之间的作用——要注意的是，此时我们把一个光滑张量场本身看成一个向量。
+
+[SCOPE:s_def1|description|定义1 李代数]
+[5] 定义 1 李代数
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[6] 给定域 $\mathbb{F}$ 上的一个线性空间 $V$。
+[7] 在 $V$ 上定义一个 “乘法” 运算 $[\cdot, \cdot] : V \times V \to V$，对于任意 $ \boldsymbol{\mathbf{v}} _1, \boldsymbol{\mathbf{v}} _2\in V$，将它们的运算结果记为 $[ \boldsymbol{\mathbf{v}} _1, \boldsymbol{\mathbf{v}} _2]$，称为李括号。
+[/SCOPE:s_def1_let]
+[8] $(V, [\cdot, \cdot])$ 被称为一个李代数，如果它满足以下性质：
+[9] 封闭性 对于任意 $ \boldsymbol{\mathbf{v}} _1, \boldsymbol{\mathbf{v}} _2\in V$,$[ \boldsymbol{\mathbf{v}} _1, \boldsymbol{\mathbf{v}} _2]\in V$。
+[10] 双线性性1 对于任意 $c_1, c_2 \in \mathbb{F}$ 和任意 $ \boldsymbol{\mathbf{v}} , \boldsymbol{\mathbf{v}} _1, \boldsymbol{\mathbf{v}} _2, \boldsymbol{\mathbf{u}} , \boldsymbol{\mathbf{u}} _1, \boldsymbol{\mathbf{u}} _2 \in V$，都有
+[11] \begin{equation}
+\begin{aligned}
+{[ \boldsymbol{\mathbf{v}} , c_1 \boldsymbol{\mathbf{u}} _1 + c_2 \boldsymbol{\mathbf{u}} _2]} &= c_1 [ \boldsymbol{\mathbf{v}} , \boldsymbol{\mathbf{u}} _1] + c_2[ \boldsymbol{\mathbf{v}} , \boldsymbol{\mathbf{u}} _2…[truncated]…, \\
+[c_1 \boldsymbol{\mathbf{v}} _1+c_2 \boldsymbol{\mathbf{v}} _2, \boldsymbol{\mathbf{u}} ] &= c_1[ \boldsymbol{\mathbf{v}} _1, \boldsymbol{\mathbf{u}} ] + c_2[ \boldsymbol{\mathbf{v}} _1, \boldsymbol{\mathbf{u}} _2]~.
+\end{aligned}
+\end{equation}
+[12] 反对称性 对于任意 $ \boldsymbol{\mathbf{v}} , \boldsymbol{\mathbf{u}} \in V$，有 $[ \boldsymbol{\mathbf{v}} , \boldsymbol{\mathbf{u}} ]=-[ \boldsymbol{\mathbf{u}} , \boldsymbol{\mathbf{v}} ]$。
+[13] Jacobi 结合性 对于任意 $ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} , \boldsymbol{\mathbf{z}} \in V$，有
+[14] \begin{equation}
+[ \boldsymbol{\mathbf{x}} , [ \boldsymbol{\mathbf{y}} , \boldsymbol{\mathbf{z}} ]]+[ \boldsymbol{\mathbf{z}} , [ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} ]]+[ \boldsymbol{\mathbf{y}} , [ \boldsymbol{\mathbf{z}} , \boldsymbol{\mathbf{x}} ]]=0~.
+\end{equation}
+[15] 由于李括号用有时也被视为乘法，
+[16] 因此有时也称之为括积。
+[17] 李代数定义中的双线性性可以通过反对称性和单线性性2推出，
+[18] 所以和小时百科中群的定义一样，是有冗余的。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义2 交换李代数]
+[19] 定义 2 交换李代数
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[20] 设 $\mathfrak{g}$ 为域 $\mathbb{F}$ 上的 $n$ 维李代数，
+[/SCOPE:s_def2_let]
+[21] 那么如果对于任意的 $ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} \in\mathfrak{g}$，都有 $[ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} ] = [ \boldsymbol{\mathbf{y}} , \boldsymbol{\mathbf{x}} ]$（等价的 $[ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} ] = 0$），
+[22] 则称这是一个交换李代数（commutative Lie algebra）或阿贝尔李代数（abelian Lie algebra）。
+[23] 李代数和结合代数定义 1 （很多时候直接称代数）的关系极为紧密，每个结合代数都可以唯一地导出一个李代数：
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|定理1 结合代数导出李代数]
+[24] 定理 1 结合代数导出李代数
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[25] 设 $\mathfrak{A}$ 是域 $\mathbb{F}$ 上的一个结合代数，以 $\times$ 为环的乘法，
+[26] 那么如果定义
+[27] $$
+[ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} ] := \boldsymbol{\mathbf{x}} \times \boldsymbol{\mathbf{y}} - \boldsymbol{\mathbf{y}} \times \boldsymbol{\mathbf{x}} ~,
+$$
+[28] 其中 $ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} \in\mathfrak{A}$，
+[/SCOPE:s_thm1_let]
+[29] 则 $(\mathfrak{A}, [\cdot, \cdot])$ 构成一个李代数。
+[SCOPE:s_thm1_proof|description|定理1的证明]
+[30] 证明：
+[31] 封闭性是显然的，因为 $\times$ 是封闭的。
+[32] 由这个括积的定义，反对称性也是显然的，因为 $ \boldsymbol{\mathbf{x}} \times \boldsymbol{\mathbf{y}} - \boldsymbol{\mathbf{y}} \times \boldsymbol{\mathbf{x}} =-( \boldsymbol{\mathbf{y}} \times \boldsymbol{\mathbf{x}} - \boldsymbol{\mathbf{x}} \times \boldsymbol{\mathbf{y}} )$ 恒成立。
+[33] 由反对称性，我们只需要证明单线性性即可推出双线性性：$\forall \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} , \boldsymbol{\mathbf{z}} \in\frak{A}$ 和 $a, b\in\mathbb{F}$，有：
+[34] \begin{equation}
+\begin{aligned}
+{[a \boldsymbol{\mathbf{x}} +b \boldsymbol{\mathbf{y}} , \boldsymbol{\mathbf{z}} ]}&=(a \boldsymbol{\mathbf{x}} +b \boldsymbol{\mathbf{y}} )\times \boldsymbol{\mathbf{z}} - \boldsymbol{\mathbf{z}} \times(a \boldsymbol…[truncated]…bol{\mathbf{y}} \times \boldsymbol{\mathbf{z}} - \boldsymbol{\mathbf{z}} \times \boldsymbol{\mathbf{y}} )\\
+&=a[ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{z}} ]+b[ \boldsymbol{\mathbf{y}} , \boldsymbol{\mathbf{z}} ]~.
+\end{aligned}
+\end{equation}
+[35] 最后是 Jacobi 结合性：
+[36] \begin{equation}
+\begin{aligned}
+{[ \boldsymbol{\mathbf{x}} , [ \boldsymbol{\mathbf{y}} , \boldsymbol{\mathbf{z}} ]]}&= \boldsymbol{\mathbf{x}} \times ( \boldsymbol{\mathbf{y}} \times \boldsymbol{\mathbf{z}} - \boldsymbol{\mathbf{z}} \times \boldsymb…[truncated]…{y}} )\times \boldsymbol{\mathbf{x}} -( \boldsymbol{\mathbf{y}} \times \boldsymbol{\mathbf{z}} )\times \boldsymbol{\mathbf{x}} - \boldsymbol{\mathbf{x}} \times( \boldsymbol{\mathbf{z}} \times \boldsymbol{\mathbf{y}} )~.\\
+\end{aligned}
+\end{equation}
+[37] 依次轮换 $ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} $ 和 $ \boldsymbol{\mathbf{z}} $ 的位置，
+[38] 即可相互抵消，得到 $[ \boldsymbol{\mathbf{x}} , [ \boldsymbol{\mathbf{y}} , \boldsymbol{\mathbf{z}} ]]+[ \boldsymbol{\mathbf{z}} , [ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} ]]+[ \boldsymbol{\mathbf{y}} , [ \boldsymbol{\mathbf{z}} , \boldsymbol{\mathbf{x}} ]]=0$。
+[39] 由式 4 ，轮换 $ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} $ 和 $ \boldsymbol{\mathbf{z}} $ 的顺序后把得到的三个式子相加，
+[40] 即可以得到 Jacobi 结合性。
+[41] 【未完成】该证明不够清晰
+[42] 证毕。
+[/SCOPE:s_thm1_proof]
+[43] 知道了每个结合代数可以对应一个李代数后，我们自然会好奇，每个李代数是不是也能 “对应” 一个结合代数？
+[44] 答案是肯定的，见泛包络代数。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_def3|description|定义3 中心]
+[45] 定义 3 中心
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[46] 设 $\mathfrak{g}$ 为域 $\mathbb{F}$ 上的李代数，记 $C(\mathfrak{g})=\{ \boldsymbol{\mathbf{x}} \in\mathfrak{g}|\forall \boldsymbol{\mathbf{y}} \in\mathfrak{g}, [ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} ]= \boldsymbol{\mathbf{0}} \}$，称之为 $\mathfrak{g}$ 的中心（center）。
+[/SCOPE:s_def3_let]
+[47] 李代数的中心，概念直接来自群等其它代数结构的中心，
+[48] 即 “和所有元素的运算都交换的元素所构成的集合”。
+[49] 对李代数来说，交换意味着李括号的结果为 $0$。
+
+[/SCOPE:s_def3]
+[50] 结合代数对应李代数这一事实，使得我们很容易联想到一个常见的结合代数：矩阵代数。
+[51] 在本文中，将域 $\mathbb{F}$ 上的 $n$ 阶可逆方阵的集合记为 $ \operatorname {gl}(n, \mathbb{F})$，
+[52] 那么这个集合自然构成 $\mathbb{F}$ 上的一个线性空间（以矩阵加法为向量加法），而矩阵乘法则使之构成一个环，
+[53] 因此这是一个结合代数。
+
+[SCOPE:s_ex1|description|例1 一般线性李代数]
+[54] 例 1 一般线性李代数
+[55] 域 $\mathbb{F}$ 上的 $ \operatorname {gl}(n, \mathbb{F})$ 是一个结合代数。
+[56] 由这个结合代数可以导出李代数，其中对于矩阵 $ \boldsymbol{\mathbf{A}} $ 和 $ \boldsymbol{\mathbf{B}} $，括积的定义为 $[ \boldsymbol{\mathbf{A}} , \boldsymbol{\mathbf{B}} ]= \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{B}} - \boldsymbol{\mathbf{B}} \boldsymbol{\mathbf{A}} $。
+[57] 该李代数被称为一般线性李代数，名称和一般线性群 $ \operatorname {GL}(n, \mathbb{F})$ 对应。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2 特殊线性李代数]
+[58] 例 2 特殊线性李代数
+[59] 对于域 $\mathbb{F}$ 和正整数 $n$，记 $ \operatorname {sl}(n, \mathbb{F})$ 为 $ \operatorname {gl}(n, \mathbb{F})$ 中迹为 $0$ 的矩阵构成的结合代数，
+[60] 则它可以导出一个特殊线性李代数，名称也和特殊线性群 $ \operatorname {SL}(n, \mathbb{F})$ 对应。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|例3 三维向量叉积]
+[61] 例 3 三维向量叉积
+[SCOPE:s_ex3_let|let_bind|例3的变量]
+[62] 域 $\mathbb{R}$ 上的三维线性空间 $\mathbb{R}^3$ 中，将括积定义为叉积：$\forall \boldsymbol{\mathbf{v}} , \boldsymbol{\mathbf{u}} \in \mathbb{R}^3$，有 $[ \boldsymbol{\mathbf{v}} , \boldsymbol{\mathbf{u}} ]= \boldsymbol{\mathbf{v}} \times \boldsymbol{\mathbf{u}} $。
+[/SCOPE:s_ex3_let]
+[63] 那么这个线性空间配上叉积可以得到一个李代数。
+
+[/SCOPE:s_ex3]
+[SCOPE:s_ex4|description|例4 李代数的积]
+[64] 例 4 李代数的积
+[SCOPE:s_ex4_let|let_bind|例4的变量]
+[65] 若 $\mathfrak g,\mathfrak h$ 都是李代数，
+[66] 那么定义李代数的积 $\mathfrak g\times\mathfrak h$，对于任意 $X,X'\in \mathfrak g,Y,Y'\in \mathfrak h$，李括号运算为
+[/SCOPE:s_ex4_let]
+[67] \begin{equation}
+[(X,Y),(X',Y')]=[[X,X'],[Y,Y']]~.
+\end{equation}
+
+[/SCOPE:s_ex4]
+[68] 李代数的括积的作用是把两个向量映射为一个向量，而且还要求具有双线性性，
+[69] 因此括积实际上是一个三阶张量。
+[70] 如果设 $\mathfrak{g}$ 为域 $\mathbb{F}$ 上的 $n$ 维李代数，而 $\{ \boldsymbol{\mathbf{x}} _i\}$ 为它的一组基，
+[71] 那么对于任意的 $ \boldsymbol{\mathbf{x}} _i$ 和 $ \boldsymbol{\mathbf{x}} _j$，存在 $C^k_{ij}\in\mathbb{F}$，使得 $[ \boldsymbol{\mathbf{x}} _i, \boldsymbol{\mathbf{x}} _j]=C^k_{ij} \boldsymbol{\mathbf{x}} _k$3。
+[72] 这样的 $C^k_{ij}$ 就是括积张量的三维矩阵表示。
+[73] 显然，括积张量的三维矩阵表示依赖于基的选取，和所有其它张量一样。
+[74] 当选定基以后，所得到的矩阵称为 $\mathfrak{g}$ 关于基 $\{ \boldsymbol{\mathbf{x}} _i\}$ 的结构常数。
+
+[SCOPE:s_thm2|description|定理2]
+[75] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[76] 设 $\mathfrak{g}$ 为域 $\mathbb{F}$ 上的 $n$ 维李代数，它在基 $\{ \boldsymbol{\mathbf{x}} _i\}$ 下的结构常数为 $C^k_{ij}$，
+[/SCOPE:s_thm2_let]
+[77] 那么有：
+[78] $C^k_{ij}=-C^k_{ji}$。
+[79] $C^l_{ij}C^m_{lk}+C^l_{jk}C^m_{li}+C^l_{ki}C^m_{lj}=0$。
+[80] 定理 2 的证明思路简述如下，细节读者可自行补充：对于第一条，直接应用反交换性；
+[81] 对于第二条，考虑 $[ \boldsymbol{\mathbf{x}} _i, [ \boldsymbol{\mathbf{x}} _j, \boldsymbol{\mathbf{x}} _k]] = [ \boldsymbol{\mathbf{x}} _i, C_{jk}^l \boldsymbol{\mathbf{x}} _l] = C_{jk}^l C_{il}^m \boldsymbol{\mathbf{x}} _m$，再应用反交换性就能直接得到式中左边的第二项，以此类推，应用 Jacobi 结合性即可得到整个式子。
+[82] 结构常数唯一地对应李代数，也就是说，我们也可以任取一个线性空间，然后通过定义满足定理 2 的结构常数来定义括积，
+[83] 从而得到一个李代数。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|定理3 结构常数的变换]
+[84] 定理 3 结构常数的变换
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[85] 设 $\mathfrak{g}$ 为域 $\mathbb{F}$ 上的 $n$ 维李代数，它在基 $\{ \boldsymbol{\mathbf{x}} _i\}$ 下的结构常数为 $C^k_{ij}$，在基 $\{ \boldsymbol{\mathbf{y}} _i\}$ 下的结构常数为 $D^k_{ij}$，而且有过渡矩阵$a_i^j$ 使得 $ \boldsymbol{\mathbf{y}} _i=a_i^j \boldsymbol{\mathbf{x}} _j$，
+[/SCOPE:s_thm3_let]
+[86] 那么有变换法则：
+[87] \begin{equation}
+D_{ij}^k a_k^j=a_i^m a_j^n C^j_{mn}~.
+\end{equation}
+[SCOPE:s_thm3_proof|description|定理3的证明]
+[88] 证明：
+[89] \begin{equation}
+[ \boldsymbol{\mathbf{y}} _i, \boldsymbol{\mathbf{y}} _j] = D_{ij}^k \boldsymbol{\mathbf{y}} _k = D_{ij}^k a_k^j \boldsymbol{\mathbf{x}} _j~,
+\end{equation}
+[90] \begin{equation}
+[ \boldsymbol{\mathbf{y}} _i, \boldsymbol{\mathbf{y}} _j]=[a_i^m \boldsymbol{\mathbf{x}} _m, a_j^n \boldsymbol{\mathbf{x}} _n]=a_i^m a_j^n[ \boldsymbol{\mathbf{x}} _m, \boldsymbol{\mathbf{x}} _n]=a_i^m a_j^n C^j_{mn} \boldsymbol{\mathbf{x}} _j~.
+\end{equation}
+[91] 比较式 7 和式 8 ，消去 $ \boldsymbol{\mathbf{x}} _j$ 即可得 $D_{ij}^k a^k_j = a_i^m a_j^n C^j_{mn}$。
+[92] 证毕。
+[/SCOPE:s_thm3_proof]
+[93] 回顾张量的坐标变换文章，我们发现这就是三阶张量的坐标变换式。
+[/SCOPE:s_thm3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是定义1的一个特例（结合代数导出李代数）"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是定理1的一个实例"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_ex1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2是例1的子代数"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例3是定义1的一个实例"
+  },
+  {
+    "source_scope": "s_ex4",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例4是定义1的一个实例（积李代数）"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2由定义1的性质推出"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3是结构常数在基变换下的变换法则"
+  }
+]

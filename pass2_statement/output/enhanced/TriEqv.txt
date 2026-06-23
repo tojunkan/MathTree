@@ -1,0 +1,166 @@
+[SCOPE:root|description|三角恒等式]
+文章名: TriEqv
+标题: 三角恒等式
+
+[SCOPE:s_intro|description|引言]
+[0] 这里列出几个高中常见的三角函数恒等式。
+[1] 以下用到的两个高中数学不常见的三角函数分别为 $\csc \alpha= 1/\sin \alpha$，$\sec \alpha = 1/\cos \alpha$，分别读作 cosecant 和 secant。
+
+[/SCOPE:s_intro]
+[SCOPE:s_pythagorean|description|勾股定理]
+[2] \begin{equation}
+\sin^2 \alpha + \cos^2 \alpha = 1~.
+\end{equation}
+[3] 等式两边同除 $\cos^2 \alpha$ 和 $\sin^2 \alpha$ 得
+[4] \begin{gather}
+\tan^2 \alpha + 1 = \sec^2 \alpha~,\\
+1 + \cot^2\alpha = \csc^2\alpha~.
+\end{gather}
+
+[/SCOPE:s_pythagorean]
+[SCOPE:s_sum_angle|description|两角和公式]
+[5] \begin{gather}
+\sin\left(\alpha\pm \beta\right) = \sin \alpha\cos \beta \pm \cos \alpha\sin \beta~,\\
+\cos\left(\alpha\pm \beta\right) = \cos \alpha\cos \beta \mp \sin \alpha\sin \beta~,\\
+\tan\left(\alpha\pm \beta\right) = \frac{\tan \alpha \pm \tan \beta}{1 \mp \tan \alpha \tan \beta}~.
+\end{gather}
+
+[/SCOPE:s_sum_angle]
+[SCOPE:s_double_angle|description|二倍角公式]
+[6] 令式 4 中 $\beta=\alpha$ 取上号得
+[7] \begin{gather}
+\sin 2\alpha = 2\sin \alpha\cos \alpha~,\\
+\cos 2\alpha = \cos^2 \alpha - \sin^2 \alpha~,\\
+\tan 2\alpha = \frac{2\tan \alpha}{1 - \tan^2 \alpha}~.
+\end{gather}
+
+[/SCOPE:s_double_angle]
+[SCOPE:s_power_reduction|description|降幂公式]
+[8] 结合式 8 和 $\sin^2 \alpha + \cos^2 \alpha = 1$ 可以得到
+[9] \begin{gather}
+\sin^2 \alpha = \frac12 (1- \cos 2\alpha) ~, \\
+\cos^2 \alpha = \frac12 (1+\cos 2\alpha) ~.
+\end{gather}
+[10] 由此可得半角公式
+[11] \begin{gather}
+\sin\frac{ \alpha}{2} = \pm\sqrt{\frac{1-\cos \alpha}{2}}~,\\
+\cos\frac{ \alpha}{2}= \pm\sqrt{\frac{1+\cos \alpha}{2}}~,\\
+\tan\frac{ \alpha}{2} = \pm\sqrt{\frac{1-\cos \alpha}{1+\cos \alpha}} = \frac{\sin \alpha}{1+\cos \alpha} = \frac{1-\cos \alpha}{\sin \alpha}~.
+\end{gather}
+[12a] 注意正负号的选择需要根据 $\alpha$ 所在的区间判断
+[12b] 如果需要恒等式，则两边取平方。
+
+[/SCOPE:s_power_reduction]
+[SCOPE:s_sum_to_product|description|和差化积公式]
+[13] \begin{gather}
+\sin \alpha + \sin \beta = 2\sin \left(\frac{\alpha + \beta}{2} \right) \cos \left(\frac{\alpha - \beta}{2} \right) ~,\\
+\sin \alpha - \sin \beta = 2\sin \left(\frac{\alpha - \beta}{2} \right) \cos \left(\frac{\alpha + \beta}{2} \right…[truncated]…~,\\
+\cos \alpha + \cos \beta = 2\cos \left(\frac{\alpha+\beta}{2} \right) \cos \left(\frac{\alpha-\beta}{2} \right) ~,\\
+\cos \alpha - \cos \beta = -2\sin \left(\frac{\alpha+\beta}{2} \right) \sin \left(\frac{\alpha-\beta}{2} \right) ~.
+\end{gather}
+
+[/SCOPE:s_sum_to_product]
+[SCOPE:s_product_to_sum|description|积化和差公式]
+[14] 根据上文的和差化积公式，我们也可以直接写出积化和差公式
+[15] \begin{gather}
+\sin \alpha\sin \beta = \frac12 [ \cos\left(\alpha - \beta\right) - \cos\left(\alpha + \beta\right) ]~,\\
+\cos \alpha\cos \beta = \frac12 [ \cos\left(\alpha + \beta\right) + \cos\left(\alpha - \beta\right) ]~,\\
+\sin \alpha\cos \beta = \frac12 [ \sin\left(\alpha + \beta\right) + \sin\left(\alpha - \beta\right) ]~.
+\end{gather}
+
+[/SCOPE:s_product_to_sum]
+[SCOPE:s_auxiliary|description|辅助角公式]
+[16] \begin{equation}
+a\sin \alpha + b\cos \alpha = \sqrt{a^2+b^2} \sin\left(\alpha + \phi\right) \qquad \left(\phi = \tan^{-1}\frac{b}{a} \right) ~.
+\end{equation}
+
+[/SCOPE:s_auxiliary]
+[SCOPE:s_sum_angle_proof|description|两角和公式（图解）]
+[17] 【图解】图 1：两角和公式
+[SCOPE:s_sum_angle_proof_let|let_bind|图解变量]
+[18] 如图 1 ，要证明式 4 ，令 $OB = 1$，
+[/SCOPE:s_sum_angle_proof_let]
+[19] 那么 $ \sin\left(\alpha+\beta\right) = BD = AC + BE$，而 $AC = OA \sin\alpha$，$OA = \cos\beta$；
+[20] $BE = AB\cos\alpha$，$AB = \sin\beta$，代入得 $ \sin\left(\alpha+\beta\right) = \sin\alpha\cos\beta + \cos\alpha\sin\beta$。
+[21] 注意当 $\alpha$ 或 $\beta$ 取其他任意值时，重新画图同样可以证明该关系。
+[22] 所以给 $\beta$ 取相反数，就得到 $ \sin\left(\alpha-\beta\right) = \sin\alpha\cos\beta - \cos\alpha\sin\beta$
+[23] 要证明式 5 ，$ \cos\left(\alpha+\beta\right) = OD = OC - EA$，而 $OC = OA\cos\alpha$，$OA = \cos\beta$；
+[24] $EA = AB\sin\alpha$，$AB = \sin\beta$，代入得 $ \cos\left(\alpha+\beta\right) = \cos\alpha\cos\beta - \sin\alpha\sin\beta$，$\beta$ 取相反数得 $ \cos\left(\alpha-\beta\right) = \cos\alpha\cos\beta + \sin\alpha\sin\beta$。
+[25] 证毕。
+
+[/SCOPE:s_sum_angle_proof]
+[SCOPE:s_sum_angle_vector|description|两角和公式（几何矢量）]
+[26] 把以上过程用几何矢量语言可以表达得更自然。
+[SCOPE:s_sum_angle_vector_let|let_bind|矢量变量]
+[27] 令 $ \hat{\boldsymbol{\mathbf{x}}} , \hat{\boldsymbol{\mathbf{y}}} $ 分别是图 1 直角坐标的单位矢量，$OA$ 方向的单位矢量为 $ \hat{\boldsymbol{\mathbf{a}}} $，$AB$ 方向的单位矢量为 $ \hat{\boldsymbol{\mathbf{b}}} $。
+[28] 易得
+[29] \begin{gather}
+\hat{\boldsymbol{\mathbf{a}}} = \cos\alpha\ \hat{\boldsymbol{\mathbf{x}}} + \sin\alpha\ \hat{\boldsymbol{\mathbf{y}}} ~,\\
+\hat{\boldsymbol{\mathbf{b}}} = -\sin\alpha\ \hat{\boldsymbol{\mathbf{x}}} + \cos\alpha\ \hat{\boldsymbol{\mathbf{y}}} ~.
+\end{gather}
+[30] 同样以 $O$ 为原点，$ \hat{\boldsymbol{\mathbf{a}}} , \hat{\boldsymbol{\mathbf{b}}} $ 可以看成 $x$-$y$ 直角坐标系旋转后的坐标系中的单位矢量。
+[31] 令 $OB$ 矢量为 $ \hat{\boldsymbol{\mathbf{u}}} $，
+[/SCOPE:s_sum_angle_vector_let]
+[32] 那么 $ \hat{\boldsymbol{\mathbf{u}}} = \cos\beta\ \hat{\boldsymbol{\mathbf{a}}} + \sin\beta\ \hat{\boldsymbol{\mathbf{b}}} $，把以上两式代入得
+[33] \begin{equation}
+\hat{\boldsymbol{\mathbf{u}}} = (\cos\alpha\cos\beta - \sin\alpha\sin\beta) \hat{\boldsymbol{\mathbf{x}}} + (\sin\alpha\cos\beta + \cos\alpha\sin\beta) \hat{\boldsymbol{\mathbf{y}}} ~,
+\end{equation}
+[34] 这就同时证明了两个两角和公式。
+[35] 证毕。
+
+[/SCOPE:s_sum_angle_vector]
+[SCOPE:s_sum_to_product_proof|description|和差化积公式推导]
+[SCOPE:s_sum_to_product_proof_let|let_bind|矢量变量]
+[36] 以式 17 为例，$\cos \alpha, \cos \beta$ 和 $\cos \alpha + \cos \beta$ 分别等于图 2 中矢量 $ \boldsymbol{\mathbf{A}} , \boldsymbol{\mathbf{B}} $（令它们的模长为 1）和 $ \boldsymbol{\mathbf{A}} + \boldsymbol{\mathbf{B}} $ 在水平方向的投影长度，而 $ \boldsymbol{\mathbf{A}} + \boldsymbol{\mathbf{B}} $ 在水平方向的投影长度等为 $ \left\lvert \boldsymbol{\mathbf{A}} + \boldsymbol{\mathbf{B}} \right\rvert \cos[(\alpha+\beta)/2]$，其中 $ \left\lvert \boldsymbol{\mathbf{A}} + \boldsymbol{\mathbf{B}} \right\rvert = 2\cos [(\beta-\alpha)/2]$，代入可得式 17 。
+[/SCOPE:s_sum_to_product_proof_let]
+[37] 利用 $ \boldsymbol{\mathbf{A}} + \boldsymbol{\mathbf{B}} $ 在竖直方向的投影可得式 15 ，把式 15 和式 17 中的 $\beta$ 分别替换成 $-\beta$ 和 $\beta+\pi$ 可推导出式 16 和式 18 。
+[38] 【图解】图 2：和差化积公式推导
+[39] 【未完成】图中 $x,y$ 改为 $\alpha,\beta$
+[/SCOPE:s_sum_to_product_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_double_angle",
+    "target_scope": "s_sum_angle",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "二倍角公式是两角和公式的特例"
+  },
+  {
+    "source_scope": "s_power_reduction",
+    "target_scope": "s_double_angle",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "降幂公式由二倍角公式推导"
+  },
+  {
+    "source_scope": "s_product_to_sum",
+    "target_scope": "s_sum_to_product",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "积化和差由和差化积推导"
+  },
+  {
+    "source_scope": "s_sum_angle_proof",
+    "target_scope": "s_sum_angle",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "图解证明两角和公式"
+  },
+  {
+    "source_scope": "s_sum_angle_vector",
+    "target_scope": "s_sum_angle",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "矢量证明两角和公式"
+  },
+  {
+    "source_scope": "s_sum_to_product_proof",
+    "target_scope": "s_sum_to_product",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "图解推导和差化积公式"
+  }
+]

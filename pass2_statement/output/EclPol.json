@@ -1,0 +1,309 @@
+{
+  "article_name": "EclPol",
+  "statements": [
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "C",
+        "P",
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_concl",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "AB"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_converse",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "P"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "C",
+        "P",
+        "x_0",
+        "y_0",
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_concl",
+      "subtype": "theorem",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof_let1",
+      "exposed_entities": [
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof_let2",
+      "exposed_entities": [
+        "O",
+        "H"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_calc",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_c_fixed",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        34
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_c_eq_R2",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "C",
+        "P",
+        "x_0",
+        "y_0",
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_def",
+      "subtype": "definition",
+      "clause_range": [
+        48,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_let",
+      "subtype": "assumption",
+      "clause_range": [
+        52,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3_let",
+      "exposed_entities": [
+        "E",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_ellipse",
+      "subtype": "definition",
+      "clause_range": [
+        53,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_hyperbola",
+      "subtype": "definition",
+      "clause_range": [
+        54,
+        55
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3_let",
+      "exposed_entities": [
+        "H"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_parabola",
+      "subtype": "definition",
+      "clause_range": [
+        56,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3_let",
+      "exposed_entities": [
+        "P"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_converse",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_let1",
+      "target": "st_thm1_proof_calc",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_let2",
+      "target": "st_thm1_proof_calc",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_calc",
+      "target": "st_thm1_proof_c_fixed",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_c_fixed",
+      "target": "st_thm1_proof_c_eq_R2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_let",
+      "target": "st_def3_ellipse",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_let",
+      "target": "st_def3_hyperbola",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_let",
+      "target": "st_def3_parabola",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_def2_def",
+      "target": "st_def1_concl",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义2是定义1的推广，去掉了P在圆外的限制"
+    },
+    {
+      "source": "st_def3_ellipse",
+      "target": "st_def2_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义3推广到一般圆锥曲线"
+    },
+    {
+      "source": "st_thm1_concl",
+      "target": "st_def2_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理1的结论为定义2提供了方程形式"
+    }
+  ],
+  "unresolved": []
+}

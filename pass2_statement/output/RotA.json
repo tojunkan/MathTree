@@ -1,0 +1,348 @@
+{
+  "article_name": "RotA",
+  "statements": [
+    {
+      "stmt_id": "st_formula_intro",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_formula",
+      "exposed_entities": [
+        "r",
+        "r'",
+        "A_hat",
+        "theta"
+      ]
+    },
+    {
+      "stmt_id": "st_R_theta_def",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_formula",
+      "exposed_entities": [
+        "R_theta"
+      ]
+    },
+    {
+      "stmt_id": "st_c_s_a_def",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_formula",
+      "exposed_entities": [
+        "c",
+        "s",
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_quaternion_mention",
+      "subtype": "remark",
+      "clause_range": [
+        13,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_formula",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_approach",
+      "subtype": "assumption",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "A_hat",
+        "r",
+        "theta",
+        "r'"
+      ]
+    },
+    {
+      "stmt_id": "st_note_diff_plane",
+      "subtype": "remark",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_figure_description",
+      "subtype": "remark",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_r3_def",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "r_3"
+      ]
+    },
+    {
+      "stmt_id": "st_r1_def",
+      "subtype": "definition",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "r_1"
+      ]
+    },
+    {
+      "stmt_id": "st_r2_def",
+      "subtype": "definition",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "r_2"
+      ]
+    },
+    {
+      "stmt_id": "st_r2_rotation_90",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_r_prime_minus_r3",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_r_prime_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        40
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_velocity_intro",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_velocity",
+      "exposed_entities": [
+        "v",
+        "omega",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_infinitesimal_theta",
+      "subtype": "assumption",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_velocity",
+      "exposed_entities": [
+        "t",
+        "theta",
+        "omega"
+      ]
+    },
+    {
+      "stmt_id": "st_R_theta_approx",
+      "subtype": "conclusion",
+      "clause_range": [
+        44,
+        45
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_velocity",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_displacement_derivation",
+      "subtype": "conclusion",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_velocity",
+      "exposed_entities": [
+        "s"
+      ]
+    },
+    {
+      "stmt_id": "st_velocity_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        48,
+        48
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_velocity",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_see_also",
+      "subtype": "remark",
+      "clause_range": [
+        49,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_velocity",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_r3_def",
+      "target": "st_r1_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_r1_def",
+      "target": "st_r2_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_r2_def",
+      "target": "st_r2_rotation_90",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_r1_def",
+      "target": "st_r_prime_minus_r3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_r2_def",
+      "target": "st_r_prime_minus_r3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_r_prime_minus_r3",
+      "target": "st_r_prime_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_r_prime_formula",
+      "target": "st_derivation_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_infinitesimal_theta",
+      "target": "st_R_theta_approx",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_R_theta_approx",
+      "target": "st_displacement_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_displacement_derivation",
+      "target": "st_velocity_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_result",
+      "target": "st_formula_intro",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_velocity_formula",
+      "target": "st_formula_intro",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_derivation_result",
+      "target": "st_formula_intro",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "推导得到公式"
+    },
+    {
+      "source": "st_velocity_formula",
+      "target": "st_formula_intro",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "由旋转矩阵推导出线速度公式"
+    }
+  ],
+  "unresolved": []
+}

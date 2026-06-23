@@ -1,0 +1,221 @@
+{
+  "article_name": "SpePrj",
+  "statements": [
+    {
+      "stmt_id": "st_def1_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "X",
+        "T",
+        "γ",
+        "Λ"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_def",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "P_Λ"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1_let",
+      "exposed_entities": [
+        "P_Λ"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_proj",
+      "subtype": "lemma",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_decomp",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "M_Λ",
+        "N_Λ"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        17,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_isolated_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_isolated_let",
+      "exposed_entities": [
+        "λ_0"
+      ]
+    },
+    {
+      "stmt_id": "st_isolated_residue",
+      "subtype": "remark",
+      "clause_range": [
+        26,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_isolated",
+      "exposed_entities": [
+        "P_{λ_0}"
+      ]
+    },
+    {
+      "stmt_id": "st_isolated_laurent",
+      "subtype": "remark",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_isolated",
+      "exposed_entities": [
+        "A_n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "λ_0",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        34,
+        35
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let_assump",
+      "target": "st_def1_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_let_assump",
+      "target": "st_lemma1_proj",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_proj",
+      "target": "st_lemma1_decomp",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_decomp",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_isolated_let_assump",
+      "target": "st_isolated_residue",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_isolated_residue",
+      "target": "st_isolated_laurent",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_isolated_let_assump",
+      "target": "st_thm2_assump",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assump",
+      "target": "st_thm2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_lemma1_proj",
+      "target": "st_def1_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "引理1基于定义1的谱投影"
+    },
+    {
+      "source": "st_thm1_conclusion",
+      "target": "st_lemma1_decomp",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理1由引理1推出"
+    },
+    {
+      "source": "st_thm2_conclusion",
+      "target": "st_isolated_residue",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理2基于孤立谱点的讨论"
+    }
+  ],
+  "unresolved": []
+}

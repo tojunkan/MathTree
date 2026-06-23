@@ -1,0 +1,93 @@
+[SCOPE:root|description|序数、超限数]
+文章名: OrdNum
+标题: 序数、超限数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=保序映射
+  [1] type=definition heading=定义 2 title=序型、序数
+  [2] type=definition heading=定义 3 title=全序集的有序和
+  [3] type=theorem heading=定理 1 title=
+  [4] type=corollary heading=推论 1 title=
+  [5] type=definition heading=定义 4 title=有序积
+  [6] type=theorem heading=定理 2 title=
+  [7] type=corollary heading=推论 2 title=
+
+[0] 本文存在未完成的内容。
+[1] 序型是相互同构的偏序集的公共内在属性，良序集的序型称为序数，当强调良序集是无限集时，序数也称超限数。
+[2] 任意两个序数都是可比较的，这是本节的重点。
+
+[SCOPE:s_def1|description|保序映射]
+[3] 定义 1 保序映射
+[SCOPE:s_def1_let|let_bind|保序映射的变量]
+[4] 设 $M,M'$ 是两偏序集，$f$ 是 $M$ 到 $M'$ 的映射。
+[/SCOPE:s_def1_let]
+[5a] (a)\leq f
+[5b] (b)$，
+[6] 则映射 $f$ 称为保序的。
+[7a] (a)\leq f
+[7b] (b)$ 当且仅当 $a\leq b$ 时成立，
+[8] 则 $f$ 称为偏序集 $M$ 与 $M'$ 的同构映射，这时也称它们相互同构。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|序型、序数]
+[9] 定义 2 序型、序数
+[SCOPE:s_def2_let|let_bind|序型定义的变量]
+[10] 若两偏序集 $M,M'$ 相互同构，
+[/SCOPE:s_def2_let]
+[11] 则称它们具有同一序型。
+[12] 良序集（定义 4 ）的序型称为序数，无限的良序集的序数也称超限数。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|全序集的有序和]
+[13] 定义 3 全序集的有序和
+[SCOPE:s_def3_let|let_bind|有序和的变量]
+[14] 设 $M_1,M_2$ 时序型分别为 $\theta_1,\theta_2$ 的两个不相交的全序集，在 $M_1\cup M_2$ 中定义全序关系，其中 $M_1$ 的两个元素的序关系如同在 $M_1$ 中一样，$M_2$ 的元素的序关系如同在 $M_2$ 中一样，并且 $M_1$ 的任一元素前于 $M_2$ 的任一元素。
+[/SCOPE:s_def3_let]
+[15] 这样的全序集称为 $M_1$ 与 $M_2$ 的有序和，记作 $M_1+M_2$，其序型称为序型 $\theta_1$ 与 $\theta_2$ 的有序和，记作 $\theta_1+\theta_2$。
+
+[/SCOPE:s_def3]
+[SCOPE:s_thm1|description|定理1]
+[16] 定理 1
+[17] 有限个良序集的有序和仍是良序集。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_cor1|description|推论1]
+[18] 推论 1
+[19] 序数的有序和仍是序数。
+
+[/SCOPE:s_cor1]
+[SCOPE:s_def4|description|有序积]
+[20] 定义 4 有序积
+[SCOPE:s_def4_let|let_bind|有序积的变量]
+[21] 设 $M_1,M_2$ 是序型分别为 $\theta_1,\theta_2$ 的全序集。
+
+[/SCOPE:s_def4]
+[/SCOPE:s_def4_let]
+[SCOPE:s_thm2|description|定理2]
+[22] 定理 2
+[23] 两个良序集的有序积仍是良序集。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_cor2|description|推论2]
+[24] 推论 2
+[25] 序数的有序积仍是序数。
+[/SCOPE:s_cor2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是定理1在序数上的特例"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论2是定理2在序数上的特例"
+  }
+]

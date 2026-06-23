@@ -1,0 +1,61 @@
+[SCOPE:root|description|导数与差分]
+文章名: DerDif
+标题: 导数与差分
+
+[SCOPE:s_1|description|一阶导数]
+[SCOPE:s_1_let|let_bind|一阶导数的变量]
+[0] 我们在导数的定义中已经知道1
+[/SCOPE:s_1_let]
+[1] \begin{equation}
+f'(x) = \lim_{h\to 0}\frac{f(x + h/2) - f(x - h/2)}{h}~.
+\end{equation}
+[2] 在一些应用（如数值计算）中，我们只能把 $h$ 取一个很小的数值（如 $10^{-10}$）而并非无穷小，这就需要我们估计用上式右边的
+[3] 差分
+[4] 来代替 $f'(x)$ 有多精确。
+[5] 为了估算误差，我们可以将 $f(x \pm h/2)$ 展开为关于 $h$ 的泰勒级数
+[6] \begin{equation}
+f(x \pm h/2) = f(x) \pm f'(x)\frac h2 + \frac12 f''(x) \left(\frac h2 \right) ^2 + \mathcal{O}\left(h^3 \right) ~.
+\end{equation}
+[7] 式 1 [链接 L0]
+[8] \begin{equation}
+\lim_{h\to 0} \frac{f'(x)h + \mathcal{O}\left(h^3 \right) }{h} = f'(x) + \mathcal{O}\left(h^2 \right) ~,
+\end{equation}
+[9] 所以用差分代替一阶导数可以精确到 $h$ 的二阶无穷小 $ \mathcal{O}\left(h^2 \right) $。
+
+[/SCOPE:s_1]
+[SCOPE:s_2|description|二阶导数]
+[SCOPE:s_2_let|let_bind|二阶导数的变量]
+[10] 能否用类似的方法来表示二阶导数呢？
+[/SCOPE:s_2_let]
+[11] 根据二阶导数的定义，我们需要用双重极限来表示
+[12] \begin{equation} \begin{aligned}
+f''(x) &= \lim_{l\to 0} \frac{f'(x+l/2) - f'(x - l/2)}{l}\\
+&= \lim_{l\to 0}\lim_{h\to 0} \frac{1}{lh} [f(x + l/2 + h/2) - f(x + l/2 - h/2)\\
+&\qquad\qquad - f(x - l/2 + h/2) + f(x - l/2 - h/2)]~,
+\end{aligned} \end{equation}
+[13] 但我们希望只用一个极限来表示二阶导数。
+[14] 然而我们不确定 $h$ 是否需要是 $l$ 的高阶无穷小。
+[SCOPE:s_2_try|let_bind|尝试令 l = h]
+[15] 我们不妨来试试令 $l = h$，
+[16] 即
+[17] \begin{equation}
+f''(x) = \lim_{h\to 0} \frac{f(x + h) - 2f(x) +f(x-h)}{h^2}~.
+\end{equation}
+[18] 要验证该式成立与否，将 $f(x \pm h)$ 关于 $h$ 做泰勒展开得
+[19] \begin{equation}
+f(x \pm h) = f(x) \pm f'(x) h + \frac12 f''(x) h^2 \pm \frac16 f'''(x) h^3 + \mathcal{O}\left(h^4 \right) ~.
+\end{equation}
+[20] 式 5 [链接 L1]
+[21] \begin{equation}
+\lim_{h\to 0} \frac{f''(x)h^2 + \mathcal{O}\left(h^4 \right) }{h^2} = f''(x) + \mathcal{O}\left(h^2 \right) ~.
+\end{equation}
+[22] 这就验证了
+[23] 式 5 [链接 L2]
+[24] 的正确性。
+[25] 另外我们得知用差分来近似二阶导数 $f''(x)$ 同样是精确到二阶无穷小 $ \mathcal{O}\left(h^2 \right) $。
+
+[/SCOPE:s_2]
+[/SCOPE:s_2_try]
+[26] 【图解】代码 1：D_i.m
+[27] 【图解】代码 2：D_i_vpa.m
+[/SCOPE:root]

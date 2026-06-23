@@ -1,0 +1,77 @@
+[SCOPE:root|description|二次多项式与二次型]
+文章名: QuaPol
+标题: 二次多项式与二次型
+
+[SCOPE:s_quadratic_form|description|二次型表示]
+[SCOPE:s_quadratic_form_let|let_bind|二次型变量]
+[0] 所有的 $N$ 元二次（齐次）多项式都可以表示为
+[1] \begin{equation}
+P(x_1,\dots,x_N) = \sum_{i=1}^N\sum_{j=1}^N a_{i,j}x_i x_j \qquad (a_{i,j}, x_k \in \mathbb R)~,
+\end{equation}
+[2] 其中 $a_{i,j}$ 是对称矩阵 $ \boldsymbol{\mathbf{A}} $ 的矩阵元。
+[/SCOPE:s_quadratic_form_let]
+[3] 这是一个
+[4] 二次型 [链接 L0]
+[5] 在某组基底下的对称矩阵表示（$ \boldsymbol{\mathbf{x}} ^{\mathrm{T}} \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{x}} $）。
+[6] 由于 $x_i x_j = x_j x_i$，
+[7] 所以规定 $ \boldsymbol{\mathbf{A}} $ 为对称矩阵并不影响一般性，反而可以简化运算。
+
+[/SCOPE:s_quadratic_form]
+[SCOPE:s_extrema|description|齐次二次多项式的极值]
+[SCOPE:s_extrema_let|let_bind|齐次极值变量]
+[8] 要求二次多项式的极值，先求驻点：
+[9] \begin{equation}
+\frac{\partial}{\partial{x_i}} P(x_1,\dots,x_N) = 2\sum_j a_{ij} x_j = 0 \qquad (i = 1,\dots,N)~.
+\end{equation}
+[10] 所以这相当于解齐次线性方程组
+[11] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{0}} ~.
+\end{equation}
+[/SCOPE:s_extrema_let]
+[12] 可见它的解集要么是 $ \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{0}} $ 一个点，要么是一个
+[13] 子空间（零空间） [链接 L1]
+[SCOPE:s_extrema_cases|cases|正定与负定]
+[14] 若矩阵 $ \boldsymbol{\mathbf{A}} $ 是正定的，
+[15] 那么当 $ \boldsymbol{\mathbf{x}} \ne \boldsymbol{\mathbf{0}} $ 时 $ \boldsymbol{\mathbf{x}} ^{\mathrm{T}} \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{x}} > 0$，
+[16] 即 $ \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{x}} \ne \boldsymbol{\mathbf{0}} $，可以马上得到只有 $ \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{0}} $ 一点是齐次方程组的解，且该点是全局最小值，也是唯一一个极值点。
+[17] 若 $ \boldsymbol{\mathbf{A}} $ 是负定的，
+[18] 那么同理 $ \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{0}} $ 就是全局最大值。
+
+[/SCOPE:s_extrema]
+[/SCOPE:s_extrema_cases]
+[SCOPE:s_nonhomogeneous|description|非齐次二次多项式的极值]
+[SCOPE:s_nonhomogeneous_let|let_bind|非齐次极值变量]
+[19] \begin{equation}
+P(x_1,\dots,x_N) = \sum_{i=1}^N\sum_{j=1}^N a_{i,j}x_i x_j + \sum_{i=1}^N b_i x_i + C~.
+\end{equation}
+[20] 求驻点相当于求解非齐次方程组
+[21] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{x}} = - \boldsymbol{\mathbf{b}} ~.
+\end{equation}
+[/SCOPE:s_nonhomogeneous_let]
+[22a] 当 $ \boldsymbol{\mathbf{A}} $ 是正定（负定）时，由于矩阵是满秩的，有且仅有一个解，这个点
+[22b] 则是最小（最大）值。
+
+跨文章引用:
+  [L0] 二次型 → QuaFor
+  [L1] 子空间（零空间） → LinEq
+[/SCOPE:s_nonhomogeneous]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_extrema",
+    "target_scope": "s_quadratic_form",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "齐次极值基于二次型表示"
+  },
+  {
+    "source_scope": "s_nonhomogeneous",
+    "target_scope": "s_extrema",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "非齐次极值是齐次极值的推广"
+  }
+]

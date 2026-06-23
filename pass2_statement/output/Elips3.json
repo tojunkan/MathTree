@@ -1,0 +1,717 @@
+{
+  "article_name": "Elips3",
+  "statements": [
+    {
+      "stmt_id": "st_intro",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_squashed_circle_intro",
+      "subtype": "remark",
+      "clause_range": [
+        12,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_squashed_circle",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_stretch_params",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_squashed_let1",
+      "exposed_entities": [
+        "p",
+        "q"
+      ]
+    },
+    {
+      "stmt_id": "st_stretched_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_squashed_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vertices_axes",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_squashed_circle",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_translated_eq",
+      "subtype": "remark",
+      "clause_range": [
+        27,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_squashed_circle",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_semi_axes_def",
+      "subtype": "definition",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_squashed_let2",
+      "exposed_entities": [
+        "a",
+        "b",
+        "长轴",
+        "短轴",
+        "半长轴",
+        "半短轴"
+      ]
+    },
+    {
+      "stmt_id": "st_ab_condition",
+      "subtype": "assumption",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_squashed_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_std_eq_case1",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_squashed_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_std_eq_case2",
+      "subtype": "conclusion",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_squashed_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ab_arbitrary",
+      "subtype": "remark",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_squashed_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geo_def_motivation",
+      "subtype": "remark",
+      "clause_range": [
+        40,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_geo_def_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        54,
+        55
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "F1",
+        "F2",
+        "c",
+        "m",
+        "P",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_derivation",
+      "subtype": "conclusion",
+      "clause_range": [
+        56,
+        61
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_result_ellipse",
+      "subtype": "conclusion",
+      "clause_range": [
+        62,
+        62
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_vertical",
+      "subtype": "conclusion",
+      "clause_range": [
+        63,
+        65
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_abc_relations",
+      "subtype": "conclusion",
+      "clause_range": [
+        66,
+        69
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geo_def_summary",
+      "subtype": "conclusion",
+      "clause_range": [
+        70,
+        71
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geo_def",
+      "subtype": "definition",
+      "clause_range": [
+        72,
+        75
+      ],
+      "truth_value": null,
+      "scope_id": "s_geo_def",
+      "exposed_entities": [
+        "F1",
+        "F2",
+        "P",
+        "a",
+        "椭圆"
+      ]
+    },
+    {
+      "stmt_id": "st_focus_terms",
+      "subtype": "remark",
+      "clause_range": [
+        76,
+        79
+      ],
+      "truth_value": null,
+      "scope_id": "s_geo_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_abc_relation_remark",
+      "subtype": "remark",
+      "clause_range": [
+        80,
+        92
+      ],
+      "truth_value": null,
+      "scope_id": "s_geo_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_std_eq_intro",
+      "subtype": "remark",
+      "clause_range": [
+        93,
+        93
+      ],
+      "truth_value": null,
+      "scope_id": "s_std_eq",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_std_eq_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        94,
+        98
+      ],
+      "truth_value": "true",
+      "scope_id": "s_std_eq",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_std_eq_remark",
+      "subtype": "remark",
+      "clause_range": [
+        99,
+        102
+      ],
+      "truth_value": null,
+      "scope_id": "s_std_eq",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_param_eq_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        103,
+        105
+      ],
+      "truth_value": "true",
+      "scope_id": "s_param_eq",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_family_intro",
+      "subtype": "remark",
+      "clause_range": [
+        106,
+        109
+      ],
+      "truth_value": null,
+      "scope_id": "s_family",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_family_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        110,
+        110
+      ],
+      "truth_value": null,
+      "scope_id": "s_family_let",
+      "exposed_entities": [
+        "lambda",
+        "p",
+        "q"
+      ]
+    },
+    {
+      "stmt_id": "st_family_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        111,
+        118
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_family",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_family_example",
+      "subtype": "example",
+      "clause_range": [
+        119,
+        125
+      ],
+      "truth_value": "true",
+      "scope_id": "s_family",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_properties_intro",
+      "subtype": "remark",
+      "clause_range": [
+        126,
+        127
+      ],
+      "truth_value": null,
+      "scope_id": "s_properties",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_reflection_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        128,
+        135
+      ],
+      "truth_value": "true",
+      "scope_id": "s_reflection_let1",
+      "exposed_entities": [
+        "F1",
+        "F2",
+        "P",
+        "l",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_reflection_remark",
+      "subtype": "remark",
+      "clause_range": [
+        136,
+        138
+      ],
+      "truth_value": null,
+      "scope_id": "s_reflection",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_jiangjun_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        139,
+        141
+      ],
+      "truth_value": null,
+      "scope_id": "s_reflection_let2",
+      "exposed_entities": [
+        "M",
+        "N",
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_jiangjun_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        142,
+        145
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_reflection_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_reflection_connection",
+      "subtype": "remark",
+      "clause_range": [
+        146,
+        154
+      ],
+      "truth_value": null,
+      "scope_id": "s_reflection",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_reflection_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        155,
+        162
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_reflection",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_symmetry",
+      "subtype": "remark",
+      "clause_range": [
+        163,
+        165
+      ],
+      "truth_value": null,
+      "scope_id": "s_circle_like",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_area_conjecture",
+      "subtype": "conjecture",
+      "clause_range": [
+        166,
+        168
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_circle_like",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_area_true",
+      "subtype": "remark",
+      "clause_range": [
+        169,
+        172
+      ],
+      "truth_value": null,
+      "scope_id": "s_circle_like",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_slope_product",
+      "subtype": "theorem",
+      "clause_range": [
+        173,
+        176
+      ],
+      "truth_value": "true",
+      "scope_id": "s_circle_like",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_slope_remark",
+      "subtype": "remark",
+      "clause_range": [
+        177,
+        178
+      ],
+      "truth_value": null,
+      "scope_id": "s_circle_like",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_tangent_derivative",
+      "subtype": "conclusion",
+      "clause_range": [
+        179,
+        181
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_tangent",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_tangent_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        182,
+        184
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_tangent",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_chord_def",
+      "subtype": "definition",
+      "clause_range": [
+        186,
+        186
+      ],
+      "truth_value": null,
+      "scope_id": "s_chord",
+      "exposed_entities": [
+        "弦"
+      ]
+    },
+    {
+      "stmt_id": "st_longest_chord",
+      "subtype": "theorem",
+      "clause_range": [
+        187,
+        193
+      ],
+      "truth_value": "true",
+      "scope_id": "s_chord",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_focal_chord_def",
+      "subtype": "definition",
+      "clause_range": [
+        194,
+        195
+      ],
+      "truth_value": null,
+      "scope_id": "s_chord",
+      "exposed_entities": [
+        "焦点弦"
+      ]
+    },
+    {
+      "stmt_id": "st_latus_rectum",
+      "subtype": "theorem",
+      "clause_range": [
+        196,
+        199
+      ],
+      "truth_value": "true",
+      "scope_id": "s_chord",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_focal_radius",
+      "subtype": "remark",
+      "clause_range": [
+        200,
+        202
+      ],
+      "truth_value": null,
+      "scope_id": "s_chord",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_stretch_params",
+      "target": "st_stretched_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_semi_axes_def",
+      "target": "st_ab_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ab_condition",
+      "target": "st_std_eq_case1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ab_condition",
+      "target": "st_std_eq_case2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_assump",
+      "target": "st_example1_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_derivation",
+      "target": "st_example1_result_ellipse",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_assump",
+      "target": "st_example1_vertical",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_result_ellipse",
+      "target": "st_abc_relations",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_abc_relations",
+      "target": "st_geo_def_summary",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_family_assump",
+      "target": "st_family_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_jiangjun_assump",
+      "target": "st_jiangjun_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_reflection_theorem",
+      "target": "st_reflection_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_std_eq_theorem",
+      "target": "st_param_eq_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_result_ellipse",
+      "target": "st_geo_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_stretched_eq",
+      "target": "st_std_eq_theorem",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_geo_def",
+      "target": "st_std_eq_theorem",
+      "edge_type": "equivalent",
+      "category": "logic"
+    },
+    {
+      "source": "st_reflection_theorem",
+      "target": "st_geo_def",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_example1_result_ellipse",
+      "target": "st_geo_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1推导出椭圆方程，引出定义"
+    },
+    {
+      "source": "st_stretched_eq",
+      "target": "st_std_eq_theorem",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "压扁的圆方程即标准方程"
+    },
+    {
+      "source": "st_geo_def",
+      "target": "st_std_eq_theorem",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "几何定义与标准方程等价"
+    },
+    {
+      "source": "st_std_eq_theorem",
+      "target": "st_param_eq_theorem",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "标准方程推导出参数方程"
+    },
+    {
+      "source": "st_reflection_theorem",
+      "target": "st_geo_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "反射性质基于几何定义"
+    }
+  ],
+  "unresolved": []
+}

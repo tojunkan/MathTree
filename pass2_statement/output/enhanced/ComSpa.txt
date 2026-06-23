@@ -1,0 +1,128 @@
+[SCOPE:root|description|完备空间]
+文章名: ComSpa
+标题: 完备空间
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=柯西数列
+  [1] type=exercise heading=习题 1 title=柯西数列的收敛性
+  [2] type=definition heading=定义 2 title=柯西列
+  [3] type=theorem heading=定理 1 title=收敛点的唯一性
+  [4] type=definition heading=定义 3 title=完备化度量
+
+[0] 和 cauchy.tex 重复，需要整合
+
+[SCOPE:s_cauchy_seq_def|description|柯西数列]
+[1] 度量空间是定义了 “距离” 的空间，
+[2] 因此可以讨论点与点之间的远近。
+[3] 微积分的基础是极限的概念；
+[4a] 直观来说
+[4b] 如果一个数列 $\{a_n\}$ 在 $n$ 趋于正无穷时有极限 $a_0$，意思，则是说 $a_n$ 随着 $n$ 的增大，越来越靠近 $a_0$。
+[5] 因此，表达式 $\lim\limits_{n\rightarrow\infty}a_n=a_0$ 可以表述为 “不管我们要求的接近程度 $\epsilon$ 有多小（同时大于零），总能找到足够大的正整数 $N$，使得只要 $n>N$，
+[6] 那么 $a_n$ 到 $a_0$ 的距离就小于 $\epsilon$”；
+[7] 或者用数学符号，更紧凑一点，写为：$\forall\epsilon>0$，$\exists N\in\mathbb{Z}^+$，使得 $\forall n>N$，有 $|a_n-a_0|<\epsilon$。
+[8] 什么情况下，一个数列 $\{a_n\}$ 存在这样的极限 $a_0$ 呢？
+[9] 这样的数列被称作柯西数列，定义如下。
+
+[SCOPE:s_cauchy_seq_let|let_bind|柯西数列的变量]
+[10] 定义 1 柯西数列
+[11a] 在 $\mathbb{R}$ 中，一个数列 $\{a_n\}$ 被称为柯西数列（Cauchy Series）
+[11b] 当且仅当对于任意的正距离 $\epsilon$，存在 $N\in\mathbb{Z}$，使得只要 $n, m>N$，则有：$|a_n-a_m|<\epsilon$。
+[12] 这样的数列就是可以有极限的数列。
+
+[/SCOPE:s_cauchy_seq_def]
+[/SCOPE:s_cauchy_seq_let]
+[SCOPE:s_exercise|description|柯西数列的收敛性]
+[13] 习题 1 柯西数列的收敛性
+[14] 证明：柯西数列必有极限；
+[15] 有极限的数列必是柯西数列。
+[16] 以上定义中，我们只讨论了 “距离” 这一性质，
+[17] 因此这些定义都可以推广到任意有距离概念的集合中，也就是度量空间中。
+
+[/SCOPE:s_exercise]
+[SCOPE:s_cauchy_seq2_let|let_bind|柯西列的变量]
+[SCOPE:s_cauchy_seq_def2|description|柯西列]
+[18] 定义 2 柯西列
+[19] 给定度量空间 $\mathcal{M}$，记两点 $x$，$y\in\mathcal{M}$ 之间的度量为 $d(x, y)$。
+[20] 称点列 $\{a_n\}_{n=1}^{\infty}\subseteq\mathcal{M}$ 为一个柯西点列，当且仅当 $\forall\epsilon>0$，$\exists N\in\mathbb{Z}^+$，使得 $\forall n, m>N$，有 $d(a_n, a_m)<\epsilon$。
+[21] 柯西点列、柯西数列也可以简称/统称为柯西列。
+[22] 一个柯西列只能收敛到一个点上。
+
+[/SCOPE:s_cauchy_seq2_let]
+[/SCOPE:s_cauchy_seq_def2]
+[SCOPE:s_uniqueness|description|收敛点的唯一性]
+[SCOPE:s_uniqueness_let|let_bind|唯一性定理的变量]
+[23] 定理 1 收敛点的唯一性
+[24] 给定度量空间 $\mathcal{M}$，如果 $\{a_n\}_{n=1}^{\infty}$ 是一个柯西列，
+[25] 那么这个柯西列只收敛到一个点上。
+[/SCOPE:s_uniqueness_let]
+[26] 证明是很简单的。
+[SCOPE:s_uniqueness_reductio|reductio|反证法假设两个收敛点]
+[SCOPE:s_uniqueness_reductio_let|let_bind|反证法中的变量]
+[27] 反设柯西列 $\{a_n\}$ 有两个收敛点 $x_0$ 和 $y_0$，
+[28] 那么找出这两个点的距离 $L=d(x_0, y_0)$，由收敛点的定义，存在正整数 $N$ 使得 $\forall n>N$，使得 $d(a_n, x_0)< L/2$ 和 $d(a_n, y_0)< L/2$。
+[/SCOPE:s_uniqueness_reductio_let]
+[29] 这样的 $a_n$ 不可能存在，因为它到 $x_0$ 和 $y_0$ 两点的距离之和小于 $x_0$ 和 $y_0$ 两点之间的距离了。
+[30] 这就产生了矛盾，说明设定不成立，也就是说柯西列不可能有两个收敛点。
+
+[/SCOPE:s_uniqueness]
+[/SCOPE:s_uniqueness_reductio]
+[SCOPE:s_complete_space|description|完备空间]
+[31] 在度量空间文章中我们发现，有理数集 $\mathbb{Q}$ 上的柯西列不一定存在极限；
+[32] 而实数集 $\mathbb{R}$ 上的柯西列一定存在极限。
+[33] 也就是说，在这个度量下，$\mathbb{R}$ 可以看成 $\mathbb{Q}$ 中添加了所有收敛点构成的集合。
+[34] 像 $\mathbb{R}$ 这样包含了自身所有柯西列的收敛点的集合，被称为完备集（Complete Set）。
+[35] 包含了自身所有柯西列的收敛点的度量空间，被称为完备（度量）空间（Complete Metric Space）。
+[36] 考虑到一个柯西列唯一对应一个收敛点，我们也可以把柯西列本身看成一个点。
+[37] 那么，一个不完备的度量空间 $\mathcal{M}$，也可以通过把所有柯西列作为一个点添加到这个空间里来得到一个完备的空间。
+[38] 如果一个柯西列在 $\mathcal{M}$ 中已经有收敛点了，
+[39] 那么添加这个柯西列相当于添加了已经存在的收敛点，也就是什么都没添加；
+[40a] 如果一个柯西列在 $\mathcal{M}$ 中没有收敛点，那
+[40b] 则把这个柯西列本身当作一个点添加进去。
+[41] 注意，柯西列本身是 $\mathcal{M}$ 的一个子集，它不是 $\mathcal{M}$ 中的一个点。
+[42] 我们把柯西列等价于其收敛点后，就可以把它看成点来添加进 $\mathcal{M}$ 中了。
+[43] 添加缺失的收敛点以得到完备空间的过程，叫做度量空间的完备化。
+[44] 对于这些新添加的点，它的度量应该是什么呢？
+
+[/SCOPE:s_complete_space]
+[SCOPE:s_completion_def|description|完备化度量]
+[SCOPE:s_completion_def_let|let_bind|完备化度量的变量]
+[45] 定义 3 完备化度量
+[46] 设 $\{a_n\}$ 是度量空间 $\mathcal{M}$ 中的柯西列，其在空间中没有收敛点。
+[47] 那么添加其收敛点并命名为 $a_0$，对于 $\mathcal{M}$ 中任意一点 $x$，定义度量 $d(x, a_0)$ 为 $\lim\limits_{x, a_n}$。
+[48] 可以看到，新的点和其它点的度量是用数列极限定义的。
+[/SCOPE:s_completion_def_let]
+[49] 感兴趣的读者可以自行验证，对于柯西点列，这样的极限一定存在。
+[/SCOPE:s_completion_def]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cauchy_seq_def2",
+    "target_scope": "s_cauchy_seq_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "柯西列是柯西数列在度量空间中的推广"
+  },
+  {
+    "source_scope": "s_uniqueness",
+    "target_scope": "s_cauchy_seq_def2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "唯一性定理依赖于柯西列的定义"
+  },
+  {
+    "source_scope": "s_complete_space",
+    "target_scope": "s_cauchy_seq_def2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "完备空间的定义基于柯西列"
+  },
+  {
+    "source_scope": "s_completion_def",
+    "target_scope": "s_complete_space",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "完备化度量用于构造完备空间"
+  }
+]

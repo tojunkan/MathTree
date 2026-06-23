@@ -1,0 +1,155 @@
+[SCOPE:root|description|Minkowski 泛函]
+文章名: MinFul
+标题: Minkowski 泛函
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=Minkowski 泛函
+  [1] type=lemma heading=引理 1 title=
+  [2] type=theorem heading=定理 1 title=
+  [3] type=theorem heading=定理 2 title=
+
+[SCOPE:s_def1|description|定义 1 Minkowski 泛函]
+[0] 定义 1 Minkowski 泛函
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[1] 设 $L$ 是任一线性空间，$A$ 是核 包含 0 的 $L$ 中的凸体（定义 4 ），
+[2] 则称泛函
+[/SCOPE:s_def1_let]
+[3] \begin{equation}
+p_A(x)=\inf \left\{r|\frac{x}{r}\in A,r>0 \right\} ~
+\end{equation}
+[4] Minkowski 泛函
+
+[/SCOPE:s_def1]
+[SCOPE:s_lemma1|description|引理 1]
+[5] 引理 1
+[SCOPE:s_lemma1_let|let_bind|引理 1 的变量]
+[6] 设 $L,A,p_A$ 如定义 1 定义。
+[7] 则任意 $x\in L,0<\epsilon\in\mathbb R$，只要 $r>p_A(x)$，就有 $x/r\in A$
+[/SCOPE:s_lemma1_let]
+[8] 证明：事实上，在 $p_A(x)=0$ 时 $x/r=0\in A$；
+[9a] (x)\neq0$，由 $p_A
+[9b] (x)$ 的（下确界的）定义，一定存在 $p_A
+[9c] (x)\leq a< r$，使得 $x/a\in A$，否者 $\inf \left\{r|\frac{x}{r}\in A,r>0 \right\} \geq r$。
+[10] 于是存在 $s\in A$，使得 $x=as$，
+[11] 因此 $x/r=(a/r)s\in A$（因为 $A$ 是凸集，而 $(a/r)s$ 在 $0,s\in A$ 的线段上）。
+[12] 证毕！
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_thm1|description|定理 1]
+[13] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[14] Minkowski 泛函式 1 是齐次凸的与非负的。
+[15] 证明：非负性：对每一 $x\in L$，如果 $r$ 充分大，
+[/SCOPE:s_thm1_let]
+[16] 则元素 $x/r$ 属于 $A$。
+[17] 因此定义 1 定义的 $p(x)$ 是非负有限的（由于是取下确界）。
+[18] 现在来证明正齐次性。
+[19] 正齐次性：若 $t>0$，
+[20] 则
+[21] \begin{equation}
+\begin{aligned}
+p_A(tx)=&\inf \{r|tx/r\in A,r>0\}=\inf \{r|x/(r/t)\in A,r>0\}\\
+=&\inf \{tr'|x/r'\in A,r'>0\}=t\inf \{r'|x/r'\in A,r'>0\}\\
+=&tp_A(x)\\.
+\end{aligned}~
+\end{equation}
+[22] 凸性：
+[SCOPE:s_thm1_convex_let|let_bind|凸性证明中的变量]
+[23] 设 $x_1,x_2\in L,\epsilon>0$ 任意，取 $r_i(i=1,2)$ 使得 $p_A(x_i)< r_i< p_A(x_i)+\epsilon$，
+[24] 则由
+[/SCOPE:s_thm1_convex_let]
+[25] 定理 1 [链接 L0]
+[26] ，$x_i/r\in A$。
+[27] 令 $r=r_1+r_2$，
+[28] 则点
+[29] \begin{equation}
+\frac{x_1+x_2}{r}=\frac{r_1}{rr_1}x_1+frac{r_2}{rr_2}x_2~
+\end{equation}
+[30] 属于具有端点 $x_1/r_1$ 与 $x_2/r_2$ 的线段。
+[31] 由于 $A$ 的凸性，该线段属于 $A$，这也意味着点 $(x_1+x_2)/r\in A$。
+[32] 因此（由
+[33] 定义 1 [链接 L1]
+[34] \begin{equation}
+p_A(x_1+x_2)\leq r=r_1+r_2< p_A(x_1)+p_A(x_2)+2\epsilon.~
+\end{equation}
+[35] 因为 $\epsilon>0$ 的任意性，
+[36] 则
+[37] \begin{equation}
+p_A(x_1+x_2)\leq p_A(x_1)+p_A(x_2).~
+\end{equation}
+[38] 定理 1 [链接 L2]
+[39] ，$p_A$ 凸。
+[40] 证毕！
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理 2]
+[41] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理 2 的变量]
+[42] 若 $p(x)$ 是线性空间 $L$ 上任意非负齐次凸泛函，$k$ 是正数，
+[43] 则
+[/SCOPE:s_thm2_let]
+[44] \begin{equation}
+A=\{x|p(x)\leq k\}~
+\end{equation}
+[45] 证明：
+[SCOPE:s_thm2_convex_let|let_bind|凸性证明中的变量]
+[46] 凸体：设 $x,y\in A,\alpha+\beta=1,\alpha,\beta\geq0$，
+[47] 则（根据 $p$ 泛函的凸性）
+[/SCOPE:s_thm2_convex_let]
+[48] \begin{equation}
+p(\alpha x+\beta y)\leq\alpha p(x)+\beta p(x)\leq k.~
+\end{equation}
+[49] 这即表明 $A$ 是凸的。
+[SCOPE:s_thm2_kernel_let|let_bind|核证明中的变量]
+[50] 核：设 $p(x)< k,t>0$ 与 $y\in L$，
+[51] 则（根据正齐次凸性和定理 1 ）
+[/SCOPE:s_thm2_kernel_let]
+[52] \begin{equation}
+p(x\pm ty)\leq p(x)+tp(\pm y)~.
+\end{equation}
+[53] 若 $p(-y)=p(y)=0$，
+[54] 则上式为 $p(x\pm ty)\leq p(x)< k$，
+[55] 即对一切 $t$，成立 $x\pm ty\in A$；
+[56] 反之，$p(y),p(-y)$ 必有一异于零，
+[57] 则对
+[58] \begin{equation}
+t<\frac{k-p(x)}{\max\{p(y),p(-y)\}}~,
+\end{equation}
+[59] \begin{equation}
+p(x)+tp(\pm y)\leq p(x)+(k-p(x))=k~.
+\end{equation}
+[60] 即 $x\pm ty\in A$。
+[61] $k=1$ 是 Minkowski 泛函：任意 $x/r\in A$，成立 $p(x/r)\leq 1$，进而由齐次性 $p(x)\leq r$，
+[62] 即 $p(x)$ 是 $\{r|x/r\in A,r>0\}$ 的下界。
+[63] 另一方面，若 $x/r\notin A$，
+[64] 则 $p(x)>r$，
+[65] 即 $p(x)$ 比 $\{r|x/r\in A,r>0\}$ 的一切下界都大，
+[66] 因此 $p(x)$ 是 $\{r|x/r\in A,r>0\}$ 的下确界。
+[67] 证毕！
+[/SCOPE:s_thm2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_lemma1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "引理 1 基于定义 1 的 Minkowski 泛函"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理 1 证明 Minkowski 泛函的性质"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理 2 利用定理 1 的齐次凸性"
+  }
+]

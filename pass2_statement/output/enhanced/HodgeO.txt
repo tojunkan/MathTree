@@ -1,0 +1,300 @@
+[SCOPE:root|description|霍奇星算子]
+文章名: HodgeO
+标题: 霍奇星算子
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=$k$-向量的内积
+  [1] type=example heading=例 1 title=$2$-向量的内积
+  [2] type=definition heading=定义 2 title=复杂指标（正整数指标）
+  [3] type=example heading=例 2 title=复杂指标的一个例子
+  [4] type=definition heading=定义 3 title=霍奇星算子
+  [5] type=theorem heading=定理 1 title=霍奇星算子（等价定义）
+  [6] type=theorem heading=定理 2 title=线性性
+  [7] type=theorem heading=定理 3 title=对偶
+
+[0] 【未完成】加入目录。
+
+[1] 考虑 $n$ 维线性空间 $V$ 上的外代数 $\bigwedge V$，我们注意到各阶的外积空间具有明显的对称性：$ \operatorname {dim}\bigwedge^k V=C^k_n=C^{n-k}_n= \operatorname {dim}\bigwedge^{n-k} V$。
+[2] 这意味着这样的一对空间之间存在线性同构，我们使用星算子 $\star$ 来描述这一同构。
+
+[3] 星算子是一个映射，把一个 $\bigwedge^k V$ 中的元素 $\omega$ 映射为一个 $\bigwedge^{n-k} V$ 中的元素 $\star\omega$。
+[4] 为了方便定义星算子，我们要先扩张一下内积的定义：
+
+[SCOPE:s_def1|description|定义1: k-向量的内积]
+[5] 定义 1 $k$-向量的内积
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[6] 设线性空间上有内积，
+[7] 即对于向量 $\alpha$ 和 $\beta$，有内积 $\langle \alpha, \beta \rangle$。
+[8] 给定向量 $\alpha_i$ 和 $\beta_j$，构成两个 $k$-向量 $\omega_\alpha=\alpha_1\wedge \alpha_2\wedge \cdots\wedge \alpha_k$ 和 $\omega_\beta=\beta_1\wedge \beta_2\wedge \cdots\wedge \beta_k$。
+[/SCOPE:s_def1_let]
+[9] 则这两个 $k$-向量的内积定义为
+[10] \begin{equation}
+\langle\omega_\alpha, \omega_\beta\rangle = \det \begin{pmatrix}\langle \alpha_i, \beta_j \rangle_{i, j=1}^k\end{pmatrix} ~,
+\end{equation}
+[11] 显然，如果有某个 $\beta_j$ 正交于所有 $\alpha_i$，
+[12] 那么式 1 就是 $0$。
+[13] 这一点对于霍奇星算子的性质很重要。
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|例1: 2-向量的内积]
+[14] 例 1 $2$-向量的内积
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[15] 设二维欧几里得空间有极坐标的坐标函数 $r$ 和 $\theta$，诱导出余切向量的基 $\{ \,\mathrm{d}{r} , \,\mathrm{d}{\theta} \}$。
+[16] 于是，基向量的内积为
+[17] \begin{equation}
+\left\{\begin{aligned}
+\langle \,\mathrm{d}{r} , \,\mathrm{d}{r} \rangle &= 1\\
+\langle \,\mathrm{d}{r} , \,\mathrm{d}{\theta} \rangle &= 0 = \langle \,\mathrm{d}{\theta} , \,\mathrm{d}{r} \rangle\\
+\langle \,\mathrm{d}{\theta} , \,\mathrm{d}{\theta} \rangle &= \frac{1}{r^2}~.
+\end{aligned}\right.
+\end{equation}
+[18] 构造 $2$-向量 $\omega_1=a_1 \,\mathrm{d}{r} \wedge \,\mathrm{d}{\theta} $ 和 $\omega_2=a_2 \,\mathrm{d}{r} \wedge \,\mathrm{d}{\theta} $，
+[/SCOPE:s_ex1_let]
+[19] 则它们的内积为
+[20] \begin{equation}
+\begin{aligned}
+\langle\omega_1, \omega_2\rangle &= a_1a_2\det \begin{pmatrix}
+\langle \,\mathrm{d}{r} , \,\mathrm{d}{r} \rangle&\langle \,\mathrm{d}{r} , \,\mathrm{d}{\theta} \rangle\\
+\langle \,\mathrm{d}{\theta} , \,\mathrm{d}{r} \rangle&\langle \,\mathrm{d}{\theta} , \,\mathrm{d}{\theta} \rangle
+\end{pmatrix} \\
+&= \frac{a_1a_2}{r^2}~.
+\end{aligned}
+\end{equation}
+[21] 另一等价所需要的预备知识则是如下定义的复杂指标。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_def2|description|定义2: 复杂指标]
+[22] 定义 2 复杂指标（正整数指标）
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[23] 给定正整数指标集合 $\Gamma=\{1, 2, \cdots, n\}$。
+[24] 设 $I$ 是 $\Gamma$ 的 $k$ 次有序子集，
+[25] 即对于一个正整数 $k\leq n$，存在一个置换 $\sigma\in S_n$，将 $I$ 表示为 $(\sigma(1), \sigma(2), \cdots, \sigma(k))$。
+[26a] 再定义 $I$ 的补集 $\bar{I}=(\sigma(k+1), \cdots, \sigma(n))$
+[26b] 如果 $k=n$，则$\bar{I}=\varnothing$。
+[/SCOPE:s_def2_let]
+[27a] (k)}$ 表示为 $\omega_I$，向量 $v^{\sigma(1)}\wedge v^{\sigma(2)}\wedge \cdots\wedge v^{\sigma
+[27b] (k)}$ 表示为 $v^I$。
+[28] 复杂指标也应用爱因斯坦求和约定：$\omega_I v^I$ 是 $I$ 遍历所有 $k$ 次有序子集、或者特别声明的范围后，所得结果的乘积。
+[29] 可以看到，之所以要求 $I$ 是有序的，是因为外积有次序要求。
+[30] 定义中使用正整数是为了方便，实际上复杂指标的概念也可以推广到任意指标集合上。
+
+[/SCOPE:s_def2]
+[SCOPE:s_ex2|description|例2: 复杂指标的例子]
+[31] 例 2 复杂指标的一个例子
+[SCOPE:s_ex2_let|let_bind|例2的变量]
+[32] 设 $I$ 的取值范围为 $\{(1, 2), (2, 3), (3, 1)\}$，
+[33] 那么 $\omega_{1,2} \,\mathrm{d}{x} ^1\wedge \,\mathrm{d}{x} ^2+\omega_{2,3} \,\mathrm{d}{x} ^2\wedge \,\mathrm{d}{x} ^3+\omega_{3, 1} \,\mathrm{d}{x} ^3\wedge \,\mathrm{d}{x} ^1$ 表示为 $\omega_I \,\mathrm{d}{x} ^I$。
+[/SCOPE:s_ex2_let]
+[34] 特别地，外导数可以表示为
+[35] \begin{equation}
+\,\mathrm{d}\left(\omega_I \,\mathrm{d}{x} ^I \right) = \,\mathrm{d}{\omega} _I\wedge \,\mathrm{d}{x} ^I~.
+\end{equation}
+
+[/SCOPE:s_ex2]
+[SCOPE:s_def3|description|定义3: 霍奇星算子]
+[36] 定义 3 霍奇星算子
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[37] 在 $n$ 维线性空间 $V$ 的外代数 $\bigwedge V$ 上任取$k$-向量 $\alpha$ 和 $\beta$，且有标准正交基 $\{e_1, e_2, \cdots, e_n\}$。
+[38] 为方便，记 $\omega=e_1\wedge e_2\wedge \cdots\wedge e_n$1。
+[/SCOPE:s_def3_let]
+[39] 定义映射 $\star:\bigwedge^k V \to \bigwedge^{n-k} V$ 如下：
+[40] \begin{equation}
+\alpha\wedge \star\beta = \langle\alpha, \beta\rangle\omega~.
+\end{equation}
+[41] 霍奇星算子（Hodge star operator 或 Hodge star）
+[42] 霍奇对偶（Hodge dual）
+[43] 使用复杂指标可以得到另一种定义方式：
+
+[/SCOPE:s_def3]
+[SCOPE:s_thm1|description|定理1: 等价定义]
+[44] 定理 1 霍奇星算子（等价定义）
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[45] 设 $I$ 是定义 1 中描述的一个复杂指标，$\bar{I}$ 是其补，$\{e_1, e_2, \cdots, e_n\}$ 是线性空间的一组标准正交基，
+[/SCOPE:s_thm1_let]
+[46] 则
+[47] \begin{equation}
+\star e_I = ( \operatorname {sign}\sigma) e_{\overline{I}}~.
+\end{equation}
+[48] 欧几里得空间中，如果用通常的标准正交坐标系，坐标函数为 $x^1, x^2, \cdots, x^n$，
+[49] 那么体积形式为 $ \,\mathrm{d}{x} ^1\wedge \,\mathrm{d}{x} ^2\wedge \cdots \wedge \,\mathrm{d}{x} ^n$，
+[50] 于是
+[51] \begin{equation}
+\left\{\begin{aligned}
+\star \,\mathrm{d}{x} ^1 \wedge \,\mathrm{d}{x} ^2 &= \,\mathrm{d}{x} ^3\wedge \,\mathrm{d}{x} ^4\wedge \cdots\wedge \,\mathrm{d}{x} ^n\\
+\star \,\mathrm{d}{x} ^1 \wedge \,\mathrm{d}{x} ^3 &= - \,\mathrm{d}{x} ^2\wedge \,\mathrm{d}{x} ^4\wedge \cdots\wedge \,\mathrm{d}{x} ^n~.
+\end{aligned}\right.
+\end{equation}
+[52] 如果流形上坐标函数仍记为 $x^1, x^2, \cdots, x^n$，而某处的体积形式为 $\sqrt{ \left\lvert g \right\rvert } \,\mathrm{d}{x} ^1\wedge \,\mathrm{d}{x} ^2\wedge \cdots \wedge \,\mathrm{d}{x} ^n$，
+[53] 则式 7 的例子应变为
+[54] \begin{equation}
+\left\{\begin{aligned}
+\frac{\star \,\mathrm{d}{x} ^1 \wedge \,\mathrm{d}{x} ^2}{\langle \,\mathrm{d}{x} ^1\wedge \,\mathrm{d}{x} ^2, \,\mathrm{d}{x} ^1\wedge \,\mathrm{d}{x} ^2\rangle} &= \sqrt{ \left\lvert g \right\rvert } \,\mathr…[truncated]…rm{d}{x} ^1\wedge \,\mathrm{d}{x} ^3, \,\mathrm{d}{x} ^1\wedge \,\mathrm{d}{x} ^3\rangle} &= -\sqrt{ \left\lvert g \right\rvert } \,\mathrm{d}{x} ^2\wedge \,\mathrm{d}{x} ^4\wedge \cdots\wedge \,\mathrm{d}{x} ^n
+~. \end{aligned}\right.
+\end{equation}
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理2: 线性性]
+[55] 定理 2 线性性
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[56] 设 $V$ 是 $n$ 维线性空间，取 $v_i\in\bigwedge^k V$，$a_i$ 为 $V$ 的基域中的元素，
+[/SCOPE:s_thm2_let]
+[57] 则 $\star(a_1v_1+a_2v_2)=a_1\star v_1+a_2\star v_2$。
+[SCOPE:s_thm2_proof|description|定理2的证明]
+[58] 证明：
+[SCOPE:s_thm2_proof_let|let_bind|定理2证明的变量]
+[59] 取 $V$ 的标准正交基 $\{e_i\}$，记其体积形式为 $\omega$。
+[60] 任取 $k$ 次复杂指标 $I$、$I_1$ 和 $I_2$，分别对应置换 $\sigma$、$\sigma_1$ 和 $\sigma_2$，
+[/SCOPE:s_thm2_proof_let]
+[61] 则
+[62] \begin{equation}
+\begin{aligned}
+e_{\overline{I}}\wedge \star a_1 e_I &= a_1\langle e_{\overline{I}}, e_I \rangle \omega\\
+&= e_{\overline{I}}\wedge a_1\star e_I~.
+\end{aligned}
+\end{equation}
+[63] \begin{equation}
+\star a_1e_I = a_1\star e_I~,
+\end{equation}
+[64] 又因为
+[65] \begin{equation}
+\begin{aligned}
+\langle e_I, (e_{I_1}+e_{I_2}) \rangle \omega &= \langle e_I, e_{I_1} \rangle\omega + \langle e_I, e_{I_2} \rangle\omega\\
+\end{aligned} ~,
+\end{equation}
+[66] \begin{equation}
+e_I\wedge \star(e_{I_1}+e_{I_2}) = e_I\wedge e_{I_1} + e_I\wedge e_{I_2}~.
+\end{equation}
+[67] 综合式 10 和式 12 ，并考虑到复杂指标选取的任意性，
+[68] 即可得证。
+[69] 证毕。
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_proof]
+[SCOPE:s_thm3|description|定理3: 对偶]
+[70] 定理 3 对偶
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[71] 设 $V$ 是 $n$ 维线性空间，取 $v\in\bigwedge^k V$，
+[/SCOPE:s_thm3_let]
+[72] 则 $\star \star v = (-1)^{(n-k)k} v$。
+[SCOPE:s_thm3_proof|description|定理3的证明]
+[73] 证明：
+[SCOPE:s_thm3_proof_let|let_bind|定理3证明的变量]
+[74] 取 $V$ 的标准正交基 $\{e_i\}$，任取一个 $k$ 次复杂指标 $I$，其对应的置换为 $\sigma$，补为 $\bar{I}$，
+[/SCOPE:s_thm3_proof_let]
+[75] 则由定理 1 和定理 2 ，
+[76] \begin{equation}
+\begin{aligned}
+\star \star e_I &= \star( \operatorname {sign}\sigma)e_{\overline{I}}\\
+&= ( \operatorname {sign}\sigma)\star e_{\overline{I}}~.
+\end{aligned}
+\end{equation}
+[77] 复杂指标 $\bar{I}$ 对应的置换 $\bar{\sigma}$，相当于进行 $\sigma$ 置换后再把后 $n-k$ 个元素整体挪到前面，也就是进行 $\sigma$ 后再进行 $(n-k)k$ 次对换。
+[78] 因此，$ \operatorname {sign}\bar{\sigma}=(-1)^{(n-k)k} \operatorname {sign}\sigma$，
+[79] 故将 $\star e_{\overline{I}}= \operatorname {sign}\bar{\sigma}e_I$ 代入式 13 后有
+[80] \begin{equation}
+\begin{aligned}
+\star \star e_I &= ( \operatorname {sign}\sigma)\star e_{\overline{I}}\\
+&= (-1)^{(n-k)k}( \operatorname {sign}\sigma)^2 e_I~.
+\end{aligned}
+\end{equation}
+[81] 证毕。
+[/SCOPE:s_thm3_proof]
+[82] 定理 3 的例子请参见子节 3 。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_examples|description|例子: 二维、三维、四维]
+[SCOPE:s_examples_let_2d|let_bind|二维例子变量]
+[83] \begin{equation}
+\begin{aligned}
+\star e_x &= e_y~,\\
+\star e_y &= -e_x~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_examples_let_2d]
+[SCOPE:s_examples_let_3d|let_bind|三维例子变量]
+[84] \begin{equation}
+\left\{\begin{aligned}
+\star 1 &= \,\mathrm{d}{x} \wedge \,\mathrm{d}{y} \wedge \,\mathrm{d}{z} \\
+\star \,\mathrm{d}{x} &= \,\mathrm{d}{y} \wedge \,\mathrm{d}{z} \\
+\star \,\mathrm{d}{y} &= \,\mathrm{d}{z} \wedge \,\mathrm{d}{x} \\
+…[truncated]…} \\
+\star \,\mathrm{d}{z} \wedge \,\mathrm{d}{x} &= \,\mathrm{d}{y} \\
+\star \,\mathrm{d}{x} \wedge \,\mathrm{d}{y} &= \,\mathrm{d}{z} \\
+\star \,\mathrm{d}{x} \wedge \,\mathrm{d}{y} \wedge \,\mathrm{d}{z} & = 1~.
+\end{aligned}\right.
+\end{equation}
+
+[/SCOPE:s_examples_let_3d]
+[SCOPE:s_examples_let_4d|let_bind|四维例子变量]
+[85] 取通常的参考系 $(t, x, y, z)$，注意由于闵可夫斯基度量是 $\eta_{\mu\nu}= \operatorname {diag} (1, -1, -1, -1)$，
+[86] 故这不是一个标准正交基，不适用定理 1 。
+[87] 但是可以取体积形式 $\omega= \,\mathrm{d}{t} \wedge \,\mathrm{d}{x} \wedge \,\mathrm{d}{y} \wedge \,\mathrm{d}{z} $，适用定义 3 。
+[88] \begin{equation}
+\begin{aligned}
+\star \,\mathrm{d}{t} &= \,\mathrm{d}{x} \wedge \,\mathrm{d}{y} \wedge \,\mathrm{d}{z} ~,\\
+\star \,\mathrm{d}{x} &= \,\mathrm{d}{t} \wedge \,\mathrm{d}{y} \wedge \,\mathrm{d}{z} ~,\\
+\star \,\mathrm{d}{y} &= - \,\mathrm{d}{t} \wedge \,\mathrm{d}{x} \wedge \,\mathrm{d}{z} ~,\\
+\star \,\mathrm{d}{z} &= \,\mathrm{d}{t} \wedge \,\mathrm{d}{x} \wedge \,\mathrm{d}{y} ~.
+\end{aligned}
+\end{equation}
+[89] 如果取不同的号差，
+[90] 即 $\eta_{\mu\nu}= \operatorname {diag} (-1, 1, 1, 1)$，
+[91] 则式 17 应变为
+[92] \begin{equation}
+\begin{aligned}
+\star \,\mathrm{d}{t} &= - \,\mathrm{d}{x} \wedge \,\mathrm{d}{y} \wedge \,\mathrm{d}{z} ~,\\
+\star \,\mathrm{d}{x} &= - \,\mathrm{d}{t} \wedge \,\mathrm{d}{y} \wedge \,\mathrm{d}{z} ~,\\
+\star \,\mathrm{d}{y} &= \,\mathrm{d}{t} \wedge \,\mathrm{d}{x} \wedge \,\mathrm{d}{z} ~,\\
+\star \,\mathrm{d}{z} &= - \,\mathrm{d}{t} \wedge \,\mathrm{d}{x} \wedge \,\mathrm{d}{y} ~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_examples]
+[/SCOPE:s_examples_let_4d]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是定义3在标准正交基下的等价形式"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2证明星算子的线性性"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3证明星算子的对偶性质"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3的证明使用了定理1"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3的证明使用了定理2"
+  },
+  {
+    "source_scope": "s_examples",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例子展示了定义3在具体空间中的应用"
+  }
+]

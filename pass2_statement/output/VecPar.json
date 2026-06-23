@@ -1,0 +1,383 @@
+{
+  "article_name": "VecPar",
+  "statements": [
+    {
+      "stmt_id": "st_notation_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_notation",
+      "exposed_entities": [
+        "M",
+        "E",
+        "D"
+      ]
+    },
+    {
+      "stmt_id": "st_parallel_def",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_parallel_section",
+      "exposed_entities": [
+        "ξ"
+      ]
+    },
+    {
+      "stmt_id": "st_ps_let1_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_ps_let1",
+      "exposed_entities": [
+        "s_α",
+        "ω"
+      ]
+    },
+    {
+      "stmt_id": "st_ps_let1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ps_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ps_let2_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_ps_let2",
+      "exposed_entities": [
+        "e_i",
+        "θ_j",
+        "Γ"
+      ]
+    },
+    {
+      "stmt_id": "st_ps_let2_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ps_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_pfaffian_system",
+      "subtype": "remark",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_parallel_section",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_frobenius_condition",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        16
+      ],
+      "truth_value": "true",
+      "scope_id": "s_parallel_section",
+      "exposed_entities": [
+        "Ω"
+      ]
+    },
+    {
+      "stmt_id": "st_curvature_zero_implies_parallel",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_parallel_section",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_curvature_obstacle",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_parallel_section",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_trivial_bundle_example",
+      "subtype": "example",
+      "clause_range": [
+        21,
+        25
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ps_let3",
+      "exposed_entities": [
+        "∂_α"
+      ]
+    },
+    {
+      "stmt_id": "st_parallel_transport_intro",
+      "subtype": "remark",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_parallel_transport",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_pt_let1_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_pt_let1",
+      "exposed_entities": [
+        "γ",
+        "ξ_0"
+      ]
+    },
+    {
+      "stmt_id": "st_parallel_along_curve_def",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_pt_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_pt_let2_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_pt_let2",
+      "exposed_entities": [
+        "γ^i"
+      ]
+    },
+    {
+      "stmt_id": "st_pt_let2_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_pt_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ode_existence",
+      "subtype": "theorem",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": "true",
+      "scope_id": "s_parallel_transport",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_parallel_transport_operator",
+      "subtype": "definition",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_pt_let3",
+      "exposed_entities": [
+        "P_γ"
+      ]
+    },
+    {
+      "stmt_id": "st_inverse_property",
+      "subtype": "conclusion",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_pt_let3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_connection_from_transport",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        42
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_pt_let3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_transport_determines_connection",
+      "subtype": "remark",
+      "clause_range": [
+        43,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_parallel_transport",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_trivial_connection_path_independent",
+      "subtype": "example",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": "true",
+      "scope_id": "s_parallel_transport",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_general_connection_not_path_independent",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_parallel_transport",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_holonomy_theorem_mention",
+      "subtype": "remark",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_parallel_transport",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_notation_assumptions",
+      "target": "st_parallel_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ps_let1_assumptions",
+      "target": "st_ps_let1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ps_let2_assumptions",
+      "target": "st_ps_let2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ps_let1_conclusion",
+      "target": "st_ps_let2_conclusion",
+      "edge_type": "equivalent",
+      "category": "logic"
+    },
+    {
+      "source": "st_ps_let2_conclusion",
+      "target": "st_frobenius_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_frobenius_condition",
+      "target": "st_curvature_zero_implies_parallel",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_pt_let1_assumptions",
+      "target": "st_parallel_along_curve_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_pt_let2_assumptions",
+      "target": "st_pt_let2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_pt_let2_conclusion",
+      "target": "st_ode_existence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ode_existence",
+      "target": "st_parallel_transport_operator",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_parallel_transport_operator",
+      "target": "st_inverse_property",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_parallel_transport_operator",
+      "target": "st_connection_from_transport",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_trivial_connection_path_independent",
+      "target": "st_general_connection_not_path_independent",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_parallel_along_curve_def",
+      "target": "st_parallel_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "平行移动是平行截面概念在道路上的推广"
+    }
+  ],
+  "unresolved": []
+}

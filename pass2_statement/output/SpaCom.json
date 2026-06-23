@@ -1,0 +1,429 @@
+{
+  "article_name": "SpaCom",
+  "statements": [
+    {
+      "stmt_id": "st_intro_1",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_2",
+      "subtype": "question",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": "unknown",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_3",
+      "subtype": "remark",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_assump_X",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "X",
+        "X^*"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_cond1",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_cond2",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "X^*"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_unique_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_unique_let1",
+      "exposed_entities": [
+        "X_1",
+        "X_2"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_unique_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_unique",
+      "exposed_entities": [
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_unique_construct",
+      "subtype": "remark",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_unique_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_unique_arg1",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_unique",
+      "exposed_entities": [
+        "x_n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_unique_arg2",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_unique",
+      "exposed_entities": [
+        "y_2"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_unique_arg3",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_unique",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_unique_define_phi",
+      "subtype": "definition",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_unique_let3",
+      "exposed_entities": [
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_unique_phi_prop",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_unique",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_unique_phi_bij",
+      "subtype": "remark",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_unique",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_unique_phi_isometry",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_unique",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_unique_qed",
+      "subtype": "remark",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_unique",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_exist_claim",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_exist_let",
+      "exposed_entities": [
+        "X^*"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_exist_step1",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_exist",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_exist_step2",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_exist",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_exist_goal",
+      "subtype": "assumption",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_exist",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_exist_arg1",
+      "subtype": "conclusion",
+      "clause_range": [
+        36,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_exist",
+      "exposed_entities": [
+        "x^*"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_exist_arg2",
+      "subtype": "assumption",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_exist",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_exist_arg3",
+      "subtype": "conclusion",
+      "clause_range": [
+        39,
+        44
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_exist",
+      "exposed_entities": [
+        "x_n^*"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_exist_qed",
+      "subtype": "remark",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_exist",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_cond1",
+      "target": "st_def1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_cond2",
+      "target": "st_def1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_unique_assump",
+      "target": "st_thm1_unique_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_unique_arg1",
+      "target": "st_thm1_unique_arg2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_unique_arg2",
+      "target": "st_thm1_unique_define_phi",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_unique_define_phi",
+      "target": "st_thm1_unique_phi_prop",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_unique_phi_prop",
+      "target": "st_thm1_unique_phi_isometry",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_exist_claim",
+      "target": "st_thm1_exist_step1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_exist_claim",
+      "target": "st_thm1_exist_step2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_exist_step1",
+      "target": "st_thm1_exist_goal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_exist_step2",
+      "target": "st_thm1_exist_goal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_exist_goal",
+      "target": "st_thm1_exist_arg1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_exist_arg1",
+      "target": "st_thm1_exist_arg3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_exist_arg2",
+      "target": "st_thm1_exist_arg3",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_unique_conclusion",
+      "target": "st_def1_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "唯一性证明引用完备化定义"
+    },
+    {
+      "source": "st_thm1_exist_claim",
+      "target": "st_def1_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "存在性证明引用完备化定义"
+    }
+  ],
+  "unresolved": []
+}

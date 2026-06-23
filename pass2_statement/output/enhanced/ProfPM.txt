@@ -1,0 +1,133 @@
+[SCOPE:root|description|计数原理]
+文章名: ProfPM
+标题: 计数原理
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=corollary heading=推论 1 title=
+  [2] type=theorem heading=定理 2 title=
+  [3] type=corollary heading=推论 2 title=
+
+[0] 1本节介绍组合学里两个一般性的原则——加法原则和乘法原则。
+[1] 以下假设 $A$ 和 $B$ 是两类不同、互不关联的事件。
+
+[SCOPE:s_add_principle|description|加法原则]
+[SCOPE:s_add_let|let_bind|加法原则变量]
+[2] 加法原则：设事件 $A$ 有 $m$ 种选取方式，事件 $B$ 有 $n$ 种选取方式，
+[3] 则选 $A$ 或 $B$ 共有 $m+n$ 种方式。
+[/SCOPE:s_add_let]
+[4] 用集合的语言可将加法原则描述成如下定理（定理 4 ）：
+
+[/SCOPE:s_add_principle]
+[SCOPE:s_thm1|description|定理1]
+[5] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1变量]
+[6] 设 $A,B$ 为有限集，且 $A\cap B=\emptyset$，
+[7] 则
+[/SCOPE:s_thm1_let]
+[8] \begin{equation}
+\left\lvert A\cup B \right\rvert = \left\lvert A \right\rvert + \left\lvert B \right\rvert ~.
+\end{equation}
+
+[/SCOPE:s_thm1]
+[SCOPE:s_cor1|description|推论1]
+[9] 推论 1
+[SCOPE:s_cor1_let|let_bind|推论1变量]
+[10] 设 $n$ 个有限集合 $A_1,\cdots,A_n$ 满足
+[11] \begin{equation}
+A_i\cap A_j=\emptyset,1\leq i\neq j\leq n~,
+\end{equation}
+[/SCOPE:s_cor1_let]
+[12] \begin{equation}
+\left\lvert \bigcup_{i=1}^n A_i \right\rvert =\sum_{i=1}^n \left\lvert A_i \right\rvert ~.
+\end{equation}
+
+[/SCOPE:s_cor1]
+[SCOPE:s_mul_principle|description|乘法原则]
+[SCOPE:s_mul_let|let_bind|乘法原则变量]
+[13] 乘法原则：设事件 $A$ 有 $m$ 种选取方式，事件 $B$ 有 $n$ 种选取方式，
+[14] 那么选取 $A$ 以后再选取 $B$ 共有 $m\cdot n$ 种方式。
+[/SCOPE:s_mul_let]
+[15] 同样，用集合的语言可将乘法原则描述成如下的定理：
+
+[/SCOPE:s_mul_principle]
+[SCOPE:s_thm2|description|定理2]
+[16] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2变量]
+[17] 设 $A,B$ 为有限集，$ \left\lvert A \right\rvert =m, \left\lvert B \right\rvert =n$，
+[18] 则
+[/SCOPE:s_thm2_let]
+[19] \begin{equation}
+\left\lvert A\times B \right\rvert = \left\lvert A \right\rvert \times \left\lvert B \right\rvert =m\cdot n~.
+\end{equation}
+[SCOPE:s_thm2_proof|description|定理2证明]
+[SCOPE:s_thm2_case1|cases|m=0或n=0]
+[20] 证明：若 $m=0$ 或 $n=0$，
+[21] 则式 4 的两边均为 0，
+[22] 故等式成立。
+[/SCOPE:s_thm2_case1]
+[SCOPE:s_thm2_case2|cases|m>0,n>0]
+[SCOPE:s_thm2_let2|let_bind|定理2证明变量]
+[23] 设 $m>0,n>0$，并且记
+[24] \begin{equation}
+A=\{a_1,\cdots,a_m\}~,\quad B=\{b_1,\cdots,b_n\}~.
+\end{equation}
+[25] 定义映射
+[26] \begin{equation}
+\varphi:(a_i,b_j)\rightarrow (i-1)n+j\qquad (1\leq i\leq m,1\leq j\leq n)~,
+\end{equation}
+[27] 则 $\varphi$ 是 $A\times B$ 到集合 $\{1,2\cdots,mn-1,mn\}$ 上的一一映射（试证明），根据集合基数的定义（
+[/SCOPE:s_thm2_let2]
+[28] 定义 1 [链接 L0]
+[29] 式 4 [链接 L1]
+[30] 证毕！
+[/SCOPE:s_thm2_proof]
+[/SCOPE:s_thm2_case2]
+[31] 注：乘法原则之所以能用定理 2 描述，是因为在乘法原则的描述中，选取 $A$ 以后再选取 $B$，这意味着 $A$ 与 $B$ 是有顺序的，这便使得选取 $A$ 再选取 $B$ 的方式能用笛卡尔积 $A\times B$（子节 2 ）来描述（即二者一一对应）。
+[32] 比如：选取 $A$ 得到 $a_i$，再选取 $B$ 得到 $b_j$ 这样一种选取，可记为 $(a_i,b_j)$；
+[33] 或将 $(a_i,b_j)$ 理解为选取 $A$ 得到 $a_i$，再选取 $B$ 得到 $b_j$ 这样一种选取。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_cor2|description|推论2]
+[34] 推论 2
+[SCOPE:s_cor2_let|let_bind|推论2变量]
+[35] 设 $A_1,\cdots,A_n$ 为 $n$ 个有限集合，
+[36] 则
+[/SCOPE:s_cor2_let]
+[37] \begin{equation}
+\left\lvert A_1\times A_2\cdots A_n \right\rvert = \left\lvert A_1 \right\rvert \times \left\lvert A_2 \right\rvert \times\cdots\times \left\lvert A_n \right\rvert ~.
+\end{equation}
+[/SCOPE:s_cor2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_add_principle",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是加法原则的集合语言表述"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是定理1的推广"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_mul_principle",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2是乘法原则的集合语言表述"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论2是定理2的推广"
+  }
+]

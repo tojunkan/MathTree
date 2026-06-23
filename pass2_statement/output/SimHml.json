@@ -1,0 +1,194 @@
+{
+  "article_name": "SimHml",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "[a_0,a_1,...,a_n]",
+        "a_0a_1...a_n"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_chain_group",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "chain group",
+        "chain"
+      ]
+    },
+    {
+      "stmt_id": "st_def3",
+      "subtype": "definition",
+      "clause_range": [
+        22,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "K",
+        "C_q(K)",
+        "q-chain"
+      ]
+    },
+    {
+      "stmt_id": "st_def4",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "s^q",
+        "t^{q-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_def5",
+      "subtype": "definition",
+      "clause_range": [
+        39,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_def5",
+      "exposed_entities": [
+        "∂_q",
+        "C_q(K)",
+        "C_{q-1}(K)"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1",
+      "subtype": "lemma",
+      "clause_range": [
+        46,
+        51
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "K",
+        "∂_q",
+        "∂_{q+1}",
+        "C_{q+1}(K)",
+        "C_{q-1}(K)"
+      ]
+    },
+    {
+      "stmt_id": "st_def6",
+      "subtype": "definition",
+      "clause_range": [
+        52,
+        56
+      ],
+      "truth_value": null,
+      "scope_id": "s_def6",
+      "exposed_entities": [
+        "B_q(K)",
+        "Im ∂_{q+1}"
+      ]
+    },
+    {
+      "stmt_id": "st_def7",
+      "subtype": "definition",
+      "clause_range": [
+        57,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_def7",
+      "exposed_entities": [
+        "Z_q(K)"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_closed_chain",
+      "subtype": "example",
+      "clause_range": [
+        60,
+        72
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "a_0a_1+a_1a_2+a_2a_0",
+        "torus",
+        "B_q(K)",
+        "Z_q(K)",
+        "C_q(K)"
+      ]
+    },
+    {
+      "stmt_id": "st_def8",
+      "subtype": "definition",
+      "clause_range": [
+        73,
+        75
+      ],
+      "truth_value": null,
+      "scope_id": "s_def8",
+      "exposed_entities": [
+        "K",
+        "H_q",
+        "Z_q(K)",
+        "B_q(K)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def6",
+      "target": "st_def5",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def7",
+      "target": "st_def5",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_closed_chain",
+      "target": "st_def7",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def8",
+      "target": "st_def6",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def8",
+      "target": "st_def7",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1",
+      "target": "st_def5",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

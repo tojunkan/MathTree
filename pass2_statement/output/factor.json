@@ -1,0 +1,199 @@
+{
+  "article_name": "factor",
+  "statements": [
+    {
+      "stmt_id": "st_ex1_question",
+      "subtype": "example",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        1,
+        4
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_def",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "n!",
+        "0!"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_question",
+      "subtype": "example",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_question",
+      "subtype": "example",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex4_question",
+      "subtype": "example",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex4_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        35
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_def",
+      "subtype": "definition",
+      "clause_range": [
+        45,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "n!!",
+        "0!!",
+        "(-1)!!"
+      ]
+    },
+    {
+      "stmt_id": "st_ex5_question",
+      "subtype": "example",
+      "clause_range": [
+        48,
+        48
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex5_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        49,
+        51
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex5",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex1_question",
+      "target": "st_ex1_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_question",
+      "target": "st_ex2_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex4_question",
+      "target": "st_ex4_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex5_question",
+      "target": "st_ex5_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

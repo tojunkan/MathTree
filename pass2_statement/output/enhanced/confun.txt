@@ -1,0 +1,250 @@
+[SCOPE:root|description|函数的连续与间断]
+文章名: confun
+标题: 函数的连续与间断
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=左连续，右连续，连续
+  [1] type=exercise heading=习题 1 title=连续函数
+  [2] type=exercise heading=习题 2 title=
+  [3] type=definition heading=定义 2 title=间断点
+  [4] type=definition heading=定义 3 title=第一类间断点与第二类间断点
+  [5] type=exercise heading=习题 3 title=
+  [6] type=theorem heading=定理 1 title=局部有界性
+  [7] type=theorem heading=定理 2 title=局部保号性
+  [8] type=theorem heading=定理 3 title=局部保号性
+  [9] type=theorem heading=定理 4 title=四则运算下的性质
+  [10] type=theorem heading=定理 5 title=复合函数的连续性
+  [11] type=theorem heading=定理 6 title=复合连续函数极限
+  [12] type=theorem heading=定理 7 title=反函数连续性
+  [13] type=exercise heading=习题 4 title=
+  [14] type=theorem heading=定理 8 title=
+
+[SCOPE:s_def1|description|左连续，右连续，连续]
+[0] 定义 1 左连续，右连续，连续
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1a] (x)$ 在 $U(x_0,\delta_0)$ 内有定义，且 $\lim\limits_{x\rightarrow x_0}f
+[1b] (x)=f(x_0)$，
+[/SCOPE:s_def1_let]
+[2a] (x)$ 在 $x_0$ 连续，$x_0$ 为 $f
+[2b] (x)$ 的一个连续点。
+[3] 若函数 $f(x)$ 在 $U^+(x_0,\delta_0)$ 内有定义，且 $f(x_0^+)=f(x_0)$，
+[4] 则称 $f(x)$ 在 $x_0$ 右连续。
+[5] 若函数 $f(x)$ 在 $U^-(x_0,\delta_0)$ 内有定义，且 $f(x_0^-)=f(x_0)$，
+[6] 则称 $f(x)$ 在 $x_0$ 左连续。
+[7] 连续的另一种等价定义：若 $f(x)$ 在 $x_0$ 处左连续且右连续（$i.e. $ 在 $U(x_0,\delta_0)$ 上有定义，且 $f(x_0^+)=f(x_0^-)=f(x_0)$），
+[8] 那么称 $f(x)$ 在 $x_0$ 处连续。
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|连续函数]
+[9] 习题 1 连续函数
+[SCOPE:s_ex1_let|let_bind|习题1的变量]
+[10] 开区间上连续函数：设函数 $f(x)$ 在 $(a,b)$ 内有定义。
+[/SCOPE:s_ex1_let]
+[11] 若 $\forall x_0\in(a,b)$，$f(x)$ 在 $x_0$ 连续，
+[12a] (x)$ 在 $(a,b)$ 内连续，记为 $f
+[12b] (x)\in C(a,b)$。
+[13] 闭区间上连续函数：设函数 $f(x)$ 在 $[a,b]$ 内有定义。
+[14a] (x)\in C(a,b)$，且 $f
+[14b] (x)$ 在 $a$ 处右连续，在 $b$ 处左连续，
+[15a] (x)$ 在 $[a,b]$ 内连续，记为 $f
+[15b] (x)\in C[a,b]$。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|习题2]
+[16] 习题 2
+[SCOPE:s_ex2_let1|let_bind|习题2第一题变量]
+[17a] (x)=1/x-[1/x]$，求 $f
+[17b] (x)$ 的所有连续点。
+[/SCOPE:s_ex2_let1]
+[SCOPE:s_ex2_let2|let_bind|习题2第二题变量]
+[18a] (x)=1/x\ (x\in(0,1))$，证明 $f
+[18b] (x)\in C(0,1)$。
+[/SCOPE:s_ex2_let2]
+[SCOPE:s_ex2_let3|let_bind|习题2第三题变量]
+[19a] (x)=\left\{ \begin{aligned}&x\cdot \sin\left(1/x\right) ,&x\in(0,1]\\&0,&x=0 \end{aligned} \right.$，证明 $f
+[19b] (x)\in C[0,1]$。
+[/SCOPE:s_ex2_let3]
+[SCOPE:s_ex2_let4|let_bind|习题2第四题变量]
+[20a] (x)\in C(a,b)$，且极限 $\lim\limits_{x\rightarrow a^+}f
+[20b] (x)=A,\lim\limits_{x\rightarrow b^-}f
+[20c] (x)=B$ 存在，
+[21] 则可以连续延拓到 $(-\infty,+\infty)$。
+
+[/SCOPE:s_ex2]
+[/SCOPE:s_ex2_let4]
+[SCOPE:s_def2|description|间断点]
+[22] 定义 2 间断点
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[23a] (x)$ 在 $U(x_0,\delta_0)$ 内有定义，若 $x_0$ 不是 $f
+[23b] (x)$ 的连续点，
+[/SCOPE:s_def2_let]
+[24a] (x)$ 在 $x_0$ 间断（或不连续），并称 $x_0$ 为 $f
+[24b] (x)$ 的一个间断点（或不连续点）。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|第一类间断点与第二类间断点]
+[25] 定义 3 第一类间断点与第二类间断点
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[26] 用左右极限来刻画间断点，
+[/SCOPE:s_def3_let]
+[27] 则有以下几种情况：
+[28] 若 $f(x_0^+)$ 和 $f(x_0^-)$ 都存在，
+[29] 则称 $x_0$ 为 $f(x)$ 的第一类间断点。
+[30] 此时若 $f(x_0^+)=f(x_0^-)\neq f(x_0)$，
+[31] 则称它为可去间断点，否则称它为跳跃间断点。
+[32] 若 $f(x_0^+)$ 和 $f(x_0^-)$ 至少有一个不存在，
+[33] 则称 $x_0$ 为 $f(x)$ 的第二类间断点。
+
+[/SCOPE:s_def3]
+[SCOPE:s_ex3|description|习题3]
+[34] 习题 3
+[SCOPE:s_ex3_let1|let_bind|习题3第一题变量]
+[35a] (x)=1/x-[1/x]$，求 $f
+[35b] (x)$ 的所有间断点。
+[/SCOPE:s_ex3_let1]
+[SCOPE:s_ex3_let2|let_bind|习题3第二题变量]
+[36a] (x)= \sin\left(1/x\right) $，考察 $f
+[36b] (x)$ 在 $x=0$ 处的连续性。
+[/SCOPE:s_ex3_let2]
+[SCOPE:s_ex3_let3|let_bind|习题3第三题变量]
+[37a] (x)$ 在 $(0,1)$ 上单调，证明 $f
+[37b] (x)$ 的间断点都是跳跃间断点。
+[/SCOPE:s_ex3_let3]
+[SCOPE:s_ex3_let4|let_bind|习题3第四题变量]
+[38] 构造定义域为 $\mathbb{R}$ 的函数 $f(x)$，使得处处都是间断点。
+[/SCOPE:s_ex3_let4]
+[SCOPE:s_ex3_let5|let_bind|习题3第五题变量]
+[39] 考察黎曼函数图 2 的连续性：
+[40] \begin{equation}
+f(x)=\left\{
+\begin{aligned}
+&1/q && (x=\frac{p}{q}\ (p,q\in \mathbb{N}, \frac{p}{q}\text{为既约真分数}))\\
+&0 && (x=0\text{或}x=1\text{或} x\notin \mathbb{Q})~.
+\end{aligned} \right.
+\end{equation}
+[41] 可以证明，对于 $x_0\in(0,1)$，若 $x_0$ 是有理数，
+[42] 则 $x_0$ 是 $f(x)$ 的可去间断点；
+[43] 若 $x_0$ 是无理数，
+[44] 则 $f(x)$ 在 $x_0$ 连续。
+
+[/SCOPE:s_ex3]
+[/SCOPE:s_ex3_let5]
+[SCOPE:s_thm1|description|局部有界性]
+[45] 定理 1 局部有界性
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[46] 若 $f(x)$ 在 $x_0$ 连续，
+[/SCOPE:s_thm1_let]
+[47] 则必存在 $x_0$ 的一个邻域 $U(x_0,\delta)$，使得 $f(x)$ 在该邻域内有界。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|局部保号性]
+[48] 定理 2 局部保号性
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[49] 若 $f(x)$ 在 $x_0$ 连续，而 $f(x_0)>0$，
+[/SCOPE:s_thm2_let]
+[50] 则必存在 $x_0$ 的一个邻域 $U(x_0,\delta)$，使得 $f(x)$ 在该邻域内 $>0$。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|局部保号性（更强）]
+[51] 定理 3 局部保号性
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[52] 更强的命题：若 $f(x)$ 在 $x_0$ 连续，而 $f(x_0)>A$，
+[/SCOPE:s_thm3_let]
+[53] 则必存在 $x_0$ 的一个邻域 $U(x_0,\delta)$，使得 $f(x)$ 在该邻域内 $>A$。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|四则运算下的性质]
+[54] 定理 4 四则运算下的性质
+[55] 连续函数经四则运算后仍然连续，
+[SCOPE:s_thm4_let|let_bind|定理4的变量]
+[56a] (x),g
+[56b] (x)$ 在 $x_0$ 处连续，
+[/SCOPE:s_thm4_let]
+[57a] (x)+g
+[57b] (x),f
+[57c] (x)-g
+[57d] (x),f
+[57e] (x)g
+[57f] (x),f
+[57g] (x)/g
+[57h] (x)(g(x_0)\neq 0)$ 仍然在 $x_0$ 处连续。
+
+[/SCOPE:s_thm4]
+[SCOPE:s_thm5|description|复合函数的连续性]
+[58] 定理 5 复合函数的连续性
+[SCOPE:s_thm5_let|let_bind|定理5的变量]
+[59a] (x)$ 在点 $x_0$ 连续，$y=f
+[59b] (u)$ 在点 $u_0=g(x_0)$ 连续，复合函数 $f(g
+[59c] (x))$ 在点 $x_0$ 连续。
+[/SCOPE:s_thm5_let]
+[60] 由连续性的定义，我们还可以推出复合连续函数极限的性质：
+
+[/SCOPE:s_thm5]
+[SCOPE:s_thm6|description|复合连续函数极限]
+[61] 定理 6 复合连续函数极限
+[SCOPE:s_thm6_let|let_bind|定理6的变量]
+[62a] (x)$ 在点 $x_0$ 连续，$y=f
+[62b] (u)$ 在点 $u_0=g(x_0)$ 连续，
+[/SCOPE:s_thm6_let]
+[63a] (x))=f(\lim\limits_{x\rightarrow x_0}g
+[63b] (x))$ 一定成立。
+[64] 实际上，如果 $u_0$ 是 $f$ 的可去间断点，在满足一定条件的情况下这个性质仍然成立。
+[65] 详细的表述可以看 定理 9 。
+
+[/SCOPE:s_thm6]
+[SCOPE:s_thm7|description|反函数连续性]
+[66] 定理 7 反函数连续性
+[SCOPE:s_thm7_let|let_bind|定理7的变量]
+[67] 设 $f(x)$ 是区间 $I$ 上严格单调的连续函数，
+[/SCOPE:s_thm7_let]
+[68] 则其反函数 $x=f^{-1}(y)$ 在 $f(I)$ 上连续。
+
+[/SCOPE:s_thm7]
+[SCOPE:s_ex4|description|习题4]
+[69] 习题 4
+[SCOPE:s_ex4_let1|let_bind|习题4第一题变量]
+[70] 对于给定的常数 $a>0$，应如何定义指数函数 $f(x)=a^x$（$x$ 是无理数的情况）？
+[71] 判断指数函数 $f(x)=a^x(a>0)$ 的连续性。
+[/SCOPE:s_ex4_let1]
+[SCOPE:s_ex4_let2|let_bind|习题4第二题变量]
+[72] $u(x)$ 在 $x_0$ 处连续，$u(x_0)>0$；
+[73] $v(x)$ 在 $x_0$ 处连续。
+[74a] (x)=u
+[74b] (x)^{v
+[74c] (x)}$ 在 $x_0$ 处连续，且 $f(x_0)=u(x_0)^{v(x_0)}$。
+[/SCOPE:s_ex4_let2]
+[SCOPE:s_ex4_let3|let_bind|习题4结论变量]
+[75] 由以上的习题，可以推出一个重要结论：初等函数在其定义域内是连续的。
+
+[/SCOPE:s_ex4]
+[/SCOPE:s_ex4_let3]
+[SCOPE:s_thm8|description|定理8]
+[76] 定理 8
+[77] 初等函数在其定义域内是连续的。
+[/SCOPE:s_thm8]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3是定理2的推广"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_thm6",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理5推出定理6"
+  },
+  {
+    "source_scope": "s_ex4",
+    "target_scope": "s_thm8",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "习题4的结论是定理8"
+  }
+]

@@ -1,0 +1,126 @@
+[SCOPE:root|description|Sperner 定理]
+文章名: SpeThm
+标题: Sperner 定理
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=独立族
+  [1] type=theorem heading=定理 1 title=Sperner's Theorem
+  [2] type=definition heading=定义 2 title=链
+  [3] type=definition heading=定义 3 title=对称链
+  [4] type=example heading=例 1 title=对称链的例子与反例
+  [5] type=lemma heading=引理 1 title=[n] 的幂集的对称链划分
+  [6] type=theorem heading=定理 2 title=Sperner 定理的取等条件
+
+[SCOPE:s_def1|description|独立族]
+[0] 定义 1 独立族
+[SCOPE:s_def1_let|let_bind|独立族变量]
+[1] 设 $\mathcal{F}\subset 2^{[n]}$ 是 $[n]$ 的一个子集族。
+[2] 我们说 $\mathcal{F}$ 是独立的如果 $\forall A,B\in \mathcal{F}$ 我们都有 $A\not\subset B$ 和 $B\not\subset A$（即 $\mathcal{F}$ 中的任意两个集合互不包含）.
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[3] 下面我们给出 Sperner 定理：
+
+[SCOPE:s_thm1|description|Sperner's Theorem]
+[4] 定理 1 Sperner's Theorem
+[SCOPE:s_thm1_let|let_bind|Sperner 定理变量]
+[5] 对于任意 $[n]$ 的独立子集族 $\mathcal{F}$，我们有：
+[6] $|\mathcal{F}|\leq  \begin{pmatrix}n\\\lfloor \frac{n}{2}\rfloor\end{pmatrix}  $
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_let]
+[7] 为给出定理 1 的证明，我们先引入链的定义：
+
+[SCOPE:s_def2|description|链]
+[8] 定义 2 链
+[SCOPE:s_def2_let|let_bind|链变量]
+[9] $[n]$ 的子集构成的一条链指一列 $[n]$ 的子集 $\{A_i\}_{i=1}^{k}$ 使得：
+[10] $A_1\subset A_2\subset A_3\subset \cdots \subset A_k$，其中 $A_1,\cdots,A_k$ 互不相同。
+[/SCOPE:s_def2_let]
+[11] 这里 $k$ 称为链的长度。
+[12] $\qquad$
+[13] 一条链称为极大链如果 $k=n+1$。
+[14] 简单地我们知道，$[n]$ 的子集可以构成的极大链的个数为 $n!$。
+[/SCOPE:s_def2]
+[15] 定理 1的证明：
+[16] 如果 $\mathcal{F}$ 是独立族，
+[17] 那么每一条极大链 $\mathcal{C}$ 中至多含有一个 $\mathcal{F}$ 中的集合；
+[18] 算两次：$\sum\limits_{A\in \mathcal{F}}N_A=\sum\limits_{\mathcal{C}}N_{\mathcal{C}}$，其中 $N_A$ 表示包含集合 $A$ 的极大链的个数，$N_{\mathcal{C}}$ 表示极大链 $\mathcal{C}$ 中含有的 $\mathcal{F}$ 中的集合的个数，$\sum\limits_{\mathcal{C}}$ 表示对所有极大链求和；
+[19] 考察 $N_A$，$N_A=|A|!\cdot (n-|A|)!=\frac{n!}{  \begin{pmatrix}n\\|A|\end{pmatrix}  }\geq \frac{n!}{  \begin{pmatrix}n\\ \lfloor\frac{n}{2} \rfloor\end{pmatrix}  }$；
+[20] 由 1.，我们有：$N_{\mathcal{C}}\leq 1$；
+[21] 从而 $n!=\sum\limits_{\mathcal{C}}1\geq \sum\limits_{\mathcal{C}}N_{\mathcal{C}}=\sum\limits_{A\in \mathcal{F}}N_A\geq \sum\limits_{A\in \mathcal{F}}\frac{n!}{  \begin{pmatrix}n\\ \lfloor\frac{n}{2} \rfloor\end{pmatrix}  }=\frac{n!}{  \begin{pmatrix}n\\ \lfloor\frac{n}{2} \rfloor\end{pmatrix}  }\cdot |\mathcal{F}|$，整理即得 $|\mathcal{F}|\leqslant  \begin{pmatrix}n\\ \lfloor\frac{n}{2} \rfloor\end{pmatrix}  $，证毕。
+[22] $\square$
+[23] Sperner 定理（定理 1）的另一个证明用到如下引理 1：（以下讨论默认对 $[n]$ 进行）
+[24] $\qquad$ 先给出对称链的定义：
+
+[SCOPE:s_def3|description|对称链]
+[25] 定义 3 对称链
+[SCOPE:s_def3_let|let_bind|对称链变量]
+[26] 一个链称为对称链如果 $|A_1|=\frac{n+1-k}{2}$ 且 $|A_k|=n-\frac{n+1-k}{2}$
+[27] $\qquad$
+[28] 换句话说，存在 $s\in \mathbb{N}$ 使得链中的集合大小分别为 $s,s+1,\cdots,n-s$。
+
+[/SCOPE:s_def3]
+[/SCOPE:s_def3_let]
+[SCOPE:s_ex1|description|对称链的例子与反例]
+[29] 例 1 对称链的例子与反例
+[30] $n=3$ 时，$\{\{2\},\{2,3\}\}$ 是对称链，$\{\{1\},\{1,2\},\{1,2,3\}\}$ 不是对称链;
+[31] $n=4$ 时，$\{\emptyset,\{1,2,3,4\}\}$ 不是对称链。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_lem1|description|[n] 的幂集的对称链划分]
+[32] 引理 1 [n] 的幂集的对称链划分
+[SCOPE:s_lem1_let|let_bind|引理1变量]
+[33] $2^{[n]}$ 可以划分为不交对称链。
+[/SCOPE:s_lem1_let]
+[34] 引理 1的证明：利用数学归纳法可证明引理 1。
+[35] 此处略去不表。
+[36] 引理 1 注记：考察引理 1 中划分出的不交对称链的个数：每个大小为 $\lfloor\frac{n}{2}\rfloor$ 的集合都唯一包含于某一条对称链，
+[37] 从而对称链个数为 $  \begin{pmatrix}n\\ \lfloor\frac{n}{2} \rfloor\end{pmatrix}  $。
+[38] $\square$
+[/SCOPE:s_lem1]
+[39] 定理 1的另证：考虑引理 1中的对称链划分，我们知道每个 $A_i\in \mathcal{F}$ 被包含于唯一一条对称链，
+[40] 从而 $\mathcal{F}$ 中 $A_i$ 的个数不大于对称链的个数，
+[41] 即 $|\mathcal{F}|\leq  \begin{pmatrix}n\\ \lfloor\frac{n}{2} \rfloor\end{pmatrix}  $，证毕。
+[42] $\square$
+[43] 下面我们来考察 Sperner 定理中等号成立的条件：
+
+[SCOPE:s_thm2|description|Sperner 定理的取等条件]
+[44] 定理 2 Sperner 定理的取等条件
+[SCOPE:s_thm2_let|let_bind|定理2变量]
+[45] Sperner 定理中等号成立当且仅当 $\mathcal{F}=\mathcal{A}_{\lfloor\frac{n}{2} \rfloor}$ 或 $ \mathcal{A}_{\lceil\frac{n}{2} \rceil}$，这里 $\mathcal{A}_s\triangleq\{B\subset[n]||B|=s\}$。
+[/SCOPE:s_thm2_let]
+[46] 定理 2的证明：
+[47] 定理 1 中等号取到当且仅当 $|A|=\lfloor\frac{n}{2} \rfloor$ 或 $\lceil\frac{n}{2} \rceil,\forall A\in \mathcal{F}$ 且 $N_{\mathcal{C}}=1,\forall \mathcal{C}$ 是极大链。
+[SCOPE:s_thm2_cases|cases|n奇偶情形]
+[48] 可以看出，只需要考察 $n=2k+1$ 的情形（即 $n$ 是奇数）；
+[SCOPE:s_thm2_cases_let|let_bind|奇数情形变量]
+[49] 倘若 $A\in \mathcal{F}$ 使得 $|A|=\lfloor\frac{n}{2} \rfloor=k$，
+[50] 则 $\forall x\in [n]\backslash A,y\in A,\hat{A}\triangleq A\cup\{x\}\notin \mathcal{F}$；
+[51] 由于 $N_{\mathcal{C}}=1$，这里 $\mathcal{C}$ 取作包含 $\hat{A}$ 和 $B\triangleq \hat{A}\backslash\{y\}$ 的极大链，我们有 $B\in \mathcal{F}$。
+[52] 也就是说，任一大小为 $k$ 的集合若落在 $\mathcal{F}$ 中，
+[53] 则其替换了一个元素后得到的集合依旧落在 $\mathcal{F}$ 中；
+[54] 而每一个大小为 $k$ 的集合总可以对任一大小为 $k$ 的集合作若干次替换后得到，
+[55] 故若存在 $A\in \mathcal{F}$ 使得 $|A|=k$，
+[56] 则 $\mathcal{A}_k\subset \mathcal{F}$。
+[57] 由 $|\mathcal{A}_{\lfloor\frac{n}{2} \rfloor}|=| \mathcal{A}_{\lceil\frac{n}{2} \rceil}|=  \begin{pmatrix}n\\ \lfloor\frac{n}{2} \rfloor\end{pmatrix}  $ 我们知道：此时 $\mathcal{F}=\mathcal{A}_{\lfloor\frac{n}{2} \rfloor}$ 或 $ \mathcal{A}_{\lceil\frac{n}{2} \rceil}$，证毕.$\square$
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_cases]
+[/SCOPE:s_thm2_cases_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_lem1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的另一个证明用到引理1"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2讨论定理1的取等条件"
+  }
+]

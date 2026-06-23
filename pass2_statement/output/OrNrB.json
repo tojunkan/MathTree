@@ -1,0 +1,448 @@
+{
+  "article_name": "OrNrB",
+  "statements": [
+    {
+      "stmt_id": "st_orthonormal_def",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_orthonormal_bases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_orthonormal_let",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_orthonormal_let",
+      "exposed_entities": [
+        "x_i",
+        "x_j",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_orthonormal_condition",
+      "subtype": "condition",
+      "clause_range": [
+        7,
+        10
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_orthonormal_bases",
+      "exposed_entities": [
+        "δ_{ij}"
+      ]
+    },
+    {
+      "stmt_id": "st_expansion_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        11,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_orthonormal_bases",
+      "exposed_entities": [
+        "v",
+        "c_i",
+        "x_i",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_coeff_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        15,
+        18
+      ],
+      "truth_value": "true",
+      "scope_id": "s_orthonormal_bases",
+      "exposed_entities": [
+        "c_i",
+        "v",
+        "x_i",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_example_geometric",
+      "subtype": "example",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": "true",
+      "scope_id": "s_orthonormal_bases",
+      "exposed_entities": [
+        "v",
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_let",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let",
+      "exposed_entities": [
+        "x_k",
+        "c_i",
+        "x_i",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_remark2",
+      "subtype": "remark",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_schmidt_question",
+      "subtype": "question",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_schmidt",
+      "exposed_entities": [
+        "M",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_schmidt_intro",
+      "subtype": "definition",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_schmidt",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_heading",
+      "subtype": "example",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let1",
+      "exposed_entities": [
+        "v_1",
+        "v_2"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_independent",
+      "subtype": "conclusion",
+      "clause_range": [
+        36,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_not_orthonormal",
+      "subtype": "remark",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        38,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let2",
+      "exposed_entities": [
+        "u_1",
+        "u_2",
+        "v_1",
+        "v_2",
+        "v_2^∥",
+        "v_2^⊥"
+      ]
+    },
+    {
+      "stmt_id": "st_schmidt_general",
+      "subtype": "definition",
+      "clause_range": [
+        44,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "M",
+        "N",
+        "v_i",
+        "u_i",
+        "v_i^∥",
+        "v_i^⊥"
+      ]
+    },
+    {
+      "stmt_id": "st_exercise1",
+      "subtype": "exercise",
+      "clause_range": [
+        55,
+        56
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_intro",
+      "subtype": "remark",
+      "clause_range": [
+        57,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_let",
+      "subtype": "assumption",
+      "clause_range": [
+        58,
+        60
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation_let",
+      "exposed_entities": [
+        "i",
+        "N",
+        "u_j",
+        "v_i",
+        "c_j"
+      ]
+    },
+    {
+      "stmt_id": "st_derivation_parallel",
+      "subtype": "conclusion",
+      "clause_range": [
+        61,
+        63
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "v_i^∥",
+        "c_j",
+        "u_j"
+      ]
+    },
+    {
+      "stmt_id": "st_derivation_perp",
+      "subtype": "conclusion",
+      "clause_range": [
+        64,
+        66
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "v_i^⊥",
+        "c_j",
+        "u_j"
+      ]
+    },
+    {
+      "stmt_id": "st_derivation_orthogonal",
+      "subtype": "conclusion",
+      "clause_range": [
+        67,
+        68
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "v_i^⊥",
+        "u_j"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_orthonormal_let",
+      "target": "st_orthonormal_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_orthonormal_def",
+      "target": "st_expansion_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_orthonormal_def",
+      "target": "st_coeff_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_let",
+      "target": "st_proof_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_conclusion",
+      "target": "st_coeff_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_let1",
+      "target": "st_example1_independent",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_let2",
+      "target": "st_schmidt_general",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_let",
+      "target": "st_derivation_parallel",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_let",
+      "target": "st_derivation_perp",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_let",
+      "target": "st_derivation_orthogonal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_parallel",
+      "target": "st_schmidt_general",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_perp",
+      "target": "st_schmidt_general",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_orthogonal",
+      "target": "st_schmidt_general",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_remark1",
+      "target": "st_proof_conclusion",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_proof_remark2",
+      "target": "st_proof_conclusion",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_proof_conclusion",
+      "target": "st_orthonormal_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "证明是正交归一基底定义的一个应用"
+    },
+    {
+      "source": "st_example1_let2",
+      "target": "st_schmidt_intro",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是施密特正交归一化的二维特例"
+    },
+    {
+      "source": "st_derivation_parallel",
+      "target": "st_schmidt_intro",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "推导解释了施密特公式的由来"
+    }
+  ],
+  "unresolved": []
+}

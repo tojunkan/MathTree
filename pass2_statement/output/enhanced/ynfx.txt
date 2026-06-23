@@ -1,0 +1,96 @@
+[SCOPE:root|description|微分方程 y^{(N)}=f(x)]
+文章名: ynfx
+标题: 微分方程 $y^{(N)}=f(x)$
+
+[SCOPE:s_intro|description|引言与结论]
+[0] 在常微分方程中，我们曾提到形如 $y^{(N)}=f(x)$ 的 $N$ 阶微分方程可通过 $N$ 次积分求得通解。
+[1] 为了之后引入记号方法方便，本节将具体讨论该方程。
+[2] \begin{equation}
+y^{(N)}=f(x)~
+\end{equation}
+[3] 的通解具有形式
+[4] \begin{equation}
+y=y_1+\sum_{i=0}^{N-1}C_ix^i~.
+\end{equation}
+[5] 其中，$y_1$ 是
+[6] 式 1 [链接 L0]
+[7] 的任意一个特殊解。
+[8] 特殊地，若式 1 满足下列零初始条件
+[9] \begin{equation}
+y|_{x=x_0}=0,\quad y'|_{x=x_0}=0\quad\cdots \quad y^{(N-1)}|_{x=x_0}=0~.
+\end{equation}
+[10] 式 1 [链接 L1]
+[11] 满足初始条件
+[12] 式 3 [链接 L2]
+[13] 的解 $y_1(x)$ 为
+[14] \begin{equation}
+y_1(x)=\frac{1}{(N-1)!}\int_{x_0}^x(x-t)^{N-1}f(t) \,\mathrm{d}{t} ~.
+\end{equation}
+[15] 式 1 [链接 L3]
+[16] 的通解则为
+[17] \begin{equation}
+y(x)=\frac{1}{(N-1)!}\int_{x_0}^x(x-t)^{N-1}f(t) \,\mathrm{d}{t} +\sum_{i=0}^{N-1}C_ix^i~.
+\end{equation}
+
+[/SCOPE:s_intro]
+[SCOPE:s_proof|description|证明]
+[18] 先来求方程式 1 的一般积分公式。
+[SCOPE:s_proof_let1|let_bind|设 y1 是解]
+[19] 设 $y_1(x)$ 是方程式 1 的任何一个解，就是
+[20] \begin{equation}
+y_1^{(N)}=f(x)~,
+\end{equation}
+[/SCOPE:s_proof_let1]
+[SCOPE:s_proof_let2|let_bind|引入 z]
+[21] 引入未知函数 $z$
+[22] \begin{equation}
+y=y_1(x)+z~.
+\end{equation}
+[/SCOPE:s_proof_let2]
+[23] 式 1 [链接 L4]
+[24] ，得到一个关于 $z$ 的方程
+[25] \begin{equation}
+y_1^{(N)}+z^{(N)}=f(x)~.
+\end{equation}
+[26] 根据恒等式
+[27] 式 6 [链接 L5]
+[28] \begin{equation}
+z^{(N)}=0~.
+\end{equation}
+[29] 这意味着函数 $z$ 是具有任何常系数的 $N$ 次多项式
+[30] \begin{equation}
+z=\sum_{i=0}^{N-1}C_ix^i~,
+\end{equation}
+[31] 式 7 [链接 L6]
+[32] 给出方程
+[33] 式 1 [链接 L7]
+[34] 的一般积分
+[35] \begin{equation}
+y=y_1+\sum_{i=0}^{N-1}C_ix^i~.
+\end{equation}
+[36] 式 1 [链接 L8]
+[37] 的一般积分是这方程的任何一个特殊解与具有任意常系数的 $N-1$ 次多项式之和。
+[38] 这样，剩下的任务就是证明方程式 1 满足初始条件式 3 的解为式 4 。
+[SCOPE:s_proof_let3|let_bind|泰勒公式变量]
+[39] 为此，将 $y(x)$ 写成余项具有积分形式的泰勒公式（式 18 ）
+[40] \begin{equation}
+y(x)=\sum_{i=0}^{N-1}\frac{y^{(i)}(x_0)}{i!} \left(x-x_0 \right) ^{i}+\frac{1}{(N-1)!}\int_{x_0}^{x}(x-t)^{N-1}y^{(N)}(t) \,\mathrm{d}{t} ~,
+\end{equation}
+[/SCOPE:s_proof_let3]
+[41] 代入初始条件
+[42] 式 3 [链接 L9]
+[43] 式 1 [链接 L10]
+[44] 到上式，
+[45] 即得
+[46] 式 4 [链接 L11]
+[47] 正如所说的，方程式 1 的解可通过 $N$ 次积分求得，
+[48] 那么满足初值条件式 3 的解为
+[49] \begin{equation}
+y=\int_{x_0}^x \,\mathrm{d}{x} \int_{x_0}^x \,\mathrm{d}{x} \cdots\int_{x_0}^{x} \,\mathrm{d}{x} \int_{x_0}^{x}f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[50] 式 4 [链接 L12]
+[51] 给出了 $N$ 次积分
+[52] 式 13 [链接 L13]
+[53] 的一次积分形式的表达式。
+[/SCOPE:s_proof]
+[/SCOPE:root]

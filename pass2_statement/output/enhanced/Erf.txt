@@ -1,0 +1,79 @@
+[SCOPE:root|description|误差函数]
+文章名: Erf
+标题: 误差函数
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=example heading=例 2 title=
+
+[SCOPE:s_erf_def|description|误差函数定义]
+[0] 【图解】图 1：误差函数
+[1] 1误差函数（error function）的定义为
+[2] \begin{equation}
+\operatorname{erf} (x) = \frac{1}{\sqrt{\pi}} \int_{-x}^x \mathrm{e} ^{-t^2} \,\mathrm{d}{t}
+= \frac{2}{\sqrt{\pi}} \int_{0}^x \mathrm{e} ^{-t^2} \,\mathrm{d}{t} ~,
+\end{equation}
+[3] 这是一个奇函数（
+[4] 图 1 [链接 L0]
+[5] ）。
+[6] 根据
+[7] 式 5 [链接 L1]
+[8] \begin{equation}
+\operatorname{erf} (\pm\infty) = \pm 1~.
+\end{equation}
+[9] 式 13 [链接 L2]
+[10] ，误差函数的导数为
+[11] \begin{equation} \operatorname{erf} '(x) = \frac{2}{\sqrt{\pi}} \mathrm{e} ^{-x^2}~.
+\end{equation}
+[12] 即 $ \mathrm{e} ^{-x^2}$ 的不定积分（原函数）为
+[13] \begin{equation}
+\int \mathrm{e} ^{-x^2} \,\mathrm{d}{x} = \frac{\sqrt{\pi}}{2} \operatorname{erf} (x) + C~.
+\end{equation}
+[14] 误差函数的反函数称为反误差函数（inverse error function），记为 $ \operatorname{erf} ^{-1}$，定义域为 $(-1,1)$。
+
+[/SCOPE:s_erf_def]
+[SCOPE:s_series|description|级数展开]
+[15] 由指数函数的级数展开得
+[16] \begin{equation}
+\mathrm{e} ^{-x^2} = \sum_{n=0}^\infty \frac{1}{n!} (-x^2)^n = \sum_n \frac{(-1)^n}{n!} x^{2n}~.
+\end{equation}
+[17] 对各项做不定积分代入
+[18] 式 4 [链接 L3]
+[19] 可得误差函数的级数展开为
+[20] \begin{equation}
+\operatorname{erf} (x) = \frac{2}{\sqrt{\pi}} \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)n!} x^{2n+1}
+= \frac{2}{\sqrt{\pi}} \left(x - \frac{x^3}{3} + \frac{x^5}{10} - \frac{x^7}{42} + \frac{x^9}{216} \dots \right) ~.
+\end{equation}
+[21] 由该式可以把误差函数拓展到复数域。
+
+[/SCOPE:s_series]
+[SCOPE:s_ex1_let|let_bind|例1变量]
+[SCOPE:s_ex1|description|例1]
+[22] 令 $a$ 为实数且 $a > 0$，计算不定积分
+[23] \begin{equation}
+\int \exp\left(-ax^2 + bx\right) \,\mathrm{d}{x} ~.
+\end{equation}
+[24] 解：我们可以先将指数部分凑平方得
+[25] \begin{equation}
+-ax^2 + bx = -t^2 + \frac{b^2}{4a}~,
+\end{equation}
+[26] \begin{equation}
+t = \sqrt{a} x - \frac{b}{2\sqrt{a}} \qquad~,
+\end{equation}
+[27] \begin{equation}
+\int \exp\left(-ax^2 + bx\right) \,\mathrm{d}{x} = \frac{1}{\sqrt{a}} \mathrm{e} ^{{b^2}/(4a)} \int \mathrm{e} ^{-t^2} \,\mathrm{d}{t}
+= \frac12 \sqrt{\frac{\pi}{a}} \mathrm{e} ^{{b^2}/(4a)} \operatorname{erf} \left(\sqrt{a} x - \frac{b}{2\sqrt{a}} \right) ~.
+\end{equation}
+
+[/SCOPE:s_ex1_let]
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2]
+[28] 计算无穷积分（即 $e^{-ax^2}$ 的傅里叶变换）
+[29] \begin{equation}
+g(k) = \int_{-\infty}^{+\infty} \mathrm{e} ^{-a x^2} \mathrm{e} ^{- \mathrm{i} kx} \,\mathrm{d}{x} ~.
+\end{equation}
+[30] \begin{equation}
+g(k) = \frac12 \sqrt{\frac{\pi}{a}} \mathrm{e} ^{-{k^2}/(4a)} \left. \operatorname{erf} \left(\sqrt{a} x + \frac{ \mathrm{i} k}{2\sqrt{a}} \right) \right\rvert _{-\infty}^{+\infty} = \sqrt{\frac{\pi}{a}} \mathrm{e} ^{-{k^2}/(4a)}~.
+\end{equation}
+[/SCOPE:s_ex2]
+[/SCOPE:root]

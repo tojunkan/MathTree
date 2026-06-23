@@ -1,0 +1,300 @@
+{
+  "article_name": "Group1",
+  "statements": [
+    {
+      "stmt_id": "st_def1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "(G, ⋅)",
+        "H"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_concl",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "H"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "2ℤ"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_concl",
+      "subtype": "example",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let",
+      "exposed_entities": [
+        "n",
+        "nℤ"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_let_concl",
+      "subtype": "example",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "G",
+        "H"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_concl",
+      "subtype": "theorem",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_suff_assump1",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_suff_let1",
+      "exposed_entities": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_suff_concl1",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_suff",
+      "exposed_entities": [
+        "e"
+      ]
+    },
+    {
+      "stmt_id": "st_suff_assump2",
+      "subtype": "assumption",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_suff_let2",
+      "exposed_entities": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_suff_concl2",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_suff",
+      "exposed_entities": [
+        "x⁻¹"
+      ]
+    },
+    {
+      "stmt_id": "st_suff_assump3",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_suff_let3",
+      "exposed_entities": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_suff_concl3",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_suff",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_nec_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_nec",
+      "exposed_entities": [
+        "H"
+      ]
+    },
+    {
+      "stmt_id": "st_nec_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_nec",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_assump",
+      "target": "st_def1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_assump",
+      "target": "st_ex1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let_assump",
+      "target": "st_ex1_let_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_assump",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_suff_assump1",
+      "target": "st_suff_concl1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_suff_assump2",
+      "target": "st_suff_concl2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_suff_assump3",
+      "target": "st_suff_concl3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_nec_assump",
+      "target": "st_nec_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_suff_concl1",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_suff_concl2",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_suff_concl3",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_nec_concl",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_suff_concl1",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "充分性证明推出定理"
+    },
+    {
+      "source": "st_nec_concl",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "必要性证明推出定理"
+    }
+  ],
+  "unresolved": []
+}

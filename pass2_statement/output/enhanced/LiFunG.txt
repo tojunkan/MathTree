@@ -1,0 +1,217 @@
+[SCOPE:root|description|线性泛函的几何意义]
+文章名: LiFunG
+标题: 线性泛函的几何意义
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=零子空间，核
+  [1] type=lemma heading=引理 1 title=
+  [2] type=corollary heading=推论 1 title=
+  [3] type=corollary heading=推论 2 title=$\mathrm{codim} f=1$
+  [4] type=corollary heading=推论 3 title=
+  [5] type=definition heading=定义 2 title=超平面
+  [6] type=theorem heading=定理 1 title=
+
+[0] 在有限维线性空间中，一个线性方程和一个超曲面一一对应（线性方程组的仿射解释），这在无穷维的线性空间中仍然成立。
+[1] 具体的，在任一的线性空间中，一个非平凡线性泛函（即不恒为零）和一个不通过坐标原点的超曲面一一对应。
+[2] 这便是线性泛函的几何意义。
+[3] 本文将始终假定 $\mathbb F$ 是定义线性空间 $L$ 的域。
+
+[SCOPE:s_def1|description|定义1 零子空间，核]
+[4] 定义 1 零子空间，核
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[5] 设 $f$ 是线性空间 $L$ 上不恒为零的线性泛函。则
+[/SCOPE:s_def1_let]
+[6] \begin{equation}
+\{x|f(x)=0,x\in L\}~,
+\end{equation}
+[7] 零子空间
+[8a] (x)=f
+[8b] (y)=0$，
+[9] 则
+[10] \begin{equation}
+f(\alpha x+\beta y)=\alpha f(x)+\beta f(y)=0.~
+\end{equation}
+
+[/SCOPE:s_def1]
+[SCOPE:s_lemma1|description|引理1]
+[11] 引理 1
+[SCOPE:s_lemma1_let|let_bind|引理1的变量]
+[12] 设 $f$ 是线性空间 $L$ 的非平凡线性泛函，
+[13] 则任一 $x\in L$，对固定的满足 $f(x_0)\neq0$ 的 $x_0$，存为唯一 $\alpha\in\mathbb F,y\in \ker f$，使得
+[14] \begin{equation}
+x=\alpha x_0+y.~
+\end{equation}
+[/SCOPE:s_lemma1_let]
+[15] 在 $f,x_0$ 确定的情况下，$\alpha=\frac{f(x)}{f(x_0)}$
+[16] 证明：存在性：任一 $x\in L$，令 $y=x-\frac{f(x)}{f(x_0)}x_0$，
+[17] 则 $f(y)=0$，
+[18] 即 $y\in\ker f$。
+[19] 因此任一 $x\in L$，存在 $\alpha\in\mathbb F,y\in \ker f$，使得
+[20] \begin{equation}
+x=\alpha x_0+y.~
+\end{equation}
+[21] 唯一性：设 $\alpha x_0+y=\alpha' x_0+y'$，
+[22] 则 $(\alpha-\alpha')x_0=y'-y$。
+[23] 若 $\alpha=\alpha'$，
+[24] 则 $y'=y$，唯一性成立；
+[SCOPE:s_lemma1_reductio|reductio|唯一性反证]
+[25] 若 $\alpha\neq\alpha'$，
+[26] 则 $x_0=\frac{y'-y}{\alpha-\alpha'}\in\ker f$，这和 $f(x_0)\neq0$ 矛盾，
+[27] 因此只能是 $\alpha=\alpha'$。
+[/SCOPE:s_lemma1_reductio]
+[28] 证毕！
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_cor1|description|推论1]
+[29] 推论 1
+[SCOPE:s_cor1_let|let_bind|推论1的变量]
+[30] 设 $f$ 是线性空间 $L$ 的非平凡线性泛函，
+[/SCOPE:s_cor1_let]
+[31] 则 $x$ 等价于 $x'$，当且将当 $f(x)=f(x')$。
+[32] 证明：由于 $f$ 不恒为 0，
+[33] 因此存在 $x_0$，使得 $f(x_0)\neq0$。
+[34] 由引理 1 ，任意 $x,x'$，可表示为
+[35] \begin{equation}
+x=\alpha x_0+y,\quad x'=\alpha' x_0+y'.~
+\end{equation}
+[36] $x,x'$ 等价的条件是 $x-x'=(\alpha'-\alpha)x_0+(y-y')\in \ker f$，这要求 $\alpha'=\alpha$。
+[37a] (x)-f(x')=f
+[37b] (y)-f(y')=0$，
+[38] 即 $f(x)=f(x')$。
+[39] 证毕！
+
+[/SCOPE:s_cor1]
+[SCOPE:s_cor2|description|推论2 codim f=1]
+[40] 推论 2 $\mathrm{codim} f=1$
+[SCOPE:s_cor2_let|let_bind|推论2的变量]
+[41] 零子空间 $\ker f$ 的余维数为 $1$。
+[/SCOPE:s_cor2_let]
+[42] 证明：需要证明商空间 $L/\ker f$ 的维数为 1，
+[43] 即存在非零矢量 $[x_0]\neq [0]\in L/\ker f$，使得任一 $\xi\in L/\ker f$，都有 $\xi=\alpha[x_0],\alpha\in\mathbb F$。
+[44] 证明如下：
+[45] 由引理 1 ，任一 $\xi\in L/\ker f$ 的代表元 $x$ 可写为 $x=\alpha x_0+y,y\in\ker f,x_0\notin\ker f$。
+[46] 又 $\alpha x_0$ 和 $x$ 等价，
+[47] 因此 $\alpha x_0\in \xi$，
+[48] 即每一 $\xi$ 都有形如 $\alpha x_0$ 的代表元。
+[49] 即 $[\xi]=\alpha[x_0]$。
+[50] 证毕！
+
+[/SCOPE:s_cor2]
+[SCOPE:s_cor3|description|推论3]
+[51] 推论 3
+[SCOPE:s_cor3_let|let_bind|推论3的变量]
+[52] 设 $f,g$ 是线性空间 $L$ 的非平凡线性泛函，
+[53] 则若 $\ker f=\ker g$，
+[/SCOPE:s_cor3_let]
+[54a] (x)=\frac{f(x_0)}{g(x_0)}f
+[54b] (x)$。
+[55] 即在不计常数因子的情况下，在 $\ker f$ 定义的线性泛函是唯一的。
+[56] 证明：取 $x_0$，使得 $f(x_0)\neq0$。
+[57] 那么可断定 $g(x_0)\neq0$。
+[58] 事实上，由引理 1
+[59] \begin{equation}
+\begin{aligned}
+x=\frac{f(x)}{f(x_0)}x_0+y,&\quad y\in\ker f=\ker g,\\
+&\Downarrow\\
+g(x)=\frac{f(x)}{f(x_0)}g(x_0)&+g(y)=\frac{f(x)}{f(x_0)}g(x_0).
+\end{aligned}~
+\end{equation}
+[SCOPE:s_cor3_reductio|reductio|g(x0)≠0的反证]
+[60] 若 $g(x_0)=0$，
+[61] 那么 $g(x)\equiv0$，这与 $g$ 的非平凡性矛盾。
+[/SCOPE:s_cor3_reductio]
+[62] 由上式可知命题成立。
+[63] 证毕！
+
+[/SCOPE:s_cor3]
+[SCOPE:s_def2|description|定义2 超平面]
+[64] 定义 2 超平面
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[65] 设 $L'$ 是 $L$ 的余维数为 1 的任意子空间，
+[/SCOPE:s_def2_let]
+[66] 则称空间 $L'$ 的任一剩余类（定义 2 ）为（与子空间 $L'$ 平行）的超平面。
+[67] 由剩余类的定义可知，与 $L'$ 平行的超平面 $M'$，是从 $L'$ 平移任一向量 $x_0\in L$ 所得到的集 $M'=x_0+L'$。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|定理1]
+[68] 定理 1
+[69] 定义在 $L$ 上的所有非平凡线性泛函与 $L$ 中不通过坐标原点的所有超平面是一一对应的。
+[SCOPE:s_thm1_let1|let_bind|定理1前半变量]
+[70] 证明： 若 $f$ 是空间 $L$ 上的非平凡线性泛函，
+[71] 则集 $M_f=\{x|f(x)=c\neq 0\}$ 是与子空间 $\ker f$ 平行的超平面：事实上，选定任一满足 $f(x_0)=c$ 的元素 $x_0$。
+[/SCOPE:s_thm1_let1]
+[72] 于是由引理 1 ，任一 $x\in M_f$ 可表为 $x=\frac{f(x)}{f(x_0)}x_0+y=x_0+y,y\in\ker f$。
+[73] 反过来，$x_0+\ker f\subset M_f$。
+[74] 于是 $M_f=x_0+\ker f$。
+[SCOPE:s_thm1_let2|let_bind|定理1后半变量]
+[75] 若 $M'$ 是与子空间 $L'$ 平行、且不通过原点的任一超曲面，
+[76] 则存在唯一的线性泛函，使得 $M'=\{x|f(x)=c\neq0\}$：设 $M'=L'+x_0,x_0\in L$。
+[77] 则任一元素 $x\in L$ 可唯一表为 $x=\alpha x_0+y,y\in L'$ 的形式（因为超平面余维数为 1）。
+[/SCOPE:s_thm1_let2]
+[78] 令 $f(x)=\alpha f(x_0)$，
+[79] 于是 $f$ 是所需要的线性泛函。
+[80] 事实上，若 $x=\alpha x_0+y,x'=\alpha' x_0+y'$，
+[81] 则
+[82] \begin{equation}
+\begin{aligned}
+f(\lambda x+\lambda' x')&=f((\lambda\alpha+\lambda'\alpha')x_0+\lambda y+\lambda'y')\\
+&=(\lambda \alpha+\lambda'\alpha')f(x_0)\\
+&=\lambda f(x)+\lambda'f(x').
+\end{aligned}~
+\end{equation}
+[83] 另外，由 $f$ 的定义，$f(x)=0\Rightarrow x\in L'$，
+[84] 即 $\ker f\subset L'$，又 $f(L')=0$，
+[85] 所以 $L'\in\ker f$，
+[86] 即 $L'=\ker f$。
+[87] 因此 $M'=x_0+\ker f$。
+[88] 若 $x\in M',g(x)\equiv c$，
+[89] 则 $y\in L',g(y)\equiv 0$，
+[90] 因此
+[91] \begin{equation}
+g(\alpha x_0+y)=\alpha c=f(\alpha x_0+y).~
+\end{equation}
+[92] 由此得到 $f$ 的唯一性。
+[93] 结合上面证得的两个命题，命题得证！
+[94] 证毕！
+[95] 定理 1 便说明了线性泛函的几何意义。
+[/SCOPE:s_thm1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1引用引理1"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论2引用引理1"
+  },
+  {
+    "source_scope": "s_cor3",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论3引用引理1"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1引用引理1"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1使用超平面定义"
+  }
+]

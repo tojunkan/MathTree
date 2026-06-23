@@ -1,0 +1,196 @@
+[SCOPE:root|description|泛函分析笔记 2]
+文章名: FnalN2
+标题: 泛函分析笔记 2
+
+[SCOPE:s_hilbert|description|Hilbert Spaces]
+[0] 希尔伯特空间必须使用勒贝格积分（见附录）
+[1] 内积记为 $(u|v)$, $(u|v) \in K$
+[2] pre-Hilbert 空间 就是定义了内积的线性空间
+[3] 柯西—施瓦兹不等式是（pre-）Hilbert 空间中最重要的性质。
+[4] pre-Hilbert 空间都是赋范空间，范数为 $ \left\lVert u \right\rVert := \sqrt{(u|u)}$
+[5] 希尔伯特空间定义：1. 是一个内积空间，2. 是一个 Banach 空间（或者任意柯西序列的极限都属于它本身）
+
+[/SCOPE:s_hilbert]
+[SCOPE:s_examples|description|Standard Examples]
+[SCOPE:s_examples_let1|let_bind|空间 X := K^N]
+[6] 空间 $X := \mathbb K^N$ 是一个希尔伯特空间，内积为 $(x|y) := \sum_j \bar \xi_j \eta_j$，范数为 $ \left\lVert x \right\rVert = (x|x)^{1/2}$
+[/SCOPE:s_examples_let1]
+[SCOPE:s_examples_let2|let_bind|区间 [a,b] 和 C[a,b]]
+[7] 令 $-\infty < a < b < \infty$。
+[8] $\forall u, v\in C[a, b]$，定义内积为 $(u|v)=\int_a^b uv \,\mathrm{d}{x} $，
+[9] 那么这是一个 pre-Hilbert 空间而不是 Hilbert 空间，记为 $C_*[a, b]$。
+[10] 该空间是以下 $L_2(a, b)$ 的稠密子集
+[/SCOPE:s_examples_let2]
+[SCOPE:s_examples_let3|let_bind|L_2(a,b)]
+[11] 令 $-\infty \leqslant a < b \leqslant \infty$，令 $L_2(a, b)$ 为所有可测函数 $u :]a, b[ \to \mathbb R$（其中 $]a, b[$ 表示开区间）$ \left\{x \in R : a < x < b \right\} $，满足 $\int_a^b \left\lvert u \right\rvert ^2 \,\mathrm{d}{x} < \infty$。
+[12] 定义内积为 $(u|v) := \int_a^b uv \,\mathrm{d}{x} $，
+[13] 那么 $L_2(a, b)$ 是无穷维的实希尔伯特空间
+[14a] (x) = v
+[14b] (x)$ 对几乎所有 $x \in ]a, b[$ 成立
+[/SCOPE:s_examples_let3]
+[SCOPE:s_examples_let4|let_bind|L_2^K(G)]
+[15] 令 $G$ 表示 $\mathbb R^N$（$N \geqslant 1$）中的可测非空子集，$L_2^{\mathbb K}(G)$ 表示可测函数 $u: G \to \mathbb K$ 的集合，满足 $\int_G \left\lvert u \right\rvert ^2 \,\mathrm{d}{x} < \infty$。
+[16] 那么 $L_2^{\mathbb K}(G)$ 是一个希尔伯特空间，内积定义为 $(u|v) := \int_G \bar u v \,\mathrm{d}{x} $，称为勒贝格空间（Lebesgue space）
+[17] 请写出 $L_2^{\mathbb K}(G)$ 中的施瓦兹（Schwarz）不等式
+[/SCOPE:s_examples_let4]
+[SCOPE:s_examples_let5|let_bind|C^k(G) 等]
+[18] 令 $G$ 为 $\mathbb R^N$ 中的非空开子集（$N > 1$）。
+[19] 那么 $C^k(G)$ 表示 $k$ 阶偏导连续的函数 $u: G \to R$ 的集合
+[20] $C^k(\bar G)$ 包含 $C^k$ 中所有满足各阶偏导数能拓展到 $G$ 的闭包 $\bar G$ 上的函数
+[21] 如果 $u \in C^k(G)$ 对所有的 $k = 0, 1, \dots$ 都成立，
+[22] 那么我们记 $u \in C^\infty(G)$。
+[23] 同理可以定义 $C^\infty(\bar G)$
+[24] $C_0^\infty (G)$ 是所有 $C^\infty(G)$ 中的函数，满足在 $G$ 的紧子集 $C$ 外恒为零
+[/SCOPE:s_examples_let5]
+[SCOPE:s_examples_let6|let_bind|稠密性和分部积分]
+[25] 令 $G$ 为 $\mathbb R^N$ 中的一个非空开集，$N \geqslant 1$。
+[26] 那么 (i) $C_0^\infty(G)$ 和 $C(\bar G)$ 在 $L_2(G)$ 中稠密
+[27] $C_0^\infty(G)_{\mathbb C}$ 和 $C(\bar G)_{\mathbb C}$ 在 $L_2^{\mathbb C}(G)$ 中稠密
+[28] 分部积分的高阶拓展：$\int_G (\partial_j u) v \,\mathrm{d}{x} = \int_{\partial G} uvn_j \,\mathrm{d}{O} - \int_G u \partial_j v \,\mathrm{d}{x} $。
+[29] 其中 $x = (\xi_1, \dots, \xi_N)$，$\partial_j u := \partial u/\partial\xi_j$，$n_j$ 是边界 $\partial G$ 的法向量 $n = (n_1, \dots, n_N)$。
+[30] $\int \,\mathrm{d}{O} $ 代表边界上的积分，二维情况下 $\int \,\mathrm{d}{O} $ 是逆时针的环积分。
+[31] （推导见式 1 ）。
+[32] 当 $u$ 或 $v$ 在 $\partial G$ 上为零时，边界积分为零
+[33] 上一条的分部积分公式对所有 $u, v \in C^1(\bar G)$ 成立，$G$ 是 $\mathbb R^N$ 中的有界非空开集，边界足够光滑。
+[34] 没有边界积分的分部积分对所有 $u \in C^1(G)$ 和 $v \in C_0^\infty(G)$ 成立。
+[35] $G$ 是 $\mathbb R^N$ 中的一个非空开集
+[36] 微积分基本定理 $\int_a^b w' \,\mathrm{d}{x} = \left. w \right\rvert _a^b$ 在高维中拓展为高斯定理（Gauss theorem） $\int_G \partial_j w \,\mathrm{d}{x} = \int_{\partial G} wn_j \,\mathrm{d}{O} $。
+[37] 令 $w = uv$，可得分部积分
+
+[/SCOPE:s_examples]
+[/SCOPE:s_examples_let6]
+[SCOPE:s_bilinear|description|Bilinear Forms]
+[38] 赋范空间 $X$ 上的 bounded bilinear form 是一个函数 $a: X\times X\to\mathbb K$ 且具有性质 (1) 双线性（bilinear）：对所有 $u, v, w\in X$ 以及 $\alpha, \beta \in \mathbb K$，$a(\alpha u + \beta v, w) = \alpha a(u, w) + \beta a(v, w)$ 以及 $a(w, \alpha u + \beta v) = \alpha a(w, u) + \beta a(w, v)$，(2) 有界性（Boundedness） 存在常数 $d > 0$ 使得 $ \left\lvert a(u, v) \right\rvert \le d \left\lVert u \right\rVert \left\lVert v \right\rVert $ 对所有 $u, v\in X$ 成立
+[39] 双线性函数 $a(\cdot,\cdot)$ 叫做对称的当且仅当 $a(u, v) = a(v, u)$ 对任意 $u, v\in X$ 成立，叫做 positive 当且仅当 $0\le a(u,u)$ 对所有 $u\in X$ 成立。
+[40] 叫做 strongly positive 当且仅当存在常数 $c > 0$ 使 $c \left\lVert u \right\rVert ^2 \le a(u, u)$ 对所有 $u\in X$ 成立
+
+[/SCOPE:s_bilinear]
+[SCOPE:s_variational|description|Main Theorem on Quadratic Variational Problems]
+[SCOPE:s_variational_let|let_bind|变分问题中的变量]
+[41] 令 $a: X\times X\to\mathbb R$ 是实希尔伯特空间 $X$ 上的 symmetric, bounded, strongly positive, bilinear form，$b: X\to\mathbb R$ 是一个 $X$ 上的线性连续函数。
+[/SCOPE:s_variational_let]
+[42a] (u) = \min!$（$u\in X$）有唯一解，且该式等效于 variational equation $a(u, v) = b
+[42b] (v)$ 对所有 $v\in X$ 成立。
+[43] （想一想哈密顿原理如何推出欧拉—拉格朗日方程）
+
+[/SCOPE:s_variational]
+[SCOPE:s_dirichlet|description|Functional Analytic Justification of the Dirichlet Principle]
+[SCOPE:s_dirichlet_let1|let_bind|广义导数定义]
+[44] 广义导数：分部积分 $\int_G u\partial_j v \,\mathrm{d}{x} = -\int_G (\partial_j u)v \,\mathrm{d}{x} $ 对所有 $v \in C_0^\infty(G)$ 和 $u \in C^1(G)$ 成立。
+[45] 若 $w, u\in L_2(G)$ 能使所有 $\int_G u\partial_j v \,\mathrm{d}{x} = -\int_G wv \,\mathrm{d}{x} $ 对所有 $v \in C_0^\infty(G)$ 成立，
+[46] 那么 $w$ 就是 $u$ 的广义导数（$G$ 是 $\mathbb R^N$ 中的非空开集）。
+[47] 同样记 $w = \partial_j u$
+[48] 广义导数 $w = \partial_j u$ 能在一个 $N$ 维零测度集外被唯一确定
+[/SCOPE:s_dirichlet_let1]
+[SCOPE:s_dirichlet_let2|let_bind|Sobolev 空间]
+[49] Sobolev 空间 $W_2^1(G)$：$G$ 是 $\mathbb R^N$ 中的非空开集，$u, \partial_ju \in L_2(G)$。
+[50] 定义内积为 $(u|v)_{1,2} := \int_G(uv + \sum_j \partial_j u\partial_j v) \,\mathrm{d}{x} $
+[51] $W_2^1(G)$ 是一个希尔伯特空间，如果我们认为两个在大多数地方相等的函数是同一个函数
+[52] 定义 $\mathring {W_2^1}(G)$ 为 $C_0^\infty(G)$ 在 $W_2^1(G)$ 上的闭包
+[53] $\mathring {W_2^1}(G)$ 是 $W_2^1(G)$ 的（实的）子希尔伯特空间
+[54] 从广义的角度理解，$\mathring {W_2^1}(G)$ 中函数的边界值为 0
+
+[/SCOPE:s_dirichlet]
+[/SCOPE:s_dirichlet_let2]
+[SCOPE:s_generalized|description|Generalized Functions and Linear Functionals]
+[SCOPE:s_generalized_let1|let_bind|多重指标]
+[55] 多重指标（multiindex）：$\alpha = (\alpha_1, \dots, \alpha_N)$，令 $ \left\lvert \alpha \right\rvert := \alpha_1 + \dots + \alpha_N$, 以及 $\partial^\alpha u := \partial_1^{\alpha_1} \dots \partial_N^{\alpha N} u = \partial^{ \left\lvert \alpha \right\rvert } u/ (\partial\xi_1^{\alpha_1} \dots \partial\xi_N^{\alpha N})$
+[56] 分部积分：$G$ 为 $\mathbb R^N \ge 1$ 上的所有非空开区间。
+[57] 对所有 $u, v \in C_0^\infty(G)$ 以及所有多重指标 $\alpha$，$\int_G u\partial^\alpha v \,\mathrm{d}{x} = (-1)^{ \left\lvert \alpha \right\rvert } \int_G (\partial^\alpha u)v \,\mathrm{d}{x} $（重复使用分部积分即可证明）
+[/SCOPE:s_generalized_let1]
+[SCOPE:s_generalized_let2|let_bind|D(G) 和收敛]
+[58] 令 $\mathcal D(G) := C_0^\infty(G)$。
+[59] 令 $\phi_n, \phi \in \mathcal D(G)$。
+[60] $\phi_n \to \phi$ 的定义是：对所有的多重指标 $\alpha$，$K$ 上有一致收敛 $\partial^\alpha \phi_n \to \partial^\alpha \phi(x)$
+[61] 如果 $G = ]\alpha,\beta[$，
+[62] 那么 $\mathcal D(\alpha,\beta) := \mathcal D(G)$
+[/SCOPE:s_generalized_let2]
+[SCOPE:s_generalized_let3|let_bind|广义函数定义]
+[63] 广义函数（generalized function） $U \in \mathcal D'(G)$ 定义：线性连续泛函 $U: \mathcal D(G) \to \mathbb R$。
+[64] 广义函数也叫分布（distribution）
+[65a] (x) \phi
+[65b] (x) \,\mathrm{d}{x} $ 对所有 $\phi \in \mathcal D(G)$ 成立。
+[66] $U \in \mathcal D'(G)$。
+[67] 如果 $u = v$，
+[68] 那么 $U = V$
+[/SCOPE:s_generalized_let3]
+[SCOPE:s_generalized_let4|let_bind|狄拉克 delta]
+[69] 狄拉克 $\delta_y$ 分布：$\delta_y(\phi) := \phi(y)$ 对所有 $\phi\in\mathcal D(G)$ 成立
+[/SCOPE:s_generalized_let4]
+[SCOPE:s_generalized_let5|let_bind|广义函数导数]
+[70] 定义广义函数 $U \in \mathcal D'(G)$ 的导数 $\partial^\alpha U$ 为 $(\partial^\alpha U)(\phi) := (-1)^{ \left\lvert \alpha \right\rvert } U(\partial^\alpha \phi)$ 对所有 $\phi\in\mathcal D(G)$ 成立
+[71] 如果 $u \in\mathcal D(G)$ 对应的广义函数为 $U$，$\partial^\alpha u$ 对应的广义函数为 $V$，
+[72] 那么 $V = \partial^\alpha U$
+[73] 如果 $U \in\mathcal D'(G)$，
+[74] 那么 $\partial^\alpha U \in\mathcal D'(G)$ 对所有的 $\alpha$ 成立
+[75] 广义函数存在任意阶导数
+[76] 广义函数的极限 $U_n \to U$ 的定义：$U_n(\phi)\to U(\phi)$ 对所有 $\phi \in\mathcal D(G)$ 都成立
+[77] 在 $L_2(G)$ 中 $u_n\to u$ 意味着对应的 $U_n \to U$
+[78] 在 $\mathcal D(\alpha,\beta)$ 中，$f_{y,\epsilon}$ 对应的泛函 $F_{y, \epsilon}\to \delta_y$ 当 $\epsilon \to +0$。
+[79] $f_{y,\epsilon}$ 是区间 $[y-\epsilon,y+\epsilon]$ 外为零，积分为 1 的函数
+[80] 在 $\mathcal D(\alpha,\beta)$ 中，方程 $-U'' = \delta_y$ 的解 $U$ 对应的就是格林函数，$U(\phi) = \int \mathcal G(x, y) \phi(x) \,\mathrm{d}{x} $
+[/SCOPE:s_generalized_let5]
+[SCOPE:s_generalized_let6|let_bind|广义导数再定义]
+[81] 令 $u, w \in L_2(G)$，广义导数 $w = \partial^\alpha u$ 的定义为：对应的广义函数满足 $W = \partial^\alpha U$。
+[82] 这比之前定义的广义导数更一般化
+[83] 广义导数（除了零测度集）是唯一确定的
+
+[/SCOPE:s_generalized]
+[/SCOPE:s_generalized_let6]
+[SCOPE:s_orthogonal_let|let_bind|正交投影变量]
+[SCOPE:s_orthogonal|description|Orthogonal Projection]
+[84] orthogonal complement：$M^\bot := {w \in X: (w|v) = 0\ \ \forall\ \ v\in M}$
+[85] perpendicular principle：令 $M$ 为希尔伯特空间 $X$ 上闭合的线性子空间。
+[86] 对于给定的 $u\in X$，$ \left\lVert u - v \right\rVert = \min!$ 存在唯一的解 $v$，且 $u - v\in M^\bot$
+[87] orthogonality decomposition：如果给定 $u \in M$，要求 $w \in M^\bot$，
+[88] 那么 $u = v + w$ 是唯一的
+
+[/SCOPE:s_orthogonal_let]
+[/SCOPE:s_orthogonal]
+[SCOPE:s_riesz_let|let_bind|Riesz 定理变量]
+[SCOPE:s_riesz|description|Linear Functionals and the Riesz Theorem]
+[89] Riesz teorem：令 $X$ 为 $\mathbb K$ 上的希尔伯特空间，令 $X^*$ 为 $X$ 的对偶空间。
+[90] 那么 $f\in X^*$ 当且仅当存在 $v\in X$ 使得 $f(u) = (v|u)$ 对所有 $u\in X$。
+[91] $v$ 可以由 $f$ 唯一确定，且 $ \left\lVert f \right\rVert = \left\lVert v \right\rVert $
+[92] 如果 $f$ 是 Hilbert 空间中的非零线性连续函数，
+[93a] (f)$ 是一个闭合平面且 orthogonal complement $N
+[93b] (f)^\bot$ 是一维的
+
+[/SCOPE:s_riesz_let]
+[/SCOPE:s_riesz]
+[SCOPE:s_duality_let|let_bind|对偶映射变量]
+[SCOPE:s_duality|description|The Duality Map]
+[94] duality map $J: X\to X^*$ 把 $v\in X$ 映射到 $f(u) = (v|u)$（对所有 $u\in X$）
+[95] 定义 $ \left\langle f, u \right\rangle = f(u)$（$f\in X^*, u\in X$），
+[96] 那么 $ \left\langle J(v), u \right\rangle := (v|u)$（对所有 $u, v\in X$）
+[97] 对偶映射 $J$ 是双射的，连续的以及 norm preserving。
+[98] 即 $ \left\lVert J(u) \right\rVert = \left\lVert u \right\rVert $ 对所有 $u\in X$
+[99] 如果 $X$ 是实 Hilbert 空间，
+[100] 那么 $J$ 是线性的。
+[101] 如果 $X$ 是复 Hilbert 空间，
+[102] 那么 $J$ 是反线性的，
+[103] 即 $J(\alpha v + \beta w) = \bar \alpha Ju + \bar \beta Jw$（对所有 $\alpha,\beta\in\mathbb C, u, w\in X$）
+
+[/SCOPE:s_duality_let]
+[/SCOPE:s_duality]
+[SCOPE:s_orthogonality_principle|description|The Linear Orthogonality Principle]
+[104] 以下三个条件互相等价：(1) 二次最小值问题的 existence principle (2) 垂直定理 (3) Riesz 定理
+
+[/SCOPE:s_orthogonality_principle]
+[SCOPE:s_monotone_let|let_bind|单调算子变量]
+[SCOPE:s_monotone|description|Nonlinear Monotone Operators]
+[105] 实 Hilbert 空间 $X$ 上的强单调（strongly monotone） 算符（注意不一定是线性的！
+[106] ）$A:X\to X$ 定义为：存在常数 $c > 0$ 使得 $(u-v|Au - Av) \ge c \left\lVert u-v \right\rVert ^2$ 对所有 $u, v\in X$ 成立
+[107] 对任意 $z \in X$ 以及强单调，Lipschitz 连续的算符 $A$，$Au = z$ 存在唯一解 $u\in X$
+
+[/SCOPE:s_monotone_let]
+[/SCOPE:s_monotone]
+[SCOPE:s_problems_let|let_bind|问题变量]
+[SCOPE:s_problems|description|Problems]
+[108a] (x)\psi
+[108b] (y)$。
+[109] 令广义函数 $U, \delta \in \mathcal D'(\mathbb R)$。
+[110] 定义 $(U\otimes V)(\chi) = U(V(\chi))$
+[/SCOPE:s_problems_let]
+[/SCOPE:s_problems]
+[/SCOPE:root]

@@ -1,0 +1,72 @@
+{
+  "article_name": "ExtCur",
+  "statements": [
+    {
+      "stmt_id": "st_theorem1",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_curve",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1_let",
+      "exposed_entities": [
+        "y_1",
+        "y_n",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_J",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1_let",
+      "exposed_entities": [
+        "J",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_Euler",
+      "subtype": "conclusion",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1_let",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_curve",
+      "target": "st_conclusion_Euler",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_J",
+      "target": "st_conclusion_Euler",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

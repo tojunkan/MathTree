@@ -1,0 +1,299 @@
+{
+  "article_name": "CrIntN",
+  "statements": [
+    {
+      "stmt_id": "st_intro_importance",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_polar_area_element",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_polar",
+      "exposed_entities": [
+        "r",
+        "θ",
+        "ds"
+      ]
+    },
+    {
+      "stmt_id": "st_polar_integral_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": "true",
+      "scope_id": "s_polar",
+      "exposed_entities": [
+        "f(r,θ)",
+        "S",
+        "r1(θ)",
+        "r2(θ)"
+      ]
+    },
+    {
+      "stmt_id": "st_polar_cylindrical_note",
+      "subtype": "remark",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_polar",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_polar_spherical_area_element",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_polar",
+      "exposed_entities": [
+        "θ",
+        "φ",
+        "ds"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_problem",
+      "subtype": "example",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "f(r,θ)",
+        "R1",
+        "R2"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_bounds",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "r1(θ)",
+        "r2(θ)",
+        "θ1",
+        "θ2"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_computation",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_curvilinear_partial_derivative",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_curvilinear",
+      "exposed_entities": [
+        "x_i",
+        "f_i(r)",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_curvilinear_total_differential",
+      "subtype": "theorem",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_curvilinear",
+      "exposed_entities": [
+        "dr"
+      ]
+    },
+    {
+      "stmt_id": "st_curvilinear_volume_element",
+      "subtype": "definition",
+      "clause_range": [
+        28,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_curvilinear",
+      "exposed_entities": [
+        "dV",
+        "x1",
+        "x2",
+        "x3"
+      ]
+    },
+    {
+      "stmt_id": "st_curvilinear_explanation",
+      "subtype": "remark",
+      "clause_range": [
+        32,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_curvilinear",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_curvilinear_notation",
+      "subtype": "definition",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_curvilinear",
+      "exposed_entities": [
+        "d^3x",
+        "d^3r"
+      ]
+    },
+    {
+      "stmt_id": "st_curvilinear_cartesian",
+      "subtype": "remark",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_curvilinear",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_curvilinear_cylindrical_volume",
+      "subtype": "theorem",
+      "clause_range": [
+        39,
+        40
+      ],
+      "truth_value": "true",
+      "scope_id": "s_curvilinear",
+      "exposed_entities": [
+        "dV"
+      ]
+    },
+    {
+      "stmt_id": "st_curvilinear_spherical_volume",
+      "subtype": "theorem",
+      "clause_range": [
+        41,
+        44
+      ],
+      "truth_value": "true",
+      "scope_id": "s_curvilinear",
+      "exposed_entities": [
+        "dV"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_problem",
+      "subtype": "example",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": [
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_computation",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex1_bounds",
+      "target": "st_ex1_computation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_problem",
+      "target": "st_ex3_computation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_computation",
+      "target": "st_polar_integral_formula",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_computation",
+      "target": "st_curvilinear_spherical_volume",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex1_computation",
+      "target": "st_polar_integral_formula",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是极坐标积分公式的应用"
+    },
+    {
+      "source": "st_ex3_computation",
+      "target": "st_curvilinear_spherical_volume",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例3是球坐标体积元的应用"
+    }
+  ],
+  "unresolved": []
+}

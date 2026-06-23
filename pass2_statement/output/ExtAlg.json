@@ -1,0 +1,672 @@
+{
+  "article_name": "ExtAlg",
+  "statements": [
+    {
+      "stmt_id": "st_intro",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_construct_1",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "V",
+        "x",
+        "y",
+        "x∧y"
+      ]
+    },
+    {
+      "stmt_id": "st_construct_2",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "x∧y=-y∧x",
+        "x∧x=0",
+        "+",
+        "a(x∧y)=(ax)∧y=x∧(ay)"
+      ]
+    },
+    {
+      "stmt_id": "st_construct_3",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "∧²V",
+        "∧¹V"
+      ]
+    },
+    {
+      "stmt_id": "st_construct_4",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "x∧(y∧z)=(x∧y)∧z",
+        "x∧y∧z"
+      ]
+    },
+    {
+      "stmt_id": "st_construct_5",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "∧³V",
+        "∧ᵏV"
+      ]
+    },
+    {
+      "stmt_id": "st_construct_6",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "dim V"
+      ]
+    },
+    {
+      "stmt_id": "st_construct_7",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "∧⁰V",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_construct_8",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "∧V"
+      ]
+    },
+    {
+      "stmt_id": "st_construct_9",
+      "subtype": "remark",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_heading",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "V",
+        "F",
+        "∧",
+        "x",
+        "y",
+        "z",
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_prop1",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_prop2",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_prop3",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_prop4",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "外代数",
+        "楔积",
+        "格拉斯曼代数"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        29,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_remark2",
+      "subtype": "remark",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_heading",
+      "subtype": "exercise",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "e_i",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_proof1",
+      "subtype": "conclusion",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_example",
+      "subtype": "example",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "e_1",
+        "e_2",
+        "e_3"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_heading",
+      "subtype": "exercise",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_hint",
+      "subtype": "remark",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_heading",
+      "subtype": "example",
+      "clause_range": [
+        43,
+        43
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "∧ᵏV",
+        "Λᵏ₀T",
+        "Λᵏ₀(V)"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_conclusion1",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        48,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "R³",
+        "x",
+        "y",
+        "z",
+        "*"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_conclusion2",
+      "subtype": "conclusion",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_remark2",
+      "subtype": "remark",
+      "clause_range": [
+        51,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_remark3",
+      "subtype": "remark",
+      "clause_range": [
+        55,
+        56
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_dual_intro",
+      "subtype": "remark",
+      "clause_range": [
+        57,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_dual",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_dual_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        60,
+        62
+      ],
+      "truth_value": null,
+      "scope_id": "s_dual",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_dual_definition",
+      "subtype": "definition",
+      "clause_range": [
+        63,
+        66
+      ],
+      "truth_value": null,
+      "scope_id": "s_dual",
+      "exposed_entities": [
+        "f",
+        "g",
+        "f∧g",
+        "sgn(σ)"
+      ]
+    },
+    {
+      "stmt_id": "st_dual_remark2",
+      "subtype": "remark",
+      "clause_range": [
+        67,
+        67
+      ],
+      "truth_value": null,
+      "scope_id": "s_dual",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_dual_let",
+      "subtype": "assumption",
+      "clause_range": [
+        68,
+        69
+      ],
+      "truth_value": null,
+      "scope_id": "s_dual",
+      "exposed_entities": [
+        "V*",
+        "V",
+        "f",
+        "g",
+        "v",
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_dual_example",
+      "subtype": "example",
+      "clause_range": [
+        70,
+        71
+      ],
+      "truth_value": "true",
+      "scope_id": "s_dual",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_construct_1",
+      "target": "st_construct_3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_construct_2",
+      "target": "st_construct_3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_construct_4",
+      "target": "st_construct_5",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_construct_6",
+      "target": "st_construct_5",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_construct_3",
+      "target": "st_construct_8",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_construct_5",
+      "target": "st_construct_8",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_construct_7",
+      "target": "st_construct_8",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_prop1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_prop2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_prop3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_prop4",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_prop1",
+      "target": "st_def1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_prop2",
+      "target": "st_def1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_prop3",
+      "target": "st_def1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_prop4",
+      "target": "st_def1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let",
+      "target": "st_ex1_proof1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_let",
+      "target": "st_example1_conclusion1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_let2",
+      "target": "st_example1_conclusion2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_dual_let",
+      "target": "st_dual_example",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex1_statement",
+      "target": "st_def1_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "习题1是定义1中幂零性的具体化"
+    },
+    {
+      "source": "st_ex2_statement",
+      "target": "st_def1_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "习题2是定义1中外代数维度的推论"
+    },
+    {
+      "source": "st_example1_conclusion1",
+      "target": "st_def1_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是定义1在张量上的具体实现"
+    },
+    {
+      "source": "st_dual_definition",
+      "target": "st_def1_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "对偶空间的外代数是定义1在对偶空间上的应用"
+    }
+  ],
+  "unresolved": []
+}

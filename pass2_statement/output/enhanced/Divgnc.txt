@@ -1,0 +1,157 @@
+[SCOPE:root|description|散度、高斯散度定理]
+文章名: Divgnc
+标题: 散度、高斯散度定理
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=匀速水流
+  [1] type=example heading=例 2 title=变速水流
+  [2] type=example heading=例 3 title=质点引力场的散度
+
+[SCOPE:s_ex1|description|例1 匀速水流]
+[0] 例 1 匀速水流
+[SCOPE:s_ex1_let|let_bind|匀速水流变量]
+[1] 假设密度不变的水以匀速流动，质量的流密度场 $ \boldsymbol{\mathbf{j}} ( \boldsymbol{\mathbf{r}} )$ 为恒定场。
+[/SCOPE:s_ex1_let]
+[2] 对于任何一个闭合曲面，流入的流量（负值）和流出的流量（正值）相等，总通量为零。
+[3] 所以该场的散度处处为零。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2 变速水流]
+[4] 例 2 变速水流
+[SCOPE:s_ex2_let|let_bind|变速水流变量]
+[5] 在例 1 中，流密度场随 $x$ 坐标线性增加，$ \boldsymbol{\mathbf{j}} = (j_0 + \alpha x) \hat{\boldsymbol{\mathbf{x}}} $（$\alpha$ 为常数），
+[/SCOPE:s_ex2_let]
+[6] 那么取一个边长为 $h$ 的立方体表面作为闭合曲面，从左侧的流量为 $\Phi_L = - (j_0 + \alpha x_0) h^2$，右侧的流量为 $\Phi_R = [j_0 + \alpha (x_0 + h)] h^2$，其余四个面与 $ \boldsymbol{\mathbf{j}} $ 平行，没有流量。
+[7] 闭合曲面的总流量为 $\Phi = \alpha h^3 = \alpha V$。
+[8] 根据定义，水流的散度处处为 $\alpha$。
+[9] 分析可发现该水流中单位体积单位时间必然会凭空产生质量为 $\alpha$ 的水（虽然实际中不可能）。
+[10] 所以散度也叫源密度（source density）。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_cartesian|description|直角坐标系中的散度]
+[SCOPE:s_cartesian_let|let_bind|矢量场和立方体]
+[11] 若在直角坐标系中给出矢量场
+[12] \begin{equation}
+\boldsymbol{\mathbf{F}} (x,y,z) = F_x(x,y,z) \hat{\boldsymbol{\mathbf{x}}} + F_y(x,y,z) \hat{\boldsymbol{\mathbf{y}}} + F_z(x,y,z) \hat{\boldsymbol{\mathbf{z}}} ~,
+\end{equation}
+[13] 令闭合曲面为立方体 $[x,y,z]$-$[x+h,y+h,z+h]$ 的表面。
+[/SCOPE:s_cartesian_let]
+[14] 先来考虑 $x$ 方向两个正方形的通量 $\Phi_x$，在点 $ \boldsymbol{\mathbf{r}} (x,y,z)$ 附近对 $F_x( \boldsymbol{\mathbf{r}} )$ 使用
+[15] 全微分近似 [链接 L0]
+[16] 得（为简便书写，以下的函数值和偏导都默认在 $ \boldsymbol{\mathbf{r}} $ 处取值）
+[17] \begin{equation}
+F_x(x + x',y + y',z + z') \approx F_x + \frac{\partial F_x}{\partial x} x' + \frac{\partial F_x}{\partial y} y' + \frac{\partial F_x}{\partial z} z'~.
+\end{equation}
+[18] 由于只有 $x$ 方向的场分量对 $\Phi_x$ 有贡献，
+[19] \begin{equation}
+\begin{aligned}
+\Phi_x &\approx \int_0^h \int_0^h \,\mathrm{d}{y'} \,\mathrm{d}{z'} \boldsymbol\times \\
+&\phantom{\approx} \left[ \left(F_x + \frac{\partial F_x}{\partial x} h + \frac{\partial F_x}{\partial y} y' + \frac{\partial F_…[truncated]… + \frac{\partial F_x}{\partial z} z' \right) \right] \\
+&= \frac{\partial F_x}{\partial x} h \int_0^h \int_0^h \,\mathrm{d}{y'} \,\mathrm{d}{z'} = \frac{\partial F_x}{\partial x} h^3 = \frac{\partial F_x}{\partial x} V~.
+\end{aligned} \end{equation}
+[20] 同理可以得到另外四个正方形的通量。
+[21] 六个正方形的总通量为
+[22] \begin{equation}
+\Phi \approx \left( \frac{\partial F_x}{\partial x} + \frac{\partial F_y}{\partial y} + \frac{\partial F_z}{\partial z} \right) V~.
+\end{equation}
+[23] 根据定义
+[24] 式 2 [链接 L1]
+[25] ，可得直角坐标中的散度公式
+[26] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{F}} = \lim_{V \to 0} \frac{\Phi }{V} = \frac{\partial F_x}{\partial x} + \frac{\partial F_y}{\partial y} + \frac{\partial F_z}{\partial z} ~.
+\end{equation}
+[SCOPE:s_cartesian_let2|let_bind|nabla算符]
+[27] 从形式上，我们可以引入一个 $ \boldsymbol{\mathbf{\nabla}} $ 算符，在直角坐标系中的形式为
+[28] \begin{equation}
+\boldsymbol{\mathbf{\nabla}} = \hat{\boldsymbol{\mathbf{x}}} \frac{\partial}{\partial{x}} + \hat{\boldsymbol{\mathbf{y}}} \frac{\partial}{\partial{y}} + \hat{\boldsymbol{\mathbf{z}}} \frac{\partial}{\partial{z}} ~,
+\end{equation}
+[29] 那么 $ \boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} )$ 从形式上可以看做矢量算符 $ \boldsymbol{\mathbf{\nabla}} $ 与某点场矢量 $ \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} )$ 的 “内积”。
+[/SCOPE:s_cartesian_let2]
+[30] 根据
+[31] 式 7 [链接 L2]
+[32] ，显然散度是一个
+[33] 线性算符
+[34] ，
+[35] 即多个矢量场的线性组合的散度等于它们分别求散度再线性组合
+[36] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\cdot} [C_1 \boldsymbol{\mathbf{F}} _1( \boldsymbol{\mathbf{r}} ) + C_2 \boldsymbol{\mathbf{F}} _2( \boldsymbol{\mathbf{r}} ) + ...] = C_1 \boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{F}} _1( \boldsymbol{\mathbf{r}} ) + C_2 \boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{F}} _2( \boldsymbol{\mathbf{r}} ) + \dots~
+\end{equation}
+
+[/SCOPE:s_cartesian]
+[SCOPE:s_ex3|description|例3 质点引力场的散度]
+[37] 例 3 质点引力场的散度
+[SCOPE:s_ex3_let|let_bind|质点引力场变量]
+[38] 令质点 $m$ 在坐标原点，
+[39] 则它的引力场（式 2 ）为
+[40] \begin{equation}
+\boldsymbol{\mathbf{g}} ( \boldsymbol{\mathbf{r}} ) = -\frac{Gm}{r^3} \boldsymbol{\mathbf{r}} ~.
+\end{equation}
+[/SCOPE:s_ex3_let]
+[41] \begin{equation} \begin{aligned}
+\boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{g}} &= \frac{Gm}{(x^2 + y^2 + z^2)^{5/2}} [(2x^2 - y^2 - z^2) + (2y^2 - z^2 - x^2) + (2z^2 - x^2 - y^2)]\\
+&= 0~,
+\end{aligned} \end{equation}
+[42] 式 10
+
+[/SCOPE:s_ex3]
+[SCOPE:s_div_theorem|description|散度定理]
+[SCOPE:s_div_theorem_let|let_bind|散度定理变量]
+[43] 我们来考虑一个有限大的闭合曲面并计算通量 $\Phi$。
+[44] 我们先把曲面内的空间划分成许多体积足够小的微元，第 $i$ 个的体积微元为 $V_i$，通量为 $\Phi_i \approx \boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} _i) V_i$。
+[/SCOPE:s_div_theorem_let]
+[45] 现在来证明所有小曲面的通量之和等于大曲面的通量。
+[46] 【图解】图 1：证明所有小曲面的通量之和等于大曲面的通量
+[47] 图 1 中所有微元的曲面可划分为两部分，一是相邻两个小曲面的边界（红色），二是小曲面与大曲面重合的部分（黑色）。
+[48] 前者产生的通量之和为零，因为这些边界都是由正方向相反的两块小曲面重合而成，它们产生的通量等大反向，互相抵消。
+[49] 后者产生的通量等于大曲面的通量，这是因为每块黑色边界都是由正方向相同的小曲面和大曲面重合而成，产生的通量等大同向。
+[50] 所以总通量等于
+[51] \begin{equation}
+\Phi = \sum_i \Phi_i \approx \sum_i \boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} _i) V_i~.
+\end{equation}
+[52] 令微元趋近无穷小，上面的求和变为定积分（积分范围默认为 $\mathcal V$）
+[53] \begin{equation}
+\oint \boldsymbol{\mathbf{F}} \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{s}} } = \int \boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} ) \,\mathrm{d}{V} ~.
+\end{equation}
+[54] 高斯散度定理
+[55] ，也简称为
+[56] 高斯定理（Gauss's theorem）
+[57] 散度定理（divergence theorem）
+[58] 就是，矢量场在任意闭合曲面的通量等于矢量场的散度在曲面所围空间的体积分。
+[59] 【未完成】给出一些场和曲面，证明散度定理成立
+
+跨文章引用:
+  [L0] 全微分近似 → TDiff
+[/SCOPE:s_div_theorem]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_ex1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2是例1的推广"
+  },
+  {
+    "source_scope": "s_cartesian",
+    "target_scope": "s_ex1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "直角坐标散度公式是例1的推广"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_cartesian",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例3应用直角坐标散度公式"
+  },
+  {
+    "source_scope": "s_div_theorem",
+    "target_scope": "s_cartesian",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "散度定理由散度定义推导"
+  }
+]

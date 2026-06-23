@@ -1,0 +1,120 @@
+[SCOPE:root|description|有界算子的谱]
+文章名: BddSpe
+标题: 有界算子的谱
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=有界算子的谱
+  [1] type=example heading=例 1 title=矩阵的本征值
+  [2] type=example heading=例 2 title=卷积算子
+  [3] type=example heading=例 3 title=推移算子
+
+[SCOPE:s_intro|description|引言]
+[0] 线性算子的谱（spectrum） 推广了矩阵的本征值这一概念。
+[1] 它对于了解线性算子如何作用于线性空间有着重要意义。
+[2] 在这一章中，我们主要讨论复巴拿赫空间上有界线性算子的谱。
+[3] 无界算子的谱将留待后续章节讨论。
+[4] 由于实巴拿赫空间都可以复化成为复巴拿赫空间，
+[5] 所以在这一章中将一直考虑复巴拿赫空间。
+
+[/SCOPE:s_intro]
+[SCOPE:s_def1|description|有界算子的谱]
+[6] 定义 1 有界算子的谱
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[7] 设 $X$ 是复巴拿赫空间，$T:X\to X$ 是有界线性算子。
+[/SCOPE:s_def1_let]
+[8] 复数 $\lambda\in\mathbb{C}$ 称为算子 $T$ 的一个谱点（spectral point），如果 $\lambda-T$ 不是可逆映射。
+[9] $T$ 的全体谱点的集合记为 $\sigma(T)$，称为谱集（spectrum），而补集 $\mathbb{C}\setminus\sigma(T)$ 称作预解集（resolvent set），有时记为 $\rho(T)$。
+[10] 既然 $T-\lambda$ 是有界算子，根据开映像原理，如果逆映射 $(T-\lambda)^{-1}$ 存在，
+[11] 那么它也必然是连续的。
+[12] 因此 $T$ 的谱集可以等价地定义为使得 $(\lambda-T)^{-1}$ 不是有界线性算子的那些 $\lambda$ 的集合。
+[13] 有界算子 $T$ 的谱集 $\sigma(T)$ 可以分成三个互不相交的部分（可能有某个部分是空集，
+[14] 但按照下节的基本定理，谱集本身一定非空）：
+[15] 点谱 $\sigma_p(T)$ (point spectrum)，定义为使得 $\text{Ker}(\lambda-T)$ 为非平凡子空间的那些谱点 $\lambda$ 的集合，也即 $T$ 的本征值的集合。
+[16] 连续谱 $\sigma_c(T)$（continuous spectrum），定义为使得 $\text{Ker}(\lambda-T)=\{0\}$，且 $\text{Ran}(\lambda-T)$ 在空间 $X$ 中稠密的那些谱点 $\lambda$ 的集合。
+[17] 剩余谱 $\sigma_r(T)$（remaining spectrum），定义为使得 $\text{Ker}(\lambda-T)=\{0\}$，且 $\text{Ran}(\lambda-T)$ 在空间 $X$ 中不稠密的那些谱点 $\lambda$ 的集合。
+[18] 接下来马上就能看到，对于无穷维巴拿赫空间上的算子，定义连续谱和剩余谱是十分必要的。
+[19] 在讨论无界算子（尤其是量子力学中常见的算子）时更能看出这些概念的用处。
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|矩阵的本征值]
+[20] 例 1 矩阵的本征值
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[21] 设 $A$ 是 $n\times n$ 复矩阵。
+[/SCOPE:s_ex1_let]
+[22] 可以把它等价地看成 $\mathbb{C}^n$ 到自己的线性算子。
+[23] 如果 $\lambda I_n-A$ 不可逆，
+[24] 那么它的行列式必定为零。
+[25] 按照线性方程组的性质，必然存在一个非零向量 $v\in \mathbb{C}^n$ 使得 $\lambda v-Av=0$，也就是说 $\lambda$ 是 $A$ 的本征值。
+[26] 这样看来，对于有限维空间上的线性算子，谱的概念和本征值是等价的。
+[27] 然而对于无穷维巴拿赫空间，谱点不一定是本征值。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|卷积算子]
+[28] 例 2 卷积算子
+[SCOPE:s_ex2_let|let_bind|例2的变量]
+[29] 考虑 $L^2(\mathbb{R})$ 上的卷积算子
+[30] $$
+(Tf)(x):=\int_{\mathbb{R}}f(y)e^{-(x-y)^2}dy~.
+$$
+[/SCOPE:s_ex2_let]
+[31] 如果取傅里叶变换，可看出它实际上是一个傅里叶乘子，
+[32] 即 $Tf$ 的傅里叶变换是
+[33] $$
+\hat f(\xi)e^{-\xi^2}~.
+$$
+[34] 这个算子在 $L^2(\mathbb{R})$ 上显然不可逆：例如，假若 $Tf$ 的傅里叶变换是 $(1+\xi^2)^{-1}$，
+[35] 那么就必须有 $\hat f(\xi)=e^{\xi^2}(1+\xi^2)^{-1}$，这显然不能是任何 $L^2$ 函数的傅里叶变换。
+[36] 但 $T$ 的像却也是稠密的：如果 $\hat f$ 具有紧支集，
+[37] 那么 $T^{-1}f$ 的傅里叶变换也具有紧支集，而傅里叶变换具有紧支集的那些 $L^2$ 函数组成 $L^2(\mathbb{R})$ 的稠密子空间。
+[38] 因此 $\lambda=0$ 是 $T$ 的连续谱点。
+[39] 通过类似的推理，不难看出 $\sigma(T)=[0,1]$，也就是函数 $e^{-\xi^2}$ 的值域。
+[40] 这里的所有谱点都是连续谱点。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|推移算子]
+[41] 例 3 推移算子
+[SCOPE:s_ex3_let|let_bind|例3的变量]
+[42] 考虑序列空间 $l^2$ 上的推移算子：
+[43] $$
+S:(x_1,x_2,x_3,\dots)\to(0,x_1,x_2,\dots)~.
+$$
+[/SCOPE:s_ex3_let]
+[44] 于是 $S$ 的像是余维数为 1 的闭子空间，
+[45] 可见 $S$ 不是可逆算子。
+[46] 另一方面，$Sx=0$ 当且仅当 $x=0$，
+[47] 于是 $\lambda=0$ 并非 $S$ 的本征值。
+[48] 可见 $\lambda=0$ 是 $S$ 的剩余谱点。
+[49] 通过求解方程 $(S-\lambda)x=y$，最终可以证明 $\sigma_c(S)=\{\lambda:|\lambda|=1\}$，$\sigma_r(S)=\{\lambda:|\lambda|<1\}$，而 $S$ 没有本征值。
+[50] 不过，对于经典数学物理问题中常见的一大类算子（称为紧算子），真正使人感兴趣的谱点都是本征值。
+[51] 紧算子的性质与有限维矩阵是很像的。
+[52] 然而，在量子力学中，连续谱和剩余谱都有鲜明的物理意义。
+[53] 一般的量子力学教材将算子的谱统称为本征值；
+[54] 尽管使用这样的术语并非完全不确切，
+[55] 但也可能会引起一些不必要的误会。
+[/SCOPE:s_ex3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "矩阵本征值是谱的特例"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "卷积算子的谱是定义1的例子"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推移算子的谱是定义1的例子"
+  }
+]

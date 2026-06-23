@@ -1,0 +1,52 @@
+[SCOPE:root|description|小角极限（极简微积分）]
+文章名: LimArc
+标题: 小角极限（极简微积分）
+
+[0] 贡献者： addis; Giacomo
+[1] 预备知识 函数的极限
+[2] 1这里要介绍的是一个简单的几何问题，然而它在微积分和物理中却非常频繁地出现。
+[SCOPE:s_geometry|description|几何设置与误差定义]
+[SCOPE:s_geometry_let|let_bind|几何变量]
+[3] 如图 1 ，令平面上 $O$ 点为圆心，以 $R$ 作为半径画圆。
+[4] 取一段的圆心角为 $\theta $ 的圆弧 $AB$（令长为 $l$），并作线段 $AB$。
+[5] 我们定义弧长和线段长度的相对误差为
+[/SCOPE:s_geometry_let]
+[6] \begin{equation}
+E = \frac{l - AB}{l}~.
+\end{equation}
+[7] 图 1：单位圆中，随着角度 $\theta$ 不断减小，弧长与线段长度的相对误差 $E$ 也不断减小
+[8] 由弧长公式得
+[9] \begin{equation}
+l = R\theta ~.
+\end{equation}
+[10] 线段 $AB$ 的长度为
+[11] \begin{equation}
+AB = 2R\sin \frac{\theta }{2}~.
+\end{equation}
+[12] 显然弧长 $l$ 大于线段长度 $AB$（两点之间直线最短），
+[13] 但从图中可以看出随着 $\theta $ 越来越小，二者的相对误差（$E$）越来越小。
+[/SCOPE:s_geometry]
+[SCOPE:s_limit_derivation|description|极限推导]
+[14] 用极限的语言来说，就是当 $\theta $ 趋近于 $0$ 时，它们的比值趋近于１。
+[15] 注意这只是一个经验上的总结，我们暂时不证明。
+[16] 所以有
+[17] \begin{equation}
+1=\lim_{\theta\to 0} \frac{AB}{l} = \lim_{\theta\to 0} \frac{2R \sin\left(\theta/2\right) }{R\theta}
+= \lim_{\theta\to 0}\frac{ \sin\left(\theta/2\right) }{\theta/2}~.
+\end{equation}
+[SCOPE:s_limit_derivation_let|let_bind|变量代换 x = θ/2]
+[18] 令 $x = \theta/2$，有
+[19] \begin{equation}
+\lim_{x\to 0} \frac{\sin x}{x} = 1~.
+\end{equation}
+[/SCOPE:s_limit_derivation_let]
+[20] 这是一个非常重要的极限。
+[21] 在物理中，我们常常会就某个小角使用近似 $\sin x \approx x$，例如 “单摆” 以及 “双缝干涉”。
+[22] 具体来说，这是一个一阶近似， 以后会看到 $x$ 就是 $\sin x$ 的泰勒展开（式 3 ）的第一项。
+[/SCOPE:s_limit_derivation]
+[23] 未完成：类似地还有 $\tan\theta$
+[24] 1. ^ 参考 Wikipedia 相关页面。
+
+跨文章引用:
+  [L0] 极限 → FunLim
+[/SCOPE:root]

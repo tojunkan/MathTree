@@ -1,0 +1,158 @@
+[SCOPE:root|description|Christoffel 符号]
+文章名: CrstfS
+标题: Christoffel 符号
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=Christoffel 符号
+  [1] type=theorem heading=定理 1 title=无挠对称性
+  [2] type=exercise heading=习题 1 title=
+
+[0] 【未完成】黎曼联络可能不需要
+[1] 流形的特点是局部与我们熟悉的欧几里得空间同胚。
+[2] 尽管我们经常讨论的是流形的内禀性质，不涉及具体的图或者嵌入，
+[3] 但是在实际应用的时候，比如计算广义相对论的现象时，我们却要关心特定图中的数值关系。
+[4] 本节引入的是著名的 Christoffel 符号，它描述了在特定图中联络的性质。
+[5] Christoffel 的计算实例，请参考庞加莱半平面（微分几何计算实例）文章。
+[6] 本节中默认 $(M, \nabla)$ 是一个带仿射联络的流形。
+
+[7] 对于 $M$ 的任意一个图 $(U, \varphi)$，由于 $\varphi(U)$ 是一个欧几里得空间，
+[8] 即实数坐标空间，
+[9] 因此它的光滑向量场集合自带一组标准正交基 $\{\frac{\partial}{\partial x^i}\}$。
+[10] 为方便计，我们可以将每个导子 $\frac{\partial}{\partial x^i}$ 简记为 $\partial_i$。
+[11a] (p)=(\varphi
+[11b] (p)_1, \varphi
+[11c] (p)_2, \cdots)\in\varphi(U)$ 处和 $\partial_i$ 相对应的道路，可以取 $c_i:I\to \varphi(U)$ 为代表，其中 $c_i(0)=\varphi
+[11d] (p)_i$，且 $\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }c_i
+[11e] (t)|_{t=0}=1$。
+[12] 回忆切空间（欧几里得空间）中的讨论，导子和道路都是 “切向量” 这一对象的等价描述。
+[13] 上面给出导子后又给了对应的道路，是为了提示你该如何将 $\varphi(U)$ 中的切向量通过 $\varphi^{-1}$ 映射为 $U\subseteq M$ 上的切向量。
+[14] 每个图唯一对应一个量，称为 Christoffel 符号，如定义 1 所示。
+
+[SCOPE:s_def1|description|定义 1 Christoffel 符号]
+[15] 定义 1 Christoffel 符号
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[16] 对于 $M$ 的图 $(U, \varphi)$，易知 $\{\partial_i\}$ 是 $\varphi(U)$ 上光滑向量场的基，
+[17] 因此存在一组光滑函数 $\Gamma^k_{ij}$，使得
+[18] \begin{equation}
+\nabla_{\partial_i}\partial_j=\Gamma^k_{ij}\partial_k~.
+\end{equation}
+[/SCOPE:s_def1_let]
+[19] 称 $\Gamma^k_{ij}$ 为联络 $\nabla$ 在图 $(U, \varphi)$ 上的Christoffel 符号（symbol），简称克氏符。
+[20] 回忆爱因斯坦求和约定的规定，$\Gamma^k_{ij}$ 是由 $\Gamma$ 类型的元素构成的嵌套矩阵，这里每个元素都是一个光滑函数。
+[21] 如果固定 $i$ 和 $j$，
+[22] 那么 $\Gamma^k_{ij}$ 就是一个光滑函数构成的列矩阵，用来表示 $\partial_k$ 线性组合出 $\nabla_{\partial_i}\partial_j$ 的系数。
+[23] Christoffel 符号的分量由所选择的图来决定，
+[24] 因此并不是流形上不变的量，这就把它和张量场区分开来。
+[25] 张量场的定义不依赖于图的选择，我们讨论的时候也都可以摆脱图来讨论，只不过当选定图了以后，一个张量场总可以表示为光滑函数的嵌套矩阵；
+[26] 但 Christoffel 符号就是依赖图来定义的，根本就没有脱离图的概念，
+[27] 所以要注意区分1。
+[/SCOPE:s_def1]
+[28] 下面是一个重要的性质。
+
+[SCOPE:s_thm1|description|定理 1 无挠对称性]
+[29] 定理 1 无挠对称性
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[30] 流形 $(M, \nabla)$ 是无挠的，当且仅当在任意图中，$\Gamma^k_{ij}=\Gamma^k_{ji}$。
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm1_proof|description|定理 1 的证明]
+[31] 证明：
+[SCOPE:s_thm1_forward|description|正向]
+[32] $\Rightarrow$：
+[33] 因为无挠，
+[34] 故 $\nabla_{\partial_i}\partial_j-\nabla_{\partial_j}\partial_i=[\partial_i, \partial_j]$。
+[35] 而由于欧几里得空间中偏微分算子的交换性，$[\partial_i, \partial_j]=0$，
+[36] 故 $\nabla_{\partial_i}\partial_j=\nabla_{\partial_j}\partial_i$。
+[37] 又因为 $\{\partial_k\}$ 是线性不相关的，
+[38] 因此 $\Gamma^k_{ij}=\Gamma^k_{ji}$。
+[/SCOPE:s_thm1_forward]
+[SCOPE:s_thm1_backward|description|反向]
+[39] $\Leftarrow$：
+[40] 由习题 4 可知，$T(f\partial_i, g\partial_j)=fgT(\partial_i, \partial_j)$。
+[41] 任意向量场都可以表示为 $f^i\partial_i$ 的形式，其中 $f^i$ 的类型是 “光滑函数”。
+[42] 将任意两个光滑向量场分别表示成 $f^i\partial_i$ 和 $g^j\partial_j$，
+[43] 于是有
+[44] \begin{equation}
+T(f^i\partial_i, g^j\partial_j)=f^ig^jT(\partial_i, \partial_j)=f^ig^j(\Gamma^k_{ij}\partial_k-\Gamma^k_{ji}\partial_k-[\partial_i, \partial_j])~.
+\end{equation}
+[45] 由于 $\Gamma^k_{ij}=\Gamma^k_{ji}$，且偏微分算子交换，
+[46] 故上式为 $0$。
+[47] 证毕。
+[/SCOPE:s_thm1_proof]
+[/SCOPE:s_thm1_backward]
+[48] 由于定理 1 ，无挠的联络也常被称为对称联络（symmetric connection）。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex1|description|习题 1]
+[49] 习题 1
+[SCOPE:s_ex1_let|let_bind|习题 1 的变量]
+[50] 设在 $M$ 的某个图（坐标系）中，联络 $\nabla$ 的 Christoffel 符号为 $\Gamma^k_{ij}$，
+[51] 那么对于任意两个向量场 $x^i\partial_i$ 和 $y^j\partial_j$，证明：
+[/SCOPE:s_ex1_let]
+[52] \begin{equation}
+\nabla_{x^i\partial_i}(y^j\partial_j)=[x^i(\partial_iy^s)+x^iy^j\Gamma^s_{ij}]\partial_s~.
+\end{equation}
+[53] 在具体坐标系中，我们往往为了简便，直接用坐标矩阵来代表一个向量，比如说将向量 $x^i\partial_i$ 表示为它的坐标矩阵 $x^i$。
+[54] 用这种坐标语言，式 3 就写为
+[55] \begin{equation}
+\nabla_{x^i}y^j=x^i(\partial_iy^s)+x^iy^j\Gamma^s_{ij}~.
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_metric|description|由度规张量导出 Christoffel 符号]
+[SCOPE:s_metric_let|let_bind|度规张量导出中的变量]
+[56] 在任意给定的坐标系中，黎曼度量用一个张量场 $g_{ij}$ 来表示，满足
+[57] \begin{equation}
+< x^i\partial_i, y^j\partial_j>=x^iy^jg_{ij}~.
+\end{equation}
+[/SCOPE:s_metric_let]
+[58] 矩阵 $x^i, y^j$ 和嵌套矩阵 $g_{ij}$ 的元素类型是该参考系上的光滑函数，
+[59] 因此符合 “光滑向量场内积是光滑函数” 的性质。
+[60] 由黎曼联络文章中的推论 1 ，黎曼度量唯一地确定一个对称联络，
+[61] 即黎曼联络。
+[62] 具体到给定坐标系上的时候，这条推论的含义就变成了 “度量张量场 $g_{ij}$ 决定了 Christoffel 符号 $\Gamma^k_{ij}$”。
+[63] 也就是说，我们应该可以用 $g_{ij}$ 计算出 $\Gamma^k_{ij}$。
+[64] 考虑到偏微分算子的交换性，
+[65] 即 $[\partial_a, \partial_b]=0$ 恒成立，代入式 6 后有：
+[66] \begin{equation}
+\begin{aligned}
+2<\nabla_{\partial_i}\partial_j, \partial_k>&=2<\Gamma^s_{ij}\partial_s, \partial_k>\\
+&=2\Gamma^s_{ij}g_{sk}\\
+&=\partial_ig_{jk}+\partial_jg_{ki}-\partial_kg_{ij}~.
+\end{aligned}
+\end{equation}
+[67] 把式 6 的最后两行同时乘以 $g^{kr}$
+[68] \begin{equation}
+2\Gamma^{s}_{ij}g_{sk}g^{kr}=g^{kr}(\partial_ig_{jk}+\partial_jg_{ki}-\partial_kg_{ij})~.
+\end{equation}
+[69] 由指标的升降的约定法则，$g_{sk}g^{kr}=\delta_s^r$，进而有：
+[70] \begin{equation}
+\Gamma^{r}_{ij}=\frac{1}{2}g^{kr}(\partial_ig_{jk}+\partial_jg_{ki}-\partial_kg_{ij})~,
+\end{equation}
+[71] 式 8 就是 “（伪）黎曼度量在导出无挠联络” 在具体坐标系中的表示。
+[/SCOPE:s_metric]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1 的结论依赖于定义1 的 Christoffel 符号"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题1 使用定义1 的 Christoffel 符号"
+  },
+  {
+    "source_scope": "s_metric",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "由度规张量导出 Christoffel 符号，基于定义1"
+  }
+]

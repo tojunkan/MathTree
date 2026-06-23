@@ -1,0 +1,109 @@
+[SCOPE:root|description|Gamma 函数]
+文章名: Gamma
+标题: Gamma 函数
+
+[SCOPE:s_gamma_def|description|Gamma 函数定义]
+[0] 1$\Gamma$ 函数（gamma function）可以看成是阶乘在实数或复数域的拓展，该函数有多种定义方法，这里先讨论实数域上的定积分定义。
+[1] 该方法可以定义 $(-1, \infty)$ 区间的阶乘
+[SCOPE:s_gamma_let|let_bind|定义中的变量]
+[2] \begin{equation}
+x! \equiv \Gamma (x + 1) = \int_0^{+\infty} t^x \mathrm{e} ^{-t} \,\mathrm{d}{t} \qquad (x > -1)~.
+\end{equation}
+[3] 即 $\Gamma$ 函数在区间 $(0,\infty)$ 被定义为
+[4] \begin{equation}
+\Gamma(x) \equiv \int_0^{+\infty} t^{x-1} \mathrm{e} ^{-t} \,\mathrm{d}{t} \qquad (x > 0)~.
+\end{equation}
+[/SCOPE:s_gamma_let]
+[5] 可以证明新定义的阶乘的递推关系仍为
+[6] \begin{equation}
+(x+1)!=(x+1)x! \qquad (x>-1)~,
+\end{equation}
+[7] 且 $0! = 1$。
+[8] 所以当 $x$ 取正整数 $N$ 时，
+[9] 式 1 [链接 L0]
+[10] 的结果仍然是熟悉的 $N! = N(N-1)\dots, 1$。
+[11] 另外能证明 $(-1/2)!=\sqrt{\pi}$，
+[12] 由此我们可以直接写出半整数的阶乘为
+[13] \begin{equation}
+\frac{N}{2}! = \frac{N}{2} \left(\frac{N}{2}-1 \right) \dots \frac12 \sqrt{\pi} \qquad (N > 0)~.
+\end{equation}
+
+[/SCOPE:s_gamma_def]
+[SCOPE:s_verify_int|description|验证正整数阶乘]
+[SCOPE:s_verify_let|let_bind|验证中的变量]
+[14] 首先当 $x \leqslant 0$ 时该积分在 $x=0$ 处不收敛，以下仅讨论 $x$ 为正实数的情况2。
+[15] 我们现在验证当 $x$ 取正整数时，新定义的阶乘 $x! = \Gamma(x+1)$ 与原来的定义 $x! = x(x-1)\dots 1$ 相同。
+[/SCOPE:s_verify_let]
+[16] 首先
+[17] \begin{equation}
+0! = \Gamma(1) = \int_0^{+\infty} \mathrm{e} ^{-t} \,\mathrm{d}{t} = 0 - (-1) = 1~.
+\end{equation}
+[18] 使用分部积分法，令 $t^x$ 为 “求导项”，$ \mathrm{e} ^{-t}$ 为 “积分项”，可得递推公式3（式 3 ）
+[19] \begin{equation}
+\begin{aligned}
+x! &= \Gamma(x+1) = \int_0^{+\infty} t^x \mathrm{e} ^{-t} \,\mathrm{d}{t} = - \left. t^x \mathrm{e} ^{-t} \right\rvert _{0}^{+\infty} + \int_0^{+\infty} x t^{x-1} \mathrm{e} ^{-t} \,\mathrm{d}{t} \\
+&= x\int_0^{+\infty} t^{x-1} \mathrm{e} ^{-t} \,\mathrm{d}{t} = x\Gamma (x) = x(x-1)!~.
+\end{aligned} \end{equation}
+[20] 式 6 [链接 L1]
+[21] 式 5 [链接 L2]
+[22] ，对任意正整数 $n$ 有
+[23] \begin{equation}
+n! = n(n-1)! = n(n-1)(n-2)!... = n(n-1)...1~
+\end{equation}
+[/SCOPE:s_verify_int]
+[SCOPE:s_half_int|description|半整数阶乘]
+[SCOPE:s_half_int_let|let_bind|半整数阶乘中的变量]
+[24] 再来看半整数的阶乘，我们讨论范围内的最小半整数的阶乘为
+[25] \begin{equation}
+\left(-\frac12 \right) ! = \int_0^{+\infty} \frac{ \mathrm{e} ^{-x}}{\sqrt x} \,\mathrm{d}{x} = 2\int_0^{+\infty} \mathrm{e} ^{-t^2} \,\mathrm{d}{t} = \int_{-\infty}^{+\infty} \mathrm{e} ^{-t^2} \,\mathrm{d}{t} = \sqrt{\pi}~,
+\end{equation}
+[26] 其中使用了换元法令 $x = t^2$ 将定积分变为
+[/SCOPE:s_half_int_let]
+[27] 高斯积分 [链接 L3]
+
+[/SCOPE:s_half_int]
+[SCOPE:s_stirling|description|斯特林公式]
+[SCOPE:s_stirling_let|let_bind|斯特林公式中的变量]
+[28] 对于大的 $x$, 有斯特林公式（Stirling formula）：
+[29] $$
+\Gamma(x+1)
+=\sqrt{2\pi x}\left({x\over \mathrm{e} }\right)^x
+\left(
+1
++{1\over12x}
++{1\over288x^2}
+-{139\over51840x^3}
+-{571\over2488320x^4}
++ \cdots
+\right)~
+$$
+[/SCOPE:s_stirling_let]
+[30] 这是一个渐近展开，右边的级数是发散的。
+[31] 它的推导可见拉普拉斯方法
+
+[/SCOPE:s_stirling]
+[32] Matlab 中的默认 gamma(x) 函数接受一个实数 double 类型 x，
+[33] 但如果你安装了符号工具箱 Matlab 符号计算和变精度计算，可以用 gamma(vpa(x))。
+[34] 【图解】代码 1：gamma_sym.m
+
+跨文章引用:
+  [L3] 高斯积分 → GsInt
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_verify_int",
+    "target_scope": "s_gamma_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "正整数阶乘是Gamma函数的特例"
+  },
+  {
+    "source_scope": "s_half_int",
+    "target_scope": "s_gamma_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "半整数阶乘是Gamma函数的特例"
+  }
+]

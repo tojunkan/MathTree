@@ -1,0 +1,126 @@
+[SCOPE:root|description|随机变量的变换]
+文章名: RandCV
+标题: 随机变量的变换
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=线性变换
+  [1] type=example heading=例 2 title=
+  [2] type=example heading=例 3 title=
+  [3] type=example heading=例 4 title=
+
+[SCOPE:s_general1|description|求新变量的分布函数]
+[SCOPE:s_general1_let|let_bind|变量声明]
+[0] 我们先来讨论这样一个问题：令两个随机变量 $x_1, x_2$ 间有函数关系 $x_1 = g(x_2)$，若已知 $x_1$ 的分布函数为 $f_1(x_1)$，求 $x_2$ 的分布函数 $f_2(x_2)$。
+[/SCOPE:s_general1_let]
+[1] 将两个概率分布写成微分形式，有
+[2] \begin{gather}
+\,\mathrm{d}{P} = f_1(x_1) \,\mathrm{d}{x_1} \\
+\,\mathrm{d}{P} = f_2(x_2) \,\mathrm{d}{x_2} ~.
+\end{gather}
+[3] 式 1 [链接 L0]
+[4] 中的 $x_1$ 替换成 $g(x_2)$，$ \,\mathrm{d}{x_1} $ 替换成 $g'(x_2) \,\mathrm{d}{x_2} $，有
+[5] \begin{equation}
+\,\mathrm{d}{P} = f_1[g(x_2)] g'(x_2) \,\mathrm{d}{x_2} ~.
+\end{equation}
+[6] 式 2 [链接 L1]
+[7] \begin{equation}
+f_2(x) = f_1[g(x)] g'(x)~,
+\end{equation}
+[8] 这样，就求出了 $x_2$ 的分布函数 $f_2(x)$。
+
+[/SCOPE:s_general1]
+[SCOPE:s_ex1|description|例1 线性变换]
+[9] 例 1 线性变换
+[SCOPE:s_ex1_let|let_bind|变量声明]
+[10] 若随机变量 $x$ 的分布为 $f(x)$，
+[/SCOPE:s_ex1_let]
+[11] 那么 $y = ax$ 的分布为 $g(y) = f(y/a)/a$。
+[12] 平均值变为 $a\mu$，方差变为 $a^2\sigma^2$。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2]
+[SCOPE:s_ex2_let|let_bind|变量声明]
+[13] 已知 $f_1(x_1) = 3x_1^2$，$x_1 \in [0, 1]$，$x_2 = x_1^2$，求 $x_2$ 的分布函数。
+[/SCOPE:s_ex2_let]
+[14] 用 $x_2$ 表示 $x_1$ 得 $x_1 = \sqrt{x_2}$，代入 $ \,\mathrm{d}{P} = f_1(x_1) \,\mathrm{d}{x_1} $，得
+[15] \begin{equation}
+\,\mathrm{d}{P} = 3\sqrt{x_2}^2 \,\mathrm{d}\left(\sqrt{x_2} \right) = \frac32 \sqrt{x_2} \,\mathrm{d}{x_2} ~.
+\end{equation}
+
+[/SCOPE:s_ex2]
+[SCOPE:s_general2|description|求两变量的关系]
+[SCOPE:s_general2_let|let_bind|变量声明]
+[16] 另一个常见的问题是已知 $x_1$ 和 $x_2$ 的分布函数 $f_1(x_1), f_2(x_2)$，求两个随机变量需要满足的函数关系。
+[/SCOPE:s_general2_let]
+[17] 对比式 1 和式 2 可得一个已分离变量的微分方程
+[18] \begin{equation}
+f_1(x_1) \,\mathrm{d}{x_1} = f_2(x_2) \,\mathrm{d}{x_2} ~.
+\end{equation}
+[19] 将方程两边积分即可得到两变量所满足的函数关系
+[20] \begin{equation}
+F_1(x_1) = F_2(x_2) + C~.
+\end{equation}
+[21] 其中函数 $F_1, F_2$ 分别是函数 $f_1, f_2$ 的一个原函数，待定常数 $C$ 通常可以由 $x_1$ 和 $x_2$ 的取值范围确定。
+[22] 这个问题的一个常见应用是在程序中生成指定分布函数的随机变量。
+[23a] 在许多编程语言中，随机数生成器只能生成一个从 0 到 1 均匀分布的随机变量（即 $f(x) = 1$）
+[23b] 若我们需要一个其他分布的随机变量，则可以使用以上方法。
+
+[/SCOPE:s_general2]
+[SCOPE:s_ex3|description|例3]
+[SCOPE:s_ex3_let|let_bind|变量声明]
+[24] 已知随机变量 $x_1\ \ (x_1\in [0,1])$ 的分布函数为 $f_1(x_1) = 1$，求函数关系 $x_2 = g(x_1)$ 使得 $x_2$ 的分布函数为 $f_2(x_2) = 2x_2\ \ (x_2\in [0,1])$。
+[/SCOPE:s_ex3_let]
+[25] 将 $f_1, f_2$ 代入式 6 并两边积分得
+[26] \begin{equation}
+x_1 = x_2^2 + C~.
+\end{equation}
+
+[/SCOPE:s_ex3]
+[SCOPE:s_ex4|description|例4]
+[SCOPE:s_ex4_let|let_bind|变量声明]
+[27] 给出两个随机变量 $\xi_1, \xi_2\ \ (\xi_1, \xi_2\in [0,1])$，分布函数均为 $f(\xi_i) = 1$，用 $\xi_1, \xi_2$ 表示某随机点的极坐标 $(r,\theta)$ 使得该点在单位圆内均匀随机分布。
+[/SCOPE:s_ex4_let]
+[28] 要使随机点在单位圆内随机分布，$\theta$ 显然应该在 $[0,2\pi]$ 间均匀随机分布，
+[29] 所以令 $\theta = 2\pi\xi_2$ 即可。
+[30] 要决定 $r$ 的分布函数，我们把单位圆划分为许多小圆环，随机点出现在某圆环内的概率等于该圆环的面积比单位圆的面积，
+[31] 即
+[32] \begin{equation}
+\,\mathrm{d}{P} = \frac{2\pi r \,\mathrm{d}{r} }{\pi} = 2r \,\mathrm{d}{r} ~.
+\end{equation}
+[33] \begin{equation}
+1 \,\mathrm{d}{\xi_1} = 2r \,\mathrm{d}{r} ~.
+\end{equation}
+[/SCOPE:s_ex4]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_general1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是线性变换的特例"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_general1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2是求新变量分布函数的具体计算"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_general2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例3是求两变量关系的具体应用"
+  },
+  {
+    "source_scope": "s_ex4",
+    "target_scope": "s_general2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例4是求两变量关系的具体应用"
+  }
+]

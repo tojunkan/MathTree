@@ -1,0 +1,176 @@
+[SCOPE:root|description|利用复数方法证明三角恒等式]
+文章名: TriCom
+标题: 利用复数方法证明三角恒等式
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+
+[SCOPE:s_theory|description|理论基础]
+[0] 要借助复数证明三角恒等式，我们一般需要构造具有以下形式的复数：
+[1] $$w=\cos \alpha+ \mathrm{i} \sin\alpha~.$$
+[2] 这类复数具有许多好的性质，我们熟知的有：
+[3] \begin{equation}(\cos\alpha+ \mathrm{i} \sin\alpha)(\cos\beta+ \mathrm{i} \sin\beta)= \cos\left(\alpha+\beta\right) + \mathrm{i} \sin\left(\alpha+\beta\right) ~,
+\end{equation}
+[4] \begin{equation}(\cos\alpha+ \mathrm{i} \sin\alpha)^n=\cos n\alpha+ \mathrm{i} \sin n\alpha~.
+\end{equation}
+[5] 此外，我们再引入另外两条常用的性质：
+[6] $$\begin{aligned}
+1-(\cos\alpha+ \mathrm{i} \sin\alpha)^n&=1-\left(\cos{\frac{n\alpha}2+ \mathrm{i} \sin{\frac{n\alpha}2}}\right)^{2}\\ &=1-\left(\cos^2{\frac{n\alpha}2}-\sin^2{\frac{n\alpha}2}+2 \mathrm{i} \sin{\frac{n\alpha}2}\cos{\frac{n\alpha}2}\right)\\ &=2\sin^2{\frac{n\alpha}2}-2 \mathrm{i} \sin{\frac{n\alpha}2}\cos{\frac{n\alpha}2}\\ &=-2 \mathrm{i} \sin{\frac{n\alpha}2}\left(\cos{\frac{n\alpha}2}+ \mathrm{i} \sin{\frac{n\alpha}2}\right) ~.
+\end{aligned}$$
+[7] \begin{equation}
+1-(\cos\alpha+ \mathrm{i} \sin\alpha)^n=-2 \mathrm{i} \sin{\frac{n\alpha}2}\left(\cos{\frac{n\alpha}2}+ \mathrm{i} \sin{\frac{n\alpha}2}\right)~.
+\end{equation}
+[8] 同理可得：
+[9] \begin{equation}1+(\cos\alpha+ \mathrm{i} \sin\alpha)^n=2\cos{\frac{n\alpha}2}\left(\cos{\frac{n\alpha}2}+ \mathrm{i} \sin{\frac{n\alpha}2}\right)~.
+\end{equation}
+
+[/SCOPE:s_theory]
+[SCOPE:s_thm1|description|定理1]
+[10] 定理 1
+[11] \begin{equation}\begin{aligned}
+\sum_{k=0}^n \sin\left(\alpha+k\beta\right) &=\frac{\sin\left(\alpha+\frac{n\beta}2\right)\sin\left(\frac{n+1}2\beta\right)}{\sin\frac{\beta}2}~,\\\sum_{k=0}^n \cos\left(\alpha+k\beta\right) &=\frac{\cos\left(\alpha+\frac{n\beta}2\right)\sin\left(\frac{n+1}2\beta\right)}{\sin\frac{\beta}2}~.
+\end{aligned}
+\end{equation}
+[SCOPE:s_thm1_let1|let_bind|设w1,w2]
+[12] 证明：设 $w_1=\cos \alpha+ \mathrm{i} \sin\alpha\,,w_2=\cos \beta+ \mathrm{i} \sin\beta$，
+[13] 则：
+[14] $$\begin{aligned}
+\sum_{k=0}^n \cos\left(\alpha+k\beta\right) + \mathrm{i} \sum_{k=0}^n \sin\left(\alpha+k\beta\right) &=\sum_{k=0}^n\left[ \cos\left(\alpha+k\beta\right) + \mathrm{i} \sin\left(\alpha+k\beta\right) \right]\\&=w_1\sum_{k=0}^nw_2^k \\&…[truncated]…rac{\beta}2}\right)}\\ &=\frac{\cos\left(\alpha+\frac{n\beta}2\right)\sin\left(\frac{n+1}2\beta\right)}{\sin\frac{\beta}2}+ \mathrm{i} \frac{\sin\left(\alpha+\frac{n\beta}2\right)\sin\left(\frac{n+1}2\beta\right)}{\sin\frac{\beta}2}~.
+\end{aligned}$$
+[/SCOPE:s_thm1_let1]
+[15] 对比虚实部，
+[16] 即证
+[SCOPE:s_thm1_let2|let_bind|令α=β]
+[17] 令 $\alpha=\beta$，得：
+[18] $$\sum_{k=1}^n\sin k\alpha=\frac{\sin{\frac{(n+1)\alpha}2}\sin{\frac{n\alpha}{2}}}{\sin{\frac{\alpha}2}}~,$$   $$\sum_{k=1}^n\cos k\alpha=\frac{\cos{\frac{(n+1)\alpha}2}\sin{\frac{n\alpha}{2}}}{\sin{\frac{\alpha}2}}~.$$
+[/SCOPE:s_thm1_let2]
+[19] 可以推知：
+[20] $\displaystyle{\cos\frac{\pi}{7}+\cos\frac{3\pi}{7}+\cos\frac{5\pi}{7}=\frac{1}{2}}~,$
+[21] $\displaystyle{\cos\frac{\pi}{9}+\cos\frac{5\pi}{9}+\cos\frac{7\pi}{9}=0}~.$
+
+[/SCOPE:s_thm1]
+[SCOPE:s_products|description|连乘]
+[22] 要证明与三角函数有关的连乘式，我们需要考虑多项式的分解，例如：
+[23] $$z^5-1=(z-1)(z^4+z^3+z^2+z+1)~.$$
+[SCOPE:s_prod_let1|let_bind|记w=cos(π/5)+i sin(π/5)]
+[24] 记 $\displaystyle{w=\cos\frac{\pi}5+ \mathrm{i} \sin\frac{\pi}5}$，$z^5-1=0$ 有 $w^2,w^4,w^6,w^8,w^{10}$ 五个根，而 $w^{10}=1$，
+[25] 于是有：
+[26] $$z^4+z^3+z^2+z+1=(z-w^2)(z-w^4)(z-w^6)(z-w^8)~.$$
+[/SCOPE:s_prod_let1]
+[27a] 我们发现
+[27b] 如果我们代入 $z=1$，则能利用上述的式 3 ，得到关于 $\sin$ 的连乘式；
+[28a] 如果我们代入 $z=-1$
+[28b] 则能利用上述的式 4 ，得到关于 $\cos$ 的连乘式
+[29] 下面我们具体讨论以下三类不同的方程：
+[30] $$\begin{aligned}
+z^{2k-1}+1&=0~,\\z^{2k-1}-1&=0~, \\z^{2k}-1&=0~.
+\end{aligned}$$
+[SCOPE:s_prod_let10|let_bind|记w=cos(π/(2m-1))+i sin(π/(2m-1)) (z^(2m-1)+1=0, 第二次)]
+[SCOPE:s_prod_let6|let_bind|记w=cos(π/(2m-1))+i sin(π/(2m-1)) (z^(2m-1)+1=0)]
+[SCOPE:s_prod_let2|let_bind|记w=cos(π/(2m-1))+i sin(π/(2m-1))]
+[31] 记 $\displaystyle{w=\cos\frac{\pi}{2m-1}+ \mathrm{i} \sin\frac{\pi}{2m-1}}$，
+[32] 则 $w,w^3\cdots,w^{4m-3}$ 是 $z^{2m-1}+1=0$ 的 $2m-1$ 个根
+[33] 又因为 $w^{2m-1}=-1$，
+[34] 于是 $w\cdots ,w^{2m-3},w^{2m+1}\cdots ,w^{4m-3}$ 是 $z^{2m-1}+1=0$ 的 $2m-2$ 个虚根
+[35] 由因式分解 $z^{2m-1}+1=(z+1)(z^{2m-2}-z^{2m-3}+\cdots+z^{2}-z+1)$，知：
+[36] $$z^{2m-2}-z^{2m-3}+\cdots-z+1=(z-w)\cdots(z-w^{2m-3})(z-w^{2m+1})\cdots(z-w^{4m-3})~.$$
+[/SCOPE:s_prod_let10]
+[/SCOPE:s_prod_let6]
+[/SCOPE:s_prod_let2]
+[SCOPE:s_prod_let11|let_bind|置μ=w^(1/2) (z^(2m-1)+1=0, 第二次)]
+[SCOPE:s_prod_let7|let_bind|置μ=w^(1/2) (z^(2m-1)+1=0)]
+[SCOPE:s_prod_let3|let_bind|置μ=w^(1/2)]
+[37] 代入 $z=1$，并置 $\mu=w^{\frac12}$ 得：
+[38] $$\begin{aligned}
+1&=(1-w)\cdots(1-w^{2m-3})(1-w^{2m+1})\cdots(1-w^{4m-3})\\&=\prod_{\substack{k=1\\k\neq m}}^{2m-1}(-2 \mathrm{i} )\mu^{2k-1}\sin\frac{(2k-1)\pi}{4m-2}\\&=(-2 \mathrm{i} )^{2m-2}{\mu}^{(2m-1)(2m-2)}\prod_{k=1}^{2m-1}\sin{\frac{(2k-1)\pi}{4m-2}}\\ &=4^{m-1}(-1)^{m-1} \cos\left(m-1\right) \pi\prod_{k=1}^{2m-1}\sin{\frac{(2k-1)\pi}{4m-2}}\\ &=4^{m-1}\prod_{k=1}^{2m-1}\sin{\frac{(2k-1)\pi}{4m-2}} ~.
+\end{aligned}$$
+[/SCOPE:s_prod_let11]
+[/SCOPE:s_prod_let7]
+[/SCOPE:s_prod_let3]
+[39] 所以：
+[40] \begin{equation}\prod_{k=1}^{2m-1}\sin{\frac{(2k-1)\pi}{4m-2}}=\frac{1}{4^{m-1}}~.
+\end{equation}
+[41] 又因为 $\displaystyle{\sin\frac{(2k-1)\pi}{4m-2}=\sin\frac{(4m-2k-1)\pi}{4m-2}}$，
+[42] 故：
+[43] \begin{equation}\prod_{k=1}^{m-1}\sin{\frac{(2k-1)\pi}{4m-2}}=\prod_{k=m+1}^{2m-1}\sin{\frac{(2k-1)\pi}{4m-2}}=\frac{1}{2^{m-1}}~.
+\end{equation}
+[44] 代入 $z=-1$ 得：
+[45] \begin{equation}
+\begin{aligned}
+2m-1&=(-1-w)\cdots(-1-w^{2m-3})(-1-w^{2m+1})\cdots(-1-w^{4m-3})\\ &=(-1)^{2m-2}(1+w)\cdots(1+w^{2m-3})(1+w^{2m+1})\cdots(1+w^{2m-3})\\ &=\prod_{\substack{k=1\\k\neq m}}^{2m-1}2\mu^{2k-1}\cos\frac{(2k-1)\pi}{4m-2}\\ &=…[truncated]…d_{k=1}^{m-1}\cos{\frac{(2k-1)\pi}{4m-2}}\prod_{k=m+1}^{2m-1}\cos{\frac{(2k-1)\pi}{4m-2}}\\ &=4^{m-1} \cos\left(m-1\right) \pi\prod_{k=1}^{m-1}\cos{\frac{(2k-1)\pi}{4m-2}}\prod_{k=m+1}^{2m-1}\cos{\frac{(2k-1)\pi}{4m-2}}~.
+\end{aligned}
+\end{equation}
+[46] 又因为 $\displaystyle{\cos\frac{(2k-1)\pi}{4m-2}=-\cos\frac{(4m-2k-1)}{4m-2}}$，
+[47] 故：
+[48] \begin{equation}
+\begin{aligned}
+2m-1&=4^{m-1} \cos\left(m-1\right) \pi\prod_{k=1}^{m-1}\cos{\frac{(2k-1)\pi}{4m-2}}\prod_{k=m+1}^{2m-1}\cos{\frac{(2k-1)\pi}{4m-2}}\\ &=4^{m-1} \cos\left(m-1\right) \pi(-1)^{m-1}\left[\prod_{k=1}^{m-1}\cos{\frac{(2k-1)\pi}{4m-2}}\right]^2~,
+\end{aligned}
+\end{equation}
+[49] 于是：
+[50] \begin{equation}\prod_{k=1}^{m-1}\cos{\frac{(2k-1)\pi}{4m-2}}=\prod_{k=m+1}^{2m-1}\cos{\frac{(2k-1)\pi}{4m-2}}=\frac{\sqrt{2m-1}}{2^{m-1}}~.
+\end{equation}
+[SCOPE:s_prod_let12|let_bind|记w=cos(π/(2m-1))+i sin(π/(2m-1)) (z^(2m-1)-1=0, 第二次)]
+[SCOPE:s_prod_let8|let_bind|记w=cos(π/(2m-1))+i sin(π/(2m-1)) (z^(2m-1)-1=0)]
+[SCOPE:s_prod_let4|let_bind|记w=cos(π/(2m-1))+i sin(π/(2m-1))]
+[51] 记 $\displaystyle{w=\cos\frac{\pi}{2m-1}+ \mathrm{i} \sin\frac{\pi}{2m-1}}$，
+[52] 则 $w^2,w^4\cdots,w^{4m-2}$ 是 $z^{2m-1}-1=0$ 的 $2m-1$ 个根
+[53] 又因为 $w^{4m-2}=1$，
+[54] 于是 $w^2,w^4\cdots ,w^{4m-4}$ 是 $z^{2m-1}-1=0$ 的 $2m-2$ 个虚根
+[55] 由因式分解 $\displaystyle{z^{2m-1}-1=(z-1)(z^{2m-2}+z^{2m-3}+\cdots+z^{2}+z+1)}$，知：
+[56] $$z^{2m-2}+z^{2m-3}+\cdots+z+1=(z-w^2)\cdots(z-w^{4m-4})~.$$
+[/SCOPE:s_prod_let12]
+[/SCOPE:s_prod_let8]
+[/SCOPE:s_prod_let4]
+[57] 代入 $z=1$，得：
+[58] $$\begin{aligned} 2m-1&=(1-w^2)(1-w^4)\cdots(1-w^{4m-4})\\ &=\left(-2 \mathrm{i} \mu^2\sin\frac{2\pi}{4m-2}\right)\left(-2 \mathrm{i} \mu^4\sin\frac{4\pi}{4m-2}\right)\cdots\left[-2 \mathrm{i} \mu^{4m-4}\sin\frac{(4m-4)\pi}{4m-2}\right]\\ &=(-2 \mathrm{i} )^{2m-2}\mu^{(2m-1)(2m-2)}\prod_{k=1}^{2m-2}\sin\frac{k\pi}{2m-1}\\ &=4^{m-1}(-1)^{m-1} \cos\left(m-1\right) \pi\prod_{k=1}^{2m-2}\sin\frac{k\pi}{2m-1}~. \end{aligned} $$
+[59] 于是：
+[60] \begin{equation}\prod_{k=1}^{2m-2}\sin\frac{k\pi}{2m-1}=\frac{2m-1}{4^{m-1}}~.
+\end{equation}
+[61] 代入 $z=-1$，得：
+[62] $ \begin{aligned} 1&=(-1-w^2)(-1-w^4)\cdots(1-w^{4m-4})\\ &=(-1)^{2m-2}(1+w^2)(1+w^4)\cdots(1+w^{4m-4})\\ &=\left(2\mu^2\cos\frac{2\pi}{4m-2}\right)\left(2\mu^4\cos\frac{4\pi}{4m-2}\right)\cdots\left[2\mu^{4m-4}\cos\frac{(4m-4)\pi}{4m-2}\right]\\ &=2^{2m-2}\mu^{(2m-1)(2m-2)}\prod_{k=1}^{2m-2}\cos\frac{k\pi}{2m-1}\\ &=4^{m-1} \cos\left(m-1\right) \pi\prod_{k=1}^{2m-2}\cos\frac{k\pi}{2m-1}~. \end{aligned} $
+[63] \begin{equation}\prod_{k=1}^{2m-2}\cos\frac{k\pi}{2m-1}=\frac{(-1)^{m-1}}{4^{m-1}} ~.
+\end{equation}
+[SCOPE:s_prod_let9|let_bind|记w=cos(π/(2m))+i sin(π/(2m)) (z^(2m)-1=0)]
+[SCOPE:s_prod_let5|let_bind|记w=cos(π/(2m))+i sin(π/(2m))]
+[64] 记 $\displaystyle{w=\cos\frac{\pi}{2m}+ \mathrm{i} \sin\frac{\pi}{2m}}$，
+[65] 则 $w^2,w^4,\dots ,w^{4m}$ 是 $z^{2m}-1=0$ 的 $2m$ 个根
+[66] 又因为 $w^{2m}=-1\,,w^{4m}=1$，
+[67] 于是 $w^2\cdots,w^{2m-2},w^{2m+2}\cdots,w^{4m-2}$ 是 $z^{2m}-1=0$ 的 $2m-2$ 个虚根
+[68] 由因式分解 $z^{2m}-1=(z^2-1)(z^{2m-2}+\cdots+z^4+z^2+1)$，知：
+[69] $$z^{2m-2}+\cdots+z^4+z^2+1=(z-w^2)\cdots(z-w^{2m-2})(z-w^{2m+2})\cdots(z-w^{4m-2})~.$$
+[/SCOPE:s_prod_let9]
+[/SCOPE:s_prod_let5]
+[70] 代入 $z=1$，得：
+[71] $$\begin{aligned} m&=(1-w^2)\cdots(1-w^{2m-2})(1-w^{2m+2})\cdots(1-w^{4m-2})\\ &=\prod_{\substack{k=1\\k\neq m}}^{2m-1}(-2 \mathrm{i} )\mu^{2k}\frac{2k\pi}{4m}\\ &=(-2 \mathrm{i} )^{2m-2}\mu^{2m(2m-2)}\prod_{k=1}^{2m-1}\sin\frac{k\pi}{2m}\\ &=2^{2m-2}(-1)^{m-1} \cos\left(m-1\right) \pi\prod_{k=1}^{2m-1}\sin\frac{k\pi}{2m}\\ &=4^{m-1}\prod_{k=1}^{2m-1}\sin\frac{k\pi}{2m}~, \end{aligned}$$
+[72] 于是：
+[73] \begin{equation}\prod_{k=1}^{2m-1}\sin\frac{k\pi}{2m}=\frac{m}{4^{m-1}}~.
+\end{equation}
+[74] 代入 $z=-1$，得：
+[75] $$\begin{aligned} m&=(-1-w^2)\cdots(-1-w^{2m-2})(-1-w^{2m+2})\cdots(-1-w^{4m-2})\\ &=(-1)^{2m-2}(1+w^2)\cdots(1+w^{2m-2})(1+w^{2m+2})\cdots(1+w^{4m-2})\\ &=\prod_{\substack{k=1\\k\neq m}}^{2m-1}2\mu^{2k}\cos\frac{2k\pi}{4m}\\ &=2^{2m-2}\mu^{2m(m-2)}\prod_{k=1}^{m-1}\cos\frac{k\pi}{2m}\prod_{k=m+1}^{2m-1}\cos\frac{k\pi}{2m}\\ &=4^{m-1} \cos\left(m-1\right) \pi\prod_{k=1}^{m-1}\cos\frac{k\pi}{2m}\prod_{k=m+1}^{2m-1}\cos\frac{k\pi}{2m} ~. \end{aligned}$$
+[76] 又因为 $\displaystyle{\cos\frac{k\pi}{2m}=-\sin\frac{(m+k)\pi}{2m}}$，
+[77] 所以：
+[78] $$\begin{aligned} m&=4^{m-1} \cos\left(m-1\right) \pi\prod_{k=1}^{m-1}\cos\frac{k\pi}{2m}\prod_{k=m+1}^{2m-1}\cos\frac{k\pi}{2m}\\ &=(-1)^{m-1}4^{m-1} \cos\left(m-1\right) \pi\prod_{k=1}^{m-1}\sin\frac{k\pi}{2m}\cos\frac{k\pi}{2m}\\ &=2^{m-1}\prod_{k=1}^{m-1}\sin\frac{k\pi}{m}~. \end{aligned}$$
+[79] \begin{equation}\prod_{k=1}^{m-1}\sin\frac{k\pi}{m}=\frac{m}{2^{m-1}}~.
+\end{equation}
+[80] 实际上，式 14 不过是式 11 和式 13 的更一般的形式。
+[/SCOPE:s_products]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_theory",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的证明使用了理论基础中的性质"
+  },
+  {
+    "source_scope": "s_products",
+    "target_scope": "s_theory",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "连乘部分使用了理论基础中的公式"
+  }
+]

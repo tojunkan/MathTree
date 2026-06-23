@@ -1,0 +1,292 @@
+{
+  "article_name": "SecVar",
+  "statements": [
+    {
+      "stmt_id": "st_intro_1",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_delta2J",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "J(y)",
+        "δ²J",
+        "F(x,y,y')"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_J",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_y",
+      "exposed_entities": [
+        "J(y)",
+        "F(x,y,y')",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_delta",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_delta",
+      "exposed_entities": [
+        "δy(x)",
+        "y(x)",
+        "ȳ(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_boundary",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_delta",
+      "exposed_entities": [
+        "δy(a)",
+        "δy(b)"
+      ]
+    },
+    {
+      "stmt_id": "st_taylor_expansion",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_continuity",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "r(ȳ,y)"
+      ]
+    },
+    {
+      "stmt_id": "st_approx_tilde",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "ε₁",
+        "ε₂",
+        "ε₃"
+      ]
+    },
+    {
+      "stmt_id": "st_full_expansion",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "ε"
+      ]
+    },
+    {
+      "stmt_id": "st_inequality_1",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_epsilon_bound",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "ε₃",
+        "ε₄",
+        "ε₅"
+      ]
+    },
+    {
+      "stmt_id": "st_epsilon_higher_order",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_approx_delta",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_formula_delta",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "δJ",
+        "δ²J"
+      ]
+    },
+    {
+      "stmt_id": "st_name_delta2J",
+      "subtype": "definition",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "δ²J"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_J",
+      "target": "st_taylor_expansion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_delta",
+      "target": "st_taylor_expansion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_boundary",
+      "target": "st_taylor_expansion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_continuity",
+      "target": "st_approx_tilde",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_taylor_expansion",
+      "target": "st_full_expansion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_approx_tilde",
+      "target": "st_full_expansion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inequality_1",
+      "target": "st_epsilon_bound",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_full_expansion",
+      "target": "st_epsilon_bound",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_epsilon_bound",
+      "target": "st_epsilon_higher_order",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_epsilon_higher_order",
+      "target": "st_approx_delta",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_full_expansion",
+      "target": "st_approx_delta",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_approx_delta",
+      "target": "st_formula_delta",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_formula_delta",
+      "target": "st_name_delta2J",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_def_delta2J",
+      "target": "st_name_delta2J",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "s_intro中的定义与s_derivation中的定义是同一概念的不同表述"
+    }
+  ],
+  "unresolved": []
+}

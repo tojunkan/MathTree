@@ -1,0 +1,215 @@
+{
+  "article_name": "LogNor",
+  "statements": [
+    {
+      "stmt_id": "st_ex1_goal",
+      "subtype": "example",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_method",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "f(x)",
+        "ln(f(x))"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_eq3",
+      "subtype": "conclusion",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_eq4",
+      "subtype": "conclusion",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_goal",
+      "subtype": "example",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_def_moment",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "X",
+        "r",
+        "E[X^r]"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_eq9",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_indefinite",
+      "subtype": "conclusion",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "erf"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_erf_def",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "erf"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_substitute",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_var",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "Var[X]"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex1_method",
+      "target": "st_ex1_eq3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_eq3",
+      "target": "st_ex1_eq4",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_eq4",
+      "target": "st_ex1_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_def_moment",
+      "target": "st_ex2_eq9",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_eq9",
+      "target": "st_ex2_indefinite",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_indefinite",
+      "target": "st_ex2_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_substitute",
+      "target": "st_ex2_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_final",
+      "target": "st_ex2_var",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

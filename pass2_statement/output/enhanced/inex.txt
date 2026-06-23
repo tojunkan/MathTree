@@ -1,0 +1,70 @@
+[SCOPE:root|description|容斥原理]
+文章名: inex
+标题: 容斥原理
+
+[0] 本文缺少预备知识，初学者可能会遇到困难。
+
+[SCOPE:s_principle|description|容斥原理]
+[1] 容斥原理是组合数学中的一个重要原理，是用于计算多个集合的并集中元素数量时的一种简化计数的方法。
+[SCOPE:s_two_sets|description|两个集合的情形]
+[2] 首先,我们考虑两个集合的情形。
+[SCOPE:s_two_sets_let|let_bind|两个集合的变量]
+[3] 设有两个集合 \(A\) 和 \(B\)，我们要计算这两个集合的并集 \(A \cup B\) 的元素数量。
+[/SCOPE:s_two_sets_let]
+[4] 如果直接将两个集合的元素数量相加，\( |A| + |B| \)，会重复计算 \(A\) 和 \(B\) 的交集 \(A \cap B\) 中的元素。
+[5] 因此，为了得到准确的元素数量，需要减去这个交集的大小，
+[6] 即：
+[7] $|A \cup B| = |A| + |B| - |A \cap B|$
+[/SCOPE:s_two_sets]
+[SCOPE:s_three_sets|description|三个集合的情形]
+[SCOPE:s_three_sets_let|let_bind|三个集合的变量]
+[8] 当涉及到三个集合 \(A\)、\(B\) 和 \(C\) 时，如下图所示，首先直观地将每个集合的大小相加，再减去两两交集的大小，
+[/SCOPE:s_three_sets_let]
+[9] 但我们再次重复计算了三个集合共同部分的元素。
+[10] 因此，需要加回一次这个三个集合的交集的大小：
+[11] $|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|$
+[12] 【图解】图 1：三个集合的情况
+[/SCOPE:s_three_sets]
+[SCOPE:s_general|description|推广到n个集合]
+[13] 推广到任意 \(n\) 个集合的情况：
+[SCOPE:s_general_let|let_bind|n个集合的变量]
+[14] 使用 $|S|$ 来表示集合 S 的元素个数, 并把 S 的概率记作 Pr(S). 对于集合 \(A_1, A_2, \ldots, A_n\)。
+[/SCOPE:s_general_let]
+[15] 容斥原理可以用来计算这些集合并集的大小或这个集合所对应的事件的概率概率。
+[16] \begin{equation}
+\left|\bigcup_{i=1}^{n} A_i\right| = \sum_{i=1}^{n} |A_i| - \sum_{1 \leq i < j \leq n} |A_i \cap A_j| + \sum_{1 \leq i < j < k \leq n} |A_i \cap A_j \cap A_k| - \cdots + (-1)^{n-1} |A_1 \cap A_2 \cap \cdots \cap A_n|~.
+\end{equation}
+[17] 如果将集合的大小 \(|S|\) 替换为集合的概率 \(\text{Pr}(S)\)，
+[18] 则上述公式仍然成立。
+[19] 因此，对于计算概率的情况，公式可以表示为：
+[20] \begin{equation}
+\text{Pr}\left(\bigcup_{i=1}^{n} A_i\right) = \sum_{i=1}^{n} \text{Pr}(A_i) - \sum_{1 \leq i < j \leq n} \text{Pr}(A_i \cap A_j) + \sum_{1 \leq i < j < k \leq n} \text{Pr}(A_i \cap A_j \cap A_k) - \cdots + (-1)^{n-1} \text{Pr}(A_1 \cap A_2 \cap \cdots \cap A_n)
+~.
+\end{equation}
+[21] 这个公式通过交替添加和减去所有可能的交集的大小来准确计数，
+[22] 从而消除了重复计数的问题。
+[23] 每个交集只计算一次，并且根据它涉及的集合数量的奇偶性，决定是加上还是减去这个数值。
+[24] 这样，最终得到的结果就是所有集合的并集的准确大小，
+[25] 从而简化分解了多个集合重叠时的计数问题。
+[26] （等价于求解 “多个事件中至少有一个发生” 的概率问题）
+[/SCOPE:s_principle]
+[/SCOPE:s_general]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_three_sets",
+    "target_scope": "s_two_sets",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "三个集合的情形是两集合的推广"
+  },
+  {
+    "source_scope": "s_general",
+    "target_scope": "s_three_sets",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "n个集合的情形是三个集合的推广"
+  }
+]

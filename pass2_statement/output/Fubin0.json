@@ -1,0 +1,217 @@
+{
+  "article_name": "Fubin0",
+  "statements": [
+    {
+      "stmt_id": "st_example1_func",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "f(x,y)"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_singularity",
+      "subtype": "remark",
+      "clause_range": [
+        1,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_convergence",
+      "subtype": "conclusion",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_antisymmetry",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_cancel",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "u",
+        "v",
+        "g(u,v)"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_let_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_principal",
+      "subtype": "remark",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_volume_dependence",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_other_angles",
+      "subtype": "remark",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        18,
+        20
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_fubini_note",
+      "subtype": "remark",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_example1_check",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_integral_infinite",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_no_guarantee",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_exercise",
+      "subtype": "remark",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_example1_let_assump",
+      "target": "st_example1_let_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_example1_check",
+      "target": "st_theorem1_integral_infinite",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_integral_infinite",
+      "target": "st_theorem1_no_guarantee",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_theorem1_statement",
+      "target": "st_example1_convergence",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1是Fubini定理的特例，例1是定理1的反例"
+    }
+  ],
+  "unresolved": []
+}

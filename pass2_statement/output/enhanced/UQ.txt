@@ -1,0 +1,155 @@
+[SCOPE:root|description|酉群]
+文章名: UQ
+标题: 酉群
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=酉矩阵
+  [1] type=theorem heading=定理 1 title=
+  [2] type=example heading=例 1 title=所有的酉矩阵构成一个群
+  [3] type=definition heading=定义 2 title=酉群
+  [4] type=theorem heading=定理 2 title=
+  [5] type=theorem heading=定理 3 title=$SU(n)$
+
+[SCOPE:s_hermitian_intro|description|埃尔米特矢量空间与基底转换]
+[0] 如文章 “埃尔米特矢量空间（酉空间）” 所说，酉群是埃尔米特矢量空间中所有标准正交基底之间的转换矩阵构成的群。
+[1] 现在来一步步的引入它。
+
+[SCOPE:s_hermitian_let|let_bind|基底与转换矩阵]
+[2] 设 $\{ \hat e_i\},\{ \hat e'_i\}$ 是埃尔米特矢量空间 $V$ 的两个标准正交基底，从 $\{ \hat e_i\}$ 到 $\{\hat e'_i\}$ 的转换矩阵为 $ \boldsymbol{\mathbf{A}} =(a_{ij})$，
+[3] 即
+[4] \begin{equation}
+\hat e'_j=\sum_{i}a_{ij} \hat e_i~.
+\end{equation}
+[5] 于是，基矢量间的纯量积满足（
+[6] 定义 1 [链接 L0]
+[7] \begin{equation}
+( \hat e'_j| \hat e'_k)=\sum_{i,s}\overline{a_{ij}}a_{sk}(\hat e_i|\hat e_s)=\sum_{i}\overline{a_{ij}}a_{ik}~,
+\end{equation}
+[8] \begin{equation}
+\boldsymbol{\mathbf{A}} ^\dagger \boldsymbol{\mathbf{A}} = \boldsymbol{\mathbf{E}} = \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{A}} ^\dagger~.
+\end{equation}
+[9] 其中，$ \boldsymbol{\mathbf{A}} ^\dagger:=( \boldsymbol{\mathbf{A}} ^T)^*$，*表取共轭复数。
+
+[/SCOPE:s_hermitian_intro]
+[/SCOPE:s_hermitian_let]
+[SCOPE:s_unitary_def|description|定义1 酉矩阵]
+[10] 定义 1 酉矩阵
+[11] 称矩阵 $ \boldsymbol{\mathbf{A}} $ 为酉矩阵，若
+[12] \begin{equation}
+\boldsymbol{\mathbf{A}} ^\dagger \boldsymbol{\mathbf{A}} = \boldsymbol{\mathbf{E}} ~.
+\end{equation}
+[13] 这就是说，在埃米尔特矢量空间里，两个标准正交基之间的转换矩阵为酉矩阵。
+[14] 反过来，若 $ \boldsymbol{\mathbf{A}} $ 为酉矩阵，
+[15] 则根据式 1 ，由标准正交基底 $\{\hat e_i\}$ 得到的矢量组 $\{\hat e'_i\}$ 仍是标准正交基底。
+[16] 下面定理成立
+
+[/SCOPE:s_unitary_def]
+[SCOPE:s_theorem1|description|定理1]
+[17] 定理 1
+[18] 在埃米尔特矢量空间中，由一个标准正交基底到另一个标准正交基底的转换矩阵是酉矩阵，而且，所有酉矩阵都可以是这种转换矩阵。
+
+[/SCOPE:s_theorem1]
+[SCOPE:s_example1|description|例1 所有的酉矩阵构成一个群]
+[19] 例 1 所有的酉矩阵构成一个群
+[20] 试证明：所有 $n$ 阶酉矩阵构成一个群。
+[SCOPE:s_example1_let|let_bind|酉矩阵A,B]
+[21] 封闭性：设 $ \boldsymbol{\mathbf{A}} , \boldsymbol{\mathbf{B}} $ 是酉矩阵，
+[22] 则
+[23] \begin{equation}
+( \boldsymbol{\mathbf{AB}} )^\dagger( \boldsymbol{\mathbf{AB}} )= \boldsymbol{\mathbf{B}} ^\dagger \boldsymbol{\mathbf{A}} ^\dagger \boldsymbol{\mathbf{AB}} = \boldsymbol{\mathbf{E}} ~.
+\end{equation}
+[24] 结合性：由矩阵满足结合律，
+[25] 故酉矩阵满足结合律；
+[26] 逆元：由于酉矩阵 $ \boldsymbol{\mathbf{A}} $ 的逆就是 $ \boldsymbol{\mathbf{A}} ^\dagger$，而 $( \boldsymbol{\mathbf{A}} ^\dagger)^\dagger= \boldsymbol{\mathbf{A}} $，
+[27] 所以式 3 表明 $ \boldsymbol{\mathbf{A}} ^\dagger$ 也是酉矩阵，
+[28] 所以 $A^{-1}$ 即酉矩阵；
+[29] 单位元： $ \boldsymbol{\mathbf{E}} ^\dagger \boldsymbol{\mathbf{E}} = \boldsymbol{\mathbf{E}} $
+[30] 由群的定义（定义 1 ），所有的酉矩阵构成一个群。
+
+[/SCOPE:s_example1]
+[/SCOPE:s_example1_let]
+[SCOPE:s_unitary_group_def|description|定义2 酉群]
+[31] 定义 2 酉群
+[32] 所有 $n$ 酉矩阵构成的集合称为酉群，记作 $U(n)$。
+
+[/SCOPE:s_unitary_group_def]
+[SCOPE:s_theorem2|description|定理2]
+[33] 定理 2
+[34a] (n)$ 是酉群 $U
+[34b] (n)$ 的一个子群。
+[SCOPE:s_theorem2_let|let_bind|正交矩阵A]
+[35] 证明：由正交矩阵的定义，若 $A$ 是正交矩阵，
+[36] 则 $ \boldsymbol{\mathbf{A}} ^T= \boldsymbol{\mathbf{A}} $，又正交矩阵的矩阵元是实数，
+[37] 故 $ \boldsymbol{\mathbf{A}} ^*= \boldsymbol{\mathbf{A}} $。
+[38] 所以
+[39] \begin{equation}
+\boldsymbol{\mathbf{A}} ^\dagger \boldsymbol{\mathbf{A}} =( \boldsymbol{\mathbf{A}} ^T)^* \boldsymbol{\mathbf{A}} = \boldsymbol{\mathbf{A}} ^T \boldsymbol{\mathbf{A}} = \boldsymbol{\mathbf{E}} ~.
+\end{equation}
+[40] 这就是说，正交矩阵本身也是个酉矩阵，
+[41a] (n)\subset U
+[41b] (n)$。
+
+[/SCOPE:s_theorem2]
+[/SCOPE:s_theorem2_let]
+[SCOPE:s_theorem3|description|定理3 SU(n)]
+[42] 定理 3 $SU(n)$
+[43] 所有行列式为 1 的 $n$ 阶酉矩阵构成一个特殊的酉群 $SU(n)$。
+[44] 证明：
+[SCOPE:s_theorem3_let|let_bind|SU(n)中的矩阵A,B]
+[45] 封闭性：设 $ \boldsymbol{\mathbf{A}} , \boldsymbol{\mathbf{B}} \in SU(n)$，
+[46] 则
+[47] \begin{equation}
+\det{( \boldsymbol{\mathbf{AB}} )}=\det{ \boldsymbol{\mathbf{A}} }\det{ \boldsymbol{\mathbf{B}} }=1~.
+\end{equation}
+[48] 结合性、逆元存在性显然，单位元即 $ \boldsymbol{\mathbf{E}} $
+[49] 故 $SU(n)$ 是一个群。
+[50] 证毕！
+[/SCOPE:s_theorem3]
+[/SCOPE:s_theorem3_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_unitary_def",
+    "target_scope": "s_hermitian_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "酉矩阵定义基于埃尔米特空间中的基底转换"
+  },
+  {
+    "source_scope": "s_theorem1",
+    "target_scope": "s_unitary_def",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理1陈述了酉矩阵与基底转换的关系"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_unitary_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1证明酉矩阵构成群，基于酉矩阵定义"
+  },
+  {
+    "source_scope": "s_unitary_group_def",
+    "target_scope": "s_example1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "酉群定义直接来自例1的结论"
+  },
+  {
+    "source_scope": "s_theorem2",
+    "target_scope": "s_unitary_group_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2说明正交群是酉群的子群"
+  },
+  {
+    "source_scope": "s_theorem3",
+    "target_scope": "s_unitary_group_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3定义SU(n)为U(n)的子群"
+  }
+]

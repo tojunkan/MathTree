@@ -1,0 +1,391 @@
+{
+  "article_name": "ConFul",
+  "statements": [
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "L"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_def",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "p",
+        "x",
+        "y",
+        "α"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "L"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_def",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "p",
+        "x",
+        "α"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_def",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_when",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_onlyif_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_onlyif_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_conclusion1",
+      "subtype": "theorem",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_conclusion2",
+      "subtype": "theorem",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_conclusion3",
+      "subtype": "theorem",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_proof1",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_proof2",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_proof3a",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_proof3b",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_proof3c",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_let",
+      "subtype": "assumption",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_example_let",
+      "exposed_entities": [
+        "m",
+        "x",
+        "x_n"
+      ]
+    },
+    {
+      "stmt_id": "st_example_def",
+      "subtype": "example",
+      "clause_range": [
+        40,
+        41
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example",
+      "exposed_entities": [
+        "p"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_assump",
+      "target": "st_thm1_proof_when",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_onlyif_assump",
+      "target": "st_thm1_proof_onlyif_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let",
+      "target": "st_thm2_conclusion1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let",
+      "target": "st_thm2_conclusion2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let",
+      "target": "st_thm2_conclusion3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let",
+      "target": "st_thm2_proof1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof1",
+      "target": "st_thm2_proof2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let",
+      "target": "st_thm2_proof3a",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof1",
+      "target": "st_thm2_proof3b",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof2",
+      "target": "st_thm2_proof3c",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_let",
+      "target": "st_example_def",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_conclusion",
+      "target": "st_def1_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1给出凸泛函的等价条件，是凸泛函定义的特例"
+    },
+    {
+      "source": "st_thm2_conclusion1",
+      "target": "st_def1_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2是凸泛函的性质，是定义1的推论"
+    },
+    {
+      "source": "st_example_def",
+      "target": "st_def3_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是齐次凸泛函的例子"
+    }
+  ],
+  "unresolved": []
+}

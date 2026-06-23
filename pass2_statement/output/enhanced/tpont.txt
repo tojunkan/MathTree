@@ -1,0 +1,164 @@
+[SCOPE:root|description|数论函数 theta 与 psi 的阶]
+文章名: tpont
+标题: 数论函数 theta 与 psi 的阶
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=lemma heading=引理 1 title=
+  [2] type=corollary heading=推论 1 title=
+  [3] type=lemma heading=引理 2 title=
+
+[0] 本文默认若对 $n$ 求和或求积，
+[1] 则范围均满足 $n \ge 1$。
+[2] 符号 $\lfloor n \rfloor$ 表示 $n$ 的整数部分。
+
+[SCOPE:s_thm1|description|定理1]
+[3] 定理 1
+[4a] (x)$ 与 $\psi
+[4b] (x)$ 的阶是 $x$：
+[5] 对于足够大的 $x$（$x \ge 2$），
+[6] \begin{equation}
+Ax < \vartheta(x) < Bx, ~ Cx < \psi(x) < Dx ~ ~.
+\end{equation}
+
+[/SCOPE:s_thm1]
+[7] 我们首先引入一个引理并予以证明。
+
+[SCOPE:s_lemma1|description|引理1]
+[8] 引理 1
+[9] \begin{equation}
+\psi(x) = \vartheta(x) + \mathcal O\left( x^{1/2} (\ln x)^{2} \right) ~.
+\end{equation}
+[SCOPE:s_lemma1_let1|let_bind|引理1变量m]
+[10] 证明：考虑 $\psi(x)$ 的定义，由于 $p^2 \le x$, $p^3 \le x$, $\dots$ 等价于 $p \le x^{1/2}$, $p \le x^{1/3}$, $\dots$, 故
+[11] \begin{equation}
+\psi(x) = \vartheta(x) + \vartheta(x^{1/2}) + \vartheta(x^{1/3}) + \cdots = \sum_{m} \vartheta(x^{1/m}) ~.
+\end{equation}
+[12a] 当 $x^{1/m} < 2$，也
+[12b] 则是
+[13] \begin{equation}
+m > \frac{\ln x}{\ln 2} ~~
+\end{equation}
+[14] 时，求和结束。
+[/SCOPE:s_lemma1_let1]
+[15a] (x)$ 的定义显然有 $x$ 足够大时 $\vartheta
+[15b] (x) < x \ln x$，
+[16] 故 $m \ge 2$ 时有
+[17] \begin{equation}
+\vartheta(x^{1/m}) < x^{1/m} \ln x \le x^{1/2} \ln x~,
+\end{equation}
+[18] \begin{equation}
+\sum_{m \ge 2} \vartheta(x^{1/m}) = \mathcal O\left( x^{1/2} (\ln x)^{2} \right) ~.
+\end{equation}
+[19] 这等式成立是因为由于
+[20] 式 4 [链接 L0]
+[21] ，这级数仅有 $\mathcal O(\ln x)$ 项。
+[22] 将式 6 与 $\vartheta(x)$ 相加，就得到了式 3 ，就完成了证明。
+[/SCOPE:s_lemma1]
+[23a] (x)$ 与 $\psi
+[23b] (x)$ 大致相等。
+[24a] (x) < Bx$ 与 $\psi
+[24b] (x) > Cx$。
+[25] 因为上界与下界只需用两个数论函数中的一者约束即可。
+[SCOPE:s_lemma1_let2|let_bind|引理1变量M]
+[26] 引入
+[27] \begin{equation}
+M = \frac{(2m+1)!}{m! (m+1)!} = \frac{(2m+1)(2m)\cdots(m+2)}{m!} ~,
+\end{equation}
+[28] 这将是一个整数，且由于组合数性质，将在 $(1+1)^{2m+1}$ 的二项式展开中出现两次，
+[29] 故 $2M < 2^{2m+1}$ 即 $M < 2^{2m}$。
+[/SCOPE:s_lemma1_let2]
+[30] 考虑对于某素数 $p$，若 $m+1 < p \le 2m+1$，
+[31] 那么 $p$ 是 $M$ 的分子的因子，
+[32] 但并不是分母的因子。
+[33] 也就是说，
+[34] \begin{equation}
+\left( \prod_{m+1 < p \le 2m+1} p \right) \mid M ~.
+\end{equation}
+[35] \begin{equation}
+\vartheta(2m+1) - \vartheta(m+1) = \sum_{m+1 < p \le 2m+1} \ln p \le \ln M < 2 m \ln 2 ~.
+\end{equation}
+[36] 通过归纳法可以立刻得出 $\vartheta(x) < 2x \ln 2$。
+[37] 就证明了 $\vartheta(x) < Bx$，另外还得到了一个更严的估计。
+
+[SCOPE:s_cor1|description|推论1]
+[38] 推论 1
+[39] 对于足够大的 $n$，
+[40] \begin{equation}
+\vartheta(n) < 2 n \ln n ~.
+\end{equation}
+[/SCOPE:s_cor1]
+[41a] (x)$，我们要证明 $\psi
+[41b] (x) > Cx$。
+[42] 为此引入另一引理。
+
+[SCOPE:s_lemma2|description|引理2]
+[SCOPE:s_lemma2_let1|let_bind|引理2变量k]
+[43] 引理 2
+[44] \begin{equation}
+k(n, p) = \sum_{m\ge 1} \left\lfloor \frac{n}{p^m} \right\rfloor ~,
+\end{equation}
+[45] \begin{equation}
+n! = \prod_p p^{k(n, p)} ~.
+\end{equation}
+[/SCOPE:s_lemma2_let1]
+[46] 证明：这是因为 $1, 2, \dots, n$ 各数恰好包含 $\lfloor n/p \rfloor$ 个 $p$ 的倍数，恰好包含 $ \lfloor n/p^2 \rfloor$ 个 $p^2$ 的倍数，...... 依此类推。
+[47] 就直接完成了证明。
+[SCOPE:s_lemma2_let2|let_bind|引理2变量N]
+[48] \begin{equation}
+N = \frac{(2n)!}{(n!)^2} = \prod_{p \le 2n} p^{\alpha_p} ~,
+\end{equation}
+[49] 则利用这引理，立刻有
+[50] \begin{equation}
+\alpha_p = \sum_{m=1}^{+\infty} \left( \left\lfloor \frac{2n}{p^m} \right\rfloor - 2 \left\lfloor \frac{n}{p^m} \right\rfloor\right) ~.
+\end{equation}
+[/SCOPE:s_lemma2_let2]
+[51] 这里指出，括号内的每一项要么是 $1$，要么是 $0$，这是由 $\lfloor 2n/p^m \rfloor$ 的奇偶性决定的。
+[52] 我们考虑 $\psi(x)$ 的另一等价表达形式，是对于可能的最大的 $m$ 可以等价表示为
+[53] \begin{equation}
+\psi(x) = \sum_{p^m \le x} m \ln p ~,
+\end{equation}
+[54] 从而这是一个最小公倍数的表示，
+[55] 故等价于
+[56] \begin{equation}
+\psi(x) = \ln\left( [1, 2, 3, \dots, x] \right)~,
+\end{equation}
+[57] \begin{equation}
+\psi(x) = \sum_{p \le x} \left\lfloor \frac{\ln x}{\ln p} \right\rfloor \ln p ~.
+\end{equation}
+[58] 利用这式重新审视式 14 将不难得到
+[59] \begin{equation}
+\alpha_p \le \left \lfloor \frac{\ln 2n}{\ln p} \right \rfloor ~,
+\end{equation}
+[60] \begin{equation}
+\ln N = \sum_{p \le 2n} \alpha_p \ln p \le \sum_{p \le 2n} \left\lfloor \frac{\ln 2n}{\ln p} \right \rfloor \ln p= \psi(2n) ~.
+\end{equation}
+[61] 而其中，$N = (2n)!/n! \ge 2^n$，
+[62] 故 $\psi(2n) \ge n \ln 2$，这可以立刻得到 $\psi(x) \ge (x \ln 2)/4$，证毕！
+[/SCOPE:s_lemma2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_lemma1",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "引理1用于证明定理1"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是定理1的特例"
+  },
+  {
+    "source_scope": "s_lemma2",
+    "target_scope": "s_cor1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "引理2用于证明推论1"
+  }
+]

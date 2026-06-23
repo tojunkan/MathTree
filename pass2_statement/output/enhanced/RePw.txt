@@ -1,0 +1,136 @@
+[SCOPE:root|description|幂函数（数学分析）]
+文章名: RePw
+标题: 幂函数（数学分析）
+
+环境标记 (hints):
+  [0] type=exercise heading=习题 1 title=幂的连续性
+  [1] type=theorem heading=定理 1 title=幂的连续性
+  [2] type=exercise heading=习题 2 title=
+
+[SCOPE:s_intro|description|幂的性质与问题]
+[0] 在中学数学中，我们已经学习过正实数的幂的定义。
+[1] 按照此定义，给定实数$x>0$ 和任意实数 $\alpha,\beta$, 幂 $x^\alpha$ 满足如下性质：
+[2] 对于任意的 $x>0$, 均有 $x^0=1$.
+[3] $x^{\alpha+\beta}=x^\alpha\cdot x^\beta$.
+[4] $(x^\alpha)^\beta=x^{\alpha\beta}$.
+[5] 给定 $x_1,x_2>0$, 那么 $x_1^\alpha\cdot x_2^\alpha=(x_1x_2)^\alpha$.
+[6a] 如果 $x>1$, $\alpha<\beta$,
+[6b] 则$x^\alpha< x^\beta$.
+[7a] 如果 $0< x_1< x_2$, $\alpha>0$,
+[7b] 则$x_1^\alpha< x_2^\alpha$.
+[8] 特别地，对于正整数 $n$, $x^n$ 就是将 $x$ 自乘 $n$ 次，$x^{-n}$ 就是 $1/x^n$, 而 $x^{1/n}$ 就是 $x$ 的 $n$ 次算术根。
+[9] 一个自然的问题是，满足以上六条性质的运算是否唯一？
+[10] 答案是肯定的。
+[11] 严格的实数理论给出了一个构造幂的方法。
+
+[/SCOPE:s_intro]
+[SCOPE:s_rational|description|有理数次幂的构造]
+[12] 首先，正实数的整数次幂可以通过乘法来直接定义。
+[13] 它当然满足以上六个要求。
+[14] 现在要由此出发来构造正实数的有理数次幂。
+[SCOPE:s_rational_let1|let_bind|n次算术根构造]
+[15] 给定正整数 $n$. 根据实数理论，我们可以严格地构造出任意正实数 $x$ 的 $n$ 次算术根，也就是满足 $y^n=x$ 的唯一一个正实数 $y$. 由于正整数次幂的保序性质，
+[16] 可见算术根若存在则必然只有唯一一个。
+[17] 至于实际的构造，
+[18] 则可以确定一个戴德金分割如下：分割的下类 $L$ 包含所有非正的有理数，以及满足 $l^n< x$ 的正有理数 $l$; 分割的上类 $R$ 包含所有满足 $r^n\geq x$ 的正有理数。
+[19] 容易验证它满足戴德金分割的定义，
+[20] 从而它确定了一个实数 $y$.
+[21] 为了说明 $y^n=x$, 只需要注意到，实数 $y$ 是下类 $L_y$ 的上确界，同时也是上类 $R_y$ 的下确界。
+[22] 所以给定 $\varepsilon>0$, 都存在 $l\in L_y$ 和 $r\in R_y$ 使得
+[23] \[
+[24] y-\varepsilon< l< y~,\quad y\leq r< y+\varepsilon~.
+[25] \]
+[26] 于是
+[27] \[
+[28] r^n-l^n<(r-l)(r^{n-1}+...+l^{n-1})
+[29] <2n(y+\varepsilon)^{n-1}\varepsilon~.
+[30] \]
+[31] 但另一方面当然有 $l^n< y^n\leq r^n$ 和 $l^n< x\leq r^n$, 从而 $y^n$ 同 $x$ 的差可以小于任意预先指定的正数，
+[32] 于是只能有 $y^n=x$.
+[/SCOPE:s_rational_let1]
+[SCOPE:s_rational_let2|let_bind|有理数次幂定义]
+[33] 由此出发，就可以构造正实数的有理数次幂了。
+[34] 给定 $x>0$, 正整数 $n$ 和任意整数 $m$, 定义 $x^{1/n}$ 为 $x$ 的 $n$ 次算术根，而 $x^{m/n}=(x^{1/n})^m$. 由此得到的方幂满足开头所提到的六条性质。
+
+[/SCOPE:s_rational]
+[/SCOPE:s_rational_let2]
+[SCOPE:s_ex1|description|习题1 幂的连续性]
+[35] 习题 1 幂的连续性
+[36] 给定实数 $x>0$. 试证明：如果 $r_k$ 是收敛到零的有理数序列，
+[37] 那么序列 $x^{r_k}$ 的极限是 1. 提示：利用伯努利不等式的如下变形：如果 $x>1$, $N$ 为正整数，
+[38] 则
+[39] \[
+[40] 0< x^{1/N}-1<\frac{x-1}{N}~.
+[41] \]
+
+[/SCOPE:s_ex1]
+[SCOPE:s_real|description|实数次幂的构造]
+[42] 有了有理数次幂作为基础，就可以根据六条性质中的最后两条（保序性）来构造任意实数次幂了。
+[SCOPE:s_real_let|let_bind|实数次幂定义变量]
+[43] 给定 $x>0$ 和任意实数 $\alpha$. 记实数 $\alpha$ 的戴德金分割为 $L_\alpha|R_\alpha$. 于是可得到两个数集
+[44] \[
+[45] A=\{x^l:l\in L_\alpha\}~,\quad B=\{x^r:r\in R_\alpha\}~.
+[46] \]
+[47] 由于前面已经定义了有理数次幂，
+[48] 所以这两个数集都是良好定义的，而且根据保序性质也可看出 $A$ 中的元素总是小于 $B$ 中的元素。
+[49] 根据实数的完备性，这两个数集之间存在着一个实数。
+[50] 另一方面，由于上类和下类之间的元素可以任意接近，
+[51] 所以根据习题 1., 可见数集 $A$ 和 $B$ 之间只能有一个实数。
+[52] 我们定义这唯一的一个实数为 $x^\alpha$.
+[/SCOPE:s_real_let]
+[53] 从这个定义出发，可以验证幂的一切性质。
+[54] 例如，设实数 $\alpha,\beta$ 的戴德金分割分别为 $L_\alpha|R_\alpha$ 和 $L_\beta|R_\beta$, 那么实数 $\alpha+\beta$ 的戴德金分割就是 $(L_\alpha+L_\beta)|(R_\alpha+R_\beta)$. 根据有理数次幂的性质就能够得到
+[55] \[
+[56] x^{\alpha+\beta}=x^\alpha\cdot x^\beta~.
+[57] \]
+[58] 幂的其余运算性质均可由类似的方法导出。
+[59] 幂还具有如下的连续性：
+
+[/SCOPE:s_real]
+[SCOPE:s_thm1|description|定理1 幂的连续性]
+[60] 定理 1 幂的连续性
+[61] 设正数序列 $x_k$ 收敛到正实数 $x$. 那么
+[62] \[
+[63] \lim_{k\to\infty}x_k^\alpha=x^\alpha~.
+[64] \]
+[65] 设实数序列 $\alpha_k$ 收敛到 $\alpha$. 那么
+[66] \[
+[67] \lim_{k\to\infty}x^{\alpha_k}=x^\alpha~.
+[68] \]
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex2|description|习题2]
+[69] 习题 2
+[70] 证明上述定理。
+[71] 提示：对于第一条，试说明对于 $y>x>1$, 成立
+[72] \[
+[73] 0< y^\alpha-x^\alpha< x^\alpha\cdot\left(\left(\frac{y}{x}\right)^{[\alpha]+1}-1\right)~.
+[74] \]
+[75] 这样一来，当 $y$ 接近 $x$ 时，$y^\alpha$ 便接近 $x^\alpha$. 对于第二条，参考习题 1.
+[/SCOPE:s_ex2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_ex1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的证明需要习题1的结论"
+  },
+  {
+    "source_scope": "s_real",
+    "target_scope": "s_ex1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "实数次幂构造中用到习题1的结论"
+  },
+  {
+    "source_scope": "s_real",
+    "target_scope": "s_rational",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "实数次幂构造基于有理数次幂"
+  }
+]

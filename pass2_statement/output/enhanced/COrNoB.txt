@@ -1,0 +1,125 @@
+[SCOPE:root|description|连续正交归一基底与傅里叶变换]
+文章名: COrNoB
+标题: 连续正交归一基底与傅里叶变换
+
+[SCOPE:s_discrete|description|离散的函数基底]
+[SCOPE:s_discrete_let|let_bind|离散基底变量]
+[0] 本文使用狄拉克符号。
+[1] 在 “傅里叶级数（三角）” 中，我们介绍了正交归一函数基底的概念，
+[2] 即把满足一定条件的一元函数的集合看作一个矢量空间，两个函数（矢量）的内积定义为
+[3] \begin{equation}
+\left\langle f \middle| g \right\rangle = \int_{-\infty}^{+\infty} f(x)^* g(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[4a] 其中 $*$ 表示复共轭
+[4b] 如果空间中的函数都是实函数，则可忽略。
+[5] 该空间中的一组正交归一基底用狄拉克符号表示为 $ \left\lvert x_i \right\rangle $（$i = 1, 2,\dots$），基底的个数可以是有限个或无限个，空间的维数就是基底的个数。
+[/SCOPE:s_discrete_let]
+[6] 基底满足正交归一条件（式 1 ）
+[7] \begin{equation}
+\left\langle x_i \middle| x_j \right\rangle = \delta_{i,j}~.
+\end{equation}
+[8] 若这组正交归一基底是完备的，
+[9] 那么如果一个函数可以分解为它们的线性组合：
+[10] \begin{equation}
+\left\lvert f \right\rangle = \sum_j c_j \left\lvert x_j \right\rangle ~.
+\end{equation}
+[11] 两边左乘 $ \left\langle x_i \right\rvert $，
+[12] 则有
+[13] \begin{equation}
+\left\langle x_i \middle| f \right\rangle = \sum_j c_j \left\langle x_i \middle| x_j \right\rangle = \sum_j c_j \delta_{i,j} = c_i~.
+\end{equation}
+[14] \begin{equation}
+c_i = \left\langle x_i \middle| f \right\rangle ~,
+\end{equation}
+[15] 式 4 [链接 L0]
+[16] 的过程相当于用正交归一性把 $ \left\lvert x_i \right\rangle $ 项从
+[17] 式 3 [链接 L1]
+[18] 的求和中筛选了出来。
+[19] 我们得到几何矢量中一个熟悉的结论：一个矢量关于一组正交归一基底的坐标等于它在每个基底上的投影。
+
+[/SCOPE:s_discrete]
+[SCOPE:s_continuous|description|连续的函数基底]
+[SCOPE:s_continuous_let|let_bind|连续基底变量]
+[20] 我们接下来用类似的方法来理解傅里叶变换（式 1 ）
+[21] \begin{equation}
+g(k) = \frac{1}{\sqrt{2\pi }} \int_{-\infty }^{+\infty } f(x) \mathrm{e} ^{- \mathrm{i} kx} \,\mathrm{d}{x} ~,
+\end{equation}
+[22] \begin{equation}
+f(x) = \frac{1}{\sqrt{2\pi }} \int_{-\infty }^{+\infty } g(k) \mathrm{e} ^{ \mathrm{i} kx} \,\mathrm{d}{k} ~.
+\end{equation}
+[23] 我们令所有可以做傅里叶变换的函数构成的空间为 $X$，从傅里叶变换的公式，我们猜想该空间的正交归一 “基底” 为
+[24] \begin{equation}
+\left\lvert k \right\rangle = \frac{1}{\sqrt{2\pi}} \mathrm{e} ^{ \mathrm{i} kx} \qquad (k \in \mathbb R)~.
+\end{equation}
+[/SCOPE:s_continuous_let]
+[25] 严格来说，$X$ 空间的函数必须要满足 $ \left\langle x \middle| x \right\rangle $ 为有限值，而
+[26] 式 8 [链接 L2]
+[27] 中的函数显然不满足这点，
+[28] 所以它们并不属于 $X$ 空间，而是一个包含 $X$ 的更大的空间，
+[29] 所以这个 “基底” 只是一个形象的说法，需要加上引号。
+[SCOPE:s_continuous_cond|conditional|连续基底的正交归一条件]
+[30] 显然，式 8 中的任意两个 “基底” 的内积都不收敛，而且 $k$ 的取值是连续的，
+[31] 所以我们不可能用式 2 表示它们的正交归一关系。
+[32] 但通过狄拉克 delta 函数的式 14
+[33] \begin{equation}
+\int_{-\infty}^{+\infty} \mathrm{e} ^{ \mathrm{i} kx} \,\mathrm{d}{x} = 2\pi \delta(k)~.
+\end{equation}
+[34] 可以得到一个和
+[35] 式 2 [链接 L3]
+[36] 类似的关系
+[37] \begin{equation}
+\begin{aligned}
+\left\langle k' \middle| k \right\rangle &= \int_{-\infty}^{+\infty} \frac{ \mathrm{e} ^{- \mathrm{i} k'x}}{\sqrt{2\pi}} \frac{ \mathrm{e} ^{ \mathrm{i} kx}}{\sqrt{2\pi}} \,\mathrm{d}{x} \\
+&= \frac{1}{2\pi}\int_{-\infty}^{+\infty} \mathrm{e} ^{ \mathrm{i} (k'-k)x} \,\mathrm{d}{x}
+= \delta(k' - k)~,
+\end{aligned}
+\end{equation}
+[38] \begin{equation}
+\left\langle k' \middle| k \right\rangle = \delta(k' - k)~.
+\end{equation}
+[/SCOPE:s_continuous_cond]
+[39] 这可以看作是
+[40] 连续基底的正交归一条件
+[41] 现在，把式 6 和式 7 用狄拉克符号表示为
+[42] \begin{equation}
+g(k) = \left\langle k \middle| f \right\rangle ~,
+\end{equation}
+[43] \begin{equation}
+f(x) = \int_{-\infty}^{+\infty} g(k') \left\lvert k' \right\rangle \,\mathrm{d}{k'} ~.
+\end{equation}
+[44] 它们可以分别看作是把
+[45] 式 5 [链接 L4]
+[46] 式 3 [链接 L5]
+[47] 拓展到连续基底的情况。
+[48] 根据定义，任何能做傅里叶（反）变换的 $f(x)$ 必定能展开成
+[49] 式 13 [链接 L6]
+[50] 的形式。
+[51] 再来证明
+[52] 式 12 [链接 L7]
+[53] ，过程和
+[54] 式 4 [链接 L8]
+[55] 式 13 [链接 L9]
+[56] 两边左乘 $ \left\langle k \right\rvert $，使用 $\delta$ 函数的性质
+[57] 式 9 [链接 L10]
+[58] 把积分中 $ \left\lvert k \right\rangle $ 基底的系数 “筛选” 出来
+[59] \begin{equation}
+\begin{aligned}
+\left\langle k \middle| f \right\rangle &= \int_{-\infty}^{+\infty} g(k) \left\langle k \middle| k' \right\rangle \,\mathrm{d}{k} \\
+&= \int_{-\infty}^{+\infty} g(k) \delta(k-k') \,\mathrm{d}{k'}
+= g(k)~,
+\end{aligned}
+\end{equation}
+[60] 注意该证明并不仅限于傅里叶变换一种情况，任何连续的基底 $ \left\lvert k \right\rangle $ 只要满足正交归一条件式 11 ，且可以展开某函数 $f(x)$，就都能使式 12 成立。
+[/SCOPE:s_continuous]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_continuous",
+    "target_scope": "s_discrete",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "连续基底是离散基底的推广"
+  }
+]

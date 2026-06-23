@@ -1,0 +1,835 @@
+[SCOPE:root|description|Rudin 数学分析笔记 2]
+文章名: AnalN2
+标题: Rudin 数学分析笔记 2
+
+[0] 本文参考 Rudin [1]。
+
+[SCOPE:s_chap4|description|Chap 4. 连续性]
+[SCOPE:s_4_1|description|4.1 函数的极限]
+[SCOPE:s_4_1_let|let_bind|4.1 变量]
+[1] 4.1 函数的极限：令 $f:E\subset X\to Y$，$X,Y$ 为度量空间，且 $p$ 是 $E$ 的极限点。
+[/SCOPE:s_4_1_let]
+[2a] (x)\to q$，或 $\lim_{x\to p}f
+[2b] (x)=q$，就是存在 $q\in Y$ 具有以下性质：对每个 $\epsilon>0$，存在 $\delta>0$，使 $d_{Y}(f
+[2c] (x),q)<\epsilon$ 对满足 $0< d_X(x,p)<\delta$ 的一切点 $x\in E$ 成立。
+[/SCOPE:s_4_1]
+[SCOPE:s_4_2|description|4.2 序列极限刻画]
+[3] 4.2 $\lim_{x\to p}f(x)=q$ 当且仅当 $\lim_{n\to\infty} f(p_n)=q$ 对 $E$ 中满足 $p_n\ne p$，$\lim_{n\to\infty} p_n=p$ 的每个序列 $\{p_n\}$ 成立。
+[4] 如果 $f$ 在 $p$ 有极限，
+[5] 那么它是唯一的
+[/SCOPE:s_4_2]
+[SCOPE:s_4_4|description|4.4 极限的四则运算]
+[6a] (x)=A$，$\lim_{x\to p}g
+[6b] (x)=B$，
+[7a] (a) $\lim_{x\to p}(f+g)
+[7b] (x)=A+B$，
+[7c] (b) $\lim_{x\to p}(fg)
+[7d] (x)=AB$，
+[7e] (c) $\lim_{x\to p}(f/g)
+[7f] (x)=A/B$（若 $B\ne 0$）。
+[/SCOPE:s_4_4]
+[SCOPE:s_4_6|description|4.6 连续性定义]
+[8a] (x)=f
+[8b] (p)$。
+[/SCOPE:s_4_6]
+[SCOPE:s_4_7|description|4.7 复合函数的连续性]
+[9a] (x) = g(f
+[9b] (x))$。
+[10] 如果 $f$ 在点 $p$ 连续，且 $g$ 在点 $f(p)$ 连续，
+[11] 那么 $h$ 在点 $p$ 连续。
+[/SCOPE:s_4_7]
+[SCOPE:s_4_8|description|4.8 开集刻画连续性]
+[12] 4.8 定理：度量空间 $X,Y$ 的函数 $f:X\to Y$ 连续，当且仅当对 $Y$ 的每个开集 $V$，$f^{-1}(V)$ 是 $X$ 中的开集。
+[13] 这是连续性的一个极有用的特征。
+[14] 推论：度量空间 $X,Y$ 的函数 $f:X\to Y$ 连续，当且仅当对 $Y$ 的每个闭集 $C$，$f^{-1}(C)$ 是 $X$ 中的闭集。
+[/SCOPE:s_4_8]
+[SCOPE:s_4_9|description|4.9 连续函数的四则运算]
+[15] 4.9 设 $f,g$ 是度量空间 $X$ 上的复连续函数，
+[16] 那么 $f+g$，$fg$ 与 $f/g$ 在 $X$ 上连续。
+[17] 在最后一个中，假定对一切 $x\in X$，$g(x)\ne 0$。
+[18] (a) 度量空间上的 $ \boldsymbol{\mathbf{f}} :X\to R^k$ 连续当且仅当每个分量函数都连续。
+[19] (b) 如果 $ \boldsymbol{\mathbf{f}} , \boldsymbol{\mathbf{g}} :X\to R^k$ 连续，
+[20] 那么 $ \boldsymbol{\mathbf{f}} + \boldsymbol{\mathbf{g}} $ 与 $ \boldsymbol{\mathbf{f}} \boldsymbol\cdot \boldsymbol{\mathbf{g}} $ 都在 $X$ 上连续。
+[/SCOPE:s_4_9]
+[SCOPE:s_4_13|description|4.13 有界定义]
+[21] 4.13 有界：$ \left\lvert \boldsymbol{\mathbf{f}} (x) \right\rvert \leqslant M$。
+[/SCOPE:s_4_13]
+[SCOPE:s_4_14|description|4.14 连续像紧]
+[22] 4.14 若紧度量空间 $X$ 到度量空间 $Y$ 的函数 $f:X\to Y$ 是连续的，
+[23] 那么 $f(X)$ 是紧的。
+[/SCOPE:s_4_14]
+[SCOPE:s_4_15|description|4.15 紧集上连续映射有界]
+[24] 4.15 如果 $ \boldsymbol{\mathbf{f}} $ 是把紧度量空间 $X$ 映入 $R^k$ 内的连续映射，
+[25] 那么 $ \boldsymbol{\mathbf{f}} (X)$ 是闭的和有界的。
+[26] 因此 $ \boldsymbol{\mathbf{f}} $ 是有界的。
+[/SCOPE:s_4_15]
+[SCOPE:s_4_16|description|4.16 最值定理]
+[27a] (p)$，$m=\inf_{p\in X} f
+[27b] (p)$，
+[28a] (r)=M$ 以及 $f
+[28b] (x)=m$。
+[/SCOPE:s_4_16]
+[SCOPE:s_4_17|description|4.17 连续双射的逆连续]
+[29] 4.17 设 $f$ 是把紧度量空间 $X$ 映满度量空间 $Y$ 的连续 1-1 映射，
+[30] 那么逆映射 $f^{-1}$ 是 $Y$ 映满 $X$ 的连续映射。
+[/SCOPE:s_4_17]
+[SCOPE:s_4_18|description|4.18 一致连续定义]
+[31a] (p),f
+[31b] (q))<\epsilon$。
+[/SCOPE:s_4_18]
+[SCOPE:s_4_19|description|4.19 紧集上连续则一致连续]
+[32] 4.19 设 $f$ 是把紧度量空间 $X$ 映入度量空间 $Y$ 的连续映射。
+[33] 那么 $f$ 在 $X$ 上一致连续。
+[/SCOPE:s_4_19]
+[SCOPE:s_4_20|description|4.20 非紧集上的反例]
+[34] 4.20 设 $E$ 是 $R^1$ 中的非紧集，
+[35] 那么 (a) 有在 $E$ 上连续却无界的函数。
+[36] (b) 有在 $E$ 上连续且有界，却没有最大值的函数。
+[37] (c) 如果 $E$ 是有界的，有在 $E$ 上连续却不一致连续的函数。
+[/SCOPE:s_4_20]
+[SCOPE:s_4_22|description|4.22 连续像连通]
+[38] 4.22 设 $f$ 是把连通的度量空间 $X$ 映入度量空间 $Y$ 内的连续映射，$E$ 是 $X$ 的连通子集，
+[39] 那么 $f(E)$ 是连通的。
+[/SCOPE:s_4_22]
+[SCOPE:s_4_25|description|4.25 左极限右极限]
+[40] 4.25 设 $f$ 定义在 $(a,b)$ 上，定义一点的左极限和右极限……显然极限存在当且仅当左极限和右极限存在且相等。
+[41a] 如果函数在一点不连续
+[41b] 则说在这点间断（discontinuous）。
+[/SCOPE:s_4_25]
+[SCOPE:s_4_26|description|4.26 第一类间断]
+[42a] 4.26 设 $f$ 定义在 $(a,b)$ 上
+[42b] 如果 $f$ 在一点 $x$ 间断，并且如果 $f(x+)$ 和 $f(x-)$ 都存在，则说 $f$ 在 $x$ 发生了第一类间断。
+[43] 其他间断称为第二类间断。
+[/SCOPE:s_4_26]
+[SCOPE:s_4_28|description|4.28 单调函数定义]
+[44a] 4.28 设 $f:(a,b)\to R$
+[44b] 若 $a< x< y< b$ 时有 $f(x)\leqslant f(y)$，则说 $f$ 在 $(a,b)$ 上单调递增；
+[45a] 若有 $f(x)\geqslant f(y)$
+[45b] 则是单调递减。
+[46] 二者统称为单调函数。
+[/SCOPE:s_4_28]
+[SCOPE:s_4_30|description|4.30 单调函数间断点可数]
+[47] 4.30 设 $f$ 在 $(a,b)$ 上单调，
+[48] 那么 $(a,b)$ 中使 $f$ 间断的点最多是可数的。
+[/SCOPE:s_4_30]
+[49] 4.31 间断点不一定是孤立点。
+[SCOPE:s_4_32|description|4.32 无穷邻域]
+[50] 4.32 对任意 $c\in R$，集合 ${x|x>c}$ 叫做 $+\infty$ 的一个邻域，记为 $(c,+\infty)$。
+[51] 类似地，$(-\infty, c)$ 是 $-\infty$ 的一个邻域。
+[/SCOPE:s_4_32]
+[SCOPE:s_4_33|description|4.33 广义实数系极限]
+[52] 4.33 把函数的极限用领域的语言拓展到了广义实数系。
+
+[/SCOPE:s_chap4]
+[/SCOPE:s_4_33]
+[SCOPE:s_chap5|description|Chap 5. 微分法]
+[SCOPE:s_5_1|description|5.1 导数定义]
+[SCOPE:s_5_1_let|let_bind|5.1 变量]
+[53a] (x) = \lim_{t\to x} [f
+[53b] (t)-f
+[53c] (x)]/(t-x)$。
+[/SCOPE:s_5_1_let]
+[54a] 如果 $f'$ 在点 $x$ 有定义
+[54b] 则说 $f$ 在 $x$ 点可微或可导。
+[55a] 如果在 $E\subset [a,b]$ 的每一点有定义
+[55b] 则说 $f$ 在 $E$ 上可微。
+[/SCOPE:s_5_1]
+[SCOPE:s_5_2|description|5.2 可微则连续]
+[56] 5.2……若 $f$ 在 $x\in [a,b]$ 可微（可导），
+[57] 那么它在 $x$ 点连续。
+[/SCOPE:s_5_2]
+[SCOPE:s_5_5|description|5.5 链式法则]
+[58a] (x) = g'(f
+[58b] (x))f'
+[58c] (x)$。
+[/SCOPE:s_5_5]
+[SCOPE:s_5_8|description|5.8 极值点导数为零]
+[59a] (q)\leqslant f
+[59b] (p)$。
+[60] 局部极小值的定义类似。
+[61] 5.8 设 $f$ 定义在 $[a,b]$ 上；
+[62] $x\in [a,b]$，如果 $f$ 在点 $x$ 取得局部极大值而且 $f'(x)$ 存在，
+[63] 那么 $f'(x) = 0$。
+[/SCOPE:s_5_8]
+[SCOPE:s_5_9|description|5.9 柯西中值定理]
+[64] 5.9 设 $f,g$ 是 $[a,b]$ 上的连续实函数，他们在 $(a,b)$ 内可微，
+[65a] (b)-f
+[65b] (a)]g'
+[65c] (x) = [g
+[65d] (b)-g
+[65e] (a)]f'
+[65f] (x)$
+[/SCOPE:s_5_9]
+[SCOPE:s_5_10|description|5.10 拉格朗日中值定理]
+[66] 5.10 一般中值定理：设 $f$ 是定义在 $[a,b]$ 的连续实函数，在 $(a,b)$ 内可微，
+[67a] (b)-f
+[67b] (a) = (b-a)f'
+[67c] (x)$。
+[/SCOPE:s_5_10]
+[SCOPE:s_5_12|description|5.12 导数的介值性质]
+[68a] (a)<\lambda< f'
+[68b] (b)$，
+[69] 那么必有一点 $x\in (a,b)$ 使 $f'(x) = \lambda$。
+[70] 推论：如果 $f$ 在 $[a,b]$ 上可微，
+[71] 那么 $f'$ 在 $[a,b]$ 上不能有简单间断。
+[72] 但 $f'$ 可能有第二类间断。
+[/SCOPE:s_5_12]
+[SCOPE:s_5_13|description|5.13 洛必达法则]
+[73] 5.13 洛必达（L'Hospital）法则：假设实函数 $f,g$ 在 $(a,b)$ 内可微，而且对所有 $x\in (a,b)$，$g'(x)\ne 0$。
+[74] 这里 $-\infty\leqslant a< b\leqslant+\infty$。
+[75a] (x)/g'
+[75b] (x) = A$，如果 $\lim_{x\to a} f
+[75c] (x) = \lim_{x\to a} g
+[75d] (x) = 0$，或 $\lim_{x\to a} g
+[75e] (x) = +\infty$，
+[76a] (x)/g
+[76b] (x)= A$。
+[/SCOPE:s_5_13]
+[SCOPE:s_5_14|description|5.14 高阶导数]
+[77] 5.14 如果 $f$ 在一个区间由导数 $f'$，而 $f'$ 自身又是可微的，把 $f'$ 的导数记为 $f''$，叫做二阶导数。
+[78a] (n)}$，其中 $f^{
+[78b] (n)}$ 叫做 $n$ 阶导数。
+[/SCOPE:s_5_14]
+[SCOPE:s_5_15|description|5.15 Taylor 定理]
+[79a] (n)}
+[79b] (t)$ 对每个 $t \in(a, b)$ 存在。
+[80a] (t)=\sum_{k=0}^{n-1} \frac{f^{
+[80b] (k)}(\alpha)}{k !}(t-\alpha)^{k}$. 那么，在 $\alpha$ 与 $\beta$ 之间一定存在着一点，$x$, 使得 $f(\beta)=P(\beta)+\frac{f^{
+[80c] (n)}
+[80d] (x)}{n !}(\beta-\alpha)^{n}$.
+[/SCOPE:s_5_15]
+[SCOPE:s_5_19|description|5.19 向量值中值定理]
+[81] 5.19 设 $\mathbf{f}$ 是把 $[a, b]$ 映人 $R^{k}$ 内的连续映射，并且 $\mathbf{f}$ 在 $(a, b)$ 内可微，
+[82a] (b)-\mathbf{f}
+[82b] (a)| \leqslant(b-a)\left|\mathbf{f}^{\prime}
+[82c] (x)\right|$.
+
+[/SCOPE:s_chap5]
+[/SCOPE:s_5_19]
+[SCOPE:s_chap6|description|Chap 6. Riemann-Stieltjes 积分]
+[SCOPE:s_6_1|description|6.1 Riemann 积分定义]
+[SCOPE:s_6_1_let|let_bind|6.1 变量]
+[83] 6.1 设 $[a, b]$ 是给定的区间。
+[84] $[a, b]$ 的分法 $P$ 指的是有限点集 $x_{0}$, $x_{1}, \cdots, x_{n}$, 其中 $a=x_{0} \leqslant x_{1} \leqslant \cdots \leqslant x_{n-1} \leqslant x_{n}=b$. 把这里每个数减去它的前邻数的差记作 $\Delta x_{i}=x_{i}-x_{i-1} \quad(i=1, \cdots, n)$. 现在假设 $f$ 是定义在 $[a, b]$ 上的有界实函数。
+[85a] (x)\ \ \left(x_{i-1} \leqslant x \leqslant x_{i}\right)$, $m_{i}=\inf f
+[85b] (x)\ \ \left(x_{i-1} \leqslant x \leqslant x_{i}\right)$, $U(P, f)=\sum_{i=1}^{n} M_{i} \Delta x_{i}$, $L(P, f)=\sum_{i=1}^{n} m_{i} \Delta x_{i}$ 最后置 $\overline{\int_{a}^{b}} f \mathrm{~d} x=\inf U(P, f)$, $\underline{\int_{a}^{b}} f \mathrm{~d} x=\sup L(P, f)$. 其中最大下界与最小上界是对 $[a, b]$ 的所有分法而取的。
+[/SCOPE:s_6_1_let]
+[86] 两式左端分别称为 $f$ 在 $[a, b]$ 上的 Riemann 上积分与下积分.
+[87a] 如果上积分与下积分相等
+[87b] 则说 $f$ 在 $[a, b]$ 上 Riemann 可积，记作 $f \in \mathscr{R}$ (即 是 $\mathscr{R}$ 表示 Riemann 可积函数的集合). 并且用 $\int_{a}^{b} f \mathrm{~d} x$ 或 $\int_{a}^{b} f(x) \mathrm{d} x$ 上下积分的共同值。
+[88] 这就是 $f$ 在 $[a, b]$ 上的 Riemann 积分.
+[89] 因为 $f$ 是有界的，对于每个 $P$, $m(b-a) \leqslant L(P, f) \leqslant U(P, f) \leqslant M(b-a)$, 从而数 $L(P, f)$ 和 $U(P, f)$ 组成一个有界集。
+[90] 这说明，对于每个有界函数 $f$, 上秎分与下积分都有定义。
+[91] 关于它们是否相等的问题，
+[92] 即是 $f$ 的可积性问题，是 更为细致的问题。
+[93] 我们将不去孤立地研究 Riemann 积分，而马上去考虑更一般的情形。
+[/SCOPE:s_6_1]
+[SCOPE:s_6_2|description|6.2 Riemann-Stieltjes 积分定义]
+[SCOPE:s_6_2_let|let_bind|6.2 变量]
+[94a] (a)$ 和 $\alpha
+[94b] (b)$ 有限，
+[95] 从而 $\alpha$ 在 $[a, b]$ 上有界). 对应于 $[a, b]$ 的每个分法 $P$, 记 $\Delta \alpha_{i}=\alpha\left(x_{i}\right)-\alpha\left(x_{i-1}\right)$ 显然 $\Delta \alpha_{i} \geqslant 0$. 对于 $[a, b]$ 上任意的有界实函数 $f$, 令 $U(P, f, \alpha)=\sum_{i=1}^{n} M_{i} \Delta \alpha_{i}$, …[truncated]…^{n} m_{i} \Delta \alpha_{i}$. 这里 $M_{i}, m_{i}$ 与 6.1 中的含义相同，并且定义 $\overline{\int_{a}^{b}} f \mathrm{~d} \alpha=\operatorname{infU}(P, f, \alpha)$, $\underline{\int_{a}^{b}} f \mathrm{~d} \alpha=\sup L(P, f, \alpha)$. 其中的 $\inf$ 及 $\sup$ 都是对所有分法而取的。
+[/SCOPE:s_6_2_let]
+[96a] 如果两式左端相等，我们
+[96b] 则用 $\int_{a}^{b} f \mathrm{~d} \alpha$ 有时也用 $\int_{a}^{b} f(x) \mathrm{d} \alpha(x)$ 表示它们的共同值。
+[97] 这就是 $[a, b]$ 上 $f$ 关于 $\alpha$ 的 Riemann-Stieltjes 积分（或简称为 Stieltjes 积 分）, 我们就说 $f$ 关于 $\alpha$ 在 Riemann 意义上可积，并记作 $f \in \mathscr{R}(\alpha)$. 取 $\alpha(x)=x$, 可见 Riemann 积分是 Riemann-Stieltjes 积分的特殊情形。
+[98] 在一般情形，$\alpha$ 甚至不一定是连续的。
+[/SCOPE:s_6_2]
+[SCOPE:s_6_3|description|6.3 加细]
+[99a] 6.3 我们称分法 $P^{*}$ 是 $P$ 的加细
+[99b] 如果 $P^{*} \supset P($，则$P$ 的每个点都是 $P^{*}$ 的点). 设有两个分法 $P_{1}$ 和 $P_{2}$, 如果 $P^{*}=P_{1} \cup P_{2}$, 便称 $P^{*}$ 是它们的共同加细。
+[/SCOPE:s_6_3]
+[SCOPE:s_6_4|description|6.4 加细性质]
+[100] 6.4 如果 $P^{*}$ 是 $P$ 的加细，
+[101] 那么 $L(P, f, \alpha) \leqslant L\left(P^{*}, f, \alpha\right)$ 而且 $U\left(P^{*}, f, \alpha\right) \leqslant U(P, f, \alpha)$
+[/SCOPE:s_6_4]
+[SCOPE:s_6_5|description|6.5 下积分 ≤ 上积分]
+[102] 6.5 $\underline{\int_{a}^{b}} f \mathrm{~d} \alpha \leqslant \overline{\int_{a}^{b}} f \mathrm{~d} \alpha .$
+[/SCOPE:s_6_5]
+[SCOPE:s_6_6|description|6.6 可积的充要条件]
+[103] 6.6 在 $[a,b]$ 上 $f\in\mathscr{R}(\alpha)$ 当且仅当对任意的 $\epsilon>0$，存在一个分法 $P$ 使 $U(P,f,\alpha)-L(P,f,\alpha)<\epsilon$。
+[/SCOPE:s_6_6]
+[SCOPE:s_6_8|description|6.8 连续则可积]
+[104] 6.8 如果 $f$ 在 $[a,b]$ 上连续，
+[105] 那么在 $[a,b]$ 上 $f\in \mathscr{R}(\alpha)$。
+[/SCOPE:s_6_8]
+[SCOPE:s_6_9|description|6.9 单调且α连续则可积]
+[106] 6.9 如果 $f$ 在 $[a,b]$ 上单调，$\alpha$ 在 $[a,b]$ 上连续，
+[107] 那么 $f\in \mathscr{R}(\alpha)$。
+[/SCOPE:s_6_9]
+[SCOPE:s_6_10|description|6.10 有限间断点且α连续则可积]
+[108] 6.10 假设 $f$ 在 $[a,b]$ 上有界，只有有限个间断点。
+[109] $\alpha$ 在 $f$ 的每个间断点上连续，
+[110] 那么 $f\in \mathscr{R}(\alpha)$。
+[/SCOPE:s_6_10]
+[SCOPE:s_6_11|description|6.11 连续函数复合可积]
+[111] 6.11 假设在 $[a,b]$ 上 $f\in \mathscr{R}(\alpha)$，$m\leqslant f\leqslant M$。
+[112a] (x) = \phi(f
+[112b] (x))$。
+[113] 那么在 $[a,b]$ 上 $h\in \mathscr{R}(\alpha)$。
+[/SCOPE:s_6_11]
+[SCOPE:s_6_12a|description|6.12 (a) 线性性]
+[114] 6.12 (a) 如果在 $f_1,f_2 \in \mathscr{R}(\alpha)$，
+[115] 那么 $f_1+f_2 \in \mathscr{R}(\alpha)$。
+[116] 对任意常数 $c$，$cf\in \mathscr{R}(\alpha)$，并且 $\int_a^b (f_1+f_2) \,\mathrm{d}{\alpha} = \int_a^bf_1 \,\mathrm{d}{\alpha} + \int_a^bf_2 \,\mathrm{d}{\alpha} $。
+[117] $\int_a^b cf \,\mathrm{d}{\alpha} = c\int_a^b f \,\mathrm{d}{\alpha} $。
+[/SCOPE:s_6_12a]
+[SCOPE:s_6_12b|description|6.12 (b) 单调性]
+[118] 6.12 (b) 如果在 $[a,b]$ 上 $f_1\leqslant f_2$，
+[119] 那么 $\int_a^bf_1 \,\mathrm{d}{\alpha} \leqslant \int_a^bf_2 \,\mathrm{d}{\alpha} $。
+[/SCOPE:s_6_12b]
+[SCOPE:s_6_12c|description|6.12 (c) 区间可加性]
+[120] 6.12 (c) 如果在 $[a,b]$ 上 $f\in \mathscr{R}(\alpha)$，并且 $a< c< b$，
+[121] 那么在 $[a,c]$ 及 $[c,b]$ 上 $f\in \mathscr{R}(\alpha)$，并且 $\int_a^cf \,\mathrm{d}{\alpha} +\int_c^bf \,\mathrm{d}{\alpha} = \int_a^bf \,\mathrm{d}{\alpha} $
+[/SCOPE:s_6_12c]
+[SCOPE:s_6_12d|description|6.12 (d) 有界估计]
+[122a] （d) 如果在 $[a,b]$ 上 $f\in \mathscr{R}(\alpha)$ 并且 $[a,b]$ 上 $ \left\lvert f
+[122b] (x) \right\rvert \leqslant M$，
+[123a] (b)-\alpha
+[123b] (a)]$。
+[/SCOPE:s_6_12d]
+[SCOPE:s_6_12e|description|6.12 (e) 关于α的线性性]
+[124] 6.12 (e) 如果 $f\in \mathscr{R}(\alpha_1)$ 并且 $f\in \mathscr{R}(\alpha_2)$，
+[125] 那么 $f\in \mathscr{R}(\alpha_1+\alpha_2)$ 并且 $\int_a^bf \,\mathrm{d}{(\alpha_1+\alpha_2)} = \int_a^bf \,\mathrm{d}{\alpha_1} + \int_a^bf \,\mathrm{d}{\alpha_2} $。
+[126] 如果 $f\in \mathscr{R}(\alpha)$ 且 $c$ 是正常数，
+[127] 那么 $f\in \mathscr{R}(c\alpha)$ 而且 $\int_a^bf \,\mathrm{d}{(c\alpha)} = c\int_a^bf \,\mathrm{d}{\alpha} $
+[128a] 如果在 $[a,b]$ 上 $f,g\in \mathscr{R}(\alpha)$
+[128b] 则(a) $fg\in \mathscr{R}(\alpha)$；
+[129] (b) $ \left\lvert f \right\rvert \in \mathscr{R}(\alpha)$ 而且 $ \left\lvert \int_a^bf \,\mathrm{d}{\alpha} \right\rvert \leqslant \int_a^b \left\lvert f \right\rvert \,\mathrm{d}{\alpha} $
+[/SCOPE:s_6_12e]
+[SCOPE:s_6_17|description|6.17 积分换元公式]
+[130a] (x)\alpha'
+[130b] (x) \,\mathrm{d}{x} $。
+[/SCOPE:s_6_17]
+[SCOPE:s_6_20|description|6.20 变上限积分]
+[131a] (x) = \int_a^x f
+[131b] (t) \,\mathrm{d}{t} $。
+[132] 那么 $F$ 在 $[a,b]$ 上连续；
+[133] 如果 $f$ 又在 $[a,b]$ 的 $x_0$ 点连续，
+[134] 那么 $F$ 在 $x_0$ 可微，并且 $F'(x_0) = f(x_0)$。
+[/SCOPE:s_6_20]
+[SCOPE:s_6_21|description|6.21 微积分基本定理]
+[135] 6.21 微积分基本定理：如果在 $[a,b]$ 上 $f\in \mathscr{R}$。
+[136] 在 $[a,b]$ 上又有可微函数 $F$ 满足 $F' = f$，
+[137a] (x) \,\mathrm{d}{x} = F
+[137b] (b)-F
+[137c] (a)$。
+[/SCOPE:s_6_21]
+[SCOPE:s_6_22|description|6.22 分部积分]
+[138] 6.22 分部积分：假定 $F$ 和 $G$ 都是 $[a, b]$ 上的可微函数。
+[139a] (x) g
+[139b] (x) \mathrm{d} x=F
+[139c] (b) G
+[139d] (b)-F
+[139e] (a) G
+[139f] (a)-\int_{a}^{b} f
+[139g] (x) G
+[139h] (x) \mathrm{d} x$.
+[/SCOPE:s_6_22]
+[SCOPE:s_6_23|description|6.23 向量值函数的积分]
+[140] 6.23 设 $f_{1}, \cdots, f_{k}$ 是 $[a, b]$ 上的实函数，并设 $\boldsymbol{f}=\left(f_{1}, \cdots, f_{k}\right)$ 是将 $[a, b]$ 映人 $R^{k}$ 内的映射。
+[141] 如果 $\alpha$ 在 $[a, b]$ 上单调递增，
+[142] 那么说 $\boldsymbol f \in \mathscr{R}(\alpha)$, 指的就是对于 $j=1,2, \cdots, k$，$f_{j} \in \mathscr{R}(\alpha)$. 果真如此的话，就定义 $\int_{a}^{b} \boldsymbol{f} \mathrm{d} \alpha=\left(\int_{a}^{b} f_{1} \mathrm{~d} \alpha, \cdots, \int_{a}^{b} f_{k} \mathrm{~d} \alpha\right)$. 换句话说，$\int \boldsymbol{f} \mathrm{~d} \alpha$ 是 $R^{k}$ 中的点，而 $\int f_{j} \mathrm{~d} \alpha$ 是它的第 $j$ 个坐标。
+[/SCOPE:s_6_23]
+[SCOPE:s_6_24|description|6.24 向量值微积分基本定理]
+[143a] (t) \mathrm{d} t=\boldsymbol{F}
+[143b] (b)-\boldsymbol{F}
+[143c] (a)$
+[/SCOPE:s_6_24]
+[SCOPE:s_6_25|description|6.25 向量值积分不等式]
+[144] 6.25 如果 $\boldsymbol f$ 是把 $[a, b]$ 映入 $R^{k}$ 内的映射，并且对于 $[a, b]$ 上的某个单调递增函数 $\alpha$, $\boldsymbol f \in \mathscr{R}(\alpha)$, 那么 $|\boldsymbol f| \in \mathscr{R}(\alpha)$, 而且 $\left|\int_{a}^{b} \boldsymbol f \mathrm{~d} \alpha\right| \leqslant \int_{a}^{b}|\boldsymbol f| \mathrm{d} \alpha$.
+[/SCOPE:s_6_25]
+[SCOPE:s_6_26|description|6.26 曲线与弧长]
+[SCOPE:s_6_26_let|let_bind|6.26 变量]
+[145] 6.26 将闭区间 $[a, b]$ 映人 $R^{k}$ 的映射 $\gamma$ 叫做 $R^{k}$ 里的曲线。
+[146] 也可以说 $\gamma$ 是 $[a , b]$ 上的曲线。
+[147a] 假如 $\gamma$ 是一对一的，$\gamma$
+[147b] 则称作弧. 假如 $\gamma(a)=\gamma(b)$; 就说 $\gamma$ 是闭曲线. 结合着 $R^{k}$ 里的每个曲线 $\gamma$, 总有 $R^{k}$ 的一个子集，
+[148] 即是 $\gamma$ 的值域，
+[149] 但是不同的曲线可以有相同的值域。
+[150] 我们给 $[a, b]$ 的每个分法 $P=\left\{x_{0}, \cdots, x_{n}\right\}$ 和 $[a, b]$ 上的每个曲线 $\gamma$, 配置一个数 $\Lambda(P, \gamma)=\sum_{i=1}^{n}\left|\gamma\left(x_{i}\right)-\gamma\left(x_{i-1}\right)\right|$. 我们把 $\Lambda(\gamma)=\sup \Lambda(P, \gamma)$
+[/SCOPE:s_6_26_let]
+[151] 定义作 $\gamma$ 之长; 这里的 sup 是对 $[a, b]$ 的一切分法来取的。
+[152] 假若 $\Lambda(\gamma)<\infty$, 就说 $\gamma$ 是可求长的。
+[/SCOPE:s_6_26]
+[SCOPE:s_6_27|description|6.27 光滑曲线可求长]
+[153] 6.27 假如 $\gamma^{\prime}$ 在 $[a, b]$ 上连续，$\gamma$ 便是可求长的，而且 $\Lambda(\gamma)=\int_{a}^{b}\left|\gamma^{\prime}(t)\right| \mathrm{d} t$
+
+[/SCOPE:s_chap6]
+[/SCOPE:s_6_27]
+[SCOPE:s_chap7|description|Chap 7. 函数序列与函数项级数]
+[SCOPE:s_7_1|description|7.1 逐点收敛]
+[SCOPE:s_7_1_let|let_bind|7.1 变量]
+[154] 7.1 假设 $n=1,2,...$，$\{f_n\}$ 是一个定义在集 $E$ 上的函数序列，再假设数列 $\{f_n(x)\}$ 对每个 $x\in E$ 收敛。
+[/SCOPE:s_7_1_let]
+[155a] (x) = \lim_{n\to\infty} f_n
+[155b] (x)$（$x\in E$）确定一个函数 $f$。
+[156] 这时我们说 $\{f_n\}$ 在 $E$ 上收敛。
+[157] $f$ 是 $\{f_n\}$ 的极限或极限函数。
+[158a] 类似地
+[158b] 如果对每个 $x\in E$，$\sum f_n(x)$ 收敛，如果定义 $f(x) = \sum_{n=1}^\infty f_n(x)$（$x\in E$），则说函数 $f$ 是级数 $\sum f_n$ 的和。
+[159] ……所以，积分的极限和极限的积分，
+[160] 即使两者都是有限的，也未必相等。
+[/SCOPE:s_7_1]
+[SCOPE:s_7_7|description|7.7 一致收敛定义]
+[161a] (x)-f
+[161b] (x) \right\rvert \leqslant \epsilon$，我们就说函数序列在 $E$ 上一致收敛于函数 $f$。
+[162] 一致收敛必定逐点收敛。
+[/SCOPE:s_7_7]
+[SCOPE:s_7_8|description|7.8 Cauchy 准则]
+[163a] (x)-f_m
+[163b] (x) \right\rvert \leqslant \varepsilon$。
+[/SCOPE:s_7_8]
+[SCOPE:s_7_9|description|7.9 上确界刻画]
+[164a] (x) = f
+[164b] (x)$（$x\in E$）。
+[165a] (x)-f
+[165b] (x) \right\rvert $。
+[166] 那么在 $E$ 上 $f_n\to f$ 是一致的，当且仅当 $n\to \infty$ 时，$M_n\to 0$。
+[/SCOPE:s_7_9]
+[SCOPE:s_7_10|description|7.10 M-判别法]
+[167] 7.10 假设 $\left\{f_{n}\right\}$ 是定义在 $E$ 上的函数序列。
+[168] 并且，假设 $\left|f_{n}(x)\right| \leqslant M_{n} \quad(x \in E, n=1,2,3, \cdots)$ 如果 $\Sigma M_{n}$ 收敛，
+[169] 那么，$\Sigma f_{n}$ 便在 $E$ 上一致收敛。
+[/SCOPE:s_7_10]
+[SCOPE:s_7_11|description|7.11 极限交换]
+[170] 7.11 假设在度量空间内的集 $E$ 上 $f_{n}$ 一致收敛于 $f$. 设 $x$ 是 $E$ 的极限点，
+[171a] (t) = \lim_{n\to\infty}\lim_{t\to x} f_n
+[171b] (t)$
+[/SCOPE:s_7_11]
+[SCOPE:s_7_12|description|7.12 一致收敛保持连续性]
+[172] 7.12 如果 $\{f_n\}$ 是 $E$ 上的连续函数序列。
+[173] 并且在 $E$ 上 $f_n$ 一致收敛于 $f$。
+[174] 那么，$f$ 在 $E$ 上连续。
+[/SCOPE:s_7_12]
+[SCOPE:s_7_13|description|7.13 Dini 定理]
+[175] 7.13 假定 $K$ 是紧集。
+[176a] (a) $\left\{f_{n}\right\}$ 是 $K$ 上的连续函数序列，
+[176b] (b) $\left\{f_{n}\right\}$ 在 $K$ 上逐点收敛于连续函数 $f$,
+[176c] (c) 对于一切 $x \in K$ 和 $n=1,2,3, \cdots, f_{n}
+[176d] (x) \geqslant f_{n+1}
+[176e] (x)$. 那么在 $K$ 上 $f_{n} \rightarrow f$ 是一致的。
+[/SCOPE:s_7_13]
+[SCOPE:s_7_14|description|7.14 连续函数空间 C(X)]
+[SCOPE:s_7_14_let|let_bind|7.14 变量]
+[177] 7.14 如果 $X$ 是度量空间，$\mathscr C(X)$ 就表示以 $X$ 为定义域的复值连续有界函数的集。
+[178] 给每个 $f\in\mathscr C(X)$ 配置上确范数 $ \left\lVert f \right\rVert = \sup_{x\in X} \left\lvert f(x) \right\rvert $。
+[/SCOPE:s_7_14_let]
+[179] 因为 $f$ 有界，
+[180] 所以 $ \left\lVert f \right\rVert <\infty$。
+[181] 只有当 $f(x)=0$ 时才有 $ \left\lVert f \right\rVert =0$。
+[182] 如果 $h=f+g$，
+[183a] (x) \right\rvert \leqslant \left\lvert f
+[183b] (x) \right\rvert + \left\lvert g
+[183c] (x) \right\rvert \leqslant \left\lVert f \right\rVert + \left\lVert g \right\rVert $。
+[184] 所以 $ \left\lVert f+g \right\rVert \leqslant \left\lVert f \right\rVert + \left\lVert g \right\rVert $。
+[185] 定义 $f,g\in\mathscr C(X)$ 之间的距离为 $ \left\lVert f-g \right\rVert $。
+[186] 于是 $\mathscr C(X)$ 变为度量空间。
+[187] 复述 7.9：对于 $\mathscr C(X)$ 度量来说，序列 $\{f_n\}$ 收敛于 $f$ 当且仅当 $f_n$ 在 $X$ 上一致收敛于 $f$。
+[/SCOPE:s_7_14]
+[SCOPE:s_7_15|description|7.15 C(X) 完备]
+[188] 7.15 以上度量使 $\mathscr C(X)$ 成为完备度量空间。
+[/SCOPE:s_7_15]
+[SCOPE:s_7_16|description|7.16 一致收敛与积分交换]
+[189] 7.16 设函数 $\alpha$ 在 $[a,b]$ 上单调递增。
+[190] 假定在 $[a,b]$ 上 $f_n\in\mathscr R(\alpha)$，$n=1,2,\dots$。
+[191] 再假设 $[a,b]$ 上 $f_n\to f$ 是一致的，
+[192] 那么 $[a,b]$ 上 $f\in\mathscr R$，而且 $\int_a^b f \,\mathrm{d}{\alpha} = \lim_{n\to\infty}\int_a^b f_n \,\mathrm{d}{\alpha} $。
+[/SCOPE:s_7_16]
+[SCOPE:s_7_17|description|7.17 一致收敛与微分交换]
+[193] 7.17 设 $\{f_n\}$ 是 $[a,b]$ 上的可微函数序列，且 $[a,b]$ 上有某点 $x_0$ 使 $\{f_n(x_0)\}$ 收敛。
+[194] 如果 $\{f'_n\}$ 在 $[a,b]$ 上一致收敛，
+[195] 那么 $\{f_n\}$ 就在 $[a,b]$ 上一致收敛于某函数 $f$；
+[196a] (x) = \lim_{n\to\infty} f'_n
+[196b] (x)$（$a\leqslant x \leqslant b$）。
+[/SCOPE:s_7_17]
+[SCOPE:s_7_18|description|7.18 处处不可微函数]
+[197] 7.18 实轴上有处处不可微的实连续函数。
+[/SCOPE:s_7_18]
+[SCOPE:s_7_19|description|7.19 逐点有界与一致有界]
+[198] 7.19 令 $\{f_n\}$ 为集合 $E$ 上的函数序列。
+[199] 说 $\{f_n\}$ 在 $E$ 上逐点有界，如果对每个 $x\in E$，序列 $\{f_n\}$ 是有界的。
+[200a] (x) \right\rvert <\phi
+[200b] (x)$（$x\in E$，$n=1,2,\dots$）。
+[201] 我们说 $\{f_n\}$ 在 $E$ 上一致有界，如果存在一个数 $M$，使 $ \left\lvert f_n(x) \right\rvert < M$（$x\in E$，$n=1,2,\dots$）。
+[/SCOPE:s_7_19]
+[SCOPE:s_7_22|description|7.22 等度连续]
+[202] 7.22 $f$ 是定义在度量空间 $X$ 的子集 $E$ 上的函数，$\mathscr F$ 是 $f$ 的族。
+[203a] (x)-f
+[203b] (y) \right\rvert <\varepsilon$。
+[/SCOPE:s_7_22]
+[SCOPE:s_7_23|description|7.23 对角线法]
+[204] 7.23 假若 $\left\{f_{n}\right\}$ 是在可数集 $E$ 上逐点有界的复值函数序列，
+[205] 那么 $\left\{f_{n}\right\}$ 便有子序列 $\left\{f_{n_{k}}\right\}$, 使得 $\left\{f_{n_{k}}(x)\right\}$ 对于每个 $x \in E$ 收敛。
+[/SCOPE:s_7_23]
+[SCOPE:s_7_24|description|7.24 一致收敛蕴含等度连续]
+[206] 7.24 若 $K$ 是紧度量空间，$f_n\in \mathscr C(K)$，$n=1,2,\dots$，而且 $\{f_n\}$ 在 $K$ 上一致收敛，
+[207] 那么 $\{f_n\}$ 在 $K$ 上等度连续。
+[/SCOPE:s_7_24]
+[SCOPE:s_7_25|description|7.25 Arzela-Ascoli 定理]
+[208] 7.25 若 $K$ 是紧集，$f_n\in \mathscr C(K)$，$n=1,2,\dots$，而且 $\{f_n\}$ 在 $K$ 上逐点有界又等度连续，
+[209a] (a) $\{f_n\}$ 在 $K$ 上一致有界，
+[209b] (b) $\{f_n\}$ 含有一致收敛的子序列。
+[/SCOPE:s_7_25]
+[SCOPE:s_7_26|description|7.26 Stone-Weierstrass 定理]
+[210] 7.26 Stone-Weierstrass 定理：如果 $f$ 是 $[a,b]$ 上的一个连续复函数，
+[211a] (x) = f
+[211b] (x)$ 在 $[a,b]$ 上一致成立。
+[212] 如果 $f$ 是实函数，$P_n$ 可以是实多项式。
+[/SCOPE:s_7_26]
+[SCOPE:s_7_27|description|7.27 绝对值逼近]
+[213] 7.27 在每个闭区间 $[-a,a]$ 上，必有实多项式 $P_n$ 的序列，满足 $P_n(0) = 0$ 且 $\lim_{n\to\infty} P_n(x) = \left\lvert x \right\rvert $ 一致地成立。
+[/SCOPE:s_7_27]
+[SCOPE:s_7_28|description|7.28 函数代数]
+[214a] (i) $f+g\in \mathscr A$，
+[214b] (ii) $fg\in \mathscr A$，
+[214c] (iii) 对一切复常数 $c$，$cf\in \mathscr A$。
+[215] 也就是说，加法、乘法、数乘是封闭的。
+[216a] 如果 $\mathscr A$ 满足，只要 $f_n\in \mathscr A$（$n=1,2,\dots$），且在 $E$ 上 $f_n\to f$ 一致成立
+[216b] 则有 $f\in \mathscr A$。
+[217] 就说 $\mathscr A$ 是一致闭的。
+[218] 设 $\mathscr B$ 是由 $\mathscr A$ 中所有一致收敛函数序列的及先函数组成的集，就说 $\mathscr B$ 是 $\mathscr A$ 的一致闭包。
+[219] Weierstrass 定理可以叙述为：$[a,b]$ 上连续函数的集合是 $[a,b]$ 上的多项式集的一致闭包。
+[/SCOPE:s_7_28]
+[SCOPE:s_7_29|description|7.29 一致闭包是代数]
+[220] 7.29 设 $\mathscr B$ 是有界函数的代数 $\mathscr A$ 的一致闭包。
+[221] 那么 $\mathscr B$ 是一致闭的代数。
+[/SCOPE:s_7_29]
+[SCOPE:s_7_30|description|7.30 分离点]
+[222] 7.30 设 $\mathscr A$ 是集合 $E$ 上的函数族。
+[223] 说 $\mathscr A$ 能分离 $E$ 的点，就是说对不同的 $x_1,x_2\in E$，总有函数 $f\in \mathscr A$，使 $f(x_1)\ne f(x_2)$。
+
+[/SCOPE:s_chap7]
+[/SCOPE:s_7_30]
+[SCOPE:s_chap8|description|Chap 8. 一些特殊函数]
+[SCOPE:s_8_1|description|8.1 幂级数性质]
+[SCOPE:s_8_1_let|let_bind|8.1 变量]
+[224a] (x) = \sum_{n=0}^\infty c_n x^n$ 或更一般地 $f
+[224b] (x) = \sum_{n=0}^\infty c_n (x-a)^n$，都称为解析函数。
+[225] 我们限制 $x$ 取实数。
+[226] 8.1 假设对 $ \left\lvert x \right\rvert < R$，级数 $\sum_{n=0}^\infty c_n x^n$ 收敛，并规定 $f(x) = \sum_{n=0}^\infty c_n x^n$（$ \left\lvert x \right\rvert < R$）。
+[/SCOPE:s_8_1_let]
+[227] 那么无论选取怎样的 $\varepsilon >0$，级数在 $[-R+\epsilon, R-\epsilon]$ 上一致收敛，函数 $f$ 在 $(-R,R)$ 内连续、可微，且 $f'(x)=\sum_{n=1}^\infty nc_n x^{n-1}$（$ \left\lvert x \right\rvert < R$）
+[228] 在 8.1 中，$f$ 在 $(-R,R)$ 内有任意阶导数。
+[229] 他们是……
+[/SCOPE:s_8_1]
+[SCOPE:s_8_3|description|8.3 二重级数交换]
+[230] 8.3 设有双重序列 $\{a_{ij}\}$，$i,j=1,2,3\dots$。
+[231] 假设 $\sum_{j=1}^\infty = b_i$（$i=1,2,\dots$）并且 $\sum b_i$ 收敛，
+[232] 那么 $\sum_{i=1}^\infty\sum_{j=1}^\infty a_{ij} = \sum_{j=1}^\infty\sum_{i=1}^\infty a_{ij}$
+[/SCOPE:s_8_3]
+[SCOPE:s_8_4|description|8.4 幂级数展开]
+[233] 8.4 设 $f(x)=\sum_{n=0}^\infty c_nx^n$，这级数在 $ \left\lvert x \right\rvert < R$ 内收敛。
+[234a] 若 $-R< a< R$，$f$
+[234b] 则可以在 $x=a$ 附近展开为幂级数，这幂级数在 $ \left\lvert x-a \right\rvert < R- \left\lvert a \right\rvert $ 中收敛，且有泰勒公式……
+[/SCOPE:s_8_4]
+[235a] (z) = \sum_{n=0}^\infty z^n/n!$ 为指数函数，有加法公式 $E(z+w)=E
+[235b] (z)E
+[235c] (w)$。
+[236] …… 对一切实数 $x$，$E(x)= \mathrm{e} ^x$。
+[237a] (x) = [E(ix)+E(-ix)]/2$，$S
+[237b] (x)=[E(ix)-E(-ix)]/(2i)$。
+[SCOPE:s_8_9|description|8.9 三角多项式]
+[238] 8.9 三角多项式是形如 $f(x) = a_0 + \sum_{n=1}^N (a_n\cos nx + b_n \sin nx)$（$x\in R$）的有限和。
+[239] 其中系数都是复数。
+[240] 也可以记为 $f(x) = \sum_{-N}^N c_n \mathrm{e} ^{inx}$（$x\in R$）。
+[241] 每个三角多项式以 $2\pi$ 为周期。
+[242] $c_m = (1/2\pi) \int_{-\pi}^{\pi} f(x) \mathrm{e} ^{- \mathrm{i} mx} \,\mathrm{d}{x} $。
+[243] $f$ 是实函数当且仅当 $c_{-n} = \bar c_n$，$n=0,\dots,N$。
+[244] 定义三角级数为 $\sum_{-\infty}^\infty c_n \mathrm{e} ^{inx}$。
+[/SCOPE:s_8_9]
+[SCOPE:s_8_10|description|8.10 正交系]
+[245a] (x) \overline{\phi_{m}
+[245b] (x)} \mathrm{d} x=0 \quad(n \neq m)$ 的复值函数序列。
+[246] 那么，$\left\{\phi_{n}\right\}$ 叫做 $[a, b]$ 上的函数的正交系。
+[247] 此外，若是 对于一切 $n$，$\int_{a}^{b}\left|\phi_{n}(x)\right|^{2} \mathrm{~d} x=1$，$\left\{\phi_{n}\right\}$ 便叫作正规正交系（orthonormal）.
+[248a] (t) \overline{\phi_{n}
+[248b] (t)} \mathrm{d} t \quad(n=1,2,3, \cdots)$, 我们便说 $c_{n}$ 是 $f$ 关于 $\left\{\phi_{n}\right\}$ 的第 $n$ 个 Fourier 系数。
+[249a] (x) \sim \sum_{1}^{\infty} c_{n} \phi_{n}
+[249b] (x)$。
+[250] 这并不意味着任何关于级数收敛性的事实。
+[/SCOPE:s_8_10]
+[SCOPE:s_8_11|description|8.11 最佳逼近]
+[251] 8.11 设 $\left\{\phi_{n}\right\}$ 是 $[a, b]$ 上的正规正交系。
+[252a] (x)=\sum_{m=1}^{n} c_{m} \phi_{m}
+[252b] (x)$ 是 $f$ 的 Fouricr 级数的第 $n$ 个部分和。
+[253a] (x)=\sum_{m=1}^{n} \gamma_{m} \phi_{m}
+[253b] (x) .$ 那么 $\int_{a}^{b}\left|f-s_{n}\right|^{2} \mathrm{~d} x \leqslant \int_{a}^{b}\left|f-t_{n}\right|^{2} \mathrm{~d} x$ 并且，当且仅当 $\gamma_{m}=c_{m} \quad(m=1, \cdots, n)$ 时才能使等式成立。
+[/SCOPE:s_8_11]
+[SCOPE:s_8_12|description|8.12 Bessel 不等式]
+[254a] (x) \sim \sum_{n=1}^{\infty} c_{n} \phi_{n}
+[254b] (x)$，
+[255] 那么 $\sum_{n=1}^{\infty}\left|c_{n}\right|^{2} \leqslant \int_{a}^{b}|f(x)|^{2} \mathrm{~d} x$. 特别地，$\lim _{n \rightarrow \infty} c_{n}=0$. 这即是所谓 Bessel 不等式.
+[/SCOPE:s_8_12]
+[SCOPE:s_8_13|description|8.13 Fourier 级数部分和]
+[256] 8.13 将要考虑的函数都以 $2 \pi$ 为周期，都在 $[-\pi, \pi]$ 上 Riemann 可积。
+[257] 那么 $s_{N}(x)=s_{N}(f ; x)=\sum_{-N}^{N} c_{n} e^{i n x}$ 是 $f$ 的 Fourier 级数的第 $N$ 个部分和。
+[258a] (x)\right|^{2} \mathrm{~d} x=\sum_{-N}^{N}\left|c_{n}\right|^{2} \leqslant \frac{1}{2 \pi} \int_{-\pi}^{\pi}|f
+[258b] (x)|^{2} \mathrm{~d} x$. 定义 Dirichlet 核 $D_{N}
+[258c] (x)=\sum_{n=-N}^{N} e^{i n x}=\frac{\sin \left(N+\frac{1}{2}\right) x}{\sin \left(\frac{x}{2}\right)}$ 这里第一个等式是 $D_{N}
+[258d] (x)$ 的定义; 于是 $s_{N}(f ; x) =\frac{1}{2 \pi} \int_{-\pi}^{\pi} f
+[258e] (t) \sum_{-N}^{N} e^{i n(x-t)} \mathrm{d} t$。
+[259a] (t) D_{N}(x-t) \mathrm{d} t =\frac{1}{2 \pi} \int_{-\pi}^{\pi} f(x-t) D_{N}
+[259b] (t) \mathrm{d} t$
+[/SCOPE:s_8_13]
+[SCOPE:s_8_14|description|8.14 点态收敛条件]
+[260a] (x)| \leqslant M|t|$ 便一定有 $\lim _{N \rightarrow \infty} s_{N}(f ; x)=f
+[260b] (x)$
+[/SCOPE:s_8_14]
+[SCOPE:s_8_15|description|8.15 三角多项式逼近]
+[261a] (x)-f
+[261b] (x)|<\varepsilon$
+[/SCOPE:s_8_15]
+[SCOPE:s_8_16|description|8.16 Parseval 定理]
+[262] 8.16 Parseval 定理：假定 $f$ 与 $g$ 都是 Riemann 可积而且周期为 $2 \pi$ 的函数。
+[263a] (x) \sim \sum_{-\infty}^{\infty} c_{n} e^{i n x}, g
+[263b] (x) \sim \sum_{-\infty}^{\infty} \gamma_{n} e^{i n x}$ 那么 $\lim _{N \rightarrow \infty} \frac{1}{2 \pi} \int_{-x}^{\pi}\left|f
+[263c] (x)-S_{N}(f ; x)\right|^{2} \mathrm{~d} x=0$；
+[264a] (x) \overline{g
+[264b] (x)} \mathrm{d} x=\sum_{-\infty}^{\infty} c_{n} \bar{\gamma}_{n}$；
+[265] $\frac{1}{2 \pi} \int_{-\pi}^{\pi}|f(x)|^{2} \mathrm{~d} x=\sum_{-\infty}^{\infty}\left|c_{n}\right|^{2}$
+[/SCOPE:s_8_16]
+[SCOPE:s_8_17|description|8.17 Gamma 函数定义]
+[266] 8.17 当 $0< x<\infty$ 时 $\Gamma(x)=\int_{0}^{\infty} t^{x-1} e^{-t} \mathrm{~d} t$ 对于这些 $x$, 这积分收敛。
+[267] (当 $x<1$ 时，0 与 $\infty$ 都必须检查。)
+[/SCOPE:s_8_17]
+[SCOPE:s_8_18|description|8.18 Gamma 函数性质]
+[268a] (a) 如果 $0< x<\infty$, 函数方程 $\Gamma(x+1)=x \Gamma
+[268b] (x)$ 成立。
+[269a] (b) $\Gamma(n+1)=n !, n=1,2,3, \cdots$.
+[269b] (c) $\log \Gamma$ 在 $(0, \infty)$ 上是凸的。
+[/SCOPE:s_8_18]
+[SCOPE:s_8_19|description|8.19 Gamma 函数唯一性]
+[270a] (a) $f(x+1)=x f
+[270b] (x)$,
+[270c] (b) $f(1)=1$,
+[270d] (c) $\log f$ 是凸的，
+[271a] (x)=\Gamma
+[271b] (x)$.
+[/SCOPE:s_8_19]
+[SCOPE:s_8_20|description|8.20 Beta 函数]
+[272a] (x) \Gamma
+[272b] (y)}{\Gamma(x+y)}$ 这积分是所谓的 $B$ 函数 $B(x, y)$.
+[/SCOPE:s_8_20]
+[SCOPE:s_8_21|description|8.21 Gamma(1/2) = sqrt(pi)]
+[273] 8.21 $\Gamma\left(\frac{1}{2}\right)=\sqrt{\pi}$，$\int_{-\infty}^{\infty} e^{-s^{2}} \mathrm{~d} s=\sqrt{\pi}$
+[/SCOPE:s_8_21]
+[SCOPE:s_8_22|description|8.22 Stirling 公式]
+[274] 8.22 当 $x$ 很大时，这给 $\Gamma(x+1)$ 提供了一个简单的近似表 达式（当 $n$ 很大时，就是 $n !$ 的近似表达式）. 这公式是 $\lim _{x \rightarrow \infty} \frac{\Gamma(x+1)}{(x / e)^{x} \sqrt{2 \pi x}}=1$
+[/SCOPE:s_chap8]
+[/SCOPE:s_8_22]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_4_2",
+    "target_scope": "s_4_1",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "序列极限刻画等价于函数极限定义"
+  },
+  {
+    "source_scope": "s_4_14",
+    "target_scope": "s_4_13",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "连续像紧蕴含f有界"
+  },
+  {
+    "source_scope": "s_4_16",
+    "target_scope": "s_4_15",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "最值定理是紧集上连续函数有界的推论"
+  },
+  {
+    "source_scope": "s_4_19",
+    "target_scope": "s_4_18",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "紧集上连续则一致连续"
+  },
+  {
+    "source_scope": "s_4_20",
+    "target_scope": "s_4_19",
+    "edge_type": "counterexample_of",
+    "category": "logic",
+    "note": "非紧集上连续不一定一致连续"
+  },
+  {
+    "source_scope": "s_5_2",
+    "target_scope": "s_5_1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "可微则连续"
+  },
+  {
+    "source_scope": "s_5_8",
+    "target_scope": "s_5_2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "极值点导数为零"
+  },
+  {
+    "source_scope": "s_5_10",
+    "target_scope": "s_5_9",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "拉格朗日是柯西中值的特例"
+  },
+  {
+    "source_scope": "s_5_12",
+    "target_scope": "s_5_10",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "导数的介值性质"
+  },
+  {
+    "source_scope": "s_5_15",
+    "target_scope": "s_5_10",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "Taylor定理推广中值定理"
+  },
+  {
+    "source_scope": "s_6_2",
+    "target_scope": "s_6_1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Riemann积分是Riemann-Stieltjes积分的特例"
+  },
+  {
+    "source_scope": "s_6_6",
+    "target_scope": "s_6_5",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "可积充要条件"
+  },
+  {
+    "source_scope": "s_6_8",
+    "target_scope": "s_6_6",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "连续则可积"
+  },
+  {
+    "source_scope": "s_6_9",
+    "target_scope": "s_6_6",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "单调且α连续则可积"
+  },
+  {
+    "source_scope": "s_6_10",
+    "target_scope": "s_6_6",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "有限间断点且α连续则可积"
+  },
+  {
+    "source_scope": "s_6_21",
+    "target_scope": "s_6_20",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "微积分基本定理"
+  },
+  {
+    "source_scope": "s_6_22",
+    "target_scope": "s_6_21",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "分部积分"
+  },
+  {
+    "source_scope": "s_6_24",
+    "target_scope": "s_6_21",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "向量值微积分基本定理"
+  },
+  {
+    "source_scope": "s_7_12",
+    "target_scope": "s_7_7",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "一致收敛保持连续性"
+  },
+  {
+    "source_scope": "s_7_13",
+    "target_scope": "s_7_12",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "Dini定理"
+  },
+  {
+    "source_scope": "s_7_16",
+    "target_scope": "s_7_7",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "一致收敛与积分交换"
+  },
+  {
+    "source_scope": "s_7_17",
+    "target_scope": "s_7_7",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "一致收敛与微分交换"
+  },
+  {
+    "source_scope": "s_7_25",
+    "target_scope": "s_7_24",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "Arzela-Ascoli定理"
+  },
+  {
+    "source_scope": "s_7_26",
+    "target_scope": "s_7_28",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "Weierstrass定理是Stone-Weierstrass的特例"
+  },
+  {
+    "source_scope": "s_8_1",
+    "target_scope": "s_8_4",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "幂级数可逐项求导"
+  },
+  {
+    "source_scope": "s_8_16",
+    "target_scope": "s_8_12",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "Parseval定理推广Bessel不等式"
+  },
+  {
+    "source_scope": "s_8_18",
+    "target_scope": "s_8_17",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "Gamma函数性质"
+  },
+  {
+    "source_scope": "s_8_19",
+    "target_scope": "s_8_18",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "Gamma函数唯一性"
+  },
+  {
+    "source_scope": "s_8_20",
+    "target_scope": "s_8_17",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "Beta函数与Gamma函数关系"
+  },
+  {
+    "source_scope": "s_8_22",
+    "target_scope": "s_8_18",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "Stirling公式"
+  }
+]

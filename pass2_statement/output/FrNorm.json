@@ -1,0 +1,272 @@
+{
+  "article_name": "FrNorm",
+  "statements": [
+    {
+      "stmt_id": "st_why_k_positive",
+      "subtype": "question",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_background_quantum",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_root",
+      "exposed_entities": [
+        "f(r)",
+        "u_{l,m}"
+      ]
+    },
+    {
+      "stmt_id": "st_negative_k_possible",
+      "subtype": "remark",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_normalization_condition",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_root",
+      "exposed_entities": [
+        "u_{l,m}(k,r)",
+        "k",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_basis_definition",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_root",
+      "exposed_entities": [
+        "s_{l,m}(k)",
+        "u_{l,m}(k,r)",
+        "Y_{l,m}(r_hat)"
+      ]
+    },
+    {
+      "stmt_id": "st_orthonormality",
+      "subtype": "theorem",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_expansion_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": "true",
+      "scope_id": "s_root",
+      "exposed_entities": [
+        "c_{l,m}(k)"
+      ]
+    },
+    {
+      "stmt_id": "st_projection_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_partial_wave_form",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_root",
+      "exposed_entities": [
+        "g_{l,m}(r)"
+      ]
+    },
+    {
+      "stmt_id": "st_fourier_relation",
+      "subtype": "theorem",
+      "clause_range": [
+        16,
+        18
+      ],
+      "truth_value": "true",
+      "scope_id": "s_root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_title",
+      "subtype": "example",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sinc_identity",
+      "subtype": "lemma",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_asymptotic_note",
+      "subtype": "remark",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_spherical_bessel_asymptotic",
+      "subtype": "lemma",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "j_l(kr)"
+      ]
+    },
+    {
+      "stmt_id": "st_krj_normalization",
+      "subtype": "lemma",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_normalized_bessel_def",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "u_{l,m}(k,r)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_background_quantum",
+      "target": "st_normalization_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_normalization_condition",
+      "target": "st_basis_definition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_basis_definition",
+      "target": "st_orthonormality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_orthonormality",
+      "target": "st_expansion_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_expansion_formula",
+      "target": "st_projection_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_expansion_formula",
+      "target": "st_partial_wave_form",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_partial_wave_form",
+      "target": "st_fourier_relation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sinc_identity",
+      "target": "st_spherical_bessel_asymptotic",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_spherical_bessel_asymptotic",
+      "target": "st_krj_normalization",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_krj_normalization",
+      "target": "st_normalized_bessel_def",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_normalized_bessel_def",
+      "target": "st_normalization_condition",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "Example 1 provides a specific normalized radial function satisfying the general normalization condition."
+    }
+  ],
+  "unresolved": []
+}

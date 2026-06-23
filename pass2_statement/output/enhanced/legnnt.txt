@@ -1,0 +1,118 @@
+[SCOPE:root|description|Legendre 符号（数论）]
+文章名: legnnt
+标题: Legendre 符号（数论）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=Legendre 符号
+  [1] type=corollary heading=推论 1 title=
+  [2] type=corollary heading=推论 2 title=
+  [3] type=theorem heading=定理 1 title=
+
+[SCOPE:s_def1|description|定义 1 Legendre 符号]
+[0] 定义 1 Legendre 符号
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[1] 对于一个奇素数 $p$ 与一个不被 $p$ 整除的数 $a$，定义 勒让德符号（Legendre 符号） $\left( \frac{a}{p} \right)$ 是：
+[/SCOPE:s_def1_let]
+[2a] 若 $a \operatorname R p$
+[2b] 则$\left( \frac{a}{p} \right) = +1$；
+[3a] 若 $a \operatorname N p$
+[3b] 则$\left( \frac{a}{p} \right) = -1$。
+
+[/SCOPE:s_def1]
+[SCOPE:s_cor1|description|推论 1]
+[4] 推论 1
+[5] 由定义，立刻有
+[6] \begin{equation}
+\left(\frac ap\right) ^2 = 1 ~.
+\end{equation}
+
+[/SCOPE:s_cor1]
+[SCOPE:s_cor2|description|推论 2]
+[7] 推论 2
+[SCOPE:s_cor2_let|let_bind|推论 2 的变量]
+[8] 若 $a \equiv b \pmod p$，而 $a$ 为不被奇素数 $p$ 整除的数，
+[/SCOPE:s_cor2_let]
+[9] 则
+[10] \begin{equation}
+\left(\frac ap \right) = \left(\frac bp \right) ~.
+\end{equation}
+[11] 当 $p=2$ 时，不考虑其 Legendre 符号。
+
+[/SCOPE:s_cor2]
+[SCOPE:s_thm1|description|定理 1]
+[12] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[13] 对于奇素数 $p$，若 $a$ 不是 $p$ 的倍数，
+[/SCOPE:s_thm1_let]
+[14] 则
+[15] \begin{equation}
+(p-1)! \equiv -\left(\frac ap\right) a^{(p-1)/2} \pmod p ~.
+\end{equation}
+[SCOPE:s_thm1_cases|cases|a R p 与 a N p 两种情况]
+[SCOPE:s_thm1_cases_let1|let_bind|a R p 情况下的变量]
+[16] 证明：若 $a \operatorname R p$ 且有 $x_1^2 \equiv a \pmod p$，
+[17] 则显然
+[18] \begin{equation}
+x_2 = p-x_1 \equiv -x_1 \pmod p ~~
+\end{equation}
+[19] 也是 $x^2 \equiv a \pmod p$ 的解，此外若还有其他解 $x'^2 \equiv a \pmod p$，
+[20] 则
+[21] \begin{equation}
+x^2 \equiv a \pmod p, x'^2 \equiv a \pmod p ~,
+\end{equation}
+[22] 这就指出，
+[23] \begin{equation}
+x^2 - x'^2 = (x+x')(x-x') \equiv a - a = 0 \pmod p ~,
+\end{equation}
+[24] 从而 $(x+x') \equiv 0 \pmod p$ 或 $(x-x') \equiv 0 \pmod p$，这就指出了仅有 $x_1$ 与 $p-x_1$ 两个代表对应的模 $p$ 的剩余类是解。
+[25] 这就指出，仅有 $x_1$ 与 $p-x_1$ 的伴随数是自己。
+[26] 此时可以立刻得出，各数 $1, 2, \dots, (p-1)$ 可以分成 $x_1, p-x_1$ 以及 $(p-3)/2$ 对不相等的伴随数对1，其中
+[27] \begin{equation}
+x_1(p-x_1) \equiv -x_1^2 \equiv -a \pmod p ~,
+\end{equation}
+[28] 而对任意一对伴随数 $x, x'$ 都有 $xx' \equiv a \pmod p$，
+[29] 故
+[30] \begin{equation}
+(p-1)! = \prod x \equiv -a \cdot a^{(p-3)/2} \equiv -a ^{(p-1)/2} \pmod p ~.
+\end{equation}
+[/SCOPE:s_thm1_cases_let1]
+[31] 可以发现当 $a \operatorname R p$ 时，原定理成立。
+[SCOPE:s_thm1_cases_let2|let_bind|a N p 情况下的变量]
+[32] 若 $a \operatorname N p$，
+[33] 则 $x^2 \equiv a \pmod p$ 无解，
+[34] 故各数 $1, 2, \dots, (p-1)$ 可以分成 $(p-1)/2$ 对不相等的伴随数对2，
+[35] 从而
+[36] \begin{equation}
+(p-1)! = \prod x \equiv a^{(p-1)/2} \pmod p ~.
+\end{equation}
+[/SCOPE:s_thm1_cases_let2]
+[37] 故当 $a \operatorname N p$ 时，原定理也成立。
+[/SCOPE:s_thm1_cases]
+[38] 证毕！
+[/SCOPE:s_thm1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论 1 由定义直接得出"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论 2 由定义直接得出"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理 1 的证明使用了 Legendre 符号的定义"
+  }
+]

@@ -1,0 +1,355 @@
+{
+  "article_name": "RPlynm",
+  "statements": [
+    {
+      "stmt_id": "st_def1_poly",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "R",
+        "x",
+        "R[x]"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_multi",
+      "subtype": "definition",
+      "clause_range": [
+        35,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "x_k",
+        "m",
+        "R[x_1,...,x_m]"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_root",
+      "subtype": "definition",
+      "clause_range": [
+        43,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "f(x)",
+        "g(x_1,...,x_m)",
+        "r",
+        "r_1,...,r_m"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_claim",
+      "subtype": "exercise",
+      "clause_range": [
+        52,
+        54
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "R",
+        "x",
+        "R[x]"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_hint",
+      "subtype": "remark",
+      "clause_range": [
+        55,
+        58
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_claim",
+      "subtype": "exercise",
+      "clause_range": [
+        59,
+        61
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "R",
+        "R[x]"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        62,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_div_intro",
+      "subtype": "remark",
+      "clause_range": [
+        65,
+        78
+      ],
+      "truth_value": null,
+      "scope_id": "s_div",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_div_division",
+      "subtype": "definition",
+      "clause_range": [
+        79,
+        83
+      ],
+      "truth_value": null,
+      "scope_id": "s_div",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "h(x)",
+        "r(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        85,
+        88
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "F",
+        "f(x)",
+        "r",
+        "(x-r)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        89,
+        91
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "h(x)",
+        "s(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        92,
+        95
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        96,
+        101
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_example",
+      "subtype": "example",
+      "clause_range": [
+        102,
+        128
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_construction",
+      "subtype": "definition",
+      "clause_range": [
+        138,
+        139
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "Q",
+        "Q[x]",
+        "Q[sqrt2]"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        140,
+        149
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_null_poly",
+      "subtype": "definition",
+      "clause_range": [
+        150,
+        155
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "F",
+        "a",
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_remark",
+      "subtype": "remark",
+      "clause_range": [
+        156,
+        162
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        163,
+        165
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "f(x)",
+        "<f(x)>",
+        "R[x]"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        166,
+        166
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        167,
+        170
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": [
+        "F",
+        "a",
+        "f(x)",
+        "F[a]",
+        "F[x]/<f(x)>"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        171,
+        172
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3",
+      "exposed_entities": [
+        "sigma",
+        "p(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_proof_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        173,
+        177
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_proof_assump",
+      "target": "st_thm1_proof_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_proof_assump",
+      "target": "st_thm3_proof_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_statement",
+      "target": "st_div_division",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_statement",
+      "target": "st_def3_null_poly",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_statement",
+      "target": "st_div_division",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1使用除法概念"
+    },
+    {
+      "source": "st_thm3_statement",
+      "target": "st_def3_null_poly",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理3基于最小多项式定义"
+    }
+  ],
+  "unresolved": []
+}

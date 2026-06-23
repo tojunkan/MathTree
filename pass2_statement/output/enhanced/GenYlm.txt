@@ -1,0 +1,112 @@
+[SCOPE:root|description|广义球谐函数]
+文章名: GenYlm
+标题: 广义球谐函数
+
+[SCOPE:s_def|description|定义]
+[SCOPE:s_def_let|let_bind|定义中的变量]
+[0] 有了 CG 系数的相位约定和球谐函数的相位约定，就可以由球谐函数定义广义球谐函数（Generalized Spherical Harmonics）
+[1] \begin{equation}
+\mathcal{Y}_{l_1,l_2}^{L,M}( \hat{\boldsymbol{\mathbf{r}}} _1, \hat{\boldsymbol{\mathbf{r}}} _2) = \sum_{m_1, m_2} \begin{bmatrix}l_1 & l_2 & L\\ m_1 & m_2 & M\end{bmatrix} Y_{l_1 m_1}( \hat{\boldsymbol{\mathbf{r}}} _1) Y_{l_2 m_2} ( \hat{\boldsymbol{\mathbf{r}}} _2)~.
+\end{equation}
+[/SCOPE:s_def_let]
+[2] 由于只有 $m_1 + m_2 = M$ 时 CG 系数才不为零，公式中令 $m_2 = M - m_1$，求和就由双重求和变为了单个求和，而且只有有限项。
+[3] $m_1$ 的上下限满足 $-l_1 \leqslant m_1 \leqslant l_1$，$-l_2 \leqslant M-m_1 \leqslant l_2$ 即
+[4] \begin{equation}
+\max\{-l_1, M-l_2\} \leqslant m_1 \leqslant \max\{l_1, M+l_1\}~.
+\end{equation}
+[5] 式 1 [链接 L0]
+[6] 可以看作一个
+[7] 酉矩阵 [链接 L1]
+[8] 乘以列向量。
+[9] 由于式 1 是一个正交变换，其逆变换为
+[10] \begin{equation}
+Y_{l_1 m_1}( \hat{\boldsymbol{\mathbf{r}}} _1) Y_{l_2 m_2} ( \hat{\boldsymbol{\mathbf{r}}} _2) = \sum_{L} \begin{bmatrix}l_1 & l_2 & L\\ m_1 & m_2 & M\end{bmatrix} \mathcal{Y}_{l_1,l_2}^{L,M}( \hat{\boldsymbol{\mathbf{r}}} _1, \hat{\boldsymbol{\mathbf{r}}} _2)~.
+\end{equation}
+[11] 由于球谐函数一般是复函数，而 CG 系数是实数，
+[12] 所以 $\mathcal{Y}_{l_1,l_2}^{L,M}$ 一般也是
+[13] 复函数
+[14] 【未完成】什么时候是实数？
+
+[/SCOPE:s_def]
+[15] 在 Mathematica 中可以把广义球谐函数定义为1
+
+[SCOPE:s_diffeq|description|微分方程]
+[16] 广义球谐函数是量子力学中双粒子总角动量算符 $ \hat{L} ^2, \hat{L} _z$ 的本征函数。
+[17] \begin{equation}
+\hat{L} ^2 \mathcal Y_{l_1,l_2}^{L,M} = L(L+1) \hbar^2 \mathcal Y_{l_1,l_2}^{L,M}~,
+\qquad
+\hat{L} _z \mathcal Y_{l_1,l_2}^{L,M} = M\hbar \mathcal Y_{l_1,l_2}^{L,M}~.
+\end{equation}
+
+[/SCOPE:s_diffeq]
+[SCOPE:s_parity|description|宇称]
+[18] 宇称（parity）算符 $\Pi$ 作用在一个函数上，就是把函数所有自变量乘以 $-1$。
+[19] 其本征函数是所有中心对称或反对称的函数，本征值为分别为 $\pm 1$。
+[20] 球谐函数是宇称算符的本征矢，本征值为 $(-1)^l$（式 25 ），易得广义球谐函数也是宇称算符的本征矢，本征值为 $(-1)^{l_1+l_2}$
+[21] \begin{equation}
+\Pi \mathcal{Y}_{l_1,l_2}^{L,M}( \hat{\boldsymbol{\mathbf{r}}} _1, \hat{\boldsymbol{\mathbf{r}}} _2) = \mathcal{Y}_{l_1,l_2}^{L,M}(- \hat{\boldsymbol{\mathbf{r}}} _1, - \hat{\boldsymbol{\mathbf{r}}} _2) = (-1)^{l_1+l_2} \mathcal{Y}_{l_1,l_2}^{L,M}( \hat{\boldsymbol{\mathbf{r}}} _1, \hat{\boldsymbol{\mathbf{r}}} _2)~.
+\end{equation}
+
+[/SCOPE:s_parity]
+[SCOPE:s_exchange|description|交换对称性]
+[SCOPE:s_exchange_let|let_bind|交换对称性中的变量]
+[22] 广义球谐函数不具有交换对称性2（除非 $l_1 = l_2$）
+[23] \begin{equation}
+P_{12} \mathcal{Y}_{l_1,l_2}^{L,M}( \hat{\boldsymbol{\mathbf{r}}} _1, \hat{\boldsymbol{\mathbf{r}}} _2) = \mathcal{Y}_{l_1,l_2}^{L,M}( \hat{\boldsymbol{\mathbf{r}}} _2, \hat{\boldsymbol{\mathbf{r}}} _1) =
+(-1)^{l_1+l_2-L} \mathcal{Y}_{l_2,l_1}^{L,M}( \hat{\boldsymbol{\mathbf{r}}} _1, \hat{\boldsymbol{\mathbf{r}}} _2)~,
+\end{equation}
+[/SCOPE:s_exchange_let]
+[24] 也可以记为
+[25] \begin{equation}
+\mathcal{Y}_{l_1,l_2}^{L,M}( \hat{\boldsymbol{\mathbf{r}}} _1, \hat{\boldsymbol{\mathbf{r}}} _2) =
+(-1)^{l_1+l_2-L} \mathcal{Y}_{l_2,l_1}^{L,M}( \hat{\boldsymbol{\mathbf{r}}} _2, \hat{\boldsymbol{\mathbf{r}}} _1)~.
+\end{equation}
+[26] 但是我们可以轻易构造对称（+）或反对称（-）的函数
+[27] \begin{equation}
+\mathcal{Y}_{l_1,l_2}^{L,M}( \hat{\boldsymbol{\mathbf{r}}} _1, \hat{\boldsymbol{\mathbf{r}}} _2) \pm (-1)^{l_1+l_2-L}\mathcal{Y}_{l_2,l_1}^{L,M}( \hat{\boldsymbol{\mathbf{r}}} _1, \hat{\boldsymbol{\mathbf{r}}} _2)~,
+\end{equation}
+[28] \begin{equation}
+\Psi( \boldsymbol{\mathbf{r}} _1, \boldsymbol{\mathbf{r}} _2) =
+R(r_1, r_2)\mathcal{Y}_{l_1,l_2}^{L,M}( \hat{\boldsymbol{\mathbf{r}}} _1, \hat{\boldsymbol{\mathbf{r}}} _2) - R(r_1, r_2)\mathcal{Y}_{l_2,l_1}^{L,M}( \hat{\boldsymbol{\mathbf{r}}} _1, \hat{\boldsymbol{\mathbf{r}}} _2)~, \qquad (l_1+l_2-L = odd).
+\end{equation}
+[29] 证明可以用 CG 系数的对称性（交换左边两列，式 7 ）
+[30] \begin{equation}
+\begin{aligned}
+\mathcal{Y}_{l_1,l_2}^{L,M}( \hat{\boldsymbol{\mathbf{r}}} _2, \hat{\boldsymbol{\mathbf{r}}} _1)
+&= \sum_{m_1, m_2} \begin{bmatrix}l_1 & l_2 & L\\ m_1 & m_2 & M\end{bmatrix} Y_{l_1, m_1}( \hat{\boldsymbol{\mathbf{r}}}…[truncated]…ix} Y_{l_2, m_2}( \hat{\boldsymbol{\mathbf{r}}} _1) Y_{l_1, m_1}( \hat{\boldsymbol{\mathbf{r}}} _2)\\
+& = (-1)^{l_1+l_2-L} \mathcal{Y}_{l_2,l_1}^{L,M}( \hat{\boldsymbol{\mathbf{r}}} _1, \hat{\boldsymbol{\mathbf{r}}} _2)~,
+\end{aligned} \end{equation}
+[31] 式 6 [链接 L2]
+[32] 也可以得到对易关系
+[33] \begin{equation}
+\left[L^2, P_{12}\right] = \left[L_z, P_{12}\right] = 0~,
+\end{equation}
+[34] 即交换两个粒子不改变总角动量。
+[35] 操作类算符（宇称，平移，交换）如果与某物理量算符对易，就说明波函数经过该操作，改物理量守恒。
+[36a] 如果哈密顿中的某一项算符（例如 $z$ 方向的电场的 dipole）如果与某物理量算符（例如 $L_z$）对易
+[36b] 则说明波函数经过该传播子传播，该物理量守恒。
+
+[/SCOPE:s_exchange]
+[SCOPE:s_ortho|description|正交性]
+[37] 将式 10 用这里的符号表示，就是
+[38] \begin{equation}
+\int \mathcal{Y}_{l_1', l_2'}^{L', M'}( \hat{\boldsymbol{\mathbf{r}}} _1, \hat{\boldsymbol{\mathbf{r}}} _2) \mathcal{Y}_{l_1, l_2}^{L, M}( \hat{\boldsymbol{\mathbf{r}}} _1, \hat{\boldsymbol{\mathbf{r}}} _2) \,\mathrm{d}{\Omega_1} \,\mathrm{d}{\Omega_2} = \delta_{l_1, l_1'} \delta_{l_2, l_2'} \delta_{L, L'} \delta_{M, M'}~.
+\end{equation}
+
+[/SCOPE:s_ortho]
+[SCOPE:s_other|description|其他性质]
+[39] \begin{equation}
+\mathcal{Y}_{l_1,l_2}^{L,-M}( \hat{\boldsymbol{\mathbf{r}}} _1, \hat{\boldsymbol{\mathbf{r}}} _2) = (-1)^{l_1 + l_2 + L + M} \mathcal{Y}_{l_1,l_2}^{L,M}( \hat{\boldsymbol{\mathbf{r}}} _1, \hat{\boldsymbol{\mathbf{r}}} _2)^*~,
+\end{equation}
+[40] 其中 $*$ 表示复共轭。
+[41] 推导如下，
+[42] \begin{equation}
+\begin{aligned}
+\mathcal{Y}_{l_1,l_2}^{L,-M}( \hat{\boldsymbol{\mathbf{r}}} _1, \hat{\boldsymbol{\mathbf{r}}} _2) &= \sum_{m_1+m_2 = M} \begin{bmatrix}l_1 & l_2 & L \\ -m_1 & -m_2 & -M\end{bmatrix} Y_{l_1,-m_1}( \hat{\boldsymbol{\mat…[truncated]…l_1,m_1}^*( \hat{\boldsymbol{\mathbf{r}}} _1) Y_{l_2, m_2}^* ( \hat{\boldsymbol{\mathbf{r}}} _2)\\
+&= (-1)^{l_1+l_2+L+M} \mathcal{Y}_{l_1,l_2}^{L,M}( \hat{\boldsymbol{\mathbf{r}}} _1, \hat{\boldsymbol{\mathbf{r}}} _2)^*~.
+\end{aligned} \end{equation}
+
+跨文章引用:
+  [L1] 酉矩阵 → UniMat
+[/SCOPE:s_other]
+[/SCOPE:root]

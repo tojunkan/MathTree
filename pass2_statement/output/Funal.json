@@ -1,0 +1,275 @@
+{
+  "article_name": "Funal",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "L",
+        "F",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "L",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1",
+      "subtype": "example",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "L",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "f",
+        "L",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_additive",
+      "subtype": "definition",
+      "clause_range": [
+        22,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_homogeneous",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "x",
+        "alpha"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_conjugate_homogeneous",
+      "subtype": "definition",
+      "clause_range": [
+        26,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "x",
+        "alpha"
+      ]
+    },
+    {
+      "stmt_id": "st_def3",
+      "subtype": "definition",
+      "clause_range": [
+        29,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "linear functional",
+        "conjugate linear functional"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "R^n",
+        "x",
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_formula1",
+      "subtype": "example",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_formula2",
+      "subtype": "example",
+      "clause_range": [
+        36,
+        37
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3",
+      "subtype": "example",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": [
+        "I",
+        "overline{I}"
+      ]
+    },
+    {
+      "stmt_id": "st_ex4_let",
+      "subtype": "assumption",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex4_let",
+      "exposed_entities": [
+        "y0",
+        "C[a,b]"
+      ]
+    },
+    {
+      "stmt_id": "st_ex4_formula",
+      "subtype": "example",
+      "clause_range": [
+        41,
+        42
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex4",
+      "exposed_entities": [
+        "F",
+        "overline{F}"
+      ]
+    },
+    {
+      "stmt_id": "st_ex5",
+      "subtype": "example",
+      "clause_range": [
+        43,
+        44
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex5",
+      "exposed_entities": [
+        "delta_{t0}",
+        "C[a,b]"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2_additive",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2_homogeneous",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2_conjugate_homogeneous",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_let",
+      "target": "st_ex2_formula1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_let",
+      "target": "st_ex2_formula2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex4_let",
+      "target": "st_ex4_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

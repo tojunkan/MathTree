@@ -1,0 +1,192 @@
+{
+  "article_name": "ReRep",
+  "statements": [
+    {
+      "stmt_id": "st_lemma1",
+      "subtype": "lemma",
+      "clause_range": [
+        0,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_x",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1_let1",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_concl_unique",
+      "subtype": "conclusion",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1_let1",
+      "exposed_entities": [
+        "n",
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_partition",
+      "subtype": "remark",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_define_n1_a1",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1_let3",
+      "exposed_entities": [
+        "n_1",
+        "a_1"
+      ]
+    },
+    {
+      "stmt_id": "st_cond_zero",
+      "subtype": "condition",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_lemma1_let4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_recursive_step",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1_let4",
+      "exposed_entities": [
+        "n_2",
+        "a_2"
+      ]
+    },
+    {
+      "stmt_id": "st_cond_zero2",
+      "subtype": "condition",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_lemma1_let4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_define_sequences",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1_let5",
+      "exposed_entities": [
+        "a_k",
+        "n_k"
+      ]
+    },
+    {
+      "stmt_id": "st_termination_or_infinite",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1_let5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_limit_representation",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1_let5",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_x",
+      "target": "st_concl_unique",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_concl_unique",
+      "target": "st_define_n1_a1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_define_n1_a1",
+      "target": "st_cond_zero",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cond_zero",
+      "target": "st_recursive_step",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_recursive_step",
+      "target": "st_cond_zero2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cond_zero2",
+      "target": "st_define_sequences",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_define_sequences",
+      "target": "st_termination_or_infinite",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_termination_or_infinite",
+      "target": "st_limit_representation",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

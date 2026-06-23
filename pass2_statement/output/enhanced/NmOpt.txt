@@ -1,0 +1,195 @@
+[SCOPE:root|description|正规算子]
+文章名: NmOpt
+标题: 正规算子
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=正规算子
+  [1] type=lemma heading=引理 1 title=
+  [2] type=lemma heading=引理 2 title=算子交换则有公共本征向量
+  [3] type=corollary heading=推论 1 title=算子交换则有公共本征向量
+  [4] type=theorem heading=定理 1 title=正规算子必能正交对角化
+  [5] type=theorem heading=定理 2 title=能正交对角化的就是正规算子
+  [6] type=corollary heading=推论 2 title=
+  [7] type=theorem heading=定理 3 title=
+
+[0] “算子” 一词是 “线性算子” 的简称，在本文中指代 “线性变换” 或者 “线性映射”。
+[1] 本文讨论的是酉空间上的情况，
+[2] 但多数结论可以应用到内积空间或者更一般的配备了非退化双线性形式的空间中。
+
+[SCOPE:s_def1|description|正规算子]
+[3] 定义 1 正规算子
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[4] 给定酉空间 $U$ 上的线性变换 $A$，令 $A^\dagger$ 是其伴随变换。
+[/SCOPE:s_def1_let]
+[5] 若 $AA^\dagger = A^\dagger A$，
+[6] 则称 $A$ 是 $U$ 上的正规算子（normal operator）。
+[7] 如果 $A=A^\dagger$，
+[8] 则称 $A$ 是一个厄米算子（hermitian operator）。
+[9] 如果 $AA^\dagger = E$，其中 $E$ 是单位方阵，
+[10] 则称 $A$ 是一个酉算子（unitary operator）。
+[11] 显然，厄米算子和酉算子都是正规算子。
+[12] 厄米算子的性质非常好，而一般的算子总可以分解为厄米算子的组合，这就为研究算子带来了便利：
+
+[/SCOPE:s_def1]
+[SCOPE:s_lem1|description|引理1]
+[13] 引理 1
+[SCOPE:s_lem1_let|let_bind|引理1的变量]
+[14] 任取酉空间 $U$ 上的线性变换 $A$，
+[/SCOPE:s_lem1_let]
+[15] 则存在 $U$ 上唯一的厄米算子 $ \boldsymbol{\mathbf{H}} _1$ 和 $ \boldsymbol{\mathbf{H}} _2$，使得
+[16] \begin{equation}
+A = \boldsymbol{\mathbf{H}} _1 + \mathrm{i} \boldsymbol{\mathbf{H}} _2~.
+\end{equation}
+[17] 证明：
+[18] 对于任意的 $A$，定义
+[19] \begin{equation}
+\begin{cases}
+\boldsymbol{\mathbf{H}} _1 =\frac{1}{2} \left(A+A^\dagger \right) , \\
+\boldsymbol{\mathbf{H}} _2 =\frac{1}{2 \mathrm{i} } \left(A-A^\dagger \right) ~.
+\end{cases}
+\end{equation}
+[20] 显然 $ \boldsymbol{\mathbf{H}} _1+ \mathrm{i} \boldsymbol{\mathbf{H}} _2=A$，
+[21] 因此存在性得证。
+[22] 反过来，假设 $A = \boldsymbol{\mathbf{H}} _1 + \mathrm{i} \boldsymbol{\mathbf{H}} _2$，
+[23] 则 $A^\dagger = \boldsymbol{\mathbf{H}} _1 - \mathrm{i} \boldsymbol{\mathbf{H}} _2$，
+[24] 从而 $ \boldsymbol{\mathbf{H}} _1$ 和 $ \boldsymbol{\mathbf{H}} _2$ 能由 $A$唯一决定。
+[25] 证毕。
+[/SCOPE:s_lem1]
+[26] 正规算子的定义依赖于酉空间的内积，因为伴随变换的定义依赖于内积或者一个非退化双线性形式。
+[27] 因此，讨论正规算子的同时可以讨论向量的正交性，而正规算子实际上就是 “可以被正交对角化的线性变换”。
+[28] 我们接下来就一步步推导出这一点。
+
+[SCOPE:s_lem2|description|算子交换则有公共本征向量]
+[29] 引理 2 算子交换则有公共本征向量
+[SCOPE:s_lem2_let|let_bind|引理2的变量]
+[30] 给定 $n$ 维酉空间 $U$ 上的线性变换 $A$ 和 $B$，若 $AB=BA$，
+[/SCOPE:s_lem2_let]
+[31] 则存在 $ \boldsymbol{\mathbf{u}} \in U$，它是 $A$ 和 $B$ 的公共本征向量。
+[32] 【未完成】可能需要引用 “复矩阵都可以上三角化” 的定理。
+[33] 证明：
+[34] 有限维酉空间上任何算子都至少有一个本征向量，这是代数学基本定理保证的。
+[35] 取 $A$ 的本征向量 $ \boldsymbol{\mathbf{x}} $，使得 $A \boldsymbol{\mathbf{x}} =\lambda \boldsymbol{\mathbf{x}} $。
+[36] 构造子空间 $W= \operatorname {Span}\{ \boldsymbol{\mathbf{x}} , B \boldsymbol{\mathbf{x}} , B^2 \boldsymbol{\mathbf{x}} , \cdots\}$，
+[37] 则显然有
+[38] \begin{equation}
+AB^k \boldsymbol{\mathbf{x}} = B^kA \boldsymbol{\mathbf{x}} = \lambda B^k \boldsymbol{\mathbf{x}} ~
+\end{equation}
+[39] 对任意正整数 $k$ 都成立，
+[40] 故 $W$ 中的向量都是 $A$ 的本征向量，本征值都是 $\lambda$。
+[41] 又因为按构造可知 $W$ 是 $B$ 的不变子空间，
+[42] 故 $W$ 上必有 $B$ 的本征向量 $ \boldsymbol{\mathbf{u}} $，此即为所求。
+[43] 证毕。
+[/SCOPE:s_lem2]
+[44] 由引理 2 显然可知如下推论：
+
+[SCOPE:s_cor1|description|算子交换则有公共本征向量]
+[45] 推论 1 算子交换则有公共本征向量
+[SCOPE:s_cor1_let|let_bind|推论1的变量]
+[46] 给定 $n$ 维酉空间 $U$ 上的有限多个线性变换 $A_1, A_2, \cdots, A_k$，
+[/SCOPE:s_cor1_let]
+[47] 则存在它们的公共本征向量。
+[48] 证明：
+[49] 用数学归纳法证明如下。
+[50] 设该定理对于 $m\leq k-1$ 成立，$ \boldsymbol{\mathbf{x}} $ 是其共同本征向量，并构造子空间 $W= \operatorname {Span}\{ \boldsymbol{\mathbf{x}} ,A_{k} \boldsymbol{\mathbf{x}} ,A_{k}^2x\cdots\}$。
+[51] 由于 $A_m$ 与 $A_k$ 交换，
+[52] 所以 $W$ 上的任意向量都是 $A_m$ 的本征向量。
+[53] 且由于 $W$ 是 $A_k$ 的不变子空间，
+[54] 则其上至少有一个 $A_k$ 的本征向量，证毕。
+[/SCOPE:s_cor1]
+[55] 利用引理 2 ，还可以得到正规算子的对角化：
+
+[SCOPE:s_thm1|description|正规算子必能正交对角化]
+[56] 定理 1 正规算子必能正交对角化
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[57] 给定 $n$ 维酉空间 $U$ 上的线性变换 $A$，若 $AA^\dagger = A^\dagger A$，
+[/SCOPE:s_thm1_let]
+[58] 则存在一组标准正交基 $\{ \boldsymbol{\mathbf{e}} _i\}_{i=1}^n$，使得 $A$ 的矩阵是对角矩阵。
+[59] 证明：
+[60] 据引理 2 ，可以取 $A$ 和 $A^\dagger$ 的一个模长为 $1$ 的公共本征向量 $ \boldsymbol{\mathbf{e}} _1$，将其拓展为一组标准正交基，
+[61] 则在这组基下 $A$ 和 $A^\dagger$ 的矩阵的第一列第一行不为零，第一列其它行都为零。
+[62] 又因为标准正交基下 $A$ 和 $A^\dagger$ 的矩阵互为 “转置后取共轭”，
+[63] 因此可知两个矩阵的第一行第一列不为零，第一行其它列都为零。
+[64] 这意味着，可以通过以酉矩阵为过渡矩阵的相似变换，将 $A$ 和 $A^\dagger$ 的矩阵同时化为第一行和第一列已经对角化的情况，
+[65] 于是接下来可以看除了第一行和第一列的部分，同样利用不改变第一行和第一列的酉矩阵将第二行和第二列同时对角化。
+[66] 以此类推，最终能用一系列酉相似变换将 $A$ 和 $A^\dagger$ 的矩阵同时对角化，
+[67] 即得证。
+[68] 证毕。
+[/SCOPE:s_thm1]
+[69] 定理 1 反过来也成立：
+
+[SCOPE:s_thm2|description|能正交对角化的就是正规算子]
+[70] 定理 2 能正交对角化的就是正规算子
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[71] 给定 $n$ 维酉空间 $U$ 上的线性变换 $A$，若在某组标准正交基下 $A$ 是对角矩阵，
+[/SCOPE:s_thm2_let]
+[72] 则 $A$ 是正规算子。
+[73] 证明：
+[74] 由于标准正交基下 $A^\dagger$ 的矩阵就是 $A$ 的矩阵做转置和取共轭后的结果，
+[75] 因此 $A^\dagger$ 的矩阵也是对角矩阵。
+[76] 显然，对角矩阵的乘法总是可交换的，
+[77] 因此 $AA^\dagger = A^\dagger A$。
+[78] 证毕。
+[/SCOPE:s_thm2]
+[79] 综上，我们即得到正规算子的等价定义：
+
+[SCOPE:s_cor2|description|推论2]
+[80] 推论 2
+[81] 有限维酉空间上的线性变换是正规算子，当且仅当其在某组标准正交基下是对角矩阵。
+
+[/SCOPE:s_cor2]
+[82] 推论 1 大大简化了对正规算子的讨论，比如分析正规算子的本征值分布。
+
+[SCOPE:s_thm3|description|定理3]
+[83] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[84] 有限维酉空间上，厄米变换 $H$ 的本征值都是实数，酉变换 $U$ 的本征值都是模为 $1$ 的复数。
+[/SCOPE:s_thm3_let]
+[85] 证明：
+[86] 取标准正交基，将 $H$ 表示为对角矩阵，
+[87] 则 $H=H^\dagger$ 意味着该矩阵的对角元都等于自身的复共轭，
+[88] 从而对角元都是实数。
+[89] 取标准正交基，将 $U$ 表示为对角矩阵，
+[90] 则 $UU^\dagger = E$ 意味着该矩阵的对角元乘以自身的复共轭等于 $1$，
+[91] 从而对角元都是模为 $1$ 的复数。
+[92] 证毕。
+[/SCOPE:s_thm3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_lem2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是引理2的推广（多个算子）"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_lem2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理1证明中使用了引理2"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "定理2是定理1的逆命题"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_thm1",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "推论2综合定理1和定理2"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_cor2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3利用推论2证明"
+  }
+]

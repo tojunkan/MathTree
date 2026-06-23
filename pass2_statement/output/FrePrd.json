@@ -1,0 +1,172 @@
+{
+  "article_name": "FrePrd",
+  "statements": [
+    {
+      "stmt_id": "st_free_product_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "G",
+        "H",
+        "F(G∪H)",
+        "G*H"
+      ]
+    },
+    {
+      "stmt_id": "st_amalgamated_def",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "F",
+        "G",
+        "H",
+        "φ",
+        "ϕ",
+        "G*_F H"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1",
+      "exposed_entities": [
+        "G",
+        "H",
+        "F",
+        "φ",
+        "ϕ"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem1_S_def",
+      "subtype": "definition",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1",
+      "exposed_entities": [
+        "S"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem1_conclusion1",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_conclusion2",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_ker_eq_S",
+      "subtype": "conclusion",
+      "clause_range": [
+        52,
+        54
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        55,
+        55
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_normal_subgroup",
+      "subtype": "remark",
+      "clause_range": [
+        57,
+        63
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_theorem1_assump",
+      "target": "st_theorem1_conclusion1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_assump",
+      "target": "st_theorem1_conclusion2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_conclusion1",
+      "target": "st_theorem1_conclusion2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_conclusion2",
+      "target": "st_proof_ker_eq_S",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_ker_eq_S",
+      "target": "st_proof_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_remark_normal_subgroup",
+      "target": "st_theorem1_conclusion1",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_theorem1_conclusion2",
+      "target": "st_amalgamated_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1给出共合积的另一种构造"
+    }
+  ],
+  "unresolved": []
+}

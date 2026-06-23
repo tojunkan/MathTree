@@ -1,0 +1,641 @@
+{
+  "article_name": "ReTop",
+  "statements": [
+    {
+      "stmt_id": "st_def1_open_set",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "x",
+        "U(x)",
+        "V(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_closed_set",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_empty_both",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_union",
+      "subtype": "theorem",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_intersection",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_closed_intersection",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_closed_union",
+      "subtype": "theorem",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_prove",
+      "subtype": "exercise",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_hint_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "U_alpha",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_hint_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "V^k(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_question",
+      "subtype": "question",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_ex_open_interval",
+      "subtype": "example",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1_ex",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_ex_singleton",
+      "subtype": "example",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1_ex",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_ex_finite",
+      "subtype": "example",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1_ex",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_ex_Z",
+      "subtype": "example",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1_ex",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_ex_counterexample",
+      "subtype": "counterexample_claim",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2_ex",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_ex_intersection",
+      "subtype": "example",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2_ex",
+      "exposed_entities": [
+        "U_k",
+        "I_k"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_ex_Q",
+      "subtype": "example",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2_ex",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_subset_topology",
+      "subtype": "definition",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "E",
+        "x",
+        "U(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_component_def",
+      "subtype": "definition",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "G",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "x",
+        "U"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_reductio_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_reductio",
+      "exposed_entities": [
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_reductio_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_countable",
+      "subtype": "conclusion",
+      "clause_range": [
+        48,
+        50
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "r",
+        "U_r"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_corollary",
+      "subtype": "corollary",
+      "clause_range": [
+        52,
+        52
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_distance",
+      "subtype": "definition",
+      "clause_range": [
+        62,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "E",
+        "x",
+        "dist(x;E)"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_contact_equiv",
+      "subtype": "definition",
+      "clause_range": [
+        65,
+        65
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_accumulation",
+      "subtype": "definition",
+      "clause_range": [
+        67,
+        68
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_isolated",
+      "subtype": "definition",
+      "clause_range": [
+        70,
+        71
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_finite",
+      "subtype": "example",
+      "clause_range": [
+        73,
+        73
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_specific",
+      "subtype": "example",
+      "clause_range": [
+        74,
+        75
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_interval",
+      "subtype": "example",
+      "clause_range": [
+        76,
+        76
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def4_closure",
+      "subtype": "definition",
+      "clause_range": [
+        78,
+        78
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "E",
+        "bar E"
+      ]
+    },
+    {
+      "stmt_id": "st_def5_dense",
+      "subtype": "definition",
+      "clause_range": [
+        80,
+        80
+      ],
+      "truth_value": null,
+      "scope_id": "s_def5",
+      "exposed_entities": [
+        "E",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        83,
+        83
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": [
+        "E"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        84,
+        84
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3",
+      "exposed_entities": [
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_proof_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        87,
+        87
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1_statement",
+      "subtype": "corollary",
+      "clause_range": [
+        90,
+        90
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": [
+        "E"
+      ]
+    },
+    {
+      "stmt_id": "st_thm4_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        93,
+        93
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm4",
+      "exposed_entities": [
+        "E"
+      ]
+    },
+    {
+      "stmt_id": "st_thm4_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        94,
+        94
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm4",
+      "exposed_entities": [
+        "H"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex1_hint_assump",
+      "target": "st_ex1_hint_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof_assump",
+      "target": "st_thm2_proof_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_reductio_assump",
+      "target": "st_thm2_reductio_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof_assump",
+      "target": "st_thm2_countable",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_proof_assump",
+      "target": "st_thm3_proof_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm4_statement",
+      "target": "st_thm4_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_union",
+      "target": "st_def1_open_set",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1基于开集闭集定义"
+    },
+    {
+      "source": "st_ex1_prove",
+      "target": "st_thm1_union",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "习题1要求证明定理1"
+    },
+    {
+      "source": "st_ex2_question",
+      "target": "st_ex1_prove",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "习题2是习题1的追问"
+    },
+    {
+      "source": "st_ex2_ex_counterexample",
+      "target": "st_ex2_question",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2是习题2的参考"
+    },
+    {
+      "source": "st_thm2_statement",
+      "target": "st_def1_open_set",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2刻画开集结构"
+    },
+    {
+      "source": "st_def3_distance",
+      "target": "st_def1_open_set",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "接触点定义基于开集"
+    },
+    {
+      "source": "st_def4_closure",
+      "target": "st_def3_distance",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "闭包定义基于接触点"
+    },
+    {
+      "source": "st_def5_dense",
+      "target": "st_def4_closure",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "稠密定义基于闭包"
+    },
+    {
+      "source": "st_thm3_statement",
+      "target": "st_def4_closure",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理3关于闭包的性质"
+    },
+    {
+      "source": "st_cor1_statement",
+      "target": "st_thm3_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论1是定理3的直接结果"
+    },
+    {
+      "source": "st_thm4_statement",
+      "target": "st_def5_dense",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理4关于稠密性"
+    }
+  ],
+  "unresolved": []
+}

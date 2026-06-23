@@ -1,0 +1,223 @@
+{
+  "article_name": "SNesT",
+  "statements": [
+    {
+      "stmt_id": "st_def_ball_nest",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "(X,d)",
+        "B_n",
+        "B(x_n,r_n)",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_def_closed_ball_nest",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_open_ball_nest",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        8,
+        11
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm",
+      "exposed_entities": [
+        "(X,d)",
+        "B_n",
+        "r_n"
+      ]
+    },
+    {
+      "stmt_id": "st_nec_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_nec",
+      "exposed_entities": [
+        "(X,d)",
+        "B_n",
+        "x_n",
+        "r_n"
+      ]
+    },
+    {
+      "stmt_id": "st_nec_cauchy",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_nec",
+      "exposed_entities": [
+        "x_n"
+      ]
+    },
+    {
+      "stmt_id": "st_nec_limit",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_nec",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_nec_intersection",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_nec",
+      "exposed_entities": [
+        "x",
+        "B_n"
+      ]
+    },
+    {
+      "stmt_id": "st_suf_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_suf",
+      "exposed_entities": [
+        "x_n"
+      ]
+    },
+    {
+      "stmt_id": "st_suf_construction",
+      "subtype": "assumption",
+      "clause_range": [
+        31,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_suf",
+      "exposed_entities": [
+        "x_{n_k}",
+        "B_k"
+      ]
+    },
+    {
+      "stmt_id": "st_suf_nest",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_suf",
+      "exposed_entities": [
+        "z"
+      ]
+    },
+    {
+      "stmt_id": "st_suf_limit",
+      "subtype": "conclusion",
+      "clause_range": [
+        37,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_suf",
+      "exposed_entities": [
+        "x_{n_k}",
+        "x_n"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_nec_assump",
+      "target": "st_nec_cauchy",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_nec_cauchy",
+      "target": "st_nec_limit",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_nec_limit",
+      "target": "st_nec_intersection",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_suf_assump",
+      "target": "st_suf_construction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_suf_construction",
+      "target": "st_suf_nest",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_suf_nest",
+      "target": "st_suf_limit",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_nec_intersection",
+      "target": "st_thm_statement",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "必要性证明推出定理的结论"
+    },
+    {
+      "source": "st_suf_limit",
+      "target": "st_thm_statement",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "充分性证明推出定理的结论"
+    }
+  ],
+  "unresolved": []
+}

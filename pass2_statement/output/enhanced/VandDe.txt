@@ -1,0 +1,97 @@
+[SCOPE:root|description|范德蒙矩阵、范德蒙行列式]
+文章名: VandDe
+标题: 范德蒙矩阵、范德蒙行列式
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+
+[SCOPE:s_def|description|定义 1]
+[SCOPE:s_def_let|let_bind|定义中的变量]
+[0] 定义 1
+[1] 范德蒙矩阵是一个 $n\times m$ 的矩阵，定义为
+[2] \begin{equation}
+\boldsymbol{\mathbf{V}} =
+\begin{pmatrix}1 & x_1 & x_1^2 & \dots & x_1^{m-1}\\
+1 & x_2 & x_2^2 & \dots & x_2^{m-1}\\
+1 & x_3 & x_3^2 & \dots & x_3^{m-1}\\
+\vdots & \vdots & \vdots & \ddots & \vdots\\
+1 & x_n & x_n^2 & \dots & x_n^{m-1}\end{pmatrix} ~.
+\end{equation}
+[/SCOPE:s_def_let]
+[3] 范德蒙行列式（Vandermonde determinant）
+[4] 一些文献中也把式 1 中的各列左右翻转，
+[5] 即按照幂从大到小排列。
+[6] 可应用于多项式最小二乘法拟合（子节 3 ）以及多项式插值。
+
+[/SCOPE:s_def]
+[SCOPE:s_prop|description|性质]
+[7] 当 $m \le n$ 时，矩阵的秩为 $m$ 当且仅当所有的 $x_i$ 各不相等。
+[8] 当 $m \ge n$ 时，矩阵的秩为 $n$ 当且仅当至少 $n$ 个 $x_i$ 各不相等。
+
+[/SCOPE:s_prop]
+[SCOPE:s_proof|description|证明]
+[SCOPE:s_proof_let1|let_bind|证明中的变量 V_n]
+[9] 先证明 $m = n$ 时范德蒙矩阵满秩，
+[10] 即行列式不为零。
+[11] 大小为 $n \times n$ 的范德蒙矩阵 $ \boldsymbol{\mathbf{V}} _n $ 的行列式：
+[12] \begin{equation}
+\begin{vmatrix} \boldsymbol{\mathbf{V}} _n\end{vmatrix} = \begin{vmatrix}1 & x_1 & x_1^2 & \dots & x_1^{m-1}\\
+1 & x_2 & x_2^2 & \dots & x_2^{m-1}\\
+1 & x_3 & x_3^2 & \dots & x_3^{m-1}\\
+\vdots & \vdots & \vdots & \ddots & \vdots\\
+1 & x_n & x_n^2 & \dots & x_n^{m-1}\end{vmatrix} ~.
+\end{equation}
+[/SCOPE:s_proof_let1]
+[SCOPE:s_proof_let2|let_bind|列变换引入 V_j]
+[13] 将 $ \boldsymbol{\mathbf{V}} _n$ 的每一列记成 $V_j $。
+[14] 根据行列式的性质，从第 $n$ 列开始，对每一列依次进行列变换 $V_{j}\rightarrow \ V_{j}-x_1V_{j-1} $：
+[15] \begin{equation}
+\begin{vmatrix} \boldsymbol{\mathbf{V}} _n\end{vmatrix} =
+\begin{vmatrix}1 & x_1-x_1 & x_1^2-x_1^2 & \dots & x_1^{m-1}-x_1^{m-1}\\
+1 & x_2-x_1 & x_2^2-x_1x_2 & \dots & x_2^{m-1}-x_1x_2^{m-2}\\
+\vdots & \vdots & \vdots & \ddots & \vdo…[truncated]…^{m-2}(x_2-x_1)\\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+1 & x_n-x_1 & x_n(x_n-x_1) & \dots & x_n^{m-2}(x_n-x_1)\end{vmatrix}
+= \begin{vmatrix} \boldsymbol{\mathbf{V^\prime}} _{n-1}\end{vmatrix} \prod_\limits{j=2}^n (x_j-x_1) ~.
+\end{equation}
+[/SCOPE:s_proof_let2]
+[SCOPE:s_proof_let3|let_bind|子矩阵 V'_n-1]
+[16] \begin{equation}
+\boldsymbol{\mathbf{V}} ^\prime_{n-1} =
+\begin{pmatrix}
+1 & x_2 & x_2^2 & \dots & x_2^{m-2}\\
+1 & x_3 & x_3^2 & \dots & x_3^{m-2}\\
+\vdots & \vdots & \vdots & \ddots & \vdots\\
+1 & x_n & x_n^2 & \dots & x_n^{m-2}
+\end{pmatrix} ~.
+\end{equation}
+[17] 也是一个范德蒙矩阵，只不过 $ x$ 的下标是从 $2$ 到 $n$。
+[/SCOPE:s_proof_let3]
+[18] 由于 $x_i \neq x_j(i \neq j)$，我们知道只要 $  \begin{vmatrix} \boldsymbol{\mathbf{V}} ^\prime_{n-1}\end{vmatrix}  \neq 0$，就有 $  \begin{vmatrix} \boldsymbol{\mathbf{V}} _n\end{vmatrix}  \neq 0$。
+[19] 因此，要证明 $  \begin{vmatrix} \boldsymbol{\mathbf{V}} _n\end{vmatrix}  \neq 0$，只需要证明 $  \begin{vmatrix} \boldsymbol{\mathbf{V}} ^\prime_2\end{vmatrix}  \neq 0$。
+[20] 而
+[21] \begin{equation}
+\begin{vmatrix} \boldsymbol{\mathbf{V}} ^\prime_2\end{vmatrix} = \begin{vmatrix}
+1 & x_{n-1} \\
+1 & x_n
+\end{vmatrix} = x_n - x_{n-1} \neq 0 ~.
+\end{equation}
+[22] 因此，我们证明了 $  \begin{vmatrix} \boldsymbol{\mathbf{V}} _n\end{vmatrix}  \neq 0$，甚至得到了其表达式：
+[23] \begin{equation}
+\begin{vmatrix} \boldsymbol{\mathbf{V}} _n\end{vmatrix} =\prod_\limits{1\le i < j \le n }(x_j-x_i)~.
+\end{equation}
+[24] 当 $m \neq n$ 时，容易知道，矩阵的秩 $= \min \{m,n\}$。
+[25] 因此原命题得证。
+[/SCOPE:s_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_prop",
+    "target_scope": "s_proof",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "性质是定理，证明是它的证明。Pass 2 落地时端点应为各自的 conclusion Statement。"
+  }
+]

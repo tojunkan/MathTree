@@ -1,0 +1,149 @@
+[SCOPE:root|description|拉普拉斯方程]
+文章名: LapEq
+标题: 拉普拉斯方程
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=example heading=例 2 title=二维长方形边界问题
+
+[SCOPE:s_intro|description|拉普拉斯方程介绍]
+[SCOPE:s_intro_let|let_bind|变量Ω和u]
+[0] 设 $\Omega\subset\mathbb{R}^n$ 是区域，$u$ 是 $\Omega$ 上的实值函数。
+[1] 如下偏微分方程称为拉普拉斯方程（laplacian equation）:
+[/SCOPE:s_intro_let]
+[2] \begin{equation}
+\Delta u = 0~,
+\end{equation}
+[3] 这里 $\Delta=\nabla^2 = \boldsymbol{\nabla} \boldsymbol\cdot \boldsymbol{\nabla} =\partial_{x^1}^2+...+\partial_{x^n}^2$ 是梯度的散度，也就是所谓的
+[4] 拉普拉斯算子（Laplacian）
+[5] . 根据定义，有分配律 $ \boldsymbol{\nabla} \boldsymbol\cdot ( \boldsymbol{\nabla} u) = ( \boldsymbol{\nabla} \boldsymbol\cdot \boldsymbol{\nabla} ) u$。
+[6] 满足拉普拉斯方程的函数叫做
+[7] 调和函数（harmonic function）
+[8] 从物理上看，二元函数的拉普拉斯方程可以理解为一片静止的，不受外力的薄膜所满足的方程。
+[9] 要得到方程的解，我们需要规定一些边界条件。
+[10] 常见的条件是给定一个区域，然后给出 $u( \boldsymbol{\mathbf{r}} )$ 在边界上的函数值。
+
+[/SCOPE:s_intro]
+[SCOPE:s_coords|description|直角坐标系中的拉普拉斯方程]
+[11] 直角坐标系中的拉普拉斯方程 $\nabla^2u=0$ 为
+[12] \begin{equation}
+\frac{\partial^{2}{u}}{\partial{x}^{2}} + \frac{\partial^{2}{u}}{\partial{y}^{2}} + \frac{\partial^{2}{u}}{\partial{z}^{2}} =0~.
+\end{equation}
+[13] 拉普拉斯方程还可化为
+[14] 柱坐标系中的拉普拉斯方程 [链接 L0]
+[15] 球坐标系中的拉普拉斯方程 [链接 L1]
+
+[/SCOPE:s_coords]
+[SCOPE:s_ex1|description|例1 静电学中的拉普拉斯方程]
+[16] 在静电学问题中，电势能满足泊松方程，在没有电荷分布的区域，泊松方程变为拉普拉斯方程。
+[17] \begin{equation}
+\Delta V=0~.
+\end{equation}
+[18] \begin{equation}
+\frac{1}{r^2} \frac{\mathrm{d}{}}{\mathrm{d}{r}} \left(r^2 \frac{\mathrm{d}{V}}{\mathrm{d}{r}} \right) =0~,
+\end{equation}
+[19] \begin{equation}
+r^2 \frac{\mathrm{d}{V}}{\mathrm{d}{r}} =c\Rightarrow \frac{\mathrm{d}{V}}{\mathrm{d}{r}} =\frac{c}{r^2}~.
+\Rightarrow V(r)=-\frac{c}{r}+c'~,
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2 二维长方形边界问题]
+[SCOPE:s_ex2_let|let_bind|变量u, X, Y, 常数a,b,c]
+[20] 例 2 二维长方形边界问题
+[21] 未完成：图
+[22] \begin{equation}
+\frac{\partial^{2}{u}}{\partial{x}^{2}} + \frac{\partial^{2}{u}}{\partial{y}^{2}} =0~.
+\end{equation}
+[23] \begin{equation}
+u(0,y)=u(a,y)=u(x,0)=0~,\quad u(x,b)=c~,
+\end{equation}
+[SCOPE:s_ex2_solve|description|求解过程]
+[SCOPE:s_ex2_solve_let1|let_bind|分离变量常数k_x, k_y]
+[24a] (x)Y
+[24b] (y)$，代入式 6 ，得
+[/SCOPE:s_ex2_let]
+[25] \begin{equation}
+\frac{X''}{X}+\frac{Y''}{Y}=0~.
+\end{equation}
+[26] \begin{equation}
+\frac{X''}{X}=-k_x^2~,\quad \frac{Y''}{Y}=-k_y^2~.
+\end{equation}
+[27] \begin{equation}
+k_x^2+k_y^2=0~.
+\end{equation}
+[/SCOPE:s_ex2_solve_let1]
+[SCOPE:s_ex2_solve_let2|let_bind|系数a1,b1,a2,b2, n, C_n等]
+[28] \begin{equation}
+X''+k_x^2X=0~,
+\end{equation}
+[29] \begin{equation}
+X(x)=a_1\sin k_x x+b_1\cos k_x x~.
+\end{equation}
+[30] \begin{equation}
+b_1=0,\quad k_x=\frac{n\pi}{a} \qquad (n\in \mathbb{Z})~,
+\end{equation}
+[31] \begin{equation}
+X_n(x)=a_1\sin\frac{n\pi x}{a} \qquad (n\in \mathbb{Z})~.
+\end{equation}
+[32] \begin{equation}
+Y''+k_y^2Y=0~.
+\end{equation}
+[33] \begin{equation}
+Y(y)=a_2\sin k_y y+b_2\cos k_y y~.
+\end{equation}
+[34] 式 10
+[35] 式 11
+[36] 式 12
+[37] \begin{equation}
+Y(y)= \mathrm{i} a_2\sinh k_x y+b_2\cosh k_x y~.
+\end{equation}
+[38] \begin{equation}
+Y_n(y)= \mathrm{i} a_2\sinh\frac{n\pi y}{a}\qquad (n\in \mathbb{Z})~,
+\end{equation}
+[39] \begin{equation}
+\begin{aligned}
+u_n(x,y)&=X_n(x)Y_n(y)= \mathrm{i} a_1a_2\sin\frac{n\pi x}{a}\sinh\frac{n\pi y}{a}\\
+&=C'_n\sin\frac{n\pi x}{a}\sinh\frac{n\pi y}{a} \qquad (n\in\mathbb{Z})~.
+\end{aligned}
+\end{equation}
+[40] 由线性叠加原理
+[41] \begin{equation}
+u(x,y)=\sum_n C''_n u_n(x,y)=\sum_n C_n\sin\frac{n\pi x}{a}\sinh\frac{n\pi y}{a} \qquad (n\in\mathbb{Z^+})~.
+\end{equation}
+[42] \begin{equation}
+c=\sum_n C_n\sin\frac{n\pi x}{a}\sinh\frac{n\pi b}{a}=\sum_n B_n\sin\frac{n\pi x}{a} \qquad (n\in\mathbb{Z^+})~,
+\end{equation}
+[43] \begin{equation}
+\int_0^a\sin\frac{n\pi x}{a}\sin\frac{m\pi x}{a} \,\mathrm{d}{x} =\left\{\begin{aligned}
+&\frac{a}{2}&&(n=m)\\
+& 0 &&(n\neq m)~,
+\end{aligned}\right.
+\end{equation}
+[44] \begin{equation}
+\begin{aligned}
+B_n
+&=\frac{2c}{a}\int_0^a\sin\frac{n\pi x}{a} \,\mathrm{d}{x} =\frac{2c}{n\pi}(1+(-1)^{n+1})\\
+&=\left\{\begin{aligned}
+0,&\quad n=2,4,\cdots~\\
+\frac{4c}{n\pi},&\quad n=1,3,5,\cdots~
+\end{aligned}\right.
+\end{aligned}~
+\end{equation}
+[45] \begin{equation}
+C_n=\frac{B_n}{\sinh \frac{n\pi b}{a}}=\frac{4c}{n\pi\sinh \frac{n\pi b}{a}}\qquad
+(n=1,3,5,\cdots)~.
+\end{equation}
+[46] 式 24
+[47] 式 20
+[48] \begin{equation}
+u(x,y)=\frac{4c}{\pi}\sum_{n=1,3,5,\cdots} \frac{1}{n\sinh \frac{n\pi b}{a}}\sin\frac{n\pi x}{a}\sinh\frac{n\pi y}{a}~.
+\end{equation}
+
+跨文章引用:
+  [L0] 柱坐标系中的拉普拉斯方程 → CylLap
+  [L1] 球坐标系中的拉普拉斯方程 → SphLap
+[/SCOPE:s_ex2]
+[/SCOPE:s_ex2_solve]
+[/SCOPE:s_ex2_solve_let2]
+[/SCOPE:root]

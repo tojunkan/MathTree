@@ -1,0 +1,89 @@
+{
+  "article_name": "VecOp",
+  "statements": [
+    {
+      "stmt_id": "st_scalar_func_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_scalar_func_let",
+      "exposed_entities": [
+        "f(x,y,z)"
+      ]
+    },
+    {
+      "stmt_id": "st_vector_func_def",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_vector_func_let",
+      "exposed_entities": [
+        "f(x,y,z)",
+        "f_x(x,y,z)",
+        "f_y(x,y,z)",
+        "f_z(x,y,z)"
+      ]
+    },
+    {
+      "stmt_id": "st_nabla_def",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_nabla_let",
+      "exposed_entities": [
+        "∇"
+      ]
+    },
+    {
+      "stmt_id": "st_gradient_def",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_gradient",
+      "exposed_entities": [
+        "∇f"
+      ]
+    },
+    {
+      "stmt_id": "st_divergence_def",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_divergence",
+      "exposed_entities": [
+        "∇·f"
+      ]
+    },
+    {
+      "stmt_id": "st_curl_def",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_curl",
+      "exposed_entities": [
+        "∇×f"
+      ]
+    }
+  ],
+  "edges": [],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

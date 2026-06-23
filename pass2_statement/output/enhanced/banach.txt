@@ -1,0 +1,159 @@
+[SCOPE:root|description|巴拿赫空间]
+文章名: banach
+标题: 巴拿赫空间
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=$\mathbb C^N$ 空间
+  [1] type=example heading=例 2 title=连续函数空间
+  [2] type=example heading=例 3 title=$l^p$、$L^p$ 空间
+
+[SCOPE:s_def|description|巴拿赫空间定义]
+[0] 赋范线性空间都具有度量
+[1] \begin{equation}
+d(x,y) := \left\lVert x-y \right\rVert ~,
+\end{equation}
+[2] 所以赋范空间都是
+[3] 度量空间 [链接 L0]
+[4] 。
+[5] 作为度量空间时完备的赋范空间称为
+[6] 巴拿赫空间（Banach space）
+
+[/SCOPE:s_def]
+[SCOPE:s_ex1|description|例1 C^N空间]
+[7] 例 1 $\mathbb C^N$ 空间
+[8] $N$ 维实空间 $\mathbb R^N$ 或者复空间 $\mathbb C^N$ 在任何范数之下都是完备的，
+[9] 因此在任何范数之下都是巴拿赫空间。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2 连续函数空间]
+[10] 例 2 连续函数空间
+[SCOPE:s_ex2_let1|let_bind|连续函数空间变量]
+[11] 有限闭区间上的所有连续函数构成的空间记为 $X := C[a, b]$，这是一个不可数维的空间。
+[12] 若令范数为
+[13] $$
+\|{f}\|:= \max_{a \leqslant x \leqslant b} \left\lvert f(x) \right\rvert ~,
+$$
+[14] 则它成为一个巴拿赫空间。
+[15] 这范数下收敛的连续函数序列恰为一致收敛的连续函数序列。
+[/SCOPE:s_ex2_let1]
+[SCOPE:s_ex2_let2|let_bind|Lp范数变量]
+[16] 而若赋予 $X$ 以 $L^p$ 范数
+[17] $$
+\|f\|_{L^p}:=\left(\int_{\mathbb{R^N}}|f(x)|^pdx\right)^{1/p}~,
+$$
+[18] 则在此范数下它不是完备的。
+[/SCOPE:s_ex2_let2]
+[19] 更一般地，对于任何紧 Hausforff 空间 $K$，连续函数空间 $C(K)$ 在范数
+[20] $$
+\|f\|:=\sup_{x\in K}|f(x)|~
+$$
+[21] 之下也是巴拿赫空间。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|例3 lp Lp空间]
+[22] 例 3 $l^p$、$L^p$ 空间
+[SCOPE:s_ex3_let|let_bind|测度空间变量]
+[23] 对于测度空间 $(\Omega,\mathcal{A},\mu)$，定义可测函数的 $L^p$ 范数为
+[24] $$
+\|f\|_{L^p(\mu)}=\left(\int_\Omega |f(x)|^pd\mu(x)\right)^{1/p}~,
+$$
+[25] $$
+\|f\|_{L^\infty(\mu)}=\text{ess sup}_{\Omega}|f|~.
+$$
+[/SCOPE:s_ex3_let]
+[26] 未完成：解释一下什么叫 essential sup
+[27] 未完成：改写成 cite 的形式
+
+[/SCOPE:s_ex3]
+[SCOPE:s_linear_op|description|巴拿赫空间上的线性算子]
+[28] 巴拿赫空间上有界算子的定义与赋范空间中一样。
+[29] 不过，在泛函分析中，也常常需要考虑不一定有界的线性算子。
+[SCOPE:s_linear_op_let1|let_bind|稠定算子变量]
+[30] 一般来说，对于两个巴拿赫空间 $X,Y$，泛函分析中最经常考虑的是稠定算子（densely defined operator），
+[31] 即定义在 $X$ 的某个稠密子空间上的线性算子 $T$。
+[32] 这个稠密子空间称为算子的定义域，常记为 $\text{Dom}(T)$。
+[33] 稠定算子不一定可以延拓为全空间上的有界算子。
+[34] 如果算子 $T_1$ 是算子 $T$ 的延拓，
+[35] 即 $\text{Dom}(T)\subset \text{Dom}(T_1)$ 且在 $\text{Dom}(T)$ 上有 $T_1=T$，
+[36] 则写 $T\subset T_1$。
+[/SCOPE:s_linear_op_let1]
+[SCOPE:s_linear_op_let2|let_bind|图像范数变量]
+[37] 对于巴拿赫空间 $X,Y$ 之间的（不一定有界的）线性算子 $T$，其图像（graph）定义为 $X\times Y$ 的子空间
+[38] $$
+\text{G}(T):=\{(x,Tx):x\in \text{Dom}(T)\}~.
+$$
+[39] 在 $\text{Dom}(T)$ 上定义的范数 $[|x|]_T:=\|x\|_X+\|Tx\|_Y$ 称为图像范数（graph norm）。
+[40] 如果 $\text{G}(T)$ 是闭子空间，
+[41] 则称算子 $T$ 为闭算子（closed operator）。
+[42] 如果存在延拓 $T_1\supset T$ 使得 $T_1$ 为闭算子，
+[43] 则 $T$ 称为可闭化（closable） 的。
+[44] 闭图像定理（Closed graph theorem）说明：在巴拿赫空间上，定义于全空间的闭算子是有界的。
+[45] 谱理论就是针对闭算子展开的。
+
+[/SCOPE:s_linear_op]
+[/SCOPE:s_linear_op_let2]
+[SCOPE:s_properties|description|巴拿赫空间的基本性质]
+[46] 赋范线性空间在度量空间的意义下经过完备化之后成为巴拿赫空间。
+[47] 完备的赋范空间在赋以等价范数后还是完备的。
+[48] 可分的赋范线性空间的完备化空间还是可分的。
+[SCOPE:s_properties_let1|let_bind|完备性条件变量]
+[49] 一个赋范空间 $(X,\|\cdot\|)$ 是完备的，当且仅当由 $\sum _{n=1}^{\infty }\|x_{n}\|<\infty $ 总可以推出 $\sum _{n=1}^{\infty }x_{n}$ 按照范数收敛。
+[/SCOPE:s_properties_let1]
+[SCOPE:s_properties_let2|let_bind|直积与算子空间变量]
+[50] 如果 $(X,\|\cdot\|_X),(Y,\|\cdot\|_Y)$ 是巴拿赫空间，
+[51] 那么其直积 $X\times Y$ 在范数 $\|(x,y)\|_{p}$ 之下也是巴拿赫空间。
+[52] 有界线性算子空间 $\mathfrak{B}(X,Y)$ 在算子范数下也是巴拿赫空间。
+[53] 如果 $X$ 巴拿赫空间，$M\subset X$ 是其闭子空间，
+[54] 则商空间 $X/M$ 在商范数之下也是巴拿赫空间。
+[/SCOPE:s_properties_let2]
+[55] 这里用到的定义见 “赋范空间”。
+[SCOPE:s_properties_reductio|reductio|无穷维代数维数不可数]
+[56] 无穷维巴拿赫空间的代数维数（即其中极大线性无关向量组的势）一定是不可数的。
+[SCOPE:s_properties_reductio_let|let_bind|序列与子空间变量]
+[57] 这是因为，如果 $\{x_k\}\subset X$ 是任何序列，
+[58] 则若命 $X_n$ 是 $\{x_1,...,x_n\}$ 张成的子空间，
+[59] 那么每个 $X_n$ 都是真闭子空间。
+[60] 按照贝尔纲定理，它们的并集是第一纲集，
+[61] 但巴拿赫空间作为完备度量空间是第二纲集，
+[62] 所以不可能有 $X=\bigcup_n X_n$。
+[/SCOPE:s_properties_reductio_let]
+[63] 无穷维巴拿赫空间中的闭单位球 $\{\|x\|\leq1\}$ 在其范数拓扑下一定不是紧的。
+[/SCOPE:s_properties_reductio]
+[64] 详见里斯引理。
+
+跨文章引用:
+  [L0] 度量空间 → Metric
+[/SCOPE:s_properties]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "连续函数空间是巴拿赫空间的例子"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "C^N空间是巴拿赫空间的例子"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "lp Lp空间是巴拿赫空间的例子"
+  },
+  {
+    "source_scope": "s_properties_reductio",
+    "target_scope": "s_properties",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "反证法证明无穷维代数维数不可数"
+  }
+]

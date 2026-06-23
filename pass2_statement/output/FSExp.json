@@ -1,0 +1,445 @@
+{
+  "article_name": "FSExp",
+  "statements": [
+    {
+      "stmt_id": "st_intro_assump_f",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_conclusion_series",
+      "subtype": "conclusion",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "c_n"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_cn_formula",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "c_n"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_real_func",
+      "subtype": "theorem",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_even_odd",
+      "subtype": "theorem",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_note_equality",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_assump_t",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_geom",
+      "exposed_entities": [
+        "t"
+      ]
+    },
+    {
+      "stmt_id": "st_geom_motion",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_omega_T",
+      "subtype": "definition",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_geom",
+      "exposed_entities": [
+        "omega_n",
+        "T_n"
+      ]
+    },
+    {
+      "stmt_id": "st_geom_example",
+      "subtype": "example",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derive_basis",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_derive",
+      "exposed_entities": [
+        "f_n(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_derive_inner_product",
+      "subtype": "definition",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_derive",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derive_orthogonality",
+      "subtype": "theorem",
+      "clause_range": [
+        28,
+        31
+      ],
+      "truth_value": "true",
+      "scope_id": "s_derive",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derive_coeff_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        34
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derive",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_tri_rel_euler",
+      "subtype": "theorem",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": "true",
+      "scope_id": "s_tri_rel",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_tri_rel_an_bn_cn",
+      "subtype": "theorem",
+      "clause_range": [
+        37,
+        42
+      ],
+      "truth_value": "true",
+      "scope_id": "s_tri_rel",
+      "exposed_entities": [
+        "a_n",
+        "b_n"
+      ]
+    },
+    {
+      "stmt_id": "st_tri_rel_n_note",
+      "subtype": "remark",
+      "clause_range": [
+        43,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_tri_rel",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_tri_rel_cn_from_an_bn",
+      "subtype": "theorem",
+      "clause_range": [
+        44,
+        45
+      ],
+      "truth_value": "true",
+      "scope_id": "s_tri_rel",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_special_real_conj",
+      "subtype": "theorem",
+      "clause_range": [
+        46,
+        48
+      ],
+      "truth_value": "true",
+      "scope_id": "s_special",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_special_even_odd",
+      "subtype": "theorem",
+      "clause_range": [
+        49,
+        53
+      ],
+      "truth_value": "true",
+      "scope_id": "s_special",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_special_real_even_odd",
+      "subtype": "theorem",
+      "clause_range": [
+        54,
+        54
+      ],
+      "truth_value": "true",
+      "scope_id": "s_special",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop_parseval",
+      "subtype": "theorem",
+      "clause_range": [
+        55,
+        55
+      ],
+      "truth_value": "true",
+      "scope_id": "s_prop",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        56,
+        60
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_prop",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop_normalized",
+      "subtype": "theorem",
+      "clause_range": [
+        61,
+        63
+      ],
+      "truth_value": "true",
+      "scope_id": "s_prop",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_arbitrary_method",
+      "subtype": "theorem",
+      "clause_range": [
+        65,
+        66
+      ],
+      "truth_value": "true",
+      "scope_id": "s_arbitrary",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_intro_assump_f",
+      "target": "st_intro_conclusion_series",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_assump_f",
+      "target": "st_intro_cn_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_assump_f",
+      "target": "st_intro_real_func",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_assump_f",
+      "target": "st_intro_even_odd",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geom_assump_t",
+      "target": "st_geom_motion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geom_assump_t",
+      "target": "st_geom_omega_T",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derive_basis",
+      "target": "st_derive_orthogonality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derive_inner_product",
+      "target": "st_derive_orthogonality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derive_orthogonality",
+      "target": "st_derive_coeff_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_tri_rel_euler",
+      "target": "st_tri_rel_an_bn_cn",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_tri_rel_an_bn_cn",
+      "target": "st_tri_rel_cn_from_an_bn",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_tri_rel_an_bn_cn",
+      "target": "st_special_real_conj",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_tri_rel_an_bn_cn",
+      "target": "st_special_even_odd",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_special_real_conj",
+      "target": "st_special_real_even_odd",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_special_even_odd",
+      "target": "st_special_real_even_odd",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prop_parseval",
+      "target": "st_prop_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prop_proof",
+      "target": "st_prop_normalized",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_derive_coeff_formula",
+      "target": "st_intro_conclusion_series",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "推导基于引言中的定义"
+    },
+    {
+      "source": "st_tri_rel_an_bn_cn",
+      "target": "st_intro_conclusion_series",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "关系推导基于引言中的定义"
+    },
+    {
+      "source": "st_special_real_conj",
+      "target": "st_tri_rel_an_bn_cn",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "特殊函数情况是三角关系式的特例"
+    },
+    {
+      "source": "st_special_even_odd",
+      "target": "st_tri_rel_an_bn_cn",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "特殊函数情况是三角关系式的特例"
+    },
+    {
+      "source": "st_prop_parseval",
+      "target": "st_intro_conclusion_series",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "性质证明基于引言中的定义"
+    },
+    {
+      "source": "st_arbitrary_method",
+      "target": "st_intro_conclusion_series",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "任意区间是标准区间[-l,l]的推广"
+    }
+  ],
+  "unresolved": []
+}

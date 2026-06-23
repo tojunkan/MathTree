@@ -1,0 +1,62 @@
+[SCOPE:root|description|曲线的长度]
+文章名: CurLen
+标题: 曲线的长度
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=抛物线
+  [1] type=example heading=例 2 title=椭圆的弧长
+
+[SCOPE:s_ex1|description|抛物线]
+[0] 例 1 抛物线
+[SCOPE:s_ex1_let|let_bind|抛物线变量]
+[1] 对抛物线 $y=\frac{x^2}{2p}$，在区间 $[0,x]$ 对应的弧长为
+[/SCOPE:s_ex1_let]
+[2] \begin{equation}
+\begin{aligned}
+l& = \frac{1}{p}\int_{0}^{x}\sqrt{x^2+p^2} \,\mathrm{d}{x} \\
+&=\frac{1}{p}\bigg[\frac{1}{2}x\sqrt{x^2+p^2}+\frac{p^2}{2} \ln\left(x+\sqrt{x^2+p^2}\right) \bigg]\Bigg\lvert_{0}^{x}\\
+&=\frac{x}{2p}\sqrt{x^2+p^2}+\frac{p}{2}\ln\frac{x+\sqrt{x^2+p^2}}{p}~.
+\end{aligned}
+\end{equation}
+[3] 你一定很想问，为什么我们不能像计算面积时一样，用无限小矩形的边长来近似曲线的长度呢？
+[4] 这其实是一个小学二年级的、古老的脑筋急转弯问题。
+[5] 你总能把每个矩形的各边都平移到下方与左方。
+[6] 最终你会发现，如图 3 所示，不论你如何细致地划分矩形，你得到的 “长度” 都不是曲线的长度。
+[7] 【图解】图 3：平移矩形的边
+
+[/SCOPE:s_ex1]
+[SCOPE:s_param|description|含参曲线]
+[SCOPE:s_param_let|let_bind|参数变量]
+[8a] (t), y
+[8b] (t)$（三维情况同理），
+[/SCOPE:s_param_let]
+[9] 那么 $t \in [t_1, t_2]$ 对应的一段曲线长度为
+[10] \begin{equation}
+l = \int_{t_1}^{t_2} \sqrt{\dot x^2 + \dot y^2} \,\mathrm{d}{t} ~,
+\end{equation}
+[11] 推导和上面的过程类似。
+
+[/SCOPE:s_param]
+[SCOPE:s_ex2|description|椭圆的弧长]
+[12] 例 2 椭圆的弧长
+[SCOPE:s_ex2_let|let_bind|椭圆变量]
+[13] 椭圆的参数方程为（式 18 ）
+[14] \begin{equation}
+\left\{\begin{aligned}
+&x(t) = a\cos t\\
+&y(t) = b\sin t
+\end{aligned}\right. \qquad
+(a > b > 0)~.
+\end{equation}
+[/SCOPE:s_ex2_let]
+[15] \begin{equation}
+\begin{aligned}
+l &= \int_0^{\varphi} \sqrt{a^2\sin^2 t + b^2 \cos^2 t} \,\mathrm{d}{t}
+= b\int_0^\varphi \sqrt{1 - e^2\sin^2 t} \,\mathrm{d}{t} \\
+&= b E(\varphi, e)~.
+\end{aligned}
+\end{equation}
+[16] 椭圆的周长 $c$ 为 $t \in [0, \pi/2]$ 对应弧长的 4 倍，
+[17] 即 $c = 4bE(\pi/2, e)$。
+[/SCOPE:s_ex2]
+[/SCOPE:root]

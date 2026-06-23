@@ -1,0 +1,264 @@
+{
+  "article_name": "RHM",
+  "statements": [
+    {
+      "stmt_id": "st_helmholtz_eq",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_helmholtz",
+      "exposed_entities": [
+        "u",
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_sep_vars",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_helmholtz_let",
+      "exposed_entities": [
+        "X",
+        "Y",
+        "Z",
+        "k_x",
+        "k_y",
+        "k_z"
+      ]
+    },
+    {
+      "stmt_id": "st_decompose_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_helmholtz_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_real_solutions",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_helmholtz_let",
+      "exposed_entities": [
+        "C1",
+        "C1'",
+        "C2",
+        "C2'",
+        "C3",
+        "C3'"
+      ]
+    },
+    {
+      "stmt_id": "st_general_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_helmholtz_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_intro",
+      "subtype": "example",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_waveguide_vars",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_helmholtz_apply",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "E",
+        "H"
+      ]
+    },
+    {
+      "stmt_id": "st_electric_field_form",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "E",
+        "k_z"
+      ]
+    },
+    {
+      "stmt_id": "st_solution_form",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_boundary_conditions",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "E_x",
+        "E_y",
+        "E_z"
+      ]
+    },
+    {
+      "stmt_id": "st_field_components",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_kx_ky_quantized",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "m",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_relation_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_let",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_sep_vars",
+      "target": "st_decompose_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_decompose_eq",
+      "target": "st_real_solutions",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_real_solutions",
+      "target": "st_general_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_waveguide_vars",
+      "target": "st_helmholtz_apply",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_helmholtz_apply",
+      "target": "st_electric_field_form",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_electric_field_form",
+      "target": "st_solution_form",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_boundary_conditions",
+      "target": "st_field_components",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_field_components",
+      "target": "st_kx_ky_quantized",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_kx_ky_quantized",
+      "target": "st_relation_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_example1_intro",
+      "target": "st_helmholtz_eq",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1应用亥姆霍兹方程的通解"
+    }
+  ],
+  "unresolved": []
+}

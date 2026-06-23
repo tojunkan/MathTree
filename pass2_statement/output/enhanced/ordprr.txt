@@ -1,0 +1,81 @@
+[SCOPE:root|description|阶与原根]
+文章名: ordprr
+标题: 阶与原根
+
+环境标记 (hints):
+  [0] type=lemma heading=引理 1 title=
+  [1] type=definition heading=定义 1 title=阶
+  [2] type=definition heading=定义 2 title=原根
+
+[SCOPE:s_lemma1|description|引理1]
+[0] 引理 1
+[SCOPE:s_lemma1_let|let_bind|引理1的变量]
+[1a] (n)$ 而言，若对于每个 $a$, $b$ 都有 $P
+[1b] (a)$ 与 $P
+[1c] (b)$ 蕴含 $P(a+b)$ 且至少在 $b \le a$ 时蕴含 $P(a-b)$，而 $r$ 是使 $P$ 成立的最小正正数，
+[2] 则：
+[/SCOPE:s_lemma1_let]
+[3] 对于各个自然数 $k = 1, 2, \dots$，$P(kr)$ 也为真。
+[4] 任何使得 $P(m)$ 成立的非负整数 $m$ 都是 $r$ 的倍数。
+[5a] (r)$ 与 $P
+[5b] (r)$ 都为真，
+[6] 故 $P(r+r)$ 为真......
+[7] 现在考虑第二点。
+[8] 根据 $r$ 的定义，$0 < r \le m$，记 $m = qr + s$，
+[9] 从而 $s = m - qr$，其中 $0 \le s < r$ 而 $q \ge 1$。
+[10a] (r) \rightarrow P(kr)$，而 $P
+[10b] (a)$ 与 $P
+[10c] (b)$ 蕴含 $P(a \pm b)$，
+[11a] (m)$ 与 $P(qr)$ 可以推导出 $P
+[11b] (s)$。
+[12] 而由于 $r$ 的定义，$s$ 必定为 $0$。
+[13] 故 $q = kr$。
+[14] 证毕！
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_def1|description|定义1 阶]
+[15] 定义 1 阶
+[16] 记 $d$ 是使得
+[17] \begin{equation}
+a^x \equiv 1 \pmod m ~~
+\end{equation}
+[18] 阶（order）
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义2 原根]
+[19] 定义 2 原根
+[20] 特别的，若 $d$ 是 $a$ 模 $m$ 的阶，且 $d = \varphi(m)$，
+[21] 则称 $d$ 是 $a$ 模 $m$ 的原根（primitive root）。
+[SCOPE:s_def2_let|let_bind|原根中的变量]
+[22] 考虑阶的条件，记
+[23] \begin{equation}
+P(x) : a^x \equiv 1 \pmod m ~,
+\end{equation}
+[/SCOPE:s_def2_let]
+[24a] (x)$ 与 $P
+[24b] (y)$ 显然蕴含 $P(x+y)$，而在 $y \le x$ 时，
+[25] \begin{equation}
+a^{x-y} \equiv b \pmod m ~,
+\end{equation}
+[26] \begin{equation}
+a^x \equiv b a^y \pmod m ~,
+\end{equation}
+[27a] (x)$ 与 $P
+[27b] (y)$ 在 $y \le x$ 时蕴含 $P(x-y)$。
+[28] 这就使得符合
+[29] 引理 1
+[30] 的条件，这就指出 $d | \varphi(m)$。
+[31] 阶与原根可以理解为数论上的某种本原单位根。
+[/SCOPE:s_def2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义2中应用引理1的结论"
+  }
+]

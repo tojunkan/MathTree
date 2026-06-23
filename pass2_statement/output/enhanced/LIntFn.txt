@@ -1,0 +1,61 @@
+[SCOPE:root|description|Lebesgue 可积的函数]
+文章名: LIntFn
+标题: Lebesgue 可积的函数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=Lebesgue 积分
+  [1] type=example heading=例 1 title=Dirichlet 函数
+
+[SCOPE:s_def1|description|Lebesgue 积分]
+[0] 定义 1 Lebesgue 积分
+[SCOPE:s_def1_let|let_bind|定义中的变量]
+[1] 设 $f$ 是可测集 $E\subseteq\mathbb{R}^n$ 上的可测函数，$f^+$ 和 $f^-$ 分别是其正部与负部。
+[2a] (x) \,\mathrm{d}{x} $ 和 $\int_E f^-
+[2b] (x) \,\mathrm{d}{x} $ 中至少有一个是有限的，
+[3] 则可定义其 Lebesgue 积分为：
+[4] \begin{equation}
+\int_E f(x) \,\mathrm{d}{x} = \int_E f^+(x) \,\mathrm{d}{x} - \int_E f^-(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[/SCOPE:s_def1_let]
+[5] 由定义直接可得，如果 $f$ 在 $E$ 上可积，
+[6a] (x) \,\mathrm{d}{x} = -\int_E f
+[6b] (x) \,\mathrm{d}{x} $。
+[7] 另外，也易得，$f$ 可测当且仅当 $ \left\lvert f \right\rvert $ 可测；
+[8] 如果 $E$ 测度有限且 $f$ 有界，
+[9] 那么 $f$ 的正部和负部的积分都是有限的，
+[10] 故 $f$ 可积。
+[11] Riemann 积分中对定义域进行的分划，也可以当作 Lebesgue 积分中的可测分划，
+[12] 于是可以结合 Riemann 可积的定义（Riemann 上和和 Riemann 下和之差可以任意小），得知 Riemann 可积的函数也 Lebesgue 可积。
+[13] 再注意到，在Lebesgue 积分中的定理 4 ，我们证明了可积函数的 Lebesgue 积分实际上就是其下方图形的测度，而测度又是面积的推广；
+[14] 因此，如果区间 $[a, b]$ 上的函数 $f$ 是 Riemann 可积的，
+[15] 那么它也是 Lebesgue 可积的，且两个积分值相等。
+[16] 因此，Lebesgue 积分是 Riemann 积分的推广。
+[17] 那么 Lebesgue 积分是和 Riemann 积分等价呢，还是能处理比 Riemann 可积函数范围更广的函数呢？
+[18] 答案是后者，我们以一个例子来说明：
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|Dirichlet 函数]
+[19] 例 1 Dirichlet 函数
+[SCOPE:s_ex1_let|let_bind|Dirichlet 函数变量]
+[20] Dirichlet 函数
+[21] \begin{equation}
+D(x)=
+\left\{\begin{aligned}
+1, x\in\mathbb{Q}\\
+0, x\not\in\mathbb{Q}
+\end{aligned}\right. ~
+\end{equation}
+[/SCOPE:s_ex1]
+[/SCOPE:s_ex1_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是定义1的一个例子"
+  }
+]

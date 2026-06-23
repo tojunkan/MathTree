@@ -1,0 +1,141 @@
+{
+  "article_name": "LPint",
+  "statements": [
+    {
+      "stmt_id": "st_assump_plane",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_let",
+      "exposed_entities": [
+        "p",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_line",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_let",
+      "exposed_entities": [
+        "s",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_note_units",
+      "subtype": "remark",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_plane_eq",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_main",
+      "exposed_entities": [
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_line_eq",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_main",
+      "exposed_entities": [
+        "lambda"
+      ]
+    },
+    {
+      "stmt_id": "st_lambda_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_main",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intersection",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_main",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_plane",
+      "target": "st_plane_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_line",
+      "target": "st_line_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_plane_eq",
+      "target": "st_lambda_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_line_eq",
+      "target": "st_lambda_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lambda_solution",
+      "target": "st_intersection",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_assump_plane",
+      "target": "st_plane_eq",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "scope s_let assumptions used in s_main"
+    },
+    {
+      "source": "st_assump_line",
+      "target": "st_line_eq",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "scope s_let assumptions used in s_main"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,128 @@
+[SCOPE:root|description|有限差分]
+文章名: Diffen
+标题: 有限差分
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=差分
+  [1] type=theorem heading=定理 1 title=差分公式
+  [2] type=theorem heading=定理 2 title=差分与导数关系
+
+[SCOPE:s_def1|description|差分定义]
+[0] 定义 1 差分
+[SCOPE:s_def1_let|let_bind|差分变量]
+[1] 设函数 $f(x)$ 定义在某区间 $\mathcal{X}$ 上，给定自变量 $x$ 任一固定增量 $\Delta x$。称
+[/SCOPE:s_def1_let]
+[2] \begin{equation}
+\Delta f(x)=f(x+\Delta x)-f(x)~,
+\end{equation}
+[3] 一阶差分
+[4] 二阶差分
+[5] $n$ 阶差分
+[6] \begin{equation}
+\Delta^n f(x)=\Delta[\Delta^{n-1}f(x)]~.
+\end{equation}
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|差分公式]
+[7] 定理 1 差分公式
+[8] $n$ 阶差分 $\Delta^n f(x)$ 具有如下公式
+[9] \begin{equation}
+\Delta^nf(x)=\sum_{i=0}^n(-1)^iC_n^if(x+(n-i)\Delta x)~.
+\end{equation}
+[10] 式 3 表明，$n$ 阶差分可直接用函数 $f(x)$ 本身在等距分点
+[11] \begin{equation}
+x,x+\Delta x,\cdots,x+n\Delta x~
+\end{equation}
+[12] 表示出。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|差分与导数关系]
+[13] 定理 2 差分与导数关系
+[SCOPE:s_thm2_let|let_bind|定理2变量]
+[14a] (x)$ 在闭区间 $[x_0,x_0+n\Delta x]$ 上有直到 $n-1$ 阶连续导数，且至少在开区间 $(x_0,x_0+n\Delta x)$ 上有直到 $n$ 阶有限导数 $f^{
+[14b] (n)}
+[14c] (x)$。
+[/SCOPE:s_thm2_let]
+[15] 于是成立下面公式
+[16] \begin{equation}
+\Delta^nf(x_0)=f^{(n)}(\xi_n)\Delta x^n ,\quad x_0<\xi_n< x_0+n\Delta x~.
+\end{equation}
+[17a] (n)}
+[17b] (x)$ 存在且连续，
+[18] 则让 $\Delta x\rightarrow0$（此时 $\xi_n\rightarrow x_0$），得
+[19] \begin{equation}
+f^{(n)}(x_0)=\lim_{\Delta x\rightarrow0}\frac{\Delta^n f(x_0)}{\Delta x^n}~,
+\end{equation}
+[20] 这个公式给出了用一次极限步骤求得 $n$ 阶导数的可能性。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_proof1|description|定理1证明]
+[21] 当 $n=1,2$ 时，定理显然成立：
+[22] \begin{equation}
+\begin{aligned}
+\Delta f(x)=&f(x+\Delta x)-f(x)\\
+=&\sum_{i=0}^1(-1)^iC_1^if(x+(1-i)\Delta x)~,\\
+\Delta^2 f(x)=&\Delta (\Delta f(x))=\Delta f(x+\Delta x)-\Delta f(x)\\
+=&f(x+2\Delta x)-2f(x+\Delta x)+f(x)\\
+=&\sum_{i=0}^2(-1)^iC_2^if(x+(2-i)\Delta x)~.
+\end{aligned}
+\end{equation}
+[SCOPE:s_proof1_induction|let_bind|归纳假设]
+[23] 假设 $n=k$ 时，
+[24] 式 3 [链接 L0]
+[25] 成立，
+[26] 即
+[27] \begin{equation}
+\Delta^kf(x)=\sum_{i=0}^k(-1)^iC_k^if(x+(k-i)\Delta x)~.
+\end{equation}
+[28] \begin{equation}
+\begin{aligned}
+\Delta^{k+1} f(x)=&\Delta(\Delta^k f(x))=\Delta \left(\sum_{i=0}^k(-1)^iC_k^if(x+(k-i)\Delta x) \right) \\
+=&\sum_{i=0}^k(-1)^iC_k^i\Delta f(x+(k-i)\Delta x)\\
+=&\sum_{i=0}^k(-1)^iC_k^i \left[f(x+(k+1-i)\Delta x)-f(x+…[truncated]…=1}^{k}(-1)^{i}(C_k^{i}+C_k^{i-1}) f(x+(k+1-i)\Delta x)+(-1)^{k+1}f(x)\\
+=&f(x+(k+1)\Delta x)+\sum_{i=1}^{k}(-1)^{i}C_{k+1}^{i} f(x+(k+1-i)\Delta x)+(-1)^{k+1}f(x)\\
+=&\sum_{i=0}^{k+1}(-1)^iC_{k+1}^if(x+(k+1-i)\Delta x)~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_proof1_induction]
+[29] 第三个等式用到了 $\Delta x$ 固定这一事实，$C_k^i+C_k^{i-1}=C_{k+1}^i$ 见
+[30] 式 6 [链接 L1]
+[31] 证毕！
+
+[/SCOPE:s_proof1]
+[SCOPE:s_proof2|description|定理2证明]
+[32] 当 $n=1$ 时，式 5 便是拉格朗日公式式 1 。
+[SCOPE:s_proof2_induction|let_bind|归纳假设]
+[33] 假设 $n$ 为 $n-1$ 时，式 5 成立。则
+[/SCOPE:s_proof2_induction]
+[34] \begin{equation}
+\Delta^n f(x_0)=\Delta(\Delta^{n-1}f(x_0))= \left[f^{n-1}(\xi_{n-1}+\Delta x)-f^{n-1}(\xi_{n-1}) \right] \Delta x^{n-1}~.
+\end{equation}
+[35] 其中，$x_0<\xi_{n-1}< x_0+(n-1)\Delta x$。
+[36] 上式右边应用拉格朗日公式
+[37] 式 1 [链接 L2]
+[38] 式 5 [链接 L3]
+[39] \begin{equation}
+x_0<\xi_{n-1}<\xi_n<\xi_{n-1}+\Delta x< x_0+n\Delta x~.
+\end{equation}
+[40] 证毕！
+[/SCOPE:s_proof2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_proof1",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明推出定理"
+  },
+  {
+    "source_scope": "s_proof2",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明推出定理"
+  }
+]

@@ -1,0 +1,385 @@
+[SCOPE:root|description|曲率张量场]
+文章名: RicciC
+标题: 曲率张量场
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=曲率
+  [1] type=theorem heading=定理 1 title=曲率的线性性
+  [2] type=definition heading=定义 2 title=Ricci 曲率
+  [3] type=theorem heading=定理 2 title=反对称性
+  [4] type=theorem heading=定理 3 title=度量反对称性
+  [5] type=theorem heading=定理 4 title=交换对称性
+  [6] type=theorem heading=定理 5 title=第一 Bianchi 恒等式（代数）
+  [7] type=theorem heading=定理 6 title=第二 Bianchi 恒等式（微分）
+  [8] type=corollary heading=推论 1 title=缩并形式
+  [9] type=corollary heading=推论 2 title=黎曼曲率张量的对称性
+  [10] type=theorem heading=定理 7 title=Ricci 曲率张量的对称性
+
+[0] 本节中默认 $(M, \nabla)$ 是一个配备了仿射联络 $\nabla$ 的流形 $M$。
+
+[1] 我们在这里重新誊写一遍仿射联络（切丛）中定义的曲率映射。
+
+[SCOPE:s_curvature_def|description|曲率定义]
+[SCOPE:s_curvature_let|let_bind|曲率定义变量]
+[2] 定义 1 曲率
+[3] 定义 $R:\mathfrak{X}(M)\times\mathfrak{X}(M)\to \operatorname {End}(\mathfrak{X}(M))$ 为：对于任意 $X, Y\in\mathfrak{X}(M)$，有 $R(X, Y)=\nabla_X\nabla_Y-\nabla_Y\nabla_X-\nabla_{[X, Y]}$，称该映射为 $(M, \nabla)$ 的曲率（curvature）。
+[/SCOPE:s_curvature_let]
+[4] 为什么要这么定义曲率呢？
+[5] 平坦流形和弯曲流形有一个关键的区别，那就是平行移动是否依赖路径。
+[6] 平坦的时空中，对一个向量进行平行移动，不管它沿着什么路径走，只要回到原点，它就和出发时是同一个向量；
+[7] 但是不平坦的流形上，如仿射联络（切丛）中地球表面的例子，平行移动后回到原点时是哪个向量，取决于走的是什么道路。
+[8] 本质上，平坦流形上的路径无关性，来自偏微分算子的交换性，
+[9] 即 $\partial_i\partial_j-\partial_j\partial_i=0$。
+[10] 那么当平行移动取决于路径时，人们自然想到通过 $\nabla_i\nabla_j-\nabla_j\nabla_i$ 的值来研究路径是如何影响平行移动的。
+[11] 由于我们希望讨论的是流形上的张量，而不是局限于给定图上的函数排列，
+[12] 因此又额外加了一项 $\nabla_{[X, Y]}$，把它凑成一个张量场。
+[13] 整体来看，曲率就是把两个光滑向量场映射为一个光滑向量场。
+[14] 我们接下来就证明，这样构造的量确实是一个张量场。
+
+[/SCOPE:s_curvature_def]
+[SCOPE:s_linearity|description|曲率的线性性]
+[SCOPE:s_linearity_let|let_bind|线性性变量]
+[15] 定理 1 曲率的线性性
+[16] 令 $f, g, h$ 为 $M$ 上的光滑函数，$X, Y, Z$ 为 $M$ 上的光滑向量场。
+[17] 则我们有：$R(fX, gY)hZ=fgh\cdot R(X, Y)Z$。
+[/SCOPE:s_linearity_let]
+[18] 证明：
+[19] 由于 $\nabla_{fX}=f\nabla_X$，且 $[fX, gY]=fg[X, Y]+f(Xg)Y-g(Yf)X~.$
+[20] \begin{equation}
+\begin{aligned}
+&\nabla_{fX}\nabla_{gY}-\nabla_{gY}\nabla_{fX}-\nabla_{[fX, gY]}\\={}&f\nabla_X(g\nabla_Y)-g\nabla_Y(f\nabla_X)-fg\nabla_{[X, Y]}-\nabla_{f(Xg)Y-g(Yf)X}\\
+\\={}&fg\nabla_X\nabla_Y+f(Xg)\nabla_Y-gf\nabla_Y\nabla_X-g(Yf)\nabla_X\\&-fg\nabla_{[X, Y]}-f(Xg)\nabla_Y+g(Yf)\nabla_X\\
+={}&fg\nabla_X\nabla_Y-gf\nabla_Y\nabla_X-fg\nabla_{[X, Y]}\\
+={}&fg(\nabla_X\nabla_Y-\nabla_Y\nabla_X-\nabla_{[X, Y]})~,
+\end{aligned}
+\end{equation}
+[21] 这就证明了 $R(fX, gY)=fgR(X, Y)$。
+[22] 接下来证明 $R(X, Y)hZ=hR(X, Y)Z$。
+[23] 考虑到
+[24] \begin{equation}
+\begin{aligned}
+\nabla_X\nabla_Y(hZ)&=\nabla_X(h\nabla_YZ+(Yh)Z)\\
+&=h\nabla_X\nabla_YZ+(Xh)\nabla_YZ+(Yh)\nabla_XZ+(XYh)Z~,
+\end{aligned}
+\end{equation}
+[25] \begin{equation}
+\begin{aligned}
+(\nabla_X\nabla_Y-\nabla_Y\nabla_X)hZ={}& h\nabla_X\nabla_YZ-h\nabla_Y\nabla_XZ+\\&(Xh)\nabla_YZ-(Yh)\nabla_XZ+\\&(Yh)\nabla_XZ-(Xh)\nabla_YZ+\\&(XYh)z-(YXh)z\\
+={}& h(\nabla_X\nabla_Y-\nabla_Y\nabla_X)Z+([X, Y]h)Z~,
+\end{aligned}
+\end{equation}
+[26] 于是最后有
+[27] \begin{equation}
+\begin{aligned}
+&(\nabla_X\nabla_Y-\nabla_Y\nabla_X-\nabla_{[X, Y]})hZ\\
+&=h(\nabla_X\nabla_Y-\nabla_Y\nabla_X)Z+([X, Y]h)Z-h\nabla_{[X, Y]}Z-([X, Y]h)Z\\
+&=h(\nabla_X\nabla_Y-\nabla_Y\nabla_X-\nabla_{[X, Y]})Z~,
+\end{aligned}
+\end{equation}
+[28] 从而得证 $R(X, Y)hZ=hR(X, Y)Z$。
+[29] 证毕。
+[30] 定理 1 意味着，曲率是一个 $M$ 上光滑向量场的线性映射，也就是说，是一个张量场。
+[31] 又因为曲率将三个向量场映射为一个向量场，我们可以在给定图中将曲率映射表示为一组光滑函数 $R^r_{kij}$1，使得 $R(f^i \hat{\boldsymbol{\mathbf{e}}} _i, g^j \hat{\boldsymbol{\mathbf{e}}} _j)h^k \hat{\boldsymbol{\mathbf{e}}} _k=(R^r_{kij}f^ig^jh^k) \hat{\boldsymbol{\mathbf{e}}} _r$。
+[32] 从证明过程中也可以看到，补充的 $\nabla_{[X, Y]}$ 的必要性。
+[33] 如果用抽象指标，将 $X, Y, Z$ 分别表示为 $x^i, y^j, z^k$，
+[34] 那么 $R(X, Y)Z=R^r_{kij}x^iy^jz^k$。
+
+[/SCOPE:s_linearity]
+[35] 在给定图中，联络 $\nabla$ 由 Christoffel 符号 $\Gamma^k_{ij}$ 完全刻画，
+[36] 那么我们应该也能用 Christoffel 符号计算出曲率张量场的坐标。
+[37] 记住，$\Gamma$ 中每个元素的类型是 $M$ 上的光滑向量场。
+[38] \begin{equation}
+\begin{aligned}
+\nabla_{\partial_i}\nabla_{\partial_j}\partial_k&=\nabla_{\partial_i}(\Gamma^s_{jk}\partial_s)\\
+&=(\partial_i\Gamma^s_{jk})\partial_s+\Gamma^s_{jk}\Gamma^r_{is}\partial_r\\
+&=(\partial_i\Gamma^r_{jk}+\Gamma^s_{jk}\Gamma^r_{is})\partial_r~.
+\end{aligned}
+\end{equation}
+[39] 考虑到偏微分的交换性，$[\partial_i, \partial_j]=0$，
+[40] 因此
+[41] \begin{equation}
+\begin{aligned}
+&(\nabla_{\partial_i}\nabla_{\partial_j}-\nabla_{\partial_j}\nabla_{\partial_i})\partial_k\\
+={}&(\partial_i\Gamma^r_{jk}-\partial_j\Gamma^{r}_{ik}+\Gamma^s_{jk}\Gamma^r_{is}-\Gamma^s_{ik}\Gamma^r_{js})\partial_r~.
+\end{aligned}
+\end{equation}
+[42] 由定义，$R(f^i\partial_i, g^j\partial_j)h^k\partial_k=(R^r_{kij}f^ig^jh^k)\partial_r$，
+[43] 故有
+[44] \begin{equation}
+R^r_{kij}=\partial_i\Gamma^r_{jk}-\partial_j\Gamma^{r}_{ik}+\Gamma^s_{jk}\Gamma^r_{is}-\Gamma^s_{ik}\Gamma^r_{js}~.
+\end{equation}
+
+[45] 黎曼曲率张量场经常被用在进行内积的场合中，比如高斯绝妙定理就可以表示为 $K=< R( \hat{\boldsymbol{\mathbf{e}}} _1, \hat{\boldsymbol{\mathbf{e}}} _2) \hat{\boldsymbol{\mathbf{e}}} _1, \hat{\boldsymbol{\mathbf{e}}} _2>$。
+[46] 带上内积运算后，我们也可以把它认为是一个 “将四个向量场映射为一个光滑函数” 的张量，也就是说，指标下降一下：
+[47] \begin{equation}
+R_{rkij}=g_{ar}R^a_{kij}~.
+\end{equation}
+[48] 由于式中出现了 $g_{ar}$，再用式 7 那样纯粹用 Christoffel 符号来描述其坐标已经不方便了，
+[49] 因此我们还得把 Christoffel 符号展开来，用 $g_{ab}$ 表示。
+[50] 以下是详细展开过程，
+[51] 但是式 10 和式 11 都只是中间步骤，请读者酌情选择跳过或跟一遍。
+[52] 最终结果是式 12 。
+[53] 引用式 8 ，誊抄如下：
+[54] \begin{equation}
+\Gamma^{r}_{ij}=\frac{1}{2}g^{kr}(\partial_ig_{jk}+\partial_jg_{ki}-\partial_kg_{ij})~.
+\end{equation}
+[55] 代入式 7 得：
+[56] \begin{equation}
+\begin{aligned}
+2R^r_{kij}={}&\partial_i(g^{ar}\partial_jg_{ka}+g^{ar}\partial_kg_{aj}-g^{ar}\partial_ag_{jk})-\\
+&\partial_j(g^{ar}\partial_ig_{ka}+g^{ar}\partial_kg_{ai}-g^{ar}\partial_ag_{ik})+\\
+&g^{as}(\partial_jg_{ka}+\partial_…[truncated]…ial_jg_{ka}+\partial_kg_{aj}-\partial_ag_{jk})(\partial_ig_{sb}+\partial_sg_{bi}-\partial_bg_{is})-\\
+&g^{as}g^{br}(\partial_ig_{ka}+\partial_kg_{ai}-\partial_ag_{ik})(\partial_jg_{sb}+\partial_sg_{bj}-\partial_bg_{js})~.
+\end{aligned}
+\end{equation}
+[57] 最后两行尚未展开，就已经这么长了，这也是为什么我们不用度量张量来表示黎曼张量，而是用 Christoffel 符号的原因。
+[58] 进行指标下降后，我们得到：
+[59] \begin{equation}
+\begin{aligned}
+2R_{tkij}={}&2g_{rt}R^r_{kij}\\
+={}&g_{rt}(\partial_ig^{ar})(\partial_jg_{ka})+\delta^a_t\partial_i\partial_jg_{ka}+\\
+&g_{rt}(\partial_ig^{ar})(\partial_kg_{aj})+\delta^a_t\partial_i\partial_kg_{aj}-\\
+&g_{rt}(\parti…[truncated]…partial_ig_{at}+\partial_ag_{ti}-\partial_tg_{ia})(\partial_jg_{ks}+\partial_kg_{sj}-\partial_sg_{jk})-\\
+&g^{as}(\partial_ig_{ka}+\partial_kg_{ai}-\partial_ag_{ik})(\partial_jg_{st}+\partial_sg_{tj}-\partial_tg_{js})~.\\
+\end{aligned}
+\end{equation}
+[60] 其中第二个等号是直接把 $g_{rt}$ 乘到展开式中，并按升降法则将 $g_{rt}g^{ar}$ 和 $g_{rt}g^{br}$ 分别写为 $\delta^a_t$ 和 $\delta^b_t$；
+[61] 第三个等号是消去 $\delta^i_j$ 项，进行下标替换；
+[62] 第四个等号删去了互相抵消的两项，按照 $g_{ab}$ 的对称性调整了几个下标的位置，并将倒数第二项的 $s$ 和 $a$ 两个赝指标地位对换、两个括号顺序对换。
+[63] 但是等等！
+[64] 还没完，我们还能进一步简化。
+[65] 我把这一步单独摘出来，是为了不让原式过于臃肿。
+[66] 这步简化是什么呢？
+[67] 考虑到 $g^{ar}g_{rt}=\delta^a_t$，且 $\partial_i\delta^a_t=0$，
+[68] 因此应用 Leibniz 律可得 $g^{ar}\partial_ig_{rt}=-g_{rt}\partial_ig^{ar}$。
+[69] 把这一点代入式 11 ，
+[70] 即可得如下简化：
+[71] \begin{equation}
+\begin{aligned}
+2R_{tkij}={}&2g_{rt}R^r_{kij}\\
+={}&-g^{ar}(\partial_ig_{rt})(\partial_jg_{ka})\\
+&-g^{ar}(\partial_ig_{rt})(\partial_kg_{aj})+\partial_i\partial_kg_{tj}\\
+&+g^{ar}(\partial_ig_{rt})(\partial_ag_{jk})-\partial_i\parti…[truncated]…partial_ig_{at}+\partial_ag_{ti}-\partial_tg_{ia})(\partial_jg_{ks}+\partial_kg_{sj}-\partial_sg_{jk})-\\
+&g^{as}(\partial_ig_{ka}+\partial_kg_{ai}-\partial_ag_{ik})(\partial_jg_{st}+\partial_sg_{tj}-\partial_tg_{js})~.\\
+\end{aligned}
+\end{equation}
+[72] 简化到这一步，我们就已经可以清晰地看到黎曼张量的对称性了。
+[73] 这些对称性会在本节稍后的小节中集中讨论。
+
+[SCOPE:s_ricci_def|description|Ricci曲率定义]
+[SCOPE:s_ricci_let|let_bind|Ricci定义变量]
+[74] 如果我们固定 $Y, Z$，
+[75] 那么 $R(X, Y)Z$ 可以看成是 $X$ 的一个 $C^{\infty}$-线性映射；
+[76] 更准确地说，对于任意 $p\in M$，$R(X, Y)Z$ 都是 $X_p$ 的一个 $\mathbb{R}$-线性映射。
+[77] 为了方便，我们记 $T_{Y, Z}$ 是这样的线性映射：$T_{Y, Z}(X)=R(X, Y)Z$。
+[78] 那么 $ \operatorname {trace}T_{Y, Z}$ 就是 $M$ 上的一个光滑函数。
+[/SCOPE:s_ricci_let]
+[79] 这样一来，我们又相当于得到了一个将 $Y$ 和 $Z$ 映射为一个光滑函数的张量场。
+[80] 用抽象指标，将 $X, Y, Z$ 分别表示为 $x^i, y^j, z^k$，
+[81] 那么 $T_{Y, Z}(X)=R^r_{kij}y^jz^kx^i$，
+[82] 因此 $T_{Y, Z}=R^r_{kij}y^jz^k$。
+[83] 于是，$ \operatorname {trace}T_{Y, Z}=R^i_{kij}y^jz^k$2
+[84] 而因为我们想把 $ \operatorname {trace}T_{Y, Z}$ 看成是 $Y, Z$ 的映射，
+[85] 因此最终得到一个张量场 $R^i_{kij}$，它把两个光滑向量场映射为一个光滑函数。
+[86] 这个张量场，就是所谓的Ricci 曲率。
+
+[87] 定义 2 Ricci 曲率
+[88] 已知曲率张量场 $R^r_{kij}$，
+[89] 则定义张量场 $R_{kj}=R^i_{kij}$，称之为Ricci 曲率（Ricci curvature）或者Ricci 张量场（Ricci tensor field）。
+[90] 黎曼曲率张量 $R^r_{kij}$ 涉及的向量场太多，而 Ricci 场通过对其进行缩并，得到了一个更简单的张量场，它同样可以很好地描绘流形的性质，同时是爱因斯坦场方程的核心结构。
+[91] 我们上面已经计算过了黎曼曲率 $R^r_{kij}$ 的坐标表达，只需要进行指标替换就可以得到 Ricci 张量场的坐标：
+[92] \begin{equation}
+R_{kj}=\partial_i\Gamma^i_{jk}-\partial_j\Gamma^{i}_{ik}+\Gamma^s_{jk}\Gamma^i_{is}-\Gamma^s_{ik}\Gamma^i_{js}~.
+\end{equation}
+[93] 结合式 8 ：
+[94] \begin{equation}
+\Gamma^{r}_{ij}=\frac{1}{2}g^{kr}(\partial_ig_{jk}+\partial_jg_{ki}-\partial_kg_{ij})~.
+\end{equation}
+[95] 还可以根据度量场 $g_{ij}$ 计算出 Ricci 曲率场，写起来非常长，在此从略。
+
+[/SCOPE:s_ricci_def]
+[SCOPE:s_antisym|description|反对称性]
+[SCOPE:s_antisym_let|let_bind|反对称性变量]
+[96] 定理 2 反对称性
+[97] 对于任意 $X, Y\in\mathfrak{X}(M)$，有 $R(X, Y)=-R(Y, X)$。
+[/SCOPE:s_antisym_let]
+[98] 这一点由黎曼曲率张量的定义直接可得。
+[99] 用抽象指标表示，就是 $R^i_{cab}=-R^i_{cba}$，再两边乘以一个 $g_{di}$，得到 $R_{dcab}=-R_{dcba}$。
+
+[/SCOPE:s_antisym]
+[SCOPE:s_metric_antisym|description|度量反对称性]
+[SCOPE:s_metric_antisym_let|let_bind|度量反对称性变量]
+[100] 定理 3 度量反对称性
+[101] 对于任意 $X, Y, U, V\in\mathfrak{X}(M)$，有 $< R(X, Y)U, V>=-< R(X, Y)V, U>$。
+[/SCOPE:s_metric_antisym_let]
+[102] 用抽象指标表示，就是 $R^i_{cab}g_{id}=-R^i_{dab}g_{ic}$，或者写为 $R_{dcab}=-R_{cdab}$。
+[103] 我们根据式 12 ，交换其中的 $t$ 和 $k$ 指标，就可以证明3这一点。
+
+[/SCOPE:s_metric_antisym]
+[SCOPE:s_exchange_sym|description|交换对称性]
+[104] 定理 4 交换对称性
+[105] \begin{equation}
+R_{tkij}=R_{ijtk}~.
+\end{equation}
+[106] 同样，在式 12 中交换 $ij$ 和 $tk$ 指标即可证明。
+
+[/SCOPE:s_exchange_sym]
+[SCOPE:s_first_bianchi|description|第一Bianchi恒等式]
+[107] 定理 5 第一 Bianchi 恒等式（代数）
+[108] \begin{equation}
+R_{tkij}+R_{tijk}+R_{tjki}=0~.
+\end{equation}
+[109] 这次我们根据式 7 ，注意到把等号右边分成两组，分别进行下标 $ijk$ 的轮换，
+[110] 即可证明 $R^r_{kij}+R^r_{ijk}+R^r_{jki}=0$，两边乘以一个 $g_{rt}$ 即得证。
+
+[/SCOPE:s_first_bianchi]
+[SCOPE:s_second_bianchi|description|第二Bianchi恒等式]
+[111] 定理 6 第二 Bianchi 恒等式（微分）
+[112] \begin{equation}
+\partial_aR_{tkij}+\partial_iR_{tkja}+\partial_jR_{tkai}=0~.
+\end{equation}
+[113] 用式 7 可以证明上标版本的恒等式 $\partial_aR_{kij}^r+\partial_iR_{kja}^r+\partial_jR_{kai}^r=0$，把 $g_{rt}$ 乘进去，展开4，再把式 15 和式 16 代进去，
+[114] 即可得证。
+
+[/SCOPE:s_second_bianchi]
+[SCOPE:s_cor1|description|缩并形式]
+[SCOPE:s_cor1_let|let_bind|缩并形式变量]
+[115] 推论 1 缩并形式
+[116] 由式 17 得：$\partial_iR^i{}_{j}=\frac{1}{2}\partial_jR$，也等价于更为常见的：$\partial^iR_{ij}=\frac{1}{2}\partial_{j}R$。
+[117] Proof.
+[118] 为表示简洁，用 “$_{;a}$” 表示 $\partial_a$，
+[119] 即 $\partial_iR^i{}_{j}=R_{j;i}$。
+[/SCOPE:s_cor1_let]
+[120] 那么第二 Bianchi 恒等式表示为：
+[121] \begin{equation}
+R_{abcd;e}+R_{abec;d}+R_{abde;c}=0~.
+\end{equation}
+[122] 两边都乘以 “$g^{bd}g^{ac}$”，得：
+[123] \begin{equation}
+\begin{aligned}
+g^{bd}g^{ac}R_{abcd;e}+R_{abec;d}+R_{abde;c}&=0\\
+&=g^{bd}(R^c{}_{bcd;e}+R^c{}_{bec;d}+R^c{}_{bde;c})\\
+&=R_{;e}+g^{bd}(-R^c{}_{bce;d}-R_b{}^{c}{}_{de;c})\\
+&=R_{;e}-R^d{}_{e;d}+R^c{}_{e;c}~.
+\end{aligned}
+\end{equation}
+[124] 第三个等号处 “$R^c{}_{bde;c}=-R_b{}^c{}_{de;c}$” 源自
+[125] 定理 2 [链接 L0]
+[126] 的反对称性，两边乘以 “$g_{ck}$” 可证。
+[127] 证毕。
+[128] 以上五条定理，就是黎曼张量最重要的五条对称性，我们将下标修改成顺眼的形式，集中总结如下：
+
+[/SCOPE:s_cor1]
+[SCOPE:s_cor2|description|黎曼曲率张量的对称性]
+[SCOPE:s_cor2_let|let_bind|对称性变量]
+[129] 推论 2 黎曼曲率张量的对称性
+[130] 设 $R_{abcd}$ 是流形 $(M, \nabla)$ 上的黎曼曲率张量（全下标形式）在任意图中的坐标表达，
+[131] 即 $< R(x^a\partial_a, y^b\partial_b)v^c\partial_c, w^d\partial_d>=x^ay^bv^cw^dR_{abcd}$，
+[/SCOPE:s_cor2_let]
+[132] 那么我们有如下对称性：
+[133] $R_{abcd}=-R_{abdc}$.
+[134] $R_{abcd}=-R_{bacd}$.
+[135] $R_{abcd}=R_{cdab}$.
+[136] $R_{abcd}+R_{acdb}+R_{adbc}=0$.
+[137] $\partial_eR_{abcd}+\partial_cR_{abde}+\partial_dR_{abec}=0$.
+[138] 定理中强调了是在任意的图中都成立，
+[139] 因此也可以直接推广为张量的抽象指标形式。
+[140] 特别地，偏微分算子直接推广为图的坐标方向的联络，
+[141] 于是第二 Bianchi 恒等式变为：
+[142] \begin{equation}
+\nabla_eR_{abcd}+\nabla_cR_{abde}+\nabla_dR_{abec}=0~.
+\end{equation}
+[143] 由于 Ricci 张量定义为黎曼张量的缩并：$R_{ij}=R^a_{iaj}=R_{aibj}g^{ab}$，
+[144] 因此可以直接继承黎曼张量的交换对称性定理 4 ：
+
+[/SCOPE:s_cor2]
+[SCOPE:s_ricci_sym|description|Ricci曲率张量的对称性]
+[145] 定理 7 Ricci 曲率张量的对称性
+[146] $R_{ij}=R_{ji}$。
+
+[/SCOPE:s_ricci_sym]
+[SCOPE:s_notation|description|符号拓展]
+[SCOPE:s_notation_let|let_bind|符号定义变量]
+[147] 对于任何嵌套矩阵 $T_{i_1i_2\cdots i_n}$，定义
+[148] \begin{equation}
+T_{[i_1i_2\cdots i_n]}=\frac{1}{n}\sum\limits_{\sigma\in S_n} \operatorname {sgn}(\sigma)T_{i_{\sigma(1)}i_{\sigma(2)}\cdots i_{\sigma(n)}}~.
+\end{equation}
+[/SCOPE:s_notation_let]
+[149] 具体到 $n=3$ 的情况，就是 $T_{[abc]}=\frac{1}{3}(T_{abc}+T_{bca}+T_{cab}-T_{acb}-T_{cba}-T_{bac})$。
+[150] 这样，我们还可以把第一 Bianchi 恒等式表示为 $R_{a[bcd]}=0$，而把第二 Bianchi 恒等式表示为5$\nabla_{[e}R_{cd]ab}=0$.
+[/SCOPE:s_notation]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_linearity",
+    "target_scope": "s_curvature_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "线性性定理是曲率定义的推论"
+  },
+  {
+    "source_scope": "s_ricci_def",
+    "target_scope": "s_curvature_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Ricci曲率由曲率缩并得到"
+  },
+  {
+    "source_scope": "s_antisym",
+    "target_scope": "s_curvature_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "反对称性由定义直接推出"
+  },
+  {
+    "source_scope": "s_metric_antisym",
+    "target_scope": "s_curvature_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "度量反对称性由坐标表达式证明"
+  },
+  {
+    "source_scope": "s_exchange_sym",
+    "target_scope": "s_curvature_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "交换对称性由坐标表达式证明"
+  },
+  {
+    "source_scope": "s_first_bianchi",
+    "target_scope": "s_curvature_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "第一Bianchi恒等式由坐标表达式证明"
+  },
+  {
+    "source_scope": "s_second_bianchi",
+    "target_scope": "s_curvature_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "第二Bianchi恒等式由坐标表达式证明"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_second_bianchi",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "缩并形式是第二Bianchi恒等式的推论"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_curvature_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "总结黎曼曲率张量的对称性"
+  },
+  {
+    "source_scope": "s_ricci_sym",
+    "target_scope": "s_exchange_sym",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Ricci对称性继承自黎曼张量的交换对称性"
+  }
+]

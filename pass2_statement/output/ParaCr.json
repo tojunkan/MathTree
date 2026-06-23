@@ -1,0 +1,344 @@
+{
+  "article_name": "ParaCr",
+  "statements": [
+    {
+      "stmt_id": "st_parabola_eq1",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "r",
+        "η",
+        "θ"
+      ]
+    },
+    {
+      "stmt_id": "st_parabola_eq2",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "r",
+        "ξ",
+        "θ"
+      ]
+    },
+    {
+      "stmt_id": "st_define_eta_xi_zero",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "η",
+        "ξ"
+      ]
+    },
+    {
+      "stmt_id": "st_coords_determine_point",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_phi_intro",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let2",
+      "exposed_entities": [
+        "φ",
+        "ξ",
+        "η",
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_convert_xi",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_convert",
+      "exposed_entities": [
+        "ξ",
+        "r",
+        "θ",
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    {
+      "stmt_id": "st_convert_eta",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_convert",
+      "exposed_entities": [
+        "η",
+        "r",
+        "θ",
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    {
+      "stmt_id": "st_convert_phi",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_convert",
+      "exposed_entities": [
+        "φ",
+        "y",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_inverse_z",
+      "subtype": "definition",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_convert",
+      "exposed_entities": [
+        "z",
+        "ξ",
+        "η"
+      ]
+    },
+    {
+      "stmt_id": "st_inverse_xy",
+      "subtype": "definition",
+      "clause_range": [
+        23,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_convert",
+      "exposed_entities": [
+        "x",
+        "y",
+        "ξ",
+        "η",
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_orthogonal_claim",
+      "subtype": "theorem",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_orthogonal",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_orthogonal_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_orthogonal",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_position_vector",
+      "subtype": "definition",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_orthogonal",
+      "exposed_entities": [
+        "r",
+        "ξ",
+        "η",
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_unit_vectors",
+      "subtype": "definition",
+      "clause_range": [
+        35,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_orthogonal",
+      "exposed_entities": [
+        "ξ̂",
+        "η̂",
+        "φ̂"
+      ]
+    },
+    {
+      "stmt_id": "st_dr_formula",
+      "subtype": "definition",
+      "clause_range": [
+        40,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_orthogonal",
+      "exposed_entities": [
+        "dr",
+        "ξ",
+        "η",
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_volume_element",
+      "subtype": "definition",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_orthogonal",
+      "exposed_entities": [
+        "dV",
+        "ξ",
+        "η",
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_gradient",
+      "subtype": "definition",
+      "clause_range": [
+        44,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_vector_ops",
+      "exposed_entities": [
+        "∇u",
+        "u",
+        "ξ",
+        "η",
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_divergence",
+      "subtype": "definition",
+      "clause_range": [
+        44,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_vector_ops",
+      "exposed_entities": [
+        "∇·A",
+        "A_ξ",
+        "A_η",
+        "A_φ"
+      ]
+    },
+    {
+      "stmt_id": "st_curl",
+      "subtype": "definition",
+      "clause_range": [
+        44,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_vector_ops",
+      "exposed_entities": [
+        "∇×A",
+        "A_ξ",
+        "A_η",
+        "A_φ"
+      ]
+    },
+    {
+      "stmt_id": "st_laplacian",
+      "subtype": "definition",
+      "clause_range": [
+        44,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_vector_ops",
+      "exposed_entities": [
+        "∇²u",
+        "u",
+        "ξ",
+        "η",
+        "φ"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_parabola_eq1",
+      "target": "st_coords_determine_point",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_parabola_eq2",
+      "target": "st_coords_determine_point",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_define_eta_xi_zero",
+      "target": "st_coords_determine_point",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_phi_intro",
+      "target": "st_coords_determine_point",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_orthogonal_claim",
+      "target": "st_orthogonal_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

@@ -1,0 +1,216 @@
+{
+  "article_name": "TanL",
+  "statements": [
+    {
+      "stmt_id": "st_secant_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_secant",
+      "exposed_entities": [
+        "A",
+        "B",
+        "割线"
+      ]
+    },
+    {
+      "stmt_id": "st_tangent_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_tangent_let",
+      "exposed_entities": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_tangent_def",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_tangent_let",
+      "exposed_entities": [
+        "切线"
+      ]
+    },
+    {
+      "stmt_id": "st_tangent_limit",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_tangent",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_no_tangent_cond",
+      "subtype": "condition",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_tangent",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_example_let",
+      "exposed_entities": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_example_vertical",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_horizontal",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_no_tangent",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example_no_tangent",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_two_point_remark",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_two_point_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_two_point_question",
+      "subtype": "question",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_two_point_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_two_point_answer",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_two_point_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_two_point_proof_needed",
+      "subtype": "remark",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_two_point_def",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_secant_def",
+      "target": "st_tangent_assump",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_tangent_assump",
+      "target": "st_tangent_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_assump",
+      "target": "st_example_vertical",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_assump",
+      "target": "st_example_horizontal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_vertical",
+      "target": "st_example_no_tangent",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_horizontal",
+      "target": "st_example_no_tangent",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_two_point_question",
+      "target": "st_two_point_answer",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_two_point_answer",
+      "target": "st_tangent_def",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "两点定义与三点定义等价，但需向量值函数导数证明"
+    }
+  ],
+  "unresolved": []
+}

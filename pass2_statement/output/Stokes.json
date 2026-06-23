@@ -1,0 +1,158 @@
+{
+  "article_name": "Stokes",
+  "statements": [
+    {
+      "stmt_id": "st_thm1",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "F(r)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2",
+      "subtype": "theorem",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_proof1",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_section2_intro",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_section2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_section2_question",
+      "subtype": "question",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_section2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_section2_answer",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_section2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_assump",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assump",
+      "target": "st_thm2_proof1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof1",
+      "target": "st_thm2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm2_concl",
+      "target": "st_thm1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2的证明使用了斯托克斯定理，但未明确引用定理1。"
+    }
+  ],
+  "unresolved": []
+}

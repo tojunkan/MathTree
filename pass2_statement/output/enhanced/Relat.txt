@@ -1,0 +1,157 @@
+[SCOPE:root|description|二元关系]
+文章名: Relat
+标题: 二元关系
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=二元关系
+  [1] type=example heading=例 1 title=
+  [2] type=definition heading=定义 2 title=对偶关系
+  [3] type=definition heading=定义 3 title=等价关系
+  [4] type=definition heading=定义 4 title=集合的划分
+  [5] type=theorem heading=定理 1 title=
+
+[0] 在 “集合” 中我们只关心了集合的基数，
+[1] 即集合中元素的数目。
+[2] 在这种语境下，任何两个元素数量相同的集合都可以看作是同一个集合。
+[3] 但是仅仅讨论集合的基数未免太过单调，缺少了很多有意思的理论，
+[4] 于是我们希望在集合的元素之间建立一些结构，来进行更细致的划分和研究。
+[5] 关系（relation）是集合上最基础的一种结构。
+[6] 给定一个关系，我们就可以讨论一些元素之间是否满足这个关系。
+[7] 比如说，如果取一家三口构成一个集合，$\sim$ 代表的是 “年龄大于”，
+[8] 那么我们可以说 “爸爸对于孩子具有这个关系”，
+[9] 但是反过来 “孩子对于爸爸不具有这个关系”。
+[10] 从这个例子可以看出，关系的表达方式很灵活，而且可以是有方向性的。
+[11] 讨论关系时，我们唯一关心的是给定元素之间是否具有这样的关系。
+[12] 关系可以用在两个元素之间，也可以用在三个元素之间，甚至可以用在不特定的元素之间。
+
+[13] 在绝大多数数学和物理领域，我们只关心集合上的二元关系（binary relation）。
+[14] 如果 $\sim$ 是在集合 $A$ 上定义的一个二元关系，
+[15] 那么任意给定两个元素，我们都可以讨论它们之间是否具有这种关系，
+[16] 但如果给定三个元素，讨论就没有意义了。
+[17] 比如，如果 $\sim$ 的定义是 “年龄大于”，
+[18] 那么把三个人的年龄都拿过来比较就没有意义；
+[19] 不过，如果 $\sim$ 的定义是 “比后面两个人的年龄都大”，
+[20] 那么 $\sim$ 就可以用在三个人身上。
+[21] 对于集合 $A$ 上的二元关系 $\sim$，如果 $x, y\in A$ 满足这个关系，我们可以把这句话表述为 $x\sim y$。
+[22] 如果不满足，
+[23] 则可以表述为 $x\not\sim y$。
+[24] 用这样简洁的表示方法，我们可以把以上 “年龄大于” 的关系表述如下：
+[25] \begin{equation}
+\text{爸爸}\sim\text{孩子}~, \qquad
+\text{妈妈}\sim\text{孩子}~, \qquad
+\text{孩子}\not\sim\text{爸爸}~, \qquad
+\text{孩子}\not\sim\text{妈妈}~. \qquad
+\end{equation}
+[26] 爸爸和妈妈之间，在没有进一步信息的情况下，无法判断是否满足这个关系，
+[27] 但这个关系是存在的。
+[28] 也就是说，元素间的关系一共有两种状态：满足和不满足。
+[29] 在数学上，二元关系的严格定义是:
+
+[SCOPE:s_binary_rel_def|description|二元关系定义]
+[30] 定义 1 二元关系
+[SCOPE:s_binary_rel_let|let_bind|二元关系变量]
+[31a] 设 $A \times A$ 的子集 $R$
+[31b] 如果集合 $A$ 中的两个元素 $a,b$ 满足 $(a,b) \in R$ ,，则就称 $a,b$ 满足关系 $R$。
+[32] 也称 $a,b$ 是 $R-$ 相关的，并且记作 $aRb$.
+[/SCOPE:s_binary_rel_def]
+[/SCOPE:s_binary_rel_let]
+[33] 下面是一个简单的例子：
+
+[SCOPE:s_example1|description|例1]
+[SCOPE:s_example1_let|let_bind|例1变量]
+[34] 设集合 $A=\{1,2\}$ 上的关系 $R$ 为 $a< b,\ \forall (a,b)\in A^2$.
+[35] 集合 $A$ 的笛卡尔积为：
+[36] \begin{equation}
+A^2 = \{(1,1),(1,2),(2,1),(2,2)\}~.
+\end{equation}
+[37] \begin{equation}
+R=\{(1,2)\}\subset A^2~.
+\end{equation}
+[/SCOPE:s_example1_let]
+[38] 我们注意到在 $\mathbb{R}$ 上，装备着小于关系和大于关系，它们间有一种对偶的联系，
+[/SCOPE:s_example1]
+[39] 因此我们引入对偶关系来描述这种联系。
+
+[SCOPE:s_dual_rel_def|description|对偶关系定义]
+[40] 定义 2 对偶关系
+[SCOPE:s_dual_rel_let|let_bind|对偶关系变量]
+[41] 设 $R$ 是非空集合 $A$ 上的一个二元关系. 我们定义 $A$ 上的另一个关系 $R^{d}$ 如下:
+[42] $(x, y) \in R^{d} \Leftrightarrow(y, x) \in R~.$
+[43] 我们称 $R^{d}$ 是 $R$ 的对偶关系
+[/SCOPE:s_dual_rel_let]
+[44] 对偶关系描述的是二元关系的对称性，同时容易验证,存在着一些二元关系，它们的对偶关系是自身。
+
+[/SCOPE:s_dual_rel_def]
+[45] 最基础的一类关系，是等价关系（equivalence），它也是一类满足对偶关系是自己的关系（即对称性）
+
+[SCOPE:s_equiv_rel_def|description|等价关系定义]
+[46] 定义 3 等价关系
+[SCOPE:s_equiv_rel_let|let_bind|等价关系变量]
+[47] 在集合 $A$ 上定义的关系 $\sim$ 是一个等价关系，要求满足条件：
+[48] 自反性：$\forall x\in A, x\sim x$；
+[49] 对称性：$\forall x, y\in A, x\sim y \Rightarrow y\sim x$；
+[50] 传递性：$\forall x, y, z\in A, x\sim y, y\sim z\Rightarrow x\sim z$。
+[/SCOPE:s_equiv_rel_let]
+[51] 如果把 “具有关系 $\sim$” 看成是两个元素间相互连接（没有方向性，因为对称性），传递性保证了当多个元素相连时，这些元素也两两互联；
+[52] 自反性甚至保证了每个元素必然和自身相连。
+[53] 由此一来，我们可以根据等价关系把集合 $A$ 中所有全部两两等价的元素的子集称为一个等价类（equivalence class）。
+[54] 注:等价关系定义中的自反性不可去除，虽然很多时候对称性和传递性可以推出自反性；
+[55] 如果每一个等价类都不止一个元素，
+[56a] 那么自反性是可以推导出来的
+[56b] 如果不满足，比如说集合中只有一个元素，则不可以。
+
+[/SCOPE:s_equiv_rel_def]
+[SCOPE:s_partition_def|description|集合的划分定义]
+[57] 定义 4 集合的划分
+[SCOPE:s_partition_let|let_bind|划分变量]
+[58] 在集合 $A$ 上，一个集族 $\mathcal{S} \subseteq P(A)$，（$P(A)$ 是 $A$ 的幂集合）被称为 $A$ 的划分，如果它满足
+[59] $U_1, U_2 \in \mathcal{S}$，$U_1 \cap U_2 = \varnothing$，
+[60] $\bigcup_{U \in \mathcal{S}} U = A$。
+[/SCOPE:s_partition_let]
+[61] $A$ 的全体等价类构成了一个划分，这是数学中非常重要的思维方法，它可以将每一个等价类中的元素都看成是无差别的，大大简化一个集合的复杂程度。
+[62] 有了等价关系后，我们把划分视作一个新的集合，这样的集合被称作商集（quotient set），记做 $A / \sim$。
+[63] 和原来集合中的元素不一样，商集中的元素是原集合中的子集。
+[64] 作为例子，我们取全体非负整数的集合 $\mathbb{Z}$，并在上面定义关系 $\sim$ 为 “两数的差是 3 的倍数”，
+[65] 那么容易验证，$1\sim4, 7\sim304, 0\not\sim 77, 77\not\sim 1$。
+[66] 利用这个等价关系，我们可以把非负整数集合划分成三个等价类，分别是 $\{0, 3, 6, 9, 12\cdots \}$，$\{1, 4, 7, 10, 13\cdots\}$ 和 $\{2, 5, 8, 11, 14\cdots\}$。
+[67] 这样，我们可以得到一个含有三个元素的商集，用数学专业术语来说，叫做集合 $A$ 模去关系 $\sim$ 所得的商集。
+[68] 这里的模（mod）的意思来自于 “除法”，在群论中会看到为什么用除法来命名商集。
+[69] 每个等价关系都可以得到一个划分，反过来也是成立的，
+
+[/SCOPE:s_partition_def]
+[SCOPE:s_theorem1|description|定理1]
+[70] 定理 1
+[71] 集合 $A$ 上的每一个划分定义了一个等价关系。
+[72] 更进一步我们有，集合上的等价关系和划分一一对应。
+[73] 【未完成】证明它
+[74] 【未完成】以下为回收内容
+
+[/SCOPE:s_theorem1]
+[75] 另一类比较基础的关系是序关系（ordering relation）。
+[76] 在集合 $A$ 上定义的关系 $\prec$（一般也可以写成 $\leq$ 或 $\leqslant$）是一个序关
+[77] 系，要求满足条件：
+[78] 自反性：$\forall x\in A,x\prec x$；
+[79] 反对称性：$\forall x,y\in A,\ x\prec y,\ y\prec x \Rightarrow x = y $；
+[80] 传递性：$\forall x,y,z\in A,\ x\prec y,\ y\prec z \Rightarrow x\prec z $。
+[81] 序关系是比较基础的一类关系，它在数学各个学科中广泛运用。
+[82] 序关系也是序论的中心课题。
+[83] 接下来，我们将主要探讨序关系。
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_equiv_rel_def",
+    "target_scope": "s_partition_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "等价关系定义后引出划分定义，划分是等价关系的特例"
+  },
+  {
+    "source_scope": "s_partition_def",
+    "target_scope": "s_theorem1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "划分定义后定理1说每个划分定义等价关系"
+  }
+]

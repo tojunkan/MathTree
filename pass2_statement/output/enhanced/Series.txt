@@ -1,0 +1,194 @@
+[SCOPE:root|description|级数（数学分析）]
+文章名: Series
+标题: 级数（数学分析）
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=级数收敛的柯西判据
+  [1] type=exercise heading=习题 1 title=
+  [2] type=example heading=例 1 title=发散级数
+  [3] type=example heading=例 2 title=
+
+[SCOPE:s_basic|description|基本定义回顾]
+[SCOPE:s_basic_let|let_bind|定义变量]
+[0] 设 $\{a_n\}_{n\in\mathbb{N}}$ 是一个复数序列，$\sum_{n=1}^\infty a_n$ 为 $a_n$ 的级数（series）。
+[1] 假设级数是收敛的，它满足
+[2] $$
+\sum_{n=1}^\infty a_n = \lim_{N \to \infty} \sum_{n=1}^N a_n~.
+$$
+[3] 记级数 $\sum_{n=1}^\infty a_n$ 的部分和为
+[4] \[
+[5] S_N := \sum_{n=1}^N a_n~.
+[6] \]
+[/SCOPE:s_basic_let]
+[7] 根据极限运算的简单性质，容易看出部分和序列 $\{S_N\}$ 若有极限，
+[8] 则必定有 $\lim_{n\to\infty}a_n=0$, 由此即得到级数收敛的一个简单的必要条件。
+[9] 但它并不是充分条件。
+[10] 一般级数收敛性的唯一充分必要条件是
+
+[/SCOPE:s_basic]
+[SCOPE:s_cauchy|description|级数收敛的柯西判据]
+[SCOPE:s_cauchy_let|let_bind|柯西判据变量]
+[11] 定理 1 级数收敛的柯西判据
+[12] \begin{equation}
+\sum_{n=1}^\infty a_n~
+\end{equation}
+[13] 收敛，当且仅当任给 $\varepsilon>0$, 都存在正整数 $N_\varepsilon$, 使得当 $N'>N>N_\varepsilon$ 时有
+[14] $$
+\left|\sum_{n=N}^{N'} a_n\right|<\varepsilon~,
+$$
+[/SCOPE:s_cauchy_let]
+[15] 这是序列收敛的柯西判据的直接推论。
+
+[/SCOPE:s_cauchy]
+[SCOPE:s_ex1|description|习题1]
+[16] 习题 1
+[17] 利用极限的四则运算法则证明：级数 $\sum_{n=1}^\infty a_n$ 收敛，当且仅当序列 $\{a_n\}$ 的实部和虚部组成的级数都收敛。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例1 发散级数]
+[18] 例 1 发散级数
+[19] 根据定义，一般项不趋于零的级数当然发散。
+[20] 但一般项趋于零也并不能保证收敛性。
+[SCOPE:s_ex2_let1|let_bind|调和级数变量]
+[21] 一个著名的例子是调和级数
+[22] $$
+\sum_{n=1}^\infty\frac{1}{n}~,
+$$
+[23] 有许多种办法能证明它发散。
+[24] 例如，对于正整数 $N$, 和式
+[25] $$
+\sum_{n=N}^{2N}\frac{1}{n}~
+$$
+[26] 总共有 $N+1$ 项，除了最后一项之外，每一项都大于 $1/2N$, 所以
+[27] $$
+\sum_{n=N}^{2N}\frac{1}{n}>\frac{N+1}{2N}>\frac{1}{2}~,
+$$
+[28] 按照柯西判据，这个级数是发散的。
+[/SCOPE:s_ex2_let1]
+[29] 通过积分的办法，可以得到一些有用的渐近公式：
+[30] $$
+\sum_{n=1}^{N}\frac{1}{n}=\ln N+O(1)\quad (N\to\infty)~,
+$$
+[SCOPE:s_ex2_let2|let_bind|p-级数变量]
+[31] 如果 $0<\alpha<1$, 那么
+[32] $$
+\sum_{n=1}^{N}\frac{1}{n^\alpha}=\frac{N^{1-\alpha}}{1-\alpha}+O(1)~.
+$$
+
+[/SCOPE:s_ex2]
+[/SCOPE:s_ex2_let2]
+[SCOPE:s_ex3|description|重要的收敛级数]
+[33] 这里列出一些最重要的收敛级数。
+[SCOPE:s_ex3_let1|let_bind|p-级数变量]
+[34] $p$-级数是指
+[35] $$
+\sum_{n=1}^\infty\frac{1}{n^p}~,
+$$
+[36a] 如果 $p>1$
+[36b] 则级数收敛，$p\leq1$ 则级数发散。
+[37] 最方便的证明是积分判别法; 它还能给出收敛和发散的速度估计。
+[/SCOPE:s_ex3_let1]
+[SCOPE:s_ex3_let2|let_bind|p-对数级数变量]
+[38] $p$-对数级数是指
+[39] $$
+\sum_{n=2}^\infty\frac{1}{n(\ln n)^p}~,
+$$
+[40a] 如果 $p>1$
+[40b] 则级数收敛，$p\leq1$ 则级数发散。
+[41] 最方便的证明仍然积分判别法。
+[/SCOPE:s_ex3_let2]
+[SCOPE:s_ex3_let3|let_bind|几何级数变量]
+[42] 几何级数是指
+[43] $$
+\sum_{n=0}^\infty q^n~,
+$$
+[44] 当 $q=1$ 时，它的部分和 $\sum_{n=0}^N q^n=N+1$. 当 $q\neq1$ 时，按照等比数列的求和公式，可以算出它的部分和：
+[45] $$
+\sum_{n=0}^N q^n=\frac{1-q^{N+1}}{1-q}~.
+$$
+[46] 由此可见，几何级数在 $|q|<1$ 时收敛，在 $|q|\geq1$ 时发散。
+[/SCOPE:s_ex3_let3]
+[SCOPE:s_ex3_let4|let_bind|裂项级数变量]
+[47] 还有一类例子是所谓的裂项级数，也称为望远镜级数。
+[48] 设 $\{b_n\}$ 是极限为 $b$ 的复数序列，
+[49] 则级数
+[50] $$
+\sum_{n=1}^\infty(b_{n+1}-b_n)~
+$$
+[51] 是收敛的。
+[52] 实际上，它的部分和是
+[53] $$
+\sum_{n=1}^N(b_{n+1}-b_n)=b_{N+1}-b_1~,
+$$
+[54] 当 $N\to\infty$ 时它的极限等于 $b-b_1$.
+
+[/SCOPE:s_ex3]
+[/SCOPE:s_ex3_let4]
+[SCOPE:s_discussion|description|定义辨析]
+[55] 对于收敛的级数 $\sum_{n=1}^\infty a_n$, 有时也可以用这个形式表达式来代表它的和。
+[56] 但是需要注意，形式等式 $\sum_{n=1}^\infty a_n=S$ 的真正含义是 $\lim_{N\to\infty}S_N=S$, 必须要在这个意义下来理解它。
+[57] 由此，级数的和与有限个实数的和有所不同。
+[58] 根据极限的四则运算法则，两个收敛级数的和与差都仍然是收敛级数。
+[59] 但对于改变收敛级数的求和顺序，以及两个收敛级数的乘积，
+[60] 则需要多加留意。
+[61] 后续文章绝对收敛与条件收敛将详细解释这里可能出现的问题。
+[62a] 如果对级数进行四
+[62b] 则运算时涉及到不收敛的级数，
+[63] 则需要更加留意。
+[64] 来看一个著名的例子。
+
+[SCOPE:s_discussion_let|let_bind|例2变量]
+[65] 考虑序列 $a_n=(-1)^n$ 组成的几何级数。
+[66] 这个序列的部分和在 $-1$ 和 $0$ 之间来回跳跃：当 $N$ 为奇数时 $S_N=-1$, 当 $N$ 为偶数时 $S_N=0$. 因此级数 $\sum_{n=1}^\infty(-1)^n$ 是发散的。
+[67a] 如果强行定义 $S=\sum_{n=1}^\infty(-1)^n$, 并对这个 $S$ 像有限和那样进行四
+[67b] 则运算，
+[68] 那么立刻就能导出矛盾。
+[69] 例如，将级数的和铺开并进行错位相加：
+[70] $$
+\begin{aligned}
+1 & \quad-1 & 1 & \quad-1 & 1 &...\\
+& \quad\quad1 & -1 & \quad\quad1 & -1 &...
+\end{aligned}~
+$$
+[71] 除了最开头的一项之外，其余项都消去了。
+[72] 由此将得到"等式"$2S=1$, 或者 $S=1/2$. 但如果换一种错位相加的方式，例如错两位进行相加，
+[73] 那么得到的又将是"等式"$S=0$. 造成这种矛盾的唯一原因在于 $S$ 实际上不能代表任何实数，
+[74] 因此实数的四则运算法则对于它不适用。
+[75] 然而，以上的形式操作尽管导出逻辑矛盾，却并非没有意义。
+[76] 由此引发出的概念叫做"发散级数的广义求和"(generalized summation of divergent series). 顾名思义，这种操作方式与通常意义下的求和 -- 取部分和的极限 -- 是不同的。
+[77] 它在 20 世纪的分析数学中占据着重要的地位。
+[/SCOPE:s_discussion]
+[/SCOPE:s_discussion_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cauchy",
+    "target_scope": "s_basic",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "柯西判据是级数收敛的充要条件，基于基本定义。"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_cauchy",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1用柯西判据证明调和级数发散。"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_basic",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "重要的收敛级数作为基本定义的例子。"
+  },
+  {
+    "source_scope": "s_discussion",
+    "target_scope": "s_basic",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义辨析基于基本定义。"
+  }
+]

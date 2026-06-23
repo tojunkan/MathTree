@@ -1,0 +1,135 @@
+[SCOPE:root|description|换元积分法]
+文章名: IntCV
+标题: 换元积分法
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=example heading=例 2 title=
+
+[SCOPE:s_first_substitution|description|第一类换元积分法]
+[SCOPE:s_first_let|let_bind|第一类换元积分法的变量]
+[0a] (x) = f
+[0b] (x)$，
+[1] 则
+[2] \begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}{x}} F(u(x)) = f(u(x))u'(x)~.
+\end{equation}
+[/SCOPE:s_first_let]
+[3] 由于求导的逆运算是积分，有
+[4] \begin{equation}
+\int f(u(x))u'(x) \,\mathrm{d}{x} = F(u(x)) + C~.
+\end{equation}
+[5a] (x))u'
+[5b] (x) \,\mathrm{d}{x} $ 的形式，且 $F
+[5c] (x)$ 较容易求出，
+[6] 即可根据
+[7] 式 2 [链接 L0]
+[8] 写出结果。
+[9] 这种方法叫做
+[10] 第一类换元积分法
+[11] 。
+[12a] (x)]u'
+[12b] (x) \,\mathrm{d}{x} $，只有多练习才能熟能生巧。
+
+[/SCOPE:s_first_substitution]
+[SCOPE:s_example1|description|例1]
+[13] \begin{equation}
+\int a \sin\left(ax + b\right) \,\mathrm{d}{x} ~.
+\end{equation}
+[14] \begin{equation}
+F[u(x)] + C = - \cos\left(ax + b\right) + C~.
+\end{equation}
+[SCOPE:s_example1_let|let_bind|例1的变量]
+[15a] (x) \,\mathrm{d}{x} = F
+[15b] (x) + C$，
+[16] 则对于任意常数 $a$ 和 $b$，必有 $\int a \,f(ax + b) \,\mathrm{d}{x} = F(ax + b)$。
+[/SCOPE:s_example1_let]
+[17] 根据积分的基本性质，两边同除 $a$，得
+[18] \begin{equation}
+\int f(ax + b) \,\mathrm{d}{x} = \frac{1}{a} F(ax + b) + C~.
+\end{equation}
+[19] 该式使用频率很高，需要熟练掌握。
+[20] 类似例子还有
+[21] \begin{equation}
+\int \frac{1}{ax+b} \,\mathrm{d}{x} = \frac{1}{a} \ln\left(ax + b\right) +C ~, \qquad
+\int \mathrm{e} ^{ax + b} \,\mathrm{d}{x} = \frac{1}{a} \mathrm{e} ^{ax + b}+C
+\end{equation}
+
+[/SCOPE:s_example1]
+[SCOPE:s_variable_change|description|积分变量替换]
+[22] 换元积分法的过程在形式上可以记为（见微分）
+[23] \begin{equation}
+\begin{aligned}
+\int f[u(x)]u'(x) \,\mathrm{d}{x} &= \int f[u(x)] \,\mathrm{d}{[u(x)]} = \int f(u) \,\mathrm{d}{u} = F(u)+C\\
+&= F[u(x)]+C~.
+\end{aligned} \end{equation}
+[24] 该式把积分变量由 $x$ 换成了 $u$，
+[25] 故称为
+[26] 换元积分法
+
+[/SCOPE:s_variable_change]
+[SCOPE:s_second_substitution|description|第二类换元积分法]
+[27] 第二类换元积分法从某种意义上和第一类换元积分相反。
+[SCOPE:s_second_let|let_bind|第二类换元积分法的变量]
+[28] 若要对一个函数积分，先把它的自变量看做另一个变量的函数，再逆向使用式 7 ，
+[29] 即可化简积分。
+[30] \begin{equation}
+\int f(x) \,\mathrm{d}{x} = \int f[x(t)] \,\mathrm{d}{[x(t)]} = \int f[x(t)]x'(t) \,\mathrm{d}{t} ~.
+\end{equation}
+[/SCOPE:s_second_let]
+[31] 这个积分看似变复杂了，
+[32] 但是如果 $x(t)$ 选取适当，反而可以使计算化简。
+
+[/SCOPE:s_second_substitution]
+[SCOPE:s_example2|description|例2]
+[SCOPE:s_example2_let|let_bind|例2的变量]
+[33] \begin{equation}
+\int \frac{ \,\mathrm{d}{x} }{\sqrt{1-x^2}}~.
+\end{equation}
+[34] \begin{equation}
+\int \frac{ \,\mathrm{d}{x} }{\sqrt{1-x^2}} = \int \frac{ \,\mathrm{d}{\sin t} }{\sqrt{1-\sin^2 t}} = \int \frac{\cos t \,\mathrm{d}{t} }{\cos t} = \int 1 \,\mathrm{d}{t} = t + C = \arcsin x + C~.
+\end{equation}
+[/SCOPE:s_example2_let]
+[35] 反函数求导法则
+[36] \begin{equation}
+\arcsin'x = \frac{1}{ \cos\left(\arcsin x\right) } = \frac{1}{\sqrt {1 - {x^2}} }~.
+\end{equation}
+
+[/SCOPE:s_example2]
+[SCOPE:s_definite_integral|description|应用到定积分]
+[37] 式 2 应用到定积分，有
+[38] \begin{equation}
+\int_{x_1}^{x_2} f(u(x))u'(x) \,\mathrm{d}{x} = \int_{u(x_1)}^{u(x_2)} f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[39] 典型的应用就是
+[40] \begin{equation}
+\int_{x_1}^{x_2} f(ax+b) \,\mathrm{d}{x} = \frac{1}{a}\int_{ax_1+b}^{ax_2+b} f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[41] 注意这里的 $a$ 可以是小于零，另外注意交换顶积分上下限需要在积分前面加负号。
+[/SCOPE:s_definite_integral]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_first_substitution",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是第一类换元积分法的应用"
+  },
+  {
+    "source_scope": "s_example2",
+    "target_scope": "s_second_substitution",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2是第二类换元积分法的应用"
+  },
+  {
+    "source_scope": "s_definite_integral",
+    "target_scope": "s_first_substitution",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定积分换元是第一类换元积分法的推广"
+  }
+]

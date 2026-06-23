@@ -1,0 +1,328 @@
+{
+  "article_name": "clf01",
+  "statements": [
+    {
+      "stmt_id": "st_ideal_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        4,
+        16
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ideal",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ideal_let",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_ideal_let",
+      "exposed_entities": [
+        "V",
+        "T(V)",
+        "I_q(V)"
+      ]
+    },
+    {
+      "stmt_id": "st_ideal_def",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_ideal_let",
+      "exposed_entities": [
+        "I_q(V)"
+      ]
+    },
+    {
+      "stmt_id": "st_ideal_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ideal",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_def",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_geom",
+      "exposed_entities": [
+        "V",
+        "B_q",
+        "G(V,q)"
+      ]
+    },
+    {
+      "stmt_id": "st_geom_let",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_geom_let",
+      "exposed_entities": [
+        "V",
+        "B_q"
+      ]
+    },
+    {
+      "stmt_id": "st_geom_quotient",
+      "subtype": "definition",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_geom_let",
+      "exposed_entities": [
+        "G(V,q)"
+      ]
+    },
+    {
+      "stmt_id": "st_geom_properties",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        38
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cliff_def",
+      "subtype": "definition",
+      "clause_range": [
+        41,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_cliff",
+      "exposed_entities": [
+        "X",
+        "R",
+        "s",
+        "Cl(X,R,s)"
+      ]
+    },
+    {
+      "stmt_id": "st_cliff_let",
+      "subtype": "assumption",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_cliff_let",
+      "exposed_entities": [
+        "X",
+        "R",
+        "s",
+        "2^X"
+      ]
+    },
+    {
+      "stmt_id": "st_cliff_free_module",
+      "subtype": "definition",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_cliff_let",
+      "exposed_entities": [
+        "Cl(X,R,s)"
+      ]
+    },
+    {
+      "stmt_id": "st_cliff_multiplication",
+      "subtype": "definition",
+      "clause_range": [
+        48,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_cliff",
+      "exposed_entities": [
+        "tau"
+      ]
+    },
+    {
+      "stmt_id": "st_cliff_connection",
+      "subtype": "conclusion",
+      "clause_range": [
+        52,
+        67
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cliff",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_kvec_def",
+      "subtype": "definition",
+      "clause_range": [
+        68,
+        72
+      ],
+      "truth_value": null,
+      "scope_id": "s_kvec",
+      "exposed_entities": [
+        "Cl^k(X,R,s)"
+      ]
+    },
+    {
+      "stmt_id": "st_kvec_let",
+      "subtype": "assumption",
+      "clause_range": [
+        69,
+        69
+      ],
+      "truth_value": null,
+      "scope_id": "s_kvec_let",
+      "exposed_entities": [
+        "Cl(X,R,s)"
+      ]
+    },
+    {
+      "stmt_id": "st_kvec_subspace",
+      "subtype": "definition",
+      "clause_range": [
+        71,
+        71
+      ],
+      "truth_value": null,
+      "scope_id": "s_kvec_let",
+      "exposed_entities": [
+        "Cl^k(X,R,s)"
+      ]
+    },
+    {
+      "stmt_id": "st_parity_def",
+      "subtype": "definition",
+      "clause_range": [
+        73,
+        74
+      ],
+      "truth_value": null,
+      "scope_id": "s_parity",
+      "exposed_entities": [
+        "Cl^+(X,R,s)",
+        "Cl^-(X,R,s)"
+      ]
+    },
+    {
+      "stmt_id": "st_parity_let",
+      "subtype": "assumption",
+      "clause_range": [
+        73,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_parity_let",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ideal_let",
+      "target": "st_ideal_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ideal_def",
+      "target": "st_ideal_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geom_let",
+      "target": "st_geom_quotient",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geom_quotient",
+      "target": "st_geom_properties",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cliff_let",
+      "target": "st_cliff_free_module",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cliff_free_module",
+      "target": "st_cliff_multiplication",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cliff_multiplication",
+      "target": "st_cliff_connection",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_kvec_let",
+      "target": "st_kvec_subspace",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_parity_let",
+      "target": "st_parity_def",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_geom_def",
+      "target": "st_ideal_theorem",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "几何代数定义依赖理想定理"
+    },
+    {
+      "source": "st_cliff_def",
+      "target": "st_geom_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "Clifford 代数是几何代数在交换环上的推广"
+    },
+    {
+      "source": "st_kvec_def",
+      "target": "st_cliff_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "k-向量是 Clifford 代数的子空间"
+    },
+    {
+      "source": "st_parity_def",
+      "target": "st_cliff_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "偶/奇子代数是 Clifford 代数的子代数"
+    }
+  ],
+  "unresolved": []
+}

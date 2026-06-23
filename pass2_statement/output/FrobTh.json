@@ -1,0 +1,711 @@
+{
+  "article_name": "FrobTh",
+  "statements": [
+    {
+      "stmt_id": "st_intro",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_dist_assump_M",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_dist_let",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_dist_def_D",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_distribution",
+      "exposed_entities": [
+        "D"
+      ]
+    },
+    {
+      "stmt_id": "st_dist_def_involutive",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_distribution",
+      "exposed_entities": [
+        "D"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_assump_D",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "D",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion_coords",
+      "subtype": "theorem",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "x^i",
+        "partial_1",
+        "partial_k"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_equiv_submanifold",
+      "subtype": "theorem",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "N_p"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_def_integrable",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "D"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_def_integral_submanifold",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_assump_M_Rn",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof_let1",
+      "exposed_entities": [
+        "M",
+        "R^n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_assump_frame",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof_let1",
+      "exposed_entities": [
+        "X_1",
+        "X_k",
+        "Pi"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_dPi",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": [
+        "dPi"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_ker",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": [
+        "ker dPi"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_isomorphism",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": [
+        "dPi|_D",
+        "(dPi|_D)^{-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_def_Vi",
+      "subtype": "definition",
+      "clause_range": [
+        22,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof_let2",
+      "exposed_entities": [
+        "V_i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_dPi_comm",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_Vi_comm",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_coord_fields",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_equiv_assump_D",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_equiv_let",
+      "exposed_entities": [
+        "D"
+      ]
+    },
+    {
+      "stmt_id": "st_equiv_def_annihilate",
+      "subtype": "definition",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_equiv_let",
+      "exposed_entities": [
+        "omega"
+      ]
+    },
+    {
+      "stmt_id": "st_equiv_prod_annihilate",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_equiv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_equiv_def_annihilator",
+      "subtype": "definition",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_equiv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_equiv_iff_involutive",
+      "subtype": "theorem",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": "true",
+      "scope_id": "s_equiv",
+      "exposed_entities": [
+        "omega"
+      ]
+    },
+    {
+      "stmt_id": "st_equiv_pfaffian_def",
+      "subtype": "definition",
+      "clause_range": [
+        35,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_equiv",
+      "exposed_entities": [
+        "omega_{k+1}",
+        "omega_n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_assump_omega",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "omega_k",
+        "omega_n",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_iff",
+      "subtype": "theorem",
+      "clause_range": [
+        42,
+        46
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "omega_l"
+      ]
+    },
+    {
+      "stmt_id": "st_app_intro",
+      "subtype": "remark",
+      "clause_range": [
+        47,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_app",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_app_assump_pde",
+      "subtype": "assumption",
+      "clause_range": [
+        50,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_app_let1",
+      "exposed_entities": [
+        "x",
+        "u",
+        "f_i^alpha"
+      ]
+    },
+    {
+      "stmt_id": "st_app_initial_condition",
+      "subtype": "assumption",
+      "clause_range": [
+        53,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_app",
+      "exposed_entities": [
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_app_problem",
+      "subtype": "question",
+      "clause_range": [
+        55,
+        57
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_app",
+      "exposed_entities": [
+        "U",
+        "V",
+        "x_0",
+        "z_0"
+      ]
+    },
+    {
+      "stmt_id": "st_app_necessary_condition",
+      "subtype": "conclusion",
+      "clause_range": [
+        58,
+        61
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_app",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_app_necessary_global",
+      "subtype": "conclusion",
+      "clause_range": [
+        62,
+        67
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_app",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_app_commute_iff",
+      "subtype": "theorem",
+      "clause_range": [
+        68,
+        72
+      ],
+      "truth_value": "true",
+      "scope_id": "s_app_let2",
+      "exposed_entities": [
+        "X_i"
+      ]
+    },
+    {
+      "stmt_id": "st_app_solution_iff_integral",
+      "subtype": "theorem",
+      "clause_range": [
+        73,
+        75
+      ],
+      "truth_value": "true",
+      "scope_id": "s_app",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_app_iff_commute",
+      "subtype": "theorem",
+      "clause_range": [
+        76,
+        82
+      ],
+      "truth_value": "true",
+      "scope_id": "s_app",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_app_pfaffian_omega",
+      "subtype": "definition",
+      "clause_range": [
+        83,
+        84
+      ],
+      "truth_value": null,
+      "scope_id": "s_app_let3",
+      "exposed_entities": [
+        "omega^alpha"
+      ]
+    },
+    {
+      "stmt_id": "st_app_pfaffian_equiv",
+      "subtype": "conclusion",
+      "clause_range": [
+        85,
+        86
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_app",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_app_pfaffian_condition",
+      "subtype": "conclusion",
+      "clause_range": [
+        87,
+        90
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_app",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_app_remark",
+      "subtype": "remark",
+      "clause_range": [
+        91,
+        91
+      ],
+      "truth_value": null,
+      "scope_id": "s_app",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_dist_assump_M",
+      "target": "st_dist_def_D",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_dist_def_D",
+      "target": "st_dist_def_involutive",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_assump_D",
+      "target": "st_thm1_conclusion_coords",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_conclusion_coords",
+      "target": "st_thm1_equiv_submanifold",
+      "edge_type": "equivalent",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_equiv_submanifold",
+      "target": "st_thm1_def_integrable",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_def_integrable",
+      "target": "st_thm1_def_integral_submanifold",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_assump_M_Rn",
+      "target": "st_thm1_proof_assump_frame",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_assump_frame",
+      "target": "st_thm1_proof_dPi",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_dPi",
+      "target": "st_thm1_proof_ker",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_ker",
+      "target": "st_thm1_proof_isomorphism",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_isomorphism",
+      "target": "st_thm1_proof_def_Vi",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_def_Vi",
+      "target": "st_thm1_proof_dPi_comm",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_dPi_comm",
+      "target": "st_thm1_proof_Vi_comm",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_Vi_comm",
+      "target": "st_thm1_proof_coord_fields",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_equiv_assump_D",
+      "target": "st_equiv_def_annihilate",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_equiv_def_annihilate",
+      "target": "st_equiv_prod_annihilate",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_equiv_prod_annihilate",
+      "target": "st_equiv_def_annihilator",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_equiv_def_annihilator",
+      "target": "st_equiv_iff_involutive",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_equiv_iff_involutive",
+      "target": "st_equiv_pfaffian_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assump_omega",
+      "target": "st_thm2_iff",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_app_assump_pde",
+      "target": "st_app_initial_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_app_initial_condition",
+      "target": "st_app_problem",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_app_problem",
+      "target": "st_app_necessary_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_app_necessary_condition",
+      "target": "st_app_necessary_global",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_app_necessary_global",
+      "target": "st_app_commute_iff",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_app_commute_iff",
+      "target": "st_app_solution_iff_integral",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_app_solution_iff_integral",
+      "target": "st_app_iff_commute",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_app_iff_commute",
+      "target": "st_app_pfaffian_omega",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_app_pfaffian_omega",
+      "target": "st_app_pfaffian_equiv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_app_pfaffian_equiv",
+      "target": "st_app_pfaffian_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_app_pfaffian_condition",
+      "target": "st_app_remark",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_conclusion_coords",
+      "target": "st_dist_def_involutive",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1的陈述依赖于分布和对合的定义"
+    },
+    {
+      "source": "st_thm2_iff",
+      "target": "st_thm1_conclusion_coords",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "定理2是定理1的等价形式"
+    },
+    {
+      "source": "st_app_iff_commute",
+      "target": "st_thm1_conclusion_coords",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "应用举例中使用了定理1"
+    }
+  ],
+  "unresolved": []
+}

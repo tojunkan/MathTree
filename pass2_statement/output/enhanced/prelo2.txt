@@ -1,0 +1,60 @@
+[SCOPE:root|description|量词公式的基本等价关系]
+文章名: prelo2
+标题: 量词公式的基本等价关系
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=改名规则
+  [1] type=theorem heading=定理 2 title=量词转换
+  [2] type=theorem heading=定理 3 title=量词公式的分配律
+  [3] type=theorem heading=定理 4 title=辖域的扩展或收紧
+
+[SCOPE:s_thm1|description|改名规则]
+[0] 定理 1 改名规则
+[1] \begin{equation}
+(\forall x) F(x) \Leftrightarrow (\forall y) F(y) ~.
+\end{equation}
+[2] \begin{equation}
+(\exists x) F(x) \Leftrightarrow (\exists y) F(y) ~.
+\end{equation}
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|量词转换]
+[3] 定理 2 量词转换
+[4] \begin{equation}
+\neg (\forall x A(x)) \Leftrightarrow \exists x (\neg A(x)) ~.
+\end{equation}
+[5] \begin{equation}
+\neg (\exists x A(x)) \Leftrightarrow \forall x (\neg A(x)) ~.
+\end{equation}
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|量词公式的分配律]
+[6] 定理 3 量词公式的分配律
+[7] \begin{equation}
+\forall x A(x) \land \forall x B(x) \Leftrightarrow \forall x(A(x) \land B(x) )~.
+\end{equation}
+[8] \begin{equation}
+\exists x A(x) \lor \exists x B(x) \leftrightarrow \exists x(A(x) \lor B(x)) ~.
+\end{equation}
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|辖域的扩展或收紧]
+[9] 定理 4 辖域的扩展或收紧
+[SCOPE:s_thm4_let|let_bind|设B不含变元x]
+[10] 设 $B$ 不含变元 $x$，或与变元 $x$ 无关，
+[/SCOPE:s_thm4_let]
+[11] 则
+[12] \begin{equation}
+\begin{aligned}
+\forall x (A(x) \lor B) &\Leftrightarrow (\forall x A(x)) \lor B, \\
+\forall x (A(x) \land B) &\Leftrightarrow (\forall x A(x)) \land B ~.
+\end{aligned}
+\end{equation}
+[13] \begin{equation}
+\begin{aligned}
+\exists x (A(x) \lor B) &\Leftrightarrow (\exists x A(x)) \lor B, \\
+\exists x (A(x) \land B) &\Leftrightarrow (\exists x A(x)) \land B ~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_thm4]
+[/SCOPE:root]

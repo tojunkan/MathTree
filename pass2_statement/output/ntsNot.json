@@ -1,0 +1,103 @@
+{
+  "article_name": "ntsNot",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "h",
+        "n",
+        "f(h)"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "h",
+        "n",
+        "f(h)"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        2,
+        4
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "h",
+        "n",
+        "g(h)"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "h",
+        "n",
+        "g(h)"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def2_let",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_assump",
+      "target": "st_def1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_assump",
+      "target": "st_def2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

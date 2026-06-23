@@ -1,0 +1,308 @@
+{
+  "article_name": "Codim",
+  "statements": [
+    {
+      "stmt_id": "st_intro_remark",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_let_L",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let",
+      "exposed_entities": [
+        "L"
+      ]
+    },
+    {
+      "stmt_id": "st_def_assump_L_Lprime",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let",
+      "exposed_entities": [
+        "L",
+        "L'"
+      ]
+    },
+    {
+      "stmt_id": "st_def_codim",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "codim_L L'"
+      ]
+    },
+    {
+      "stmt_id": "st_thm_assump_finite_codim",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm_let",
+      "exposed_entities": [
+        "L",
+        "L'",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm",
+      "exposed_entities": [
+        "x_i",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_existence_assump_dim",
+      "subtype": "assumption",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm_proof_let1",
+      "exposed_entities": [
+        "L/L'",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_existence_choose_basis",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm_proof_let1",
+      "exposed_entities": [
+        "ξ_i",
+        "x_i"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_existence_representation",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm_proof",
+      "exposed_entities": [
+        "x",
+        "ξ",
+        "α_i"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_existence_equiv",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_existence_diff_in_Lprime",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_existence_form",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm_proof",
+      "exposed_entities": [
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_uniqueness_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm_proof_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_uniqueness_equation",
+      "subtype": "assumption",
+      "clause_range": [
+        33,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm_proof",
+      "exposed_entities": [
+        "α_i'",
+        "y'"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_uniqueness_linear_indep",
+      "subtype": "conclusion",
+      "clause_range": [
+        36,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm_proof",
+      "exposed_entities": [
+        "[e_i]"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_uniqueness_alpha_equal",
+      "subtype": "conclusion",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_uniqueness_y_equal",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        41
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_intro_let_L",
+      "target": "st_intro_remark",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_assump_L_Lprime",
+      "target": "st_def_codim",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm_assump_finite_codim",
+      "target": "st_thm_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_existence_assump_dim",
+      "target": "st_proof_existence_choose_basis",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_existence_choose_basis",
+      "target": "st_proof_existence_representation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_existence_representation",
+      "target": "st_proof_existence_equiv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_existence_equiv",
+      "target": "st_proof_existence_diff_in_Lprime",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_existence_diff_in_Lprime",
+      "target": "st_proof_existence_form",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_uniqueness_assump",
+      "target": "st_proof_uniqueness_equation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_uniqueness_equation",
+      "target": "st_proof_uniqueness_linear_indep",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_uniqueness_linear_indep",
+      "target": "st_proof_uniqueness_alpha_equal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_uniqueness_alpha_equal",
+      "target": "st_proof_uniqueness_y_equal",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm_conclusion",
+      "target": "st_def_codim",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理引用余维数定义"
+    }
+  ],
+  "unresolved": []
+}

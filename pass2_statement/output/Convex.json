@@ -1,0 +1,398 @@
+{
+  "article_name": "Convex",
+  "statements": [
+    {
+      "stmt_id": "st_def1_convex_set",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "C",
+        "x_1",
+        "x_n",
+        "theta_k"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_convex_set",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "C",
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_convex_function",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "f",
+        "dom f",
+        "x_1",
+        "x_2",
+        "theta"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_strongly_convex",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "f",
+        "dom f",
+        "x_1",
+        "x_2",
+        "theta"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_concave_function",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "f",
+        "dom f",
+        "x_1",
+        "x_2",
+        "theta"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_strongly_concave",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "f",
+        "dom f",
+        "x_1",
+        "x_2",
+        "theta"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "f",
+        "g",
+        "x",
+        "v",
+        "t"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_nec_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_nec",
+      "exposed_entities": [
+        "f",
+        "g",
+        "x",
+        "v",
+        "t1",
+        "t2"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_nec_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_nec",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_suf_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_suf",
+      "exposed_entities": [
+        "g",
+        "f",
+        "x",
+        "v",
+        "t1",
+        "t2",
+        "theta"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_suf_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_suf",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        31,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "f",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_nec_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_nec",
+      "exposed_entities": [
+        "f",
+        "x",
+        "y",
+        "theta",
+        "z"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_nec_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        37,
+        40
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_nec",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_suf_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        42,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_suf",
+      "exposed_entities": [
+        "f",
+        "x",
+        "y",
+        "theta",
+        "z"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_suf_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        55
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_suf",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        56,
+        58
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": [
+        "f",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_nec_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        60,
+        63
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3_nec",
+      "exposed_entities": [
+        "f",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_nec_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        64,
+        71
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm3_nec",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_suf_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        73,
+        76
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3_suf",
+      "exposed_entities": [
+        "f",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_suf_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        77,
+        79
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm3_suf",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1",
+      "subtype": "exercise",
+      "clause_range": [
+        80,
+        86
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_statement",
+      "subtype": "exercise",
+      "clause_range": [
+        87,
+        88
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "f",
+        "g",
+        "A",
+        "b"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_nec_assump",
+      "target": "st_thm1_nec_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_suf_assump",
+      "target": "st_thm1_suf_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_nec_assump",
+      "target": "st_thm2_nec_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_suf_assump",
+      "target": "st_thm2_suf_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_nec_assump",
+      "target": "st_thm3_nec_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_suf_assump",
+      "target": "st_thm3_suf_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm2_statement",
+      "target": "st_thm1_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "一阶条件是凸函数判定的特例"
+    },
+    {
+      "source": "st_thm3_statement",
+      "target": "st_thm2_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "二阶条件是一阶条件的特例"
+    }
+  ],
+  "unresolved": []
+}

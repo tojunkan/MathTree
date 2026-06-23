@@ -1,0 +1,42 @@
+[SCOPE:root|description|素数定理]
+文章名: prithy
+标题: 素数定理
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=素数定理
+  [1] type=definition heading=定义 2 title=Tchebychef 定理
+
+[SCOPE:s_prime_theorem|description|素数定理]
+[0] 定义 1 素数定理
+[1] 不超过 $x$ 的素数个数渐进于 $x / (\ln x)$，
+[2] 即 $\pi(x) \sim \dfrac{x}{\ln x}$。
+[3] 另外一个弱化版的素数定理是 Tchebychef 定理。
+
+[/SCOPE:s_prime_theorem]
+[SCOPE:s_tchebychef|description|Tchebychef 定理]
+[4] 定义 2 Tchebychef 定理
+[5] $\pi(x)$ 的阶是 $x/(\ln x)$，
+[6] 即 $\pi(x) \asymp \dfrac{x}{\ln x}$。
+[SCOPE:s_tchebychef_let|let_bind|引入 y]
+[7] 显然若 $y = \dfrac x{\ln x}$，
+[8] 则 $\ln y = \ln x - \ln \ln x$，而 $\ln \ln x = o(\ln x)$，
+[9] 故 $\ln y \sim \ln x$，
+[10] 从而 $x = y \ln x \sim y \ln y$。
+[11] 故 $x/(\ln x)$ 的反函数就渐进于 $x \ln x$。
+[/SCOPE:s_tchebychef_let]
+[12] 这也就是说，第 $n$ 个素数的渐进是 $n \ln n$，
+[13] 即 $p_n \sim n \ln n$。
+[14] 同时 Tchebychef 定理通过同样的操作可以得到类似的 $p_n \asymp n \ln n$。
+[/SCOPE:s_tchebychef]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_tchebychef",
+    "target_scope": "s_prime_theorem",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Tchebychef 定理是素数定理的弱化版"
+  }
+]

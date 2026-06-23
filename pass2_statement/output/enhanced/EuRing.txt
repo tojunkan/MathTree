@@ -1,0 +1,196 @@
+[SCOPE:root|description|欧几里得环]
+文章名: EuRing
+标题: 欧几里得环
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=欧几里得环
+  [1] type=theorem heading=定理 1 title=
+  [2] type=example heading=例 1 title=整数环
+  [3] type=example heading=例 2 title=多项式环
+  [4] type=example heading=例 3 title=高斯整数环
+  [5] type=example heading=例 4 title=
+  [6] type=theorem heading=定理 2 title=
+
+[SCOPE:s_def1|description|定义1 欧几里得环]
+[0] 定义 1 欧几里得环
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1a] (r)<\delta
+[1b] (b)$，
+[2] 则称 $R$ 为一个欧几里得环（Euclid Ring），或者欧几里得整环（Euclid Domain）。
+[/SCOPE:s_def1_let]
+[3] 直观来说，欧几里得环就是 “可以做辗转相除法的环”。
+[4] 这从定义就可以看出来：任取 $a$，再用任意的 $b$ 去尝试除它，总能得到 $qb+r$ 的形式，其中 $r$ 相当于除法的余数。
+[5] 虽然任意环中的元素都可以这么做分解，而欧几里得环就特殊在它还关系到一个非负整数赋值，使得余数的赋值总是小于非零除数 $b$ 的，这样就使得我们可以多次分解，也就是进行辗转相除。
+[6] 为了严格证明以上说法成立，我们还需要讨论欧几里得环的一个性质：
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理1]
+[7] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[8] 设 $R$ 是一个欧几里得环，
+[9] 那么对于 $r\in R$，有：
+[10] $r=0\iff \delta(r)=0$。
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm1_proof|description|定理1的证明]
+[11] 证明：
+[SCOPE:s_thm1_proof_let|let_bind|证明中的变量a]
+[12] 任选 $a\in R$ 且 $a\not=0$，
+[13] 那么 $a=1a+0$，
+[14] 故由欧几里得环的定义可推知，对于任意 $a\in R-\{0\}$，必有 $\delta(0)<\delta(a)$，
+[/SCOPE:s_thm1_proof_let]
+[15] 由此得证。
+[16] 证毕。
+[/SCOPE:s_thm1_proof]
+[17a] (a)\leq\delta
+[17b] (b)$ 的时候，我们可以取 $q=0$ 而 $r=a$ 来满足 $a=qb+r$ 且符合欧几里得环的性质。
+[18a] (a)>\delta
+[18b] (b)$ 的情形。
+[19] 我们来看几个典型的欧几里得环。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex1|description|例1 整数环]
+[20] 例 1 整数环
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[21] 对于 $n\in\mathbb{Z}$，令 $\delta(n)=n$，
+[/SCOPE:s_ex1_let]
+[22] 则容易看出 $\mathbb{Z}$ 是一个欧几里得环。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2 多项式环]
+[23] 例 2 多项式环
+[SCOPE:s_ex2_let|let_bind|例2的变量]
+[24] 任给域 $\mathbb{K}$，其多项式环 $\mathbb{K}[x]$ 是一个欧几里得环。
+[25a] (x))=2^{ \operatorname {deg}
+[25b] (f)}$ 即可。
+[/SCOPE:s_ex2_let]
+[26] $ \operatorname {deg}(f)$ 是 $f$ 的次数，也就是系数非零的最高项的幂次。
+[27] 这里 $\delta$ 要取 $2$ 的指数是因为 $ \operatorname {deg}(0)=-\infty$，而我们希望 $\delta(0)=0$。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|例3 高斯整数环]
+[28] 例 3 高斯整数环
+[SCOPE:s_ex3_let|let_bind|例3的变量]
+[29] 高斯整数环是复平面上的全体坐标为整数的点的集合 $\mathbb{Z}[ \mathrm{i} ]$ 构成的环，并且是一个欧几里得环。
+[/SCOPE:s_ex3_let]
+[30] 证明见下。
+[SCOPE:s_ex3_proof|description|例3的证明]
+[31] 证明：
+[SCOPE:s_ex3_proof_let1|let_bind|证明中的变量z, delta]
+[32] 对于任意 $z\in\mathbb{Z}[ \mathrm{i} ]$，令 $\delta(z)= \left\lvert z \right\rvert ^2$。
+[/SCOPE:s_ex3_proof_let1]
+[SCOPE:s_ex3_proof_let2|let_bind|证明中的变量a,b,u,v,c,d,q,r]
+[33a] (a)>\delta
+[33b] (b)$。
+[34] 于是必有 $u, v\in\mathbb{Q}$，使得 $\frac{a}{b}=(u+v \mathrm{i} )$。
+[35] 于是必有 $c, d\in\mathbb{Z}$，使得 $ \left\lvert c-u \right\rvert \leq\frac{1}{2}$ 和 $ \left\lvert d-v \right\rvert \leq\frac{1}{2}$。
+[36] 令 $q=c+d \mathrm{i} $，$r=(c+d \mathrm{i} )b-(u+v \mathrm{i} )b=(c+d \mathrm{i} )b-a$，
+[37a] (r)<\delta
+[37b] (b)$。
+[/SCOPE:s_ex3_proof_let2]
+[38] 证毕。
+[/SCOPE:s_ex3_proof]
+[39] 一些类似高斯整数环的环也可以是欧几里得环。
+
+[/SCOPE:s_ex3]
+[SCOPE:s_ex4|description|例4]
+[SCOPE:s_ex4_let|let_bind|例4的变量]
+[40] 考虑 $\mathbb{Z}[\sqrt{-n}]$，其中 $n$ 是正整数。
+[41] 取 $a, b, r, s\in\mathbb{Z}$，定义 $\delta:\mathbb{C}\to \mathbb{Z}^+\cup\{0\}$ 为复数的模方。
+[/SCOPE:s_ex4_let]
+[42] 显然，存在 $x, y\in \mathbb{Q}$ 使得
+[43] \begin{equation}
+a+b\sqrt{-n} = \left(r+b\sqrt{-n} \right) \left(x+y\sqrt{-n} \right) ~.
+\end{equation}
+[44] \begin{equation}
+\begin{aligned}
+a+b\sqrt{-n} ={}& \left(r+b\sqrt{-n} \right) \left(n+m\sqrt{-n} \right) +\\
+& \left(r+b\sqrt{-n} \right) \left((x-n)+(y-m)\sqrt{-n} \right) ~.
+\end{aligned}
+\end{equation}
+[45] 只要保证 $ \left((x-n)+(y-m)\sqrt{-n} \right) $ 的模方恒小于 $1$，
+[46] 那么 $\delta$ 就是一个合适的函数，使得 $\mathbb{Z}[\sqrt{-n}]$ 是一个欧几里得环。
+[47] 利用 $ \left\lvert x-n \right\rvert <0> \left\lvert y-m \right\rvert $，可知
+[48] \begin{equation}
+\begin{aligned}
+\left\lvert (x-n)+(y-m)\sqrt{-n} \right\rvert ^2 = (x-n)^2+n(y-m)^2 < \frac{1+n}{4}~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_ex4]
+[SCOPE:s_thm2|description|定理2]
+[49] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[50] 欧几里得环都是主理想整环。
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm2_proof|description|定理2的证明]
+[51] 证明：
+[SCOPE:s_thm2_proof_let1|let_bind|证明中的变量I]
+[52] 设 $R$ 是一个欧几里得环，令 $I$ 为 $R$ 的一个理想。
+[53] 不妨设 $I\not=\{0\}$。
+[/SCOPE:s_thm2_proof_let1]
+[54] 由于 $\delta(I)=\{\delta(i)|i\in I\}\subseteq\mathbb{Z}^+\cup\{0\}$，
+[SCOPE:s_thm2_proof_let2|let_bind|证明中的变量b, a, q, r]
+[55a] (i)$ 中存在最小值 $\delta
+[55b] (b)$，其中 $b\in I$。
+[56] 任取 $a\in I$，
+[57a] (r)<\delta
+[57b] (b)$，使得 $a-qb=r$。
+[/SCOPE:s_thm2_proof_let2]
+[58] 由于 $a, b\in I$ 且 $I$ 有吸收律2，
+[59] 故 $r\in I$。
+[60] 由于 $\delta(b)$ 是 $\delta(I)$ 中的最小非负值，
+[61] 因此必有 $\delta(r)=0$。
+[62] 由定理 1 ，$r=0$。
+[63] 因此，$b|a$ 对任意 $a\in I$ 成立。
+[64] 故 $I=\langle b \rangle$，
+[65] 从而得证。
+[66] 证毕。
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是定义1的推论"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2是定义1的推论"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是定义1的特例"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2是定义1的特例"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例3是定义1的特例"
+  },
+  {
+    "source_scope": "s_ex4",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例4是定义1的候选特例"
+  }
+]

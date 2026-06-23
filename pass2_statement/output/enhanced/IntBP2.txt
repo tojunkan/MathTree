@@ -1,0 +1,52 @@
+[SCOPE:root|description|分部积分的高维拓展]
+文章名: IntBP2
+标题: 分部积分的高维拓展
+
+[0] 以下同一公式中所有体积分 $\int \dots \,\mathrm{d}{V} $ 都是在某个有限区域 $\mathcal V$ 进行，所有的曲面积分 $\int \dots \,\mathrm{d}{ \boldsymbol{\mathbf{s}} } $ 都在 $\mathcal V$ 的边界 $\mathcal S$ 上进行，正方向向外。
+
+[SCOPE:s_scalar|description|标量分部积分]
+[1] 这是最接近一元函数分部积分的高维拓展
+[2] \begin{equation}
+\int ( \boldsymbol\nabla f) g \,\mathrm{d}{V} = \oint fg \,\mathrm{d}{ \boldsymbol{\mathbf{s}} } - \int f ( \boldsymbol\nabla g) \,\mathrm{d}{V} ~.
+\end{equation}
+[3] 对于二维情况，面积分变为线积分，方向沿逆时针。
+[4] 一维情况就一元函数分部积分。
+
+[SCOPE:s_scalar_proof|description|标量分部积分证明]
+[5] 把式 1 两边积分，移项得
+[6] \begin{equation}
+\int ( \boldsymbol\nabla f) g \,\mathrm{d}{V} = \int \boldsymbol\nabla (fg) \,\mathrm{d}{V} - \int f ( \boldsymbol\nabla g) \,\mathrm{d}{V} ~.
+\end{equation}
+[7] 现在只需证明
+[8] \begin{equation}
+\int \boldsymbol\nabla (fg) \,\mathrm{d}{V} = \oint fg \,\mathrm{d}{ \boldsymbol{\mathbf{s}} } ~,
+\end{equation}
+[9] 式 1 [链接 L0]
+[10] 可证。
+[11] 证毕。
+
+[/SCOPE:s_scalar]
+[/SCOPE:s_scalar_proof]
+[SCOPE:s_vector|description|矢量分部积分]
+[12] \begin{equation}
+\int f ( \boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{A}} ) \,\mathrm{d}{V} = \oint f \boldsymbol{\mathbf{A}} \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{s}} } - \int \boldsymbol{\mathbf{A}} \boldsymbol\cdot ( \boldsymbol\nabla f) \,\mathrm{d}{V} ~.
+\end{equation}
+[13] [1] [链接 L1]
+[14] ，在电动力学中有应用（见 “
+[15] 电场的能量 [链接 L2]
+
+[SCOPE:s_vector_proof|description|矢量分部积分证明]
+[16] 把式 3 两边做体积分
+[17] \begin{equation}
+\int \boldsymbol{\nabla}\boldsymbol{\cdot} (f \boldsymbol{\mathbf{A}} ) \,\mathrm{d}{V} = \int f ( \boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{A}} ) \,\mathrm{d}{V} + \int \boldsymbol{\mathbf{A}} \boldsymbol\cdot ( \boldsymbol\nabla f) \,\mathrm{d}{V} ~.
+\end{equation}
+[18] 由散度定理，左边的体积分变为面积分 $\oint f \boldsymbol{\mathbf{A}} \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{s}} } $，移项得
+[19] 式 4 [链接 L3]
+[20] 。
+[21] 证毕。
+
+跨文章引用:
+  [L2] 电场的能量 → EEng
+[/SCOPE:s_vector]
+[/SCOPE:s_vector_proof]
+[/SCOPE:root]

@@ -1,0 +1,149 @@
+[SCOPE:root|description|球坐标系中的拉普拉斯方程]
+文章名: SphLap
+标题: 球坐标系中的拉普拉斯方程
+
+[SCOPE:s_intro|description|引言与通解]
+[0] 三维空间的拉普拉斯方程为
+[1] \begin{equation}
+\boldsymbol{\nabla}^2 f( \boldsymbol{\mathbf{r}} ) = 0~.
+\end{equation}
+[2] 球坐标系中的拉普拉斯算子 [链接 L0]
+[3] \begin{equation}
+\frac{\partial}{\partial{r}} \left(r^2 \frac{\partial u}{\partial r} \right) + \frac{1}{\sin\theta} \frac{\partial}{\partial{\theta}} \left(\sin \theta \frac{\partial u}{\partial \theta} \right) + \frac{1}{\sin^2 \theta} \frac{\partial^{2}{u}}{\partial{\phi}^{2}} = 0~,
+\end{equation}
+[4] 其通解为
+[5] \begin{equation}
+f(r, \theta, \phi) = \sum_{l,m} \left(A_{l,m} r^l + \frac{B_{l,m}}{r^{l+1}} \right) Y_{l,m} (\theta, \phi)~,
+\end{equation}
+[6] 其中 $Y_{l,m}$ 是
+[7] 球谐函数 [链接 L1]
+
+[/SCOPE:s_intro]
+[SCOPE:s_derivation|description|推导]
+[8] 球坐标系中，可以将拉普拉斯算子分解为径向和角向两部分（式 6 ）
+[9] \begin{equation}
+\boldsymbol{\nabla}^2 = \boldsymbol{\nabla}^2 _r + \frac{ \boldsymbol{\nabla}^2 _{\Omega}}{r^2} = \frac{1}{r^2} \frac{\partial}{\partial{r}} \left(r^2 \frac{\partial u}{\partial r} \right) + \frac{1}{r^2\sin\theta} \frac{\partial}{\partial{\theta}} \left(\sin \theta \frac{\partial u}{\partial \theta} \right) + \frac{1}{r^2\sin^2 \theta} \frac{\partial^{2}{u}}{\partial{\phi}^{2}} ~,
+\end{equation}
+[10] 式 1 [链接 L2]
+[11] 两边乘以 $r^2$ 得
+[12] \begin{equation}
+\left(r^2 \boldsymbol{\nabla}^2 _r + \boldsymbol{\nabla}^2 _\Omega \right) f = 0~.
+\end{equation}
+[13] 注意第一项只含有 $r$ 的偏导，第二项只含有 $\theta,\phi$ 的偏导。
+[SCOPE:s_sep_var|let_bind|分离变量]
+[14] 用分离变量法，令 $f( \boldsymbol{\mathbf{r}} ) = R(r) Y( \hat{\boldsymbol{\mathbf{r}}} )$（$ \hat{\boldsymbol{\mathbf{r}}} $ 是 $\theta, \phi$ 的简写），
+[15] 则分离后的
+[16] 径向方程
+[17] 角向方程
+[18] \begin{equation}
+r^2 \boldsymbol{\nabla}^2 _r R(r) = l(l+1)R(r)~,
+\end{equation}
+[19] \begin{equation}
+\boldsymbol{\nabla}^2 _{\Omega} Y( \hat{\boldsymbol{\mathbf{r}}} ) = -l(l+1) Y( \hat{\boldsymbol{\mathbf{r}}} )~.
+\end{equation}
+[20] 角向方程还可以进一步分离变量，令 $Y(\theta,\phi) = \Theta(\theta)\Phi(\phi)$，有
+[21] \begin{equation}
+l(l+1)\sin^2 \theta + \left. \sin\theta \frac{\partial}{\partial{\theta}} \left(\sin \theta \frac{\partial \Theta}{\partial \theta} \right) \middle/ \Theta + \frac{\partial^{2}{\Phi}}{\partial{\phi}^{2}} \middle/ \Phi = 0~. \right.
+\end{equation}
+[22] 注意前二项只含 $\theta$，第三项只含 $\phi$。
+[23] 一般令前两项之和为常数 $m^2$，
+[24] 则第三项为 $-m^2$。
+[/SCOPE:s_sep_var]
+[25] 这样我们就成功分离出了三个常微分方程，下面分别介绍。
+[SCOPE:s_radial|description|径向方程]
+[26] 径向方程是欧拉型方程
+[27] \begin{equation}
+r^2 \frac{\mathrm{d}^{2}{R}}{\mathrm{d}{r}^{2}} + 2r \frac{\mathrm{d}{R}}{\mathrm{d}{r}} - l(l+1)R = 0~,
+\end{equation}
+[SCOPE:s_radial_sub|let_bind|径向变量代换]
+[28] 使用变量代换 $t = \ln r$ 解得
+[29] \begin{equation}
+R(r) = C_1 r^l + \frac{C_2}{r^{l+1}}~.
+\end{equation}
+[/SCOPE:s_radial]
+[/SCOPE:s_radial_sub]
+[SCOPE:s_angular|description|角向方程（θ部分）]
+[30] 关于 $\theta$ 的方程是
+[31] \begin{equation}
+\sin^2\theta \frac{\mathrm{d}^{2}{\Theta}}{\mathrm{d}{\theta}^{2}} + \sin\theta\cos\theta \frac{\mathrm{d}{\Theta}}{\mathrm{d}{\theta}} + [l(l+1)\sin^2\theta - m^2] \Theta = 0~.
+\end{equation}
+[SCOPE:s_angular_sub|let_bind|角向变量代换]
+[32] 使用变量代换 $x = \cos\theta$ 得
+[33] \begin{equation}
+(1-x^2) \frac{\mathrm{d}^{2}{\Theta}}{\mathrm{d}{x}^{2}} - 2x \frac{\mathrm{d}{\Theta}}{\mathrm{d}{x}} + \left[l(l+1) - \frac{m^2}{1-x^2} \right] \Theta = 0~,
+\end{equation}
+[34] \begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}{x}} \left[(1-x^2) \frac{\mathrm{d}{\Theta}}{\mathrm{d}{x}} \right] + \left[l(l+1) - \frac{m^2}{1-x^2} \right] \Theta = 0~.
+\end{equation}
+[35] 该式被称为
+[36] 连带勒让德方程 [链接 L3]
+[37] ，解为连带勒让德函数 $P_l^m(x) = P_l^m(\cos\theta)$。
+[/SCOPE:s_angular]
+[/SCOPE:s_angular_sub]
+[SCOPE:s_phi_eq|description|φ方程与边界条件]
+[38] 关于 $\phi$ 的方程是
+[39] \begin{equation}
+\frac{\mathrm{d}^{2}{\Phi}}{\mathrm{d}{\phi}^{2}} = -m^2 \Phi~,
+\end{equation}
+[40] 该方程的解为 $ \mathrm{e} ^{ \mathrm{i} m\phi}$。
+[41] 原则上 $m$ 可以取任意实数，
+[42] 但由于球坐标中的
+[43] 循环边界条件
+[44] 要求 $\Phi(\phi + 2\pi) = \Phi(\phi)$，$m$ 只能取任意整数。
+[/SCOPE:s_phi_eq]
+[45] 综上，球坐标中拉普拉斯方程的通解为
+[46] \begin{equation}
+f(r, \theta, \phi) = \sum_{l = 0}^\infty \sum_{m = -l}^l \left(C_{l,m} r^l + \frac{C'_{l,m}}{r^{l+1}} \right) P_l^m(\cos\theta) \mathrm{e} ^{ \mathrm{i} m\phi}~.
+\end{equation}
+[47] 我们一般把在单位球面上归一化后的 $\Theta(\theta)\Phi(\phi)$ 称为
+[48] 球谐函数 [链接 L4]
+[49] ，记为 $Y_{l,m}(\theta,\phi)$（满足角向方程
+[50] 式 7 [链接 L5]
+[51] ），
+[52] 则通解也可记为
+[53] 式 3 [链接 L6]
+[SCOPE:s_symmetry|conditional|φ方向对称性]
+[54] 如果考虑的问题具有 $\phi$ 方向的对称性，
+[55] 那么 $f(r,\theta,\phi)$ 的展开式中将只涉及到 $m=0$ 的球谐函数，这时连带勒让德函数就退化为勒让德多项式。
+[56] 这对求解具体的静电边值问题有很大帮助。
+
+跨文章引用:
+  [L0] 球坐标系中的拉普拉斯算子 → SphNab
+  [L1] 球谐函数 → SphHar
+  [L3] 连带勒让德方程 → AsLgdr
+  [L4] 球谐函数 → SphHar
+[/SCOPE:s_derivation]
+[/SCOPE:s_symmetry]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_derivation",
+    "target_scope": "s_intro",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推导得到通解，与引言中的通解一致。"
+  },
+  {
+    "source_scope": "s_radial",
+    "target_scope": "s_sep_var",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "径向方程由分离变量得到。"
+  },
+  {
+    "source_scope": "s_angular",
+    "target_scope": "s_sep_var",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "角向方程由分离变量得到。"
+  },
+  {
+    "source_scope": "s_phi_eq",
+    "target_scope": "s_sep_var",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "φ方程由分离变量得到。"
+  }
+]

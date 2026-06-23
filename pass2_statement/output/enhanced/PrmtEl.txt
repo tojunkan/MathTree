@@ -1,0 +1,282 @@
+[SCOPE:root|description|本原元定理]
+文章名: PrmtEl
+标题: 本原元定理
+
+环境标记 (hints):
+  [0] type=lemma heading=引理 1 title=
+  [1] type=example heading=例 1 title=
+  [2] type=corollary heading=推论 1 title=
+  [3] type=theorem heading=定理 1 title=本原元定理（primitive element theorem）
+  [4] type=example heading=例 2 title=$\mathbb{Z}_p(x, y)$ 中若干元素的表示
+  [5] type=theorem heading=定理 2 title=Artin 本原性定理
+  [6] type=corollary heading=推论 2 title=
+  [7] type=corollary heading=推论 3 title=
+
+[0] 【未完成】增加预备知识《域》（有限/无限域）
+[1] 本节介绍两个定理：本原元定理和 Artin 本原性定理。
+[2] 本原元定理给出了有限扩张是单扩张的充要条件，而 Artin 本原性定理给出了代数扩张是单扩张的充分条件。
+
+[3] 下面给出一个引理，有助于理解和证明本原元定理。
+[4] 事实上，这个引理正是本原元定理的其中一个方向的核心思路。
+
+[SCOPE:s_lemma1|description|引理1]
+[5] 引理 1
+[SCOPE:s_lemma1_let|let_bind|引理1的变量]
+[6] 设 $\mathbb{K}=\mathbb{F}(a, b)$，$\mathbb{F}$ 是无限域，且 $\mathbb{K}/\mathbb{F}$ 只有有限多个中间域，
+[7] 那么必存在 $x\in\mathbb{K}$ 使得 $\mathbb{K}=\mathbb{F}(x)$。
+[/SCOPE:s_lemma1_let]
+[8] 证明：
+[9] 任取 $c\in\mathbb{F}$，构造单扩域 $\mathbb{K}_c=\mathbb{F}(a+cb)$。
+[10] 由于 $\mathbb{F}\subseteq\mathbb{F}(a+cb)\subseteq\mathbb{K}$，
+[11] 因此 $\mathbb{K}_c$ 的数量有限。
+[12] 但 $\mathbb{F}$ 是无限域，
+[13] 因此必存在不相等的 $c_1, c_2\in\mathbb{F}$，使得 $\mathbb{K}_{c_1}=\mathbb{K}_{c_2}$，把它们都记为 $\mathbb{E}$。
+[14] 考虑域的封闭性。
+[15] $a+c_1b$ 和 $a+c_2b$ 都在 $\mathbb{E}$ 中，
+[16] 故其差 $(c_1-c_2)b$ 也在其中。
+[17] 因为 $c_1, c_2$ 都在 $\mathbb{F}$ 中，
+[18] 故 $b$ 应在 $\mathbb{E}$ 中，进而 $a$ 也在 $\mathbb{E}$ 中。
+[19] 于是 $\mathbb{K}=\mathbb{F}(a, b)\subseteq\mathbb{E}$。
+[20] 又因为 $\mathbb{E}=\mathbb{F}(a+c_1b)\subseteq\mathbb{F}(a, b)=\mathbb{K}$，
+[21] 故 $\mathbb{E}=\mathbb{K}$。
+[22] 即，取 $x=a+c_1b$ 即得证。
+[23] 证毕。
+[/SCOPE:s_lemma1]
+[24] 为了直观理解引理 1 ，我们举一个例子：
+
+[SCOPE:s_example1|description|例1]
+[25] 考虑有理数域 $\mathbb{Q}$ 和 $\mathbb{K}=\mathbb{Q}(\sqrt{2}, \sqrt{3})$。
+[26] 显然，这两个域之间的中间域只有 $\mathbb{Q}$、$\mathbb{Q}(\sqrt{2})$、$\mathbb{Q}(\sqrt{3})$、$\mathbb{Q}(\sqrt{6})$ 和 $\mathbb{K}$ 这几个。
+[27] 存在不相等的有理数 $1$ 和 $2$，使得 $\mathbb{Q}(\sqrt{2}+\sqrt{3})=\mathbb{Q}(\sqrt{2}+2\sqrt{3})$。
+[28] 因此按照引理 1 ，$\mathbb{K}=\mathbb{Q}(\sqrt{2}+\sqrt{3})$。
+[29] 验证一下：$(\sqrt{2}+\sqrt{3})^2-5=2\sqrt{6}$，
+[30] 因此 $\sqrt{6}\in\mathbb{Q}(\sqrt{2}+\sqrt{3})$。
+[31] $(\sqrt{6}-2)(\sqrt{2}+\sqrt{3})=\sqrt{2}$，
+[32] 因此 $\sqrt{2}\in\mathbb{Q}(\sqrt{2}+\sqrt{3})$。
+[33] 接着很容易证明 $\sqrt{3}$ 也在这个域中，
+[34] 从而这个域就是 $\mathbb{Q}(\sqrt{2}, \sqrt{3})$ 本身。
+
+[/SCOPE:s_example1]
+[SCOPE:s_cor1|description|推论1]
+[35] 推论 1
+[SCOPE:s_cor1_let|let_bind|推论1的变量]
+[36] 设 $\mathbb{K}=\mathbb{F}(a_1, \cdots, a_n)$，$\mathbb{F}$ 是无限域，且 $\mathbb{K}/\mathbb{F}$ 只有有限多个中间域，
+[37] 那么必存在 $x\in\mathbb{K}$ 使得 $\mathbb{K}=\mathbb{F}(x)$。
+[/SCOPE:s_cor1_let]
+[38] 证明：
+[39] 由引理 1 ，$\mathbb{F}(a_1, a_2)$ 是单扩张，可以写为 $\mathbb{F}(x_2)$。
+[40] 于是，$\mathbb{F}(a_1, a_2, a_3)=\mathbb{F}(x_2, a_3)$ 也是单扩张，可写为 $\mathbb{F}(x_3)$。
+[41] 以此类推即得证。
+[42] 证毕。
+[/SCOPE:s_cor1]
+[43] 理解了引理 1 和推论 1 ，我们就可以更方便地讨论本原元定理了。
+
+[SCOPE:s_thm1|description|定理1 本原元定理]
+[44] 定理 1 本原元定理（primitive element theorem）
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[45] 设 $\mathbb{K}/\mathbb{F}$ 是有限次的域扩张，
+[46] 则
+[/SCOPE:s_thm1_let]
+[47] $\mathbb{K}/\mathbb{F}$ 是单扩张 $\iff$ $\mathbb{K}/\mathbb{F}$ 的中间域1只有有限多个。
+[48] 证明：
+[49] $\mathbb{F}$ 是有限域时，由推论 1 ，两个条件恒成立。
+[50] 因此下面只考虑 $\mathbb{F}$ 是无限域的情况。
+[SCOPE:s_thm1_backward|description|定理1的⇐方向]
+[51] $\Leftarrow$：
+[52] 有限扩张一定是代数扩张（推论 1 ），
+[53] 即存在正整数 $n$ 和 $n$ 个 $a_i\in\mathbb{K}$，使得 $\mathbb{K}=\mathbb{F}(a_1, \cdots, a_n)$。
+[54] 于是，由推论 1 立刻得证。
+[/SCOPE:s_thm1_backward]
+[SCOPE:s_thm1_forward|description|定理1的⇒方向]
+[55] $\Rightarrow$：
+[SCOPE:s_thm1_forward_let|let_bind|定理1⇒方向的变量]
+[56] 现在已知 $\mathbb{K}=\mathbb{F}(a)$。
+[57] 设 $a$ 在 $\mathbb{F}$ 上的最小多项式为 $f$。
+[58] 对于 $\mathbb{K}/\mathbb{F}$ 任意中间域 $\mathbb{M}$，设 $a$ 在 $\mathbb{M}$ 上的最小多项式为 $f_\mathbb{M}$，
+[59] 则必有 $f_{\mathbb{M}}\mid f$。
+[60] $f_\mathbb{M}(x)$ 在 $\mathbb{M}\subseteq\mathbb{K}$ 上展开为
+[61] \begin{equation}
+f_\mathbb{M} = \sum_{i=0}^n m_ix^i~.
+\end{equation}
+[62] 若设 $\mathbb{M}'=\mathbb{F}(m_0, m_1, \cdots, m_n)$，
+[63] 那么显然 $\mathbb{M}'\subseteq\mathbb{M}$，进而 $f_\mathbb{M}$ 也是 $\mathbb{M}'$ 上的不可约多项式，或者说 $a$ 的最小多项式。
+[/SCOPE:s_thm1_forward_let]
+[64] 由定理 2 ，$[\mathbb{K}:\mathbb{M}]= \operatorname {deg}f_\mathbb{M}=n$，$[\mathbb{K}:\mathbb{M}']= \operatorname {deg}f_\mathbb{M}=n$，
+[65] 因此由定理 4 ，
+[66] \begin{equation}
+[\mathbb{M}:\mathbb{M}']=\frac{[\mathbb{K}:\mathbb{M}']}{[\mathbb{K}:\mathbb{M}]}=\frac{n}{n}=1~,
+\end{equation}
+[67] 故 $\mathbb{M}=\mathbb{M}'$。
+[68] 也就是说，中间域 $\mathbb{M}$ 由 $f_\mathbb{M}$（的系数）唯一决定，不可能有两个不同的中间域对应同一个 $f_{\mathbb{M}}$。
+[69] 但由于 $f_\mathbb{M}\mid f$，知 $f_\mathbb{M}$ 的数量有限，知中间域的数量也有限。
+[70] 证毕。
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_forward]
+[71] 本原元定理定理 1 给出了判断有限扩张是否为单扩张的充要条件，
+[72] 但实际应用中有一个麻烦：证明中间域的数量是很难的。
+[73] 下面举一个例子来体现这一点，和例 3 构造的思路一样：
+
+[74] 考虑 $\mathbb{Z}_p$ 上全体二元有理式2构成的域，记为 $\mathbb{Z}_p(x, y)$。
+[75] 也可以理解为，$x, y$ 是 $\mathbb{Z}_p$ 的两个超越元。
+[76] 当然，我们不考虑域扩张 $\mathbb{Z}_p(x, y)/\mathbb{Z}_p$，因为这是超越扩张，不在我们讨论范围内。
+[77] 我们讨论的是 $\mathbb{Z}_p(x, y)/\mathbb{Z}_p(x^p, y^p)$。
+[78] 显然，由于 $x^p$ 的 $p$ 次方根不在 $\mathbb{Z}_p(x^p, y^p)$ 中，根据定理 6 ，$\mathbb{Z}_p(x^p, y^p)$ 不是完美域。
+[79] 这就提醒我们，这个扩张可能不是可分的。
+[80] 现在我们要明确的是，这是一个有限扩域，
+[81] 即 $\mathbb{Z}_p(x, y)$ 作为 $\mathbb{Z}_p(x^p, y^p)$ 的线性空间，维度有限。
+[82] 那么我们就要问，各向量都是怎么表示的呢？
+[83] 先考虑一个例子：向量 $y^{-1}\in\mathbb{Z}_p(x, y)$ 就可以表示为 $\frac{1}{y^p}y^{p-1}$，其中 $\frac{1}{y^p}\in\mathbb{Z}_p(x^p, y^p)$ 是系数，$y^{p-1}$ 是基向量。
+[84] 下面的例 2 进一步展现了如何用 $\mathbb{Z}_p(x^p, y^p)$ 作为基域来表示 $\mathbb{Z}_p(x, y)$ 中的元素。
+
+[SCOPE:s_example2|description|例2]
+[SCOPE:s_example2_let|let_bind|例2的变量]
+[85] 例 2 $\mathbb{Z}_p(x, y)$ 中若干元素的表示
+[/SCOPE:s_example2_let]
+[86] \begin{equation}
+\frac{x^{p-1}}{y} = \frac{1}{y^p}x^{p-1}y^{p-1}~.
+\end{equation}
+[87] \begin{equation}
+\frac{1}{x^2+y} = \frac{x^p}{x^{2p}+y^p}x^{p-2} + \frac{1}{x^{2p}+y^p}y^{p-1}~.
+\end{equation}
+[88] \begin{equation}
+\frac{1}{xy+x^2y} = \frac{1}{x^py^p+x^{2p}y^p}x^{p-1}y^{p-1}+\frac{1}{y^p+x^{p}y^p}x^{p-2}y^{p-1}~.
+\end{equation}
+[89] 其中，想到式 4 的思路为：
+[90] \begin{equation}
+\frac{1}{x^2+y}(x^{2p}+y^p) = x^{2p-2}+y^{p-1} = x^px^{p-2}+y^{p-1}~.
+\end{equation}
+[91] 想到式 5 的思路为：
+[92] \begin{equation}
+\begin{aligned}
+\frac{1}{xy+x^2y}(x^py^p+x^{2p}y^p) &= x^{p-1}y^{p-1}+x^{2p-2}y^{p-1} \\
+&= x^{p-1}y^{p-1}+x^px^{p-2}y^{p-1}~.
+\end{aligned}
+\end{equation}
+[93] 观察例 2 中几个表示的例子，找找哪些是域 $\mathbb{Z}_p(x, y)$ 中的元素（系数），哪些应该是向量？
+[94] 观察后容易发现，域 $\mathbb{Z}_p(x, y)$ 上的线性空间 $\mathbb{Z}_p(x^p, y^p)$ 的基向量组为 $\{x^iy^j\mid i, j=0, 1, 2, \cdots, p-1\}$。
+[95] 这么一来，$\mathbb{Z}_p(x, y)/\mathbb{Z}_p(x^p, y^p)$ 就应该是一个 $p^2$ 次扩域，
+[96] 即有限（代数）扩域。
+[97] $x\in\mathbb{Z}_p(x, y)$ 在 $\mathbb{Z}_p(x^p, y^p)$ 上的最小多项式为 $f(t)=t^p-x^p$。
+[98] 在 $\mathbb{Z}_p(x, y)$ 上，有 $t^p-x^p=(t-x)^p$，说明这是个不可分多项式。
+[99] 因此，$\mathbb{Z}_p(x, y)/\mathbb{Z}_p(x^p, y^p)$ 是一个不可分扩张。
+[100] 现在问题来了：$\mathbb{Z}_p(x, y)/\mathbb{Z}_p(x^p, y^p)$ 的中间域有多少呢？
+[101] 这很难讨论，反而直接证明它不是单代数扩张还简单些：
+[102] 任取 $\gamma\in\mathbb{Z}_p(x, y)$，
+[103] 则由于 $\gamma^p\in\mathbb{Z}_p(x^p, y^p)$，可知 $\mathbb{Z}_p(x^p, y^p)(\gamma)$ 是域 $\mathbb{Z}_p(x^p, y^p)$ 上的最多 $p$ 维线性空间（因为是由 $\{1,\gamma, \gamma^2, \cdots, \gamma^{p-1}\}$ 张成的），
+[104] 从而不可能是 $p^2$ 维的 $\mathbb{Z}_p(x, y)$。
+
+[/SCOPE:s_example2]
+[105] 由上述讨论，可知我们需要一个更好验证的条件来判断一个有限扩张是否是单扩张，比如下面这个重要成果。
+
+[SCOPE:s_thm2|description|定理2 Artin本原性定理]
+[106] 定理 2 Artin 本原性定理
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[107] 设 $\mathbb{K}=\mathbb{F}(a, b)$ 是域 $\mathbb{F}$ 的代数扩张，且 $a$ 和 $b$ 都是 $\mathbb{F}$ 上的可分元素，
+[108] 则 $\mathbb{K}/\mathbb{F}$ 是单代数扩张。
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm2_proof|description|定理2的证明]
+[109] 证明：
+[110] 由推论 1 ，$\mathbb{F}$ 为有限域时定理天然成立。
+[111] 因此下设 $\mathbb{F}$ 是无限域。
+[SCOPE:s_thm2_proof_let|let_bind|定理2证明中的变量]
+[112a] (x)$ 和 $g
+[112b] (x)$。
+[113] 设 $f$ 在其分裂域上的根为 $a_1=a, a_2, a_3, \cdots, a_r$，$g$ 在其分裂域上的根为 $b_1=b, b_2, b_3, \cdots, b_s$。
+[114] 现在，我们希望找到一个 $c\in\mathbb{F}$，使得 $a+cb=a_i+cb_j$ 仅在 $i=j=1$ 时成立。
+[115] 移项后，条件变为 “$c\neq\frac{a-a_i}{b_j-b}$ 对 $j\neq 1$ 的情况恒成立”。
+[116] 显然，$\frac{a-a_i}{b_j-b}$ 只有有限多个，而 $\mathbb{F}$ 是无限域，
+[117] 所以这样的 $c$ 总是能找到的。
+[118] 找到上述 $c$ 以后，令 $\gamma=a+cb$。
+[119] 现在设 $\mathbb{F}(\gamma)$ 上的多项式 $h(x)=f(\gamma-cx)$。
+[/SCOPE:s_thm2_proof_let]
+[120a] (x)$ 与 $h
+[120b] (x)$ 在 $gh\in\mathbb{F}(\gamma)[x]$ 的分裂域上（故在域 $\mathbb{F}(\gamma)$ 上）具有唯一的公共零点 $b$。
+[121a] (x), h
+[121b] (x))=x-b$。
+[122a] (x), q
+[122b] (x)\in\mathbb{F}(\gamma)[x]$，使得 $p
+[122c] (x)g
+[122d] (x)+q
+[122e] (x)h
+[122f] (x)=x-b$，
+[123] 因此 $x-b\in\mathbb{F}(\gamma)[x]$。
+[124] 换句话说，$b\in\mathbb{F}(\gamma)$。
+[125] 于是 $a=\gamma-cb\in\mathbb{F}(\gamma)$。
+[126] 因此 $a, b\in\mathbb{F}(\gamma)\Rightarrow \mathbb{F}(a, b)=\mathbb{F}(\gamma)$。
+[127] 证毕。
+[/SCOPE:s_thm2_proof]
+[128] 上述证明里，哪里用到了 “可分” 的条件呢？
+[129] 如果 $a$ 和 $b$ 是不可分元素，
+[130a] (x), h
+[130b] (x))=(x-b)^p=x^p-b^p$ 的情况，其中 $p= \operatorname {ch}\mathbb{F}$。
+[131] 这时，就没法保证 $\mathbb{F}(\gamma)$ 中有 $b^p$ 的 $p$ 次方根，
+[132] 即没法保证 $b\in\mathbb{F}(\gamma)$。
+[133] 利用数学归纳法，以及 “可分扩张的元素都是可分元素”，我们可以得到如下结论：
+
+[/SCOPE:s_thm2]
+[SCOPE:s_cor2|description|推论2]
+[134] 推论 2
+[135] 有限可分扩张都是单代数扩张。
+[136] 由此还可得一个重要的计数性质：
+
+[/SCOPE:s_cor2]
+[SCOPE:s_cor3|description|推论3]
+[137] 推论 3
+[SCOPE:s_cor3_let|let_bind|推论3的变量]
+[138] 设 $\mathbb{K}/\mathbb{F}$ 是可分扩张，且 $\mathbb{K}$ 中任意元素关于 $\mathbb{F}$ 的最小多项式次数最大的是 $n$，
+[139] 那么 $[\mathbb{K}:\mathbb{F}] = n$。
+[/SCOPE:s_cor3_let]
+[140] 证明：
+[141] 取 $\alpha\in\mathbb{K}$，使 $ \operatorname {deg} \operatorname {Irr}(\alpha:\mathbb{F})=n$。
+[142] 由定理 2 ，$[\mathbb{F}(\alpha):\mathbb{F}]=n$。
+[143] 任取 $\beta\in\mathbb{K}$，
+[144] 则由 Artin 本原性定理 2 ，存在 $\gamma\in\mathbb{K}$ 使得 $\mathbb{F}(\alpha, \beta)=\mathbb{F}(\gamma)$。
+[145] 由题设和定理 2 ，$[\mathbb{F}(\gamma):\mathbb{F}]\leq n$，
+[146] 但 $\mathbb{F}(\alpha)\subseteq\mathbb{F}(\gamma)$，
+[147] 所以必有 $\mathbb{F}(\alpha)=\mathbb{F}(\gamma)$。
+[148] 因此，$\beta\in\mathbb{F}(\alpha)$，
+[149] 故 $\mathbb{K}=\mathbb{F}(\alpha)$。
+[150] 所以 $[\mathbb{K}:\mathbb{F}]=[\mathbb{F}(\alpha):\mathbb{F}]=n$。
+[151] 证毕。
+[/SCOPE:s_cor3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是引理1的推广"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_cor1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理1的⇐方向用到推论1"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Artin本原性定理是本原元定理在可分情形下的特例"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推论2由定理2和归纳法得到"
+  },
+  {
+    "source_scope": "s_cor3",
+    "target_scope": "s_cor2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推论3用到推论2"
+  }
+]

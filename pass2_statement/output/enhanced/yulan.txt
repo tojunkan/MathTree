@@ -1,0 +1,112 @@
+[SCOPE:root|description|整数集的倍数与整除]
+文章名: yulan
+标题: 整数集的倍数与整除
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=倍数
+  [1] type=exercise heading=习题 1 title=
+  [2] type=theorem heading=定理 1 title=
+  [3] type=definition heading=定义 2 title=整除
+  [4] type=exercise heading=习题 2 title=倍数与整除
+  [5] type=example heading=例 1 title=整除的基本性质
+
+[SCOPE:s_def1|description|倍数]
+[0] 定义 1 倍数
+[SCOPE:s_def1_let|let_bind|倍数定义中的变量]
+[1] 设整数 $n\in \mathbb{Z}$,我们用符号 $n\mathbb{Z}$ 来表示集合 $\{nm|m\in \mathbb{Z}\}$(用描述法来写就是集合 $\{...,-3n,-2n,-n,0,n,2n,3n,...\}$),并且我们将 $n\mathbb{Z}$ 里的元素称之为 $n$ 的倍数
+[/SCOPE:s_def1_let]
+[2] 从上述定义可以看出，$n\mathbb{Z}$ 和 $(-n)\mathbb{Z}$ 所表示的集合是同一个集合(试着验证一下),为了方便书写和辨认，我们习惯于将 $n\mathbb{Z}$ 中的 $n$ 写成正整数,即我们将 3 的倍数集写作 $3\mathbb{Z}$ 而不是 $(-3)\mathbb{Z}$,同时，记号 $1\mathbb{Z}$ 过于繁琐和没必要，我们将略去 $1$ 不写。
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|习题1]
+[3] 习题 1
+[4] 试着验证 $0\mathbb{Z}=\{0\}$,即 $0$ 的任意倍数还是 $0$
+[5] 不难发现，某些倍数集之间有着包含关系，例如 $4\mathbb{Z}$ 就包含于 $2\mathbb{Z}$ 之中，
+[6] 但 $5\mathbb{Z}$ 却并不包含于 $2\mathbb{Z}$，
+[7] 所以我们可以用倍数的语言来描述这一事实.
+
+[/SCOPE:s_ex1]
+[SCOPE:s_thm1|description|定理1]
+[8] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[9] 设整数 $a,b\in \mathbb{Z}$，若 $b$ 是 $a$ 的倍数，
+[/SCOPE:s_thm1_let]
+[10] 则 $b\mathbb{Z} \subset a\mathbb{Z}$
+[SCOPE:s_thm1_proof|description|定理1的证明]
+[SCOPE:s_thm1_proof_let|let_bind|证明中的变量c]
+[11] 证明:由于 $b$ 是 $a$ 的倍数,我们知道存在一个整数 $c$,使得 $b=ac$,所以对于每一个元素 $bn\in b\mathbb{Z}$,都有 $bn=a(cn)$，
+[/SCOPE:s_thm1_proof_let]
+[12] 即 $bn\in a\mathbb{Z}$,于是 $b\mathbb{Z} \subset a\mathbb{Z}$。
+[13] 证毕.
+[/SCOPE:s_thm1_proof]
+[14] 从上述定理的证明过程中，我们发现我们用到了一个事实，
+[15] 即：若 $b$ 是 $a$ 的倍数,则存在一个整数 $c$,使得 $b=ac$(读者请自行验证),我们注意到可以使用除法来对具体的数字 $a$,$b$ 给出上述事实中的 $c$，读者已经在之前的课程中学习了整数系扩张到有理数系，也就知道了对于任意给定的整数 $a$,$b$,未必有 $\frac{b}{a}\in \mathbb{Z}$，
+[16] 于是我们引进整除这一概念，来讨论到底什么样的整数 $a$,$b$,满足 $\frac{b}{a}\in \mathbb{Z}$。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_def2|description|整除]
+[17] 定义 2 整除
+[SCOPE:s_def2_let|let_bind|整除定义中的变量]
+[18] 设整数 $a,b\in \mathbb{Z}$,且 $a$ 非零,若存在一个整数 $c$,使得 $b=ac$（也就是 $\frac{b}{a}\in \mathbb{Z}$），
+[/SCOPE:s_def2_let]
+[19] 那么我们称 $a$ 能整除 $b$，$b$ 能被 $a$ 整除，并且记作 $a\mid b$
+[20a] 反之
+[20b] 若对于任意整数 $c$,都有 $b\ne ac$（也，则是 $\frac{b}{a}\notin \mathbb{Z}$），
+[21] 那么我们称 $a$ 不能整除 $b$，$b$ 不能被 $a$ 整除，并且记作 $a\nmid b$
+[22] 从定义中可以看出，倍数关系和整除关系是一对对偶关系(详见"数系与集合"拓展部分"元素的关系")，
+[23] 因此它们之间有很多互通的性质，举个例子，我们在前文中提到了命题:$0$ 的任意倍数还是 $0$,这句话可以引申出命题:对于任意整数 $a\in \mathbb{Z}$，都存在整数 $0$,使得 $0=0a$，
+[24] 即任何整数 $a$ 都能整除 $0$。
+[25] 让我们把这一组对偶关系用更清楚的语言叙述一遍吧:
+
+[/SCOPE:s_def2]
+[SCOPE:s_ex2|description|习题2]
+[26] 习题 2 倍数与整除
+[27] $b$ 是 $a$ 的倍数等价于 $a$ 能整除 $b$(读者自己验证)
+[28] 于是，研究倍数关系就转化为了研究整除关系，事实上，在大多数情况下研究整除关系比研究倍数关系更容易(合适记号的伟大之处，如果可以，读者大可试着将接下来的用整除描述的命题转化为用倍数描述的命题并对比一下)。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_example1|description|整除的基本性质]
+[29] 例 1 整除的基本性质
+[30] (反身性)对于非零整数 $a$，有 $a\mid a$
+[31] (传递性)若 $a\mid b$ 且 $b\mid c$,则 $a\mid c$
+[SCOPE:s_example1_let1|let_bind|传递性证明中的变量]
+[32] 证明:反身性是相当明显的，用恒等式 $a=1\cdot a$ 即可得到;而传递性需要费一些功夫，我们不妨设 $c=mb,b=na$，
+[/SCOPE:s_example1_let1]
+[SCOPE:s_example1_let2|let_bind|传递性证明中的变量（续）]
+[33] 则必有 $c=(mn)a$,即 $a\mid c$
+[/SCOPE:s_example1_let2]
+[34] 联系上加法和乘法，我们可以得到更加有趣的:
+[/SCOPE:s_example1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的结论基于倍数定义"
+  },
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_def1",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "整除与倍数是对偶关系"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题2说明倍数与整除等价"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1展示整除的基本性质"
+  }
+]

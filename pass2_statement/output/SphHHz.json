@@ -1,0 +1,244 @@
+{
+  "article_name": "SphHHz",
+  "statements": [
+    {
+      "stmt_id": "st_helmholtz_eq",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_main",
+      "exposed_entities": [
+        "f",
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_laplacian_decomp",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_main",
+      "exposed_entities": [
+        "\\boldsymbol{\\nabla}^2_r",
+        "\\boldsymbol{\\nabla}^2_\\Omega"
+      ]
+    },
+    {
+      "stmt_id": "st_multiply_r2",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_main",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sep_var_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_sep_var",
+      "exposed_entities": [
+        "f(\\boldsymbol{\\mathbf{r}})",
+        "R(r)",
+        "Y(\\hat{\\boldsymbol{\\mathbf{r}}})"
+      ]
+    },
+    {
+      "stmt_id": "st_angular_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_sep_var",
+      "exposed_entities": [
+        "Y(\\hat{\\boldsymbol{\\mathbf{r}}})",
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_radial_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_sep_var",
+      "exposed_entities": [
+        "R(r)",
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_angular_solution",
+      "subtype": "theorem",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_sep_var",
+      "exposed_entities": [
+        "Y_{l,m}(\\hat{\\boldsymbol{\\mathbf{r}}})"
+      ]
+    },
+    {
+      "stmt_id": "st_radial_sub",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_radial_sub",
+      "exposed_entities": [
+        "\\rho"
+      ]
+    },
+    {
+      "stmt_id": "st_radial_eq_transformed",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_radial_sub",
+      "exposed_entities": [
+        "R(\\rho)",
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_bessel_solution",
+      "subtype": "theorem",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_radial_sub",
+      "exposed_entities": [
+        "j_l(\\rho)",
+        "y_l(\\rho)"
+      ]
+    },
+    {
+      "stmt_id": "st_general_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_main",
+      "exposed_entities": [
+        "f(\\boldsymbol{\\mathbf{r}})",
+        "A_l",
+        "B_l",
+        "j_l(kr)",
+        "y_l(kr)",
+        "Y_{l,m}(\\hat{\\boldsymbol{\\mathbf{r}}})"
+      ]
+    },
+    {
+      "stmt_id": "st_k_complex",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_main",
+      "exposed_entities": [
+        "k"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_helmholtz_eq",
+      "target": "st_multiply_r2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_laplacian_decomp",
+      "target": "st_multiply_r2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sep_var_assump",
+      "target": "st_angular_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sep_var_assump",
+      "target": "st_radial_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_angular_eq",
+      "target": "st_angular_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_radial_sub",
+      "target": "st_radial_eq_transformed",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_radial_eq_transformed",
+      "target": "st_bessel_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_multiply_r2",
+      "target": "st_sep_var_assump",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_angular_solution",
+      "target": "st_general_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_bessel_solution",
+      "target": "st_general_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_radial_eq",
+      "target": "st_radial_sub",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "径向方程引出变量代换"
+    }
+  ],
+  "unresolved": []
+}

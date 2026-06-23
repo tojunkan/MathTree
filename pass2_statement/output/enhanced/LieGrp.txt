@@ -1,0 +1,203 @@
+[SCOPE:root|description|李群]
+文章名: LieGrp
+标题: 李群
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=（实）李群
+  [1] type=definition heading=定义 2 title=紧李群
+  [2] type=definition heading=定义 3 title=复李群
+  [3] type=definition heading=定义 4 title=李群
+  [4] type=lemma heading=引理 1 title=
+  [5] type=definition heading=定义 5 title=李群
+  [6] type=example heading=例 1 title=李群的例子
+  [7] type=example heading=例 2 title=环面的稠密单参数子群1
+  [8] type=definition heading=定义 6 title=
+  [9] type=definition heading=定义 7 title=子李群
+  [10] type=theorem heading=定理 1 title=
+
+[0] 如果没有微分几何的基础，
+[1] 但是想了解李群，可以阅读矩阵李群。
+
+[2a] 拓扑群既是一个群，又是一个拓扑空间
+[2b] 如果更近一步的是一个（微分）流形，那它，则被称为李群。
+
+[SCOPE:s_def1|description|定义1 (实)李群]
+[3] 定义 1 （实）李群
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[4] 给定一个实光滑流形 $G$，若 $G$ 配合二元运算 $\cdot$ 构成一个群，并且以下两个映射都是光滑映射：
+[5] 群运算映射：$\mu:G\times G\to G, \mu(a,b)=a\cdot b$，其中 $G\times G$ 是积流形；
+[6] 逆运算映射：$\iota:G\to G, \iota(a)=a^{-1}$，
+[7] 那么我们说 $G$ 是一个实李群，简称李群。
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_def2|description|定义2 紧李群]
+[8] 定义 2 紧李群
+[9] 一个李群被称为紧李群，当且仅当它是一个紧流形。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|定义3 复李群]
+[10] 定义 3 复李群
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[11] 给定一个复流形定义 6 $G$，若 $G$ 配合二元运算 $\cdot$ 构成一个群，并且群运算映射和逆运算映射都是全纯映射，
+[12] 那么我们说 $G$ 是一个复李群。
+[13] 简单可证，复李群都是（实）李群。
+
+[/SCOPE:s_def3]
+[/SCOPE:s_def3_let]
+[14] 定义 1 给出的定义是最标准的定义，也可以使用下述等价的定义。
+
+[SCOPE:s_def4|description|定义4 李群]
+[15] 定义 4 李群
+[SCOPE:s_def4_let|let_bind|定义4的变量]
+[16] 给定一个实光滑流形 $G$，若在 $G$ 上定义了一个群运算 “$\cdot$”，且满足流形空间之间的映射 $f:G\times G\rightarrow G$ 是一个光滑映射，其中 $f(g_1, g_2)=g_1\cdot g_2^{-1}$，
+[17] 那么称 $G$ 是一个李群（Lie group）。
+[18] 在应用中，一个图像更清晰的定义如下所示，不过首先我们要引入一个引理：
+
+[/SCOPE:s_def4]
+[/SCOPE:s_def4_let]
+[SCOPE:s_lemma1|description|引理1]
+[19] 引理 1
+[SCOPE:s_lemma1_let|let_bind|引理1的变量]
+[20] 给定流形 $M$、$N$ 和 $K$，令 $M\times N$ 为积流形；
+[21] 对于任意 $m\in M, n\in N$，将 $\{m\}\times N$ 与 $N$ 等同，$M\times \{n\}$ 与 $M$ 等同。
+[22a] (n)=f(m, n)=f^n
+[22b] (m)$。
+[23] 则有：$f$ 是光滑映射 $\iff$ 对于任意 $m\in M, n\in N$，$f_m$ 和 $f^n$ 为光滑映射。
+[/SCOPE:s_lemma1_let]
+[SCOPE:s_lemma1_proof|description|引理1的证明]
+[24] 证明：
+[25] 证明的思路简单来说，就是利用 “流形间光滑映射的定义就是在任意一对图中是欧几里得空间之间的光滑映射”，“如果一个映射在一个图里光滑，
+[26] 那么在所有相容的图里也光滑” 以及 “欧几里得空间之间的光滑映射，定义为任意坐标表示下，在任意点处，映射的每个坐标关于自变量的每个坐标都是光滑函数”，
+[27] 从而得出两个条件的等价性。
+[28] 具体展开就很拗口了，对上述描述的严谨性感受不深的读者可选择阅读并思考：
+[SCOPE:s_lemma1_proof_let1|let_bind|必要性中的变量]
+[29] 必要性（$\Rightarrow$）：
+[30] “$f$ 是光滑映射”，等价于 “对于任意 $(m, n)\in M\times N$，分别取 $(m, n)$ 周围任意一个图 $(U, \varphi)$ 和 $f(m, n)$ 周围任意一个图 $(V, \phi)$，都有：$\phi\circ f\circ\varphi^{-1}$ 是一个欧几里得空间到欧几里得空间的光滑映射”。
+[31] 如果我们取上述 $m$ 附近的图 $(U_m, \varphi_m)$ 和 $n$ 附近的图 $(U^n, \varphi^n)$，令 $(U, \varphi)=(U_m, \varphi_m)\times(U^n, \varphi^n)$（见定义 8 ），
+[32] 那么由于欧几里得空间之间的光滑映射的任意分量都是光滑映射，可知在图 $(U_m, \varphi_m)$ 和图 $(U^n, \varphi^n)$ 中 $f_m, f^n$ 分别是光滑映射。
+[33] 由 $m, n$ 的任意性，必要性得证。
+[/SCOPE:s_lemma1_proof_let1]
+[SCOPE:s_lemma1_proof_let2|let_bind|充分性中的变量]
+[34] 充分性（$\Leftarrow$）：
+[35] “对于任意 $m\in M, n\in N$，$f_m$ 和 $f^n$ 为光滑映射”，等价于 “对于任意 $m\in M, n\in N$，取 $m$ 附近的图 $(U_m, \varphi_m)$ 和 $n$ 附近的图 $(U^n, \varphi^n)$，令 $(U_m\times U^n, \varphi_m\times\varphi^n)$ 为 $M\times N$ 在 $(m, n)$ 附近的一个图，且 $\varphi=\varphi_m\times\varphi^n$，
+[36] 那么 $\phi\circ f\circ\varphi^{-1}$ 是一个欧几里得空间到流形 $K$ 的光滑映射”，这又等价于 “$f$ 是光滑映射”，
+[37] 故充分性得证。
+[/SCOPE:s_lemma1_proof_let2]
+[38] 证毕。
+[/SCOPE:s_lemma1_proof]
+[39] 引理 1 的用处就是引出以下定义：
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_def5|description|定义5 李群]
+[40] 定义 5 李群
+[SCOPE:s_def5_let|let_bind|定义5的变量]
+[41] 给定一个实光滑流形 $G$，若 $G$ 配合二元运算 $\cdot$ 构成一个群，并且满足以下条件：
+[42a] (h)=g\cdot h$，$f^g
+[42b] (h)=h\cdot g$，
+[43] 则 $f_g$ 和 $f^g$ 都是 $G\to G$ 的光滑映射；
+[44] 令 $\iota:G\to G$，其中 $\iota(a)=a^{-1}$，
+[45] 则 $\iota$ 是 $G\to G$ 的光滑映射，
+[46] 那么我们说 $G$ 是一个李群。
+[47] 可见，定义 1 和 定义 5 的区别只在第一个条件里映射的定义，前者是用乘积映射，后者是用群运算的所有平移映射。
+
+[/SCOPE:s_def5]
+[/SCOPE:s_def5_let]
+[SCOPE:s_ex1|description|例1 李群的例子]
+[48] 例 1 李群的例子
+[49] 实数轴 $\mathbb{R}$ 和单位圆 $S^1$ 都是流形，都构成李群。
+[50] 见例 1 。
+[51] 矩阵李群，如 $GL(n, \mathbb{R})$，$SL(n, \mathbb{R})$，$GL(n, \mathbb{C})$，$SL(n, \mathbb{C})$
+[52] $GL(n, \mathbb{R})$ 是李群，原因如下。
+[53] 使用定义 5 来证明该群运算符合李群的定义就很方便。
+[SCOPE:s_ex1_let1|let_bind|例1中GL(n,R)的变量]
+[54] 首先，对于任意矩阵 $\mathfrak{A} \in GL(n, \mathbb{R})$，可以定义映射 $f_\mathfrak{A}$，方式就是用 $\mathfrak{A}$ 来左乘 $GL(n, \mathbb{R})$ 中的元素。
+[55] 这样的映射实际上就是一个线性变换，当然是光滑的了；
+[56] 其次，逆映射也是一个线性变换，其系数可以由 $\mathfrak{A}$ 的伴随矩阵计算得出，
+[57] 因此也光滑。
+[58] 综上，$GL(n, \mathbb{R})$ 符合李群定义。
+[/SCOPE:s_ex1_let1]
+[SCOPE:s_ex1_let2|let_bind|例1中其他群的变量]
+[59a] (n)$（保度量变换群）和 $SO
+[59b] (n)$（旋转群）等都是李群。
+[/SCOPE:s_ex1_let2]
+[60] 为了加深对李群的印象，我们再举出一个重要的反例：
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2 环面的稠密单参数子群1]
+[61] 例 2 环面的稠密单参数子群1
+[SCOPE:s_ex2_let1|let_bind|例2中T^2和H的变量]
+[62] 记 $\mathbb{T}^2=S^1\times S^1$ 为李群 $S^1$ 的积李群，
+[63] 即其群乘法为 $S^1$ 的群乘法的积，流形为 $S^1$ 的流形的积。
+[64] 取 $\mathbb{T}^2$ 的子群 $H=\{( \mathrm{e} ^{\theta \mathrm{i} }, \mathrm{e} ^{a_0\theta \mathrm{i} })|\theta\in\mathbb{R}\}$，其中 $a_0$ 是一个无理数。
+[/SCOPE:s_ex2_let1]
+[65] 按以上方式定义的群 $H$ 是一个拓扑群，
+[66] 但不是流形，
+[67] 因而不是李群。
+[68] 这是因为无理数 $a_0$ 导致 $H$ 的图像是环面上密绕的一条线，在任何一个点的任何一个开邻域里都有无数条不连通的线段，
+[69] 因此任何点处都无法找到同构于欧几里得空间的图。
+[70] 不过我们依然可以在群 $H$ 上构造出李群来。
+[SCOPE:s_ex2_let2|let_bind|例2中phi的变量]
+[71] 把 $H$ 的拓扑进行如下改动：定义映射 $\phi:\mathbb{R}\to H$，其中 $\phi(\theta)=( \mathrm{e} ^{\theta \mathrm{i} }, \mathrm{e} ^{a_0\theta \mathrm{i} })$；
+[72] 再利用 $\phi$ 来构造 $H$ 的拓扑为 “$U\subseteq H$ 为开集当且仅当 $\phi^{-1}(U)$ 为 $\mathbb{R}$ 的开集”。
+[73] 这样定义的拓扑空间 $H$ 就是一个同胚于 $\mathbb{R}$ 的李群了。
+
+[/SCOPE:s_ex2]
+[/SCOPE:s_ex2_let2]
+[SCOPE:s_def6|description|定义6 李群同态]
+[74] 定义 6
+[SCOPE:s_def6_let|let_bind|定义6的变量]
+[75] 给定李群之间的映射 $F:G\to H$，其中 $F$ 既是流形间的光滑映射，又是群之间的同态，
+[76] 则称之为一个李群同态（Lie groupe homomorphism）。
+[77] 同构的概念类似，将定义 6 中 “同态” 一词都替换为 “同构（isomorphism）” 即可。
+
+[/SCOPE:s_def6]
+[/SCOPE:s_def6_let]
+[SCOPE:s_def7|description|定义7 子李群]
+[78] 定义 7 子李群
+[SCOPE:s_def7_let|let_bind|定义7的变量]
+[79] 设 $G$ 是一个李群，$H$ 是它的子集。
+[80] 如果 $H$ 是 $G$ 的子群和子流形，
+[81] 那么称 $H$ 为 $G$ 的子李群（Lie subgroup）。
+
+[/SCOPE:s_def7]
+[/SCOPE:s_def7_let]
+[SCOPE:s_thm1|description|定理1]
+[82] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[83] 对于一个联通的李群 $G$，如果 $H$ 是它的子群2，且是一个开集，
+[84] 那么 $H=G$。
+[85] 定理 1 的证明见拓扑群的定理 1 。
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_let]
+[86] 李代数虽然是对李群性质的抽象，
+[87] 但是其本身可以脱离李群来定义，参见李代数文章。
+[88] 事实上，学有余力的学生完全可以在熟悉了线性代数的概念之后直接进入李代数的学习，无需流形的知识3。
+[89] 李代数是李群上特有的一种切向量场的代数，具体联系请参见李群的李代数。
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def5",
+    "target_scope": "s_def1",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "定义5与定义1等价"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def5",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是定义5的例子"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_def7",
+    "edge_type": "counterexample_of",
+    "category": "logic",
+    "note": "例2中H是子群但不是子流形，因此不是子李群"
+  }
+]

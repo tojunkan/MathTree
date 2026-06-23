@@ -1,0 +1,167 @@
+{
+  "article_name": "HsRdNc",
+  "statements": [
+    {
+      "stmt_id": "st_expectation_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_expectation",
+      "exposed_entities": [
+        "X",
+        "x_i",
+        "p_i",
+        "E(X)"
+      ]
+    },
+    {
+      "stmt_id": "st_expectation_remark",
+      "subtype": "remark",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_expectation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bernoulli_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_bernoulli",
+      "exposed_entities": [
+        "X",
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_bernoulli_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_bernoulli",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_binomial_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_binomial",
+      "exposed_entities": [
+        "X",
+        "n",
+        "p",
+        "k",
+        "q"
+      ]
+    },
+    {
+      "stmt_id": "st_binomial_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_binomial",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_hypergeometric_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_hypergeometric",
+      "exposed_entities": [
+        "X",
+        "N",
+        "M",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_hypergeometric_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_hypergeometric",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_hypergeometric_remark",
+      "subtype": "remark",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_hypergeometric",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_bernoulli_assump",
+      "target": "st_bernoulli_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_binomial_assump",
+      "target": "st_binomial_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_hypergeometric_assump",
+      "target": "st_hypergeometric_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_bernoulli_concl",
+      "target": "st_expectation_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "二点分布是离散型随机变量的特例"
+    },
+    {
+      "source": "st_binomial_concl",
+      "target": "st_expectation_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "二项分布是离散型随机变量的特例"
+    },
+    {
+      "source": "st_hypergeometric_concl",
+      "target": "st_expectation_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "超几何分布是离散型随机变量的特例"
+    }
+  ],
+  "unresolved": []
+}

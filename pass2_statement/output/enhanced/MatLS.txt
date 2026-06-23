@@ -1,0 +1,85 @@
+[SCOPE:root|description|矩阵与线性映射]
+文章名: MatLS
+标题: 矩阵与线性映射
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=投影矩阵
+
+[SCOPE:s_example1|description|投影矩阵]
+[0] 例 1 投影矩阵
+[SCOPE:s_example1_let|let_bind|投影变换的变量]
+[1] 我们考虑一个投影变换：将平面上任意几何矢量投影到 $ \hat{\boldsymbol{\mathbf{x}}} + \hat{\boldsymbol{\mathbf{y}}} $ 方向上得到该方向的矢量。
+[2] 已知该变换是线性的，写出变换矩阵（变换前后使用同一组正交归一基底 $ \hat{\boldsymbol{\mathbf{x}}} _1, \hat{\boldsymbol{\mathbf{x}}} _2$）
+[/SCOPE:s_example1_let]
+[3] 解：与 “平面旋转矩阵” 中的方法同理，先考虑各基底的投影变换。
+[4] $ \hat{\boldsymbol{\mathbf{x}}} _1 = (1, 0) ^{\mathrm{T}} $ 投影后变为 $(1, 1) ^{\mathrm{T}} /\sqrt2$，$ \hat{\boldsymbol{\mathbf{x}}} _2$ 投影后同样变为 $(1, 1) ^{\mathrm{T}} /\sqrt2$，
+[5] 所以投影变换矩阵即使两个列矢量组成的矩阵
+[6] \begin{equation}
+\boldsymbol{\mathbf{P}} = \frac{1}{\sqrt{2}} \begin{pmatrix}1 && 1\\ 1 && 1\end{pmatrix} ~.
+\end{equation}
+[7] 注意该变换中虽然每个矢量都映射到同一空间的唯一的矢量，
+[8] 但不同的矢量有可能映射到同一个矢量。
+[9] 所以这是一个多对一映射。
+
+[/SCOPE:s_example1]
+[SCOPE:s_domain_range|description|定义域和值域]
+[10] 式 1 表示的线性映射中，定义域（domain）是 $X$ 空间中的任意矢量，而值域（range）却不一定是整个 $Y$ 空间，也可能是 $Y$ 的一个子空间。
+[11] 任何情况下，线性映射的值域必定是一个矢量空间。
+[12] 例如例 1 中投影变换的值域就是沿 $ \hat{\boldsymbol{\mathbf{x}}} _1 + \hat{\boldsymbol{\mathbf{x}}} _2$ 方向的任意矢量（包括零矢量）构成的一维矢量空间，是二维矢量空间中的一个子空间。
+
+[/SCOPE:s_domain_range]
+[SCOPE:s_matrix_cols|description|矩阵的列]
+[13] 我们先来看第一空间的基底 $ \boldsymbol{\mathbf{\alpha}} _1$ 如何映射到第二空间。
+[14] $ \boldsymbol{\mathbf{\alpha}} _1$ 对应的列矢量是 $(1, 0, \dots) ^{\mathrm{T}} $，作为 $ \boldsymbol{\mathbf{x}} $ 输入矩阵 $ \boldsymbol{\mathbf{A}} $ 得 $ \boldsymbol{\mathbf{y}} $ 等于 $ \boldsymbol{\mathbf{A}} $ 的第一列。
+[15] 同理，矩阵的第 $i$ 列就是 $ \boldsymbol{\mathbf{\alpha}} _i$ 映射到第二个空间的矢量在基底 $\{ \boldsymbol{\mathbf{\beta}} _i\}$ 上的坐标。
+[16] 【未完成】未完成
+
+[/SCOPE:s_matrix_cols]
+[SCOPE:s_matrix_elem|description|矩阵元]
+[SCOPE:s_matrix_elem_let|let_bind|矩阵元变量]
+[17] 线性算符 $A:X\to Y$ 的矩阵记为 $ \boldsymbol{\mathbf{A}} $，矩阵元记为 $A_{i,j}$，如果有一组 $X$ 的正交归一基底 $\xi_j$ 和 $Y$ 的正交归一基底 $\eta_i$，
+[18] 那么矩阵元为
+[/SCOPE:s_matrix_elem_let]
+[19] \begin{equation}
+A_{i,j} = \left\langle \eta_i \middle| A \middle| \xi_j \right\rangle ~,
+\end{equation}
+[20] 这里我们使用了狄拉克符号
+[21] 表示点乘。
+[22] 若 $\xi_j, \eta_i$ 的列矢量为 $ \boldsymbol{\mathbf{\xi}} _j, \boldsymbol{\mathbf{\eta_i}} $，
+[23] 那么也可以记为
+[24] \begin{equation}
+A_{i,j} = \boldsymbol{\mathbf{\eta_i}} ^\dagger { \boldsymbol{\mathbf{A}} } \boldsymbol{\mathbf{\xi_j}} ~.
+\end{equation}
+[25] 证明：把式 2 代入即可：
+[26] \begin{equation}
+\begin{aligned}
+\left\langle \eta_i \middle| A \middle| \xi_j \right\rangle &= \langle{\eta_i}|{ \left(\sum_{i',j'} A_{i',j'} \left\lvert \eta_{i'} \right\rangle \left\langle \xi_{j'} \right\rvert \right) }|{\xi_j}\rangle
+= \sum_{i',j'} A_{i',j'} \left\langle \eta_i \middle| \eta_{i'} \right\rangle \left\langle \xi_{j'} \middle| \xi_j \right\rangle \\
+&= \sum_{i',j'} A_{i',j'} \delta_{i,i'}\delta_{j,j'}
+= A_{i,j}~,
+\end{aligned}
+\end{equation}
+
+跨文章引用:
+  [L0] 矢量空间 → LSpace
+  [L1] 一一对应 → map
+[/SCOPE:s_matrix_elem]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_domain_range",
+    "target_scope": "s_example1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义域和值域以例1为特例说明"
+  },
+  {
+    "source_scope": "s_matrix_cols",
+    "target_scope": "s_matrix_elem",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "矩阵的列是矩阵元的基础"
+  }
+]

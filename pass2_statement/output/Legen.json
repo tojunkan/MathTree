@@ -1,0 +1,310 @@
+{
+  "article_name": "Legen",
+  "statements": [
+    {
+      "stmt_id": "st_legendre_eq",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "P_l(x)",
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_interval_l",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "x",
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_solution_form",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "P_l(x)",
+        "l",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_floor_def",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "[x]"
+      ]
+    },
+    {
+      "stmt_id": "st_examples",
+      "subtype": "example",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rodrigues",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "P_l(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_parity",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_norm_coeff",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_ortho",
+      "exposed_entities": [
+        "A_l"
+      ]
+    },
+    {
+      "stmt_id": "st_orthonorm",
+      "subtype": "theorem",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ortho",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_roots_l",
+      "subtype": "theorem",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "true",
+      "scope_id": "s_props",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_roots_deriv",
+      "subtype": "theorem",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_props",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_endpoints",
+      "subtype": "theorem",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": "true",
+      "scope_id": "s_props",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_zero_value",
+      "subtype": "theorem",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_props",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fourier",
+      "subtype": "theorem",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": "true",
+      "scope_id": "s_props",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivative_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": "true",
+      "scope_id": "s_props",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_series_expansion",
+      "subtype": "assumption",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_series",
+      "exposed_entities": [
+        "c_n"
+      ]
+    },
+    {
+      "stmt_id": "st_recurrence",
+      "subtype": "theorem",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_series",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_even_odd",
+      "subtype": "theorem",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": "true",
+      "scope_id": "s_series",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_constants",
+      "subtype": "theorem",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": "true",
+      "scope_id": "s_series",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_termination",
+      "subtype": "theorem",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": "true",
+      "scope_id": "s_series",
+      "exposed_entities": [
+        "c_l"
+      ]
+    },
+    {
+      "stmt_id": "st_series_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_series",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_generating_func",
+      "subtype": "definition",
+      "clause_range": [
+        35,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_genfunc",
+      "exposed_entities": [
+        "P_l(x)",
+        "r"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_interval_l",
+      "target": "st_solution_form",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_series_expansion",
+      "target": "st_recurrence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_recurrence",
+      "target": "st_even_odd",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_even_odd",
+      "target": "st_constants",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_constants",
+      "target": "st_termination",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_termination",
+      "target": "st_series_result",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

@@ -1,0 +1,178 @@
+[SCOPE:root|description|子列极限、上极限与下极限]
+文章名: SubLim
+标题: 子列极限、上极限与下极限
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=上下极限
+  [1] type=exercise heading=习题 1 title=
+  [2] type=theorem heading=定理 1 title=
+  [3] type=definition heading=定义 2 title=聚点
+  [4] type=theorem heading=定理 2 title=序列极限与聚点
+  [5] type=exercise heading=习题 2 title=
+  [6] type=definition heading=定义 3 title=柯西序列
+  [7] type=theorem heading=定理 3 title=柯西收敛准则
+  [8] type=theorem heading=定理 4 title=压缩映像定理
+  [9] type=exercise heading=习题 3 title=
+
+[0] 与其它文章内容重复。
+[1] 需要删减。
+
+[2] 我们知道，有许多序列是没有极限的，例如简单的振荡序列 $\{(-1)^n\}$: 它在正负 1 之间无穷多次地跳动，
+[3] 因此它不收敛。
+[4] 但是，它的子序列却可以有极限。
+[5] 下面我们要介绍的是上下极限的概念，它可以很好地描述序列的 “振荡” 特征。
+[6] 如下图所示，横坐标为 $n$，纵坐标为序列的第 $n$ 个元素 $x_n$。
+[7] 可以发现序列越来越趋向于在橙色线和蓝色线之间振荡。
+[8] “在无穷远处”，蓝色线 “几乎” 是序列的上界；
+[9] 橙色线 “几乎” 是序列的下界。
+[10] 【图解】图 1：上下极限示意图
+[11] 为了给出严格的描述，我们需要借助上确界和下确界的语言进行定义。
+
+[SCOPE:s_def1|description|定义1 上下极限]
+[12] 定义 1 上下极限
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[13] 设序列 $\{x_n\}$，定义 $l_n=\inf\{x_n,x_{n+1},\cdots\}$，定义 $h_n=\sup\{x_n,x_{n+1},\cdots\}$。
+[/SCOPE:s_def1_let]
+[14] 也就是说，$l_n$ 是序列从 $n$ 开始的后缀的下确界；
+[15] $h_n$ 是序列从 $n$ 开始的后缀的上确界。
+[16] 如果序列有上界，
+[17] 那么 $h_n$ 是良定义的，定义序列的上极限为 $h=\inf\{h_n\}$。
+[18] 如果序列有下界，
+[19] 那么 $l_n$ 是良定义的，定义序列的下极限为 $l=\sup\{l_n\}$。
+[20] 记做
+[21] \begin{equation}
+l= \operatorname {\underline{\lim}}\limits_{n\rightarrow\infty}x_n~,\quad
+h= \operatorname {\overline{\lim}}\limits_{n\rightarrow\infty}x_n~.
+\end{equation}
+[22] 图 1 中蓝线代表的是序列的上极限，橙色线代表的是序列的下极限。
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|习题1]
+[23] 习题 1
+[SCOPE:s_ex1_let|let_bind|习题1的变量]
+[24] 设序列 $\{x_n\}$ 有界，证明序列的下极限 $l$ 可以用 $\{l_n\}$ 的极限表示；
+[/SCOPE:s_ex1_let]
+[25] 序列的上极限 $h$ 可以用 $\{h_n\}$ 的极限表示：
+[26] \begin{equation}
+\begin{aligned}
+l= \operatorname {\underline{\lim}}\limits_{n\rightarrow\infty}x_n=\lim\limits_{n\rightarrow \infty} l_n~,\\
+h= \operatorname {\overline{\lim}}\limits_{n\rightarrow\infty}x_n=\lim\limits_{n\rightarrow \infty} h_n~.
+\end{aligned}
+\end{equation}
+[27] 从这个习题我们可以看出，序列的上下极限的含义正是序列在 “无穷远处” 的上界和下界。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_thm1|description|定理1]
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[28] 定理 1
+[/SCOPE:s_thm1_let]
+[29] 以下三个命题等价：
+[30] $h= \operatorname {\overline{\lim}}\limits_{n\rightarrow\infty}x_n$
+[31] 对任意 $\epsilon>0$，总是存在 $N$，当 $n>N$ 时，总有 $x_n< h+\epsilon$；
+[32] 对任意 $\epsilon>0$，对任意的 $K$，总是存在 $n>K$，使 $x_{n}>h-\epsilon$。
+[33] 存在子列 $\{x_{n_k}\}$，使得 $\lim\limits_{k\rightarrow\infty}x_{n_k}=h$，并对任何其它收敛子列 $\{x_{n_k}\}$，都有 $\lim\limits_{k\rightarrow\infty}x_{n_k}\leq h$
+[34] 【未完成】最好再补充证明
+[35] 对于一个实数的子集，将其中的数洒在数轴上，可能会存在这样的点 $x_0$，它周围有无穷多个点 $x$ 在集合中，而且无论把数轴放大多少倍，也是如此。
+[36] 直观上看，集合中的 “点” 聚集在 $x_0$ 周围，
+[37] 所以我们称这样的点为聚点。
+[38] 如果对任意去心邻域 $U_0(x_0,\delta)$，总是存在集合中的某个元素 $x$ 在这个去心邻域中，
+[39] 那么 $x_0$ 就是聚点。
+[40] 下面我们给出形式化的定义：
+
+[/SCOPE:s_thm1]
+[SCOPE:s_def2|description|定义2 聚点]
+[41] 定义 2 聚点
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[42] 设 $E$ 是 $\mathbb{R}$ 中的一个子集。
+[/SCOPE:s_def2_let]
+[43] 若 $x_0 \in \mathbb{R}$（$x_0$ 不一定属于 $E$）满足：对任意 $\delta>0$，有 $U_0(x_0,\delta)\cap E\not=\emptyset$，
+[44] 则称 $x_0$ 是 $E$ 的一个聚点。
+[45] 我们尝试观察序列的上下极限有哪些性质，是否与聚点有关系。
+[46] 从直观上看，如果把序列 $\{x_n\}$ 当作是集合，
+[47] 那么在上极限附近似乎聚集了大量的点，再以上的就都不是聚点了；
+[48] 在下极限附近也似乎聚集了大量的点，再以下的就都不是聚点了。
+[49] 具体地，我们有以下定理：
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm2|description|定理2 序列极限与聚点]
+[50] 定理 2 序列极限与聚点
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[51] 若有界序列 $\{x_n\}$ 由互不相同的数组成，
+[/SCOPE:s_thm2_let]
+[52] 则上极限为其最大聚点，下极限为其最小聚点。
+[53] 若 $\{x_{n_k}\}$ 为 $\{x_n\}$ 子列，
+[54] 则有 $ \operatorname {\underline{\lim}}\limits_{n\rightarrow\infty}x_n\leq \operatorname {\underline{\lim}}\limits_{k\rightarrow\infty}x_{n_k}\leq \operatorname {\overline{\lim}}\limits_{k\rightarrow\infty}x_{n_k}\leq \operatorname {\overline{\lim}}\limits_{n\rightarrow\infty}x_{n}$。
+[55] $\lim\limits_{n\rightarrow\infty}x_n=a\Leftrightarrow \operatorname {\underline{\lim}}\limits_{n\rightarrow\infty}x_n= \operatorname {\overline{\lim}}\limits_{n\rightarrow\infty}x_n=a$
+
+[/SCOPE:s_thm2]
+[SCOPE:s_ex2|description|习题2]
+[56] 习题 2
+[SCOPE:s_ex2_let|let_bind|习题2的变量]
+[57] 设 $E$ 是 $\mathbb{R}$ 中的一个子集。
+[/SCOPE:s_ex2_let]
+[58] 若 $x$ 是 $E$ 的一个聚点，证明： $\forall \delta>0$，$U(x_0,\delta)\cap E$ 中有无穷多个元素。
+[59] 证明性质 1 和性质 2。
+[60] 利用上下极限证明 $\{\sin n\}$ 发散。
+[61] 序列 $\{x_n\}$ 的上极限为 $h_1$，序列 $\{y_n\}$ 的上极限为 $h_2$，
+[62] 那么序列 $\{x_n+y_n\}$ 的上极限是 $h1+h2$ 吗，$\{x_ny_n\}$ 的上极限是 $h_1\cdot h_2$ 吗？
+[63] 若序列 $\{x_n\}$ 是非负收敛序列，上一问的命题成立吗？
+
+[/SCOPE:s_ex2]
+[SCOPE:s_def3|description|定义3 柯西序列]
+[64] 定义 3 柯西序列
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[65] 设{$x_n$}是一个序列，若对任意 $\epsilon>0$，总是存在 $N$，当 $n,m>N$ 时，有 $\vert x_n-x_m\vert<\epsilon$，
+[/SCOPE:s_def3_let]
+[66] 则称{$x_n$}是一个柯西序列。
+
+[/SCOPE:s_def3]
+[SCOPE:s_thm3|description|定理3 柯西收敛准则]
+[67] 定理 3 柯西收敛准则
+[68] 序列 {$x_n$} 收敛 $\Leftrightarrow$ {$x_n$} 是一个柯西序列。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|定理4 压缩映像定理]
+[69] 定理 4 压缩映像定理
+[SCOPE:s_thm4_let|let_bind|压缩映像定理的变量]
+[70a] (x)$ 在 $[a,b]$ 上有定义，$f([a,b])\subset[a,b]$，且存在一个 $(0,1)$ 内的实数 $q$，满足对任意 $x,y\in[a,b]$，都有 $|f
+[70b] (x)-f
+[70c] (y)|\leq q|x-y|$。
+[/SCOPE:s_thm4_let]
+[71] 那么：存在唯一 $c\in[a,b]$，使 $f(c)=c$。
+[72] 证明：构造序列 $\{x_n=f(x_{n-1})\}$，用柯西准则证明其收敛。
+
+[/SCOPE:s_thm4]
+[SCOPE:s_ex3|description|习题3]
+[73] 习题 3
+[74] 写出柯西收敛准则的否命题形式（用肯定的语气写出：怎样的序列不是柯西序列，怎样的序列不是发散的）。
+[75] 试用闭区间套定理证明压缩映像原理。
+[SCOPE:s_ex3_let|let_bind|习题3的变量]
+[76] 设序列 $\{p_n\}, \{q_n\}$ 满足 $p_{n+1}=p_n+2q_n,\ q_{n+1}=p_n+q_n,\ p_1=q_1=1$，求证 $\left\{\large\frac{p_n}{q_n}\right\}$ 的极限存在，并求其极限。
+[/SCOPE:s_ex3]
+[/SCOPE:s_ex3_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2涉及聚点概念，依赖于定义2"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3涉及柯西序列概念，依赖于定义3"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_thm3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "压缩映像定理的证明使用柯西收敛准则"
+  }
+]

@@ -1,0 +1,451 @@
+{
+  "article_name": "Ode2",
+  "statements": [
+    {
+      "stmt_id": "st_intro_form",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "y",
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_let_exp_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_exp",
+      "exposed_entities": [
+        "y",
+        "r",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_let_exp_deriv",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_let_exp",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_char_eq_def",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "特征方程"
+      ]
+    },
+    {
+      "stmt_id": "st_cases_intro",
+      "subtype": "condition",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_case1",
+      "subtype": "theorem",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_case1",
+      "exposed_entities": [
+        "r1",
+        "r2",
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "stmt_id": "st_case2",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_case2",
+      "exposed_entities": [
+        "r",
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "stmt_id": "st_case3",
+      "subtype": "theorem",
+      "clause_range": [
+        15,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_case3",
+      "exposed_entities": [
+        "omega0",
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "stmt_id": "st_case4",
+      "subtype": "theorem",
+      "clause_range": [
+        20,
+        25
+      ],
+      "truth_value": "true",
+      "scope_id": "s_case4",
+      "exposed_entities": [
+        "r",
+        "omega",
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "stmt_id": "st_existence_unique",
+      "subtype": "theorem",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_detail_case3_intro",
+      "subtype": "remark",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_detail_case3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_detail_case3_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_detail_case3",
+      "exposed_entities": [
+        "C",
+        "r",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_detail_case3_complex_sol",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_detail_case3",
+      "exposed_entities": [
+        "C1",
+        "C2",
+        "omega"
+      ]
+    },
+    {
+      "stmt_id": "st_let_complex_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_complex",
+      "exposed_entities": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "stmt_id": "st_let_complex_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_let_complex",
+      "exposed_entities": [
+        "C3",
+        "C4",
+        "omega"
+      ]
+    },
+    {
+      "stmt_id": "st_detail_case3_real_sol",
+      "subtype": "conclusion",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_detail_case3",
+      "exposed_entities": [
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "stmt_id": "st_detail_case2_intro",
+      "subtype": "remark",
+      "clause_range": [
+        39,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_detail_case2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_detail_case2_limit_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_detail_case2",
+      "exposed_entities": [
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "stmt_id": "st_detail_case2_question",
+      "subtype": "question",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_detail_case2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let_limit_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_limit",
+      "exposed_entities": [
+        "C1",
+        "C2",
+        "C3",
+        "omega"
+      ]
+    },
+    {
+      "stmt_id": "st_let_limit_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_let_limit",
+      "exposed_entities": [
+        "C3",
+        "x",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_small_angle_ref",
+      "subtype": "remark",
+      "clause_range": [
+        47,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_detail_case2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let_exp_assump",
+      "target": "st_let_exp_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_exp_deriv",
+      "target": "st_char_eq_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_case1",
+      "target": "st_cases_intro",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_case2",
+      "target": "st_cases_intro",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_case3",
+      "target": "st_cases_intro",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_case4",
+      "target": "st_cases_intro",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_detail_case3_assump",
+      "target": "st_detail_case3_complex_sol",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_complex_assump",
+      "target": "st_let_complex_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_complex_result",
+      "target": "st_detail_case3_real_sol",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_detail_case3_complex_sol",
+      "target": "st_detail_case3_real_sol",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_detail_case2_limit_assump",
+      "target": "st_detail_case2_question",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_limit_assump",
+      "target": "st_let_limit_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_limit_result",
+      "target": "st_case2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_detail_case3_real_sol",
+      "target": "st_case3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_detail_case2_intro",
+      "target": "st_case2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_small_angle_ref",
+      "target": "st_let_limit_result",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_case1",
+      "target": "st_char_eq_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "情况1是特征方程根分布的特例"
+    },
+    {
+      "source": "st_case2",
+      "target": "st_char_eq_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "情况2是特征方程根分布的特例"
+    },
+    {
+      "source": "st_case3",
+      "target": "st_char_eq_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "情况3是特征方程根分布的特例"
+    },
+    {
+      "source": "st_case4",
+      "target": "st_char_eq_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "情况4是特征方程根分布的特例"
+    },
+    {
+      "source": "st_detail_case3_real_sol",
+      "target": "st_case3",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "详细推导情况3的通解形式"
+    },
+    {
+      "source": "st_let_limit_result",
+      "target": "st_case2",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "详细推导情况2的通解形式"
+    }
+  ],
+  "unresolved": []
+}

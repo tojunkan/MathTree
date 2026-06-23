@@ -1,0 +1,350 @@
+{
+  "article_name": "SeqLim",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "a_n",
+        "A",
+        "epsilon",
+        "N_epsilon"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_divergent",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_proof",
+      "subtype": "example",
+      "clause_range": [
+        15,
+        25
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "2^{-n}",
+        "epsilon",
+        "N_epsilon"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_unique",
+      "subtype": "theorem",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_order",
+      "subtype": "theorem",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_arithmetic",
+      "subtype": "theorem",
+      "clause_range": [
+        35,
+        37
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2",
+      "subtype": "definition",
+      "clause_range": [
+        42,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "x_n",
+        "M",
+        "M_1",
+        "M_2",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_bounded",
+      "subtype": "theorem",
+      "clause_range": [
+        52,
+        52
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_unique",
+      "subtype": "theorem",
+      "clause_range": [
+        53,
+        53
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_reductio_assume",
+      "subtype": "assumption",
+      "clause_range": [
+        55,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_reductio",
+      "exposed_entities": [
+        "a",
+        "b",
+        "epsilon_0",
+        "N_1",
+        "N_2",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_reductio_contra",
+      "subtype": "conclusion",
+      "clause_range": [
+        62,
+        65
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_cond1",
+      "subtype": "theorem",
+      "clause_range": [
+        70,
+        71
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_cond2",
+      "subtype": "theorem",
+      "clause_range": [
+        72,
+        73
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exer1",
+      "subtype": "exercise",
+      "clause_range": [
+        75,
+        77
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exer1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm4",
+      "subtype": "theorem",
+      "clause_range": [
+        78,
+        83
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exer2",
+      "subtype": "exercise",
+      "clause_range": [
+        84,
+        88
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exer2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm5",
+      "subtype": "theorem",
+      "clause_range": [
+        89,
+        92
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm6_inc",
+      "subtype": "theorem",
+      "clause_range": [
+        98,
+        99
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm6",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm6_dec",
+      "subtype": "theorem",
+      "clause_range": [
+        100,
+        101
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm6",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm2_reductio_assume",
+      "target": "st_thm2_reductio_contra",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_reductio_contra",
+      "target": "st_thm2_unique",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_bounded",
+      "target": "st_def2",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_unique",
+      "target": "st_thm1_unique",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_cond1",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_cond2",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm4",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm5",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm6_inc",
+      "target": "st_def2",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm6_dec",
+      "target": "st_def2",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm2_bounded",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "收敛序列的有界性依赖于极限定义"
+    },
+    {
+      "source": "st_thm3_cond1",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "保序性依赖于极限定义"
+    },
+    {
+      "source": "st_thm3_cond2",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "保序性依赖于极限定义"
+    },
+    {
+      "source": "st_thm4",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "四则运算依赖于极限定义"
+    },
+    {
+      "source": "st_thm5",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "夹逼定理依赖于极限定义"
+    },
+    {
+      "source": "st_thm6_inc",
+      "target": "st_def2",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "单调收敛原理依赖于有界性定义"
+    },
+    {
+      "source": "st_thm6_dec",
+      "target": "st_def2",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "单调收敛原理依赖于有界性定义"
+    }
+  ],
+  "unresolved": []
+}

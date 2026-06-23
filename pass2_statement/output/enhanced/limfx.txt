@@ -1,0 +1,180 @@
+[SCOPE:root|description|函数的极限]
+文章名: limfx
+标题: 函数的极限
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=邻域和去心邻域
+  [1] type=definition heading=定义 2 title=极限
+  [2] type=theorem heading=定理 1 title=
+  [3] type=exercise heading=习题 1 title=
+  [4] type=exercise heading=习题 2 title=
+  [5] type=exercise heading=习题 3 title=
+  [6] type=exercise heading=习题 4 title=
+  [7] type=definition heading=定义 3 title=广义极限
+  [8] type=exercise heading=习题 5 title=
+
+[0] 回顾：函数是一个非空集合 $A$ 到另一个集合 $B$ 的对应法则。
+[1] 本文中，函数 $f$ 是指从 $\mathbb R$ 的某个非空子集 $X$ 到 $\mathbb{R}$ 的映射
+
+[2] 【图解】图 1：请添加图片描述
+
+[SCOPE:s_def1|description|邻域和去心邻域]
+[3] 定义 1 邻域和去心邻域
+[4] 定义邻域为：$U(x_0,\delta)=\{x\in \mathbb{R}:|x-x_0|<\delta\}$.
+[5] 定义去心邻域为：$U_0(x_0,\delta)= U(x_0,\delta) \backslash \{x_0\}=\{x\in \mathbb{R}:0<|x-x_0|<\delta\}$.
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|极限]
+[6] 定义 2 极限
+[SCOPE:s_def2_let|let_bind|极限定义中的变量]
+[7] 设函数 $f(x)$ 在 $U_0(x_0,\delta_0)$（$\delta_0>0$）内有定义。
+[8] 若存在实数 $A$，使得对任意 $\epsilon >0$，存在 $\delta>0$，使得当 $x\in U_0(x_0,\delta)$ 时，有 $|f(x)-A|<\epsilon$，
+[9a] (x)$ 以 $A$ 为极限，记为 $\large \lim\limits_{x\rightarrow x_0}f
+[9b] (x)=A$ 或 $f
+[9c] (x)\rightarrow A\ (x\rightarrow x_0)$。
+[/SCOPE:s_def2_let]
+[10] 补充：实际上有更宽泛的定义，只要 $x_0$ 是函数 $f(x)$ 定义域的聚点，就可以定义在该点处的极限。
+[11] 同序列极限的性质类似，函数极限也具有唯一性：
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|极限唯一性]
+[12] 定理 1
+[13] 若函数 $f(x)$ 在 $x_0$ 处极限存在，证明在 $x_0$ 处极限唯一。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex1|description|习题1]
+[14] 习题 1
+[15a] (x)=\left\{ \begin{aligned} 0\ \ &(x<1)\\ 1\ \ &(x\ge 1) \end{aligned} \right.$，判断 $f
+[15b] (x)$ 在 $x_0=1$ 处极限是否存在。
+[16a] (x)=\left\{ \begin{aligned} 0\ \ &(x<1)\\ 1\ \ &(x= 1)\\2\ \ &(x>1) \end{aligned} \right.$，判断 $f
+[16b] (x)$ 在 $x_0=1$ 处极限是否存在。
+[17a] (x)=x\cdot \sin\left(1/x\right) $，判断 $f
+[17b] (x)$ 在 $x_0=0$ 处极限是否存在。
+[18a] (x)= \sin\left(1/x\right) $，判断 $f
+[18b] (x)$ 在 $x_0=0$ 处极限是否存在。
+[19] $f(x)= \mathrm{e} ^x$，证明 $\lim\limits_{x\rightarrow a}= \mathrm{e} ^a,\forall a\in\mathbb{R}$。
+[20] 【图解】图 2：黎曼函数
+[21] 我们来看一个有趣的函数 $f(x)$，它的定义域为 $[0,1]$：
+[22] \begin{equation}
+f(x)=\left\{
+\begin{aligned}
+&1/q && (x=\frac{p}{q}\ (p,q\in \mathbb{N},\frac{p}{q}\text{为既约真分数}))\\
+&0 && (\text{x=0 或 x=1 或 x}\notin \mathbb{Q})~.
+\end{aligned}
+\right.
+\end{equation}
+[23] 我们称它为
+[24] 黎曼（Riemann）函数
+[25] 虽然在定义域内有无穷多个点的函数值不为 $0$，
+[26a] (x)$ 的极限却处处为 $0$，我们之后还将看到，$f
+[26b] (x)$ 在无理点处处连续，
+[27] 但 $f(x)$ 处处不可导。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|习题2]
+[28] 习题 2
+[29a] (x)$ 在 $U(a,\delta_0)(\delta_0>0)$ 上有定义，且满足 $\large\lim\limits_{x\rightarrow a}f
+[29b] (x)=f
+[29c] (a)$，
+[30] 那么对任意极限为 $a$ 的序列 $\{x_n\}$，序列 $\{f(x_n)\}$ 的极限也为 $f(a)$。
+[31] 上述命题反过来也成立。
+[32a] (x)$，满足 $\forall x\in \{a_n\},f
+[32b] (x)\neq 0;\ \forall x \in [0,1]\backslash \{a_n\},f
+[32c] (x)=0$，且 $f
+[32d] (x)$ 在定义域上极限处处为 $0$。
+
+[/SCOPE:s_ex2]
+[33] 【图解】图 3：请添加图片描述
+[34] 如果把去心邻域 $U_0(x_0,\delta_0)$ 分成两块单侧邻域——
+[35] 左空心邻域：$U_0^+(x_0,\delta)=U_0(x_0,\delta)\cap (x_0,+\infty) \{x\in \mathbb{R} :x_0< x< x_0+\delta\}~.$
+[36] 右空心邻域：$U_0^-(x_0,\delta)=U_0(x_0,\delta)\cap (-\infty,x_0) \{x\in \mathbb{R} :x_0-\delta< x< x_0\}~.$
+[37] 那么就可以定义函数的左右极限：
+[38] 设 $f(x)$ 在 $U^+_0(x_0,\delta_0)(\delta_0>0)$ 上有定义。
+[39] 如果存在实数 $A$，使得对任意 $\epsilon >0$，存在 $\delta>0$，当 $x\in U_0^+(x_0,\delta)$ 时，有 $|f(x)-A|<\epsilon$，
+[40a] (x)$ 在点 $x_0$ 的右极限存在，而称 $A$ 为 $f
+[40b] (x)$ 在点 $x_0$ 的右极限，记为 $\lim\limits_{x\rightarrow x_0^+}f
+[40c] (x)=A$ 或 $f(x_0^+)=A$。
+[41] 类似地可以定义左极限存在和左极限。
+
+[42] 习题 3
+[43a] (x)=\left\{ \begin{aligned} 0\ \ &(x<1)\\ 1\ \ &(x= 1)\\2\ \ &(x>1) \end{aligned} \right.$，判断 $f
+[43b] (x)$ 在 $x_0=1$ 处的左极限与右极限。
+[44a] (x)=[x]$（取整函数），判断 $f
+[44b] (x)$ 在 $x_0=1$ 处的左极限与右极限。
+[45a] (x)$ 在 $U_0(x_0,\delta_0)$ 上有定义，证明：$\lim\limits_{x\rightarrow x_0} f
+[45b] (x)=A$ 当且仅当 $\lim\limits_{x\rightarrow x_0^-}f
+[45c] (x)=\lim\limits_{x\rightarrow x_0^+}f
+[45d] (x)=A$。
+
+[46] 称集合 $\{x:|x|>h\}(h>0)$ 为 $\infty$ 的邻域，记为 $U(\infty,h)$（这时就没有必要定义去心邻域了）。
+[47] 同样的可以分成两块单侧邻域：
+[48] \begin{equation}
+\begin{aligned}
+&U^+(\infty,h)=U(\infty,h)\cup (0,\infty)=\{x:x>h\}~,\\
+&U^-(\infty,h)=U(\infty,h)\cup (-\infty,0)=\{x:x<-h\}~.
+\end{aligned}
+\end{equation}
+[49] 这样就可以函数在自变量趋向于无穷大时的极限：
+[50] 设函数 $f(x)$ 在 $U^+(\infty,h_0)$ 上有定义。
+[51] 若存在实数 $A$，使得 $\forall \epsilon >0, \exists X\in U^+(\infty,h_0)$，当 $x>X$ 时，有 $|f(x)-A|<\epsilon$，
+[52a] (x)$ 的极限存在，其极限为 $A$，记为 $\lim\limits_{x\rightarrow +\infty}f
+[52b] (x)=A$ 或 $f
+[52c] (x)\rightarrow A(x\rightarrow +\infty)$。
+[53a] (x)=A$ 和 $\lim\limits_{x\rightarrow \infty}f
+[53b] (x)=A$。
+
+[54] 习题 4
+[55a] (x)$ 在 $U(\infty,h_0)$ 上有定义，证明：$\lim\limits_{x\rightarrow \infty} f
+[55b] (x)=A$ 当且仅当 $\lim\limits_{x\rightarrow -\infty}f
+[55c] (x)=\lim\limits_{x\rightarrow +\infty}f
+[55d] (x)=A$。
+[56a] (x)=a_{|[x]+1|}$，证明：$\lim\limits_{x\rightarrow \infty} f
+[56b] (x)=A$。
+
+[SCOPE:s_def3|description|广义极限]
+[57] 定义 3 广义极限
+[58] 如果自变量趋向于一个值时，函数趋向于无穷大，
+[59] 则可以定义广义极限：
+[SCOPE:s_def3_let|let_bind|广义极限定义中的变量]
+[60a] (x)$ 在 $U_0(x_0,\delta_0)(\delta_0>0)$ 上有定义，若 $\forall M>0,\exists \delta>0$，使得当 $x\in U_0(x,\delta)$ 时，有 $f
+[60b] (x)>M$，
+[61a] (x)$ 趋于 $+\infty$，或称当 $x$ 趋于 $x_0$ 时，$f
+[61b] (x)$ 的广义极限为 $+\infty$。
+[62a] (x)=+\infty$ 或 $f
+[62b] (x)\rightarrow +\infty(x\rightarrow x_0)$。
+[/SCOPE:s_def3_let]
+[63] 此时也称 $f(x)$ 为当 $x$ 趋于 $x_0$ 时的正无穷大量。
+[64] 同样地可以定义负无穷大量和无穷大量。
+[65] 对于函数极限而言，自变量有以下几种变化情况：
+[66] \begin{equation}
+x\rightarrow x_0;\ x\rightarrow x_0^+;\ x\rightarrow x_0^{-};\ x\rightarrow \infty;\ x\rightarrow +\infty;\ x\rightarrow -\infty~.
+\end{equation}
+[67] 对于这六种情况可以定义各自的
+[68] 广义极限
+[69] \begin{equation}
+f(x)\rightarrow A;\ f(x)\rightarrow +\infty;\ f(x)\rightarrow -\infty;\ f(x)\rightarrow \infty~,
+\end{equation}
+[70] 因此一共有 $24$ 种可能的函数极限的情形。
+[71] 但由于它们之间有极大的相似之处，
+[72] 所以很容易进行记忆和想象。
+
+[/SCOPE:s_def3]
+[SCOPE:s_ex5|description|习题5]
+[73] 习题 5
+[74] $f(x)=x^2\sin x$，判断它是不是当 $x\rightarrow \infty$ 时的无穷大量。
+[75a] (x)=1/(x-1)\ (x\neq 1)$，求 $f(1^-),f(1^+),\lim\limits_{x\rightarrow 1}f
+[75b] (x),\lim\limits_{x\rightarrow \infty}f
+[75c] (x)$。
+[/SCOPE:s_ex5]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是定义2的推论"
+  }
+]

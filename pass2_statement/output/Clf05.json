@@ -1,0 +1,280 @@
+{
+  "article_name": "Clf05",
+  "statements": [
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "G(V,q)",
+        "e_1",
+        "e_2",
+        "e_k",
+        "e^1",
+        "e^2",
+        "e^k"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_eq",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "e^i*e_j",
+        "delta^i_j"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "G(V,q)",
+        "A",
+        "v_1",
+        "v_2",
+        "v_k",
+        "v_{k+1}",
+        "v_n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        28,
+        30
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "A^c",
+        "v^{k+1}",
+        "v^{k+2}",
+        "v^n"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        40,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_cor1_let",
+      "exposed_entities": [
+        "G(V,q)",
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1_conclusion",
+      "subtype": "corollary",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": [
+        "A wedge B",
+        "A vee B"
+      ]
+    },
+    {
+      "stmt_id": "st_cor2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        44,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_cor2_let",
+      "exposed_entities": [
+        "G(V,q)",
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_cor2_conclusion",
+      "subtype": "corollary",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor2",
+      "exposed_entities": [
+        "A lcorner B"
+      ]
+    },
+    {
+      "stmt_id": "st_cor3_let",
+      "subtype": "assumption",
+      "clause_range": [
+        51,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_cor3_let",
+      "exposed_entities": [
+        "A",
+        "B",
+        "G(V,q)"
+      ]
+    },
+    {
+      "stmt_id": "st_cor3_conclusion",
+      "subtype": "corollary",
+      "clause_range": [
+        52,
+        52
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor3",
+      "exposed_entities": [
+        "A lcorner B"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        66,
+        66
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "A",
+        "B^bullet(V,q)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        67,
+        67
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "bar A",
+        "bar A^perp"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_let",
+      "subtype": "assumption",
+      "clause_range": [
+        70,
+        70
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3_let",
+      "exposed_entities": [
+        "A",
+        "B",
+        "B^bullet(V,q)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        71,
+        72
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor1_let",
+      "target": "st_cor1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor2_let",
+      "target": "st_cor2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor3_let",
+      "target": "st_cor3_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let",
+      "target": "st_thm2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_let",
+      "target": "st_thm3_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_cor2_conclusion",
+      "target": "st_thm1_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论2的证明用到定理1"
+    },
+    {
+      "source": "st_cor3_conclusion",
+      "target": "st_cor2_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论3的证明用到推论2"
+    },
+    {
+      "source": "st_thm3_conclusion",
+      "target": "st_cor3_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理3的第四条证明仿照推论3"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,33 @@
+[SCOPE:root|description|用极值点大致确定函数图像]
+文章名: DerImg
+标题: 用极值点大致确定函数图像
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+
+[SCOPE:s_example1|description|例1]
+[SCOPE:s_example1_let|let_bind|函数f的变量]
+[0] 求以下函数的极值点，并判断该函数的大致图像
+[1] \begin{equation}
+f(x) = a + \frac{b}{2} x^2 - \frac{c}{4} x^4 + \frac{d}{6} x^6 \quad (a,b,c,d >0)~.
+\end{equation}
+[/SCOPE:s_example1_let]
+[2a] (x)$ 与原函数 $f
+[2b] (x)$
+[3] 先对函数求导，得
+[4] \begin{equation}
+f'(x) = bx - c x^3 + d x^5~.
+\end{equation}
+[5] \begin{equation}
+bx + c x^3 + d x^5 = x[b + c(x^2) + d(x^2)^2 ]~.
+\end{equation}
+[6] \begin{equation}
+f'(x) = d \cdot x (x^2 - x_2^2) (x^2 - x_2^2) = d \cdot x (x + x_1)(x - x_1)(x + x_1)(x - x_2)~.
+\end{equation}
+[7] 用二阶导数判断分类。
+[8] 若二阶导数为正，
+[9] 则是极小值，若为负，
+[10] 则是极大值，若为零，
+[11] 则是鞍点。
+[/SCOPE:s_example1]
+[/SCOPE:root]

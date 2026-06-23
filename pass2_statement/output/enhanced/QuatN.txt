@@ -1,0 +1,181 @@
+[SCOPE:root|description|四元数与旋转矩阵]
+文章名: QuatN
+标题: 四元数与旋转矩阵
+
+[SCOPE:s_intro|description|四元数表示旋转]
+[0] 四元数可以用来简洁地表示三维空间中的旋转，极大地减少了计算量。
+[1] 所有模长为 $1$ 的四元数 $q$ 与所有可能的（绕原点的）三维旋转存在一一对应关系。
+[2] 三维空间中的一个向量表示为标部为 $0$ 的四元数：$  \begin{pmatrix}0, \boldsymbol{\mathbf{v}} \end{pmatrix}  $，简记为 $ \boldsymbol{\mathbf{v}} $。
+[3] 如果我们绕着一个单位向量 ${ \hat{\boldsymbol{\mathbf{n}}} }$ 把 $ \boldsymbol{\mathbf{v}} $ 旋转一个角度 $\theta$，所得的结果应该是哪个向量呢？
+[SCOPE:s_intro_let|let_bind|引入变量 q, v, n, theta]
+[4] 任意模长为 $1$ 的四元数都可以表示为
+[5] \begin{equation}
+q = \left(\cos{\frac{\theta}{2}},\ { \hat{\boldsymbol{\mathbf{n}}} }\sin{\frac{\theta}{2}} \right) ~.
+\end{equation}
+[6] 那么旋转后的向量 $ \boldsymbol{\mathbf{v}} '$ 就可以表示为
+[7] \begin{equation}
+\boldsymbol{\mathbf{v}} ' = q \boldsymbol{\mathbf{v}} q^{-1} = q \boldsymbol{\mathbf{v}} \tilde q~.
+\end{equation}
+[8] 其中 $q^{-1}$ 表示 $q$ 的逆，$\tilde q$ 表示 $q$ 的共轭（
+[9] 定义 2 [链接 L0]
+[10] ），满足 $qq^{-1} = q^{-1}q = (1,0,0,0)$，易证
+[11] \begin{equation}
+q^{-1} = \tilde q = (\cos{\frac{-\theta}{2}},\ { \hat{\boldsymbol{\mathbf{n}}} }\sin{\frac{-\theta}{2}})
+= (\cos{\frac{\theta}{2}},\ -{ \hat{\boldsymbol{\mathbf{n}}} }\sin{\frac{\theta}{2}})~,
+\end{equation}
+[12] 表示绕 $ \hat{\boldsymbol{\mathbf{n}}} $ 旋转 $-\theta$。
+[13] 例如当 $\theta = 0$ 时，$q = (1,0,0,0)$ 是单位元，$q \boldsymbol{\mathbf{v}} q^{-1} = \boldsymbol{\mathbf{v}} $。
+[14] 又例如取 $ \boldsymbol{\mathbf{v}} = (0, 1, 0, 0)$，它代表一个 $x$ 轴上的单位向量。
+[15] 如果想要把它绕着 $z$ 轴上的单位向量转 $\pi/2$，
+[16] 那么结果向量的四元数表示应该是 $(0, 0, 1, 0)$。
+[17] 按照我们定义的规则，旋转表示为四元数 $q=(\sqrt{2}/2, 0, 0, \sqrt{2}/2)$，$q^{-1} = \tilde q = (\sqrt{2}/2,0,0,-\sqrt{2}/2)$，按照四元数的乘法规则易得 $q \boldsymbol{\mathbf{v}} q^{-1}=(0,0,1,0)$。
+
+[/SCOPE:s_intro]
+[/SCOPE:s_intro_let]
+[SCOPE:s_proof|description|证明旋转公式及一一对应]
+[SCOPE:s_proof_let|let_bind|引入变量 q, v, n_hat, theta]
+[18] 直接计算式 2 得（使用连续叉乘的化简以及三角降幂公式）：
+[19] \begin{equation}
+\begin{aligned}
+q \boldsymbol{\mathbf{v}} q^{-1}&= (\cos{\frac{\theta}{2}}, { \hat{\boldsymbol{\mathbf{n}}} }\sin{\frac{\theta}{2}})\cdot (0, \boldsymbol{\mathbf{v}} )\cdot q^{-1}\\&
+=(- \boldsymbol{\mathbf{v}} \cdot { \hat{\boldsymb…[truncated]…athbf{v}} + (1-\cos\theta) \hat{\boldsymbol{\mathbf{n}}} ( \hat{\boldsymbol{\mathbf{n}}} \boldsymbol\cdot \boldsymbol{\mathbf{v}} ) + \sin\theta\ \hat{\boldsymbol{\mathbf{n}}} \boldsymbol\times \boldsymbol{\mathbf{v}} )~,
+\end{aligned}
+\end{equation}
+[20] 这正是直接使用罗德里格旋转公式（
+[21] 式 1 [链接 L1]
+[22] ）使 $ \boldsymbol{\mathbf{v}} $ 绕 ${ \hat{\boldsymbol{\mathbf{n}}} }$ 旋转 $\theta$ 的结果。
+[23] 一点补充：考虑到四元数限定向量方向时退化为复数（见四元数的讨论），
+[24] 故 $ \boldsymbol{\mathbf{v}} \parallel{ \hat{\boldsymbol{\mathbf{n}}} }$ 的情况其实可以直接套用复数的交换性来得到，
+[25] 即 $qvq^{-1}=qq^{-1}v=v$。
+[/SCOPE:s_proof_let]
+[SCOPE:s_proof_correspondence|description|一一对应证明]
+[SCOPE:s_proof_corr_let|let_bind|引入变量 q1, q2, v]
+[26] 再来证明 $q$ 和三维旋转的一一对应关系：若 $q_1,q_2$ 表示同一个旋转，
+[27] 那么对任意 $ \boldsymbol{\mathbf{v}} $ 都有
+[28] \begin{equation}
+q_1 \boldsymbol{\mathbf{v}} \tilde q_1 = q_2 \boldsymbol{\mathbf{v}} \tilde q_2~.
+\end{equation}
+[29] 也就是对任意 $ \boldsymbol{\mathbf{v}} $ 都有
+[30] \begin{equation}
+\boldsymbol{\mathbf{v}} = (\tilde q_1q_2) \boldsymbol{\mathbf{v}} \widetilde{(\tilde q_1q_2)}~,
+\end{equation}
+[31] 所以必定有 $\tilde q_1q_2 = 1$，
+[32] 即 $q_2 = \tilde q_1^{-1} = q_1$。
+[/SCOPE:s_proof_corr_let]
+[33] 证毕。
+
+[/SCOPE:s_proof]
+[/SCOPE:s_proof_correspondence]
+[SCOPE:s_composition|description|旋转的复合]
+[34] 四元数的乘法运算（式 3 ）可以把两次旋转合并为一次旋转。
+[35] 注意 $q_2q_1$ 表示先做 $q_1$ 的旋转，再做 $q_2$ 的旋转。
+[36] 另外易证 $(q_2q_1)^{-1} = q_1^{-1} q_2^{-1} = \tilde q_1\tilde q_2$。
+[37] 由于一般来说四元数乘法不满足交换律，
+[38] 所以两次旋转也一般不能交换，
+[39] 除非两次转动的转轴（两四元数的矢部）共线。
+[SCOPE:s_composition_let|let_bind|引入变量 q1, q2, v]
+[40] 证明：令 $ \boldsymbol{\mathbf{v}} $ 经过 $q_1$ 旋转变为 $ \boldsymbol{\mathbf{v}} '$，再经过 $q_2$ 旋转变为 $ \boldsymbol{\mathbf{v}} ''$，
+[41] 则
+[42] \begin{equation}
+\boldsymbol{\mathbf{v}} '' = q_2 \boldsymbol{\mathbf{v}} 'q_2^{-1} = q_2(q_1 \boldsymbol{\mathbf{v}} q_1^{-1}) q_2^{-1} = (q_2q_1) \boldsymbol{\mathbf{v}} (q_1^{-1} q_2^{-1}) = (q_2q_1) \boldsymbol{\mathbf{v}} (q_2q_1)^{-1}~,
+\end{equation}
+
+[/SCOPE:s_composition]
+[/SCOPE:s_composition_let]
+[SCOPE:s_rotation_matrix|description|旋转矩阵]
+[SCOPE:s_rotation_matrix_let|let_bind|引入变量 q, s, v, theta]
+[43] 令四元数 $q = (s, \boldsymbol{\mathbf{v}} )$ 表示绕 $ \hat{\boldsymbol{\mathbf{v}}} $ 方向以右手定则旋转 $\theta$ 的矩阵，其中
+[44] \begin{equation}
+s = \cos\frac{\theta}{2} ~,\qquad
+\left\lvert \boldsymbol{\mathbf{v}} \right\rvert = \sin\frac{\theta}{2}~.
+\end{equation}
+[45] 则对应的三维旋转矩阵（
+[46] 式 3 [链接 L2]
+[47] ）可以表示为
+[48] \begin{equation}
+\boldsymbol{\mathbf{R}} =
+\begin{pmatrix}
+1 - 2v_y^2 - 2v_z^2 & 2v_xv_y - 2sv_z & 2v_x v_z + 2s v_y\\
+2v_x v_y + 2sv_z & 1 - 2v_x^2 - 2v_z^2 & 2v_y v_z - 2s v_x\\
+2v_x v_z - 2s v_y & 2v_y v_z + 2s v_x & 1 - 2v_x^2 - 2v_y^2
+\end{pmatrix}~.
+\end{equation}
+[/SCOPE:s_rotation_matrix_let]
+[49] 特殊地，$\theta = 0$ 时，四元数为 $(1,0,0,0)$，对应单位矩阵，无任何旋转。
+[50] 另外由上一节的分析可知，若 $q_i$ 的旋转矩阵为 $ \boldsymbol{\mathbf{R}} _i$，
+[51] 那么 $q_1q_2$ 对应的旋转矩阵就是 $ \boldsymbol{\mathbf{R}} _1 \boldsymbol{\mathbf{R}} _2$。
+
+[/SCOPE:s_rotation_matrix]
+[SCOPE:s_time_derivative_let|let_bind|引入变量 R, omega, q, t]
+[SCOPE:s_time_derivative|description|时间导数]
+[52] 若从坐标系 $B$ 到坐标系 $A$ 的基底变换矩阵为 $ \boldsymbol{\mathbf{R}} $，当 $B$ 相对于 $A$ 绕原点以角速度 $ \boldsymbol{\mathbf{\omega}} $ 旋转时有（式 2 ）
+[53] \begin{equation}
+\dot{ \boldsymbol{\mathbf{R}} } = \boldsymbol{\mathbf{\Omega}} \boldsymbol{\mathbf{R}} ~.
+\end{equation}
+[54] 其中 $ \boldsymbol{\mathbf{\Omega}} $ 乘以任意位置矢量 $ \boldsymbol{\mathbf{r}} $ 等于 $ \boldsymbol{\mathbf{\omega}} \boldsymbol\times \boldsymbol{\mathbf{r}} $
+[55] \begin{equation}
+\boldsymbol{\mathbf{\Omega}} = \begin{pmatrix}
+0 & -\omega_z & \omega_y\\
+\omega_z & 0 & -\omega_x\\
+-\omega_y & \omega_x & 0
+\end{pmatrix} ~.\end{equation}
+[56] 若旋转矩阵 $ \boldsymbol{\mathbf{R}} $ 对应的四元数为 $q(t)$，
+[57] 则
+[58] \begin{equation}
+\dot {q} = \frac12 (0, \boldsymbol{\mathbf{\omega}} ) q~,
+\end{equation}
+[59] 这里的 $\dot{q}$ 表示对四个标量中的每个分别求导。
+[60] 推导：把 ${q}(t+\Delta t)$ 分解为 ${q}(t)$ 和 ${q}_1(\Delta t)$ 两次旋转，
+[61] \begin{equation}
+\dot {q}
+= \lim_{\Delta t\to 0}\frac{{q}(t+\Delta t) - {q}(t)}{\Delta t}
+= \lim_{\Delta t\to 0}\frac{{q}_1(\Delta t) - (1,0,0,0)}{\Delta t}q(t)~.
+\end{equation}
+[62] 其中 ${q}_1(t)$ 相当于以瞬时角速度 $ \boldsymbol{\mathbf{\omega}} $ 旋转时间 $t$
+[63] \begin{equation}
+{q_1}(t) = (\cos\frac{\omega t}{2},\ \ \hat{\boldsymbol{\mathbf{\omega}}} \sin\frac{\omega t}{2})~.
+\end{equation}
+[64] 注意 $q_1(0) = (1,0,0,0)$，
+[65] 所以
+[66] 式 13 [链接 L3]
+[67] 中的极限就是
+[68] \begin{equation}
+\lim_{t\to 0}\frac{{q}_1(t) - {q}_1(0)}{\Delta t} = \dot{q}_1(0) = \frac{1}{2}(0, \boldsymbol{\mathbf{\omega}} )~.
+\end{equation}
+[69] 式 13 [链接 L4]
+[70] 式 12 [链接 L5]
+[/SCOPE:s_time_derivative_let]
+[/SCOPE:s_time_derivative]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_proof",
+    "target_scope": "s_intro",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明旋转公式依赖前面的定义"
+  },
+  {
+    "source_scope": "s_composition",
+    "target_scope": "s_intro",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "复合旋转基于旋转表示"
+  },
+  {
+    "source_scope": "s_rotation_matrix",
+    "target_scope": "s_intro",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "旋转矩阵由四元数导出"
+  },
+  {
+    "source_scope": "s_time_derivative",
+    "target_scope": "s_rotation_matrix",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "时间导数基于旋转矩阵"
+  }
+]

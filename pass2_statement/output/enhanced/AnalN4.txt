@@ -1,0 +1,971 @@
+[SCOPE:root|description|Rudin 实分析与复分析笔记 1]
+文章名: AnalN4
+标题: Rudin 实分析与复分析笔记 1
+
+[SCOPE:s_chap1|description|Chap 1. 抽象积分]
+[SCOPE:s_1_1|description|1.1 指数函数性质]
+[0a] (a) 对每一个复数 $z, e^{z} \neq 0$.
+[0b] (b) $\exp$ 的导数是它自己。
+[1] (c) $\exp$ 限制在实轴上是单调增加的正函数，且当 $x \rightarrow \infty$ 时，$\mathrm{e}^{x} \rightarrow \infty$; 当 $x \rightarrow-\infty$ 时，$\mathrm{e}^{x} \rightarrow 0$.
+[2] (d) 存在一个正数 $\pi$ 使得 $\mathrm{e}^{ \mathrm{i} \pi / 2}=\mathrm{i}$, 并使得 $\mathrm{e}^{z}=1$ 当且仅当 $z /(2 \pi \mathrm{i})$ 是整数。
+[3a] （e）$\exp$ 是周期函数，其周期是 $2 \pi \mathrm{i}$.
+[3b] (f) 映射 $t \rightarrow \mathrm{e}^{\mathrm{i}}$ 将实轴映到单位圆上。
+[4a] （g）若 $w$ 是复数且 $w \neq 0$,
+[4b] 则存在某个 $z$ 使 $w=\mathrm{e}^{z}$.
+[/SCOPE:s_1_1]
+[SCOPE:s_1_2|description|1.2 拓扑定义]
+[5a] (a) 集 $X$ 的子集族 $\tau$ 称为 $X$ 上的一个拓扑（topology）, 若 $\tau$ 具有如下三个性质：
+[5b] (i) $\varnothing \in \tau$ 及 $X \in \tau$.
+[5c] (ii) 若 $V_{1} \in \tau, i=1, \cdots, n$, 则 $V_{1} \cap V_{2} \cap \cdots \cap V_{n} \in \tau$.
+[5d] (iii) 若 $\left\{V_{a}\right\}$ 是由 $\tau$ 的元素构成的集族（有限、可数或不可数）, 则 $\bigcup_{a} V_{a} \in \tau$.
+[5e] (b) 若 $\tau$ 是 $X$ 上的拓扑，
+[6] 则称 $X$ 为一个拓扑空间（topological space）, 且 $\tau$ 的元素称为 $X$ 的开集。
+[7] (c) 若 $X$ 和 $Y$ 为拓扑空间，且 $f$ 是 $X$ 到 $Y$ 内的映射，而对 $Y$ 的每一个开集 $V, f^{-1}(V)$ 是 $X$ 的开集，
+[8] 则称 $f$ 为连续的.
+[/SCOPE:s_1_2]
+[SCOPE:s_1_3|description|1.3 σ-代数与可测函数]
+[9a] (a) 集 $X$ 的子集族 $\mathfrak{M}$ 称为 $X$ 的一个 $\sigma$-代数, 若 $\mathfrak{M}$ 具有如下性质：
+[9b] (i) $X \in \mathfrak{M}$.
+[9c] (ii) 若 $A \in \mathfrak{M}$, 则 $A^{c} \in \mathfrak{M}$, 其中 $A^{c}$ 是 $A$ 关于 $X$ 的余集。
+[10a] (iii) 若 $A=\bigcup_{n=1}^{\infty} A_{n}$ 且 $A_{n} \in \mathfrak{M}, n=1,2,3, \cdots$, 则 $A \in \mathfrak{M}$.
+[10b] (b) 若 $\mathfrak{M}$ 是 $X$ 的 $\sigma$-代数，
+[11] 则称 $X$ 为一个可测空间（measurable space）, 且 $\mathfrak{M}$ 的元素称为 $X$ 的可测集（measurable set）. (c) 若 $X$ 是可测空间，$Y$ 是拓扑空间，$f$ 是 $X$ 到 $Y$ 内的映射，而对 $Y$ 的每一个开集 $V$, $f^{-1}(V)$ 是 $X$ 的可测集，
+[12] 则 $f$ 称为可测的.
+[/SCOPE:s_1_3]
+[SCOPE:s_1_5|description|1.5 连续性的点态定义]
+[13a] 若对 $f\left(x_{0}\right)$ 的每一个邻域 $V$, 对应有 $x_{0}$ 的一个邻域 $W$, 使得 $f(W) \subset V$,
+[13b] 则称 $X$ 到 $Y$ 内的映射 $f$ 在点 $x_{0} \in X$ 连续.
+[14] 1.5 设 $X$ 和 $Y$ 是拓扑空间，$f$ 是 $X$ 到 $Y$ 内的映射。
+[15] 当且仅当 $f$ 在 $X$ 的每一点连续时，映射 $f$ 是连续的.
+[/SCOPE:s_1_5]
+[SCOPE:s_1_6|description|1.6 可测集性质与σ-环]
+[16a] (a) 空集可测，
+[16b] (c) 可测集的可数交可测。
+[17] (d) 由于 $A-B = B^C\cap A$，若 $A,B \in \mathfrak{M}$，
+[18] 那么 $A-B\in \mathfrak{M}$.
+[19] 若 $\sigma$-代数的定义中，只要求对有限并封闭，
+[20] 则称为一个代数（algebra）。
+[21] （私货）$X$ 子集组成的 $\sigma$-代数是包含了 $X$ 的 $\sigma$-环。
+[22] 证明 $\sigma$-代数都是 $\sigma$-环：$A-B = A\cap B^c$；
+[23] 证明包含 $X$ 的 $\sigma$-环是 $\sigma$-代数：$A^c = X-A$。
+[24] 图 1：$\sigma$-环和 $\sigma$-代数
+[/SCOPE:s_1_6]
+[SCOPE:s_1_7|description|1.7 连续与可测函数的复合]
+[25] 1.7 简言之，连续函数的连续函数是连续的; 可测函数的连续函数是可测的。
+[26] 设 $Y$ 和 $Z$ 为拓扑空间，且 $g: Y \rightarrow Z$ 是连续的。
+[27a] (a)若 $X$ 是拓扑空间，$f: X \rightarrow Y$ 是连续的，且 $h=g \circ f$,
+[27b] 则$h: X \rightarrow Z$ 是连续的。
+[28a] (b)若 $X$ 是可测空间，$f: X \rightarrow Y$ 是可测的，且 $h=g \circ f$,
+[28b] 则$h: X \rightarrow Z$ 是可测的。
+[/SCOPE:s_1_7]
+[SCOPE:s_1_8|description|1.8 二元连续函数复合]
+[29a] (x)=\Phi(u
+[29b] (x), v
+[29c] (x))$, 则 $h: X \rightarrow Y$ 是可测的。
+[/SCOPE:s_1_8]
+[SCOPE:s_1_9|description|1.9 复可测函数性质]
+[30] 1.9 设 $X$ 是可测空间。
+[31] 下面的命题是定理 1.7 和定理 1.8 的推论：
+[32a] (a)若 $u$ 和 $v$ 是 $X$ 上的实可测函数，$f=u+\mathrm{i} v$,
+[32b] 则$f$ 为 $X$ 上的复可测函数。
+[33] (b) 若 $f=u+\mathrm{i} v$ 是 $X$ 上的复可测函数，
+[34] 则 $u, v,|f|$ 都是 $X$ 上的实可测函数。
+[35] (c) 若 $f$ 及 $g$ 是 $\mathrm{X}$ 上的复可测函数，
+[36] 则 $f+g$ 及 $f g$ 亦然。
+[37a] (d)若 $E$ 是 $X$ 上的可测集，且 $\chi_{E}(x)=  \begin{cases}1 & \text { 当 } x \in E, \\ 0 & \text { 当 } x \notin E,\end{cases} $,
+[37b] 则$\chi_{E}$ 是可测函数。
+[38] 我们称 $\chi_{E}$ 为集 $E$ 的特征函数（characteristic function）. 整本书中，字母 $\chi$ 将专用于表示特征函数。
+[39] (e) 若 $f$ 为 $X$ 上的复可测函数，
+[40] 则存在 $X$ 上的复可测函数 $\alpha$, 使得 $|\alpha|=1$, 且 $f=$ $\alpha|f|$.
+[/SCOPE:s_1_9]
+[SCOPE:s_1_10|description|1.10 生成σ-代数]
+[41] 1.10 若 $\mathscr{F}$ 为 $X$ 的任意子集族，
+[42] 则在 $X$ 内存在一个最小的 $\sigma$-代数 $\mathfrak{M}^{*}$, 使得 $M \subset \mathfrak{M}^{*}$. $\mathfrak{M}^{*}$ 有时称为由 $\mathscr{F}$ 生成的 $\sigma$-代数。
+[/SCOPE:s_1_10]
+[SCOPE:s_1_11|description|1.11 博雷尔集]
+[43] 1.11 设 $X$ 为拓扑空间。
+[44] 由定理 1.10, 在 $X$ 内存在一个最小的 $\sigma$-代数 $\mathscr B$，使得 $X$ 内每一个开集都属于 $\mathscr B$。
+[45] 就称 $\mathscr B$ 的元素为 $X$ 的博雷尔集（Borel set）。
+[46] 特别地，每个闭集是博雷尔集（由定义，它是开集的余集）, 且闭集的一切可数并 $F_{\sigma}$ 及开集的一切可数交 $G_{\delta}$ 都是博雷尔集。
+[47] 该记号来源于豪斯多夫（Hausdorff）. 字母 $F$ 及 $G$ 分别用于闭集及开集，而 $\sigma$ 用于并（Summe）, $\delta$ 用于交（Durchschnitt）. 例如，每个半开区间 $[a, b)$ 是 $R^{1}$ 内的一个 $G_{\delta}$ 集和一个 $F_{\sigma}$ 集。
+[48] 因为 $\mathscr{B}$ 是 $\sigma$-代数，我们现在可以把 $X$ 看做一个可测空间，而博雷尔集则起着可测集的作用。
+[49] 更简洁地，考虑可测空间 $(X, \mathscr{B})$. 若 $f: X \rightarrow Y$ 是 $X$ 的连续映射，其中 $Y$ 为任意拓扑空间，由定义，显然对 $Y$ 内每个开集 $V, f^{-1}(V) \in \mathscr{B}$. 换句话说，$X$ 的每个连续映射是博雷尔可测的。
+[50] 博雷尔可测映射通常称为博雷尔映射或博雷尔函数.
+[/SCOPE:s_1_11]
+[SCOPE:s_1_12|description|1.12 可测映射性质]
+[51] 1.12 假设 $\mathfrak{M}$ 是 $X$ 内的 $\sigma$-代数，$Y$ 为拓扑空间，$f$ 是从 $\mathrm{X}$ 到 $\mathrm{Y}$ 的一个映射。
+[52] (a) 若 $\Omega$ 为所有集 $E \subset Y$ 使得 $f^{-1}(E) \in \mathfrak{M}$ 的集族，
+[53] 则 $\Omega$ 为 $Y$ 内的 $\sigma$-代数。
+[54] (b) 若 $f$ 可测且 $E$ 为 $Y$ 内的博雷尔集，
+[55] 则 $f^{-1}(E) \in \mathfrak{M}$.
+[56] (c) 若 $Y=[-\infty, \infty]$, 且对每一个实数 $\alpha, f^{-1}((\alpha, \infty]) \in \mathfrak{M}$，
+[57] 则 $f$ 可测。
+[58a] (d)若 $f$ 可测，$Z$ 为拓扑空间，$g: Y \rightarrow Z$ 为博雷尔映射，且 $h=g \circ f$,
+[58b] 则$h: X \rightarrow Z$ 可测。
+[/SCOPE:s_1_12]
+[SCOPE:s_1_16|description|1.16 简单函数]
+[59] 1.16 在可测空间 $X$ 上。
+[60] 值域仅由有限个点组成的复函数 $s$ 称为简单函数. 这里是指非负简单函数，其值域为 $[0, \infty)$ 的有限子集。
+[61a] (x)=\alpha_{i}\right\}$, 显然 $s=\sum_{i=1}^{n} \alpha_{i} \chi_{A_{i}}$, 在这里 $\chi_{A_{i}}$ 按照 1.9
+[61b] (d) 所定义，是 $A_{i}$ 的特征函数。
+[/SCOPE:s_1_16]
+[SCOPE:s_1_17|description|1.17 可测函数逼近]
+[62] 1.17 设 $f:X \rightarrow[0, \infty]$ 可测，
+[63a] (a) $0 \leqslant s_{1} \leqslant s_{2} \leqslant \cdots \leqslant f$.
+[63b] (b) 对每个 $x \in X$, 当 $n \rightarrow \infty$ 时，$s_{n}
+[63c] (x) \rightarrow f
+[63d] (x)$.
+[/SCOPE:s_1_17]
+[SCOPE:s_1_18|description|1.18 测度定义]
+[64] 1.18 (a) 正测度为一个定义在 $\sigma$-代数 $\mathfrak{M}$ 上的函数 $\mu$, 其值域在 $[0, \infty]$ 内，并且是可数可加的。
+[65] 即若 $\left\{A_{i}\right\}$ 为 $\mathfrak{M}$ 中互不相交的可数集族，
+[66] 则 $\mu\left(\bigcup_{i=1}^{\infty} A_{i}\right)=\sum_{i=1}^{\infty} \mu\left(A_{i}\right)$. 为避免麻烦，我们假设至少对一个 $A \in \mathfrak{M}, \mu(A)<\infty$.
+[67] (b) 测度空间（measure space）是一个可测空间，具有定义在其可测集的 $\sigma$-代数上的正测度。
+[68] (c) 复测度是定义在一个 $\sigma$-代数上的复值可数可加函数。
+[/SCOPE:s_1_18]
+[SCOPE:s_1_19|description|1.19 测度性质]
+[69] 1.19 设 $\mu$ 为 $\sigma$-代数 $\mathfrak{M}$ 上的正测度，
+[70] 则
+[71] (a) $\mu(\varnothing)=0$.
+[72] (b) 若 $A_{1}, \cdots, A_{n}$ 均为 $\mathfrak{M}$ 的两两不相交的元素，
+[73] 则
+[74] $\mu\left(A_{1} \cup \cdots \cup A_{n}\right)=\mu\left(A_{1}\right)+\cdots+\mu\left(A_{n}\right) .$
+[75a] (c)若 $A, B \in \mathfrak{M}$,
+[75b] 则$A \subset B$ 蕴含着 $\mu(A) \leqslant \mu(B)$.
+[76a] (d)若 $A=\bigcup_{n=1}^{\infty} A_{n}, A_{n} \in \mathfrak{M}$, 且 $A_{1} \subset A_{2} \subset A_{3} \subset \cdots$,
+[76b] 则当 $n \rightarrow \infty$ 时，$\mu\left(A_{n}\right) \rightarrow \mu(A)$.
+[77] (e) 若 $A=\bigcap_{n=1}^{\infty} A_{n}, A_{n} \in \mathfrak{M}$, $A_{1} \supset A_{2} \supset A_{3} \supset \cdots$, 且 $\mu\left(A_{1}\right)$ 有限，
+[78] 则当 $n \rightarrow \infty$ 时，$\mu\left(A_{n}\right) \rightarrow \mu(A)$.
+[79a] (c) 外，对复测度也成立;
+[79b] (b) 称为有限可加性;
+[79c] (c) 称为单调性.
+[/SCOPE:s_1_19]
+[SCOPE:s_1_20|description|1.20 测度空间例子]
+[80] 1.20 测度空间的简单例子。
+[81] (a) $X$ 为任意集，对任意 $E \subset X$, 若 $E$ 为无穷集，定义 $\mu(E)=\infty$, 当 $E$ 为有限集时，令 $\mu(E)$ 为 $E$ 的点数。
+[82] 这个 $\mu$ 称为 $X$ 上的计数测度.
+[83] (b) 固定 $x_{0} \in X$, 对任意 $E \subset X$, 若 $x_{0} \in E$, 定义 $\mu(E)=1$; 若 $x_{0} \notin E$, 定义 $\mu(E)=0$. 这 个 $\mu$ 称为集中在 $x_{0}$ 的单位质量.
+[84a] (c) 令 $\mu$ 是集 $\{1,2,3, \cdots\}$ 上的计数测度，令 $A_{n}=\{n, n+1, n+2, \cdots\}$, 则 $\cap A_{n}=\varnothing$, 但对 $n=1,2,3, \cdots, \mu\left(A_{n}\right)=\infty$. 这表明定理 1.19
+[84b] (e) 中的假设并非多余的。
+[/SCOPE:s_1_20]
+[SCOPE:s_1_30|description|1.30 L^1(μ)定义]
+[85] 1.30 我们定义 $L^{1}(\mu)$ 是所有使得 $\int_{X}|f| \mathrm{d} \mu<\infty$ 的、$X$ 上的复可测函数 $f$ 的集族。
+[/SCOPE:s_1_30]
+[SCOPE:s_1_31|description|1.31 复函数积分定义]
+[86] 1.31 若 $f=u+\mathrm{i} v$, 这里 $u$ 和 $v$ 是 $X$ 上的实可测函数，且 $f \in L^{1}(\mu)$, 则对每一个可测集 $E$ 定义 $\int_{E} f \mathrm{~d} \mu=\int_{E} u^{+} \mathrm{d} \mu-\int_{E} u^{-} \mathrm{d} \mu+\mathrm{i} \int_{E} v^{+} \mathrm{d} \mu-\mathrm{i} \int_{E} v^{-} \mathrm{d} \mu$
+[/SCOPE:s_1_31]
+[SCOPE:s_1_32|description|1.32 线性性]
+[87] 1.32 设 $f$ 和 $g \in L^{1}(\mu)$, 且 $\alpha$ 和 $\beta$ 是复数，
+[88] 则 $\alpha f+\beta g \in L^{1}(\mu)$, 且 $\int_{x}(\alpha f+\beta g) \mathrm{d} \mu=\alpha \int_{x} f \mathrm{~d} \mu+\beta \int_{x} g \mathrm{~d} \mu$
+[/SCOPE:s_1_32]
+[SCOPE:s_1_34|description|1.34 勒贝格控制收敛定理]
+[89a] (x)=\lim _{n \rightarrow \infty} f_{n}
+[89b] (x)$ 对每一个 $x \in X$ 成立。
+[90a] 若存在一个函数 $g \in L^{1}(\mu)$ 使得 $\left|f_{n}(x)\right| \leqslant g(x) \quad(n=1,2,3, \cdots ; x \in X)$,
+[90b] 则$f \in L^{1}(\mu)$, $\lim _{n \rightarrow \infty} \int_{x}\left|f_{n}-f\right| \mathrm{d} \mu=0$, 并且 $\lim _{n \rightarrow \infty} \int_{X} f_{n} \mathrm{~d} \mu=\int_{X} f \mathrm{~d} \mu$.
+[/SCOPE:s_1_34]
+[SCOPE:s_1_35|description|1.35 几乎处处概念]
+[91] 1.35 设 $P$ 是对于点 $x$ 可以具有或者不具有的一种性质。
+[92a] (x)>0$ ”, 若 $\left\{f_{n}\right\}$ 是给定的函数序列，$P$ 可以是性质 “ $\left\{f_{n}
+[92b] (x)\right\}$ 收敛”. 如果 $\mu$ 是一个 $\sigma$-代数 $\mathfrak{M}$ 上的测度，$E \in \mathfrak{M}$, “$P$ 在 $E$ 上几乎处处成立” (简记为 “ $P$ 在 $E$ 上 a. e. 成立") 这句话意味着：存在一个 $N \in \mathfrak{M}$, 使得 $\mu(N)=0, N \subset E$, 并且 $P$ 在 $E-N$ 的每一点上成立。
+[93] 当然 “几乎处处” 这个概念非常强烈地依赖于所给定的测度。
+[94] 当明确要求指出测度的时侯，我们将记作 “a. e. $[\mu]$”.
+[/SCOPE:s_1_35]
+[SCOPE:s_1_36|description|1.36 测度完备化]
+[95] 1.36 设 $(X, \mathfrak{M}, \mu)$ 是一个测度空间，$\mathfrak{M}^*$ 是所有这样的 $E \subset X$ 的集族，对于 $E$ 存在集 $A$ 和 $B \in \mathfrak{M}$, 使得 $A \subset E \subset B$, 且 $\mu(B-A)=0$, 在这种情况下，定义 $\mu(E)=\mu(A)$, 则 $\mathfrak{M}^{*}$ 是一个 $\sigma$-代数，且 $\mu$ 是 $\mathfrak{M}^{*}$ 上的一个测度。
+[/SCOPE:s_1_36]
+[SCOPE:s_1_38|description|1.38 级数积分交换]
+[96a] (x)=\sum_{n=1}^{\infty} f_{n}
+[96b] (x)$ 对几乎所有的 $x$ 收敛，$f \in L^{1}(\mu)$, 并且 $\int_{X} f \mathrm{~d} \mu=\sum_{n=1}^{\infty} \int_{X} f_{n} \mathrm{~d} \mu$
+[/SCOPE:s_1_38]
+[SCOPE:s_1_41|description|1.41 博雷尔-坎泰利引理]
+[97] 1.41 设 $\left\{E_{k}\right\}$ 是在 $X$ 内的可测集序列，满足 $\sum_{k=1}^{\infty} \mu\left(E_{k}\right)<\infty$, 则几乎所有的 $x \in X$, 至多属于有限个集 $E_{k}$.
+
+[/SCOPE:s_chap1]
+[/SCOPE:s_1_41]
+[SCOPE:s_chap2|description|Chap 2. 正博雷尔测度]
+[SCOPE:s_2_1|description|2.1 线性泛函定义]
+[98] 2.1 复向量空间，线性空间到标量域的线性变换叫做线性泛函
+[/SCOPE:s_2_1]
+[SCOPE:s_2_2|description|2.2 积分作为线性泛函]
+[99] 2.2 作为线性泛函的积分：1.32 说明 $L^1(\mu)$ 对任何正测度 $\mu$ 都是一个向量空间，而映射 $f \rightarrow \int_{x} f \mathrm{~d} \mu$ 是 $L^1(\mu)$ 上的一个线性泛函。
+[100] 类似地，如果 $g$ 是任何有界可测函数，
+[101] 则映射 $f \rightarrow \int_{x} f g \mathrm{~d} \mu$ 也是 $L^1(\mu)$ 上的一个线性泛函。
+[102] 某种意义上，这是 $L^1(\mu)$ 上我们唯一感兴趣的一种泛函。
+[103] 另一个例子：设 $C$ 是单位区间 $I=[0,1]$ 上一切连续复函数的集。
+[104] 两个连续函数的和是连续的，一个连续函数的任何标量积也是连续的。
+[105] 因此，$C$ 是一个向量空间。
+[106] 如果 $\Lambda f=\int_{0}^{1} f(x) \mathrm{d} x \quad(f \in C)$ 是通常的黎曼积分，
+[107] 则 $\Lambda$ 显然是 $C$ 上的线性泛函; $\Lambda$ 有一个附带的有趣的性质：它是一个正线性泛函. 也就是说，当 $f \geqslant 0$ 时，有 $\Lambda f \geqslant 0$.
+[/SCOPE:s_2_2]
+[SCOPE:s_2_3|description|2.3 拓扑概念]
+[108] 2.3 设 $X$ 是拓扑空间。
+[109] (a) 集 $E \subset X$ 是闭的，如果它的余集 $E^{c}$ 是开的。
+[110] （因此，$\varnothing$ 和 $X$ 是闭集，闭集的有限并是闭集，闭集的任意交是闭集。
+[111] )（b）集 $E \subset X$ 的闭包 $\bar{E}$ 是 $X$ 中包含 $E$ 的最小闭集。
+[112] (下述推理证明了 $\bar{E}$ 存在：$X$ 中包含 $E$ 的所有闭子集的集族 $\Omega$ 是非空的，因为 $X \in \Omega$. 令 $\bar{E}$ 是 $\Omega$ 的一切元素的交。
+[113] ) (c) 集 $K \subset X$ 是紧的, 如果 $K$ 的每个开覆盖包含有限子覆盖。
+[114] 特别地，如果 $X$ 本身是紧的，
+[115] 则 $X$ 称为紧空间. (d) 点 $p \in X$ 的一个邻域是 $X$ 的任意一个包含 $p$ 的开子集。
+[116] (使用这个词并不是十分标准; 有些人对任意包含一个含 $p$ 的开集的集使用 “ $p$ 的邻域” 这个词。
+[117] ) (e) $X$ 是一个豪斯多夫空间（Hausdorff space）, 如果其中任意不同两点有不相交的邻域。
+[118] (f) $X$ 是局部紧的（locally compact）, 如果 $X$ 的每一点有一个邻域，它的闭包是紧的。
+[119] 每个紧空间是局部紧的。
+[/SCOPE:s_2_3]
+[SCOPE:s_2_5|description|2.5 紧集与点分离]
+[120] 2.5 设 $X$ 是豪斯多夫空间。
+[121] $K \subset X, K$ 是紧的，且 $p \in K^{c}$, 则存在开集 $U$ 和 $W$, 使得 $p \in U, K \subset W$, 并且 $U \cap W=\varnothing$.
+[/SCOPE:s_2_5]
+[SCOPE:s_2_6|description|2.6 紧集族有限交性质]
+[122] 2.6 设 $\left\{K_{a}\right\}$ 是豪斯多夫空间紧子集的集族，$\cap_{a} K_{a}=\varnothing$, 则 $\left\{K_{a}\right\}$ 族中存在有限个集，它们的交也是空的。
+[/SCOPE:s_2_6]
+[SCOPE:s_2_8|description|2.8 上下半连续]
+[123] 2.8 设 $f$ 是拓扑空间上的实函数（或广义实函数）. 如果对每个实数 $\alpha,\{x: f(x)>$ $\alpha\}$ 是开的，
+[124] 则称 $f$ 为下半连续的. 如果对每个实数 $\alpha,\{x: f(x)<\alpha\}$ 是开的，
+[125] 则称 $f$ 为上半连续的. 显然，一个实函数是连续的，当且仅当它同时是上半连续和下半连续的。
+[/SCOPE:s_2_8]
+[SCOPE:s_2_9|description|2.9 支集与C_c(X)]
+[126] 2.9 拓扑空间 $X$ 上的复函数 $f$ 的支集是集 $\{x: f(x) \neq 0\}$ 的闭包。
+[127] 记 $X$ 上支集是紧的所有连续复函数的集为 $C_{c}(X)$.
+[/SCOPE:s_2_9]
+[SCOPE:s_2_10|description|2.10 连续像紧]
+[128] 2.10 设 $X$ 和 $Y$ 是拓扑空间，并设 $f: X \rightarrow Y$ 是连续的。
+[129] 若 $K$ 是 $X$ 的紧子集，
+[130] 则 $f(K)$ 是紧的。
+[/SCOPE:s_2_10]
+[SCOPE:s_2_11|description|2.11 记号约定]
+[131] 2.11 在本章，将使用下述约定。
+[132a] (x) \leqslant 1$, 并对一切 $x \in K, f
+[132b] (x)=1$. 记号 $f \prec V$ 表示 $V$ 是开集，$f \in C_{c}(X), 0 \leqslant f \leqslant 1$, 并且 $f$ 的支集含于 $V$. 记号 $\mathrm{K}\prec\mathrm{f}\prec\mathrm{V}$ 表示二者都成立。
+[/SCOPE:s_2_11]
+[SCOPE:s_2_12|description|2.12 乌雷松引理型]
+[133] 2.12 设 $X$ 是局部紧的豪斯多夫空间，$V$ 是 $X$ 中的开集，$K \subset V$, 而 $K$ 是紧集，
+[134] 则存在一个 $f \in C_{c}(X)$, 使得 $K \prec f \prec V$
+[/SCOPE:s_2_12]
+[SCOPE:s_2_14|description|2.14 里斯表示定理]
+[135] 2.14 里斯表示定理（Riesz representation theorem）：设 $X$ 是局部紧的豪斯多夫空间，$\Lambda$ 是 $C_{c}(X)$ 上的正线性泛函，
+[136] 则在 $X$ 内存在一个包含 $X$ 的全体博雷尔集的 $\sigma$-代数 $\mathfrak{M}$, 并存在 $\mathfrak{M}$ 上的唯一一个正测度 $\mu, \mu$ 在下述意义上表示了 $\Lambda$:
+[137] (a) 对每个 $f \in C_{c}(X), \Lambda f=\int_{X} f \mathrm{~d} \mu$.
+[138] 并有下述的附加性质：
+[139] (b) 对每个紧集 $K \subset X, \mu(K)<\infty$.
+[140] (c) 对每个 $E \in \mathfrak{M}$, 有 $\mu(E)=\inf \{\mu(V): E \subset V, V$ 是开集 $\} .$
+[141] (d) 对每个开集 $E$ 或每个 $E \in \mathfrak{M}$ 而 $\mu(E)<\infty$, 有 $\mu(E)=\sup \{\mu(K): K \subset E, K$ 是紧集 $\} .$
+[142a] (e)若 $E \in \mathfrak{M}, A \subset E$, 并且 $\mu(E)=0$,
+[142b] 则$A \in \mathfrak{M}$.
+[143] 为清晣起见，让我们进一步明确一下假设中 “正” 字的含义：$\Lambda$ 被假定是复向是空间 $C_{c}(X)$ 上的一个线性泛函，具有如下的附加性质，
+[144] 即对每一个取值为非负实数的函数 $f, \Lambda f$ 也是非负实数。
+[145a] 简言之
+[145b] 若 $f(X) \subset[0, \infty)$,，则$\Lambda f \in[0, \infty)$.
+[/SCOPE:s_2_14]
+[SCOPE:s_2_15|description|2.15 博雷尔测度与正则性]
+[146a] (c) 或
+[146b] (d), 我们就分别称 $E$ 为外正则或内正则的。
+[147a] 如果 $X$ 内的每个博雷尔集同时是外正
+[147b] 则和内正则的，
+[148] 则称 $\mu$ 为正则的.
+[/SCOPE:s_2_15]
+[SCOPE:s_2_16|description|2.16 σ-紧与σ-有限]
+[149] 2.16 拓扑空间中的一个集 $E$ 称为 $\sigma$-紧的, 如果 $E$ 是紧集的可数并。
+[150] 对于测度空间（测度为 $\mu$）中的一个集 $E$, 如果 $E$ 是集 $E_{i}$ 的可数并，而 $\mu\left(E_{i}\right)<\infty$, 那么称 $E$ 有 $\sigma$-有限测度. 例如在定理 2.14 的情况下，每个 $\sigma$-紧集有 $\sigma$-有限测度。
+[151] 另外容易看出，如果 $E \in\mathfrak{M}$, $E$ 有 $\sigma$-有限测度，
+[152] 则 $E$ 是内正则的。
+[/SCOPE:s_2_16]
+[SCOPE:s_2_17|description|2.17 正则性进一步性质]
+[153] 2.17 设 $X$ 是局部紧、$\sigma$-紧的豪斯多夫空间。
+[154] 若 $\mathfrak{M}$ 和 $\mu$ 都像 2.14 所叙述的那样，
+[155a] （a）若 $E \in \mathfrak{M}$ 和 $\varepsilon>0$, 则存在闭集 $F$ 和开集 $V$ 使得 $F \subset E \subset V$ 且 $\mu(V-F)<\varepsilon$.
+[155b] (b) $\mu$ 是 $X$ 上的一个正则博雷尔测度。
+[156a] (c) 若 $E \in \mathfrak{M}$, 则存在集 $A$ 和 $B$ 使得 $A$ 是一个 $F_{\sigma}$ 集，$B$ 是一个 $G_{\delta}$ 集，$A \subset E \subset B$ 且 $\mu(B-A)=0$. 作为
+[156b] (c) 的推论，我们看出每个 $E \in \mathfrak{M}$ 是一个 $F_\sigma$ 集和一个测度为 0 的集的并。
+[/SCOPE:s_2_17]
+[SCOPE:s_2_18|description|2.18 开集σ-紧]
+[157] 2.18 设 $X$ 是局部紧的豪斯多夫空间。
+[158] 其每个开集是 $\sigma$-紧的。
+[159] 设 $\lambda$ 是 $X$ 上的任一个正博雷尔测度，对每个紧集 $K$, 有 $\lambda(K)<\infty$. 则 $\lambda$ 是正则的。
+[160] 注意，每个欧氏空间 $R^{k}$ 满足现在的假设，因为 $R^{k}$ 中的每个开集是闭球的可数并。
+[/SCOPE:s_2_18]
+[161] 2.19 欧氏空间
+[SCOPE:s_2_22|description|2.22 不可测集存在]
+[162] 2.22 若 $A \subset R^{1}$, 并且 $A$ 的每个子集都是勒贝格可测的，
+[163] 则 $m(A)=0$. 推论：每个正测度集都有不可测的子集。
+[/SCOPE:s_2_22]
+[SCOPE:s_2_24|description|2.24 鲁金定理]
+[164a] (x)=0$, 并且 $\varepsilon>0$, 则存在一个 $g \in C_{c}(X)$, 使得 $\mu(\{x: f
+[164b] (x) \neq g
+[164c] (x)\})<\varepsilon$. 并且，还可以做到 $\sup _{x \in X}|g
+[164d] (x)| \leqslant \sup _{x \in X}|f
+[164e] (x)|$
+[/SCOPE:s_2_24]
+[SCOPE:s_2_25|description|2.25 维塔利-卡拉泰奥多里定理]
+[165] 2.25 维塔利-卡拉泰奥多里定理：设 $f \in L^{1}(\mu), f$ 是实值的，并且 $\varepsilon>0$. 则在 $X$ 上存在 函数 $u$ 和 $v, u$ 是上半连续且有上界的，$v$ 是下半连续且有下界的，使得 $u \leqslant f \leqslant v$, 且 $\int_{X}(v-u) \mathrm{d} \mu<\varepsilon$
+
+[/SCOPE:s_chap2]
+[/SCOPE:s_2_25]
+[SCOPE:s_chap3|description|Chap 3. L^p-空间]
+[SCOPE:s_3_1|description|3.1 凸函数定义]
+[166a] (x)+\lambda \varphi
+[166b] (y)$, 那么称 $\varphi$ 是凸的。
+[/SCOPE:s_3_1]
+[SCOPE:s_3_2|description|3.2 凸函数连续]
+[167] 3.2 若 $\varphi$ 在 $(a, b)$ 上是凸的，
+[168] 则 $\varphi$ 在 $(a, b)$ 上连续。
+[/SCOPE:s_3_2]
+[169] 在这一节里，$X$ 是任意一个具有正测度 $\mu$ 的测度空间。
+[SCOPE:s_3_4|description|3.4 共轭指数]
+[170] 3.4 若 $p$ 和 $q$ 都是正实数，使得 $p+q=p q$, 或等价地 $\frac{1}{p}+\frac{1}{q}=1$, 则称 $p$ 和 $q$ 为一对共轭指数. 显然有 $1< p<\infty$ 和 $1< q<\infty$. 一个重要的特殊情况是 $p=q=2$. 当 $p \rightarrow 1$ 时，$q \rightarrow \infty$. 因而也可以把 1 和 $\infty$ 看成是一对共轭指数。
+[171] 许多分析学家通常不明确指出而把共轭指数记为 $p$ 和 $p^{\prime}$.
+[/SCOPE:s_3_4]
+[SCOPE:s_3_6|description|3.6 L^p空间定义]
+[172] 3.6 若 $0< p<\infty$ 且 $f$ 是 $X$ 上的一个复可测函数，定义 $\|f\|_{p}=\left\{\int_{\mathrm{x}}|f|^{p} \mathrm{~d} \mu\right\}^{1 / p}$, 且设 $L^{p}(\mu)$ 空间由所有满足 $\|f\|_{p}<\infty$ 的 $f$ 组成，称 $\|f\|_{p}$ 为 $f$ 的 $L^{p}$-范数.
+[173] 若 $\mu$ 是 $R^{k}$ 上的勒贝格测度，记 $L^{p}\left(R^{k}\right)$ 以代替 $L^{p}(\mu)$. 若 $\mu$ 是集 $A$ 上的计数测度，习惯上用 $\ell^{p}(A)$ 记对应的 $L^{p}$-空间。
+[174] 当 $A$ 可数时，便简记为 $\ell^{p}$. $\ell^{p}$ 的一个元素可以看成是一个复序列 $x=\left\{\xi_{n}\right\}$, 并且 $\|x\|_{p}=\left\{\sum_{n=1}^{\infty}\left|\xi_{n}\right|^{p}\right\}^{1 / p}$
+[/SCOPE:s_3_6]
+[SCOPE:s_3_7|description|3.7 本性上确界与L^∞]
+[175] 3.7 设 $g: X \rightarrow[0, \infty]$ 是可测的，且 $S$ 是所有使得 $\mu\left(g^{-1}((\alpha, \infty])\right)=0$ 的实数 $\alpha$ 的集。
+[176] 若 $S=\varnothing$, 令 $\beta=\infty$. 若 $S \neq \varnothing$, 令 $\beta=\inf S$. 因为 $g^{-1}((\beta, \infty])=\bigcup_{n=1}^{\infty} g^{-1}\left(\left(\beta+\frac{1}{n}, \infty\right]\right)$ 并且因为零测度集的可数并有测度 0 , 可以看出 $\beta \in S$. 我们称 $\beta$ 为 $g$ 的本性上确界. 如果 $f$ 是 $X$ 上的复可测函数，定义 $\|f\|_{\infty}$ 为 $|f|$ 的本性上确界，并设 $L^{\infty}(\mu)$ 由所有满足 $\|f\|_{\infty}<\infty$ 的 $f$ 所组成。
+[177] $L^{\infty}(\mu)$ 的元素有时称为 $X$ 上的本性有界可测函数.
+[/SCOPE:s_3_7]
+[SCOPE:s_3_8|description|3.8 霍尔德不等式]
+[178] 3.8 若 $p$ 和 $q$ 是共轭指数，$1 \leqslant p \leqslant \infty, f \in L^{p}(\mu)$ 和 $g \in L^{q}(\mu)$, 则 $f g \in L^{1}(\mu)$, 并且 $\|f g\|_{1} \leqslant\|f\|_{p}\|g\|_{q}$ 成立。
+[/SCOPE:s_3_8]
+[SCOPE:s_3_9|description|3.9 闵可夫斯基不等式]
+[179] 3.9 假定 $1 \leqslant p \leqslant \infty$, 并且 $f, g \in L^{p}(\mu)$, 则 $f+g \in L^{p}(\mu)$, 且 $\|f+g\|_{p} \leqslant\|f\|_{p}+\|g\|_{p}$ 成立。
+[/SCOPE:s_3_9]
+[SCOPE:s_3_11|description|3.11 L^p完备性]
+[180] 3.11 对于 $1 \leqslant p \leqslant \infty$ 和每一个正测度 $\mu$, $L^{p}(\mu)$ 是一个完备的度量空间。
+[/SCOPE:s_3_11]
+[SCOPE:s_3_12|description|3.12 子序列点态收敛]
+[181] 3.12 若 $1 \leqslant p \leqslant \infty,\left\{f_{n}\right\}$ 是在 $L^{p}(\mu)$ 内的柯西序列，它的极限为 $f$, 则 $\left\{f_{n}\right\}$ 存在一 个子序列，它几乎处处点态收敛于 $f(x)$.
+[/SCOPE:s_3_12]
+[SCOPE:s_3_13|description|3.13 简单函数稠密]
+[182] 3.13 设 $S$ 是所有使得 $\mu(\{x: s(x) \neq 0\})<\infty$ 的 $X$ 上的复可测简单函数 $s$ 的类。
+[183a] 若 $1 \leqslant p<\infty$,
+[183b] 则$S$ 在 $L^{p}(\mu)$ 中是稠密的。
+[/SCOPE:s_3_13]
+[SCOPE:s_3_14|description|3.14 C_c稠密]
+[184] 3.14 对 $1 \leqslant p<\infty$, $C_{c}(X)$ 在 $L^{p}(\mu)$ 中稠密。
+[/SCOPE:s_3_14]
+[SCOPE:s_3_16|description|3.16 C_0(X)定义]
+[185] 3.16 一个局部紧豪斯多夫空间 $X$ 上的复函数 $f$, 若对每一个 $\varepsilon>0$, 存在一个紧集 $K \subset X$, 使得对所有不在 $K$ 内的 $x$, $|f(x)|<\varepsilon$ 成立，
+[186] 则称 $f$ 在无穷远点为 0. 所有在无穷远点为 0 的 $X$ 上的连续函数的类称为 $C_{0}(X)$. 显然 $C_{c}(X) \subset C_{0}(X)$, 并且若 $X$ 是紧的，这两个类就是重合的，在这种情况下对它们中的任何一个记为 $C(X)$.
+[/SCOPE:s_3_16]
+[SCOPE:s_3_17|description|3.17 C_0完备化]
+[187] 3.17 若 $X$ 是一个局部紧豪斯多夫空间，
+[188] 则 $C_{0}(X)$ 是 $C_{c}(X)$ 相对于由上确界范数 $\|f\|=\sup _{x \in X}|f(x)|$ 所定义的度量的完备化。
+
+[/SCOPE:s_chap3]
+[/SCOPE:s_3_17]
+[SCOPE:s_chap4|description|Chap 4. 希尔伯特空间的初等理论]
+[SCOPE:s_4_1|description|4.1 内积空间定义]
+[189] 4.1 复向量空间 $H$ 称为内积空间 (或 $U$ 空间), 如果向量 $x$ 和 $y \in H$ 的每个序对都对应一个复数 $(x, y)$, 即所谓 $x$ 和 $y$ 的内积（或标量积）, 使得下面的法则成立。
+[190a] (a) $(y, x)=\overline{(x, y)}$ (横线表示取共轭复数).
+[190b] (b) 当 $x, y$ 和 $z \in H$ 时，$(x+y, z)=(x, z)+(y, z)$.
+[190c] (c) 当 $x$ 和 $y \in H, \alpha$ 是标量时，$(\alpha x, y)=\alpha(x, y)$.
+[190d] (d) 对所有 $x \in H,(x, x) \geqslant 0$.
+[190e] (e) $(x, x)=0$ 当且仅当 $x=0$.
+[190f] (f) $\|x\|^{2}=(x, x)$.
+[/SCOPE:s_4_1]
+[SCOPE:s_4_2|description|4.2 柯西-施瓦茨不等式]
+[191a] (a)-
+[191b] (d) 蕴含着 $|(x, y)| \leqslant\|x\|\|y\|$ 对所有 $x, y \in H$ 成立。
+[/SCOPE:s_4_2]
+[SCOPE:s_4_3|description|4.3 三角不等式]
+[192] 4.3 对任意 $x$ 和 $y \in H$, 都有 $\|x+y\| \leqslant\|x\|+\|y\|$.
+[/SCOPE:s_4_3]
+[SCOPE:s_4_4|description|4.4 希尔伯特空间定义]
+[193] 4.4……就是说，$H$ 中的每一个柯西序列都收敛，
+[194] 那么 $H$ 就称为希尔伯特空间.
+[/SCOPE:s_4_4]
+[SCOPE:s_4_5|description|4.5 例子]
+[195] 4.5 例子 (a) 对任一固定的 $n$, 所有 $n$ 元序组 $x=\left(\xi_{1}, \cdots, \xi_{n}\right)$ 的集 $C^{n}$, 这里 $\xi_{1}, \cdots, \xi_{n}$ 是复数。
+[196a] 当我们像通常一样按分量定义加法和标量乘法，并定义 $(x, y)=\sum_{j=1}^{n} \xi_{i} \bar{\eta}_{j} \quad\left(y=\left(\eta_{1}, \cdots, \eta_{n}\right)\right)$
+[196b] 则成为一个希尔伯特空间。
+[197a] (b)如果 $\mu$ 是一个正测度，$L^{2}(\mu)$
+[197b] 则是一个具有内积 $(f, g)=\int_{x} f \bar{g} \mathrm{~d} \mu$ 的希尔伯特空间。
+[198] 这里右端的被积函数由定理 3.8, 是属于 $L^1(\mu)$ 的。
+[199] 因此 $(f, g)$ 有确定的意义。
+[200] 注意 $\|f\|=(f, f)^{1 / 2}=\left\{\int_{x}|f|^{2} \mathrm{~d} \mu\right\}^{1 / 2}=\|f\|_{2}$. $L^{2}(\mu)$ 的完备性（3.11）表明 $L^{2}(\mu)$ 的确是一个希尔伯特空间（要记住 $L^{2}(\mu)$ 是看做函数的等价类的空间的; 比较 3.10 节的讨论). 当 $H=L^{2}(\mu)$ 时，不等式 4.2 和 4.3 转化为霍尔德和闵可夫斯基不等式的特例。
+[201a] (a) 是例
+[201b] (b) 的特殊情况。
+[202] 在 (a) 中的测度是什么？
+[203a] (c) $[0,1]$ 上全体连续复函数的向量空间是一个内积空间，如果 $(f, g)=\int_{0}^{1} f
+[203b] (t) \overline{g
+[203c] (t)} \mathrm{d} t$ 但它不是希尔伯特空间。
+[/SCOPE:s_4_5]
+[SCOPE:s_4_6|description|4.6 内积连续性]
+[204] 4.6 对任意固定的 $y \in H$, 映射 $x \rightarrow(x, y),\ x \rightarrow(y, x),\ x \rightarrow\|x\|$ 都是 $H$ 上的连续函数。
+[/SCOPE:s_4_6]
+[SCOPE:s_4_8|description|4.8 凸集定义]
+[205] 4.8 向量空间 $V$ 中的集 $E$ 称为凸的, 如果它有下面的几何性质：当 $x \in E, y \in E$, 且 $0< t<1$ 时，点 $z_{t}=(1-t) x+t y$ 也属于 $E$. 当 $t$ 从 0 变到 1 时，我们可以设想点 $z_{t}$ 在 $V$ 中描出一条从 $x$ 到 $y$ 的直线段。
+[206] 凸性要求 $E$ 包含它的任意两点之间的线段。
+[207] 显然，$V$ 的每个子空间都是凸的。
+[208] 同样，如果 $E$ 是凸的，
+[209] 那么它的每一个平移 $E+x=\{y+x: y \in E\}$ 也一定是凸的。
+[/SCOPE:s_4_8]
+[SCOPE:s_4_9|description|4.9 正交与正交补]
+[210] 4.9 若对某个 $x,y \in H,(x, y)=0$, 我们就说 $x$ 正交于 $y$, 有时记作 $x \perp y$. 由于 $(x, y)=0$ 蕴含着 $(y, x)=0$, 关系 “$\perp$” 是对称的。
+[211] 设 $x^{\perp}$ 表示所有正交于 $x$ 的 $y \in H$ 的集；
+[212] 而当 $M$ 是 $H$ 的子空间时，设 $M^{\perp}$ 是所有正交于每 个 $x \in M$ 的那些 $y \in H$ 的集。
+[213] 注意 $x^{\perp}$ 是 $H$ 的一个子空间，因为 $x \perp y$ 和 $x \perp y^{\prime}$ 蕴涵着 $x \perp\left(y+y^{\prime}\right)$ 和 $x \perp \alpha y . x^{\perp}$ 也恰好是那些使连续函数 $y \rightarrow(x, y)$ 等于 0 的那些点的集。
+[214] 因此，$x^{\perp}$ 是 $H$ 的闭子空间。
+[215] 由于 $M^{\perp}=\bigcap_{x \in M} x^{\perp}$, $M^{\perp}$ 是闭子空间的交，
+[216] 于是得知 $M^{\perp}$ 是 $H$ 的闭子空间。
+[/SCOPE:s_4_9]
+[SCOPE:s_4_10|description|4.10 最小范数元素]
+[217] 4.10 在希尔伯特空间 $H$ 中，每一个非空闭凸集 $E$ 都包含唯一的一个具有最小范数的元素。
+[/SCOPE:s_4_10]
+[SCOPE:s_4_11|description|4.11 正交分解]
+[218] 4.11 设 $M$ 是希尔伯特空间 $H$ 的闭子空间。
+[219a] (a) 对每个 $x \in H$, 有唯一的分解 $x=P x+Q x$ 其中 $P x \in M, Q x \in M^{\perp}$.
+[219b] (b) $P x$ 和 $Q x$ 分别是 $M$ 和 $M^{\perp}$ 中距 $x$ 最近的点。
+[220] (c) 映射 $P: H \rightarrow M$ 和 $Q: H \rightarrow M^{\perp}$ 都是线性的。
+[221] (d) $\|x\|^{2}=\|P x\|^{2}+\|Q x\|^{2}$.
+[/SCOPE:s_4_11]
+[SCOPE:s_4_12|description|4.12 里斯表示定理]
+[222] 4.12 若 $L$ 是 $H$ 上的一个连续线性泛函，
+[223] 则存在唯一的一个 $y \in H$, 使得 $L x=(x, y)\ \ (x \in H)$.
+[/SCOPE:s_4_12]
+[SCOPE:s_4_13|description|4.13 规范正交与傅里叶系数]
+[224] 4.13 线性组合指有限个向量的，独立 即线性无关，张成空间 $[S]$，规范正交即正交归一
+[225] 如果 $\left\{u_{\alpha}: \alpha \in A\right\}$ 是规范正交的，对于每个 $x \in H$, 我们都对应于指标 $A$ 上的一个复函数 $\hat{x}$, 它定义为 $\hat{x}(\alpha)=\left(x, u_{\alpha}\right) \quad(\alpha \in A)$. 有时，称这些数 $\hat{x}(\alpha)$ 为关于集 $\left\{u_{\alpha}\right\}$ 的傅里叶系数.
+[/SCOPE:s_4_13]
+[SCOPE:s_4_14|description|4.14 有限维投影]
+[226] 4.14 设 $\left\{u_{\alpha}: \alpha \in A\right\}$ 是 $H$ 中的规范正交集，且 $F$ 是 $A$ 的一个有限子集，设 $M_{F}$ 是由 $\left\{u_{\alpha}: \alpha \in F\right\}$ 张成的空间。
+[227a] （a）若 $\varphi$ 是 $A$ 上的一个复函数且在 $F$ 外取值为 0 ,
+[227b] 则存在一个向量 $y \in M_{F}$, 即 $y =\sum_{\alpha \in F} \varphi(\alpha) u_{\alpha}$ 使得 $\hat y(\alpha)=\varphi(\alpha)$ 对每个 $\alpha \in A$ 成立。
+[228] 同时 $\|y\|^{2} =\sum_{\alpha \in F}|\varphi(\alpha)|^{2}$.
+[229a] (b)若 $x \in H$ 且 $s_{F}(x)=\sum_{\alpha \in F} \hat{x}(\alpha) u_{\alpha}$,
+[229b] 则$\left\|x-s_{F}(x)\right\|<\|x-s\|$ 对除 $s=s_{F}(x)$ 外的所有 $s \in M_{F}$ 成立，且 $\sum_{a \in F}|\hat{x}(\alpha)|^{2} \leqslant\|x\|^{2}$
+[/SCOPE:s_4_14]
+[SCOPE:s_4_16|description|4.16 等距延拓]
+[230] 等距映射（isometry）是保持距离的一种简单映射。
+[231] 对所有 $X_{0}$ 中的点 $x_{1}, x_{2}, f\left(x_{1}\right)$ 与 $f\left(x_{2}\right)$ 在 $Y$ 中的距离刚好等于 $x_{1}$ 和 $x_{2}$ 在 $X$ 中的距离。
+[232] 4.16 设 (a) $X$ 和 $Y$ 都是度量空间，且 $X$ 是完备的。
+[233] (b) $f: X \rightarrow Y$ 是连续的。
+[234] (c) $f$ 在 $X$ 的一个稠密子集 $X_{0}$ 上是等距映射。
+[235] (d) $f\left(X_{0}\right)$ 在 $Y$ 上稠密。
+[236] 则 $f$ 是从 $X$ 到 $Y$ 上的等距映射。
+[237] 此结论最重要的内容是 $f$ 把 $X$ 映射到整个 $Y$ 上。
+[/SCOPE:s_4_16]
+[SCOPE:s_4_17|description|4.17 贝塞尔不等式与等距]
+[238] 4.17 设 $\left\{u_{\alpha}: \alpha \in A\right\}$ 是 $H$ 中的一个规范正交集，$P$ 是向量 $u_{\alpha}$ 的所有有限线性组合构成的空间。
+[239] 不等式 $\sum_{\alpha \in A}|\hat{x}(\alpha)|^{2} \leqslant\|x\|^{2}$ 对所有的 $x \in H$ 都成立，且 $x \rightarrow \hat{x}$ 是 $H$ 到 $\ell^{2}(A)$ 上的连续线性映射，其限制于 $P$ 的闭包 $\bar{P}$ 是 $\bar{P}$ 到 $\ell^{2}(A)$ 上的等距映射。
+[/SCOPE:s_4_17]
+[SCOPE:s_4_18|description|4.18 极大规范正交集等价条件]
+[240] 4.18 设 $\left\{u_{\alpha}: \alpha \in A\right\}$ 是 $H$ 中的规范正交集。
+[241] 下面关于 $\left\{u_{\alpha}\right\}$ 的四个条件中的每一个都蕴含着另外三个：(i) $\left\{u_{\alpha}\right\}$ 是 $H$ 的极大规范正交集。
+[242] (ii) $\left\{u_{\alpha}\right\}$ 的全体有限线性组合 $P$ 在 $H$ 中稠密。
+[243a] (iii) 对每个 $x \in H$, 有 $\sum_{\alpha \in A}|\hat{x}(\alpha)|^{2}=\|x\|^{2}$.
+[243b] (iv) 若 $x \in H, y \in H$, 则 $\sum_{\alpha \in A} \hat{x}(\alpha) \overline{\hat{y}(\alpha)}=(x, y)$. 最后一个公式就是熟知的帕塞瓦尔恒等式（Parseval's identity）. 注意 $\hat{x},\hat{y} \in \ell^{2}(A)$, 所以 $\hat x\bar{\hat y} \in \ell^1(A)$. 从而
+[243c] (iv) 中的和式的意义是明确的。
+[244a] (iii) 是
+[244b] (iv)当 $x=y$ 时的特例。
+[245] 极大规范正交集通常叫做完备规范正交集（complete orthonormal set）或者规范正交基（orthonormal bases）.
+[/SCOPE:s_4_18]
+[SCOPE:s_4_20|description|4.20 偏序集定义]
+[246a] (a) $a \leqslant b$ 和 $b \leqslant c$ 蕴含着 $a \leqslant c$.
+[246b] (b) 对每个 $a \in \mathscr{P}, a \leqslant a$.
+[246c] (c) $a \leqslant b$ 和 $b \leqslant a$ 蕴涵着 $a=b$. 偏序集 $\mathscr{P}$ 的子集 $\mathscr{Q}$ 称为全序的（totally ordered） 或线性序的（linearly ordered）, 如果每一对 $a, b \in \mathscr{Q}$ 满足 $a \leqslant b$ 或者 $b \leqslant a$.
+[/SCOPE:s_4_20]
+[SCOPE:s_4_21|description|4.21 豪斯多夫极大性定理]
+[247] 4.21 豪斯多夫极大性定理: 每一个非空偏序集都含有极大的全序子集。
+[/SCOPE:s_4_21]
+[SCOPE:s_4_22|description|4.22 规范正交集扩充]
+[248] 4.22 希尔伯特空间 $H$ 中的每一个规范正交集 $B$ 都包含在 $H$ 的一个极大规范正交集中。
+[/SCOPE:s_4_22]
+[SCOPE:s_4_23|description|4.23 三角系与L^p(T)]
+[249] 4.23 $T$ 为单位圆周，对于 $1 \leqslant p<\infty$ 定义 $L^{p}(T)$ 为所有 $R^{1}$ 上的、勒贝格可测的、周期为 $2 \pi$ 的，并使得范数 $\|f\|_{p}=\left\{\frac{1}{2 \pi} \int_{-\pi}^{\pi}|f(t)|^{p} \mathrm{~d} t\right\}^{1 / p}$ 为有限的复函数类。
+[250] $L^{\infty}(T)$ 是所有 $L^{\infty}\left(R^{1}\right)$ 中的周期为 $2 \pi$ 的元素的类，以其本性上确界为范数。
+[251] 而 $C(T)$ 由 $T$ 上全 体连续复函数组成（或者，等价地，由全体 $R^{1}$ 上的周期为 $2 \pi$ 的连续复函数组成）, 并具有范数 $\|f\|_{\infty}=\sup _{t}|f(t)|$
+[252] 三角多项式是形如 $f(t)=a_{0}+\sum_{n=1}^{N}\left(a_{n} \cos n t+b_{n} \sin n t\right) \quad\left(t \in R^{1}\right)$ 的有限和式，这里 $a_{0}, a_{1}, \cdots, a_{N}$ 和 $b_{1}, \cdots, b_{N}$ 是复数。
+[253] 根据欧拉恒等式，也可以写成 $f(t)=\sum_{n=-N}^{N} c_{n} \mathrm{e}^{\mathrm{i} n t}$ 的形式，这对大多数目的来说显得更方便些。
+[254a] (t)=\mathrm{e}^{\mathrm{i} n t} \quad(n \in Z)$ 如果在 $L^{2}(T)$ 中用 $(f, g)=\frac{1}{2 \pi} \int_{-\pi}^{\pi} f
+[254b] (t) \overline{g
+[254c] (t)} \mathrm{d} t$ 来定义内积。
+[255] 那么，简单的计算表明 $\left\{u_{n} ; n \in Z\right\}$ 是 $L^{2}(T)$ 的一个规范正交集，通常称之为三角系.
+[/SCOPE:s_4_23]
+[SCOPE:s_4_25|description|4.25 三角多项式逼近]
+[256a] (t)-P
+[256b] (t)|<\varepsilon$. 一个更为精细的结果曾由 Fejér (1904) 所证明：任何 $f \in C(T)$ 的傅里叶级数部分和的算术 平均值都一致收敛于 $f$.
+[/SCOPE:s_4_25]
+[SCOPE:s_4_26|description|4.26 傅里叶级数与里斯-费希尔定理]
+[257a] (n)=\frac{1}{2 \pi} \int_{-\pi}^{\pi} f
+[257b] (t) \mathrm{e}^{-\mathrm{i} n t} \mathrm{~d} t \quad(n \in Z)$ 定义 $f$ 的傅里叶系数. 这样对每个 $f \in L^{1}(T)$, 都对应了 $Z$ 上的一个函数 $\hat{f}$ . $f$ 的傅里叶级数就是 $\sum_{-\infty}^{\infty} \hat{f}
+[257c] (n) \mathrm{e}^{\mathrm{i} n t}$ 而它的部分和是 $s_{N}
+[257d] (t)=\sum_{-N}^{N} \hat{f}
+[257e] (n) \mathrm{e}^{\mathrm{i} n t} \quad(N=0,1,2, \cdots)$. 因为 $L^{2}(T) \subset L^{1}(T)$,（1）也可以应用于每个 $f \in L^{2}(T)$. 重新叙述定理 4.17 和定理 4.18:
+[258] 里斯-费希尔定理断言：当 $\left\{c_{n}\right\}$ 是一个复数序列，使 $\sum_{n=-\infty}^{\infty} \left\lvert c_n \right\rvert ^2 < \infty$ 时，
+[259a] (t) \mathrm{e}^{-i n t} \mathrm{~d} t \quad(n \in Z)$. 帕塞瓦尔定理断言：当 $f \in L^{2}(T)$ 和 $g \in L^{2}(T)$ 时，$\sum_{n=-\infty}^{\infty} \hat{f}
+[259b] (n) \overline{\hat{g}
+[259c] (n)}=\frac{1}{2 \pi} \int_{-\pi}^{\pi} f
+[259d] (t) \overline{g
+[259e] (t)} \mathrm{d} t$.
+[260] 左边的级数绝对收敛，并 $\lim _{N \rightarrow \infty}\left\|f-s_{N}\right\|_{2}=0$. 一个特殊情形是 $\left\|f-s_{N}\right\|_{2}^{2}=\sum_{|n|>N}|\hat{f}(n)|^{2}$.
+
+[/SCOPE:s_chap4]
+[/SCOPE:s_4_26]
+[SCOPE:s_chap5|description|Chap 5. 巴拿赫空间技巧的例子]
+[SCOPE:s_5_4|description|5.4 有界线性变换等价条件]
+[261] 5.4 对于从一个赋范线性空间 $X$ 到赋范线性空间 $Y$ 内的一个线性变换 $\Lambda$, 下面三个条件的每一个都蕴涵着另外两个：(a) $\Lambda$ 是有界的。
+[262] (b) $\Lambda$ 是连续的。
+[263] (c) $\Lambda$ 在 $X$ 的某个点连续。
+[/SCOPE:s_5_4]
+[SCOPE:s_5_6|description|5.6 贝尔定理]
+[264] 5.6 贝尔定理（Baire's theorem）：若 $X$ 是完备度量空间，
+[265] 则每个由 $X$ 的稠密开子集组成的可数族，其交在 $X$ 中稠密。
+[/SCOPE:s_5_6]
+[SCOPE:s_5_9|description|5.9 开映射定理]
+[266] 5.9 设 $U$ 和 $V$ 是巴拿赫空间 $X$ 和 $Y$ 的开单位球。
+[267] 对 $X$ 到 $Y$ 上的每一个有界线性变换 $\Lambda$, 相应地有一个 $\delta>0$, 使 $\Lambda(U) \supset \delta V$. 请注意假设中 “到 $Y$ 上” 这个词！
+[268] 符号 $\delta V$ 表示集 $\{\delta y, y \in V\}$, 即所有 $\|y\|<\delta$ 的 $y \in$ $Y$ 的集。
+[/SCOPE:s_5_9]
+[SCOPE:s_5_10|description|5.10 逆算子定理]
+[269] 5.10 若 $X$ 和 $Y$ 都是巴拿赫空间，$\Lambda$ 是 $X$ 到 $Y$ 上的一一的有界线性变换，
+[270] 则存在 $\delta>0$, 使 $\|\Lambda x\| \geqslant \delta\|x\| \quad(x \in X)$. 换句话说，$\Lambda^{-1}$ 是 $Y$ 到 $X$ 上的一个有界线性变换。
+[/SCOPE:s_5_10]
+[SCOPE:s_5_11|description|5.11 傅里叶级数收敛问题]
+[271a] (x)$ ? 让我们回忆一下，$f$ 的傅里叶级数在点 $x$ 的第 $n$ 个部分和由 $s_{n}(f ; x)=\frac{1}{2 \pi} \int_{-\pi}^{\pi} f
+[271b] (t) D_{n}(x-t) \mathrm{d} t \quad(n=0,1,2, \cdots)$ 给出，这里 $D_{n}
+[271c] (t)=\sum_{k=-n}^{n} \mathrm{e}^{\mathrm{i} k t}$. 问题在于判定 $\lim _{n \rightarrow \infty} s_{n}(f ; x)=f
+[271d] (x)$ 是否对每个 $f \in C(T)$ 和每个实数 $x$ 成立。
+[272] 我们在 4.26 看到部分和按 $L^{2}$ 范数收敛于 $f$, 因此定理 3.12 蕴涵着每个 $f \in L^{2}(T)$ (从而对每个 $f \in C(T)$ 亦然) 都是整个部分和序列的某个子序列的 a. e. 点态极限。
+[273] 但这并没有回答现在提出的问题。
+[274] 我们将会看到，巴拿赫一斯坦因豪斯定理否定地回答了这个问题。
+[/SCOPE:s_5_11]
+[SCOPE:s_5_13|description|5.13 稠密集非G_δ]
+[275] 5.13 在不存在孤立点的完备度量空间中，没有一个可数稠密集是 $G_{\delta}$ 集。
+[/SCOPE:s_5_13]
+[SCOPE:s_5_17|description|5.17 复线性泛函与实部]
+[276] 5.17 设 $V$ 是复向量空间。
+[277] (a) 若 $u$ 是 $V$ 上的复线性泛函 $f$ 的实部，
+[278a] (x)=u
+[278b] (x)-\mathrm{i} u(\mathrm{i} x) \quad(x \in V)$
+[278c] (b) 若 $u$ 是 $V$ 上的一个实线性泛函，而 $f$ 由上式定义，
+[279] 则 $f$ 是 $V$ 上的一个复线性泛函。
+[280] (c) 若 $V$ 是赋范线性空间，而 $f$ 与 $u$ 有上式的关系，
+[281] 则 $\|f\|=\|u\|$.
+[/SCOPE:s_5_17]
+[SCOPE:s_5_19|description|5.19 闭包与泛函分离]
+[282] 5.19 设 $M$ 是赋范线性空间 $X$ 的一个线性子空间，$x_{0} \in X$. 则 $x_{0}$ 属于 $M$ 的闭包 $\bar{M}$ 当且仅当不存在 $X$ 上的有界线性泛函 $f$ 使所有 $x \in M, f(x)=0$ 而 $f\left(x_{0}\right) \neq 0$.
+[/SCOPE:s_5_19]
+[SCOPE:s_5_20|description|5.20 哈恩-巴拿赫推论]
+[283] 5.20 若 $X$ 是一个赋范线性空间，且 $x_{0} \in X, x_{0} \neq 0$, 则存在一个 $X$ 上的范数为 1 的有界线性泛函 $f$ 使 $f\left(x_{0}\right)=\left\|x_{0}\right\|$.
+[/SCOPE:s_5_20]
+[SCOPE:s_5_22|description|5.22 边界与最大模]
+[284] 5.22 设 $K$ 是一个紧豪斯多夫空间，$H$ 是 $K$ 的紧子集，并设 $A$ 是 $C(K)$ 的一个子空间，使 $1 \in A$ ($1$ 表示对每个 $x \in X$ 对应于数 $1$ 的函数 ), 并且使 $\|f\|_{K}=\|f\|_{H} \quad(f \in A)$ 这里我们采用记号 $\|f\|_{E}=\sup \{|f(x)|: x \in E\}$. 由于 5.23 节讨论过的例子，$H$ 有时称为对应于空间 $A$ 的 $K$ 的边界。
+[/SCOPE:s_5_22]
+[SCOPE:s_5_23|description|5.23 多项式最大模原理]
+[285] 5.23 设 $U=\{z:|z|<1\}$ 是复平面上的开单位圆盘。
+[286] 令 $K=\bar{U}$ (闭单位圆盘), 并取 $H$ 为 $U$ 的边界 $T$. 我们断言每个多项式 $f$, 即每个形如 $f(z)=\sum_{n=0}^{N} a_{n} z^{n}$ 的函数，这里 $a_{0}, \cdots, a_{N}$ 是复数，都满足关系式 $\|f\|_{\mathrm{U}}=\|f\|_{\mathrm{T}}$
+[/SCOPE:s_5_23]
+[SCOPE:s_5_25|description|5.25 泊松积分公式]
+[287] 5.25 设 $A$ 是闭单位圆盘 $\bar{U}$ 上的连续复函数的一个向量空间。
+[288a] (z)|=\sup _{z \in T} |f
+[288b] (z)|$ (这里 $T$ 是单位图周，
+[289] 即 $U$ 的边界), 则泊松积分表达式 $f(z)=\frac{1}{2 \pi} \int_{-\pi}^{\pi} \frac{1-r^{2}}{1-2 r \cos\left(\theta-t\right) +r^{2}} f\left(\mathrm{e}^{\mathrm{i} t}\right) \mathrm{d} t \quad\left(z=r \mathrm{e}^{\mathrm{i} \theta}\right)$ 对每个 $f \in A, z \in U$ 都成立。
+[/SCOPE:s_chap5]
+[/SCOPE:s_5_25]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_1_5",
+    "target_scope": "s_1_2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "1.5 是连续性的点态定义，是1.2中连续定义的细化"
+  },
+  {
+    "source_scope": "s_1_7",
+    "target_scope": "s_1_2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "1.7 连续函数复合是1.2连续定义的推论"
+  },
+  {
+    "source_scope": "s_1_8",
+    "target_scope": "s_1_7",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "1.8 是1.7的推广到二元函数"
+  },
+  {
+    "source_scope": "s_1_9",
+    "target_scope": "s_1_7",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "1.9 是1.7在可测函数情形下的推论"
+  },
+  {
+    "source_scope": "s_1_12",
+    "target_scope": "s_1_3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "1.12 是1.3中可测函数定义的进一步性质"
+  },
+  {
+    "source_scope": "s_1_17",
+    "target_scope": "s_1_16",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "1.17 用简单函数逼近可测函数"
+  },
+  {
+    "source_scope": "s_1_19",
+    "target_scope": "s_1_18",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "1.19 是1.18测度定义的性质"
+  },
+  {
+    "source_scope": "s_1_20",
+    "target_scope": "s_1_18",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "1.20 是1.18测度定义的例子"
+  },
+  {
+    "source_scope": "s_1_31",
+    "target_scope": "s_1_30",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "1.31 定义L^1中函数的积分"
+  },
+  {
+    "source_scope": "s_1_32",
+    "target_scope": "s_1_30",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "1.32 说明L^1是线性空间"
+  },
+  {
+    "source_scope": "s_1_34",
+    "target_scope": "s_1_30",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "1.34 控制收敛定理"
+  },
+  {
+    "source_scope": "s_1_36",
+    "target_scope": "s_1_3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "1.36 测度完备化"
+  },
+  {
+    "source_scope": "s_1_38",
+    "target_scope": "s_1_34",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "1.38 是控制收敛定理的推论"
+  },
+  {
+    "source_scope": "s_1_41",
+    "target_scope": "s_1_19",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "1.41 博雷尔-坎泰利引理"
+  },
+  {
+    "source_scope": "s_2_2",
+    "target_scope": "s_1_32",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "2.2 引用1.32说明积分是线性泛函"
+  },
+  {
+    "source_scope": "s_2_5",
+    "target_scope": "s_2_3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "2.5 是豪斯多夫空间性质"
+  },
+  {
+    "source_scope": "s_2_6",
+    "target_scope": "s_2_3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "2.6 紧集族有限交性质"
+  },
+  {
+    "source_scope": "s_2_10",
+    "target_scope": "s_2_3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "2.10 连续像紧"
+  },
+  {
+    "source_scope": "s_2_12",
+    "target_scope": "s_2_11",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "2.12 乌雷松引理型存在性"
+  },
+  {
+    "source_scope": "s_2_14",
+    "target_scope": "s_2_12",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "2.14 里斯表示定理"
+  },
+  {
+    "source_scope": "s_2_15",
+    "target_scope": "s_2_14",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "2.15 正则性定义"
+  },
+  {
+    "source_scope": "s_2_17",
+    "target_scope": "s_2_14",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "2.17 正则性进一步性质"
+  },
+  {
+    "source_scope": "s_2_18",
+    "target_scope": "s_2_14",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "2.18 开集σ-紧情形"
+  },
+  {
+    "source_scope": "s_2_22",
+    "target_scope": "s_1_3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "2.22 不可测集存在"
+  },
+  {
+    "source_scope": "s_2_24",
+    "target_scope": "s_1_3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "2.24 鲁金定理"
+  },
+  {
+    "source_scope": "s_2_25",
+    "target_scope": "s_1_31",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "2.25 维塔利-卡拉泰奥多里定理"
+  },
+  {
+    "source_scope": "s_3_2",
+    "target_scope": "s_3_1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "3.2 凸函数连续"
+  },
+  {
+    "source_scope": "s_3_8",
+    "target_scope": "s_3_6",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "3.8 霍尔德不等式"
+  },
+  {
+    "source_scope": "s_3_9",
+    "target_scope": "s_3_6",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "3.9 闵可夫斯基不等式"
+  },
+  {
+    "source_scope": "s_3_11",
+    "target_scope": "s_3_6",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "3.11 L^p完备性"
+  },
+  {
+    "source_scope": "s_3_12",
+    "target_scope": "s_3_11",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "3.12 子序列点态收敛"
+  },
+  {
+    "source_scope": "s_3_13",
+    "target_scope": "s_3_6",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "3.13 简单函数稠密"
+  },
+  {
+    "source_scope": "s_3_14",
+    "target_scope": "s_3_13",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "3.14 C_c稠密"
+  },
+  {
+    "source_scope": "s_3_17",
+    "target_scope": "s_3_16",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "3.17 C_0完备化"
+  },
+  {
+    "source_scope": "s_4_2",
+    "target_scope": "s_4_1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "4.2 柯西-施瓦茨不等式"
+  },
+  {
+    "source_scope": "s_4_3",
+    "target_scope": "s_4_1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "4.3 三角不等式"
+  },
+  {
+    "source_scope": "s_4_5",
+    "target_scope": "s_4_4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "4.5 希尔伯特空间例子"
+  },
+  {
+    "source_scope": "s_4_6",
+    "target_scope": "s_4_1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "4.6 内积连续性"
+  },
+  {
+    "source_scope": "s_4_9",
+    "target_scope": "s_4_1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "4.9 正交与正交补"
+  },
+  {
+    "source_scope": "s_4_10",
+    "target_scope": "s_4_8",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "4.10 最小范数元素"
+  },
+  {
+    "source_scope": "s_4_11",
+    "target_scope": "s_4_10",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "4.11 正交分解"
+  },
+  {
+    "source_scope": "s_4_12",
+    "target_scope": "s_4_11",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "4.12 里斯表示定理"
+  },
+  {
+    "source_scope": "s_4_14",
+    "target_scope": "s_4_13",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "4.14 有限维投影"
+  },
+  {
+    "source_scope": "s_4_17",
+    "target_scope": "s_4_14",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "4.17 贝塞尔不等式与等距"
+  },
+  {
+    "source_scope": "s_4_18",
+    "target_scope": "s_4_17",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "4.18 极大规范正交集等价条件"
+  },
+  {
+    "source_scope": "s_4_22",
+    "target_scope": "s_4_21",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "4.22 规范正交集扩充"
+  },
+  {
+    "source_scope": "s_4_23",
+    "target_scope": "s_4_5",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "4.23 L^p(T)与三角系"
+  },
+  {
+    "source_scope": "s_4_25",
+    "target_scope": "s_4_23",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "4.25 三角多项式逼近"
+  },
+  {
+    "source_scope": "s_4_26",
+    "target_scope": "s_4_23",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "4.26 傅里叶级数与里斯-费希尔定理"
+  },
+  {
+    "source_scope": "s_5_4",
+    "target_scope": "s_5_6",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "5.4 有界线性变换等价条件"
+  },
+  {
+    "source_scope": "s_5_9",
+    "target_scope": "s_5_6",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "5.9 开映射定理"
+  },
+  {
+    "source_scope": "s_5_10",
+    "target_scope": "s_5_9",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "5.10 逆算子定理"
+  },
+  {
+    "source_scope": "s_5_11",
+    "target_scope": "s_4_26",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "5.11 傅里叶级数收敛问题"
+  },
+  {
+    "source_scope": "s_5_17",
+    "target_scope": "s_5_20",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "5.17 复线性泛函与实部"
+  },
+  {
+    "source_scope": "s_5_19",
+    "target_scope": "s_5_20",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "5.19 闭包与泛函分离"
+  },
+  {
+    "source_scope": "s_5_22",
+    "target_scope": "s_5_23",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "5.22 边界与最大模"
+  },
+  {
+    "source_scope": "s_5_25",
+    "target_scope": "s_5_23",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "5.25 泊松积分公式"
+  }
+]

@@ -1,0 +1,70 @@
+[SCOPE:root|description|手动计算开根号（泰勒展开法）]
+文章名: TSqrt
+标题: 手动计算开根号（泰勒展开法）
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=幂函数的泰勒展开
+  [1] type=example heading=例 1 title=平方根的手动计算
+  [2] type=example heading=例 2 title=$\sqrt{6}$ 的手动计算
+
+[SCOPE:s_theorem1|description|幂函数的泰勒展开]
+[0] 定理 1 幂函数的泰勒展开
+[1] $$(1+x)^k = 1 + \frac{k}{1!} x + \frac{k(k-1)}{2!} x^2 + \frac{k(k-1)(k-2)}{3!} x^3 + \cdots~.$$
+[2a] 泰勒展开是一种常用的 “拟合” 方法，对于一个幂函数：$\left(1+x\right) ^k$
+[2b] 当 $x$ 极小的时候（可以表示为 $x \rightarrow 0$），则会有：
+[3] $$(1+\Delta x)^k \approx 1 + k \Delta x + \frac{k(k-1)}{2!}(\Delta x)^2 ~,$$
+[4] 特别的，这里的 $x$ 取正数负数都可以。
+[5] 我们的手动计算根号的这种方法就是由此得来。
+[6] 下面举例子来更明确的说明如何使用这种方法计算：
+
+[/SCOPE:s_theorem1]
+[SCOPE:s_example1|description|平方根的手动计算]
+[7] 例 1 平方根的手动计算
+[SCOPE:s_example1_let|let_bind|例1的变量]
+[8] 例如对于 $\sqrt{101}$，我们要考虑将其拆为 $\sqrt{1+ \Delta x}$ 的形式（其中 $\Delta x$ 极小）。
+[9] 我们找到一个距离 $101$ 最近的平方数，
+[10] 即 $10^2 = 100$，之后将这 $100$ 提出，之后就一定可以得到一个 $10 \sqrt{1 + \Delta x}$ 的形式：
+[11] $$\sqrt{101} = \sqrt{100} \times \sqrt{\frac{101}{100}} = 10 \sqrt{1+\frac{1}{100}}~,$$
+[/SCOPE:s_example1_let]
+[12] 也就可以考虑对后半部分进行近似，
+[13] 即为：
+[14] $$\sqrt{1 + \frac 1{100}} = \left(1 + \frac 1{100}\right)^{\frac 1 2} = 1 + \frac 12 \times \frac 1{100} + \frac{\frac 12 \times (\frac 12 - 1)}{2!} \times \left(\frac 1{100}\right)^2~,$$
+[15] 计算得出这式的值为：$1.0049875$，将其代回 $\sqrt{101} = 10 \sqrt{1+\frac{1}{100}}$ 就可以得到 $\sqrt{101}$ 的近似值 $\sqrt{101} \approx 10 \times 1.0049875 = 10.049875$。
+[16] 可以计算得到 $10.049875^2 \approx 100.9999875$，是十分接近的。
+[17] 一般的来说，取到第二项 $kx$，也就是取近似 $\left(1+\Delta x\right)^k \approx 1 + k \Delta x $ 就已经足够了。
+[18] 在使用这种方法的时候，精度是由 $\Delta x$ 极小保证的，
+[19] 所以对于一些 “不友好” 的数，其没有距离很近的平方数，就需要用到一些 “凑” 的技巧，例如下面这个例子：
+
+[/SCOPE:s_example1]
+[SCOPE:s_example2|description|sqrt(6) 的手动计算]
+[20] 例 2 $\sqrt{6}$ 的手动计算
+[21] $\sqrt{6}$ 直接找最近的平方数是会取到 $\sqrt{4}=2$ 或 $\sqrt{9}=3$，对于这两者而言，提出后得到的式子分别为：$2\sqrt{1 + \frac 12}$ 与 $3 \sqrt{1 - \frac 13}$，这剩余的部分都是较大的。
+[22] 例如对于后者，就算取到二阶近似（$\frac{k(k-1)}{2!} (\Delta x)^2$）结果也是十分不准确的（对结果 $2.3333$ 平方后得到 $5.4443$）。
+[SCOPE:s_example2_let|let_bind|例2的变量]
+[23] 因此我们考虑对 $\sqrt{6}$ 乘以某一系数，使其接近一平方数。
+[24] 有如下过程：
+[25] $$\sqrt{6} = \frac 12 \sqrt{6 \times 2^2} = \frac 12 \sqrt{24} = \frac 12 \sqrt{25 - 1} = \frac52 \sqrt{1 - \frac 1{25}} \approx \frac 52 \left(1 - \frac 12 \cdot \frac 1{25}\right) = 2.45~.$$
+[/SCOPE:s_example2_let]
+[26] 现在考虑将这结果平方验证：$2.45^2 = 6.0025$，是十分接近的。
+[27] 综上，这种方法优势在于对于任意次根号都是可以计算的而且过程较为简单，
+[28] 但缺点是需要配凑使得 $\Delta x$ 极小。
+[/SCOPE:s_example2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_theorem1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1使用定理1的展开公式"
+  },
+  {
+    "source_scope": "s_example2",
+    "target_scope": "s_theorem1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2使用定理1的展开公式"
+  }
+]

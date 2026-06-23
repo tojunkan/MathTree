@@ -1,0 +1,606 @@
+{
+  "article_name": "GAUSS",
+  "statements": [
+    {
+      "stmt_id": "st_example1_intro",
+      "subtype": "example",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_system",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_solve1",
+      "subtype": "conclusion",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_elimination",
+      "subtype": "conclusion",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_augmented",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "augmented matrix"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_row_reduced",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_ideal",
+      "subtype": "remark",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_pivot_zero",
+      "subtype": "condition",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_need_general",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_general_representation",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_general_let",
+      "exposed_entities": [
+        "B",
+        "A",
+        "y",
+        "a_{i,j}",
+        "y_i"
+      ]
+    },
+    {
+      "stmt_id": "st_elementary_row_ops_def",
+      "subtype": "definition",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_general_let",
+      "exposed_entities": [
+        "elementary row operations"
+      ]
+    },
+    {
+      "stmt_id": "st_elementary_row_ops_preserve_solution",
+      "subtype": "theorem",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_general_steps",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_swap_rows",
+      "subtype": "definition",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_general_steps",
+      "exposed_entities": [
+        "r_i"
+      ]
+    },
+    {
+      "stmt_id": "st_scale_row",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_general_steps",
+      "exposed_entities": [
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_add_multiple",
+      "subtype": "definition",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_general_steps",
+      "exposed_entities": [
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_echelon_form_existence",
+      "subtype": "theorem",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "true",
+      "scope_id": "s_general_steps",
+      "exposed_entities": [
+        "echelon form"
+      ]
+    },
+    {
+      "stmt_id": "st_echelon_form_definition",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_general_steps",
+      "exposed_entities": [
+        "q(i)"
+      ]
+    },
+    {
+      "stmt_id": "st_general_steps_algorithm",
+      "subtype": "theorem",
+      "clause_range": [
+        26,
+        36
+      ],
+      "truth_value": "true",
+      "scope_id": "s_general_steps",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_system",
+      "subtype": "assumption",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2_let",
+      "exposed_entities": [
+        "x_1",
+        "x_2",
+        "x_3",
+        "x_4"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_augmented",
+      "subtype": "conclusion",
+      "clause_range": [
+        39,
+        40
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_step1",
+      "subtype": "conclusion",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_comment",
+      "subtype": "remark",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_step2",
+      "subtype": "conclusion",
+      "clause_range": [
+        44,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        48
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2",
+      "exposed_entities": [
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_general_solution",
+      "subtype": "remark",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_solution_count_intro",
+      "subtype": "remark",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_solution_count",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_no_solution",
+      "subtype": "theorem",
+      "clause_range": [
+        51,
+        53
+      ],
+      "truth_value": "true",
+      "scope_id": "s_solution_count",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_infinite_solutions",
+      "subtype": "theorem",
+      "clause_range": [
+        54,
+        55
+      ],
+      "truth_value": "true",
+      "scope_id": "s_solution_count",
+      "exposed_entities": [
+        "d"
+      ]
+    },
+    {
+      "stmt_id": "st_unique_solution",
+      "subtype": "theorem",
+      "clause_range": [
+        56,
+        58
+      ],
+      "truth_value": "true",
+      "scope_id": "s_solution_count",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_solution_structure_form",
+      "subtype": "theorem",
+      "clause_range": [
+        59,
+        61
+      ],
+      "truth_value": "true",
+      "scope_id": "s_solution_structure_let",
+      "exposed_entities": [
+        "x",
+        "c_i",
+        "x_i",
+        "x_0",
+        "d"
+      ]
+    },
+    {
+      "stmt_id": "st_solution_structure_completeness",
+      "subtype": "theorem",
+      "clause_range": [
+        62,
+        62
+      ],
+      "truth_value": "true",
+      "scope_id": "s_solution_structure",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_general_solution_def",
+      "subtype": "definition",
+      "clause_range": [
+        63,
+        65
+      ],
+      "truth_value": null,
+      "scope_id": "s_solution_structure",
+      "exposed_entities": [
+        "general solution"
+      ]
+    },
+    {
+      "stmt_id": "st_particular_solution_def",
+      "subtype": "definition",
+      "clause_range": [
+        66,
+        67
+      ],
+      "truth_value": null,
+      "scope_id": "s_solution_structure",
+      "exposed_entities": [
+        "special solution"
+      ]
+    },
+    {
+      "stmt_id": "st_homogeneous_definition",
+      "subtype": "definition",
+      "clause_range": [
+        73,
+        77
+      ],
+      "truth_value": null,
+      "scope_id": "s_solution_structure",
+      "exposed_entities": [
+        "homogeneous"
+      ]
+    },
+    {
+      "stmt_id": "st_homogeneous_solution",
+      "subtype": "theorem",
+      "clause_range": [
+        68,
+        72
+      ],
+      "truth_value": "true",
+      "scope_id": "s_solution_structure",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_solution_structure_summary",
+      "subtype": "theorem",
+      "clause_range": [
+        78,
+        79
+      ],
+      "truth_value": "true",
+      "scope_id": "s_solution_structure",
+      "exposed_entities": [
+        "inhomogeneous"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_example1_system",
+      "target": "st_example1_solve1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_system",
+      "target": "st_example1_elimination",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_system",
+      "target": "st_example1_augmented",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_augmented",
+      "target": "st_example1_row_reduced",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_pivot_zero",
+      "target": "st_example1_need_general",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_elementary_row_ops_def",
+      "target": "st_elementary_row_ops_preserve_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_swap_rows",
+      "target": "st_elementary_row_ops_preserve_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_scale_row",
+      "target": "st_elementary_row_ops_preserve_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_add_multiple",
+      "target": "st_elementary_row_ops_preserve_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_elementary_row_ops_preserve_solution",
+      "target": "st_echelon_form_existence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_echelon_form_existence",
+      "target": "st_general_steps_algorithm",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_system",
+      "target": "st_example2_augmented",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_augmented",
+      "target": "st_example2_step1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_step1",
+      "target": "st_example2_step2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_step2",
+      "target": "st_example2_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_general_steps_algorithm",
+      "target": "st_no_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_general_steps_algorithm",
+      "target": "st_infinite_solutions",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_general_steps_algorithm",
+      "target": "st_unique_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_solution_structure_form",
+      "target": "st_solution_structure_completeness",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_solution_structure_form",
+      "target": "st_homogeneous_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_homogeneous_solution",
+      "target": "st_solution_structure_summary",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_example1_intro",
+      "target": "st_general_steps_algorithm",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是高斯消元法的特例，引出一般步骤"
+    },
+    {
+      "source": "st_general_steps_algorithm",
+      "target": "st_example2_system",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2应用一般步骤"
+    },
+    {
+      "source": "st_general_steps_algorithm",
+      "target": "st_solution_count_intro",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "一般步骤后判断解的数量"
+    },
+    {
+      "source": "st_unique_solution",
+      "target": "st_solution_structure_form",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "解的数量引出解的结构"
+    }
+  ],
+  "unresolved": []
+}

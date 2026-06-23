@@ -1,0 +1,720 @@
+{
+  "article_name": "conff",
+  "statements": [
+    {
+      "stmt_id": "st_boundedness_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": "true",
+      "scope_id": "s_boundedness",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_boundedness_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_boundedness_let",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_boundedness_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_boundedness_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_boundedness_reductio_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_boundedness_reductio",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_boundedness_interval_seq_def",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_boundedness_interval_seq",
+      "exposed_entities": [
+        "[a_n,b_n]",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_boundedness_contradiction",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        12
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_boundedness_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_boundedness_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_boundedness",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_extreme_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": "true",
+      "scope_id": "s_extreme",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b",
+        "ξ",
+        "ζ"
+      ]
+    },
+    {
+      "stmt_id": "st_extreme_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_extreme_let",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_extreme_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_extreme_let",
+      "exposed_entities": [
+        "ξ",
+        "ζ"
+      ]
+    },
+    {
+      "stmt_id": "st_extreme_M_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_extreme_M_let",
+      "exposed_entities": [
+        "M",
+        "x_n",
+        "ζ"
+      ]
+    },
+    {
+      "stmt_id": "st_extreme_m_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_extreme_m_let",
+      "exposed_entities": [
+        "m",
+        "ξ"
+      ]
+    },
+    {
+      "stmt_id": "st_extreme_remark",
+      "subtype": "remark",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_extreme",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intermediate_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        25,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intermediate",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b",
+        "m",
+        "M",
+        "η",
+        "ξ"
+      ]
+    },
+    {
+      "stmt_id": "st_intermediate_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_intermediate_let",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b",
+        "m",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_intermediate_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intermediate_let",
+      "exposed_entities": [
+        "η",
+        "ξ"
+      ]
+    },
+    {
+      "stmt_id": "st_intermediate_proof_start",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intermediate_proof",
+      "exposed_entities": [
+        "x_1",
+        "x_2"
+      ]
+    },
+    {
+      "stmt_id": "st_intermediate_E_def",
+      "subtype": "definition",
+      "clause_range": [
+        29,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_intermediate_E_let",
+      "exposed_entities": [
+        "E",
+        "x_1",
+        "x_2",
+        "η",
+        "ξ"
+      ]
+    },
+    {
+      "stmt_id": "st_intermediate_E_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intermediate_proof",
+      "exposed_entities": [
+        "ξ",
+        "η"
+      ]
+    },
+    {
+      "stmt_id": "st_intermediate_reductio_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_intermediate_reductio",
+      "exposed_entities": [
+        "ξ",
+        "η"
+      ]
+    },
+    {
+      "stmt_id": "st_intermediate_reductio_contra",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intermediate_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_zero_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": "true",
+      "scope_id": "s_zero",
+      "exposed_entities": [
+        "f(x)",
+        "I",
+        "α",
+        "β",
+        "ξ"
+      ]
+    },
+    {
+      "stmt_id": "st_zero_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_zero_let",
+      "exposed_entities": [
+        "f(x)",
+        "I",
+        "α",
+        "β"
+      ]
+    },
+    {
+      "stmt_id": "st_zero_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_zero_let",
+      "exposed_entities": [
+        "ξ"
+      ]
+    },
+    {
+      "stmt_id": "st_zero_remark",
+      "subtype": "remark",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_zero",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_question1_1",
+      "subtype": "exercise",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_question1",
+      "exposed_entities": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    },
+    {
+      "stmt_id": "st_question1_2",
+      "subtype": "exercise",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_question1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_unif_cont_def",
+      "subtype": "definition",
+      "clause_range": [
+        43,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_unif_cont_def",
+      "exposed_entities": [
+        "f(x)",
+        "I",
+        "ϵ",
+        "δ",
+        "x_1",
+        "x_2"
+      ]
+    },
+    {
+      "stmt_id": "st_unif_cont_def_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        43,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_unif_cont_def_let",
+      "exposed_entities": [
+        "f(x)",
+        "I"
+      ]
+    },
+    {
+      "stmt_id": "st_unif_cont_def_cond",
+      "subtype": "condition",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_unif_cont_def_let",
+      "exposed_entities": [
+        "ϵ",
+        "δ",
+        "x_1",
+        "x_2"
+      ]
+    },
+    {
+      "stmt_id": "st_unif_cont_def_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_unif_cont_def_let",
+      "exposed_entities": [
+        "f(x)",
+        "I"
+      ]
+    },
+    {
+      "stmt_id": "st_unif_cont_equiv",
+      "subtype": "theorem",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": "true",
+      "scope_id": "s_unif_cont_def",
+      "exposed_entities": [
+        "ϵ_0",
+        "x'_n",
+        "x''_n"
+      ]
+    },
+    {
+      "stmt_id": "st_unif_cont_implies_cont",
+      "subtype": "theorem",
+      "clause_range": [
+        47,
+        48
+      ],
+      "truth_value": "true",
+      "scope_id": "s_unif_cont_def",
+      "exposed_entities": [
+        "f(x)",
+        "I"
+      ]
+    },
+    {
+      "stmt_id": "st_question2_1",
+      "subtype": "exercise",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_question2",
+      "exposed_entities": [
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_question2_2",
+      "subtype": "exercise",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_question2",
+      "exposed_entities": [
+        "x'_n",
+        "x''_n"
+      ]
+    },
+    {
+      "stmt_id": "st_cantor_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        51,
+        52
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cantor",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_cantor_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        51,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_cantor_let",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_cantor_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        52,
+        52
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cantor_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cantor_F_def",
+      "subtype": "definition",
+      "clause_range": [
+        53,
+        55
+      ],
+      "truth_value": null,
+      "scope_id": "s_cantor_F_let",
+      "exposed_entities": [
+        "F(x)",
+        "f(a)",
+        "f(b)"
+      ]
+    },
+    {
+      "stmt_id": "st_cantor_cover_def",
+      "subtype": "definition",
+      "clause_range": [
+        57,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_cantor_cover_let",
+      "exposed_entities": [
+        "U(x,δ_x)",
+        "x_j",
+        "δ_{x_j}",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_cantor_delta_def",
+      "subtype": "definition",
+      "clause_range": [
+        60,
+        60
+      ],
+      "truth_value": null,
+      "scope_id": "s_cantor_delta_let",
+      "exposed_entities": [
+        "δ"
+      ]
+    },
+    {
+      "stmt_id": "st_cantor_proof_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        61,
+        67
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cantor_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_question3_1",
+      "subtype": "exercise",
+      "clause_range": [
+        68,
+        69
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_question3",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_question3_2",
+      "subtype": "exercise",
+      "clause_range": [
+        70,
+        70
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_question3",
+      "exposed_entities": [
+        "f(x)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_boundedness_assump",
+      "target": "st_boundedness_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_boundedness_reductio_assump",
+      "target": "st_boundedness_contradiction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_boundedness_contradiction",
+      "target": "st_boundedness_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_extreme_assump",
+      "target": "st_extreme_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intermediate_assump",
+      "target": "st_intermediate_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_zero_assump",
+      "target": "st_zero_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_unif_cont_def_assump",
+      "target": "st_unif_cont_def_cond",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_unif_cont_def_cond",
+      "target": "st_unif_cont_def_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cantor_assump",
+      "target": "st_cantor_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cantor_concl",
+      "target": "st_cantor_proof_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_zero_theorem",
+      "target": "st_intermediate_theorem",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_cantor_theorem",
+      "target": "st_unif_cont_def",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_zero_theorem",
+      "target": "st_intermediate_theorem",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "零点存在定理是介值定理的特例"
+    },
+    {
+      "source": "st_cantor_theorem",
+      "target": "st_unif_cont_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "康托尔定理断言闭区间上连续函数一致连续"
+    }
+  ],
+  "unresolved": []
+}

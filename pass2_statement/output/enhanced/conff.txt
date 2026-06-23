@@ -1,0 +1,183 @@
+[SCOPE:root|description|连续函数的性质]
+文章名: conff
+标题: 连续函数的性质
+
+[0] 【未完成】修改格式
+
+[SCOPE:s_boundedness|description|有界性定理]
+[SCOPE:s_boundedness_let|let_bind|有界性定理的变量]
+[1] 若函数 $f(x)\in C[a,b]$，
+[2] 则 $f(x)$ 在 $[a,b]$ 上有界。
+[/SCOPE:s_boundedness_let]
+[SCOPE:s_boundedness_reductio|reductio|反证法：假设无界]
+[3] 证明：若 $f(x)$ 在 $[a,b]$ 上无界，
+[SCOPE:s_boundedness_interval_seq|let_bind|闭区间列]
+[4] 则将 $[a,b]$ 等分成两个闭区间，$f(x)$ 必在其中一个子区间上无界，取定这样的一个区间并将其设为 $[a_1,b_1]$ . 同理，取定 $[a_2,b_2]$ . 如此进行下去，我们就得到了一个闭区间列 $\{[a_n,b_n]\}$，满足：
+[5] （1）$[a_n,b_n]\supset[a_{n+1},b_{n+1}]$；
+[6] （2）$b_{n+1}-a_{n+1}=\dfrac{b_n-a_n}{2}$；
+[7] （3）$f(x)$ 在每个 $[a_n,b_n]$ 上无界。
+[/SCOPE:s_boundedness_interval_seq]
+[8a] (x)\in C[a,b]$ 和 $\xi\in[a,b]$，知 $\forall\epsilon>0$，$\exists\ \delta>0$，$\forall x\in B(\xi,\delta)\bigcap[a,b]$，有 $\vert f
+[8b] (x)-f(\xi)\vert<\epsilon$，
+[9] 即 $f(x)$ 在 $B(\xi,\delta)\bigcap[a,b]$ 上有界。
+[10] 又由条件（2），当 $n$ 充分大时，有 $[a_n,b_n]\subset B(\xi,\delta)$，
+[11] 故 $[a_n,b_n]\subset B(\xi,\delta)\bigcap[a,b]$，
+[12] 从而 $f(x)$ 在 $[a_n,b_n]$ 上有界，与条件（3）矛盾。
+[/SCOPE:s_boundedness_reductio]
+[13] 故 $f(x)$ 在 $[a,b]$ 上有界。
+
+[/SCOPE:s_boundedness]
+[SCOPE:s_extreme|description|最值定理]
+[SCOPE:s_extreme_let|let_bind|最值定理的变量]
+[14] 若 $f(x)\in C[a,b]$，
+[15] 则 $f(x)$ 在 $[a,b]$ 上必有最小值和最大值，
+[16] 即存在 $\xi,\zeta\in [a,b]$，使得 $f(\xi)\leq f(x)\leq f(\zeta)$ 对一切的 $x\in[a,b]$ 成立。
+[/SCOPE:s_extreme_let]
+[SCOPE:s_extreme_proof|description|最值定理的证明]
+[SCOPE:s_extreme_M_let|let_bind|最大值点]
+[17] 证明：令 $M=\sup\limits_{x\in[a,b]}\{f(x)\}$，
+[18] 则由上确界的定义知，存在一个序列 $\{x_n\}\subset[a,b]$，使得 $f(x)\rightarrow M(x\rightarrow \infty)$. 由于 $\{x_n\}$ 是有界序列，
+[19] 所以必有一收敛子列 $\{x_{n_k}\}$（定理 5 ）. 设 $\lim\limits_{k\rightarrow\infty}x_{n_k}=\zeta$，
+[20] 则 $\zeta\in[a,b]$. 再由 $f(x)\in C[a,b]$，知
+[21] $$
+f(\zeta)=\lim\limits_{k\rightarrow\infty}f(x_{n_k})=M~.
+$$
+[/SCOPE:s_extreme_M_let]
+[SCOPE:s_extreme_m_let|let_bind|最小值点]
+[22] 同理可证存在 $\xi\in[a,b]$，使得
+[23] $$
+f(\xi)=m=\inf\limits_{x\in[a,b]}\{f(x)\}~.
+$$
+[/SCOPE:s_extreme_proof]
+[/SCOPE:s_extreme_m_let]
+[24] **注**：介值定理只在闭区间上成立，开区间上边界处 $f(x)$ 可能趋于无穷。
+
+[/SCOPE:s_extreme]
+[SCOPE:s_intermediate|description|介值定理]
+[SCOPE:s_intermediate_let|let_bind|介值定理的变量]
+[25a] (x)\in [a,b]$，记 $m=\min\limits_{x\in[a,b]}\{f
+[25b] (x)\}$，$M=\max\limits_{x\in[a,b]}\{f
+[25c] (x)\}$，
+[26] 则 $f([a,b])=[m,M]$，
+[27] 即对 $\forall \eta\in[m,M]$，$\exists \xi\in[a,b]$，使得 $f(\xi)=\eta$.
+[/SCOPE:s_intermediate_let]
+[SCOPE:s_intermediate_proof|description|介值定理的证明]
+[28] 证明：由最值定理知，$\exists\ x_1,x_2\in[a,b]$，使得 $f(x_1)=m$，$f(x_2)=M$. 下证对 $\forall \eta\in (m,M)$，$\exists\ \xi\in[a,b]$，使得 $f(\xi)=\eta$.
+[SCOPE:s_intermediate_E_let|let_bind|集合E]
+[29] 不妨设 $x_1< x_2$，并定义
+[30] $$
+E=\{x\in[x_1,x_2]:f(x)>\eta\}~.
+$$
+[31] 显然有 $x_1\notin E$，$x_2\in E$. 现令 $E$ 的下确界为 $\xi$，
+[/SCOPE:s_intermediate_E_let]
+[32] 则有 $f(\xi)=\eta$.
+[SCOPE:s_intermediate_reductio|reductio|反证法：假设f(ξ)≠η]
+[33] 事实上，若不然，
+[34] 则 $f(\xi)>\eta$. 由连续函数的局部保号性知，存在 $\xi$ 的一个邻域 $U(\xi,\delta)$，使得 $f(x)>\eta$ 对一切 $x\in U(\xi,\delta)$ 成立。
+[35] 取 $\xi'\in[x_1,x_2]\bigcap [\xi-\delta,\xi]$，
+[36] 则有 $f(\xi')\in E$ 及 $\xi'<\xi$，这与 $\xi$ 是 $E$ 的下确界矛盾。
+
+[/SCOPE:s_intermediate]
+[/SCOPE:s_intermediate_proof]
+[/SCOPE:s_intermediate_reductio]
+[SCOPE:s_zero|description|零点存在定理]
+[SCOPE:s_zero_let|let_bind|零点定理的变量]
+[37] 设 $f(x)$ 在区间 $I$ 上连续，若 $\alpha,\beta\in I$，$\alpha<\beta$，满足 $f(\alpha)f(\beta)<0$，
+[38] 则存在 $\xi\in(\alpha,\beta)$，使得 $f(\xi)=0$.
+[/SCOPE:s_zero_let]
+[39] 零点存在定理实质上是介值定理的一种特殊情况，常被用来证明非线性方程之解的存在性，或者用它来求方程的近似根。
+[40] 如：
+
+[/SCOPE:s_zero]
+[SCOPE:s_question1|description|Question 1]
+[41] 1.证明三次方程 $ax^3+bx^2+cx+d=0$ 至少有一实根。
+[42] 2.证明方程 $x^4+2x-1=0$ 在 $(0,1)$ 中必有一根，并求它的一个近似解。
+
+[/SCOPE:s_question1]
+[SCOPE:s_unif_cont_def|description|一致连续定义]
+[SCOPE:s_unif_cont_def_let|let_bind|一致连续定义的变量]
+[43] 设函数 $f(x)$ 在区间 $I$ 上有定义。
+[44] 若 $\forall \epsilon>0$，$\exists\ \delta>0$，当 $x_1,x_2\in I$ 且 $\vert x_1-x_2\vert<\delta$ 时，有 $\vert f(x_1)-f(x_2)\vert<\epsilon$，
+[45] 则称 $f(x)$ 在 $I$ 上**一致连续**.
+[/SCOPE:s_unif_cont_def_let]
+[46] 由此，$f(x)$ 在 $I$ 上不一致连续与以下断言等价：存在 $\epsilon_0>0$ 及序列 $\{x'_n\}$，$\{x''_n\}\subset I$ 满足 $x'_n-x''_n\rightarrow0(n\rightarrow\infty)$ 及 $\vert f(x'_n)-f(x''_n)\vert\geq\epsilon_0$.
+[47] 显然，若 $f(x)$ 在 $I$ 上一致连续，
+[48] 则它必在 $I$ 上连续。
+
+[/SCOPE:s_unif_cont_def]
+[SCOPE:s_question2|description|Question 2]
+[49] 1.证明 $f(x)=\sin x$ 在 $(-\infty,+\infty)$ 上一致连续。
+[50] 2.试证明 $f(x)$ 在 $I$ 一致连续的充分必要条件是：对任意的两个序列 $\{x'_n\}\subset I$，$\{x''_n\}\subset I$，若它们满足 $\lim\limits_{n\rightarrow\infty}(x'_n-x''_n)=0$，必有 $\lim\limits_{n\rightarrow\infty}[f(x'_n)-f(x''_n)]=0$。
+
+[/SCOPE:s_question2]
+[SCOPE:s_cantor|description|康托尔定理]
+[SCOPE:s_cantor_let|let_bind|康托尔定理的变量]
+[51] 设函数 $f(x)\in C[a,b]$，
+[52] 则 $f(x)$ 在闭区间 $[a,b]$ 上一致连续。
+[/SCOPE:s_cantor_let]
+[SCOPE:s_cantor_proof|description|康托尔定理的证明]
+[SCOPE:s_cantor_F_let|let_bind|延拓函数F]
+[53] 证明：定义
+[54] $$
+F(x)=\left\{
+\begin{matrix}
+f(a),\ \ \ \ &x\in(-\infty,a),\\
+f(x),\ \ \ \ &x\in[a,b],\\
+f(b),\ \ \ \ &x\in(b,+\infty),
+\end{matrix}
+\right.~.
+$$
+[55] 则 $F(x)\in C(-\infty,+\infty)$. $\forall \epsilon>0$ 和 $x\in[a,b]$，$\exists\ \delta_x>0$，当 $x',x''\in U(x,2\delta_x)$ 时，有
+[/SCOPE:s_cantor_F_let]
+[56] $$
+\vert F(x')-F(x'')\vert<\epsilon~.
+$$
+[SCOPE:s_cantor_cover_let|let_bind|开覆盖与有限子覆盖]
+[57] 显然，开区间簇 $\{U(x,\delta_x):x\in[a,b]\}$ 是闭区间 $[a,b]$ 的一个开覆盖。
+[58] 由有限覆盖定理知，必有其中有限多个开区间
+[59] $$
+U(x_1,\delta_{x_1}),U(x_2,\delta_{x_2}),\cdot\cdot\cdot,U(x_m,\delta_{x_m})~.
+$$
+[SCOPE:s_cantor_delta_let|let_bind|最终delta]
+[60] 它们完全覆盖了 $[a,b]$. 令 $\delta=\min\{\delta_{x_j}:j=1,2,\cdot\cdot\cdot,m\}$，
+[/SCOPE:s_cantor_cover_let]
+[61] 则 $\delta>0$，且当 $x',x''\in[a,b]$ 且 $\vert x'-x''\vert<\delta$ 时，必定存在某一 $U(x_j,\delta_{x_j})$，使得 $x'\in U(x_j,\delta_{x_j})$，
+[62] 即 $\vert x'-x_j\vert<\delta_{x_j}$，
+[63] 从而 $\vert x''-x_j\vert\leq\vert x''-x'\vert+\vert x'-x_j\vert\leq\delta+\delta_{x_j}\leq2\delta_{x_j}$，
+[64] 于是有 $x',x''\in U(x_j,2\delta_{x_j})$. 这样，由 $\delta_{x_j}$ 的定义，有
+[65] $$
+\vert f(x')-f(x'')\vert=\vert F(x')-F(x'')\vert<\epsilon~.
+$$
+[66] 注意到 $\delta$ 只与 $\epsilon$ 有关而与 $x',x''$ 无关，
+[67] 故 $f(x)$ 在 $[a,b]$ 上一致连续。
+
+[/SCOPE:s_cantor]
+[/SCOPE:s_cantor_proof]
+[/SCOPE:s_cantor_delta_let]
+[SCOPE:s_question3|description|Question 3]
+[68] 1.设函数 $f(x)$ 在 $(a,b)$ 上连续。
+[69a] (x)$ 在 $(a,b)$ 上一致连续的充要条件是 $\lim\limits_{x\rightarrow a+0}f
+[69b] (x)$ 与 $\lim\limits_{x\rightarrow b-0}f
+[69c] (x)$ 都存在。
+[70a] (x)$ 是定义在 $(-\infty,+\infty)$ 上的连续周期函数，证明 $f
+[70b] (x)$ 在 $(-\infty,+\infty)$ 上一致连续。
+[/SCOPE:s_question3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_zero",
+    "target_scope": "s_intermediate",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "零点存在定理是介值定理的特例"
+  },
+  {
+    "source_scope": "s_cantor",
+    "target_scope": "s_unif_cont_def",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "康托尔定理断言闭区间上连续函数一致连续"
+  }
+]

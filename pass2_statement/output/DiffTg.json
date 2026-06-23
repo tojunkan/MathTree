@@ -1,0 +1,327 @@
+{
+  "article_name": "DiffTg",
+  "statements": [
+    {
+      "stmt_id": "st_smooth_map_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_smooth_map_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_smooth_map_let",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_smooth_map_let",
+      "exposed_entities": [
+        "f",
+        "M",
+        "N",
+        "p",
+        "U",
+        "V",
+        "φ",
+        "ϕ"
+      ]
+    },
+    {
+      "stmt_id": "st_smooth_map_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_smooth_map_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_smooth_map_remark",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_smooth_map_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_differential_def",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_differential_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_differential_let",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_differential_let",
+      "exposed_entities": [
+        "M",
+        "N",
+        "f",
+        "p",
+        "v",
+        "df_p"
+      ]
+    },
+    {
+      "stmt_id": "st_differential_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_differential_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_differential_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_differential_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_differential_remark2",
+      "subtype": "remark",
+      "clause_range": [
+        19,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_differential_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_immersion_def",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_immersion_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_immersion_let",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_immersion_let",
+      "exposed_entities": [
+        "f",
+        "M",
+        "N",
+        "p",
+        "df_p"
+      ]
+    },
+    {
+      "stmt_id": "st_immersion_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_immersion_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_submersion_def",
+      "subtype": "definition",
+      "clause_range": [
+        28,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_submersion_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_submersion_let",
+      "subtype": "assumption",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_submersion_let",
+      "exposed_entities": [
+        "f",
+        "M",
+        "N",
+        "p",
+        "df_p"
+      ]
+    },
+    {
+      "stmt_id": "st_submersion_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_submersion_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_submersion_remark",
+      "subtype": "remark",
+      "clause_range": [
+        32,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_submersion_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example",
+      "subtype": "example",
+      "clause_range": [
+        35,
+        40
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_let",
+      "subtype": "assumption",
+      "clause_range": [
+        36,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_example_let",
+      "exposed_entities": [
+        "S1",
+        "S2",
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_example_immersion",
+      "subtype": "conclusion",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_submersion",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example_let",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_smooth_map_let",
+      "target": "st_smooth_map_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_differential_let",
+      "target": "st_differential_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_immersion_let",
+      "target": "st_immersion_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_submersion_let",
+      "target": "st_submersion_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_let",
+      "target": "st_example_immersion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_let",
+      "target": "st_example_submersion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_immersion_def",
+      "target": "st_differential_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "浸入定义依赖于微分"
+    },
+    {
+      "source": "st_submersion_def",
+      "target": "st_differential_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "浸没定义依赖于微分"
+    },
+    {
+      "source": "st_example",
+      "target": "st_immersion_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例子说明浸入"
+    },
+    {
+      "source": "st_example",
+      "target": "st_submersion_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例子说明浸没"
+    }
+  ],
+  "unresolved": []
+}

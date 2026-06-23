@@ -1,0 +1,351 @@
+{
+  "article_name": "Der",
+  "statements": [
+    {
+      "stmt_id": "st_geom_curve",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_secant_eq",
+      "subtype": "remark",
+      "clause_range": [
+        3,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_limit_slope",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_geom",
+      "exposed_entities": [
+        "k",
+        "x_A",
+        "x_B",
+        "f(x_B)",
+        "f(x_A)"
+      ]
+    },
+    {
+      "stmt_id": "st_geom_derivative_def",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_geom",
+      "exposed_entities": [
+        "f'(x_A)",
+        "df/dx|_{x=x_A}"
+      ]
+    },
+    {
+      "stmt_id": "st_geom_tangent_slope",
+      "subtype": "remark",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_formula",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "f'(x_0)",
+        "x_0",
+        "f(x)",
+        "Δx"
+      ]
+    },
+    {
+      "stmt_id": "st_phys_approx",
+      "subtype": "remark",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_phys",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_phys_linear_approx",
+      "subtype": "remark",
+      "clause_range": [
+        21,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_phys",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_phys_sensitivity",
+      "subtype": "remark",
+      "clause_range": [
+        28,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_phys",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_phys_velocity",
+      "subtype": "remark",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_phys",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sided_intro",
+      "subtype": "remark",
+      "clause_range": [
+        33,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_sided",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_formula",
+      "subtype": "definition",
+      "clause_range": [
+        38,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "f'_+(x_0)",
+        "f'_-(x_0)",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        43,
+        45
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_contrapositive",
+      "subtype": "conclusion",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_example",
+      "subtype": "example",
+      "clause_range": [
+        47,
+        51
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "f(x)=|x|"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_intro",
+      "subtype": "remark",
+      "clause_range": [
+        53,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_formula",
+      "subtype": "definition",
+      "clause_range": [
+        58,
+        61
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "f'(x)",
+        "dy/dx",
+        "df/dx"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_calc",
+      "subtype": "example",
+      "clause_range": [
+        63,
+        67
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "f(x)=2x+3"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        68,
+        68
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_calc",
+      "subtype": "example",
+      "clause_range": [
+        69,
+        73
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": [
+        "f(x)=C"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_remark",
+      "subtype": "remark",
+      "clause_range": [
+        74,
+        74
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex4_calc",
+      "subtype": "example",
+      "clause_range": [
+        75,
+        79
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex4",
+      "exposed_entities": [
+        "f(x)=ax^2+bx+c"
+      ]
+    },
+    {
+      "stmt_id": "st_ex4_remark",
+      "subtype": "remark",
+      "clause_range": [
+        80,
+        80
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex4",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_geom_limit_slope",
+      "target": "st_geom_derivative_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_statement",
+      "target": "st_thm1_contrapositive",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_example",
+      "target": "st_thm1_statement",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_calc",
+      "target": "st_ex2_calc",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex4_calc",
+      "target": "st_ex2_calc",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_statement",
+      "target": "st_def1_formula",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1（可导充要条件）是定义1（导数）的推论"
+    },
+    {
+      "source": "st_ex1_example",
+      "target": "st_thm1_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1（棱角处不可导）是定理1的应用"
+    },
+    {
+      "source": "st_ex3_calc",
+      "target": "st_ex2_calc",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "常函数是直线方程当斜率为0的特例"
+    },
+    {
+      "source": "st_ex4_calc",
+      "target": "st_ex2_calc",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "二次函数当a=0退化为直线方程"
+    }
+  ],
+  "unresolved": []
+}

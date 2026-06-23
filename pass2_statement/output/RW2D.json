@@ -1,0 +1,123 @@
+{
+  "article_name": "RW2D",
+  "statements": [
+    {
+      "stmt_id": "st_main_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": "true",
+      "scope_id": "s_main",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let_xy_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_xy",
+      "exposed_entities": [
+        "X",
+        "Y",
+        "R",
+        "f(r)",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_let_xy_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        1,
+        4
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_let_xy",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let_x_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_x",
+      "exposed_entities": [
+        "x_i",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_let_x_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_let_x",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_main_derivation",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_main",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let_xy_def",
+      "target": "st_let_xy_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_x_assump",
+      "target": "st_let_x_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_xy_result",
+      "target": "st_main_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_x_conclusion",
+      "target": "st_main_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_main_conclusion",
+      "target": "st_let_xy_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "主推导依赖变量定义"
+    },
+    {
+      "source": "st_main_conclusion",
+      "target": "st_let_x_assump",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "主推导依赖变量定义"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,312 @@
+[SCOPE:root|description|常微分方程解的存在、唯一及连续可微定理]
+文章名: ODEUC
+标题: 常微分方程解的存在、唯一及连续可微定理
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=存在、唯一及对参数的连续依赖定理
+  [1] type=theorem heading=定理 2 title=
+  [2] type=theorem heading=定理 3 title=
+  [3] type=theorem heading=定理 4 title=
+  [4] type=lemma heading=引理 1 title=
+  [5] type=theorem heading=定理 5 title=
+
+[SCOPE:s_intro|description|引言与等价性论证]
+[0] 本节证明常微分方程的解的存在、唯一、及对参数连续可微定理。
+[1] 所谓 “解对参数连续可微” 是指微分方程
+[2] \begin{equation}
+\dot x=v(x,t)~,
+\end{equation}
+[3] 的解 $\varphi$ 也是某些参数 $\mu=(\mu_1,\cdots,\mu_m)$ 的函数，
+[4] 即 $\varphi(\mu,t)$。
+[5] 于是
+[6] 式 1 [链接 L0]
+[7] 右边也应写成 $v(x,\mu,t)$。
+[8] 即需要证明形如
+[9] \begin{equation}
+\dot x=v(x,\mu,t)~
+\end{equation}
+[10] 的微分方程解的存在唯一且对参数 $\mu$ 的连续可微定理。
+[11] 然而，可以验证，对
+[12] 式 1 [链接 L1]
+[13] 证明存在唯一性和对初始点解为 $C^r$ 类，等价于证明
+[14] 式 2 [链接 L2]
+[15] 的存在唯一性和对参数 $\mu$ 为 $C^r$ 类。
+[16] 事实上：
+[17] 若微分方程
+[18] 式 1 [链接 L3]
+[SCOPE:s_intro_let1|let_bind|引入参数 mu 和变量 y]
+[19] 解 $\varphi$ 存在唯一且对初始点 $(t_0,x_0)$ $r$ 次连续可微。记
+[20] \begin{equation}
+y=(x,\mu),\quad f=(v_x,v_{\mu})=(v,v_{\mu})~,
+\end{equation}
+[21] 式 2 [链接 L4]
+[22] 等价于(初始 $\mu$ 分量为 $\mu$ 的)微分方程
+[23] \begin{equation}
+\begin{aligned}
+\dot y=f(y,t)=(v(y,t),0)~.
+\end{aligned}
+\end{equation}
+[24] 由假设，
+[25] 式 4 [链接 L5]
+[26a] (t)$ 存在唯一，且 $r$ 次连续可微的依赖于起始点 $(t_0,x_0,\mu)$（即解可写为 $\varphi(x_0,\mu,t_0,t)\equiv\varphi
+[26b] (t)$ 且 $\varphi(x_0,\mu,t_0,t_0)=x_0$），
+[27] 于是解也就 $r$ 阶连续可微的依赖于 $\mu$；
+[/SCOPE:s_intro_let1]
+[28] 反之，如果对
+[29] 式 2 [链接 L6]
+[30] 的微分方程存在唯一及对参数 $\mu$ $r$ 次连续可微定理成立，
+[31] 则由 $\mu$ 是参数，可令 $v_\mu(x,t)\equiv v(x,\mu,t)$ 则
+[32] 式 2 [链接 L7]
+[33] \begin{equation}
+\dot x=v_{\mu}(x,t)~.
+\end{equation}
+[34] 由假定，其解存在唯一且对参数 $\mu$ 属于 $C^r$ 类。
+[35] 取参数 $\mu$ 对应起始点 $(t_0,x_0)$ 的情形，
+[36] 于是微分方程
+[37] 式 5 [链接 L8]
+[38] 的解存在唯一且对起始点 $r$ 阶连续可微。
+[39] 一般的常微分方程都可以写为式 1 的形式，并通过上面考虑，我们只需要证明对形为式 1 的微分方程的解存在唯一且连续依赖于起始点即可。
+[SCOPE:s_intro_let2|let_bind|引入小参数 epsilon]
+[40] 解的可微定理引出一个重要的方法：小参数法（或微扰法）。
+[41] 设想包含小参数 $\epsilon$ 的微分方程 $\dot x=v(x,\epsilon)$，$v$ 对 $\epsilon$ 连续可微，
+[42] 于是解的可微定理使得具有固定初始条件的解可以写成形式
+[43] \begin{equation}
+x(t)=x_0(t)+\epsilon y(t)+O(\epsilon^2)~.
+\end{equation}
+[44] 其中 $x_0$ 是 “未受扰” 方程 $\dot x=v(x,0)$ 的解。
+
+[/SCOPE:s_intro]
+[/SCOPE:s_intro_let2]
+[SCOPE:s_thm1|description|定理1 存在、唯一及对参数的连续依赖定理]
+[45] 定理 1 存在、唯一及对参数的连续依赖定理
+[46] 设微分方程
+[47] \begin{equation}
+\dot x=v(x,t)~
+\end{equation}
+[48] 定义 7
+[49] \begin{equation}
+\dot x=v(x,t)~
+\end{equation}
+[SCOPE:s_thm1_let1|let_bind|引入皮卡映射 A]
+[50] 证明（存在唯一和对参数的连续性）：由定理 2 ，对任一点 $(t_1,x_1)$，都有要求的点 $(t_1,x_1)$ 的领域 $M$（对应 $ \left\lvert x-x_1 \right\rvert \leq b', \left\lvert t-t_1 \right\rvert \leq a'$）存在，使得 $\forall z\in M$，皮卡映射（定义 1 ）
+[51] \begin{equation}
+(A\varphi)(x_1,t_1,t)\equiv x_1+\int_{t_1}^{t}v(\varphi(x_1,t_1,\tau),\tau) \,\mathrm{d}{\tau} ~
+\end{equation}
+[52] 是 $M$ 中的压缩映射（$M$ 的定义见
+[53] 定理 2 [链接 L9]
+[54] ）。
+[55] 由于压缩映射都有不动点（
+[56] 定理 1 [链接 L10]
+[57] ），而皮卡映射
+[58] 式 9 [链接 L11]
+[59] 的不动点 $g(x_1,t_1,t)$ 就是微分方程
+[60] 式 8 [链接 L12]
+[61] 定理 1 [链接 L13]
+[62] ），由 $M$ 的完备性（
+[63] 习题 1
+[64] ），该不动点对应的曲线也在 $M$ 中。
+[65] 而 $M$ 中的曲线都是连续的，
+[66] 故解的存在性和对变量 $(x_1,t_1,t)$ 的连续性得证！
+[/SCOPE:s_thm1_let1]
+[SCOPE:s_thm1_let2|let_bind|引入两个解 g1, g2]
+[67] 下面证明唯一性：设 $g_1(x_1,t_1,t),g_2(x_1,t_1,t)$ 都是初值条件 $g(x_1,t_1,t_1)=x_1$ 的微分方程式 8 的解。
+[68] 由于 $g_1,g_2\in M$，
+[69] 所以可对其实行皮卡映射。
+[70] 由于在解存在的区域里皮卡映射是压缩映射，
+[71] 故成立（为何度量变成范数可类比线性算子度量空间，这里 $ \left\lVert g \right\rVert =\max\limits_{x_1,t_1,t} \left\lvert g(x_1,t_1,t) \right\rvert $）
+[72] \begin{equation}
+\left\lVert A g_1-A g_2 \right\rVert \leq\lambda \left\lVert g_1-g_2 \right\rVert ,\quad\lambda<1~.
+\end{equation}
+[73] 定理 1 [链接 L14]
+[74] ，$g_1,g_2$ 都是 $A$ 的不动点，
+[75] 故
+[76] 式 10 [链接 L15]
+[77] \begin{equation}
+\left\lVert g_1-g_2 \right\rVert \leq\lambda \left\lVert g_1-g_2 \right\rVert ,\quad\lambda<1~.
+\end{equation}
+[78] 上式只能在 $ \left\lVert g_1-g_2 \right\rVert =0$ 时成立，这意味着唯一性。
+[/SCOPE:s_thm1_let2]
+[79] 对 $g\in C^{r-1}$ 单独放在下面进行证明。
+[80] 证毕！
+
+[/SCOPE:s_thm1]
+[81] 对于可微性，我们用数学归纳法进行证明。
+[82] 我们分为三个分定理进行证明。
+[83] 下面将用 $C_{x_1}^r$ 表示关于 ${x_1}$ 是 $C^r$ 类的函数。
+
+[SCOPE:s_thm2|description|定理2]
+[84] 定理 2
+[85] 同定理 1 叙述，仅假定 $v\in C^2$，
+[86] 那么 $g\in C_{x_1}^1$.
+[SCOPE:s_thm2_let1|let_bind|引入皮卡近似序列 g_n, f_n]
+[87] 证明：对初始点 $(t_1,x_1)\in M$ 的映射 $g_0(x_1,t_1,t)$ 和初始矩阵为单位矩阵 $ \boldsymbol{\mathbf{E}} $ 的矩阵映射 $f_0(x_1,t_1,t)$，我们分别用 $g_n,f_n$ 表示其皮卡近似1：
+[88] \begin{equation}
+\begin{aligned}
+g_{n+1}(x_1,t_1,t)&=x_1+\int_{t_1}^{t}v(g_n(x_1,t_1,\tau),\tau) \,\mathrm{d}{\tau} ,\\
+f_{n+1}(x_1,t_1,t)&= \boldsymbol{\mathbf{E}} +\int_{t_1}^{t}v_{*}(g_n(x_1,t_1,\tau),\tau)f_n(x_1,t_1,\tau) \,\mathrm{d}{\tau} ~.
+\end{aligned}
+\end{equation}
+[89] 这里的 $v_{*}$ 表示 $v$ 对其第一个变量 $x$ 的导数。
+[90] 注意 $(g_{0})_{*}=f_0$，
+[91] 于是由数学归纳法可从
+[92] 式 12 [链接 L16]
+[93] 推得 $(g_{n+1})_{*}=f_{n+1}$。
+[94] 因此，序列 $\{f_n\}$ 是 $\{g_n\}$ 的导数序列。
+[95] 对充分小的 $ \left\lvert t-t_1 \right\rvert $，
+[96] 式 12 [链接 L17]
+[97] 一致收敛（因为皮卡映射的压缩性要求其不动点存在，$f_n$ 的皮卡映射可看出其对应向量场 $v_f(x,y,t)=v(x,t)y$，显然对 $x,y,t$ 连续可微）。
+[98] 因此序列 $\{g_n\}$ 及其关于 $x_1$ 的导数都一致收敛，
+[99] 因此极限函数
+[100] \begin{equation}
+g(x_1,t_1,t)=\lim_{n\rightarrow\infty}g_n(x_1,t_1,t)~
+\end{equation}
+[101] 关于 $x_1$ 一致可微。
+[102] 实际上，
+[103] \begin{equation}
+\begin{aligned}
+f(x_1,t_1,t)&=\lim_{n\rightarrow\infty}g_{n*}(x_1,t_1,t)\\
+&=\lim\limits_{n\rightarrow\infty}\lim\limits_{\Delta x_1\rightarrow0}\frac{g_{n}(x_1+\Delta x_1,t_1,t)-g_{n}(x_1,t_1,t)}{\Delta x_1}\\
+&=\lim\limits_{\Delta …[truncated]…htarrow0}\lim\limits_{n\rightarrow\infty}\frac{g_{n}(x_1+\Delta x_1,t_1,t)-g_{n}(x_1,t_1,t)}{\Delta x_1}\\
+&=\lim\limits_{\Delta x_1\rightarrow0}\frac{g(x_1+\Delta x_1,t_1,t)-g(x_1,t_1,t)}{\Delta x_1}\\
+&=g_*(x_1,t_1,t)~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_thm2_let1]
+[104] 证毕！
+[105] 注意式 12 第二式表明其对应微分方程为
+[106] \begin{equation}
+\dot y=v_*(x,t)y,\quad y\in TU_x~.
+\end{equation}
+[107] 式 7 [链接 L18]
+[108] 一起称为关于微分方程
+[109] 式 7 [链接 L19]
+[110] 变分方程
+[111] 式 14 [链接 L20]
+[112] 表明方程
+[113] 式 7 [链接 L21]
+[114] 的解关于初始条件 $x_1$ 的导数 $g_*$ 是满足初始条件 $y(t_1)=E$ 的
+[115] 式 15 [链接 L22]
+[116] 的解。
+[117] 这就证得下面的定理
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|定理3]
+[118] 定理 3
+[119] 微分方程
+[120] \begin{equation}
+\dot x=v(x,t)~
+\end{equation}
+[121] \begin{equation}
+\begin{aligned}
+& \frac{\partial }{\partial t} g(x_1,t_1,t)=v(g(x_1,t_1,t),t),\\
+& \frac{\partial }{\partial t} g_*(x_1,t_1,t)=v_*(g(x_1,t_1,t),t)g_*(x_1,t_1,t),\\
+&g(x_1,t_1,t_1)=x_1,\quad g_*(x_1,t_1,t_1)=E~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|定理4]
+[122] 定理 4
+[123] 同定理 1 叙述，当 $v\in C^r$($r\geq2$)，
+[124] 则 $g\in C_{x_1}^{r-1}$。
+[125] 证明： 假设对定理对 $< r$ 成立。则
+[126] \begin{equation}
+v\in C^r\Rightarrow v_*\in C^{r-1}\Rightarrow v_y(x,t,y)=v_*(x,t)y\in C^{r-1}\Rightarrow g_*\in C_{x_1}^{r-2}\Rightarrow g\in C_{x_1}^{r-1}~.
+\end{equation}
+[127] 证毕！
+
+[/SCOPE:s_thm4]
+[SCOPE:s_lemma1|description|引理1]
+[128] 引理 1
+[SCOPE:s_lemma1_let1|let_bind|引入映射 f 和积分函数 F]
+[129] 设 $f:G\times I^2\rightarrow \mathbb R^n$ 是欧氏空间区域 $G$ 和 $t$ 轴区间直积 $I^2$ 的直积到 $\mathbb R^n$ 的映射。
+[130] 若 $f\in C_{x_1}^r \cap C^{r-1}$，
+[131] 则积分函数
+[132] \begin{equation}
+F(x_1,t_1,t)=\int_{t_1}^t f(x_1,t_1,\tau) \,\mathrm{d}{\tau} ~,
+\end{equation}
+[/SCOPE:s_lemma1_let1]
+[133] 证明：因为 $f\in C_{x_1}^r\cap C^{r-1}\Rightarrow F\in C_{x_1}^r\cap C_t^{r}\cap C_{t_1}^{r}$，
+[134] 所以 $F$ 对 $x_1$（或 $t$ 或 $t_1$）的 $r$ 阶偏导存在。
+[135] 剩下只需证明任意的 $r$ 阶混合导都存在，若先对 $t$（或 $t_1$）求偏导，
+[136] 则 $ \frac{\partial F(x_1,t_1,t)}{\partial t} =f(x_1,t_1,t)$（或 $ \frac{\partial F(x_1,t_1,t)}{\partial t_1} =-f(x_1,t_1,t)$），由于 $f\in C^{r-1}$，
+[137] 所以剩下 $r-1$ 次混合导都存在；
+[138] 若先对 $x_1$ 求偏导，且第 1 次对 $t$ (或 $t_1$)求偏导在第 $i$ 次，
+[139] 那么由
+[140] \begin{equation}
+\begin{aligned}
+f\in C^{r-1}\Rightarrow \frac{\partial^{i-1}{}}{\partial{x_1}^{i-1}} \frac{\partial F(x_1,t_1,t)}{\partial t} = \frac{\partial^{i-1}{f(x_1,t_1,t)}}{\partial{x_1}^{i-1}} \in C^{r-i} \\
+\left(f\in C^{r-1}\Rightarrow \frac{\partial^{i-1}{}}{\partial{x_1}^{i-1}} \frac{\partial F(x_1,t_1,t)}{\partial t_1} =- \frac{\partial^{i-1}{f(x_1,t_1,t)}}{\partial{x_1}^{i-1}} \in C^{r-i} \right) ~.
+\end{aligned}
+\end{equation}
+[141] 于是剩余的 $r-i$ 次混合偏导存在且连续。
+[142] 证毕！
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_thm5|description|定理5]
+[143] 定理 5
+[144] 同定理 1 叙述，若 $v\in C^r $，
+[145] 则 $g\in C^{r-1}$。
+[146] 证明：由于解是对应的皮卡映射的不动点，
+[147] 于是
+[148] \begin{equation}
+g(x_1,t_1,t)=x+\int_{t_1}^tv(g(x_1,t_1,\tau),\tau) \,\mathrm{d}{\tau} ~.
+\end{equation}
+[149] 由 $ \frac{\partial v}{\partial x_1} = \frac{\partial v}{\partial x_1} \frac{\partial g}{\partial x_1} $ 知 $ \frac{\partial v}{\partial x_1} $ 关于 $x_1$ 的阶数为 $ \frac{\partial v}{\partial x_1} $ 和 $ \frac{\partial g}{\partial x_1} $ 关于 $x_1$ 的阶数最小的那个。
+[150] 所以若 $g$ 关于 $x_1$ 阶数小于 $r$，
+[151] 则 $v$ 关于 $x_1$ 的阶数 和 $g$ 一致。
+[152] 于是由
+[153] 引理 1
+[154] \begin{equation}
+g\in C^{i-1}\cap C_x^{i}\Rightarrow g\in C^i,\quad i< r~.
+\end{equation}
+[155] 定理 5 [链接 L23]
+[156] ，$g\in C_{x_1}^s,\quad s< r$。
+[157] 于是
+[158] \begin{equation}
+g\in C^0\Rightarrow g\in C^1\Rightarrow\cdots\Rightarrow g\in C^{r-1}~.
+\end{equation}
+[159] 由已经证明的解 $g$ 连续依赖于其变量，
+[160] 即 $g\in C^0$ 成立，上式立刻得到 $g\in C^{r-1}$。
+[161] 证毕！
+[/SCOPE:s_thm5]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的证明引用定理2的结论"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2的证明导出定理3"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理4是定理2的推广"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_lemma1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理5的证明使用引理1"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理5是定理1的推广"
+  }
+]

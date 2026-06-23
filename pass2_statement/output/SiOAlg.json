@@ -1,0 +1,312 @@
+{
+  "article_name": "SiOAlg",
+  "statements": [
+    {
+      "stmt_id": "st_algebra_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_algebra_def",
+      "exposed_entities": [
+        "L(V)",
+        "F",
+        "K"
+      ]
+    },
+    {
+      "stmt_id": "st_subalgebra_def",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_subalgebra",
+      "exposed_entities": [
+        "K",
+        "L"
+      ]
+    },
+    {
+      "stmt_id": "st_subalgebra_let_A",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_subalgebra_let",
+      "exposed_entities": [
+        "A",
+        "E"
+      ]
+    },
+    {
+      "stmt_id": "st_subalgebra_construction",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_subalgebra",
+      "exposed_entities": [
+        "F[A]"
+      ]
+    },
+    {
+      "stmt_id": "st_commutative",
+      "subtype": "theorem",
+      "clause_range": [
+        30,
+        32
+      ],
+      "truth_value": "true",
+      "scope_id": "s_commutative",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_minpoly_def_annihilate",
+      "subtype": "definition",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_minpoly_def",
+      "exposed_entities": [
+        "f(t)",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_minpoly_def_minimal",
+      "subtype": "definition",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_minpoly_def",
+      "exposed_entities": [
+        "mu_A(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        36,
+        38
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "A",
+        "mu_A(t)",
+        "F[A]"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_part1_assume",
+      "subtype": "assumption",
+      "clause_range": [
+        40,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_part1",
+      "exposed_entities": [
+        "mu_A(t)",
+        "A^0",
+        "A^1",
+        "A^{m-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_part1_contra",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_part1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_part1_converse",
+      "subtype": "conclusion",
+      "clause_range": [
+        44,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_part1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_part1_dim",
+      "subtype": "conclusion",
+      "clause_range": [
+        48,
+        51
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_part1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_part2_assume_mu0_0",
+      "subtype": "assumption",
+      "clause_range": [
+        53,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_part2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_part2_zero_divisor",
+      "subtype": "conclusion",
+      "clause_range": [
+        54,
+        58
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_part2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_part2_assume_mu0_nonzero",
+      "subtype": "assumption",
+      "clause_range": [
+        59,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_part2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_part2_invertible",
+      "subtype": "conclusion",
+      "clause_range": [
+        60,
+        62
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_part2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        64,
+        66
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "f(t)",
+        "A",
+        "mu_A(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        68,
+        73
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_subalgebra_let_A",
+      "target": "st_subalgebra_construction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_part1_assume",
+      "target": "st_thm1_part1_contra",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_part1_assume",
+      "target": "st_thm1_part1_converse",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_part1_assume",
+      "target": "st_thm1_part1_dim",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_part2_assume_mu0_0",
+      "target": "st_thm1_part2_zero_divisor",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_part2_assume_mu0_nonzero",
+      "target": "st_thm1_part2_invertible",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_part1_dim",
+      "target": "st_thm1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_part2_zero_divisor",
+      "target": "st_thm1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_part2_invertible",
+      "target": "st_thm1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof",
+      "target": "st_thm2_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_statement",
+      "target": "st_minpoly_def_minimal",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1引用极小多项式定义"
+    },
+    {
+      "source": "st_thm2_statement",
+      "target": "st_thm1_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2引用定理1"
+    }
+  ],
+  "unresolved": []
+}

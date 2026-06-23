@@ -1,0 +1,315 @@
+{
+  "article_name": "MinFul",
+  "statements": [
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "L",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "p_A"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1_let",
+      "exposed_entities": [
+        "L",
+        "A",
+        "p_A",
+        "x",
+        "epsilon",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "L",
+        "A",
+        "p_A"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_nonneg",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_homog",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_convex_let",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_convex_let",
+      "exposed_entities": [
+        "x1",
+        "x2",
+        "epsilon",
+        "r1",
+        "r2"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_convex_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        37,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "L",
+        "p",
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_convex_let",
+      "subtype": "assumption",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_convex_let",
+      "exposed_entities": [
+        "x",
+        "y",
+        "alpha",
+        "beta"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_convex_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_kernel_let",
+      "subtype": "assumption",
+      "clause_range": [
+        50,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_kernel_let",
+      "exposed_entities": [
+        "x",
+        "t",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_kernel_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        55,
+        60
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_minkowski",
+      "subtype": "conclusion",
+      "clause_range": [
+        61,
+        66
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_let",
+      "target": "st_lemma1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1_nonneg",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1_homog",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_convex_let",
+      "target": "st_thm1_convex_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let",
+      "target": "st_thm2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_convex_let",
+      "target": "st_thm2_convex_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_kernel_let",
+      "target": "st_thm2_kernel_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let",
+      "target": "st_thm2_minkowski",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_lemma1_conclusion",
+      "target": "st_def1_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "引理 1 基于定义 1 的 Minkowski 泛函"
+    },
+    {
+      "source": "st_thm1_conclusion",
+      "target": "st_def1_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理 1 证明 Minkowski 泛函的性质"
+    },
+    {
+      "source": "st_thm2_conclusion",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理 2 利用定理 1 的齐次凸性"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,96 @@
+[SCOPE:root|description|解三棱锥顶角]
+文章名: PrmSol
+标题: 解三棱锥顶角
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=已知三个线线角求线面角
+  [1] type=example heading=例 2 title=
+
+[SCOPE:s_ex1|description|例1 已知三个线线角求线面角]
+[0] 例 1 已知三个线线角求线面角
+[SCOPE:s_ex1_let|let_bind|例1变量]
+[1] 若已知 $\theta_1$，$\theta_2$ 和 $\alpha$，
+[2] 则
+[/SCOPE:s_ex1_let]
+[3] \begin{equation}
+\cos\phi = \frac{\cos\alpha - \cos\theta_1 \cos\theta_2}{\sin\theta_1 \sin\theta_2}~.
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2]
+[4] 未完成：图
+[SCOPE:s_ex2_let|let_bind|例2变量]
+[5] 利用式 1 , 令正方形的内角为 $\theta_1 = \pi/2$，六边形的内角为 $\theta_2 = 2\pi/3$, 五边形的内角为 $\alpha = 3\pi/5$，代入式 1 解得正方形与六边形的二面角为 $\phi$ 为
+[/SCOPE:s_ex2_let]
+[6] \begin{equation}
+\phi = \arccos\frac{\cos\alpha - \cos\theta_1 \cos\theta_2}{\sin\theta_1\sin\theta_2} \approx 1.936 \,\mathrm{rad} \approx 110.9^\circ~,
+\end{equation}
+[7] 再代入式 2 ，$\phi$ 是钝角，
+[8] 所以 $\gamma$ 也是钝角，
+[9] 所以
+[10] \begin{equation}
+\gamma = \pi - \arcsin\left(\sin\phi \sin\theta_1\right) \approx 1.9357 \,\mathrm{rad} \approx 110.9^\circ~.
+\end{equation}
+
+[/SCOPE:s_ex2]
+[SCOPE:s_asa|description|角边角问题]
+[11] 事实上解三棱锥顶角和解三角形类似，面面角可以看作三角形的 “角”，而两条棱之间的角可以看作三角形的 “边”。
+[12] 例如式 1 就可以看作 “边角边” 问题（已知 $\theta_1, \phi, \theta_2$）求第三边 $\alpha$。
+[SCOPE:s_asa_let|let_bind|角边角变量]
+[13] 那么我们再来看若已知 “角边角”（$\theta_1, \alpha, \theta_2$）求下一边 $\beta$（图 2 ）
+[14] 【图解】图 2：角边角问题
+[15] $\beta$ 满足
+[16] \begin{equation}
+(C_1^2 - S_\alpha^2 C_1^2 C_2^2 - C_\alpha^2 C_2^2)T_\beta^2 + 2S_\alpha C_\alpha S_1^2 C_2 T_\beta - S_1^2 S_\alpha^2 = 0~,
+\end{equation}
+[17] 其中 $C,S,T$ 分别代表 $\cos, \sin, \tan$，$C_1 = \cos\theta_1, C_2 = \cos\theta_2$。
+[/SCOPE:s_asa_let]
+[18] 该式子可以直接使用两次 “边角边” 公式解出来。
+[19] 注意上式若存在两个解，必须剔除一个无意义的解。
+
+[/SCOPE:s_asa]
+[SCOPE:s_proof|description|证明]
+[20] 我们可以用球坐标系来证明式 1 。
+[SCOPE:s_proof_let1|let_bind|球坐标变量1]
+[21] 令极坐标 $(\theta_1, \phi_1)$ 和 $(\theta_2, \phi_2)$ 代表的两个单位矢量的坐标分别为
+[22] \begin{equation}
+(\sin\theta_1\cos\phi_1, \sin\theta_1\sin\phi_1, \cos\theta_1)~,
+\qquad
+(\sin\theta_2\cos\phi_2, \sin\theta_2\sin\phi_2, \cos\theta_2)~,
+\end{equation}
+[23] \begin{equation}
+\cos\alpha = \cos\theta_1 \cos\theta_2 + \sin\theta_1 \sin\theta_2 \cos\left(\phi_2 - \phi_1\right) ~.
+\end{equation}
+[/SCOPE:s_proof_let1]
+[SCOPE:s_proof_let2|let_bind|球坐标变量2]
+[24] 再来证明式 2 ，我们仍然使用球坐标，将射线 OA 作为极轴，面 OAC 为 $xz$ 平面，线面角中 “线” 的极坐标为 $(1, \theta, \phi)$，该点的 $y$ 坐标为 $\sin\theta \sin\phi$ 而 $y = \sin\gamma$，
+[25] 所以 $\sin\gamma = \sin\theta \sin\phi$。
+[/SCOPE:s_proof_let2]
+[26] 证毕。
+[/SCOPE:s_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_ex1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2代入具体数值到例1公式"
+  },
+  {
+    "source_scope": "s_asa",
+    "target_scope": "s_ex1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "角边角问题类比边角边"
+  },
+  {
+    "source_scope": "s_proof",
+    "target_scope": "s_ex1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明例1公式"
+  }
+]

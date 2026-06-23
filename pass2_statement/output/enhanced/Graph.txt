@@ -1,0 +1,490 @@
+[SCOPE:root|description|图]
+文章名: Graph
+标题: 图
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=$n$ 元子集的族
+  [1] type=definition heading=定义 2 title=有序对和 2 元子集的族
+  [2] type=definition heading=定义 3 title=图，顶点，边，关联函数，阶数
+  [3] type=definition heading=定义 4 title=边的有向性，端点
+  [4] type=definition heading=定义 5 title=边的交
+  [5] type=definition heading=定义 6 title=环，对称，平行
+  [6] type=definition heading=定义 7 title=关联，端点，连接，相邻，独立
+  [7] type=definition heading=定义 8 title=有限图，可数图，无限图，空图，平凡图
+  [8] type=definition heading=定义 9 title=无向图，有向图，混合图
+  [9] type=definition heading=定义 10 title=简单图
+  [10] type=definition heading=定义 11 title=对称有向图
+  [11] type=definition heading=定义 12 title=完全图
+  [12] type=definition heading=定义 13 title=完全有向图
+  [13] type=definition heading=定义 14 title=$n$ 部图
+  [14] type=definition heading=定义 15 title=完全 $n$ 部分图
+  [15] type=definition heading=定义 16 title=图的惯用表示
+  [16] type=definition heading=定义 17 title=同态，同构，自同构，抽象图
+  [17] type=definition heading=定义 18 title=标号图
+  [18] type=definition heading=定义 19 title=记号约定 $K_n$
+  [19] type=definition heading=定义 20 title=图性质，图不变量
+  [20] type=definition heading=定义 21 title=边极大
+  [21] type=definition heading=定义 22 title=图的交并差
+  [22] type=definition heading=定义 23 title=删除，增加
+  [23] type=definition heading=定义 24 title=无向化映射
+  [24] type=definition heading=定义 25 title=不交，子图，母图，真子图
+  [25] type=definition heading=定义 26 title=补图，自补图
+  [26] type=definition heading=定义 27 title=导出子图，支撑
+  [27] type=definition heading=定义 28 title=基础图，定向图
+  [28] type=definition heading=定义 29 title=竞赛图
+
+[SCOPE:s_intro|description|引言]
+[0] [1] [2] 直观上，图要描述的是一些带有两端点的边和一些点构成的对象。
+[1] 这样的对象有以下几种情况：
+[2] 两种可能的边：1.有方向的边，这是指边的端点有起止点之分的情形，此时的图称为有向图；
+[3] 2.无方向的边，这是指边的端点没有起止的差异，无论两个点在边的哪一头都被认为是相同的，这样的图叫无向图。
+[4] 两种可能的点：1.有边连接的点，
+[5] 即这样的点是某些边的端点；
+[6] 2.无边连接的点，
+[7] 即这样的点不是任何边的端点，这样的点叫做孤立点。
+[8] 3 种可能的图：1.无点无边的图，这是个空集；
+[9] 2.有点无边的图，这被称为空图；
+[10] 3.有点有边的图。
+[11] 因为边必然包含点，
+[12] 所以没有无点有边的图。
+[13] 图论的所有基本概念都是为了建立起以上图像及对图的操作的严格化语言。
+[14] 本文旨在建立上述图像的严格化语言。
+
+[15] 当建立起某一对象的数学语言时，我们应当首先借助集合论的基本工具。
+[16] 首先，图包含两个代表点和边的集合。
+[17] 而边是连接两个端点的边，
+[18] 因此若对不同的点最多只有一边连接它们，就可以通过指定端点确定边。
+[19] 这时，对于无连接顺序之分的无向边，可以用代表集合的无序符号 "$\{*\}$" 把它们括起来；
+[20] 而对于有向的边，
+[21] 则用代表有序对的符号 "$(*)$" 把它们括起来。
+[22] 然而若允许图的两点之间可以有不同的点相连时，就不能用端点来确定边了，并且边集 $\{\{x,y\},\{x,y\}\}$ 因为有重复元而不满足集合的定义。
+[23] 但是边始终被认为是有端点的，
+[24] 因此我们总可以指定边的端点。
+[25] 这样就在边集和点集之间建立了一个关联，
+[26] 因此一般的图应当包含所谓的关联函数。
+[27] 值得注意的是，很多教材将图定义为只有点集和边集组成的二元组对象，使得它们在建立具有相同端点的不同边的模型的时候，而在 “图” 的前面加上一些形容词。
+[28] 本文认为，图的概念应当尽可能包含充分多的图，而不限于不同边只能对应不同端点，而把众多已经建立的（带有形容词的）图概念包含在图中来，
+[29] 从而 “某某图” 只是具有 “某某” 限制的图。
+[30] 因此，我们采用文献 [2] 的观点。
+
+[/SCOPE:s_intro]
+[SCOPE:s_def1|description|定义1 n元子集的族]
+[31] 定义 1 $n$ 元子集的族
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[32] 设 $A$ 是集合，
+[33] 则记 $A$ 的所有 $n$ 元子集的全体为 $[A]^n$。即
+[34] \begin{equation}
+[A]^n=\{\{x_1,\cdots,x_n\}|x_i\in A,i=1,\cdots n\}.~
+\end{equation}
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_def2|description|定义2 有序对和2元子集的族]
+[35] 定义 2 有序对和 2 元子集的族
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[36] 设 $A$ 是集合，
+[37] 则记 $A$ 的所有 2 元子集和有序对的全体为 $P_2(A)$。即
+[38] \begin{equation}
+P_2(A)=[A]^2\cup (A\times A).~
+\end{equation}
+
+[/SCOPE:s_def2]
+[/SCOPE:s_def2_let]
+[SCOPE:s_def3|description|定义3 图，顶点，边，关联函数，阶数]
+[39] 定义 3 图，顶点，边，关联函数，阶数
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[40] 设 $V,E$ 是集合，$\varphi:E\rightarrow P_2(A)$ 是 $E$ 到 $V$ 的二元对族的映射。
+[41] 则称三元组 $G=(V,E,\varphi)$ 为图（graph）。
+[42] $V$ 的元素称为 $G$ 的顶点（vertex），$E$ 的元素称为 $G$ 的边（edge）或弧 (arc)，$\varphi$ 称为关联函数（incidence function）。
+[43] $V$ 的基数（元素个数）称为图 $G$ 的顶点数或阶（order），记作 $ \left\lvert G \right\rvert $，而 $E$ 的基数称为 $G$ 的边数（size），记作 $ \left\lVert G \right\rVert $。
+[44] 当然，顶点也可以称为节点（node）或点（point），边还能叫做线（line），具有顶点集 $V$ 的图也能称为 $V$ 上的图（a graph on $V$），往往图 $G$ 的顶点集记作 $V(G)$，边集记作 $E(G)$，而 $x\in V(G),e\in E(G)$ 直接记作 $x\in G,e\in G$ 等等，这都是习惯的问题，熟悉它们往往是有好处的。
+[45] 值得强调的是，图中可能有端点相同的边出现，
+[46] 但是 $P_2(V)$ 中包含了 $(x,x)$，它相当于端点相同的边。
+[47] 因此我们无需在 $P_2(V)$ 中加入 $V$ 的单点子集来表示端点相同的边。
+[48] 由于代表边的序对 $(x,x)$ 交换 $x$ 不变，
+[49] 因此可以认为 $(x,x)$ 是无向的。
+
+[/SCOPE:s_def3]
+[/SCOPE:s_def3_let]
+[50] 下面概念给出了边的有向性。
+
+[SCOPE:s_def4|description|定义4 边的有向性，端点]
+[51] 定义 4 边的有向性，端点
+[SCOPE:s_def4_let|let_bind|定义4的变量]
+[52] 设 $G=(V,E,\varphi)$ 是图，$e\in E$。
+[53] 若 $\varphi(e)\in[V]^2\cup\{(x,x)|x\in V\}$，
+[54] 则称 $e$ 是无向的（undirected）；
+[55] 若 $\varphi(e)\in V\times V$，
+[56] 则称 $e$ 是有向的（directed）。
+[57] 若 $\varphi(e)=\{v_1,v_2\}$，
+[58] 则简记 $e=\{v_1,v_2\}$，而 $v_1,v_2$ 称为 $e$ 的端点；
+[59] 若 $\varphi(e)=(v_1,v_2)$，
+[60] 则简记 $e=(v_1,v_2)$。
+[61] 对有向边 $e=(v_1,v_2)$，称 $v_1$ 是 $e$ 的起点（origin），$v_2$ 是 $e$ 的终点（terminus）。
+[62] $e$ 的起点和终点也称为 $e$ 的端点（end vertex）。
+[63] 若 $x$ 是 $e$ 的端点，
+[64] 则记 $x\in e$。
+
+[/SCOPE:s_def4]
+[/SCOPE:s_def4_let]
+[SCOPE:s_def5|description|定义5 边的交]
+[65] 定义 5 边的交
+[SCOPE:s_def5_let|let_bind|定义5的变量]
+[66] 设 $e,f$ 是两个边，
+[67] 则它们共同的端点的全体
+[68] \begin{equation}
+\{x|x\in e,x\in f\}~
+\end{equation}
+[/SCOPE:s_def5_let]
+[69] 下面的概念通过边的端点给出了边之间的关系。
+
+[/SCOPE:s_def5]
+[SCOPE:s_def6|description|定义6 环，对称，平行]
+[70] 定义 6 环，对称，平行
+[SCOPE:s_def6_let|let_bind|定义6的变量]
+[71] 设 $G=(V,E,\varphi)$ 是图，$e_1,e_2\in E$。
+[72] 若 $\varphi(e_1)=(v,v)$，
+[73] 则称 $e$ 为环（loop）。
+[74] 若 $\varphi(e_1)=(v_1,v_2),\varphi(e_2)=(v_2,v_1)$，
+[75] 则称 $e_1,e_2$ 为对称边（symmetric edges）。
+[76] 若 $e_1,e_2$ 分别是起止点相同的有向边，
+[77] 则称 $e_1,e_2$ 为平行边（parallel edges）或重边（multi-edges）。
+[78] 显然，无向图中端点相同的边是平行的。
+[/SCOPE:s_def6_let]
+[79] 下面的概念用于表达点和边之间的关系的。
+
+[/SCOPE:s_def6]
+[SCOPE:s_def7|description|定义7 关联，端点，连接，相邻，独立]
+[80] 定义 7 关联，端点，连接，相邻，独立
+[SCOPE:s_def7_let|let_bind|定义7的变量]
+[81] 设 $G=(V,E,\varphi)$ 是图，$x,y\in V,e,f\in E$。
+[82] 若 $x,y\in e$，
+[83] 则：
+[84] 称 $x$（$y$ 也是同样的）和 $e$ 是关联的（incident）；
+[85] $x$ 和 $y$ 称为相邻的(adjacent 或 adjacent)。
+[86] $v$ 称为在 $x$ 上的边。
+[87] $x$ 和 $y$ 也称为 $e$ 的端点（endvertex）或顶端（end）；
+[88] $e$ 也称为连接（join）$x$ 和 $y$ 的边；
+[89] 若 $x\in X,y\in Y$，
+[90] 则称边 $xy$ 为 $X-Y$ 边（$X-Y$ edge）。
+[91] 所有 $X-Y$ 边的全体记作 $E(X,Y)$。
+[92] 而 $E(\{x\},Y),E(X,\{y\})$ 则分别简记作 $E(x,Y),E(X,y)$。
+[93] 所有和 $v\in V$ 关联的边的全体记作 $E(v)$。
+[94] 若 $e\cap f\neq\varnothing$，
+[95] 则称 $e$ 和 $f$ 是相邻的。
+[96] 不相邻的点或边称为是独立的（independent）。
+[97] 若一个点集或边集中没有两个元是相邻的，
+[98] 则称该集是独立的（或稳定的（stable））。
+[/SCOPE:s_def7_let]
+[99] 上面的概念显然反映了我们日常生活中对 “关联”，“相邻"等的理解。
+
+[/SCOPE:s_def7]
+[100] 根据图的阶的分类，又将图分为有限图、可数图和无限图。
+
+[SCOPE:s_def8|description|定义8 有限图，可数图，无限图，空图，平凡图]
+[101] 定义 8 有限图，可数图，无限图，空图，平凡图
+[SCOPE:s_def8_let|let_bind|定义8的变量]
+[102] 设 $G$ 是图，若 $ \left\lvert G \right\rvert , \left\lVert G \right\rVert \in\mathbb N$，
+[103] 则称 $G$ 是有限的（finite）；
+[104] 若 $V(G),E(G)$ 有一个是可数集，另一个不是不可数集（见集合的基数），
+[105] 则称 $G$ 是可数的（countable）；
+[106] 若不是以上两种情况，
+[107] 则称 $G$ 是无限的（infinite）。
+[108] $ \left\lvert G \right\rvert =0,1$ 的有限图 $G$ 称为平凡的1（trival）。
+[109] 其中 $ \left\lVert G \right\rVert =0$ 的图 $G$ 称为空图（empty graph）。
+[/SCOPE:s_def8_let]
+[110] 根据边集的分类，图又可分为无向图、有向图和混合图
+
+[/SCOPE:s_def8]
+[SCOPE:s_def9|description|定义9 无向图，有向图，混合图]
+[111] 定义 9 无向图，有向图，混合图
+[SCOPE:s_def9_let|let_bind|定义9的变量]
+[112] 设 $G=(V,E,\varphi)$ 是图，若 $\varphi(E)\subset[V]^2$，
+[113] 则称 $G$ 为无向图（undirected graph）；
+[114] 若 $\varphi(E)\subset V\times V$，
+[115] 则称 $G$ 为有向图（directed graph）；
+[116] 若 $\varphi(E)\cap[V]^2\neq\varnothing,\varphi(E)\cap (V\times V)\neq\varnothing$，
+[117] 则称 $G$ 为混合图（mixed graph）。
+[/SCOPE:s_def9_let]
+[118] 有一种图相对来说比较简单，它的不同点之间最多只有一条边，且是无环的图。
+
+[/SCOPE:s_def9]
+[SCOPE:s_def10|description|定义10 简单图]
+[119] 定义 10 简单图
+[120] 不同两点之间最多只有一条边的无环图称为简单图（simple graph）。
+[121] 简单图可以简记为 $(V,E)$。
+[122] 下面的概念通过将无向图的边都换成一对对称边而得到的图称为对称有向图。
+
+[/SCOPE:s_def10]
+[SCOPE:s_def11|description|定义11 对称有向图]
+[123] 定义 11 对称有向图
+[SCOPE:s_def11_let|let_bind|定义11的变量]
+[124] 设 $G=(V,E,\varphi)$ 是无向图。
+[125] 将 $E$ 的每一条边都用端点和它相同的一对对称边替代得到的边集记作 $E'$，并记 $\varphi'$ 是对应新图的关联函数。
+[126] 则称 $(V,E',\varphi')$ 为由 $G$ 得到的对称有向图（symmetric digraph）。
+[/SCOPE:s_def11_let]
+[127] 下面的概念将不同两个都有边相连的简单无向图称为完全图。
+
+[/SCOPE:s_def11]
+[SCOPE:s_def12|description|定义12 完全图]
+[128] 定义 12 完全图
+[SCOPE:s_def12_let|let_bind|定义12的变量]
+[129] 设 $G=(V,E)$ 是简单无向图，若任意 $v_1\neq v_2\in V$，存在连接它们的边 $e\in E$，
+[130] 则称 $G$ 为完全图（complete graph）。
+[/SCOPE:s_def12_let]
+[131] 下面的概念将完全图的对称有向图称为完全有向图。
+
+[/SCOPE:s_def12]
+[SCOPE:s_def13|description|定义13 完全有向图]
+[132] 定义 13 完全有向图
+[133] 完全图的对称有向图称为完全有向图（complete diagraph）。
+[134] 下面的概念将点集分为 $n$ 个部分，其中每一部分的点间是互不相邻的图称为 $n$ 部分图。
+
+[/SCOPE:s_def13]
+[SCOPE:s_def14|description|定义14 n部图]
+[135] 定义 14 $n$ 部图
+[SCOPE:s_def14_let|let_bind|定义14的变量]
+[136] 设 $G=(V,E,\varphi)$ 是图。
+[137] 若 $V$ 可分为 $n$ 个不相交的非空点集 $V_1,\cdots,V_n$，且任一边的端点在不同的 $V_i$ 中，
+[138] 则称 $G$ 是 $n$ 部图（partite graph）。
+[139] 二部图也称为偶图。
+[140] 由定义可知，$n$ 部图是无环的，否则因为环的端点相同，环的端点就在同一集中。
+[/SCOPE:s_def14_let]
+[141] 此外，同一 $V_i$ 中的点不可能相邻。
+
+[/SCOPE:s_def14]
+[SCOPE:s_def15|description|定义15 完全n部分图]
+[142] 定义 15 完全 $n$ 部分图
+[SCOPE:s_def15_let|let_bind|定义15的变量]
+[143] 设 $G=(V,E,\varphi)$ 是简单 $n$ 部无向图，$V_1,\cdots,V_n$ 是对应的划分。
+[144] 若 $\forall x\in V_i,y\in V_j,i\neq j$，都有 $e\in E$，使得 $x,y$ 相邻，
+[/SCOPE:s_def15_let]
+[145] 则称 $G$ 为完全 $n$ 部图。
+
+[/SCOPE:s_def15]
+[SCOPE:s_def16|description|定义16 图的惯用表示]
+[146] 定义 16 图的惯用表示
+[147] 按照习惯，在绘制图的时候，用圆圈来代表点，而用带箭头的线代表有向边（箭头指向终点），用不带箭头的线代表无向边。
+[148] 如何绘制圆圈和线是不重要的，重要的是正确体现点对之间是否有边。
+
+[/SCOPE:s_def16]
+[149] 同一图不同的人有不同的画法，因为重要的仅仅是哪些点之间有边，哪些点之间没边。
+[150] 因此就可能有外观上有很大差异的图，
+[151] 但是本质上是相同的。
+[152] 下面我们将建立同态和同构的概念，它们所起的作用就是帮助我们识别哪些图本质是相同的。
+[153] 为了明白数学上建立它们的思想，这里做一个讨论：
+[154a] 在集合中
+[154b] 若两个集合是一一对应的，则被称为是对等的。
+[155] “对等” 其实表达了数学的思想，这就是指表示集合的名称和元素的具体符号不重要，重要的仅仅是集合的元素的个数，我们可以完全认为它们是同一个集合，只是不同的人表达同一个东西用了不一样的符号标记而已。
+[156] 当集合的元素之间有某些关系的时候，关系的名称也不重要，重要的是哪些元素之间有关系，哪些元素之间没有关系。
+[157] 对于元素之间有某些关系的集合，不同的人2完全可以选择不同的表达方式，
+[158] 即可以使用不同的符号，
+[159] 但应当正确表达哪些元素之间有关系，哪些没有关系。
+[160] 当使用不同的记号来表示元素之间具有关系的集合的时候，若它们都正确的表达了同样的关系，我们称这两种表示是同构的。
+[161] 也有可能，不同的人表达同一个东西，有的人只是表达了该东西的某一部分。
+[162] 另一个人不光表达了前一个人表达的部分，还表达了其它部分，
+[163] 那么就称它们是同态的。
+[164] 有了这一图像，容易理解下面的数学概念。
+
+[SCOPE:s_def17|description|定义17 同态，同构，自同构，抽象图]
+[165] 定义 17 同态，同构，自同构，抽象图
+[SCOPE:s_def17_let|let_bind|定义17的变量]
+[166] 设 $G=(V,E,\varphi),G'=(V',E',\varphi')$ 是两个图。
+[167] 若存在映射
+[168] \begin{equation}
+f:V\rightarrow V'~
+\end{equation}
+[169] \begin{equation}
+\forall\{x_1,y_1\},(x_2,y_2)\in E\Rightarrow \{f(x_1),f(y_1)\},(f(x_2),f(y_2))\in E',,~
+\end{equation}
+[170] 同态映射
+[171] 同构映射
+[172] 自同构映射
+[173] 与给定图同构的所有图的全体被非正式地称为抽象图（abstract graph）。
+[/SCOPE:s_def17_let]
+[174] 容易验证，完全图及完全有向图在同构意义下是唯一的。
+[175] 很多时候，人们感兴趣的只是图的结构，
+[176] 所以常常略去名称，用一个其顶点和边的名称都没有的图形作为同构图等价类中的代表元素。
+[177] 有时也给图的顶点或边加以标号。
+
+[/SCOPE:s_def17]
+[SCOPE:s_def18|description|定义18 标号图]
+[178] 定义 18 标号图
+[179] 在图的表示中，若图的顶点都用记号进行标记了，
+[180] 则称为标号图（labelled graph）。
+
+[/SCOPE:s_def18]
+[SCOPE:s_def19|description|定义19 记号约定 K_n]
+[181] 定义 19 记号约定 $K_n$
+[182] $n$ 阶完全图和完全有向图的等价类分别记作 $K_n,K_n^*$。
+[183] 特别 $K_3$ 称为三角形（triangle）。
+
+[/SCOPE:s_def19]
+[184] 既然同构的图本质是相同的，
+[185] 那么若某一图具有某个性质，
+[186] 那么真正和它 “同构” 的图就应当具有该性质。
+[187] 下面的概念表达了这一思想。
+
+[SCOPE:s_def20|description|定义20 图性质，图不变量]
+[188] 定义 20 图性质，图不变量
+[SCOPE:s_def20_let|let_bind|定义20的变量]
+[189] 设 $\mathfrak A$ 是图 $G$ 的某种（已有定义的）特征。
+[190] 若与 $G$ 同构的图都有特征 $\mathfrak A$，
+[191] 则称 $\mathfrak A$ 是图性质(graph property)。
+[/SCOPE:s_def20_let]
+[192] 定义在同构图的全体上的恒值映射被称为图不变量（graph invariant）。
+
+[/SCOPE:s_def20]
+[SCOPE:s_def21|description|定义21 边极大]
+[193] 定义 21 边极大
+[SCOPE:s_def21_let|let_bind|定义21的变量]
+[194] 设图 $G$ 具有图性质 $\mathfrak A$。
+[195] 若 $G$ 的任意真子图都没有性质 $\mathfrak A$，
+[/SCOPE:s_def21_let]
+[196] 则称 $G$ 关于 $\mathfrak A$ 是边极大的（edge-maximal）。
+
+[/SCOPE:s_def21]
+[197] 下面的概念表达了将两个图放在一起和取公共部分的思想。
+
+[SCOPE:s_def22|description|定义22 图的交并差]
+[198] 定义 22 图的交并差
+[SCOPE:s_def22_let|let_bind|定义22的变量]
+[199] 设 $G=(V,E,\varphi),G'=(V',E',\varphi')$ 是两个图。记
+[200] \begin{equation}
+\begin{aligned}
+&E_0=\{e\in E\cap E'|\varphi(e)=\varphi'(e)\},\\
+&E_1=\{e|e\in E\cup E'\}\backslash ((E\cap E')\backslash E_0),\\
+&E_2=\{e\in E\backslash E'|\varphi(e)\in V\backslash V'\},\\
+&\varphi_0:E_0\rightarrow V\cap V',\varphi…[truncated]…e)=\varphi(e),\\
+&\varphi_1:E_1\rightarrow V\cup V',\varphi_1(e)=\left\{\begin{aligned}
+&\varphi(e),e\in E,\\
+&\varphi'(e),e\in E'.
+\end{aligned}\right. \\
+&\varphi_2:E\backslash E'\rightarrow V,\varphi_2(e)=\varphi(e).
+\end{aligned}
+~
+\end{equation}
+[201] \begin{equation}
+(V\cap V',E_0,\varphi_0)~
+\end{equation}
+[202] \begin{equation}
+(V\cup V',E_1,\varphi_1)~
+\end{equation}
+[203] \begin{equation}
+(V\backslash V',E_2,\varphi_2)~
+\end{equation}
+[/SCOPE:s_def22_let]
+[204] 下面的概念表达从一个图删掉一些点或边构建新的图。
+
+[/SCOPE:s_def22]
+[SCOPE:s_def23|description|定义23 删除，增加]
+[205] 定义 23 删除，增加
+[SCOPE:s_def23_let|let_bind|定义23的变量]
+[206] 设 $G=(V,E,\varphi)$ 是一个图，$V',E'$ 分别是任意的点集和边集。
+[207] 则称 $G[V\backslash V']$ 为从 $G$ 中删除(delete) $V\cap V'$ 中所有点及相关联的边得到的图，记作 $G-V$；
+[208] 称
+[209] $(V,E\backslash E',\varphi|_{E\backslash E'})$ 为从 $G$ 中删除$E\cap E'$（或简称 $E'$）中所有边得到的图，记作 $G-E'$。
+[210] 设 $G'=(V',E',\varphi')$，记
+[211] \begin{equation}
+\begin{aligned}
+&E_1=\{e\in E'|\varphi'(e)\in P_2[V]\},\\
+&\varphi_1:E\cup E_1\rightarrow P_2[V],\varphi_1(e)=\left\{\begin{aligned}
+&\varphi(e),e\in E,\\
+&\varphi'(e),e\in E'.
+\end{aligned}\right.
+\end{aligned}~
+\end{equation}
+[212] 则称 $(V,E\cup E_1,\varphi_1)$ 为从 $G$ 中增加 $[V]^2\cap E'$（或简称 $E'$）中所有边得到的图，记作 $G+E'$。
+[213] 当只删除一点或一边时，记 $G-v:=G-\{v\},G-e:=G-\{e\},G+e:=G+\{e\}$。
+[/SCOPE:s_def23_let]
+[214] 下面的概念将有向图变成无向图。
+
+[/SCOPE:s_def23]
+[SCOPE:s_def24|description|定义24 无向化映射]
+[215] 定义 24 无向化映射
+[SCOPE:s_def24_let|let_bind|定义24的变量]
+[216] 设 $G=(V,E,\varphi)$ 是图。
+[217] 设 $\varphi(e)=\{x,y\}\text{或}(x,y)\text{或}(y,x)$，
+[218] 则称映射
+[219] \begin{equation}
+\begin{aligned}
+\pi:E\rightarrow P_2(V),\pi(e)=\left\{\begin{aligned}
+\{x,y\},x\neq y,\\
+(x,y),x=y.
+\end{aligned}\right.
+\end{aligned}~
+\end{equation}
+
+[/SCOPE:s_def24]
+[/SCOPE:s_def24_let]
+[220] 通过交运算定义子母图，反映图的包含关系
+
+[SCOPE:s_def25|description|定义25 不交，子图，母图，真子图]
+[221] 定义 25 不交，子图，母图，真子图
+[SCOPE:s_def25_let|let_bind|定义25的变量]
+[222] 设 $G=(V,E,\varphi),G'=(V',E',\varphi')$ 是两个图。
+[223] 若 $E(G\cap G')=V(G\cap G')=\varnothing$，
+[224] 则称 $G$ 和 $G'$ 是不交的（disjoint）；
+[225] 若 $G\cap G'=G$，
+[226] 则称 $G$ 是 $G'$ 的子图（subgraph），而 $G'$ 称为 $G$ 的母图（supergraph），记作 $G\subset G'$。
+[227] 若 $G\subset G', G\neq G'$，
+[228] 则称 $G$ 是 $G'$ 真子图（proper subgraph）。
+[/SCOPE:s_def25_let]
+[229] 在简单无向图的完全图中把简单无向图的边去掉得到的图叫补图。
+
+[/SCOPE:s_def25]
+[SCOPE:s_def26|description|定义26 补图，自补图]
+[230] 定义 26 补图，自补图
+[SCOPE:s_def26_let|let_bind|定义26的变量]
+[231] 设 $G$ 是简单无向图，若 $G'$ 是它对应的完全图。
+[232] 则称 $(V(G),E(G')\backslash E(G),\varphi)$（$\varphi$ 是 $G'$ 的关联函数在 $E(G')\backslash E(G)$ 上的限制）是 $G$ 的补图（complementary graph），记作 $G^c$ 或 $\overline G$。
+[233] 若 $G=\bar G$，
+[234] 则称 $G$ 是自补的（self complementary）。
+[/SCOPE:s_def26_let]
+[235] 下面的概念表达了从一个图如何生成新的图。
+
+[/SCOPE:s_def26]
+[SCOPE:s_def27|description|定义27 导出子图，支撑]
+[236] 定义 27 导出子图，支撑
+[SCOPE:s_def27_let|let_bind|定义27的变量]
+[237] 设 $G=(V,E,\varphi)$ 是图，$V'\subset V$。
+[238] 定义端点在 $V'$ 中的所有 $E$ 中的边全体 $E'$ 及其上的映射 $\varphi'$ 如下，
+[239] \begin{equation}
+\begin{aligned}
+E':=\{e\in E|\varphi(e)\in V'\},\\
+\varphi':E'\rightarrow V',\varphi'(e)=\varphi(e).
+\end{aligned}~
+\end{equation}
+[240] 导出子图
+[241] 若有图 $H=(V(H),E(H),\varphi_H)$，使得 $V(H)=V(G),E(H)\subset E(G),\varphi_H=\varphi|_{E(H)}$（其中 $\varphi|_{E(H)}$ 是 $\varphi$ 在 $E(H)$ 上的限制），
+[242] 则称 $H$ 是 $G$ 的支撑子图（spanning subgraph）或生成子图。
+[/SCOPE:s_def27_let]
+[243] 下面的概念通过无向化映射可以将有向图变为无向图，通过定向操作将无向图变为有向图。
+
+[/SCOPE:s_def27]
+[SCOPE:s_def28|description|定义28 基础图，定向图]
+[244] 定义 28 基础图，定向图
+[SCOPE:s_def28_let|let_bind|定义28的变量]
+[245] 设 $G_1=(V_1,E_1,\varphi_2)$ 是有向图，$G_2=(V_2,E_2,\varphi_2)$ 是无向图，$\pi$ 是 $G_1$ 的无向化映射。
+[246] 则称
+[247] \begin{equation}
+(V_1,E_1,\pi)~
+\end{equation}
+[248] 定义 $G_2$ 上（方向任意）的定向化映射
+[249] \begin{equation}
+\begin{aligned}
+f:E_2\rightarrow P_2(V_2),f(e)=(x,y),\\
+\text{其中} \varphi_2(e)=\{x,y\}.
+\end{aligned}~
+\end{equation}
+[250] \begin{equation}
+(V_2,E_2,f)~
+\end{equation}
+
+[/SCOPE:s_def28]
+[/SCOPE:s_def28_let]
+[SCOPE:s_def29|description|定义29 竞赛图]
+[251] 定义 29 竞赛图
+[252] 完全图的定向图称为竞赛图（tornament）。
+[/SCOPE:s_def29]
+[/SCOPE:root]

@@ -1,0 +1,335 @@
+{
+  "article_name": "GausPD",
+  "statements": [
+    {
+      "stmt_id": "st_def_pdf",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "f(x)",
+        "μ",
+        "σ^2",
+        "σ"
+      ]
+    },
+    {
+      "stmt_id": "st_notation_normal",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "N(μ,σ^2)"
+      ]
+    },
+    {
+      "stmt_id": "st_normalization",
+      "subtype": "theorem",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_standard_normal",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "N(0,1)"
+      ]
+    },
+    {
+      "stmt_id": "st_prob_interval",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "erf"
+      ]
+    },
+    {
+      "stmt_id": "st_inverse_erf",
+      "subtype": "remark",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "erf^{-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_fwhm",
+      "subtype": "theorem",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": "true",
+      "scope_id": "s_special",
+      "exposed_entities": [
+        "FWHM"
+      ]
+    },
+    {
+      "stmt_id": "st_fwhm_half",
+      "subtype": "remark",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_special",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sigma_value",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_special",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_special_table",
+      "subtype": "remark",
+      "clause_range": [
+        21,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_special",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_general_form",
+      "subtype": "assumption",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "f(x)",
+        "A",
+        "a",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_symmetry",
+      "subtype": "assumption",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mean_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "μ"
+      ]
+    },
+    {
+      "stmt_id": "st_gaussian_integral",
+      "subtype": "lemma",
+      "clause_range": [
+        31,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_normalization_derivation",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_variance_derivation",
+      "subtype": "conclusion",
+      "clause_range": [
+        37,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "σ^2"
+      ]
+    },
+    {
+      "stmt_id": "st_solve_params",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        45
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "a",
+        "A"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_general_form",
+      "target": "st_symmetry",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_symmetry",
+      "target": "st_mean_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_general_form",
+      "target": "st_normalization_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_gaussian_integral",
+      "target": "st_normalization_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_general_form",
+      "target": "st_variance_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_gaussian_integral",
+      "target": "st_variance_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_normalization_derivation",
+      "target": "st_solve_params",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_variance_derivation",
+      "target": "st_solve_params",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_pdf",
+      "target": "st_notation_normal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_pdf",
+      "target": "st_normalization",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_pdf",
+      "target": "st_standard_normal",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_pdf",
+      "target": "st_prob_interval",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prob_interval",
+      "target": "st_inverse_erf",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_def_pdf",
+      "target": "st_fwhm",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_fwhm",
+      "target": "st_fwhm_half",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_def_pdf",
+      "target": "st_sigma_value",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_fwhm",
+      "target": "st_special_table",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_solve_params",
+      "target": "st_def_pdf",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "推导结果代入定义式"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,134 @@
+[SCOPE:root|description|群的自由积]
+文章名: FrePrd
+标题: 群的自由积
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=共合积
+  [1] type=theorem heading=定理 1 title=
+
+[0] 将自由群的概念推广，
+[1] 即可得到两个群之间的自由积的概念。
+
+[SCOPE:s_free_product_let|let_bind|自由积的变量]
+[SCOPE:s_free_product|description|自由积的构造]
+[2] 给定两个群 $G$ 和 $H$，取集合 $G\cup H$ 上的自由群 $F(G\cup H)$，
+[3] 则 $F(G\cup H)$ 的元素形如 $x_1x_2\cdots x_k$ 的有限长字符串，其中 $k$ 是某个正整数，各 $x_i$ 都是 $G\cup H$ 的元素。
+[4] 在 $F(G\cup H)$ 上定义一个等价关系：如果字符串 $g_1g_2\cdots g_k$ 中各 $g_i\in G$，
+[5] 那么令 $g_1g_2\cdots g_k\sim g_1\cdot g_2\cdot\cdots\cdot g_k$，
+[6] 即把该字符串等同于各字母在群 $G$ 中运算的结果；
+[7] 同样地把字母都是 $H$ 中元素的字符串等同于这些元素在群 $H$ 中的运算结果；
+[8] 把 $G$ 和 $H$ 的单位元等同于空词。
+[9] 比如说，在整数加法群 $\mathbb{Z}$ 中，把字符串 $123$ 等同于数字 $1+2+3$ 所代表的字符串，
+[10] 即只有一个字母 $6$ 的字符串。
+[11] 这样一来，商群 $F(G\cup H)/\sim$ 中的字符串就形如 $g_1h_1g_2h_2\cdots g_kh_k$、$g_1h_1g_2h_2\cdots g_k$、$h_1g_1h_2g_2\cdots h_kg_k$ 或 $h_1g_1h_2g_2\cdots h_k$ 的字符串，或者简单来说，有限长的 $g$ 和 $h$ 的交替字符串，其中 $g, g_i\in G$，$h, h_i\in H$。
+[12] 称商群 $F(G\cup H)/\sim$ 为群 $G$ 和群 $H$ 的自由积（free product），记为 $G*H$。
+
+[/SCOPE:s_free_product_let]
+[/SCOPE:s_free_product]
+[SCOPE:s_amalgamated|description|共合积]
+[13] 定义 1 共合积
+[SCOPE:s_amalgamated_let|let_bind|共合积的变量]
+[14] 设有三个群 $F, G, H$，且有群同态 $\phi:F\rightarrow G$ 和 $\varphi:F\rightarrow H$，
+[15] 那么可以定义 $G$ 和 $H$ 关于 $F$ 的共合积 $G*_FH$ 如下：
+[16a] (f)\sim\varphi
+[16b] (f)$。
+[17] 简单来说，$G*_FH$ 的元素依然是 $H$ 和 $G$ 中元素交替排列的字符串，
+[18a] (f)\sim\varphi
+[18b] (f)$ 都看成等价元素。
+[19] 既然是自由群上规定等价关系得来的，共合积也可以用描述为自由群的商群。
+
+[/SCOPE:s_amalgamated]
+[/SCOPE:s_amalgamated_let]
+[SCOPE:s_theorem1|description|定理1]
+[20] 定理 1
+[SCOPE:s_theorem1_let|let_bind|定理1的变量]
+[21] 给定互不相交的群 $G$ 和 $H$，再给定群 $F$ 和群同态$\varphi:F\to G$ 和 $\phi: F\to H$。
+[22a] (x)\phi(x^{-1})A^{-1}$ 和 $A\phi
+[22b] (x)\varphi(x^{-1})A^{-1}$ 的元素构成的集合，其中 $A\in G*H$，$x\in F$，
+[23] 则由 $S$ 生成的 $G*H$ 的子群 $\langle S \rangle$ 是 $G*H$ 的正规子群。
+[/SCOPE:s_theorem1_let]
+[24] 进一步有 $G*_FH=G*H/\langle S \rangle$。
+[SCOPE:s_theorem1_proof|description|定理1的证明]
+[25] 证明：
+[SCOPE:s_proof_let1|let_bind|证明中的变量1]
+[26a] (x)\phi(x^{-1})A^{-1}B\phi
+[26b] (y)\varphi(y^{-1})B^{-1}\in \langle S \rangle$，任取 $C\in G*H$，
+[27] 则
+[28] \begin{equation}
+\begin{aligned}
+&CA\varphi(x)\phi(x^{-1})A^{-1}B\phi(y)\varphi(y^{-1})B^{-1}C^{-1} \\
+={}&
+CAC^{-1}C\varphi(x)\phi(x^{-1})C^{-1}CA^{-1}C^{-1}CBC^{-1}C\phi(y)\varphi(y^{-1})C^{-1}CB^{-1}C^{-1}\\
+={}&
+(CAC^{-1}C)\varphi(x)\phi(x^{-1})(CAC^{-1}C)^{-1}(CBC^{-1}C)\phi(y)\varphi(y^{-1})(CBC^{-1}C)^{-1}\\
+\in{}& \langle S \rangle~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_proof_let1]
+[29] 下证 $G*H/\langle S \rangle \cong G*_F H$。
+[SCOPE:s_proof_let2|let_bind|证明中的变量2]
+[30] 定义满同态 $\sigma:G*H\to G*_FH$，使得 $\sigma$ 限制在 $G$ 或 $H$ 上都是恒等映射。
+[31] 取 $G*H\subseteq G*H*F$ 中的一个已化简的词 $W$，
+[32] 则 $\sigma(W)$ 等价于把 $W$ 中能替换为 $F$ 中元素的字母都替换了。
+[33] 替换后，如果有来自 $F$ 的字母相邻，将它们进行 $F$ 的群运算，再把所得新词中来自 $F$ 的字母都替换回 $G$ 或 $H$ 中，化简，所得结果依然等价于1
+[34] $W$。
+[/SCOPE:s_proof_let2]
+[35] $G*H$ 中任何等价于 $W$ 的词都可以按这个程序得出。
+[36] 如果 $W$ 中没有任何字母可以替换，
+[37] 那么 $W$ 无法化简为空字。
+[38] 于是，如果 $\sigma(W)=1$，
+[39] 则 $W$ 中必有可以替换进 $F$ 的字母。
+[40] 挑其中一个这样的字母如 $a=\varphi(x)$，
+[41] 则可将其补充为 $a\phi(x^{-1})\phi(x)$，使得 $W$ 作为自由积 $G*H$ 不变。
+[42] 补充后，保持 $a\phi(x^{-1})$ 部分不动，剩下部分按自由积的定义化简。
+[43] 接下来，在剩下的可替换进 $F$ 的字母中挑一个，重复上述补充、化简的程序2。
+[44] 可替换字母乘以一个不可替换字母，结果一定是不可替换的3。
+[45] 将上述步骤最后所得的词按共合积的定义化简，
+[46a] (x)\phi(x^{-1})$ 和 $\phi
+[46b] (x)\varphi(x^{-1})$ 的元素化为 $1$，然后将所得结果按自由积的定义化简。
+[47] 此时如果所得结果是 $1$，
+[48] 那么 $W$ 确实是 $S$ 中的元素相乘而得；
+[49] 如果不是，
+[50] 那么它已经不可再施行上述补充、化简的程序，
+[51] 从而 $W$ 不可能等价为 $1$。
+[52] 综上，$ \operatorname {ker}\sigma\subseteq \langle S \rangle $
+[53] 又显然有 $\langle S \rangle \subseteq \operatorname {ker}\sigma$，
+[54] 从而 $ \operatorname {ker}\sigma=\langle S \rangle$。
+[55] 由群同态基本定理即可得证。
+[56] 证毕。
+[/SCOPE:s_theorem1_proof]
+[57a] (x)\phi(x^{-1})$ 和 $\phi
+[57b] (x)\varphi(x^{-1})$ 的元素的最小正规子群。
+[58] 你可能会疑问，如果包含这些元素的最小正规子群是 $N$，
+[59] 那么任取 $A, B\in G*H$，应有
+[60] \begin{equation}
+\begin{aligned}
+&\varphi(x)\phi(x^{-1}), \varphi(y)\phi(y^{-1})\in N \\
+\implies{}& A\varphi(x)\phi(x^{-1})A^{-1}\in N\\
+\implies{}& \varphi(y)\phi(y^{-1})A\varphi(x)\phi(x^{-1})A^{-1}\in N\\
+\implies{}& B\varphi(y)\phi(y^{-1})A\varphi(x)\phi(x^{-1})A^{-1}B^{-1}\in N
+\end{aligned}
+~.
+\end{equation}
+[61] 最右端这个词似乎不是直接由 $S$ 的元素相乘而得的，
+[62] 但它其实是的：
+[63] \begin{equation}
+\begin{aligned}
+&B\varphi(y)\phi(y^{-1})A\varphi(x)\phi(x^{-1})A^{-1}B^{-1} \\
+={}& \left(B\varphi(y)\phi(y^{-1})B^{-1} \right) \left(BA\varphi(x)\phi(x^{-1})A^{-1}B^{-1} \right)
+\end{aligned}
+~.
+\end{equation}
+[/SCOPE:s_theorem1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_theorem1",
+    "target_scope": "s_amalgamated",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1给出共合积的另一种构造"
+  }
+]

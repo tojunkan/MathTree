@@ -1,0 +1,319 @@
+{
+  "article_name": "HsCb",
+  "statements": [
+    {
+      "stmt_id": "st_def_combination",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let",
+      "exposed_entities": [
+        "n",
+        "m",
+        "C_n^m"
+      ]
+    },
+    {
+      "stmt_id": "st_derivation_intro",
+      "subtype": "remark",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_formula_A_C",
+      "subtype": "theorem",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "A_n^m",
+        "C_n^m",
+        "A_m^m"
+      ]
+    },
+    {
+      "stmt_id": "st_formula_C_from_A",
+      "subtype": "theorem",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "C_n^m",
+        "A_n^m",
+        "A_m^m"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_interpret",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_formula_expanded",
+      "subtype": "theorem",
+      "clause_range": [
+        9,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "C_n^m",
+        "n",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_formula_factorial",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "C_n^m",
+        "n!",
+        "m!",
+        "(n-m)!"
+      ]
+    },
+    {
+      "stmt_id": "st_prop1_derivation",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_prop_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop1",
+      "subtype": "theorem",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "true",
+      "scope_id": "s_prop",
+      "exposed_entities": [
+        "C_n^m",
+        "C_n^{n-m}"
+      ]
+    },
+    {
+      "stmt_id": "st_prop1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_prop",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop2_derivation",
+      "subtype": "remark",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_prop",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop2",
+      "subtype": "theorem",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_prop",
+      "exposed_entities": [
+        "C_{n+1}^m",
+        "C_n^m",
+        "C_n^{m-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_prop2_proof_intro",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_prop2_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop2_proof_eq",
+      "subtype": "theorem",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "s_prop2_proof",
+      "exposed_entities": [
+        "C_n^m",
+        "C_n^{m-1}",
+        "C_{n+1}^m"
+      ]
+    },
+    {
+      "stmt_id": "st_extra_formula_intro",
+      "subtype": "remark",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_prop",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_extra_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "true",
+      "scope_id": "s_prop",
+      "exposed_entities": [
+        "m",
+        "C_n^m",
+        "n",
+        "C_{n-1}^{m-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_extra_proof_intro",
+      "subtype": "remark",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_prop",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_extra_proof_eq",
+      "subtype": "theorem",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": "true",
+      "scope_id": "s_prop",
+      "exposed_entities": [
+        "m",
+        "C_n^m",
+        "n",
+        "C_{n-1}^{m-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_extra_formula2",
+      "subtype": "theorem",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_prop",
+      "exposed_entities": [
+        "C_n^m",
+        "n",
+        "m",
+        "C_{n-1}^{m-1}"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_formula_A_C",
+      "target": "st_formula_C_from_A",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_formula_C_from_A",
+      "target": "st_formula_expanded",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_formula_expanded",
+      "target": "st_formula_factorial",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prop1_derivation",
+      "target": "st_prop1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prop2_derivation",
+      "target": "st_prop2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prop2_proof_intro",
+      "target": "st_prop2_proof_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_extra_formula_intro",
+      "target": "st_extra_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_extra_proof_intro",
+      "target": "st_extra_proof_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_extra_proof_eq",
+      "target": "st_extra_formula2",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

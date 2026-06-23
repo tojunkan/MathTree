@@ -1,0 +1,32 @@
+[SCOPE:root|description|双线性型]
+文章名: bilinF
+标题: 双线性型
+
+[0] 贡献者： JierPeter; addis
+[1] 预备知识 线性映射
+[SCOPE:s_def|description|双线性型定义]
+[SCOPE:s_let_f|let_bind|函数 f]
+[SCOPE:s_let_V|let_bind|线性空间 V]
+[2] 给定域 $\mathbb{F}$ 上的线性空间 $V$，若函数 $f:V\times V\to \mathbb{F}$ 对于两个自变量都满足线性性（称为 “双线性性”），
+[/SCOPE:s_let_V]
+[3] 则称 $f$ 为一个双线性函数（bilinear function）、线性 $2$-函数（linear $2$-function）或者双线性形式（bilinear form），也译作双线性型。
+[/SCOPE:s_let_f]
+[4] 所谓双线性性，
+[SCOPE:s_let_uv|let_bind|任意向量和标量]
+[5] 即对于任意 $ \boldsymbol{\mathbf{u}} _i, \boldsymbol{\mathbf{v}} _j\in V$ 和 $a_i, b_j\in\mathbb{F}$，都有
+[6] \begin{equation}
+\begin{aligned}
+&f(a_1 \boldsymbol{\mathbf{u}} _1+a_2 \boldsymbol{\mathbf{u}} _2, b_1 \boldsymbol{\mathbf{v}} _1+b_2 \boldsymbol{\mathbf{v}} _2)\\
+={}& a_1b_1f( \boldsymbol{\mathbf{u}} _1, \boldsymbol{\mathbf{v}} _1)+a_2b_1f( \boldsymbol{\mathbf{u}} _2, \boldsymbol{\mathbf{v}} _1)+a_1b_2f( \boldsymbol{\mathbf{u}} _1, \boldsymbol{\mathbf{v}} _2)+a_2b_2f( \boldsymbol{\mathbf{u}} _2, \boldsymbol{\mathbf{v}} _2)~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_let_uv]
+[7] 如果固定两个自变量中的一个，如固定第二个自变量 $ \boldsymbol{\mathbf{v}} $，
+[8] 则 $f$ 可以看成是 $V\to \mathbb{F}$ 的单自变量函数，显然对于这个自变量，$f$ 满足线性性：
+[9] \begin{equation}
+f(a_1 \boldsymbol{\mathbf{u}} _1+b_1 \boldsymbol{\mathbf{u}} _2, \boldsymbol{\mathbf{v}} )=a_1f( \boldsymbol{\mathbf{u}} _1, \boldsymbol{\mathbf{v}} )+a_2f( \boldsymbol{\mathbf{u}} _2, \boldsymbol{\mathbf{v}} )~.
+\end{equation}
+[10] 双线性形式是一种张量，具体来说是 $(0, 2)$ 型张量。
+[/SCOPE:s_def]
+[11] 内积是一种双线性形式，具体来说是正定的双线性形式。
+[/SCOPE:root]

@@ -1,0 +1,60 @@
+[SCOPE:root|description|谱半径]
+文章名: SpeRad
+标题: 谱半径
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=谱半径
+  [1] type=theorem heading=定理 1 title=
+  [2] type=theorem heading=定理 2 title=
+
+[SCOPE:s_def1|description|定义 1 谱半径]
+[0] 定义 1 谱半径
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[1] 设 $X$ 是复巴拿赫空间，$T:X\to X$ 是有界线性算子。数
+[2] $$
+r(T):=\sup_{\lambda\in\sigma(T)}|\lambda|~
+$$
+[/SCOPE:s_def1_let]
+[3] 称为算子 $T$ 的谱半径（spectral radius）.
+[4] 对预解式 $(z-T)^{-1}$ 进行冯诺依曼级数展开, 可见谱集包含于圆 $|z|\leq\|T\|$ 内。
+[5] 所以有 $r(T)\leq\|T\|$. 更精确的定理如下：
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理 1]
+[6] 定理 1
+[7] 极限 $\lim_{n\to\infty}\|T^n\|^{1/n}$ 存在，并且等于 $T$ 的谱半径 $r(T)$.
+[8] 证明。
+[9] 谱半径的重要意义由下述定理刻画：
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理 2]
+[10] 定理 2
+[11] 当 $|z|>r(T)$ 时，冯诺依曼级数
+[12] $$
+\frac{1}{z}\sum_{n=0}^\infty\frac{T^n}{z^n}~,
+$$
+[13] 按照算子范数收敛到 $(z-T)^{-1}$. 当 $|z|< r(T)$ 时，此冯诺依曼级数按照算子范数是发散的。
+[14] 可见，谱半径的意义正如同数值幂级数的收敛半径，而它的计算方法正如同柯西-阿达玛公式所揭示的那样。
+[15] 不论在 $X$ 上取什么样的等价范数，都不影响上面算子的可逆性和连续性，自然也不影响它的谱性质。
+[16] 由于谱半径的定义只用到了算子 $T$ 的谱的性质，
+[17] 所以谱半径是与 $X$ 上的范数选取无关的。
+[/SCOPE:s_thm2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的结论涉及谱半径，是定义1的深化"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2刻画谱半径的意义，基于定义1"
+  }
+]

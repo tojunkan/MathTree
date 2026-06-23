@@ -1,0 +1,167 @@
+[SCOPE:root|description|共轭算子]
+文章名: ConOp
+标题: 共轭算子
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=共轭算子
+  [1] type=definition heading=定义 2 title=符号约定
+  [2] type=theorem heading=定理 1 title=
+  [3] type=example heading=例 1 title=有限维空间的共轭算子
+  [4] type=theorem heading=定理 2 title=
+  [5] type=theorem heading=定理 3 title=
+
+[SCOPE:s_def1|description|定义1 共轭算子]
+[0] 定义 1 共轭算子
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1] 设 $A$ 是线性拓扑空间 $E$ 到 $E_1$ 的线性连续算子，
+[2] 则称映射 $E_1^*\rightarrow E^*:g\mapsto gA$ 为 $A$ 的共轭算子，记作 $A^*$。
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_def2|description|定义2 符号约定]
+[3] 定义 2 符号约定
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[4] 设 $f$ 是泛函，
+[5] 则记 $(f,x):=f(x)$。
+
+[/SCOPE:s_def2]
+[/SCOPE:s_def2_let]
+[SCOPE:s_thm1|description|定理1]
+[6] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[7] 设 $A$ 是线性连续算子，
+[8] 则
+[/SCOPE:s_thm1_let]
+[9] \begin{equation}
+(g,Ax)=(A^* g,x).~
+\end{equation}
+[10] 证明：由共轭算子定义 1 ，有
+[11] \begin{equation}
+A^*g=gA.~
+\end{equation}
+[12] \begin{equation}
+(A^*g,x)=(gA,x)=g(Ax)=(g,Ax).~
+\end{equation}
+[13] 证毕！
+[14] 式 1 往往被用作共轭算子的定义。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex1|description|例1 有限维空间的共轭算子]
+[15] 例 1 有限维空间的共轭算子
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[16] 设 $A:\mathbb R^n\rightarrow\mathbb R^m$ 是线性连续算子，
+[17] 则
+[/SCOPE:s_ex1_let]
+[18] \begin{equation}
+A(E_1 X)=A(E_1)X=E_2 \bar AX.~
+\end{equation}
+[19] \begin{equation}
+A^*f=fA.~
+\end{equation}
+[20] \begin{equation}
+\begin{aligned}
+(A^*f)(E_1)X&=A^*f(E_1X)=(fA)(E_1X)\\
+&=f(E_2 \bar AX)=f(E_2)\bar AX
+\end{aligned}.~
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_thm2|description|定理2]
+[21] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[22] 设 $A,B$ 是连续线性算子，
+[23] 则成立：
+[/SCOPE:s_thm2_let]
+[24] $A^*$ 是线性的；
+[25] $(A+B)^*=A^*+B^*$；
+[26] $(\alpha A)^*=\alpha A^*$。
+[27] 证明：由定义 1 ，
+[28] \begin{equation}
+\begin{aligned}
+A^*(\alpha f+\beta g)&=(\alpha f+\beta g)A\\
+&=\alpha fA+\beta gA\\
+&=\alpha A^*f+\beta A^*g.
+\end{aligned}~
+\end{equation}
+[29] \begin{equation}
+\begin{aligned}
+(A+B)^*(f)&=f(A+B)=fA+fB\\
+&=A^*f+B^*f=(A^*+B^*)f.
+\end{aligned}~
+\end{equation}
+[30] \begin{equation}
+\begin{aligned}
+(\alpha A)^*(f)&=f(\alpha A)=\alpha fA=\alpha A^*f.
+\end{aligned}~
+\end{equation}
+[31] 其中用到了 $f(\alpha A+\beta B)=\alpha fA+\beta fB$，这是因为
+[32] \begin{equation}
+\begin{aligned}
+f(\alpha A+\beta B)(x)&=f(\alpha A(x)+\beta B(x))\\
+&=\alpha fA(x)+\beta fB(x)\\
+&=(\alpha fA+\beta fB)(x).
+\end{aligned}~
+\end{equation}
+[33] 证毕！
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|定理3]
+[34] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[35] 若 $A$ 是赋范空间之间的有界线性算子，
+[36] 则
+[/SCOPE:s_thm3_let]
+[37] \begin{equation}
+\left\lVert A^* \right\rVert = \left\lVert A \right\rVert .~
+\end{equation}
+[38] 证明：根据定理 1 和赋范空间满足第一可数性，可知线性有界算子必定是线性连续算子，
+[39] 因此线性有界算子可以讨论共轭性。
+[40] 根据算子范数的性质，
+[41] \begin{equation}
+\left\lvert (A^*g,x) \right\rvert = \left\lvert (g,Ax) \right\rvert \leq \left\lVert g \right\rVert \cdot \left\lVert A \right\rVert \cdot \left\lVert x \right\rVert .~
+\end{equation}
+[42] \begin{equation}
+\left\lVert A^*g \right\rVert =\sup_{x\neq0} \frac{ \left\lvert (A^*g,x) \right\rvert }{ \left\lVert x \right\rVert }\leq \left\lVert g \right\rVert \cdot \left\lVert A \right\rVert .~
+\end{equation}
+[43] \begin{equation}
+\frac{ \left\lVert A^*g \right\rVert }{ \left\lVert g \right\rVert }\leq \left\lVert A \right\rVert \quad\Rightarrow\quad \left\lVert A^* \right\rVert =\sup_{g\neq0}\frac{ \left\lVert A^*g \right\rVert }{ \left\lVert g \right\rVert }\leq \left\lVert A \right\rVert .~
+\end{equation}
+[SCOPE:s_thm3_let2|let_bind|定理3证明中的变量]
+[44] 设 $x\in E,Ax\neq0$。
+[45] 令 $y_0=\frac{Ax}{ \left\lVert Ax \right\rVert }\in E_1$。
+[46] 显然，$ \left\lVert y_0 \right\rVert =1$。
+[47] 由推论 1 ，存在全空间上的线性连续泛函 $g$，使得
+[48] \begin{equation}
+\left\lVert g \right\rVert =1,(g,y_0)= \left\lVert y_0 \right\rVert =1.~
+\end{equation}
+[49] 即 $(g,Ax)= \left\lVert Ax \right\rVert $（由 $y_0$ 的定义）。
+[/SCOPE:s_thm3_let2]
+[50] 因此
+[51] \begin{equation}
+\left\lVert Ax \right\rVert =(g,Ax)= \left\lvert (A^*g,x) \right\rvert \leq \left\lVert A^* \right\rVert \cdot \left\lVert x \right\rVert .~
+\end{equation}
+[52] 式 12 [链接 L0]
+[53] 式 14 [链接 L1]
+[54] 一样，有 $ \left\lVert A \right\rVert \leq \left\lVert A^* \right\rVert $。
+[55] 从而命题得证。
+[56] 证毕！
+[/SCOPE:s_thm3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的证明引用定义1"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3的证明引用定理1"
+  }
+]

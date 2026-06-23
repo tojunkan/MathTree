@@ -1,0 +1,143 @@
+{
+  "article_name": "Parity",
+  "statements": [
+    {
+      "stmt_id": "st_parity_def",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_parity_def",
+      "exposed_entities": [
+        "f",
+        "x",
+        "Π"
+      ]
+    },
+    {
+      "stmt_id": "st_inner_product_def",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_parity_def",
+      "exposed_entities": [
+        "f",
+        "g",
+        "⟨f|g⟩"
+      ]
+    },
+    {
+      "stmt_id": "st_parity_hermitian",
+      "subtype": "theorem",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_parity_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_eigen_eq",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_parity_eigen",
+      "exposed_entities": [
+        "f",
+        "λ"
+      ]
+    },
+    {
+      "stmt_id": "st_eigen_values",
+      "subtype": "theorem",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": "true",
+      "scope_id": "s_parity_eigen",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_parity_names",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_parity_eigen",
+      "exposed_entities": [
+        "even parity",
+        "odd parity"
+      ]
+    },
+    {
+      "stmt_id": "st_1d_parity",
+      "subtype": "remark",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_parity_eigen",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_eigen_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_parity_eigen",
+      "exposed_entities": [
+        "x_1"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_inner_product_def",
+      "target": "st_parity_hermitian",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_eigen_eq",
+      "target": "st_eigen_values",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_eigen_eq",
+      "target": "st_eigen_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_eigen_values",
+      "target": "st_parity_names",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_parity_names",
+      "target": "st_1d_parity",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

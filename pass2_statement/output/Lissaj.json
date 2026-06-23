@@ -1,0 +1,714 @@
+{
+  "article_name": "Lissaj",
+  "statements": [
+    {
+      "stmt_id": "st_intro_definition",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "P",
+        "x",
+        "y",
+        "A",
+        "B",
+        "a",
+        "b",
+        "t",
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_assump_rational",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_conclusion_closed",
+      "subtype": "conclusion",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_remark_phi",
+      "subtype": "remark",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_remark_cos",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_assump_phi_range",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_remark_neg_phi",
+      "subtype": "remark",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "phi",
+        "P"
+      ]
+    },
+    {
+      "stmt_id": "st_freq_equal_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_freq_equal",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_freq_equal_conclusion_closed",
+      "subtype": "conclusion",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_freq_equal",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_freq_equal_case_phi0",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_freq_equal",
+      "exposed_entities": [
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_freq_equal_case_pi",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_freq_equal",
+      "exposed_entities": [
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_freq_equal_case_pm_pi2",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_freq_equal",
+      "exposed_entities": [
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_freq_equal_case_circle",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_freq_equal",
+      "exposed_entities": [
+        "phi",
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_freq_equal_case_other_ellipse",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_freq_equal",
+      "exposed_entities": [
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_freq_equal_case_angle",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_freq_equal",
+      "exposed_entities": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_freq_equal_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_freq_equal_proof",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_freq_equal_proof_eq2",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_freq_equal_proof",
+      "exposed_entities": [
+        "x",
+        "y",
+        "A",
+        "B",
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_case_phi0_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_case_phi0",
+      "exposed_entities": [
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_case_phi0_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_case_phi0",
+      "exposed_entities": [
+        "x",
+        "y",
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_case_pi_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_case_pi",
+      "exposed_entities": [
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_case_pi_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_case_pi",
+      "exposed_entities": [
+        "x",
+        "y",
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_case_pm_pi2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_case_pm_pi2",
+      "exposed_entities": [
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_case_pm_pi2_conclusion_ellipse",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_case_pm_pi2",
+      "exposed_entities": [
+        "x",
+        "y",
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_case_pm_pi2_assump_AB",
+      "subtype": "assumption",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_case_pm_pi2",
+      "exposed_entities": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_case_pm_pi2_conclusion_circle",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_case_pm_pi2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_case_other_assump_AB",
+      "subtype": "assumption",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_case_other",
+      "exposed_entities": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_case_other_eq3",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_case_other",
+      "exposed_entities": [
+        "x",
+        "y",
+        "phi",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_case_other_eq4",
+      "subtype": "conclusion",
+      "clause_range": [
+        36,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_case_other",
+      "exposed_entities": [
+        "x",
+        "y",
+        "theta",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_case_other_eq5",
+      "subtype": "conclusion",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_case_other",
+      "exposed_entities": [
+        "x",
+        "y",
+        "theta",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_case_other_eq6",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_case_other",
+      "exposed_entities": [
+        "a",
+        "b",
+        "theta",
+        "phi",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_case_other_deduction",
+      "subtype": "conclusion",
+      "clause_range": [
+        44,
+        49
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_case_other",
+      "exposed_entities": [
+        "a",
+        "b",
+        "theta",
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_case_other_qed",
+      "subtype": "remark",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_case_other",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_freq_equal_remark_t0",
+      "subtype": "remark",
+      "clause_range": [
+        51,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_freq_equal",
+      "exposed_entities": [
+        "t",
+        "x",
+        "A",
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_freq_diff_irrational_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        57,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "s_freq_diff_irrational",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_freq_diff_irrational_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        58,
+        60
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_freq_diff_irrational",
+      "exposed_entities": [
+        "x",
+        "y",
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_freq_diff_rational_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        61,
+        61
+      ],
+      "truth_value": null,
+      "scope_id": "s_freq_diff_rational",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_freq_diff_rational_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        62,
+        66
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_freq_diff_rational",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_intro_assump_rational",
+      "target": "st_intro_conclusion_closed",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_freq_equal_assump",
+      "target": "st_freq_equal_conclusion_closed",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_freq_equal_assump",
+      "target": "st_freq_equal_case_phi0",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_freq_equal_assump",
+      "target": "st_freq_equal_case_pi",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_freq_equal_assump",
+      "target": "st_freq_equal_case_pm_pi2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_freq_equal_assump",
+      "target": "st_freq_equal_case_circle",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_freq_equal_assump",
+      "target": "st_freq_equal_case_other_ellipse",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_freq_equal_assump",
+      "target": "st_freq_equal_case_angle",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_freq_equal_proof_assump",
+      "target": "st_freq_equal_proof_eq2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_case_phi0_assump",
+      "target": "st_case_phi0_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_case_pi_assump",
+      "target": "st_case_pi_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_case_pm_pi2_assump",
+      "target": "st_case_pm_pi2_conclusion_ellipse",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_case_pm_pi2_assump_AB",
+      "target": "st_case_pm_pi2_conclusion_circle",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_case_other_assump_AB",
+      "target": "st_case_other_eq3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_case_other_assump_AB",
+      "target": "st_case_other_eq4",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_case_other_assump_AB",
+      "target": "st_case_other_eq5",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_case_other_assump_AB",
+      "target": "st_case_other_eq6",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_case_other_assump_AB",
+      "target": "st_case_other_deduction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_freq_diff_irrational_assump",
+      "target": "st_freq_diff_irrational_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_freq_diff_rational_assump",
+      "target": "st_freq_diff_rational_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_freq_equal_proof_eq2",
+      "target": "st_freq_equal_conclusion_closed",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_freq_equal_proof_eq2",
+      "target": "st_freq_equal_case_phi0",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_freq_equal_proof_eq2",
+      "target": "st_freq_equal_case_pi",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_freq_equal_proof_eq2",
+      "target": "st_freq_equal_case_pm_pi2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_freq_equal_proof_eq2",
+      "target": "st_freq_equal_case_circle",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_freq_equal_proof_eq2",
+      "target": "st_freq_equal_case_other_ellipse",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_freq_equal_proof_eq2",
+      "target": "st_freq_equal_case_angle",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_freq_equal_proof_eq2",
+      "target": "st_freq_equal_conclusion_closed",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明频率相同情况下的结论"
+    },
+    {
+      "source": "st_freq_diff_irrational_conclusion",
+      "target": "st_intro_conclusion_closed",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "频率不同情况下的结论"
+    }
+  ],
+  "unresolved": []
+}

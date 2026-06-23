@@ -1,0 +1,179 @@
+{
+  "article_name": "projOp",
+  "statements": [
+    {
+      "stmt_id": "st_thm1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "M",
+        "X",
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        2,
+        8
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let",
+      "exposed_entities": [
+        "M",
+        "M^⊥",
+        "α_i",
+        "β_i",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_conclusion",
+      "subtype": "example",
+      "clause_range": [
+        9,
+        20
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "M",
+        "X",
+        "P_M",
+        "u",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "P",
+        "X",
+        "M",
+        "μ_i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_prop1_let",
+      "exposed_entities": [
+        "u",
+        "v",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_prop1_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        27,
+        30
+      ],
+      "truth_value": "true",
+      "scope_id": "s_prop1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let",
+      "target": "st_ex1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let",
+      "target": "st_thm2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prop1_let",
+      "target": "st_prop1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex1_conclusion",
+      "target": "st_thm1_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是定理1在三维几何矢量空间中的特例"
+    },
+    {
+      "source": "st_thm2_conclusion",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2给出了投影算符的狄拉克符号表示，是定义1的具体化"
+    },
+    {
+      "source": "st_prop1_conclusion",
+      "target": "st_thm2_conclusion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "由定理2的表示可证明投影算符是厄米算符"
+    }
+  ],
+  "unresolved": []
+}

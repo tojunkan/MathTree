@@ -1,0 +1,189 @@
+{
+  "article_name": "CauGou",
+  "statements": [
+    {
+      "stmt_id": "st_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_G_C_f",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem_let1",
+      "exposed_entities": [
+        "G",
+        "C",
+        "f(z)"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_integral_zero",
+      "subtype": "conclusion",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_fprime_cont",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem",
+      "exposed_entities": [
+        "f'(z)"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_z_f_split",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem_let2",
+      "exposed_entities": [
+        "x",
+        "y",
+        "u(x,y)",
+        "v(x,y)"
+      ]
+    },
+    {
+      "stmt_id": "st_eq_split_integral",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_stokes",
+      "subtype": "theorem",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cauchy_riemann",
+      "subtype": "theorem",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_final_zero",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_method",
+      "subtype": "remark",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example",
+      "subtype": "example",
+      "clause_range": [
+        13,
+        15
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_G_C_f",
+      "target": "st_conclusion_integral_zero",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_fprime_cont",
+      "target": "st_assump_z_f_split",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_z_f_split",
+      "target": "st_eq_split_integral",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_eq_split_integral",
+      "target": "st_stokes",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_stokes",
+      "target": "st_cauchy_riemann",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cauchy_riemann",
+      "target": "st_final_zero",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_final_zero",
+      "target": "st_conclusion_integral_zero",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_remark_method",
+      "target": "st_theorem",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

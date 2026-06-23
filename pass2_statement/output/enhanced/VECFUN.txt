@@ -1,0 +1,67 @@
+[SCOPE:root|description|向量值函数]
+文章名: VECFUN
+标题: 向量值函数
+
+[SCOPE:s_main|description|向量值函数概念]
+[0] 贡献者： addis
+[1] 需要画图
+[2] 预备知识 函数（高中），几何向量的基底和坐标
+[3] 1我们在一元函数函数与多元函数中已经学会了函数的映射含义：一元函数就是把定义域中的一个数（实数或复数）通过一定的方式转换为另一个数：
+[4] \begin{equation}
+y=f_1(x)~.
+\end{equation}
+[5] 而多元函数相当于把定义域中的一组数通过一定的方式转换为另一个数：
+[6] \begin{equation}
+y=f_2(x_1, x_2,...,x_N)~.
+\end{equation}
+[7] 我们也可以把 $x_1,\dots,x_N$ 看成是一个（$N$ 维）几何向量 $ \boldsymbol{\mathbf{x}} $ 的 $N$ 个坐标，进而写成
+[8] \begin{equation}
+y=f_2( \boldsymbol{\mathbf{x}} )~.
+\end{equation}
+[9] 这只是把符号改变了，仍表示同一个函数。
+[SCOPE:s_let_vec|let_bind|向量函数变量]
+[10] 如今，我们要面对向量值函数。
+[11] 他的含义也完全类似：向量函数把定义域中的一个数或向量通过一定的方式转换为另一个向量。
+[12] \begin{equation}
+\boldsymbol{\mathbf{y}} = \boldsymbol{\mathbf{f}} _3 (x)~.
+\end{equation}
+[13] \begin{equation}
+\boldsymbol{\mathbf{y}} = \boldsymbol{\mathbf{f}} _4( \boldsymbol{\mathbf{x}} )~.
+\end{equation}
+[14] 注意为了强调函数值是向量，我们在印刷中通常会把函数名也使用粗体和正体。
+[15] 手写时，同样在上方加箭头即可：$\vec f_3(x)$，$\vec f_4(\vec x)$。
+[/SCOPE:s_let_vec]
+[SCOPE:s_let_comp|let_bind|分量形式变量]
+[16a] 如果你还是暂时理解不了向量函数的概念，更简单粗暴的方法是拆分所有向量为分量形式，这样你
+[16b] 则把一个向量函数化为了一组多元函数。
+[17] 当然，为了能够写出向量的分量形式，你必须指明坐标系。
+[18] 例如，我们上文所言的向量函数可以拆分为这 $3$ 个多元函数：
+[19] $$
+\boldsymbol{\mathbf{r}} = \boldsymbol{\mathbf{f}} ( \boldsymbol{\mathbf{a}} )
+\Leftrightarrow
+\left \{
+\begin{aligned}
+r_x &= f_x( \boldsymbol{\mathbf{a}} , t)\\
+r_y &= f_y( \boldsymbol{\mathbf{a}} , t)\\
+r_z &= f_z( \boldsymbol{\mathbf{a}} , t)\\
+\end{aligned}
+\right.
+\Leftrightarrow
+\left \{
+\begin{aligned}
+r_x &= f_x(a_x,a_y,a_z,t)\\
+r_y &= f_y(a_x,a_y,a_z,t)\\
+r_z &= f_z(a_x,a_y,a_z,t)~.\\
+\end{aligned}
+\right.
+$$
+[20] 其中 $r_x, r_y, r_z$ 是 $ \boldsymbol{\mathbf{r}} $ 分别在三个轴上的分量，$f_x,f_y,f_z$ 是三个多元函数（这里的下标不是求偏导的意思！
+[21] ）。
+[/SCOPE:s_let_comp]
+[22] 有时，向量形式的向量函数更能直观地反映函数背后的物理含义，而分量形式反而让你陷入具体数值的池沼。
+[23] 因此，在你熟悉向量函数的概念后，我不建议你继续做这种拆分。
+[/SCOPE:s_main]
+[24] 1. ^ 本文参考了 [1]。
+[25] 参考文献
+[26] [1] ^ J. Hass, C. Heil, M. Weir．Thomas' Cauculus 14ed
+[/SCOPE:root]

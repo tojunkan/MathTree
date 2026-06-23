@@ -1,0 +1,141 @@
+[SCOPE:root|description|几何向量的加法和数乘]
+文章名: GVecOp
+标题: 几何向量的加法和数乘
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=线性组合
+  [1] type=exercise heading=习题 1 title=
+
+[0] 我们可以定义几何向量之间的加减法、数乘，以及更一般的线性组合。
+
+[SCOPE:s_add|description|几何向量的加法]
+[1] 两个几何向量相加，结果是另一个几何向量，具体定义如下：
+[2] 【图解】图 1：几何向量的加法。
+[3] 左：平行四边形法则；
+[4] 中：三角形法则；
+[5] 右：多个几何向量相加
+[6] 如图 1 ，两个几何向量相加，既可以使用平行四边形法则，也可以用三角形法则。
+[7] 平行四边形法则是指先将两个几何向量移动到共同的起点，然后以它们为边做一个平行四边形，再由对角线得到相加后的几何向量。
+[8] 三角形法则是指将第二个几何向量的起点移动到第一个几何向量的终点，然后作出从第一个几何向量起点指向第二个几何向量终点的几何向量。
+[9] 容易证明，二者的结果是一样的。
+[SCOPE:s_add_let|let_bind|加法中的变量]
+[10a] 特殊地
+[10b] 如果 $ \boldsymbol{\mathbf{A}} $ 和 $ \boldsymbol{\mathbf{B}} $ 方向相同或相反（，则共线），
+[11] 那么我们姑且把挤成一条线的平行四边形（三角形）仍然叫做平行四边形（三角形），同样可以定义加法。
+[12] 我们可以写出几何向量加法的三角不等式
+[13] \begin{equation}
+\big| \left\lvert \boldsymbol{\mathbf{A}} \right\rvert - \left\lvert \boldsymbol{\mathbf{B}} \right\rvert \big| \leqslant \left\lvert \boldsymbol{\mathbf{A}} + \boldsymbol{\mathbf{B}} \right\rvert \leqslant \left\lvert \boldsymbol{\mathbf{A}} \right\rvert + \left\lvert \boldsymbol{\mathbf{B}} \right\rvert ~.
+\end{equation}
+[14] 即两边之和大于第三边，两边之差小于第三边。
+[15] 显然，当且仅当方向相同时 $ \boldsymbol{\mathbf{C}} $ 的模长等于 $ \boldsymbol{\mathbf{A}} $ 和 $ \boldsymbol{\mathbf{C}} $ 的模长之和；
+[16] 当且仅当方向相反时，$ \boldsymbol{\mathbf{C}} $ 的模长等于 $ \boldsymbol{\mathbf{A}} $ 和 $ \boldsymbol{\mathbf{C}} $ 的模长之差。
+[17a] 若有多个几何向量连续相加，我们既可以依次使用平行四边形法
+[17b] 则，也可以分别把它们依次首尾相接，结果就是由起点指向终点的几何向量。
+[18] 二者结果也是一样的，证明留作习题。
+[19] 根据平行四边形的性质容易证明几何向量的加法满足交换律（commutativity），
+[20] \begin{equation}
+\boldsymbol{\mathbf{A}} + \boldsymbol{\mathbf{B}} = \boldsymbol{\mathbf{B}} + \boldsymbol{\mathbf{A}} ~,
+\end{equation}
+[21] 结合律（associativity）
+[22] \begin{equation}
+( \boldsymbol{\mathbf{A}} + \boldsymbol{\mathbf{B}} ) + \boldsymbol{\mathbf{C}} = \boldsymbol{\mathbf{A}} + ( \boldsymbol{\mathbf{B}} + \boldsymbol{\mathbf{C}} )~,
+\end{equation}
+[23] 零向量是加法中 “零”，称为
+[24] 单位元（identity）
+[25] \begin{equation}
+\boldsymbol{\mathbf{A}} + \boldsymbol{\mathbf{0}} = \boldsymbol{\mathbf{A}} ~,
+\end{equation}
+
+[/SCOPE:s_add]
+[/SCOPE:s_add_let]
+[SCOPE:s_scalar|description|几何向量的数乘、共线、逆几何向量、归一化]
+[26] 第二个几何向量运算，是一个几何向量和一个数字的乘积，得到一个几何向量，称为数乘，我们用例子定义如下。
+[27] 【图解】图 2：几何向量的数乘
+[28] 如图 2 ，一个几何向量与一个正实数相乘，
+[29] 则方向不变，把长度乘以这个实数。
+[30] 若这个数是负数，
+[31] 则把几何向量取反方向再把长度乘以这个实数数的绝对值即可。
+[SCOPE:s_scalar_let|let_bind|数乘中的变量]
+[32] 若 $\lambda, \mu$ 表示实数，容易证明分配律和结合律
+[33] \begin{equation}
+\lambda( \boldsymbol{\mathbf{A}} + \boldsymbol{\mathbf{B}} ) = \lambda \boldsymbol{\mathbf{A}} + \lambda \boldsymbol{\mathbf{B}} ~,
+\end{equation}
+[34] \begin{equation}
+(\lambda+\mu) \boldsymbol{\mathbf{A}} = \lambda \boldsymbol{\mathbf{A}} + \mu \boldsymbol{\mathbf{A}} ~,
+\end{equation}
+[35] \begin{equation}
+\lambda(\mu \boldsymbol{\mathbf{A}} ) = (\lambda\mu) \boldsymbol{\mathbf{A}} ~.
+\end{equation}
+[36a] 两个几何向量的关系可以用 $ \boldsymbol{\mathbf{A}} = \lambda \boldsymbol{\mathbf{B}} $ 表示
+[36b] 当且仅当它们，则是共线的（或者说平行的）定义 2 ；
+[37] 对于非零几何向量 $ \boldsymbol{\mathbf{A}} , \boldsymbol{\mathbf{B}} $ 是共线的当且仅当 $ \boldsymbol{\mathbf{A}} = \lambda \boldsymbol{\mathbf{B}} $，其中 $\lambda$ 是非零实数。
+[38] 对于零向量，我们有：
+[39] \begin{equation}
+\boldsymbol{\mathbf{0}} = 0 \boldsymbol{\mathbf{v}} ~,
+\end{equation}
+[40] 这和我们之前对零向量的特殊约定相符合
+[41] 零向量和任何几何向量都共线；
+[42] 零向量是唯一的——任何方向的零向量 $0 \boldsymbol{\mathbf{v}} $ 都是同一个零向量。
+[43] 特殊地，如果把一个几何向量乘以 $-1$，
+[44] 那么它的长度不变，而方向相反。
+[45] 我们把这个新几何向量叫做原几何向量的相反向量（opposite vector），或者加法逆元（additive inverse）。
+[46] $-1 \boldsymbol{\mathbf{A}} $ 的简记为 $- \boldsymbol{\mathbf{A}} $，它满足
+[47] \begin{equation}
+\boldsymbol{\mathbf{A}} + (- \boldsymbol{\mathbf{A}} ) = \boldsymbol{\mathbf{0}} ~.
+\end{equation}
+[48] 几何向量除以标量的定义为乘以标量的倒数，
+[49] 即
+[50] \begin{equation}
+\frac{ \boldsymbol{\mathbf{A}} }{\lambda} = \frac{1}{\lambda} \boldsymbol{\mathbf{A}} \qquad (\lambda \ne 0)~.
+\end{equation}
+[51] 几何意义上，就是保持几何向量方向不变，把模长除以标量。
+[52] 把一个非零几何向量归一化（normalize）是指，把该几何向量除以自己的模长（即乘以模长的倒数）得到一个模长等于 1 的，同方向的单位向量。
+
+[/SCOPE:s_scalar]
+[/SCOPE:s_scalar_let]
+[SCOPE:s_sub|description|几何向量的减法]
+[53] 【图解】图 3：几何向量减法
+[SCOPE:s_sub_let|let_bind|减法中的变量]
+[54] 由了加法和数乘，我们并不需要另外定义所谓的几何向量减法，只需要把 $ \boldsymbol{\mathbf{A}} - \boldsymbol{\mathbf{B}} $ 看成 $ \boldsymbol{\mathbf{A}} $ 加上 $ \boldsymbol{\mathbf{B}} $ 的逆即可，
+[55] 即
+[56] \begin{equation}
+\boldsymbol{\mathbf{A}} - \boldsymbol{\mathbf{B}} \equiv \boldsymbol{\mathbf{A}} + (- \boldsymbol{\mathbf{B}} )~.
+\end{equation}
+[57] 几何上来说，容易证明（留做习题）要计算 $ \boldsymbol{\mathbf{A}} - \boldsymbol{\mathbf{B}} $，就先把它们的起点移动到一起，然后画出从 $ \boldsymbol{\mathbf{B}} $ 的终点指向 $ \boldsymbol{\mathbf{A}} $ 的终点的几何向量即可。
+[58] 几何向量的加减法和我们熟知的标量加减法有许多相似之处，我们可以像标量等式中的移项一样对几何向量等式进行移项。
+[59] 例如我们有表达式
+[60] \begin{equation}
+\boldsymbol{\mathbf{A}} + \boldsymbol{\mathbf{B}} = \boldsymbol{\mathbf{C}} + \boldsymbol{\mathbf{D}} ~.
+\end{equation}
+[61] 显然在等式两边同时加上或减去相同的几何向量仍然可以使等式成立，
+[62] 于是两边同时减 $ \boldsymbol{\mathbf{C}} $ 再同时减 $ \boldsymbol{\mathbf{D}} $ 得
+[63] \begin{equation}
+\boldsymbol{\mathbf{A}} + \boldsymbol{\mathbf{B}} - \boldsymbol{\mathbf{C}} - \boldsymbol{\mathbf{D}} = \boldsymbol{\mathbf{0}} ~.
+\end{equation}
+[64] 这看起来就像我们把等号右边得项移动到了等号左边，并添加了负号。
+[65] 一个小技巧是，在画几何向量减法 $ \boldsymbol{\mathbf{A}} - \boldsymbol{\mathbf{B}} = \boldsymbol{\mathbf{C}} $ 时，如果你忘记了 $ \boldsymbol{\mathbf{C}} $ 是从 $ \boldsymbol{\mathbf{A}} $ 指向 $ \boldsymbol{\mathbf{B}} $ 还是 $ \boldsymbol{\mathbf{B}} $ 指向 $ \boldsymbol{\mathbf{A}} $，
+[66] 那么可以检查一下画出来的三个几何向量是否满足 $ \boldsymbol{\mathbf{A}} = \boldsymbol{\mathbf{B}} + \boldsymbol{\mathbf{C}} $。
+
+[/SCOPE:s_sub]
+[/SCOPE:s_sub_let]
+[SCOPE:s_lincomb_def|description|线性组合]
+[67] 加法和数乘可以推广到任意有限个几何向量，更一般的我们可以定义：
+
+[68] 定义 1 线性组合
+[SCOPE:s_lincomb_let|let_bind|线性组合中的变量]
+[69] 把有限个几何向量 $ \boldsymbol{\mathbf{v}} _i$ 分别数乘实数 $c_i$、再相加就得到了这些几何向量的一个线性组合
+[70] \begin{equation}
+\sum_i^N c_i \boldsymbol{\mathbf{v}} _i = c_1 \boldsymbol{\mathbf{v}} _1 + c_2 \boldsymbol{\mathbf{v}} _2 +\dots +c_N \boldsymbol{\mathbf{v}} _N~.
+\end{equation}
+[71] 注意若无特别说明，线性组合仅指有限个几何向量的数乘和加法。
+[72] 根据几何向量加法和数乘的定义，容易得知任何有限个几何向量的任何线性组合仍然是一个几何向量。
+
+[/SCOPE:s_lincomb_def]
+[/SCOPE:s_lincomb_let]
+[SCOPE:s_exercise|description|习题1]
+[73] 习题 1
+[74] 试说明，在三维空间中，任意给定两个不共线的几何向量的所有线性组合都会落在同一个平面上。
+
+[/SCOPE:s_exercise]
+[75] 详见 “几何向量的内积” 和 “几何向量叉乘”。
+[/SCOPE:root]

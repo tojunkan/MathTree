@@ -1,0 +1,447 @@
+{
+  "article_name": "STop",
+  "statements": [
+    {
+      "stmt_id": "st_strong_norm_intro",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_strong_norm",
+      "exposed_entities": [
+        "E",
+        "f",
+        "||f||"
+      ]
+    },
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "E",
+        "E*",
+        "||*||"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "E"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_concl",
+      "subtype": "theorem",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "E*",
+        "||*||"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof_let",
+      "exposed_entities": [
+        "{f_n}",
+        "epsilon",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_step1",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        25
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof_let",
+      "exposed_entities": [
+        "x",
+        "f_n(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_step2",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof_let",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_step3",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        35
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof_let",
+      "exposed_entities": [
+        "f-f_n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_step4",
+      "subtype": "conclusion",
+      "clause_range": [
+        36,
+        38
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof_let",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_step5",
+      "subtype": "conclusion",
+      "clause_range": [
+        39,
+        42
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof_let",
+      "exposed_entities": [
+        "{f_n}",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "E",
+        "bar{E}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_concl",
+      "subtype": "theorem",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "E*",
+        "bar{E}*"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof_assump1",
+      "subtype": "assumption",
+      "clause_range": [
+        48,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_proof_let",
+      "exposed_entities": [
+        "bar{E}",
+        "E",
+        "{x_n}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof_assump2",
+      "subtype": "assumption",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_proof_let",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof_concl1",
+      "subtype": "conclusion",
+      "clause_range": [
+        51,
+        52
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_proof_let",
+      "exposed_entities": [
+        "bar{f}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof_concl2",
+      "subtype": "conclusion",
+      "clause_range": [
+        53,
+        54
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_proof_let",
+      "exposed_entities": [
+        "bar{f}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof_concl3",
+      "subtype": "conclusion",
+      "clause_range": [
+        55,
+        55
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_proof_let",
+      "exposed_entities": [
+        "bar{f}",
+        "||bar{f}||"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof_concl4",
+      "subtype": "conclusion",
+      "clause_range": [
+        56,
+        57
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_proof_let",
+      "exposed_entities": [
+        "f",
+        "bar{f}"
+      ]
+    },
+    {
+      "stmt_id": "st_strong_tvs_intro",
+      "subtype": "definition",
+      "clause_range": [
+        61,
+        71
+      ],
+      "truth_value": null,
+      "scope_id": "s_strong_tvs",
+      "exposed_entities": [
+        "E",
+        "E*",
+        "A",
+        "epsilon"
+      ]
+    },
+    {
+      "stmt_id": "st_def2",
+      "subtype": "definition",
+      "clause_range": [
+        72,
+        76
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "E*",
+        "E",
+        "A",
+        "epsilon",
+        "U_{epsilon,A}"
+      ]
+    },
+    {
+      "stmt_id": "st_def3",
+      "subtype": "definition",
+      "clause_range": [
+        77,
+        80
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "E*",
+        "E",
+        "A",
+        "epsilon",
+        "U_{epsilon,A}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3",
+      "subtype": "theorem",
+      "clause_range": [
+        81,
+        82
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": [
+        "E*"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_proof_assump",
+      "target": "st_thm1_proof_step1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_step1",
+      "target": "st_thm1_proof_step2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_step2",
+      "target": "st_thm1_proof_step3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_step3",
+      "target": "st_thm1_proof_step4",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_step4",
+      "target": "st_thm1_proof_step5",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_step5",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof_assump1",
+      "target": "st_thm2_proof_concl1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof_assump2",
+      "target": "st_thm2_proof_concl1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof_concl1",
+      "target": "st_thm2_proof_concl2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof_concl2",
+      "target": "st_thm2_proof_concl3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof_concl3",
+      "target": "st_thm2_proof_concl4",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof_concl4",
+      "target": "st_thm2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_concl",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1的证明引用定义1的范数"
+    },
+    {
+      "source": "st_thm2_concl",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理2的证明引用定理1的柯西序列收敛性"
+    },
+    {
+      "source": "st_strong_tvs_intro",
+      "target": "st_strong_norm_intro",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "从赋范空间推广到一般拓扑线性空间"
+    },
+    {
+      "source": "st_def2",
+      "target": "st_strong_tvs_intro",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义2是定义3的基础"
+    },
+    {
+      "source": "st_def3",
+      "target": "st_def2",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定义3由定义2的零邻域系定义"
+    },
+    {
+      "source": "st_thm3",
+      "target": "st_def3",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理3是关于定义3的强拓扑的性质"
+    }
+  ],
+  "unresolved": []
+}

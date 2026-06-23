@@ -1,0 +1,149 @@
+{
+  "article_name": "prithy",
+  "statements": [
+    {
+      "stmt_id": "st_prime_theorem_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_prime_theorem",
+      "exposed_entities": [
+        "x",
+        "π(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_tchebychef_def",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_tchebychef",
+      "exposed_entities": [
+        "x",
+        "π(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_let_y",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_tchebychef_let",
+      "exposed_entities": [
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_ln_y_sim_ln_x",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_tchebychef_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_x_sim_y_ln_y",
+      "subtype": "conclusion",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_tchebychef_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_inverse_asymptotic",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_tchebychef_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_pn_asymptotic",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_tchebychef",
+      "exposed_entities": [
+        "n",
+        "p_n"
+      ]
+    },
+    {
+      "stmt_id": "st_pn_asymptotic_tcheby",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_tchebychef",
+      "exposed_entities": [
+        "n",
+        "p_n"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let_y",
+      "target": "st_ln_y_sim_ln_x",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_y",
+      "target": "st_x_sim_y_ln_y",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_y",
+      "target": "st_inverse_asymptotic",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_tchebychef_def",
+      "target": "st_pn_asymptotic",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_tchebychef_def",
+      "target": "st_pn_asymptotic_tcheby",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_tchebychef_def",
+      "target": "st_prime_theorem_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "Tchebychef 定理是素数定理的弱化版"
+    }
+  ],
+  "unresolved": []
+}

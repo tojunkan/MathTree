@@ -1,0 +1,42 @@
+[SCOPE:root|description|块对角厄米矩阵的本征问题]
+文章名: BHeig
+标题: 块对角厄米矩阵的本征问题
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=theorem heading=定理 2 title=
+
+[SCOPE:s_theorem1|description|定理 1]
+[0] 定理 1
+[SCOPE:s_theorem1_let|let_bind|定理 1 的变量]
+[1] 若一个厄米矩阵 $ \boldsymbol{\mathbf{H}} $ 是块对角的，
+[2] 那么每个对角块 $ \boldsymbol{\mathbf{H}} _i$ 也显然是厄米矩阵。
+[3] 只需要分别解每个 $ \boldsymbol{\mathbf{H}} _i$ 的本征方程，得到相同大小的本征矢列矩阵 $ \boldsymbol{\mathbf{P}} _i$，然后按相同顺序拼成块对角矩阵 $ \boldsymbol{\mathbf{P}} $，就是 $ \boldsymbol{\mathbf{H}} $ 的本征矢列矩阵。
+[4] 从线性算符的角度来理解，就是
+
+[/SCOPE:s_theorem1]
+[/SCOPE:s_theorem1_let]
+[SCOPE:s_theorem2|description|定理 2]
+[5] 定理 2
+[SCOPE:s_theorem2_let|let_bind|定理 2 的变量]
+[6] 若厄米算符 $H:V\to V$ 在 $V$ 的若干子空间 $V_i$ 中闭合，且
+[7] \begin{equation}
+V = V_1\oplus V_2\oplus \dots \oplus V_N~.
+\end{equation}
+[8] 【未完成】举例
+[9] 由于映射 $H$ 在每个子空间中都闭合，只需要在每个子空间解 $H$ 的本征矢，
+[10] 即第 $n$ 个对角块矩阵元为 $ \left\langle v_{n,i} \middle| H \middle| v_{n,j} \right\rangle $……
+[/SCOPE:s_theorem2]
+[/SCOPE:s_theorem2_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_theorem2",
+    "target_scope": "s_theorem1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2是定理1的推广，从矩阵到算符"
+  }
+]

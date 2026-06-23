@@ -1,0 +1,331 @@
+{
+  "article_name": "ConSet",
+  "statements": [
+    {
+      "stmt_id": "st_segment_def",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_segment_def",
+      "exposed_entities": [
+        "L",
+        "x1",
+        "x2"
+      ]
+    },
+    {
+      "stmt_id": "st_convex_def",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_convex_def",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_core_def",
+      "subtype": "definition",
+      "clause_range": [
+        20,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_core_def",
+      "exposed_entities": [
+        "E",
+        "L"
+      ]
+    },
+    {
+      "stmt_id": "st_convex_body_def",
+      "subtype": "definition",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_convex_body_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "M",
+        "N",
+        "J(E)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_convex_body",
+      "subtype": "example",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_convex_not_body",
+      "subtype": "example",
+      "clause_range": [
+        39,
+        40
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "C([a,b])",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        45
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        48,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "M",
+        "M_i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_convex_hull_def",
+      "subtype": "definition",
+      "clause_range": [
+        55,
+        58
+      ],
+      "truth_value": null,
+      "scope_id": "s_convex_hull_def",
+      "exposed_entities": [
+        "L",
+        "E",
+        "E_alpha"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        60,
+        61
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3",
+      "exposed_entities": [
+        "x1",
+        "x2",
+        "x_{n+1}"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_def_simplex",
+      "subtype": "definition",
+      "clause_range": [
+        62,
+        63
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        64,
+        73
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_face",
+      "subtype": "conclusion",
+      "clause_range": [
+        75,
+        77
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        79,
+        80
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3",
+      "exposed_entities": [
+        "x1",
+        "x_{n+1}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        78,
+        78
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_segment_def",
+      "target": "st_convex_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_convex_def",
+      "target": "st_convex_body_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_assump",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_assump",
+      "target": "st_ex2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assump",
+      "target": "st_thm2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_assump",
+      "target": "st_ex3_def_simplex",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_assump",
+      "target": "st_ex3_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_assump",
+      "target": "st_ex3_face",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_assump",
+      "target": "st_thm3_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_convex_body_def",
+      "target": "st_convex_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "凸体是核非空的凸集"
+    },
+    {
+      "source": "st_thm1_concl",
+      "target": "st_core_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理1关于核的性质"
+    },
+    {
+      "source": "st_ex3_def_simplex",
+      "target": "st_convex_hull_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "单纯形是凸包的特例"
+    },
+    {
+      "source": "st_thm3_concl",
+      "target": "st_ex3_def_simplex",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理3给出单纯形的表示"
+    }
+  ],
+  "unresolved": []
+}

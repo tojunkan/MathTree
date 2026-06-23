@@ -1,0 +1,323 @@
+[SCOPE:root|description|一阶隐式常微分方程]
+文章名: ODEa4
+标题: 一阶隐式常微分方程
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=example heading=例 2 title=
+  [2] type=example heading=例 3 title=
+  [3] type=example heading=例 4 title=
+  [4] type=example heading=例 5 title=
+
+[SCOPE:s_intro|description|引言]
+[0] 我们之前讨论的常微分方程都是显式写出导函数表达式的，
+[1] 即 $\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }=F(x, y)$ 的形式。
+[2] 很多时候，一阶微分方程常被写为 $F(x, y, \frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} })=0$ 的形式，如果这样的方程可以被改写为显式的形式，
+[3] 那么我们就可以尝试用预备知识中介绍过的方法来解方程；
+[4] 但如果难以改写或者解出来的形式极为复杂，那我们也可以尝试换元的方法。
+[5] 本节介绍四种一阶隐式方程和它们的换元方法。
+
+[/SCOPE:s_intro]
+[SCOPE:s_type1|description|第一种：y=f(t, dy/dt)]
+[6] 第一个要讨论的是形如
+[7] \begin{equation}
+y=f(t, \frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{t} })~
+\end{equation}
+[8] 的方程。
+[9] 这里自变量用的是通常代表时间的 $t$，为的是提示该怎么换元——如果 $y$ 是位移，那 $ \,\mathrm{d}{y} / \,\mathrm{d}{t} $ 就是速度，这就是我们要的变换。
+[SCOPE:s_type1_let|let_bind|令 v=dy/dt]
+[10] 令 $v=\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{t} }$，
+[11] 则原方程变为 $y=f(t, v)$。
+[12] 在方程两边同时对 $t$ 求导，得到
+[13] \begin{equation}
+v=\frac{\partial f(t, v)}{\partial t}+\frac{\partial f(t, v)}{\partial v}\frac{ \,\mathrm{d}{v} }{ \,\mathrm{d}{t} }~.
+\end{equation}
+[14] 式 2 就是一个关于 $t, v$ 的一阶微分方程，用我们之前讨论过的方法就可以解出，再将解出的 $v$ 代回式 1 即可得到原方程的通解。
+
+[/SCOPE:s_type1]
+[/SCOPE:s_type1_let]
+[SCOPE:s_ex1|description|例1]
+[SCOPE:s_ex1_let1|let_bind|令 v=dy/dx]
+[15] 考虑方程
+[16] \begin{equation}
+y= \left(\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} } \right) ^2+2x\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }~,
+\end{equation}
+[17] \begin{equation}
+v=2v\frac{ \,\mathrm{d}{v} }{ \,\mathrm{d}{x} }+2v+2x\frac{ \,\mathrm{d}{v} }{ \,\mathrm{d}{x} }~,
+\end{equation}
+[18] \begin{equation}
+v \,\mathrm{d}{x} +(2v+2x) \,\mathrm{d}{v} =0~.
+\end{equation}
+[/SCOPE:s_ex1_let1]
+[19] \begin{equation}
+v^2 \,\mathrm{d}{x} +(2v^2+2xv) \,\mathrm{d}{v} =0~.
+\end{equation}
+[SCOPE:s_ex1_let2|let_bind|令 u(x,v)=v^2 x + 2/3 v^3]
+[20] 令 $u(x, v)=v^2x+\frac{2}{3}v^3$，
+[21] 那么 $ \,\mathrm{d}{u} =v^2 \,\mathrm{d}{x} +(2v^2+2xv) \,\mathrm{d}{v} $。
+[22] 因此，式 3 的通解为 $u=C$，
+[23] 即
+[24] \begin{equation}
+\left\{\begin{aligned}
+\begin{aligned}
+v^2x+\frac{2}{3}v^3&=C\\
+v^2+2xv&=y~.
+\end{aligned}
+\end{aligned}\right.
+\end{equation}
+
+[/SCOPE:s_ex1]
+[/SCOPE:s_ex1_let2]
+[SCOPE:s_ex2|description|例2]
+[SCOPE:s_ex2_let|let_bind|令 v=dy/dx]
+[25] 考虑方程
+[26] \begin{equation}
+5 \left(\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} } \right) ^2+5x\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }+x^2=y~.
+\end{equation}
+[27] \begin{equation}
+10v\frac{ \,\mathrm{d}{v} }{ \,\mathrm{d}{x} }+5v+5x\frac{ \,\mathrm{d}{v} }{ \,\mathrm{d}{x} }+2x=v~,
+\end{equation}
+[28] \begin{equation}
+10v\frac{ \,\mathrm{d}{v} }{ \,\mathrm{d}{x} }+5x\frac{ \,\mathrm{d}{v} }{ \,\mathrm{d}{x} }+4v+2x=0~.
+\end{equation}
+[/SCOPE:s_ex2_let]
+[SCOPE:s_ex2_cases|cases|两种情形]
+[29] 式 10 还可以进一步整理为
+[30] \begin{equation}
+(\frac{5}{2}\frac{ \,\mathrm{d}{v} }{ \,\mathrm{d}{x} }+1)(4v+2x)=0~.
+\end{equation}
+[31] 由 $\frac{5}{2}\frac{ \,\mathrm{d}{v} }{ \,\mathrm{d}{x} }+1=0$ 得通解
+[32] \begin{equation}
+v=-\frac{2}{5}x+C~.
+\end{equation}
+[33] 第一个通解
+[34] \begin{equation}
+y=-\frac{1}{5}x^2+C_1x+5C_1^2~,
+\end{equation}
+[35] 但这个方程还有一个特解：取 $4v+2x=0$，再代入 $v= \,\mathrm{d}{y} / \,\mathrm{d}{x} $ 和式 8 ，得到
+[36] \begin{equation}
+y=-\frac{1}{4}x^2~,
+\end{equation}
+[37] 式 13
+[38] 式 14
+[39] 例 2 较为复杂，我们在这里做一点补充。
+[40] 整个例 2 的求解思路，是首先作变量代换，去解式 9 ，其结果就是式 12 和 $4p+2=0$。
+[41] 但这是式 9 的解，由于求导会把一些常数项消掉，式 9 的解会比变量代换前的式 8 多一些，我们还是得代回式 8 看看该怎么约束。
+[42] 实际上在解答过程中，式 13 是先写为 $y=-\frac{1}{5}x^2+C_1x+C_2$ 的，有两个待定常数。
+[43] 这是式 9 的解。
+[44] 我们把它代回式 8 ，计算后发现 $C_2=5C_1^2$，
+[45] 因此最终写成了式 13 的形式。
+[46] 如果把式 13 和式 14 的图像画出来，我们会发现，式 14 内切于每一条式 13
+[47] 。
+[48] 式 14 被称为一个奇解，其图像也被称为包络线包络和奇解}。
+[/SCOPE:s_ex2_cases]
+[49] 【未完成】添加展示包络线的 gif。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_type2|description|第二种：x=f(y, dy/dx)]
+[50] 第二个是形如
+[51] \begin{equation}
+x=f(y, \frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} })~
+\end{equation}
+[52] 的方程。
+[SCOPE:s_type2_let|let_bind|令 v=dy/dx]
+[53] 同样令 $v=\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }$，代入式 15 并两边同时对 $y$ 求导，得到
+[54] \begin{equation}
+\frac{1}{v}=\frac{\partial f}{\partial y}+\frac{\partial f}{\partial v}\frac{ \,\mathrm{d}{v} }{ \,\mathrm{d}{y} }~.
+\end{equation}
+[55] 整理一下得
+[56] \begin{equation}
+\frac{\partial f}{\partial v} \,\mathrm{d}{v} + \left(\frac{\partial f}{\partial y}-\frac{1}{v} \right) \,\mathrm{d}{y} =0~,
+\end{equation}
+[57] 我们就可以尝试用之前的办法来解。
+
+[/SCOPE:s_type2]
+[/SCOPE:s_type2_let]
+[SCOPE:s_ex3|description|例3]
+[58] 考虑方程
+[59] \begin{equation}
+\left(\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} } \right) ^2+x\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }+2y=0~.
+\end{equation}
+[SCOPE:s_ex3_let|let_bind|令 v=dy/dx]
+[60] 令 $v=\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }$，代入式 18 ，整理得
+[61] \begin{equation}
+x=\frac{-v^2-2y}{v}=-v-\frac{2y}{v}~.
+\end{equation}
+[62] 两边关于 $y$ 求导，整理得（或者直接把式 19 代入式 17 得）
+[63] \begin{equation}
+\left(-1+\frac{2y}{v^2} \right) \,\mathrm{d}{v} + \left(-\frac{3}{v} \right) \,\mathrm{d}{y} =0~.
+\end{equation}
+[64] 按照在一阶常微分方程解法：恰当方程中讨论的方法，式 20 有一个积分因子 $h(v)=v^{1/3}$，
+[65] 从而将式 20 化为
+[66] \begin{equation}
+\left(-v^{1/3}+\frac{2y}{v^{5/3}} \right) \,\mathrm{d}{v} + \left(-\frac{3}{v^{2/3}} \right) \,\mathrm{d}{y} =0~,
+\end{equation}
+[67] \begin{equation}
+\,\mathrm{d}\left(-\frac{3}{4}v^{4/3}-\frac{3y}{v^{2/3}} \right) =0~,
+\end{equation}
+[68] \begin{equation}
+-\frac{1}{4}v^{4/3}-\frac{y}{v^{2/3}}=C~,
+\end{equation}
+[69] \begin{equation}
+y=-\frac{1}{4}v^2-Cv^{2/3}~.
+\end{equation}
+[70] 利用 $v=\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }$，再代回式 18 ，得到
+[71] \begin{equation}
+x=-\frac{1}{2}v+Kv^{-1/3}~,
+\end{equation}
+[72] 式 24 和式 25 就是以 $v$ 为参数的式 18 的通解。
+
+[/SCOPE:s_ex3]
+[/SCOPE:s_ex3_let]
+[SCOPE:s_type3|description|第三种：F(x, dy/dx)=0]
+[73] 形如 $F(x, \frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} })=0$ 的方程。
+[SCOPE:s_type3_let|let_bind|令 v=dy/dx, 参数 t]
+[74] 同样令 $v=\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }$，我们发现 $F(x, v)=0$ 是 $Oxv$ 平面上的一条曲线。
+[75] 用参数 $t$ 来表示这条曲线：
+[76] \begin{equation}
+\left\{\begin{aligned}
+x=\varphi(t)\\
+v=\phi(t)~.
+\end{aligned}\right.
+\end{equation}
+[77] 那么 $x$ 相当于已经解出来了，接下来只需要考虑 $y$ 怎么用参数 $t$ 表示。
+[78] 由于 $v \,\mathrm{d}{x} = \,\mathrm{d}{y} $ 恒成立，代入式 26 后可得
+[79] \begin{equation}
+\phi(t)\varphi'(t) \,\mathrm{d}{t} = \,\mathrm{d}{y} ~,
+\end{equation}
+[80] \begin{equation}
+y=\int \phi(t)\varphi'(t) \,\mathrm{d}{t} +C~.
+\end{equation}
+[81] 这样，式 26 和式 28 结合，就能得到参数形式的解。
+
+[/SCOPE:s_type3]
+[/SCOPE:s_type3_let]
+[SCOPE:s_ex4|description|例4]
+[82] 考虑方程
+[83] \begin{equation}
+x^2- \left(\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} } \right) ^3+x\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }=0~.
+\end{equation}
+[SCOPE:s_ex4_let|let_bind|令 v=dy/dx, 参数 t]
+[84] \begin{equation}
+x^2-v^3+xv=0~.
+\end{equation}
+[85] 式 30
+[86] \begin{equation}
+-t^3x^3+(1-t)x^2=0~,
+\end{equation}
+[87] \begin{equation}
+x^2 \left(t^3x+t-1 \right) =0~.
+\end{equation}
+[88] 由式 30 可知 $x$ 不恒为 $0$，
+[89] 因此式 32 可以用参数 $t$ 解出 $x$：
+[90] \begin{equation}
+x=\frac{1-t}{t^3}~.
+\end{equation}
+[91] \begin{equation}
+v=tx=\frac{1-t}{t^2}~
+\end{equation}
+[92] \begin{equation}
+\frac{ \,\mathrm{d}{x} }{ \,\mathrm{d}{t} }=\frac{2t-3}{t^4}~,
+\end{equation}
+[93] \begin{equation}
+y=\int \frac{1-t}{t^2}\cdot\frac{2t-3}{t^4} \,\mathrm{d}{t} =\frac{40t^2-75t+36}{60t^5}+C~.
+\end{equation}
+[94] 式 33
+[95] 式 36
+
+[/SCOPE:s_ex4]
+[/SCOPE:s_ex4_let]
+[SCOPE:s_type4|description|第四种：F(y, dy/dx)=0]
+[96] 形如 $F(y, \frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} })=0$ 的方程。
+[97] 解法类似第三种。
+[SCOPE:s_type4_let|let_bind|令 v=dy/dx, 参数 t]
+[98] 令 $v=\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }$，将 $F(y, v)=0$ 写成参数曲线的形式：
+[99] \begin{equation}
+\left\{\begin{aligned}
+y=\varphi(t)\\
+v=\phi(t)~.
+\end{aligned}\right.
+\end{equation}
+[100] 那么由 $ \,\mathrm{d}{x} =\frac{ \,\mathrm{d}{y} }{v}$，可知
+[101] \begin{equation}
+x=\int \frac{\varphi'(t)}{\phi(t)} \,\mathrm{d}{t} +C~.
+\end{equation}
+[102] 式 37 [链接 L0]
+[103] 式 38 [链接 L1]
+[104] 就构成一组参数解。
+
+[/SCOPE:s_type4]
+[/SCOPE:s_type4_let]
+[SCOPE:s_ex5|description|例5]
+[105] 考虑方程
+[106] \begin{equation}
+\left(\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} } \right) ^2-y\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }+y^3=0~.
+\end{equation}
+[SCOPE:s_ex5_let|let_bind|令 v=dy/dx, 参数 t]
+[107] 式 39
+[108] \begin{equation}
+v^2-vy+y^3=0~.
+\end{equation}
+[109] 式 40
+[110] \begin{equation}
+t^3v^3+(1-t)v^2=0~.
+\end{equation}
+[111] 式 40
+[112] 式 41
+[113] \begin{equation}
+v=\frac{t-1}{t^3}~,
+\end{equation}
+[114] \begin{equation}
+y=tv=\frac{t-1}{t^2}~,
+\end{equation}
+[115] \begin{equation}
+\begin{aligned}
+x
+&=\int \frac{1}{v} \,\mathrm{d}{v} +C\\
+&=\int \frac{t^3}{t-1}\cdot\frac{2-t}{t^3} \,\mathrm{d}{t} +C\\
+&=\ln \left\lvert t-1 \right\rvert -t+C~.
+\end{aligned}
+\end{equation}
+[116] 式 43 和式 44 就构成一组参数解。
+[/SCOPE:s_ex5]
+[/SCOPE:s_ex5_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_type1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是第一种类型的例子"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_type1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2是第一种类型的例子"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_type2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例3是第二种类型的例子"
+  },
+  {
+    "source_scope": "s_ex4",
+    "target_scope": "s_type3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例4是第三种类型的例子"
+  },
+  {
+    "source_scope": "s_ex5",
+    "target_scope": "s_type4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例5是第四种类型的例子"
+  }
+]

@@ -1,0 +1,114 @@
+[SCOPE:root|description|傅里叶变换与矢量空间]
+文章名: FTvec
+标题: 傅里叶变换与矢量空间
+
+[SCOPE:s_intro|description|引言]
+[0] 本文存在未完成的内容。
+[1] 在 “傅里叶变换与连续正交归一基底” 中，我们已经用矢量空间和连续基底的概念来理解傅里叶变换，
+[2] 但我们把函数看作矢量本身。
+[3] 而在本文中，我们再次用另一种方法理解傅里叶变换，
+[4] 即把函数看作是矢量的坐标而不是矢量本身。
+[5] 注意这种理解和 “连续基底” 的概念一样，并不十分严谨，
+[6] 但对于理解量子力学中的 “位置表象和动量表象” 却十分有用。
+[SCOPE:s_intro_let1|let_bind|引入 x 基底和 k 基底]
+[7] 类比傅里叶级数，我们仍然可以将傅里叶变换看作是矢量空间中两组正交归一基底之间的变换，我们分别把他们叫做 $x$ 基底和 $k$ 基底。
+[8a] 若使用 $x$ 基底
+[8b] 则说在 $x$ 表象下，若用 $k$ 基底就说在 $k$ 表象下。
+[9] 每个实数 $x_0$ 对应一个基底 $ \left\lvert x_0 \right\rangle $，所有的 $ \left\lvert x_0 \right\rangle $ 构成 $x$ 基底。
+[10] 每个实数 $k_0$ 对应一个基底 $ \left\lvert k_0 \right\rangle $，所有的 $ \left\lvert k_0 \right\rangle $ 构成 $k$ 基底。
+[11] 就像有限维空间中用 $(0, \dots , 1, \dots , 0)$ 表示一组基底的第 $i$ 个关于这组基底的坐标（见 “几何矢量的基底和坐标” 中的定义），可以用狄拉克 delta 函数 $\delta (x - x_0)$ 表示 $ \left\lvert x_0 \right\rangle $ 关于所有 $x$ 基底的坐标，用 $\delta (k - k_0)$ 表示 $ \left\lvert k_0 \right\rangle $ 关于所有 $k$ 基底的坐标。
+[/SCOPE:s_intro_let1]
+[SCOPE:s_intro_let2|let_bind|引入矢量 |v⟩ 及其坐标]
+[12a] (x)$ 可以看作是某个矢量 $ \left\lvert v \right\rangle $ 关于 $x$ 基底的坐标（有限维空间中的求和在无穷维空间中变为积分）, 而 $g
+[12b] (k)$ 可以看作是 $k$ 基底的坐标1。
+[13] \begin{equation}
+\left\lvert v \right\rangle = \int f(x_0) \left\lvert x_0 \right\rangle \,\mathrm{d}{x_0} = \int g(k_0) \left\lvert k_0 \right\rangle \,\mathrm{d}{k_0} ~.
+\end{equation}
+[14] 矢量空间中两个矢量的内积，在 $x$ 表象下为
+[15] \begin{equation}
+\begin{aligned}
+& \left\langle v_1 \middle| v_2 \right\rangle = \left(\int f_1(x_1) \left\lvert x_1 \right\rangle \,\mathrm{d}{x_1} \right) ^\dagger \int f_2(x_2) \left\lvert x_2 \right\rangle \,\mathrm{d}{x_2} \\
+&=\iint f_1(x_1)^* f_2(x_2) \delta (x_2 - x_1) \,\mathrm{d}{x_1} \,\mathrm{d}{x_2} \\
+&=\int f_1(x)^* f_2(x) \,\mathrm{d}{x} ~,
+\end{aligned}
+\end{equation}
+[16] $k$ 表象同理。
+[17] 将某矢量 $ \left\lvert v \right\rangle $ 投影到基底 $ \left\lvert x_0 \right\rangle $ 上，可以验证其系数为
+[18] \begin{equation}
+\left\langle x_0 \middle| v \right\rangle = \int f(x) \delta (x - x_0) \,\mathrm{d}{x} = f(x_0)~.
+\end{equation}
+[19] $x$ 表象下，可以验证 $x$ 基底的正交归一化
+[20] \begin{equation}
+\left\langle x_1 \middle| x_2 \right\rangle = \int \delta (x - x_1) \delta (x - x_2) \,\mathrm{d}{x} = \delta (x_2 - x_1)~,
+\end{equation}
+[21] $k$ 表象同理。
+
+[/SCOPE:s_intro]
+[/SCOPE:s_intro_let2]
+[SCOPE:s_basis_transform|description|基底变换]
+[SCOPE:s_basis_transform_let1|let_bind|引入傅里叶算符]
+[22] 将傅里叶变换对应的算符记为 $\mathcal F$，反变换记为 $\mathcal F^{-1}$。
+[23] 傅里叶变换可以看成一个无穷维且连续的酉矩阵，将同一个矢量从 $x$ 表象坐标变换到 $k$ 表象坐标。
+[24] 反变换从 $k$ 表象变回 $x$ 表象。
+[25] 傅里叶变换和反变换并不改变矢量 $ \left\lvert v \right\rangle $ 本身，$\mathcal F$ 是一个单位算符，
+[26] 即 $\mathcal F \left\lvert v \right\rangle = \left\lvert v \right\rangle $。
+[/SCOPE:s_basis_transform_let1]
+[SCOPE:s_basis_transform_let2|let_bind|引入基底变换矩阵元]
+[27] 令 $ \left\lvert k_0 \right\rangle $ 基底在 $x$ 表象下的函数（即坐标）为 $ \mathrm{e} ^{ \mathrm{i} k_0 x}/\sqrt{2\pi }$，
+[28] 即
+[29] \begin{equation}
+\left\lvert k_0 \right\rangle = \int \frac{ \mathrm{e} ^{ \mathrm{i} k_0 x_0}}{\sqrt{2\pi }} \left\lvert x_0 \right\rangle \,\mathrm{d}{x_0} ~.
+\end{equation}
+[30] 则基底变换矩阵的 “矩阵元” 为
+[31] \begin{equation}
+\begin{aligned}
+\left\langle x_0 \middle| k_0 \right\rangle &= \left\langle x_0 \right\rvert \int \frac{ \mathrm{e} ^{ \mathrm{i} k_0 x_1}}{\sqrt{2\pi }} \left\lvert x_1 \right\rangle \,\mathrm{d}{x_1} \\
+&= \int \frac{ \mathrm{e} ^{ \mathrm{i} k_0 x_1}}{\sqrt{2\pi }} \delta (x_1 - x_0) \,\mathrm{d}{x_1}
+= \frac{ \mathrm{e} ^{ \mathrm{i} k_0 x_0}}{\sqrt{2\pi }}~.
+\end{aligned}
+\end{equation}
+[32] 我们将矩阵元记为 $F^*(x_0, k_0)$，也叫做
+[33] 核（kernel）
+[34] 。
+[35] 两个变量就相当于矩阵的两个角标。
+[36] 该矩阵乘以 $k$ 表象的坐标，就是 $x$ 表象的坐标，矩阵的求和同样需要写成积分的形式
+[37] \begin{equation}
+f(x_0) = \int F^*(x_0, k_0) g(k_0) \,\mathrm{d}{k_0} = \int \frac{ \mathrm{e} ^{ \mathrm{i} k_0 x_0}}{\sqrt{2\pi }} g(k_0) \,\mathrm{d}{k_0} ~,
+\end{equation}
+[38] 这就是反傅里叶变换。
+[39] 由于酉矩阵的厄米共轭就是它的逆矩阵，
+[40] 所以逆矩阵的矩阵元为
+[41] \begin{equation}
+\left\langle k_0 \middle| x_0 \right\rangle = \left\langle x_0 \middle| k_0 \right\rangle ^* = \frac{ \mathrm{e} ^{- \mathrm{i} k_0 x_0}}{\sqrt{2\pi }}~,
+\end{equation}
+[42] 核为 $F(k_0, x_0)$。
+[43] 该矩阵乘以 $x$ 表象的坐标，就是 $k$ 表象的坐标
+[44] \begin{equation}
+g(k_0) = \int F(k_0, x_0) f(x_0) \,\mathrm{d}{x_0} = \int \frac{ \mathrm{e} ^{- \mathrm{i} k_0 x_0}}{\sqrt{2\pi }} f(x_0) \,\mathrm{d}{x_0} ~,
+\end{equation}
+[45] 这就是傅里叶变换。
+[/SCOPE:s_basis_transform_let2]
+[46] $x$ 表象下，$k$ 基底的正交归一化可以记为
+[47] \begin{equation}
+\left\langle k_1 \middle| k_2 \right\rangle = \int \frac{ \mathrm{e} ^{ \mathrm{i} k_1 x}}{\sqrt{2\pi }} \frac{ \mathrm{e} ^{- \mathrm{i} k_2 x}}{\sqrt{2\pi }} \,\mathrm{d}{x} = \delta (k_2 - k_1)~,
+\end{equation}
+[48] $x$ 基底在 $k$ 表象下的正交归一也同理。
+[SCOPE:s_basis_transform_proof|description|证明傅里叶变换与反变换的复合]
+[49a] (x)$ 依次经过傅里叶变换和反变换后，仍然可以得到 $f
+[49b] (x)$。
+[50] 证明的矢量形式为
+[51] \begin{equation}
+\left\lvert v \right\rangle = \int \left\lvert k \right\rangle \left\langle k \middle| v \right\rangle \,\mathrm{d}{k} ~.
+\end{equation}
+[52] 将各个矢量替换为 $x$ 表象的坐标，得
+[53] \begin{equation}
+\begin{aligned}
+\mathcal F^{-1} [\mathcal F f(x)] &= \int \frac{ \mathrm{e} ^{ \mathrm{i} k x}}{\sqrt{2\pi }} \left(\int \frac{ \mathrm{e} ^{- \mathrm{i} k x'}}{\sqrt{2\pi }} f(x') \,\mathrm{d}{x'} \right) \,\mathrm{d}{k} \\
+&= \int …[truncated]…) \left(\int \frac{ \mathrm{e} ^{- \mathrm{i} k x'}}{\sqrt{2\pi }}\frac{ \mathrm{e} ^{ \mathrm{i} k x}}{\sqrt{2\pi }} \,\mathrm{d}{k} \right) \,\mathrm{d}{x'} \\
+&= \int f(x') \delta (x - x') \,\mathrm{d}{x'} \\
+&= f(x)~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_basis_transform]
+[/SCOPE:s_basis_transform_proof]
+[/SCOPE:root]

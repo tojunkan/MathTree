@@ -1,0 +1,142 @@
+[SCOPE:root|description|逆矩阵]
+文章名: InvMat
+标题: 逆矩阵
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=计算矩阵的逆
+  [1] type=example heading=例 2 title=计算例题 1 中的矩阵 $ \boldsymbol{\mathbf{A}} $ 的逆
+
+[0] 本文存在未完成的内容。
+
+[SCOPE:s_inv_def|description|逆矩阵定义]
+[1] 1如果两个方阵的乘积是单位矩阵，
+[2] \begin{equation}
+\boldsymbol{\mathbf{B}} \boldsymbol{\mathbf{A}} = \boldsymbol{\mathbf{I}} ~.
+\end{equation}
+[3] 那么 $ \boldsymbol{\mathbf{B}} $ 就叫做 $ \boldsymbol{\mathbf{A}} $ 的
+[4] 逆矩阵
+[5] ，或者记为 $ \boldsymbol{\mathbf{A}} ^{-1}$
+[6] 2
+[7] 。
+[/SCOPE:s_inv_def]
+[SCOPE:s_inv_prop|description|逆矩阵性质]
+[8] 这里的一个隐含要求是 $ \boldsymbol{\mathbf{x}} \mapsto \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{x}} $ 必须是一一映射，$ \boldsymbol{\mathbf{y}} \mapsto { \boldsymbol{\mathbf{A}} }^{-1} \boldsymbol{\mathbf{y}} $ 是它的逆映射，如果是多对一的映射，将不存在逆映射。
+[9] 一一映射要求 $ \boldsymbol{\mathbf{A}} $ 的每一列都线性无关，
+[10] 所以 $ \boldsymbol{\mathbf{A}} $ 的行数必须大于等于列数。
+[11] 另外显然一个矩阵最多只能有一个逆矩阵。
+[12] 我们讨论逆矩阵时一般假设 $ \boldsymbol{\mathbf{A}} $ 和 $ \boldsymbol{\mathbf{A}} ^{-1}$ 都是方阵3，
+[13] 所以 $ \boldsymbol{\mathbf{A}} $ 是一个 $N$ 维方阵，代表两个 $N$ 维矢量空间的一一映射，
+[14] 即每个空间中任何一个矢量在另一个空间中都能找到唯一对应的矢量。
+[15] 同理，$ \boldsymbol{\mathbf{A}} ^{-1}$ 的性质也相同。
+[16] 从以上的分析中易证，如果 $ \boldsymbol{\mathbf{B}} $ 是 $ \boldsymbol{\mathbf{A}} $ 的逆矩阵，
+[17] 那么 $ \boldsymbol{\mathbf{A}} $ 必定也是 $ \boldsymbol{\mathbf{B}} $ 的逆矩阵，我们说 $ \boldsymbol{\mathbf{A}} $ 和 $ \boldsymbol{\mathbf{B}} $ 互逆，
+[18] 即
+[19] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{B}} = \boldsymbol{\mathbf{B}} \boldsymbol{\mathbf{A}} = \boldsymbol{\mathbf{I}} ~.
+\end{equation}
+
+[/SCOPE:s_inv_prop]
+[SCOPE:s_methods|description|求逆矩阵方法]
+[SCOPE:s_methods_let1|let_bind|方法1变量]
+[20] 令 $ \boldsymbol{\mathbf{x}} $ 和 $ \boldsymbol{\mathbf{y}} $ 为 $N$ 维列矢量，如果有
+[21] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{y}} ~.
+\end{equation}
+[22] 那么我们在等式两边左乘 $ \boldsymbol{\mathbf{A}} ^{-1}$ 得
+[23] \begin{equation}
+\boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{A}} ^{-1} \boldsymbol{\mathbf{y}} ~.
+\end{equation}
+[24] 要求逆矩阵，一种直接的方法就是先令 $ \boldsymbol{\mathbf{y}} = (1, 0, \dots) ^{\mathrm{T}} $，代入
+[25] 式 3 [链接 L0]
+[26] 解线性方程组得 $ \boldsymbol{\mathbf{x}} $，将 $ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} $ 代入
+[27] 式 4 [链接 L1]
+[28] 可知 $x$ 就是 $ \boldsymbol{\mathbf{A}} ^{-1}$ 的第一列，再令 $ \boldsymbol{\mathbf{y}} = (0, 1, 0, \dots) ^{\mathrm{T}} $，解线性方程组可得 $ \boldsymbol{\mathbf{A}} $ 的第二列，以此类推。
+[29] 在一些实际问题中，我们需要大量求解式 3 形式的方程组，每个方程组都有同样的 $ \boldsymbol{\mathbf{A}} $ 和不同的 $y$，一个高效的做法是先求出 $ \boldsymbol{\mathbf{A}} ^{-1}$，这样解每个方程组就只需要做一次矩阵乘法（式 4 ）即可。
+[/SCOPE:s_methods_let1]
+[SCOPE:s_methods_let2|let_bind|方法2变量]
+[30] 法 2：将 $ \boldsymbol{\mathbf{A}} $ 和 $ \boldsymbol{\mathbf{I}} $ 做同样的行变换，使 $ \boldsymbol{\mathbf{A}} $ 变换后称为单位矩阵。
+[31] 证明：行变换相当于左乘一个矩阵 $ \boldsymbol{\mathbf{B}} $。
+[32] $ \boldsymbol{\mathbf{B}} \boldsymbol{\mathbf{A}} = \boldsymbol{\mathbf{I}} $，$ \boldsymbol{\mathbf{B}} \boldsymbol{\mathbf{I}} = \boldsymbol{\mathbf{B}} $
+[/SCOPE:s_methods_let2]
+[33] 下面给予一个例子。
+
+[/SCOPE:s_methods]
+[SCOPE:s_ex1|description|例1 计算矩阵的逆]
+[34] 例 1 计算矩阵的逆
+[SCOPE:s_ex1_let|let_bind|例1变量]
+[35] 设现在有矩阵 $ \boldsymbol{\mathbf{A}} $，求 $ \boldsymbol{\mathbf{A}} ^{-1}$。
+[36] 其中，$ \boldsymbol{\mathbf{A}} $ 被定义为
+[37] $
+[38] \left(
+[39] \begin{matrix}
+1&2\\
+3&4
+\end{matrix}
+[40] \right)
+[41] $。
+[/SCOPE:s_ex1_let]
+[42] 我们将其与一个二阶单位矩阵并在一起：
+[43] $$
+\left(
+\begin{matrix}
+1&2&1&0\\
+3&4&0&1
+\end{matrix}
+\right)~.
+$$
+[44] 下面我们对上述矩阵进行变换，使原始矩阵变为单位矩阵：
+[45] $$
+\left(
+\begin{matrix}
+1&2&1&0\\
+3&4&0&1
+\end{matrix}\right)=\left(
+\begin{matrix}
+1&2&1&0\\
+0&-2&-3&1
+\end{matrix}\right)~$$
+[46] $$
+=\left(
+\begin{matrix}
+1&0&-2&1\\
+0&-2&-3&1
+\end{matrix}\right)=\left(
+\begin{matrix}
+1&0&-2&1\\
+0&1&3/2&-1/2
+\end{matrix}
+\right)~.
+$$
+[47] 此时右侧便成为了原始矩阵的逆。
+[48] 这与我们运用其他方法的计算结果是一致的。
+[49] 法 3：伴随矩阵（adjugate matrix）除以行列式，参考同济线代，其证明待补充。
+[50] 伴随矩阵被定义为原始矩阵的代数余子式形成的矩阵的转置。
+[51] $(m,n)$ 处的代数余子式指的是除去本行本列（即第 $m$ 行和第 $n$ 列）元素后新生成的矩阵的行列式乘以 $(-1)^{m+n}$。
+[52] 下面举一个例子。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2 计算例题1中的矩阵A的逆]
+[53] 例 2 计算例题 1 中的矩阵 $ \boldsymbol{\mathbf{A}} $ 的逆
+[54] 首先，$\det \boldsymbol{\mathbf{A}} =4-6=-2$。
+[55] 其伴随矩阵为 $\left(
+[56] \begin{matrix}
+4&-2\\
+-3&1
+\end{matrix}
+[57] \right)
+[58] $。
+[59] 接着将二者相乘，我们便得到了原始矩阵的逆。
+[60] 逆与上一题的结果一致。
+[/SCOPE:s_ex2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_ex1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2是例1中矩阵A的逆的具体计算"
+  }
+]

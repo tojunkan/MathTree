@@ -1,0 +1,254 @@
+[SCOPE:root|description|凸函数（补）]
+文章名: Convex
+标题: 凸函数（补）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=凸集
+  [1] type=definition heading=定义 2 title=凸集
+  [2] type=definition heading=定义 3 title=凸函数
+  [3] type=definition heading=定义 4 title=凹函数
+  [4] type=theorem heading=定理 1 title=凸函数判定
+  [5] type=theorem heading=定理 2 title=一阶条件
+  [6] type=theorem heading=定理 3 title=二阶条件
+  [7] type=exercise heading=习题 1 title=判断下列函数的凹凸性
+  [8] type=exercise heading=习题 2 title=
+
+[SCOPE:s_def1|description|凸集（定义1）]
+[0] 定义 1 凸集
+[SCOPE:s_def1_let|let_bind|凸集定义1的变量]
+[1] 对于一个集合 $C\subseteq\mathbb{R}^n,\forall\boldsymbol{x}_1,\cdot,\boldsymbol{x}_n,\theta_k\in[0,1], \sum_{k=1}^n\theta_k=1$ 满足
+[2] \begin{equation}
+\theta_1\boldsymbol{x}_1+\cdots+\theta_n\boldsymbol{x}_n\in C~
+\end{equation}
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_def2|description|凸集（定义2）]
+[3] 定义 2 凸集
+[SCOPE:s_def2_let|let_bind|凸集定义2的变量]
+[4] 对于一个集合 $C\subseteq\mathbb{R}^n,$ 存在映射 $p:\mathbb{R}^n\to\mathbb{R},p(\boldsymbol{x}),\int_Cp(\boldsymbol{x})\mathrm{d}\boldsymbol{x}=1,\forall\boldsymbol{x}\in C,$ 满足
+[5] \begin{equation}
+\int_C\boldsymbol{x}p(\boldsymbol{x})\mathrm{d}\boldsymbol{x}\in C~
+\end{equation}
+
+[/SCOPE:s_def2]
+[/SCOPE:s_def2_let]
+[SCOPE:s_def3|description|凸函数（定义3）]
+[6] 定义 3 凸函数
+[SCOPE:s_def3_let|let_bind|凸函数定义3的变量]
+[7] 存在映射 $f:\mathbb{R}^n\to\mathbb{R},\mathrm{dom} f$ 是凸集合，如果 $\forall\boldsymbol{x_1},\boldsymbol{x_2}\in\mathrm{dom} f, \theta\in[0,1],$ 满足
+[8] \begin{equation}
+f(\theta\boldsymbol{x}_1+(1-\theta)\boldsymbol{x}_2)\leqslant\theta f(\boldsymbol{x}_1) + (1-\theta)f(\boldsymbol{x}_2)~
+\end{equation}
+[9] 称映射 $f$ 是定义在 $\mathrm{dom} f$ 上的凸函数.如果满足
+[10] \begin{equation}
+f(\theta\boldsymbol{x}_1+(1-\theta)\boldsymbol{x}_2)<\theta f(\boldsymbol{x}_1) + (1-\theta)f(\boldsymbol{x}_2)~
+\end{equation}
+[11] 称映射 $f$ 是定义在 $\mathrm{dom} f$ 上的强凸函数.
+
+[/SCOPE:s_def3]
+[/SCOPE:s_def3_let]
+[SCOPE:s_def4|description|凹函数（定义4）]
+[12] 定义 4 凹函数
+[SCOPE:s_def4_let|let_bind|凹函数定义4的变量]
+[13] 存在映射 $f:\mathbb{R}^n\to\mathbb{R},\mathrm{dom} f$ 是凸集合，如果 $\forall\boldsymbol{x_1},\boldsymbol{x_2}\in\mathrm{dom} f, \theta\in[0,1],$ 满足
+[14] \begin{equation}
+f(\theta\boldsymbol{x}_1+(1-\theta)\boldsymbol{x}_2)\geqslant\theta f(\boldsymbol{x}_1) + (1-\theta)f(\boldsymbol{x}_2)~
+\end{equation}
+[15] 称映射 $f$ 是定义在 $\mathrm{dom} f$ 上的凹函数.如果满足
+[16] \begin{equation}
+f(\theta\boldsymbol{x}_1+(1-\theta)\boldsymbol{x}_2)>\theta f(\boldsymbol{x}_1) + (1-\theta)f(\boldsymbol{x}_2)~
+\end{equation}
+[17] 称映射 $f$ 是定义在 $\mathrm{dom} f$ 上的强凹函数.
+
+[/SCOPE:s_def4]
+[/SCOPE:s_def4_let]
+[SCOPE:s_thm1|description|凸函数判定（定理1）]
+[18] 定理 1 凸函数判定
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[19] $f:\mathbb{R}^n\to\mathbb{R}$ 是凸函数，当且仅当 $g:\mathbb{R}\to\mathbb{R},g(t)=f(\boldsymbol{x}+t\boldsymbol{v}),t=\{t|\boldsymbol{x}+t\boldsymbol{v}\in\mathrm{dom} f,\boldsymbol{v}\in\mathbb{R}^n\}$ 是凸函数.
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm1_nec|description|定理1必要性]
+[20] 证明:(1)必要性
+[SCOPE:s_thm1_nec_let|let_bind|必要性中的变量]
+[21] $f(\boldsymbol{x})$ 是凸函数，令 $g(t)=f(\boldsymbol{x}+t\boldsymbol{v}),$ 那么对 $\forall t_1,t_2,$ 有以下关系:
+[22] $$
+\begin{aligned}
+g\left( \theta t_1+\left( 1-\theta \right) t_2 \right) &=f\left( \boldsymbol{x}+\left( \theta t_1+\left( 1-\theta \right) t_2 \right) \boldsymbol{v} \right)\\
+&=f\left( \boldsymbol{x}+\theta t_1\boldsymbol{v}+\left( 1-\theta \right…[truncated]…\right) \right) \\
+&\leqslant \theta f\left( \boldsymbol{x}+t_1\boldsymbol{v} \right) +\left( 1-\theta \right) f\left( \boldsymbol{x}+t_2\boldsymbol{v} \right) =\theta g\left( t_1 \right) +\left( 1-\theta \right) g\left( t_2 \right)
+\end{aligned}~
+$$
+[23] 由此可知，$g(t)$ 是凸函数.
+[/SCOPE:s_thm1_nec]
+[/SCOPE:s_thm1_nec_let]
+[SCOPE:s_thm1_suf|description|定理1充分性]
+[24] (2)充分性
+[SCOPE:s_thm1_suf_let|let_bind|充分性中的变量]
+[25] $g(t)=f(\boldsymbol{x}+t\boldsymbol{v})$ 是凸函数，
+[26] 因此，\forall \theta \in \left[ 0,1 \right]
+[27] $$
+\begin{aligned}
+g\left( \theta t_1+\left( 1-\theta \right) t_2 \right) &=f\left( \boldsymbol{x}+\left( \theta t_1+\left( 1-\theta \right) t_2 \right) \boldsymbol{v} \right) \\
+&=f\left( \boldsymbol{x}+\theta t_1\boldsymbol{v}+\left( 1-\theta \righ…[truncated]…ght) \right) \\
+&\leqslant \theta g\left( t_1 \right) +\left( 1-\theta \right) g\left( t_2 \right)\\
+&=\theta f\left( \boldsymbol{x}+t_1\boldsymbol{v} \right) +\left( 1-\theta \right) f\left( \boldsymbol{x}+t_2\boldsymbol{v} \right)
+\end{aligned}~
+$$
+[28] 令 $\boldsymbol{z}_1=\boldsymbol{x}+t_1\boldsymbol{v},\boldsymbol{z}_2=\boldsymbol{x}+t_2\boldsymbol{v},$ 上述不等式等价为
+[29] $$
+f\left( \theta \boldsymbol{z}_1+\left( 1-\theta \right) \boldsymbol{z}_2 \right) \leqslant \theta f\left( \boldsymbol{z}_1 \right) +\left( 1-\theta \right) f\left( \boldsymbol{z}_2 \right)~
+$$
+[30] 由此可知，$f(\boldsymbol{x})$ 是凸函数.
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_suf]
+[/SCOPE:s_thm1_suf_let]
+[SCOPE:s_thm2|description|一阶条件（定理2）]
+[31] 定理 2 一阶条件
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[32] 假设 $f:\mathbb{R}^n\to\mathbb{R}$ 一阶可微，$f:\mathbb{R}^n\to\mathbb{R}$ 是凸函数，当且仅当
+[33] \begin{equation}
+f(\boldsymbol{y})\geqslant f(\boldsymbol{x})+\nabla^\top f(\boldsymbol{x})(\boldsymbol{y}-\boldsymbol{x})~
+\end{equation}
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm2_nec|description|定理2必要性]
+[34] 证明:(1)必要性
+[SCOPE:s_thm2_nec_let|let_bind|必要性中的变量]
+[35] 令 $\boldsymbol{z}=\theta \boldsymbol{y}+\left( 1-\theta \right) \boldsymbol{x}=\boldsymbol{x}+\theta \left( \boldsymbol{y}-\boldsymbol{x} \right),$ 由凸函数定位可知，
+[36] $$
+f\left( \theta \boldsymbol{y}+\left( 1-\theta \right) \boldsymbol{x} \right) =f\left( \boldsymbol{x}+\theta \left( \boldsymbol{y}-\boldsymbol{x} \right) \right) \leqslant \theta f\left( \boldsymbol{y} \right) +\left( 1-\theta \right) f\left( \boldsymbol{x} \right)~
+$$
+[37] 整理得，
+[38] $$
+f\left( \boldsymbol{y} \right) \geqslant \frac{f\left( \boldsymbol{x}+\theta \left( \boldsymbol{y}-\boldsymbol{x} \right) \right) -\left( 1-\theta \right) f\left( \boldsymbol{x} \right)}{\theta}=f\left( \boldsymbol{x} \right) +\frac{f\left( \boldsymbol{x}+\theta \left( \boldsymbol{y}-\boldsymbol{x} \right) \right) -f\left( \boldsymbol{x} \right)}{\theta}~
+$$
+[39] 让 $\theta\to 0$ 可得
+[40] $$
+f\left( \boldsymbol{y} \right) \geqslant f\left( \boldsymbol{x} \right) +\lim_{\theta \rightarrow 0} \frac{f\left( \boldsymbol{x}+\theta \left( \boldsymbol{y}-\boldsymbol{x} \right) \right) -f\left( \boldsymbol{x} \right)}{\theta}=f\left( \boldsymbol{x} \right) +\nabla ^{\top}f\left( \boldsymbol{x} \right) \left( \boldsymbol{y}-\boldsymbol{x} \right)~
+$$
+[/SCOPE:s_thm2_nec]
+[/SCOPE:s_thm2_nec_let]
+[SCOPE:s_thm2_suf|description|定理2充分性]
+[41] (2)充分性
+[SCOPE:s_thm2_suf_let|let_bind|充分性中的变量]
+[42] 令 $z=\theta\boldsymbol{x}+(1-\theta)\boldsymbol{y},$ 于是可以得到
+[43] $$
+f\left( \boldsymbol{x} \right) \geqslant f\left( \boldsymbol{z} \right) +\nabla ^{\top}f\left( \boldsymbol{z} \right) \left( \boldsymbol{x}-\boldsymbol{z} \right)~
+$$
+[44] $$
+f\left( \boldsymbol{y} \right) \geqslant f\left( \boldsymbol{z} \right) +\nabla ^{\top}f\left( \boldsymbol{z} \right) \left( \boldsymbol{y}-\boldsymbol{z} \right)~
+$$
+[45] 也即是
+[46] $$
+\theta f\left( \boldsymbol{x} \right) +\left( 1-\theta \right) f\left( \boldsymbol{y} \right) \geqslant \theta \left( f\left( \boldsymbol{z} \right) +\nabla ^{\top}f\left( \boldsymbol{z} \right) \left( \boldsymbol{x}-\boldsymbol{z} \right) \right) +\left( 1-\theta \right) \left( f\left( \boldsymbol{z} \right) +\nabla ^{\top}f\left( \boldsymbol{z} \right) \left( \boldsymbol{y}-\boldsymbol{z} \right) \right)~
+$$
+[47] 展开得
+[48] $$
+\theta f\left( \boldsymbol{x} \right) +\left( 1-\theta \right) f\left( \boldsymbol{y} \right) \geqslant \theta f\left( \boldsymbol{z} \right) +\theta \nabla ^{\top}f\left( \boldsymbol{z} \right) \left( \boldsymbol{x}-\boldsymbol{z} \right) +\left( 1-\theta \right) f\left( \boldsymbol{z} \right) +\left( 1-\theta \right) \nabla ^{\top}f\left( \boldsymbol{z} \right) \left( \boldsymbol{y}-\boldsymbol{z} \right)~
+$$
+[49] 进一步得到
+[50] $$
+\theta f\left( \boldsymbol{x} \right) +\left( 1-\theta \right) f\left( \boldsymbol{y} \right) \geqslant \nabla ^{\top}f\left( \boldsymbol{z} \right) \left[ \theta \left( \boldsymbol{x}-\boldsymbol{z} \right) +\left( 1-\theta \right) \left( \boldsymbol{y}-\boldsymbol{z} \right) \right] +f\left( \boldsymbol{z} \right)~
+$$
+[51] 也即是
+[52] $$
+f\left( \boldsymbol{z} \right) \leqslant \theta f\left( \boldsymbol{x} \right) +\left( 1-\theta \right) f\left( \boldsymbol{y} \right)~
+$$
+[53] 即
+[54] $$
+f\left( \theta \boldsymbol{x}+\left( 1-\theta \right) \boldsymbol{y} \right) \leqslant \theta f\left( \boldsymbol{x} \right) +\left( 1-\theta \right) f\left( \boldsymbol{y} \right)~
+$$
+[55] 因此，$f(\boldsymbol{x})$ 是凸函数.
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_suf]
+[/SCOPE:s_thm2_suf_let]
+[SCOPE:s_thm3|description|二阶条件（定理3）]
+[56] 定理 3 二阶条件
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[57] 假设 $f:\mathbb{R}^n\to\mathbb{R}$ 二阶可微，$f:\mathbb{R}^n\to\mathbb{R}$ 是凸函数，当且仅当
+[58] \begin{equation}
+\nabla^2 f(\boldsymbol{x})\succeq 0~
+\end{equation}
+[/SCOPE:s_thm3_let]
+[SCOPE:s_thm3_nec|description|定理3必要性]
+[59] 证明:(1)必要性
+[60] 由函数的泰勒展开,
+[61] $$
+f\left( \boldsymbol{y} \right) =f\left( \boldsymbol{x} \right) +\nabla ^{\top}f\left( \boldsymbol{x} \right) \left( \boldsymbol{y}-\boldsymbol{x} \right) +\frac{1}{2}\left( \boldsymbol{y}-\boldsymbol{x} \right) ^{\top}\nabla ^2f\left( \boldsymbol{x} \right) \left( \boldsymbol{y}-\boldsymbol{x} \right) +o\left( \left\| \boldsymbol{y}-\boldsymbol{x} \right\| ^2 \right)~
+$$
+[62] 再由定理 2 可知,
+[63] $$
+f\left( \boldsymbol{y} \right) \geqslant f\left( \boldsymbol{x} \right) +\nabla ^{\top}f\left( \boldsymbol{x} \right) \left( \boldsymbol{y}-\boldsymbol{x} \right)~
+$$
+[64] 于是可得,
+[65] $$
+f\left( \boldsymbol{x} \right) +\nabla ^{\top}f\left( \boldsymbol{x} \right) \left( \boldsymbol{y}-\boldsymbol{x} \right) +\frac{1}{2}\left( \boldsymbol{y}-\boldsymbol{x} \right) ^{\top}\nabla ^2f\left( \boldsymbol{x} \right) \left( \boldsymbol{y}-\boldsymbol{x} \right) +o\left( \left\| \boldsymbol{y}-\boldsymbol{x} \right\| ^2 \right) \geqslant f\left( \boldsymbol{x} \right) +\nabla ^{\top}f\left( \boldsymbol{x} \right) \left( \boldsymbol{y}-\boldsymbol{x} \right)~
+$$
+[66] 因此,
+[67] $$
+\frac{1}{2}\left( \boldsymbol{y}-\boldsymbol{x} \right) ^{\top}\nabla ^2f\left( \boldsymbol{x} \right) \left( \boldsymbol{y}-\boldsymbol{x} \right) +o\left( \left\| \boldsymbol{y}-\boldsymbol{x} \right\| ^2 \right) \geqslant 0~
+$$
+[68] 也即
+[69] $$
+\left( \boldsymbol{y}-\boldsymbol{x} \right) ^{\top}\nabla ^2f\left( \boldsymbol{x} \right) \left( \boldsymbol{y}-\boldsymbol{x} \right) \geqslant 0~
+$$
+[70] 由此可知
+[71] $$
+\nabla ^2f\left( \boldsymbol{x} \right) \succeq 0~
+$$
+[/SCOPE:s_thm3_nec]
+[SCOPE:s_thm3_suf|description|定理3充分性]
+[72] (2)充分性
+[73] 由函数的泰勒展开,
+[74] $$
+f\left( \boldsymbol{y} \right) =f\left( \boldsymbol{x} \right) +\nabla ^{\top}f\left( \boldsymbol{x} \right) \left( \boldsymbol{y}-\boldsymbol{x} \right) +\frac{1}{2}\left( \boldsymbol{y}-\boldsymbol{x} \right) ^{\top}\nabla ^2f\left( \boldsymbol{x} \right) \left( \boldsymbol{y}-\boldsymbol{x} \right) +o\left( \left\| \boldsymbol{y}-\boldsymbol{x}\right\| ^2 \right)~
+$$
+[75] 由 $\nabla ^2f\left( \boldsymbol{x} \right) \succeq$,因此
+[76] $$
+\left( \boldsymbol{y}-\boldsymbol{x} \right) ^{\top}\nabla ^2f\left( \boldsymbol{x} \right) \left( \boldsymbol{y}-\boldsymbol{x} \right) \geqslant 0~
+$$
+[77] 也即
+[78] $$
+f\left( \boldsymbol{y} \right) =f\left( \boldsymbol{x} \right) +\nabla ^{\top}f\left( \boldsymbol{x} \right) \left( \boldsymbol{y}-\boldsymbol{x} \right) +\frac{1}{2}\left( \boldsymbol{y}-\boldsymbol{x} \right) ^{\top}\nabla ^2f\left( \boldsymbol{…[truncated]…t) \left( \boldsymbol{y}-\boldsymbol{x} \right) +o\left( \left\| \boldsymbol{y}-\boldsymbol{x} \right\| ^2 \right) \geqslant f\left( \boldsymbol{x} \right) +\nabla ^{\top}f\left( \boldsymbol{x} \right) \left( \boldsymbol{y}-\boldsymbol{x} \right)~
+$$
+[79] 由定理 2 可知，$f(\boldsymbol{x})$ 是凸函数.
+
+[/SCOPE:s_thm3]
+[/SCOPE:s_thm3_suf]
+[SCOPE:s_ex1|description|习题1]
+[80] 习题 1 判断下列函数的凹凸性
+[81] $f(\boldsymbol{x})=\max\{x_1,\cdots,x_n\}$
+[82] $f(\boldsymbol{x})=\min\{x_1,\cdots,x_n\}$
+[83] $f\left( \boldsymbol{x} \right) =\frac{1}{2}\boldsymbol{x}^{\top}P\boldsymbol{x}+\boldsymbol{q}^{\top}\boldsymbol{x}+r,P\succeq 0$
+[84] $f\left( \boldsymbol{x} \right) =\left\| A\boldsymbol{x}-b \right\| _{2}^{2},A\in \mathbb{R} ^{m\times n}$
+[85] $f\left( \boldsymbol{x} \right) =\log \sum_{k=1}^n{\exp \,x_k}$
+[86] $f\left( \boldsymbol{x} \right) =\prod_{k=1}^n{\left( x_k \right) ^{\frac{1}{n}}}$
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|习题2]
+[87] 习题 2
+[SCOPE:s_ex2_let|let_bind|习题2的变量]
+[88] 存在映射 $f:\mathbb{R}^n\to\mathbb{R}$,另有映射 $g:\mathbb{R}^m\to\mathbb{R}$,且 $g(\boldsymbol{x})=f(A\boldsymbol{x}+\boldsymbol{b})$,其中 $A\in\mathbb{R}^{n\times m},\boldsymbol{b}\in\mathbb{R}^m$,证明 $f$ 和 $g$ 的凸凹性一致.
+[/SCOPE:s_ex2]
+[/SCOPE:s_ex2_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "一阶条件是凸函数判定的特例"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "二阶条件是一阶条件的特例"
+  }
+]

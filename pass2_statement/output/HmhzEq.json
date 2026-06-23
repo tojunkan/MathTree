@@ -1,0 +1,235 @@
+{
+  "article_name": "HmhzEq",
+  "statements": [
+    {
+      "stmt_id": "st_eq_form",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_eq",
+      "exposed_entities": [
+        "y",
+        "t",
+        "omega"
+      ]
+    },
+    {
+      "stmt_id": "st_omega_real",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_eq_let",
+      "exposed_entities": [
+        "omega"
+      ]
+    },
+    {
+      "stmt_id": "st_assume_exp_sol",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_solution_let1",
+      "exposed_entities": [
+        "r",
+        "e^{rt}"
+      ]
+    },
+    {
+      "stmt_id": "st_char_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_solution_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_solve_r",
+      "subtype": "conclusion",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_solution",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_gen_sol_complex",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_solution",
+      "exposed_entities": [
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "stmt_id": "st_C1C2_const",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_solution_let2",
+      "exposed_entities": [
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "stmt_id": "st_choose_C1C2",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_solution_let3",
+      "exposed_entities": [
+        "C1R",
+        "C1I",
+        "C2R",
+        "C2I"
+      ]
+    },
+    {
+      "stmt_id": "st_decompose_y",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_solution",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_imag_zero",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_solution",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_conditions",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_solution",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_real_sol_form",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_solution",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_general_real_sol",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_solution",
+      "exposed_entities": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_omega_real",
+      "target": "st_eq_form",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assume_exp_sol",
+      "target": "st_char_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_char_eq",
+      "target": "st_solve_r",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_solve_r",
+      "target": "st_gen_sol_complex",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_C1C2_const",
+      "target": "st_gen_sol_complex",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_choose_C1C2",
+      "target": "st_decompose_y",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_decompose_y",
+      "target": "st_imag_zero",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_imag_zero",
+      "target": "st_conditions",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_conditions",
+      "target": "st_real_sol_form",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_real_sol_form",
+      "target": "st_general_real_sol",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

@@ -1,0 +1,282 @@
+{
+  "article_name": "GO2SOD",
+  "statements": [
+    {
+      "stmt_id": "st_intro",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_single_eq_let",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_single_eq_let",
+      "exposed_entities": [
+        "y",
+        "y'",
+        "y^{(n)}",
+        "F",
+        "f_i",
+        "y_i",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_single_eq_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_single_eq",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_single_eq_remark2",
+      "subtype": "remark",
+      "clause_range": [
+        11,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_single_eq",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_single_eq_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        34
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_single_eq",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        35,
+        38
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "y",
+        "z_i",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_intro",
+      "subtype": "remark",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_dir1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        40,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_dir1",
+      "exposed_entities": [
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_dir1_deriv",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        49
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_dir1",
+      "exposed_entities": [
+        "z_i'"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_dir2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        50,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_dir2",
+      "exposed_entities": [
+        "z_i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_dir2_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        53,
+        61
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_dir2",
+      "exposed_entities": [
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_end",
+      "subtype": "remark",
+      "clause_range": [
+        62,
+        62
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_general_system_let",
+      "subtype": "assumption",
+      "clause_range": [
+        63,
+        65
+      ],
+      "truth_value": null,
+      "scope_id": "s_general_system_let",
+      "exposed_entities": [
+        "y_i",
+        "y_i^{(n_i)}",
+        "f_i",
+        "m",
+        "n_i"
+      ]
+    },
+    {
+      "stmt_id": "st_general_system_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        66,
+        66
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_general_system",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        67,
+        70
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "y_i",
+        "z_i",
+        "f_i",
+        "n_i",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof_remark",
+      "subtype": "remark",
+      "clause_range": [
+        71,
+        71
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_proof_equivalence",
+      "subtype": "conclusion",
+      "clause_range": [
+        72,
+        73
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_single_eq_let",
+      "target": "st_single_eq_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_dir1_assump",
+      "target": "st_thm1_dir1_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_dir2_assump",
+      "target": "st_thm1_dir2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_general_system_let",
+      "target": "st_general_system_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_statement",
+      "target": "st_thm2_proof_equivalence",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_statement",
+      "target": "st_single_eq_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1是单个方程情形的具体化"
+    },
+    {
+      "source": "st_thm2_statement",
+      "target": "st_general_system_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2是一般方程组情形的具体化"
+    },
+    {
+      "source": "st_thm2_statement",
+      "target": "st_thm1_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2是定理1的推广"
+    }
+  ],
+  "unresolved": []
+}

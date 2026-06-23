@@ -1,0 +1,19 @@
+[SCOPE:root|description|函数的旋转和其他变换]
+文章名: FunRot
+标题: 函数的旋转和其他变换
+
+[0] 贡献者： addis
+[1] 预备知识 平面旋转矩阵，三维旋转矩阵
+[SCOPE:s_let|let_bind|引入旋转矩阵和函数]
+[2] 令坐标的旋转矩阵为 $ \boldsymbol{\mathbf{R}} $，
+[3] 那么把函数 $f( \boldsymbol{\mathbf{r}} )$ 做同样的旋转，
+[4] 那么将得到 $f( \boldsymbol{\mathbf{R}} ^{-1} \boldsymbol{\mathbf{r}} ) = f( \boldsymbol{\mathbf{R}} ^{\mathrm{T}} \boldsymbol{\mathbf{r}} )$。
+[/SCOPE:s_let]
+[5] 括号中为什么要去逆旋转呢？
+[6] 这可以类比一元函数的平移。
+[7] $f(x)$ 向右移动 $x_0$ 得 $f(x-x_0)$，而 $x-x_0$ 恰好是坐标向左平移。
+[SCOPE:s_desc|description|一般坐标变换]
+[8] 同理，对于任何一一对应的坐标变换 $ \boldsymbol{\mathbf{r}} ' = g( \boldsymbol{\mathbf{r}} )$，若想让函数的图像做同样的变换，
+[9] 那么就把 $f( \boldsymbol{\mathbf{r}} )$ 变为 $f(g^{-1}( \boldsymbol{\mathbf{r}} ))$ 即可。
+[/SCOPE:s_desc]
+[/SCOPE:root]

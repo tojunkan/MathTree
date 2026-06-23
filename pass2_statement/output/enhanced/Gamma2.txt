@@ -1,0 +1,56 @@
+[SCOPE:root|description|Gamma 函数 2]
+文章名: Gamma2
+标题: Gamma 函数 2
+
+[SCOPE:s_lim_let|let_bind|极限定义变量]
+[SCOPE:s_lim|description|极限定义]
+[0] 1定义复数域 $\mathbb C$ 中的 $\Gamma$ 函数为
+[1] \begin{equation}
+\Gamma(z) \equiv \lim_{n\to\infty} \frac{n!}{z(z+1)\dots(z+n)}n^z \qquad (z \ne 0, -1, -2,\dots)~,
+\end{equation}
+[2] 该定义包括了 $\Gamma$ 函数的整个定义域。
+
+[/SCOPE:s_lim_let]
+[/SCOPE:s_lim]
+[SCOPE:s_int_let|let_bind|积分定义变量]
+[SCOPE:s_int|description|积分定义]
+[3] Gamma 函数的积分定义式 2 也可以轻易拓展到复数域上，
+[4] 但同样不包含整个定义域
+[5] \begin{equation}
+z! \equiv \Gamma (z + 1) = \int_0^{+\infty} t^z \mathrm{e} ^{-t} \,\mathrm{d}{t} \qquad ( \operatorname{Re} [z] > -1)~.
+\end{equation}
+[6] 在 $ \operatorname{Re} [z] \leqslant -1$ 的区域，积分不收敛。
+
+[/SCOPE:s_int_let]
+[/SCOPE:s_int]
+[SCOPE:s_weier_let|let_bind|Weierstrass 定义变量]
+[SCOPE:s_weier|description|Weierstrass 定义]
+[7] \begin{equation}
+\frac{1}{\Gamma(z)} \equiv z \mathrm{e} ^{\gamma z} \prod_{n=1}^\infty \left(1 + \frac{z}{n} \right) \mathrm{e} ^{-z/n}~,
+\end{equation}
+[8] 其中 $\gamma = 0.57722\dots$ 是
+[9] Euler-Mascheroni 常数 [链接 L0]
+
+跨文章引用:
+  [L0] Euler-Mascheroni 常数 → Masche
+[/SCOPE:s_weier_let]
+[/SCOPE:s_weier]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_lim",
+    "target_scope": "s_int",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "极限定义与积分定义等价（在收敛域内）"
+  },
+  {
+    "source_scope": "s_lim",
+    "target_scope": "s_weier",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "极限定义与Weierstrass定义等价"
+  }
+]

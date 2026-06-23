@@ -1,0 +1,180 @@
+{
+  "article_name": "APdet",
+  "statements": [
+    {
+      "stmt_id": "st_vol_form_def",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_vol_form",
+      "exposed_entities": [
+        "V",
+        "n-form"
+      ]
+    },
+    {
+      "stmt_id": "st_paral_def",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_paral",
+      "exposed_entities": [
+        "V",
+        "v_1",
+        "v_k",
+        "P"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_example",
+      "subtype": "example",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "V",
+        "l",
+        "omega",
+        "P",
+        "v_1",
+        "v_k"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_example",
+      "subtype": "example",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": [
+        "P",
+        "e_1",
+        "e_2",
+        "e_3"
+      ]
+    },
+    {
+      "stmt_id": "st_det_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_det_let",
+      "exposed_entities": [
+        "f",
+        "V",
+        "W",
+        "wedge^k V",
+        "wedge^k f"
+      ]
+    },
+    {
+      "stmt_id": "st_det_let_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_det_let",
+      "exposed_entities": [
+        "lambda"
+      ]
+    },
+    {
+      "stmt_id": "st_det_def",
+      "subtype": "definition",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_det_def",
+      "exposed_entities": [
+        "f",
+        "V",
+        "lambda"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex2_let",
+      "target": "st_ex2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_det_let_assump",
+      "target": "st_det_let_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_det_let_conclusion",
+      "target": "st_det_def",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex2_conclusion",
+      "target": "st_vol_form_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2是体积形式在k=1时的特例"
+    },
+    {
+      "source": "st_ex3_example",
+      "target": "st_ex2_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例3是例2在三维空间的具体例子"
+    },
+    {
+      "source": "st_det_def",
+      "target": "st_vol_form_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "行列式定义依赖于体积形式的概念"
+    }
+  ],
+  "unresolved": []
+}

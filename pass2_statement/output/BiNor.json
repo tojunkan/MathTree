@@ -1,0 +1,115 @@
+{
+  "article_name": "BiNor",
+  "statements": [
+    {
+      "stmt_id": "st_formula",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_formula",
+      "exposed_entities": [
+        "(a+b)^n",
+        "C_n^i",
+        "a",
+        "b",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_no_combine",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_expand_terms",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_combine_terms",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let2",
+      "exposed_entities": [
+        "C_n^i"
+      ]
+    },
+    {
+      "stmt_id": "st_sum_terms",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_final_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_no_combine",
+      "target": "st_expand_terms",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_combine_terms",
+      "target": "st_sum_terms",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_expand_terms",
+      "target": "st_final_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sum_terms",
+      "target": "st_final_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_final_formula",
+      "target": "st_formula",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明推出公式"
+    }
+  ],
+  "unresolved": []
+}

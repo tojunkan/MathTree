@@ -1,0 +1,243 @@
+{
+  "article_name": "LieGrp",
+  "statements": [
+    {
+      "stmt_id": "st_def1_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "G",
+        "μ",
+        "ι"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "G",
+        "μ",
+        "ι"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "G",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_conclusion",
+      "subtype": "lemma",
+      "clause_range": [
+        19,
+        23
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "M",
+        "N",
+        "K",
+        "f",
+        "f_m",
+        "f^n"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_proof_necessity",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1_proof_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_proof_sufficiency",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1_proof_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def5_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        40,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_def5",
+      "exposed_entities": [
+        "G",
+        "f_g",
+        "f^g",
+        "ι"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_GLnR",
+      "subtype": "example",
+      "clause_range": [
+        48,
+        58
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "GL(n,R)",
+        "f_A"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_other",
+      "subtype": "example",
+      "clause_range": [
+        59,
+        59
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "O(n)",
+        "SO(n)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_H_not_Lie",
+      "subtype": "example",
+      "clause_range": [
+        61,
+        69
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "T^2",
+        "H",
+        "a_0"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_H_Lie",
+      "subtype": "example",
+      "clause_range": [
+        70,
+        73
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_def6_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        74,
+        77
+      ],
+      "truth_value": null,
+      "scope_id": "s_def6",
+      "exposed_entities": [
+        "F",
+        "G",
+        "H"
+      ]
+    },
+    {
+      "stmt_id": "st_def7_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        78,
+        81
+      ],
+      "truth_value": null,
+      "scope_id": "s_def7",
+      "exposed_entities": [
+        "G",
+        "H"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        82,
+        85
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "G",
+        "H"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def5_conclusion",
+      "target": "st_def1_conclusion",
+      "edge_type": "equivalent",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_GLnR",
+      "target": "st_def5_conclusion",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_other",
+      "target": "st_def5_conclusion",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_H_not_Lie",
+      "target": "st_def7_conclusion",
+      "edge_type": "counterexample_of",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

@@ -1,0 +1,160 @@
+[SCOPE:root|description|张量积空间]
+文章名: DirPro
+标题: 张量积空间
+
+[SCOPE:s_def|description|张量积空间的定义]
+[0] 我们以二维傅里叶级数来引入张量积的概念。
+[1] 我们已知一维函数的傅里叶级数展开可以看做是一个矢量在一组正交归一基底上的展开，自然地，我们也希望能从矢量的空间的角度理解二维傅里叶级数展开。
+[2] 为了讨论方便，我们只讨论可以用有限项傅里叶级数展开的函数。
+[SCOPE:s_def_let1|let_bind|引入 N_x, N_y]
+[3] 如果 $x$ 和 $y$ 方向分别取 $N_x$ 和 $N_y$ 个函数基底，
+[4] 那么二维傅里叶级数中就有 $N_xN_y$ 个基底，
+[5] 即被展开的函数是一个 $N_xN_y$ 维空间中的矢量。
+[/SCOPE:s_def_let1]
+[6] 观察二维傅里叶级数中的函数基底可以发现，每一个基底都是一个 $N_x$ 维空间中的 $x$ 基底和一个 $N_y$ 维空间中的 $y$ 基底的乘积（两个一元函数相乘变为二元函数）。
+[7] 从矢量的角度来看，这是一种以前没有见过的矢量乘法，它既不是\entry{数乘}{GVecOp}（得到同一个空间的的矢量）也不是内积（得到标量），而是将两个不同矢量空间中的矢量相乘得到一个更高维空间中的矢量，使新矢量的维度等于前两个矢量各自的维度相乘。
+[8] 我们把这样的矢量乘法叫做张量积，用狄拉克符号记为
+[9] \begin{equation}
+\left\lvert v \right\rangle = \left\lvert x \right\rangle \otimes \left\lvert y \right\rangle ~,
+\end{equation}
+[10] 我们把张量积得到的矢量所在的空间叫做
+[11] 张量积空间
+[12] 。
+[13] 为了书写方便我们时常省略张量积号记为 $ \left\lvert x \right\rangle \left\lvert y \right\rangle $，或者将张量积的结果记为一个整体 $ \left\lvert x, y \right\rangle = \left\lvert v \right\rangle $。
+[SCOPE:s_def_let2|let_bind|引入基底 |x_i>, |y_j>]
+[14] 我们将两个一维傅里叶变换空间中的基底分别为 $\{ \left\lvert x_i \right\rangle \}$ 和 $\{ \left\lvert y_j \right\rangle \}$，
+[15] 那么我们定义张量积空间为基底 $\{ \left\lvert x_i \right\rangle \left\lvert y_j \right\rangle \}$ 张成的空间，里面的任意矢量都可以用基底展开。
+[16] \begin{equation}
+\left\lvert v \right\rangle = \sum_{i,j} C_{ij} \left\lvert x_i, y_j \right\rangle ~.
+\end{equation}
+[/SCOPE:s_def_let2]
+[17] 定义张量积满足分配律，
+[18] 即两个低维空间中任意各选一个矢量 $ \left\lvert x \right\rangle $ 和 $ \left\lvert y \right\rangle $，它们都可以在各自空间的基底中展开，
+[19] 则它们的张量积为
+[20] \begin{equation}
+\left\lvert x \right\rangle \left\lvert y \right\rangle = \sum_i a_i \left\lvert x_i \right\rangle \sum_j b_j \left\lvert y_j \right\rangle
+= \sum_{i,j} a_i b_j \left\lvert x_i, y_j \right\rangle ~.
+\end{equation}
+[21] 注意张量积空间的的任意一个矢量不一定可以表示为一个张量积运算，例如 $ \left\lvert x_1 \right\rangle \left\lvert y_1 \right\rangle + \left\lvert x_2 \right\rangle \left\lvert y_2 \right\rangle $（$x_1, x_2$ 不共线，$y_1, y_2$ 不共线）。
+[22a] (x)f_y
+[22b] (y)$ 可以记为 $f(x, y)$，
+[23a] (x)f_y
+[23b] (y)$。
+[24] 任何矢量空间的基底都需要有固定的顺序，一旦确定在所有的计算中都不能改变。
+[25] 张量积基底通常按照以下两种方式排序1
+[26] \begin{equation}
+\left\{ \left\lvert x_1, y_1 \right\rangle , \left\lvert x_1, y_2 \right\rangle \dots \left\lvert x_2, y_1 \right\rangle , \left\lvert x_2, y_2 \right\rangle \dots \right\} ~,
+\end{equation}
+[27] \begin{equation}
+\left\{ \left\lvert x_1, y_1 \right\rangle , \left\lvert x_2, y_1 \right\rangle \dots \left\lvert x_1, y_2 \right\rangle , \left\lvert x_2, y_2 \right\rangle \dots \right\} ~.
+\end{equation}
+[SCOPE:s_def_let3|let_bind|引入排序索引 α]
+[28] 排序以后，我们就可以用单下标来区分不同的基底，令
+[29] \begin{equation}
+\left\lvert x, y \right\rangle _\alpha = \left\lvert x_i, y_j \right\rangle ~,
+\end{equation}
+[30] 对应两种排序，分别有
+[31] \begin{equation}
+\alpha = N_y (i-1) + j
+\quad \text{或} \quad
+\alpha = i + N_x (j-1)
+\qquad
+(1 \leqslant \alpha \leqslant N_xN_y)~.
+\end{equation}
+
+[/SCOPE:s_def]
+[/SCOPE:s_def_let3]
+[SCOPE:s_inner|description|张量积空间的内积]
+[SCOPE:s_inner_let1|let_bind|引入 |c>|d>, |a>|b>]
+[32a] 若我们需要在张量积空间中讨论模长和正交这样的概念
+[32b] 则必须先定义内积：张量积空间中两矢量（先假设它们可以表示为单个张量积）的内积等于把每个低维空间中对应矢量分别做内积再相乘。
+[33] 即 $ \left\lvert c \right\rangle \left\lvert d \right\rangle $ 和 $ \left\lvert a \right\rangle \left\lvert b \right\rangle $ 的内积为
+[34] \begin{equation}
+\left( \left\langle d \right\rvert \left\langle c \right\rvert \right) \left( \left\lvert a \right\rangle \left\lvert b \right\rangle \right)
+= \left\langle d \right\rvert \left\langle c \middle| a \right\rangle \left\lvert b \right\rangle
+= \left\langle c \middle| a \right\rangle \left\langle d \middle| b \right\rangle ~,
+\end{equation}
+[35] 注意 $ \left\lvert c \right\rangle \left\lvert d \right\rangle $ 的厄米共轭记为 $ \left\langle d \right\rvert \left\langle c \right\rvert $ 而不是 $ \left\langle c \right\rvert \left\langle d \right\rvert $。
+[36] 这样就可以很容易看出需要把 $ \left\langle c \middle| a \right\rangle $ 组合做内积而不是 $ \left\langle d \middle| a \right\rangle $。
+[/SCOPE:s_inner_let1]
+[37] 但如果把两矢量记为 $ \left\lvert a, b \right\rangle $ 和 $ \left\lvert c, d \right\rangle $，
+[38] 那么内积记为
+[39] 2
+[40] \begin{equation}
+\left\langle c, d \middle| a, b \right\rangle = \left\langle c \middle| a \right\rangle \left\langle d \middle| b \right\rangle ~,
+\end{equation}
+[41] 张量积空间中的内积是否满足交换律取决于两个低维空间中的内积是否满足交换律。
+[42] 按照内积的一般性质 $ \left\langle u \middle| v \right\rangle = \left\langle v \middle| u \right\rangle ^*$，
+[43] 所以张量积空间中的也有
+[44] \begin{equation}
+\left\langle a, b \middle| c, d \right\rangle = \left\langle a \middle| c \right\rangle \left\langle b \middle| d \right\rangle
+= \left\langle c \middle| a \right\rangle ^* \left\langle d \middle| b \right\rangle ^* = \left\langle c, d \middle| a, b \right\rangle ^*~.
+\end{equation}
+[45] 如果两个低维空间中的基底都是正交归一的，
+[46] 那么张量积空间中的基底也是正交归一的
+[47] \begin{equation}
+\left\langle x_{i'}, y_{j'} \middle| x_i, y_j \right\rangle = \left\langle x_{i'} \middle| x_i \right\rangle \left\langle y_{j'} \middle| y_j \right\rangle
+= \delta_{i,i'}\delta_{j,j'}~,
+\end{equation}
+[48] 以后我们一般讨论正交归一基底。
+[49] 知道了张量积空间基底之间的内积后，要计算张量积空间中任意两个矢量的内积，只需先将它们分解到基底上，再按照内积的分配律和正交归一化条件即可得到熟悉的内积公式
+[50] \begin{equation} \begin{aligned}
+\left\langle v' \middle| v \right\rangle &= \left(\sum_{i',j'} C'^*_{i',j'} \left\langle y_{j'} \right\rvert \left\langle x_{i'} \right\rvert \right) \left(\sum_{i,j} C_{i,j} \left\lvert x_{i'} \right\rangle \left\lvert y_{j'} \right\rangle \right) \\
+&= \sum_{i',j'} \sum_{i,j} C'^*_{i',j'} C_{i,j} \delta_{i,i'}\delta_{j,j'}
+= \sum_{i,j} C'^*_{i,j} C_{i,j}~.
+\end{aligned} \end{equation}
+[51] 正交归一基底的完备性仍然可以记为
+[52] \begin{equation}
+\sum_{i,j} \left\lvert x_i, y_j \right\rangle \left\langle x_i, y_j \right\rvert = \hat{I} ~,
+\end{equation}
+[53] 其中 $ \hat{I} $ 是张量积空间的单位算符。
+[SCOPE:s_inner_let2|let_bind|引入 |f>]
+[54] 我们现在从张量积空间的角度来看二维傅里叶级数，将被展开的函数记为矢量 $ \left\lvert f \right\rangle $，
+[55] 则
+[56] \begin{equation}
+\left\lvert f \right\rangle = \sum_\alpha C_\alpha \left\lvert x, y \right\rangle _\alpha = \sum_{i,j} C_{i,j} \left\lvert x_i, y_j \right\rangle ~.
+\end{equation}
+[/SCOPE:s_inner_let2]
+[57] \begin{equation}
+C_{i,j} = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f_{x,i}(x) f_{y,j}(y) f(x, y) \,\mathrm{d}{x} \,\mathrm{d}{y}
+= \left\langle x_i, y_j \middle| f \right\rangle ~,
+\end{equation}
+[58] 我们可以验证基底的完备性（
+[59] 式 13 [链接 L0]
+[60] 式 15 [链接 L1]
+[61] 式 14 [链接 L2]
+[62] \begin{equation}
+\left\lvert f \right\rangle = \sum_{i,j} \left\lvert x_i, y_j \right\rangle \left\langle x_i, y_i \middle| f \right\rangle
+= \left(\sum_{i,j} \left\lvert x_i, y_j \right\rangle \left\langle x_i, y_i \right\rvert \right) \left\lvert f \right\rangle ~.
+\end{equation}
+[63] 对所有 $ \left\lvert f \right\rangle $ 都成立，这就间接证明了
+[64] 式 13 [链接 L3]
+[65] 若张量积空间中一个矢量可以表示为单个张量积 $ \left\lvert u \right\rangle \left\lvert v \right\rangle $，
+[66] 则其基底展开为
+[67] \begin{equation}
+\left\lvert u \right\rangle \left\lvert v \right\rangle = \left(\sum_i a_i \left\lvert u_i \right\rangle \right) \otimes \left(\sum_j b_j \left\lvert v_j \right\rangle \right)
+= \sum_{i,j} a_i b_j \left\lvert u_i, v_j \right\rangle ~.
+\end{equation}
+
+[/SCOPE:s_inner]
+[SCOPE:s_subspace|description|张量积空间的子空间]
+[SCOPE:s_subspace_let|let_bind|引入 |u_i>, |v_j>]
+[68] 令 $ \left\lvert u_i \right\rangle $ 和 $ \left\lvert v_j \right\rangle $ 分别为两个低维空间的基底，
+[69] 则张量积空间中存在两种 “天然” 的子空间。
+[/SCOPE:s_subspace_let]
+[70] 一种将张量积基底根据 $i$ 的值分成许多组，每组张成一个子空间。
+[71] 同理，也可以根据 $j$ 来划分子空间。
+[72] 我们姑且分别称它们为 $u$ 子空间和 $v$ 子空间。
+[73] 任意一个张量空间中的矢量可以看做是每个子空间中的一个矢量的线性组合
+[74] \begin{equation}
+\begin{aligned}
+\sum_{i,j} C_{ij} \left\lvert u_i \right\rangle \left\lvert v_j \right\rangle &= \sum_j \left(\sum_i C_{ij} \left\lvert u_i \right\rangle \right) \otimes \left\lvert v_j \right\rangle = \sum_j \left\lvert a_j \right\rangle \left\lvert v_j \right\rangle \\
+&= \sum_i \left\lvert u_i \right\rangle \otimes \left(\sum_j C_{ij} \left\lvert v_j \right\rangle \right) = \sum_i \left\lvert u_i \right\rangle \left\lvert b_i \right\rangle ~,
+\end{aligned} \end{equation}
+[75] 上式中的 $ \left\lvert a_j \right\rangle $ 可以理解为矢量在每个 $ \left\lvert v_j \right\rangle $ 子空间的
+[76] 分量
+[77] （$u$ 空间的矢量），$ \left\lvert b_i \right\rangle $ 理解为矢量在每个 $ \left\lvert u_i \right\rangle $ 子空间中的
+[78] 分量
+[79] （$v$ 空间的矢量）。
+[/SCOPE:s_subspace]
+[/SCOPE:root]

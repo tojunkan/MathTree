@@ -1,0 +1,106 @@
+[SCOPE:root|description|矢量的模和度量的关系]
+文章名: SNadM
+标题: 矢量的模和度量的关系
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+
+[0] 在带有内积的矢量空间（实数域 $\mathbb R$ 或复数域 $\mathbb C$ 上的）中，矢量的模的性质可用来定义度量，使得矢量空间可看成一个度量空间。
+[1] 反过来，满足一定性质的度量也可用来定义矢量的模。
+[SCOPE:s_mod_properties|description|矢量模的性质]
+[SCOPE:s_mod_properties_let|let_bind|矢量空间 V]
+[2] 先列出矢量模 $ \left\lVert v \right\rVert =\sqrt{ \left\langle v \middle| v \right\rangle }$ 的性质（设矢量空间为 $V$）（式 5 ）：
+[/SCOPE:s_mod_properties_let]
+[3] \begin{equation}
+\left\lVert x \right\rVert \geq 0\quad (\forall x\in V)~.
+\end{equation}
+[4] 且 $ \left\lVert x \right\rVert =0\Rightarrow x=0$。
+[5] \begin{equation}
+\left\lVert \lambda v \right\rVert = \left\lvert \lambda \right\rvert \left\lVert v \right\rVert \qquad (\lambda\in V,\quad\forall\lambda\in\mathbb C,v\in V)~.
+\end{equation}
+[6] \begin{equation}
+\left\lVert x+y \right\rVert \leq \left\lVert x \right\rVert + \left\lVert y \right\rVert \qquad (\forall x,y\in V)~.
+\end{equation}
+[/SCOPE:s_mod_properties]
+[SCOPE:s_metric_def|description|度量定义]
+[SCOPE:s_metric_def_let|let_bind|度量 d 和集合 E]
+[7] 而度量是满足以下三个条件的函数 $d:E\times E\rightarrow\mathbb R$（$E$ 为任意的集合）（定义 1 ）：
+[/SCOPE:s_metric_def_let]
+[8] 正定性：$d(u, v) \geq 0$，且 $d(u, v)=0$ 当且仅当 $u=v$.
+[9] 对称性：$d(u, v) = d(v, u)$.
+[10] 三角不等式：$d(u, v) \leqslant d(u, w) + d(w, v)$.
+
+[/SCOPE:s_metric_def]
+[SCOPE:s_mod_to_metric|description|从矢量模到度量]
+[11] 通过模 $ \left\lVert x \right\rVert $ 取
+[12] \begin{equation}
+d(x,y):= \left\lVert x-y \right\rVert ~.
+\end{equation}
+[13] 显然，
+[14] 由此定义的 $d$ 满足度量定义中的 3 个条件，
+[15] 故由此定义的 $d$ 可充当矢量空间的
+[16] 度量
+
+[/SCOPE:s_mod_to_metric]
+[SCOPE:s_example1|description|例 1]
+[SCOPE:s_example1_let|let_bind|函数 f, g]
+[17] 在 $V=C_2(a,b)$（例 1 ）中，
+[/SCOPE:s_example1_let]
+[18] \begin{equation}
+d(f,g)=\sqrt{\int_a^b \left\lvert f(x)-g(x) \right\rvert ^2 \,\mathrm{d}{x} }~
+\end{equation}
+
+[/SCOPE:s_example1]
+[SCOPE:s_metric_to_mod|description|从度量到模]
+[SCOPE:s_metric_to_mod_let|let_bind|矢量空间 V]
+[19] 为从度量定义矢量空间中的模，需要的度量还应具有以下两个性质：
+[/SCOPE:s_metric_to_mod_let]
+[20] 4.（平移不变性）$\forall x,y,z\in V,\quad d(x,y)=(x+z,y+z)$；
+[21] 5.（与纯量 $\lambda$ 写出相当于距离延长 $ \left\lvert \lambda \right\rvert $ 倍）：$d(\lambda x,\lambda y)= \left\lvert \lambda \right\rvert d(x,y)$。
+[22] 如此，取
+[23] \begin{equation}
+\left\lVert x \right\rVert :=d(x,0)~,
+\end{equation}
+[24] 则它将具有矢量模的所有性质：矢量模的性质
+[25] 式 1 [链接 L0]
+[26] 式 2 [链接 L1]
+[27] 可通过度量的正定性和性质 5 得到，而第三个性质这样验证：
+[28] \begin{equation}
+\begin{aligned}
+\left\lVert x+y \right\rVert &=d(x+y,0)\underset{\text{平移不变性}}{=}d(x,-y)\\
+&\underset{\text{三角不等式}}{\leq}d(x,0)+d(0,-y)\\
+&\underset{\text{性质 5，对称性}}{=} \left\lVert x \right\rVert + \left\lVert y \right\rVert ~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_metric_to_mod]
+[SCOPE:s_summary|description|小结]
+[29] 带有内积的矢量空间通过矢量的模可以直接看成一个度量空间，而度量空间（若 $E=V$）通过给度量函数进行一些限制才能得到矢量空间的模。
+[30] 即带有内积矢量空间包含在度量空间中。
+[/SCOPE:s_summary]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_mod_to_metric",
+    "target_scope": "s_mod_properties",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "从模到度量利用了模的性质"
+  },
+  {
+    "source_scope": "s_metric_to_mod",
+    "target_scope": "s_metric_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "从度量到模需要度量满足额外性质"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_mod_to_metric",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例 1 是模到度量的具体例子"
+  }
+]

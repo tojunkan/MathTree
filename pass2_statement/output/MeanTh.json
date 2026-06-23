@@ -1,0 +1,696 @@
+{
+  "article_name": "MeanTh",
+  "statements": [
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_max",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "O",
+        "x_0",
+        "f(x_0)"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_min",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "O",
+        "x_0",
+        "f(x_0)"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_extremum",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_maxpoint",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_minpoint",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_extremumpoint",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        11,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "f(x)=x^3-x"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_min",
+      "subtype": "example",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_max",
+      "subtype": "example",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fermat_let",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_fermat",
+      "exposed_entities": [
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_fermat_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_fermat",
+      "exposed_entities": [
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_fermat_concl",
+      "subtype": "theorem",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "true",
+      "scope_id": "s_fermat",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fermat_reductio_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_fermat",
+      "exposed_entities": [
+        "x_0",
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_fermat_reductio_let",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_fermat",
+      "exposed_entities": [
+        "{a_n}"
+      ]
+    },
+    {
+      "stmt_id": "st_fermat_reductio_step1",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_fermat",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fermat_reductio_step2",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_fermat",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fermat_reductio_step3",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_fermat",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fermat_reductio_contra",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_fermat",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fermat_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_fermat",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fermat_remark",
+      "subtype": "remark",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_fermat",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_concl",
+      "subtype": "theorem",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_remark2",
+      "subtype": "remark",
+      "clause_range": [
+        44,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "k",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_lagrange_let",
+      "subtype": "assumption",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_lagrange",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_lagrange_concl",
+      "subtype": "theorem",
+      "clause_range": [
+        50,
+        51
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lagrange",
+      "exposed_entities": [
+        "ξ"
+      ]
+    },
+    {
+      "stmt_id": "st_exer1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        53,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_exer1",
+      "exposed_entities": [
+        "P_n(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_exer1_concl",
+      "subtype": "exercise",
+      "clause_range": [
+        55,
+        55
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exer1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exer1_hint",
+      "subtype": "remark",
+      "clause_range": [
+        56,
+        65
+      ],
+      "truth_value": null,
+      "scope_id": "s_exer1",
+      "exposed_entities": [
+        "f(x)=(x^2-1)^n"
+      ]
+    },
+    {
+      "stmt_id": "st_exer2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        67,
+        68
+      ],
+      "truth_value": null,
+      "scope_id": "s_exer2",
+      "exposed_entities": [
+        "α",
+        "f(x)=x^α"
+      ]
+    },
+    {
+      "stmt_id": "st_exer2_question",
+      "subtype": "question",
+      "clause_range": [
+        68,
+        68
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exer2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exer2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        69,
+        71
+      ],
+      "truth_value": null,
+      "scope_id": "s_exer2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exer2_case1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        72,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_exer2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exer2_case1_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        74,
+        75
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_exer2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exer2_case2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        76,
+        76
+      ],
+      "truth_value": null,
+      "scope_id": "s_exer2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exer2_case2_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        77,
+        78
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_exer2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cauchy_let",
+      "subtype": "assumption",
+      "clause_range": [
+        80,
+        80
+      ],
+      "truth_value": null,
+      "scope_id": "s_cauchy",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_cauchy_concl",
+      "subtype": "theorem",
+      "clause_range": [
+        81,
+        82
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cauchy",
+      "exposed_entities": [
+        "ξ"
+      ]
+    },
+    {
+      "stmt_id": "st_exer3_let",
+      "subtype": "assumption",
+      "clause_range": [
+        84,
+        84
+      ],
+      "truth_value": null,
+      "scope_id": "s_exer3",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_exer3_concl",
+      "subtype": "exercise",
+      "clause_range": [
+        85,
+        87
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exer3",
+      "exposed_entities": [
+        "ξ",
+        "ψ"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_max",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_min",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_max",
+      "target": "st_def1_maxpoint",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_min",
+      "target": "st_def1_minpoint",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_maxpoint",
+      "target": "st_def1_extremumpoint",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_minpoint",
+      "target": "st_def1_extremumpoint",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_fermat_let",
+      "target": "st_fermat_assump",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_fermat_assump",
+      "target": "st_fermat_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_fermat_reductio_assump",
+      "target": "st_fermat_reductio_step1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_fermat_reductio_let",
+      "target": "st_fermat_reductio_step1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_fermat_reductio_step1",
+      "target": "st_fermat_reductio_step2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_fermat_reductio_step2",
+      "target": "st_fermat_reductio_step3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_fermat_reductio_step3",
+      "target": "st_fermat_reductio_contra",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_fermat_reductio_contra",
+      "target": "st_fermat_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lagrange_let",
+      "target": "st_lagrange_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exer2_case1_assump",
+      "target": "st_exer2_case1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exer2_case2_assump",
+      "target": "st_exer2_case2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cauchy_let",
+      "target": "st_cauchy_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_fermat_concl",
+      "target": "st_def1_extremumpoint",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "Fermat定理是极值定义的一个推论"
+    },
+    {
+      "source": "st_def2_concl",
+      "target": "st_fermat_concl",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "Rolle定理可由Fermat定理证明"
+    },
+    {
+      "source": "st_lagrange_concl",
+      "target": "st_def2_concl",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "拉格朗日定理是Rolle定理的推广"
+    },
+    {
+      "source": "st_cauchy_concl",
+      "target": "st_lagrange_concl",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "柯西定理是拉格朗日定理的推广"
+    },
+    {
+      "source": "st_exer1_concl",
+      "target": "st_def2_concl",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "习题1应用Rolle定理"
+    },
+    {
+      "source": "st_exer2_question",
+      "target": "st_lagrange_concl",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "习题2应用拉格朗日定理"
+    },
+    {
+      "source": "st_exer3_concl",
+      "target": "st_cauchy_concl",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "习题3应用柯西定理"
+    }
+  ],
+  "unresolved": []
+}

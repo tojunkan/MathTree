@@ -1,0 +1,25 @@
+[SCOPE:root|description|多元傅里叶变换]
+文章名: NFTran
+标题: 多元傅里叶变换
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=$N$ 维高斯波包
+
+[SCOPE:s_example1|description|N维高斯波包]
+[0] 例 1 $N$ 维高斯波包
+[SCOPE:s_example1_let|let_bind|高斯函数变量]
+[1] 要计算 $n$ 维高斯函数
+[2] \begin{equation}
+f( \boldsymbol{\mathbf{r}} ) = \exp\left(-a \boldsymbol{\mathbf{r}} ^2\right) \qquad (a > 0)~.
+\end{equation}
+[3] 式 12
+[4] \begin{equation}
+g( \boldsymbol{\mathbf{k}} ) = \frac{1}{(\sqrt{2a})^N} \mathrm{e} ^{-\frac{k^2}{4a}}~.
+\end{equation}
+
+跨文章引用:
+  [L0] 多元函数的傅里叶级数 → NdFuri
+  [L1] 狄拉克 delta 函数 → Delta
+[/SCOPE:s_example1]
+[/SCOPE:s_example1_let]
+[/SCOPE:root]

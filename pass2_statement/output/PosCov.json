@@ -1,0 +1,1107 @@
+{
+  "article_name": "PosCov",
+  "statements": [
+    {
+      "stmt_id": "st_intro_question",
+      "subtype": "question",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": "unknown",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_list",
+      "subtype": "remark",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_class1",
+      "subtype": "remark",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_comp_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        3,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_linear_comp",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_comp_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_comp_let",
+      "exposed_entities": [
+        "a_n",
+        "b_n"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_comp_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_linear_comp",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exercise1_task",
+      "subtype": "exercise",
+      "clause_range": [
+        6,
+        9
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_convergence_p1",
+      "subtype": "conclusion",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_surprising",
+      "subtype": "remark",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_formula",
+      "subtype": "remark",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2_let",
+      "exposed_entities": [
+        "p",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_inequality",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2_let",
+      "exposed_entities": [
+        "c",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_comparison",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_root_test_intro",
+      "subtype": "remark",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_root_test_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        23,
+        30
+      ],
+      "truth_value": "true",
+      "scope_id": "s_root_test",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_root_test_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_root_test_let",
+      "exposed_entities": [
+        "a_n",
+        "q"
+      ]
+    },
+    {
+      "stmt_id": "st_root_test_concl_conv",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_root_test_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_root_test_assump_div",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_root_test_let",
+      "exposed_entities": [
+        "Q"
+      ]
+    },
+    {
+      "stmt_id": "st_root_test_concl_div",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_root_test_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_root_test_explanation",
+      "subtype": "remark",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_root_test_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_root_test_cauchy_hadamard",
+      "subtype": "remark",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_root_test_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_root_test_limit1",
+      "subtype": "remark",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_root_test_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mul_comp_intro",
+      "subtype": "remark",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_root_test",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mul_comp_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        32,
+        38
+      ],
+      "truth_value": "true",
+      "scope_id": "s_mul_comp",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mul_comp_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_mul_comp_let",
+      "exposed_entities": [
+        "a_n",
+        "b_n"
+      ]
+    },
+    {
+      "stmt_id": "st_mul_comp_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_mul_comp_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mul_comp_proof",
+      "subtype": "remark",
+      "clause_range": [
+        35,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_mul_comp_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ratio_test_intro",
+      "subtype": "remark",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_mul_comp",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ratio_test_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        40,
+        45
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ratio_test",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ratio_test_assump_conv",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_ratio_test_let",
+      "exposed_entities": [
+        "a_n",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_ratio_test_concl_conv",
+      "subtype": "conclusion",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ratio_test_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ratio_test_assump_div",
+      "subtype": "assumption",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_ratio_test_let",
+      "exposed_entities": [
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_ratio_test_concl_div",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ratio_test_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ratio_test_remark",
+      "subtype": "remark",
+      "clause_range": [
+        43,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_ratio_test_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ratio_test_limit1",
+      "subtype": "remark",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_ratio_test",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_kummer_intro",
+      "subtype": "remark",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_kummer_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        48,
+        55
+      ],
+      "truth_value": "true",
+      "scope_id": "s_kummer",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_kummer_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_kummer_let",
+      "exposed_entities": [
+        "a_n",
+        "c_n"
+      ]
+    },
+    {
+      "stmt_id": "st_kummer_cond_conv",
+      "subtype": "assumption",
+      "clause_range": [
+        50,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_kummer_let",
+      "exposed_entities": [
+        "kappa"
+      ]
+    },
+    {
+      "stmt_id": "st_kummer_concl_conv",
+      "subtype": "conclusion",
+      "clause_range": [
+        52,
+        52
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_kummer_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_kummer_cond_div",
+      "subtype": "assumption",
+      "clause_range": [
+        53,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_kummer_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_kummer_concl_div",
+      "subtype": "conclusion",
+      "clause_range": [
+        55,
+        55
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_kummer_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_kummer_proof",
+      "subtype": "remark",
+      "clause_range": [
+        56,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_kummer_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_kummer_remark_choice",
+      "subtype": "remark",
+      "clause_range": [
+        65,
+        68
+      ],
+      "truth_value": null,
+      "scope_id": "s_kummer",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_kummer_examples",
+      "subtype": "remark",
+      "clause_range": [
+        69,
+        71
+      ],
+      "truth_value": null,
+      "scope_id": "s_kummer",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_raabe_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        72,
+        80
+      ],
+      "truth_value": "true",
+      "scope_id": "s_raabe",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_raabe_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        73,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_raabe_let",
+      "exposed_entities": [
+        "a_n"
+      ]
+    },
+    {
+      "stmt_id": "st_raabe_cond_conv",
+      "subtype": "assumption",
+      "clause_range": [
+        74,
+        75
+      ],
+      "truth_value": null,
+      "scope_id": "s_raabe_let",
+      "exposed_entities": [
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_raabe_concl_conv",
+      "subtype": "conclusion",
+      "clause_range": [
+        76,
+        76
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_raabe_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_raabe_cond_div",
+      "subtype": "assumption",
+      "clause_range": [
+        77,
+        78
+      ],
+      "truth_value": null,
+      "scope_id": "s_raabe_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_raabe_concl_div",
+      "subtype": "conclusion",
+      "clause_range": [
+        79,
+        79
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_raabe_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_raabe_limit1",
+      "subtype": "remark",
+      "clause_range": [
+        80,
+        80
+      ],
+      "truth_value": null,
+      "scope_id": "s_raabe_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bertrand_intro",
+      "subtype": "remark",
+      "clause_range": [
+        81,
+        81
+      ],
+      "truth_value": null,
+      "scope_id": "s_raabe",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bertrand_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        82,
+        90
+      ],
+      "truth_value": "true",
+      "scope_id": "s_bertrand",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bertrand_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        83,
+        83
+      ],
+      "truth_value": null,
+      "scope_id": "s_bertrand_let",
+      "exposed_entities": [
+        "a_n"
+      ]
+    },
+    {
+      "stmt_id": "st_bertrand_cond_conv",
+      "subtype": "assumption",
+      "clause_range": [
+        84,
+        85
+      ],
+      "truth_value": null,
+      "scope_id": "s_bertrand_let",
+      "exposed_entities": [
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_bertrand_concl_conv",
+      "subtype": "conclusion",
+      "clause_range": [
+        86,
+        86
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_bertrand_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bertrand_cond_div",
+      "subtype": "assumption",
+      "clause_range": [
+        87,
+        88
+      ],
+      "truth_value": null,
+      "scope_id": "s_bertrand_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bertrand_concl_div",
+      "subtype": "conclusion",
+      "clause_range": [
+        89,
+        89
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_bertrand_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bertrand_limit1",
+      "subtype": "remark",
+      "clause_range": [
+        90,
+        90
+      ],
+      "truth_value": null,
+      "scope_id": "s_bertrand_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_comparison_remark",
+      "subtype": "remark",
+      "clause_range": [
+        91,
+        101
+      ],
+      "truth_value": null,
+      "scope_id": "s_bertrand",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_hypergeometric",
+      "subtype": "example",
+      "clause_range": [
+        102,
+        116
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        103,
+        105
+      ],
+      "truth_value": null,
+      "scope_id": "s_example3_let",
+      "exposed_entities": [
+        "a",
+        "b",
+        "c",
+        "z",
+        "F(a,b,c;z)"
+      ]
+    },
+    {
+      "stmt_id": "st_example3_radius",
+      "subtype": "conclusion",
+      "clause_range": [
+        106,
+        106
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example3_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_ratio",
+      "subtype": "remark",
+      "clause_range": [
+        107,
+        109
+      ],
+      "truth_value": null,
+      "scope_id": "s_example3_let",
+      "exposed_entities": [
+        "h_n",
+        "theta_n"
+      ]
+    },
+    {
+      "stmt_id": "st_example3_bertrand_seq",
+      "subtype": "remark",
+      "clause_range": [
+        110,
+        111
+      ],
+      "truth_value": null,
+      "scope_id": "s_example3_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_apply",
+      "subtype": "remark",
+      "clause_range": [
+        112,
+        112
+      ],
+      "truth_value": null,
+      "scope_id": "s_example3_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_case1",
+      "subtype": "assumption",
+      "clause_range": [
+        113,
+        113
+      ],
+      "truth_value": null,
+      "scope_id": "s_example3_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_concl_conv",
+      "subtype": "conclusion",
+      "clause_range": [
+        114,
+        114
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example3_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_case2",
+      "subtype": "assumption",
+      "clause_range": [
+        114,
+        114
+      ],
+      "truth_value": null,
+      "scope_id": "s_example3_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_concl_div",
+      "subtype": "conclusion",
+      "clause_range": [
+        115,
+        115
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example3_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_case3",
+      "subtype": "assumption",
+      "clause_range": [
+        115,
+        115
+      ],
+      "truth_value": null,
+      "scope_id": "s_example3_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_concl_div2",
+      "subtype": "conclusion",
+      "clause_range": [
+        116,
+        116
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example3_let",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_linear_comp_assump",
+      "target": "st_linear_comp_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_assump",
+      "target": "st_example2_comparison",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_inequality",
+      "target": "st_example2_comparison",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_comparison",
+      "target": "st_example2_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_root_test_assump",
+      "target": "st_root_test_concl_conv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_root_test_assump_div",
+      "target": "st_root_test_concl_div",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_mul_comp_assump",
+      "target": "st_mul_comp_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ratio_test_assump_conv",
+      "target": "st_ratio_test_concl_conv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ratio_test_assump_div",
+      "target": "st_ratio_test_concl_div",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_kummer_assump",
+      "target": "st_kummer_cond_conv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_kummer_cond_conv",
+      "target": "st_kummer_concl_conv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_kummer_assump",
+      "target": "st_kummer_cond_div",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_kummer_cond_div",
+      "target": "st_kummer_concl_div",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_raabe_assump",
+      "target": "st_raabe_cond_conv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_raabe_cond_conv",
+      "target": "st_raabe_concl_conv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_raabe_assump",
+      "target": "st_raabe_cond_div",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_raabe_cond_div",
+      "target": "st_raabe_concl_div",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_bertrand_assump",
+      "target": "st_bertrand_cond_conv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_bertrand_cond_conv",
+      "target": "st_bertrand_concl_conv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_bertrand_assump",
+      "target": "st_bertrand_cond_div",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_bertrand_cond_div",
+      "target": "st_bertrand_concl_div",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example3_assump",
+      "target": "st_example3_radius",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example3_case1",
+      "target": "st_example3_concl_conv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example3_case2",
+      "target": "st_example3_concl_div",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example3_case3",
+      "target": "st_example3_concl_div2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_kummer_proof",
+      "target": "st_kummer_theorem",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_kummer_remark_choice",
+      "target": "st_kummer_theorem",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_kummer_examples",
+      "target": "st_kummer_theorem",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_raabe_limit1",
+      "target": "st_raabe_theorem",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_bertrand_limit1",
+      "target": "st_bertrand_theorem",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_comparison_remark",
+      "target": "st_bertrand_theorem",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_example3_ratio",
+      "target": "st_example3_hypergeometric",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_example3_bertrand_seq",
+      "target": "st_example3_hypergeometric",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_example3_apply",
+      "target": "st_example3_hypergeometric",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_root_test_theorem",
+      "target": "st_linear_comp_theorem",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "根值判别法是线性比较原理的特殊情形"
+    },
+    {
+      "source": "st_ratio_test_theorem",
+      "target": "st_mul_comp_theorem",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "比值判别法是乘性比较原理的特殊情形"
+    },
+    {
+      "source": "st_raabe_theorem",
+      "target": "st_kummer_theorem",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "拉阿贝判别法是库莫尔判别法取c_n=n的特殊情形"
+    },
+    {
+      "source": "st_bertrand_theorem",
+      "target": "st_kummer_theorem",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "贝特朗判别法是库莫尔判别法取c_n=n ln n的特殊情形"
+    },
+    {
+      "source": "st_ratio_test_theorem",
+      "target": "st_raabe_theorem",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "比值判别法是拉阿贝判别法的弱特殊情形"
+    }
+  ],
+  "unresolved": []
+}

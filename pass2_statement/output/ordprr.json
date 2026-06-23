@@ -1,0 +1,143 @@
+{
+  "article_name": "ordprr",
+  "statements": [
+    {
+      "stmt_id": "st_lemma1_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "n",
+        "a",
+        "b",
+        "r",
+        "P"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_conclusion1",
+      "subtype": "conclusion",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_conclusion2",
+      "subtype": "conclusion",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "d",
+        "a",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_definition",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "d",
+        "a",
+        "m",
+        "φ(m)"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "P",
+        "x",
+        "y",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark",
+      "subtype": "remark",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_lemma1_assumptions",
+      "target": "st_lemma1_conclusion1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_assumptions",
+      "target": "st_lemma1_conclusion2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_assumptions",
+      "target": "st_def2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_def2_conclusion",
+      "target": "st_lemma1_conclusion2",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义2中应用引理1的结论"
+    }
+  ],
+  "unresolved": []
+}

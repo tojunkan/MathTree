@@ -1,0 +1,40 @@
+[SCOPE:root|description|命题]
+文章名: prop
+标题: 命题
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=真值
+  [1] type=definition heading=定义 2 title=命题
+  [2] type=definition heading=定义 3 title=命题常量
+  [3] type=definition heading=定义 4 title=命题变元
+
+[SCOPE:s_def1|description|真值]
+[0] 定义 1 真值
+[1] 真值有真（True，$1$）与假（False，$0$）两个值组成。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|命题]
+[2] 定义 2 命题
+[3] 命题是具有确切的真值（唯一的真值）的无歧义的陈述句。
+[4] 命题无需知道真值具体是什么，
+[5] 但是要求真值一定唯一。
+[6] 例如，“$x>3$” 不是命题，
+[7] 但 “对于所有实数 $x$，$x>3$” 是命题。
+[8] 有歧义的，例如 “这句话是假的” 不是命题。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|命题常量]
+[9] 定义 3 命题常量
+[10] 对于在一个解释范围内，命题的真值是确定的，
+[11] 则称这命题是命题常量。
+
+[/SCOPE:s_def3]
+[SCOPE:s_def4|description|命题变元]
+[12] 定义 4 命题变元
+[13] 命题变元（又称句子变元）是一个可真可假的变量。
+[14] 代表了一个在某解释范围内的、不确定的、泛指的命题，以真或假为取值范围。
+[15] 特别的，因为命题变元可真可假，
+[16] 所以其不是命题，
+[17] 但当确定了某个解释的时候，命题变元会确定，此时命题变元化为命题常元。
+[/SCOPE:s_def4]
+[/SCOPE:root]

@@ -1,0 +1,885 @@
+{
+  "article_name": "EliCor",
+  "statements": [
+    {
+      "stmt_id": "st_elliptic_def",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_elliptic",
+      "exposed_entities": [
+        "椭圆坐标系"
+      ]
+    },
+    {
+      "stmt_id": "st_elliptic_coords",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_elliptic_let1",
+      "exposed_entities": [
+        "ξ",
+        "η",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_elliptic_transform",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_elliptic_let1",
+      "exposed_entities": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_elliptic_eqs",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_elliptic",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_elliptic_ecc",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_elliptic",
+      "exposed_entities": [
+        "e"
+      ]
+    },
+    {
+      "stmt_id": "st_elliptic_orthogonal",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_elliptic",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_elliptic_unit_vec_def",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_elliptic_let2",
+      "exposed_entities": [
+        "ξ_hat",
+        "η_hat"
+      ]
+    },
+    {
+      "stmt_id": "st_elliptic_orthogonal_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_elliptic_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cylindrical_def",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_cyl_let1",
+      "exposed_entities": [
+        "椭圆柱坐标系",
+        "z"
+      ]
+    },
+    {
+      "stmt_id": "st_cylindrical_transform",
+      "subtype": "definition",
+      "clause_range": [
+        25,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_cyl_let1",
+      "exposed_entities": [
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    {
+      "stmt_id": "st_cylindrical_eqs",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cylindrical",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cylindrical_orthogonal",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cylindrical",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cylindrical_unit_vec",
+      "subtype": "definition",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_cylindrical",
+      "exposed_entities": [
+        "ξ_hat",
+        "η_hat",
+        "z_hat"
+      ]
+    },
+    {
+      "stmt_id": "st_cylindrical_alpha_def",
+      "subtype": "definition",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_cyl_let2",
+      "exposed_entities": [
+        "α"
+      ]
+    },
+    {
+      "stmt_id": "st_prolate_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        37,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_pro_let1",
+      "exposed_entities": [
+        "椭圆坐标系",
+        "xOz平面",
+        "z轴"
+      ]
+    },
+    {
+      "stmt_id": "st_prolate_phi_def",
+      "subtype": "definition",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_pro_let1",
+      "exposed_entities": [
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_prolate_surfaces",
+      "subtype": "conclusion",
+      "clause_range": [
+        41,
+        44
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_pro_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prolate_phi_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        50
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_pro_let1",
+      "exposed_entities": [
+        "f(φ)"
+      ]
+    },
+    {
+      "stmt_id": "st_prolate_g_def",
+      "subtype": "definition",
+      "clause_range": [
+        51,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_pro_let1",
+      "exposed_entities": [
+        "g(ξ,η)"
+      ]
+    },
+    {
+      "stmt_id": "st_prolate_eq_surfaces",
+      "subtype": "conclusion",
+      "clause_range": [
+        53,
+        54
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_pro_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prolate_eta_range",
+      "subtype": "remark",
+      "clause_range": [
+        55,
+        56
+      ],
+      "truth_value": null,
+      "scope_id": "s_pro_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prolate_z_solve",
+      "subtype": "conclusion",
+      "clause_range": [
+        57,
+        59
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_pro_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prolate_xy_solve",
+      "subtype": "conclusion",
+      "clause_range": [
+        60,
+        62
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_pro_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prolate_g_solve",
+      "subtype": "conclusion",
+      "clause_range": [
+        63,
+        67
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_pro_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prolate_xy_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        68,
+        70
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_pro_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prolate_transform",
+      "subtype": "definition",
+      "clause_range": [
+        71,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_pro_let1",
+      "exposed_entities": [
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    {
+      "stmt_id": "st_prolate_orthogonal",
+      "subtype": "conclusion",
+      "clause_range": [
+        74,
+        74
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_pro_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prolate_unit_vec",
+      "subtype": "definition",
+      "clause_range": [
+        75,
+        76
+      ],
+      "truth_value": null,
+      "scope_id": "s_pro_let2",
+      "exposed_entities": [
+        "ξ_hat",
+        "η_hat",
+        "φ_hat"
+      ]
+    },
+    {
+      "stmt_id": "st_oblate_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        77,
+        79
+      ],
+      "truth_value": null,
+      "scope_id": "s_obl_let1",
+      "exposed_entities": [
+        "扁椭球坐标系",
+        "x轴",
+        "z轴",
+        "c",
+        "焦圆"
+      ]
+    },
+    {
+      "stmt_id": "st_oblate_transform",
+      "subtype": "definition",
+      "clause_range": [
+        80,
+        82
+      ],
+      "truth_value": null,
+      "scope_id": "s_obl_let1",
+      "exposed_entities": [
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    {
+      "stmt_id": "st_oblate_phi_remark",
+      "subtype": "remark",
+      "clause_range": [
+        83,
+        83
+      ],
+      "truth_value": null,
+      "scope_id": "s_obl_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_oblate_unit_vec",
+      "subtype": "definition",
+      "clause_range": [
+        84,
+        85
+      ],
+      "truth_value": null,
+      "scope_id": "s_obl_let2",
+      "exposed_entities": [
+        "ξ_hat",
+        "η_hat",
+        "φ_hat"
+      ]
+    },
+    {
+      "stmt_id": "st_lame_intro",
+      "subtype": "assumption",
+      "clause_range": [
+        86,
+        86
+      ],
+      "truth_value": null,
+      "scope_id": "s_lame",
+      "exposed_entities": [
+        "拉梅系数",
+        "q_i"
+      ]
+    },
+    {
+      "stmt_id": "st_lame_cyl",
+      "subtype": "conclusion",
+      "clause_range": [
+        87,
+        88
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lame",
+      "exposed_entities": [
+        "H_ξ",
+        "H_η",
+        "H_z"
+      ]
+    },
+    {
+      "stmt_id": "st_lame_pro",
+      "subtype": "conclusion",
+      "clause_range": [
+        89,
+        91
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lame",
+      "exposed_entities": [
+        "H_ξ",
+        "H_η",
+        "H_φ"
+      ]
+    },
+    {
+      "stmt_id": "st_lame_obl",
+      "subtype": "conclusion",
+      "clause_range": [
+        92,
+        94
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lame",
+      "exposed_entities": [
+        "H_ξ",
+        "H_η",
+        "H_φ"
+      ]
+    },
+    {
+      "stmt_id": "st_vec_cyl_grad",
+      "subtype": "conclusion",
+      "clause_range": [
+        95,
+        96
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_vec_cyl",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vec_cyl_div",
+      "subtype": "conclusion",
+      "clause_range": [
+        97,
+        97
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_vec_cyl",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vec_cyl_curl",
+      "subtype": "conclusion",
+      "clause_range": [
+        98,
+        98
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_vec_cyl",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vec_cyl_laplacian",
+      "subtype": "conclusion",
+      "clause_range": [
+        99,
+        99
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_vec_cyl",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vec_pro_grad",
+      "subtype": "conclusion",
+      "clause_range": [
+        100,
+        101
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_vec_pro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vec_pro_div",
+      "subtype": "conclusion",
+      "clause_range": [
+        102,
+        102
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_vec_pro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vec_pro_curl",
+      "subtype": "conclusion",
+      "clause_range": [
+        103,
+        103
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_vec_pro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vec_pro_laplacian",
+      "subtype": "conclusion",
+      "clause_range": [
+        104,
+        104
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_vec_pro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vec_obl_grad",
+      "subtype": "conclusion",
+      "clause_range": [
+        105,
+        106
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_vec_obl",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vec_obl_div",
+      "subtype": "conclusion",
+      "clause_range": [
+        107,
+        107
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_vec_obl",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vec_obl_curl",
+      "subtype": "conclusion",
+      "clause_range": [
+        108,
+        108
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_vec_obl",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vec_obl_laplacian",
+      "subtype": "conclusion",
+      "clause_range": [
+        109,
+        109
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_vec_obl",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_elliptic_coords",
+      "target": "st_elliptic_transform",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_elliptic_transform",
+      "target": "st_elliptic_eqs",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_elliptic_eqs",
+      "target": "st_elliptic_ecc",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_elliptic_eqs",
+      "target": "st_elliptic_orthogonal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_elliptic_unit_vec_def",
+      "target": "st_elliptic_orthogonal_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cylindrical_def",
+      "target": "st_cylindrical_transform",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cylindrical_transform",
+      "target": "st_cylindrical_eqs",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cylindrical_eqs",
+      "target": "st_cylindrical_orthogonal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cylindrical_orthogonal",
+      "target": "st_cylindrical_unit_vec",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prolate_assump",
+      "target": "st_prolate_phi_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prolate_phi_def",
+      "target": "st_prolate_surfaces",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prolate_surfaces",
+      "target": "st_prolate_phi_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prolate_phi_eq",
+      "target": "st_prolate_g_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prolate_g_def",
+      "target": "st_prolate_eq_surfaces",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prolate_eq_surfaces",
+      "target": "st_prolate_z_solve",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prolate_z_solve",
+      "target": "st_prolate_xy_solve",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prolate_xy_solve",
+      "target": "st_prolate_g_solve",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prolate_g_solve",
+      "target": "st_prolate_xy_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prolate_xy_final",
+      "target": "st_prolate_transform",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prolate_transform",
+      "target": "st_prolate_orthogonal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prolate_orthogonal",
+      "target": "st_prolate_unit_vec",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_oblate_assump",
+      "target": "st_oblate_transform",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_oblate_transform",
+      "target": "st_oblate_unit_vec",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lame_intro",
+      "target": "st_lame_cyl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lame_intro",
+      "target": "st_lame_pro",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lame_intro",
+      "target": "st_lame_obl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_vec_cyl_grad",
+      "target": "st_vec_cyl_div",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_vec_cyl_div",
+      "target": "st_vec_cyl_curl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_vec_cyl_curl",
+      "target": "st_vec_cyl_laplacian",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_vec_pro_grad",
+      "target": "st_vec_pro_div",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_vec_pro_div",
+      "target": "st_vec_pro_curl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_vec_pro_curl",
+      "target": "st_vec_pro_laplacian",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_vec_obl_grad",
+      "target": "st_vec_obl_div",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_vec_obl_div",
+      "target": "st_vec_obl_curl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_vec_obl_curl",
+      "target": "st_vec_obl_laplacian",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_cylindrical_def",
+      "target": "st_elliptic_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "椭圆柱坐标系是椭圆坐标系沿z轴投影得到"
+    },
+    {
+      "source": "st_prolate_assump",
+      "target": "st_elliptic_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "长椭球坐标系由椭圆坐标系绕长轴旋转得到"
+    },
+    {
+      "source": "st_oblate_assump",
+      "target": "st_elliptic_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "扁椭球坐标系由椭圆坐标系绕短轴旋转得到"
+    },
+    {
+      "source": "st_lame_cyl",
+      "target": "st_cylindrical_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "拉梅系数由椭圆柱坐标系推导"
+    },
+    {
+      "source": "st_lame_pro",
+      "target": "st_prolate_transform",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "拉梅系数由长椭球坐标系推导"
+    },
+    {
+      "source": "st_lame_obl",
+      "target": "st_oblate_transform",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "拉梅系数由扁椭球坐标系推导"
+    },
+    {
+      "source": "st_vec_cyl_grad",
+      "target": "st_cylindrical_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "矢量算符基于椭圆柱坐标系"
+    },
+    {
+      "source": "st_vec_pro_grad",
+      "target": "st_prolate_transform",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "矢量算符基于长椭球坐标系"
+    },
+    {
+      "source": "st_vec_obl_grad",
+      "target": "st_oblate_transform",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "矢量算符基于扁椭球坐标系"
+    }
+  ],
+  "unresolved": []
+}

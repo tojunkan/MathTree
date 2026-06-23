@@ -1,0 +1,87 @@
+[SCOPE:root|description|亥姆霍兹分解]
+文章名: HelmTh
+标题: 亥姆霍兹分解
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=亥姆霍兹分解
+
+[SCOPE:s_theorem|description|亥姆霍兹分解定理]
+[0] 定理 1 亥姆霍兹分解
+[SCOPE:s_theorem_let|let_bind|定理中的变量定义]
+[1] 1任何处处可导的矢量场都可以分解为一个无旋场 $ \boldsymbol{\mathbf{F}} _{d}( \boldsymbol{\mathbf{r}} )$，一个无散场 $ \boldsymbol{\mathbf{F}} _{c}( \boldsymbol{\mathbf{r}} )$，和一个调和场 $ \boldsymbol{\mathbf{H}} ( \boldsymbol{\mathbf{r}} )$。
+[2] \begin{equation}
+\boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} ) = \boldsymbol{\mathbf{F}} _{d}( \boldsymbol{\mathbf{r}} ) + \boldsymbol{\mathbf{F}} _{c}( \boldsymbol{\mathbf{r}} ) + \boldsymbol{\mathbf{H}} ( \boldsymbol{\mathbf{r}} )~.
+\end{equation}
+[3] \begin{equation}
+\rho( \boldsymbol{\mathbf{r}} ) \equiv \boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} ) ~,\qquad
+\boldsymbol{\mathbf{j}} ( \boldsymbol{\mathbf{r}} ) \equiv \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} )~,
+\end{equation}
+[4] \begin{equation}
+\boldsymbol{\mathbf{F}} _{d}( \boldsymbol{\mathbf{r}} ) \equiv \frac{1}{4\pi}\int \frac{\rho( \boldsymbol{\mathbf{r}} ') \boldsymbol{\mathbf{R}} }{R^3} \,\mathrm{d}{V'} ~,
+\end{equation}
+[5] \begin{equation}
+\boldsymbol{\mathbf{F}} _{c}( \boldsymbol{\mathbf{r}} ) \equiv \frac{1}{4\pi}\int \frac{ \boldsymbol{\mathbf{j}} ( \boldsymbol{\mathbf{r}} ') \boldsymbol\times \boldsymbol{\mathbf{R}} }{R^3} \,\mathrm{d}{V'} ~,
+\end{equation}
+[6] \begin{equation}
+\boldsymbol{\mathbf{H}} ( \boldsymbol{\mathbf{r}} ) \equiv \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} ) - \boldsymbol{\mathbf{F}} _{d}( \boldsymbol{\mathbf{r}} ) - \boldsymbol{\mathbf{F}} _{c}( \boldsymbol{\mathbf{r}} )~.
+\end{equation}
+[/SCOPE:s_theorem_let]
+[7] 矢量叉乘
+[8] 亥姆霍兹分解分解不是唯一的，我们也可以给式 3 和式 4 右边分别加上一个任意调和场，分解依然成立。
+[9] 除此之外不存在其他分解方法。
+[10a] 特殊地（例如在电磁学中）
+[10b] 如果要求 $ \boldsymbol{\mathbf{F}} _d, \boldsymbol{\mathbf{F}} _c$ 在无穷远处都趋于零，这，则要求式 3 和式 4 右边不能加上非零调和场（见定理 2 ），
+[11] 所以该条件下亥姆霍兹分解是唯一的。
+[12] 式 3 和式 4 可以分别类比静电学中的库仑定律（式 6 ）和静磁学中的毕奥—萨伐尔定律（式 2 ）：把 $ \boldsymbol{\mathbf{F}} _c$ 看作静电场，$\rho( \boldsymbol{\mathbf{r}} )$ 看作电荷密度，满足高斯定律（式 2 ）；
+[13] 把 $ \boldsymbol{\mathbf{F}} _c$ 看作静磁场，$ \boldsymbol{\mathbf{j}} ( \boldsymbol{\mathbf{r}} )$ 看作电流密度，满足安培环路定律（式 2 ）。
+[14] 也可以把 $ \boldsymbol{\mathbf{j}} $ 看成磁场的负时间偏导 $- \partial \boldsymbol{\mathbf{B}} /\partial t $，$ \boldsymbol{\mathbf{F}} _c$ 看成感生电场，满足电磁感应定律（式 6 ）。
+[15] 现在我们可以回答一个问题：已知一个矢量场的散度和旋度，是否能唯一确定该矢量场？
+[16] 答案是不能，因为还可以叠加一个任意调和场。
+[17] 但如果该矢量场在无穷远处趋于零，
+[18] 那么就可以唯一确定。
+
+[/SCOPE:s_theorem]
+[SCOPE:s_proof|description|证明]
+[19] 根据定理 2 以及定理 2 ，式 3 和式 4 中定义的 $ \boldsymbol{\mathbf{F}} _{d}( \boldsymbol{\mathbf{r}} )$ 和 $ \boldsymbol{\mathbf{F}} _{c}( \boldsymbol{\mathbf{r}} )$ 分别是无旋场和无散场，且满足
+[20] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{F}} _d( \boldsymbol{\mathbf{r}} ) = \rho( \boldsymbol{\mathbf{r}} ) = \boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} )~,
+\end{equation}
+[21] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{F}} _c( \boldsymbol{\mathbf{r}} ) = \boldsymbol{\mathbf{j}} ( \boldsymbol{\mathbf{r}} ) = \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} )~.
+\end{equation}
+[22] 容易证明 $ \boldsymbol{\mathbf{H}} ( \boldsymbol{\mathbf{r}} )$ 必定是调和场（无散且无旋）：
+[23] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{H}} = \boldsymbol{\nabla}\boldsymbol{\cdot} ( \boldsymbol{\mathbf{F}} - \boldsymbol{\mathbf{F}} _d) = 0~,
+\end{equation}
+[24] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{H}} = \boldsymbol{\nabla}\boldsymbol{\times} ( \boldsymbol{\mathbf{F}} - \boldsymbol{\mathbf{F}} _d) = \boldsymbol{\mathbf{0}} ~,
+\end{equation}
+
+[/SCOPE:s_proof]
+[SCOPE:s_alt_rep|description|另一种表示]
+[25] 上述分解采用的是积分的方法，我们也可以用微分来描述。
+[SCOPE:s_alt_rep_let|let_bind|另一种表示中的变量]
+[26] 无旋场总能表示为某个标量函数 $V( \boldsymbol{\mathbf{r}} )$ 的梯度（证明见势能），而无散场总能表示为另一个矢量场 $ \boldsymbol{\mathbf{A}} $ 的旋度，
+[27] 所以
+[28] \begin{equation}
+\boldsymbol{\mathbf{F}} _{d} = \boldsymbol\nabla V~,\qquad \boldsymbol{\mathbf{F}} _{c} = \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{A}} ~.
+\end{equation}
+[/SCOPE:s_alt_rep_let]
+[29] 所以亥姆霍兹分解也可以记为
+[30] \begin{equation}
+\boldsymbol{\mathbf{F}} = \boldsymbol\nabla V + \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{A}} + \boldsymbol{\mathbf{H}} ~.
+\end{equation}
+[31] 但是求解 $V( \boldsymbol{\mathbf{r}} )$ 和 $ \boldsymbol{\mathbf{A}} $ 并不那么直接，一般还是需要先用上一节中的办法进行分解才能求得。
+[/SCOPE:s_alt_rep]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_proof",
+    "target_scope": "s_theorem",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明部分支持定理的结论"
+  }
+]

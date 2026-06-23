@@ -1,0 +1,92 @@
+[SCOPE:root|description|余维数]
+文章名: Codim
+标题: 余维数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=余维数
+  [1] type=theorem heading=定理 1 title=有限余维数矢量表述的唯一性
+
+[SCOPE:s_intro|description|引言]
+[0] 商空间一文已经介绍了余维数的概念，然而在那里，定理定理 5 的证明依赖于 “ $\ker f=0$ 则满射 $f$ 是双射”。
+[1] 而该论断只对有限维空间上的线性映射 $f$ 有效。
+[2] 在无限维空间里，该论断失效了，
+[3] 从而定理定理 5 失效，其得到的商空间的维数公式式 7 也失效了。
+[4] 其实，通过 $\dim(V/U) = \dim V - \dim U$ 就能看出，$\dim V=\infty$ 时，该公式是有问题的，因为关于无穷的加减法我们一无所知。
+[5a] 特别
+[5b] 当 $\dim U=\infty$ 时，$\infty-\infty$ 本身，则不是确定的。
+[6] 然而，商空间一文的其它内容并不依赖于空间是否为有限，
+[7] 因此在无穷维空间时仍然是成立的。
+[8] 特别，余维数仍有意义。
+[9] 本文将看到，在余维数为有限时，矢量空间的元素将有唯一的形式。
+[SCOPE:s_intro_let|let_bind|引入 L]
+[10] 为和有限维空间相区别，我们用 $L$ 来代表（不限于有限维的）一般的线性空间。
+
+[/SCOPE:s_intro]
+[/SCOPE:s_intro_let]
+[SCOPE:s_def|description|余维数定义]
+[11] 定义 1 余维数
+[SCOPE:s_def_let|let_bind|定义变量]
+[12] 设 $L$ 是任意线性空间，$L'$ 是它的子空间。
+[13] 则商空间 $L/L'$ 的维数叫着（空间 $L$ 中）$L'$ 的余维数，记作 $\mathrm{codim}_L L'$。
+
+[/SCOPE:s_def]
+[/SCOPE:s_def_let]
+[SCOPE:s_thm|description|有限余维数矢量表述的唯一性]
+[14] 定理 1 有限余维数矢量表述的唯一性
+[SCOPE:s_thm_let|let_bind|定理变量]
+[15] 设子空间 $L'\subset L$ 具有有限余维数 $n$，
+[16] 则在 $L$ 中可选取彼此不等价的 $x_1,\cdots,x_n$，使得任一元素 $x\in L$ 具有唯一的形式：
+[17] \begin{equation}
+x=\sum_{i=1}^n\alpha_i x_i+y,~
+\end{equation}
+[/SCOPE:s_thm_let]
+[SCOPE:s_thm_proof|description|证明]
+[18] 证明：
+[SCOPE:s_thm_proof_let1|let_bind|存在性变量]
+[19] 存在性：由于 $\dim L/L'=n$，
+[20] 因此可在 $L/L'$ 上选取基 $\xi_1,\cdots,\xi_n$。
+[21] 从每一个剩余类 $\xi_i$ 中选取代表元 $x_i$。
+[/SCOPE:s_thm_proof_let1]
+[22] 设 $x\in L$ 是任意元，且 $x\in\xi\in L/L'$，其中记 $\xi$ 在基 $\xi_i$ 下的表示为
+[23] \begin{equation}
+\xi=\sum_{i=1}^n\alpha_i\xi_i.~
+\end{equation}
+[24] 按剩余类的定义（
+[25] 定义 2 [链接 L0]
+[26] ），这意味着 $\xi$ 中的每一元素，特别是 $x$，和 $x_1,\cdots,x_n$ 的线性组合 $\sum_i\alpha_i x_i$ 等价。
+[27] 因此，$x-\sum_i\alpha_i x_i\in L'$，
+[28] 从而
+[29] \begin{equation}
+x=\sum_{i=1}^n\alpha_i x_i+y,~
+\end{equation}
+[30] 其中 $y\in L'$。
+[SCOPE:s_thm_proof_let2|let_bind|唯一性变量]
+[31] 唯一性：注意定理中 $x_i$ 是选定的，
+[32] 因此只需证明 $\alpha_i,y$ 唯一即可。
+[/SCOPE:s_thm_proof_let2]
+[33] 设 $\sum\limits_{i=1}^n\alpha_i x_i+y=\sum\limits_{i=1}^n\alpha'_i x_i+y'$，
+[34] 则
+[35] \begin{equation}
+\sum_{i=1}^n(\alpha_i -\alpha'_i) x_i=y'-y\in L'.~
+\end{equation}
+[36] 于是 $\sum_{i=1}^n(\alpha_i -\alpha'_i) [x_i]=[0]$，由于 $x_i$ 彼此不等价，
+[37] 因此矢量 $[e_i]$ 线性无关，
+[38] 因此只能是 $\alpha_i=\alpha_i'$。
+[39] 从而
+[40] 式 4 [链接 L1]
+[41] 表明 $y=y'$。
+[42] 证毕！
+[/SCOPE:s_thm]
+[/SCOPE:s_thm_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm",
+    "target_scope": "s_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理引用余维数定义"
+  }
+]

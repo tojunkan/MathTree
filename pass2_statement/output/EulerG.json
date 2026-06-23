@@ -1,0 +1,98 @@
+{
+  "article_name": "EulerG",
+  "statements": [
+    {
+      "stmt_id": "st_def1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_concl",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_stmt",
+      "subtype": "theorem",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1_stmt",
+      "subtype": "corollary",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": [
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_cor2_stmt",
+      "subtype": "corollary",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor2",
+      "exposed_entities": [
+        "G"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_assump",
+      "target": "st_def1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_stmt",
+      "target": "st_def1_concl",
+      "edge_type": "equivalent",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor1_stmt",
+      "target": "st_thm1_stmt",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor2_stmt",
+      "target": "st_thm1_stmt",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

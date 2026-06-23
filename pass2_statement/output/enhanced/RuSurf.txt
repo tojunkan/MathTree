@@ -1,0 +1,60 @@
+[SCOPE:root|description|直纹面（古典微分几何）]
+文章名: RuSurf
+标题: 直纹面（古典微分几何）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=直纹面
+
+[SCOPE:s_def|description|直纹面]
+[0] 定义 1 直纹面
+[SCOPE:s_let_alpha_omega|let_bind|位置向量和方向向量]
+[1a] (t)$ 和一个方向向量 $\omega
+[1b] (t)$。
+[2a] (t)+v\omega
+[2b] (t)|v\in\mathbb{R}\}$。
+[3] 随着参数 $t$ 变化，直线的位置和方向都连续变化，也就是说，$\alpha$ 和 $\omega$ 随着 $t$ 连续变化。
+[/SCOPE:s_let_alpha_omega]
+[4] 由此容易想到，可以使用两个参数来描述一个直纹面，将其局部坐标系写成如下形式：
+[5] \begin{equation}
+\boldsymbol{\mathbf{x}} (t, v)=\alpha(t)+\omega(t)v~.
+\end{equation}
+[6] 这里的两个参数确定直纹面上一个点的过程，可以理解为 $t$ 确定了是在哪一条直线上，而 $v$ 确定了是在直线上的哪个位置。
+[SCOPE:s_let_unit_omega|let_bind|单位方向向量]
+[7] 不失一般性地，为了方便，我们不妨设方向向量 $\omega(t)$ 恒为单位向量。
+[8a] (t)\cdot\omega'
+[8b] (t)=0$ 恒成立。
+[/SCOPE:s_let_unit_omega]
+[9a] 当 $\omega'(t)$ 为零的时候，得到的直纹面
+[9b] 则被称为柱形面（cylindrical surface）；
+[10a] 当 $\omega'(t)$ 不为零的时候，意味着方向必然在变，得到的
+[10b] 则是非柱形面（noncylindrical surface）。
+[SCOPE:s_let_beta|let_bind|曲线β]
+[11a] (t)$，都可以用一个标量函数$u
+[11b] (t)$ 来唯一表示：
+[12] \begin{equation}
+\beta(t)=\alpha(t)+\omega(t)u(t)~.
+\end{equation}
+[13] 直纹面上每个点处都可以画出一条直线，作为曲率为零的曲率曲线。
+[14] 我们现在关心的是曲率不为零的曲率曲线怎么求。
+[15a] (t)=\alpha
+[15b] (t)+\omega
+[15c] (t)u
+[15d] (t)$。
+[16] 由于形状算子是切空间中的线性映射，而主曲率可以视为形状算子的特征值，不属于同一特征值的向量彼此垂直，
+[17] 因此 $\beta(t)$ 的切向量必然处处和直线部分垂直。
+[18] 也就是说，我们要求有
+[19] \begin{equation}
+\beta'(t)\cdot\omega'(t)=0~
+\end{equation}
+[20] 恒成立。
+[21a] (t)\cdot\omega'
+[21b] (t)=0$，可得 $u$ 的表达式
+[22] \begin{equation}
+u=-\frac{\alpha'\cdot\omega'}{\omega'^2}~,
+\end{equation}
+[23] 由此唯一确定了 $\beta$ 的表达式。
+[/SCOPE:s_let_beta]
+[24] 值得一提的是，虽然 $u$ 的表达式里出现了位置向量 $\alpha$，而同一个直纹面可以由不同的位置向量移动过程来构造，
+[25] 但位置向量的选择并不会影响 $u$ 的表达式。
+[/SCOPE:s_def]
+[/SCOPE:root]

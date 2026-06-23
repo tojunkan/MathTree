@@ -1,0 +1,281 @@
+{
+  "article_name": "IntGen",
+  "statements": [
+    {
+      "stmt_id": "st_intro_1",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ode_let_1",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_ode_let",
+      "exposed_entities": [
+        "F",
+        "x",
+        "y",
+        "y'",
+        "y^{(n)}",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_ode_gen_1",
+      "subtype": "theorem",
+      "clause_range": [
+        18,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ode_gen",
+      "exposed_entities": [
+        "f",
+        "x",
+        "y",
+        "y'",
+        "y^{(n-1)}",
+        "x_0",
+        "y_0",
+        "y_0'",
+        "y_0^{(n-1)}"
+      ]
+    },
+    {
+      "stmt_id": "st_ode_gen_2",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        25
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ode_gen",
+      "exposed_entities": [
+        "C_1",
+        "C_n",
+        "varphi"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_let_1",
+      "subtype": "definition",
+      "clause_range": [
+        26,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "psi",
+        "x",
+        "y",
+        "C_1",
+        "C_n"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_1",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "C_1",
+        "C_n"
+      ]
+    },
+    {
+      "stmt_id": "st_sys_let_1",
+      "subtype": "assumption",
+      "clause_range": [
+        34,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_sys_let",
+      "exposed_entities": [
+        "y_i",
+        "f_i",
+        "x",
+        "y_1",
+        "y_n"
+      ]
+    },
+    {
+      "stmt_id": "st_sys_gen_1",
+      "subtype": "theorem",
+      "clause_range": [
+        38,
+        44
+      ],
+      "truth_value": "true",
+      "scope_id": "s_sys_gen",
+      "exposed_entities": [
+        "f_i",
+        "x",
+        "y_1",
+        "y_n",
+        "x_0",
+        "y_1^{(0)}",
+        "y_n^{(0)}",
+        "omega_i"
+      ]
+    },
+    {
+      "stmt_id": "st_sys_gen_2",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_sys_gen",
+      "exposed_entities": [
+        "psi_i",
+        "C_1",
+        "C_n"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_let_1",
+      "subtype": "definition",
+      "clause_range": [
+        47,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "C_1",
+        "C_n"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_1",
+      "subtype": "conclusion",
+      "clause_range": [
+        50,
+        60
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "varphi_i",
+        "x",
+        "y_1",
+        "y_n",
+        "C_i"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_let_1",
+      "subtype": "definition",
+      "clause_range": [
+        61,
+        63
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3_let",
+      "exposed_entities": [
+        "varphi_i"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_1",
+      "subtype": "remark",
+      "clause_range": [
+        64,
+        68
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "varphi",
+        "F",
+        "varphi_1",
+        "varphi_k"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ode_let_1",
+      "target": "st_ode_gen_1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ode_gen_1",
+      "target": "st_ode_gen_2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let_1",
+      "target": "st_def1_1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sys_let_1",
+      "target": "st_sys_gen_1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sys_gen_1",
+      "target": "st_sys_gen_2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let_1",
+      "target": "st_def2_1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_let_1",
+      "target": "st_def3_1",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_def1_let_1",
+      "target": "st_ode_gen_2",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义1是n阶方程一般积分的正式定义，是前面描述的special_case。"
+    },
+    {
+      "source": "st_def2_let_1",
+      "target": "st_sys_gen_2",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义2是方程组一般积分的正式定义。"
+    },
+    {
+      "source": "st_def3_let_1",
+      "target": "st_def2_let_1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义3是方程组积分的定义，是定义2中一般积分的组成部分。"
+    }
+  ],
+  "unresolved": []
+}

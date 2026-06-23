@@ -1,0 +1,575 @@
+{
+  "article_name": "LapAsm",
+  "statements": [
+    {
+      "stmt_id": "st_intro_1",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_2",
+      "subtype": "remark",
+      "clause_range": [
+        1,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "s",
+        "L(s)",
+        "Φ(x)",
+        "ψ(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_3",
+      "subtype": "remark",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_4",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_watson_lemma",
+      "subtype": "lemma",
+      "clause_range": [
+        8,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_watson",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_watson_assump1",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_watson_let",
+      "exposed_entities": [
+        "φ",
+        "X",
+        "Y",
+        "λ_n",
+        "c_n",
+        "δ",
+        "B_+(0,δ)"
+      ]
+    },
+    {
+      "stmt_id": "st_watson_assump2",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_watson_let",
+      "exposed_entities": [
+        "c",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_watson_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_watson",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_watson_proof_start",
+      "subtype": "remark",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_watson",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_watson_proof_F",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_watson",
+      "exposed_entities": [
+        "F(z)"
+      ]
+    },
+    {
+      "stmt_id": "st_watson_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_watson",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_watson_proof_convergence",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_watson",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_watson_proof_ineq1",
+      "subtype": "remark",
+      "clause_range": [
+        22,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_watson",
+      "exposed_entities": [
+        "N",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_watson_proof_ineq2",
+      "subtype": "remark",
+      "clause_range": [
+        27,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_watson",
+      "exposed_entities": [
+        "K"
+      ]
+    },
+    {
+      "stmt_id": "st_watson_proof_est",
+      "subtype": "remark",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_watson",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_watson_proof_gamma",
+      "subtype": "remark",
+      "clause_range": [
+        34,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_watson",
+      "exposed_entities": [
+        "Γ(λ_n)"
+      ]
+    },
+    {
+      "stmt_id": "st_watson_proof_bound",
+      "subtype": "remark",
+      "clause_range": [
+        40,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_watson",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_watson_proof_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        49
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_watson",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_laplace_intro",
+      "subtype": "remark",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_laplace",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_laplace_assump1",
+      "subtype": "assumption",
+      "clause_range": [
+        51,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_laplace_let",
+      "exposed_entities": [
+        "Φ",
+        "ψ",
+        "X",
+        "Y"
+      ]
+    },
+    {
+      "stmt_id": "st_laplace_assump2",
+      "subtype": "assumption",
+      "clause_range": [
+        53,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_laplace_let",
+      "exposed_entities": [
+        "I",
+        "a",
+        "b",
+        "x_0",
+        "Φ''(x_0)"
+      ]
+    },
+    {
+      "stmt_id": "st_laplace_assump3",
+      "subtype": "assumption",
+      "clause_range": [
+        54,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_laplace_let",
+      "exposed_entities": [
+        "s_0"
+      ]
+    },
+    {
+      "stmt_id": "st_laplace_figure",
+      "subtype": "remark",
+      "clause_range": [
+        55,
+        55
+      ],
+      "truth_value": null,
+      "scope_id": "s_laplace",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_laplace_deriv",
+      "subtype": "conclusion",
+      "clause_range": [
+        56,
+        56
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_laplace",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_laplace_taylor",
+      "subtype": "remark",
+      "clause_range": [
+        57,
+        61
+      ],
+      "truth_value": null,
+      "scope_id": "s_laplace",
+      "exposed_entities": [
+        "δ",
+        "B(x_0,δ)",
+        "φ(x)",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_laplace_outside",
+      "subtype": "remark",
+      "clause_range": [
+        62,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_laplace",
+      "exposed_entities": [
+        "ε_0"
+      ]
+    },
+    {
+      "stmt_id": "st_laplace_subst_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        65,
+        72
+      ],
+      "truth_value": null,
+      "scope_id": "s_laplace_let2",
+      "exposed_entities": [
+        "y",
+        "α",
+        "β",
+        "ψ̃",
+        "c_0",
+        "c_1"
+      ]
+    },
+    {
+      "stmt_id": "st_laplace_inside",
+      "subtype": "remark",
+      "clause_range": [
+        73,
+        74
+      ],
+      "truth_value": null,
+      "scope_id": "s_laplace",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_laplace_apply_watson",
+      "subtype": "remark",
+      "clause_range": [
+        75,
+        75
+      ],
+      "truth_value": null,
+      "scope_id": "s_laplace",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_laplace_asymptotic",
+      "subtype": "theorem",
+      "clause_range": [
+        76,
+        81
+      ],
+      "truth_value": "true",
+      "scope_id": "s_laplace",
+      "exposed_entities": [
+        "c_{2n}",
+        "Γ(n+1/2)"
+      ]
+    },
+    {
+      "stmt_id": "st_laplace_leading",
+      "subtype": "corollary",
+      "clause_range": [
+        82,
+        91
+      ],
+      "truth_value": "true",
+      "scope_id": "s_laplace",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_stirling_intro",
+      "subtype": "remark",
+      "clause_range": [
+        92,
+        92
+      ],
+      "truth_value": null,
+      "scope_id": "s_stirling",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_stirling_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        93,
+        100
+      ],
+      "truth_value": null,
+      "scope_id": "s_stirling_let",
+      "exposed_entities": [
+        "Γ(s+1)",
+        "Φ(x)=x-log x",
+        "ψ(x)=1"
+      ]
+    },
+    {
+      "stmt_id": "st_stirling_min",
+      "subtype": "conclusion",
+      "clause_range": [
+        101,
+        101
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_stirling",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_stirling_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        102,
+        105
+      ],
+      "truth_value": "true",
+      "scope_id": "s_stirling",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_stirling_series",
+      "subtype": "theorem",
+      "clause_range": [
+        106,
+        113
+      ],
+      "truth_value": "true",
+      "scope_id": "s_stirling",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_stirling_remark",
+      "subtype": "remark",
+      "clause_range": [
+        114,
+        114
+      ],
+      "truth_value": null,
+      "scope_id": "s_stirling",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_watson_assump1",
+      "target": "st_watson_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_watson_assump2",
+      "target": "st_watson_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_watson_proof_assump",
+      "target": "st_watson_proof_convergence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_watson_proof_convergence",
+      "target": "st_watson_proof_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_laplace_assump1",
+      "target": "st_laplace_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_laplace_assump2",
+      "target": "st_laplace_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_laplace_assump3",
+      "target": "st_laplace_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_laplace_assump1",
+      "target": "st_laplace_asymptotic",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_laplace_assump2",
+      "target": "st_laplace_asymptotic",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_laplace_assump3",
+      "target": "st_laplace_asymptotic",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_laplace_subst_assump",
+      "target": "st_laplace_asymptotic",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_laplace_asymptotic",
+      "target": "st_laplace_leading",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_stirling_assump",
+      "target": "st_stirling_min",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_stirling_assump",
+      "target": "st_stirling_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_stirling_assump",
+      "target": "st_stirling_series",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_laplace_asymptotic",
+      "target": "st_watson_lemma",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "拉普拉斯方法引用 Watson 引理"
+    }
+  ],
+  "unresolved": []
+}

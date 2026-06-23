@@ -1,0 +1,386 @@
+{
+  "article_name": "DirSum",
+  "statements": [
+    {
+      "stmt_id": "st_def1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "V",
+        "V_1",
+        "V_2"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_cond1",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "v",
+        "v_1",
+        "v_2"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_def",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "V_1 ⊕ V_2"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_remark2",
+      "subtype": "remark",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_remark3",
+      "subtype": "remark",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "v1",
+        "v2",
+        "v3"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_case1",
+      "subtype": "condition",
+      "clause_range": [
+        18,
+        20
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_case2",
+      "subtype": "condition",
+      "clause_range": [
+        21,
+        24
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_multi_def",
+      "subtype": "definition",
+      "clause_range": [
+        26,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_multi",
+      "exposed_entities": [
+        "V_1 ⊕ ... ⊕ V_n"
+      ]
+    },
+    {
+      "stmt_id": "st_multi_assoc",
+      "subtype": "theorem",
+      "clause_range": [
+        29,
+        32
+      ],
+      "truth_value": "true",
+      "scope_id": "s_multi",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_multi_remark",
+      "subtype": "remark",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_multi",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_basis_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_basis",
+      "exposed_entities": [
+        "α_i",
+        "β_j"
+      ]
+    },
+    {
+      "stmt_id": "st_basis_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        36,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_basis",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_stmt",
+      "subtype": "theorem",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_reductio",
+      "exposed_entities": [
+        "a_i",
+        "b_j",
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_contra",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1_stmt",
+      "subtype": "corollary",
+      "clause_range": [
+        49,
+        50
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1_proof",
+      "subtype": "remark",
+      "clause_range": [
+        51,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_cor1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_stmt",
+      "subtype": "theorem",
+      "clause_range": [
+        54,
+        56
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_proof",
+      "subtype": "remark",
+      "clause_range": [
+        57,
+        58
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exer1_exercise",
+      "subtype": "exercise",
+      "clause_range": [
+        59,
+        62
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exer1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_assump",
+      "target": "st_def1_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_cond1",
+      "target": "st_def1_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_assump",
+      "target": "st_ex1_case1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_assump",
+      "target": "st_ex1_case2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_case1",
+      "target": "st_ex1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_case2",
+      "target": "st_ex1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_basis_assump",
+      "target": "st_basis_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_assump",
+      "target": "st_thm1_proof_contra",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_contra",
+      "target": "st_thm1_stmt",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor1_stmt",
+      "target": "st_thm1_stmt",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_stmt",
+      "target": "st_thm1_stmt",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_conclusion",
+      "target": "st_def1_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_stmt",
+      "target": "st_def1_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理 1 的证明引用定义 1 的条件"
+    },
+    {
+      "source": "st_cor1_stmt",
+      "target": "st_thm1_stmt",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论 1 是定理 1 的直接推论"
+    },
+    {
+      "source": "st_thm2_stmt",
+      "target": "st_thm1_stmt",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理 2 的证明引用定理 1"
+    },
+    {
+      "source": "st_ex1_conclusion",
+      "target": "st_def1_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例 1 是定义 1 的实例"
+    }
+  ],
+  "unresolved": []
+}

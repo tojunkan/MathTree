@@ -1,0 +1,465 @@
+[SCOPE:root|description|导数的计算（高中）]
+文章名: HsDerB
+标题: 导数的计算（高中）
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=求 $f(2x+3)$ 的导数。
+  [1] type=example heading=例 2 title=求 $x^2 + y^2 = 1$2上点 $(x_0,y_0)$ 处的切线方程。
+  [2] type=definition heading=定义 1 title=导函数
+  [3] type=lemma heading=引理 1 title=极限的朴素理解
+
+[0] 为了更高效地计算函数的导数，数学家在实践中总结和发展了许多求导方法。
+[1] 这些方法不仅大大简化了计算过程，还将求导从一个过程提升为独立的数学运算。
+[2] 在高中阶段，能够快速且熟练地使用这些求导方法是数学学习的基础。
+[3] 然而，高中教材中对求导公式的处理通常是直接给出结果，供学生直接应用，而未深入说明这些公式的推导过程。
+[4] 这种方式虽然足以应对考试和解题，
+[5] 但在数学的逻辑性和严谨性上有所欠缺。
+[6] 为了为对数学推导感兴趣的读者提供进一步探索的机会，本文将在总结教材中公式的基础上，尝试在高中生能够接受的范围内，尽量给出这些公式的推导和证明过程。
+[7] 需要强调的是，这些推导并非高中学习的必备内容，而是面向那些希望了解数学本质、追求逻辑严谨性的学习者。
+[8] 通过这些推导，读者不仅能更深入地理解公式的来源，还能从中感受到数学推理的魅力，以及逻辑思维的力量。
+
+[9a] (x),g=g
+[9b] (x),f'=f'
+[9c] (x),g'=g'
+[9d] (x)$。
+[10] 【图解】表1：导数运算法则
+[11] 和差 $(f\pm g)'=f'\pm g'$
+[12] 积 $(fg)'=f'g+fg'$
+[13] 数乘 $(af)'=af'$
+[14] 商 $\displaystyle\left(\frac{f}{g}\right)'=\frac{f'g-fg'}{g^2}$
+[15] 倒数 $\displaystyle\left(\frac{1}{g}\right)'=-\frac{g'}{g^2}$
+[16a] (g))'=f'
+[16b] (g)g'$
+[17] 关于导数的运算法则，有几点需要注意的：
+[18] 加法法则和数乘法则共同体现了导数运算的线性特性。
+[19] 加法法则表明，两个函数的和的导数等于各函数导数的和；
+[20] 数乘法则则指出，函数乘以一个常数后的导数等于常数乘以原函数的导数。
+[21] 这种线性特性使得处理多项式函数和分段组合函数时尤为重要。
+[22] 初学者常因数字计算的习惯而误认为 $(f g)'= f' g'$，$\displaystyle\left(\frac{f}{g}\right)'=\frac{f'}{g'}$，事实上这两种计算方法是错误的。
+[23] 商法则的适用条件是分母 $g\neq0$ 且导数 $g'$ 存在。
+[24a] (x)]^2$，而非 $g^2
+[24b] (x)$1。
+[25] 数乘的导数是积法则的一个特例，
+[26] 即 $g=a(a\in\mathbb{R})$
+[27] 倒数法则是商法则的一个特例，
+[28] 即 $f=1$。
+[29] 对于商的分子，要注意 $f$ 与 $g$ 的顺序。
+[30] 复合函数的导数运算通常称为链式法则（chain rule）。
+[31] 在初学阶段，可以通过明确拆分内外函数并分别求导的方式来理解链式法则。
+[32] 熟练后，
+[33] 则可直接应用链式法则进行计算。
+[34] $f'(g)$ 表示的，是以 $g$ 作为自变量时的 $f$ 的导数。
+[35] 下面以一个例子来解释复合函数求导法则的使用。
+
+[SCOPE:s_example1|description|例1 求f(2x+3)的导数]
+[36] 例 1 求 $f(2x+3)$ 的导数。
+[SCOPE:s_example1_let|let_bind|例1变量]
+[37] $f(2x+3)$ 是一个复合函数，可以表示为：$y = f(t) , t = 2x+3$。
+[/SCOPE:s_example1_let]
+[38] 因此，其导数计算如下：
+[39] \begin{equation}
+\left(f(2x+3)\right)' = f'(t) t' = f'(2x+3) t'~.
+\end{equation}
+[40] 根据后续的求导公式可知 $t' = 2$，将其代入式 1 ，得到：
+[41] \begin{equation}
+\left(f(2x+3)\right)' = 2f'(2x+3)~.
+\end{equation}
+[42] 需要特别注意的是，$\left(f(2x+3)\right)'$ 和 $f'(2x+3)$ 是两个不同的表达式，初学者常常误以为二者相同，进而错误地在公式两侧约分，得出 $1 = 2$ 或 $f'(2x+3) = 0$ 的荒谬结论。
+[43] 事实上，$\left(f(2x+3)\right)'$ 指的是复合函数的导数，而 $f'(2x+3)$ 则仅指函数 $f$ 的导数。
+[44] 因此，在书写和理解时，务必要通过括号清楚地区分两者，以避免不必要的混淆和错误。
+[/SCOPE:s_example1]
+[45] 下面是常见的初等函数与导数对照表。
+[46] 【图解】表2：高中常见初等函数及其导数
+[47a] (x)$ 导函数 $f'
+[47b] (x)$
+[48] 常数$c$ $0$
+[49] 幂函数（$a\neq-1$）$x^a$ $a x^{a-1}$
+[50] 指数函数（$ \mathrm{e} $ 为底）$ \mathrm{e} ^x$ $ \mathrm{e} ^x$
+[51] 对数函数（$ \mathrm{e} $ 为底）$ \ln\left(x\right) $ $\displaystyle\frac{1}{x}$
+[52] 反比例函数$\displaystyle\frac{1}{x}$ $\displaystyle-\frac{1}{x^2}$
+[53] 指数函数$a^x$ $a^x\ln a $
+[54] 对数函数$\log_a(x)$ $\displaystyle \frac{1}{x\ln a}$
+[55] 正弦函数$ \sin\left(x\right) $ $ \cos\left(x\right) $
+[56] 余弦函数$ \cos\left(x\right) $ $- \sin\left(x\right) $
+[57] 正切函数$ \tan\left(x\right) $ $\displaystyle \frac{1}{\cos^2(x)}\quad\text{或}\quad1+\tan^2 x$
+[58] 表中常数函数和反比例函数实际上可以看作幂函数的一种特例。
+[59] 例如，常数函数对应幂函数 $x^a$ 中 $a=0$ 的情形，而反比例函数 $\displaystyle y = \frac{1}{x}$ 则对应 $a = -1$ 的情形。
+[60] 而对数函数 $\log_a x$ 和指数函数 $a^x$ 均可以视为通过换底公式变成以 $ \mathrm{e} $ 为底的对应函数 $\displaystyle\frac{1}{\ln a}\ln x$ 以及 $e^{x\ln a}$，再进行运算，减少记忆量。
+[61] 另外，初学者在学习求导时，往往会混淆反比例函数、常数函数以及以 $ \mathrm{e} $ 为底的对数函数：
+[62a] (x) = x^0 = 1$，其导数实际上为 $f'
+[62b] (x) = 0$。
+[63a] (x) = nx^{n-1}$）的惯性，误认为 $f'
+[63b] (x)$ 为 $\displaystyle\frac{1}{x}$。
+[64a] (x) = \displaystyle\frac{1}{x}$ 的导数为 $f'
+[64b] (x) = -\displaystyle\frac{1}{x^2}$，而以 $ \mathrm{e} $ 为底的对数函数 $f
+[64c] (x) = \ln x$ 的导数为 $f'
+[64d] (x) = \displaystyle\frac{1}{x}$。
+[65] 初学者容易因为对数函数的导数公式中有 $\displaystyle\frac{1}{x}$ 的形式，将其与反比例函数混淆。
+[66] 表格中单独列出这些函数及其导数公式，希望能够帮助读者更加清晰地理解和区分。
+[67] 另外，有一条规则非常重要需要在此说明：对于任意的恒等式，可以同时对等式两边求导，结果仍然相等，
+[68a] (x) = g
+[68b] (x)$，在 $x$ 的定义域内对两边同时求导，有：
+[69] \begin{equation}
+f'(x) = g'(x)~.
+\end{equation}
+[70] 尽管这看上去像一句废话，
+[71] 但这一性质提供了一个强有力的工具，尤其是在处理一些复杂或难以直接求导的函数时，可以对等号两边同时进行求导运算，这样能够简化计算，尤其是反函数和隐函数的场景。
+[72] 这里介绍一下 隐函数（implicit function）。
+[73] 通常情况下，函数是以明确的形式给出的，例如 $y = f(x)$，表示 $y$ 是 $x$ 的明确函数。
+[74] 然而，有些情况下，函数的形式并不那么清晰，$y$ 不能完全独立于右侧写出，例如 $f(x, y) = 0$ 的形式，这样的函数称为隐函数。
+[75] 反函数求导的场景是隐函数的特例，
+[76] 因此不特别介绍。
+[77] 隐函数的特点是变量 $x$ 和 $y$ 之间的关系被隐藏在一个方程中，而不是通过显式表达式直接给出。
+[78] 例如，圆的方程 $x^2 + y^2 = 1$ 是隐函数的一个典型例子，它描述了 $x$ 和 $y$ 之间的关系，
+[79] 但不能直接将 $y$ 表示为 $x$ 的函数，当然这里的圆并不符合一般的函数定义，
+[80] 但可以通过限定它的定义域和值域，来将其看作函数。
+[81] 对于隐函数的求导，可以对方程两边同时求导，并利用链式法则处理含有 $y$ 的导数项。
+
+[SCOPE:s_example2|description|例2 求切线方程]
+[SCOPE:s_example2_let|let_bind|例2变量]
+[82] 例 2 求 $x^2 + y^2 = 1$2上点 $(x_0,y_0)$ 处的切线方程。
+[/SCOPE:s_example2_let]
+[83] 两侧同时对 $x$ 求导有：
+[84] \begin{equation}
+2x+2yy'=0~.
+\end{equation}
+[85] \begin{equation}
+y'=-\frac{x}{y}~.
+\end{equation}
+[86] \begin{equation}
+x_0x+y_0y=1~.
+\end{equation}
+[87] 注意，尽管涉及隐函数求导的方法都是高中学过的，
+[88] 但是在高中阶段不允许在答题时使用，
+[89] 但由于其计算简便，可以作为代替求解复杂方程或验算的方法。
+
+[/SCOPE:s_example2]
+[90] 导数的求导法则及基本初等函数导数的推导虽然在高中教材中有所提及，
+[91] 但并非核心内容，一般在考试中也并不涉及。
+[92] 然而，学习这些推导过程能够帮助更深入地理解导数运算背后的数学规律，并为熟练运用部分求导法则奠定基础。
+[93] 此外，这一过程还可以培养对极限运算的初步感知，为后续学习提供支持。
+[94] 另外，文中涉及的所有超出高中阶段范围的极限运算都将附加必要的解释，以确保内容易于理解，不必担心无法读懂。
+[95] 在展开所有推导之前，先回顾一下导数的定义。
+[96] 根据这一定义及导函数的描述，可以进一步得到导函数的定义。
+[97] 导函数的定义是后续所有推导的基础，以下内容的推导都将严格基于这一定义进行展开。
+
+[SCOPE:s_def1|description|定义1 导函数]
+[98] 定义 1 导函数
+[99a] (x)$，其导函数是在 $f
+[99b] (x)$ 的定义域内所有导数存在的点构成定义域，导数值作为函数值的函数，记作 $f'
+[99c] (x)$，
+[100] 即：
+[101] \begin{equation}
+f'(x)=\lim_{\Delta x\to 0}\frac{\Delta y}{\Delta x}=\lim_{\Delta x\to0}\frac{f(x+\Delta x)-f(x)}{\Delta x}~.
+\end{equation}
+[102] 在上面的定义中，将原本的具体值 $x_0$ 替换为变量 $x$，计算的结果也随之从一个具体数值转变为一个函数。
+[103] 这一变化体现了导函数作为一个函数的本质，而不再仅仅是具体某一点的瞬时变化率。
+[104] 在高中教材中，对于导数定义的推导其实提供了一些简化或不完全严谨的说明。
+[105] 这是因为高中阶段尚未系统学习极限理论，而极限的严谨性是导数定义和推导的核心。
+[106] 由于可导性要求函数必须是连续的，
+[107] 所以下文的推导建立在所有给出的函数都连续的前提下。
+[108] 基于这种连续性，涉及的极限可以依赖于高中阶段对极限的朴素、直观的理解，主要包括以下几点：
+
+[/SCOPE:s_def1]
+[SCOPE:s_lemma1|description|引理1 极限的朴素理解]
+[109] 引理 1 极限的朴素理解
+[110] 在 $f(x)$ 连续且极限存在的前提下，有：
+[111] $\displaystyle\lim_{\Delta x\to 0}f(x+\Delta x)=f(x)$
+[112] $\displaystyle\lim_{\Delta x\to 0}f(\Delta x)=f(0)$
+[113] $\displaystyle\lim_{\Delta x\to 0}[f(\Delta x)\pm g(\Delta x)]=\lim_{\Delta x\to 0}f(\Delta x)\pm \lim_{\Delta x\to 0}g(\Delta x)$
+[114] $\displaystyle\lim_{\Delta x\to 0}[f(\Delta x)\cdot g(\Delta x)]=\lim_{\Delta x\to 0}f(\Delta x)\cdot\lim_{\Delta x\to 0}g(\Delta x)$
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_sumdiff|description|和差法则推导]
+[115] \begin{equation}
+\begin{split}
+\left[f(x)\pm g(x)\right]'&=\lim_{\Delta x\to 0}\frac{[f(x+\Delta x)\pm g(x+\Delta x)]-[f(x)\pm g(x)]}{\Delta x}\\
+&=\lim_{\Delta x\to 0}\frac{[f(x+\Delta x)-f(x)]\pm [g(x+\Delta x)]-+g(x)]}{\Delta x}\\
+&=\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}\pm\lim_{\Delta x\to 0}\frac{g(x+\Delta x)-g(x)}{\Delta x}\\
+&=f'(x)\pm g'(x)~.
+\end{split}
+\end{equation}
+[116] 推导过程中使用了引理 3。
+[117] 这个求导法则契合生活中的直观认知，并在日常情境中经常被使用。
+[118] 例如，如果两个人分别以固定的速度完成各自的任务，
+[119] 那么他们一起完成任务的总速度就是两者速度的简单相加。
+
+[/SCOPE:s_sumdiff]
+[SCOPE:s_product|description|积法则推导]
+[120] \begin{equation}
+\begin{split}
+\left[f(x) g(x)\right]'&=\lim_{\Delta x\to 0}\frac{f(x+\Delta x) g(x+\Delta x)-f(x) g(x)}{\Delta x}\\
+&=\lim_{\Delta x\to 0}\frac{f(x+\Delta x) g(x+\Delta x)-f(x) g(x+\Delta x)+f(x) g(x+\Delta x)-f(x) g(x)}{\Delta x}\\
+&=\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x} g(x+\Delta x)+\lim_{\Delta x\to 0}f(x)\frac{g(x+\Delta x)-g(x)}{\Delta x}\\
+&=f'(x)g(x)+f(x) g'(x)~.
+\end{split}
+\end{equation}
+[121] 第二个等号处是同时加减了 $f(x) g(x+\Delta x)$。
+[122] 然后分别使用了引理 1、3。
+[123] 这个求导法则可以用一个池塘和荷叶的例子来类比。
+[124] 假设池塘的面积正在增长，同时水面上的荷叶覆盖率也在增加，
+[125] 那么整个覆盖面积的变化速度既受到池塘面积变化的影响，也受到荷叶覆盖率变化的影响。
+[126] 变化率的叠加既考虑了每一部分自身的变化，也考虑了其与另一部分的关联变化。
+
+[/SCOPE:s_product]
+[SCOPE:s_quotient|description|商法则推导]
+[127] 由于除法本质上等同于乘以分母的倒数，而乘法求导法则已经得到证明，
+[128] 因此可以通过先求倒数的导数，再结合乘法法则来推导除法的求导公式。
+[SCOPE:s_quotient_let|let_bind|商法则假设g≠0]
+[129] 假设 $g(x)\neq0$，
+[/SCOPE:s_quotient_let]
+[130] 则：
+[131] \begin{equation}
+\begin{split}
+\left[\frac{1}{g(x)}\right]'&=\lim_{\Delta x\to 0}\frac{\displaystyle\frac{1}{g(x+\Delta x)}-\frac{1}{g(x)}}{\Delta x}\\
+&=\lim_{\Delta x\to 0}\frac{g(x)-g(x+\Delta x)}{g(x+\Delta x)g(x)\Delta x}\\
+&=-\frac{\displaystyle\lim_{\Delta x\to 0}\frac{g(x+\Delta x)-g(x)}{\Delta x}}{\displaystyle\lim_{\Delta x\to 0}g(x+\Delta x)g(x)}\\
+&=-\frac{g'(x)}{[g(x)]^2}~.
+\end{split}
+\end{equation}
+[132] 推导中使用了引理 1、4。
+[133] 进而，商法则为：
+[134] \begin{equation}
+\begin{split}
+\left[f(x) \frac{1}{g(x)}\right]'&=f'(x)\frac{1}{g(x)}+f(x) [\frac{1}{g(x)}]'\\
+&=\frac{f'(x)}{g(x)}-\frac{f(x)g'(x)}{[g(x)]^2}\\
+&=\frac{f'(x)g(x)-f(x)g'(x)}{[g(x)]^2}~.
+\end{split}
+\end{equation}
+[135a] (x)g
+[135b] (x),f
+[135c] (x)g'
+[135d] (x)$ 的顺序不能交换。
+[136] 这也从另一个角度印证了一个重要的代数特性：乘法满足交换律，而除法则不满足。
+
+[/SCOPE:s_quotient]
+[SCOPE:s_chain|description|链式法则推导]
+[SCOPE:s_chain_let|let_bind|链式法则变量]
+[137a] (x)\right)$，设 $y=f
+[137b] (t),t=g
+[137c] (x)$，根据定义有：
+[/SCOPE:s_chain_let]
+[138] \begin{equation}
+f'(t)=\lim_{\Delta t\to 0}\frac{f(t+\Delta t)-f(t)}{\Delta t}~.
+\end{equation}
+[139] \begin{equation}
+g'(x)=\lim_{\Delta x\to 0}\frac{\Delta t}{\Delta x}=\lim_{\Delta x\to 0}\frac{g(x+\Delta x)-g(x)}{\Delta x}~.
+\end{equation}
+[140] 而对 $\Delta x\to 0$ 的情况下，根据定义 1 ，可知这时有 $\Delta t$ 也趋于 03，而且 $g(x+\Delta x)=g(x)+\Delta t=t+\Delta t$。
+[141] 于是有：
+[142] \begin{equation}
+\begin{split}
+\left[f(g(x))\right]'&=\lim_{\Delta x\to 0}\frac{f(g(x+\Delta x))-f(g(x))}{\Delta x}\\
+&=\lim_{\Delta x\to 0}\frac{f(t+\Delta t)-f(t)}{\Delta t}\frac{\Delta t}{\Delta x}\\
+&=\lim_{\Delta t\to 0}\frac{f(t+\Delta t)-f(t)}{\Delta t}\lim_{\Delta x\to 0}\frac{\Delta t}{\Delta x}\\
+&=f'(t) g'(x)\\
+&=f'(g(x)) g'(x)~.
+\end{split}
+\end{equation}
+
+[/SCOPE:s_chain]
+[143] 基本初等函数具有一个非常重要且优良的特性：它们在自身的定义域上都是连续的。
+[144] 这一连续性保证了这些函数在定义域内都具备导函数。
+[145] 此外，由于基本初等函数的复合也保持连续性，这意味着它们的复合函数同样具有导数。
+[146] 这一性质为高中阶段的导数运算提供了良好的基础。
+[147] 另外，为了简化计算，将多次运用恒等式求导的原理。
+[148] 这种方法通过利用函数间的恒等关系，将复杂的问题化简为已知的形式，直接高效。
+[149] 动手试一试，可以直观地体会到其妙用。
+
+[SCOPE:s_constant|description|常数函数导数]
+[150] \begin{equation}
+\begin{split}
+(c)'&=\lim_{\Delta x\to 0}\frac{c-c}{\Delta x}\\
+&=\lim_{\Delta x\to 0}\frac{0}{\Delta x}\\
+&=0~.
+\end{split}
+\end{equation}
+[151] 这一结论符合直觉，因为常数函数（constant function）没有任何变化，其值在定义域内始终不变，
+[152] 因此它的导数自然恒为 0。
+[153] 这也意味着，对于任何函数，若在其基础上加上一个常数项，这个常数对导数的影响是完全消失的。
+[154] 换句话说，函数的导数仅仅反映了函数的变化率，而常数部分没有任何变化，不会对变化率产生贡献。
+
+[/SCOPE:s_constant]
+[SCOPE:s_power|description|幂函数导数]
+[155] 对于实数次幂函数，由于涉及到极限的高级处理以及对无理数指数的严格定义，高中阶段难以进行完整的证明。
+[156] 然而，可以通过分步骤推导，证明有理数次幂函数的导数公式 $f'(x) = ax^{a-1}$ 成立。
+[SCOPE:s_power_let1|let_bind|正整数幂变量]
+[157] 首先证明正整数次幂函数的导数，对于函数 $f(x) = x^n$（$n \in \mathbb{Z}^+$），利用等幂差公式有：
+[/SCOPE:s_power_let1]
+[158] \begin{equation}
+\begin{split}
+f'(x) &= \lim_{\Delta x \to 0} \frac{(x+\Delta x)^n - x^n}{\Delta x}\\
+&=\lim_{\Delta x \to 0} \frac{(x+\Delta x-x)[(x+\Delta x)^{n-1}+x(x+\Delta x)^{n-2}+s+x^{n-2}(x+\Delta x)+x^{n-1}]}{\Delta x}\\
+&=\lim_{\Delta x \to 0} [(x+\Delta x)^{n-1}+x(x+\Delta x)^{n-2}+s+x^{n-2}(x+\Delta x)+x^{n-1}]\\
+&=nx^{n-1}~.
+\end{split}
+\end{equation}
+[159] 证明使用了引理 2、3。
+[SCOPE:s_power_let2|let_bind|负整数幂变量]
+[160a] (x) = x^{-n}$（$n \in \mathbb{Z}^+$），可以将其表示为 $f
+[160b] (x) = \frac{1}{x^{n}}$。
+[/SCOPE:s_power_let2]
+[161] 利用商法则计算导数：
+[162] \begin{equation}
+\begin{split}
+f'(x) &= \left(\frac{1}{x^n}\right)' \\
+&=-\frac{nx^{n-1}}{x^{2n}}\\
+&=(-n)x^{(-n)-1}~.
+\end{split}
+\end{equation}
+[163] 另外，由于 $(x^0)'=(1)'=0$，
+[164] 因此，任意整数次（$n\in\mathbb{Z}$）幂函数的导数都遵循 $f'(x) = nx^{n-1}$。
+[SCOPE:s_power_let3|let_bind|有理数幂变量]
+[165] 对于有理数指数的幂函数 $f(x) = x^{\frac{p}{q}}$（$p, q \in \mathbb{Z}$，$q > 0$），写成 $y=x^{\frac{p}{q}}$ 的形式，变形可得到恒等式 $y^q=x^p$，由于 $p,q$ 均为整数，两侧同时求导有：
+[/SCOPE:s_power_let3]
+[166] \begin{equation}
+q y^{q-1} y' = p x^{p-1}~.
+\end{equation}
+[167] 解出 $y'$，并代入 $\displaystyle y = x^{\frac{p}{q}}$ 还原得到：
+[168] \begin{equation}
+y' =\frac{p}{q} x^{\frac{p}{q}-1}~.
+\end{equation}
+[169] 综上，$f'(x) = ax^{a-1}$ 对所有有理数 $a$ 均成立。
+
+[/SCOPE:s_power]
+[SCOPE:s_exp_log|description|指数和对数函数导数]
+[170] 先求 $ \mathrm{e} ^x$：
+[SCOPE:s_exp_log_let1|let_bind|指数代换变量]
+[171] \begin{equation}
+\begin{split}
+\left( \mathrm{e} ^x\right)' &= \lim_{\Delta x \to 0}\frac{ \mathrm{e} ^{x+\Delta x}- \mathrm{e} ^x}{\Delta x} \\
+&= \mathrm{e} ^x\lim_{\Delta x \to 0}\frac{ \mathrm{e} ^{\Delta x}-1}{\Delta x} \\
+&= \mathrm{e} ^x\lim_{t \to 0}\frac{t}{ \ln\left(1+t\right) }\qquad(t= \mathrm{e} ^{\Delta x}-1)\\
+&= \mathrm{e} ^x\lim_{t \to 0}\frac{1}{ \ln\left(1+t\right) ^{1\over t}}\\
+&= \mathrm{e} ^x~.
+\end{split}
+\end{equation}
+[/SCOPE:s_exp_log_let1]
+[172] 证明过程中，使用了一步代换，尽管这里是在算极限，
+[173] 但这也是求导时经常使用的手段，将复杂的形式设为一个新变量，
+[174] 从而降低计算的难度。
+[175] 当 $\Delta x$ 趋于 $0$ 时，$ \mathrm{e} ^{\Delta x}-1$ 也趋于 $0$，
+[176] 即此时 $t$ 趋于 $0$。
+[177] 而这里使用了一个重要极限，也就是 $ \mathrm{e} $ 的定义，变形得到了 $\displaystyle\lim_{t \to 0}(1+t)^{1\over t}= \mathrm{e} $，由于对数函数连续，
+[178] 于是可以直接代入得到 $\displaystyle\frac{1}{\ln \mathrm{e} }=1$。
+[SCOPE:s_exp_log_let2|let_bind|对数隐函数变量]
+[179] 对于 $y=\ln x$，变形有 $x= \mathrm{e} ^y$，两侧同时求导有：
+[/SCOPE:s_exp_log_let2]
+[180] \begin{equation}
+1= \mathrm{e} ^y\cdot y'~.
+\end{equation}
+[181] 解出 $y'$，并代入 $\displaystyle \mathrm{e} ^y=x$ 还原得到：
+[182] \begin{equation}
+y'=\frac{1}{x}~.
+\end{equation}
+[183a] (x)=a^x$ 和 $f
+[183b] (x)=\log_a x$，都可以用换底公式变成 $ \mathrm{e} $ 的形式推导：
+[184] \begin{equation}
+\left(a^x\right)'=\left( \mathrm{e} ^{x\ln a}\right)'=\ln a \mathrm{e} ^{x\ln a}=a^x\ln a~.
+\end{equation}
+[185] \begin{equation}
+\left(\log_a x\right)'=\left(\frac{\ln x}{\ln a}\right)'=\frac{1}{x\ln a}~.
+\end{equation}
+
+[/SCOPE:s_exp_log]
+[SCOPE:s_trig|description|三角函数导数]
+[186] 这里需要使用另一个重要的极限，在高中阶段无法进行严谨证明，结论如下：
+[187] \begin{equation}
+\displaystyle\lim_{\Delta x \to 0}\frac{\sin\Delta x} {\Delta x}=1~.
+\end{equation}
+[188] 这个极限的几何意义可以通过单位圆来直观理解。
+[189] 在单位圆中，设角度为 $\Delta x$ 弧度，
+[190] 则圆弧长度为 $\Delta x$，$\sin\Delta x$ 对应圆上点的垂直高度，$\tan\Delta x$ 则是过该点的切线段长度，
+[191] 于是始终有 $\sin\Delta x \leq \Delta x \leq \tan\Delta x$。
+[192] 当 $\Delta x \to 0$ 时，$\cos \Delta x=1$，进而 $\sin\Delta x=\tan\Delta x$。
+[193] 也就是说，随着 $\Delta x$ 缩小，$\sin\Delta x,\Delta x,\tan\Delta x$ 三者逐渐相等。
+[194] 从而 $\displaystyle\lim_{\Delta x \to 0} \frac{\sin\Delta x}{\Delta x} = 1$。
+[195] 对 $\sin x$ 的导数：
+[196] \begin{equation}
+\begin{split}
+\left(\sin x\right)' &= \lim_{\Delta x \to 0}\frac{ \sin\left(x+\Delta x\right) -\sin x}{\Delta x} \\
+&= \lim_{\Delta x \to 0}\frac{\sin x\cos\Delta x+\cos x\sin\Delta x-\sin x}{\Delta x} \\
+&= \sin x\lim_{\Delta x \to …[truncated]…\cos x\lim_{\Delta x \to 0}\frac{\sin\Delta x} {\Delta x}\\
+&= \sin x\lim_{\Delta x \to 0}\frac{\sin^2\frac{\Delta x}{2}}{\frac{\Delta x}{2}}+\cos x\\
+&= \sin x\lim_{\Delta x \to 0}\sin\frac{\Delta x}{2}+\cos x\\
+&=\cos x~.
+\end{split}
+\end{equation}
+[197] 其中，使用了两个恒等变换：$ \sin\left(a+b\right) =\sin a\cos b+\cos a\sin b$ 和 $\displaystyle\cos x-1=2\sin^2\frac{x}{2}$，并在第五个等号使用了
+[198] 另一个重要极限 [链接 L0]
+[199] 为求 $(\cos x)'$，根据恒等式 $\cos^2 x+\sin^2 x=1$，两侧同时对 $x$ 求导有：
+[200] \begin{equation}
+2\cos x(\cos x)'+2\sin x(\sin x)'=0~.
+\end{equation}
+[201] 解出 $(\cos x)'$，并代入 $(\sin x)'=\cos x$ 得到：
+[202] \begin{equation}
+(\cos x)'=-\sin x~.
+\end{equation}
+[203] 根据恒等式 $\displaystyle\tan x=\frac{\sin x}{\cos x}$，应用商法则有：
+[204] \begin{equation}
+\begin{split}
+(\tan x)'&=\frac{(\sin x)'\cos x-\sin x(\cos x)'}{\cos^2 x}\\
+&=\frac{\cos^2 x+\sin^2 x}{\cos^2 x}\\
+&=1+\tan^2 x\\
+&=\frac{1}{\cos^2 x}\\
+&=\sec^2 x~.
+\end{split}
+\end{equation}
+[205] 这里可以看出，对于三角函数的导数结果，尽管形式上可能存在差异，
+[206] 但由于三角恒等式的存在，这些形式本质上表示的是同一个函数。
+[207] 在实际应用中，应根据具体问题的需求选择最简洁或最适合的表达形式，以便于计算或分析。
+[/SCOPE:s_trig]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_sumdiff",
+    "target_scope": "s_lemma1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "和差法则推导使用了引理1"
+  },
+  {
+    "source_scope": "s_product",
+    "target_scope": "s_lemma1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "积法则推导使用了引理1"
+  },
+  {
+    "source_scope": "s_quotient",
+    "target_scope": "s_lemma1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "商法则推导使用了引理1"
+  },
+  {
+    "source_scope": "s_chain",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "链式法则推导基于导数定义"
+  },
+  {
+    "source_scope": "s_power",
+    "target_scope": "s_lemma1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "幂函数推导使用了引理1"
+  },
+  {
+    "source_scope": "s_exp_log",
+    "target_scope": "s_lemma1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "指数对数推导使用了极限性质"
+  },
+  {
+    "source_scope": "s_trig",
+    "target_scope": "s_lemma1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "三角函数推导使用了重要极限"
+  }
+]

@@ -1,0 +1,431 @@
+{
+  "article_name": "TsrFst",
+  "statements": [
+    {
+      "stmt_id": "st_intro_matrix",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_linear",
+      "subtype": "remark",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_colrow_def",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_colrow_let",
+      "exposed_entities": [
+        "n",
+        "方矩阵",
+        "列矩阵",
+        "行矩阵",
+        "数矩阵"
+      ]
+    },
+    {
+      "stmt_id": "st_colrow_mul_types",
+      "subtype": "remark",
+      "clause_range": [
+        5,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_colrow",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_colrow_focus",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_colrow",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_colrow_left_right",
+      "subtype": "remark",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_colrow",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_colrow_action_def",
+      "subtype": "definition",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_colrow",
+      "exposed_entities": [
+        "方矩阵",
+        "列矩阵",
+        "行矩阵"
+      ]
+    },
+    {
+      "stmt_id": "st_colrow_remark",
+      "subtype": "remark",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_colrow",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_types_intro",
+      "subtype": "remark",
+      "clause_range": [
+        30,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_types",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_types_def",
+      "subtype": "definition",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_types_let",
+      "exposed_entities": [
+        "(0,0)型",
+        "(0,1)型",
+        "(1,0)型",
+        "(1,1)型"
+      ]
+    },
+    {
+      "stmt_id": "st_types_reduce",
+      "subtype": "remark",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_types",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_types_note",
+      "subtype": "remark",
+      "clause_range": [
+        40,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_types",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_types_action_effect",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_types",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_types_explain",
+      "subtype": "remark",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_types",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_types_question",
+      "subtype": "question",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_types",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_types_answer",
+      "subtype": "conclusion",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_types",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_notation_intro",
+      "subtype": "remark",
+      "clause_range": [
+        47,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_notation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_notation_def",
+      "subtype": "definition",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_notation_let",
+      "exposed_entities": [
+        "A^i_j"
+      ]
+    },
+    {
+      "stmt_id": "st_notation_benefits",
+      "subtype": "remark",
+      "clause_range": [
+        50,
+        67
+      ],
+      "truth_value": null,
+      "scope_id": "s_notation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1",
+      "subtype": "example",
+      "clause_range": [
+        68,
+        69
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_tensor_def",
+      "subtype": "definition",
+      "clause_range": [
+        70,
+        70
+      ],
+      "truth_value": null,
+      "scope_id": "s_tensor_let",
+      "exposed_entities": [
+        "(r,s)型张量",
+        "A_{j_1...j_s}^{i_1...i_r}"
+      ]
+    },
+    {
+      "stmt_id": "st_tensor_action_col",
+      "subtype": "definition",
+      "clause_range": [
+        71,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_tensor",
+      "exposed_entities": [
+        "列矩阵",
+        "v^j"
+      ]
+    },
+    {
+      "stmt_id": "st_tensor_remark_sum",
+      "subtype": "remark",
+      "clause_range": [
+        74,
+        75
+      ],
+      "truth_value": null,
+      "scope_id": "s_tensor",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_def",
+      "subtype": "definition",
+      "clause_range": [
+        77,
+        77
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2_let",
+      "exposed_entities": [
+        "(0,2)-型张量",
+        "A_{j1 j2}"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_action_col",
+      "subtype": "example",
+      "clause_range": [
+        78,
+        79
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_tensor_action_row",
+      "subtype": "definition",
+      "clause_range": [
+        80,
+        82
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2",
+      "exposed_entities": [
+        "行矩阵",
+        "θ_i"
+      ]
+    },
+    {
+      "stmt_id": "st_tensor_full_action",
+      "subtype": "conclusion",
+      "clause_range": [
+        83,
+        83
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_general_motivation",
+      "subtype": "remark",
+      "clause_range": [
+        84,
+        86
+      ],
+      "truth_value": null,
+      "scope_id": "s_general",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_general_def",
+      "subtype": "definition",
+      "clause_range": [
+        87,
+        87
+      ],
+      "truth_value": null,
+      "scope_id": "s_general_let",
+      "exposed_entities": [
+        "(r,s,t)型广义张量",
+        "^{k1...kt}A_{j1...js}^{i1...ir}"
+      ]
+    },
+    {
+      "stmt_id": "st_general_more",
+      "subtype": "remark",
+      "clause_range": [
+        88,
+        88
+      ],
+      "truth_value": null,
+      "scope_id": "s_general",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_colrow_def",
+      "target": "st_colrow_action_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_colrow_focus",
+      "target": "st_colrow_action_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_types_def",
+      "target": "st_types_action_effect",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_types_question",
+      "target": "st_types_answer",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_tensor_def",
+      "target": "st_tensor_action_col",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_tensor_def",
+      "target": "st_tensor_action_row",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_tensor_action_col",
+      "target": "st_tensor_full_action",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_tensor_action_row",
+      "target": "st_tensor_full_action",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_def",
+      "target": "st_example2_action_col",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_general_def",
+      "target": "st_general_more",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

@@ -1,0 +1,223 @@
+{
+  "article_name": "TriVM",
+  "statements": [
+    {
+      "stmt_id": "st_def_triple_product",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_unambiguous",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem_cyclic_perm",
+      "subtype": "theorem",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_memory",
+      "subtype": "remark",
+      "clause_range": [
+        11,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_negative",
+      "subtype": "remark",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem_opposite",
+      "subtype": "theorem",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_order",
+      "subtype": "remark",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_geo_parallelepiped",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_geo",
+      "exposed_entities": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_geo_area",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_geo",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_geo_normal",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_geo",
+      "exposed_entities": [
+        "n_hat"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_geo_volume",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_geo",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_conclusion_geo_cyclic",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_geo",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_geo_sign",
+      "subtype": "remark",
+      "clause_range": [
+        30,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_geo",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem_algebra_det",
+      "subtype": "theorem",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": "true",
+      "scope_id": "s_algebra",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_algebra_perm",
+      "subtype": "remark",
+      "clause_range": [
+        35,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_algebra",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_geo_parallelepiped",
+      "target": "st_conclusion_geo_volume",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_geo_area",
+      "target": "st_conclusion_geo_volume",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_geo_normal",
+      "target": "st_conclusion_geo_volume",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_conclusion_geo_volume",
+      "target": "st_conclusion_geo_cyclic",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_conclusion_geo_volume",
+      "target": "st_def_triple_product",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "几何法证明混合积的几何意义，是定义的一个特例应用。"
+    },
+    {
+      "source": "st_theorem_algebra_det",
+      "target": "st_def_triple_product",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "代数法证明混合积等于行列式，是定义的另一种表达。"
+    }
+  ],
+  "unresolved": []
+}

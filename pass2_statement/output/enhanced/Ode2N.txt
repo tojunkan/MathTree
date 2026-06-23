@@ -1,0 +1,135 @@
+[SCOPE:root|description|二阶常系数非齐次微分方程]
+文章名: Ode2N
+标题: 二阶常系数非齐次微分方程
+
+[SCOPE:s_intro|description|方程形式与通解公式]
+[0] 在二阶常系数齐次微分方程的右端加上一个函数 $f(x)$，就得到了二阶常系数非齐次微分方程
+[1] \begin{equation}
+y'' + by' + cy = f(x)~.
+\end{equation}
+[2] 二阶常系数非齐次微分方程
+[3] 。
+[4] 其解为
+[5] \begin{equation}
+y(x) = C_1 y_1 + C_2 y_2 - y_1\int \frac{y_2 f}{W} \,\mathrm{d}{x} + y_2\int \frac{y_1 f}{W} \,\mathrm{d}{x} ~,
+\end{equation}
+[SCOPE:s_intro_let|let_bind|引入变量 y1, y2, W]
+[6] 其中 $W$ 可以写成二阶行列式
+[7] \begin{equation}
+W =
+\begin{vmatrix}
+y_1 & y_2\\
+y'_1 & y'_2
+\end{vmatrix} = y_1 y'_2 - y'_1 y_2~,
+\end{equation}
+[8] 其中 $y_1, y_2, W, f$ 都是 $x$ 的函数，后面的括号和自变量被省略。
+[9a] (x)$ 和 $y_2
+[9b] (x)$ 是对应齐次方程
+[10] \begin{equation}
+y'' + by' + cy = 0~
+\end{equation}
+[11] 的两个线性无关的解。
+
+[/SCOPE:s_intro]
+[/SCOPE:s_intro_let]
+[12] 简谐振子受迫运动，轨道方程 比耐公式。
+
+[SCOPE:s_derivation|description|常数变易法推导]
+[13] 下面介绍的方法叫常数变易法，其主要思想可参考一阶线性非齐次微分方程的通解
+[SCOPE:s_derivation_let|let_bind|设 v1, v2]
+[14] 设通解的形式为
+[15] \begin{equation}
+y = v_1 y_1 + v_2 y_2~,
+\end{equation}
+[16] 其中，$v_i$ 也是关于 $x$ 的函数。
+[/SCOPE:s_derivation_let]
+[17] 对该式两边求导，得
+[18] \begin{equation}
+y' = v'_1 y_1 + v'_2 y_2 + v_1 y'_1 + v_2 y'_2~.
+\end{equation}
+[SCOPE:s_derivation_cond|conditional|规定 v1', v2' 满足关系]
+[19] 为了接下来计算方便，我们规定 $v_1$，$v_2$ 满足关系
+[20] 1
+[21] \begin{equation}
+v'_1 y_1 + v'_2 y_2 = 0~.
+\end{equation}
+[/SCOPE:s_derivation_cond]
+[22] 式 7 [链接 L0]
+[23] 式 6 [链接 L1]
+[24] \begin{equation}
+y' = v_1 y'_1 + v_2 y'_2~.
+\end{equation}
+[25] 继续对求导，得到
+[26] \begin{equation}
+y'' = v'_1 y'_1 + v'_2 y'_2 + v_1 y''_1 + v_2 y''_2~.
+\end{equation}
+[27] 式 5 [链接 L2]
+[28] 式 8 [链接 L3]
+[29] 式 9 [链接 L4]
+[30] 代回原方程
+[31] 式 1 [链接 L5]
+[32] \begin{equation}
+(v'_1 y'_1 + v'_2 y'_2 + v_1 y''_1 + v_2 y''_2) + b (v_1 y'_1 + v_2 y'_2) + c(v_1 y_1 + v_2 y_2) = f~,
+\end{equation}
+[33] 化简，得
+[34] \begin{equation}
+(v'_1 y'_1 + v'_2 y'_2) + v_1 ( y''_1 + b y'_1 + c y_1) + v_2 ( y''_2 + b y'_2 + c y_2) = f ~.\end{equation}
+[35] 由于 $y_1$ 和 $y_2$ 都是
+[36] 式 4 [链接 L6]
+[37] 的解，式（9）化为
+[38] \begin{equation} v'_1 y'_1 + v'_2 y'_2 = f~.
+\end{equation}
+[39] 总结一下，刚刚的推导说明，和在（5）的假设条件下，只要满足（10）即可满足（1）式。
+[40] 联立（5）和（10）式，得到关于 $v_1'$ 和 $v_2'$ 的方程组
+[41] \begin{equation}
+\begin{cases}
+y_1 v'_1 + y_2 v'_2 = 0\\
+y'_1 v'_1 + y'_2 v'_2 = f~,
+\end{cases}
+\end{equation}
+[42] \begin{equation}
+\begin{cases}
+v_1' = -y_2f/W\\
+v_2' = y_1 f/W~,
+\end{cases}
+\end{equation}
+[43] \begin{equation}
+W = y_1 y'_2 - y_2 y'_1 =
+\begin{vmatrix}
+y_1 & y_2\\
+y'_1 & y'_2
+\end{vmatrix}~.
+\end{equation}
+[44] 对（13）的两条式子积分，
+[45] 即可得到
+[46] \begin{equation}
+v_1 = - \int \frac{y_2 f}{W} \,\mathrm{d}{x} + C_1~,
+\end{equation}
+[47] \begin{equation}
+v_2 = \int \frac{y_1 f}{W} \,\mathrm{d}{x} + C_2~.
+\end{equation}
+[48] 式 16 [链接 L7]
+[49] 式 17 [链接 L8]
+[50] 式 5 [链接 L9]
+[51] ，得方程
+[52] 式 1 [链接 L10]
+[53] \begin{equation}
+y(x) = C_1 y_1 + C_2 y_2 - y_1 \int \frac{y_2 f}{W} \,\mathrm{d}{x} + y_2 \int \frac{y_1 f}{W} \,\mathrm{d}{x} ~.
+\end{equation}
+[54] 由于上式满足线性微分方程解的结构，所这已经是通解了。
+[55] 但是必须注意，根据常数变易法，我们只能在没有零点的区间内找到方程
+[56] 式 1 [链接 L11]
+[57] 的通解。
+[/SCOPE:s_derivation]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_derivation",
+    "target_scope": "s_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推导得到通解公式，是 intro 中公式的推导"
+  }
+]

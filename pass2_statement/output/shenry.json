@@ -1,0 +1,279 @@
+{
+  "article_name": "shenry",
+  "statements": [
+    {
+      "stmt_id": "st_axisym_def",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_axisym",
+      "exposed_entities": [
+        "f",
+        "a",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_centersym_def",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_centersym",
+      "exposed_entities": [
+        "f",
+        "a",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_period_def",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_period",
+      "exposed_entities": [
+        "f",
+        "a",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_period_note",
+      "subtype": "remark",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_period",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_min_period_def",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_period",
+      "exposed_entities": [
+        "最小正周期"
+      ]
+    },
+    {
+      "stmt_id": "st_example_sin_cos",
+      "subtype": "example",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_period",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ab_general_intro",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_ab_general",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_ab_axis",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_ab_general",
+      "exposed_entities": [
+        "f",
+        "a",
+        "b",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_ab_center",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_ab_general",
+      "exposed_entities": [
+        "f",
+        "a",
+        "b",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_ab_period",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_ab_general",
+      "exposed_entities": [
+        "f",
+        "a",
+        "b",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_ab_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ab_general",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_two_axes_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_two_axes",
+      "exposed_entities": [
+        "f",
+        "x",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_two_axes_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_two_axes",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_two_centers_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_two_centers",
+      "exposed_entities": [
+        "f",
+        "x",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_two_centers_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_two_centers",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_axis_center_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_axis_center",
+      "exposed_entities": [
+        "f",
+        "x",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_axis_center_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_axis_center",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ab_axis",
+      "target": "st_ab_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ab_center",
+      "target": "st_ab_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ab_period",
+      "target": "st_ab_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_two_axes_assump",
+      "target": "st_two_axes_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_two_centers_assump",
+      "target": "st_two_centers_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_axis_center_assump",
+      "target": "st_axis_center_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

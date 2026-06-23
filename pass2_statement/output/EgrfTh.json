@@ -1,0 +1,237 @@
+{
+  "article_name": "EgrfTh",
+  "statements": [
+    {
+      "stmt_id": "st_lemma1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "E",
+        "E_k"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_reductio_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "epsilon",
+        "F_N",
+        "U"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_reductio_contra",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_reductio_end",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_cor1",
+      "exposed_entities": [
+        "E",
+        "E_k"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cor1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_egoroff_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        36,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_egoroff",
+      "exposed_entities": [
+        "E",
+        "f_n",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_egoroff_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_egoroff",
+      "exposed_entities": [
+        "E_delta"
+      ]
+    },
+    {
+      "stmt_id": "st_egoroff_cases_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_egoroff",
+      "exposed_entities": [
+        "E",
+        "f_n"
+      ]
+    },
+    {
+      "stmt_id": "st_egoroff_cases_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        55,
+        55
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_egoroff",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        60,
+        60
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "f_n"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        61,
+        61
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_lemma1_assump",
+      "target": "st_lemma1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_reductio_assump",
+      "target": "st_lemma1_reductio_contra",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_reductio_contra",
+      "target": "st_lemma1_reductio_end",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor1_assump",
+      "target": "st_cor1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_egoroff_assump",
+      "target": "st_egoroff_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_egoroff_cases_assump",
+      "target": "st_egoroff_cases_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_assump",
+      "target": "st_example1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_egoroff_concl",
+      "target": "st_lemma1_concl",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "Egoroff 定理的证明使用了引理 1"
+    },
+    {
+      "source": "st_cor1_concl",
+      "target": "st_lemma1_concl",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论 1 是引理 1 的推广"
+    },
+    {
+      "source": "st_example1_concl",
+      "target": "st_egoroff_concl",
+      "edge_type": "counterexample_of",
+      "category": "logic",
+      "note": "例 1 说明 Egoroff 定理中测度有限的条件不可少"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,145 @@
+[SCOPE:root|description|集合的极限]
+文章名: SetLim
+标题: 集合的极限
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=上极限
+  [1] type=definition heading=定义 2 title=下极限
+
+[SCOPE:s_intro|description|特征函数与上下极限的引入]
+[SCOPE:s_intro_let1|let_bind|引入集合族和特征函数]
+[0] 如果我们有可数个集合构成的族 $\{A_n\}$，每个 $A_n$ 都是编了号的集合，
+[1] 那么对于给定的元素，我们可以观察它是否存在于各 $A_n$ 中。
+[2] 为了表达方便，我们用一个特征函数，$\mathcal{X}$，来表达属于关系：对于元素 $x$ 和集合 $A_n$，当 $x\in A_n$ 时 $\mathcal{X}_{A_n}(x)=1$；
+[3] 当 $x\not\in A_n$ 时 $\mathcal{X}_{A_n}(x)=0$。
+[4] 有了特征函数，我们就可以套用数列的极限来讨论集合的极限。
+
+[/SCOPE:s_intro_let1]
+[SCOPE:s_intro_let2|let_bind|引入U_k和J_k]
+[5] 给定一列编好了号的集合：$\{A_n\}$。
+[6] 为了方便之后的讨论，先定义两列集合：$U_k=\underset{i\ge k}{\bigcup}A_i$，$J_k=\underset{i\ge k}{\bigcap} A_i$。
+[7] 这么取的两列集合有很棒的性质：对于任何正整数 $k$，$U_{k+1}\subseteq U_k$，而 $J_{k+1}\supseteq J_k$。
+[8] 如果说真子集时比原来的集合要小的话，我们可以认为 $U_k$ 是一个单调不增的集列，而 $J_k$单调不减。
+[9] 这么一来，对于任何元素 $x$，不管 $x$ 是一个数字，一种动物，还是一片凋落在安田讲堂1前的银杏叶，它的特征函数 $\mathcal{X}_{U_n}(x)$单调不增，也就是说一旦某个 $U_n$ 不包含 $x$，
+[10] 那么任何 $m>n$ 的 $U_m$ 也不包含 $x$；
+[11] 同样地，$\mathcal{X}_{J_n}(x)$单调不减，也就是说也就是说一旦某个 $J_n$ 包含 $x$，
+[12] 那么任何 $m>n$ 的 $J_m$ 也包含 $x$。
+[13a] (x)$ 和 $\mathcal{X}_{J_n}
+[13b] (x)$ 都有极限。
+[14] 那么我们可以定义 $U_n$ 和 $J_n$ 的极限如下：
+
+[/SCOPE:s_intro]
+[/SCOPE:s_intro_let2]
+[SCOPE:s_ulim_def_let|let_bind|上极限定义中的变量]
+[SCOPE:s_ulim_def|description|上极限定义]
+[15] 定义 1 上极限
+[16] 给定一列编好了号的集合：$\{A_n\}$，令 $U_k=\underset{i\ge k}{\bigcup} A_i$。
+[17] 定义 $\lim\limits_{k\to\infty} U_k=U$，其中 $U=\{x|\text{存在无穷多个正整数}n,\text{使}\mathcal{X}_{U_n}(x)=1\}$。
+[18] 称这个 $U$ 是集列 $\{A_n\}$ 的上极限集合（upper limit set）。
+[19] 简单来说，某元素 $x$ 在上极限 $U$ 中，当且仅当 $x$ 在无穷多个$A_n$ 中。
+[20] 类似地有：
+
+[/SCOPE:s_ulim_def_let]
+[/SCOPE:s_ulim_def]
+[SCOPE:s_llim_def_let|let_bind|下极限定义中的变量]
+[SCOPE:s_llim_def|description|下极限定义]
+[21] 定义 2 下极限
+[22] 给定一列编好了号的集合：$\{A_n\}$，令 $J_k=\underset{i\ge k}{\bigcap} A_i$。
+[23] 定义 $\lim\limits_{k\to\infty} J_k=J$，其中 $J=\{x|\text{存在正整数}N\text{使得}\forall n>N, \mathcal{X}_{J_n}(x)=1\}$。
+[24] 称这个 $J$ 是集列 $\{A_n\}$ 的下极限集合（lower limit set）。
+[25] 简单来说，某元素 $x$ 在下极限 $J$ 中，当且仅当从集合序列的某一个（比如 $A_N$）开始，$x$ 在之后的每一个$A_n$ 中。
+[26] 也可以简单地说，只有有限个 $A_n$ 不包含 $x$。
+[27] 如果从 $A_n$ 的视角来看的话，上极限 $U$ 中的元素是包含于无穷多个 $A_n$ 的。
+[28] 我们也可以记上极限为 $U=\underset{n\to \infty}{\overline{\lim}} A_n$。
+[29] 下极限 $J$ 中的元素，从某个编号 $m$ 开始，包含于每一个 $n>m$ 的 $A_n$。
+[30] 我们也可以记下极限为 $J=\underset{n\to \infty}{\underline{\lim}}A_n$。
+[31] 由定义容易得到，下极限必是上极限的子集。
+
+[/SCOPE:s_llim_def_let]
+[/SCOPE:s_llim_def]
+[SCOPE:s_calc_let|let_bind|计算公式中的变量]
+[SCOPE:s_calc|description|上下极限的计算公式]
+[32] 给定一列编好了号的集合：$\{A_n\}$，
+[33] 则
+[34] \begin{equation}
+\underset{n\to \infty}{\overline{\lim}} A_n = \overset {\infty}{\underset{k=1}{\bigcap}} \overset{\infty}{\underset{i=k}{\bigcup}} A_i = \overset{\infty}{\underset{k=1}{\bigcap}} U_k~,
+\end{equation}
+[35] \begin{equation}
+\underset{n\to \infty}{\underline{\lim}}A_n=\overset{\infty}{\underset{k=1}{\bigcup}}\overset{\infty}{\underset{i=k}{\bigcap}} A_i=\overset{\infty} {\underset{k=1}{\bigcup}} J_k~,
+\end{equation}
+[36] 这两个计算公式的依据是单调性。
+[37] 由于 $U_k$ 单调不增，$J_k$ 单调不减，
+[38] 于是 $\displaystyle \overset{N}{\underset{k=1}{\bigcap}}U_k=U_N$，
+[39] 因此
+[40] \begin{equation}
+\lim_{k\to\infty}U_k=\lim\limits_{N\to\infty}\overset{N}{\underset{k=1}{\bigcap}} U_k=\overset{\infty}{\underset{k=1}{\bigcap}}U_k
+\qquad
+\lim\limits_{k\to\infty}J_k=\lim\limits_{N\to\infty}\overset{N}{\underset{k=1}{\bigcup}} J_k=\overset{\infty}{\underset{k=1}{\bigcup}} J_k~.
+\end{equation}
+
+[/SCOPE:s_calc_let]
+[/SCOPE:s_calc]
+[SCOPE:s_limit_let|let_bind|极限定义中的变量]
+[SCOPE:s_limit|description|集列的极限]
+[41] 给定一列编好了号的集合：$\{A_n\}$，
+[42] 那么它的上极限和下极限总是存在的。
+[43a] 但是
+[43b] 如果有一个元素 $x$ 很不听话，随着 $n$ 向无穷增大，$\mathcal{X}_{A_n}(x)$ 一会儿是 $1$，一会儿是 $0$，那，则没法定义 $\{A_n\}$ 的极限，因为你没法说清楚这个不听话的 $x$ 究竟是不是极限集合中的元素。
+[44] 所以，为了良好地定义 $\{A_n\}$ 的极限，就不允许不听话的 $x$ 出现。
+[45] 单调集列自然不存在不听话的 $x$，
+[46] 但是单调性是一个过分强的要求。
+[47] 为了让集列 $\{A_n\}$ 有极限，我们只需要它的上极限等于下极限：$\underset{n\to \infty}{\overline{\lim}} A_n=\underset{n\to \infty}{\underline{\lim}} A_n$。
+[48] 由于每一个 $J_k\subseteq U_k$，
+[49] 故已经必有 $\underset{n\to \infty}{\underline{\lim}} A_n\subseteq \underset{n\to \infty}{\overline{\lim}} A_n$，
+[50] 所以我们只要求 $\underset{n\to \infty}{\overline{\lim}}A_n\subseteq \underset{n\to \infty}{\underline{\lim}} A_n$。
+[51a] 当 $\underset{n\to \infty}{\overline{\lim}} A_n\subseteq \underset{n\to \infty}{\underline{\lim}} A_n$ 时，上下极限相等，我们
+[51b] 则统一把它们叫做 $\{A_n\}$ 的极限（limit set）。
+[/SCOPE:s_limit_let]
+[/SCOPE:s_limit]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ulim_def",
+    "target_scope": "s_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "上极限定义基于之前引入的U_k"
+  },
+  {
+    "source_scope": "s_llim_def",
+    "target_scope": "s_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "下极限定义基于之前引入的J_k"
+  },
+  {
+    "source_scope": "s_calc",
+    "target_scope": "s_ulim_def",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "计算公式由上极限定义推导"
+  },
+  {
+    "source_scope": "s_calc",
+    "target_scope": "s_llim_def",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "计算公式由下极限定义推导"
+  },
+  {
+    "source_scope": "s_limit",
+    "target_scope": "s_ulim_def",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "极限定义依赖于上极限"
+  },
+  {
+    "source_scope": "s_limit",
+    "target_scope": "s_llim_def",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "极限定义依赖于下极限"
+  }
+]

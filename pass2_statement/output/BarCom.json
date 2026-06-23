@@ -1,0 +1,164 @@
+{
+  "article_name": "BarCom",
+  "statements": [
+    {
+      "stmt_id": "st_ex1_question",
+      "subtype": "example",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "n",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_method",
+      "subtype": "conclusion",
+      "clause_range": [
+        2,
+        4
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_requirements",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_question",
+      "subtype": "example",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "n",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_method",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_section2_method",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_section2",
+      "exposed_entities": [
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_section2_condition",
+      "subtype": "condition",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_section2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_question",
+      "subtype": "example",
+      "clause_range": [
+        23,
+        29
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_method",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex1_question",
+      "target": "st_ex1_method",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_question",
+      "target": "st_ex2_method",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_section2_method",
+      "target": "st_section2_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_question",
+      "target": "st_ex3_method",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex2_method",
+      "target": "st_ex1_method",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2是例1的推广（盒子可为空）"
+    },
+    {
+      "source": "st_section2_method",
+      "target": "st_ex1_method",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "至少k>1个球是标准隔板法的推广"
+    },
+    {
+      "source": "st_ex3_method",
+      "target": "st_ex1_method",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例3是混合情形的应用"
+    }
+  ],
+  "unresolved": []
+}

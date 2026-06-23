@@ -1,0 +1,231 @@
+[SCOPE:root|description|图的矩阵表示]
+文章名: RepGra
+标题: 图的矩阵表示
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=邻接矩阵
+  [1] type=theorem heading=定理 1 title=
+  [2] type=definition heading=定义 2 title=关联矩阵
+  [3] type=example heading=例 1 title=
+  [4] type=theorem heading=定理 2 title=
+  [5] type=example heading=例 2 title=
+  [6] type=definition heading=定义 3 title=赋权矩阵
+
+[0] 将图的点集和边集的关系用矩阵来体现，就是所谓的图的矩阵表示。
+[1] 体现点与点相邻关系的矩阵称为邻接矩阵；
+[2] 体现点与边关联关系的矩阵称为关联矩阵。
+[3] 当对某个图选定了权函数成为赋权图时，体现权函数的矩阵称为赋权矩阵。
+
+[4] 邻接矩阵是用来体现点点相邻关系的，具体地，设图 $G$ 的点集为 $V(G)=\{v_1,\cdots,v_n\}$。
+[5] 若 $G$ 是无向图，
+[6] 则邻接矩阵的第 $(i,j)$ 个元反映了连接 $v_i,v_j$ 的边数。
+[7] 若 $G$ 是有向图，
+[8] 则邻接矩阵的第 $(i,j)$ 个元反映了以 $v_i$ 为起点，$v_j$ 为终点的有向边数。
+
+[SCOPE:s_adj_def|description|定义1 邻接矩阵]
+[9] 定义 1 邻接矩阵
+[SCOPE:s_adj_def_let|let_bind|邻接矩阵变量]
+[10] 设 $G$ 是图，$V(G)=\{v_1,\cdots,v_n\}$，$A=(a_{ij})$ 是 $n$ 阶矩阵。
+[11] 若 $G$ 是无向图，$a_{ij}$ 等于连接 $v_i,v_j$ 的边数；
+[12] 若 $G$ 是有向图，$a_{ij}$ 等于以 $v_i$ 为起点，$v_j$ 为终点的有向边数。
+[/SCOPE:s_adj_def_let]
+[13] 则称 $A$ 为 $G$ 的邻接矩阵（adjacency matrix）。
+
+[/SCOPE:s_adj_def]
+[SCOPE:s_adj_thm|description|定理1]
+[14] 定理 1
+[SCOPE:s_adj_thm_let|let_bind|定理1变量]
+[15] 设 $A$ 是有向图 $G$ 的邻接矩阵，$V(G)=\{v_1,\cdots,v_n\}$。
+[16] 则 $A^k$ 中的第 $(i,j)$ 元是 $G$ 中长度为 $k$ 的从 $v_i$ 到 $v_j$ 的有向链的数目。
+[/SCOPE:s_adj_thm_let]
+[SCOPE:s_adj_thm_ind|description|归纳证明]
+[17] 证明：
+[SCOPE:s_adj_thm_ind_base|description|归纳基础]
+[18] 使用数学归纳法证明如下：当 $k=1$ 是，由邻接矩阵 $A$ 的定义（定义 1 ）和链长的定义（定义 1 ），可知定理成立；
+[/SCOPE:s_adj_thm_ind_base]
+[SCOPE:s_adj_thm_ind_step|description|归纳步骤]
+[19] 设 $k=l$ 时定理成立，
+[SCOPE:s_adj_thm_ind_step_let|let_bind|归纳步骤变量]
+[20] 那么当 $k=l+1$ 时，设 $a_{ij}^{(l)},a_{ij}^{(l+1)}$ 分别是 $A^{l},A^{l+1}$ 的 $(i,j)$ 元。
+[/SCOPE:s_adj_thm_ind_step_let]
+[21] 由于 $A^l=A^{l-1}A$，
+[22] 所以
+[23] \begin{equation}
+a_{ij}^{(l+1)}=\sum_{m=1}^na_{im}^{(l)}a_{mj}.~
+\end{equation}
+[24] 由假设，$a_{im}^{(l)}$ 是从 $v_i$ 到 $v_m$ 的长为 $l$ 的有向链数，$a_{mj}$ 是从 $v_m$ 到 $v_j$ 的长为 $l$ 的有向链数，
+[25] 于是 $a_{im}^{(l)}a_{mj}$ 是从 $V_i$ 到 $v_m$ 再到 $v_j$ 的长为 $l+1$ 的有向链数。
+[26] 而所有从 $v_i$ 到 $v_j$ 的长为 $l+1$ 的有向链，都是从 $v_i$ 到某个 $v_x$ 的长为 $l$ 的有向链与 $v_x$ 到 $v_j$ 的长为 1 的有向链连接构成。
+[27] 因此若记 $A_m$ 是从 $V_i$ 到 $v_m$ 再到 $v_j$ 的长为 $l+1$ 的所有有向链的全体，而 $A$ 记为从 $V_i$ 到 $v_j$ 的长为 $l+1$ 的所有有向链的全体，
+[28] 那么
+[29] \begin{equation}
+A=\bigcup_{m=1}^n A_m.~
+\end{equation}
+[30] 显然 $A_a\cap A_b=\varnothing,a\neq b$，
+[31] 因此
+[32] \begin{equation}
+\left\lvert A \right\rvert =\sum_{m=1}^n \left\lvert A_m \right\rvert .~
+\end{equation}
+[33] 而 $ \left\lvert A_m \right\rvert =a_{im}^{(l)}a_{mj}$。
+[34] 因此定理得证。
+[/SCOPE:s_adj_thm_ind_step]
+[35] 证毕！
+[/SCOPE:s_adj_thm_ind]
+[36] 这一定理对无向图也是成立的，证明类似。
+
+[/SCOPE:s_adj_thm]
+[37] 关联矩阵是用来体现点边的关联关系的，具体地，设图 $G$ 的点集和边集分别为
+[38] \begin{equation}
+V(G)=\{v_1,\cdots,v_n\},E(G)=\{e_1,\cdots,e_m\}.~
+\end{equation}
+[39] 若 $G$ 是无向图，
+[40] 则关联矩阵的第 $(i,j)$ 个元反映了 $v_i,e_j$ 是否关联。
+[41] 若 $G$ 是有向图，
+[42] 则关联矩阵的第 $(i,j)$ 个元反映了以 $v_i$ 是 $e_j$ 的起点还是终点。
+[43] 为方便使用 Mathematica 软件进行图论计算起见，我们这里使用 Mathematica 关于图的关联矩阵定义
+
+[SCOPE:s_inc_def|description|定义2 关联矩阵]
+[44] 定义 2 关联矩阵
+[SCOPE:s_inc_def_let|let_bind|关联矩阵变量]
+[45] 设 $G$ 是图，$V(G)=\{v_1,\cdots,v_n\},E(G)=\{e_1,\cdots,e_m\}$，$A=(a_{ij})$ 是 $n\times m$ 的矩阵。若
+[46] \begin{equation}
+a_{ij}=\left\{\begin{aligned}
+&0,\quad &&v_i\notin e_j,\\
+&1, &&e_j=(*,v_i) \quad or\quad \{v_i,v_k\},i\neq k\\
+&-1, &&e_j=(v_i,*) ,\\
+&2, &&e_j=(v_i,v_i)
+\end{aligned}\right.~
+\end{equation}
+[/SCOPE:s_inc_def_let]
+[47] 关联矩阵
+
+[/SCOPE:s_inc_def]
+[SCOPE:s_inc_ex1|description|例1]
+[SCOPE:s_inc_ex1_let|let_bind|例1变量]
+[48] 设有图 $G=(V,E,\varphi)$，其中
+[49] \begin{equation}
+\begin{aligned}
+&V=\{v_1,v_2,v_3\},E=\{e_1,e_2,e_3,e_4,e_5\},\\
+&\varphi(e_1)=(v_1,v_1), \varphi(e_2)=(v_1,v_1), \\
+&\varphi(e_3)=(v_1,v_2), \varphi(e_4)=(v_2,v_1),\varphi(e_5)=\{v_1,v_2\}.
+\end{aligned}~
+\end{equation}
+[/SCOPE:s_inc_ex1_let]
+[50] 图 1：例子图的表示
+[51] 那么由关联矩阵定义，该图的关联矩阵为
+[52] \begin{equation}
+\begin{pmatrix}
+2&2&-1&1&1\\
+0&0&1&-1&1\\
+0&0&0&0&0
+\end{pmatrix}.~
+\end{equation}
+[53] 该例的 Mathematica 代码如下，其表明关联矩阵和我们的定义一致。
+[54] 图 2：代码及结果展示
+
+[/SCOPE:s_inc_ex1]
+[SCOPE:s_inc_thm|description|定理2]
+[55] 定理 2
+[SCOPE:s_inc_thm_let|let_bind|定理2变量]
+[56] 设 $M$ 是图的关联矩阵，
+[57] 则 $MM^T$ 的 $(i,j)$ 元为
+[58] \begin{equation}
+n_{ij}=\left\{\begin{aligned}
+&d_G(v_i)+2r=d_G^+(v_i)+d_G^{-1}(v_i)+2r,\quad &i=j,\\
+&-\mu(v_i,v_j)-\mu(v_j,v_i)+\nu(v_i,v_j),\quad &i\neq j.
+\end{aligned}\right.~
+\end{equation}
+[/SCOPE:s_inc_thm_let]
+[59] \begin{equation}
+4r+2N_i.~
+\end{equation}
+[SCOPE:s_inc_thm_proof|description|定理2证明]
+[60] 证明：
+[SCOPE:s_inc_thm_proof_let|let_bind|证明中引入变量]
+[61] 设 $N=MM^T$，由于当对某个 $k$ 而言，$M_{ik}M_{jk}$ 在 $i\neq j$ 时，当是有向边 $e_k$ 的两端点时为 -1，当是无向边 $e_k$ 的两端点时 1；
+[62] 而 $M_{ik}M_{ik}$ 为 $e_k$ 的端点且 $e_k$ 不是环时为 1，是环时为 4。
+[63] 因此 $\sum\limits_{k=1}^{ \left\lvert E(G) \right\rvert }M_{ik}M_{jk},i\neq j$ 表示以 $v_i,v_j$ 为端点的边数的负值+该点上 4 倍的环数，$\sum\limits_{k=1}^{ \left\lvert E(G) \right\rvert }M_{ik}M_{ik}$ 表示以 $v_i$ 为端点的边数加上 3 倍的环数，
+[64] 即该点的度加 2 倍的环数。
+[65] 因此，若设 $r$ 是过点 $v_i$ 的环数，
+[/SCOPE:s_inc_thm_proof_let]
+[66] 则有
+[67] \begin{equation}
+n_{ij}=\left\{\begin{aligned}
+&d_G(v_i)+2r_i=d_G^+(v_i)+d_G^{-1}(v_i)+2r_i,\quad &i=j,\\
+&-\mu(v_i,v_j)-\mu(v_j,v_i)+\nu(v_i,v_j),\quad &i\neq j.
+\end{aligned}\right.~
+\end{equation}
+[68] 其中 $r_i$ 是过 $v_i$ 的环数，$\mu(v_i,v_j)$ 表示以 $v_i$ 为起点 $v_j$ 为终点的边数，$\nu(v_i,v_j)$ 是以 $v_i,v_j$ 为端点的无向边个数。
+[69] 由 $N$ 的定义知 $N$ 是对称的。且
+[70] \begin{equation}
+\begin{aligned}
+\sum_{j=1}^{ \left\lvert V \right\rvert }n_{ij}&=d_G(v_i)+2r-\sum_{j=1,j\neq i}^{ \left\lvert V \right\rvert } \left(\mu(v_i,v_j)+\mu(v_j,v_i)-\nu(v_i,v_j) \right) \\
+&=d_C(v_i)+2r-(d_G(v_i)-2r)+2\sum_{j=1,j\neq i}^{ \left\lvert V \right\rvert }\nu(v_i,v_j)\\
+&=4r+2\sum_{j=1,j\neq i}^{ \left\lvert V \right\rvert }\nu(v_i,v_j).
+\end{aligned}
+~
+\end{equation}
+[71] 证毕！
+
+[/SCOPE:s_inc_thm]
+[/SCOPE:s_inc_thm_proof]
+[SCOPE:s_inc_ex2|description|例2]
+[72] 对例 1 的图，有 $d(v_1)=7,d(v_2)=3,d(v_3)=0$，由定理 2 ，可以看出它的关联矩阵和其转置的乘积为
+[73] \begin{equation}
+\begin{pmatrix}
+11&-1&0\\
+-1&3&0\\
+0&0&0
+\end{pmatrix}.~
+\end{equation}
+[74] 定理 2
+
+[/SCOPE:s_inc_ex2]
+[75] 赋权矩阵是用来体现赋权函数的，其有不同的定义方式。
+[76] 例如，设图 $G$ 的点集为 $V(G)=\{v_1,\cdots,v_n\}$，
+[77] 则赋权矩阵是一个 $n$ 阶矩阵。
+[78] 若 $G$ 为有向图，
+[79] 则其第 $(i,j)$ 个元反映了以 $v_i$ 为起点 $v_j$ 为终点的所有边的权值之和；
+[80] 若 $G$ 为无向图，
+[81] 则其第 $(i,j)$ 个元反映了连接 $v_i,v_j$ 的所有边的权值之和。
+
+[SCOPE:s_weight_def|description|定义3 赋权矩阵]
+[82] 定义 3 赋权矩阵
+[SCOPE:s_weight_def_let|let_bind|赋权矩阵变量]
+[83] 若 $G$ 是图，$\omega$ 是其上的权函数。
+[/SCOPE:s_weight_def_let]
+[84] 则给出权函数的矩阵称为赋权矩阵。
+[/SCOPE:s_weight_def]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_adj_thm",
+    "target_scope": "s_adj_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1引用定义1"
+  },
+  {
+    "source_scope": "s_inc_thm",
+    "target_scope": "s_inc_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2引用定义2"
+  },
+  {
+    "source_scope": "s_inc_ex2",
+    "target_scope": "s_inc_thm",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2验证定理2"
+  },
+  {
+    "source_scope": "s_inc_ex1",
+    "target_scope": "s_inc_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1说明定义2"
+  }
+]

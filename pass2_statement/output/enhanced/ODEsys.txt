@@ -1,0 +1,182 @@
+[SCOPE:root|description|一阶线性常微分方程组（简明微积分）]
+文章名: ODEsys
+标题: 一阶线性常微分方程组（简明微积分）
+
+[0] 和一阶常系数线性微分方程组（常微分方程）部分内容重复
+
+[SCOPE:s_const_coeff|description|常系数情况]
+[SCOPE:s_const_let|let_bind|常系数变量]
+[1] 一阶常微分方程组
+[2] \begin{equation}
+\frac{\mathrm{d}{ \boldsymbol{\mathbf{v}} }}{\mathrm{d}{t}} = \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{v}} ~
+\end{equation}
+[3] 的解析解（先假设 $ \boldsymbol{\mathbf{A}} $ 为常矩阵）为
+[4] \begin{equation}
+\boldsymbol{\mathbf{v}} (t) = \exp\left( \boldsymbol{\mathbf{A}} t\right) \boldsymbol{\mathbf{v}} (0)~.
+\end{equation}
+[/SCOPE:s_const_let]
+[5] 其中矩阵（这里是方阵）的指数函数也是一个大小相同的矩阵，有类似于
+[6] 泰勒级数 [链接 L0]
+[7] \begin{equation}
+\exp\left( \boldsymbol{\mathbf{A}} t\right) = 1 + \boldsymbol{\mathbf{A}} t + \frac1{2!} ( \boldsymbol{\mathbf{A}} t)^2 + \dots~
+\end{equation}
+[8] 代入即可验证
+[9] 式 1 [链接 L1]
+[10] 。
+[11] 这类似于一阶常系数常微分方程的解（未完成），
+[12] 即 $ \boldsymbol{\mathbf{A}} $ 是一个常数而不是矩阵的情况。
+[13] 但式 3 不方便直接计算。
+[SCOPE:s_diag|let_bind|对角化变量]
+[14] 此时如果 $ \boldsymbol{\mathbf{A}} $ 可以对角化为
+[15] \begin{equation}
+\boldsymbol{\mathbf{A}} = \boldsymbol{\mathbf{U}} \boldsymbol{\mathbf{\Lambda}} \boldsymbol{\mathbf{U}} ^{-1}~,
+\end{equation}
+[16] 其中 $ \boldsymbol{\mathbf{U}} $ 是本征列向量排成的矩阵，$ \boldsymbol{\mathbf{\Lambda}} $ 是对应本征值 $\lambda_1, \lambda_2, \dots$ 排成的对角矩阵，
+[17] 代入
+[18] 式 3 [链接 L2]
+[19] \begin{equation} \begin{aligned}
+\exp\left( \boldsymbol{\mathbf{A}} t\right) &= \boldsymbol{\mathbf{U}} \boldsymbol{\mathbf{U}} ^{-1} + \boldsymbol{\mathbf{U}} \boldsymbol{\mathbf{\Lambda}} \boldsymbol{\mathbf{U}} ^{-1} t + \frac1{2!} ( \boldsymbol{\…[truncated]…oldsymbol{\mathbf{U}} ^{-1}\\
+&= \boldsymbol{\mathbf{U}} \begin{pmatrix} \mathrm{e} ^{\lambda_1 t} & 0 & \dots\\ 0 & \mathrm{e} ^{\lambda_2 t} &\dots\\ \vdots & \vdots & \ddots\end{pmatrix} \boldsymbol{\mathbf{U}} ^{-1}~.
+\end{aligned} \end{equation}
+[20] 式 2 [链接 L3]
+[21] 就是方程组的解。
+
+[/SCOPE:s_const_coeff]
+[/SCOPE:s_diag]
+[SCOPE:s_time_dep|description|含时系数情况的形式解]
+[SCOPE:s_time_let|let_bind|含时系数变量]
+[22] 当式 1 中的系数矩阵 $ \boldsymbol{\mathbf{A}} $ 是 $t$ 的函数 $ \boldsymbol{\mathbf{A}} (t)$ 时，一般没有解析解。
+[23] 我们可以取微小时间步长 $\Delta t$，在每个 $\Delta t$ 内近似认为 $ \boldsymbol{\mathbf{A}} (t_i)$ 为常数，再取极限
+[24] \begin{equation}
+\boldsymbol{\mathbf{v}} (t) = \lim_{\Delta t \to 0} \prod \exp \left[ \boldsymbol{\mathbf{A}} (t_i)\Delta t \right] \boldsymbol{\mathbf{v}} (0)~,
+\end{equation}
+[/SCOPE:s_time_let]
+[25] 如果两个矩阵 $ \boldsymbol{\mathbf{P}} , \boldsymbol{\mathbf{Q}} $
+[26] 对易 [链接 L4]
+[27] \begin{equation}
+\exp\left( \boldsymbol{\mathbf{P}} + \boldsymbol{\mathbf{Q}} \right) = \exp\left( \boldsymbol{\mathbf{P}} \right) \exp\left( \boldsymbol{\mathbf{Q}} \right) ~,
+\end{equation}
+[28] 但一般来说 $ \boldsymbol{\mathbf{A}} (t_i)$ 之间不对易，
+[SCOPE:s_time_order|let_bind|时序算符]
+[29] 所以我们形式上定义一个
+[30] 时序算符
+[31] 子节 2
+[32] ）$ \hat{\mathcal T} $ 使例如
+[33] \begin{equation}
+\hat{\mathcal T} [ \boldsymbol{\mathbf{A}} (t_1) \boldsymbol{\mathbf{A}} (t_3) \boldsymbol{\mathbf{A}} (k_2)] = \boldsymbol{\mathbf{A}} (t_3) \boldsymbol{\mathbf{A}} (t_2) \boldsymbol{\mathbf{A}} (t_1) \qquad ( t_1 < t_2 < t_3 )~,
+\end{equation}
+[34] 这样通解在形式上就可以记为
+[35] \begin{equation}
+\boldsymbol{\mathbf{v}} (t) = \hat{\mathcal T} \exp\left(\int_0^ t \boldsymbol{\mathbf{A}} (t') \,\mathrm{d}{t} '\right) \boldsymbol{\mathbf{v}} (0)~,
+\end{equation}
+[/SCOPE:s_time_order]
+[36] 然而这么做对于数值计算并没有太大意义。
+
+[/SCOPE:s_time_dep]
+[SCOPE:s_hermitian|description|厄米矩阵、反厄米矩阵]
+[SCOPE:s_herm_let|let_bind|厄米矩阵变量]
+[37] 量子力学中经常需要求解矩阵形式的薛定谔方程
+[38] \begin{equation}
+\mathrm{i} \frac{\mathrm{d}}{\mathrm{d}{t}} \boldsymbol{\mathbf{v}} = \boldsymbol{\mathbf{H}} \boldsymbol{\mathbf{v}} ~.
+\end{equation}
+[39] 其中 $ \boldsymbol{\mathbf{H}} $ 是厄米矩阵（哈密顿矩阵）。
+[/SCOPE:s_herm_let]
+[40] 若把两边同除以 $ \mathrm{i} $，
+[41] 则系数矩阵 $- \mathrm{i} \boldsymbol{\mathbf{H}} $ 就是一个反厄米矩阵。
+[42] 如果 $ \boldsymbol{\mathbf{H}} $ 不随时间变化，
+[43] 那么 $ \mathrm{e} ^{ \mathrm{i} \boldsymbol{\mathbf{H}} t}$（$t\in \mathbb R$）是一个
+[44] 酉矩阵（幺正矩阵） [链接 L5]
+[45] 。
+[46a] (t)$ 的模 $ \left\lVert \boldsymbol{\mathbf{v}}
+[46b] (t) \right\rVert = \sum \left\lvert v_i \right\rvert ^2$ 将不随时间变化。
+[SCOPE:s_herm_proof|description|模守恒证明]
+[47] 证明：
+[48] \begin{equation}
+\left\lVert \boldsymbol{\mathbf{v}} (t) \right\rVert = \boldsymbol{\mathbf{v}} (t) ^\dagger \boldsymbol{\mathbf{v}} (t) = \left( \mathrm{e} ^{- \mathrm{i} \boldsymbol{\mathbf{H}} t} \right) ^\dagger \mathrm{e} ^{- \mathrm{i} \boldsymbol{\mathbf{H}} t} \boldsymbol{\mathbf{v}} (0) \left\lVert \boldsymbol{\mathbf{v}} (0) \right\rVert ~.
+\end{equation}
+[49] 两边取厄米共轭得
+[50] \begin{equation}
+\left( \mathrm{e} ^{- \mathrm{i} \boldsymbol{\mathbf{H}} t} \right) ^\dagger = \mathrm{e} ^{ \mathrm{i} \boldsymbol{\mathbf{H}} ^\dagger t} = \mathrm{e} ^{ \mathrm{i} \boldsymbol{\mathbf{H}} t}~,
+\end{equation}
+[51] 由于 $[H,H] = 0$，有 $( \mathrm{e} ^{- \mathrm{i} \boldsymbol{\mathbf{H}} t}) ^\dagger \mathrm{e} ^{- \mathrm{i} \boldsymbol{\mathbf{H}} t} = \mathrm{e} ^{ \mathrm{i} \boldsymbol{\mathbf{H}} t} \mathrm{e} ^{- \mathrm{i} \boldsymbol{\mathbf{H}} t} = \boldsymbol{\mathbf{I}} $。
+[52] 证毕。
+
+[/SCOPE:s_hermitian]
+[/SCOPE:s_herm_proof]
+[SCOPE:s_numerical|description|数值计算]
+[SCOPE:s_num_let|let_bind|数值计算变量]
+[53a] (t) = f
+[53b] (t) \boldsymbol{\mathbf{u}} $，代入方程得
+[54] \begin{equation}
+\frac{f'(t)}{f(t)} \boldsymbol{\mathbf{u}} = \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{u}} ~,
+\end{equation}
+[55] 由于 $ \boldsymbol{\mathbf{A}} $ 和 $ \boldsymbol{\mathbf{u}} $ 都不含时，
+[56] 所以可以令
+[57] \begin{equation} \begin{aligned}
+& \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{u}} = \lambda \boldsymbol{\mathbf{u}} ~,\\
+& f(t)' = \lambda f(t)~.
+\end{aligned} \end{equation}
+[58] 其中第一个方程是 $ \boldsymbol{\mathbf{A}} $ 的本征方程，解为 $N$ 个本征矢 $ \boldsymbol{\mathbf{u}} _i$（即 $ \boldsymbol{\mathbf{U}} $ 的第 $i$ 列）和 $N$ 个本征值 $\lambda_i$（即 $ \boldsymbol{\mathbf{\Lambda}} $ 的第 $i$ 个对角元）。
+[/SCOPE:s_num_let]
+[59] 第二条方程的解为 $f(t) = \exp\left(\lambda t\right) $。
+[60] 在此基础上使用 Lanczos 算法可以进一步提高效率。
+
+[/SCOPE:s_numerical]
+[SCOPE:s_split|description|算符拆分]
+[SCOPE:s_split_let|let_bind|拆分变量]
+[61] 有时候我们希望可以在上述计算中把 $ \boldsymbol{\mathbf{A}} $ 写成几个矩阵的和的形式（以两个为例）$ \boldsymbol{\mathbf{A}} = \boldsymbol{\mathbf{B}} + \boldsymbol{\mathbf{C}} $。
+[62] 当 $ \boldsymbol{\mathbf{B}} $ 和 $ \boldsymbol{\mathbf{C}} $ 对易时显然有
+[/SCOPE:s_split_let]
+[63] \begin{equation}
+\exp\left( \boldsymbol{\mathbf{A}} t\right) = \exp\left( \boldsymbol{\mathbf{B}} t\right) \exp\left( \boldsymbol{\mathbf{C}} t\right) ~.
+\end{equation}
+[64] 在程序中这么做可能可以进一步提高速度
+[65] 1
+[66] 。
+[67] 如果 $ \boldsymbol{\mathbf{B}} $ 和 $ \boldsymbol{\mathbf{C}} $ 不对易，严格来说上式不成立，
+[68] 但可以证明 $t \to 0$ 时近似成立
+[69] \begin{equation} \begin{aligned}
+& \quad \exp\left( \boldsymbol{\mathbf{B}} t\right) \exp\left( \boldsymbol{\mathbf{C}} t\right) \\
+& = \left(1+ \boldsymbol{\mathbf{B}} t+\frac{1}{2!} \boldsymbol{\mathbf{B}} ^2t^2 + \dots \right) \left(1+ \boldsymbol…[truncated]…!} \left( \boldsymbol{\mathbf{B}} ^2 + \boldsymbol{\mathbf{C}} ^2 + 2 \boldsymbol{\mathbf{B}} \boldsymbol{\mathbf{C}} \right) t^2 + \dots\\
+& = \exp\left( \boldsymbol{\mathbf{A}} t\right) + \mathcal{O}\left(t^2 \right) ~,
+\end{aligned} \end{equation}
+[70] 这里的 $ \mathcal{O}\left(t^2 \right) $ 是由于第二个等号后面是 $2 \boldsymbol{\mathbf{B}} \boldsymbol{\mathbf{C}} $ 而不是 $ \boldsymbol{\mathbf{B}} \boldsymbol{\mathbf{C}} + \boldsymbol{\mathbf{C}} \boldsymbol{\mathbf{B}} $。
+
+跨文章引用:
+  [L0] 泰勒级数 → Taylor
+  [L4] 对易 → Commu
+  [L5] 酉矩阵（幺正矩阵） → UniMat
+[/SCOPE:s_split]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_const_coeff",
+    "target_scope": "s_time_dep",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "常系数是含时系数的特例"
+  },
+  {
+    "source_scope": "s_hermitian",
+    "target_scope": "s_const_coeff",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "厄米矩阵情况是常系数的一个特例"
+  },
+  {
+    "source_scope": "s_numerical",
+    "target_scope": "s_hermitian",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "数值计算部分基于厄米矩阵"
+  },
+  {
+    "source_scope": "s_split",
+    "target_scope": "s_const_coeff",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "算符拆分是常系数的一种推广"
+  }
+]

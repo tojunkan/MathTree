@@ -1,0 +1,61 @@
+{
+  "article_name": "DoDifM",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "f",
+        "x",
+        "f_*|_x",
+        "φ",
+        "f∘φ"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1",
+      "subtype": "theorem",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        6,
+        8
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1",
+      "target": "st_thm1_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1的证明使用了定义1的导数概念"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

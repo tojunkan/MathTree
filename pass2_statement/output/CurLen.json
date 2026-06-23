@@ -1,0 +1,177 @@
+{
+  "article_name": "CurLen",
+  "statements": [
+    {
+      "stmt_id": "st_ex1_parabola",
+      "subtype": "example",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let",
+      "exposed_entities": [
+        "y",
+        "x",
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_question",
+      "subtype": "question",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_riddle",
+      "subtype": "remark",
+      "clause_range": [
+        4,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_param_intro",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_param_let",
+      "exposed_entities": [
+        "x(t)",
+        "y(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_param_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_param",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_param_derivation",
+      "subtype": "remark",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_param",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_ellipse",
+      "subtype": "example",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "x(t)",
+        "y(t)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_perimeter",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex1_let",
+      "target": "st_ex1_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_param_intro",
+      "target": "st_param_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_let",
+      "target": "st_ex2_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_formula",
+      "target": "st_ex2_perimeter",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

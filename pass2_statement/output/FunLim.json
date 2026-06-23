@@ -1,0 +1,199 @@
+{
+  "article_name": "FunLim",
+  "statements": [
+    {
+      "stmt_id": "st_ex1_intro",
+      "subtype": "example",
+      "clause_range": [
+        1,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "f(x)",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_intro",
+      "subtype": "example",
+      "clause_range": [
+        10,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "f(x)",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "f(x)",
+        "A",
+        "epsilon",
+        "X",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "A",
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_exer1",
+      "subtype": "exercise",
+      "clause_range": [
+        27,
+        30
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exer1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        36,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "f(x)",
+        "A",
+        "epsilon",
+        "delta",
+        "x",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "A",
+        "f(x)",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_examples",
+      "subtype": "example",
+      "clause_range": [
+        41,
+        51
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        56,
+        59
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "f(x)",
+        "x_0",
+        "A",
+        "A_-",
+        "A_+"
+      ]
+    },
+    {
+      "stmt_id": "st_ex4_example",
+      "subtype": "example",
+      "clause_range": [
+        60,
+        68
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex4",
+      "exposed_entities": [
+        "theta(x)",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_ex5_example",
+      "subtype": "example",
+      "clause_range": [
+        77,
+        79
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex5",
+      "exposed_entities": [
+        "f(x)",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_ex6_example",
+      "subtype": "example",
+      "clause_range": [
+        89,
+        90
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex6",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex1_intro",
+      "target": "st_ex2_intro",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1和例2都是引入极限的例子，但无直接逻辑关系，此处仅为示例。"
+    }
+  ],
+  "unresolved": []
+}

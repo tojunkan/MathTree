@@ -1,0 +1,240 @@
+{
+  "article_name": "CauEq",
+  "statements": [
+    {
+      "stmt_id": "st_thm1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "(X,d)",
+        "{x_n}",
+        "{x'_n}",
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "(X,d)",
+        "{x_n}",
+        "{x'_n}"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_def",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "~"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "C_X",
+        "X^*",
+        "d^*"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_let",
+      "subtype": "assumption",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3",
+      "exposed_entities": [
+        "(X,d)",
+        "X^*",
+        "d^*"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        57,
+        57
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm4_let",
+      "subtype": "assumption",
+      "clause_range": [
+        59,
+        61
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm4",
+      "exposed_entities": [
+        "(X,d)",
+        "(X^*,d^*)",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm4_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        74,
+        74
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm5_let",
+      "subtype": "assumption",
+      "clause_range": [
+        77,
+        79
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm5",
+      "exposed_entities": [
+        "(X,d)",
+        "(X^*,d^*)",
+        "[X]"
+      ]
+    },
+    {
+      "stmt_id": "st_thm5_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        92,
+        92
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm5",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let1",
+      "target": "st_thm2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_let",
+      "target": "st_thm3_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm4_let",
+      "target": "st_thm4_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm5_let",
+      "target": "st_thm5_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_conclusion",
+      "target": "st_def1_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1证明等价关系，定义1定义等价关系，定理1是定义1的基础"
+    },
+    {
+      "source": "st_thm2_conclusion",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理2利用定理1的等价关系定义商集和距离"
+    },
+    {
+      "source": "st_thm3_conclusion",
+      "target": "st_thm2_conclusion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理3证明商集是度量空间，依赖定理2的定义"
+    },
+    {
+      "source": "st_thm4_conclusion",
+      "target": "st_thm3_conclusion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理4证明等距嵌入，依赖定理3的度量空间结构"
+    },
+    {
+      "source": "st_thm5_conclusion",
+      "target": "st_thm4_conclusion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理5证明稠密性，依赖定理4的嵌入"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,140 @@
+[SCOPE:root|description|表示的约化]
+文章名: redrep
+标题: 表示的约化
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=等价表示
+  [1] type=corollary heading=推论 1 title=
+  [2] type=definition heading=定义 2 title=不可约表示
+  [3] type=definition heading=定义 3 title=
+  [4] type=definition heading=定义 4 title=完全可约表示
+
+[SCOPE:s_def1|description|等价表示]
+[0] 定义 1 等价表示
+[SCOPE:s_def1_let|let_bind|等价表示变量]
+[1a] (g)$ 与 $D'
+[1b] (g)$ 同为群 $G$ 的 $n$ 维表示，且存在可逆的 $n$ 维矩阵 $C$ 满足于 $\forall g\in G$，$C^{-1}D
+[1c] (g)C=D'
+[1d] (g)$，
+[2a] (g)$ 与 $D'
+[2b] (g)$ 为等价表示，记作 $D
+[2c] (g)\cong D'
+[2d] (g)$。
+[/SCOPE:s_def1_let]
+[3] 等价表示在本质上是对群空间中基的不同选取，定义中提到的变换矩阵 $C$ 则恰好是不同基底之间的过渡矩阵矩阵。
+[4] 等价表示的定义与相似矩阵类似，
+[5] 因此也有与相似矩阵类似的性质——等价矩阵的迹均相等。
+[6a] (g))=tr(C^{-1}D
+[6b] (g)C)=tr(D
+[6c] (g)CC^{-1})=tr(D
+[6d] (g))~.$$
+[7] 在群表示类中，表示矩阵的迹被称为特征标，这将是一个重要的概念。
+[8] 回忆共轭元素的概念定义 1 ，$g^{-1}g_\alpha g=g_\beta$，
+[9a] (g)D(g_\alpha)D
+[9b] (g)=D(g_\beta)$，
+[10] 则不难看出：
+[11a] (g)D(g_\alpha)D
+[11b] (g))=tr(D(g_\alpha)D
+[11c] (g)D^{-1}
+[11d] (g))=tr(D(g_\alpha))~.$$
+[12] 则有：
+
+[/SCOPE:s_def1]
+[SCOPE:s_cor1|description|推论1]
+[13] 推论 1
+[14] 属于同一个共轭类的元素的同一个表示下特征标相同。
+
+[/SCOPE:s_cor1]
+[15] 在给出可约表示的具体定义之前，先给出一个从形式上的理解：可约表示就是指那那些存在某个等价表示有如下分块矩阵形式的表示：
+[16] \begin{equation}
+D(g)=\begin{pmatrix}
+D^1(g) & M\\
+0 & D^2(g)
+\end{pmatrix}~.
+\end{equation}
+[17] 上式中的 M 可以为 0，对于 M 等于 0 的情况我们称其为完全可约表示。
+[18a] 反之
+[18b] 若不存在这样的等价表示，则称为不可约表示。
+[19] 验证乘法规则：
+[20] \begin{align}
+D(g_1)D(g_2)&=
+\begin{pmatrix}
+D^1(g_1) & M(g_1)\\
+0 & D^2(g_1)
+\end{pmatrix}
+\begin{pmatrix}
+D^1(g_2) & M(g_2)\\
+0 & D^2(g_2)
+\end{pmatrix} \\
+&=\begin{pmatrix}
+D^1(g_1)D^1(g_2) & D^1(g_1)M(g_2)+M(g_1)D^2(g_2)\\
+0 & D^2(g_1)D^2(g_2)
+\end{pmatrix} \\
+&=\begin{pmatrix}
+D^1(g_1g_2) & D^1(g_1)M(g_2)+M(g_1)D^2(g_2)\\
+0 & D^2(g_1g_2)
+\end{pmatrix}~.
+\end{align}
+[21] 容易看出对角线上的 “块” 满足群乘法规则。
+[22] 可以证明的一点是，对于有限群来说，可约表示一定完全可约。
+[23] 我们也可以从线性空间的角度来看可约表示的定义，
+[24] 那么其可以定义为1：
+
+[SCOPE:s_def2|description|不可约表示]
+[25] 定义 2 不可约表示
+[SCOPE:s_def2_let|let_bind|不可约表示变量]
+[26] 对于群 $G$ 的一个表示 $(\phi,V)$ 如果 $V$ 的 $G$ 不变子空间只有 $\{0\}$ 和 $V$，(即没有非平凡的 $G$ 不变子空间)，
+[27] 那么称 $(\phi,V)$ 是不可约的；
+[/SCOPE:s_def2_let]
+[28] 否则称 $(\phi,V)$ 是可约的。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|定义3]
+[29] 定义 3
+[SCOPE:s_def3_let|let_bind|定义3变量]
+[30] 对于有限维线性空间，若在 $V$ 上的群 $G$ 的表示 $(\phi,V)$ 是可约的，
+[31] 那么 $V$ 有一个非平凡的 $G$ 不变子空间 $U$，
+[32] 从而 $\phi$ 有子表示 $\phi_U$，并且 $\phi$ 在 $V$ 的适当基下提供的矩阵表示 $\Phi$ 具有形式：
+[33] $$\Phi(g)=\begin{pmatrix}
+\Phi_U(g) & C(g)\\
+0 & B(g)
+\end{pmatrix},~~~\forall g\in G~.$$
+[/SCOPE:s_def3_let]
+[34] 更进一步的有如果 $C(g)=0$，
+[35] 那么 $V$ 则是两个不变子空间的直和，可以定义：
+
+[/SCOPE:s_def3]
+[SCOPE:s_def4|description|完全可约表示]
+[36] 定义 4 完全可约表示
+[SCOPE:s_def4_let|let_bind|完全可约表示变量]
+[37] 对于群 $G$ 的一个表示 $(\phi,V)$，对于 $V$ 的每一个 $G$ 不变子空间，都有它在 $V$ 中的 $G$ 不变补空间，
+[38] 那么称 $(\phi,V)$ 是完全可约的。
+[/SCOPE:s_def4_let]
+[39] 值得注意的是，不可约表示也是完全可约的。
+[/SCOPE:s_def4]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是等价表示定义中特征标性质的一个直接结论"
+  },
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_def3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "不可约表示的定义引出可约表示时子表示的形式"
+  },
+  {
+    "source_scope": "s_def4",
+    "target_scope": "s_def2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "完全可约表示的定义中提到不可约表示也是完全可约的"
+  }
+]

@@ -1,0 +1,1687 @@
+=== 小时百科分句器批量验证明细 ===
+生成时间: 2026-06-18T13:47:10.554Z
+
+──────────────────────────────────────────────
+文章: ExDiv | 环境类型: definition | 标题: 定义 1
+原文: 定义 1　整除、因式、倍式 　　 设 $f(x),g(x)$ 为数域 $\mathbb{F}$ 上的多项式，若存在数域 $\mathbb{F}$ 上的多项式 $q(x)$ 使得 $f(x)=q(x)g(x)$，则称 $g(x)$ 整除 $f(x)$，记作 $g(x)|f(x)$，并称 $g(x)$ 为 $f(x)$ 的因式，$f(x)$ 为 $g(x)$ 的倍式.
+
+  [0] definition: 定义 1　整除、因式、倍式
+  [1] assumption: 设 $f(x),g(x)$ 为数域 $\mathbb{F}$ 上的多项式，若存在数域 $\mathbb{F}$ 上的多项式 $q(x)$ 使得 $f(x)=q(x)g(x)$
+  [2] definition: 则称 $g(x)$ 整除 $f(x)$
+  [3] definition: 记作 $g(x)|f(x)$，并称 $g(x)$ 为 $f(x)$ 的因式，$f(x)$ 为 $g(x)$ 的倍式.
+
+──────────────────────────────────────────────
+文章: ExDiv | 环境类型: theorem | 标题: 定理 1
+原文: 定理 1　 　　 设 $f(x),g(x)$ 为数域 $\mathbb{F}$ 上的两个多项式，$g(x)\neq 0$，则 $g(x)|f(x)$ 的充要条件是 $g(x)$ 除 $f(x)$ 的余式为 0，即存在多项式 $q(x)$ 使得 $f(x)=q(x)g(x)$。
+
+  [0] assertion [unclassified]: 定理 1
+  [1] assumption: 设 $f(x),g(x)$ 为数域 $\mathbb{F}$ 上的两个多项式，$g(x)\neq 0$
+  [2] conclusion [equivalence]: 则 $g(x)|f(x)$ 的充要条件是 $g(x)$ 除 $f(x)$ 的余式为 0，即存在多项式 $q(x)$ 使得 $f(x)=q(x)g(x)$
+  ⚠ unresolved (1条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: ExDiv | 环境类型: definition | 标题: 定义 2
+原文: 定义 2　多项式的商 　　 若 $g(x)|f(x)$，则 $g(x)$ 除 $f(x)$ 的商 $q(x)$ 可表示  \begin{equation} q(x)=\frac{f(x)}{g(x)}~. \end{equation}
+
+  [0] definition: 定义 2　多项式的商
+  [1] assumption: 若 $g(x)|f(x)$
+  [2] conclusion: 则 $g(x)$ 除 $f(x)$ 的商 $q(x)$ 可表示
+  [3] assertion [display_math]: \begin{equation}
+q(x)=\frac{f(x)}{g(x)}~.
+\end{equation}
+  ⚠ unresolved (1条):
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: ExDiv | 环境类型: definition | 标题: 定义 3
+原文: 定义 3　因式、最大公因式 　　 设 $f(x),g(x)$ 为数域 $\mathbb{F}$ 上的两个多项式，若数域 $\mathbb{F}$ 上的多项式 $d(x)$ 满足  \begin{equation} d(x)|f(x)\quad\&\quad d(x)|g(x)~. \end{equation}  则称 $d(x)$ 为 $f(x)$ 与 $g(x)$ 的一个公因式。 若 $f(x)$ 与 $g(x)$ 的任意公因式都是它们公因式 $d(x)$ 的因式，则称 $d(x)$ 为 $f
+
+  [0] definition: 定义 3　因式、最大公因式
+  [1] assumption: 设 $f(x),g(x)$ 为数域 $\mathbb{F}$ 上的两个多项式，若数域 $\mathbb{F}$ 上的多项式 $d(x)$ 满足
+  [2] assertion [display_math]: \begin{equation}
+d(x)|f(x)\quad\&\quad d(x)|g(x)~.
+\end{equation}
+  [3] definition: 则称 $d(x)$ 为 $f(x)$ 与 $g(x)$ 的一个公因式。
+  [4] assumption: 若 $f(x)$ 与 $g(x)$ 的任意公因式都是它们公因式 $d(x)$ 的因式
+  [5] definition: 则称 $d(x)$ 为 $f(x)$ 与 $g(x)$ 的一个最大公因式，并把 $f(x)$ 与 $g(x)$ 的首项系数为 1的最大公因式记为 $(f(x),g(x))$
+  ⚠ unresolved (1条):
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: ExDiv | 环境类型: example | 标题: 例 1
+原文: 例 1　整除性质 1 的证明 　　 试证明：若 $f(x)|g(x)$ 且 $g(x)|f(x)$，则 $f(x)=cg(x)$，$c$ 为非 0 常数。  　　 证明：显然，若 $f(x)=0$，由 $f(x)|g(x)$，有 $g(x)=0$，则 $f(x)=cg(x)$ 显然成立。下面考虑 $f(x)\neq 0$ 情形。  　　 条件 $f(x)|g(x)$ 和 $g(x)|f(x)$ 意味着  \begin{equation} f(x)=q(x)g(x)\quad g(x)=q_1(x
+
+  [0] assertion [unclassified]: 例 1　整除性质 1 的证明
+  [1] assertion [unclassified]: 试证明：若 $f(x)|g(x)$ 且 $g(x)|f(x)$
+  [2] conclusion: 则 $f(x)=cg(x)$，$c$ 为非 0 常数。
+  [3] assertion [unclassified]: 证明：显然，若 $f(x)=0$，由 $f(x)|g(x)$，有 $g(x)=0$
+  [4] conclusion: 则 $f(x)=cg(x)$ 显然成立
+  [5] assertion [unclassified]: 下面考虑 $f(x)\neq 0$ 情形。
+  [6] assertion [unclassified]: 条件 $f(x)|g(x)$ 和 $g(x)|f(x)$ 意味着
+  [7] assertion [display_math]: \begin{equation}
+f(x)=q(x)g(x)\quad g(x)=q_1(x)f(x)~.
+\end{equation}
+  [8] conclusion: 所以
+  [9] assertion [display_math]: \begin{equation}
+f(x)=q(x)q_1(x)f(x)~.
+\end{equation}
+  [10] assertion [unclassified]: 由于定理 1 ，必有
+  [11] assertion [display_math]: \begin{equation}
+q(x)q_1(x)=1~,
+\end{equation}
+  [12] assertion [unclassified]: 上式两边取次数，由式 8 ，
+  [13] assertion [display_math]: \begin{equation}
+\mathrm{deg}\;q(x)+\mathrm{deg}\;q_1(x)=0~,
+\end{equation}
+  [14] assertion [unclassified]: 显然 $q(x),q_1(x)\neq 0$，而非零多项式的次数必定大于等于 0
+  [15] conclusion: 所以要上式成立，只能
+  [16] assertion [display_math]: \begin{equation}
+\mathrm{deg}\;q(x)=\mathrm{deg}\;q_1(x)=0~,
+\end{equation}
+  [17] assertion [unclassified]: 结合式 5 ，有
+  [18] assertion [display_math]: \begin{equation}
+q(x)=1/q_1(x)=c\neq 0~.
+\end{equation}
+  [19] conclusion: 即 $f(x)=cg(x)$
+  ⚠ unresolved (15条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s5: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    ... 共 15 条
+
+──────────────────────────────────────────────
+文章: nDSM | 环境类型: definition | 标题: 定义 1
+原文: 定义 1　笛卡尔坐标 　　 在 $N+1$ 空间中，若在坐标 $(x^1,\cdots,x^{N+1})$ 下，线元平方 $ \,\mathrm{d}{s} ^2$ 可写为  \begin{equation} \,\mathrm{d}{s} ^2=( \,\mathrm{d}{x} ^1)^2+\cdots+( \,\mathrm{d}{x} ^{N+1})^2,~ \end{equation}  则称坐标 $(x^1,\cdots,x^{N+1})$ 为笛卡尔坐标。
+
+  [0] definition: 定义 1　笛卡尔坐标
+  [1] assertion [unclassified]: 在 $N+1$ 空间中，若在坐标 $(x^1,\cdots,x^{N+1})$ 下，线元平方 $ \,\mathrm{d}{s} ^2$ 可写为
+  [2] assertion [display_math]: \begin{equation}
+\,\mathrm{d}{s} ^2=( \,\mathrm{d}{x} ^1)^2+\cdots+( \,\mathrm{d}{x} ^{N+1})^2,~
+\end{equation}
+  [3] definition: 则称坐标 $(x^1,\cdots,x^{N+1})$ 为笛卡尔坐标
+  ⚠ unresolved (2条):
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: nDSM | 环境类型: definition | 标题: 定义 2
+原文: 定义 2　高维空间的球坐标 　　 是 $(x^1,\cdots,x^{N+1})$ 是 $N+1$ 维空间的笛卡尔坐标，则称如下定义的坐标 $(r,\theta,\varphi)$ 为该空间上的球坐标。  \begin{equation} \begin{aligned} &x^{N+1}=r\cos \theta^N,\\ &x^{N}=r\sin \theta^N\cos\theta^{N-1},\\ &x^{N-1}=r\sin \theta^N\sin\theta^{N-1}\cos\th
+
+  [0] definition: 定义 2　高维空间的球坐标
+  [1] assertion [unclassified]: 是 $(x^1,\cdots,x^{N+1})$ 是 $N+1$ 维空间的笛卡尔坐标
+  [2] definition: 则称如下定义的坐标 $(r,\theta,\varphi)$ 为该空间上的球坐标
+  [3] assertion [display_math]: \begin{equation}
+\begin{aligned}
+&x^{N+1}=r\cos \theta^N,\\
+&x^{N}=r\sin \theta^N\cos\theta^{N-1},\\
+&x^{N-1}=r\sin \theta^N\sin\theta^{N-1}\cos\theta
+  ⚠ unresolved (2条):
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: nDSM | 环境类型: theorem | 标题: 定理 1
+原文: 定理 1　 　　 在 $n+1$ 维空间中，球坐标系式 3  的度规张量为  \begin{equation} \begin{aligned} g_{ij}&=\mathrm{diag}(\eta_i),\\ \eta_{i}&=\left\{\begin{aligned} & \left(\frac{x^{i+1}}{\cos\theta^i} \right) ^2=r^2\prod\limits_{k=i+1}^{N}\sin^2\theta^{k},i\leq N,\\ &1,i=N+1.
+
+  [0] assertion [unclassified]: 定理 1
+  [1] assertion [unclassified]: 在 $n+1$ 维空间中，球坐标系式 3  的度规张量为
+  [2] assertion [display_math]: \begin{equation}
+\begin{aligned}
+g_{ij}&=\mathrm{diag}(\eta_i),\\
+\eta_{i}&=\left\{\begin{aligned}
+& \left(\frac{x^{i+1}}{\cos\theta^i} \right) ^2=r^2
+  ⚠ unresolved (3条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: nDSM | 环境类型: definition | 标题: 定义 3
+原文: 定义 3　球坐标 　　 在 $N+1$ 维空间中，若在坐标 $(r,\theta^1,\cdots,\theta^{N})$ 下，线元平方 $ \,\mathrm{d}{s} ^2$ 可写为  \begin{equation} \,\mathrm{d}{s} ^2=( \,\mathrm{d}{r} )^2+ r^2\sum_{i=1}^N\prod\limits_{k=i+1}^{N}\sin^2\theta^{k}( \,\mathrm{d}{\theta} ^i)^2,~ \end{equ
+
+  [0] definition: 定义 3　球坐标
+  [1] assertion [unclassified]: 在 $N+1$ 维空间中，若在坐标 $(r,\theta^1,\cdots,\theta^{N})$ 下，线元平方 $ \,\mathrm{d}{s} ^2$ 可写为
+  [2] assertion [display_math]: \begin{equation}
+\,\mathrm{d}{s} ^2=( \,\mathrm{d}{r} )^2+ r^2\sum_{i=1}^N\prod\limits_{k=i+1}^{N}\sin^2\theta^{k}( \,\mathrm{d}{\theta} ^i)^2,~
+\end{
+  [3] definition: 则称坐标 $(r,\theta^1,\cdots,\theta^{N})$ 为球坐标
+  ⚠ unresolved (2条):
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Clf05 | 环境类型: definition | 标题: 定义 1
+原文: 定义 1　 　　 给定非退化的几何代数 $\mathcal G(V,q)$，$\{e_1,e_2...e_k\}$ 是 $V$ 上的一组基，则可以定义该基的互反基(reciprocal basis)$\{e^1,e^2...e^k\}$，使得  \begin{equation} e^i*e_j=\delta^i_j~. \end{equation}
+
+  [0] definition: 定义 1
+  [1] assumption: 给定非退化的几何代数 $\mathcal G(V,q)$，$\{e_1,e_2...e_k\}$ 是 $V$ 上的一组基
+  [2] definition [ambiguous]: 则可以定义该基的互反基(reciprocal basis)$\{e^1,e^2...e^k\}$，使得
+  [3] assertion [display_math]: \begin{equation}
+e^i*e_j=\delta^i_j~.
+\end{equation}
+  ⚠ unresolved (2条):
+    - [ambiguous_subtype] s2: 句子同时匹配了 definition, conclusion, quantified，当前归类为 definition
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Clf05 | 环境类型: theorem | 标题: 定理 1
+原文: 定理 1　 　　 给定非退化的几何代数 $G(V,q)$。任取非零单向量 $A=v_1\wedge v_2...\wedge v_k$，由于其非零，可以拓展为 $V$ 上的一组基 $\{v_1,v_2...v_k,v_{k+1}...v_n\}$，则有  \begin{equation} A^c\propto v^{k+1}\wedge v^{k+2}...\wedge v^n~, \end{equation}
+
+  [0] assertion [unclassified]: 定理 1
+  [1] assumption: 给定非退化的几何代数 $G(V,q)$
+  [2] assertion [unclassified]: 任取非零单向量 $A=v_1\wedge v_2...\wedge v_k$，由于其非零，可以拓展为 $V$ 上的一组基 $\{v_1,v_2...v_k,v_{k+1}...v_n\}$
+  [3] conclusion: 则有
+  [4] assertion [display_math]: \begin{equation}
+A^c\propto v^{k+1}\wedge v^{k+2}...\wedge v^n~,
+\end{equation}
+  ⚠ unresolved (3条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s4: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Clf05 | 环境类型: corollary | 标题: 推论 1
+原文: 推论 1　 　　 给定非退化的几何代数 $\mathcal G(V,q)$。任取两个单向量 $A$，$B$，则 $A\wedge B$ 与 $A\vee B$ 也是单向量
+
+  [0] assertion [unclassified]: 推论 1
+  [1] assumption: 给定非退化的几何代数 $\mathcal G(V,q)$
+  [2] assertion [unclassified]: 任取两个单向量 $A$，$B$
+  [3] conclusion: 则 $A\wedge B$ 与 $A\vee B$ 也是单向量
+  ⚠ unresolved (2条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Clf05 | 环境类型: corollary | 标题: 推论 2
+原文: 推论 2　 　　 给定非退化的几何代数 $\mathcal G(V,q)$。任取两个单向量 $A$，$B$，则 $A\llcorner B$ 也是单向量。
+
+  [0] assertion [unclassified]: 推论 2
+  [1] assumption: 给定非退化的几何代数 $\mathcal G(V,q)$
+  [2] assertion [unclassified]: 任取两个单向量 $A$，$B$
+  [3] conclusion: 则 $A\llcorner B$ 也是单向量
+  ⚠ unresolved (2条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Clf05 | 环境类型: corollary | 标题: 推论 3
+原文: 推论 3　 　　 若 $A,B$ 为几何代数 $\mathcal G(V,q)$ 的两个单向量，则 $A\llcorner B$ 也是单向量。
+
+  [0] assertion [unclassified]: 推论 3
+  [1] assumption: 若 $A,B$ 为几何代数 $\mathcal G(V,q)$ 的两个单向量
+  [2] conclusion: 则 $A\llcorner B$ 也是单向量
+  ⚠ unresolved (1条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Clf05 | 环境类型: theorem | 标题: 定理 2
+原文: 定理 2　 　　 取 $A\in \mathcal B^{\bullet}(V,q)$，若 $q$ 非退化，有  \begin{equation} \bar A=\bar A^{\perp}~. \end{equation}
+
+  [0] assertion [unclassified]: 定理 2
+  [1] assertion [unclassified]: 取 $A\in \mathcal B^{\bullet}(V,q)$，若 $q$ 非退化，有
+  [2] assertion [display_math]: \begin{equation}
+\bar A=\bar A^{\perp}~.
+\end{equation}
+  ⚠ unresolved (3条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Clf05 | 环境类型: theorem | 标题: 定理 3
+原文: 定理 3　 　　 取 $A,B\in \mathcal B^{\bullet}(V,q)$，则有  \begin{equation} \left\{\begin{aligned} A \wedge B \neq 0 & \Longrightarrow \overline{A \wedge B}=\bar{A} \oplus \bar{B} \\ \bar{A}+\bar{B}=V & \Longrightarrow \overline{A \vee B}=\bar{A} \cap \bar{B}
+
+  [0] assertion [unclassified]: 定理 3
+  [1] assertion [unclassified]: 取 $A,B\in \mathcal B^{\bullet}(V,q)$
+  [2] conclusion: 则有
+  [3] assertion [display_math]: \begin{equation}
+\left\{\begin{aligned}
+A \wedge B \neq 0 & \Longrightarrow \overline{A \wedge B}=\bar{A} \oplus \bar{B} \\
+\bar{A}+\bar{B}=V & \Longr
+  ⚠ unresolved (3条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Delta | 环境类型: definition | 标题: 定义 1
+原文: 定义 1　狄拉克 $\delta$ 函数 　　 令 $\delta_1(x), \delta_2(x), \dots$ 为一组连续实函数的序列。若 $\delta_n(x)$ 满足以下条件，那么我们把该函数列称为狄拉克 $\delta$ 函数（列）：  \begin{equation} \lim_{n\to\infty}\int_{-\infty}^{+\infty} \delta_n(x) \,\mathrm{d}{x} = 1~. \end{equation}  且对任意给定的不包含 0 的
+
+  [0] definition: 定义 1　狄拉克 $\delta$ 函数
+  [1] assumption: 令 $\delta_1(x), \delta_2(x), \dots$ 为一组连续实函数的序列
+  [2] assumption: 若 $\delta_n(x)$ 满足以下条件
+  [3] definition: 那么我们把该函数列称为狄拉克 $\delta$ 函数（列）：
+  [4] quantified: \begin{equation}
+\lim_{n\to\infty}\int_{-\infty}^{+\infty} \delta_n(x) \,\mathrm{d}{x} = 1~.
+\end{equation}，且对任意给定的不包含 0 的区间 $(a,b)$（$a,b \ne 0$，可取 $\
+  [5] assertion [display_math]: \begin{equation}
+\lim_{n\to\infty} \int_{a}^{b} \delta_n(x) \,\mathrm{d}{x} = 0~.
+\end{equation}
+  ⚠ unresolved (1条):
+    - [unclassified] s5: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Delta | 环境类型: definition | 标题: 定义 2
+原文: 定义 2　狄拉克 $\delta$ 函数 2 　　 令 $\delta_1(x), \delta_2(x), \dots$ 为一个连续实函数的序列。若 $\delta_n(x)$ 满足以下两个条件，那么我们把该函数列称为狄拉克 $\delta$ 函数（列）：  　　 对所有性质良好（例如在 $x = 0$ 连续）的 $f(x)$，都有  \begin{equation} \lim_{n\to\infty}\int_{-\infty}^{+\infty} \delta_n(x)f(x) \,\ma
+
+  [0] definition: 定义 2　狄拉克 $\delta$ 函数 2
+  [1] assumption: 令 $\delta_1(x), \delta_2(x), \dots$ 为一个连续实函数的序列
+  [2] assumption: 若 $\delta_n(x)$ 满足以下两个条件
+  [3] definition: 那么我们把该函数列称为狄拉克 $\delta$ 函数（列）：
+  [4] quantified: 对所有性质良好（例如在 $x = 0$ 连续）的 $f(x)$，都有
+  [5] assertion [display_math]: \begin{equation}
+\lim_{n\to\infty}\int_{-\infty}^{+\infty} \delta_n(x)f(x) \,\mathrm{d}{x} = f(0)~.
+\end{equation}
+  ⚠ unresolved (1条):
+    - [unclassified] s5: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Delta | 环境类型: exercise | 标题: 习题 1
+原文: 习题 1　高斯函数 　　 证明高斯分布函数 可以构成以下 $\delta$ 函数列  \begin{equation} \delta_n(x) = \sqrt{\frac{n}{\pi}} \mathrm{e} ^{-n x^2} \qquad (n = 1, 2, \dots)~. \end{equation}
+
+  [0] assertion [unclassified]: 习题 1　高斯函数
+  [1] assertion [unclassified]: 证明高斯分布函数 可以构成以下 $\delta$ 函数列
+  [2] assertion [display_math]: \begin{equation}
+\delta_n(x) = \sqrt{\frac{n}{\pi}} \mathrm{e} ^{-n x^2} \qquad (n = 1, 2, \dots)~.
+\end{equation}
+  ⚠ unresolved (3条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Delta | 环境类型: example | 标题: 例 1
+原文: 例 1　sinc 函数 　　 可以证明 $ \operatorname{sinc} $ 函数可以构成以下 $\delta$ 函数列  \begin{equation} \delta_n(x) = \frac{n}{\pi} \operatorname{sinc} (n x) \qquad (n = 1, 2, \dots)~. \end{equation}  该式在傅里叶分析和量子力学中有重要应用（下文以及 [2]），但证明起来比较困难暂且从略（证明式 4  可用式 3 ）。注意即使对于 $x 
+
+  [0] assertion [unclassified]: 例 1　sinc 函数
+  [1] assertion [unclassified]: 可以证明 $ \operatorname{sinc} $ 函数可以构成以下 $\delta$ 函数列
+  [2] assertion [display_math]: \begin{equation}
+\delta_n(x) = \frac{n}{\pi} \operatorname{sinc} (n x) \qquad (n = 1, 2, \dots)~.
+\end{equation}
+  [3] assertion [unclassified]: 该式在傅里叶分析和量子力学中有重要应用（下文以及 [2]），但证明起来比较困难暂且从略（证明式 4  可用式 3 ）
+  [4] quantified: 注意即使对于 $x \ne 0$，极限 $\lim_{n\to\infty} \delta_n(x)$ 也不存在，可见式 2  是十分不严谨的
+  [5] assertion [unclassified]: 图 1  的三个例子也较为片面
+  ⚠ unresolved (5条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    ... 共 5 条
+
+──────────────────────────────────────────────
+文章: Delta | 环境类型: example | 标题: 例 2
+原文: 例 2　 　　 在傅里叶分析中，时常会看到  \begin{equation} \int_{-\infty}^{+\infty} \mathrm{e} ^{ \mathrm{i} kx} \,\mathrm{d}{x} = 2\pi \delta(k)~. \end{equation}  然而严格来说，该积分并不收敛，所以不能 “按字面意思” 理解该式。要严格证明，上式两边除以 $2\pi$，令有限区间 $[-n,n]$ 内的积分为  \begin{equation} \delta_n(k) =
+
+  [0] assertion [unclassified]: 例 2
+  [1] assertion [unclassified]: 在傅里叶分析中，时常会看到
+  [2] assertion [display_math]: \begin{equation}
+\int_{-\infty}^{+\infty} \mathrm{e} ^{ \mathrm{i} kx} \,\mathrm{d}{x} = 2\pi \delta(k)~.
+\end{equation}
+  [3] assertion [unclassified]: 然而严格来说，该积分并不收敛
+  [4] conclusion: 所以不能 “按字面意思” 理解该式
+  [5] assertion [unclassified]: 要严格证明，上式两边除以 $2\pi$，令有限区间 $[-n,n]$ 内的积分为
+  [6] assertion [display_math]: \begin{equation}
+\delta_n(k) = \frac{1}{2\pi}\int_{-n}^{n} \mathrm{e} ^{ \mathrm{i} kx} \,\mathrm{d}{x} = \frac{ \sin\left(n k\right) }{\pi k} = \frac
+  [7] assertion [unclassified]: 由例 1  中的结论得 $\delta_n(k)$ 是一个 delta 函数列
+  [8] assertion [unclassified]: 证毕
+  ⚠ unresolved (8条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    ... 共 8 条
+
+──────────────────────────────────────────────
+文章: Delta | 环境类型: example | 标题: 例 3
+原文: 例 3　 　　 事实上式 14  不止一种理解，例 2  中限制积分上下限的方法相当于给式 14  的被积函数乘以窗口函数  \begin{equation} g(x) = \left\{\begin{aligned} &1 && ( \left\lvert x \right\rvert \leq n)\\ &0 && ( \left\lvert x \right\rvert > n)~. \end{aligned}\right. \end{equation}  那么该例中，我们可以使用一个更平
+
+  [0] assertion [unclassified]: 例 3
+  [1] assertion [unclassified]: 事实上式 14  不止一种理解，例 2  中限制积分上下限的方法相当于给式 14  的被积函数乘以窗口函数
+  [2] assertion [display_math]: \begin{equation}
+g(x) = \left\{\begin{aligned}
+&1 && ( \left\lvert x \right\rvert \leq n)\\
+&0 && ( \left\lvert x \right\rvert > n)~.
+\end{aligned}\ri
+  [3] conclusion: 那么该例中，我们可以使用一个更平滑的窗口函数
+  [4] assertion [display_math]: \begin{equation}
+g(x) = \mathrm{e} ^{-x^2/(4n)}~.
+\end{equation}
+  [5] assertion [unclassified]: 得
+  [6] assertion [display_math]: \begin{equation}
+\int_{-\infty}^\infty \mathrm{e} ^{-x^2/(4n)} \mathrm{e} ^{ \mathrm{i} k x} \,\mathrm{d}{x} = 2\pi \sqrt{\frac{n}{\pi}} \mathrm{e} ^{
+  [7] assertion [unclassified]: 而根据习题 1 ，等式右边就是 $2\pi\delta_n(x)$
+  [8] assertion [unclassified]: 而随着 $n$ 变大，$ \mathrm{e} ^{-x^2/(4n)}$ 接近 $1$，左边的积分也 “接近” 式 14  的左边
+  ⚠ unresolved (8条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s4: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    ... 共 8 条
+
+──────────────────────────────────────────────
+文章: Delta | 环境类型: exercise | 标题: 习题 2
+原文: 习题 2　 　　 证明  \begin{equation} \begin{aligned}&\quad\int_{-\infty}^{+\infty} \sin\left(k'x\right) \sin\left(kx\right) \,\mathrm{d}{x} = \int_{-\infty}^{+\infty} \cos\left(k'x\right) \cos\left(kx\right) \,\mathrm{d}{x} \\ &= \pi\delta(k' - k) - \pi\del
+
+  [0] assertion [unclassified]: 习题 2
+  [1] assertion [unclassified]: 证明
+  [2] assertion [display_math]: \begin{equation}
+\begin{aligned}&\quad\int_{-\infty}^{+\infty} \sin\left(k'x\right) \sin\left(kx\right) \,\mathrm{d}{x} = \int_{-\infty}^{+\infty} \co
+  [3] assertion [unclassified]: 提示：使用式 1 ，式 2  和式 14
+  ⚠ unresolved (4条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Delta | 环境类型: example | 标题: 例 4
+原文: 例 4　 　　 请证明  \begin{equation} \int_{-\infty}^{+\infty} \delta(x-x_1) \delta(x-x_2) \,\mathrm{d}{x} = \delta(x_1 - x_2)~. \end{equation}  注意由此可得积分 $\int_{-\infty}^{+\infty}\delta(x)^2 \,\mathrm{d}{x} = +\infty$，即不收敛。  　　 证明：考虑和上文一样的含参函数 $\delta_n(x)$，
+
+  [0] assertion [unclassified]: 例 4
+  [1] assertion [unclassified]: 请证明
+  [2] assertion [display_math]: \begin{equation}
+\int_{-\infty}^{+\infty} \delta(x-x_1) \delta(x-x_2) \,\mathrm{d}{x} = \delta(x_1 - x_2)~.
+\end{equation}
+  [3] assertion [unclassified]: 注意由此可得积分 $\int_{-\infty}^{+\infty}\delta(x)^2 \,\mathrm{d}{x} = +\infty$
+  [4] conclusion: 即不收敛。
+  [5] assertion [unclassified]: 证明：考虑和上文一样的含参函数 $\delta_n(x)$，令 $I_n = \int_{-\infty}^{+\infty} \delta_n(x) \,\mathrm{d}{x} $，有 $\lim_{n\to\infty} I_n = 1$
+  [6] assertion [unclassified]: 再令
+  [7] assertion [display_math]: \begin{equation}
+f_n(x_1, x_2) = \int_{-\infty}^{+\infty} \delta_n(x-x_1) \delta_n(x-x_2) \,\mathrm{d}{x} ~.
+\end{equation}
+  [8] assertion [unclassified]: 未完成：以下证明不严谨，待更正
+  [9] assertion [unclassified]: 我们希望证明 $\lim_{n\to\infty }f_n(x_1, x_2) = \delta(x_1 - x_2)$
+  [10] assertion [unclassified]: 首先对于给定的 $x_1 \ne x_2$ 显然有 $\lim_{n\to\infty }f_n(x_1, x_2) = 0$
+  [11] conclusion: 所以只需证明
+  [12] assertion [display_math]: \begin{equation}
+\lim_{n\to\infty }\int_{-\infty}^{+\infty} f_n(x_1, x_2) \,\mathrm{d}{x_2} = 1~.
+\end{equation}
+  [13] assertion [unclassified]: 交换积分顺序得
+  [14] assertion [display_math]: \begin{equation}
+\begin{aligned}
+&\lim_{n\to\infty }\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} \delta_n(x-x_1) \delta_n(x-x_2) \,\mathrm{d}{x} \
+  [15] assertion [unclassified]: 证毕
+  ⚠ unresolved (14条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    ... 共 14 条
+
+──────────────────────────────────────────────
+文章: ConFul | 环境类型: definition | 标题: 定义 1
+原文: 定义 1　凸泛函 　　 设 $L$ 是实线性空间。$L$ 上的泛函 $p$ 称为凸的，是指对任意 $x,y\in L,0\leq\alpha\leq1$，成立  \begin{equation} p(\alpha x+(1-\alpha)y)\leq \alpha p(x)+(1-\alpha)p(y).~ \end{equation}
+
+  [0] definition: 定义 1　凸泛函
+  [1] assumption: 设 $L$ 是实线性空间
+  [2] definition: $L$ 上的泛函 $p$ 称为凸的，是指对任意 $x,y\in L,0\leq\alpha\leq1$，成立
+  [3] assertion [display_math]: \begin{equation}
+p(\alpha x+(1-\alpha)y)\leq \alpha p(x)+(1-\alpha)p(y).~
+\end{equation}
+  ⚠ unresolved (1条):
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: ConFul | 环境类型: definition | 标题: 定义 2
+原文: 定义 2　正齐次 　　 $L$ 上的泛函 $p$ 称为正齐次的，是指对所有的 $x\in L,\alpha >0$，  \begin{equation} p(\alpha x)=\alpha p(x).~ \end{equation}
+
+  [0] definition: 定义 2　正齐次
+  [1] definition: $L$ 上的泛函 $p$ 称为正齐次的，是指对所有的 $x\in L,\alpha >0$，
+  [2] assertion [display_math]: \begin{equation}
+p(\alpha x)=\alpha p(x).~
+\end{equation}
+  ⚠ unresolved (1条):
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: ConFul | 环境类型: definition | 标题: 定义 3
+原文: 定义 3　齐次凸泛函 　　 正齐次的凸泛函简称为齐次凸泛函。
+
+  [0] definition: 定义 3　齐次凸泛函
+  [1] definition: 正齐次的凸泛函简称为齐次凸泛函
+
+──────────────────────────────────────────────
+文章: ConFul | 环境类型: theorem | 标题: 定理 1
+原文: 定理 1　 　　 设 $p$ 是正齐次泛函，则 $p$ 凸当且仅当  \begin{equation} p(x+y)\leq p(x)+p(y).~ \end{equation}
+
+  [0] assertion [unclassified]: 定理 1
+  [1] assumption: 设 $p$ 是正齐次泛函
+  [2] conclusion: 则 $p$ 凸
+  [3] assumption [equivalence]: 当且仅当
+  [4] assertion [display_math]: \begin{equation}
+p(x+y)\leq p(x)+p(y).~
+\end{equation}
+  ⚠ unresolved (2条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s4: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: ConFul | 环境类型: theorem | 标题: 定理 2
+原文: 定理 2　凸泛函的性质 　　 设 $p$ 是凸泛函，则成立   $p(0)=0$；  $0\leq p(x)+p(-x)$；  $p(\alpha x)\geq\alpha p(x).\alpha\in\mathbb R$。
+
+  [0] assertion [unclassified]: 定理 2　凸泛函的性质
+  [1] assumption: 设 $p$ 是凸泛函
+  [2] conclusion: 则成立
+  [3] assertion [unclassified]: $p(0)=0$；
+  [4] assertion [unclassified]: $0\leq p(x)+p(-x)$；
+  [5] assertion [unclassified]: $p(\alpha x)\geq\alpha p(x).\alpha\in\mathbb R$
+  ⚠ unresolved (4条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s4: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s5: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: ConFul | 环境类型: example | 标题: 例 1
+原文: 例 1　 　　 设 $m$ 是有界序列 $x=(x_1,\cdots,\cdots,\cdots)$ 组成的空间。泛函  \begin{equation} p(x)=\sup_n \left\lvert x_n \right\rvert ~ \end{equation}  是齐次凸的。
+
+  [0] assertion [unclassified]: 例 1
+  [1] assumption: 设 $m$ 是有界序列 $x=(x_1,\cdots,\cdots,\cdots)$ 组成的空间
+  [2] assertion [unclassified]: 泛函
+  [3] assertion [display_math]: \begin{equation}
+p(x)=\sup_n \left\lvert x_n \right\rvert ~
+\end{equation}
+  [4] assertion [unclassified]: 是齐次凸的
+  ⚠ unresolved (4条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s4: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Cat | 环境类型: definition | 标题: 定义 1
+原文: 定义 1　范畴 　　 范畴 $\mathcal{C}$ 包含以下结构。   集合 $\operatorname{Ob}(\mathcal{C})$，其元素称作 $\mathcal{C}$ 的对象；  集合 $\operatorname{Mor}_{\mathcal{C}}$，其元素称作 $\mathcal{C}$ 的态射，配上一对映射 $\operatorname{Mor}(\mathcal{C})\rightrightarrows_{a}$；  对于每三个元素 $x,y,z\in\operat
+
+  [0] definition: 定义 1　范畴
+  [1] assertion [unclassified]: 范畴 $\mathcal{C}$ 包含以下结构。
+  [2] definition: 集合 $\operatorname{Ob}(\mathcal{C})$，其元素称作 $\mathcal{C}$ 的对象；
+  [3] definition: 集合 $\operatorname{Mor}_{\mathcal{C}}$，其元素称作 $\mathcal{C}$ 的态射，配上一对映射 $\operatorname{Mor}(\mathcal{C})\rightrightarrows_{a}$；
+  [4] quantified: 对于每三个元素 $x,y,z\in\operatorname{Ob}(\mathcal{C})$，存在态射复合映射 ${\circ}:\operatorname{Mor}_\mathcal{C}(Y,Z)\times\operatorname{Mor}_{\mathcal{C}}(X,Y)\to\o
+  [5] assertion [unclassified]: 这些结构满足以下规则。
+  [6] quantified: 对于每个元素 $X\in\operatorname{Ob}(\mathcal{C})$，存在单位态射 $\operatorname{id}_X\in\operatorname{Mor}_\mathcal{C}(X,X)$，使得 $\operatorname{id}_X\circ\phi=\phi$ 
+  [7] assertion [unclassified]: 复合具有结合性
+  [8] conclusion: 即对于 $\phi\in\operatorname{Mor}_\mathcal{C}(Y,Z),\psi\in\operatorname{Mor}_\mathcal{C}(X,Y),\chi\in\operatorname{Mor}_\mathcal{C}(W,X)$，有 $(\phi\circ\p
+  [9] quantified: 任意态射集合 $ \operatorname {Mor}_\mathcal{C}(X,Y)$ 和 $ \operatorname {Mor}_\mathcal{C}(X',Y')$ 不交，除非 $X=X',Y=Y'$，此时它们相等
+  ⚠ unresolved (3条):
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s5: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s7: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Cat | 环境类型: exercise | 标题: 习题 1
+原文: 习题 1　 　　 证明同个元素的任意两个单位态射是相等的。
+
+  [0] assertion [unclassified]: 习题 1
+  [1] quantified: 证明同个元素的任意两个单位态射是相等的
+  ⚠ unresolved (1条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Cat | 环境类型: definition | 标题: 定义 2
+原文: 定义 2　范畴论同构 　　 对于一个态射 $\phi:X\to Y$，若存在另一个态射 $\psi:Y\to X$ 使得 $\phi\circ\psi= \operatorname {id}_Y$ 和 $\psi\circ\phi= \operatorname {id}_X$ 成立，则我们说它是一个范畴论同构。此时 $\phi$ 也被称为一个可逆态射，而 $\phi^{-1}=\psi$ 则被称为它的逆。
+
+  [0] definition: 定义 2　范畴论同构
+  [1] quantified: 对于一个态射 $\phi:X\to Y$，若存在另一个态射 $\psi:Y\to X$ 使得 $\phi\circ\psi= \operatorname {id}_Y$ 和 $\psi\circ\phi= \operatorname {id}_X$ 成立
+  [2] conclusion: 则我们说它是一个范畴论同构
+  [3] definition: 此时 $\phi$ 也被称为一个可逆态射，而 $\phi^{-1}=\psi$ 则被称为它的逆
+
+──────────────────────────────────────────────
+文章: Cat | 环境类型: definition | 标题: 定义 3
+原文: 定义 3　群胚 　　 若范畴 $\mathcal{C}$ 的所有态射都是范畴论同构，则称范畴 $\mathcal{C}$ 为一群胚。
+
+  [0] definition: 定义 3　群胚
+  [1] assumption: 若范畴 $\mathcal{C}$ 的所有态射都是范畴论同构
+  [2] definition: 则称范畴 $\mathcal{C}$ 为一群胚
+
+──────────────────────────────────────────────
+文章: Cat | 环境类型: definition | 标题: 定义 4
+原文: 定义 4　函子 　　 范畴 $\mathcal{A},\mathcal{B}$ 间的协变函子 $F:\mathcal{A}\to\mathcal{B}$ 包含以下结构。   若 $\mathcal{A}$ 和 $\mathcal{B}$ 均为集合范畴，则函子包含一个映射 $F_{ \operatorname {Ob}}^{\text{Set}}: \operatorname {Ob}(\mathcal{A})\to \operatorname {Ob}(\mathcal{B})$，否则函子包含一
+
+  [0] definition: 定义 4　函子
+  [1] assertion [unclassified]: 范畴 $\mathcal{A},\mathcal{B}$ 间的协变函子 $F:\mathcal{A}\to\mathcal{B}$ 包含以下结构。
+  [2] assumption: 若 $\mathcal{A}$ 和 $\mathcal{B}$ 均为集合范畴
+  [3] conclusion: 则函子包含一个映射 $F_{ \operatorname {Ob}}^{\text{Set}}: \operatorname {Ob}(\mathcal{A})\to \operatorname {Ob}(\mathcal{B})$，否则函子包含一个从 $ \operatorname {Ob}(\m
+  [4] assertion [unclassified]: 函子包含一个映射 $F_{ \operatorname {Mor}}: \operatorname {Mor}_\mathcal{C}(X,Y)\to \operatorname {Mor}_\mathcal{B}(F_{ \operatorname {Ob}}^{\text{Set/PrCl}}(
+  [5] assertion [unclassified]: 函子满足如下公理。
+  [6] quantified: 对于任意元素 $X\in \operatorname {Ob}(A)$，$F( \operatorname {id}_X)= \operatorname {id}_{F(x)}$；
+  [7] quantified: 对于任意可复合的元素对 $(\phi,\psi)$，$F(\phi\circ_\mathcal{A}\psi)=F(\phi)\circ_\mathcal{B}F(\psi)$
+  ⚠ unresolved (3条):
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s4: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s5: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Cat | 环境类型: definition | 标题: 定义 5
+原文: 定义 5　$ \operatorname {Hom}$ 函子 　　 若 $\mathcal{C}$ 是一个局部集合范畴，对于每个 $A\in\mathcal{C}$，记 $A$-协变 $ \operatorname {Hom}$ 函子为 $h^A= \operatorname {Hom}(A,-):\mathcal{C}\to\mathbf{Set}$，其定义如下：   若 $X\in \operatorname {Ob}(\mathcal{C})$，则 $h^A(X)= \operatorna
+
+  [0] definition: 定义 5　$ \operatorname {Hom}$ 函子
+  [1] definition [has_assumption_context]: 若 $\mathcal{C}$ 是一个局部集合范畴，对于每个 $A\in\mathcal{C}$，记 $A$-协变 $ \operatorname {Hom}$ 函子为 $h^A= \operatorname {Hom}(A,-):\mathcal{C}\to\mathbf{Set}$，其定义如下：
+  [2] assumption: 若 $X\in \operatorname {Ob}(\mathcal{C})$
+  [3] conclusion: 则 $h^A(X)= \operatorname {Mor}_\mathcal{C}(A,X)\in \operatorname {Ob}(\mathbf{Set})$；
+  [4] assumption: 若 $f\in \operatorname {Mor}_\mathcal{C}(X,Y)$
+  [5] conclusion: 则对于 $g:A\to X$，有 $h^A(f)=g\mapsto f\circ g:A\to Y\in h^A(Y)$。
+  [6] definition: 记 $B$-逆变 $ \operatorname {Hom}$ 函子为 $h_B= \operatorname {Hom}(-,B):\mathcal{C}\to\mathbf{Set}$，其定义如下：
+  [7] assumption: 若 $X\in \operatorname {Ob}(\mathcal{C})$
+  [8] conclusion: 则 $h_A(X)= \operatorname {Mor}_\mathcal{C}(X,B)\in \operatorname {Ob}(\mathbf{Set})$；
+  [9] assumption: 若 $f\in \operatorname {Mor}_\mathcal{C}(X,Y)$
+  [10] conclusion: 则对于 $g:X\to B$，有 $h_A(f)=g\mapsto g\circ f:Y\to B\in h_A(Y)$
+
+──────────────────────────────────────────────
+文章: Cat | 环境类型: definition | 标题: 定义 6
+原文: 定义 6　$ \operatorname {Hom}$ 函子范畴 　　 我们使用 $\mathbf{Set}^\mathcal{C}$ 来记协变 $ \operatorname {Hom}$ 函子所构成的范畴，对于每个 $\mathcal{C}$ 中的态射 $\phi:A'\to A$，我们可以获得一个自然变换 $h_{\text{co}}(\phi):(h^A:\mathcal{C}\to\mathbf{Set})\Rightarrow(h^{A'}:\mathcal{C}\to\mathbf
+
+  [0] definition: 定义 6　$ \operatorname {Hom}$ 函子范畴
+  [1] assertion [unclassified]: 我们使用 $\mathbf{Set}^\mathcal{C}$ 来记协变 $ \operatorname {Hom}$ 函子所构成的范畴，对于每个 $\mathcal{C}$ 中的态射 $\phi:A'\to A$，我们可以获得一个自然变换 $h_{\text{co}}(\phi):(h^A:\ma
+  [2] quantified: 我们可以简单地看出，下图是交换的对于任意 $\psi\in \operatorname {Mor}_\mathcal{C}(X,Y)$
+  [3] conclusion: 于是 $h_\text{co}(\phi)$ 的确是一自然变换。
+  [4] assertion [unclassified]: 图 1：$h_{\text{co}}(\phi)$ 的自然性
+  [5] definition: 类似地，我们可以定义逆变 $ \operatorname {Hom}$ 函子所构成的范畴 $\mathbf{Set}^{\mathcal{C}^\text{op}}$，唯一不同的一点是我们需要给出一个相反的映射 $\phi:B\to B'$ 来使得下图交换
+  [6] assertion [unclassified]: 注意下图中 $h_B(-)$ 是一逆变函子
+  [7] conclusion: 所以关于图交换的结论是对于 $\psi:Y\to X$ 而言的。
+  [8] assertion [unclassified]: 图 2：$h_{\text{ct}}(\phi)$ 的自然性
+  ⚠ unresolved (4条):
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s4: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s6: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s8: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Cat | 环境类型: exercise | 标题: 习题 2
+原文: 习题 2　 　　 请验证 $h^{-}:\mathcal{C}\to\mathbf{Set}^\mathcal{C}$ 和 $h_{-}:\mathcal{C}\to\mathbf{Set}^{\mathcal{C}^\text{op}}$ 为函子。提示：观察上述定义，可以注意到前者为逆变函子，后者为协变函子。
+
+  [0] assertion [unclassified]: 习题 2
+  [1] assertion [unclassified]: 请验证 $h^{-}:\mathcal{C}\to\mathbf{Set}^\mathcal{C}$ 和 $h_{-}:\mathcal{C}\to\mathbf{Set}^{\mathcal{C}^\text{op}}$ 为函子
+  [2] definition: 提示：观察上述定义，可以注意到前者为逆变函子，后者为协变函子
+  ⚠ unresolved (2条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Cat | 环境类型: theorem | 标题: 定理 1
+原文: 定理 1　Yoneda 引理 　　 对于任意局部集合范畴 $\mathcal{C}$ 和 $A,B\in \operatorname {Ob}(\mathcal{C})$，   给定协变函子 $F:\mathcal{C}\overset{\text{co}}{\to}\mathbf{Set}$，存在双射 $ \operatorname {Nat}(h^A,F)\simeq F(A)$；  给定逆变函子 $G:\mathcal{C}\overset{\text{ct}}{\to}\mathbf{S
+
+  [0] assertion [unclassified]: 定理 1　Yoneda 引理
+  [1] quantified: 对于任意局部集合范畴 $\mathcal{C}$ 和 $A,B\in \operatorname {Ob}(\mathcal{C})$，
+  [2] assumption: 给定协变函子 $F:\mathcal{C}\overset{\text{co}}{\to}\mathbf{Set}$，存在双射 $ \operatorname {Nat}(h^A,F)\simeq F(A)$；
+  [3] assumption: 给定逆变函子 $G:\mathcal{C}\overset{\text{ct}}{\to}\mathbf{Set}$，存在双射 $ \operatorname {Nat}(h_B,G)\simeq G(B)$
+  ⚠ unresolved (1条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Cat | 环境类型: exercise | 标题: 习题 3
+原文: 习题 3　 　　 请尝试证明在上述证明中，$m\circ n= \operatorname {id}$ 和 $n\circ m= \operatorname {id}$。
+
+  [0] assertion [unclassified]: 习题 3
+  [1] assertion [unclassified]: 请尝试证明在上述证明中，$m\circ n= \operatorname {id}$ 和 $n\circ m= \operatorname {id}$
+  ⚠ unresolved (2条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Cat | 环境类型: exercise | 标题: 习题 4
+原文: 习题 4　 　　 模仿上述证明，证明 Yoneda 引理的第二部分。
+
+  [0] assertion [unclassified]: 习题 4
+  [1] assertion [unclassified]: 模仿上述证明，证明 Yoneda 引理的第二部分
+  ⚠ unresolved (2条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: ComMap | 环境类型: definition | 标题: 定义 1
+原文: 定义 1　压缩映射 　　 设 $A:M\rightarrow M$ 是度量空间 $M$ (度量为 $d$)到它自身的一个映射，若存在一常数 $\lambda\in(0,1)$，使得  \begin{equation} d(Ax,Ay)\leq \lambda d(x,y),\quad \forall x,y\in M~. \end{equation}  则称 $A$ 为 $M$ 上的压缩映射。
+
+  [0] definition: 定义 1　压缩映射
+  [1] assumption: 设 $A:M\rightarrow M$ 是度量空间 $M$ (度量为 $d$)到它自身的一个映射，若存在一常数 $\lambda\in(0,1)$，使得
+  [2] assertion [display_math]: \begin{equation}
+d(Ax,Ay)\leq \lambda d(x,y),\quad \forall x,y\in M~.
+\end{equation}
+  [3] definition: 则称 $A$ 为 $M$ 上的压缩映射
+  ⚠ unresolved (1条):
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: ComMap | 环境类型: theorem | 标题: 定理 1
+原文: 定理 1　压缩映射必定连续 　　 压缩映射是个连续映射。
+
+  [0] assertion [unclassified]: 定理 1　压缩映射必定连续
+  [1] assertion [unclassified]: 压缩映射是个连续映射
+  ⚠ unresolved (2条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: CpxInt | 环境类型: definition | 标题: 定义 1
+原文: 定义 1　复积分的定义 　　 设 $C$ 为复平面上一条起点在 $a$，终点在 $b$（$a,b\in\mathbb C$）的有向曲线，其方程为  \begin{equation} z(t)=x(t)+\mathrm{i} y(t) \qquad(t_a \leqslant t \leqslant t_b)~. \end{equation}  函数 $f(z)$ 定义在 $C$ 上。用一组点 $z_{0}, z_{1}, \dots, z_{n}$ 沿曲线从 $a$ 到 $b$ 对曲线 $C$ 
+
+  [0] definition: 定义 1　复积分的定义
+  [1] assumption: 设 $C$ 为复平面上一条起点在 $a$，终点在 $b$（$a,b\in\mathbb C$）的有向曲线，其方程为
+  [2] assertion [display_math]: \begin{equation}
+z(t)=x(t)+\mathrm{i} y(t) \qquad(t_a \leqslant t \leqslant t_b)~.
+\end{equation}
+  [3] definition: 函数 $f(z)$ 定义在 $C$ 上
+  [4] assertion [unclassified]: 用一组点 $z_{0}, z_{1}, \dots, z_{n}$ 沿曲线从 $a$ 到 $b$ 对曲线 $C$ 进行分割
+  [5] assumption: 当 $n$ 不断增加，设 $\Delta z_{k}=z_{k}-z_{k-1}$，$\zeta_k$ 为 $z_{k-1},z_k$ 之间任意一点，分割 $C$ 所得各个弧段长度中的最大值 $d$，不论对 $C$ 的分法及 $\zeta_k$ 的取法如何，若存在极限
+  [6] assertion [display_math]: \begin{equation}
+S = \lim_{d \rightarrow 0} \sum_{k=1}^{n} f\left(\zeta_{k}\right) \Delta z_{k}~,
+\end{equation}
+  [7] definition: 则称 $f(z)$ 沿 $C $（从 $a$ 到 $b$）可积
+  [8] definition: 称 $S$ 为 $f(z)$ 沿 $C$（从 $a$ 到 $b$）的积分，记作
+  [9] assertion [display_math]: \begin{equation}
+S=\int_{C} f(z) \mathrm{d} z~.
+\end{equation}
+  [10] definition: 其中 $f (z)$ 称为被积函数，$C$ 称为积分路径
+  ⚠ unresolved (4条):
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s4: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s6: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s9: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: CpxInt | 环境类型: example | 标题: 例 1
+原文: 例 1　 　　 设 $C$ 是一条起点为 $a$ 终点为 $b$ 的曲线，试计算 $\displaystyle S=\int_C\mathrm dz$。  　　 解：用定义来计算该积分。由定义，将 $f(z)=1$ 代入，得：  \begin{equation} \int_{C} \mathrm{d} z=\lim _{d \rightarrow 0} \sum_{k=1}^{n}\left(z_{k}-z_{k-1}\right)= b-a~. \end{equation}
+
+  [0] assertion [unclassified]: 例 1
+  [1] assumption: 设 $C$ 是一条起点为 $a$ 终点为 $b$ 的曲线，试计算 $\displaystyle S=\int_C\mathrm dz$。
+  [2] definition: 解：用定义来计算该积分
+  [3] definition: 由定义，将 $f(z)=1$ 代入，得：
+  [4] assertion [display_math]: \begin{equation}
+\int_{C} \mathrm{d} z=\lim _{d \rightarrow 0} \sum_{k=1}^{n}\left(z_{k}-z_{k-1}\right)= b-a~.
+\end{equation}
+  ⚠ unresolved (2条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s4: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: CpxInt | 环境类型: theorem | 标题: 定理 1
+原文: 定理 1　 　　 令复平面的实轴为 $x$ 轴，虚轴为 $y$ 轴，用两个二元实函数 $u, v$ 来表示 $f(z)$  \begin{equation} f (z) = u(x, y) + \mathrm iv(x, y)~, \end{equation}  令两个矢量场为（$ \boldsymbol{\mathbf{r}} $ 为 $xy$ 平面上的位置矢量）  \begin{equation} \boldsymbol{\mathbf{f}} ( \boldsymbol{\mathbf{r
+
+  [0] assertion [unclassified]: 定理 1
+  [1] assumption: 令复平面的实轴为 $x$ 轴，虚轴为 $y$ 轴，用两个二元实函数 $u, v$ 来表示 $f(z)$
+  [2] assertion [display_math]: \begin{equation}
+f (z) = u(x, y) + \mathrm iv(x, y)~,
+\end{equation}
+  [3] assumption: 令两个矢量场为（$ \boldsymbol{\mathbf{r}} $ 为 $xy$ 平面上的位置矢量）
+  [4] assertion [display_math]: \begin{equation}
+\boldsymbol{\mathbf{f}} ( \boldsymbol{\mathbf{r}} ) = u \hat{\boldsymbol{\mathbf{x}}} - v \hat{\boldsymbol{\mathbf{y}}}
+\qquad
+\bolds
+  [5] conclusion: 那么积分 $\int_{C} f(z) \mathrm{d} z$ 的实部和虚部分别可以看作两个矢量场 $ \boldsymbol{\mathbf{f}} ( \boldsymbol{\mathbf{r}} ), \boldsymbol{\mathbf{g}} ( \boldsymbol{\math
+  [6] assertion [display_math]: \begin{equation}
+\begin{aligned}
+\int_{C} f(z) \,\mathrm{d}{z} &= \int_C \boldsymbol{\mathbf{f}} ( \boldsymbol{\mathbf{r}} ) \boldsymbol\cdot \,\mathr
+  ⚠ unresolved (4条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s4: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s6: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: CpxInt | 环境类型: example | 标题: 例 2
+原文: 例 2　 　　 计算 $\displaystyle \int _ C z \mathrm dz$，其中 $C$ 为起点在 $a$ 终点在 $b$ 的一条逐段光滑曲线。  　　 我们用定义来计算一下。  　　 由题知，$f(z)=z$。取 $\zeta_k=z_{k-1}$，则 $f\left(\zeta_{k}\right)=z_{k-1}$，作和：  \begin{equation} A_{n}=\sum_{k=1}^{n} f\left(\zeta_{k}\right) \Delta z_{
+
+  [0] assertion [unclassified]: 例 2
+  [1] assertion [unclassified]: 计算 $\displaystyle \int _ C z \mathrm dz$，其中 $C$ 为起点在 $a$ 终点在 $b$ 的一条逐段光滑曲线。
+  [2] definition: 我们用定义来计算一下。
+  [3] assertion [unclassified]: 由题知，$f(z)=z$
+  [4] assertion [unclassified]: 取 $\zeta_k=z_{k-1}$
+  [5] conclusion: 则 $f\left(\zeta_{k}\right)=z_{k-1}$，作和：
+  [6] assertion [display_math]: \begin{equation}
+A_{n}=\sum_{k=1}^{n} f\left(\zeta_{k}\right) \Delta z_{k}=\sum_{k=1}^{n} z_{k-1}\left(z_{k}-z_{k-1}\right)~.
+\end{equation}
+  [7] assertion [unclassified]: 因 $f(z)=z$ 在 $C$ 上连续
+  [8] conclusion: 所以积分一定存在，于是
+  [9] assertion [display_math]: \begin{equation}
+\int_{C} f(\mathrm{z}) \mathrm{d} \mathrm{z}=\lim _{n \rightarrow \infty \atop d \rightarrow 0} A_{n}~.
+\end{equation}
+  [10] assertion [unclassified]: 另外，若取 $\zeta_k=z_k$
+  [11] conclusion: 则 $f\left(\zeta_{k}\right)=z_{k}$，作和：
+  [12] assertion [display_math]: \begin{equation}
+B_{n}=\sum_{k=1}^{n} f\left(\zeta_{k}\right) \Delta z_{k}=\sum_{k=1}^{n} z_{k}\left(z_{k}-z_{k-1}\right)~.
+\end{equation}
+  [13] assertion [unclassified]: 由之前的讨论知，
+  [14] assertion [display_math]: \begin{equation}
+\int_{C} f(\mathrm{z}) \mathrm{d} \mathrm{z}=\lim _{n \rightarrow \infty \atop d \rightarrow 0} B_{n}~.
+\end{equation}
+  [15] assertion [unclassified]: 由式 18  和式 20  知，
+  [16] assertion [display_math]: \begin{equation}
+\begin{aligned} \int_{C} f(z) \mathrm{d} z &=\frac{1}{2} \lim _{n \rightarrow \infty \atop d \rightarrow 0}\left(A_{n}+B_{n}\right) \
+  ⚠ unresolved (13条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s4: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    ... 共 13 条
+
+──────────────────────────────────────────────
+文章: CpxInt | 环境类型: example | 标题: 例 3
+原文: 例 3　 　　 试计算 $\displaystyle \int_{C} x \mathrm{d} z$，其中 $C$ 为起点在 $z = 0$，终点在 $z =1+\mathrm i$ 的直线段。      图 2：积分路径 　　 我们用式 16  计算。首先，写出 $C$ 的方程为  \begin{equation} z=z(t)=(1+i) t \qquad (0 \leqslant t \leqslant 1)~. \end{equation}  由 $x+\mathrm{i} y=z=z
+
+  [0] assertion [unclassified]: 例 3
+  [1] assertion [unclassified]: 试计算 $\displaystyle \int_{C} x \mathrm{d} z$，其中 $C$ 为起点在 $z = 0$，终点在 $z =1+\mathrm i$ 的直线段。
+  [2] assertion [unclassified]: 图 2：积分路径
+  [3] assertion [unclassified]: 我们用式 16  计算
+  [4] assertion [unclassified]: 首先，写出 $C$ 的方程为
+  [5] assertion [display_math]: \begin{equation}
+z=z(t)=(1+i) t \qquad (0 \leqslant t \leqslant 1)~.
+\end{equation}
+  [6] assertion [unclassified]: 由 $x+\mathrm{i} y=z=z(t)=(1+\mathrm{i}) t$ 得 $\mathrm{d} z=z^{\prime}(t) \mathrm{d} t=(1+\mathrm{i}) \mathrm{d} t$，将 $x=t$ 和 $\mathrm dz$ 代入所求积分，得
+  [7] assertion [display_math]: \begin{equation}
+\int_{C} x \mathrm{d} z=\int_{0}^{1}(1+\mathrm{i}) t \mathrm{d} t~,
+\end{equation}
+  [8] assertion [unclassified]: 最后，计算上式右端的积分得
+  [9] assertion [display_math]: \begin{equation}
+\int_{C} x \mathrm{d} z=\frac{1+\mathrm{i}}{2}~.
+\end{equation}
+  ⚠ unresolved (10条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    ... 共 10 条
+
+──────────────────────────────────────────────
+文章: CpxInt | 环境类型: example | 标题: 例 4
+原文: 例 4　 　　 设 $\Gamma$ 为由 $C_1$ 与 $C_2$ 首尾相接而成的起点在 $z=0$，终点在 $ z =1+ \mathrm i $ 的曲线，如图 3  所示。计算 $\displaystyle \int_{\Gamma} x \mathrm{d}z$。      图 3：积分路径 　　 首先写出 $C_1$ 和 $C_2$ 的方程为  \begin{equation} \begin{array}{l}C_{1}: z=z(t)=t(0 \leqslant t \leqsla
+
+  [0] assertion [unclassified]: 例 4
+  [1] assumption: 设 $\Gamma$ 为由 $C_1$ 与 $C_2$ 首尾相接而成的起点在 $z=0$，终点在 $ z =1+ \mathrm i $ 的曲线，如图 3  所示
+  [2] assertion [unclassified]: 计算 $\displaystyle \int_{\Gamma} x \mathrm{d}z$。
+  [3] assertion [unclassified]: 图 3：积分路径
+  [4] assertion [unclassified]: 首先写出 $C_1$ 和 $C_2$ 的方程为
+  [5] assertion [display_math]: \begin{equation}
+\begin{array}{l}C_{1}: z=z(t)=t(0 \leqslant t \leqslant 1) \\ C_{2}: z=z(t)=1+\text { i }t(0 \leqslant t \leqslant 1)~.\end{array}
+\e
+  [6] assertion [unclassified]: 下面分别计算 $C_1$ 和 $C_2$。
+  [7] assertion [unclassified]: 在 $C_1$ 上有 $x=t, \mathrm{d} z=\mathrm{d} t$，代入 $\displaystyle \int_{C_{1}} x \mathrm{d} z$ 得 $\displaystyle \int_{C_{1}} x \mathrm{d} z=\int_{0}^{1} t
+  [8] assertion [unclassified]: 在 $C_2$ 上有 $\displaystyle x=\operatorname{Re} z(t)=1, \mathrm{d} z=\mathrm{id} t$，代入 $\displaystyle \int_{C_{2}} x \mathrm{d} z$ 得到 $\displaystyle \in
+  [9] assertion [unclassified]: 最后，计算积分得
+  [10] assertion [display_math]: \begin{equation}
+\int_{\Gamma} x \mathrm{d} z=\int_{C_{1}} x \mathrm{d} z+\int_{C_{2}} x \mathrm{d} z=\int_{0}^{1} t \mathrm{d} t+\int_{0}^{1} \mathrm
+  ⚠ unresolved (10条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s4: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    ... 共 10 条
+
+──────────────────────────────────────────────
+文章: CpxInt | 环境类型: example | 标题: 例 5
+原文: 例 5　 　　 试证：  \begin{equation} \oint_{C} \frac{1}{(z-a)^{n}}= \left\{\begin{aligned} &2 \pi \mathrm{i} && (n=1) \\ &0 && (n \neq 1 \text{且为整数})~. \end{aligned}\right. \end{equation}  其中 $C$ 是为以 $a $ 为圆心，以 $R $ 为半径的圆周。  　　 证明：这里的 $C $ 是一条围线，对于沿围线的积分，若无
+
+  [0] assertion [unclassified]: 例 5
+  [1] assertion [unclassified]: 试证：
+  [2] assertion [display_math]: \begin{equation}
+\oint_{C} \frac{1}{(z-a)^{n}}=
+\left\{\begin{aligned}
+&2 \pi \mathrm{i} && (n=1) \\
+&0 && (n \neq 1 \text{且为整数})~.
+\end{aligned}\righ
+  [3] assertion [unclassified]: 其中 $C$ 是为以 $a $ 为圆心，以 $R $ 为半径的圆周。
+  [4] assertion [unclassified]: 证明：这里的 $C $ 是一条围线，对于沿围线的积分，若无特殊声明
+  [5] conclusion: 则今后总理解为沿围线的正向积分。
+  [6] assertion [unclassified]: 用计算积分的方法来证明本题。
+  [7] assertion [unclassified]: 首先，写出 $C $ 的方程为
+  [8] assertion [display_math]: \begin{equation}
+\begin{aligned} z &=z(t) \\ &=a+R \mathrm{e}^{\mathrm{i} \theta} \quad(0 \leqslant \theta \leqslant 2 \pi) ~.\end{aligned}
+\end{equat
+  [9] condition: 其次，$\mathrm{d} z=\mathrm{i} R \mathrm{e}^{\mathrm{i} \theta} \mathrm{d} \theta$，被积函数当 $n =1$ 时为 $(z-a)^{-1}=R^{-1} \mathrm{e}^{-\mathrm{i} \theta}$，当 
+  [10] assertion [unclassified]: 再次，计算积分，$n=1$ 时，有
+  [11] assertion [display_math]: \begin{equation}
+\begin{aligned} \oint_{c} \frac{1}{z-a} \mathrm{d} z &=\int_{0}^{2 \pi} \frac{\mathrm{i} R \mathrm{e}^{\mathrm{i} \theta}}{R \mathrm{
+  [12] condition: 当 $n \neq 1$ 且为整数时，有
+  [13] assertion [display_math]: \begin{equation}
+\begin{aligned} \oint_{C} \frac{1}{(z-a)^{n}} \mathrm{d} z &=\int_{0}^{2 \pi} \frac{\mathrm{i} R \mathrm{e}^{\mathrm{i} \theta}}{R^{n
+  [14] conclusion: 综上所述，问题得证
+  ⚠ unresolved (11条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    ... 共 11 条
+
+──────────────────────────────────────────────
+文章: CpxInt | 环境类型: example | 标题: 例 6
+原文: 例 6　 　　 计算积分  \begin{equation} \oint_{|z-1|=1} \frac{z}{z-1} \mathrm{d} z~. \end{equation}  由积分路径为 $|z -1|=1$，得 $z-1=\mathrm{e}^{\mathrm{i} \theta}(0 \leqslant \theta \leqslant 2 \pi)$。于是，积分路径的方程为  \begin{equation} z=z(\theta)=1+\mathrm{e}^{\mathrm{i
+
+  [0] assertion [unclassified]: 例 6
+  [1] assertion [unclassified]: 计算积分
+  [2] assertion [display_math]: \begin{equation}
+\oint_{|z-1|=1} \frac{z}{z-1} \mathrm{d} z~.
+\end{equation}
+  [3] assertion [unclassified]: 由积分路径为 $|z -1|=1$，得 $z-1=\mathrm{e}^{\mathrm{i} \theta}(0 \leqslant \theta \leqslant 2 \pi)$
+  [4] conclusion: 于是，积分路径的方程为
+  [5] assertion [display_math]: \begin{equation}
+z=z(\theta)=1+\mathrm{e}^{\mathrm{i} \theta},(0 \leqslant \theta \leqslant 2 \pi)~.
+\end{equation}
+  [6] conclusion: 故
+  [7] assertion [display_math]: \begin{equation}
+\begin{aligned} \oint_{z-1} \frac{z}{z-1} \mathrm{d} z &=\int_{0}^{2 \pi} \frac{1+\mathrm{e}^{\mathrm{i} \theta}}{\mathrm{e}^{\mathrm
+  ⚠ unresolved (6条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    ... 共 6 条
+
+──────────────────────────────────────────────
+文章: CpxInt | 环境类型: example | 标题: 例 7
+原文: 例 7　 　　 计算积分  \begin{equation} \oint_{|z-2|=1} \frac{3 z^{2}}{(z-2)^{3}} \mathrm{d} z~. \end{equation}  由 $ |z - 2| =1$ 得积分路径的方程为  \begin{equation} z=z(\theta)=2+\mathrm{e}^{\mathrm{i} \theta},(0 \leqslant \theta \leqslant 2 \pi)~. \end{equation}  于是
+
+  [0] assertion [unclassified]: 例 7
+  [1] assertion [unclassified]: 计算积分
+  [2] assertion [display_math]: \begin{equation}
+\oint_{|z-2|=1} \frac{3 z^{2}}{(z-2)^{3}} \mathrm{d} z~.
+\end{equation}
+  [3] assertion [unclassified]: 由 $ |z - 2| =1$ 得积分路径的方程为
+  [4] assertion [display_math]: \begin{equation}
+z=z(\theta)=2+\mathrm{e}^{\mathrm{i} \theta},(0 \leqslant \theta \leqslant 2 \pi)~.
+\end{equation}
+  [5] conclusion: 于是
+  [6] assertion [display_math]: \begin{equation}
+\begin{aligned} \oint_{|z-2|=1} \frac{3 z^{2}}{(z-2)^{3}} \mathrm{d} z &=\int_{0}^{2 \pi} \frac{3\left(2+\mathrm{e}^{\mathrm{i} \thet
+  ⚠ unresolved (6条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    ... 共 6 条
+
+──────────────────────────────────────────────
+文章: DerMax | 环境类型: example | 标题: 例 1
+原文: 例 1　 　　 二次函数 $f(x) = ax^2 + bx + c$ 的导函数为 $f'(x) = 2ax + b$，所以唯一的驻点为 $-b/(2a)$。函数的二阶导数是一个常数 $f''(x) = 2a$，所以当 $a > 0$ 时驻点是唯一的极小值点，即最小值点。同理，当 $a < 0$ 时驻点是最大值点。
+
+  [0] assertion [unclassified]: 例 1
+  [1] assertion [unclassified]: 二次函数 $f(x) = ax^2 + bx + c$ 的导函数为 $f'(x) = 2ax + b$
+  [2] conclusion: 所以唯一的驻点为 $-b/(2a)$
+  [3] assertion [unclassified]: 函数的二阶导数是一个常数 $f''(x) = 2a$
+  [4] condition: 所以当 $a > 0$ 时驻点是唯一的极小值点，即最小值点
+  [5] condition: 同理，当 $a < 0$ 时驻点是最大值点
+  ⚠ unresolved (3条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: DerMax | 环境类型: example | 标题: 例 2
+原文: 例 2　 　　 函数 $f(x) = x+a/x \ \ (a > 0)$ 的一阶导函数为 $f'(x) = 1 - a/x^2$，若我们只考察区间 $(0, +\infty)$，唯一的驻点为 $x = \sqrt{a}$。函数的二阶导函数 $f''(x) = 2a/x^3$ 在驻点处的值为 $2/\sqrt{a} > 0$，所以该驻点为当前区间的最小值点（图 2 ）。
+
+  [0] assertion [unclassified]: 例 2
+  [1] assertion [unclassified]: 函数 $f(x) = x+a/x \ \ (a > 0)$ 的一阶导函数为 $f'(x) = 1 - a/x^2$，若我们只考察区间 $(0, +\infty)$，唯一的驻点为 $x = \sqrt{a}$
+  [2] assertion [unclassified]: 函数的二阶导函数 $f''(x) = 2a/x^3$ 在驻点处的值为 $2/\sqrt{a} > 0$
+  [3] conclusion: 所以该驻点为当前区间的最小值点（图 2 ）
+  ⚠ unresolved (3条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: DerMax | 环境类型: example | 标题: 例 3
+原文: 例 3　 　　 函数 $f(x) = x^3$ 的一阶导函数为 $f'(x) = 3x^2$，唯一的驻点为 $x = 0$。函数的二阶导函数 $f''(x) = 6x$ 在驻点处的值为 $0$。由于 $f'(x)$ 在原点左侧和右侧都大于 0，所以这是一个鞍点。
+
+  [0] assertion [unclassified]: 例 3
+  [1] assertion [unclassified]: 函数 $f(x) = x^3$ 的一阶导函数为 $f'(x) = 3x^2$，唯一的驻点为 $x = 0$
+  [2] assertion [unclassified]: 函数的二阶导函数 $f''(x) = 6x$ 在驻点处的值为 $0$
+  [3] assertion [unclassified]: 由于 $f'(x)$ 在原点左侧和右侧都大于 0
+  [4] conclusion: 所以这是一个鞍点
+  ⚠ unresolved (4条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: DInt | 环境类型: definition | 标题: 定义 1
+原文: 定义 1　第一种定义 　　 称和  \begin{equation} \sigma=\sum_{i=0}^{n-1}f(\xi_i)\Delta x_i~. \end{equation}  当 $\lambda\rightarrow0$ 时有（有限）极限 $I$，如果对每个数 $\epsilon>0$ 可以找到这样的数 $\delta>0$，使得，只要 $\lambda<\delta$，不等式  \begin{equation} \left\lvert \sigma-I \right\rvert
+
+  [0] definition: 定义 1　第一种定义
+  [1] definition: 称和
+  [2] assertion [display_math]: \begin{equation}
+\sigma=\sum_{i=0}^{n-1}f(\xi_i)\Delta x_i~.
+\end{equation}
+  [3] condition [ambiguous]: 当 $\lambda\rightarrow0$ 时有（有限）极限 $I$，如果对每个数 $\epsilon>0$ 可以找到这样的数 $\delta>0$，使得，只要 $\lambda<\delta$，不等式
+  [4] assertion [display_math]: \begin{equation}
+\left\lvert \sigma-I \right\rvert <\epsilon~.
+\end{equation}
+  [5] definition: 在数 $\xi_i$ 的任意选择之下皆成立，并记作
+  [6] assertion [display_math]: \begin{equation}
+I=\lim_{\lambda\rightarrow0}\sigma~.
+\end{equation}
+  ⚠ unresolved (4条):
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [ambiguous_subtype] s3: 句子同时匹配了 assumption, quantified, condition，当前归类为 condition
+    - [unclassified] s4: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s6: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: DInt | 环境类型: definition | 标题: 定义 2
+原文: 定义 2　基本区间分划序列 　　 设用不同的方法将区间 $[a,b]$ 进行分划，记第 $i$ 种分划对应的 $\lambda$ 为 $\lambda_i$，如果分划对应的序列 $\lambda_1,\lambda_2,\cdots$ 收敛到 0，则称这样的区间分划序列叫做基本区间分划序列。
+
+  [0] definition: 定义 2　基本区间分划序列
+  [1] assumption: 设用不同的方法将区间 $[a,b]$ 进行分划，记第 $i$ 种分划对应的 $\lambda$ 为 $\lambda_i$，如果分划对应的序列 $\lambda_1,\lambda_2,\cdots$ 收敛到 0
+  [2] definition: 则称这样的区间分划序列叫做基本区间分划序列
+
+──────────────────────────────────────────────
+文章: DInt | 环境类型: definition | 标题: 定义 3
+原文: 定义 3　第二种定义 　　 不论 $\xi_i$ 如何选取，若对任一基本区间分划序列 $\{\lambda_i\}$ 对应的和  \begin{equation} \sigma=\sum_{i=0}^{n-1}f(\xi_i)\Delta x_i~. \end{equation}  的序列 $\{\sigma_i\}$，恒有极限 $I$，则称 $I$ 为和 $\sigma$ 的极限。
+
+  [0] definition: 定义 3　第二种定义
+  [1] assertion [unclassified]: 不论 $\xi_i$ 如何选取，若对任一基本区间分划序列 $\{\lambda_i\}$ 对应的和
+  [2] assertion [display_math]: \begin{equation}
+\sigma=\sum_{i=0}^{n-1}f(\xi_i)\Delta x_i~.
+\end{equation}
+  [3] assertion [unclassified]: 的序列 $\{\sigma_i\}$，恒有极限 $I$
+  [4] definition: 则称 $I$ 为和 $\sigma$ 的极限
+  ⚠ unresolved (3条):
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: DInt | 环境类型: theorem | 标题: 定理 1
+原文: 定理 1　 　　 数 $I$ 是和  \begin{equation} \sigma=\sum_{i=0}^{n-1}f(\xi_i)\Delta x_i~ \end{equation}  的由定义 1  定义的极限，当且仅当 $I$ 是定义 2  定义的极限。
+
+  [0] assertion [unclassified]: 定理 1
+  [1] assertion [unclassified]: 数 $I$ 是和
+  [2] assertion [display_math]: \begin{equation}
+\sigma=\sum_{i=0}^{n-1}f(\xi_i)\Delta x_i~
+\end{equation}
+  [3] definition: 的由定义 1  定义的极限，
+  [4] assumption [equivalence]: 当且仅当
+  [5] definition: $I$ 是定义 2  定义的极限
+  ⚠ unresolved (3条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: DInt | 环境类型: definition | 标题: 定义 4
+原文: 定义 4　定积分，可积函数 　　 如果 $\lambda\rightarrow0$ 时，和  \begin{equation} \sigma=\sum_{i=0}^{n-1}f(\xi_i)\Delta x_i~. \end{equation}  的（有限）极限 $I$ 存在，则称这个极限 $I$ 为函数 $f(x)$ 在从 $a$ 到 $b$ 的区间上的定积分，并记作  \begin{equation} I=\int_a^bf(x) \,\mathrm{d}{x} ~, \end{equati
+
+  [0] definition: 定义 4　定积分，可积函数
+  [1] assumption: 如果 $\lambda\rightarrow0$ 时，和
+  [2] assertion [display_math]: \begin{equation}
+\sigma=\sum_{i=0}^{n-1}f(\xi_i)\Delta x_i~.
+\end{equation}
+  [3] quantified: 的（有限）极限 $I$ 存在
+  [4] definition: 则称这个极限 $I$ 为函数 $f(x)$ 在从 $a$ 到 $b$ 的区间上的定积分，并记作
+  [5] assertion [display_math]: \begin{equation}
+I=\int_a^bf(x) \,\mathrm{d}{x} ~,
+\end{equation}
+  [6] definition: $a,b$ 分别称为积分的下限和上限
+  [7] assertion [unclassified]: 此时
+  [8] definition: 称函数 $f(x)$ 为区间 $[a,b]$ 上的可积函数
+  ⚠ unresolved (3条):
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s5: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s7: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: DefInt | 环境类型: example | 标题: 例 1
+原文: 例 1　不均匀细绳的质量 　　 一条密度不均匀的绳子长为 $L$，横截面积是 $S$，细绳距离 $O$ 端 $x$（$x < L$）处的密度为 $\rho(x)$。求绳子的质量。      图 1：密度不均匀的绳子 　　 如果题目中，密度是恒定的，那么直接可以写出绳子的质量为 $m = LS\rho$。但是题中 $\rho(x)$ 是关于 $x$ 的函数，所以我们要寻找另外的做法。假设绳子的密度变化是连续且 “平滑” 的，我们可以通过把绳子分割成 $n$ 小节（注意这些小节必须严格地首尾相接，不
+
+  [0] assertion [unclassified]: 例 1　不均匀细绳的质量
+  [1] assertion [unclassified]: 一条密度不均匀的绳子长为 $L$，横截面积是 $S$，细绳距离 $O$ 端 $x$（$x < L$）处的密度为 $\rho(x)$
+  [2] assertion [unclassified]: 求绳子的质量。
+  [3] assertion [unclassified]: 图 1：密度不均匀的绳子
+  [4] assumption: 如果题目中，密度是恒定的
+  [5] conclusion: 那么直接可以写出绳子的质量为 $m = LS\rho$
+  [6] assertion [unclassified]: 但是题中 $\rho(x)$ 是关于 $x$ 的函数
+  [7] conclusion: 所以我们要寻找另外的做法
+  [8] assumption: 假设绳子的密度变化是连续且 “平滑” 的，我们可以通过把绳子分割成 $n$ 小节（注意这些小节必须严格地首尾相接，不能有重合或者空隙）
+  [9] condition: 第 $i$ 节取 $x_i$ 到 $x_{i +1}$，令其长度为 $x_{i + 1} - {x_i} = \Delta x_i$ 使每一个小节内，密度可以近似看成是恒定的，这样我们可以用 $\rho(\xi_i)\,\, (x_i \leqslant \xi_i \leqslant x_{i +
+  [10] assertion [unclassified]: 第 $i$ 小节的质量为
+  [11] assertion [display_math]: \begin{equation}
+\Delta {m_i} = \rho (\xi_i)\Delta {x_i}S ~.
+\end{equation}
+  [12] conclusion: 所以总的质量用求和符号来表示，就是
+  [13] assertion [display_math]: \begin{equation}
+m = \sum_{i = 1}^n \Delta m_i \approx \sum_{i = 1}^n \rho(\xi_i)\Delta x_i S = S \sum_{i = 1}^n \rho (\xi_i)\Delta x_i~.
+\end{equatio
+  [14] condition: 由于当 $n$ 取有限值时，上式并不精确成立
+  [15] conclusion: 所以只能使用约等号，但是 $n$ 越大，约等号两边就越精确成立
+  [16] assertion [unclassified]: 这是极限的思想，用极限符号来表，就是
+  [17] assertion [display_math]: \begin{equation}
+m = \lim_{n \to \infty } \sum_{i = 1}^n {\Delta {m_i}} = \lim_{n \to \infty } \sum_{i = 1}^n \rho(\xi_i)\Delta {x_i} S = S \lim_{n \t
+  [18] assertion [unclassified]: 这种表达式在物理中反复出现
+  [19] conclusion: 所以使用积分符号 $\int {} $ 用于代替极限和求和符号
+  [20] condition: 另外把 ${\xi_i}$ 写成 $x$（当 $n$ 趋近于无穷大时，参量 $i$ 和 $\Delta {x_i}$ 具体是多少就不重要了），把表示增量的 $\Delta $ 变为表示微分的 $\mathrm{d}$，上式就写为
+  [21] assertion [display_math]: \begin{equation}
+m = \int \,\mathrm{d}{m} = \int S\rho(x) \,\mathrm{d}{x} = S\int \rho(x) \,\mathrm{d}{x} ~.
+\end{equation}
+  [22] assertion [unclassified]: 下面先看看 $\int \rho(x) \,\mathrm{d}{x} $
+  [23] conclusion: 即 $\lim\limits_{n \to \infty } \sum\limits_{i = 1}^n \rho(\xi_i)\Delta {x_i}$ 的另一种理解
+  [24] assertion [unclassified]: 画出 $\rho (x)$ 图像
+  [25] assertion [unclassified]: 例如 $\rho(x) = x + 1$
+  [26] conclusion: 则 $\rho(\xi_i)\Delta {x_i}$ 可以表示左图的第 $i$ 个小长方形的面积，$\sum\limits_{i = 1}^n \rho(\xi_i)\Delta x_i$ 表示长方形面积之和
+  [27] assumption: 如果 $n$ 非常大且每个 $\Delta x_i$ 取得非常小，左图看起来就会像右图
+  [28] conclusion: 所以 $\int \rho(x) \,\mathrm{d}{x} $ 可以用来表示右图阴影部分的面积。
+  [29] assertion [unclassified]: 图 2：定积分可以理解为曲线下面的面积，并看做由无限多个无穷窄的矩形组成
+  [30] condition: 当最大的矩形也足够小时，矩形的划分方式将不会影响面积的计算。
+  [31] assertion [unclassified]: 但 $\int \rho(x) \,\mathrm{d}{x} $ 里面显然不包含 $0$ 和 $L$ 的信息，我们根据题目中的情况，说这个积分是 “从 $0$ 积到 $L$”，其中 $0$ 是积分下限，$L$ 是积分上限
+  [32] assertion [unclassified]: 为了表示这个信息，把它写到积分号右边变为
+  [33] assertion [display_math]: \begin{equation}
+\int_0^L \rho(x) \,\mathrm{d}{x} ~.
+\end{equation}
+  [34] assertion [unclassified]: 这就是定积分的标准形式，但有时候为了书写方便，在不混淆的情况下可以把积分上下限省略
+  ⚠ unresolved (20条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    ... 共 20 条
+
+──────────────────────────────────────────────
+文章: DefInt | 环境类型: example | 标题: 例 2
+原文: 例 2　圆的面积 　　 在直角坐标系中，圆的方程为 $x^2 + y^2 = R^2$，上半圆的方程可看做 $y$ 关于 $x$ 的函数  \begin{equation} y = f(x) = \sqrt{R^2 - x^2} \quad (x\in [-R,R])~. \end{equation}  将该式定积分再乘以 2 即可得到圆的面积  \begin{equation} S = 2\int_{-R}^{R} f(x) \,\mathrm{d}{x} = 2\int_{-R}^{R} \
+
+  [0] assertion [unclassified]: 例 2　圆的面积
+  [1] assertion [unclassified]: 在直角坐标系中，圆的方程为 $x^2 + y^2 = R^2$，上半圆的方程可看做 $y$ 关于 $x$ 的函数
+  [2] assertion [display_math]: \begin{equation}
+y = f(x) = \sqrt{R^2 - x^2} \quad (x\in [-R,R])~.
+\end{equation}
+  [3] assertion [unclassified]: 将该式定积分再乘以 2 即可得到圆的面积
+  [4] assertion [display_math]: \begin{equation}
+S = 2\int_{-R}^{R} f(x) \,\mathrm{d}{x} = 2\int_{-R}^{R} \sqrt{R^2 - x^2} \,\mathrm{d}{x} ~,
+\end{equation}
+  [5] assertion [unclassified]: 我们还可以用另一种方法验证圆的面积公式
+  [6] assertion [unclassified]: 把圆划分成许多微小圆环，由例 2 ，每个微小圆环的面积为 $2\pi r \,\mathrm{d}{r} $
+  [7] conclusion: 所以圆的面积可以用定积分表示为
+  [8] assertion [display_math]: \begin{equation}
+S = \int_0^{R} 2\pi r \,\mathrm{d}{r} ~.
+\end{equation}
+  [9] assertion [unclassified]: 以上两个定积分的结果都为 $\pi R^2$，过程见 “牛顿—莱布尼兹公式” 的例 2
+  ⚠ unresolved (9条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    ... 共 9 条
+
+──────────────────────────────────────────────
+文章: DefInt | 环境类型: example | 标题: 例 3
+原文: 例 3　球体的表面积 　　      图 3：将球的表面划分成许多细圆环，每个对应的极角为 $ \,\mathrm{d}{\theta} $ 　　 以球心为原点建立球坐标系，我们可以把球体的表面根据不同的 $\theta$ 划分成许多细圆环（如图 3 ），每个圆环的面积等于周长乘以宽度，即  \begin{equation} \,\mathrm{d}{S} = 2\pi R\sin\theta \cdot R \,\mathrm{d}{\theta} ~. \end{equation}  所以球
+
+  [0] assertion [unclassified]: 例 3　球体的表面积
+  [1] assertion [unclassified]: 图 3：将球的表面划分成许多细圆环，每个对应的极角为 $ \,\mathrm{d}{\theta} $
+  [2] assertion [unclassified]: 以球心为原点建立球坐标系，我们可以把球体的表面根据不同的 $\theta$ 划分成许多细圆环（如图 3 ），每个圆环的面积等于周长乘以宽度
+  [3] conclusion: 即
+  [4] assertion [display_math]: \begin{equation}
+\,\mathrm{d}{S} = 2\pi R\sin\theta \cdot R \,\mathrm{d}{\theta} ~.
+\end{equation}
+  [5] definition: 所以球的表面积可以用定积分记为
+  [6] assertion [display_math]: \begin{equation}
+S = \int_0^{\pi} 2\pi R\sin\theta \cdot R \,\mathrm{d}{\theta} = 2\pi R^2 \int_0^{\pi} \sin\theta \,\mathrm{d}{\theta} ~.
+\end{equati
+  [7] assertion [unclassified]: 虽然我们还不会计算这个定积分（见 “牛顿—莱布尼兹公式”），但我们现在可以用一种巧妙的方法来简化问题
+  [8] assertion [unclassified]: 让我们来计算每个细圆环在极轴方向投影的长度
+  [9] definition: 我们不妨把极轴叫做 $z$ 轴
+  [10] conclusion: 则对某个细圆环有 $z = R\cos\theta$，微分得 $ \,\mathrm{d}{z} = -R\sin\theta \,\mathrm{d}{\theta} $，将该式消去式 11  中的 $ \,\mathrm{d}{\theta} $ 得
+  [11] assertion [display_math]: \begin{equation}
+\,\mathrm{d}{S} = -2\pi R \,\mathrm{d}{z} ~.
+\end{equation}
+  [12] assertion [unclassified]: 这说明无论细圆环的位置如何，其面积与其在 $z$ 轴投影的长度的比值恒为 $2\pi$
+  [13] assertion [unclassified]: 至于上式中的负号，是因为我们假设了正的 $ \,\mathrm{d}{\theta} $ 对应正的面积，而正的 $ \,\mathrm{d}{\theta} $ 却对应负的 $ \,\mathrm{d}{z} $
+  [14] assertion [unclassified]: 由于面积恒为正值，我们可以取绝对值将负号去掉
+  [15] assertion [unclassified]: 这样，球的表面积就可以用定积分表示为
+  [16] assertion [display_math]: \begin{equation}
+S = \int_{-R}^{R} 2\pi R \,\mathrm{d}{z} ~.
+\end{equation}
+  [17] assertion [unclassified]: 由于被积函数是一个常数，定积分的结果就是该常数乘以积分区间的长度即 $4\pi R^2$
+  ⚠ unresolved (14条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s4: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    ... 共 14 条
+
+──────────────────────────────────────────────
+文章: DefInt | 环境类型: example | 标题: 例 4
+原文: 例 4　球的体积 　　 要计算一个半径为 $R$ 的球体的体积，可以将球划分为无限个薄球壳，每个薄球壳的体积等于该球壳的表面积乘以厚度（见例 2  ），即 $ \,\mathrm{d}{V} = 4\pi r^2 \,\mathrm{d}{r} $。所以球的体积可用定积分表示为  \begin{equation} V = \int_0^R 4\pi r^2 \,\mathrm{d}{r} ~. \end{equation}  同样由 “牛顿—莱布尼兹公式” 可得积分结果为 $4\pi R^3/3
+
+  [0] assertion [unclassified]: 例 4　球的体积
+  [1] assertion [unclassified]: 要计算一个半径为 $R$ 的球体的体积，可以将球划分为无限个薄球壳，每个薄球壳的体积等于该球壳的表面积乘以厚度（见例 2  ）
+  [2] conclusion: 即 $ \,\mathrm{d}{V} = 4\pi r^2 \,\mathrm{d}{r} $
+  [3] conclusion: 所以球的体积可用定积分表示为
+  [4] assertion [display_math]: \begin{equation}
+V = \int_0^R 4\pi r^2 \,\mathrm{d}{r} ~.
+\end{equation}
+  [5] assertion [unclassified]: 同样由 “牛顿—莱布尼兹公式” 可得积分结果为 $4\pi R^3/3$
+  ⚠ unresolved (4条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s4: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s5: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: DeQua | 环境类型: definition | 标题: 定义 1
+原文: 定义 1　实二次型的分类 　　 非退化的实二次型 $q:V\rightarrow\mathbb R$ 称为正定的（负定的），如果 $q( \boldsymbol{\mathbf{x}} )>0(q( \boldsymbol{\mathbf{x}} )<0)$ 对任意矢量 $ \boldsymbol{\mathbf{x}} \neq0$ 都成立。$q$ 称为半正定的（或非负定的），如果 $q( \boldsymbol{\mathbf{x}} )\geq0$ 对所有 $ \boldsymbol{\m
+
+  [0] definition: 定义 1　实二次型的分类
+  [1] definition: 非退化的实二次型 $q:V\rightarrow\mathbb R$ 称为正定的（负定的），如果 $q( \boldsymbol{\mathbf{x}} )>0(q( \boldsymbol{\mathbf{x}} )<0)$ 对任意矢量 $ \boldsymbol{\mathbf{x}} \neq
+  [2] definition: $q$ 称为半正定的（或非负定的），如果 $q( \boldsymbol{\mathbf{x}} )\geq0$ 对所有 $ \boldsymbol{\mathbf{x}} \in V$ 成立
+  [3] definition: 最后，$q$ 称为不定的，如果它有时取正有时取负
+
+──────────────────────────────────────────────
+文章: DeQua | 环境类型: definition | 标题: 定义 2
+原文: 定义 2　正定双线性型 　　 与正定二次型相配极的双线性型称为正定的。
+
+  [0] definition: 定义 2　正定双线性型
+  [1] definition: 与正定二次型相配极的双线性型称为正定的
+
+──────────────────────────────────────────────
+文章: DeQua | 环境类型: theorem | 标题: 定理 1
+原文: 定理 1　 　　 矩阵 $F$ 是正定矩阵的充要条件为  \begin{equation} F=A^TA~. \end{equation}  其中，$A$ 是实的非退化矩阵。
+
+  [0] assertion [unclassified]: 定理 1
+  [1] assertion [equivalence, unclassified]: 矩阵 $F$ 是正定矩阵的充要条件为
+  [2] assertion [display_math]: \begin{equation}
+F=A^TA~.
+\end{equation}
+  [3] assertion [unclassified]: 其中，$A$ 是实的非退化矩阵
+  ⚠ unresolved (4条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: DeQua | 环境类型: definition | 标题: 定义 3
+原文: 定义 3　顺序主子式   \begin{equation} \Delta_1=f_{11},\;\cdots,\;\Delta_i=\begin{vmatrix} f_{11}&\cdots&f_{1k}\\ \vdots&\vdots&\vdots\\ f_{i1}&\cdots&f{ii} \end{vmatrix},\quad \cdots~ \end{equation}  称为矩阵 $F=(f_{ij})$ 的顺序主子式。$\Delta_i$ 称为 $F$ 的 $i$ 阶顺序主子式。且约
+
+  [0] definition: 定义 3　顺序主子式
+  [1] assertion [display_math]: \begin{equation}
+\Delta_1=f_{11},\;\cdots,\;\Delta_i=\begin{vmatrix}
+f_{11}&\cdots&f_{1k}\\
+\vdots&\vdots&\vdots\\
+f_{i1}&\cdots&f{ii}
+\end{vmatrix},\
+  [2] definition: 称为矩阵 $F=(f_{ij})$ 的顺序主子式
+  [3] definition: $\Delta_i$ 称为 $F$ 的 $i$ 阶顺序主子式，且约定 $\Delta_0=1$
+  ⚠ unresolved (1条):
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: DeQua | 环境类型: theorem | 标题: 定理 2
+原文: 定理 2　雅可比方法 　　 设 $q$ 以 $F$ 为矩阵的实二次型，$F$ 的所有顺序主子式都不为 9。那么，必有空间 $V$ 的基底 $( \boldsymbol{\mathbf{e}} '_1,\cdots, \boldsymbol{\mathbf{e}} '_n)$，使得 $q( \boldsymbol{\mathbf{x}} )$ 具有规范形式  \begin{equation} q( \boldsymbol{\mathbf{x}} )=\sum_{i=1}^n\frac{\Delta
+
+  [0] assertion [unclassified]: 定理 2　雅可比方法
+  [1] assumption: 设 $q$ 以 $F$ 为矩阵的实二次型，$F$ 的所有顺序主子式都不为 9
+  [2] conclusion: 那么，必有空间 $V$ 的基底 $( \boldsymbol{\mathbf{e}} '_1,\cdots, \boldsymbol{\mathbf{e}} '_n)$，使得 $q( \boldsymbol{\mathbf{x}} )$ 具有规范形式
+  [3] assertion [display_math]: \begin{equation}
+q( \boldsymbol{\mathbf{x}} )=\sum_{i=1}^n\frac{\Delta_{i-1}}{\Delta_i}(x'_i)^2~.
+\end{equation}
+  ⚠ unresolved (2条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: EgrfTh | 环境类型: lemma | 标题: 引理 1
+原文: 引理 1　 　　 设 $E$ 是 $\mathbb{R}^n$ 上有界的可测集，$\{E_k\}$ 是一列集合，其中各 $E_k\subseteq E$。  　　 如果 $\{E_k\}$ 的上极限（定义 1 ）为 $\varnothing$1，那么 $\lim\limits_{k\to\infty} \operatorname {m}E_k=0$。
+
+  [0] assertion [unclassified]: 引理 1
+  [1] assumption: 设 $E$ 是 $\mathbb{R}^n$ 上有界的可测集，$\{E_k\}$ 是一列集合，其中各 $E_k\subseteq E$。
+  [2] definition [has_assumption_context]: 如果 $\{E_k\}$ 的上极限（定义 1 ）为 $\varnothing$1
+  [3] conclusion: 那么 $\lim\limits_{k\to\infty} \operatorname {m}E_k=0$
+  ⚠ unresolved (1条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: EgrfTh | 环境类型: corollary | 标题: 推论 1
+原文: 推论 1　 　　 设 $E$ 是 $\mathbb{R}^n$ 上有界的可测集，$\{E_k\}$ 是一列集合，其中各 $E_k\subseteq E$。  　　 如果 $\{E_k\}$ 的上极限是零测集，那么同样有 $\lim\limits_{k\to\infty} \operatorname {m}E_k=0$。
+
+  [0] assertion [unclassified]: 推论 1
+  [1] assumption: 设 $E$ 是 $\mathbb{R}^n$ 上有界的可测集，$\{E_k\}$ 是一列集合，其中各 $E_k\subseteq E$。
+  [2] assumption: 如果 $\{E_k\}$ 的上极限是零测集
+  [3] conclusion: 那么同样有 $\lim\limits_{k\to\infty} \operatorname {m}E_k=0$
+  ⚠ unresolved (1条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: EgrfTh | 环境类型: theorem | 标题: 定理 1
+原文: 定理 1　Egoroff 定理 　　  　　 设 $E$ 是 $\mathbb{R}^n$ 上测度有限的可测集合。如果 $\{f_n\}$ 是 $E$ 上的一列可测函数，都几乎处处取有限函数值，而存在 $E$ 上的函数 $f(x)$ 使得3  \begin{equation} \lim\limits_{n\to\infty}f_n(x)=f(x)a. e~. \end{equation}  　　 那么对于任意正数 $\delta$，必存在一个可测集$E_\delta$，使得 $ \operato
+
+  [0] assertion [unclassified]: 定理 1　Egoroff 定理
+  [1] assumption: 设 $E$ 是 $\mathbb{R}^n$ 上测度有限的可测集合
+  [2] assumption: 如果 $\{f_n\}$ 是 $E$ 上的一列可测函数，都几乎处处取有限函数值，而存在 $E$ 上的函数 $f(x)$ 使得3
+  [3] assertion [display_math]: \begin{equation}
+\lim\limits_{n\to\infty}f_n(x)=f(x)a. e~.
+\end{equation}
+  [4] conclusion: 那么对于任意正数 $\delta$，必存在一个可测集$E_\delta$，使得 $ \operatorname {m}E_\delta<\delta$，且 $f_n$ 在 $E-E_\delta$ 上一致收敛于 $f$
+  ⚠ unresolved (2条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: EgrfTh | 环境类型: example | 标题: 例 1
+原文: 例 1　 　　 考虑 $\mathbb{R}$ 上的函数列 $f_n(x)= \left(\frac{2 \arctan\left(x\right) }{\pi} \right) ^n$。显然它在 $\mathbb{R}$ 上并不一致收敛，而且必须至少挖去包含 $+\infty$ 的一个区间才能使剩下部分一致收敛，这个区间的测度自然是无穷大的。
+
+  [0] assertion [unclassified]: 例 1
+  [1] assumption: 考虑 $\mathbb{R}$ 上的函数列 $f_n(x)= \left(\frac{2 \arctan\left(x\right) }{\pi} \right) ^n$
+  [2] assertion [unclassified]: 显然它在 $\mathbb{R}$ 上并不一致收敛，而且必须至少挖去包含 $+\infty$ 的一个区间才能使剩下部分一致收敛，这个区间的测度自然是无穷大的
+  ⚠ unresolved (2条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: DirCon | 环境类型: definition | 标题: 定义 1
+原文: 定义 1　Dirichlet 卷积（数论卷积） 　　 定义两个数论函数 $f(n)$, $g(n)$ 的狄利克雷卷积（Dirichlet Convolution） 为 $h(n)$ 如下，  \begin{equation} h(n) = f(n) * g(n) = \sum_{d|n}\left(f(d) g(n/d)\right) ~. \end{equation}  Dirichlet 卷积又被称为数论卷积。
+
+  [0] definition: 定义 1　Dirichlet 卷积（数论卷积）
+  [1] definition: 定义两个数论函数 $f(n)$, $g(n)$ 的狄利克雷卷积（Dirichlet Convolution） 为 $h(n)$ 如下，
+  [2] assertion [display_math]: \begin{equation}
+h(n) = f(n) * g(n) = \sum_{d|n}\left(f(d) g(n/d)\right) ~.
+\end{equation}
+  [3] definition: Dirichlet 卷积又被称为数论卷积
+  ⚠ unresolved (1条):
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: DerImg | 环境类型: example | 标题: 例 1
+原文: 例 1　 　　 求以下函数的极值点，并判断该函数的大致图像  \begin{equation} f(x) = a + \frac{b}{2} x^2 - \frac{c}{4} x^4 + \frac{d}{6} x^6 \quad (a,b,c,d >0)~. \end{equation}      图 1：导数 $f'(x)$ 与原函数 $f(x)$ 　　 先对函数求导，得  \begin{equation} f'(x) = bx - c x^3 + d x^5~. \end{equatio
+
+  [0] assertion [unclassified]: 例 1
+  [1] assertion [unclassified]: 求以下函数的极值点，并判断该函数的大致图像
+  [2] assertion [display_math]: \begin{equation}
+f(x) = a + \frac{b}{2} x^2 - \frac{c}{4} x^4 + \frac{d}{6} x^6 \quad (a,b,c,d >0)~.
+\end{equation}
+  [3] assertion [unclassified]: 图 1：导数 $f'(x)$ 与原函数 $f(x)$
+  [4] assertion [unclassified]: 先对函数求导，得
+  [5] assertion [display_math]: \begin{equation}
+f'(x) = bx - c x^3 + d x^5~.
+\end{equation}
+  [6] assertion [unclassified]: 这是一个 $5$ 次多项式，最多可能有五个零点
+  [7] assertion [unclassified]: 但由于多项式只有奇数项，不难解出可能的根
+  [8] assertion [display_math]: \begin{equation}
+bx + c x^3 + d x^5 = x[b + c(x^2) + d(x^2)^2 ]~.
+\end{equation}
+  [9] condition [ambiguous]: 所以其中一个解是 $x = 0$，而 $b + c(x^2) + d (x^2)^2$ 是关于 $x^2$ 的二次方程，当判别式 $\Delta = c^2 - 4bd$ 大于零时，$x^2$ 存在两个大小不等的正根，姑且记为 $x_1^2$ 和 $x_2^2$，$x_1 < x_2$。
+  [10] assertion [unclassified]: 此时五个根分别为 $0, \pm x_1, \pm x_2$
+  [11] assertion [display_math]: \begin{equation}
+f'(x) = d \cdot x (x^2 - x_2^2) (x^2 - x_2^2) = d \cdot x (x + x_1)(x - x_1)(x + x_1)(x - x_2)~.
+\end{equation}
+  [12] assertion [unclassified]: 由于 $d > 0$，可以大致画出 $f'(x)$ 图像如图 1 （下）。
+  [13] assertion [unclassified]: 用二阶导数判断分类
+  [14] assumption: 若二阶导数为正
+  [15] conclusion: 则是极小值，若为负，则是极大值，若为零，则是鞍点
+  ⚠ unresolved (14条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    ... 共 14 条
+
+──────────────────────────────────────────────
+文章: Commu | 环境类型: exercise | 标题: 习题 1
+原文: 习题 1　 　　 一般来说，矩阵乘法不满足交换律。试证明任意两个平面旋转矩阵（二维几何矢量空间的算符）对易（实数 $\alpha \ne \beta$）  \begin{equation} \boldsymbol{\mathbf{A}} = \begin{pmatrix}\cos\alpha & -\sin\alpha\\ \sin\alpha & \cos\alpha\end{pmatrix} \qquad \boldsymbol{\mathbf{B}} = \begin{pmatrix}\c
+
+  [0] assertion [unclassified]: 习题 1
+  [1] assertion [unclassified]: 一般来说，矩阵乘法不满足交换律
+  [2] quantified: 试证明任意两个平面旋转矩阵（二维几何矢量空间的算符）对易（实数 $\alpha \ne \beta$）
+  [3] assertion [display_math]: \begin{equation}
+\boldsymbol{\mathbf{A}} = \begin{pmatrix}\cos\alpha & -\sin\alpha\\ \sin\alpha & \cos\alpha\end{pmatrix}
+\qquad
+\boldsymbol{\mathbf{B
+  ⚠ unresolved (3条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: Commu | 环境类型: exercise | 标题: 习题 2
+原文: 习题 2　 　　 令 $X$ 为所有连续可导函数的集合，定义算符 $A$ 作用在任意 $f\in X$ 上的结果 $Af$ 为函数 $(Af)(x) = x f(x)$，定义算符 $B$ 为 $(Bf)(x) = \mathrm{d}{f}/\mathrm{d}{x} $。试证明对易算符 $[A, B]$ 是单位算符，即 $[A, B]f = f$。
+
+  [0] assertion [unclassified]: 习题 2
+  [1] definition [has_assumption_context, ambiguous]: 令 $X$ 为所有连续可导函数的集合，定义算符 $A$ 作用在任意 $f\in X$ 上的结果 $Af$ 为函数 $(Af)(x) = x f(x)$，定义算符 $B$ 为 $(Bf)(x) = \mathrm{d}{f}/\mathrm{d}{x} $
+  [2] assertion [unclassified]: 试证明对易算符 $[A, B]$ 是单位算符
+  [3] conclusion: 即 $[A, B]f = f$
+  ⚠ unresolved (3条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [ambiguous_subtype] s1: 句子同时匹配了 definition, assumption, quantified，当前归类为 definition
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: ConMap | 环境类型: example | 标题: 例 1
+原文: 例 1　落在地面上的地图 　　 这是数学科普中常见的命题：将一座公园的地图铺开在公园地面上，则地面上恰有唯一一点与地图上对应的点重合。  　　 借助一点线性代数知识，这个命题是不难验证的。设公园可以用有界的面闭区域 $\bar\Omega$ 表示。设地图的压缩比是 $\lambda$ (它当然介于 0 和 1 之间). 现在固定一个平面直角坐标系，把地图铺在区域 $\bar\Omega$ 内，则从 $\bar\Omega$ 内的点（公园中的地点）到地图上对应点的变换由下面的公式给出： $$ x\
+
+  [0] assertion [unclassified]: 例 1　落在地面上的地图
+  [1] assertion [unclassified]: 这是数学科普中常见的命题：将一座公园的地图铺开在公园地面上
+  [2] conclusion: 则地面上恰有唯一一点与地图上对应的点重合。
+  [3] assertion [unclassified]: 借助一点线性代数知识，这个命题是不难验证的
+  [4] assumption: 设公园可以用有界的面闭区域 $\bar\Omega$ 表示
+  [5] assumption: 设地图的压缩比是 $\lambda$ (它当然介于 0 和 1 之间). 现在固定一个平面直角坐标系，把地图铺在区域 $\bar\Omega$ 内
+  [6] conclusion: 则从 $\bar\Omega$ 内的点（公园中的地点）到地图上对应点的变换由下面的公式给出：
+  [7] assertion [display_math]: $
+x\to \lambda Rx+b~,
+$
+  [8] assertion [unclassified]: 这里 $R$ 是一个旋转变换，$b$ 是平移向量
+  [9] conclusion: 于是，要找的重合点必然满足方程
+  [10] assertion [display_math]: $
+x=\lambda Rx+b~.
+$
+  [11] assertion [unclassified]: 由于 $\|\lambda R\|=\lambda<1$, 这方程就有唯一的解
+  [12] assertion [display_math]: $
+x=(1-\lambda R)^{-1}b=\sum_{n=0}^{\infty}\lambda^nR^nb~.
+$
+  [13] assertion [unclassified]: 它就是要求的重合点
+  ⚠ unresolved (9条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s7: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    ... 共 9 条
+
+──────────────────────────────────────────────
+文章: ConMap | 环境类型: example | 标题: 例 2
+原文: 例 2　函数的迭代 　　 这是一个常见的数学实验：在计算器中任意输入一个数，而后不停地计算它的余弦值（弧度制）, 会得到什么结果？      图 1：余弦函数的迭代 　　 上图给出了一个结果; 迭代的结果越来越逼近对角线 $y=x$ 与余弦曲线 $y=\cos x$ 的唯一交点。验算若干数值，不难作出如下猜测：不论实数的迭代序列 $$ x_{n+1}=\cos x_n~ $$ 开始于哪一个数，它最后都会收敛到方程 $x=\cos x$ 的唯一实数解 $x=0.739...$.  　　 这个结论也
+
+  [0] assertion [unclassified]: 例 2　函数的迭代
+  [1] quantified: 这是一个常见的数学实验：在计算器中任意输入一个数，而后不停地计算它的余弦值（弧度制）, 会得到什么结果？
+  [2] assertion [unclassified]: 图 1：余弦函数的迭代
+  [3] assertion [unclassified]: 上图给出了一个结果; 迭代的结果越来越逼近对角线 $y=x$ 与余弦曲线 $y=\cos x$ 的唯一交点
+  [4] assertion [unclassified]: 验算若干数值，不难作出如下猜测：不论实数的迭代序列
+  [5] assertion [display_math]: $
+x_{n+1}=\cos x_n~
+$
+  [6] assertion [unclassified]: 开始于哪一个数，它最后都会收敛到方程 $x=\cos x$ 的唯一实数解 $x=0.739...$.
+  [7] assertion [unclassified]: 这个结论也可以严格证明
+  [8] quantified: 不论起点 $x_1$ 是何数，都有 $|x_2|=|\cos x_1|\leq 1$, 从而 $\cos 1\leq x_3\leq 1$. 这样一来，从 $x_3$ 开始，所有点都落在区间 $[\cos 1,1]$ 内
+  [9] conclusion: 于是可以作出如下估计：
+  [10] assertion [display_math]: $
+\begin{aligned}
+|x_{n+2}-x_{n+1}|
+=\left|\int_{x_{n}}^{x_{n+1}}\sin tdt\right|
+\leq (\sin 1)|x_{n+1}-x_n|.
+\end{aligned}~
+$
+  [11] assertion [unclassified]: 由于 $|\sin1|<1$, 这表示序列 $\{x_n\}$ 是柯西序列
+  [12] conclusion: 从而收敛到某个点 $x_*$. 对等式 $x_{n+1}=\cos x_n$ 取极限即看出这个极限点正是方程 $x=\cos x$ 的解
+  ⚠ unresolved (9条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s4: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    ... 共 9 条
+
+──────────────────────────────────────────────
+文章: ConMap | 环境类型: theorem | 标题: 定理 1
+原文: 定理 1　巴拿赫不动点定理 　　 设 $(X,d)$ 是完备度量空间, $T:X\to X$ 是其上的压缩映射，那么映射 $T$ 有唯一的不动点，即满足 $x=Tx$ 的点。而且，对于任意 $x_0\in X$, 点列 $\{T^nx_0\}_{n\in\mathbb{N}}$ 都收敛到这个不动点。
+
+  [0] assertion [unclassified]: 定理 1　巴拿赫不动点定理
+  [1] assumption: 设 $(X,d)$ 是完备度量空间, $T:X\to X$ 是其上的压缩映射
+  [2] conclusion: 那么映射 $T$ 有唯一的不动点，即满足 $x=Tx$ 的点，而且，对于任意 $x_0\in X$, 点列 $\{T^nx_0\}_{n\in\mathbb{N}}$ 都收敛到这个不动点
+  ⚠ unresolved (1条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: ConMap | 环境类型: example | 标题: 例 3
+原文: 例 3　没有完备性 　　 这个例子非常简单。考虑开区间 $(0,1)$ 到自己的映射 $f(x)=x/2$. 它的不动点 $x=0$ 跑出了 $(0,1)$ 的范围。之所以会有这样的反例，是因为开区间 $(0,1)$ 在通常的距离函数之下并不是完备的度量空间。
+
+  [0] assertion [unclassified]: 例 3　没有完备性
+  [1] assertion [unclassified]: 这个例子非常简单
+  [2] assumption: 考虑开区间 $(0,1)$ 到自己的映射 $f(x)=x/2$. 它的不动点 $x=0$ 跑出了 $(0,1)$ 的范围
+  [3] assertion [unclassified]: 之所以会有这样的反例，是因为开区间 $(0,1)$ 在通常的距离函数之下并不是完备的度量空间
+  ⚠ unresolved (3条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: ConMap | 环境类型: example | 标题: 例 4
+原文: 例 4　没有一致的压缩比 　　 巴拿赫不动点定理的表述要求一个无关于点 $x,y$ 的数 $q<1$, 这个数有时被称为压缩比。如果没有一致的压缩比，那么就能举出反例。例如函数 $$ f(x)=\frac{3}{4}x-\frac{1}{4}\sqrt{x^2+1},\,x\in\mathbb{R}~. $$ 如图所示，它的图形是双曲线的一支，以对角线 $y=x$ 为渐近线。方程 $x=f(x)$ 当然无解。另一方面，通过微分中值定理，却也容易证明不等式 $$ |f(x_1)-f(x_2)|<|
+
+  [0] assertion [unclassified]: 例 4　没有一致的压缩比
+  [1] definition: 巴拿赫不动点定理的表述要求一个无关于点 $x,y$ 的数 $q<1$, 这个数有时被称为压缩比
+  [2] assumption: 如果没有一致的压缩比
+  [3] conclusion: 那么就能举出反例
+  [4] assertion [unclassified]: 例如函数
+  [5] assertion [display_math]: $
+f(x)=\frac{3}{4}x-\frac{1}{4}\sqrt{x^2+1},\,x\in\mathbb{R}~.
+$
+  [6] assertion [unclassified]: 如图所示，它的图形是双曲线的一支，以对角线 $y=x$ 为渐近线
+  [7] assertion [unclassified]: 方程 $x=f(x)$ 当然无解
+  [8] assertion [unclassified]: 另一方面，通过微分中值定理，却也容易证明不等式
+  [9] assertion [display_math]: $
+|f(x_1)-f(x_2)|<|x_1-x_2|,\,x_1,x_2\in\mathbb{R}~.
+$
+  [10] condition: 然而，当 $x_1,x_2\to-\infty$ 时，不难看出 $\frac{|f(x_1)-f(x_2)|}{|x_1-x_2|}$ 越来越接近 1. 因此映射 $f$ 没有一致的压缩比。
+  [11] assertion [unclassified]: 图 2：函数 $f(x)=\frac{3}{4}x-\frac{1}{4}\sqrt{x^2+1}$ 的图形
+  ⚠ unresolved (8条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s4: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s5: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s6: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    ... 共 8 条
+
+──────────────────────────────────────────────
+文章: ConMap | 环境类型: example | 标题: 例 5
+原文: 例 5　平方根的计算 　　 对于给定的正数 $a$，它的算术平方根 $\sqrt{a}$ 一定满足方程 $x^2=a$。不妨设 $a>1$，将其改写为下列形式  \begin{equation} \frac{1}{2} \left(x+\frac{a}{x} \right) =x~. \end{equation}  将等式左边的部分视为 $Tx$，易知 $T$ 是完备度量空间1 $[\eta,a]$（$\eta$ 是一足够小正数2）上的连续映射。  　　 又对任意 $x_1,x_2\in [\e
+
+  [0] assertion [unclassified]: 例 5　平方根的计算
+  [1] assertion [unclassified]: 对于给定的正数 $a$，它的算术平方根 $\sqrt{a}$ 一定满足方程 $x^2=a$
+  [2] assertion [unclassified]: 不妨设 $a>1$，将其改写为下列形式
+  [3] assertion [display_math]: \begin{equation}
+\frac{1}{2} \left(x+\frac{a}{x} \right) =x~.
+\end{equation}
+  [4] assertion [unclassified]: 将等式左边的部分视为 $Tx$，易知 $T$ 是完备度量空间1 $[\eta,a]$（$\eta$ 是一足够小正数2）上的连续映射。
+  [5] quantified: 又对任意 $x_1,x_2\in [\eta,a]$
+  [6] assertion [display_math]: \begin{equation}
+\left\lvert Tx_1 - Tx_2 \right\rvert =\frac{1}{2} \left\lvert x_1 - x_2 \right\rvert \left\lvert 1-\frac{a}{x_1x_2} \right\rvert \leq
+  [7] quantified: 根据巴拿赫不动点定理，我们可知算术平方根 $\sqrt{a}$ 必然存在且唯一，且对任意 $x\in[\eta,a]$，点列 $\{T^nx_0\}_{n\in\mathbb{N}}$ 均收敛到 $\sqrt{a}$.
+  [8] conclusion: 所以我们可以这么计算正数 $a(a\geq 2)$ 的算术平方根：先取 $x_1=\frac{1}{2}a$3，然后按下式迭代计算：
+  [9] assertion [display_math]: \begin{equation}
+x_{n+1}=\frac{1}{2} \left(x_n+\frac{a}{x_n} \right) ~.
+\end{equation}
+  [10] assertion [unclassified]: 计算精度估计（$n$ 为迭代计算次数）
+  [11] assertion [display_math]: \begin{equation}
+\epsilon\leq \left(\frac{1}{2} \right) ^{n+1} \left\lvert a-4 \right\rvert ~.
+\end{equation}
+  [12] condition: 当 $1\leq a<2$ 时，取 $x_1=1$，此时计算精度估计
+  [13] assertion [display_math]: \begin{equation}
+\epsilon\leq \left(\frac{1}{2} \right) ^{n-1} \left\lvert a \right\rvert ~.
+\end{equation}
+  [14] condition: 当 $0< a<1$ 时，求 $\sqrt{1/a}$，然后求倒数即可
+  ⚠ unresolved (10条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    ... 共 10 条
+
+──────────────────────────────────────────────
+文章: legnnt | 环境类型: definition | 标题: 定义 1
+原文: 定义 1　Legendre 符号 　　 对于一个奇素数 $p$ 与一个不被 $p$ 整除的数 $a$，定义 勒让德符号（Legendre 符号） $\left( \frac{a}{p} \right)$ 是：   若 $a \operatorname R p$ 则 $\left( \frac{a}{p} \right) = +1$；  若 $a \operatorname N p$ 则 $\left( \frac{a}{p} \right) = -1$。
+
+  [0] definition: 定义 1　Legendre 符号
+  [1] definition: 对于一个奇素数 $p$ 与一个不被 $p$ 整除的数 $a$，定义 勒让德符号（Legendre 符号） $\left( \frac{a}{p} \right)$ 是：
+  [2] assumption: 若 $a \operatorname R p$ 则 $\left( \frac{a}{p} \right) = +1$；
+  [3] assumption: 若 $a \operatorname N p$ 则 $\left( \frac{a}{p} \right) = -1$
+
+──────────────────────────────────────────────
+文章: legnnt | 环境类型: corollary | 标题: 推论 1
+原文: 推论 1　 　　 由定义，立刻有  \begin{equation} \left(\frac ap\right) ^2 = 1 ~. \end{equation}
+
+  [0] assertion [unclassified]: 推论 1
+  [1] definition: 由定义，立刻有
+  [2] assertion [display_math]: \begin{equation}
+\left(\frac ap\right) ^2 = 1 ~.
+\end{equation}
+  ⚠ unresolved (2条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: legnnt | 环境类型: corollary | 标题: 推论 2
+原文: 推论 2　 　　 若 $a \equiv b \pmod p$，而 $a$ 为不被奇素数 $p$ 整除的数，则  \begin{equation} \left(\frac ap \right) = \left(\frac bp \right) ~. \end{equation}
+
+  [0] assertion [unclassified]: 推论 2
+  [1] assumption: 若 $a \equiv b \pmod p$，而 $a$ 为不被奇素数 $p$ 整除的数
+  [2] conclusion: 则
+  [3] assertion [display_math]: \begin{equation}
+\left(\frac ap \right) = \left(\frac bp \right) ~.
+\end{equation}
+  ⚠ unresolved (2条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: legnnt | 环境类型: theorem | 标题: 定理 1
+原文: 定理 1　 　　 对于奇素数 $p$，若 $a$ 不是 $p$ 的倍数，则  \begin{equation} (p-1)! \equiv -\left(\frac ap\right) a^{(p-1)/2} \pmod p ~. \end{equation}
+
+  [0] assertion [unclassified]: 定理 1
+  [1] assertion [unclassified]: 对于奇素数 $p$，若 $a$ 不是 $p$ 的倍数
+  [2] conclusion: 则
+  [3] assertion [display_math]: \begin{equation}
+(p-1)! \equiv -\left(\frac ap\right) a^{(p-1)/2} \pmod p ~.
+\end{equation}
+  ⚠ unresolved (3条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s3: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: lnal06 | 环境类型: definition | 标题: 定义 1
+原文: 定义 1　乘积空间 　　 给定域 $\mathbb F $ 上的线性空间 $U$ 与 $V$，定义 $U\times V=\{(u, v)|u \in U, v \in V\}$ 上的数乘和加法运算为：  \begin{equation} \left\{\begin{aligned} a \cdot (u, v) &= (a \cdot u, a \cdot v), \quad \forall a \in \mathbb F\\ (u_1, v_1) + (u_2, v_2) &= (u_1 +
+
+  [0] definition: 定义 1　乘积空间
+  [1] definition [has_assumption_context]: 给定域 $\mathbb F $ 上的线性空间 $U$ 与 $V$，定义 $U\times V=\{(u, v)|u \in U, v \in V\}$ 上的数乘和加法运算为：
+  [2] assertion [display_math]: \begin{equation}
+\left\{\begin{aligned}
+a \cdot (u, v) &= (a \cdot u, a \cdot v), \quad \forall a \in \mathbb F\\
+(u_1, v_1) + (u_2, v_2) &= (u_1 + u_
+  ⚠ unresolved (1条):
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: lnal06 | 环境类型: theorem | 标题: 定理 1
+原文: 定理 1　乘积空间的维度 　　 给定域 $\mathbb F $ 上的线性空间 $U$ 与 $V$， $$ \dim(U \times V) = \dim(U) + \dim(V)~. $$
+
+  [0] assertion [unclassified]: 定理 1　乘积空间的维度
+  [1] assumption: 给定域 $\mathbb F $ 上的线性空间 $U$ 与 $V$，
+  [2] assertion [display_math]: $
+\dim(U \times V) = \dim(U) + \dim(V)~.
+$
+  ⚠ unresolved (2条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: DesCur | 环境类型: definition | 标题: 定义 1
+原文: 定义 1　泛函 　　 设 $y(x)$ 是给定的某类函数。如果对于这类函数 $y(x)$ 中的每一个函数，有某数 $J[y(x)]$ 与之对应，那么我们说 $J[y(x)]$ 是这类函数 $y(x)$ 的泛函。
+
+  [0] definition: 定义 1　泛函
+  [1] assumption: 设 $y(x)$ 是给定的某类函数
+  [2] assumption: 如果对于这类函数 $y(x)$ 中的每一个函数，有某数 $J[y(x)]$ 与之对应
+  [3] conclusion: 那么我们说 $J[y(x)]$ 是这类函数 $y(x)$ 的泛函
+
+──────────────────────────────────────────────
+文章: GVecOp | 环境类型: definition | 标题: 定义 1
+原文: 定义 1　线性组合 　　 把有限个几何向量 $ \boldsymbol{\mathbf{v}} _i$ 分别数乘实数 $c_i$、再相加就得到了这些几何向量的一个线性组合  \begin{equation} \sum_i^N c_i \boldsymbol{\mathbf{v}} _i = c_1 \boldsymbol{\mathbf{v}} _1 + c_2 \boldsymbol{\mathbf{v}} _2 +\dots +c_N \boldsymbol{\mathbf{v}} _N~.
+
+  [0] definition: 定义 1　线性组合
+  [1] assertion [unclassified]: 把有限个几何向量 $ \boldsymbol{\mathbf{v}} _i$ 分别数乘实数 $c_i$、再相加就得到了这些几何向量的一个线性组合
+  [2] assertion [display_math]: \begin{equation}
+\sum_i^N c_i \boldsymbol{\mathbf{v}} _i = c_1 \boldsymbol{\mathbf{v}} _1 + c_2 \boldsymbol{\mathbf{v}} _2 +\dots +c_N \boldsymbol{\ma
+  ⚠ unresolved (2条):
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: GVecOp | 环境类型: exercise | 标题: 习题 1
+原文: 习题 1　 　　 试说明，在三维空间中，任意给定两个不共线的几何向量的所有线性组合都会落在同一个平面上。
+
+  [0] assertion [unclassified]: 习题 1
+  [1] quantified: 试说明，在三维空间中，任意给定两个不共线的几何向量的所有线性组合都会落在同一个平面上
+  ⚠ unresolved (1条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: LODia | 环境类型: definition | 标题: 定义 1
+原文: 定义 1　 　　 $n$ 维矢量空间 $V$ 中，若有一基底，使得在该基底下，线性算子 $\mathcal{A}$ 对应的矩阵 $A$ 取对角形式  \begin{equation} A=\begin{pmatrix} \lambda_1&0&\cdots&0\\ 0&\lambda_2&\cdots&0\\ \vdots&\vdots&\cdots&\vdots\\ 0&0&\cdots&\lambda_n \end{pmatrix}~, \end{equation}  则称算子 $\math
+
+  [0] definition: 定义 1
+  [1] quantified: $n$ 维矢量空间 $V$ 中，若有一基底，使得在该基底下，线性算子 $\mathcal{A}$ 对应的矩阵 $A$ 取对角形式
+  [2] assertion [display_math]: \begin{equation}
+A=\begin{pmatrix}
+\lambda_1&0&\cdots&0\\
+0&\lambda_2&\cdots&0\\
+\vdots&\vdots&\cdots&\vdots\\
+0&0&\cdots&\lambda_n
+\end{pmatrix}~,
+\e
+  [3] definition: 则称算子 $\mathcal{A}$ 是可对角化的
+  [4] definition: 式 1  通常又记为 $A=\mathrm{diag}(\lambda_1,\cdots,\lambda_n)$
+  ⚠ unresolved (1条):
+    - [unclassified] s2: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: LODia | 环境类型: theorem | 标题: 定理 1
+原文: 定理 1　线性算子可对角化的充要条件 　　 定义在域 $\mathbb{F}$ 上的 $n$ 维矢量空间，其上的线性算子 $\mathcal{A}$ 可对角化的充要条件为：$\mathcal{A}$ 的本征多项式 $\mathrm{det}{\mathcal{A}-t \mathcal{E}}$ 的 所有根都在 $\mathbb{F}$ 上，且每个本征值 $\lambda$ 的几何重数等于代数重数。
+
+  [0] assertion [equivalence, unclassified]: 定理 1　线性算子可对角化的充要条件
+  [1] definition [equivalence]: 定义在域 $\mathbb{F}$ 上的 $n$ 维矢量空间，其上的线性算子 $\mathcal{A}$ 可对角化的充要条件为：$\mathcal{A}$ 的本征多项式 $\mathrm{det}{\mathcal{A}-t \mathcal{E}}$ 的 所有根都在 $\mathbb{F}$ 上，
+  ⚠ unresolved (1条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+──────────────────────────────────────────────
+文章: LODia | 环境类型: lemma | 标题: 引理 1
+原文: 引理 1　 　　 属于不同本征值的本征向量必然线性无关，且 $\sum\limits_{i=1}^nV^{\lambda_i}$ 是直和（各 $\lambda_i$ 不相同）。
+
+  [0] assertion [unclassified]: 引理 1
+  [1] assertion [unclassified]: 属于不同本征值的本征向量必然线性无关，且 $\sum\limits_{i=1}^nV^{\lambda_i}$ 是直和（各 $\lambda_i$ 不相同）
+  ⚠ unresolved (2条):
+    - [unclassified] s0: 句子无任何已知触发词，逻辑角色完全无法自动判断
+    - [unclassified] s1: 句子无任何已知触发词，逻辑角色完全无法自动判断
+
+
+══════════════════════════════════════════════
+汇总统计
+══════════════════════════════════════════════
+文章数: 25
+环境总数: 95
+句子总数: 594
+
+── 环境类型分布 ──
+  definition: 33
+  example: 27
+  theorem: 18
+  exercise: 9
+  corollary: 6
+  lemma: 2
+
+── 环境类型 → 句子子类型 交叉分布 ──
+  corollary→assertion: 10
+  corollary→assumption: 6
+  corollary→conclusion: 5
+  corollary→definition: 1
+  definition→assertion: 43
+  definition→assumption: 25
+  definition→conclusion: 11
+  definition→condition: 1
+  definition→definition: 77
+  definition→quantified: 11
+  example→assertion: 223
+  example→assumption: 12
+  example→conclusion: 41
+  example→condition: 12
+  example→definition: 6
+  example→quantified: 5
+  exercise→assertion: 20
+  exercise→conclusion: 1
+  exercise→definition: 2
+  exercise→quantified: 3
+  lemma→assertion: 3
+  lemma→assumption: 1
+  lemma→conclusion: 1
+  lemma→definition: 1
+  theorem→assertion: 44
+  theorem→assumption: 15
+  theorem→conclusion: 10
+  theorem→definition: 3
+  theorem→quantified: 1
+
+── 说明 ──
+  unclassified 标记表示句子无任何已知触发词（可能是纯公式、标题行、或上下文描述句），已悬置交用户判断。
+  ambiguous 标记表示句子同时匹配 ≥3 个冲突触发词。

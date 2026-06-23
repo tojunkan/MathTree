@@ -1,0 +1,99 @@
+[SCOPE:root|description|散度的逆运算]
+文章名: DivInv
+标题: 散度的逆运算
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=theorem heading=定理 2 title=
+
+[SCOPE:s_thm1|description|定理 1]
+[0] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[1] 令 $V( \boldsymbol{\mathbf{r}} )$ 为任意标量场，
+[2] 则 $V( \boldsymbol{\mathbf{r}} )$ 总能表示为一个矢量场 $ \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} )$ 的散度，
+[/SCOPE:s_thm1_let]
+[3] 即
+[4] \begin{equation}
+V( \boldsymbol{\mathbf{r}} ) = \boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} )~,
+\end{equation}
+[5] \begin{equation}
+\boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} ) \equiv \frac{1}{4\pi}\int \frac{V( \boldsymbol{\mathbf{r}} ') \boldsymbol{\mathbf{R}} }{R^3} \,\mathrm{d}{V'} ~.
+\end{equation}
+[6] 矢量叉乘
+[7] 若在式 2 右边加上任意无散场 $ \boldsymbol{\mathbf{H}} ( \boldsymbol{\mathbf{r}} )$，定理同样成立。
+[8] 式 2 可以看做是散度运算的逆运算，类似于不定积分是求导的逆运算。
+[9] $ \boldsymbol{\mathbf{H}} ( \boldsymbol{\mathbf{r}} )$ 则相当于不定积分中的任意常数。
+[10] 旋度也有类似的逆运算。
+[11] 该定理在物理中可应用于电场和电荷的关系，定理中的 $ \boldsymbol{\mathbf{F}} $ 可看做电场 $ \boldsymbol{\mathbf{E}} $，而 $V( \boldsymbol{\mathbf{r}} )$ 可看做电荷密度 $\rho( \boldsymbol{\mathbf{r}} )$ 除以真空介电常数 $\epsilon_0$。
+[12] 于是式 1 就是电场的高斯定律（式 2 ），式 2 就是库仑定律（式 6 ）。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理 2]
+[13] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理 2 的变量]
+[14] 令 $V( \boldsymbol{\mathbf{r}} )$ 为一个标量场，
+[15] 则式 2 得到的 $ \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} )$ 是一个无旋场，
+[/SCOPE:s_thm2_let]
+[16] 即 $ \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{F}} = \boldsymbol{\mathbf{0}} $。
+[17] 作为静电学的一个应用，如果仍然将 $ \boldsymbol{\mathbf{F}} $ 看做电场，
+[18] 那么该定理说明由静止电荷产生的电场是无旋场。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_proof1|description|证明定理 1]
+[19] 对式 2 求散度，得
+[20] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} ) = \frac{1}{4\pi}\int \boldsymbol{\nabla}\boldsymbol{\cdot} \frac{V( \boldsymbol{\mathbf{r}} ') \boldsymbol{\mathbf{R}} }{R^3} \,\mathrm{d}{V'} ~.
+\end{equation}
+[21] 式 3 [链接 L0]
+[22] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\cdot} \frac{V( \boldsymbol{\mathbf{r}} ') \boldsymbol{\mathbf{R}} }{R^3} = [ \boldsymbol\nabla V( \boldsymbol{\mathbf{r}} ')] \frac{ \boldsymbol{\mathbf{R}} }{R^3} + V( \boldsymbol{\mathbf{r}} ') \left( \boldsymbol{\nabla}\boldsymbol{\cdot} \frac{ \boldsymbol{\mathbf{R}} }{R^3} \right) ~.
+\end{equation}
+[23] 由于 $V( \boldsymbol{\mathbf{r}} ')$ 是 $x', y', z'$ 而不是 $x, y, z$ 的函数，右边第一项中 $ \boldsymbol\nabla V( \boldsymbol{\mathbf{r}} ') = 0$。
+[24] 第二项中（
+[25] 式 5 [链接 L1]
+[26] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\cdot} \frac{ \boldsymbol{\mathbf{R}} }{R^3} = 4\pi \delta( \boldsymbol{\mathbf{R}} )~,
+\end{equation}
+[27] 式 4 [链接 L2]
+[28] 式 3 [链接 L3]
+[29] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} ) = \int V( \boldsymbol{\mathbf{r}} ') \delta( \boldsymbol{\mathbf{r}} - \boldsymbol{\mathbf{r}} ') \,\mathrm{d}{V'} = V( \boldsymbol{\mathbf{r}} )~,
+\end{equation}
+
+[/SCOPE:s_proof1]
+[SCOPE:s_proof2|description|证明定理 2]
+[30] 对式 2 求旋度，得
+[31] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} ) \equiv \frac{1}{4\pi}\int \boldsymbol{\nabla}\boldsymbol{\times} \frac{V( \boldsymbol{\mathbf{r}} ') \boldsymbol{\mathbf{R}} }{R^3} \,\mathrm{d}{V'} ~.
+\end{equation}
+[32] 式 5 [链接 L4]
+[33] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\times} \frac{V( \boldsymbol{\mathbf{r}} ') \boldsymbol{\mathbf{R}} }{R^3} = \boldsymbol\nabla V( \boldsymbol{\mathbf{r}} ') \boldsymbol\times \frac{ \boldsymbol{\mathbf{R}} }{R^3} + V( \boldsymbol{\mathbf{r}} ') \boldsymbol{\nabla}\boldsymbol{\times} \frac{ \boldsymbol{\mathbf{R}} }{R^3}~.
+\end{equation}
+[34] 由于 $V( \boldsymbol{\mathbf{r}} ')$ 是 $x', y', z'$ 而不是 $x, y, z$ 的函数，右边第一项中 $ \boldsymbol\nabla V( \boldsymbol{\mathbf{r}} ') = \boldsymbol{\mathbf{0}} $，第二项中，
+[35] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\times} \frac{ \boldsymbol{\mathbf{R}} }{R^3} = \boldsymbol{\mathbf{0}} ~,
+\end{equation}
+[36] 式 7 [链接 L5]
+[37] 中积分为零。
+[38] 证毕。
+[/SCOPE:s_proof2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_proof1",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明 1 推出定理 1"
+  },
+  {
+    "source_scope": "s_proof2",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明 2 推出定理 2"
+  }
+]

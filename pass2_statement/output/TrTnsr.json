@@ -1,0 +1,439 @@
+{
+  "article_name": "TrTnsr",
+  "statements": [
+    {
+      "stmt_id": "st_intro_1",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_2",
+      "subtype": "remark",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_first_order_traditional_let",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_first_order_traditional_let",
+      "exposed_entities": [
+        "V",
+        "f",
+        "e_i",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_first_order_traditional_eq1",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_first_order_traditional_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_first_order_traditional_rep",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_first_order_traditional_let",
+      "exposed_entities": [
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_first_order_traditional_change",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_first_order_traditional_let",
+      "exposed_entities": [
+        "e'_i",
+        "Q",
+        "c'"
+      ]
+    },
+    {
+      "stmt_id": "st_first_order_traditional_newrep",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_first_order_traditional_let",
+      "exposed_entities": [
+        "F'"
+      ]
+    },
+    {
+      "stmt_id": "st_first_order_traditional_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_first_order_traditional_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_second_order_traditional_let",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_second_order_traditional_let",
+      "exposed_entities": [
+        "V1",
+        "V2",
+        "f",
+        "a_i",
+        "b_j",
+        "F",
+        "c(v1)",
+        "c(v2)"
+      ]
+    },
+    {
+      "stmt_id": "st_second_order_traditional_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_second_order_traditional_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_second_order_traditional_change",
+      "subtype": "assumption",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_second_order_traditional_let",
+      "exposed_entities": [
+        "P",
+        "Q",
+        "c'(v1)",
+        "c'(v2)"
+      ]
+    },
+    {
+      "stmt_id": "st_second_order_traditional_new",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_second_order_traditional_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_first_order_einstein_let",
+      "subtype": "assumption",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_first_order_einstein_let",
+      "exposed_entities": [
+        "V",
+        "f",
+        "e_i",
+        "T_i"
+      ]
+    },
+    {
+      "stmt_id": "st_first_order_einstein_def",
+      "subtype": "definition",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_first_order_einstein_let",
+      "exposed_entities": [
+        "T_i"
+      ]
+    },
+    {
+      "stmt_id": "st_first_order_einstein_change",
+      "subtype": "assumption",
+      "clause_range": [
+        40,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_first_order_einstein_let",
+      "exposed_entities": [
+        "a_i^j",
+        "e'_i"
+      ]
+    },
+    {
+      "stmt_id": "st_first_order_einstein_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_first_order_einstein_let",
+      "exposed_entities": [
+        "T'_i"
+      ]
+    },
+    {
+      "stmt_id": "st_first_order_einstein_remark",
+      "subtype": "remark",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_first_order_einstein_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_second_order_einstein_let",
+      "subtype": "assumption",
+      "clause_range": [
+        45,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_second_order_einstein_let",
+      "exposed_entities": [
+        "V1",
+        "V2",
+        "f",
+        "a_i",
+        "b_j",
+        "T_ij"
+      ]
+    },
+    {
+      "stmt_id": "st_second_order_einstein_change",
+      "subtype": "assumption",
+      "clause_range": [
+        48,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_second_order_einstein_let",
+      "exposed_entities": [
+        "m^i_j",
+        "n^i_j",
+        "a'_i",
+        "b'_j"
+      ]
+    },
+    {
+      "stmt_id": "st_second_order_einstein_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        50,
+        51
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_second_order_einstein_let",
+      "exposed_entities": [
+        "T'_ij"
+      ]
+    },
+    {
+      "stmt_id": "st_second_order_einstein_remark",
+      "subtype": "remark",
+      "clause_range": [
+        52,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_second_order_einstein_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem_let",
+      "subtype": "assumption",
+      "clause_range": [
+        56,
+        58
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem_let",
+      "exposed_entities": [
+        "V_alpha",
+        "f",
+        "T_{i1...in}",
+        "m^k_{i alpha}"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        59,
+        61
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem_let",
+      "exposed_entities": [
+        "T'_{i1...in}"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        62,
+        62
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem_remark2",
+      "subtype": "remark",
+      "clause_range": [
+        63,
+        70
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem_let",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_first_order_traditional_let",
+      "target": "st_first_order_traditional_eq1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_first_order_traditional_let",
+      "target": "st_first_order_traditional_rep",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_first_order_traditional_change",
+      "target": "st_first_order_traditional_newrep",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_first_order_traditional_newrep",
+      "target": "st_first_order_traditional_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_second_order_traditional_let",
+      "target": "st_second_order_traditional_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_second_order_traditional_change",
+      "target": "st_second_order_traditional_new",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_first_order_einstein_let",
+      "target": "st_first_order_einstein_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_first_order_einstein_change",
+      "target": "st_first_order_einstein_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_second_order_einstein_let",
+      "target": "st_second_order_einstein_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_second_order_einstein_change",
+      "target": "st_second_order_einstein_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem_let",
+      "target": "st_theorem_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_first_order_einstein_result",
+      "target": "st_first_order_traditional_result",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "两种表示等价"
+    },
+    {
+      "source": "st_second_order_einstein_result",
+      "target": "st_second_order_traditional_new",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "两种表示等价"
+    },
+    {
+      "source": "st_theorem_conclusion",
+      "target": "st_first_order_einstein_result",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理是一般情况，一阶是特例"
+    },
+    {
+      "source": "st_theorem_conclusion",
+      "target": "st_second_order_einstein_result",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理是一般情况，二阶是特例"
+    }
+  ],
+  "unresolved": []
+}

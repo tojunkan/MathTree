@@ -1,0 +1,118 @@
+{
+  "article_name": "lnal06",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "U",
+        "V",
+        "U×V",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "{x_i}",
+        "{y_i}",
+        "U",
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        6,
+        8
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_direct_sum_let",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_direct_sum_let",
+      "exposed_entities": [
+        "U×V",
+        "Ũ",
+        "Ṽ"
+      ]
+    },
+    {
+      "stmt_id": "st_direct_sum_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_direct_sum",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_direct_sum_remark",
+      "subtype": "remark",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_direct_sum",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_direct_sum_let",
+      "target": "st_direct_sum_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_direct_sum_conclusion",
+      "target": "st_direct_sum_remark",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_conclusion",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1的结论基于定义1的乘积空间概念"
+    }
+  ],
+  "unresolved": [
+    "定理1的证明未完成，无法提取更多逻辑边",
+    "第13句未完成，未建立Statement"
+  ]
+}

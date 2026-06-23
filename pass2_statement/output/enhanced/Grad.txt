@@ -1,0 +1,222 @@
+[SCOPE:root|description|梯度、梯度定理]
+文章名: Grad
+标题: 梯度、梯度定理
+
+[SCOPE:s_grad_def|description|梯度定义]
+[SCOPE:s_grad_def_let|let_bind|梯度定义变量]
+[0] 在方向导数中，我们推出方向导数为
+[1] \begin{equation}
+\frac{\partial f}{\partial n} = \boldsymbol\nabla f \boldsymbol\cdot \hat{\boldsymbol{\mathbf{n}}} ~.
+\end{equation}
+[2] 其中 $ \boldsymbol\nabla f$ 就叫标量函数 $f$ 的梯度1。
+[3] 要注意当且仅当 Del 算符 $ \boldsymbol\nabla $ 作用在标量函数（即函数值是一个数而不是矢量）上时，可以称其为梯度算符。
+[4] 这里的 $f$ 叫做势函数。
+[5] 对于 $N$ 维直角坐标系中的 $N$ 元函数 $f(x_1,x_2\dots x_N)$，其梯度是一个矢量函数
+[/SCOPE:s_grad_def_let]
+[6] \begin{equation}
+\boldsymbol\nabla f = \sum_{i=1}^{N} \frac{\partial f}{\partial x_i} \hat{\boldsymbol{\mathbf{x}}} _i~.
+\end{equation}
+[7] 其中所有的 $ \hat{\boldsymbol{\mathbf{x}}} _i$ 组成直角坐标系的
+[8] 正交归一基 [链接 L0]
+[9] ，现在来看
+[10] 全微分 [链接 L1]
+[11] \begin{equation}
+\,\mathrm{d}{f} = \sum_{i = 1}^N \frac{\partial f}{\partial x_i} \,\mathrm{d}{x_i} ~.
+\end{equation}
+[12] 在直角坐标系中，位置矢量 $ \boldsymbol{\mathbf{r}} $ 的微分为
+[13] \begin{equation}
+\,\mathrm{d}{ \boldsymbol{\mathbf{r}} } = \sum_{i=1}^{N} \,\mathrm{d}{x_i} \hat{\boldsymbol{\mathbf{x}}} _i~.
+\end{equation}
+[14] 式 3 [链接 L2]
+[15] 可用势函数的梯度和 $ \,\mathrm{d}{ \boldsymbol{\mathbf{r}} } $ 的内积表示
+[16] \begin{equation}
+\,\mathrm{d}{f} = \boldsymbol\nabla f \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{r}} } ~.
+\end{equation}
+[17] 内积 [链接 L3]
+[18] 的几何定义可知，从某点出发，若微位移 $ \,\mathrm{d}{ \boldsymbol{\mathbf{r}} } $ 的大小不变，
+[19] 那么当其方向与梯度方向相同时函数增量 $ \,\mathrm{d}{f} $ 最大；
+[20] 二者方向垂直时，函数增量为零；
+[21] 二者夹角为 $\theta$ 时，函数增量等于最大值乘以 $\cos \theta$。
+[22] 所以梯度矢量的方向是函数 $f$ 增加最快的方向，梯度的大小等于该方向的方向导数。
+[23] 注意
+[24] 式 5 [链接 L4]
+[25] 式 1 [链接 L5]
+[26] 的关系可以类比
+[27] 一元函数的导数 [链接 L6]
+[28] 微分 [链接 L7]
+[29] 的关系，当函数可微时，二者等效。
+[30] 所以也可以把
+[31] 式 5 [链接 L8]
+[32] 看成梯度的定义（需要对所有方向的 $ \,\mathrm{d}{ \boldsymbol{\mathbf{r}} } $ 都成立）。
+[33] 现在我们也可以把全微分近似（“ 全微分” 式 6 ）记为矢量的形式
+[34] \begin{equation}
+\Delta f \approx \boldsymbol\nabla f \boldsymbol\cdot \Delta \boldsymbol{\mathbf{r}} ~.
+\end{equation}
+
+[/SCOPE:s_grad_def]
+[SCOPE:s_grad_curvilinear|description|极坐标、柱坐标和球坐标中的梯度算符]
+[SCOPE:s_grad_curvilinear_let|let_bind|曲线坐标变量]
+[35] 我们先写出极坐标中函数 $f(r,\theta)$ 的全微分为
+[36] \begin{equation}
+\,\mathrm{d}{f} = \frac{\partial f}{\partial r} \,\mathrm{d}{r} + \frac{\partial f}{\partial \theta} \,\mathrm{d}{\theta} ~,
+\end{equation}
+[37] 再写出极坐标中的微位移为
+[38] \begin{equation}
+\,\mathrm{d}{ \boldsymbol{\mathbf{r}} } = \,\mathrm{d}{r} \hat{\boldsymbol{\mathbf{r}}} + r \,\mathrm{d}{\theta} \hat{\boldsymbol{\mathbf{\theta}}} ~.
+\end{equation}
+[/SCOPE:s_grad_curvilinear_let]
+[39] 所以为了满足梯度的定义
+[40] 式 5 [链接 L9]
+[41] ，我们可以把
+[42] 式 7 [链接 L10]
+[43] \begin{equation}
+\,\mathrm{d}{f} = \frac{\partial f}{\partial r} \,\mathrm{d}{r} + \frac1r \frac{\partial f}{\partial \theta} \cdot r \,\mathrm{d}{\theta} ~.
+\end{equation}
+[44] 式 5 [链接 L11]
+[45] 式 8 [链接 L12]
+[46] 式 9 [链接 L13]
+[47] 可以得出
+[48] 极坐标中的梯度算符
+[49] \begin{equation}
+\boldsymbol\nabla = \hat{\boldsymbol{\mathbf{r}}} \frac{\partial}{\partial{r}} + \hat{\boldsymbol{\mathbf{\theta}}} \frac1r \frac{\partial}{\partial{\theta}} ~.
+\end{equation}
+[50] 同理，柱坐标中的微位移（式 11 ）与函数 $f(r,\theta, z)$ 的全微分可以分别表示为
+[51] \begin{equation}
+\,\mathrm{d}{ \boldsymbol{\mathbf{r}} } = \,\mathrm{d}{r} \hat{\boldsymbol{\mathbf{r}}} + r \,\mathrm{d}{\theta} \hat{\boldsymbol{\mathbf{\theta}}} + \,\mathrm{d}{z} \hat{\boldsymbol{\mathbf{z}}} ~,
+\end{equation}
+[52] \begin{equation}
+\,\mathrm{d}{f} = \frac{\partial f}{\partial r} \,\mathrm{d}{r} + \frac1r \frac{\partial f}{\partial \theta} \cdot r \,\mathrm{d}{\theta} + \frac{\partial f}{\partial z} \,\mathrm{d}{z} ~,
+\end{equation}
+[53] 柱坐标中的梯度算符
+[54] \begin{equation}
+\boldsymbol\nabla = \hat{\boldsymbol{\mathbf{r}}} \frac{\partial}{\partial{r}} + \hat{\boldsymbol{\mathbf{\theta}}} \frac1r \frac{\partial}{\partial{\theta}} + \hat{\boldsymbol{\mathbf{z}}} \frac{\partial}{\partial{z}} ~.
+\end{equation}
+[55] 球坐标也类似，球坐标中的微位移（式 5 ）与 $f(r,\theta,\phi)$ 的全微分可以分别表示为
+[56] \begin{equation}
+\,\mathrm{d}{ \boldsymbol{\mathbf{r}} } = \,\mathrm{d}{r} \hat{\boldsymbol{\mathbf{r}}} + r \,\mathrm{d}{\theta} \hat{\boldsymbol{\mathbf{\theta}}} + r\sin\theta \,\mathrm{d}{\phi} \hat{\boldsymbol{\mathbf{\phi}}} ~,
+\end{equation}
+[57] \begin{equation}
+\,\mathrm{d}{f} = \frac{\partial f}{\partial r} \,\mathrm{d}{r} + \frac1r \frac{\partial f}{\partial \theta} \cdot r \,\mathrm{d}{\theta} + \frac{1}{ r\sin\theta} \frac{\partial f}{\partial \phi} \cdot r\sin\theta \,\mathrm{d}{\phi} ~.
+\end{equation}
+[58] 球坐标中的梯度算符
+[59] \begin{equation}
+\boldsymbol\nabla = \hat{\boldsymbol{\mathbf{r}}} \frac{\partial}{\partial{r}} + \hat{\boldsymbol{\mathbf{\theta}}} \frac1r \frac{\partial}{\partial{\theta}} + \hat{\boldsymbol{\mathbf{\phi}}} \frac{1}{ r\sin\theta} \frac{\partial}{\partial{\phi}} ~.
+\end{equation}
+
+[/SCOPE:s_grad_curvilinear]
+[SCOPE:s_grad_theorem|description|梯度定理]
+[SCOPE:s_grad_theorem_let|let_bind|梯度定理变量]
+[60] 梯度定理：一个标量函数 $f( \boldsymbol{\mathbf{r}} )$ 的梯度延任何路径从起点 $ \boldsymbol{\mathbf{r}} _i$ 到终点 $ \boldsymbol{\mathbf{r}} _f$（角标 $i$ 表示 initial，$f$ 表示 final） 线积分的结果等于该函数在末位置的函数值减去初位置的函数值。
+[61] 可以用下式表示
+[62] \begin{equation}
+\int_{ \boldsymbol{\mathbf{r}} _i}^{ \boldsymbol{\mathbf{r}} _f} \boldsymbol\nabla f( \boldsymbol{\mathbf{r}} ) \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{r}} } = f( \boldsymbol{\mathbf{r}} _f) - f( \boldsymbol{\mathbf{r}} _i)~.
+\end{equation}
+[/SCOPE:s_grad_theorem_let]
+[63] 梯度定理可以看做是
+[64] 牛顿—莱布尼兹公式 [链接 L14]
+[65] \begin{equation}
+\int_a^b f'(x) \,\mathrm{d}{x} = f(b) - f(a)~
+\end{equation}
+[66] 的拓展，
+[67] 即把一元函数拓展为多元函数，把导函数拓展为梯度函数（在一维情况下，
+[68] 式 17 [链接 L15]
+[69] 式 18 [链接 L16]
+[70] ）。
+[71] 所以前者的证明也可以类比后者的证明。
+
+[/SCOPE:s_grad_theorem]
+[SCOPE:s_grad_proof|description|梯度定理的证明]
+[SCOPE:s_grad_proof_let|let_bind|证明变量]
+[72] 我们先把式 17 路径分为许多首尾相接的小段曲线，
+[73] 则整段曲线的线积分等于所有小曲线的线积分之和。
+[74a] 假设曲线处处光滑
+[74b] 如果每段小曲线都足够短，则可以把它们近似看做线段，且梯度值在上面近似为常矢量。
+[75] 令第 $i$ 小段的起点和终点分别为 $ \boldsymbol{\mathbf{r}} _{i0}, \boldsymbol{\mathbf{r}} _{i1}$，
+[/SCOPE:s_grad_proof_let]
+[76] 则第 $i$ 段的线积分可近似为
+[77] \begin{equation}
+\int_{ \boldsymbol{\mathbf{r}} _{i0}}^{ \boldsymbol{\mathbf{r}} _{i1}} \boldsymbol\nabla f( \boldsymbol{\mathbf{r}} ) \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{r}} } \approx \boldsymbol\nabla f( \boldsymbol{\mathbf{r}} _i) \boldsymbol\cdot \Delta \boldsymbol{\mathbf{r}} _i~.
+\end{equation}
+[78] 再利用全微分近似（
+[79] 式 6 [链接 L17]
+[80] ），上式等于
+[81] \begin{equation}
+\int_{ \boldsymbol{\mathbf{r}} _{i0}}^{ \boldsymbol{\mathbf{r}} _{i1}} \boldsymbol\nabla f( \boldsymbol{\mathbf{r}} ) \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{r}} } \approx f( \boldsymbol{\mathbf{r}} _{i1}) - f( \boldsymbol{\mathbf{r}} _{i0})~.
+\end{equation}
+[82] 将所有小段的线积分求和得到总的线积分得（注意 $ \boldsymbol{\mathbf{r}} _{i1} = \boldsymbol{\mathbf{r}} _{(i+1)0}$）
+[83] \begin{equation} \begin{aligned}
+\int_{C} \boldsymbol\nabla f( \boldsymbol{\mathbf{r}} ) \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{r}} }
+&= \sum_{i=1}^n \int_{ \boldsymbol{\mathbf{r}} _{i0}}^{ \boldsymbol{\mathbf{r}} _{i1}} \boldsymbol\nabla…[truncated]…\boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{r}} } \\
+&\approx \sum_{i=1}^n [f( \boldsymbol{\mathbf{r}} _{i1}) - f( \boldsymbol{\mathbf{r}} _{i0})]
+= f( \boldsymbol{\mathbf{r}} _f) - f( \boldsymbol{\mathbf{r}} _i)~,
+\end{aligned} \end{equation}
+[84] 最后取极限 $n\to \infty$，可使上式精确成立。
+[85] 证毕。
+
+[/SCOPE:s_grad_proof]
+[SCOPE:s_grad_inverse|description|梯度的逆运算]
+[SCOPE:s_grad_inverse_let|let_bind|逆运算变量]
+[86] 【未完成】并不是所有矢量场都存在梯度的逆运算，链接
+[87] 【未完成】这部分内容可以新建文章，使用定理表述，类似于散度的逆运算。
+[88] 证明 $ \boldsymbol{\mathbf{A}} $ 是无旋场当且仅当它可以表示为 $ \boldsymbol\nabla V$，$V( \boldsymbol{\mathbf{r}} )$ 可以加上任意常数 $C$。
+[89] 我们通常把上面的标量函数 $f( \boldsymbol{\mathbf{r}} )$ 叫做势函数，其地位相当于牛顿—莱布尼兹公式中的原函数。
+[90] 在这个类比中，既然 “对原函数求导” 对应 “对势函数求梯度”，
+[91] 那么不定积分对应的 “通过梯度函数求势函数” 又该如何实现呢？
+[92] 以二维的情况为例，我们可以先指定势函数在某点 $ \boldsymbol{\mathbf{r}} _0 (x_0,y_0)$ 的值，然后根据式 17 ，要求势函数任意一点 $ \boldsymbol{\mathbf{r}} (x,y)$ 的值，只需从 $ \boldsymbol{\mathbf{r}} _0$ 点出发由任意路径线积分到点 $ \boldsymbol{\mathbf{r}} $ 即可得到势函数 $f( \boldsymbol{\mathbf{r}} )$。
+[/SCOPE:s_grad_inverse_let]
+[93] \begin{equation}
+f( \boldsymbol{\mathbf{r}} ) = f( \boldsymbol{\mathbf{r}} _0) + \int_{ \boldsymbol{\mathbf{r}} _0}^{ \boldsymbol{\mathbf{r}} } \boldsymbol\nabla f( \boldsymbol{\mathbf{r}} ) \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{r}} } ~.
+\end{equation}
+[94] 计算该线积分一般选取一种简单的路径：即先延从 $ \boldsymbol{\mathbf{r}} _0(x_0,y_0)$ 到 $ \boldsymbol{\mathbf{r}} _1(x, y_0)$ 的水平线段，再延从 $ \boldsymbol{\mathbf{r}} _1(x, y_0)$ 到 $ \boldsymbol{\mathbf{r}} (x,y)$ 的竖直线段（当然也可以取中间点为 $(x_0,y)$）。
+[95] 若把 $ \boldsymbol\nabla f$ 的两个分量 $ \partial f/\partial x , \partial f/\partial y $ 简写为 $f_x(x,y), f_y(x,y)$，分关于 $x$ 和 $y$ 的不定积分记为 $F_x(x,y), F_y(x,y)$，延两个线段的
+[96] 线积分 [链接 L18]
+[97] （分别把 $x$ 和 $y$ 作为线积分的参数）分别为
+[98] \begin{equation}
+\int_{ \boldsymbol{\mathbf{r}} _0}^{ \boldsymbol{\mathbf{r}} _1} \boldsymbol\nabla f( \boldsymbol{\mathbf{r}} ) \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{r}} } = \int_{x_0}^{x} f_x(x,y_0) \,\mathrm{d}{x} + 0 = F_x(x,y_0) - F_x(x_0,y_0)~,
+\end{equation}
+[99] \begin{equation}
+\int_{ \boldsymbol{\mathbf{r}} _1}^{ \boldsymbol{\mathbf{r}} } \boldsymbol\nabla f( \boldsymbol{\mathbf{r}} ) \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{r}} } = \int_{y_0}^{y} f_y(x,y) \,\mathrm{d}{y} + 0 = F_y(x,y) - F_y(x,y_0)~.
+\end{equation}
+[100] 式 22 [链接 L19]
+[101] 得势函数为
+[102] \begin{equation} \begin{aligned}
+f(x,y) &= f(x_0,y_0) + F_x(x,y_0) - F_x(x_0,y_0) + F_y(x,y) - F_y(x,y_0) \\
+&= F_y(x,y) - F_y(x,y_0) + F_x(x,y_0) + C~.
+\end{aligned} \end{equation}
+[103] 其中 $C$ 为待定常数。
+
+跨文章引用:
+  [L0] 正交归一基 → OrNrB
+  [L1] 全微分 → TDiff
+  [L3] 内积 → Dot
+  [L6] 一元函数的导数 → Der
+  [L7] 微分 → Diff
+  [L14] 牛顿—莱布尼兹公式 → NLeib
+  [L18] 线积分 → IntL
+[/SCOPE:s_grad_inverse]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_grad_theorem",
+    "target_scope": "s_grad_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "梯度定理是梯度定义的推广"
+  },
+  {
+    "source_scope": "s_grad_proof",
+    "target_scope": "s_grad_theorem",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明梯度定理"
+  },
+  {
+    "source_scope": "s_grad_inverse",
+    "target_scope": "s_grad_theorem",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "逆运算基于梯度定理"
+  }
+]

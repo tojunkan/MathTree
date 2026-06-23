@@ -1,0 +1,138 @@
+[SCOPE:root|description|笛卡尔积]
+文章名: CartPr
+标题: 笛卡尔积
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=笛卡尔积
+  [1] type=definition heading=定义 2 title=有序对
+  [2] type=example heading=例 1 title=唯一性证明
+  [3] type=definition heading=定义 3 title=n 元笛卡尔积
+
+[SCOPE:s_def1|description|定义1 笛卡尔积]
+[0] 定义 1 笛卡尔积
+[SCOPE:s_def1_let|let_bind|笛卡尔积的变量]
+[1] 从集合 $X,Y$ 中各取出一个元素 $x,y$ 形成的有序对的集合，称作笛卡尔积。
+[2] \begin{equation}
+X\times Y:=\{(x,y)|x\in X,y\in Y\}~.
+\end{equation}
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_ordered_pair|description|有序对概念]
+[3] 现实生活中，“序” 这个概念是必不可少的，集合却偏偏有这样一个让人困惑的性质——“集合内的元素的具有无序性”。
+[4] 那 “序” 这个概念该如何表达呢？
+[5] 有序对（ordered pair）的出现就是为了能够有概念来表示两个不同元素的顺序。
+[6] 因此，定义时就希望这个概念能够满足下面两个性质：
+[7] 唯一性：每一个有序对是唯一定义的，
+[8] 即 $(a, b) = (c, d)\implies (a = c) \land (b = d)$。
+[9] 顺序性：有序对中的元素顺序是固定的，
+[10] 即 $a\neq b\iff(a, b)\neq (b, a)$。
+[11] 这样，“序” 的概念就能在表达序的想法（顺序性）的同时，保持稳定（唯一性）。
+[12a] 注意
+[12b] 当两个元素相等时，则没有顺序可言了，
+[13] 但后面可以看到，仍然可以保留这样的记号。
+
+[/SCOPE:s_ordered_pair]
+[SCOPE:s_def2|description|定义2 有序对]
+[14] 定义 2 有序对
+[SCOPE:s_def2_let|let_bind|有序对定义的变量]
+[15] 有序对有以下几种常见的定义方法1：
+[16] 维纳对（Wiener pair，1914 年）：$(a, b):= \{\{\emptyset,\{ a\}\}, \{\{b\}\}\} $
+[17] 豪斯多夫对（Hausdorff Pair，1914 年）：$ (a, b):= \{\{a, 1\}, \{b, 2\}\} $
+[18] 库拉托夫斯基对（Kuratoswki pair，1921 年）$(a, b) := \{\{a\}, \{a, b\}\}$
+[/SCOPE:s_def2_let]
+[19] 其中：
+[20] 维纳对通常配合类型论使用。
+[21] 豪斯多夫对由于使用了数字作为序的描述，如果要考虑尚未定义数的场景，或需要研究数的序时，可能会造成循环论证。
+[22] 库拉托夫斯基对定义较为简洁，目前使用也最为广泛。
+[23] 下面对有序对的描述，均采取此定义。
+[24] 需要注意：
+[25] 每个定义在某些具体领域（如研究集合的理论）使用时，都存在各自的局限性。
+[26] 定义不仅限于上面三种，由于与内容关系不大，其余的没有在此给出。
+[27] 有序对的概念针对的是集合的元素，并不局限于数集，通常听到的 “有序数组” 的概念是 “有序对” 概念的子概念。
+[28] $(a,a)$ 会退化成 $\{\{a\}\}$（其他定义不一定会退化），
+[29] 但我们仍可以保证二者的对应关系，
+[30] 因此仍然保持 $(a,a)$ 的记号。
+[31] 现在，得到的有序对能够比较好地描述之前提到的特性，下面以唯一性举例。
+
+[/SCOPE:s_def2]
+[SCOPE:s_example1|description|例1 唯一性证明]
+[32] 例 1 唯一性证明
+[SCOPE:s_example1_let|let_bind|唯一性证明的变量]
+[33] 根据定义有 $(a, b) = \{\{a\}, \{a, b\}\} , (c, d) = \{\{c\}, \{c, d\}\} $，若 $(a, b)=(c,d)$，
+[34] 即 $\{\{a\}, \{a, b\}\}=\{\{c\}, \{c, d\}\}$，
+[35] 则根据集合相等的定义，且 ${\rm card}(\{a\})=1$，必有 $\{a\}=\{c\},\{a, b\}=\{c, d\}$。
+[36] 继续根据集合相等，有 $a=c$，进而有 $b=d$。
+[/SCOPE:s_example1_let]
+[37] 这样，通过在无序的集合中，构造具有不同特点的子集，实现了有序的概念。
+[38] 这种方法在涉及到集合的构造（如自然数的构建等）时会经常使用。
+[39] 有序对的概念在关系、函数、拓扑等领域都有应用。
+
+[/SCOPE:s_example1]
+[SCOPE:s_cartesian_product|description|笛卡尔积的推广]
+[40] 现在，根据定义 1 就可以使用笛卡尔积得到新集合了。
+[41] 比如：
+[SCOPE:s_cartesian_product_let|let_bind|推广中的变量]
+[42] 若记掷一次骰子的结果为 $A=\{1, 2, 3, 4, 5, 6\}$，
+[43] 则掷两次骰子的结果集就可以表示为 $A\times A$。
+[44] 若记一条直线为 ${\mathbb R}$，
+[45] 则由两条相交直线张成的平面就是 ${\mathbb R}\times{\mathbb R}$，通常也写作 ${\mathbb R}^2$。
+[46] 可以看出，当前笛卡尔积的结果是对应两个集合的。
+[47] 就像推广乘法到连乘一样，如果想要求解 3 个或者到 n 个集合的笛卡尔积，为了能够让他符合直观猜想的样子 $(a_1, a_2, \ldots, a_n)$，可以通过递归的方法来将有序对的概念扩展到更多的元，例如：三元组可以定义为有序对的有序对 $(a, b, c) := ((a, b), c)$。
+[48] 因此，将有序对的概念推广到任意有序 $n$ 元组，记作：
+[49] \begin{equation}
+(a_1, a_2, \ldots, a_n) := ((a_1, a_2, \ldots, a_{n-1}), a_n)~.
+\end{equation}
+[/SCOPE:s_cartesian_product_let]
+[50] 进而，笛卡尔积也可以推广到 $n$ 元：
+
+[/SCOPE:s_cartesian_product]
+[SCOPE:s_def3|description|定义3 n元笛卡尔积]
+[51] 定义 3 n 元笛卡尔积
+[SCOPE:s_def3_let|let_bind|n元笛卡尔积的变量]
+[52] 对于 $n$ 个集合 $A_1, A_2, \ldots, A_n$，其笛卡尔积定义为：
+[53] \begin{equation}
+A_1 \times A_2 \times \cdots \times A_n = \{(a_1, a_2, \ldots, a_n) \mid \forall i,a_i \in A_i \} ~.
+\end{equation}
+[/SCOPE:s_def3]
+[/SCOPE:s_def3_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def1",
+    "target_scope": "s_ordered_pair",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义1依赖有序对概念"
+  },
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_ordered_pair",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义2给出有序对的具体定义"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1证明有序对的唯一性"
+  },
+  {
+    "source_scope": "s_cartesian_product",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推广笛卡尔积到n元"
+  },
+  {
+    "source_scope": "s_def3",
+    "target_scope": "s_cartesian_product",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义3正式定义n元笛卡尔积"
+  }
+]

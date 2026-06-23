@@ -1,0 +1,206 @@
+[SCOPE:root|description|阿贝尔微分方程恒等式]
+文章名: AbelID
+标题: 阿贝尔微分方程恒等式
+
+[0] 本文翻译并节选自 WikiPedia 的Abel's Identity。
+
+[SCOPE:s_overview|description|综述]
+[1] 在数学中，阿贝尔恒等式（Abel's identity）（亦称阿贝尔公式（Abel's formula）1 或者 阿贝尔微分方程恒等式(Abel's differential equation identity)），是一个等式，用于表示一个二阶齐次线性常微分方程的两个解的朗斯基行列式，只需要用到原方程的系数。
+[2] 这一关系也可以推广到 $n$ 阶的线性微分方程。
+[3] 该恒等式命名自挪威数学家 Niels Henrik Abel。
+[4] 由于阿贝尔恒等式把微分方程不同的线性独立解联系起来了，
+[5] 因此它也可以用来从一个特解得到另一个特解。
+[6] 它给出了解之间很有用的恒等关系，同时也在参数变易法（variation of parameters）等其它技巧中功不可没。
+[7] 在 Bessel 方程等无法给出简单解析解的方程中尤其有用，因为这些情况下朗斯基行列式非常难算。
+[8] 用Liouville 公式能将阿贝尔恒等式推广到齐次线性微分方程的一阶系统上。
+
+[/SCOPE:s_overview]
+[SCOPE:s_formula|description|公式描述]
+[SCOPE:s_formula_let|let_bind|公式变量]
+[9] 考虑二阶齐次线性微分方程
+[10] \begin{equation}
+y'' + p(x)y' +q(x)y = 0~.
+\end{equation}
+[11] 其中 $p, q$ 是实数轴上一区间 $I$ 上的连续函数，函数值为实数或者复数。
+[/SCOPE:s_formula_let]
+[12] 阿贝尔恒等式是说，对于式 1 的任意两个解 $y_1, y_2$ 以及任意 $x_0\in I$，其朗斯基行列式 $W[y_1, y_2]$ 满足以下等式：
+[13] \begin{equation}
+W[y_1, y_2](x) = W[y_1, y_2](x_0)\cdot \exp \left(-\int _{x_0}^x p(z) \,\mathrm{d}{z} \right) , \quad x\in I~.
+\end{equation}
+[14] （译者注：或者使用 $W'=-pW$，见本小节的 “定理证明” 部分。）
+
+[15] 特别地，朗斯基行列式 $W[y_1, y_2]$ 在 $I$ 上要么恒等于 $0$，要么恒大于 $0$，要么恒小于 $0$。
+[16] 对于恒大于或小于 $0$ 的情况，$y_1$ 和 $y_2$ 就是线性无关的。
+[17] 没必要假设 $y_1$ 和 $y_2$ 的二阶导数连续。
+[18] 阿贝尔这个定理在 $p(x)=0$ 的时候尤其好用，因为此时 $W$ 是常数。
+
+[/SCOPE:s_formula]
+[SCOPE:s_proof|description|定理证明]
+[SCOPE:s_proof_let|let_bind|证明变量]
+[19] 考虑朗斯基行列式
+[20] \begin{equation}
+W[y_1, y_2] = y_1y'_2 - y'_1y_2~.
+\end{equation}
+[/SCOPE:s_proof_let]
+[SCOPE:s_proof_derivation|description|推导过程]
+[21] 两边求导得（省略 $x$ 以简化表达）
+[22] \begin{equation}
+W' = y_1y_2'' - y''_1y_2~,
+\end{equation}
+[23] 而从原本的微分方程能得到
+[24] \begin{equation}
+y''_i = -(py'_i+qy_i)~.
+\end{equation}
+[25] 式 5 [链接 L0]
+[26] 式 4 [链接 L1]
+[27] \begin{equation}
+\begin{aligned}
+W' &= -y_1(py'_2 + qy_2) + y_2(py'_1 + qy_1)\\
+&= p(-y_1y'_2 + y'_1y_2)\\
+&= -pW~.
+\end{aligned}
+\end{equation}
+[28] 这是一个一阶常微分方程，其解正是阿贝尔恒等式
+[29] 式 2 [链接 L2]
+[SCOPE:s_proof_derivation_let|let_bind|推导中引入V]
+[30] 由于 $p$ 在 $I$ 上连续，
+[31] 因此它在 $I$ 的任何有界闭子区间上有界且可积，
+[32] 从而使得下列函数有良好定义：
+[33] \begin{equation}
+V(x) = W(x) \exp \left(\int_{x_0}^x p(\xi) \,\mathrm{d}{\xi} \right) ,\quad x\in I~.
+\end{equation}
+[/SCOPE:s_proof_derivation_let]
+[34] 式 7 [链接 L3]
+[35] 两边求导，再代入
+[36] 式 6 [链接 L4]
+[37] \begin{equation}
+\begin{aligned}
+V(x) &= ( W'(x) + W(x) p(x) )\exp \left(\int_{x_0}^x p(\xi) \,\mathrm{d}{\xi} \right) \\
+&= 0~.
+\end{aligned}
+\end{equation}
+[38] 从而 $V(x)$ 是常数，
+[39] 即
+[40] \begin{equation}
+W(x)\exp \left(\int_{x_0}^x p(\xi) \,\mathrm{d}{\xi} \right) ~
+\end{equation}
+[41] 常数
+[42] 。
+[43] 由于 $V(x_0)=W(x_0)$，此常数即为 $W(x_0)$。
+
+[/SCOPE:s_proof]
+[/SCOPE:s_proof_derivation]
+[SCOPE:s_generalization|description|推广]
+[SCOPE:s_generalization_let|let_bind|推广变量]
+[44] 考虑区间 $I$ 上的 $n$ 阶齐次线性微分方程（$n$ 为正整数）
+[45] \begin{equation}
+y^{(n)} + p_{n-1}(x)y^{(n-1)} + \cdots + p_1(x)y' + p_0(x)y = 0~,
+\end{equation}
+[46] 其中 $p_{n-1}$ 在 $I$ 上连续。
+[/SCOPE:s_generalization_let]
+[47] 阿贝尔恒等式的推广形式是说，式 10 的 $n$ 个解 $y_1, y_2, \cdots, y_n$ 的朗斯基行列式 $W[y_1, y_2, \cdots, y_n]$，满足下列关系：
+[48] \begin{equation}
+\begin{aligned}
+W[y_1, y_2, \cdots, y_n](x) &= W[y_1, y_2, \cdots, y_n](x_0)\exp \left(-\int_{x_0}^x p_{n-1}(z) \,\mathrm{d}{z} \right) \\
+\forall x, x_0&\in I
+\end{aligned} ~.
+\end{equation}
+
+[/SCOPE:s_generalization]
+[SCOPE:s_generalization_proof|description|直接证明]
+[SCOPE:s_generalization_proof_let|let_bind|证明变量]
+[49] 先写出 $W[y_1, y_2, \cdots, y_n]$ 的定义：
+[50] \begin{equation}
+W[y_1, y_2, \cdots, y_n] =
+\begin{vmatrix}
+y_1&y_2&\cdots&y_n\\
+y'_1&y'_2&\cdots&y'_n\\
+y''_1&y''_2&\cdots&y''_n\\
+\vdots&\vdots&\ddots&\vdots\\
+y_1^{(n-1)}&y_2^{(n-1)}&\cdots&y_n^{(n-1)}\\
+\end{vmatrix}~.
+\end{equation}
+[/SCOPE:s_generalization_proof_let]
+[51] \begin{equation}
+\begin{aligned}
+W'[y_1, y_2, \cdots, y_n] ={}& \\
+& \begin{vmatrix}
+y'_1&y'_2&\cdots&y'_n\\
+y'_1&y'_2&\cdots&y'_n\\
+y''_1&y''_2&\cdots&y''_n\\
+\vdots&\vdots&\ddots&\vdots\\
+y_1^{(n-1)}&y_2^{(n-1)}&\cdots&y_n^{(n-1)}\\
+\end{vmatrix} +…[truncated]…(n-1)}\\
+\end{vmatrix} +\\
+&\qquad\vdots\\
+& \begin{vmatrix}
+y_1&y_2&\cdots&y_n\\
+y'_1&y'_2&\cdots&y'_n\\
+y''_1&y''_2&\cdots&y''_n\\
+\vdots&\vdots&\ddots&\vdots\\
+y_1^{(n)}&y_2^{(n)}&\cdots&y_n^{(n)}\\
+\end{vmatrix} \\
+\end{aligned} ~.
+\end{equation}
+[52] 容易发现，右端除了最后一项，其它所有项都因为求导而有两行完全相同，
+[53] 于是它们都为零。
+[54] 因此
+[55] \begin{equation}
+W'[y_1, y_2, \cdots, y_n] =
+\begin{vmatrix}
+y_1&y_2&\cdots&y_n\\
+y'_1&y'_2&\cdots&y'_n\\
+y''_1&y''_2&\cdots&y''_n\\
+\vdots&\vdots&\ddots&\vdots\\
+y_1^{(n)}&y_2^{(n)}&\cdots&y_n^{(n)}\\
+\end{vmatrix} ~
+\end{equation}
+[56] 缺失了 $y_i^{(n-1)}$ 项。
+[57] 注意到各 $y_i$ 都是式 10 的解，可知
+[58] \begin{equation}
+y_i^{(n)} + p_{n-2}\,y_i^{(n-2)} + \cdots + p_1\,y'_i + p_0\,y_i = -p_{n-1}y_i^{(n-1)}~,
+\end{equation}
+[59] 对于全体 $i\in\{1, 2, 3, \cdots, n\}$ 都成立。
+[60] 把式 14 右端行列式的第一行乘以 $p_0$ 后加到最后一行、第二行乘以 $p_1$ 后加到最后一行、第三行……第 $n-1$ 行乘以 $p_n$ 后加到最后一行，行列式的值不变，
+[61] 于是得到
+[62] \begin{equation}
+\begin{aligned}
+W'[y_1, y_2, \cdots, y_n] &=
+\begin{vmatrix}
+y_1&y_2&\cdots&y_n\\
+y'_1&y'_2&\cdots&y'_n\\
+y''_1&y''_2&\cdots&y''_n\\
+\vdots&\vdots&\ddots&\vdots\\
+-p_{n-1}y_1^{(n-1)}&-p_{n-1}y_2^{(n-1)}&\cdots&-p_{n-1}y_n^{(n-1)}\\
+\…[truncated]…n-1}
+\begin{vmatrix}
+y_1&y_2&\cdots&y_n\\
+y'_1&y'_2&\cdots&y'_n\\
+y''_1&y''_2&\cdots&y''_n\\
+\vdots&\vdots&\ddots&\vdots\\
+y_1^{(n-1)}&y_2^{(n-1)}&\cdots&y_n^{(n-1)}\\
+\end{vmatrix}\\
+&= -p_{n-1}W[y_1, y_2, \cdots, y_n]~.
+\end{aligned}
+\end{equation}
+[63] 这是关于 $W$ 的微分方程，解方程即得证。
+[/SCOPE:s_generalization_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_formula",
+    "target_scope": "s_proof",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "公式描述是定理陈述，证明是推导"
+  },
+  {
+    "source_scope": "s_generalization",
+    "target_scope": "s_generalization_proof",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推广陈述及其证明"
+  }
+]

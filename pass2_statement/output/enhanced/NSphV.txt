@@ -1,0 +1,141 @@
+[SCOPE:root|description|多维球体的体积]
+文章名: NSphV
+标题: 多维球体的体积
+
+[SCOPE:s_intro|description|引言与定义]
+[SCOPE:s_intro_let|let_bind|定义变量]
+[0] 半径为 $R$ 的 $n$ 维欧几里得空间中的球体的体积可以用 $\Gamma$ 函数表示为
+[1] \begin{equation}
+V_n = \frac{\pi^{n/2}}{\Gamma (n/2+1)} R^n = \frac{\pi^{n/2}}{(n/2)!} R^n~,
+\end{equation}
+[2] 其中阶乘和 Gamma 函数的关系见
+[3] 式 1 [链接 L0]
+[4] 。
+[5] 若定义 $n$ 维球体的表面满足方程 $\sum_{i=1}^n x_i^2 = R_n^2$，其中 $x_i$ 为 $n$ 维直角坐标系中第 $i$ 个坐标。
+[6] 所有满足 $\sum_{i=1}^n x_i^2 \leqslant R_n^2$ 的坐标点都定义为球内的点，且定义 $n$ 维直角坐标系中的体积为 $V_n = \int \,\mathrm{d}{x_1} \,\mathrm{d}{x_2} \dots \,\mathrm{d}{x_n} $，积分是对所有球内的点积分。
+[/SCOPE:s_intro_let]
+[7] 如果这些定义看起来很抽象，不妨代入到三维空间中考虑。
+[8] 三维直角坐标系中，$x_1, x_2, x_3$ 分别是 $x,y,z$， $R_3$ 是球的半径，球表面上任意一点都满足 $x^2 + y^2 + z^2 = R_3^2$，且球的体积分为 $\int \,\mathrm{d}{x} \,\mathrm{d}{y} \,\mathrm{d}{z} $ 是对球内部的所有点积分。
+[9] 另外，若把上述定义代入到 1 维和 2 维，不难发现所谓的 “1 维球” 和 “2 维球” 分别是半径为 $R_1$ 的线段和半径为 $R_2$ 的圆。
+
+[/SCOPE:s_intro]
+[10] 由于正常人的空间想象力最高是 3 维，我们先由 3 维以内的球体总结出体积的递推公式，这样即使我们无法想象高维球的形状，也可以计算其体积。
+[11] 下面在推导前 3 个维度时，请把所有 $x_1, x_2, x_3$ 想象成 $xyz$。
+[12] 【图解】图 1：二维和三维球的体积
+
+[SCOPE:s_1d_let|let_bind|1维球变量]
+[SCOPE:s_1d|description|1维球]
+[13] 这是一条线段，满足 $x_1^2 \leqslant R_1^2$，“体积” 就是线段长度
+[14] \begin{equation}
+V_1 = \int \,\mathrm{d}{x_1} = 2 R_1~.
+\end{equation}
+
+[/SCOPE:s_1d_let]
+[/SCOPE:s_1d]
+[SCOPE:s_2d_let|let_bind|2维球变量]
+[SCOPE:s_2d|description|2维球]
+[15] 这是一个圆，满足 $x_1^2 + x_2^2 \leqslant R_2^2$，在计算体积 $V_2 = \int \,\mathrm{d}{x_1} \,\mathrm{d}{x_2} $ 时，可以先对 $x_1$ 积分再对 $x_2$ 积分
+[16] \begin{equation}
+V_2 = \int \left(\int \,\mathrm{d}{x_1} \right) \,\mathrm{d}{x_2} = \int V_1(x_2) \,\mathrm{d}{x_2} ~.
+\end{equation}
+[17] 在几何上，这就是说把圆从沿 $x_1$ 轴切成许多一维球（线段），由 $x_1^2 \leqslant R_2^2 - x_2^2$，一维球的半径为 $R_1(x_2) = (R_2^2 - x_2^2)^{1/2}$。
+[18] 代入
+[19] 式 2 [链接 L1]
+[20] ，得 $x_2$ 处切出的一维球的体积（线段的长度）为
+[21] \begin{equation}
+V_1 (x_2) = \int \,\mathrm{d}{x_1} = 2R_1 = 2(R_2^2 - x_2^2)^{1/2}~.
+\end{equation}
+[22] 式 3 [链接 L2]
+[23] ，得二维球的体积为（注意 $ -R_2 < x_2 < R_2$）
+[24] \begin{equation}
+V_2 = \int V_1 \,\mathrm{d}{x_2} = \int 2 (R_2^2 - x_2^2)^{1/2} \,\mathrm{d}{x_2} = \pi R_2^2~.
+\end{equation}
+
+[/SCOPE:s_2d_let]
+[/SCOPE:s_2d]
+[SCOPE:s_3d_let|let_bind|3维球变量]
+[SCOPE:s_3d|description|3维球]
+[25] 这是一个球体，满足 $x_1^2 + x_2^2 + x_3^2 \leqslant R_3^2$，计算体积 $V_3 = \int \,\mathrm{d}{x_1} \,\mathrm{d}{x_2} \,\mathrm{d}{x_3} $ 时，可以先对 $x_1 x_2$ 积分
+[26] \begin{equation}
+V_3 = \int \left(\int \,\mathrm{d}{x_1} \,\mathrm{d}{x_2} \right) \,\mathrm{d}{x_3} = \int V_2(x_3) \,\mathrm{d}{x_3} ~.
+\end{equation}
+[27] 在几何意义上，这是说把球沿 $x_1 x_2$ 平面切成许多二维球（圆），然后把球的体积（面积）沿 $x_3$ 轴积分。
+[28] 由 $x_1^2 + x_2^2 \leqslant R_3^2 - x_3^2$，得 $x_3$ 处二维球半径为 $R_2 = (R_3^2 - x_3^2)^{1/2}$。由
+[29] 式 5 [链接 L3]
+[30] 得体积为
+[31] \begin{equation}
+V_2 (x_3) = \pi R_2^2 = \pi (R_3^2 - x_3^2)~.
+\end{equation}
+[32] 式 6 [链接 L4]
+[33] 得三维球体积（注意 $-R_2 < x_2 < R_2$）
+[34] \begin{equation}
+V_3 = \int V_2(x_3) \,\mathrm{d}{x_3} = \int \pi (R_3^2 - x_3^2) \,\mathrm{d}{x_3} = \frac43 \pi R^3~.
+\end{equation}
+
+[/SCOPE:s_3d_let]
+[/SCOPE:s_3d]
+[SCOPE:s_nd|description|n维球]
+[SCOPE:s_nd_let|let_bind|n维球变量]
+[35] 由以上两个推导，可以在代数上总结出递推的规律。
+[36] 把 $n$ 维球在 $n+1$ 维积分，得1
+[37] \begin{equation}
+V_4 = \int_{-R}^R \frac43 \pi (R_4^2 - x_4^2)^{3/2} \,\mathrm{d}{x_4} = \frac12 \pi^2 R^4~.
+\end{equation}
+[38] 令 $n$ 维球体体积维 $C_n R^n$，
+[39] 那么可以总结出递推公式为
+[40] \begin{equation}
+V_{n+1} = \int_{-R}^R C_n (R^2 - x^2)^{n/2} \,\mathrm{d}{x} ~.
+\end{equation}
+[/SCOPE:s_nd_let]
+[SCOPE:s_nd_subst|let_bind|换元积分]
+[41] 换元积分法 [链接 L5]
+[42] ，令 $x = R\sin\theta$，有
+[43] \begin{equation}
+\begin{aligned}
+\int_{-R}^R (R^2 - x^2)^{n/2} \,\mathrm{d}{x} &= R^{n+1} \int_{-\pi/2}^{\pi/2} \cos^{n+1}\theta \,\mathrm{d}{\theta} \\
+&= \sqrt{\pi} \frac{\Gamma(n/2+1)}{\Gamma[(n+1)/2+1]} R^{n+1}~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_nd_subst]
+[44] 用阶乘表示递归公式（
+[45] 式 1 [链接 L6]
+[46] ），就是
+[47] \begin{equation}
+C_{n+1} = C_n \frac{\sqrt{\pi}(n/2)!}{[(n+1)/2]!}~.
+\end{equation}
+[48] 已知 $C_1 = 2$，易得
+[49] \begin{equation}
+C_n = \frac{\pi^{n/2}}{(n/2)!}~,
+\end{equation}
+[50] 这样就得到了
+[51] 式 1 [链接 L7]
+
+跨文章引用:
+  [L5] 换元积分法 → IntCV
+[/SCOPE:s_nd]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_2d",
+    "target_scope": "s_1d",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "2维球体积计算使用1维球体积公式"
+  },
+  {
+    "source_scope": "s_3d",
+    "target_scope": "s_2d",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "3维球体积计算使用2维球体积公式"
+  },
+  {
+    "source_scope": "s_nd",
+    "target_scope": "s_3d",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "n维球体积递推公式由低维推广"
+  }
+]

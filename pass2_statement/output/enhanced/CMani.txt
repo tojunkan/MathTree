@@ -1,0 +1,235 @@
+[SCOPE:root|description|复流形]
+文章名: CMani
+标题: 复流形
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=单复变全纯函数
+  [1] type=definition heading=定义 2 title=多复变全纯函数（复值）
+  [2] type=definition heading=定义 3 title=多复变全纯函数（向量值）
+  [3] type=definition heading=定义 4 title=复图和复图册
+  [4] type=definition heading=定义 5 title=全纯相容
+  [5] type=definition heading=定义 6 title=复（全纯）流形
+  [6] type=theorem heading=定理 1 title=
+  [7] type=definition heading=定义 7 title=全纯映射（复流形）
+  [8] type=definition heading=定义 8 title=解析集
+  [9] type=theorem heading=定理 2 title=隐函数定理（复几何）
+  [10] type=definition heading=定义 9 title=（近）复结构（向量空间）
+  [11] type=theorem heading=定理 3 title=
+  [12] type=definition heading=定义 10 title=近复结构（实流形）/近复流形
+  [13] type=theorem heading=定理 4 title=
+  [14] type=definition heading=定义 11 title=Nijenhuis 张量
+  [15] type=theorem heading=定理 5 title=
+
+[0] 将光滑流形定义 6 定义中的 $\mathbb{R}^n$ 替换为 $\mathbb{C}^n$，图册中的 “光滑映射” 替换为 “全纯映射”（复解析映射）, 我们就得到复流形的定义。
+
+[SCOPE:s_def1|description|单复变全纯函数]
+[1] 定义 1 单复变全纯函数
+[SCOPE:s_def1_let|let_bind|单复变全纯函数变量]
+[2] 若一个单复变函数 $f(z): \mathbb C \to C$，考虑为 $f(x+y \mathrm i)=u(x, y) + v(x, y) \mathrm i$，$x, y\in \mathbb R$，$u(x, y), v(x, y) \in \mathbb R$。
+[/SCOPE:s_def1_let]
+[3] 则称 $f$ 是全纯的当且仅当满足柯西-黎曼条件：
+[4] \begin{equation}
+\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} ~,\qquad \frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x} ~.
+\end{equation}
+[5] \begin{equation}
+\frac{\partial f}{\partial \bar{z}} = 0 ~.
+\end{equation}
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|多复变全纯函数（复值）]
+[6] 定义 2 多复变全纯函数（复值）
+[SCOPE:s_def2_let|let_bind|多复变全纯函数（复值）变量]
+[7] 对于一个复值多复变函数 $f(z_1, z_2, \dots, z_n): \mathbb C^n \to \mathbb C$ 是全纯函数当且仅当 $f$ 对每个变量 $z_i$ 而言都是全纯的。
+
+[/SCOPE:s_def2]
+[/SCOPE:s_def2_let]
+[SCOPE:s_def3|description|多复变全纯函数（向量值）]
+[8] 定义 3 多复变全纯函数（向量值）
+[SCOPE:s_def3_let|let_bind|多复变全纯函数（向量值）变量]
+[9] 对于一个向量值多复变函数 $f(z_1, z_2, \dots, z_n) = (f_1, f_2, \dots, f_m): \mathbb C^n \to \mathbb C^m$，称其是全纯的当且仅当对于每个复值多复变函数 $f_i$ 而言，其对每个变量 $z_j$ 都是全纯的。
+
+[/SCOPE:s_def3]
+[/SCOPE:s_def3_let]
+[SCOPE:s_def4|description|复图和复图册]
+[10] 定义 4 复图和复图册
+[SCOPE:s_def4_let|let_bind|复图和复图册变量]
+[11] $N$ 是一个 $n$ 维拓扑流形，如果存在开集 $U \in \mathcal{T}_N$ 和拓扑同胚映射 $\varphi: U \rightarrow \tilde{U} \subseteq \mathbb{C}^n$，其中 $\tilde{U}$ 是 $\mathbb{C}^n$ 的一个开子集，
+[/SCOPE:s_def4_let]
+[12] 那么称 $(U,\varphi)$ 是 $N$ 上的一张复图。
+[13] 如果图的一个集合 $\mathcal{A}=\{(U_\alpha, \varphi_\alpha)\}$ 覆盖了 $N$，
+[14] 即 $\bigcup\{U_\alpha\}=N$，
+[15] 那么称这个集合 $\mathcal{A}$ 是一个复图册。
+[16] 特别需要注意由于 $\mathbb{C}$ 和它的真开子集（比如开球）不是全纯同胚的（这和实数的情况不相同），不是所有的坐标图 $\varphi: U \rightarrow \tilde{U} \subseteq \mathbb{C}^n$ 都能改写成 $\varphi': U' \rightarrow \mathbb{C}^n$ 的形式的。
+[17] 实际上，$\mathbb{C}$ 无法嵌入到复环面（complex tori）$\mathbb{C} / \Lambda$ 中。
+
+[/SCOPE:s_def4]
+[SCOPE:s_def5|description|全纯相容]
+[18] 定义 5 全纯相容
+[SCOPE:s_def5_let|let_bind|全纯相容变量]
+[19] 考虑一个拓扑流形 $N$ 的两个复图 $(U, \varphi)$ 和 $(V, \phi)$。
+[/SCOPE:s_def5_let]
+[20] 如果 $U \cap V \neq \varnothing$，且 $\varphi \circ \phi^{-1}: \phi(V) \rightarrow \varphi(U)$ 和 $\phi \circ \varphi^{-1}: \varphi(U) \rightarrow \phi(V)$ 都是全纯（复解析）映射，
+[21] 那么我们称这两个图是全纯相容的（compatible）。
+
+[/SCOPE:s_def5]
+[SCOPE:s_def6|description|复（全纯）流形]
+[22] 定义 6 复（全纯）流形
+[SCOPE:s_def6_let|let_bind|复流形变量]
+[23] 一个拓扑流形 $N$ 和加上其上一组全纯相容的复图册 $\mathcal{A}$，被称为一个复流形（complex (holomorphic) manifold） $(N, \mathcal{A})$。
+
+[/SCOPE:s_def6]
+[/SCOPE:s_def6_let]
+[SCOPE:s_thm1|description|定理1]
+[24] 定理 1
+[25] 复流形都是可定向实流形。
+[26] 【未完成】证明
+
+[/SCOPE:s_thm1]
+[SCOPE:s_def7|description|全纯映射（复流形）]
+[27] 定义 7 全纯映射（复流形）
+[SCOPE:s_def7_let|let_bind|全纯映射变量]
+[28a] (p)$ 附近的坐标图 $\psi: V \ni f
+[28b] (p) \to \tilde{V} \subseteq \mathbb{C}^n$，使得函数
+[/SCOPE:s_def7_let]
+[29] $$
+\psi \circ f \circ \phi^{-1}: \tilde{U} \subseteq \mathbb{C}^m \to \tilde{V} \subseteq \mathbb{C}^n~.
+$$
+[30] 在 $\phi(x)$ 点处全纯，如图；
+[31] $f$ 被称作全纯函数，如果它在任意点处都全纯。
+[32] 【未完成】交换图
+[33] 【未完成】切向量和余切向量
+
+[/SCOPE:s_def7]
+[SCOPE:s_def8|description|解析集]
+[34] 定义 8 解析集
+[SCOPE:s_def8_let|let_bind|解析集变量]
+[35] 给定复流形 $M, N$ 和一个全纯映射 $f: M \to N$，对任意的 $y \in N$，
+[/SCOPE:s_def8_let]
+[36] $$
+f^{-1}(y)~
+$$
+[37] 是一个 $M$ 上的解析集。
+[38] 解析集是复流形 $M$ 上的闭集合，
+[39] 但不一定是闭子流形。
+[40] 解析集的名字来自于，全纯映射又称 “（复）解析映射”。
+
+[/SCOPE:s_def8]
+[SCOPE:s_thm2|description|隐函数定理（复几何）]
+[41] 定理 2 隐函数定理（复几何）
+[SCOPE:s_thm2_let|let_bind|隐函数定理变量]
+[42a] 给定复流形 $M, N$ 和一个全纯映射 $f: M \to N$
+[42b] 如果 $y \in N$ 是一个正，则值（regular value），
+[/SCOPE:s_thm2_let]
+[43] 即对任意的 $x \in f^{-1}(y)$，
+[44] $$
+D f|_x: T_x M \to T_x N~
+$$
+[45] 是一个满射，
+[46] 那么解析集 $f^{-1}(y)$ 是 $M$ 的一个闭子流形。
+[47] 这里的 $T_x M, T_x N$ 是复切空间（同构于实切空间，不同构于复化切空间）。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_def9|description|（近）复结构（向量空间）]
+[48] 定义 9 （近）复结构（向量空间）
+[SCOPE:s_def9_let|let_bind|近复结构（向量空间）变量]
+[49] 一个实向量空间 $V$ 上的一个（近）复结构是一个（实）线性映射 $j: V \to V$ 满足 $j \circ j = - \text{id}_V$。
+
+[/SCOPE:s_def9]
+[/SCOPE:s_def9_let]
+[SCOPE:s_thm3|description|定理3]
+[50] 定理 3
+[51] 一个实向量空间上存在近复结构，当且仅当它的维度是偶数。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_def10|description|近复结构（实流形）/近复流形]
+[52] 定义 10 近复结构（实流形）/近复流形
+[SCOPE:s_def10_let|let_bind|近复结构（实流形）变量]
+[53] 一个实流形 $M$ 上的一个近复结构是它的（实）切空间上的 “近复结构场”，
+[/SCOPE:s_def10_let]
+[54] 即一个 $(1, 1)$ 型张量场 $J \in \Gamma(M, T_1^1 M)$ 满足对任意一点 $p$，
+[55] $$
+J|_p: T_p(M) \to T_p(M)~
+$$
+[56] 是一个向量空间上的近复结构。
+[57] 近复流形是一个带近复结构的实流形。
+[58] 又称为殆复流形。
+
+[/SCOPE:s_def10]
+[SCOPE:s_thm4|description|定理4]
+[59] 定理 4
+[60] 复流形都是近复流形。
+[SCOPE:s_thm4_let|let_bind|定理4变量]
+[61] 可以考虑对于一个局部平凡化卡 $(U, \varphi)$，$\varphi = (z_1, z_2, \dots, z_n)$，并考虑 $z_i = x_i + \mathrm i y_i$，取
+[/SCOPE:s_thm4_let]
+[62] \begin{equation}
+J: \left\{\begin{aligned}
+\frac{\partial}{\partial{x_i}} &\mapsto \frac{\partial}{\partial{y_i}} \\
+\frac{\partial}{\partial{y_i}} &\mapsto - \frac{\partial}{\partial{x_i}}
+\end{aligned}\right. ~~
+\end{equation}
+
+[/SCOPE:s_thm4]
+[63] 近复流形为复流形当且仅当其是可积的，当且仅当 Nijenhuis 张量恒为 $0$，类似于无挠的要求。
+
+[SCOPE:s_def11|description|Nijenhuis 张量]
+[64] 定义 11 Nijenhuis 张量
+[SCOPE:s_def11_let|let_bind|Nijenhuis 张量变量]
+[65] 对于一个有近复结构 $J$ 的光滑流形 $M$，定义 Nijenhuis 张量为
+[/SCOPE:s_def11_let]
+[66] \begin{equation}
+N_J(X, Y) = [X, Y] + J[X, JY] + J[JX, Y] - [JX, JY] ~.
+\end{equation}
+[67] 这里中括号是 Lie 括号，
+[68] 即有
+[69] \begin{equation}
+[X, Y] = (X^\mu \partial_\mu Y^\nu - Y^\mu \partial_\mu X^\nu) \partial_\nu ~.
+\end{equation}
+
+[/SCOPE:s_def11]
+[SCOPE:s_thm5|description|定理5]
+[70] 定理 5
+[SCOPE:s_thm5_let|let_bind|定理5变量]
+[71] 带有近复结构 $J$ 的光滑流形 $M$ 是复流形当且仅当 $N_J$ 恒为 $0$，此时称 $J$ 为可积近复结构或复结构。
+[/SCOPE:s_thm5_let]
+[72] 【未完成】没有定义复流形的切空间没法往下写了
+[/SCOPE:s_thm5]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def6",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1：复流形都是可定向实流形，是定义6的推论。"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def8",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "隐函数定理给出解析集成为子流形的条件。"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def9",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "定理3：实向量空间存在近复结构当且仅当维数为偶数。"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_def10",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理4：复流形都是近复流形。"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_def11",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "定理5：近复流形是复流形当且仅当Nijenhuis张量为0。"
+  }
+]

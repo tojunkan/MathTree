@@ -1,0 +1,99 @@
+[SCOPE:root|description|勒让德多项式]
+文章名: Legen
+标题: 勒让德多项式
+
+[SCOPE:s_def|description|勒让德多项式定义]
+[SCOPE:s_def_let|let_bind|定义中的变量]
+[0] 勒让德方程为
+[1] \begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}{x}} \left[(1-x^2) \frac{\mathrm{d}}{\mathrm{d}{x}} P_l(x) \right] + l(l+1)P_l(x) = 0~.
+\end{equation}
+[2] 我们仅在区间 $x \in [-1,1]$ 上考虑 $l$ 为非负整数的情况。
+[3] 方程的解 $P_l(x)$ 是关于 $x$ 的 $l$ 阶多项式
+[4] \begin{equation}
+P_l(x) = \frac{1}{2^l}\sum_{s=0}^{[l/2]} \frac{(-1)^s (2l-2s)!}{s!(l-s)!(l-2s)!} x^{l-2s}~,
+\end{equation}
+[5] 其中 $[x]$ 是向下取整函数。
+[/SCOPE:s_def_let]
+[6] 当 $x$ 是整数，$[x] = x$，当 $x$ 是非整数，$[x]$ 是小于 $x$ 的最大整数。
+[7] 这里列出前几个多项式（图 1 ）
+[8] \begin{equation} \begin{aligned}
+&P_0(x) = 1 && P_3(x) = \frac12 (5x^3 - 3x) \\
+&P_1(x) = x && P_4(x) = \frac18 (35x^4 - 30x^2 + 3) \\
+&P_2(x) = \frac12 (3x^2 - 1) \qquad && P_5(x) = \frac18 (63x^5 - 70x^3 + 15x)~.
+\end{aligned} \end{equation}
+[9] 【图解】图 1：勒让德多项式
+[10] 勒让德多项式也可以用罗德里格斯公式表示
+[11] \begin{equation}
+P_l(x) = \frac{1}{2^l l!} \frac{\mathrm{d}^{l}}{\mathrm{d}{x}^{l}} (x^2 - 1)^l~.
+\end{equation}
+[12] 由于求导会改变函数的奇偶性，由上式可以证明当 $l$ 为偶（奇）数时 $P_l(x)$ 是偶（奇）函数，
+[13] 所以只有 $x$ 的偶（奇）次方项。
+
+[/SCOPE:s_def]
+[SCOPE:s_ortho|description|正交归一性质]
+[SCOPE:s_ortho_let|let_bind|正交归一中的变量]
+[14] 勒让德多项式的归一化系数为
+[15] \begin{equation}
+A_l = \sqrt{\frac{2l + 1}{2}}~,
+\end{equation}
+[/SCOPE:s_ortho_let]
+[16] 满足正交归一化条件
+[17] \begin{equation}
+\int_{-1}^1 A_{l'} P_{l'}(x) \cdot A_l P_l(x) \,\mathrm{d}{x} = \delta_{l,l'}~.
+\end{equation}
+
+[/SCOPE:s_ortho]
+[SCOPE:s_props|description|其他性质]
+[18] $P_l(x)$ 在 $[-1,1]$ 有 $l$ 个根。
+[19] $P'_l(x)$ 有 $l-1$ 个根。
+[20] \begin{equation}
+P_l(1) = 1~, \qquad P_l(-1) = (-1)^l~.
+\end{equation}
+[21] 式 2 [链接 L0]
+[22] \begin{equation}
+P_l(0) = \left\{\begin{aligned}
+&0 &\qquad (l = \text{奇数})\\
+&\frac{(-1)^{l/2} l!}{2^l [(l/2)!]^2} &\qquad (l = \text{偶数})~.
+\end{aligned}\right. \end{equation}
+[23] 傅里叶变换（$j_l$ 是球贝塞尔函数）
+[24] \begin{equation}
+\int_{-1}^1 P_l(x) \mathrm{e} ^{ \mathrm{i} k x} \,\mathrm{d}{x} = 2 \mathrm{i} ^l j_l(k)~.
+\end{equation}
+[25] \begin{equation} P'_l(x) = \left\{\begin{aligned}
+&\frac{l+1}{1-x^2} [xP_l(x) - P_{l+1}(x)] &\,\, &( \left\lvert x \right\rvert < 1) \\
+&l(l+1)/2 & &(x = 1) \\
+&(-1)^{l+1}l(l+1)/2 & &(x = -1)~.
+\end{aligned}\right. \end{equation}
+
+[/SCOPE:s_props]
+[SCOPE:s_series|description|勒让德方程的级数解]
+[SCOPE:s_series_let|let_bind|级数解中的变量]
+[26] \begin{equation}
+P_l(x) = \sum_{n = 0}^\infty c_n x^n~,
+\end{equation}
+[27] 代入方程，对比系数得到递推公式
+[28] \begin{equation}
+c_{n+2} = \frac{n(n+1)-l(l+1)}{(n+2)(n+1)}c_n = \frac{(n-l)(n+1+l)}{(n+2)(n+1)}c_n~.
+\end{equation}
+[29] 可见偶数项系数可用 $c_0$ 表示，奇数项系数可用 $c_1$ 表示。
+[30] 所以 $c_0$ 和 $c_1$ 可以看做是二阶微分方程的两个任意常数。
+[/SCOPE:s_series_let]
+[31] 当 $l$ 为整数时，可以证明 $n > l$ 以上的系数都为 0，令最高次项系数为
+[32] \begin{equation}
+c_l = \frac{(2l)!}{2^l (l!)^2}~,
+\end{equation}
+[33] 就得到了
+[34] 式 2 [链接 L1]
+
+[/SCOPE:s_series]
+[SCOPE:s_genfunc_let|let_bind|生成函数中的变量]
+[SCOPE:s_genfunc|description|生成函数]
+[35] 勒让德多项式可以表示为以下函数对 $r$ 的泰勒展开的系数
+[36] \begin{equation}
+\frac{1}{\sqrt{1 + r^2 - 2rx}} = \sum_{l = 0}^\infty P_l(x) r^l~,
+\end{equation}
+[37] 其中 $1/\sqrt {1+ r^2 - 2rx}$ 叫做勒让德多项式的生成函数或母函数
+[/SCOPE:s_genfunc_let]
+[/SCOPE:s_genfunc]
+[/SCOPE:root]

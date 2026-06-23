@@ -1,0 +1,60 @@
+[SCOPE:root|description|对易算符]
+文章名: Commu
+标题: 对易算符
+
+环境标记 (hints):
+  [0] type=exercise heading=习题 1 title=
+  [1] type=exercise heading=习题 2 title=
+
+[SCOPE:s_ex1|description|习题1]
+[0] 习题 1
+[1] 一般来说，矩阵乘法不满足交换律。
+[SCOPE:s_ex1_let|let_bind|旋转矩阵变量]
+[2] 试证明任意两个平面旋转矩阵（二维几何矢量空间的算符）对易（实数 $\alpha \ne \beta$）
+[3] \begin{equation}
+\boldsymbol{\mathbf{A}} = \begin{pmatrix}\cos\alpha & -\sin\alpha\\ \sin\alpha & \cos\alpha\end{pmatrix}
+\qquad
+\boldsymbol{\mathbf{B}} = \begin{pmatrix}\cos\beta & -\sin\beta\\ \sin\beta & \cos\beta\end{pmatrix} ~.
+\end{equation}
+
+[/SCOPE:s_ex1]
+[/SCOPE:s_ex1_let]
+[SCOPE:s_ex2|description|习题2]
+[4] 习题 2
+[SCOPE:s_ex2_let|let_bind|函数空间变量]
+[5a] (x) = x f
+[5b] (x)$，定义算符 $B$ 为 $(Bf)
+[5c] (x) = \mathrm{d}{f}/\mathrm{d}{x} $。
+[/SCOPE:s_ex2_let]
+[6] 试证明对易算符 $[A, B]$ 是单位算符，
+[7] 即 $[A, B]f = f$。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_properties|description|常见性质]
+[8] 交换反对称
+[9] \begin{equation}
+[B, A] = -[A, B]~.
+\end{equation}
+[10] 线性性。
+[SCOPE:s_prop_let|let_bind|性质变量]
+[11] 设任意 $k$ 为常数，
+[/SCOPE:s_prop_let]
+[12] 则
+[13] \begin{equation}
+[kA,B]=[A,kB]=k[A,B]~.
+\end{equation}
+[14] 分配律
+[15] \begin{equation}
+[A, B + C] = [A, B] + [A, C]~,
+\qquad
+[A + B, C] = [A, C] + [B, C]~,
+\end{equation}
+[16] \begin{equation}
+[A, BC] = [A, B]C + B[A, C]~.
+\end{equation}
+[17] 雅可比恒等式（Jacobi identity）
+[18] \begin{equation}
+[A, [B, C]] + [B, [C, A]] + [C, [A, B]] = 0~.
+\end{equation}
+[/SCOPE:s_properties]
+[/SCOPE:root]

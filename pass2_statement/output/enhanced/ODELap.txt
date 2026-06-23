@@ -1,0 +1,198 @@
+[SCOPE:root|description|拉普拉斯变换与常系数线性微分方程]
+文章名: ODELap
+标题: 拉普拉斯变换与常系数线性微分方程
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=拉普拉斯变换的导数定理
+  [1] type=corollary heading=推论 1 title=
+  [2] type=theorem heading=定理 2 title=
+  [3] type=example heading=例 1 title=幂函数
+  [4] type=example heading=例 2 title=指数函数
+  [5] type=example heading=例 3 title=三角函数
+  [6] type=example heading=例 4 title=拉普拉斯变换解非齐次方程
+
+[SCOPE:s_deriv_theorem|description|拉普拉斯变换的导数定理]
+[0] 拉普拉斯变换的导数定理（见拉普拉斯变换）使得我们可以把常系数线性微分方程化为代数方程，不论是否齐次。
+[1] 在常系数齐次线性微分方程中，我们通过把方程写为算子 $\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }$ 的代数方程，实现了化微分方程为代数方程，
+[2] 但这种操作对非齐次方程没有用。
+[3] 拉普拉斯变换是另一种化为代数方程的思路，而且不拘泥于齐次与否。
+[4] 引用拉普拉斯变换的性质，将导数定理誊写如下：
+
+[5] 定理 1 拉普拉斯变换的导数定理
+[SCOPE:s_deriv_let|let_bind|导数定理的变量]
+[6] 设 $[0, +\infty]$ 上有 $k$ 次可导函数 $f(t)$，其拉普拉斯变换为
+[7] \begin{equation}
+\mathscr{L}(f(t))=F(s)=\int^{+\infty}_0f(t) \mathrm{e} ^{-st} \,\mathrm{d}{t} ~,
+\end{equation}
+[8] \begin{equation}
+\mathscr{L}(\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }f(t))=sF(s)-f(0)~.
+\end{equation}
+[/SCOPE:s_deriv_let]
+[9] 由定理 1 ，容易计算得
+[10] \begin{equation}
+\begin{aligned}
+\mathscr{L}(\frac{\mathrm{d}^2}{ \,\mathrm{d}{t} ^2}f(t))&=s\mathscr{L}(\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }f(t))-f'(0)\\
+&=s^2F(s)-sf(0)-f'(0)~.
+\end{aligned}
+\end{equation}
+[11] 以此类推，可得：
+
+[/SCOPE:s_deriv_theorem]
+[SCOPE:s_corollary|description|推论 1]
+[12] 推论 1
+[13] \begin{equation}
+\mathscr{L}(\frac{\mathrm{d}^k}{ \,\mathrm{d}{t} ^k}f(t))=s^nF(s)-\sum_{\substack{i, j>0\\ i+j=n-1}}s^if^{(j)}(0)~.
+\end{equation}
+
+[/SCOPE:s_corollary]
+[SCOPE:s_shift_theorem|description|定理 2]
+[14] 定理 2
+[SCOPE:s_shift_let|let_bind|定理 2 的变量]
+[15a] (t)$，若设其拉普拉斯变换为 $F
+[15b] (s)$，
+[16] 则
+[/SCOPE:s_shift_let]
+[17] \begin{equation}
+\mathscr{L}( \mathrm{e} ^{at}f(t))=F(s-a)~.
+\end{equation}
+
+[/SCOPE:s_shift_theorem]
+[SCOPE:s_example1|description|例 1 幂函数]
+[SCOPE:s_example1_let|let_bind|幂函数的变量]
+[18] 例 1 幂函数
+[19] \begin{equation}
+\mathscr{L}(t^n)=\frac{n!}{s^{n+1}}~.
+\end{equation}
+[/SCOPE:s_example1_let]
+[20] 这一事实可以通过应用分部积分得证：
+[21] \begin{equation}
+\begin{aligned}
+\mathscr{L}(t^n)&=\int_0^{+\infty}t^n \mathrm{e} ^{-st} \,\mathrm{d}{t} \\
+&=-\frac{1}{s}t^n \mathrm{e} ^{-st}|^{+\infty}_0+\frac{n}{s}\int_0^{+\infty}t^{n-1} \mathrm{e} ^{-st} \,\mathrm{d}{t} \\
+&=\frac{n}{s}\int_0^{+\infty}t^{n-1} \mathrm{e} ^{-st} \,\mathrm{d}{t} \\
+&=\frac{n}{s}\mathscr{L}(t^{n-1})~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_example1]
+[SCOPE:s_example2_let|let_bind|指数函数的变量]
+[SCOPE:s_example2|description|例 2 指数函数]
+[22] 例 2 指数函数
+[23] \begin{equation}
+\mathscr{L}( \mathrm{e} ^{at})=\frac{1}{s-a}~.
+\end{equation}
+
+[/SCOPE:s_example2_let]
+[/SCOPE:s_example2]
+[SCOPE:s_example3|description|例 3 三角函数]
+[SCOPE:s_example3_let|let_bind|三角函数的变量]
+[24] 例 3 三角函数
+[25] 利用 $ \mathrm{e} ^{ \mathrm{i} x}=\cos x+ \mathrm{i} \sin x$，将 $a=\omega \mathrm{i} $ 代入式 8 ，分开实部和虚部，可得三角函数的拉普拉斯变换：
+[26] \begin{equation}
+\left\{\begin{aligned}
+\mathscr{L}(\cos \omega t)&=\frac{s}{s^2+\omega^2}\\
+\mathscr{L}(\sin \omega t)&=\frac{\omega}{s^2+\omega^2}
+\end{aligned}\right. ~.
+\end{equation}
+[/SCOPE:s_example3_let]
+[27] 有了式 6 、式 8 和式 9 ，再结合定理 2 ，我们就可以计算出多数情况下的拉普拉斯变换了。
+
+[/SCOPE:s_example3]
+[SCOPE:s_example4|description|例 4 拉普拉斯变换解非齐次方程]
+[28] 拉普拉斯变换的一大实用之处，就是可以用来解常系数线性微分方程。
+[29] 我们先举一个例子来说明其解法。
+
+[30] 例 4 拉普拉斯变换解非齐次方程
+[SCOPE:s_example4_let|let_bind|例 4 的变量 f 和 F]
+[31] 考虑方程
+[32] \begin{equation}
+\left(\frac{\mathrm{d}^2}{ \,\mathrm{d}{t} ^2}+\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }+1 \right) f(t)=t~.
+\end{equation}
+[33a] (t))=F
+[33b] (s)$，
+[/SCOPE:s_example4_let]
+[34] 那么根据推论 1 ，给式 10 左右同时进行拉普拉斯变换，得
+[35] \begin{equation}
+s^2F(s)-sf(0)-f'(0)+sF(s)-f(0)+F(s)=\frac{1}{s^2}~,
+\end{equation}
+[36] 将式 11 整理为
+[37] \begin{equation}
+F(s)=\frac{1}{s^2(s^2+s+1)}+\frac{sf(0)+f'(0)+f(0)}{s^2+s+1}~.
+\end{equation}
+[38] \begin{equation}
+s^2+s+1=(s+\frac{1}{2})^2+\frac{3}{4}~,
+\end{equation}
+[39] 式 12
+[40] \begin{equation}
+F(s)=\frac{s}{(s+\frac{1}{2})^2+\frac{3}{4}}-\frac{s-1}{s^2}+\frac{sf(0)+f'(0)+f(0)}{(s+\frac{1}{2})^2+\frac{3}{4}}~,
+\end{equation}
+[41] 进一步整理为
+[42] \begin{equation}
+F(s)=\frac{1}{s^2}-\frac{1}{s}+\frac{(f(0)+1)(s+\frac{1}{2})}{(s+\frac{1}{2})^2+\frac{3}{4}}+\frac{f'(0)+\frac{1}{2}f(0)-\frac{1}{2}}{(s+\frac{1}{2})^2+\frac{3}{4}}~.
+\end{equation}
+[43] 式 15 的右边就是我们熟知的拉普拉斯变换的形式了：
+[44] \begin{equation}
+\left\{\begin{aligned}
+\mathscr{L}(t)&=\frac{1}{s^2}\\
+\mathscr{L}(1)&=\frac{1}{s}\\
+\mathscr{L} \left( \mathrm{e} ^{-\frac{1}{2}t} \cos\left(\frac{\sqrt{3}}{2}t\right) \right) &=\frac{s+\frac{1}{2}}{(s+\frac{1}{2})^2+\frac{3}{4}}\\
+\mathscr{L} \left( \mathrm{e} ^{-\frac{1}{2}t} \sin\left(\frac{\sqrt{3}}{2}t\right) \right) &=\frac{1}{(s+\frac{1}{2})^2+\frac{3}{4}}
+\end{aligned}\right. ~.
+\end{equation}
+[45] 根据拉普拉斯变换的线性性，求出式 16 中各式的逆变换，其线性组合就是 $F(s)$ 的逆变换：
+[46] \begin{equation}
+\begin{aligned}
+f(t)&=t-1+ \left(f(0)+1 \right) \mathrm{e} ^{-\frac{1}{2}t} \cos\left(\frac{\sqrt{3}}{2}t\right) \\&
++\frac{\sqrt{3}}{3} \left(f'(0)+\frac{1}{2}f(0)-\frac{1}{2} \right) \mathrm{e} ^{-\frac{1}{2}t} \sin\left(\frac{\sqrt{3}}{2}t\right) ~,
+\end{aligned}
+\end{equation}
+[47] 式 17 就是式 10 的通解。
+[SCOPE:s_example4_let2|let_bind|例 4 的初值]
+[48] 只需要把初值 $f(0)$ 和 $f'(0)$ 代进去即可得给定初值下的特解。
+[/SCOPE:s_example4_let2]
+[49] 例 4 中最麻烦的一步是从式 12 到式 14 的因式分解。
+[50a] (t)}$ 的函数，其中 $p
+[50b] (t)$ 是多项式，都可以化为 $\frac{1}{s+a}, \frac{1}{(s+a)^2+b}, \frac{s}{(s+a)^2+b}$ 的线性组合，而这三个式子的拉普拉斯逆变换都是已知的。
+[51] 因此，当常系数线性微分方程式 1 的右端的拉普拉斯变换是多项式的倒数的时候，我们总可以求方程两端的拉普拉斯变换，得到通解的拉普拉斯变换，并求逆变换以得到通解本身。
+[/SCOPE:s_example4]
+[52] 【未完成】因式分解的技巧需引用。
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_corollary",
+    "target_scope": "s_deriv_theorem",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论 1 是导数定理的推广"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_deriv_theorem",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例 1 应用导数定理"
+  },
+  {
+    "source_scope": "s_example2",
+    "target_scope": "s_shift_theorem",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例 2 应用定理 2"
+  },
+  {
+    "source_scope": "s_example3",
+    "target_scope": "s_shift_theorem",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例 3 应用定理 2"
+  },
+  {
+    "source_scope": "s_example4",
+    "target_scope": "s_corollary",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "例 4 使用推论 1 进行拉普拉斯变换"
+  }
+]

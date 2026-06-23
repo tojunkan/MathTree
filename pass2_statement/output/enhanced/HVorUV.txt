@@ -1,0 +1,216 @@
+[SCOPE:root|description|埃尔米特矢量空间（酉空间）]
+文章名: HVorUV
+标题: 埃尔米特矢量空间（酉空间）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+  [1] type=definition heading=定义 2 title=模
+  [2] type=theorem heading=定理 1 title=施瓦茨不等式
+  [3] type=corollary heading=推论 1 title=三角不等式
+  [4] type=example heading=例 1 title=
+  [5] type=definition heading=定义 3 title=正交
+  [6] type=example heading=例 2 title=
+  [7] type=theorem heading=定理 2 title=
+  [8] type=theorem heading=定理 3 title=
+
+[0] 本文存在未完成的内容。
+[1] $\mathbb{R}$ 上的欧几里得矢量空间的度量关系完全可由内积来刻画，这成为在复数域 $\mathbb{C}$ 上的矢量空间中引入内积的刺激因素。
+[2] 然而，在复矢量空间的情形，使用标准双线性型 $s( x, y)=\sum_{i}x_iy_i\;x_i,y_i\in\mathbb{C}$ 作为内积并不能胜任此任务，因为对 $ \left\lVert x \right\rVert \geq0$，模
+[3] \begin{equation}
+\left\lVert \mathrm{i} x \right\rVert =\sqrt{s( \mathrm{i} x, \mathrm{i} x)}=- \left\lVert x \right\rVert \leq0~
+\end{equation}
+[4] 要是想利用直观的矢量长度的概念，上面的内积定义显然是不能接受的。
+[5] 但是，使用正定的埃米尔特型（
+[6] 定义 4 [链接 L0]
+[7] ）作为内积的定义却是适合的。
+
+[SCOPE:s_def1|description|定义 1]
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[8] 定义 1
+[9] 域 $\mathbb{C}$ 上一个有限维矢量空间 $V$ 配备一个正定埃尔米特型 $( x| y):=f( x| y)$，
+[10] 则称为埃尔米特矢量空间（或酉空间）。
+[/SCOPE:s_def1_let]
+[11] 复数 $( x| y)$ 称为是矢量 $ x, y\in V$ 的内积（或纯量积）。
+[12] 列出内积的性质（*表示共轭复数）：
+[13] $( x| y)=( y| x)^*$；
+[14] $(\alpha x+\beta y| z)=\alpha^*( x| z)+\beta^*( y| z)$；
+[15] $( x| x)\geq0$，仅当 $ x= 0$ 时等式成立。
+[16] 这里，仍用 $(*|*)$ 表示内积，是因为将矢量空间限制在实数域上以上性质仍成立，并不会发生任何矛盾。
+[17] 有了内积的定义以后，和欧几里得矢量空间情形完全类似的，在埃尔米特空间，有
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义 2 模]
+[18] 定义 2 模
+[19] 称 $ \left\lVert v \right\rVert =\sqrt{( v| v)}$ 为矢量 $ v$ 的模。
+[20] 模为 1 的埃尔米特矢量空间的矢量 $v$ 记作 $\hat{v}$。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|定理 1 施瓦茨不等式]
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[21] 定理 1 施瓦茨不等式
+[22] \begin{equation}
+\left\lvert ( x| y) \right\rvert \leq \left\lVert x \right\rVert \cdot \left\lVert y \right\rVert ~.
+\end{equation}
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm1_proof|description|定理 1 的证明]
+[SCOPE:s_thm1_proof_let|let_bind|证明中的变量]
+[23] 证明：将复数记为指数形式，
+[24] 即 $( x| y)= \left\lvert ( x| y) \right\rvert \mathrm{e} ^{ \mathrm{i} \varphi}$。
+[25] 那么由内积的正定性，对 $\forall t\in\mathbb{R}$
+[/SCOPE:s_thm1_proof_let]
+[26] \begin{equation}
+\begin{aligned}
+&( x t+ y \mathrm{e} ^{- \mathrm{i} \varphi}| x t+ y \mathrm{e} ^{- \mathrm{i} \varphi})\\
+&= \left\lVert x \right\rVert ^2t^2+ \left(( x| y) \mathrm{e} ^{- \mathrm{i} \varphi}+( x| y)^* \mathrm{e} ^{ \mathrm{i} \varphi} \right) t+ \left\lVert y \right\rVert ^2\\
+&= \left\lVert x \right\rVert ^2t^2+2 \left\lvert ( x| y) \right\rvert t+ \left\lVert y \right\rVert ^2\geq0~.
+\end{aligned}
+\end{equation}
+[27] 由判别式即得
+[28] 式 2 [链接 L1]
+[29] 证毕！
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_proof]
+[SCOPE:s_cor1|description|推论 1 三角不等式]
+[30] 推论 1 三角不等式
+[31] \begin{equation}
+\left\lVert x\pm y \right\rVert \leq \left\lVert x \right\rVert + \left\lVert y \right\rVert ~.
+\end{equation}
+[32] 证明完全和欧氏矢量空间一样（推论 1 ）。
+
+[/SCOPE:s_cor1]
+[SCOPE:s_ex1|description|例 1]
+[SCOPE:s_ex1_let|let_bind|例 1 的变量]
+[33] 在 $\mathbb{C}$ 上的矢量空间 $C_2(a,b)$ (例 1 ) 和 $P_n$ 上附加内积
+[34] \begin{equation}
+(f|g)=\int_a^{b}f(x)g^*(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[/SCOPE:s_ex1_let]
+[35] \begin{equation}
+\sqrt{\int_a^b \left\lvert f(x)\pm g(x) \right\rvert ^2 \,\mathrm{d}{x} }\leq\sqrt{\int_a^b \left\lvert f(x) \right\rvert ^2 \,\mathrm{d}{x} }+\sqrt{\int_a^b \left\lvert g(x) \right\rvert ^2 \,\mathrm{d}{x} }~.
+\end{equation}
+[36] 由式 2 ，存在唯一角 $\varphi,0\leq\varphi\leq\frac{\pi}{2}$ 使得
+[37] \begin{equation}
+\cos\varphi=\frac{ \left\lvert ( x| y) \right\rvert }{ \left\lVert x \right\rVert \cdot \left\lVert y \right\rVert }~.
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_def3|description|定义 3 正交]
+[38] 定义 3 正交
+[39] 若 $( x| y)=0$，
+[40] 则称 $ x, y$ 是正交的，记作 $ x\perp y$。
+[41] 此外若还成立 $( x| x)=( y| y)=1$，
+[42] 则称 $ x$ 和 $ y$ 标准正交。
+[43] 在正交性方面，也完全类似于欧几里得矢量空间情形，定理 1 、定理 2 仍成立，只需将域 $\mathbb{R}$ 上的欧氏矢量空间替换为域 $\mathbb{C}$ 上的埃尔米特矢量空间。
+[44] 注意：由于 $n$ 维的埃尔米特矢量空间必有 $n$ 个线性无关的基底，而定理 1 保证了其上必存在标准正交基底。
+
+[/SCOPE:s_def3]
+[SCOPE:s_ex2|description|例 2]
+[SCOPE:s_ex2_let|let_bind|例 2 的变量]
+[45] 试证明在埃尔米特空间，也有类似于 “毕达哥拉斯定理” 成立，
+[46] 即：对两两正交的矢量 $ v_1,\cdots, v_n$，成立
+[/SCOPE:s_ex2_let]
+[47] \begin{equation}
+\left\lvert \left\lvert v_1+\cdots+ v_n \right\rvert \right\rvert ^2= \left\lvert \left\lvert v_1 \right\rvert \right\rvert ^2+\cdots+ \left\lvert \left\lvert v_n \right\rvert \right\rvert ^2~.
+\end{equation}
+
+[/SCOPE:s_ex2]
+[SCOPE:s_thm2|description|定理 2]
+[SCOPE:s_thm2_let|let_bind|定理 2 的变量]
+[48] 定理 2
+[49] 设 $(\hat e_1,\cdots, \hat e_n)$ 是埃尔米特空间 $V$ 上的一个标准正交基底，
+[50] 那么
+[/SCOPE:s_thm2_let]
+[51] \begin{equation}
+\forall x\in V, x=\sum_{i}( \hat e_i| x)\hat e_i~.
+\end{equation}
+[52] 帕塞瓦尔等式
+[53] \begin{equation}
+\forall x, y\in V,( x| y)=\sum_{i}( x|\hat e_i)( \hat e_i| y)~.
+\end{equation}
+[54] \begin{equation}
+\ x\in V,\Rightarrow \left\lVert x \right\rVert ^2=\sum_{i} \left\lvert ( \hat e_i| x) \right\rvert ^2~.
+\end{equation}
+[SCOPE:s_thm2_proof|description|定理 2 的证明]
+[SCOPE:s_thm2_proof_let|let_bind|证明中的变量]
+[55] 证明：
+[56] 设 $ x=\sum_{i}x_i
+[57] \hat e_i$，
+[58] 则
+[/SCOPE:s_thm2_proof_let]
+[59] \begin{equation}
+( \hat e_i| x)=\sum_{j}x_j( \hat e_i| \hat e_j)=x_i~.
+\end{equation}
+[60] 由式 9
+[61] \begin{equation}
+( x| y)=( x|\sum_{i}( \hat e_i| y) \hat e_i)=\sum_{i}( \hat e_i| y)( x| \hat e_i)=\sum_{i}( x| \hat e_i)( \hat e_i| y)~.
+\end{equation}
+[62] 由式 9 直接证得！
+[63] 证毕！
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_proof]
+[SCOPE:s_thm3|description|定理 3]
+[SCOPE:s_thm3_let|let_bind|定理 3 的变量]
+[64] 定理 3
+[65] 任意两个维数相同的埃尔米特矢量空间 $V,V'$ 都是同构的。
+[66] 即存在矢量空间的同构映射 $f:V\rightarrow V'$，它还保持内积：
+[/SCOPE:s_thm3_let]
+[67] \begin{equation}
+( x| y)=(f( x)|f( y))'~.
+\end{equation}
+[SCOPE:s_thm3_proof|description|定理 3 的证明]
+[SCOPE:s_thm3_proof_let|let_bind|证明中的变量]
+[68] 证明：和欧几里得矢量空间一样，这样的同构映射是
+[69] \begin{equation}
+f: x=\sum_{i}x_i \hat e_i\mapsto x'=\sum_i x_i \hat e'_i~.
+\end{equation}
+[70] 其中，$\{ \hat e_i\}$ 和 $\{ \hat e'_i\}$ 分别是空间 $V,V'$ 的标准正交基底。
+[/SCOPE:s_thm3_proof_let]
+[71] 这显然保持内积。
+[/SCOPE:s_thm3_proof]
+[72] 从上面可以看到，欧几里得矢量空间的很多性质都可以直接推广到埃尔米特矢量空间。
+[73] 然而，在欧几里得矢量空间的情形，可以把欧几里得矢量空间和其对偶空间等同起来；
+[74] 而在埃米尔特空间，并不存在这样的等同关系。
+[75] 这是因为，欧几里得矢量空间和其对偶空间存在着自然的同构映射（定理 4 ）；
+[76] 而对埃米尔特矢量空间，并没有这样的自然同构存在，究其原因，是因为欧氏情形内积是双线性的，而埃氏情形则是半双线性的，而矢量空间的同构必须是线性的。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_unitary_group|description|酉群]
+[77] $n$ 维欧氏情形里，从一个标准正交基底到另一个标准正交基底的转换矩阵称为正交矩阵，它们构成一个群——正交群，记作 $O(n)$（子节 3 ）。
+[78] 同样的，在 $n$ 维埃氏情形，从一个标准正交基底到另一个标准正交基底的转换矩阵称为酉矩阵，它们构成的群称为酉群，记作 $U(n)$。
+[79] 关于酉群的具体介绍查看文章酉群。
+[/SCOPE:s_unitary_group]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "施瓦茨不等式依赖于内积定义"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "三角不等式是施瓦茨不等式的推论"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2关于标准正交基的展开"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "同构依赖于标准正交基"
+  }
+]

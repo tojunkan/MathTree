@@ -1,0 +1,372 @@
+{
+  "article_name": "SurInt",
+  "statements": [
+    {
+      "stmt_id": "st_ex1_heading",
+      "subtype": "example",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_let1_constant_field",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let1",
+      "exposed_entities": [
+        "v(r)",
+        "v0"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_let1_plane_area",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let1",
+      "exposed_entities": [
+        "S",
+        "theta"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_theta0_volume",
+      "subtype": "conclusion",
+      "clause_range": [
+        4,
+        6
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_theta_nonzero_volume",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_theta_observation",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_let2_generalization",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let2",
+      "exposed_entities": [
+        "v(r)",
+        "曲面"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_let2_definition_intro",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let2",
+      "exposed_entities": [
+        "曲面积分",
+        "通量"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_let2_smooth_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let2",
+      "exposed_entities": [
+        "F(r)",
+        "曲面",
+        "n_i",
+        "Delta S_i",
+        "Delta S_i"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_let2_constant_on_patch",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let2",
+      "exposed_entities": [
+        "F(r_i)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_let2_integral_definition",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let2",
+      "exposed_entities": [
+        "曲面积分"
+      ]
+    },
+    {
+      "stmt_id": "st_rect_surface_representation",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_rect",
+      "exposed_entities": [
+        "f(x,y,z)",
+        "n(x,y,z)"
+      ]
+    },
+    {
+      "stmt_id": "st_rect_question",
+      "subtype": "question",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_rect",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rect_let_surface_z",
+      "subtype": "assumption",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_rect_let",
+      "exposed_entities": [
+        "z=g(x,y)",
+        "Delta x_i",
+        "Delta y_j"
+      ]
+    },
+    {
+      "stmt_id": "st_rect_let_area_relation",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rect_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rect_let_flux_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        25
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rect_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rect_let_integral_conversion",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rect_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rect_let_interpretation",
+      "subtype": "remark",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_rect_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rect_let_special_form",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rect_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_heading",
+      "subtype": "example",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_let_field_and_surface",
+      "subtype": "assumption",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "F(r)=r",
+        "z=x^2+y^2"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_normal_vector",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        35
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_flux_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        36,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2_let",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex1_let1_constant_field",
+      "target": "st_ex1_theta0_volume",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let1_plane_area",
+      "target": "st_ex1_theta0_volume",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let1_constant_field",
+      "target": "st_ex1_theta_nonzero_volume",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let1_plane_area",
+      "target": "st_ex1_theta_nonzero_volume",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let2_generalization",
+      "target": "st_ex1_let2_integral_definition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let2_smooth_assumptions",
+      "target": "st_ex1_let2_integral_definition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let2_constant_on_patch",
+      "target": "st_ex1_let2_integral_definition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rect_let_surface_z",
+      "target": "st_rect_let_area_relation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rect_let_area_relation",
+      "target": "st_rect_let_flux_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rect_let_flux_formula",
+      "target": "st_rect_let_integral_conversion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rect_let_integral_conversion",
+      "target": "st_rect_let_special_form",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_let_field_and_surface",
+      "target": "st_ex2_normal_vector",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_normal_vector",
+      "target": "st_ex2_flux_result",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

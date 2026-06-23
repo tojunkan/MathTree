@@ -1,0 +1,75 @@
+[SCOPE:root|description|一般线性群]
+文章名: GL
+标题: 一般线性群
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=一般线性群
+  [1] type=definition heading=定义 2 title=特殊线性群
+
+[SCOPE:s_gl|description|一般线性群]
+[0] 定义 1 一般线性群
+[SCOPE:s_gl_let|let_bind|一般线性群的变量]
+[1] 对于给定域 $\mathbb{F}$ 上的一个向量空间 $V$，$V$ 上的全体可逆自线性算符构成一个群，记做 $ \operatorname {GL}(V; \mathbb{F})$（或者 $ \operatorname {GL}_{\mathbb{F}}(V)$），称为 $V$（在 $\mathbb{F}$ 上）的一般线性群。
+[2] 特别的，当 $V = \mathbb{F}^n$ 时，$ \operatorname {GL}(\mathbb{F}^n; \mathbb{F})$ 可以视作可逆矩阵的群，简写为 $ \operatorname {GL}(n; \mathbb{F})$（或者 $ \operatorname {GL}_n(\mathbb{F})$），称为 $\mathbb{F}$ 的 $n$ 维一般线性（矩阵）群。
+[/SCOPE:s_gl_let]
+[3] 当 $\mathbb{F} = \mathbb{R}$ 或者 $\mathbb{C}$ 时，由于 $\mathbb{R}, \mathbb{C}$ 本身是拓扑空间，$ \operatorname {GL}(n; \mathbb{F})$ 可以视作拓扑空间（矩阵空间）$ \operatorname {Mat}(n \times n) \cong \mathbb{F}^{n^2}$ 的子拓扑空间，
+[4] 因此 $ \operatorname {GL}(n; \mathbb{R}), \operatorname {GL}(n; \mathbb{C})$ 是拓扑群定义 1 ，更进一步的它们也是李群定义 1 。
+[5] 对于线性算符 $T \in \operatorname {GL}(n; \mathbb{F})$（或者更一般的 $ \operatorname {GL}(V; \mathbb{F})$），$T$ 是可逆的当且仅当它的行列式为 $0 \in \mathbb{F}$，
+[6] 即
+[7] $$
+\operatorname {GL}(n; \mathbb{F}): = \{T \in \operatorname {Mat}(n \times n) \mid \det(T) \neq 0\}~.
+$$
+
+[/SCOPE:s_gl]
+[SCOPE:s_sl|description|特殊线性群]
+[8] 定义 2 特殊线性群
+[SCOPE:s_sl_let|let_bind|特殊线性群的变量]
+[9] $\mathbb{F}$ 的 $n$ 维特殊线性（矩阵）群，$ \operatorname {SL}(n; \mathbb{F})$，定义为
+[10] $$
+\{T \in \operatorname {Mat}(n \times n) \mid \det(T) = 1\}~.
+$$
+[/SCOPE:s_sl_let]
+[11] 类似的我们也可以定义特殊线性群 $ \operatorname {SL}(V)$。
+[12] 因为在域 $\mathbb{F}$ 中，$0 \neq 1$，很容易看出 $ \operatorname {SL}(n; \mathbb{F})$ 是 $ \operatorname {GL}(n; \mathbb{F})$ 的子群。
+
+[/SCOPE:s_sl]
+[SCOPE:s_realcomplex|description|实/复一般线性群]
+[SCOPE:s_realcomplex_let|let_bind|实/复一般线性群的变量]
+[13] 这个章节我们来重点看看 $ \operatorname {GL}(n; \mathbb{R})$ 和 $ \operatorname {GL}(n; \mathbb{C})$。
+[14] $M_n(\mathbb{C})$ 是全体 $n \times n$ 复矩阵的集合。
+[/SCOPE:s_realcomplex_let]
+[15] 作为一个向量空间，它同构于 $\mathbb{C}^{n^2}$。
+[16] 作为一个有限维度实向量空间1，它也是一个拓扑空间，而且和 $\mathbb{C}^{n^2} \cong \mathbb{R}^{2 n^2}$ 同胚。
+[17] $M_n(\mathbb{C})$ 和 $\mathbb{C}^{n^2}$ 不同的地方在于，它本身构成一个 $\mathbb{C}$-代数，
+[18] 即矩阵的乘法。
+[19] $ \operatorname {GL}(n, \mathbb{C})$ 构成一个群，同时也是拓扑空间 $M_n(\mathbb{C})$ 的一个开集合（因此是个子流形定义 1 ，同时也是一个李群定义 1 ）。
+[20] 一方面，我们有 $\mathbb{R} \subseteq \mathbb{C}$，
+[21] 即所有的复系数矩阵都是实系数矩阵，
+[22] 因此我们有
+[23] $$
+\operatorname {GL}(n, \mathbb{R}) \subseteq \operatorname {GL}(n, \mathbb{C})~.
+$$
+[24] 另一方面，$\mathbb{C}$ 可以视作一个二维的实向量空间，带上一个实线性函数 $J: \mathbb{R}^2 \to \mathbb{R}^2$ 满足 $J \circ J = -\text{id}$，$J$ 有很多选择，比如 $J(a, b) = (-b, a)$，$J$ 可以推广到 $\mathbb{R}^{2 n}$ 上，此时我们有
+[25] $$
+\operatorname {GL}(n; \mathbb{C}): = \{A \in \operatorname {GL}(2 n; \mathbb{R}) \mid A J = J A \}~.
+$$
+[/SCOPE:s_realcomplex]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_sl",
+    "target_scope": "s_gl",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "SL(n;F) 是 GL(n;F) 的子群"
+  },
+  {
+    "source_scope": "s_realcomplex",
+    "target_scope": "s_gl",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "实/复一般线性群是一般线性群的特例"
+  }
+]

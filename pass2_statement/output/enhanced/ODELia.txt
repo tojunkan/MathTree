@@ -1,0 +1,110 @@
+[SCOPE:root|description|Liapunov 稳定性（常微分方程）]
+文章名: ODELia
+标题: Liapunov 稳定性（常微分方程）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=Liapunov 稳定
+  [1] type=definition heading=定义 2 title=渐进稳定
+  [2] type=example heading=例 1 title=
+
+[0] 本文缺少预备知识，初学者可能会遇到困难。
+[1] 微分方程中经常出现混沌系统，而讨论稳定性的问题直到现在都是较有难度的一件事。
+[2] 李雅普诺夫（Liapunov）稳定性是现在较为成熟的一套理论方法。
+
+[SCOPE:s_lyap_stable|description|Liapunov 稳定]
+[SCOPE:s_lyap_let|let_bind|Liapunov 稳定变量]
+[3] 考虑微分方程组
+[4] \begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}{t}} \boldsymbol{\mathbf{x}} (t) = \boldsymbol{\mathbf{F}} (t, \boldsymbol{\mathbf{x}} ) ~,
+\end{equation}
+[5] 其中 $t \in \mathbb R$，$ \boldsymbol{\mathbf{x}} \in D \subseteq \mathbb R^n$，$ \boldsymbol{\mathbf{F}} $ 在 $\mathbb R \times D$ 上连续且关于 $ \boldsymbol{\mathbf{x}} $ 满足李普希兹条件。
+[6] 若该方程组有解 $ \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{\varphi}} (t)$，$t \in [t_0, +\infty)$。
+
+[/SCOPE:s_lyap_let]
+[7] 定义 1 Liapunov 稳定
+[8] 若 $\forall \varepsilon > 0$，$\exists \delta > 0$，使得对任意满足
+[9] \begin{equation}
+\Vert \boldsymbol{\mathbf{x}} _0 - \boldsymbol{\mathbf{\varphi}} (t_0)\Vert < \delta ~~
+\end{equation}
+[10] \begin{equation}
+\Vert \boldsymbol{\mathbf{x}} (t, t_0, \boldsymbol{\mathbf{x}} _0) - \boldsymbol{\mathbf{\varphi}} (t) \Vert < \varepsilon ~,
+\end{equation}
+[11] 不稳定的
+
+[/SCOPE:s_lyap_stable]
+[SCOPE:s_asympt_stable|description|渐进稳定]
+[12] 定义 2 渐进稳定
+[SCOPE:s_asympt_let|let_bind|渐进稳定变量]
+[13] 假设 $ \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{\varphi}} (t)$ 是稳定的，且存在 $\delta_1$（$0 < \delta_1 < \delta$）使得只要
+[14] \begin{equation}
+\Vert \boldsymbol{\mathbf{x}} _0 - \boldsymbol{\mathbf{\varphi}} (t_0) \Vert < \delta_1 ~~
+\end{equation}
+[15] \begin{equation}
+\lim_{t \to +\infty} \Vert \boldsymbol{\mathbf{x}} (t, t_0, \boldsymbol{\mathbf{x}} _0) - \boldsymbol{\mathbf{\varphi}} (t) \Vert = 0 ~~
+\end{equation}
+[/SCOPE:s_asympt_let]
+[16] 渐近稳定的
+
+[/SCOPE:s_asympt_stable]
+[SCOPE:s_zero_stable|description|零解的稳定性]
+[SCOPE:s_zero_let|let_bind|零解变量]
+[17a] (t)$ 的研究，可以通过代换 $ \boldsymbol{\mathbf{y}} = \boldsymbol{\mathbf{x}} - \boldsymbol{\mathbf{\varphi}}
+[17b] (t)$ 转化为研究方程
+[18] \begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}{t}} \boldsymbol{\mathbf{y}} (t) = \boldsymbol{\mathbf{F}} (t, \boldsymbol{\mathbf{y}} + \boldsymbol{\mathbf{\varphi}} (t)) ~~
+\end{equation}
+[/SCOPE:s_zero_let]
+[19] 的零解的稳定性。
+[20] 因为 $ \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{\varphi}} (t)$ 就对应这方程的零解 $ \boldsymbol{\mathbf{y}} = 0$。
+
+[/SCOPE:s_zero_stable]
+[SCOPE:s_example1|description|例 1]
+[SCOPE:s_example_let|let_bind|例 1 变量]
+[21] 讨论方程
+[22] \begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}{t}} x = Cx ~,
+\end{equation}
+[23] 方程满足初始条件 $x(t_0) = x_0$ 的解是
+[24] \begin{equation}
+x(t) = x_0 \exp\left(C (t - t_0)\right) ~.
+\end{equation}
+[/SCOPE:s_example_let]
+[SCOPE:s_example_cases|cases|a 的三种情况]
+[25] i）当 $a<0$ 时，$\forall \varepsilon > 0$，选 $\delta = \varepsilon$，当 $|x_0| < \delta$ 时，$\forall t \ge t_0$，
+[26] \begin{equation}
+|x(t)| = |x_0 \exp\left(C (t-t_0)\right) | < \varepsilon \exp\left(C(t-t_0)\right) < \varepsilon ~,
+\end{equation}
+[27] 故零解是稳定的。
+[28] 同时容易证明也是渐近稳定的。
+[29] ii）当 $a=0$ 时，选 $\delta = \varepsilon$ 可类似的证明零解是稳定的，
+[30] 但由于
+[31] \begin{equation}
+\lim_{t \to +\infty} |x(t)| = |x_0| \neq 0 ~,
+\end{equation}
+[32] 故并不是渐近稳定的。
+[33] iii）当 $a > 0$ 时，无论 $x_0$ 多小，总有
+[34] \begin{equation}
+\lim_{t \to +\infty} |x(t)| = \lim_{t \to +\infty} |x_0| \exp\left(C(t-t_0)\right) = +\infty ~,
+\end{equation}
+[35] 故零解是不稳定的。
+[/SCOPE:s_example1]
+[/SCOPE:s_example_cases]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_asympt_stable",
+    "target_scope": "s_lyap_stable",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "渐进稳定是稳定的特例"
+  },
+  {
+    "source_scope": "s_zero_stable",
+    "target_scope": "s_lyap_stable",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "零解稳定性是Liapunov稳定的特例"
+  }
+]

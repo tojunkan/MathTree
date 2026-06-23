@@ -1,0 +1,694 @@
+{
+  "article_name": "BYSGL",
+  "statements": [
+    {
+      "stmt_id": "st_intro_definition",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "贝叶斯概率"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_extension",
+      "subtype": "remark",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_contrast",
+      "subtype": "remark",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_bayesian_probability_category",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_prior_posterior",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "先验概率",
+        "后验概率"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_procedures",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_origin",
+      "subtype": "remark",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_method_modeling",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_method",
+      "exposed_entities": [
+        "随机变量",
+        "未知量"
+      ]
+    },
+    {
+      "stmt_id": "st_method_prior_info",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_method",
+      "exposed_entities": [
+        "先验概率分布"
+      ]
+    },
+    {
+      "stmt_id": "st_method_bayes_formula",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_method",
+      "exposed_entities": [
+        "后验分布"
+      ]
+    },
+    {
+      "stmt_id": "st_method_frequentist_contrast",
+      "subtype": "remark",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_method",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_obj_subj_two_interpretations",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_objective_subjective",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_obj_subj_objectivist",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_objective_subjective",
+      "exposed_entities": [
+        "客观主义者"
+      ]
+    },
+    {
+      "stmt_id": "st_obj_subj_subjectivist",
+      "subtype": "definition",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_objective_subjective",
+      "exposed_entities": [
+        "主观主义者"
+      ]
+    },
+    {
+      "stmt_id": "st_obj_subj_constraints",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_objective_subjective",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_obj_subj_difference",
+      "subtype": "remark",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_objective_subjective",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_bayes_paper",
+      "subtype": "remark",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_laplace",
+      "subtype": "remark",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_inverse_probability",
+      "subtype": "remark",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_frequentist_replacement",
+      "subtype": "remark",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_two_streams",
+      "subtype": "remark",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_revival",
+      "subtype": "remark",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_term_bayesian",
+      "subtype": "remark",
+      "clause_range": [
+        34,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_objectivist_trend",
+      "subtype": "remark",
+      "clause_range": [
+        36,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_subjectivist_denial",
+      "subtype": "remark",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_mcmc_boom",
+      "subtype": "remark",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_frequentist_dominance",
+      "subtype": "remark",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_history_bayesian_acceptance",
+      "subtype": "remark",
+      "clause_range": [
+        41,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_history",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_justification_intro",
+      "subtype": "remark",
+      "clause_range": [
+        43,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_justification",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_axiomatic_cox_proof",
+      "subtype": "theorem",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": "true",
+      "scope_id": "s_axiomatic",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_axiomatic_continuity_controversy",
+      "subtype": "remark",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_axiomatic",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_axiomatic_halpern_counterexample",
+      "subtype": "counterexample_claim",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": "true",
+      "scope_id": "s_axiomatic",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_axiomatic_other_axioms",
+      "subtype": "remark",
+      "clause_range": [
+        47,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_axiomatic",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_dutch_book_intro",
+      "subtype": "remark",
+      "clause_range": [
+        49,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_dutch_book",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_dutch_book_definition",
+      "subtype": "definition",
+      "clause_range": [
+        51,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_dutch_book",
+      "exposed_entities": [
+        "荷兰赌"
+      ]
+    },
+    {
+      "stmt_id": "st_dutch_book_bayesian_avoid",
+      "subtype": "theorem",
+      "clause_range": [
+        52,
+        53
+      ],
+      "truth_value": "true",
+      "scope_id": "s_dutch_book",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_dutch_book_hacking_critique",
+      "subtype": "remark",
+      "clause_range": [
+        54,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_dutch_book",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_dutch_book_hacking_quote",
+      "subtype": "remark",
+      "clause_range": [
+        55,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_dutch_book",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_dutch_book_non_bayesian_avoid",
+      "subtype": "remark",
+      "clause_range": [
+        60,
+        60
+      ],
+      "truth_value": null,
+      "scope_id": "s_dutch_book",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_dutch_book_additional_assumptions",
+      "subtype": "remark",
+      "clause_range": [
+        61,
+        62
+      ],
+      "truth_value": null,
+      "scope_id": "s_dutch_book",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_decision_theory_wald_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        63,
+        63
+      ],
+      "truth_value": "true",
+      "scope_id": "s_decision_theory",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_decision_theory_converse",
+      "subtype": "theorem",
+      "clause_range": [
+        64,
+        64
+      ],
+      "truth_value": "true",
+      "scope_id": "s_decision_theory",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prior_ramsey_vonneumann",
+      "subtype": "remark",
+      "clause_range": [
+        66,
+        66
+      ],
+      "truth_value": null,
+      "scope_id": "s_prior",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prior_pfanzagl_axioms",
+      "subtype": "remark",
+      "clause_range": [
+        67,
+        71
+      ],
+      "truth_value": null,
+      "scope_id": "s_prior",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prior_ramsey_savage_experiment",
+      "subtype": "remark",
+      "clause_range": [
+        72,
+        72
+      ],
+      "truth_value": null,
+      "scope_id": "s_prior",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prior_testing_process",
+      "subtype": "remark",
+      "clause_range": [
+        73,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_prior",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prior_pragmatism_debt",
+      "subtype": "remark",
+      "clause_range": [
+        74,
+        75
+      ],
+      "truth_value": null,
+      "scope_id": "s_prior",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prior_ramsey_test",
+      "subtype": "remark",
+      "clause_range": [
+        76,
+        76
+      ],
+      "truth_value": null,
+      "scope_id": "s_prior",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prior_falsifiability",
+      "subtype": "remark",
+      "clause_range": [
+        77,
+        80
+      ],
+      "truth_value": null,
+      "scope_id": "s_prior",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prior_modern_experiments",
+      "subtype": "remark",
+      "clause_range": [
+        81,
+        81
+      ],
+      "truth_value": null,
+      "scope_id": "s_prior",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prior_individual_probabilities",
+      "subtype": "remark",
+      "clause_range": [
+        82,
+        82
+      ],
+      "truth_value": null,
+      "scope_id": "s_prior",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prior_individual_problem",
+      "subtype": "remark",
+      "clause_range": [
+        83,
+        83
+      ],
+      "truth_value": null,
+      "scope_id": "s_prior",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prior_objective_methods",
+      "subtype": "remark",
+      "clause_range": [
+        84,
+        84
+      ],
+      "truth_value": null,
+      "scope_id": "s_prior",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prior_unique_prior",
+      "subtype": "remark",
+      "clause_range": [
+        85,
+        86
+      ],
+      "truth_value": null,
+      "scope_id": "s_prior",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prior_search_for_objective",
+      "subtype": "remark",
+      "clause_range": [
+        87,
+        87
+      ],
+      "truth_value": null,
+      "scope_id": "s_prior",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prior_methods_list",
+      "subtype": "remark",
+      "clause_range": [
+        88,
+        92
+      ],
+      "truth_value": null,
+      "scope_id": "s_prior",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prior_usefulness",
+      "subtype": "remark",
+      "clause_range": [
+        93,
+        93
+      ],
+      "truth_value": null,
+      "scope_id": "s_prior",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prior_subjective_development",
+      "subtype": "remark",
+      "clause_range": [
+        94,
+        95
+      ],
+      "truth_value": null,
+      "scope_id": "s_prior",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prior_need_for_prior",
+      "subtype": "remark",
+      "clause_range": [
+        97,
+        97
+      ],
+      "truth_value": null,
+      "scope_id": "s_prior",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_axiomatic_cox_proof",
+      "target": "st_axiomatic_halpern_counterexample",
+      "edge_type": "counterexample_of",
+      "category": "logic"
+    },
+    {
+      "source": "st_dutch_book_bayesian_avoid",
+      "target": "st_dutch_book_hacking_critique",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_decision_theory_wald_theorem",
+      "target": "st_decision_theory_converse",
+      "edge_type": "equivalent",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

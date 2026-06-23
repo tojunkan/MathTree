@@ -1,0 +1,221 @@
+{
+  "article_name": "Gamma",
+  "statements": [
+    {
+      "stmt_id": "st_gamma_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_gamma_def",
+      "exposed_entities": [
+        "Gamma",
+        "x",
+        "t"
+      ]
+    },
+    {
+      "stmt_id": "st_gamma_let",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_gamma_let",
+      "exposed_entities": [
+        "x",
+        "t"
+      ]
+    },
+    {
+      "stmt_id": "st_recurrence",
+      "subtype": "theorem",
+      "clause_range": [
+        5,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_gamma_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_positive_int_fact",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_gamma_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_half_int_fact",
+      "subtype": "theorem",
+      "clause_range": [
+        11,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_gamma_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_verify_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_verify_int",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_verify_0fact",
+      "subtype": "theorem",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_verify_int",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_verify_recurrence",
+      "subtype": "theorem",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_verify_int",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_verify_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_verify_int",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_half_int_let",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_half_int",
+      "exposed_entities": [
+        "x",
+        "t"
+      ]
+    },
+    {
+      "stmt_id": "st_half_int_result",
+      "subtype": "theorem",
+      "clause_range": [
+        24,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_half_int",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_stirling_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": "true",
+      "scope_id": "s_stirling",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_stirling_note",
+      "subtype": "remark",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_stirling",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_gamma_let",
+      "target": "st_gamma_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_recurrence",
+      "target": "st_positive_int_fact",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_verify_assump",
+      "target": "st_verify_0fact",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_verify_assump",
+      "target": "st_verify_recurrence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_verify_0fact",
+      "target": "st_verify_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_verify_recurrence",
+      "target": "st_verify_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_half_int_let",
+      "target": "st_half_int_result",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_verify_conclusion",
+      "target": "st_gamma_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "正整数阶乘是Gamma函数的特例"
+    },
+    {
+      "source": "st_half_int_result",
+      "target": "st_gamma_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "半整数阶乘是Gamma函数的特例"
+    }
+  ],
+  "unresolved": []
+}

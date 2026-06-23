@@ -1,0 +1,283 @@
+{
+  "article_name": "InvMat",
+  "statements": [
+    {
+      "stmt_id": "st_inv_def",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_inv_def",
+      "exposed_entities": [
+        "A",
+        "B",
+        "I",
+        "A^{-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_inv_impl_cond",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_inv_prop",
+      "exposed_entities": [
+        "A",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_inv_cond1",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_inv_prop",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_inv_unique",
+      "subtype": "theorem",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "true",
+      "scope_id": "s_inv_prop",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_inv_square",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_inv_prop",
+      "exposed_entities": [
+        "A",
+        "A^{-1}",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_inv_mutual",
+      "subtype": "theorem",
+      "clause_range": [
+        16,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_inv_prop",
+      "exposed_entities": [
+        "A",
+        "B",
+        "I"
+      ]
+    },
+    {
+      "stmt_id": "st_method1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_methods_let1",
+      "exposed_entities": [
+        "x",
+        "y",
+        "N",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_method1_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_methods_let1",
+      "exposed_entities": [
+        "x",
+        "A^{-1}",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_method1_proc",
+      "subtype": "remark",
+      "clause_range": [
+        24,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_methods_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_method2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_methods_let2",
+      "exposed_entities": [
+        "A",
+        "I"
+      ]
+    },
+    {
+      "stmt_id": "st_method2_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_methods_let2",
+      "exposed_entities": [
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        35,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_proc",
+      "subtype": "example",
+      "clause_range": [
+        42,
+        47
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_check",
+      "subtype": "remark",
+      "clause_range": [
+        48,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_method3_desc",
+      "subtype": "remark",
+      "clause_range": [
+        49,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        53,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_calc",
+      "subtype": "example",
+      "clause_range": [
+        54,
+        60
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_inv_impl_cond",
+      "target": "st_inv_cond1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inv_cond1",
+      "target": "st_inv_unique",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inv_square",
+      "target": "st_inv_mutual",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_method1_assump",
+      "target": "st_method1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_method2_assump",
+      "target": "st_method2_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_assump",
+      "target": "st_ex1_proc",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_assump",
+      "target": "st_ex2_calc",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex2_calc",
+      "target": "st_ex1_proc",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2是例1中矩阵A的逆的具体计算"
+    }
+  ],
+  "unresolved": []
+}

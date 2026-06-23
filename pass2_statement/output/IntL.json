@@ -1,0 +1,159 @@
+{
+  "article_name": "IntL",
+  "statements": [
+    {
+      "stmt_id": "st_example1_heading",
+      "subtype": "example",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_force_and_path",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let1",
+      "exposed_entities": [
+        "F",
+        "r",
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_question_alternative_path",
+      "subtype": "question",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example1_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_param_equation_circle",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let2",
+      "exposed_entities": [
+        "t",
+        "x(t)",
+        "y(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_work_integral_circle",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_path_assumption",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let3",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_work_integral_linear",
+      "subtype": "conclusion",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_conservative_field_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_loop_integral_definition",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_loop_integral",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_loop_integral_unfinished",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_loop_integral",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_force_and_path",
+      "target": "st_work_integral_circle",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_param_equation_circle",
+      "target": "st_work_integral_circle",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_linear_path_assumption",
+      "target": "st_work_integral_linear",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_work_integral_circle",
+      "target": "st_conservative_field_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_work_integral_linear",
+      "target": "st_conservative_field_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

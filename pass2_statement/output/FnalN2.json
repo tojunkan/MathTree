@@ -1,0 +1,1288 @@
+{
+  "article_name": "FnalN2",
+  "statements": [
+    {
+      "stmt_id": "st_prehilbert_def",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_hilbert",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cauchy_schwarz",
+      "subtype": "theorem",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": "true",
+      "scope_id": "s_hilbert",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prehilbert_normed",
+      "subtype": "theorem",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": "true",
+      "scope_id": "s_hilbert",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_hilbert_def",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_hilbert",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_KN",
+      "subtype": "example",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": "true",
+      "scope_id": "s_examples_let1",
+      "exposed_entities": [
+        "X",
+        "K^N"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_ab",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_examples_let2",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_def_inner_C",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_examples_let2",
+      "exposed_entities": [
+        "u",
+        "v",
+        "C[a,b]"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_prehilbert_C",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_examples_let2",
+      "exposed_entities": [
+        "C_*[a,b]"
+      ]
+    },
+    {
+      "stmt_id": "st_dense_subset",
+      "subtype": "theorem",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": "true",
+      "scope_id": "s_examples_let2",
+      "exposed_entities": [
+        "L_2(a,b)"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_L2",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_examples_let3",
+      "exposed_entities": [
+        "a",
+        "b",
+        "L_2(a,b)",
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_def_inner_L2",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_examples_let3",
+      "exposed_entities": [
+        "u",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_L2_hilbert",
+      "subtype": "conclusion",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_examples_let3",
+      "exposed_entities": [
+        "L_2(a,b)"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_L2K",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_examples_let4",
+      "exposed_entities": [
+        "G",
+        "L_2^K(G)",
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_L2K_hilbert",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_examples_let4",
+      "exposed_entities": [
+        "L_2^K(G)"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_G_open",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_examples_let5",
+      "exposed_entities": [
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_def_Ck",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_examples_let5",
+      "exposed_entities": [
+        "C^k(G)",
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_def_Ckbar",
+      "subtype": "definition",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_examples_let5",
+      "exposed_entities": [
+        "C^k(bar G)"
+      ]
+    },
+    {
+      "stmt_id": "st_def_Cinfty",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_examples_let5",
+      "exposed_entities": [
+        "C^infty(G)",
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_def_Cinftybar",
+      "subtype": "definition",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_examples_let5",
+      "exposed_entities": [
+        "C^infty(bar G)"
+      ]
+    },
+    {
+      "stmt_id": "st_def_C0infty",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_examples_let5",
+      "exposed_entities": [
+        "C_0^infty(G)"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_G_open2",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_examples_let6",
+      "exposed_entities": [
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_density_real",
+      "subtype": "theorem",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_examples_let6",
+      "exposed_entities": [
+        "C_0^infty(G)",
+        "C(bar G)",
+        "L_2(G)"
+      ]
+    },
+    {
+      "stmt_id": "st_density_complex",
+      "subtype": "theorem",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_examples_let6",
+      "exposed_entities": [
+        "C_0^infty(G)_C",
+        "C(bar G)_C",
+        "L_2^C(G)"
+      ]
+    },
+    {
+      "stmt_id": "st_integration_by_parts_high",
+      "subtype": "theorem",
+      "clause_range": [
+        28,
+        30
+      ],
+      "truth_value": "true",
+      "scope_id": "s_examples_let6",
+      "exposed_entities": [
+        "u",
+        "v",
+        "G",
+        "partial_j",
+        "n_j"
+      ]
+    },
+    {
+      "stmt_id": "st_boundary_zero",
+      "subtype": "theorem",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": "true",
+      "scope_id": "s_examples_let6",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_IBP_bounded",
+      "subtype": "theorem",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_examples_let6",
+      "exposed_entities": [
+        "u",
+        "v",
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_IBP_no_boundary",
+      "subtype": "theorem",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": "true",
+      "scope_id": "s_examples_let6",
+      "exposed_entities": [
+        "u",
+        "v",
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_G_open3",
+      "subtype": "assumption",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_examples_let6",
+      "exposed_entities": [
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_gauss_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        36,
+        36
+      ],
+      "truth_value": "true",
+      "scope_id": "s_examples_let6",
+      "exposed_entities": [
+        "w",
+        "G",
+        "partial_j"
+      ]
+    },
+    {
+      "stmt_id": "st_IBP_from_gauss",
+      "subtype": "theorem",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": "true",
+      "scope_id": "s_examples_let6",
+      "exposed_entities": [
+        "u",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "def_bounded_bilinear",
+      "subtype": "definition",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_bilinear",
+      "exposed_entities": [
+        "a",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "def_symmetric_positive",
+      "subtype": "definition",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_bilinear",
+      "exposed_entities": [
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "def_strongly_positive",
+      "subtype": "definition",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_bilinear",
+      "exposed_entities": [
+        "a",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_variational",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_variational_let",
+      "exposed_entities": [
+        "a",
+        "X",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_variational_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": "true",
+      "scope_id": "s_variational",
+      "exposed_entities": [
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_hamilton",
+      "subtype": "remark",
+      "clause_range": [
+        43,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_variational",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_IBP_classical",
+      "subtype": "theorem",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": "true",
+      "scope_id": "s_dirichlet_let1",
+      "exposed_entities": [
+        "u",
+        "v",
+        "G",
+        "partial_j"
+      ]
+    },
+    {
+      "stmt_id": "st_def_generalized_derivative",
+      "subtype": "definition",
+      "clause_range": [
+        45,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_dirichlet_let1",
+      "exposed_entities": [
+        "w",
+        "u",
+        "G",
+        "partial_j"
+      ]
+    },
+    {
+      "stmt_id": "st_uniqueness_generalized",
+      "subtype": "theorem",
+      "clause_range": [
+        48,
+        48
+      ],
+      "truth_value": "true",
+      "scope_id": "s_dirichlet_let1",
+      "exposed_entities": [
+        "w",
+        "partial_j"
+      ]
+    },
+    {
+      "stmt_id": "st_def_Sobolev",
+      "subtype": "definition",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_dirichlet_let2",
+      "exposed_entities": [
+        "W_2^1(G)",
+        "G",
+        "u",
+        "partial_j"
+      ]
+    },
+    {
+      "stmt_id": "st_def_inner_Sobolev",
+      "subtype": "definition",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_dirichlet_let2",
+      "exposed_entities": [
+        "u",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_Sobolev_hilbert",
+      "subtype": "theorem",
+      "clause_range": [
+        51,
+        51
+      ],
+      "truth_value": "true",
+      "scope_id": "s_dirichlet_let2",
+      "exposed_entities": [
+        "W_2^1(G)"
+      ]
+    },
+    {
+      "stmt_id": "st_def_WS",
+      "subtype": "definition",
+      "clause_range": [
+        52,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_dirichlet_let2",
+      "exposed_entities": [
+        "W_2^1(G)",
+        "C_0^infty(G)"
+      ]
+    },
+    {
+      "stmt_id": "st_WS_subspace",
+      "subtype": "theorem",
+      "clause_range": [
+        53,
+        53
+      ],
+      "truth_value": "true",
+      "scope_id": "s_dirichlet_let2",
+      "exposed_entities": [
+        "W_2^1(G)"
+      ]
+    },
+    {
+      "stmt_id": "st_WS_boundary_zero",
+      "subtype": "remark",
+      "clause_range": [
+        54,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_dirichlet_let2",
+      "exposed_entities": [
+        "W_2^1(G)"
+      ]
+    },
+    {
+      "stmt_id": "st_def_multiindex",
+      "subtype": "definition",
+      "clause_range": [
+        55,
+        55
+      ],
+      "truth_value": null,
+      "scope_id": "s_generalized_let1",
+      "exposed_entities": [
+        "alpha",
+        "partial^alpha"
+      ]
+    },
+    {
+      "stmt_id": "st_IBP_multiindex",
+      "subtype": "theorem",
+      "clause_range": [
+        56,
+        57
+      ],
+      "truth_value": "true",
+      "scope_id": "s_generalized_let1",
+      "exposed_entities": [
+        "u",
+        "v",
+        "G",
+        "alpha"
+      ]
+    },
+    {
+      "stmt_id": "st_def_DG",
+      "subtype": "definition",
+      "clause_range": [
+        58,
+        58
+      ],
+      "truth_value": null,
+      "scope_id": "s_generalized_let2",
+      "exposed_entities": [
+        "D(G)",
+        "C_0^infty(G)"
+      ]
+    },
+    {
+      "stmt_id": "st_def_convergence_D",
+      "subtype": "definition",
+      "clause_range": [
+        59,
+        60
+      ],
+      "truth_value": null,
+      "scope_id": "s_generalized_let2",
+      "exposed_entities": [
+        "phi_n",
+        "phi",
+        "K",
+        "alpha"
+      ]
+    },
+    {
+      "stmt_id": "st_def_D_interval",
+      "subtype": "definition",
+      "clause_range": [
+        61,
+        62
+      ],
+      "truth_value": null,
+      "scope_id": "s_generalized_let2",
+      "exposed_entities": [
+        "G",
+        "alpha",
+        "beta"
+      ]
+    },
+    {
+      "stmt_id": "st_def_generalized_function",
+      "subtype": "definition",
+      "clause_range": [
+        63,
+        63
+      ],
+      "truth_value": null,
+      "scope_id": "s_generalized_let3",
+      "exposed_entities": [
+        "U",
+        "D(G)"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_distribution",
+      "subtype": "remark",
+      "clause_range": [
+        64,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_generalized_let3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_delta",
+      "subtype": "definition",
+      "clause_range": [
+        69,
+        69
+      ],
+      "truth_value": null,
+      "scope_id": "s_generalized_let4",
+      "exposed_entities": [
+        "delta_y",
+        "phi",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_def_derivative_generalized",
+      "subtype": "definition",
+      "clause_range": [
+        70,
+        70
+      ],
+      "truth_value": null,
+      "scope_id": "s_generalized_let5",
+      "exposed_entities": [
+        "U",
+        "alpha",
+        "partial^alpha"
+      ]
+    },
+    {
+      "stmt_id": "st_consistency_derivative",
+      "subtype": "theorem",
+      "clause_range": [
+        71,
+        72
+      ],
+      "truth_value": "true",
+      "scope_id": "s_generalized_let5",
+      "exposed_entities": [
+        "u",
+        "U",
+        "alpha",
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_derivative_remains",
+      "subtype": "theorem",
+      "clause_range": [
+        73,
+        74
+      ],
+      "truth_value": "true",
+      "scope_id": "s_generalized_let5",
+      "exposed_entities": [
+        "U",
+        "alpha"
+      ]
+    },
+    {
+      "stmt_id": "st_any_order_derivative",
+      "subtype": "theorem",
+      "clause_range": [
+        75,
+        75
+      ],
+      "truth_value": "true",
+      "scope_id": "s_generalized_let5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_limit_generalized",
+      "subtype": "definition",
+      "clause_range": [
+        76,
+        76
+      ],
+      "truth_value": null,
+      "scope_id": "s_generalized_let5",
+      "exposed_entities": [
+        "U_n",
+        "U",
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_L2_convergence_implies",
+      "subtype": "theorem",
+      "clause_range": [
+        77,
+        77
+      ],
+      "truth_value": "true",
+      "scope_id": "s_generalized_let5",
+      "exposed_entities": [
+        "u_n",
+        "u",
+        "U_n",
+        "U"
+      ]
+    },
+    {
+      "stmt_id": "st_delta_limit",
+      "subtype": "theorem",
+      "clause_range": [
+        78,
+        79
+      ],
+      "truth_value": "true",
+      "scope_id": "s_generalized_let5",
+      "exposed_entities": [
+        "f_{y,epsilon}",
+        "F_{y,epsilon}",
+        "delta_y",
+        "y",
+        "epsilon"
+      ]
+    },
+    {
+      "stmt_id": "st_green_function",
+      "subtype": "theorem",
+      "clause_range": [
+        80,
+        80
+      ],
+      "truth_value": "true",
+      "scope_id": "s_generalized_let5",
+      "exposed_entities": [
+        "U",
+        "delta_y",
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_def_generalized_derivative2",
+      "subtype": "definition",
+      "clause_range": [
+        81,
+        81
+      ],
+      "truth_value": null,
+      "scope_id": "s_generalized_let6",
+      "exposed_entities": [
+        "u",
+        "w",
+        "G",
+        "alpha"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_generalization",
+      "subtype": "remark",
+      "clause_range": [
+        82,
+        82
+      ],
+      "truth_value": null,
+      "scope_id": "s_generalized_let6",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_uniqueness_generalized2",
+      "subtype": "theorem",
+      "clause_range": [
+        83,
+        83
+      ],
+      "truth_value": "true",
+      "scope_id": "s_generalized_let6",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_orthogonal_complement",
+      "subtype": "definition",
+      "clause_range": [
+        84,
+        84
+      ],
+      "truth_value": null,
+      "scope_id": "s_orthogonal",
+      "exposed_entities": [
+        "M",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_perpendicular",
+      "subtype": "assumption",
+      "clause_range": [
+        85,
+        85
+      ],
+      "truth_value": null,
+      "scope_id": "s_orthogonal_let",
+      "exposed_entities": [
+        "M",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_perpendicular_principle",
+      "subtype": "theorem",
+      "clause_range": [
+        86,
+        86
+      ],
+      "truth_value": "true",
+      "scope_id": "s_orthogonal",
+      "exposed_entities": [
+        "u",
+        "v",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_orthogonal_decomposition",
+      "subtype": "theorem",
+      "clause_range": [
+        87,
+        88
+      ],
+      "truth_value": "true",
+      "scope_id": "s_orthogonal",
+      "exposed_entities": [
+        "u",
+        "v",
+        "w",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_riesz",
+      "subtype": "assumption",
+      "clause_range": [
+        89,
+        89
+      ],
+      "truth_value": null,
+      "scope_id": "s_riesz_let",
+      "exposed_entities": [
+        "X",
+        "X*"
+      ]
+    },
+    {
+      "stmt_id": "st_riesz_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        90,
+        91
+      ],
+      "truth_value": "true",
+      "scope_id": "s_riesz",
+      "exposed_entities": [
+        "f",
+        "v",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_riesz_kernel",
+      "subtype": "theorem",
+      "clause_range": [
+        92,
+        93
+      ],
+      "truth_value": "true",
+      "scope_id": "s_riesz",
+      "exposed_entities": [
+        "f",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_def_duality_map",
+      "subtype": "definition",
+      "clause_range": [
+        94,
+        94
+      ],
+      "truth_value": null,
+      "scope_id": "s_duality_let",
+      "exposed_entities": [
+        "J",
+        "X",
+        "X*",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_def_duality_pairing",
+      "subtype": "definition",
+      "clause_range": [
+        95,
+        96
+      ],
+      "truth_value": null,
+      "scope_id": "s_duality_let",
+      "exposed_entities": [
+        "f",
+        "u",
+        "J",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_duality_properties",
+      "subtype": "theorem",
+      "clause_range": [
+        97,
+        98
+      ],
+      "truth_value": "true",
+      "scope_id": "s_duality",
+      "exposed_entities": [
+        "J",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_duality_real_linear",
+      "subtype": "theorem",
+      "clause_range": [
+        99,
+        100
+      ],
+      "truth_value": "true",
+      "scope_id": "s_duality",
+      "exposed_entities": [
+        "X",
+        "J"
+      ]
+    },
+    {
+      "stmt_id": "st_duality_complex_antilinear",
+      "subtype": "theorem",
+      "clause_range": [
+        101,
+        103
+      ],
+      "truth_value": "true",
+      "scope_id": "s_duality",
+      "exposed_entities": [
+        "X",
+        "J"
+      ]
+    },
+    {
+      "stmt_id": "st_equivalence_three",
+      "subtype": "theorem",
+      "clause_range": [
+        104,
+        104
+      ],
+      "truth_value": "true",
+      "scope_id": "s_orthogonality_principle",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_strongly_monotone",
+      "subtype": "definition",
+      "clause_range": [
+        105,
+        106
+      ],
+      "truth_value": null,
+      "scope_id": "s_monotone_let",
+      "exposed_entities": [
+        "X",
+        "A",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_monotone_existence",
+      "subtype": "theorem",
+      "clause_range": [
+        107,
+        107
+      ],
+      "truth_value": "true",
+      "scope_id": "s_monotone",
+      "exposed_entities": [
+        "z",
+        "A",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_def_tensor_product",
+      "subtype": "definition",
+      "clause_range": [
+        109,
+        110
+      ],
+      "truth_value": null,
+      "scope_id": "s_problems_let",
+      "exposed_entities": [
+        "U",
+        "V",
+        "chi"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_ab",
+      "target": "st_def_inner_C",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_inner_C",
+      "target": "st_conclusion_prehilbert_C",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_L2",
+      "target": "st_def_inner_L2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_inner_L2",
+      "target": "st_conclusion_L2_hilbert",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_L2K",
+      "target": "st_conclusion_L2K_hilbert",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_G_open",
+      "target": "st_def_Ck",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_G_open2",
+      "target": "st_density_real",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_G_open2",
+      "target": "st_density_complex",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_G_open2",
+      "target": "st_integration_by_parts_high",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_G_open3",
+      "target": "st_gauss_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_gauss_theorem",
+      "target": "st_IBP_from_gauss",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_variational",
+      "target": "st_variational_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_IBP_classical",
+      "target": "st_def_generalized_derivative",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_perpendicular",
+      "target": "st_perpendicular_principle",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_perpendicular",
+      "target": "st_orthogonal_decomposition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_riesz",
+      "target": "st_riesz_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_riesz",
+      "target": "st_riesz_kernel",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_duality_map",
+      "target": "st_duality_properties",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_duality_properties",
+      "target": "st_duality_real_linear",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_duality_properties",
+      "target": "st_duality_complex_antilinear",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_strongly_monotone",
+      "target": "st_monotone_existence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_remark_hamilton",
+      "target": "st_variational_theorem",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_remark_distribution",
+      "target": "st_def_generalized_function",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_remark_generalization",
+      "target": "st_def_generalized_derivative2",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_WS_boundary_zero",
+      "target": "st_def_WS",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": [
+    "Clause [0] mentions 'Lebesgue integral' but no scope for appendix; skipped.",
+    "Clause [1] is a remark about notation; skipped.",
+    "Clause [14a] and [14b] are incomplete fragments; skipped.",
+    "Clause [17] is an exercise question; skipped.",
+    "Clause [31] references '式1' which is not present; skipped.",
+    "Clause [65a] and [65b] are incomplete; skipped.",
+    "Clause [66]-[68] are incomplete; skipped.",
+    "Clause [108a] and [108b] are incomplete; skipped."
+  ]
+}

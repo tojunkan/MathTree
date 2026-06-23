@@ -1,0 +1,100 @@
+[SCOPE:root|description|平行性（向量丛）]
+文章名: VecPar
+标题: 平行性（向量丛）
+
+[SCOPE:s_notation|let_bind|记号与设定]
+[0] 本文使用爱因斯坦求和约定。
+[1] 设 $M$ 是 $n$ 维微分流形，$E$ 是其上秩为 $k$ 的光滑向量丛。
+[2] 设给定了 $E$ 上的联络 $D$。
+
+[/SCOPE:s_notation]
+[SCOPE:s_parallel_section|description|平行截面]
+[3] 向量丛 $E$ 的截面 $\xi\in\Gamma(E)$ 称为在联络 $D$ 之下平行的（parallel），如果
+[4] $$D\xi=0~$$
+[SCOPE:s_ps_let1|let_bind|局部标架与联络形式]
+[5] 在局部标架 $\{s_\alpha\}_{\alpha=1}^k$ 之下，如果 $\xi=\xi^\alpha s_\alpha$，$\omega$ 是此标架下的联络 1-形式矩阵，
+[6] 则 $D\xi=0$ 等价于
+[7] $$
+d\xi^\alpha+\xi^\beta\omega^\alpha_\beta=0 \quad(1\leq \alpha\leq k)~.
+$$
+[/SCOPE:s_ps_let1]
+[SCOPE:s_ps_let2|let_bind|切丛与余切丛标架]
+[8] 进一步给定切丛和余切丛的局部标架 $\{e_i\},\{\theta_j\}$ (二者为对偶) 之后，就有了克氏符 $\Gamma_{\beta i}^\alpha$，
+[9] 因此上式进一步等价于方程组
+[10] $$
+e_i(\xi^\alpha)+\xi^\beta\Gamma^\alpha_{\beta i}=0\quad (1\leq \alpha\leq k,\,1\leq i\leq n)~.
+$$
+[/SCOPE:s_ps_let2]
+[11] 这是普法夫系。
+[12] 在局部上，根据费罗贝尼乌斯定理，这方程组可解（局部上相当于有 $k$ 个函数 $\{\xi^\alpha\}_{\alpha=1}^k$ 满足上面的偏微分方程组）当且仅当
+[13] $$
+0=d(\omega^\alpha_\beta\xi^\beta)=d\xi^\beta\wedge\omega^\alpha_\beta+\xi^\beta d\omega^\alpha_\beta=\xi^\beta\wedge\Omega_\beta^\alpha~.
+$$
+[14] 这里 $\Omega$ 是 $D$ 的曲率方阵。
+[15] 这也就表示这个方程组可解当且仅当
+[16] $$
+\xi^\beta\wedge\Omega_\beta^\alpha=0~.
+$$
+[17] 因此如果 $D$ 的曲率在某个开集上等于零，
+[18] 则上述普法夫系在此开集上是局部可积的，
+[19] 于是此开集上存在 $E$ 的局部平行截面。
+[20] 这样看来，曲率是平行截面存在的障碍。
+[SCOPE:s_ps_let3|let_bind|平凡丛例子]
+[21] $\mathbb{R}^n$ 上平凡丛 $\mathbb{R\times}^n\mathbb{R}^k$ 上的平凡联络就是通常的微分运算，
+[22] 因此当然是可交换的，曲率算子为零。
+[23] 设 $\partial_\alpha$ 是 $\mathbb{R}^k$ 上的一个仿射坐标向量，
+[24] 则它在此联络下就是平行的。
+[25] 这很符合"平行"的直观意义。
+
+[/SCOPE:s_parallel_section]
+[/SCOPE:s_ps_let3]
+[SCOPE:s_parallel_transport|description|平行移动]
+[26] 向量丛在区域上的平行截面很可能不存在，
+[27] 但却可以定义沿着某条道路平行的截面。
+[SCOPE:s_pt_let1|let_bind|道路与截面]
+[28] 设 $\gamma:[0,a]\to M$ 是 Lipschitz 连续的道路，$\xi_0\in E_{\gamma(0)}$ 是沿着道路的截面。
+[29a] (t)\in E_{\gamma
+[29b] (t)}$。
+[30] 称此截面是沿着道路 $\gamma$ 平行的（parallel along $\gamma$），如果 $D_{\gamma'}\xi(t)=0$。
+[31] 此时称 $\xi(a)$ 是 $\xi(0)$ 沿着 $\gamma$ 的平行移动（parallel transport）。
+[/SCOPE:s_pt_let1]
+[SCOPE:s_pt_let2|let_bind|局部坐标与标架]
+[32a] (t)=(\gamma^i
+[32b] (t))$，$\xi=\xi^\alpha s_\alpha$，
+[33] 则 $D_{\gamma'}\xi=0$ 等价于
+[34] $$
+\frac{d\xi^\alpha}{dt}+\Gamma_{\beta i}^\alpha(\gamma(t))\frac{d\gamma^i}{dt}(t)\xi^\beta=0~.
+$$
+[/SCOPE:s_pt_let2]
+[35] 这是 $k$ 个函数 $\xi^\alpha$ 的齐次线性常微分方程组，系数是有界的，
+[36] 所以给定初值之后它有唯一的 Lipschitz 连续的解。
+[SCOPE:s_pt_let3|let_bind|平行移动算子]
+[37a] (a)}$，将任何一个 $\xi(0)\in E_{\gamma(0)}$ 通过平行移动变为 $\xi
+[37b] (a)\in E_{\gamma
+[37c] (a)}$。
+[38] 从微分方程本身可得出终值与 $\gamma$ 重参数化的方法无关。
+[39] 简单计算给出 $P_\gamma^{-1}$ 实为沿着反向道路 $\gamma^{-1}$ 的平行移动。
+[40] 若命 $P_\gamma^{\tau,t}$ 表示从 $E_{\gamma(\tau)}$ 到 $E_{\gamma(t)}$ 的沿着 $\gamma$ 的平行移动，
+[41] 则简单地计算给出：对于任何截面 $\xi\in\Gamma(E)$ 和任何使得 $\gamma'(t)$ 存在的 $t$，皆有
+[42] $$
+D_{\gamma'(t)}\xi(\gamma(t))=\lim_{\tau\to t}\frac{P_\gamma^{\tau,t}\xi(\gamma(\tau))-\xi(\gamma(t))}{\tau-t}~.
+$$
+[/SCOPE:s_pt_let3]
+[43] 这样看来，沿着道路的平行移动实则决定了整个联络本身的取值。
+[44] 对于 $\mathbb{R}^n$ 上平凡丛 $\mathbb{R}^n\times\mathbb{R}^k$ 上的平凡联络，沿着两条有同样起终点的道路的平行移动给出同样的结果：它就是通常意义下实数空间中的平行移动，移动的结果显然跟移动的路径无关。
+[45] 然而对于一般的联络来说这是不对的。
+[46] 这种现象是因为一般的联络曲率不为零。
+[47] 这是和乐定理要讨论的内容。
+[/SCOPE:s_parallel_transport]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_parallel_transport",
+    "target_scope": "s_parallel_section",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "平行移动是平行截面概念在道路上的推广"
+  }
+]

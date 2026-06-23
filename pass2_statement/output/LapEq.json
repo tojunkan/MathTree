@@ -1,0 +1,322 @@
+{
+  "article_name": "LapEq",
+  "statements": [
+    {
+      "stmt_id": "st_assump_omega_u",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let",
+      "exposed_entities": [
+        "Ω",
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_def_laplace_eq",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "Δu=0"
+      ]
+    },
+    {
+      "stmt_id": "st_def_laplacian",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "Δ",
+        "∇"
+      ]
+    },
+    {
+      "stmt_id": "st_def_harmonic",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "调和函数"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_physical",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_bc",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "边界条件"
+      ]
+    },
+    {
+      "stmt_id": "st_coords_cartesian",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_coords",
+      "exposed_entities": [
+        "直角坐标系"
+      ]
+    },
+    {
+      "stmt_id": "st_coords_other",
+      "subtype": "remark",
+      "clause_range": [
+        13,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_coords",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_intro",
+      "subtype": "remark",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "V(r)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "u",
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_sep_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2_solve_let1",
+      "exposed_entities": [
+        "X",
+        "Y",
+        "k_x",
+        "k_y"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_X_sol",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        31
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2_solve_let2",
+      "exposed_entities": [
+        "X_n",
+        "a_1",
+        "b_1",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_Y_sol",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        38
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2_solve_let2",
+      "exposed_entities": [
+        "Y_n",
+        "a_2",
+        "b_2"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_u_n",
+      "subtype": "conclusion",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2_solve_let2",
+      "exposed_entities": [
+        "u_n",
+        "C'_n"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_superposition",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        41
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2_solve_let2",
+      "exposed_entities": [
+        "C_n"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_fourier",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        45
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2_solve_let2",
+      "exposed_entities": [
+        "B_n",
+        "C_n"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        48,
+        48
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2_solve_let2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_omega_u",
+      "target": "st_def_laplace_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_omega_u",
+      "target": "st_def_laplacian",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_omega_u",
+      "target": "st_def_harmonic",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_bc",
+      "target": "st_def_laplace_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_assump",
+      "target": "st_ex2_sep_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_sep_eq",
+      "target": "st_ex2_X_sol",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_sep_eq",
+      "target": "st_ex2_Y_sol",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_X_sol",
+      "target": "st_ex2_u_n",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_Y_sol",
+      "target": "st_ex2_u_n",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_u_n",
+      "target": "st_ex2_superposition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_superposition",
+      "target": "st_ex2_fourier",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_fourier",
+      "target": "st_ex2_final",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

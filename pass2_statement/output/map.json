@@ -1,0 +1,602 @@
+{
+  "article_name": "map",
+  "statements": [
+    {
+      "stmt_id": "st_def1_mapping",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "A",
+        "B",
+        "f",
+        "C",
+        "f(C)",
+        "Im(f)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_example",
+      "subtype": "example",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_injection",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "f",
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_surjection",
+      "subtype": "definition",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "f",
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_bijection",
+      "subtype": "definition",
+      "clause_range": [
+        22,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "f",
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_inverse_existence",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "f^{-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_cardinality",
+      "subtype": "remark",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_examples",
+      "subtype": "example",
+      "clause_range": [
+        30,
+        34
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_cantor_bernstein",
+      "subtype": "theorem",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "A",
+        "B",
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_binary_operation",
+      "subtype": "definition",
+      "clause_range": [
+        37,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_binary_example",
+      "subtype": "example",
+      "clause_range": [
+        40,
+        41
+      ],
+      "truth_value": "true",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_multi_operation",
+      "subtype": "definition",
+      "clause_range": [
+        43,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "A_1",
+        "A_N",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_multi_notation",
+      "subtype": "remark",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_equality",
+      "subtype": "definition",
+      "clause_range": [
+        47,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_restriction_extension",
+      "subtype": "definition",
+      "clause_range": [
+        50,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "f",
+        "g",
+        "C",
+        "f|_C"
+      ]
+    },
+    {
+      "stmt_id": "st_def5_identity",
+      "subtype": "definition",
+      "clause_range": [
+        55,
+        58
+      ],
+      "truth_value": null,
+      "scope_id": "s_def5",
+      "exposed_entities": [
+        "X",
+        "I_X",
+        "E_X",
+        "id_X"
+      ]
+    },
+    {
+      "stmt_id": "st_def6_composition",
+      "subtype": "definition",
+      "clause_range": [
+        59,
+        70
+      ],
+      "truth_value": null,
+      "scope_id": "s_def6",
+      "exposed_entities": [
+        "f",
+        "g",
+        "A",
+        "B",
+        "C",
+        "D",
+        "g∘f"
+      ]
+    },
+    {
+      "stmt_id": "st_def7_product_map",
+      "subtype": "definition",
+      "clause_range": [
+        71,
+        74
+      ],
+      "truth_value": null,
+      "scope_id": "s_def7",
+      "exposed_entities": [
+        "f",
+        "g",
+        "A",
+        "B",
+        "C",
+        "D",
+        "f×g"
+      ]
+    },
+    {
+      "stmt_id": "st_def8_diagonal_product",
+      "subtype": "definition",
+      "clause_range": [
+        75,
+        79
+      ],
+      "truth_value": null,
+      "scope_id": "s_def8",
+      "exposed_entities": [
+        "f",
+        "g",
+        "A",
+        "B",
+        "D",
+        "Δ",
+        "(f,g)"
+      ]
+    },
+    {
+      "stmt_id": "st_def9_inverse_map",
+      "subtype": "definition",
+      "clause_range": [
+        88,
+        92
+      ],
+      "truth_value": null,
+      "scope_id": "s_def9",
+      "exposed_entities": [
+        "f",
+        "A",
+        "A'",
+        "B",
+        "R",
+        "f^{-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_sine",
+      "subtype": "example",
+      "clause_range": [
+        93,
+        98
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1_inverse_composition",
+      "subtype": "corollary",
+      "clause_range": [
+        99,
+        102
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": [
+        "f",
+        "A",
+        "R",
+        "B",
+        "f^{-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1_power_set",
+      "subtype": "remark",
+      "clause_range": [
+        103,
+        110
+      ],
+      "truth_value": null,
+      "scope_id": "s_cor1",
+      "exposed_entities": [
+        "A",
+        "B",
+        "B^A",
+        "2^A"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1_inverse_image",
+      "subtype": "definition",
+      "clause_range": [
+        111,
+        117
+      ],
+      "truth_value": null,
+      "scope_id": "s_cor1",
+      "exposed_entities": [
+        "f",
+        "A",
+        "B",
+        "f^{-1}",
+        "C",
+        "f^{-1}(C)"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1_bijection_inverse",
+      "subtype": "conclusion",
+      "clause_range": [
+        118,
+        129
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cor1",
+      "exposed_entities": [
+        "f",
+        "A",
+        "B",
+        "f^{-1}",
+        "I_A",
+        "I_B"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_bijection_iff_inverse",
+      "subtype": "theorem",
+      "clause_range": [
+        131,
+        133
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "f",
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_def10_left_right_inverse",
+      "subtype": "definition",
+      "clause_range": [
+        136,
+        139
+      ],
+      "truth_value": null,
+      "scope_id": "s_def10",
+      "exposed_entities": [
+        "f",
+        "A",
+        "B",
+        "g",
+        "I_A",
+        "I_B"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_injection_iff_left",
+      "subtype": "theorem",
+      "clause_range": [
+        140,
+        142
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "f",
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_surjection_iff_right",
+      "subtype": "theorem",
+      "clause_range": [
+        143,
+        143
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "f",
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        145,
+        146
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor2_left_inverse_surjective",
+      "subtype": "corollary",
+      "clause_range": [
+        147,
+        148
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_left_inverse_not_unique",
+      "subtype": "example",
+      "clause_range": [
+        149,
+        155
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": [
+        "f",
+        "g_0",
+        "g_1"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def2_injection",
+      "target": "st_def2_bijection",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_surjection",
+      "target": "st_def2_bijection",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_bijection",
+      "target": "st_def2_inverse_existence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_inverse_existence",
+      "target": "st_def2_bijection",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_bijection",
+      "target": "st_def2_cardinality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_cantor_bernstein",
+      "target": "st_def2_bijection",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def9_inverse_map",
+      "target": "st_thm1_bijection_iff_inverse",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def10_left_right_inverse",
+      "target": "st_thm2_injection_iff_left",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def10_left_right_inverse",
+      "target": "st_thm2_surjection_iff_right",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_injection_iff_left",
+      "target": "st_cor2_left_inverse_surjective",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_surjection_iff_right",
+      "target": "st_cor2_left_inverse_surjective",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_left_inverse_not_unique",
+      "target": "st_def10_left_right_inverse",
+      "edge_type": "counterexample_of",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_bijection_iff_inverse",
+      "target": "st_def9_inverse_map",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1说双射等价于存在逆映射，而定义9定义了逆映射。"
+    },
+    {
+      "source": "st_thm2_injection_iff_left",
+      "target": "st_def10_left_right_inverse",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2说单射/满射等价于存在左/右逆，而定义10定义了左/右逆。"
+    },
+    {
+      "source": "st_thm2_surjection_iff_right",
+      "target": "st_def10_left_right_inverse",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2说单射/满射等价于存在左/右逆，而定义10定义了左/右逆。"
+    },
+    {
+      "source": "st_cor2_left_inverse_surjective",
+      "target": "st_thm2_injection_iff_left",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "推论2由定理2推出。"
+    },
+    {
+      "source": "st_cor2_left_inverse_surjective",
+      "target": "st_thm2_surjection_iff_right",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "推论2由定理2推出。"
+    },
+    {
+      "source": "st_ex3_left_inverse_not_unique",
+      "target": "st_def10_left_right_inverse",
+      "edge_type": "counterexample_of",
+      "category": "logic",
+      "note": "例3说明左逆不唯一，而定义10定义了左逆。"
+    }
+  ],
+  "unresolved": []
+}

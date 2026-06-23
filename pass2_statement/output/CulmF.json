@@ -1,0 +1,371 @@
+{
+  "article_name": "CulmF",
+  "statements": [
+    {
+      "stmt_id": "st_radial_eq",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let1",
+      "exposed_entities": [
+        "ψ_l",
+        "r",
+        "E_{n,l}",
+        "u_l",
+        "ρ",
+        "η",
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_coulomb_func_def",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let2",
+      "exposed_entities": [
+        "F_l(η,ρ)",
+        "G_l(η,ρ)"
+      ]
+    },
+    {
+      "stmt_id": "st_F_l_expr",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let2",
+      "exposed_entities": [
+        "A_l(η)",
+        "M(a,b,z)"
+      ]
+    },
+    {
+      "stmt_id": "st_whittaker_M",
+      "subtype": "definition",
+      "clause_range": [
+        18,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let2",
+      "exposed_entities": [
+        "M_{κ,μ}(z)"
+      ]
+    },
+    {
+      "stmt_id": "st_asymptotic_F",
+      "subtype": "theorem",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_phase_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_phase_shift_def",
+      "subtype": "definition",
+      "clause_range": [
+        28,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_phase_let",
+      "exposed_entities": [
+        "σ_l(η)"
+      ]
+    },
+    {
+      "stmt_id": "st_F_at_zero",
+      "subtype": "theorem",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": "true",
+      "scope_id": "s_asymp_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_F_small_r",
+      "subtype": "theorem",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": "true",
+      "scope_id": "s_asymp_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_l_zero_remark",
+      "subtype": "remark",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_asymp_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_H_plus_def",
+      "subtype": "definition",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_other_let",
+      "exposed_entities": [
+        "H_l^±(η,ρ)"
+      ]
+    },
+    {
+      "stmt_id": "st_H_plus_whittaker",
+      "subtype": "definition",
+      "clause_range": [
+        40,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_other_let",
+      "exposed_entities": [
+        "W_{κ,μ}(z)"
+      ]
+    },
+    {
+      "stmt_id": "st_U_def",
+      "subtype": "definition",
+      "clause_range": [
+        44,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_other_let",
+      "exposed_entities": [
+        "U(a,b,z)"
+      ]
+    },
+    {
+      "stmt_id": "st_H_plus_alt",
+      "subtype": "definition",
+      "clause_range": [
+        50,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_other_let",
+      "exposed_entities": [
+        "θ_l(η,ρ)"
+      ]
+    },
+    {
+      "stmt_id": "st_G_asymptotic",
+      "subtype": "theorem",
+      "clause_range": [
+        54,
+        55
+      ],
+      "truth_value": "true",
+      "scope_id": "s_prop_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivative_M",
+      "subtype": "theorem",
+      "clause_range": [
+        56,
+        57
+      ],
+      "truth_value": "true",
+      "scope_id": "s_prop_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivative_W",
+      "subtype": "theorem",
+      "clause_range": [
+        58,
+        58
+      ],
+      "truth_value": "true",
+      "scope_id": "s_prop_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_computation_remark",
+      "subtype": "remark",
+      "clause_range": [
+        59,
+        62
+      ],
+      "truth_value": null,
+      "scope_id": "s_prop_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_wronskian_property",
+      "subtype": "theorem",
+      "clause_range": [
+        63,
+        64
+      ],
+      "truth_value": "true",
+      "scope_id": "s_prop_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_wronskian_def",
+      "subtype": "definition",
+      "clause_range": [
+        65,
+        67
+      ],
+      "truth_value": null,
+      "scope_id": "s_prop_let",
+      "exposed_entities": [
+        "W{f1,f2}"
+      ]
+    },
+    {
+      "stmt_id": "st_normalization",
+      "subtype": "theorem",
+      "clause_range": [
+        68,
+        69
+      ],
+      "truth_value": "true",
+      "scope_id": "s_prop_let",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_radial_eq",
+      "target": "st_coulomb_func_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coulomb_func_def",
+      "target": "st_F_l_expr",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_F_l_expr",
+      "target": "st_whittaker_M",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coulomb_func_def",
+      "target": "st_asymptotic_F",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_asymptotic_F",
+      "target": "st_phase_shift_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coulomb_func_def",
+      "target": "st_F_at_zero",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_F_at_zero",
+      "target": "st_F_small_r",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_F_small_r",
+      "target": "st_l_zero_remark",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_coulomb_func_def",
+      "target": "st_H_plus_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_H_plus_def",
+      "target": "st_H_plus_whittaker",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_H_plus_whittaker",
+      "target": "st_U_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_H_plus_def",
+      "target": "st_H_plus_alt",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coulomb_func_def",
+      "target": "st_G_asymptotic",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coulomb_func_def",
+      "target": "st_derivative_M",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivative_M",
+      "target": "st_derivative_W",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivative_W",
+      "target": "st_computation_remark",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_coulomb_func_def",
+      "target": "st_wronskian_property",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_wronskian_property",
+      "target": "st_wronskian_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coulomb_func_def",
+      "target": "st_normalization",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

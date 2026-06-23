@@ -1,0 +1,192 @@
+[SCOPE:root|description|平面波的球谐展开]
+文章名: Pl2Ylm
+标题: 平面波的球谐展开
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=类氢原子基态的动量谱
+
+[SCOPE:s_plane_wave_expansion|description|平面波展开式]
+[SCOPE:s_plane_wave_let|let_bind|平面波变量]
+[0] 1复数形式的归一化平面波可以展开为式 13 的形式：
+[1] \begin{equation}
+\left\lvert \boldsymbol{\mathbf{k}} \right\rangle = \frac{1}{(2\pi)^{3/2}} \mathrm{e} ^{ \mathrm{i} \boldsymbol{\mathbf{k}} \boldsymbol\cdot \boldsymbol{\mathbf{r}} } = \sqrt{\frac{2}{\pi}} \sum_{l=0}^{\infty} \mathrm{i} ^l j_l(kr) \sum_{m=-l}^l Y_{l,m}^*( \hat{\boldsymbol{\mathbf{k}}} ) Y_{l,m}( \hat{\boldsymbol{\mathbf{r}}} )~,
+\end{equation}
+[/SCOPE:s_plane_wave_let]
+[2] 推导见下文。
+[3] 由 $Y_{l,m}^* = (-1)^m Y_{l,-m}$ 易证这里的复共轭可以加在任意一个球谐函数上。
+[4] 另外由 $Y_{l,m}(- \hat{\boldsymbol{\mathbf{k}}} ) = (-1)^l Y_{l,m}( \hat{\boldsymbol{\mathbf{k}}} )$ 易得 $ \left\lvert \boldsymbol{\mathbf{k}} \right\rangle ^* = \left\lvert - \boldsymbol{\mathbf{k}} \right\rangle $。
+[5] 可以证明，一组正交归一的球面波基底为（见 “径向函数的归一化”）
+[6] \begin{equation}
+\left\lvert s_{l,m}(k) \right\rangle = s_{l,m}(k, \boldsymbol{\mathbf{r}} ) = \frac{1}{r}\sqrt{\frac{2}{\pi}}kr j_l(kr) Y_{l,m}( \hat{\boldsymbol{\mathbf{r}}} )~.
+\end{equation}
+[7] 式 1 [链接 L0]
+[8] 可以表示为相同能量球谐波的线性组合
+[9] \begin{equation}
+\left\lvert \boldsymbol{\mathbf{k}} \right\rangle = \sum_{l,m}\frac{ \mathrm{i} ^l}{k} Y_{l,m}^*( \hat{\boldsymbol{\mathbf{k}}} ) \left\lvert s_{l,m}(k) \right\rangle ~.
+\end{equation}
+
+[/SCOPE:s_plane_wave_expansion]
+[SCOPE:s_other_forms|description|其他形式]
+[10] 根据式 24 ，令 $\alpha$ 为 $ \hat{\boldsymbol{\mathbf{k}}} , \hat{\boldsymbol{\mathbf{r}}} $ 的夹角，式 1 也可以记为
+[11] \begin{equation}
+\left\lvert \boldsymbol{\mathbf{k}} \right\rangle = \frac{1}{(2\pi)^{3/2}} \sum_{l=0}^{\infty} \mathrm{i} ^l (2l+1) j_l(kr) P_l(\cos\alpha)~,
+\end{equation}
+[12] 所以 $z$ 方向的平面波可以仅由 $Y_{l,0}$ 球谐函数展开
+[13] \begin{equation}
+\left\lvert k \hat{\boldsymbol{\mathbf{z}}} \right\rangle = \frac{1}{(2\pi)^{3/2}} \mathrm{e} ^{ \mathrm{i} kz}
+= \frac{1}{\pi} \sum_{l=0}^{\infty} \mathrm{i} ^l \sqrt{l+\frac12}\ j_l(kr) Y_{l,0}( \hat{\boldsymbol{\mathbf{r}}} )~.
+\end{equation}
+
+[/SCOPE:s_other_forms]
+[SCOPE:s_fourier_transform|description|球谐展开函数的傅里叶变换]
+[SCOPE:s_fourier_let|let_bind|傅里叶变换变量]
+[14] 若三维函数具有球谐展开的形式
+[15] \begin{equation}
+f( \boldsymbol{\mathbf{r}} ) = \frac{1}{r}\sum_{l,m} u_{l,m}(r) Y_{l,m}( \hat{\boldsymbol{\mathbf{r}}} )~,
+\end{equation}
+[/SCOPE:s_fourier_let]
+[16] 要做三维傅里叶变换
+[17] \begin{equation}
+g( \boldsymbol{\mathbf{k}} ) = \left\langle \boldsymbol{\mathbf{k}} \middle| f \right\rangle = \frac{1}{(2\pi)^{3/2}} \int f( \boldsymbol{\mathbf{r}} ) \mathrm{e} ^{- \mathrm{i} \boldsymbol{\mathbf{k}} \boldsymbol{\mathbf{r}} } \,\mathrm{d}^{3}{r} ~.
+\end{equation}
+[18] 式 3 [链接 L1]
+[19] 代入上式得
+[20] \begin{equation}
+g( \boldsymbol{\mathbf{k}} ) = \frac{1}{k} \sum_{l,m} g_{l,m}(k) Y_{l,m}( \hat{\boldsymbol{\mathbf{k}}} ) ~,
+\end{equation}
+[21] \begin{equation}
+g_{l,m}(k) = \sqrt{\frac{2}{\pi}} \mathrm{i} ^{-l} \int_0^{+\infty} u_{l,m}(r) kr j_l(kr) \,\mathrm{d}{r} ~,
+\end{equation}
+[22] 于是 $f( \boldsymbol{\mathbf{r}} )$ 可分解为平面波
+[23] \begin{equation}
+f( \boldsymbol{\mathbf{r}} ) = \int g_{l,m}(k) \left\lvert \boldsymbol{\mathbf{k}} \right\rangle \,\mathrm{d}^{3}{k} ~.
+\end{equation}
+
+[/SCOPE:s_fourier_transform]
+[SCOPE:s_example1|description|类氢原子基态的动量谱]
+[24] 例 1 类氢原子基态的动量谱
+[SCOPE:s_example1_let|let_bind|例1变量]
+[25] 类氢原子基态的波函数为（见式 2 ，使用原子单位）
+[26] \begin{equation}
+\psi( \boldsymbol{\mathbf{r}} ) = \frac{Z^{3/2}}{\sqrt\pi} \mathrm{e} ^{-Zr}~,
+\end{equation}
+[/SCOPE:s_example1_let]
+[27] \begin{equation}
+R_{00}(r) = 2 Z^{3/2} \mathrm{e} ^{-Zr}~,
+\end{equation}
+[28] \begin{equation}
+g( \boldsymbol{\mathbf{k}} ) = \frac{\sqrt{2}}{k\pi} \int_0^\infty \mathrm{e} ^{-r} \sin\left(kr\right) r \,\mathrm{d}{r} = \frac{2\sqrt{2}}{\pi(k^2+1)^2}~,
+\end{equation}
+[29] \begin{equation}
+g( \boldsymbol{\mathbf{k}} ) = \left(\frac{2}{Z} \right) ^{3/2} \frac{1}{\pi(k^2/Z^2 + 1)^2}~.
+\end{equation}
+
+[/SCOPE:s_example1]
+[SCOPE:s_derivation1|description|推导1]
+[30] 理论上，式 1 可以通过计算式 14 得到，
+[31] 但这个积分较为复杂，可能需要借助 Mathematica 等工具2
+[32] \begin{equation}
+\begin{aligned}
+&\quad f_{l,m}(r) = \int Y_{l,m}^*( \hat{\boldsymbol{\mathbf{r}}} ) \mathrm{e} ^{ \mathrm{i} \boldsymbol{\mathbf{k}} \boldsymbol\cdot \boldsymbol{\mathbf{r}} } \,\mathrm{d}{\Omega} \\
+&= A_{l,m}\int_0^\pi \sin\theta \…[truncated]…mathrm{d}{\theta} \int_0^{2\pi} \,\mathrm{d}{\phi} \,\,P_l^m(\cos\theta) \mathrm{e} ^{- \mathrm{i} m \phi}\\
+&\times \exp\left[ \mathrm{i} (k_x r \sin\theta\cos\phi + k_y r \sin\theta\sin\phi + k_z r \cos\theta)\right] ~.
+\end{aligned}
+\end{equation}
+[33] 式 4 [链接 L2]
+[SCOPE:s_derivation1_let|let_bind|推导1变量]
+[34] 可以知道我们只需要证明 $ \boldsymbol{\mathbf{k}} $ 延 $ \hat{\boldsymbol{\mathbf{z}}} $ 方向的情况，令 $\theta = \alpha$ 即可，也就是上式中 $k_x = 0, k_y = 0, k_z = k$。
+[/SCOPE:s_derivation1_let]
+[35] 由对称性，$m \ne 0$ 时积分都是 0，
+[36] 所以
+[37] \begin{equation}
+\begin{aligned}
+\int Y_{l,0}^*( \hat{\boldsymbol{\mathbf{r}}} ) \mathrm{e} ^{ \mathrm{i} \boldsymbol{\mathbf{k}} \boldsymbol\cdot \boldsymbol{\mathbf{r}} } \,\mathrm{d}{\Omega}
+&= 2\pi A_{l,m}\int_0^\pi P_l(\cos\theta) \exp\left[ \mathrm{i} (k r \cos\theta)\right] \sin\theta \,\mathrm{d}{\theta} \\
+&= 2\pi A_{l,m}\int_{-1}^1 P_l(x) \exp\left[ \mathrm{i} (k r x)\right] \,\mathrm{d}{x} ~.
+\end{aligned}
+\end{equation}
+[38] 式 9 [链接 L3]
+[39] \begin{equation}
+\int Y_{l,0}^*( \hat{\boldsymbol{\mathbf{r}}} ) \mathrm{e} ^{ \mathrm{i} \boldsymbol{\mathbf{k}} \boldsymbol\cdot \boldsymbol{\mathbf{r}} } \,\mathrm{d}{\Omega}
+= 4\pi A_{l,m} \mathrm{i} ^l j_l(\rho)
+= \sqrt{4\pi (2l + 1)}\ \mathrm{i} ^l j_l(\rho)~,
+\end{equation}
+[40] \begin{equation}
+\mathrm{e} ^{ \mathrm{i} \boldsymbol{\mathbf{k}} \boldsymbol\cdot \boldsymbol{\mathbf{r}} } = \sum_{l,m} \sqrt{4\pi (2l + 1)}\ \mathrm{i} ^l j_l(\rho) Y_{l,m}( \hat{\boldsymbol{\mathbf{r}}} )
+=\sum_{l,m} (2l + 1) \mathrm{i} ^l j_l(\rho) P_l(\cos\alpha)~.
+\end{equation}
+
+[/SCOPE:s_derivation1]
+[SCOPE:s_derivation2|description|推导2]
+[41] 另一种方法是把平面波看作三维亥姆霍兹方程的解
+[42] 【未完成】引用三维直角坐标的亥姆霍兹方程
+[43] \begin{equation}
+\boldsymbol{\nabla}^2 \psi_{ \boldsymbol{\mathbf{k}} }( \boldsymbol{\mathbf{r}} ) + k^2 \psi_{ \boldsymbol{\mathbf{k}} }( \boldsymbol{\mathbf{r}} ) = 0~
+\end{equation}
+[44] 的解。
+[45] 这也是
+[46] 定态薛定谔方程 [链接 L4]
+[47] 势能为零的一个解。在
+[48] 球坐标系中解亥姆霍兹方程 [链接 L5]
+[49] 得通解为
+[SCOPE:s_derivation2_let|let_bind|推导2变量]
+[50] \begin{equation}
+f( \boldsymbol{\mathbf{r}} ) = \sum_{l,m} [A_{l,m} j_l(kr) + B_{l,m} y_l(kr)] Y_{l,m}( \hat{\boldsymbol{\mathbf{r}}} )~,
+\end{equation}
+[/SCOPE:s_derivation2_let]
+[51] 第二类球贝塞尔函数 [链接 L6]
+[52] $y_l(kr)$ 在 $r\to 0$ 时有奇点，
+[53] 所以 $B_{l,m} = 0$。
+[54] 而第一类球贝塞尔函数 $j_l$ 在 $r\to \infty$ 时有渐进形式（
+[55] 式 18 [链接 L7]
+[56] \begin{equation}
+j_l(x) \to \sin\left(x - l\pi /2\right) /x~,
+\end{equation}
+[57] 在 $r\to \infty$ 匹配相位即可得到 $A_{l,m}$。
+[58] 【未完成】具体如何匹配？
+
+跨文章引用:
+  [L4] 定态薛定谔方程 → SchEq
+  [L5] 球坐标系中解亥姆霍兹方程 → SphHHz
+  [L6] 第二类球贝塞尔函数 → SphBsl
+[/SCOPE:s_derivation2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_other_forms",
+    "target_scope": "s_plane_wave_expansion",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "其他形式是平面波展开式的特例"
+  },
+  {
+    "source_scope": "s_fourier_transform",
+    "target_scope": "s_plane_wave_expansion",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "傅里叶变换推导使用了平面波展开"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_fourier_transform",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是傅里叶变换的一个应用"
+  },
+  {
+    "source_scope": "s_derivation1",
+    "target_scope": "s_plane_wave_expansion",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推导1证明了平面波展开式"
+  },
+  {
+    "source_scope": "s_derivation2",
+    "target_scope": "s_plane_wave_expansion",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推导2提供了另一种证明"
+  }
+]

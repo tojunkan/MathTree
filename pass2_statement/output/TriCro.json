@@ -1,0 +1,100 @@
+{
+  "article_name": "TriCro",
+  "statements": [
+    {
+      "stmt_id": "st_exercise",
+      "subtype": "exercise",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_geom",
+      "subtype": "remark",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_exercise",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let_D",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_D",
+      "exposed_entities": [
+        "D"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_plane",
+      "subtype": "conclusion",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_exercise",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_conclusion_linear",
+      "subtype": "conclusion",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_exercise",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_mnemonic",
+      "subtype": "remark",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_exercise",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_fig",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_exercise",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let_D",
+      "target": "st_conclusion_plane",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_conclusion_plane",
+      "target": "st_conclusion_linear",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

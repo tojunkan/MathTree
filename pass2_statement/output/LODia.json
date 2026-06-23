@@ -1,0 +1,185 @@
+{
+  "article_name": "LODia",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "V",
+        "A",
+        "lambda_i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1",
+      "subtype": "theorem",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "F",
+        "V",
+        "A",
+        "lambda"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1",
+      "subtype": "lemma",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "V^lambda_i",
+        "e_i"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1_reductio",
+      "exposed_entities": [
+        "m",
+        "alpha_i",
+        "e_i"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_directsum",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_suff_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_suff",
+      "exposed_entities": [
+        "lambda_i"
+      ]
+    },
+    {
+      "stmt_id": "st_suff_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_suff",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_nec_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_nec",
+      "exposed_entities": [
+        "lambda_i"
+      ]
+    },
+    {
+      "stmt_id": "st_nec_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_nec",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_lemma1_assump",
+      "target": "st_lemma1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_concl",
+      "target": "st_lemma1_directsum",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_suff_assump",
+      "target": "st_suff_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_nec_assump",
+      "target": "st_nec_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_lemma1",
+      "target": "st_thm1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理 1 的证明中引用了引理 1"
+    },
+    {
+      "source": "st_suff_concl",
+      "target": "st_thm1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "充分性推出定理"
+    },
+    {
+      "source": "st_nec_concl",
+      "target": "st_thm1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "必要性推出定理"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,580 @@
+{
+  "article_name": "HsDerB",
+  "statements": [
+    {
+      "stmt_id": "st_intro",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rules_table",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rules_notes",
+      "subtype": "remark",
+      "clause_range": [
+        17,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "f(t)",
+        "t",
+        "2x+3"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_comp",
+      "subtype": "conclusion",
+      "clause_range": [
+        38,
+        41
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_warn",
+      "subtype": "remark",
+      "clause_range": [
+        42,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_deriv_table",
+      "subtype": "remark",
+      "clause_range": [
+        45,
+        66
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_identity_deriv",
+      "subtype": "theorem",
+      "clause_range": [
+        67,
+        71
+      ],
+      "truth_value": "true",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_implicit_intro",
+      "subtype": "remark",
+      "clause_range": [
+        72,
+        81
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        82,
+        82
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2_let",
+      "exposed_entities": [
+        "x^2+y^2=1",
+        "(x0,y0)"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_deriv",
+      "subtype": "conclusion",
+      "clause_range": [
+        83,
+        86
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_note",
+      "subtype": "remark",
+      "clause_range": [
+        87,
+        89
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_motivation",
+      "subtype": "remark",
+      "clause_range": [
+        90,
+        97
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        98,
+        103
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "f(x)",
+        "f'(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_note",
+      "subtype": "remark",
+      "clause_range": [
+        104,
+        108
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1",
+      "subtype": "lemma",
+      "clause_range": [
+        109,
+        114
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sumdiff_deriv",
+      "subtype": "theorem",
+      "clause_range": [
+        115,
+        119
+      ],
+      "truth_value": "true",
+      "scope_id": "s_sumdiff",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_product_deriv",
+      "subtype": "theorem",
+      "clause_range": [
+        120,
+        126
+      ],
+      "truth_value": "true",
+      "scope_id": "s_product",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_quotient_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        129,
+        129
+      ],
+      "truth_value": null,
+      "scope_id": "s_quotient_let",
+      "exposed_entities": [
+        "g(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_reciprocal_deriv",
+      "subtype": "theorem",
+      "clause_range": [
+        130,
+        132
+      ],
+      "truth_value": "true",
+      "scope_id": "s_quotient",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_quotient_deriv",
+      "subtype": "theorem",
+      "clause_range": [
+        133,
+        136
+      ],
+      "truth_value": "true",
+      "scope_id": "s_quotient",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_chain_let",
+      "subtype": "assumption",
+      "clause_range": [
+        137,
+        137
+      ],
+      "truth_value": null,
+      "scope_id": "s_chain_let",
+      "exposed_entities": [
+        "y",
+        "f(t)",
+        "t",
+        "g(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_chain_deriv",
+      "subtype": "theorem",
+      "clause_range": [
+        138,
+        142
+      ],
+      "truth_value": "true",
+      "scope_id": "s_chain",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_continuity_note",
+      "subtype": "remark",
+      "clause_range": [
+        143,
+        149
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_constant_deriv",
+      "subtype": "theorem",
+      "clause_range": [
+        150,
+        154
+      ],
+      "truth_value": "true",
+      "scope_id": "s_constant",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_power_intro",
+      "subtype": "remark",
+      "clause_range": [
+        155,
+        156
+      ],
+      "truth_value": null,
+      "scope_id": "s_power",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_power_pos_int",
+      "subtype": "theorem",
+      "clause_range": [
+        157,
+        159
+      ],
+      "truth_value": "true",
+      "scope_id": "s_power",
+      "exposed_entities": [
+        "x^n"
+      ]
+    },
+    {
+      "stmt_id": "st_power_neg_int",
+      "subtype": "theorem",
+      "clause_range": [
+        160,
+        162
+      ],
+      "truth_value": "true",
+      "scope_id": "s_power",
+      "exposed_entities": [
+        "x^{-n}"
+      ]
+    },
+    {
+      "stmt_id": "st_power_zero",
+      "subtype": "theorem",
+      "clause_range": [
+        163,
+        164
+      ],
+      "truth_value": "true",
+      "scope_id": "s_power",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_power_rational",
+      "subtype": "theorem",
+      "clause_range": [
+        165,
+        169
+      ],
+      "truth_value": "true",
+      "scope_id": "s_power",
+      "exposed_entities": [
+        "x^{p/q}"
+      ]
+    },
+    {
+      "stmt_id": "st_exp_deriv",
+      "subtype": "theorem",
+      "clause_range": [
+        170,
+        178
+      ],
+      "truth_value": "true",
+      "scope_id": "s_exp_log",
+      "exposed_entities": [
+        "e^x"
+      ]
+    },
+    {
+      "stmt_id": "st_log_deriv",
+      "subtype": "theorem",
+      "clause_range": [
+        179,
+        182
+      ],
+      "truth_value": "true",
+      "scope_id": "s_exp_log",
+      "exposed_entities": [
+        "ln x"
+      ]
+    },
+    {
+      "stmt_id": "st_exp_log_general",
+      "subtype": "theorem",
+      "clause_range": [
+        183,
+        185
+      ],
+      "truth_value": "true",
+      "scope_id": "s_exp_log",
+      "exposed_entities": [
+        "a^x",
+        "log_a x"
+      ]
+    },
+    {
+      "stmt_id": "st_trig_limit",
+      "subtype": "lemma",
+      "clause_range": [
+        186,
+        194
+      ],
+      "truth_value": "true",
+      "scope_id": "s_trig",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sin_deriv",
+      "subtype": "theorem",
+      "clause_range": [
+        195,
+        198
+      ],
+      "truth_value": "true",
+      "scope_id": "s_trig",
+      "exposed_entities": [
+        "sin x"
+      ]
+    },
+    {
+      "stmt_id": "st_cos_deriv",
+      "subtype": "theorem",
+      "clause_range": [
+        199,
+        202
+      ],
+      "truth_value": "true",
+      "scope_id": "s_trig",
+      "exposed_entities": [
+        "cos x"
+      ]
+    },
+    {
+      "stmt_id": "st_tan_deriv",
+      "subtype": "theorem",
+      "clause_range": [
+        203,
+        207
+      ],
+      "truth_value": "true",
+      "scope_id": "s_trig",
+      "exposed_entities": [
+        "tan x"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_example1_let",
+      "target": "st_example1_comp",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_let",
+      "target": "st_example2_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_quotient_assump",
+      "target": "st_reciprocal_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_reciprocal_deriv",
+      "target": "st_quotient_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_chain_let",
+      "target": "st_chain_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_power_pos_int",
+      "target": "st_power_neg_int",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_power_neg_int",
+      "target": "st_power_zero",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_power_zero",
+      "target": "st_power_rational",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_exp_deriv",
+      "target": "st_log_deriv",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_log_deriv",
+      "target": "st_exp_log_general",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_trig_limit",
+      "target": "st_sin_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sin_deriv",
+      "target": "st_cos_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cos_deriv",
+      "target": "st_tan_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_sumdiff_deriv",
+      "target": "st_lemma1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "和差法则推导使用了引理1"
+    },
+    {
+      "source": "st_product_deriv",
+      "target": "st_lemma1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "积法则推导使用了引理1"
+    },
+    {
+      "source": "st_quotient_deriv",
+      "target": "st_lemma1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "商法则推导使用了引理1"
+    },
+    {
+      "source": "st_chain_deriv",
+      "target": "st_def1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "链式法则推导基于导数定义"
+    },
+    {
+      "source": "st_power_rational",
+      "target": "st_lemma1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "幂函数推导使用了引理1"
+    },
+    {
+      "source": "st_exp_log_general",
+      "target": "st_lemma1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "指数对数推导使用了极限性质"
+    },
+    {
+      "source": "st_tan_deriv",
+      "target": "st_lemma1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "三角函数推导使用了重要极限"
+    }
+  ],
+  "unresolved": []
+}

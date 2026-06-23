@@ -1,0 +1,135 @@
+[SCOPE:root|description|伴随映射]
+文章名: AdjMap
+标题: 伴随映射
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=伴随映射
+
+[SCOPE:s_def1|description|定义 1 伴随映射]
+[0] 给定线性空间，
+[1] 则可由此导出其对偶空间。
+[2] 如果给定两个线性空间 $V$ 和 $W$ 之间的线性映射，
+[3] 则我们可以自然导出对应的 $W^*$ 和 $V^*$ 之间的线性映射，
+[4] 即所谓的伴随映射。
+
+[5] 定义 1 伴随映射
+[6] 图 1：伴随映射的概念。
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[7] 给定域 $\mathbb{F}$ 上的线性空间 $V$ 和 $W$，对于线性映射$f:V\to W$，定义其伴随映射为 $f^*:W^*\to V^*$，使得对于任意 $ \boldsymbol{\mathbf{w}} \in W^*$ 和 $ \boldsymbol{\mathbf{v}} \in V$ 都有
+[8] \begin{equation}
+\langle f( \boldsymbol{\mathbf{v}} ), \boldsymbol{\mathbf{w}} \rangle = \langle \boldsymbol{\mathbf{v}} , f^*( \boldsymbol{\mathbf{w}} ) \rangle~.
+\end{equation}
+[/SCOPE:s_def1_let]
+[9] 注意，定义伴随映射时，我们已知的两个元素 $ \boldsymbol{\mathbf{v}} $ 和 $ \boldsymbol{\mathbf{w}} $ 分别位于图 1 的左上角和右下角，它们之间不能相互作用。
+[10] 但是，$f$ 能够把 $ \boldsymbol{\mathbf{v}} $ 挪到左下角，使得二者可以相互作用；
+[11] 而其对偶映射 $f^*$ 的作用则是反过来，把 $ \boldsymbol{\mathbf{w}} $ 挪到右上角，同样使得二者可以相互作用。
+
+[/SCOPE:s_def1]
+[SCOPE:s_matrix|description|矩阵表示]
+[SCOPE:s_matrix_let1|let_bind|基的引入]
+[12] 当给定 $V$ 和 $W$ 的基1$\{ \boldsymbol{\mathbf{e}} _i\}_{i=1}^n$ 和 $\{ \boldsymbol{\mathbf{\varepsilon}} _j\}_{j=1}^m$ 后，$f$ 可以表示为矩阵
+[13] \begin{equation}
+\begin{pmatrix}
+a^1_1&a^1_2&\cdots&a^1_n\\
+a^2_1&a^2_2&\cdots&a^2_n\\
+\vdots&\vdots&\ddots&\vdots\\
+a^m_1&a^m_2&\cdots&a^m_n
+\end{pmatrix}~,
+\end{equation}
+[SCOPE:s_matrix_let2|let_bind|矩阵元素]
+[14] 其中 $f( \boldsymbol{\mathbf{e}} _i)=\sum_{j=1}^m a^j_i \boldsymbol{\mathbf{\varepsilon}} _j$。
+[15] 令 $\{ \boldsymbol{\mathbf{\theta}} _i\}_{i=1}^n$ 和 $\{ \boldsymbol{\mathbf{\tau}} _j\}_{j=1}^m$ 分别是这两个基的对偶基，
+[/SCOPE:s_matrix_let1]
+[16] 则 $f^*$ 在这两组基下可以表示为矩阵
+[17] \begin{equation}
+\begin{pmatrix}
+b^1_1&b^1_2&\cdots&b^1_m\\
+b^2_1&b^2_2&\cdots&b^2_m\\
+\vdots&\vdots&\ddots&\vdots\\
+b^n_1&b^n_2&\cdots&b^n_m
+\end{pmatrix}~,
+\end{equation}
+[18] 其中 $f^*( \boldsymbol{\mathbf{\tau}} _j)=\sum_{i=1}^n b^i_j \boldsymbol{\mathbf{\theta}} _i$。
+[/SCOPE:s_matrix_let2]
+[19] 由伴随映射的定义，
+[20] \begin{equation}
+\langle f( \boldsymbol{\mathbf{e}} _i), \boldsymbol{\mathbf{\tau}} _j \rangle =\langle \boldsymbol{\mathbf{e}} _i, f^*( \boldsymbol{\mathbf{\tau}} _j) \rangle ~,
+\end{equation}
+[21] \begin{equation}
+\langle \sum_{k=1}^m a^k_i \boldsymbol{\mathbf{\varepsilon}} _k, \boldsymbol{\mathbf{\tau}} _j \rangle =\langle \boldsymbol{\mathbf{e}} _i, \sum_{k=1}^n b^k_j \boldsymbol{\mathbf{\theta}} _k \rangle ~.
+\end{equation}
+[22] 由对偶基的
+[23] 定义 6 [链接 L0]
+[24] \begin{equation}
+\sum_{k=1}^m a^k_i\delta_{kj} = \sum_{k=1}^m b^k_j\delta_{ik}~,
+\end{equation}
+[25] 这等于说 $a^j_i=b^i_j$，也就是 $f$ 和 $f^*$ 的矩阵互为
+[26] 转置
+
+[/SCOPE:s_matrix]
+[SCOPE:s_adjoint_trans|description|伴随变换]
+[27a] $V$ 和 $V^*$ 之间没有天然的一一对应
+[27b] 如果规定了一个 $V\to V^*$ 的线性同构，其实，则等价于规定了 $V$ 上的一个非退化双线性形式，
+[28] 但现在你可以局限在一种情形来考虑：内积。
+[SCOPE:s_adjoint_trans_let1|let_bind|内积和同构]
+[29] 给定 $V$ 上的内积 $g$，
+[30] 则任取 $ \boldsymbol{\mathbf{u}} \in V$，我们都可以唯一确定 $ \boldsymbol{\mathbf{u}} $ 对应的 $ \boldsymbol{\mathbf{\omega}} \in V^*$，使得
+[31] \begin{equation}
+g( \boldsymbol{\mathbf{u}} , \boldsymbol{\mathbf{v}} ) = \langle \boldsymbol{\mathbf{\omega}} , \boldsymbol{\mathbf{v}} \rangle~
+\end{equation}
+[32] 对于任意 $ \boldsymbol{\mathbf{v}} \in V$ 恒成立。
+[33] 这样，我们就用 $g$ 确定了一个
+[34] 同构映射
+[35] $\sigma_g:V\to V^*$，使得 $\sigma_g( \boldsymbol{\mathbf{u}} )= \boldsymbol{\mathbf{\omega}} $。
+[/SCOPE:s_adjoint_trans_let1]
+[36] 注意，$g( \boldsymbol{\mathbf{u}} , \boldsymbol{\mathbf{v}} ) = \langle \sigma_g( \boldsymbol{\mathbf{u}} ) , \boldsymbol{\mathbf{v}} \rangle \iff \langle \boldsymbol{\mathbf{\omega}} , \boldsymbol{\mathbf{v}} \rangle = g(\sigma_g^{-1}( \boldsymbol{\mathbf{\omega}} ), \boldsymbol{\mathbf{v}} )$。
+[SCOPE:s_adjoint_trans_let2|let_bind|线性变换 f]
+[37] 取域 $\mathbb{F}$ 上的线性空间 $V$，设 $f:V\to V$ 是线性变换，
+[38] 那么按照定义 1 ，存在 $f$ 的伴随映射 $f^*:V^*\to V^*$。
+[/SCOPE:s_adjoint_trans_let2]
+[39] 利用 $\sigma_g$ 可以导出 $V\to V$ 的映射 $\sigma_g^{-1}\circ f^*\circ \sigma_g$。
+[40] 按照伴随映射的定义得
+[41] \begin{equation}
+\begin{aligned}
+\langle f( \boldsymbol{\mathbf{v}} ), \sigma_g( \boldsymbol{\mathbf{u}} ) \rangle = \langle \boldsymbol{\mathbf{v}} , f^*\circ \sigma_g( \boldsymbol{\mathbf{u}} ) \rangle
+\end{aligned}~
+\end{equation}
+[42] 对于任意 $ \boldsymbol{\mathbf{u}} , \boldsymbol{\mathbf{v}} \in V$ 成立。
+[43] 又按照 $\sigma_g$ 的定义得
+[44] \begin{equation}
+\left\{
+\begin{aligned}
+\langle f( \boldsymbol{\mathbf{v}} ), \sigma_g( \boldsymbol{\mathbf{u}} ) \rangle ={}& g \left(f( \boldsymbol{\mathbf{v}} ), \boldsymbol{\mathbf{u}} \right) ; \\
+\langle \boldsymbol{\mathbf{v}} , f^*\circ \sigma_g( \boldsymbol{\mathbf{u}} ) \rangle={}& g( \boldsymbol{\mathbf{v}} , \sigma_g^{-1}\circ f^*\circ \sigma_g( \boldsymbol{\mathbf{u}} )).
+\end{aligned}
+\right. ~
+\end{equation}
+[SCOPE:s_adjoint_trans_let3|let_bind|伴随变换 F]
+[45] 因此，若记 $F=\sigma_g^{-1}\circ f^*\circ \sigma_g:V\to V$，
+[46] 则 $F$ 可以定义为
+[47] \begin{equation}
+g(f( \boldsymbol{\mathbf{v}} ), \boldsymbol{\mathbf{u}} ) = g( \boldsymbol{\mathbf{v}} , F( \boldsymbol{\mathbf{u}} ))~.
+\end{equation}
+[48] 通常称 $F$ 为 $f$ 的伴随变换，以式 10 为其定义。
+[/SCOPE:s_adjoint_trans_let3]
+[49] 不少材料中也直接用 $f^*:V\to V$ 来表示 $f$ 的伴随变换，不同于我们这里强调 $f^*:V^*\to V^*$。
+[/SCOPE:s_adjoint_trans]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_matrix",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "矩阵表示是伴随映射在基下的具体形式"
+  },
+  {
+    "source_scope": "s_adjoint_trans",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "伴随变换是伴随映射在内积下的特例"
+  }
+]

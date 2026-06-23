@@ -1,0 +1,179 @@
+{
+  "article_name": "asymeq",
+  "statements": [
+    {
+      "stmt_id": "st_intro",
+      "subtype": "remark",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_O",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_defs",
+      "exposed_entities": [
+        "f(x)",
+        "φ(x)",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_def_o",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_defs",
+      "exposed_entities": [
+        "f(x)",
+        "φ(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_def_sim",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_defs",
+      "exposed_entities": [
+        "f(x)",
+        "φ(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_example1",
+      "subtype": "example",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_examples",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2",
+      "subtype": "example",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_examples",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_prec",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_asymp",
+      "exposed_entities": [
+        "f(x)",
+        "φ(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_def_succ",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_asymp",
+      "exposed_entities": [
+        "f(x)",
+        "φ(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_def_asymp",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_asymp",
+      "exposed_entities": [
+        "f(x)",
+        "φ(x)",
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_equiv_sim",
+      "subtype": "theorem",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "true",
+      "scope_id": "s_asymp",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_almost_all",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_number_theory",
+      "exposed_entities": [
+        "Q(x)",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_A",
+      "subtype": "remark",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_number_theory",
+      "exposed_entities": [
+        "A"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def_prec",
+      "target": "st_def_o",
+      "edge_type": "equivalent",
+      "category": "logic"
+    },
+    {
+      "source": "st_equiv_sim",
+      "target": "st_def_sim",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

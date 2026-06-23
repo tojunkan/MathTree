@@ -1,0 +1,415 @@
+{
+  "article_name": "Manif",
+  "statements": [
+    {
+      "stmt_id": "st_topological_manifold_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_topological_manifold",
+      "exposed_entities": [
+        "N",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_assump_N",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_assump_U_phi",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "U",
+        "n",
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_chart_def",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "(U,phi)"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_atlas_def",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "A",
+        "U_alpha",
+        "phi_alpha"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_coordinate_remark",
+      "subtype": "remark",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_assump_N_A",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "N",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_manifold_def",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "(N,A)"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_remark_connected",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_remark_local_euclidean",
+      "subtype": "remark",
+      "clause_range": [
+        18,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_Sn_manifold",
+      "subtype": "example",
+      "clause_range": [
+        24,
+        32
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "S^n",
+        "S^1",
+        "U",
+        "V",
+        "phi",
+        "psi"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_mobius_manifold",
+      "subtype": "example",
+      "clause_range": [
+        34,
+        37
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example2",
+      "exposed_entities": [
+        "U_i"
+      ]
+    },
+    {
+      "stmt_id": "st_smooth_manifold_intro",
+      "subtype": "remark",
+      "clause_range": [
+        38,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_smooth_manifold",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_assump_f",
+      "subtype": "assumption",
+      "clause_range": [
+        44,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3_let",
+      "exposed_entities": [
+        "f",
+        "x",
+        "k_i"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_smooth_function_def",
+      "subtype": "definition",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_smooth_map_def",
+      "subtype": "definition",
+      "clause_range": [
+        48,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_Cm_remark",
+      "subtype": "remark",
+      "clause_range": [
+        50,
+        56
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def4_assump_two_charts",
+      "subtype": "assumption",
+      "clause_range": [
+        58,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4_let",
+      "exposed_entities": [
+        "N",
+        "(U,phi)",
+        "(V,psi)"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_compatible_def",
+      "subtype": "definition",
+      "clause_range": [
+        60,
+        60
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def4_remark_smooth_manifold_motivation",
+      "subtype": "remark",
+      "clause_range": [
+        61,
+        65
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def5_assump_N_A",
+      "subtype": "assumption",
+      "clause_range": [
+        67,
+        67
+      ],
+      "truth_value": null,
+      "scope_id": "s_def5_let",
+      "exposed_entities": [
+        "(N,A)"
+      ]
+    },
+    {
+      "stmt_id": "st_def5_maximal_atlas_def",
+      "subtype": "definition",
+      "clause_range": [
+        68,
+        69
+      ],
+      "truth_value": null,
+      "scope_id": "s_def5",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_def6_smooth_manifold_def",
+      "subtype": "definition",
+      "clause_range": [
+        71,
+        72
+      ],
+      "truth_value": null,
+      "scope_id": "s_def6",
+      "exposed_entities": [
+        "(N,A)"
+      ]
+    },
+    {
+      "stmt_id": "st_def6_remark_future",
+      "subtype": "remark",
+      "clause_range": [
+        73,
+        75
+      ],
+      "truth_value": null,
+      "scope_id": "s_def6",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_assump_N",
+      "target": "st_def1_chart_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_assump_U_phi",
+      "target": "st_def1_chart_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_chart_def",
+      "target": "st_def1_atlas_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_assump_N_A",
+      "target": "st_def2_manifold_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_assump_f",
+      "target": "st_def3_smooth_function_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_smooth_function_def",
+      "target": "st_def3_smooth_map_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def4_assump_two_charts",
+      "target": "st_def4_compatible_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def5_assump_N_A",
+      "target": "st_def5_maximal_atlas_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def5_maximal_atlas_def",
+      "target": "st_def6_smooth_manifold_def",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_def2_manifold_def",
+      "target": "st_def1_chart_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义2 实拓扑流形是定义1 图和图册的特例（加上Hausdorff和第二可数性）"
+    },
+    {
+      "source": "st_example1_Sn_manifold",
+      "target": "st_def2_manifold_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1 S^n是实拓扑流形的例子"
+    },
+    {
+      "source": "st_example2_mobius_manifold",
+      "target": "st_def2_manifold_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2 莫比乌斯带是实拓扑流形的例子"
+    },
+    {
+      "source": "st_def4_compatible_def",
+      "target": "st_def3_smooth_map_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "相容性定义依赖于光滑映射（定义3）"
+    },
+    {
+      "source": "st_def5_maximal_atlas_def",
+      "target": "st_def4_compatible_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "极大图册定义依赖于相容性（定义4）"
+    },
+    {
+      "source": "st_def6_smooth_manifold_def",
+      "target": "st_def5_maximal_atlas_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "光滑流形定义依赖于极大图册（定义5）"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,377 @@
+{
+  "article_name": "OBili",
+  "statements": [
+    {
+      "stmt_id": "st_intro_1",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_2",
+      "subtype": "remark",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_skew",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "f",
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_let_f_matrix",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let1",
+      "exposed_entities": [
+        "f",
+        "F",
+        "f_{ij}"
+      ]
+    },
+    {
+      "stmt_id": "st_let_V0_V1",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let2",
+      "exposed_entities": [
+        "V_0",
+        "V_1",
+        "f|_{V_1}"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_nondeg",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_reduce_nondeg",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_symp",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "W",
+        "f|_W"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_alt",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "e'_1",
+        "e'_2"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "V",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_concl",
+      "subtype": "theorem",
+      "clause_range": [
+        27,
+        29
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_start",
+      "subtype": "remark",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_base_case",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_base",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_step_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        32,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_step_let1",
+      "exposed_entities": [
+        "W",
+        "W^{\\perp}",
+        "e'_1",
+        "e'_2"
+      ]
+    },
+    {
+      "stmt_id": "st_step_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        36,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_step_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_step_intersect",
+      "subtype": "conclusion",
+      "clause_range": [
+        41,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_step",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_step_restrict_nondeg",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_step",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_contra_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        48,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_step_contra",
+      "exposed_entities": [
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_contra_contra",
+      "subtype": "conclusion",
+      "clause_range": [
+        50,
+        52
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_step_contra",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_step_induction",
+      "subtype": "conclusion",
+      "clause_range": [
+        53,
+        55
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_step",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_qed",
+      "subtype": "remark",
+      "clause_range": [
+        56,
+        56
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1",
+      "subtype": "corollary",
+      "clause_range": [
+        57,
+        65
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let_f_matrix",
+      "target": "st_intro_2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_V0_V1",
+      "target": "st_proof_nondeg",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_nondeg",
+      "target": "st_reduce_nondeg",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_assump",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_base_case",
+      "target": "st_thm1_concl",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_step_let1",
+      "target": "st_step_let2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_step_let2",
+      "target": "st_step_intersect",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_step_intersect",
+      "target": "st_step_restrict_nondeg",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_contra_assump",
+      "target": "st_contra_contra",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_contra_contra",
+      "target": "st_step_restrict_nondeg",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_step_restrict_nondeg",
+      "target": "st_step_induction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_step_induction",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_symp",
+      "target": "st_thm1_concl",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor1",
+      "target": "st_thm1_concl",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_concl",
+      "target": "st_def1_symp",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1的结论涉及辛平面，引用定义1"
+    },
+    {
+      "source": "st_cor1",
+      "target": "st_thm1_concl",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论1是定理1的矩阵形式"
+    }
+  ],
+  "unresolved": []
+}

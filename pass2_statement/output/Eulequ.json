@@ -1,0 +1,272 @@
+{
+  "article_name": "Eulequ",
+  "statements": [
+    {
+      "stmt_id": "st_euler_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_euler_def",
+      "exposed_entities": [
+        "a_i",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_euler_to_constant_coeff",
+      "subtype": "theorem",
+      "clause_range": [
+        3,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_euler_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_solution_form_general",
+      "subtype": "theorem",
+      "clause_range": [
+        6,
+        10
+      ],
+      "truth_value": "true",
+      "scope_id": "s_euler_def",
+      "exposed_entities": [
+        "r_s",
+        "k_s",
+        "m",
+        "P_{k_s-1}(ln x)"
+      ]
+    },
+    {
+      "stmt_id": "st_solution_form_simple_roots",
+      "subtype": "theorem",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_euler_def",
+      "exposed_entities": [
+        "C_i"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_let",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof",
+      "exposed_entities": [
+        "x",
+        "t",
+        "D_t",
+        "D_x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_Dx2_derivation",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_induction_formula",
+      "subtype": "lemma",
+      "clause_range": [
+        23,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_proof",
+      "exposed_entities": [
+        "s"
+      ]
+    },
+    {
+      "stmt_id": "st_eigenfunction_def",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof",
+      "exposed_entities": [
+        "f(t)",
+        "lambda"
+      ]
+    },
+    {
+      "stmt_id": "st_exponential_eigenfunction",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": [
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_characteristic_equation",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        40
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_simple_roots_solution",
+      "subtype": "theorem",
+      "clause_range": [
+        41,
+        44
+      ],
+      "truth_value": "true",
+      "scope_id": "s_simple_roots",
+      "exposed_entities": [
+        "r_i",
+        "C_i"
+      ]
+    },
+    {
+      "stmt_id": "st_multiple_roots_assumption",
+      "subtype": "assumption",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_multiple_roots",
+      "exposed_entities": [
+        "r_s",
+        "k_s",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_multiple_roots_solution",
+      "subtype": "theorem",
+      "clause_range": [
+        47,
+        53
+      ],
+      "truth_value": "true",
+      "scope_id": "s_multiple_roots",
+      "exposed_entities": [
+        "P_{k_s-1}(t)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_euler_def",
+      "target": "st_euler_to_constant_coeff",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euler_def",
+      "target": "st_solution_form_general",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_solution_form_general",
+      "target": "st_solution_form_simple_roots",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_let",
+      "target": "st_Dx2_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_let",
+      "target": "st_induction_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_induction_formula",
+      "target": "st_Dx2_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_let",
+      "target": "st_eigenfunction_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_eigenfunction_def",
+      "target": "st_exponential_eigenfunction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exponential_eigenfunction",
+      "target": "st_characteristic_equation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_simple_roots_solution",
+      "target": "st_solution_form_simple_roots",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_multiple_roots_assumption",
+      "target": "st_multiple_roots_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_multiple_roots_solution",
+      "target": "st_solution_form_general",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_simple_roots_solution",
+      "target": "st_solution_form_simple_roots",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "单根情况证明导出解形式"
+    },
+    {
+      "source": "st_multiple_roots_solution",
+      "target": "st_solution_form_general",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "重根情况证明导出一般解形式"
+    }
+  ],
+  "unresolved": []
+}

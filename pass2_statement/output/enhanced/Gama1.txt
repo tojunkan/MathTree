@@ -1,0 +1,152 @@
+[SCOPE:root|description|余元公式]
+文章名: Gama1
+标题: 余元公式
+
+环境标记 (hints):
+  [0] type=lemma heading=引理 1 title=伽马函数的三种等价定义：
+  [1] type=lemma heading=引理 2 title=
+  [2] type=lemma heading=引理 3 title=
+
+[SCOPE:s_lemma1|description|伽马函数的三种等价定义]
+[0] 引理 1 伽马函数的三种等价定义：
+[1] 欧拉定义
+[2] \begin{equation}
+\Gamma(z):=\int^{\infty}_{0}e^{-t}t^{z-1} \,\mathrm{d}{t} ~.
+\end{equation}
+[3] \begin{equation}
+\Gamma(z):=\lim_{n \rightarrow \infty}{\frac{n!n^z}{z(z+1)\dots (z+n)}}=\prod_{n}^{\infty}\frac{\left( 1+\frac1n \right)^z}{\left( 1+\frac zn \right)}~.
+\end{equation}
+[4] \begin{equation}
+\frac1{\Gamma(x)}:=ze^{\gamma z}\prod_{n}^{\infty}\left[ \left( 1+\frac{z}{n}\right) \mathrm{e} ^{-\frac{z}{n}} \right]~.
+\end{equation}
+[5] 首先是1
+[6] \begin{equation}
+(\cos z+i\sin z)^n=\cos\,nz+i\sin nz~,
+\end{equation}
+[7] \begin{equation}
+\sin nz=n(\cos^{n-1}z)\sin z-\frac{n(n-1)(n-2)}{1\cdot 2\cdot 3}(\cos^{n-3}z \cdot \sin z)+\dots~
+\end{equation}
+[SCOPE:s_lemma1_let1|let_bind|设 n=2k+1]
+[8] 仅仅考虑 $n=2k+1$ 的情况，然后考虑到 $\cos^2 z=1-\sin^2z$，
+[/SCOPE:s_lemma1_let1]
+[9] 则必有
+[10] \begin{equation}
+\sin\left(2k+1\right) z=\sin\,z\cdot P(\sin^2z)~,
+\end{equation}
+[11] 其中 $P(\sin^2z)$ 代表以 $ \sin^2z$ 为变量的 $\mathbf{k}$ 次多项式。
+[SCOPE:s_lemma1_let2|let_bind|定义 z_m]
+[12] 考虑到在 $z_m=\frac{m\pi}{2k+1}\,,m=1,2,\dots,k $ 时，对于每一个 $z_m$，都有 $ \sin\left(2k+1\right) z=0,\sin\,z\ne 0$
+[/SCOPE:s_lemma1_let2]
+[13] 则可知每一个 $z_m$ 都是 $P(\sin^2z)$ 的根。
+[14] 即得
+[15] \begin{equation}
+P(\sin^2z)=A(1-\frac{\sin^2z}{\sin^2z_1})(1-\frac{\sin^2z}{\sin^2z_2})\dots(1-\frac{\sin^2z}{\sin^2z_k})~.
+\end{equation}
+[16] \begin{equation}
+A=P(0)=\lim_{z\rightarrow0}\frac{ \sin\left(2k+1\right) z}{\sin z}=2k+1~,
+\end{equation}
+[17] \begin{equation}
+P(\sin^2z)=(2k+1)(1-\frac{\sin^2z}{\sin^2z_1})(1-\frac{\sin^2z}{\sin^2z_2})\dots(1-\frac{\sin^2z}{\sin^2z_k})~,
+\end{equation}
+[18] \begin{equation}
+\sin\left(2k+1\right) z=\sin z\cdot\,(2k+1)(1-\frac{\sin^2z}{\sin^2z_1})\dots(1-\frac{\sin^2z}{\sin^2z_k})~.
+\end{equation}
+[SCOPE:s_lemma1_let3|let_bind|令 z=x/(2k+1)]
+[19] 令 $z=\frac{x}{2k+1}$，
+[/SCOPE:s_lemma1_let3]
+[20] 则为
+[21] \begin{equation}
+\sin\,x= \sin\left(\frac x{2k+1}\right) \cdot\,(2k+1)(1-\frac{\sin^2\frac x{2k+1}}{\sin^2z_1})\dots(1-\frac{\sin^2\frac x{2k+1}}{\sin^2z_k})~.
+\end{equation}
+[SCOPE:s_lemma1_let4|let_bind|定义 V_k^a 和 U_k^a]
+[22] 现在把 $\sin x$ 乘积分成两部分，
+[23] 即截取
+[24] \begin{equation}
+V^a_k=(1-\frac{\sin^2\frac x{2k+1}}{\sin^2z_{a+1}})\dots(1-\frac{\sin^2\frac x{2k+1}}{\sin^2z_k})~.
+\end{equation}
+[25] 而将前面的部分记为
+[26] \begin{equation}
+U^k_a=(2k+1) \sin\left(\frac x{2k+1}\right) (1-\frac{\sin^2\frac x{2k+1}}{\sin^2z_1})\dots(1-\frac{\sin^2\frac x{2k+1}}{\sin^2z_{a}})~,
+\end{equation}
+[27] 其中 $0< a< k $。
+[/SCOPE:s_lemma1_let4]
+[28] 由 $\lim_{k\rightarrow\infty}(2k+1)\sin\frac{x}{2k+1}=x~,$
+[29] \begin{equation}
+\lim_{k\rightarrow\infty}\left( \frac{\sin\frac{x}{2k+1}}{\sin\frac{m\pi}{2k+1}} \right)^2=\left( \frac{x}{m\pi} \right)^2\,,m=1,2,\dots,k~.
+\end{equation}
+[30] \begin{equation}
+U_a=\lim_{k\rightarrow\infty}U^k_a=x(1-\frac{x^2}{\pi^2})\dots(1-\frac{x^2}{a^2\pi^2})~,
+\end{equation}
+[31] 现在考虑 $V^k_a$。
+[32] 考虑到在 $0<\varphi<\frac\pi2 $ 时，$\frac2\pi\varphi< sin\varphi$，
+[33] 则有
+[34] \begin{equation}
+\sin^2\frac {h\pi}{2k+1}>\frac4\pi\frac{(h\pi)^2}{(2k+1)^2},\ h=a+1,\dots k ~
+\end{equation}
+[35] 而 $\sin^2\frac x{2k+1}<\frac{x^2}{(2k+1)^2}$ 是易得的。
+[36] 于是
+[37] \begin{equation}
+1>V^k_a>(1-\frac{x^2}{4(a+1)^2})\dots(1-\frac{x^2}{4k^2})~.
+\end{equation}
+[SCOPE:s_lemma1_let5|let_bind|取 a=a_0]
+[38] 因为最开始并没有限定 $a$ 的具体数值，
+[39] 所以总可以找到 $a=a_0$，使得 $4(a_0+1)>x^2~.$
+
+[/SCOPE:s_lemma1]
+[/SCOPE:s_lemma1_let5]
+[SCOPE:s_lemma2|description|无穷乘积收敛条件]
+[40] 引理 2
+[41] 对于充分大的 n 而言，$\prod_{n=1}^{\infty}(1+a_n) $ 收敛的充要条件是 $\sum_{n=1}^{\infty}{a_n}$ 收敛。
+[42] 当然，不需要一定从 n=1 开始，去掉有限项都不改变收敛或发散的结果。
+
+[/SCOPE:s_lemma2]
+[SCOPE:s_lemma3|description|无穷乘积收敛性质]
+[43] 引理 3
+[44] 若无穷乘积 $\prod_{n=1}^{\infty}p_n$ 收敛，
+[45] 那么总有充分大的 m 使得 $\lim_{m\rightarrow\infty}\prod_{n=m+1}^{\infty}p_n=1$。
+[SCOPE:s_lemma3_let1|let_bind|考虑 x=0,±π,...]
+[46] 当然，这要求 $ p_n\ne0 $，所有这时应该把 $ x=0,\pm\pi,\pm 2\pi\dots $ 分出来单独考虑。
+[/SCOPE:s_lemma3_let1]
+[47] \begin{equation}
+\sum_{h=a_0+1}^{\infty}{\frac{x^2}{4h^2}} \text{收敛，所以} \lim_{a_0\rightarrow\infty}\lim_{k\rightarrow\infty}(1-\frac{x^2}{4(a_0+1)^2})\dots(1-\frac{x^2}{4k^2})=1~.
+\end{equation}
+[48] \begin{equation}
+\sin\,x=\lim_{a\rightarrow\infty}U_a=x\cdot \prod_{n=1}^{\infty}(1-\frac{x^2}{n^2\pi^2})~.
+\end{equation}
+[49] 这里可以直接看出，这对于 $x=0,\pm\pi,\pm 2\pi\dots $ 也是成立的。
+[50] 另外，有
+[51] \begin{equation}
+\sin\pi x=\pi x\cdot \prod_{n=1}^{\infty}(1-\frac{x^2}{n^2})~,
+\end{equation}
+[52] 考虑到（威尔斯特斯拉定义）
+[53] \begin{equation}
+\Gamma(x)=\frac1x\prod_{n=1}^{\infty}\frac{(1+\frac1n)^{x}}{1+\frac xn}~.
+\end{equation}
+[54] 以及 $ \Gamma(1+x)=x\Gamma(x)$，
+[55] 则有
+[56] \begin{equation}
+\Gamma(1-x)=-x\Gamma(-x)=\prod_{n=1}^{\infty}\frac{(1+\frac1n)^{-x}}{1-\frac xn}~,
+\end{equation}
+[57] \begin{equation}
+\Gamma(x)\Gamma(1-x)=\frac{1}{x}\cdot \prod_{n=1}^{\infty}\frac1{(1-\frac{x^2}{n^2})}=\frac\pi{\sin\pi x}~.
+\end{equation}
+[/SCOPE:s_lemma3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_lemma3",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "引理3推导出正弦乘积公式，引理1给出伽马函数定义，最终得到余元公式"
+  },
+  {
+    "source_scope": "s_lemma3",
+    "target_scope": "s_lemma2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "引理3使用了引理2的收敛条件"
+  }
+]

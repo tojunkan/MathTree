@@ -1,0 +1,246 @@
+[SCOPE:root|description|凸集和凸体]
+文章名: ConSet
+标题: 凸集和凸体
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=线段
+  [1] type=definition heading=定义 2 title=凸集
+  [2] type=definition heading=定义 3 title=核
+  [3] type=definition heading=定义 4 title=凸体
+  [4] type=theorem heading=定理 1 title=
+  [5] type=example heading=例 1 title=
+  [6] type=example heading=例 2 title=
+  [7] type=theorem heading=定理 2 title=凸集的性质
+  [8] type=definition heading=定义 5 title=凸包
+  [9] type=example heading=例 3 title=单纯形
+  [10] type=theorem heading=定理 3 title=
+
+[0] [1] 凸性是向量空间理论中许多重要部分的基础概念。
+[1] 它不仅是直观的几何概念，也允许纯粹解析的叙述。
+
+[2] 设 $L$ 是一实向量空间，$x_1,x_2$ 是它的两点。
+[3] 那么过 $x_1,x_2$ 的直线方向与矢量 $x_2-x_1$ 平行，
+[4] 因此该直线可表示为
+[5] \begin{equation}
+x_1+k(x_2-x_1).~
+\end{equation}
+[6] \begin{equation}
+(1-k)x_1+kx_2.~
+\end{equation}
+[7] 明显的，当 $k\geq0$ 时，矢量 $k(x_2-x_1)$ 的模（长度）随 $k$ 的增大而增大。
+[8] 即 $\{x_1+k(x_2-x_1)|k\geq0\}$ 是以 $x_1$ 为原点的正方向（由 $x_1$ 指向 $x_2$ 的方向）的直线部分；
+[9] 反之，$\{x_1+k(x_2-x_1)|k<0\}$ 是以 $x_1$ 为原点的负方向部分。
+[10] 明显的，$0\leq k\leq 1$ 时是直线 $x_1+k(x_2-x_1)$ 的 $x_1$ 到 $x_2$ 之间的部分。
+[11] 注意式 1 等价于式 2 ，
+[12] 因此可得下面的定义。
+
+[SCOPE:s_segment_def|description|定义1 线段]
+[13] 定义 1 线段
+[SCOPE:s_segment_let|let_bind|线段定义变量]
+[14] 设 $L$ 是实向量空间，$x_1,x_2\in L$，
+[/SCOPE:s_segment_let]
+[15] 则称
+[16] \begin{equation}
+\alpha x_1+\beta x_2, \quad\alpha,\beta\geq0,\alpha+\beta=1~
+\end{equation}
+
+[/SCOPE:s_segment_def]
+[SCOPE:s_convex_def|description|定义2 凸集]
+[17] 定义 2 凸集
+[SCOPE:s_convex_let|let_bind|凸集定义变量]
+[18] 设 $M\subset L$，若对 $M$ 上的任意两点 $x_1,x_2\in M$，$M$ 都包含连接它们的线段，
+[/SCOPE:s_convex_let]
+[19] 则称 $M$ 是凸的（convex）。
+
+[/SCOPE:s_convex_def]
+[SCOPE:s_core_def|description|定义3 核]
+[20] 定义 3 核
+[SCOPE:s_core_let|let_bind|核定义变量]
+[21] 设 $E\subset L$ 是任意集，
+[/SCOPE:s_core_let]
+[22] 则称
+[23] \begin{equation}
+\{x|x\in L,\text{且}\forall y\in L,\exists \epsilon(y)>0, \text{使得只要} \left\lvert t \right\rvert <\epsilon(y),\text{就有} x+ty\in E\}~
+\end{equation}
+[24] 也就是说，集 $E$ 的核是那些拥有包含在 $E$ 中的邻域的点的全体。
+
+[/SCOPE:s_core_def]
+[SCOPE:s_convex_body_def|description|定义4 凸体]
+[25] 定义 4 凸体
+[26] 核为非空集的凸集称为凸体（convex body）。
+
+[/SCOPE:s_convex_body_def]
+[SCOPE:s_thm1|description|定理1]
+[27] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1变量]
+[28] 设 $M,N$ 是线性空间的子集，$J(E)$ 是 $M$ 的核，
+[/SCOPE:s_thm1_let]
+[29] 则 $J(E)-N$ 是 $M-N$ 的核，
+[30] 即 $J(E)-N\subset J(M-N)$。
+[SCOPE:s_thm1_proof_let|let_bind|定理1证明中设x]
+[31] 证明：设 $x\in J(E)-N$，
+[32] 则 $x=x_0-x_1,x_0\in J(E),x_1\in N$。
+[/SCOPE:s_thm1_proof_let]
+[33] 于是任意 $y\in L$，存在 $\epsilon(y)>0$，使得 $x_0+ty\in M$ 对所有的 $ \left\lvert t \right\rvert <\epsilon$ 成立，
+[34] 从而对所有的这些 $t$，成立
+[35] \begin{equation}
+x+ty=x_0+ty-x_1\in M-N.~
+\end{equation}
+[36] 因此 $J(E)-N\subset J(M-N)$。
+[37] 证毕！
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex1|description|例1]
+[38] 三维欧氏空间中的多面体、球、半空间和全空间本身都是凸体。
+[39] 同一空间中的线段、平面、三角形都是凸集，
+[40] 但不是凸体。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2]
+[SCOPE:s_ex2_let|let_bind|例2变量]
+[41] 考察闭区间 $[a,b]$ 上的连续函数空间 $C([a,b])$ 中满足条件 $ \left\lvert f(t) \right\rvert \leq1$ 的函数构成的集。
+[/SCOPE:s_ex2_let]
+[42] 这个集是凸的。
+[43a] (t) \right\rvert \leq1, \left\lvert g
+[43b] (t) \right\rvert \leq1$，
+[44] 则对 $\alpha+\beta=1,\alpha,\beta\geq0$，成立
+[45] \begin{equation}
+\left\lvert \alpha f(t)+\beta g(t) \right\rvert \leq\alpha+\beta=1.~
+\end{equation}
+
+[/SCOPE:s_ex2]
+[SCOPE:s_thm2|description|定理2 凸集的性质]
+[46] 定理 2 凸集的性质
+[47] 任意多个凸集的交仍是凸集。
+[SCOPE:s_thm2_let|let_bind|定理2变量]
+[48] 证明： 设 $M$ 是任意多个凸集 $M_i$ 的交，
+[/SCOPE:s_thm2_let]
+[49] 那么任意 $x_1,x_2\in M$，$x_1,x_2$ 必属于每一凸集 $M_i$。
+[50] 从而由凸集的定义，连接 $x_1,x_2$ 的线段都属于每一个 $M_i$，
+[51] 从而该线段属于它们的交 $M$。
+[52] 证毕！
+
+[/SCOPE:s_thm2]
+[53] 任意线性空间的集，全空间是包含它的凸集，而定理 2 表明任意多个凸集的交仍是凸的，所有包含该集的凸集的交是包含该集的最小凸集。
+[54] 事实上，这样定义的最小凸集都包含在每一包含该集的凸集中，而其本身也是凸集。
+
+[SCOPE:s_convex_hull_def|description|定义5 凸包]
+[55] 定义 5 凸包
+[SCOPE:s_convex_hull_let|let_bind|凸包定义变量]
+[56] 设 $L$ 是实线性空间，$E\subset L$，
+[/SCOPE:s_convex_hull_let]
+[57] 则称
+[58] \begin{equation}
+\overline{E}:=\bigcap_{\alpha}E_\alpha~
+\end{equation}
+
+[/SCOPE:s_convex_hull_def]
+[SCOPE:s_ex3|description|例3 单纯形]
+[59] 例 3 单纯形
+[SCOPE:s_ex3_let|let_bind|例3变量]
+[60] 设 $x_1,\ldots,x_{n+1}$ 是某一线性空间的点。
+[61] 若向量 $x_2-x_1,\ldots,x_{n+1}-x_1$ 是线性无关的，
+[/SCOPE:s_ex3_let]
+[62] 则称点 $x_1,\ldots,x_{n+1}$ 占有最广位置。
+[63] 占有最广位置的点 $x_1,\ldots,x_{n+1}$ 的凸包叫做n-维单纯形(simplex)。
+[64] 我们证明这一 $n$ 维单纯形刚好好就是以 $x_1,\ldots,x_{n+1}$ 为顶点的多面体。
+[65] 证明如下：
+[SCOPE:s_ex3_proof_let|let_bind|例3证明中设点]
+[66] 由凸集的定义，包含 $x_1,\ldots,x_{n+1}$ 的凸集必然包含 $x_1,\ldots,x_{n+1}$ 之间的两两连线段，特别包含以它们为顶点的多面体的边。
+[/SCOPE:s_ex3_proof_let]
+[67] 因此必然包含每一顶点与该顶点所在多面体表面的边上任一点的连线，
+[68] 即必然包含以它们为顶点的多面体的表面。
+[69] 而多面体的每一内点必然在某一两端点在多面体表面的线段上，
+[70] 因此包含点 $x_1,\ldots,x_{n+1}$ 的凸集必然包含以它们为顶点的多面体。
+[71] 由于多面体必然是凸集，
+[72] 因而
+[73] $n$ 维单纯形刚好好就是以 $x_1,\ldots,x_{n+1}$ 为顶点的多面体。
+[74] 证毕！
+[75] 若点 $x_1,\ldots,x_{n+1}$ 占有最广位置，
+[76] 则任何 $k+1$ ($k< n$)个点也占有最广位置（因为它们相应的矢量仍线性无关），
+[77] 从而生成某一 $k$ 维单纯形，称为给定 $n$ 维单纯形的 $k$ 维边界。
+
+[/SCOPE:s_ex3]
+[SCOPE:s_thm3|description|定理3]
+[78] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理3变量]
+[79] 顶点为 $x_1,\ldots,x_{n+1}$ 的单纯形是所有可以表为
+[80] \begin{equation}
+s=\sum_{k=1}^{n+1} \alpha_k x_k\geq0,\sum_{k=1}^{n+1}\alpha_k=1~
+\end{equation}
+[/SCOPE:s_thm3_let]
+[81] 证明：
+[82] 首先证明满足式 8 的点的全体 $S$ 是凸集。
+[SCOPE:s_thm3_proof_let1|let_bind|定理3证明设y1,y2]
+[83] 设 $y_1,y_2$ 满足式 8 ，且记
+[84] \begin{equation}
+y_1=\sum_{k=1}^{n+1} \alpha_k x_k,y_2=\sum_{k=1}^{n+1} \beta_k x_k.~
+\end{equation}
+[/SCOPE:s_thm3_proof_let1]
+[85] 则 $\sum_{k=1}^{n+1}\alpha_k=1,\sum_{k=1}^{n+1}\beta_k=1$。
+[86] 则连接 $y_1,y_2$ 的线段是
+[87] \begin{equation}
+\{py_1+qy_2|p+q=1,p,q\geq0\}.~
+\end{equation}
+[88] 由于 $p\sum_{k=1}^{n+1}\alpha_k=p,q\sum_{k=1}^{n+1}\beta_k=q$，
+[89] 则 $\sum_{k=1}^{n+1}(p\alpha_k +q\beta_k)=p+q=1$，
+[90] 于是
+[91] \begin{equation}
+\begin{aligned}
+py_1+qy_2=&p\sum_{k=1}^{n+1} \alpha_k x_k+q\sum_{k=1}^{n+1} \beta_k x_k\\
+=&\sum_{k=1}^{n+1}(p\alpha_k +q\beta_k) x_k,
+\end{aligned}~
+\end{equation}
+[92] 其中，$\sum_{k=1}^{n+1}(p\alpha_k +q\beta_k)=1$ 且系数 $p\alpha_k +q\beta_k\geq0$（因为都是非负的），
+[93] 因此线段 $\{py_1+qy_2|p+q=1,p,q\geq0\}$ 满足
+[94] 式 8 [链接 L0]
+[95] 。
+[96] 从而 $S$ 是凸集。
+[97] 其次，任一包含 $x_1,\ldots,x_{n+1}$ 的凸集应当包含形如式 8 的点。
+[98] 事实上，式 8 可改写为
+[SCOPE:s_thm3_proof_let2|let_bind|定理3证明设x]
+[99] \begin{equation}
+x=\sum_{k=2}^{n+1}\alpha_kx_k+(1-\sum_{k=2}^{n+1}\alpha_k)x_1=\sum_{k=2}^{n+1}\alpha_k(x_k-x_1)+x_1~
+\end{equation}
+[/SCOPE:s_thm3_proof_let2]
+[100] 由于 $0\leq\alpha_k\leq1$，
+[101] 所以 $x$ 在方向 $x_k-x_1$ 的投影分量在连接 $x_1,x_k$ 的线段上。
+[102] 这正好属于以点 $x_1,\ldots,x_{n+1}$ 为顶点的单纯形，
+[103] 因此包含点 $x_1,\ldots,x_{n+1}$ 的凸集必然包含形如
+[104] 式 8 [链接 L1]
+[105] 因而，$S$ 是包含点 $x_1,\ldots,x_{n+1}$ 的最小凸集。
+[106] 证毕！
+[/SCOPE:s_thm3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_convex_body_def",
+    "target_scope": "s_convex_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "凸体是核非空的凸集"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_core_def",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理1关于核的性质"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_convex_hull_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "单纯形是凸包的特例"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_ex3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3给出单纯形的表示"
+  }
+]

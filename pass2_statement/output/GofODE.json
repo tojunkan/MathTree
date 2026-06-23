@@ -1,0 +1,319 @@
+{
+  "article_name": "GofODE",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "U",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def2",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "U",
+        "V",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def3",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def4",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "M",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "g^t"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_concl",
+      "subtype": "theorem",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def5",
+      "subtype": "definition",
+      "clause_range": [
+        37,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_def5",
+      "exposed_entities": [
+        "v(x)",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_def6",
+      "subtype": "definition",
+      "clause_range": [
+        45,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_def6",
+      "exposed_entities": [
+        "φ",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_def7",
+      "subtype": "definition",
+      "clause_range": [
+        50,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_def7",
+      "exposed_entities": [
+        "φ1",
+        "φ2",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2",
+      "subtype": "theorem",
+      "clause_range": [
+        54,
+        61
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def8",
+      "subtype": "definition",
+      "clause_range": [
+        68,
+        71
+      ],
+      "truth_value": null,
+      "scope_id": "s_def8",
+      "exposed_entities": [
+        "x",
+        "U"
+      ]
+    },
+    {
+      "stmt_id": "st_def9",
+      "subtype": "definition",
+      "clause_range": [
+        72,
+        75
+      ],
+      "truth_value": null,
+      "scope_id": "s_def9",
+      "exposed_entities": [
+        "TU_x",
+        "M",
+        "TM_x"
+      ]
+    },
+    {
+      "stmt_id": "st_def10",
+      "subtype": "definition",
+      "clause_range": [
+        76,
+        84
+      ],
+      "truth_value": null,
+      "scope_id": "s_def10",
+      "exposed_entities": [
+        "TM",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_def11",
+      "subtype": "definition",
+      "clause_range": [
+        85,
+        87
+      ],
+      "truth_value": null,
+      "scope_id": "s_def11",
+      "exposed_entities": [
+        "M",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_def12",
+      "subtype": "definition",
+      "clause_range": [
+        88,
+        90
+      ],
+      "truth_value": null,
+      "scope_id": "s_def12",
+      "exposed_entities": [
+        "v",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_def13",
+      "subtype": "definition",
+      "clause_range": [
+        92,
+        96
+      ],
+      "truth_value": null,
+      "scope_id": "s_def13",
+      "exposed_entities": [
+        "U",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_def14",
+      "subtype": "definition",
+      "clause_range": [
+        97,
+        100
+      ],
+      "truth_value": null,
+      "scope_id": "s_def14",
+      "exposed_entities": [
+        "φ",
+        "U",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_def15",
+      "subtype": "definition",
+      "clause_range": [
+        101,
+        105
+      ],
+      "truth_value": null,
+      "scope_id": "s_def15",
+      "exposed_entities": [
+        "φ"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_assump",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def8",
+      "target": "st_thm2",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def9",
+      "target": "st_def8",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def10",
+      "target": "st_def9",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def11",
+      "target": "st_def10",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def13",
+      "target": "st_def11",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def14",
+      "target": "st_def13",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def15",
+      "target": "st_def14",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_concl",
+      "target": "st_def4",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1是单参数微分同胚群的性质"
+    },
+    {
+      "source": "st_thm2",
+      "target": "st_def7",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2给出了曲线相切的等价条件"
+    }
+  ],
+  "unresolved": []
+}

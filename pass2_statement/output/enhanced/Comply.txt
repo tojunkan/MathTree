@@ -1,0 +1,67 @@
+[SCOPE:root|description|李代数的复化]
+文章名: Comply
+标题: 李代数的复化
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+  [1] type=example heading=例 1 title=$\mathfrak u(n)$ 的复化
+  [2] type=example heading=例 2 title=$\mathfrak {su}(n)$ 的复化
+
+[SCOPE:s_def1|description|定义 1]
+[0] 定义 1
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[1] 若 $\mathfrak g$ 是实数域上的李代数，我们可以将其扩展到复数域上。
+[2] 定义一个新的向量空间为
+[3] \begin{equation}
+\mathfrak g+ \mathrm{i} \mathfrak g=\{X+ \mathrm{i} Y|X\,,Y\in\mathfrak g\}~.
+\end{equation}
+[4] 可以验证李括号运算在其上封闭，且李括号依然有双线性和结合性。
+[5] 所以这也是一个李代数，称为 $\mathfrak g$ 的复化（complification）。
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_ex1|description|例 1 u(n) 的复化]
+[6] 例 1 $\mathfrak u(n)$ 的复化
+[7] 类似于 $ \operatorname {Lie}GL(n,\mathbb R)\cong \mathfrak{gl}(n,\mathbb R)$ 的证明，易证 $ \operatorname {Lie}GL(n,\mathbb C)\cong \mathfrak{gl}(n,\mathbb C)$。
+[8a] (n)$ 的复化，简单表示为 $\mathfrak{gl}(n,\mathbb C)=\mathfrak u
+[8b] (n)+ \mathrm{i} \mathfrak u
+[8c] (n)$。
+[9] $\mathfrak{gl}(n,\mathbb C)$ 由 $n$ 阶复数矩阵构成，$\mathfrak u(n)$ 则由 $n$ 阶反厄米矩阵构成。
+[10a] (n)+ \mathrm{i} \mathfrak u
+[10b] (n)$。
+[SCOPE:s_ex1_let|let_bind|例 1 的变量]
+[11] 现设对于任意 $A\in \mathfrak gl(n,\mathbb C)$，都有 $A=B+ \mathrm{i} C$，其中 $B,C\in \mathfrak u(n)$。
+[12] 则 $A^{\dagger}=-B+ \mathrm{i} C$。
+[13] 因此
+[14] \begin{equation}
+\begin{aligned}
+B&=\frac{A-A^{\dagger}}{2}\\
+C&= \frac{A+A^{\dagger}}{2 \mathrm{i} }~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_ex1]
+[/SCOPE:s_ex1_let]
+[SCOPE:s_ex2|description|例 2 su(n) 的复化]
+[15] 例 2 $\mathfrak {su}(n)$ 的复化
+[16a] (n)$ 的复化版本是 $\mathfrak sl(n,\mathbb C)$，简单表示为 $\mathfrak sl(n,\mathbb C)=\mathfrak {su}
+[16b] (n)+ \mathrm{i} \mathfrak {su}
+[16c] (n)$。
+[17] $\mathfrak sl(n,\mathbb C)$ 为无迹的 $n$ 阶复数矩阵，$\mathfrak {su}(n)$ 为无迹的 $n$ 阶反厄米矩阵。
+[18] 由于无迹性不随复化而丧失，
+[19a] (n)+ \mathrm{i} \mathfrak {su}
+[19b] (n)$。
+[20] 剩余证明过程类似上个例子。
+[/SCOPE:s_ex2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_ex1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2的证明类似例1"
+  }
+]

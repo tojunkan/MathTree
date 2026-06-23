@@ -1,0 +1,59 @@
+[SCOPE:root|description|函数的算符]
+文章名: DifOp
+标题: 函数的算符
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+
+[SCOPE:s_example1_let|let_bind|例 1 的算符定义]
+[SCOPE:s_example1|description|例 1]
+[0] 令算符 $ \hat{A} $ 为
+[1] \begin{equation}
+\hat{A} = \sin\left(x\right) ~,
+\end{equation}
+[2] \begin{equation}
+\hat{A} f(x) = \sin\left(x\right) f(x)~.
+\end{equation}
+[3] \begin{equation}
+\hat{B} = \frac{\mathrm{d}}{\mathrm{d}{x}} + 1~,
+\end{equation}
+[4] \begin{equation}
+\hat{B} f(x) = \left( \frac{\mathrm{d}}{\mathrm{d}{x}} + 1 \right) f(x) = \frac{\mathrm{d}{f(x)}}{\mathrm{d}{x}} + f(x)~.
+\end{equation}
+[5] \begin{equation}
+\hat{C} = \hat{A} \hat{B} = \sin\left(x\right) \left( \frac{\mathrm{d}}{\mathrm{d}{x}} + 1 \right) ~,
+\end{equation}
+[6] \begin{equation}
+\hat{C} f(x) = \hat{A} [ \hat{B} f(x)] = \sin\left(x\right) \frac{\mathrm{d}{f(x)}}{\mathrm{d}{x}} + \sin\left(x\right) f(x)~.
+\end{equation}
+[7] \begin{equation}
+\hat{D} = \hat{A} + \hat{B} ~,
+\end{equation}
+[8] \begin{equation}
+\hat{D} f(x) = \hat{A} f(x) + \hat{B} f(x)~.
+\end{equation}
+[9] \begin{equation}
+\hat{E} = { \hat{B} }^2~.
+\end{equation}
+[10] \begin{equation}
+\begin{aligned}
+\hat{E} f(x) &= \hat{B} [ \hat{B} f(x)] = \left( \frac{\mathrm{d}}{\mathrm{d}{x}} + 1 \right) \left[ \frac{\mathrm{d}{f(x)}}{\mathrm{d}{x}} + f(x) \right] \\
+&= \frac{\mathrm{d}^{2}{f(x)}}{\mathrm{d}{x}^{2}} + 2 \frac{\mathrm{d}{f(x)}}{\mathrm{d}{x}} + f(x)~.
+\end{aligned}
+\end{equation}
+[11] \begin{equation}
+\hat{B} ^2 = \left( \frac{\mathrm{d}}{\mathrm{d}{x}} + 1 \right) ^2 = \frac{\mathrm{d}^{2}}{\mathrm{d}{x}^{2}} + 2 \frac{\mathrm{d}}{\mathrm{d}{x}} + 1~.
+\end{equation}
+
+[/SCOPE:s_example1_let]
+[/SCOPE:s_example1]
+[SCOPE:s_linear_let|let_bind|线性定义中的变量]
+[SCOPE:s_linear|description|线性]
+[12] 若一个算符 $ \hat{A} $ 对两个不同的函数 $f, g$ 和两个不同的常数满足
+[13] \begin{equation}
+\hat{A} (f + g) = \hat{A} f + \hat{A} g~.
+\end{equation}
+[14] 线性
+[/SCOPE:s_linear_let]
+[/SCOPE:s_linear]
+[/SCOPE:root]

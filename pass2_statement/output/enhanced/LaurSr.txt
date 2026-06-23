@@ -1,0 +1,25 @@
+[SCOPE:root|description|洛朗级数]
+文章名: LaurSr
+标题: 洛朗级数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=洛朗级数
+
+[SCOPE:s_laurent_def|description|洛朗级数定义]
+[SCOPE:s_laurent_let|let_bind|洛朗级数变量]
+[0] 定义 1 洛朗级数
+[1] \begin{equation}
+f(z)=\sum\limits_{n=-\infty}^{\infty} a_n(z-c)^n~.
+\end{equation}
+[/SCOPE:s_laurent_let]
+[2] 洛朗级数（Laurent series）
+[3] 容易看到，洛朗级数就是将泰勒级数的幂次拓展到了负的情况。
+[4] 在 $z\neq c$ 的点处，$f(z)$ 可以看成两个级数 $\sum\limits_{n=0}^{\infty} a_n(z-c)^n$ 和 $\sum\limits_{n=1}^{\infty} a_{-n} \left(\frac{1}{z-c} \right) ^n$ 的和；
+[5] 在 $z=c$ 处则是发散的。
+[6] $\sum\limits_{n=0}^{\infty} a_n(z-c)^n$ 称为 $f$ 的正则部分（normal part），而剩下的 $\sum\limits_{n=1}^{\infty} a_{-n} \left(\frac{1}{z-c} \right) ^n$ 则称为 $f$ 的主要部分（principal part）。
+[7] 两个术语可以分别简称为正则部和主部。
+[8] 【未完成】定义域：圆环区域
+
+[/SCOPE:s_laurent_def]
+[9] 【未完成】zero and pole
+[/SCOPE:root]

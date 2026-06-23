@@ -1,0 +1,58 @@
+[SCOPE:root|description|线积分、环积分（矢量分析）]
+文章名: IntL
+标题: 线积分、环积分（矢量分析）
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=计算力场对质点的做功
+
+[SCOPE:s_example1|description|例1 计算力场对质点的做功]
+[0] 例 1 计算力场对质点的做功
+[SCOPE:s_example1_let1|let_bind|力场和轨迹参数]
+[1] 令力场为 $ \boldsymbol{\mathbf{F}} = \alpha r \, \hat{\boldsymbol{\mathbf{r}}} $，一质点从原点出发，沿轨迹 $(x-a)^2 + y^2 = a^2$ 的上半部分移动到 $(a,0)$，求力对质点做的功。
+[2] 若起点终点不变，轨迹改为延 $x$ 轴，结果又如何？
+[/SCOPE:s_example1_let1]
+[SCOPE:s_example1_let2|let_bind|圆的参数方程]
+[3] 我们先来建立运动轨迹的参数方程。
+[4] 由于运动是一个圆，我们可以使用圆的参数方程。
+[5] 把角度作为参数 $t$，$t\in [0,\pi]$。
+[6] \begin{equation}
+\begin{cases}
+x(t) = a(1-\cos t)\\
+y(t) = a \sin t
+\end{cases}~,
+\qquad
+\begin{cases}
+x'(t) = a \sin t\\
+y'(t) = a \cos t
+\end{cases}~.
+\end{equation}
+[/SCOPE:s_example1_let2]
+[7] \begin{equation}
+W = \int \boldsymbol{\mathbf{F}} \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{r}} } =\int_0^\pi \alpha a(1-\cos t) \cdot a \sin t \,\mathrm{d}{t} + \int_0^\pi \alpha a \sin t \cdot a \cos t \,\mathrm{d}{t} ~.
+\end{equation}
+[8] \begin{equation}
+\int_0^\pi \alpha a^2 \sin t \,\mathrm{d}{t} =2 \alpha a^2~.
+\end{equation}
+[SCOPE:s_example1_let3|let_bind|直线轨迹参数]
+[9] 现在来计算延 $x$ 轴的直线轨迹运动的情况。
+[10] 由于轨迹上处处都有 $y=0$，$F_y = 0$，积分只有 $F_x$ 一项。
+[11] 另外 $x$ 本身就可以作为轨道参数，
+[12a] (t) = t, y
+[12b] (t) = 0, x\in [0, 2a]$。
+[/SCOPE:s_example1_let3]
+[13] 代入式 4 得做功为
+[14] \begin{equation}
+W = \int_0^{2a} \alpha x \,\mathrm{d}{x} = 2 \alpha a^2~.
+\end{equation}
+[15] 在上例中，我们发现对于给定的矢量场，
+[16] 即使路径不同，当起点和终点相同时，线积分的结果也相同（虽然我们只计算了两条路径，
+[17] 但这个结论是正确的）。
+[18] 具有这样性质的矢量场叫做保守场，并总存在一个势能函数。
+
+[/SCOPE:s_example1]
+[SCOPE:s_loop_integral|description|环积分]
+[19a] 当线积分的路径是一个回路时
+[19b] 则可以叫做环积分，也叫回路积分，此时把积分号写作 $\oint$ 作为强调。
+[20] 【未完成】举例，另外解释一下类似式 2 是什么意思。
+[/SCOPE:s_loop_integral]
+[/SCOPE:root]

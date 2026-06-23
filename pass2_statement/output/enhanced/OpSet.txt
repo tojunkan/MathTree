@@ -1,0 +1,436 @@
+[SCOPE:root|description|集合的运算]
+文章名: OpSet
+标题: 集合的运算
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=与
+  [1] type=definition heading=定义 2 title=或
+  [2] type=theorem heading=定理 1 title=与或分配律
+  [3] type=definition heading=定义 3 title=
+  [4] type=theorem heading=定理 2 title=分配律
+  [5] type=definition heading=定义 4 title=
+  [6] type=definition heading=定义 5 title=简记约定
+  [7] type=theorem heading=定理 3 title=
+  [8] type=definition heading=定义 6 title=交集
+  [9] type=definition heading=定义 7 title=并集
+  [10] type=theorem heading=定理 4 title=
+  [11] type=corollary heading=推论 1 title=
+  [12] type=theorem heading=定理 5 title=交并的分配律
+  [13] type=theorem heading=定理 6 title=对偶原理（de Morgan 定理）
+
+[0] 通过 “集合” 的预备知识，我们应该知道，集合是由元素构成的。
+[1] 这是说，在一开始讨论集合的时候，必须先行给出一个集合，才能继续进行有关的讨论。
+[2] 这是说当你说集合 $A$ 时，我们已经知道了它的元素。
+[3] 具体而言，当谈论集合 $A$ 时，你应该马上将其理解成 $A=\{a_1,\cdots,a_n,\cdots\}$，其中花括号里的是 $A$ 的元素。
+[4] 既然提到集合相当于指出它的元素，那同时就能判断哪些是它的元素，哪些不是它的元素，$a$ 是 $A$ 的元素记作 $a\in A$，$a$ 不是 $A$ 的元素记作 $a\notin A$，这些都是在提到集合的时候就同时表明了的。
+[5] 有了集合后，一个重要的任务是其上运算的定义及运算规则，这便是本节要介绍的，本文较通常的教科书创新之处在于给出了通常集合中 “且” 和 “或” 的精确定义。
+
+[6] 同样在 “集合” 里，已经知道集合间可以进行运算 $\cap$（交）、$\cup$（并）。
+[7] 现在来给出它们的具体定义。
+[8] 严格的定义需要用到两个逻辑学概念 $\land$（读作 “与”）和 $\lor$（读作 “或”）。
+[9] 它们仅仅代表两个函数，下面将记 $Z_2=\{0,1\}$。
+
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[SCOPE:s_def1|description|定义1 与]
+[10] 定义 1 与
+[11] 称函数 $f:Z_2\times Z_2\rightarrow Z_2$ 为与，若
+[12] \begin{equation}
+f(0,0)=0,\quad f(0,1)=0,\quad f(1,0)=0,\quad f(1,1)=1~.
+\end{equation}
+
+[/SCOPE:s_def1_let]
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义2 或]
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[13] 定义 2 或
+[14] 称函数 $f:Z_2\times Z_2\rightarrow Z_2$ 为或，若
+[15] \begin{equation}
+f(0,0)=0,\quad f(0,1)=1,\quad f(1,0)=1,\quad f(1,1)=1~.
+\end{equation}
+[/SCOPE:s_def2_let]
+[16] 下面的定理起着重要作用。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|定理1 与或分配律]
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[17] 定理 1 与或分配律
+[18] 对任意 $a,b,c\in Z_2$，成立恒等式：
+[19] \begin{equation}
+\begin{aligned}
+\lor(\land(a,b),c)&=\land(\lor(a,c),\lor(b,c)),\\
+\land(\lor(a,b),c)&=\lor(\land(a,c),\land(b,c))~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_thm1_let]
+[20] 证明：
+[21] 我们以第一式的证明为例，读者完全可以类似的证明出第二式。
+[22] 证明的关键只需要代入所有可能的 $a,b,c$ 即可，由于取值只有 $0,1$，这是方便的。
+[SCOPE:s_thm1_case1|cases|c=1的情况]
+[23] 若 $c=1$，由定义 2 ，$\lor(\land(a,b),1)=1$。
+[24] 于是只需证明右边无论 $a,b$ 取 $0,1$ 哪个指都为 1 即可。
+[25] 同样由 $\lor$ 的定义，右边 $\land$ 函数的两个变量都是 1：
+[26] \begin{equation}
+\lor(a,1)=\lor(b,1)=1~.
+\end{equation}
+[27] 定义 1 [链接 L0]
+[28] ，右边为 $\land(1,1)=1$，
+[29] 即
+[30] \begin{equation}
+\lor(\land(a,b),1)=\land(\lor(a,1),\lor(b,1))~.
+\end{equation}
+[/SCOPE:s_thm1_case1]
+[SCOPE:s_thm1_case2|cases|c=0的情况]
+[31] 若 $c=0$，
+[32] 那么仅当 $\land(a,b)=1$ 时左边为 1，而右边也是仅当 $a=b=1$ 时为 1。
+[33] 于是
+[34] \begin{equation}
+\lor(\land(a,b),0)=\land(\lor(a,0),\lor(b,0))~.
+\end{equation}
+[/SCOPE:s_thm1_case2]
+[35] 证毕！
+[36] 式 3 之所以称为分配律，是因为若记 $a\land b:=\land(a,b),a\lor b:=\lor(a,b)$，
+[37] 则式 3 成为
+[38] \begin{equation}
+\begin{aligned}
+(a\land b)\lor c&=(a\lor c)\land(b\lor c),\\
+(a\lor b)\land c&=(a\land c)\lor(b\land c)~.
+\end{aligned}
+\end{equation}
+[39] 以后将采用此记号。
+[/SCOPE:s_thm1]
+[40] 总结成定义和定理的形式就是：
+
+[SCOPE:s_def3|description|定义3]
+[41] 定义 3
+[42] 定义 $a\land b:=\land(a,b),a\lor b:=\lor(a,b)$。
+
+[/SCOPE:s_def3]
+[SCOPE:s_thm2|description|定理2 分配律]
+[43] 定理 2 分配律
+[44] \begin{equation}
+\begin{aligned}
+(a\land b)\lor c&=(a\lor c)\land(b\lor c),\\
+(a\lor b)\land c&=(a\land c)\lor(b\land c)~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_thm2]
+[45] 在精确定义集合的交和并前，还需要引入一种特定的函数，它将元素和集合的关系数值化了，不妨称为集合上的坐标函数。
+
+[SCOPE:s_def4|description|定义4]
+[SCOPE:s_def4_let|let_bind|定义4的变量]
+[46] 定义 4
+[47] 设 $X$ 是集合，
+[48] 则称函数 $f_X$ 是集合 $X$ 上的坐标，若
+[49] \begin{equation}
+f_X(x)=\left\{\begin{aligned}
+&1,\quad x\in X,\\
+&0,\quad x\notin X~.
+\end{aligned}\right.
+\end{equation}
+[/SCOPE:s_def4_let]
+[50] 元素的坐标其实就表达了元素是否属于对应的集合。
+[51] 由于坐标函数的取值是 $0,1$，
+[52] 所以可以将其和逻辑与或的关系联系起来。
+
+[/SCOPE:s_def4]
+[SCOPE:s_def5|description|定义5 简记约定]
+[53] 定义 5 简记约定
+[54] 当集合的坐标函数和逻辑与或函数连用时，直接记 $x\in X:=f_X(x)$。
+[55] 这一约定并不会引起混乱，它仅仅在符号 $\in$ 和 $\land,\lor$ 同时出现在一个表达时中时被采用。
+[56a] (x)\land f_Y
+[56b] (y)$。
+[57] 利用这一约定，
+[58] 则可将定理 2 翻译成下面定理
+
+[/SCOPE:s_def5]
+[SCOPE:s_thm3|description|定理3]
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[59] 定理 3
+[60] 设 $X,Y,Z$ 是三个集合，
+[/SCOPE:s_thm3_let]
+[61] 则成立
+[62] \begin{equation}
+\begin{aligned}
+&(x\in X\land y\in Y)\lor z\in Z=(x\in X\lor z\in Z)\land(y\in Y\lor z\in Z),\\
+& \left(x\in X\lor y\in Y \right) \land z\in Z=(x\in X\land z\in Z)\lor(y\in Y\land z\in Z)~.
+\end{aligned}
+\end{equation}
+[63] 定义交和并的原材料已经制备完成了，接下来就可以造出交并的严格形式了。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_def6|description|定义6 交集]
+[SCOPE:s_def6_let|let_bind|定义6的变量]
+[64] 定义 6 交集
+[65] 设 $X,Y$ 是两集合，称集合
+[66] \begin{equation}
+\{z|z\in X\land z\in Y=1 \}~
+\end{equation}
+[/SCOPE:s_def6_let]
+[67] 这事实上表达了交集的元素同时属于两集合这样的概念。
+
+[/SCOPE:s_def6]
+[SCOPE:s_def7|description|定义7 并集]
+[SCOPE:s_def7_let|let_bind|定义7的变量]
+[68] 定义 7 并集
+[69] 设 $X,Y$ 是两集合，称集合
+[70] \begin{equation}
+\{z|z\in X\lor z\in Y=1 \}~
+\end{equation}
+[/SCOPE:s_def7_let]
+[71] 这事实上表达了并集的元素至少属于两集合之一这样的概念。
+
+[/SCOPE:s_def7]
+[SCOPE:s_thm4|description|定理4]
+[72] 定理 4
+[73] \begin{equation}
+\begin{aligned}
+f_{X\cap Y}(z)&=f_X(z)\land f_Y(z),\\
+f_{X\cup Y}(z)&=f_X(z)\lor f_Y(z)~.
+\end{aligned}
+\end{equation}
+[74] 证明：以第一式证明为例：
+[75] \begin{equation}
+\begin{aligned}
+&f_{X\cap Y}(z)=1\overset{定义 4 }{\Leftrightarrow} z\in (X\cap Y)\overset{定义 6 ,定义 5 }{\Leftrightarrow}f_X(z)\land f_Y(z)=1~.\\
+&f_{X\cap Y}(z)=0\overset{定义 4 }{\Leftrightarrow} z\notin (X\cap Y)\overset{定义 6 ,定义 5 }{\Leftrightarrow}f_X(z)\land f_Y(z)=0~.\\
+\end{aligned}
+\end{equation}
+[76] 证毕！
+
+[/SCOPE:s_thm4]
+[SCOPE:s_cor1|description|推论1]
+[77] 推论 1
+[78] \begin{equation}
+\begin{aligned}
+f_{\bigcap_\alpha X_\alpha}(z)&=\underset{\alpha}{\land} f_{X_\alpha}(z),\\
+f_{\bigcup_\alpha X_\alpha}(z)&=\underset{\alpha}{\lor} f_{X_\alpha}(z)~.
+\end{aligned}
+\end{equation}
+[79] 使用数学归纳法证明即可。
+
+[/SCOPE:s_cor1]
+[80] 现在，我们就可以严格的证明集合的交运算和并运算的分配律了。
+
+[SCOPE:s_thm5|description|定理5 交并的分配律]
+[SCOPE:s_thm5_let|let_bind|定理5的变量]
+[81] 定理 5 交并的分配律
+[82] 设 $X,Y,Z$ 是三个集合，
+[/SCOPE:s_thm5_let]
+[83] 则成立
+[84] \begin{equation}
+\begin{aligned}
+&(X\cap Y)\cup Z=(X\cup Z)\cap (Y\cup Z),\\
+&(X\cup Y)\cap Z=(X\cap Z)\cup (Y\cap Z)~.
+\end{aligned}
+\end{equation}
+[85] 证明：由定义 6 ，定义 7 ，只需证明
+[86] \begin{equation}
+\begin{aligned}
+z\in (X\cap Y)&\lor z\in Z=1\\
+&\Updownarrow\\
+(z\in X\cup Z)&\land (z\in Y\cup Z)=1~.
+\end{aligned}
+\end{equation}
+[87] \begin{equation}
+\begin{aligned}
+z\in (X\cup Y)&\land z\in Z=1\\
+&\Updownarrow\\
+(z\in X\cap Z)&\lor (z\in Y\cap Z)=1~.
+\end{aligned}
+\end{equation}
+[88] 定理 4 [链接 L1]
+[89] 定义 5 [链接 L2]
+[90] 式 17 [链接 L3]
+[91] 式 18 [链接 L4]
+[92] 等式左边可写为
+[93] \begin{equation}
+\begin{aligned}
+z\in (X\cap Y)\lor z\in Z&=(z\in X\land z\in Y)\lor z\in Z,\\
+(z\in X\cup Z)\land (z\in Y\cup Z)&=(z\in X\lor z\in Z
+)\land (z\in Y\lor z\in Z),\\
+z\in (X\cup Y)\lor z\in Z&=(z\in X\lor z\in Y)\land z\in Z,\\
+(z\in X\cap Z)\lor (z\in Y\cap Z)&=(z\in X\land z\in Z)\lor (z\in Y\land z\in Z)~.
+\end{aligned}
+\end{equation}
+[94] 于是只需证明
+[95] \begin{equation}
+\begin{aligned}
+(z\in X\land z\in Y)&\lor z\in Z=1\\
+&\Updownarrow\\
+(z\in X\lor z\in Z)&\land (z\in Y\lor z\in Z)=1,\\
+\\
+(z\in X\lor z\in Y)&\land z\in Z=1\\
+&\Updownarrow\\
+(z\in X\land z\in Z)&\lor (z\in Y\land z\in Z)=1~.
+\end{aligned}
+\end{equation}
+[96] 由定理 3 ，式 20 成立。
+[97] 证毕！
+
+[/SCOPE:s_thm5]
+[SCOPE:s_thm6|description|定理6 对偶原理（de Morgan 定理）]
+[SCOPE:s_thm6_let|let_bind|定理6的变量]
+[98] 定理 6 对偶原理（de Morgan 定理）
+[99] \begin{equation}
+\begin{aligned}
+S\backslash \bigcup_\alpha A_\alpha&=\bigcap_\alpha(S\backslash A_\alpha),\\
+S\backslash \bigcap_\alpha A_\alpha&=\bigcup_\alpha(S \backslash A_\alpha)~,\\
+\end{aligned}
+\end{equation}
+[100a] (x)=1,f_B
+[100b] (x)=0$.
+[/SCOPE:s_thm6_let]
+[101] 证明：这里的对偶是指：定理中的两式已知其中之一，便可推得另一式。
+[102] 以第一式成立为例，
+[103] 那么
+[104] \begin{equation}
+\begin{aligned}
+S\backslash \bigcap_\alpha (S\backslash A_\alpha)&=S\backslash \left(S\backslash\bigcup_\alpha A_\alpha \right) =\bigcup_\alpha A_\alpha,\\
+\Downarrow\\
+S\backslash \bigcap_\alpha A_\alpha&=S\backslash \bigcap_\alpha (S\backslash (S\backslash A_\alpha))=\bigcup_\alpha (S\backslash A_\alpha)~.
+\end{aligned}
+\end{equation}
+[105] 于是我们只需证明第一式即可。
+[106] 这只需证明
+[107] \begin{equation}
+\begin{aligned}
+f_S(x)=1,&\quad f_{\bigcup_\alpha A_\alpha}(x)=0\\
+&\Updownarrow\\
+f_{\bigcap_\alpha (S\backslash A_\alpha)}(x)&=1~.
+\end{aligned}
+\end{equation}
+[108] 推论 1
+[109] ，只需证明
+[110] \begin{equation}
+\begin{aligned}
+f_S(x)=1,&\quad \underset{\alpha}{\lor}f_{A_\alpha}(x)=0\\
+&\Updownarrow\\
+\underset{\alpha}{\land}f_{(S\backslash A_\alpha)}(x)&=1~.
+\end{aligned}
+\end{equation}
+[111] 这可证明如下
+[112] \begin{equation}
+\begin{aligned}
+f_S(x)=1,&\quad \underset{\alpha}{\lor}f_{A_\alpha}(x)=0\\
+\Updownarrow\\
+f_S(x)=1,&\quad f_{A_\alpha}(x)=0,\quad\forall \alpha\\
+\Updownarrow\\
+f_{S\backslash A_\alpha}(x)=1,&\quad\forall \alpha\\
+\Updownarrow\\
+\underset{\alpha}{\land}f_{(S\backslash A_\alpha)}(x)&=1~.
+\end{aligned}
+\end{equation}
+[113] 证毕！
+[/SCOPE:s_thm6]
+[114] 总结一下本文的内容，引入逻辑与或的概念并定义集合的坐标函数，我们可以将集合中的概念严格定义一遍而避免使用 “或” 和 “且” 这样模糊的概念，并且在证明集合运算的两个性质做到清楚了当。
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的证明引用定义1"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的证明引用定义2"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2是定理1的记号改写"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3是定理2的翻译"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_def6",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理4的证明引用定义6"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_def7",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理4的证明引用定义7"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_def4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理4的证明引用定义4"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_def5",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理4的证明引用定义5"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是定理4的推广"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_thm3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理5的证明引用定理3"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_def6",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理5的证明引用定义6"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_def7",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理5的证明引用定义7"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_def5",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理5的证明引用定义5"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_thm4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理5的证明引用定理4"
+  },
+  {
+    "source_scope": "s_thm6",
+    "target_scope": "s_cor1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理6的证明引用推论1"
+  }
+]

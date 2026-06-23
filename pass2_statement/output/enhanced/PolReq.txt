@@ -1,0 +1,89 @@
+[SCOPE:root|description|极值的必要条件（变分学）]
+文章名: PolReq
+标题: 极值的必要条件（变分学）
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=lemma heading=引理 1 title=
+
+[0] 定理 1
+[SCOPE:s_theorem1_let|let_bind|定理 1 的变量]
+[1a] (x)$ 是 $C_1$ 类的子节 2 ，且 $y
+[1b] (a)=y_0,y
+[1c] (b)=y_1$。
+[2a] (x)$ 给出泛函 $J
+[2b] (y)=\int_a^bF(x,y,y') \,\mathrm{d}{x} $ 的极值的必要条件是：变分
+[3] \begin{equation}
+\delta J=\int_a^b[F'_y(x,y,y')\eta(x)+F'_{y'}(x,y,y')\eta'(x)] \,\mathrm{d}{x} ~.
+\end{equation}
+
+[/SCOPE:s_theorem1_let]
+[4a] (x)$ 实现 $J
+[4b] (y)$ 的弱的相对极值，
+[5a] (x)$ 的某个一级 $\epsilon-$ 邻区中，任意 $\overline{y}
+[5b] (x)$，在弱极大时，$\Delta J=J(\overline{y})-J
+[5c] (y)\leq 0$；
+[6] 在弱极小时，$\Delta J=J(\overline{y})-J(y)\geq 0$。
+[7] 即 $\Delta J$ 符号一定。
+[8] 为证明定理 1 ，先引入一个引理。
+
+[SCOPE:s_lemma1|description|引理 1]
+[9] 引理 1
+[SCOPE:s_lemma1_let|let_bind|引理 1 的变量]
+[10] 设 $d$ 是常数，$\alpha$ 可以任意方式趋于 0，$\epsilon_\alpha$ 是 $\alpha$ 的高阶无穷小且随 $\alpha$ 趋于 0。
+[11] 如果对于一切充分小的 $\alpha$，成立
+[12] \begin{equation}
+\alpha d+\epsilon_\alpha\geq0\quad or\quad\alpha d+\epsilon_\alpha\leq0~,
+\end{equation}
+[/SCOPE:s_lemma1_let]
+[SCOPE:s_lemma1_reductio|reductio|引理 1 的反证法]
+[13] 证明： 设 $d\neq 0$。
+[14] 则因 $\epsilon_\alpha$ 是 $\alpha$ 的高阶无穷小，当 $\alpha\rightarrow0$ 时，表达式
+[15] \begin{equation}
+d+\frac{\epsilon_\alpha}{\alpha}~
+\end{equation}
+[16] 将与 $d$ 的符号一致。
+[17] 所以，表达式
+[18] \begin{equation}
+\alpha d+\epsilon_\alpha=\alpha \left(d+\frac{\epsilon_\alpha}{\alpha} \right) ~
+\end{equation}
+[19] 的符号取决于 $\alpha$。
+[20] 即若 $\alpha$ 与 $d+\frac{\epsilon_\alpha}{\alpha}$ 符号相反时，
+[21] 式 4 [链接 L0]
+[22] 为负，相同时为正。
+[23] 这与条件
+[24] 式 2 [链接 L1]
+[25] 相违背。
+[26] 因此，$d=0$。
+[/SCOPE:s_lemma1_reductio]
+[27] 引理得证。
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_theorem1_proof_let|let_bind|定理 1 证明中的变量]
+[28a] (x)+t\eta
+[28b] (x)$，
+[29] 则由式 11 ，式 12
+[30] \begin{equation}
+J(y+t\eta)-J(y)=t\delta J+\epsilon_1 \left\lvert t \right\rvert r(y,y+\eta)~.
+\end{equation}
+[/SCOPE:s_theorem1_proof_let]
+[31] 式中，右边第二项是 $t$ 的高阶无穷小，并且式中已经使用了 $r(y,y+t\eta)= \left\lvert t \right\rvert r(y,y+\eta)$
+[32] 定义 2 [链接 L2]
+[33a] (x)$ 给 $J
+[33b] (y)$ 于极值，由极值的必要条件，对任意的 $t\rightarrow0$, 式 5 符号都一定。
+[34] 由泛函变分 $\delta J$ 的定义，当 $y$ 和 $\eta$ 固定时，其是一个常数。
+[35] 所以式 5 满足引理 1 的条件，
+[36] 故 $\delta J=0$。
+[37] 定理得证。
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_theorem1",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理 1 的证明引用引理 1"
+  }
+]

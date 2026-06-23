@@ -1,0 +1,37 @@
+[SCOPE:root|description|全导数（简明微积分）]
+文章名: TotDer
+标题: 全导数（简明微积分）
+
+[0] 贡献者： addis; Giacomo
+[1] 预备知识 复合函数的偏导
+[SCOPE:s_let1|let_bind|引入函数 f(x,y,t) 和变量 x,y,t]
+[2] 若多元函数包含若干个变量（以下以 $f(x,y,t)$ 为例），我们知道它可以对其中任意一个变量求偏导，
+[3] 即 $ \partial f/\partial x $， $ \partial f/\partial y $， $ \partial f/\partial t $，注意求偏导时其余两个变量不变。
+[SCOPE:s_let2|let_bind|引入 x(t), y(t) 作为 t 的函数]
+[4] 现在若把 $x,y$ 看做 $t$ 的函数，
+[5a] (t),y
+[5b] (t),t]$，我们可以将其对 $t$ 求导。
+[6] 为了强调这与对 $t$ 求偏导有所不同，我们把得到的函数叫做全导数。
+[/SCOPE:s_let1]
+[7] 与偏微分中的链式法的推导类似，我们先来看函数的全微分
+[8] \begin{equation}
+\,\mathrm{d}{f} = \frac{\partial f}{\partial x} \,\mathrm{d}{x} + \frac{\partial f}{\partial y} \,\mathrm{d}{y} + \frac{\partial f}{\partial t} \,\mathrm{d}{t} ~.
+\end{equation}
+[9] 而根据 $x,y$ 与 $t$ 的微分关系
+[10] \begin{equation}
+\,\mathrm{d}{x} = \frac{\mathrm{d}{x}}{\mathrm{d}{t}} \,\mathrm{d}{t} \qquad \,\mathrm{d}{y} = \frac{\mathrm{d}{y}}{\mathrm{d}{t}} \,\mathrm{d}{t} ~.
+\end{equation}
+[11] 代入上式得
+[12] \begin{equation}
+\,\mathrm{d}{f} = \left( \frac{\partial f}{\partial x} \frac{\mathrm{d}{x}}{\mathrm{d}{t}} + \frac{\partial f}{\partial y} \frac{\mathrm{d}{y}}{\mathrm{d}{t}} + \frac{\partial f}{\partial t} \right) \,\mathrm{d}{t} ~.
+\end{equation}
+[13] 而若把 $f$ 看做 $t$ 的一元函数，又应该有全微分关系
+[14] \begin{equation}
+\,\mathrm{d}{f} = \frac{\mathrm{d}{f}}{\mathrm{d}{t}} \,\mathrm{d}{t} ~.
+\end{equation}
+[15] 对比以上两式可得 $f$ 关于 $t$ 的全导数为
+[16] \begin{equation}
+\frac{\mathrm{d}{f}}{\mathrm{d}{t}} = \frac{\partial f}{\partial x} \frac{\mathrm{d}{x}}{\mathrm{d}{t}} + \frac{\partial f}{\partial y} \frac{\mathrm{d}{y}}{\mathrm{d}{t}} + \frac{\partial f}{\partial t} ~.
+\end{equation}
+[/SCOPE:s_let2]
+[/SCOPE:root]

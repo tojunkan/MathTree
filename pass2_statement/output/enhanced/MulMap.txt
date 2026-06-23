@@ -1,0 +1,72 @@
+[SCOPE:root|description|多线性映射]
+文章名: MulMap
+标题: 多线性映射
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=多线性映射
+  [1] type=theorem heading=定理 1 title=
+  [2] type=definition heading=定义 2 title=多线性型
+
+[0] 本文存在未完成的内容。
+
+[SCOPE:s_def1|description|定义1 多线性映射]
+[1] 定义 1 多线性映射
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[2] 设 $V_1,\cdots,V_p, U$ 为域 $\mathbb{F}$ 上的向量空间。
+[/SCOPE:s_def1_let]
+[3] 映射
+[4] \begin{equation}
+f:V_1\times V_2\times\cdots\times V_p\rightarrow U~
+\end{equation}
+[5] $p$-线性
+[6] 多重线性映射
+[7] \begin{equation}
+f_i: \boldsymbol{\mathbf{v}} \mapsto f( \boldsymbol{\mathbf{a}} _1, \cdots, \boldsymbol{\mathbf{a}} _{i-1}, \boldsymbol{\mathbf{v}} , \boldsymbol{\mathbf{a}} _{i+1}, \cdots, \boldsymbol{\mathbf{a}} _p)~
+\end{equation}
+[8] 所有 $p$-线性的映射构成的集合记为 $\mathcal{L}(V_1,\cdots,V_p;U)$。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理1]
+[9] 定理 1
+[SCOPE:s_thm1_let1|let_bind|定理1的变量]
+[10] $p$-线性映射的集合 $\mathcal{L}(V_1,\cdots,V_p;U)$ 构成 $\mathbb{F}$-向量空间，它的线性组合（加法和数乘）定义为
+[11] \begin{equation}
+(\mu f+\nu g)( \boldsymbol{\mathbf{a}} _1,\cdots, \boldsymbol{\mathbf{a}} _p)=\mu f( \boldsymbol{\mathbf{a}} _1,\cdots, \boldsymbol{\mathbf{a}} _p)+\nu g( \boldsymbol{\mathbf{a}} _1,\cdots, \boldsymbol{\mathbf{a}} _p)~
+\end{equation}
+[/SCOPE:s_thm1_let1]
+[12] 证明： 即证明，任意两个 $p$-线性映射的线性组合 $\alpha f+\beta g$ 也是一个 $p$-线性映射。
+[SCOPE:s_thm1_let2|let_bind|证明中的变量]
+[13] 令 $h=\alpha f+\beta g$，且对任意指数 $i=1,\cdots,p$ 及任意固定的向量 $ \boldsymbol{\mathbf{a}} _j \in V_j\quad(1\leq j\leq p,j\neq i)$，记
+[14] \begin{equation}
+h_i: \boldsymbol{\mathbf{v}} \mapsto h( \boldsymbol{\mathbf{a}} _1,\cdots, \boldsymbol{\mathbf{a}} _{i-1}; \boldsymbol{\mathbf{v}} , \boldsymbol{\mathbf{a}} _{i+1},\cdots, \boldsymbol{\mathbf{a}} _p)~.
+\end{equation}
+[/SCOPE:s_thm1_let2]
+[15] 则对 $\forall \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} \in V_i,\quad a,b\in\mathbb{F}$
+[16] \begin{equation}
+\begin{aligned}
+h_i(a \boldsymbol{\mathbf{x}} +b \boldsymbol{\mathbf{y}} )&=(\alpha f_i+\beta g_i)(a \boldsymbol{\mathbf{x}} +b \boldsymbol{\mathbf{y}} )\\
+&=\alpha f_i(a \boldsymbol{\mathbf{x}} +b \boldsymbol{\mathbf{y}} )+\beta g_i…[truncated]…( \boldsymbol{\mathbf{x}} )+\beta g_i( \boldsymbol{\mathbf{x}} ) \right) +b(\alpha f_i( \boldsymbol{\mathbf{y}} )+\beta g_i( \boldsymbol{\mathbf{y}} ))\\
+&=ah_i( \boldsymbol{\mathbf{x}} )+bh_i( \boldsymbol{\mathbf{y}} )~,
+\end{aligned}
+\end{equation}
+[17] 这显然满足 $p$-线性映射的定义。
+[18] 证毕！
+
+[/SCOPE:s_thm1]
+[SCOPE:s_def2|description|定义2 多线性型]
+[19] 定义 2 多线性型
+[20] 任意 $V^p$ 到 $\mathbb{F}$ 的多线性映射称为 $V$ 上的多线性型（multilinear form）或者 $V^p$ 上的多线性 $\mathbb{F}$-值函数，简称多线性函数。
+[21] 【未完成】非退化多线性型
+[/SCOPE:s_def2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的结论基于定义1"
+  }
+]

@@ -1,0 +1,305 @@
+{
+  "article_name": "RQuaF",
+  "statements": [
+    {
+      "stmt_id": "st_def1_intro",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "q",
+        "V",
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_transformation",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_rational_note",
+      "subtype": "remark",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_definition",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "q",
+        "x_i",
+        "s",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "V",
+        "q"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        20,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "q",
+        "r",
+        "s",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof_intro",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_assume_other_basis",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "e'_i",
+        "t"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_assume_t_less_s",
+      "subtype": "assumption",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_subspaces",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "L",
+        "L'"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_dim_inequality",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_nonzero_vector",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_q_positive",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_q_nonpositive",
+      "subtype": "conclusion",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_contradiction",
+      "subtype": "conclusion",
+      "clause_range": [
+        39,
+        41
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_s_equals_t",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_definition",
+      "subtype": "definition",
+      "clause_range": [
+        44,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "r",
+        "s",
+        "r-s"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_remark_complex",
+      "subtype": "remark",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm2_assume_other_basis",
+      "target": "st_thm2_dim_inequality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assume_t_less_s",
+      "target": "st_thm2_dim_inequality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_subspaces",
+      "target": "st_thm2_dim_inequality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_dim_inequality",
+      "target": "st_thm2_nonzero_vector",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_nonzero_vector",
+      "target": "st_thm2_q_positive",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_nonzero_vector",
+      "target": "st_thm2_q_nonpositive",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_q_positive",
+      "target": "st_thm2_contradiction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_q_nonpositive",
+      "target": "st_thm2_contradiction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_contradiction",
+      "target": "st_thm2_s_equals_t",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_statement",
+      "target": "st_def2_definition",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1断言实二次型可化为标准型，标准型由定义2给出。"
+    },
+    {
+      "source": "st_thm2_statement",
+      "target": "st_def1_intro",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "惯性定理是关于实二次型的定理。"
+    }
+  ],
+  "unresolved": []
+}

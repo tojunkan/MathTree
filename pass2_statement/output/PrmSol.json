@@ -1,0 +1,308 @@
+{
+  "article_name": "PrmSol",
+  "statements": [
+    {
+      "stmt_id": "st_ex1_heading",
+      "subtype": "example",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let",
+      "exposed_entities": [
+        "θ1",
+        "θ2",
+        "α"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_heading",
+      "subtype": "example",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "θ1",
+        "θ2",
+        "α",
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_phi",
+      "subtype": "conclusion",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_gamma_cond",
+      "subtype": "condition",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_gamma_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "γ"
+      ]
+    },
+    {
+      "stmt_id": "st_asa_intro",
+      "subtype": "remark",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_asa",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_asa_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_asa_let",
+      "exposed_entities": [
+        "θ1",
+        "α",
+        "θ2",
+        "β"
+      ]
+    },
+    {
+      "stmt_id": "st_asa_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_asa",
+      "exposed_entities": [
+        "β"
+      ]
+    },
+    {
+      "stmt_id": "st_asa_note",
+      "subtype": "remark",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_asa",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_intro",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_assump1",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let1",
+      "exposed_entities": [
+        "θ1",
+        "φ1",
+        "θ2",
+        "φ2"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_eq1",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": [
+        "α"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_assump2",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let2",
+      "exposed_entities": [
+        "θ",
+        "φ",
+        "γ"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_eq2",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": [
+        "γ"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_end",
+      "subtype": "remark",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex1_assump",
+      "target": "st_ex1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_assump",
+      "target": "st_ex2_phi",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_phi",
+      "target": "st_ex2_gamma_cond",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_gamma_cond",
+      "target": "st_ex2_gamma_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_asa_assump",
+      "target": "st_asa_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_assump1",
+      "target": "st_proof_eq1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_assump2",
+      "target": "st_proof_eq2",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex2_phi",
+      "target": "st_ex1_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2代入具体数值到例1公式"
+    },
+    {
+      "source": "st_asa_eq",
+      "target": "st_ex1_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "角边角问题类比边角边"
+    },
+    {
+      "source": "st_proof_eq1",
+      "target": "st_ex1_conclusion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明例1公式"
+    }
+  ],
+  "unresolved": []
+}

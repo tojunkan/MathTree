@@ -1,0 +1,31 @@
+# Node
+node_modules/
+dist/
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+
+# Database
+backend/data/*.db
+backend/data/*.db-shm
+backend/data/*.db-wal
+
+# Scraped data (large, regeneratable)
+data/wuliwiki_raw/
+data/wuliwiki_checkpoint.json
+data/wuliwiki_checkpoint.json.tmp
+
+# LLM API config (contains secrets)
+config.json
+
+# LLM Pass outputs (regeneratable)
+pass1_scope/output/
+
+# Environment
+.env
+.env.local

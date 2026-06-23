@@ -1,0 +1,264 @@
+{
+  "article_name": "CExp",
+  "statements": [
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "z",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_eq",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "w",
+        "e^z"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_prop",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euler_pure_imag",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "theta"
+      ]
+    },
+    {
+      "stmt_id": "st_euler_formula_real",
+      "subtype": "theorem",
+      "clause_range": [
+        9,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euler_general",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        16
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_additivity",
+      "subtype": "theorem",
+      "clause_range": [
+        22,
+        23
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_compat_real",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_compat",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_analytic_unique",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_compat",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_deriv_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_deriv_let1",
+      "exposed_entities": [
+        "a",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_deriv1",
+      "subtype": "theorem",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_deriv_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_deriv_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_deriv_let2",
+      "exposed_entities": [
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_deriv2",
+      "subtype": "theorem",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": "true",
+      "scope_id": "s_deriv_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euler_derivation",
+      "subtype": "conclusion",
+      "clause_range": [
+        39,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euler",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_series_def",
+      "subtype": "definition",
+      "clause_range": [
+        52,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "e^z"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_eq",
+      "target": "st_def1_prop",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euler_pure_imag",
+      "target": "st_euler_formula_real",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euler_formula_real",
+      "target": "st_euler_general",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_eq",
+      "target": "st_additivity",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_eq",
+      "target": "st_compat_real",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_compat_real",
+      "target": "st_analytic_unique",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_deriv_let1",
+      "target": "st_deriv1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_deriv_let2",
+      "target": "st_deriv2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_deriv1",
+      "target": "st_deriv2",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_euler_formula_real",
+      "target": "st_euler_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_series_def",
+      "target": "st_def1_eq",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "定义2的级数定义与定义1的欧拉公式定义等价，但证明未完成"
+    }
+  ],
+  "unresolved": []
+}

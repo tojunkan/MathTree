@@ -1,0 +1,569 @@
+{
+  "article_name": "DivAlg",
+  "statements": [
+    {
+      "stmt_id": "st_divalg_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": "true",
+      "scope_id": "s_divalg",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_divalg_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_divalg_let",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_divalg_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_divalg",
+      "exposed_entities": [
+        "q(x)",
+        "r(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_exist_assump1",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_divalg_exist",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exist_case1",
+      "subtype": "condition",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_divalg_exist",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exist_induction_hyp",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_divalg_exist_let1",
+      "exposed_entities": [
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_exist_induction_step",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_divalg_exist",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exist_f1_def",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_divalg_exist_let2",
+      "exposed_entities": [
+        "f_1(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_exist_deg_ineq",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_divalg_exist",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exist_induction_use",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_divalg_exist_let3",
+      "exposed_entities": [
+        "q_1(x)",
+        "r(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_exist_final_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_divalg_exist",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exist_q_def",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_divalg_exist_let3",
+      "exposed_entities": [
+        "q(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_exist_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_divalg_exist",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_unique_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_divalg_unique",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_unique_let",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_divalg_unique_let",
+      "exposed_entities": [
+        "q_1(x)",
+        "r_1(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_unique_deg_cond",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_divalg_unique",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_unique_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_divalg_unique",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_unique_contra",
+      "subtype": "assumption",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_divalg_unique",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_unique_deg_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_divalg_unique",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_unique_contradiction",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        35
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_divalg_unique",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_unique_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        36,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_divalg_unique",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_result",
+      "subtype": "example",
+      "clause_range": [
+        39,
+        40
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "q(x)",
+        "r(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_result",
+      "subtype": "example",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "q(x)",
+        "r(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_rem_theorem",
+      "subtype": "corollary",
+      "clause_range": [
+        44,
+        48
+      ],
+      "truth_value": "true",
+      "scope_id": "s_rem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rem_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_rem_let",
+      "exposed_entities": [
+        "f(x)",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_rem_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        48
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rem",
+      "exposed_entities": [
+        "q(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_zero_def",
+      "subtype": "definition",
+      "clause_range": [
+        49,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_zero",
+      "exposed_entities": [
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_zero_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_zero_let",
+      "exposed_entities": [
+        "f(x)",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_zero_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        51,
+        51
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_zero",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor2_theorem",
+      "subtype": "corollary",
+      "clause_range": [
+        52,
+        56
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        54,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_cor2_let",
+      "exposed_entities": [
+        "f(x)",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_cor2_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        55,
+        56
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cor2",
+      "exposed_entities": [
+        "q(x)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_divalg_assump",
+      "target": "st_divalg_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exist_assump1",
+      "target": "st_exist_case1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exist_induction_hyp",
+      "target": "st_exist_induction_step",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exist_induction_step",
+      "target": "st_exist_f1_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exist_f1_def",
+      "target": "st_exist_deg_ineq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exist_deg_ineq",
+      "target": "st_exist_induction_use",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exist_induction_use",
+      "target": "st_exist_final_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exist_final_eq",
+      "target": "st_exist_q_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exist_q_def",
+      "target": "st_exist_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_unique_assump",
+      "target": "st_unique_let",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_unique_let",
+      "target": "st_unique_deg_cond",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_unique_deg_cond",
+      "target": "st_unique_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_unique_eq",
+      "target": "st_unique_contra",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_unique_contra",
+      "target": "st_unique_deg_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_unique_deg_eq",
+      "target": "st_unique_contradiction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_unique_contradiction",
+      "target": "st_unique_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_assump",
+      "target": "st_ex1_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_assump",
+      "target": "st_ex2_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rem_assump",
+      "target": "st_rem_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_zero_assump",
+      "target": "st_zero_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor2_assump",
+      "target": "st_cor2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_rem_theorem",
+      "target": "st_divalg_theorem",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "余数定理是带余除法的特例（除式为x-c）"
+    },
+    {
+      "source": "st_cor2_theorem",
+      "target": "st_rem_theorem",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论2是余数定理的直接推论"
+    }
+  ],
+  "unresolved": []
+}

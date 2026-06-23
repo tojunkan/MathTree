@@ -1,0 +1,396 @@
+{
+  "article_name": "Pl2Ylm",
+  "statements": [
+    {
+      "stmt_id": "st_plane_wave_expansion",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": "true",
+      "scope_id": "s_plane_wave_expansion",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_plane_wave_let",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_plane_wave_let",
+      "exposed_entities": [
+        "k",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_conj_commute",
+      "subtype": "remark",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_plane_wave_expansion",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_conj_relation",
+      "subtype": "remark",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_plane_wave_expansion",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_spherical_wave_basis",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_plane_wave_expansion",
+      "exposed_entities": [
+        "s_{l,m}(k)",
+        "Y_{l,m}"
+      ]
+    },
+    {
+      "stmt_id": "st_plane_wave_linear_comb",
+      "subtype": "theorem",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_plane_wave_expansion",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_other_forms_legendre",
+      "subtype": "theorem",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": "true",
+      "scope_id": "s_other_forms",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_z_direction",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_other_forms",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fourier_let",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_fourier_let",
+      "exposed_entities": [
+        "f(r)",
+        "u_{l,m}(r)",
+        "Y_{l,m}"
+      ]
+    },
+    {
+      "stmt_id": "st_fourier_transform_def",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_fourier_transform",
+      "exposed_entities": [
+        "g(k)"
+      ]
+    },
+    {
+      "stmt_id": "st_fourier_result",
+      "subtype": "theorem",
+      "clause_range": [
+        18,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "s_fourier_transform",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fourier_decompose",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_fourier_transform",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "psi(r)",
+        "Z"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_result",
+      "subtype": "example",
+      "clause_range": [
+        27,
+        29
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation1_intro",
+      "subtype": "remark",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation1_let",
+      "exposed_entities": [
+        "k",
+        "theta"
+      ]
+    },
+    {
+      "stmt_id": "st_derivation1_symmetry",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation1_integral",
+      "subtype": "theorem",
+      "clause_range": [
+        36,
+        39
+      ],
+      "truth_value": "true",
+      "scope_id": "s_derivation1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation1_final",
+      "subtype": "theorem",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": "true",
+      "scope_id": "s_derivation1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation2_intro",
+      "subtype": "remark",
+      "clause_range": [
+        41,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation2_let",
+      "exposed_entities": [
+        "A_{l,m}",
+        "B_{l,m}",
+        "j_l",
+        "y_l"
+      ]
+    },
+    {
+      "stmt_id": "st_derivation2_singularity",
+      "subtype": "conclusion",
+      "clause_range": [
+        51,
+        53
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation2_asymptotic",
+      "subtype": "remark",
+      "clause_range": [
+        54,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_plane_wave_let",
+      "target": "st_plane_wave_expansion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_plane_wave_expansion",
+      "target": "st_plane_wave_linear_comb",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_other_forms_legendre",
+      "target": "st_plane_wave_expansion",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_z_direction",
+      "target": "st_other_forms_legendre",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_fourier_let",
+      "target": "st_fourier_transform_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_fourier_transform_def",
+      "target": "st_fourier_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_fourier_result",
+      "target": "st_fourier_decompose",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_let",
+      "target": "st_example1_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation1_let",
+      "target": "st_derivation1_symmetry",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation1_symmetry",
+      "target": "st_derivation1_integral",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation1_integral",
+      "target": "st_derivation1_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation2_let",
+      "target": "st_derivation2_singularity",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_other_forms_legendre",
+      "target": "st_plane_wave_expansion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "其他形式是平面波展开式的特例"
+    },
+    {
+      "source": "st_fourier_result",
+      "target": "st_plane_wave_expansion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "傅里叶变换推导使用了平面波展开"
+    },
+    {
+      "source": "st_example1_result",
+      "target": "st_fourier_result",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是傅里叶变换的一个应用"
+    },
+    {
+      "source": "st_derivation1_final",
+      "target": "st_plane_wave_expansion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "推导1证明了平面波展开式"
+    },
+    {
+      "source": "st_derivation2_singularity",
+      "target": "st_plane_wave_expansion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "推导2提供了另一种证明"
+    }
+  ],
+  "unresolved": [
+    "推导2中未完成部分（匹配相位）无法形成完整结论，故未生成对应statement。",
+    "例1中波函数表达式与后续计算之间的推导步骤缺失，但已作为example整体处理。"
+  ]
+}

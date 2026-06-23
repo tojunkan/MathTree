@@ -1,0 +1,211 @@
+[SCOPE:root|description|仿射子空间]
+文章名: SAfSp
+标题: 仿射子空间
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+  [1] type=theorem heading=定理 1 title=
+  [2] type=theorem heading=定理 2 title=
+  [3] type=corollary heading=推论 1 title=
+  [4] type=definition heading=定义 2 title=
+  [5] type=theorem heading=定理 3 title=
+  [6] type=exercise heading=习题 1 title=
+
+[0] 缺图
+[1] 本节将引入仿射子空间的概念。
+[2] 0 维的仿射子空间是个点，1 维的是直线，$n-1$ 维的则是超平面（$n$ 为仿射空间的维数）。
+[3] 本节将证明，仿射空间中的平面本身也是一个仿射空间，且任何的平面包含通过平面上两不同点的直线。
+[4a] 此外，平面作为仿射空间，其装备了一个方向子空间（即与其相配备的矢量空间）
+[4b] 若两平面的方向子空间相同，则称它们平行，平行的平面必能通过相互平移得到。
+[5] 抛去仿射空间的内容，这些都与我们通常的几何直觉相一致。
+[6] 以上内容都能在本节得到。
+
+[SCOPE:s_def1|description|定义1]
+[7] 定义 1
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[8] 设 $(\mathbb A,V)$ 是个 $n$ 维的仿射空间，$U$ 是 $V$ 的矢量子空间。
+[9] 在 $\mathbb A$ 中固定一点 $\dot p$，称集合
+[/SCOPE:s_def1_let]
+[10] \begin{equation}
+\Pi=\dot p+U=\{\dot p+u|u\in U\}~
+\end{equation}
+[11] 仿射子空间
+[12] 方向子空间
+[13] “方向子空间 $U$” 可以这样理解：它的每一元 $u\in U$ 把点 $\dot p$ 沿着方向 $u$ 移动到点 $\dot p+u$，并且 $\Pi$ 中所有的点都可以这样得到。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理1]
+[14] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[15] 仿射空间 $(\mathbb A,V)$ 中的平面 $\Pi=\dot p+U$ 本身也是个仿射空间，它与矢量空间 $U$ 相伴。
+[/SCOPE:s_thm1_let]
+[16] 证明：由于 $U\in V$ 且 $U$ 是个矢量子空间，
+[17] 故
+[18] \begin{equation}
+\dot q+0=\dot q~,\quad (\dot q+v)+u=\dot q+(v+u)~,
+\end{equation}
+[19] 显然对 $\forall \dot q\in\mathbb A,\forall u,v\in U$ 成立。
+[20] 于是便得到了仿射空间定义中的性质 1（
+[21] 定义 1 [链接 L0]
+[22] 其次，由式 1 ，对 $\forall \dot q,\dot q'\in\Pi$，$\exists u,u'\in U$，使得 $\dot q=\dot p+u,\dot q'=\dot p+u'$。则
+[23] \begin{equation}
+\overrightarrow{qq'}=\overrightarrow{pq'}-\overrightarrow{pq}=u'-u\in U~
+\end{equation}
+[24] 存在。
+[25] 并由 $\dot q,\dot q'$ 在 $V$ 中对应矢量的唯一性，$\overrightarrow{qq'}\in U$ 必唯一。
+[26] 于是得到仿射空间定义中的性质 2。
+[27] 证毕！
+[28] 该定理表明，$\dot p$ 完全确定了 $\Pi$ 到 $U$ 的双射（子节 1 中性质 1）。
+[29] 于是 $U=\{\overrightarrow{pq}|q\in \Pi\}$，
+[30] 即方向子空间 $U$ 完全由平面 $\Pi$ 确定。
+[31] 对 1 维的直线 $\Pi$，设矢量空间 $V$ 定义在域 $\mathbb F$ 上，
+[32] 则
+[33] \begin{equation}
+\Pi=\{\dot p+\lambda\overrightarrow{pq}|\lambda\in \mathbb F\}~.
+\end{equation}
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理2]
+[34] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[35] 子集 $\Pi \subset\mathbb A$ 是个过点 $\dot p$ 的平面，当且仅当，它能整个包含通过其上两个不同点的直线（域 $\mathbb F$ 的特征（定义 6 ）$\mathrm{ch}\,\mathbb F\neq 2$）。
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm2_forward|description|定理2的⇒方向]
+[36] 证明：1.
+[37] $\Rightarrow$
+[38] 由 $\Pi$ 是个平面，
+[39] 则 $\Pi=\dot p+U$，$U\in V$ 是个矢量子空间。
+[SCOPE:s_thm2_forward_let|let_bind|⇒方向的变量]
+[40] $\forall\dot q_1,\dot q_2\in \Pi$，过 $\dot q_1,\dot q_2$ 直线上的点必形为
+[41] \begin{equation}
+\dot q_1+\lambda\overrightarrow{q_1q_2}=\dot p+\overrightarrow{pq_1}+\lambda\overrightarrow{q_1q_2}~.
+\end{equation}
+[42] 设 $\dot q_1=\dot p+u_1,\dot q_2=\dot p+u_2$，
+[/SCOPE:s_thm2_forward_let]
+[43] 则
+[44] \begin{equation}
+\begin{aligned}
+&u_1,u_2\in U,\quad \overrightarrow{q_1q_2}=\overrightarrow{pq_2}-\overrightarrow{pq_1}=u_2-u_1~,\\
+&\Downarrow\\
+&\dot q_1+\lambda\overrightarrow{q_1q_2}=\dot p+u_1+\lambda(u_2-u_1)\in\dot p+U=\Pi~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_thm2_forward]
+[SCOPE:s_thm2_backward|description|定理2的⇐方向]
+[45] 2.$\Leftarrow$
+[SCOPE:s_thm2_backward_let|let_bind|⇐方向的变量]
+[46] 设 $U=\{\overrightarrow{pq}|\dot q\in \Pi\}$，
+[/SCOPE:s_thm2_backward_let]
+[47] 则只需证明 $U$ 是个矢量子空间。
+[48] 据条件，对 $\forall \dot q_1,\dot q_2\in\Pi$
+[49] \begin{equation}
+\dot q_1+\lambda\overrightarrow{q_1q_2}=\dot p+\overrightarrow{pq_1}+\lambda(\overrightarrow{pq_2}-\overrightarrow{pq_1})\in\Pi~,
+\end{equation}
+[50] \begin{equation}
+\overrightarrow{pq_1},\overrightarrow{pq_2}\in U\Rightarrow \overrightarrow{pq_1}+\lambda(\overrightarrow{pq_2}-\overrightarrow{pq_1})\in U~.
+\end{equation}
+[51] 取 $\dot{q_1}=\dot{p}$，并注意到 $\overrightarrow{pp}=0$，带入上式即得
+[52] \begin{equation}
+\overrightarrow{pq_2}\in U\Rightarrow\lambda\overrightarrow{pq_2}\in U ~.
+\end{equation}
+[53] 取 $\lambda=\frac{1}{2}$，
+[54] 则
+[55] \begin{equation}
+\overrightarrow{pq_1},\overrightarrow{pq_2}\in U\Rightarrow \frac{1}{2}(\overrightarrow{pq_2}+\overrightarrow{pq_1})\in U\Rightarrow \overrightarrow{pq_2}+\overrightarrow{pq_1}\in U~.
+\end{equation}
+[56] 由矢量子空间的定义，
+[57] 于是 $U$ 是 $V$ 的矢量子空间。
+[58] 证毕！
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_backward]
+[SCOPE:s_cor1|description|推论1]
+[59] 推论 1
+[SCOPE:s_cor1_let|let_bind|推论1的变量]
+[60] 对 $(\mathbb A,V)$ 上的两个平面 $(\Pi',U'),(\Pi'',U'')$，
+[/SCOPE:s_cor1_let]
+[61] 那么 $\Pi=\Pi'\cap\Pi''$ 要么为空集，要么也是一个平面。
+[62] 当 $\Pi$ 为平面时，设 $U$ 是其方向子空间，
+[63] 则 $U=U'\cap U''$。
+[64] 证明：若 $\Pi'\cap\Pi''=\varnothing$，命题得证。
+[65] 反之，设 $\dot p\in \Pi'\cap\Pi''$，
+[66] 那么 $\Pi'=\dot p+U',\Pi''=\dot p+U''$。
+[67] 此时，对 $\forall\dot q\in\Pi'\cap\Pi''$，就有
+[68] \begin{equation}
+\dot q=\dot p+u'=\dot p+u''\qquad (u'\in U',u''\in U'')~.
+\end{equation}
+[69] 于是，$u'=u''\in U'\cap U''$。
+[70] 即 $\Pi$ 是所有形如 $\dot p+u,u\in U'\cap U''$ 的点组成。
+[71] 而矢量子空间的交仍是个矢量子空间（
+[72] 定理 2 [链接 L1]
+[73] ），
+[74] 故 $\Pi$ 是与 $U=U'\cap U''$ 相伴的平面。
+[75] 证毕！
+
+[/SCOPE:s_cor1]
+[SCOPE:s_def2|description|定义2]
+[76] 定义 2
+[77] 若两平面具有同一方向子空间 $U$，
+[78] 则称两平面是平行的。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm3|description|定理3]
+[79] 定理 3
+[80] 平行的平面都可以通过相互平移得到。
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[81] 即若 $(\Pi,U),(\Pi',U)$ 是仿射空间 $(\mathbb A,V)$ 的两个平行的平面，
+[82] 则存在 $v\in V$，使得 $\Pi=t_{v}\Pi'$，其中 $t_v$ 是平移映射（式 4 ）。
+[/SCOPE:s_thm3_let]
+[83] 证明：设
+[84] \begin{equation}
+\Pi=\dot p+U~,\quad \Pi'=\dot p'+U~.
+\end{equation}
+[85] \begin{equation}
+\Pi=\dot p+U=\dot p'+\overrightarrow{p'p}+U=t_{\overrightarrow{p'p}}(\dot p'+U)=t_{\overrightarrow{p'p}} \Pi'~.
+\end{equation}
+[86] 证毕！
+[87] 由式 13 ，当 $\overrightarrow{p'p}\in U$ 时，由于 $t_{\overrightarrow{p'p}}+U=U$，有
+[88] \begin{equation}
+\Pi=t_{\overrightarrow{p'p}}(\dot p'+U)=\dot p'+U=\Pi'~,
+\end{equation}
+[89] 此时两平面重合。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_ex1|description|习题1]
+[90] 习题 1
+[91] 试证明：两平行平面 $\dot p+U,\dot p'+U$ 重合，
+[92] 则 $\overrightarrow{p'p}\in U$。
+[/SCOPE:s_ex1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是定义1的结论"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2刻画平面"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1利用定理2"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3说明平行平面的性质"
+  }
+]

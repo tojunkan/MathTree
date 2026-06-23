@@ -1,0 +1,238 @@
+[SCOPE:root|description|保距群（欧氏空间）]
+文章名: CDQ2Ec
+标题: 保距群（欧氏空间）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=运动（保距映射）
+  [1] type=example heading=例 1 title=
+  [2] type=lemma heading=引理 1 title=
+  [3] type=theorem heading=定理 1 title=运动必是仿射自同构
+  [4] type=example heading=例 2 title=
+  [5] type=definition heading=定义 2 title=保距群(运动群)
+  [6] type=theorem heading=定理 2 title=
+
+[0] 在欧几里得空间 $\mathbb E$ 中，保距群是保持欧几里得空间中点与点之间距离不变的映射构成的集合，保持点距离不变的映射称为保距映射，又称运动。
+[1] 欧氏空间中的映射是个运动，当且仅当它是个线性部分为正交线性算子的仿射映射（定义 3 ）。
+[2] 需要说明的是，这里所说的欧氏空间 $\mathbb A$ 中的映射指的是 $\mathbb E$ 到 $\mathbb E$ 上的映射。
+[3] 下面将一一说明。
+
+[4] 先构建起基本材料
+
+[SCOPE:s_def1|description|运动（保距映射）]
+[5] 定义 1 运动（保距映射）
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[6] 设 $(\mathbb E,V,\rho)$ 是欧几里得点空间，变换 $f:\mathbb E\rightarrow\mathbb E$ 称为运动（或保距映射），如果它保持点与点之间距离不变，
+[7] 即 $\forall \dot p,\dot q\in\mathbb E$，都有
+[8] \begin{equation}
+\rho(f(\dot p),f(\dot q))=\rho(\dot p,\dot q)~.
+\end{equation}
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_ex1|description|例1]
+[9] 试证任意两个运动的乘积（复合）仍是运动。
+[10] 证明：
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[11] 设 $f,g$ 是个运动，
+[12] 则
+[13] \begin{equation}
+\rho(fg(\dot p),fg(\dot q))=\rho(f(\dot p),f(\dot p))=\rho(\dot p,\dot q)~,
+\end{equation}
+[/SCOPE:s_ex1_let]
+[14] 下面证明运动必是个线性部分为正交线性算子的仿射自同构（定义 3 ）。
+[15] 先证明一引理。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_lemma1|description|引理1]
+[16] 引理 1
+[SCOPE:s_lemma1_let|let_bind|引理1的变量]
+[17] 在欧氏空间 $(\mathbb E,V,\rho)$ 中，设 $g$ 是一保持点 $\dot o$ 不变的运动，且 $\mathcal G:V\rightarrow V$ 是满足 $\mathcal G x=\overrightarrow{og(o+x)}$ 的映射，
+[18] 则
+[19] \begin{equation}
+\begin{aligned}
+\mathcal G 0&=0~,\\
+\left\lVert \mathcal Gy-\mathcal Gx \right\rVert &= \left\lVert y-x \right\rVert ~,\\
+\left\lVert \mathcal G x \right\rVert &= \left\lVert x \right\rVert ~,\\
+(\mathcal G x|\mathcal G y)&=(x|y)~,\\
+\mathcal G(x+y)&=\mathcal G x+\mathcal G y~,\\
+\mathcal G(\lambda x)&=\lambda\mathcal G x~.
+\end{aligned}
+\end{equation}
+[20] 证明：由条件
+[21] \begin{equation}
+g(\dot o+x)=\dot o+\mathcal G x~,
+\end{equation}
+[22] 令 $x=0$ 并注意条件 $g(\dot o)=\dot o$，就有
+[23] \begin{equation}
+\mathcal G 0=0~.
+\end{equation}
+[24] 此外，设 $\dot p=\dot o+x,\dot q=\dot o+y$，
+[25] 那么 $\rho(\dot p,\dot q)= \left\lVert y-x \right\rVert $。
+[26] 由 $g$ 是个运动，
+[27] 所以
+[28] \begin{equation}
+\rho(g(\dot p),g(\dot q))=\rho(\dot p,\dot q)= \left\lVert y-x \right\rVert ~.
+\end{equation}
+[29] 式 4 [链接 L0]
+[30] ，$g(\dot p)=\dot o+\mathcal G x, g(\dot q)=\dot o+\mathcal G y$，
+[31] 故
+[32] \begin{equation}
+\rho(g(\dot p),g(\dot q))= \left\lVert \mathcal Gy-\mathcal Gx \right\rVert ~.
+\end{equation}
+[33] 上两式结合，
+[34] 即得
+[35] \begin{equation}
+\left\lVert \mathcal Gy-\mathcal Gx \right\rVert = \left\lVert y-x \right\rVert ~.
+\end{equation}
+[36] 令 $y=0$，
+[37] 即得
+[38] \begin{equation}
+\left\lVert \mathcal G x \right\rVert = \left\lVert x \right\rVert ~.
+\end{equation}
+[39] \begin{equation}
+\begin{aligned}
+\left\lVert x \right\rVert ^2-2(x|y)+ \left\lVert y \right\rVert ^2&= \left\lVert y-x \right\rVert ^2= \left\lVert \mathcal G y-\mathcal G x \right\rVert ^2\\
+&=(\mathcal G x-\mathcal G y|\mathcal G x-\mathcal G y)\\
+&= \left\lVert x \right\rVert ^2-2(\mathcal G x|\mathcal G y)+ \left\lVert \mathcal G y \right\rVert ^2~,
+\end{aligned}
+\end{equation}
+[40] 式 9 [链接 L1]
+[41] 式 10 [链接 L2]
+[42] \begin{equation}
+\begin{aligned}
+(\mathcal G x|\mathcal G y)=(x|y)~.
+\end{aligned}
+\end{equation}
+[43] 设 $z=x+y$，
+[44] 则 $ \left\lVert z-x-y \right\rVert ^2=0$，亦即
+[45] \begin{equation}
+\left\lVert z \right\rVert ^2+ \left\lVert x \right\rVert ^2+ \left\lVert y \right\rVert ^2-2(z|x)-2(z|y)+2(x|y)=0~,
+\end{equation}
+[46] 式 9 [链接 L3]
+[47] 式 11 [链接 L4]
+[48] \begin{equation}
+\left\lVert \mathcal G z \right\rVert ^2+ \left\lVert \mathcal G x \right\rVert ^2+ \left\lVert \mathcal G y \right\rVert ^2-2(\mathcal G z|\mathcal G x)-2(\mathcal G z|\mathcal G y)+2(\mathcal G x|\mathcal G y)=0~,
+\end{equation}
+[49] 即 $ \left\lVert \mathcal G z-\mathcal G x-\mathcal G y \right\rVert =0$，也就是 $\mathcal G z-\mathcal Gx-\mathcal G y=0$，便得
+[50] \begin{equation}
+\mathcal G(x+y)=\mathcal G x+\mathcal G y~.
+\end{equation}
+[51] 同样的，令 $z=\lambda x$，
+[52] 则
+[53] \begin{equation}
+\begin{aligned}
+\left\lVert z \right\rVert ^2+&\lambda^2 \left\lVert x \right\rVert ^2-2\lambda(z|x)=0\\
+&\Downarrow\\
+\left\lVert \mathcal G z \right\rVert ^2+&\lambda^2 \left\lVert \mathcal G x \right\rVert ^2-2\lambda(\mathcal G z|\mathcal G x)=0~.
+\end{aligned}
+\end{equation}
+[54] 即 $ \left\lVert \mathcal G z-\lambda\mathcal G x \right\rVert =0$，也就是 $\mathcal G (\lambda x)=\lambda\mathcal G x$。
+[/SCOPE:s_lemma1_let]
+[55] 证毕！
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_thm1|description|运动必是仿射自同构]
+[56] 定理 1 运动必是仿射自同构
+[57] 变换 $f:\mathbb E\rightarrow\mathbb E$ 是个运动，当且仅当，$f$ 是个线性部分为 $V$ 上的正交线性算子（子节 1 ）的仿射变换。
+[58] 证明：先来证明定理中是较为显然的一方面，
+[SCOPE:s_thm1_let1|let_bind|定理1后推前变量]
+[59] 即由后推出前：设仿射变换 $f$ 线性部分的正交线性算子为 $\mathcal F$，
+[60] 则 $\forall \dot p,\dot q\in\mathbb E$，有
+[61] \begin{equation}
+\begin{aligned}
+f(\dot p+\overrightarrow{pq})&=f(\dot p)+\mathcal F\overrightarrow{pq}\\
+&\Downarrow\\
+\rho(f(\dot p),f(\dot q))&=\rho(f(\dot p),f(\dot p)+\mathcal F\overrightarrow{pq})\\
+&= \left\lVert \mathcal F\overrightarrow{pq} \right\rVert = \left\lVert \overrightarrow{pq} \right\rVert =\rho(\dot p,\dot q)
+\end{aligned}~.
+\end{equation}
+[62] 其中，$ \left\lVert \mathcal F\overrightarrow{pq} \right\rVert = \left\lVert \overrightarrow{pq} \right\rVert $ 源于正交算子 $\mathcal F$ 是个保距算子。
+[/SCOPE:s_thm1_let1]
+[63] 现在从前推后：
+[SCOPE:s_thm1_let2|let_bind|定理1前推后变量]
+[64] 显然平移是个运动，若 $f$ 是个运动，
+[65] 则由例 1 ，$g=t_a^{-1} f$ 是个运动，其中 $a=\overrightarrow{of(o)}$，且
+[66] \begin{equation}
+g(\dot o)=t_a^{-1}(f(\dot o))=f(\dot o)-\overrightarrow{of(o)}=\dot o~,
+\end{equation}
+[67] 即 $g$ 保持点 $\dot o$ 不变。
+[68] 故任意运动 $f=t_ag$ 都是一个平移和一个保持 $\dot o$ 点不动的运动的乘积。
+[69] 现在，若能证明 $g$ 是个具有正交线性部分的仿射变换，
+[70] 则 $f=t_a g$ 也是具有正交线性部分的仿射变换。
+[71] 现在来证明这一点。
+[72] 定义变换 $\mathcal G:V\rightarrow V$，并令 $\mathcal G x=\overrightarrow{og(o+x)}$，
+[73] 则
+[74] \begin{equation}
+g(\dot o+x)=\dot o+\mathcal G x~.
+\end{equation}
+[75] 于是只需证明 $\mathcal G$ 试正交线性算子。由
+[76] 引理 1
+[77] ，这一点成立。
+[/SCOPE:s_thm1_let2]
+[78] 证毕！
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex2|description|例2]
+[79] 由于单位仿射变换 $e$ 的线性部分为单位算子 $\mathcal E$，由定理 1 ，其是一个运动。
+
+[/SCOPE:s_ex2]
+[80] 记所有保距映射构成的集合为 $\mathrm{Iso(\mathbb E)}$，
+[81] 则例 1 表明，该集合上映射乘积具有封闭性，例 2 表明具有单位元，容易计算逆元仍然是个运动，并且由仿射映射的结合性得到集合 $\mathrm{Iso(\mathbb E)}$ 上的结合性。
+[82] 于是 $\mathrm{Iso}(\mathbb E)$ 是个群。
+
+[SCOPE:s_def2|description|保距群(运动群)]
+[83] 定义 2 保距群(运动群)
+[84] 欧几里得空间 $\mathbb E$ 的所有运动连同映射的乘积（复合）运算构成一个群，称为保距群（或运动群）。
+[85] 记作 $\mathrm{Iso(\mathbb E)}$。
+[86] 由定理 1 的证明可见：所以平移构成的集合 $T$ 构成 $\mathrm{Iso}(\mathbb E)$ 的一个子群，并且所有保持 $\dot o$ 点不动的运动构成的集合 $O(n)$ 也构成 $\mathrm{Iso}(\mathbb E)$ 的一个子群（其中 $n$ 为 $\mathbb E$ 的维度）。
+[87] 这里，$O(n)$ 同构于矢量空间上的正交群，
+[88] 所以仍用正交群的记号，并也称之为正交群,这并不会导致混乱，因为在提到正交群 $O(n)$ 时，我们能立刻知道它是矢量空间上的还是仿射空间上的。
+[89] 所以，下面定理成立
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm2|description|定理2]
+[90] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[91a] (n)$ 是运动群 $\mathrm{Iso(\mathbb E)}$ 上的子群，并且任一运动 $f\in\mathrm{Iso(\mathbb E)}$，都有 $t_a\in T,g\in O
+[91b] (n)$，使得 $f=t_ag$，其中 $a=\overrightarrow{of
+[91c] (o)}$。
+[92] 证明：所有平移构成一个群可由习题 1 得知，而平移是运动是显然的，因为 $t_a(\dot p+v)=\dot p+v+a=t_a(\dot p+v)+a$ 是个仿射映射，其线性部分是个恒等映射，而 定理 1 保证了它是个运动。
+[93] 故平移群是 $\mathrm{Iso(\mathbb E)}$ 上的子群。
+[94] 对于 $O(n)$ 可同样得到证明！
+[95] 而 $f=t_ag$ 由定理 1 证明中直接得到。
+[/SCOPE:s_thm2_let]
+[96] 证毕！
+[/SCOPE:s_thm2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_lemma1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理1的证明引用引理1"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2的证明引用定理1"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_ex1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2的证明引用例1"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_ex2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2的证明引用例2"
+  }
+]

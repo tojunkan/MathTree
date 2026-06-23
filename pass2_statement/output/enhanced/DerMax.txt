@@ -1,0 +1,41 @@
+[SCOPE:root|description|导数与函数极值（简明微积分）]
+文章名: DerMax
+标题: 导数与函数极值（简明微积分）
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=example heading=例 2 title=
+  [2] type=example heading=例 3 title=
+
+[SCOPE:s_ex1|description|例 1]
+[SCOPE:s_ex1_let|let_bind|例 1 变量]
+[0a] (x) = ax^2 + bx + c$ 的导函数为 $f'
+[0b] (x) = 2ax + b$，
+[/SCOPE:s_ex1_let]
+[1] 所以唯一的驻点为 $-b/(2a)$。
+[2] 函数的二阶导数是一个常数 $f''(x) = 2a$，
+[3] 所以当 $a > 0$ 时驻点是唯一的极小值点，
+[4] 即最小值点。
+[5] 同理，当 $a < 0$ 时驻点是最大值点。
+[/SCOPE:s_ex1]
+[6] 【图解】图 2：例 2 函数图
+
+[SCOPE:s_ex2|description|例 2]
+[SCOPE:s_ex2_let|let_bind|例 2 变量]
+[7a] (x) = x+a/x \ \ (a > 0)$ 的一阶导函数为 $f'
+[7b] (x) = 1 - a/x^2$，若我们只考察区间 $(0, +\infty)$，唯一的驻点为 $x = \sqrt{a}$。
+[/SCOPE:s_ex2_let]
+[8] 函数的二阶导函数 $f''(x) = 2a/x^3$ 在驻点处的值为 $2/\sqrt{a} > 0$，
+[9] 所以该驻点为当前区间的最小值点（图 2 ）。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|例 3]
+[SCOPE:s_ex3_let|let_bind|例 3 变量]
+[10a] (x) = x^3$ 的一阶导函数为 $f'
+[10b] (x) = 3x^2$，唯一的驻点为 $x = 0$。
+[/SCOPE:s_ex3_let]
+[11] 函数的二阶导函数 $f''(x) = 6x$ 在驻点处的值为 $0$。
+[12] 由于 $f'(x)$ 在原点左侧和右侧都大于 0，
+[13] 所以这是一个鞍点。
+[/SCOPE:s_ex3]
+[/SCOPE:root]

@@ -1,0 +1,284 @@
+[SCOPE:root|description|庞加莱半平面（微分几何计算实例）]
+文章名: PoiHP
+标题: 庞加莱半平面（微分几何计算实例）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=庞加莱半平面
+
+[0] 庞加莱半平面是历史上非常重要的一个模型。
+[1] 众所周知，欧几里得几何学中有五条公理，其中第五条 “过直线外一点有且仅有一条直线与已知直线垂直” 非常冗长而且绕口，
+[2] 因此历史上一直有不少数学家致力于通过其它四条来推出第五条，也就是将第五公理变成一个定理。
+[3] 在 GTM 275 [1] 中将这种尝试评价为 “英雄式” 的（heroic）。
+[4] 这是出于早期数学家们的一种朴素的直觉，
+[5] 即几何就应该是欧几里得空间那样子的，
+[6] 所以第五公理必须成立，哪怕只是作为定理。
+[7] 后来的人们逐渐意识到第五公理并不能被前四条所证明，并逐渐发展出了符合前四条但违反第五条的几何学，也就是所谓的非欧几何学。
+[8] 庞加莱半平面就是一个典型的例子，在本节的测地线小节我们会简单讨论这一点。
+[9] 本节的主要目的是以庞加莱半平面为例，演示如何进行具体的计算。
+
+[SCOPE:s_def|description|定义 1 庞加莱半平面]
+[10] 定义 1 庞加莱半平面
+[SCOPE:s_def_let|let_bind|定义中的变量]
+[11] 设 $\mathbb{H}^2=\{(x, y)\in \mathbb{R}^2|y>0\}$，
+[12] 即二维实平面的上半平面（不包含 $x$ 轴）。
+[13] 在 $\mathbb{H}^2$ 上定义黎曼度量$\langle*,*\rangle$ 为，对于任意点 $(x, y)\in \mathbb{H}^2$ 处的切向量$(a_i, b_i)\in T_{(x, y)}\mathbb{H}^2$，有
+[14] \begin{equation}
+\langle(a_1, b_1), (a_2, b_2)\rangle=\frac{a_1a_2+b_1b_2}{y^2}~,
+\end{equation}
+[/SCOPE:s_def_let]
+[15] 黎曼流形
+[16] 庞加莱半平面（Poincaré half-plane）
+[17] 对于庞加莱半平面度量的描述，更简洁的表达是：$\frac{ \,\mathrm{d}{x} \otimes \,\mathrm{d}{x} + \,\mathrm{d}{y} \otimes \,\mathrm{d}{y} }{y^2}$。
+[18] 这里的 $ \,\mathrm{d}{x} $ 是指 $\mathbb{H}^2$ 上的函数 $f(x, y)=x$ 的微分 $ \,\mathrm{d}{f} $，同样地 $ \,\mathrm{d}{y} $ 是 $g(x, y)=y$ 的微分 $ \,\mathrm{d}{g} $，它们都是 $\mathbb{H}^2$ 上的 $1$-形式，而 $\otimes$ 是它们的张量积。
+[19] 如果用通常的 $(x, y)\in \mathbb{R}^2$ 作为坐标来描述 $\mathbb{H}^2$，
+[20] 那么在 $\mathbb{R}^2$ 中的两个点，在保持 $x$ 坐标不变时同步向 $y$ 的正方向移动，
+[21] 那么它们的距离会缩短，并在 $y$ 坐标趋于正无穷时距离趋于零。
+[22] 反过来，如果两个点的 $y$ 坐标始终相同，$x$ 坐标不变，
+[23] 那么它们同步趋近于 $x$ 轴时，彼此距离会趋近于正无穷。
+
+[/SCOPE:s_def]
+[SCOPE:s_conn|description|联络形式]
+[24] 本小节先计算 $\mathbb{H}^2$ 上的一个黎曼联络形式。
+[25] 由反对称定理定理 3 ，计算联络形式时选标准正交基来进行计算最为方便，因为 $\mathbb{H}^2$ 是二维的，标准正交基下的联络形式矩阵是一个反对称的 $2$ 阶方阵，也就是说可以被一个分量唯一确定。
+[SCOPE:s_conn_let1|let_bind|标准正交基]
+[26] 第一步，选择标准正交基：
+[27] \begin{equation}
+\begin{aligned}
+\hat{\boldsymbol{\mathbf{e}}} _1=y\frac{\partial}{\partial x}\\
+\hat{\boldsymbol{\mathbf{e}}} _2=y\frac{\partial}{\partial y}~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_conn_let1]
+[SCOPE:s_conn_let2|let_bind|对偶基]
+[28] 第二步，计算对偶基：
+[29] 由于 $ \,\mathrm{d}{x} \cdot \frac{\partial }{\partial x}= \,\mathrm{d}{y} \cdot \frac{\partial}{\partial y}=1$，$ \,\mathrm{d}{x} \cdot \frac{\partial }{\partial y}= \,\mathrm{d}{y} \cdot \frac{\partial}{\partial x}=0$，我们可以得到对应的对偶基：
+[30] \begin{equation}
+\begin{aligned}
+\theta^1=\frac{1}{y} \,\mathrm{d}{x} \\
+\theta^2=\frac{1}{y} \,\mathrm{d}{y} ~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_conn_let2]
+[31] 因此我们可以计算出1：
+[32] \begin{equation}
+\begin{aligned}
+\,\mathrm{d}{\theta} ^1&=-\frac{1}{y^2} \,\mathrm{d}{y} \wedge \,\mathrm{d}{x} =\frac{1}{y^2} \,\mathrm{d}{x} \wedge \,\mathrm{d}{y} \\
+\,\mathrm{d}{\theta} ^2&=0~.
+\end{aligned}
+\end{equation}
+[SCOPE:s_conn_let3|let_bind|联络形式]
+[33] 第三步，设挠率为 $0$，应用结构定理（定理 4 ）和反对称定理（定理 3 ）得：
+[34] \begin{equation}
+\begin{aligned}
+& \,\mathrm{d}{\theta} ^1=-\omega^1_2\wedge\theta^2\\
+& \,\mathrm{d}{\theta} ^2=-\omega^2_1\wedge\theta^1=\omega^1_2\wedge\theta^1~,
+\end{aligned}
+\end{equation}
+[35] 最后，联立式 3 、式 4 和式 5 ，得到：
+[36] \begin{equation}
+\begin{aligned}
+-\omega^1_2\wedge\theta^2&=\theta^1\wedge\theta^2\\
+\omega^1_2\wedge\theta^1&=0~,
+\end{aligned}
+\end{equation}
+[37] 因此易得 $\omega^1_2=-\theta^1=-\frac{1}{y} \,\mathrm{d}{x} $。
+[/SCOPE:s_conn_let3]
+[38] 因此联络形式矩阵为
+[39] \begin{equation}
+\begin{pmatrix}
+0&-\frac{1}{y} \,\mathrm{d}{x} \\
+\frac{1}{y} \,\mathrm{d}{x} &0
+\end{pmatrix} ~.
+\end{equation}
+
+[/SCOPE:s_conn]
+[SCOPE:s_curv|description|高斯曲率]
+[40a] 由高斯绝妙定理
+[40b] 如果要计算 $\mathbb{H}^2$ 的高斯曲率，我们，则要去计算某个基下的曲率形式 $\Omega^i_j$，
+[41] 从而有 $K=\Omega^1_2( \hat{\boldsymbol{\mathbf{e}}} _1, \hat{\boldsymbol{\mathbf{e}}} _2)$。
+[SCOPE:s_curv_let|let_bind|曲率形式]
+[42] 由上一小节计算出来的联络形式，结合结构定理定理 4 ，注意 $\omega^1_1=\omega^2_2=0$，我们有：
+[43] \begin{equation}
+\begin{aligned}
+\Omega^1_2&= \,\mathrm{d}{\omega} ^1_2+\omega^1_k\wedge\omega^k_2\\
+&= \,\mathrm{d}\left(-\frac{1}{y} \,\mathrm{d}{x} \right) +\omega^1_1\wedge\omega^1_2+\omega^1_2\wedge\omega^2_2\\
+&=\frac{1}{y^2} \,\mathrm{d}{y} \wedge \,\mathrm{d}{x} \\
+&=-\frac{1}{y^2} \,\mathrm{d}{x} \wedge \,\mathrm{d}{y} ~,
+\end{aligned}
+\end{equation}
+[44] \begin{equation}
+\begin{aligned}
+K&=\Omega^1_2(y\frac{\partial}{\partial x}, y\frac{\partial}{\partial y})\\
+&=-\frac{1}{y^2} \,\mathrm{d}{x} \wedge \,\mathrm{d}{y} (y\frac{\partial}{\partial x}, y\frac{\partial}{\partial y})\\
+&=- \,\mathrm{d}{x} \w…[truncated]…athrm{d}{x} \cdot \frac{\partial}{\partial x})( \,\mathrm{d}{y} \cdot \frac{\partial}{\partial y})+( \,\mathrm{d}{y} \cdot \frac{\partial}{\partial x})( \,\mathrm{d}{x} \cdot \frac{\partial}{\partial y})\\
+&=-1+0\\
+&=-1~,
+\end{aligned}
+\end{equation}
+[/SCOPE:s_curv_let]
+[45] 因此庞加莱半平面的高斯曲率处处为 $-1$，是典型的罗巴切夫斯基几何。
+
+[/SCOPE:s_curv]
+[SCOPE:s_chris|description|Christoffel 符号]
+[SCOPE:s_chris_let|let_bind|Christoffel 符号计算中的变量]
+[46] 我们计算 $\mathbb{H}^2$ 在通常的 $(x, y)\in\mathbb{R}^2$ 坐标下的 Christoffel 符号。
+[47] 为方便计，将导子 $\frac{\partial}{\partial_a}$ 简记为 $\partial_a$。
+[48a] (y)$，有 $ \hat{\boldsymbol{\mathbf{e}}} _1f
+[48b] (y)=y\frac{\partial}{\partial x}f
+[48c] (y)=0$，
+[49a] (y)X=f
+[49b] (y)\nabla_{ \hat{\boldsymbol{\mathbf{e}}} _1}X$。
+[50] \begin{equation}
+\begin{aligned}
+\nabla_{\partial_x}\partial_x&=\nabla_{\frac{1}{y} \hat{\boldsymbol{\mathbf{e}}} _1}\frac{1}{y} \hat{\boldsymbol{\mathbf{e}}} _1\\
+&=\frac{1}{y^2}\nabla_{ \hat{\boldsymbol{\mathbf{e}}} _1} \hat{\boldsymbol{\mathbf{e}}…[truncated]…bf{e}}} _1) \hat{\boldsymbol{\mathbf{e}}} _2\\
+&=\frac{1}{y^2}(\frac{1}{y} \,\mathrm{d}{x} \cdot y\partial_x) \hat{\boldsymbol{\mathbf{e}}} _2\\
+&=\frac{1}{y^2} \hat{\boldsymbol{\mathbf{e}}} _2\\
+&=\frac{1}{y}\partial_y~.
+\end{aligned}
+\end{equation}
+[51] 类似地，可以计算出
+[52] \begin{equation}
+\nabla_{\partial_x}\partial_y=-\frac{1}{y}\partial_x~,
+\end{equation}
+[53] \begin{equation}
+\nabla_{\partial_y}\partial_y=-\frac{1}{y}\partial_y~.
+\end{equation}
+[54] 注意，在计算式 12 的时候会多出一项 $\frac{1}{y}( \hat{\boldsymbol{\mathbf{e}}} _2\frac{1}{y}) \hat{\boldsymbol{\mathbf{e}}} _2$，这是因为 $ \hat{\boldsymbol{\mathbf{e}}} _2\frac{1}{y}$ 不为零，
+[55] 因此不能像式 10 一样直接略去。
+[56] 最后，由于我们假设挠率为零，
+[57] 故有 $\Gamma^k_{ij}=\Gamma^k_{ji}$，
+[58] 因此无需重复计算 $\nabla_{\partial_y}\partial_x$。
+[59] 由 Christoffel 符号的定义，$\nabla_{\partial_i}\partial_j=\Gamma^k_{ij}\partial_k$，就得到了 Christoffel 符号的每一个分量，列举如图 1 中的表格：
+[/SCOPE:s_chris_let]
+[60] 【图解】图 1：庞加莱半平面在通常的 $\mathbb{R}^2$ 坐标系中的 Christoffel 符号
+
+[/SCOPE:s_chris]
+[SCOPE:s_geodesic|description|测地线]
+[SCOPE:s_geodesic_let|let_bind|测地线方程中的变量]
+[61] 有了 Christoffel 符号，我们就可以列出测地线方程了。
+[62] 根据式 3 ，誊抄如下：
+[63] \begin{equation}
+\ddot{y}^k+\dot{y}^i\dot{y}^j\Gamma^k_{ji}=0~.
+\end{equation}
+[64] 改用我们在庞加莱半平面上使用的坐标，
+[65] 式 13 [链接 L0]
+[66] \begin{equation}
+\left\{\begin{aligned}
+\ddot{x}+2\dot{x}\dot{y}\Gamma^{1}_{12}=0\\
+\ddot{y}+\dot{x}^2\Gamma^{2}_{11}+\dot{y}^2\Gamma^{2}_{22}=0
+\end{aligned}\right. ~.
+\end{equation}
+[67] 将图 1 代入式 14 ，得到：
+[68] \begin{equation}
+\left\{\begin{aligned}
+\ddot{x}-2\dot{x}\dot{y}\frac{1}{y}=0\\
+\ddot{y}+\frac{1}{y}\dot{x}^2-\frac{1}{y}\dot{y}^2=0
+\end{aligned}\right. ~.
+\end{equation}
+[69] 式 15 的第二式较为难解，为了简化解答，将其用测地线的另一个性质，匀速性（定理 1 ），来代替：
+[70] \begin{equation}
+\frac{\dot{x}^2+\dot{y}^2}{y^2}=1~.
+\end{equation}
+[71] 注意，这里我们设定测地线的速度总是 $1$，这是因为任意非零测地线都可以重新参数化，将速度变成 $1$。
+[72] 式 16 没有提供超出式 15 的信息，
+[73] 但是它可以简化解答。
+
+[/SCOPE:s_geodesic_let]
+[SCOPE:s_geodesic_cases|cases|dot{x} 不恒为零 vs 恒为零]
+[SCOPE:s_case1|description|dot{x} 不恒为零]
+[SCOPE:s_case1_let|let_bind|dot{x} 不恒为零时的变量]
+[74] 当 $\dot{x}\ne 0$ 时，我们可以用它去除以式 15 中第一条，以完成变量分离：
+[75] \begin{equation}
+\frac{\ddot{x}}{\dot{x}}=\frac{2\dot{y}}{y}~.
+\end{equation}
+[76] 从式 17 容易解得
+[77] \begin{equation}
+\dot{x}=Ky^2~,
+\end{equation}
+[78] 其中 $K$ 为一常数。
+[79] 将式 18 代回式 16 ，得到
+[80] \begin{equation}
+\dot{y}^2=y^2-K^2y^4~.
+\end{equation}
+[81] 考虑到 $\frac{\dot{y}}{\dot{x}}=\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }$，用式 19 除以式 18 的平方，得：
+[82] \begin{equation}
+\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }=\pm\frac{\sqrt{1-K^2y^2}}{Ky}~.
+\end{equation}
+[83] 对式 20 变量分离后积分即得解：
+[84] \begin{equation}
+x=\mp\frac{\sqrt{1-K^2y^2}}{K}+C~,
+\end{equation}
+[85] 其中 $C$ 也是常数。
+[/SCOPE:s_case1_let]
+[86] 式 21 也可以换种写法，
+[87] 即
+[88] \begin{equation}
+(x-C)^2+(y)^2=\frac{1}{K^2}~.
+\end{equation}
+[89] 这是圆的方程，圆心都在 $x$ 轴上。
+[90] 因此，当 $\dot{x}$ 不恒为零时候，庞加莱半平面上的测地线是以 $x$ 轴上的点为圆心的半圆。
+[91] 我们可以从给定起点画垂直于初始方向的直线，其交点即为对应测地线的圆心。
+
+[/SCOPE:s_case1]
+[SCOPE:s_case2|description|dot{x} 恒为零]
+[92] 此时我们只有一个有效的方程，
+[93] 即式 15 的第二式，现在化为：
+[94] \begin{equation}
+\ddot{y}=\frac{\dot{y}^2}{y}~.
+\end{equation}
+[95] 但我们根本不需要解这个方程。
+[96] 因为 $\dot{x}$ 恒为零时，测地线在所给坐标系中就是一条平行于 $y$ 轴的直线，为保证其速度恒为 $1$，只需要 $\dot{y}^2/y^2=1$ 即可。
+[97a] 另外，对于 $\dot{x}$ 不恒为零的情况
+[97b] 当半径越来越大时，圆形测地线轨迹，则越来越接近一条竖直的直线。
+[98] 所以竖直直线解也可以看成圆形解的极限。
+[/SCOPE:s_geodesic]
+[/SCOPE:s_geodesic_cases]
+[/SCOPE:s_case2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_conn",
+    "target_scope": "s_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "联络形式计算基于庞加莱半平面的定义"
+  },
+  {
+    "source_scope": "s_curv",
+    "target_scope": "s_conn",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "高斯曲率计算使用联络形式的结果"
+  },
+  {
+    "source_scope": "s_chris",
+    "target_scope": "s_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Christoffel 符号计算基于庞加莱半平面的度量"
+  },
+  {
+    "source_scope": "s_geodesic",
+    "target_scope": "s_chris",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "测地线方程使用 Christoffel 符号"
+  },
+  {
+    "source_scope": "s_case1",
+    "target_scope": "s_geodesic",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "dot{x} 不恒为零是测地线的一种情况"
+  },
+  {
+    "source_scope": "s_case2",
+    "target_scope": "s_geodesic",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "dot{x} 恒为零是测地线的另一种情况"
+  }
+]

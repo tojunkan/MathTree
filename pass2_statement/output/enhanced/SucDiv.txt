@@ -1,0 +1,308 @@
+[SCOPE:root|description|辗转相除法]
+文章名: SucDiv
+标题: 辗转相除法
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=theorem heading=定理 2 title=最大公因式存在定理
+  [2] type=definition heading=定义 1 title=互素
+  [3] type=theorem heading=定理 3 title=
+  [4] type=theorem heading=定理 4 title=
+  [5] type=theorem heading=定理 5 title=
+
+[0] 缺例题
+[1] 1本节将证明最大公因式的存在性，并介绍最大公因式的算法程序——辗转相除法。
+[2] 简单来说，所谓的辗转相除法是指多次利用带余除法计算两个多项式的最大公因式的算法。
+[3] 推荐的拓展阅读：欧几里得环。
+[4] 简单来说，这是一种 “能做辗转相除法” 的环2。
+
+[5] 为证明最大公因式的存在，我们先来证明下面一个定理。
+
+[SCOPE:s_thm1|description|定理1]
+[6] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[7a] (x),g
+[7b] (x),q
+[7c] (x),r
+[7d] (x)\in\mathbb{F}[x]$，并且
+[8] \begin{equation}
+f(x)=q(x)g(x)+r(x)~,
+\end{equation}
+[/SCOPE:s_thm1_let]
+[9a] (x)|g
+[9b] (x),\phi
+[9c] (x)|f
+[9d] (x)\Rightarrow \phi
+[9e] (x)|g
+[9f] (x),\phi
+[9g] (x)|r
+[9h] (x)$ 的证明：
+[10a] (x)|g
+[10b] (x),\phi
+[10c] (x)|f
+[10d] (x)$，由整除的性质 3多项式的整除，$\phi
+[10e] (x)$ 必整除 $f
+[10f] (x),g
+[10g] (x)$ 的组合
+[11] \begin{equation}
+\phi(x)|f(x)-q(x)g(x)\Rightarrow \phi(x)|r(x)~.
+\end{equation}
+[12a] (x)|g
+[12b] (x),\phi
+[12c] (x)|r
+[12d] (x)\Rightarrow\phi
+[12e] (x)|g
+[12f] (x),\phi
+[12g] (x)|f
+[12h] (x)$ 的证明：同样有整除的性质 3，立即证得。
+[/SCOPE:s_thm1]
+[13] 下面利用式 1 来证明最大公因式的存在性，该证明方法便是辗转相除法。
+
+[SCOPE:s_thm2|description|最大公因式存在定理]
+[14] 定理 2 最大公因式存在定理
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[15a] (x),g
+[15b] (x)$ 是 $\mathbb{F}[x]$ 中的两个多项式，
+[16a] (x)$ 与 $g
+[16b] (x)$ 的最大公因式 $d
+[16c] (x)$ 存在，且有 $\mathbb{F}[x]$ 中的两个多项式 $u
+[16d] (x),v
+[16e] (x)$ 使得
+[17] \begin{equation}
+d(x)=u(x)f(x)+v(x)g(x)~.
+\end{equation}
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm2_case0|cases|g=0或g≠0]
+[18a] (x)$ 和 $g
+[18b] (x)$ 中有一个为 0，比如 $g
+[18c] (x)=0$，
+[19a] (x)$ 就是 $f
+[19b] (x)$ 与 $g
+[19c] (x)$ 的最大公因式，且 $f
+[19d] (x)=1\cdot f
+[19e] (x)+1\cdot0$。
+[20] 以下只需考虑 $g(x)\neq 0$。
+[SCOPE:s_thm2_case0_let|let_bind|辗转相除变量]
+[21] 由带余除法，有
+[22] \begin{equation}
+f(x)=q_1(x)g(x)+r_1(x)~,
+\end{equation}
+[23a] (x)\neq 0$，否则 $g
+[23b] (x)$ 便是最大公因式。
+[24a] (x)$ 除 $g
+[24b] (x)$，得
+[25] \begin{equation}
+g(x)=q_2(x)r_1(x)+r_2(x)~,
+\end{equation}
+[26a] (x)\neq0$，再用 $r_2
+[26b] (x)$ 除 $r_1
+[26c] (x)$，得
+[27] \begin{equation}
+r_1(x)=q_3(x)r_2(x)+r_3(x)~.
+\end{equation}
+[28] 如此不断重复该过程，所得余式的次数就不断降低，
+[29] 即
+[30] \begin{equation}
+\mathrm{deg}\;g(x)>\mathrm{deg}\;r_1(x)>\mathrm{deg}\;r_2(x)>\cdots~
+\end{equation}
+[31] 这样经过有限次相除之后，必然有余式为 0。
+[32] 于是得到一等式：
+[33] \begin{equation}
+\begin{aligned}
+f(x)&=q_1(x)g(x)+r_1(x)\\
+g(x)&=q_2(x)r_1(x)+r_2(x)\\
+r_1(x)&=q_3(x)r_2(x)+r_3(x)\\
+&\vdots\\
+r_{i-2}(x)&=q_i(x)r_{i-1}(x)+r_i(x)\\
+&\vdots\\
+r_{s-2}(x)&=q_s(x)r_{s-1}(x)+r_s(x)\\
+r_{s-1}(x)&=q_{s+1}(x)r_s(x)~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_thm2_case0_let]
+[34a] (x)$ 是 $r_s
+[34b] (x)$ 与 $r_{s-1}
+[34c] (x)$ 的一个最大公因式。由
+[35] 定理 1 [链接 L0]
+[36a] (x)$ 也是 $r_{s-1}
+[36b] (x)$ 与 $r_{s-2}
+[36c] (x)$ 的一个最大公因式。
+[37a] (x)$ 是 $f
+[37b] (x)$ 和 $g
+[37c] (x)$ 的一个最大公因式。
+[38] 这就证明了最大公因式的存在性。
+[/SCOPE:s_thm2_case0]
+[SCOPE:s_thm2_let2|let_bind|表示u,v]
+[39] 下面来证明式 3 .由式 8 倒数第二式
+[40] \begin{equation}
+r_s(x)=r_{s-2}(x)-q_s(x)r_{s-1}(x)~.
+\end{equation}
+[41] 这就是说，每一个 $r_i$ 都可由只带 $r_{i-2}$ 和 $r_{i-1}$ 的项表示。
+[42a] (x)=r_0
+[42b] (x),f
+[42c] (x)=r_{-1}
+[42d] (x)$，
+[43a] (x)$ 和 $f
+[43b] (x)$ 的项表示，
+[44] 即得
+[45] 式 3 [链接 L1]
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_let2]
+[46] 两个多项式的最大公因式的存在，使我们能够定义互素 的概念。
+[47] 这和整数中的互素的概念一样，都是指两个对象（这个对象在数论里就是整数）的最大公因式（对于整数叫公因子）为 1.
+
+[SCOPE:s_def1|description|互素定义]
+[48] 定义 1 互素
+[SCOPE:s_def1_let|let_bind|互素变量]
+[49a] (x)$ 和 $g
+[49b] (x)$ 为 $\mathbb{F}[x]$ 中的两个多项式，若 $(f
+[49c] (x),g
+[49d] (x))=1$，
+[/SCOPE:s_def1_let]
+[50a] (x)$ 与 $g
+[50b] (x)$ 互素。
+[51] 由整除的性质 1，或由文章的例 1 前一段指出的，可知若两个多项式互素，
+[52] 那么它们的公因式只能是零次多项式。
+[53] 将互素的概念与最大公因式存在定理相结合，就有下面几个有用的推论。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm3|description|定理3]
+[54] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理3变量]
+[55a] (x),g
+[55b] (x)$ 互素的充要条件是存在 $\mathbb{F}[x]$ 中的两个多项式 $u
+[55c] (x),v
+[55d] (x)$ 使得
+[56] \begin{equation}
+u(x)f(x)+v(x)g(x)=1~.
+\end{equation}
+[/SCOPE:s_thm3_let]
+[57] 证明：定理 2 可以直接得出必要性。
+[58a] (x),v
+[58b] (x)$ 使得
+[59] \begin{equation}
+u(x)f(x)+v(x)g(x)=1~,
+\end{equation}
+[60a] (x)$ 是 $f
+[60b] (x)$ 与 $g
+[60c] (x)$ 的一个最大公因式。
+[61] 于是就有
+[62] \begin{equation}
+\phi(x)|f(x),\quad \phi(x)|g(x)~.
+\end{equation}
+[63] 整除性质 3 [链接 L2]
+[64] ，立即得到 $\phi(x)|1$，
+[65a] (x)$ 与 $g
+[65b] (x)$ 互素。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|定理4]
+[66] 定理 4
+[SCOPE:s_thm4_let|let_bind|定理4变量]
+[67a] (x),g
+[67b] (x))=1$，且 $f
+[67c] (x)|g
+[67d] (x)h
+[67e] (x)$，
+[68a] (x)|h
+[68b] (x)$
+[/SCOPE:s_thm4_let]
+[69a] (x),g
+[69b] (x))=1$ 和定理 3 可知，有 $u
+[69c] (x),v
+[69d] (x)$ 使
+[70] \begin{equation}
+u(x)f(x)+v(x)g(x)=1~,
+\end{equation}
+[71] 上式两边乘 $h(x)$，得
+[72] \begin{equation}
+u(x)f(x)h(x)+v(x)g(x)h(x)=h(x)~.
+\end{equation}
+[73a] (x)|g
+[73b] (x)h
+[73c] (x)$，
+[74] 所以 $f(x)$ 整除等式左端，
+[75a] (x)|h
+[75b] (x)$。
+
+[/SCOPE:s_thm4]
+[SCOPE:s_thm5|description|定理5]
+[76] 定理 5
+[SCOPE:s_thm5_let|let_bind|定理5变量]
+[77a] (x)|g
+[77b] (x),f_2
+[77c] (x)|g
+[77d] (x)$，并且 $(f_1
+[77e] (x),f_2
+[77f] (x))=1$，
+[78a] (x)f_2
+[78b] (x)|g
+[78c] (x)$。
+[/SCOPE:s_thm5_let]
+[79a] (x),f_2
+[79b] (x))=1$，由定理 3 ，存在 $u
+[79c] (x),v
+[79d] (x)$，使得
+[80] \begin{equation}
+u(x)f_1(x)+v(x)f_2(x)=1~,
+\end{equation}
+[81] 上式两边乘 $g(x)$，
+[82] 则
+[83] \begin{equation}
+g(x)u(x)f_1(x)+g(x)v(x)f_2(x)=g(x)~.
+\end{equation}
+[84a] (x)|g
+[84b] (x),f_2
+[84c] (x)|g
+[84d] (x)$，
+[85a] (x),q_2
+[85b] (x)$，使得
+[86] \begin{equation}
+g(x)=q_1(x)f_1(x)=q_2(x)f_2(x)~,
+\end{equation}
+[87] 式 17 [链接 L3]
+[88] 式 16 [链接 L4]
+[89] \begin{equation}
+u(x)q_2(x)f_2(x)f_1(x)+v(x)q_1(x)f_1(x)f_2(x)=g(x)~,
+\end{equation}
+[90a] (x)f_2
+[90b] (x)|g
+[90c] (x)$。
+
+跨文章引用:
+  [L2] 整除性质 3 → ExDiv
+[/SCOPE:s_thm5]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2证明中引用定理1"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3必要性由定理2直接得出"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_thm3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理4证明中引用定理3"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_thm3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理5证明中引用定理3"
+  }
+]

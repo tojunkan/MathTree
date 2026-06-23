@@ -1,0 +1,64 @@
+[SCOPE:root|description|极限的运算法则]
+文章名: LimOp
+标题: 极限的运算法则
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=极限的四则运算
+  [1] type=theorem heading=定理 2 title=局部保号性、保序性
+
+[SCOPE:s_intro|description|引言]
+[0] 下面列出一些函数极限的定理，从直觉上来看它们是显然的，证明略，感兴趣的读者可以尝试自己证。
+
+[/SCOPE:s_intro]
+[SCOPE:s_thm1|description|极限的四则运算]
+[1] 定理 1 极限的四则运算
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[2a] (x)$ 和 $\lim\limits_{x\to a} g
+[2b] (x)$（$a$ 可取 $\pm \infty$），
+[/SCOPE:s_thm1_let]
+[3] 那么有
+[4] \begin{equation}
+\lim_{x\to a} [f(x) \pm g(x)] = \lim_{x\to a}f(x) \pm \lim_{x\to a} g(x)~,
+\end{equation}
+[5] \begin{equation}
+\lim_{x\to a} [f(x) g(x)] = \lim_{x\to a}f(x) \lim_{x\to a} g(x)~,
+\end{equation}
+[6] \begin{equation}
+\lim_{x\to a} [f(x)/g(x)] = \lim_{x\to a}f(x)/\lim_{x\to a} g(x) \qquad (\lim_{x\to a} g(x) \ne 0)~.
+\end{equation}
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|局部保号性、保序性]
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[7] 定理 2 局部保号性、保序性
+[/SCOPE:s_thm2_let]
+[8] 局部保号性：
+[9] \begin{equation}
+\lim_{x\to x_0}f(x)>0\Rightarrow \exists \mathring{U} (x_0), \forall x \in \mathring{U} (x_0), f(x)>0~.
+\end{equation}
+[10] 局部保序性：
+[11] \begin{equation}
+\lim_{x\to x_0}f(x)=A>0 \Rightarrow \exists \mathring{U} (x_0), \forall x \in \mathring{U} (x_0), f(x)>A/2~.
+\end{equation}
+[12] $\mathring{U} (x_0)$ 指 $x_0$ 附近的一个小区间，
+[13] 但不包括 $x_0$ 自身，也称去心区间。1
+[14] 这是一组简单的、但却有点难以理解的结论。
+[15] 在处理一些刁钻的问题时，局部保号、保序性偶尔会派上用场。
+[16] 通俗地说，这意味着若 $\lim\limits_{x\to x_0}f(x)=A$，
+[17] 则 $x$ 在 $x_0$ 附近时，$f(x)$ 的函数值也会收缩到 $A$ 附近。
+[18] 图 1：在 $(x_0-\delta, x_0+\delta)$ 区间内，$f(x)>0$. 仿自 [1]
+[SCOPE:s_thm2_proof|description|定理2的证明]
+[SCOPE:s_thm2_proof_let|let_bind|证明中的变量]
+[19] 局部保号性的一个幼稚 “证明”：如图 1 所示（其实就是图 4 ），我们总能取一个 $\varepsilon_1 \in (0,A)$，极限的定义保证了我们总能找到对应的 $\delta_1$。
+[/SCOPE:s_thm2_proof_let]
+[20] 显然，在 $(x_0-\delta_1, x_0+\delta_1)$ 这个小去心区间2(即 $\mathring{U} ({x_0})$)内，有 $f(x)>0$。
+[21] 同理，将选取 $\varepsilon$ 的区间改为 $(0,A/2)$，我们就能找到相应的、使 $f(x)>A/2$ 的区间，
+[22] 即说明了局部保序性。
+[23] 原则上，
+[24] 由此可导出更广义的局部保序性，
+[25] 即总存在 $f(x)>A/3,A/4,A/5,...$ 的区间。
+[26] 【未完成】如果在 $x_0$ 附近（不包括）$f(x) > 0$，
+[27] 那么 $\lim_{x \to x_0} f(x) \geq 0$
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_proof]
+[/SCOPE:root]

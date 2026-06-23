@@ -1,0 +1,109 @@
+{
+  "article_name": "RotDer",
+  "statements": [
+    {
+      "stmt_id": "st_exercise",
+      "subtype": "exercise",
+      "clause_range": [
+        0,
+        20
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_velocity_derivative",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_exercise_let",
+      "exposed_entities": [
+        "v",
+        "R",
+        "r'"
+      ]
+    },
+    {
+      "stmt_id": "st_angular_velocity_relation",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_exercise_let",
+      "exposed_entities": [
+        "ω"
+      ]
+    },
+    {
+      "stmt_id": "st_cross_as_matrix",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_exercise_let",
+      "exposed_entities": [
+        "Ω"
+      ]
+    },
+    {
+      "stmt_id": "st_Omega_skew_symmetric",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_exercise_let",
+      "exposed_entities": [
+        "Ω"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_exercise_let",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_velocity_derivative",
+      "target": "st_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_angular_velocity_relation",
+      "target": "st_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cross_as_matrix",
+      "target": "st_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_Omega_skew_symmetric",
+      "target": "st_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

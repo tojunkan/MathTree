@@ -1,0 +1,347 @@
+{
+  "article_name": "ExDiv",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "q(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_prop1",
+      "subtype": "theorem",
+      "clause_range": [
+        4,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_trivial",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        15
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "q(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_def2",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "q(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_prop2_1",
+      "subtype": "theorem",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_prop2_2",
+      "subtype": "theorem",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "h(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_prop2_3",
+      "subtype": "theorem",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "f(x)",
+        "g_i(x)",
+        "u_i(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_def3",
+      "subtype": "definition",
+      "clause_range": [
+        28,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "d(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_gcd",
+      "subtype": "definition",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop3_1",
+      "subtype": "theorem",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "f(x)",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_prop3_2",
+      "subtype": "theorem",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_prop3_3",
+      "subtype": "theorem",
+      "clause_range": [
+        36,
+        37
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "d(x)",
+        "d1(x)",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_case1",
+      "subtype": "condition",
+      "clause_range": [
+        41,
+        42
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1_cases",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_case2",
+      "subtype": "condition",
+      "clause_range": [
+        43,
+        51
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1_cases",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "q(x)",
+        "q1(x)",
+        "c"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1",
+      "target": "st_prop1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1",
+      "target": "st_def1_trivial",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2",
+      "target": "st_prop2_1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2",
+      "target": "st_prop2_2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2",
+      "target": "st_prop2_3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3",
+      "target": "st_def3_gcd",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3",
+      "target": "st_prop3_1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3",
+      "target": "st_prop3_2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3",
+      "target": "st_prop3_3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_assump",
+      "target": "st_ex1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_case1",
+      "target": "st_ex1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_case2",
+      "target": "st_ex1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1是定义1的充要条件"
+    },
+    {
+      "source": "st_ex1_concl",
+      "target": "st_def2",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1证明整除性质1，引用定义2"
+    }
+  ],
+  "unresolved": []
+}

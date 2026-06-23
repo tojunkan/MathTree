@@ -1,0 +1,628 @@
+{
+  "article_name": "LinMap",
+  "statements": [
+    {
+      "stmt_id": "st_def1_linear_map",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "f",
+        "V",
+        "U",
+        "F",
+        "v1",
+        "v2",
+        "c1",
+        "c2"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "F",
+        "V",
+        "U",
+        "v1",
+        "v2",
+        "c1",
+        "c2"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_linearity_condition",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "f",
+        "v1",
+        "v2",
+        "c1",
+        "c2"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_linear_map_name",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_finite_linear_combination",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1_zero_maps_to_zero",
+      "subtype": "corollary",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": [
+        "f",
+        "V",
+        "U"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_geometric_transforms",
+      "subtype": "exercise",
+      "clause_range": [
+        27,
+        35
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "V_N",
+        "f",
+        "lambda",
+        "theta"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let",
+      "exposed_entities": [
+        "V_N",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_composition_linear",
+      "subtype": "exercise",
+      "clause_range": [
+        36,
+        39
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_range_space",
+      "subtype": "definition",
+      "clause_range": [
+        40,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "f",
+        "V",
+        "U",
+        "M",
+        "rank"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "f",
+        "V",
+        "U"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_image_is_subspace",
+      "subtype": "conclusion",
+      "clause_range": [
+        41,
+        42
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_null_space",
+      "subtype": "definition",
+      "clause_range": [
+        48,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "f",
+        "V",
+        "null",
+        "ker"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_let",
+      "subtype": "assumption",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3_let",
+      "exposed_entities": [
+        "f",
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_nullity",
+      "subtype": "definition",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "nullity",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_basis_representation",
+      "subtype": "remark",
+      "clause_range": [
+        53,
+        60
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "e_i",
+        "V",
+        "f",
+        "U"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_linear_equation",
+      "subtype": "definition",
+      "clause_range": [
+        61,
+        69
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "A",
+        "X",
+        "Y",
+        "b",
+        "X_s"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_let",
+      "subtype": "assumption",
+      "clause_range": [
+        62,
+        62
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4_let",
+      "exposed_entities": [
+        "A",
+        "X",
+        "Y",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_solution_set",
+      "subtype": "definition",
+      "clause_range": [
+        63,
+        63
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "X_s"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_existence_condition",
+      "subtype": "conclusion",
+      "clause_range": [
+        64,
+        66
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def4_homogeneous",
+      "subtype": "definition",
+      "clause_range": [
+        68,
+        69
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_solution_structure",
+      "subtype": "theorem",
+      "clause_range": [
+        70,
+        89
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "A",
+        "X",
+        "Y",
+        "b",
+        "X_s",
+        "X_0",
+        "x1"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        73,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let1",
+      "exposed_entities": [
+        "X_0",
+        "x1"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        76,
+        76
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let2",
+      "exposed_entities": [
+        "x0",
+        "X_0"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let3",
+      "subtype": "assumption",
+      "clause_range": [
+        80,
+        80
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let3",
+      "exposed_entities": [
+        "x2",
+        "X_S"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_forward_inclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        75,
+        78
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_backward_inclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        79,
+        85
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_structure_summary",
+      "subtype": "remark",
+      "clause_range": [
+        86,
+        89
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linmap_space_def",
+      "subtype": "definition",
+      "clause_range": [
+        90,
+        95
+      ],
+      "truth_value": null,
+      "scope_id": "s_linmap_space",
+      "exposed_entities": [
+        "V",
+        "W",
+        "L(V,W)",
+        "a",
+        "f",
+        "f'"
+      ]
+    },
+    {
+      "stmt_id": "st_linmap_space_let",
+      "subtype": "assumption",
+      "clause_range": [
+        91,
+        91
+      ],
+      "truth_value": null,
+      "scope_id": "s_linmap_space_let",
+      "exposed_entities": [
+        "V",
+        "W",
+        "L(V,W)",
+        "a",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_matrix_rep_def",
+      "subtype": "definition",
+      "clause_range": [
+        96,
+        106
+      ],
+      "truth_value": null,
+      "scope_id": "s_matrix_rep",
+      "exposed_entities": [
+        "V",
+        "v_i",
+        "f",
+        "a_ij"
+      ]
+    },
+    {
+      "stmt_id": "st_matrix_rep_let",
+      "subtype": "assumption",
+      "clause_range": [
+        96,
+        97
+      ],
+      "truth_value": null,
+      "scope_id": "s_matrix_rep_let",
+      "exposed_entities": [
+        "V",
+        "v_i",
+        "f"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_linearity_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_linearity_condition",
+      "target": "st_def1_linear_map",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_linear_map",
+      "target": "st_def1_finite_linear_combination",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_linear_map",
+      "target": "st_cor1_zero_maps_to_zero",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let",
+      "target": "st_ex1_geometric_transforms",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_let",
+      "target": "st_ex2_composition_linear",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2_image_is_subspace",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_image_is_subspace",
+      "target": "st_def2_range_space",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_let",
+      "target": "st_def3_null_space",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def4_let",
+      "target": "st_def4_linear_equation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def4_linear_equation",
+      "target": "st_def4_solution_set",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def4_linear_equation",
+      "target": "st_def4_existence_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def4_linear_equation",
+      "target": "st_def4_homogeneous",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let1",
+      "target": "st_thm1_forward_inclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let2",
+      "target": "st_thm1_forward_inclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let3",
+      "target": "st_thm1_backward_inclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_forward_inclusion",
+      "target": "st_thm1_solution_structure",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_backward_inclusion",
+      "target": "st_thm1_solution_structure",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_linmap_space_let",
+      "target": "st_linmap_space_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_matrix_rep_let",
+      "target": "st_matrix_rep_def",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_cor1_zero_maps_to_zero",
+      "target": "st_def1_linear_map",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论1是定义1的直接推论"
+    },
+    {
+      "source": "st_thm1_solution_structure",
+      "target": "st_def4_linear_equation",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理1给出了线性方程解集的结构"
+    }
+  ],
+  "unresolved": []
+}

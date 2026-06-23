@@ -1,0 +1,209 @@
+{
+  "article_name": "ODELi2",
+  "statements": [
+    {
+      "stmt_id": "st_intro",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "V(\\boldsymbol{\\mathbf{x}})",
+        "O"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_constant_positive",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "h"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_definite_positive",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "h"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_variable_sign",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "h"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_examples",
+      "subtype": "example",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "x_1",
+        "x_2",
+        "x_3",
+        "x_4",
+        "x_5",
+        "x_6"
+      ]
+    },
+    {
+      "stmt_id": "st_system_let",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_system_let",
+      "exposed_entities": [
+        "\\boldsymbol{\\mathbf{x}}",
+        "\\boldsymbol{\\mathbf{f}}",
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_total_derivative_def",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_system",
+      "exposed_entities": [
+        "\\frac{\\mathrm{d}{V}}{\\mathrm{d}{t}}"
+      ]
+    },
+    {
+      "stmt_id": "st_geometric_interpretation",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_system",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        35,
+        37
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        38,
+        40
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        41,
+        43
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_constant_positive",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_definite_positive",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_variable_sign",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_system_let",
+      "target": "st_total_derivative_def",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_statement",
+      "target": "st_total_derivative_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理 1 引用系统式 1"
+    },
+    {
+      "source": "st_thm2_statement",
+      "target": "st_total_derivative_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理 2 引用系统式 1"
+    },
+    {
+      "source": "st_thm3_statement",
+      "target": "st_total_derivative_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理 3 引用系统式 1"
+    }
+  ],
+  "unresolved": []
+}

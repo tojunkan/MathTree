@@ -1,0 +1,128 @@
+[SCOPE:root|description|罗德里格旋转公式、定轴旋转矩阵]
+文章名: RotA
+标题: 罗德里格旋转公式、定轴旋转矩阵
+
+[SCOPE:s_formula|description|罗德里格斯旋转公式与旋转矩阵]
+[SCOPE:s_formula_let|let_bind|公式中的变量]
+[0] 1三维空间中，某点 $ \boldsymbol{\mathbf{r}} =(x,y,z) ^{\mathrm{T}} $ 以单位矢量 $ \hat{\boldsymbol{\mathbf{A}}} =(A_x, A_y, A_z) ^{\mathrm{T}} $ 为轴按右手定则转动 $\theta$ 角的得到的点 $ \boldsymbol{\mathbf{r}} '=(x',y',z') ^{\mathrm{T}} $ 可用罗德里格斯旋转公式（Rodrigues' rotation formula）计算：
+[1] \begin{equation}
+\boldsymbol{\mathbf{r}} ' = \boldsymbol{\mathbf{r}} \cos\theta + \hat{\boldsymbol{\mathbf{A}}} \boldsymbol\times \boldsymbol{\mathbf{r}} \sin\theta + \hat{\boldsymbol{\mathbf{A}}} ( \hat{\boldsymbol{\mathbf{A}}} \boldsymbol\cdot \boldsymbol{\mathbf{r}} ) (1 - \cos\theta)~,
+\end{equation}
+[2] 其中 $ \boldsymbol\cdot $ 表示
+[3] 点乘 [链接 L0]
+[4] 。
+[5] 令该旋转的
+[6] 三维旋转矩阵 [链接 L1]
+[7] $ \boldsymbol{\mathbf{R}} _\theta$，
+[8] 则
+[9] \begin{equation}
+\boldsymbol{\mathbf{r}} ' = \boldsymbol{\mathbf{R}} _\theta \boldsymbol{\mathbf{r}} ~.
+\end{equation}
+[10] 式 1 [链接 L2]
+[11] \begin{equation}
+\boldsymbol{\mathbf{R}} _\theta =
+\begin{pmatrix}
+a A_x^2 + c & a A_x A_y - s A_z & a A_x A_z + s A_y\\
+a A_y A_x + s A_z & a A_y^2 + c & a A_y A_z - s A_x\\
+a A_z A_x - s A_y & a A_z A_y + s A_x & a A_z^2 + c
+\end{pmatrix}~.\end{equation}
+[12] \begin{equation}
+c = \cos\theta ~,\qquad s = \sin\theta~, \qquad a = 1 - \cos\theta~.
+\end{equation}
+[/SCOPE:s_formula_let]
+[13] 另外也可以用
+[14] 四元数 [链接 L3]
+[15] 表示该矩阵。
+
+[/SCOPE:s_formula]
+[SCOPE:s_derivation|description|推导]
+[SCOPE:s_derivation_let|let_bind|推导中的变量]
+[16] 推导的思路是用 $ \hat{\boldsymbol{\mathbf{A}}} $ , $ \boldsymbol{\mathbf{r}} $ 和 $\theta $ 三个已知量经过数乘，内积和叉乘三种运算，表示出旋转后的矢量 $ \boldsymbol{\mathbf{r}} '$，再拆成三个分量，
+[17] 即可得到线性变换，进而写出矩阵。
+[18] 注意该思路与推导平面旋转矩阵的思路不一样。
+[19] 【图解】图 1：定轴旋转矩阵的推导
+[20] 如图，$ \boldsymbol{\mathbf{r}} $ 绕单位矢量 $ \hat{\boldsymbol{\mathbf{A}}} $ 旋转 $\theta$ 角后得到 $ \boldsymbol{\mathbf{r}} '$。
+[21] $ \boldsymbol{\mathbf{r}} $ 在 $ \hat{\boldsymbol{\mathbf{A}}} $ 方向投影得到的矢量为
+[22] \begin{equation}
+\boldsymbol{\mathbf{r}} _3 = ( \hat{\boldsymbol{\mathbf{A}}} \boldsymbol\cdot \boldsymbol{\mathbf{r}} ) \hat{\boldsymbol{\mathbf{A}}} ~,
+\end{equation}
+[23] 在与 $ \hat{\boldsymbol{\mathbf{A}}} $ 垂直方向的分量为
+[24] \begin{equation}
+\boldsymbol{\mathbf{r}} _1 = \boldsymbol{\mathbf{r}} - \boldsymbol{\mathbf{r}} _3~.
+\end{equation}
+[25] 为了构成一组正交基底，令
+[26] \begin{equation}
+\boldsymbol{\mathbf{r}} _2 = \hat{\boldsymbol{\mathbf{A}}} \boldsymbol\times \boldsymbol{\mathbf{r}} _1~,
+\end{equation}
+[27] 则 $ \boldsymbol{\mathbf{r}} _2$ 相当于 $ \boldsymbol{\mathbf{r}} _1$ 绕 $ \hat{\boldsymbol{\mathbf{A}}} $ 旋转 $90^\circ$。
+[28] 现在有了正交的 $ \boldsymbol{\mathbf{r}} _1$ , $ \boldsymbol{\mathbf{r}} _2$ 就可以表示出 $ \boldsymbol{\mathbf{r}} _1$ 绕 $ \hat{\boldsymbol{\mathbf{A}}} $ 旋转 $\theta$ 角后的结果
+[29] \begin{equation}
+\boldsymbol{\mathbf{r}} ' - \boldsymbol{\mathbf{r}} _3 = \boldsymbol{\mathbf{r}} _1\cos \theta + \boldsymbol{\mathbf{r}} _2\sin \theta~,
+\end{equation}
+[30] \begin{equation}
+\boldsymbol{\mathbf{r}} ' = \boldsymbol{\mathbf{r}} _1\cos \theta + \boldsymbol{\mathbf{r}} _2\sin \theta + \boldsymbol{\mathbf{r}} _3~.
+\end{equation}
+[/SCOPE:s_derivation_let]
+[31] 式 5 [链接 L4]
+[32] 式 6 [链接 L5]
+[33] 式 7 [链接 L6]
+[34] 式 9 [链接 L7]
+[35] ，
+[36] 即可求出
+[37] 式 1 [链接 L8]
+[38] 。
+[39] 把结果写成分量的形式，化简可得到
+[40] 式 2 [链接 L9]
+
+[/SCOPE:s_derivation]
+[SCOPE:s_velocity|description|由旋转矩阵推导出匀速圆周运动的线速度]
+[SCOPE:s_velocity_let|let_bind|速度推导中的变量]
+[41] 我们可以用旋转矩阵得到 $ \boldsymbol{\mathbf{v}} = \boldsymbol{\mathbf{\omega}} \boldsymbol\times \boldsymbol{\mathbf{r}} $（式 5 ），这也验证了旋转矩阵的正确性。
+[42] 在无穷小的时间 $t$ 内，点 $P$ 绕轴转过 $\theta$ 角，
+[43] 则 $\theta = \omega t \to 0$，此时有 $\sin\theta \to \theta $ 和 $\cos\theta \to 1$。
+[44] 旋转矩阵变为
+[45] \begin{equation}
+\boldsymbol{\mathbf{R}} _\theta =
+\begin{pmatrix}
+1 & -A_z\theta & A_y \theta\\
+A_z \theta & 1 & -A_x \theta\\
+-A_y \theta & A_x \theta &1
+\end{pmatrix}~.
+\end{equation}
+[46] 下面 $ \boldsymbol{\mathbf{R}} _\theta$ 乘以某点的列矢量，得到变换后的坐标，再减掉变换前的坐标，得位移矢量 $ \boldsymbol{\mathbf{s}} $
+[47] \begin{equation} \begin{aligned}
+\boldsymbol{\mathbf{s}} &= \boldsymbol{\mathbf{v}} t\\
+&= \begin{pmatrix}1 & -A_z\theta & A_y\theta\\A_z\theta & 1 & -A_x\theta\\-A_y\theta & A_x\theta & 1\end{pmatrix} \begin{pmatrix}x\\y\\z\end{pmatrix}
+- \boldsymbo…[truncated]…matrix} \begin{pmatrix}x\\y\\z\end{pmatrix} \\
+&= \theta \hat{\boldsymbol{\mathbf{A}}} \boldsymbol\times \boldsymbol{\mathbf{r}}
+= \left( \boldsymbol{\mathbf{\omega}} t \right) \boldsymbol\times \boldsymbol{\mathbf{r}} ~.
+\end{aligned} \end{equation}
+[48] 两边除以 $t$，得 $ \boldsymbol{\mathbf{v}} = \boldsymbol{\mathbf{\omega}} \boldsymbol\times \boldsymbol{\mathbf{r}} $。
+[/SCOPE:s_velocity_let]
+[49] 另见 “旋转矩阵的导数
+[50] 习题 1
+
+跨文章引用:
+  [L0] 点乘 → Dot
+  [L1] 三维旋转矩阵 → Rot3D
+  [L3] 四元数 → QuatN
+[/SCOPE:s_velocity]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_derivation",
+    "target_scope": "s_formula",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推导得到公式"
+  },
+  {
+    "source_scope": "s_velocity",
+    "target_scope": "s_formula",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "由旋转矩阵推导出线速度公式"
+  }
+]

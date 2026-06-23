@@ -1,0 +1,207 @@
+[SCOPE:root|description|幂指函数之差的极限]
+文章名: MZHSZC
+标题: 幂指函数之差的极限
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=corollary heading=推论 1 title=
+  [2] type=example heading=例 1 title=
+  [3] type=exercise heading=习题 1 title=
+
+[SCOPE:s_thm1|description|定理 1]
+[0] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[1a] (x)$, $g
+[1b] (x)$, $h
+[1c] (x)$ 在 $x_{0}$ 的去心邻域内取正值,
+[2] 且 $a>0$.
+[/SCOPE:s_thm1_let]
+[3a] (x)^{g
+[3b] (x)}={\displaystyle \lim_{x\to x_{0}}}\,f
+[3c] (x)^{h
+[3d] (x)}=a$,
+[4] 则当 $x\to x_{0}$ 时,
+[5] $$
+f(x)^{g(x)}-f(x)^{h(x)}\,\sim\,a\,\big(g(x)-h(x)\big)\ln f(x).~
+$$
+[6a] (x)^{f
+[6b] (x)}={\displaystyle \lim_{x\to x_{0}}}\,h
+[6c] (x)^{f
+[6d] (x)}=a$,
+[7a] (x)}{h
+[7b] (x)}}=1,$
+[8] 则当 $x\to x_{0}$ 时,
+[9] \[
+[10a] (x)^{f
+[10b] (x)}-h
+[10c] (x)^{f
+[10d] (x)}\,\sim\,a\,\big(g
+[10e] (x)-h
+[10f] (x)\big)\frac{f
+[10g] (x)}{h
+[10h] (x)}\sim\,a\,\big(g
+[10i] (x)-h
+[10j] (x)\big)\frac{f
+[10k] (x)}{g
+[10l] (x)}.~
+[11] \]
+[12a] (x)$ 与 $g
+[12b] (x)$ 是等价无穷小量且 ${\displaystyle {\displaystyle \lim_{x\to x_{0}}}\,}f
+[12c] (x)^{g
+[12d] (x)}={\displaystyle \lim_{x\to x_{0}}}\,g
+[12e] (x)^{f
+[12f] (x)}=a$,
+[13] 则当 $x\to x_{0}$ 时,
+[14] \[
+[15a] (x)^{g
+[15b] (x)}-g
+[15c] (x)^{f
+[15d] (x)}\,\sim\,a\,\big(g
+[15e] (x)-f
+[15f] (x)\big)\ln f
+[15g] (x)\sim\,a\,\big(g
+[15h] (x)-f
+[15i] (x)\big)\ln g
+[15j] (x).~
+[16] \]
+[17a] (x)$ 与 $g
+[17b] (x)$ 是等价无穷小量且 ${\displaystyle {\displaystyle \lim_{x\to x_{0}}}\,}f
+[17c] (x)^{f
+[17d] (x)}={\displaystyle \lim_{x\to x_{0}}}\,g
+[17e] (x)^{g
+[17f] (x)}=a$,
+[18] 则当 $x\to x_{0}$ 时,
+[19] \[
+[20a] (x)^{f
+[20b] (x)}-g
+[20c] (x)^{g
+[20d] (x)}\,\sim\,a\,\big(f
+[20e] (x)-g
+[20f] (x)\big)\ln f
+[20g] (x)\sim\,a\,\big(f
+[20h] (x)-g
+[20i] (x)\big)\ln g
+[20j] (x).~
+[21] \]
+[SCOPE:s_thm1_note|description|注记]
+[22] 注记
+[23a] 若 $a=0$ 但相减的两个幂指函数是等价无穷小量,
+[23b] 则上面各个结论中的 $a$ 换成任一幂指函数即可, 如 $(1)$ 中的结论将变成
+[24] \[
+[25a] (x)^{g
+[25b] (x)}-f
+[25c] (x)^{h
+[25d] (x)}\,\sim\,f
+[25e] (x)^{g
+[25f] (x)}\,\big(g
+[25g] (x)-h
+[25h] (x)\big)\ln f
+[25i] (x),~
+[26] \]
+[27] 其余类似.
+[/SCOPE:s_thm1_note]
+[28a] (x)$, $g
+[28b] (x)$, $h
+[28c] (x)$ 分别略写为 $f$, $g,$ $h$.
+[29] $(1)$ 显然, $(g-h)\ln f$ 是无穷小量, 因此
+[30] \[
+[31] f^{g}-f^{h}=f^{h}\big(f^{g-h}-1\big)=f^{h}\big(\,\mathrm{e}^{(g-h)\ln f}-1\big)\sim a(g-h)\ln f.~
+[32] \]
+[33] $(2)$ 类似地,
+[34] \[g^{f}-h^{f}=h^{f}\big((g/h)^{f}-1\big)=h^{f}\big(\,\mathrm{e}^{f\ln\frac{g}{h}}-1\big)\sim af\ln\frac{g}{h}\sim af\left(\frac{g}{h}-1\right)\sim a(g-h)\frac{f}{h}\sim a(g-h)\frac{f}{g}.~\]
+[35] $(3)$ 由于 $f\sim g$ 故 $f^{f}=\big(f^{g}\big)^{\frac{f}{g}}\to a$,
+[36] 所以可将 $f^{g}-g^{f}$ 看成 $(f^{g}-f^{f})+(f^{f}-g^{f})$, 并利用前面两个结论:
+[37] \[
+[38] f^{g}-f^{f}=a(g-f)\ln f,\qquad f^{f}-g^{f}=a(f-g)\frac{f}{g}\sim a(f-g),~
+[39] \]
+[40] 因为 $f$ 是无穷小量, 所以 $\ln f=\infty$, 故上面的第二式被第一式控制. 综上, $f^{g}-g^{f}\sim a(g-f)\ln f.$ 另, 由于 $f$ 和 $g$ 是等价无穷小量, 所以
+[41] \[
+[42] \ln f=\ln\frac{f}{g}+\ln g=\ln g+o(1)\,\sim\,\ln g.~
+[43] \]
+[44] $(4)$ 的证明与 $(3)$ 类似, 留给读者. $\quad\square$
+[/SCOPE:s_thm1]
+[45] 利用上面的定理，立即得到下面的推论：
+
+[SCOPE:s_cor1|description|推论 1]
+[46] 推论 1
+[47] 当 $x\to0^+$ 时成立
+[48] $(1)$ $x^{x}-x^{\sin x}\sim1\cdot(x-\sin x)\ln x\sim\frac{x^{3}}{6}\ln x.$
+[49] $(2)$ $x^{x}-(\sin x)^{x}\sim1\cdot(x-\sin x)\frac{x}{\sin x}\sim\frac{x^{3}}{6}.$
+[50] $(3)$ $x^{\sin x}-(\sin x)^{x}\sim1\cdot(\sin x-x)\ln x\sim\,\frac{-x^{3}}{6}\ln x.$
+[51] $(4)$ $x^{x}-(\sin x)^{\sin x}\sim1\cdot(x-\sin x)\ln x\sim\frac{x^{3}}{6}\ln x.$
+[52] $$~$$
+[/SCOPE:s_cor1]
+[53] 下面来看几个例子.
+
+[SCOPE:s_ex1|description|例 1]
+[54] 证明：当 $x\to0^+$ 时, $x^{(\sin x)^{x}}-(\sin x)^{x^{\sin x}}\sim\frac{x^{3}}{6}.$
+[SCOPE:s_ex1_let|let_bind|例 1 的变量]
+[55a] (x)=(\sin x)^{x}$, $v
+[55b] (x)=x^{\sin x}$, 则 $x^{u
+[55c] (x)}-(\sin x)^{v
+[55d] (x)}$
+[/SCOPE:s_ex1_let]
+[56a] (x)}-x^{v
+[56b] (x)}\big)+\big(x^{v
+[56c] (x)}-(\sin x)^{v
+[56d] (x)}\big).~$$
+[57] 利用定理的前面两个结论:
+[58] \[
+[59a] (x)}-x^{v
+[59b] (x)}\sim x^{u
+[59c] (x)}\big(u
+[59d] (x)-v
+[59e] (x)\big)\ln x,\qquad x^{v
+[59f] (x)}-(\sin x)^{v
+[59g] (x)}\sim x^{v
+[59h] (x)-1}(x-\sin x)v
+[59i] (x).~
+[60] \]
+[61a] (x)\to1$ 及 $v
+[61b] (x)\to1$ 且 $x^{u
+[61c] (x)}\sim x$ 及 $x^{v
+[61d] (x)}\sim x$, 再利用定理的第三个结论:
+[62] \[
+[63a] (x)-v
+[63b] (x)\sim(\sin x-x)\ln x\sim\frac{-x^{3}}{6}\ln x.~
+[64] \]
+[65] 因而
+[66] \[
+[67a] (x)}-x^{v
+[67b] (x)}\sim\frac{-x^{4}}{6}\ln^{2}x,\qquad x^{v
+[67c] (x)}-(\sin x)^{v
+[67d] (x)}\sim\frac{x^{3}}{6}.~
+[68] \]
+[69] 由于 ${\displaystyle \lim_{x\to0^+}x^{\alpha}\ln x=0}$ $(\alpha>0)$,
+[70a] (x)}-(\sin x)^{v
+[70b] (x)}\sim\frac{x^{3}}{6}.~$$  证毕. $\quad\square$
+
+[/SCOPE:s_ex1]
+[SCOPE:s_exer1|description|习题 1]
+[71] 习题 1
+[72] 求下面极限.
+[73] $(1)$ ${\displaystyle \lim_{x\to0^{+}}\frac{x^{x^{x}}-(\sin x)^{(\sin x)^{\sin x}}}{x^{3}}.}$
+[74] $(2)$ ${\displaystyle \lim_{x\to0^{+}}\frac{x^{x^{\sin x}}-(\sin x)^{(\sin x)^{x}}}{x^{3}}.}$
+[75] $(3)$ ${\displaystyle \lim_{x\to0^{+}}\frac{x^{(\sin x)^{\sin x}}-(\sin x)^{x^{x}}}{x^{3}}.}$
+[76] $(4)$ ${\displaystyle \lim_{x\to0^{+}}\frac{x^{(\sin x)^{\sin x}}-(\sin x)^{(\sin x)^{x}}}{x^{3}}.}$
+[77] $(5)$ ${\displaystyle \lim_{x\to0^{+}}\frac{x^{(\sin x)^{\tan x}}-(\tan x)^{(\sin x)^{x}}}{x^{3}}.}$
+[/SCOPE:s_exer1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论 1 是定理 1 的特例"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例 1 应用定理 1"
+  }
+]

@@ -1,0 +1,130 @@
+{
+  "article_name": "propco",
+  "statements": [
+    {
+      "stmt_id": "st_neg_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_neg",
+      "exposed_entities": [
+        "p",
+        "¬p"
+      ]
+    },
+    {
+      "stmt_id": "st_neg_example",
+      "subtype": "example",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": "true",
+      "scope_id": "s_neg",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_conj_def",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_conj",
+      "exposed_entities": [
+        "p",
+        "q",
+        "p ∧ q"
+      ]
+    },
+    {
+      "stmt_id": "st_disj_def",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_disj",
+      "exposed_entities": [
+        "p",
+        "q",
+        "p ∨ q"
+      ]
+    },
+    {
+      "stmt_id": "st_impl_def",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_impl",
+      "exposed_entities": [
+        "p",
+        "q",
+        "p → q"
+      ]
+    },
+    {
+      "stmt_id": "st_equiv_def",
+      "subtype": "definition",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_equiv",
+      "exposed_entities": [
+        "p",
+        "q",
+        "p ↔ q"
+      ]
+    },
+    {
+      "stmt_id": "st_contra_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": "true",
+      "scope_id": "s_contra",
+      "exposed_entities": [
+        "p",
+        "q",
+        "p → q",
+        "¬q → ¬p"
+      ]
+    },
+    {
+      "stmt_id": "st_atom_def",
+      "subtype": "definition",
+      "clause_range": [
+        31,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_atom",
+      "exposed_entities": [
+        "原子命题",
+        "复合命题"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_contra_theorem",
+      "target": "st_impl_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

@@ -1,0 +1,134 @@
+[SCOPE:root|description|可测函数的 Lusin 定理]
+文章名: MsbFSt
+标题: 可测函数的 Lusin 定理
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+  [1] type=theorem heading=定理 1 title=
+  [2] type=definition heading=定义 2 title=连续性
+  [3] type=theorem heading=定理 2 title=
+  [4] type=corollary heading=推论 1 title=Lusin 定理
+
+[0] 从定理 5 可知可测函数的一个性质：其下方图形是可测集。
+[1] 本节我们继续讨论可测函数具有哪些结构，来加深对可测函数的理解。
+
+[SCOPE:s_def1|description|定义 1 简单函数]
+[2] 定义 1
+[SCOPE:s_def1_let|let_bind|简单函数变量]
+[3] 设 $E$ 是 $\mathbb{R}^n$ 上的一个可测集，$f$ 是其上一个函数。
+[4] 如果 $E$ 能分解为互不相交的 $N$ 个 $E_k$，其中 $k$ 取值为正整数，使得 $E=\bigcup_{k=1}^N$，且 $f$ 在各 $E_k$ 上都是有限常数，
+[5] 那么我们称 $f$ 是一个 $E$ 上的简单函数（simple function）.
+[/SCOPE:s_def1_let]
+[6] 显然，简单函数都是可测函数。
+[7] 你甚至可能留意到了，简单函数可以直接定义 Lebesgue 积分了：如果 $f$ 是定义 1 中所说的那种简单函数，
+[8] 那么可以定义其 Lebesgue 积分为：
+[9] \begin{equation}
+\int_E f \,\mathrm{d}{x} = \sum_{k=1}^N f(x_k) \operatorname {m}(E_k)~,
+\end{equation}
+[10] 其中 $x_k\in E_k$。
+[11] 事实上，简单函数是定义 Lebesgue 积分的基础，这可以由以下定理得出：
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理 1 可测函数为简单函数列极限]
+[12] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1变量]
+[13] 设 $E$ 是 $\mathbb{R}^n$ 上的一个可测集，$f$ 是其上的可测函数。
+[14] 那么存在一列 $E$ 上的简单函数$\{f_k\}_{k=1}^\infty$，使得 $\lim\limits_{k\to\infty}f_k=f$ 在 $E$ 上处处成立。
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm1_proof|description|定理1证明]
+[15] 证明：
+[SCOPE:s_thm1_proof_let|let_bind|构造简单函数列]
+[16] 定义数列 $\{a_{k, i}\}$ 为 $a_{k, i}= \arctan\left(\frac{\pi}{2}\cdot\frac{i}{k}\right) $，其中 $k$ 是正整数，$i$ 是 $(-k, k)$ 中的整数。
+[17] 容易发现，固定 $k$ 时，$a_{k, i}$ 可以将整个 $\mathbb{R}$ 划分为 $2k+1$ 份。
+[18] 由于 $f$ 是可测函数，
+[19] 故 $f^{-1}([a_{k, i}, a_{k, i+1}))$ 是可测集。
+[20a] (x)=a_{k, i}$，如果 $f
+[20b] (x)\in [a_{k, i}, a_{k, i+1})$。
+[21] 则各 $f_k$ 都是简单函数，并且 $\lim_{k\to\infty}f_k=f$ 在 $E$ 上处处成立。
+[/SCOPE:s_thm1_proof_let]
+[22] 证毕。
+[/SCOPE:s_thm1_proof]
+[23] 简单函数都是可测函数，加上定理 1 ，我们就得到可测函数的另一个定义：可测函数都是简单函数列的极限。
+[24] 很多与可测函数有关的问题都可以通过讨论简单函数再取极限得到可测函数来解决。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_def2|description|定义 2 连续性]
+[25] 定义 2 连续性
+[SCOPE:s_def2_let|let_bind|连续性变量]
+[26] 设 $E$ 是 $\mathbb{R}^n$ 上的一个可测集，$f$ 是其上的可测函数。
+[27] 如果在 $x_0\in E$ 处，对于任何 $\epsilon>0$，都存在 $\delta>0$ 使得对于任意 $x\in E\cap N(x_0, \delta)$，恒有 $ \left\lvert f(x)-f(x_0) \right\rvert <\epsilon$，
+[28] 那么称 $f$相对于$E$ 在 $x_0$ 处连续。
+[/SCOPE:s_def2_let]
+[29] 这里的 $N(x_0, \delta)$ 指以 $x_0$ 为球心、$\delta$ 为半径的邻域。
+[30] 如果 $f$ 相对于 $E$ 的任何点都连续，
+[31] 则称 $f$ 在 $E$ 上处处连续。
+[32] 可测函数和连续函数的关系很密切，其逻辑类似于 Egoroff 定理的对偶形式。
+[33] 注意观察以下 Lusin 定理和之前讲过的 Egoroff 定理逻辑上的异同。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm2|description|定理 2]
+[34] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2变量]
+[35] 设 $E$ 是 $\mathbb{R}^n$ 上的一个可测集，$f$ 是其上几乎处处有限的可测函数。
+[36] 则对于任意 $\delta>0$，总存在闭集$F$ 使得 $ \operatorname {m}(E-F)<\delta$ 且 $f$ 在 $E\cap F$ 上处处连续。
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm2_proof|description|定理2证明]
+[37] 证明：
+[38] 只需要证明对于处处有限的可测函数的情况即可。
+[SCOPE:s_thm2_proof_let|let_bind|构造开集并]
+[39] 用定理 1 证明过程中构造简单函数列的方法，构造一列简单函数 $\{f_i\}_{i=1}^\infty$，它们处处趋近于 $f$。
+[40] 按照这个构造方法，对于 $f$ 的任意不连续点，一定存在一个 $N$，使得只要 $i>N$，
+[41] 那么该点也是 $f_i$ 的不连续点。
+[42] 根据定义，一个简单函数最多只有有限多个不连续点，
+[43] 因此对于每个简单函数 $f_i$，都可以从 $E$ 中减去有限个开区间1，其总体积可以任意小，使 $f_i$ 在剩下的部分中处处连续。
+[44] 对简单函数 $f_i$，减去体积为 $\delta/2^{i+1}$ 的开集$U_i$。
+[45] 取所有减去的开集之并 $A=\bigcup_{i=1}^\infty U_i$，
+[46] 则 $f$ 的不连续点都在 $A$ 中。
+[47] 因此，$f$ 在 $E-A$ 上处处连续。
+[48] 由于 $A$ 是开区间的并，
+[49] 因此 $A$ 为开集，其补集 $A^C$ 为闭集。
+[50] 而 $A$ 的体积小于 $\delta$。
+[51] 故令 $F=A^C$，定理即得证。
+[/SCOPE:s_thm2_proof_let]
+[52] 证毕。
+[/SCOPE:s_thm2_proof]
+[53] 根据定理 4 ，定理 2 中的 $E\cap F$ 总可以挖掉一个零测集后变成若干互不相交的区间的并。
+[54] 这些区间最多有可数个。
+[55] 如果一个区间不是闭区间，
+[56] 那么可以通过挖掉一两个任意小的开区间使剩下部分为闭区间。
+[57] 有了这两个因素，可知 $E\cap F$ 总可以挖掉一个测度任意小的部分后变成互不相交的闭区间的并，或者说互不相交的开集的并再取补，
+[58] 因此这个剩余部分是一个闭集。
+[59] 因此，我们进一步得到以下推论：
+
+[/SCOPE:s_thm2]
+[SCOPE:s_cor1|description|推论 1 Lusin 定理]
+[60] 推论 1 Lusin 定理
+[SCOPE:s_cor1_let|let_bind|Lusin定理变量]
+[61] 设 $E\subseteq\mathbb{R}^n$ 是一个可测集，$f$ 是其上一个几乎处处有限的可测函数。
+[62] 那么对于任意 $\delta>0$，总存在闭集$F\subseteq E$ 使得 $ \operatorname {m}(E-F)<\delta$ 且 $f$ 在 $F$ 上处处连续。
+[/SCOPE:s_cor1_let]
+[63] 注意，定理 1 和推论 1 的区别在于 $F$ 的定义，前者不要求 $F\subseteq E$，
+[64] 但这导致无法保证 $E\cap F$ 是闭集。
+[65] 另外，尽管定理 1 和推论 1 讨论的是一维函数的情况，
+[66] 但只要把区间的概念拓展为方块，就可以把结论应用到任意维的函数上。
+[67] Lusin 定理揭示了可测函数与连续函数的紧密联系，使得很多有关可测函数的问题都可以简化为对连续函数的讨论。
+[/SCOPE:s_cor1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2的证明使用了定理1的构造方法"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是定理2的细化"
+  }
+]

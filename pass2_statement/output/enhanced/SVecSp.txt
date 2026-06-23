@@ -1,0 +1,97 @@
+[SCOPE:root|description|超线性空间]
+文章名: SVecSp
+标题: 超线性空间
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=超线性空间
+  [1] type=definition heading=定义 2 title=维度
+  [2] type=definition heading=定义 3 title=反演算子
+  [3] type=definition heading=定义 4 title=
+  [4] type=theorem heading=定理 1 title=
+  [5] type=definition heading=定义 5 title=对偶超空间
+
+[0] 【未完成】基本内容已完成，拓展内容待补充。
+[1] 超线性空间是一种在现代理论物理中应用的代数结构，用于描述超对称性的各种代数性质。
+[2] 它是普通线性空间的一个简单推广，附加了对其中元素奇偶性的判断。
+
+[SCOPE:s_def1|description|定义1 超线性空间]
+[3] 定义 1 超线性空间
+[SCOPE:s_def1_let|let_bind|超线性空间变量]
+[4] 域 $\mathbb{F}$ 上的超线性空间（super vector space）$V$ 是一个分次（graded）线性空间，它是两个齐次子空间 $V_0$ 和 $V_1$ 的直和：$V=V_0\oplus V_1$，其中 $0, 1\in \mathbb{Z}_2$。
+[5] $V_i$ 中的元素称为齐次的（homogeneous）。
+[6] $V_i$ 的子空间被称为 $V$ 的齐次子空间（homogeneous subspace），比如 $V_i$ 本身。
+[7] 齐次元素的奇偶性（parity）由所属子空间决定：对于 $v\in V_i$，定义 $ \left\lvert v \right\rvert =i\in\mathbb{Z}_2$，其中 $ \left\lvert v \right\rvert =0$ 时称 $v$ 是偶（even）的，否则是奇（odd）的。
+[/SCOPE:s_def1_let]
+[8] 在理论物理中，偶元素也被称为玻色元素（Bose element），奇元素则被称为费米元素（Fermi element）。
+[9] 由于超线性空间是两个齐次空间的直和，
+[10] 因此超线性空间中也存在非齐次的元素。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义2 维度]
+[11] 定义 2 维度
+[SCOPE:s_def2_let|let_bind|维度变量]
+[12] 令 $V=V_0\oplus V_1$ 是超线性空间，$V_i$ 是它的齐次子空间。
+[13] 如果 $ \operatorname {dim}V_0=n$，$ \operatorname {dim}V_1=m$，
+[14] 那么称 $V$ 的维度是 $n|m$。
+[/SCOPE:s_def2_let]
+[15] $V$ 的坐标空间是 $\mathbb{F}^{n+m}$ 上赋予分次结构的结果，记为 $\mathbb{F}^{n|m}$。
+[16] 约定 $\mathbb{F}^{n+m}$ 的前 $n$ 个坐标表示 $V_0$ 中的坐标，后 $m$ 个表示 $V_1$ 中的。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|定义3 反演算子]
+[17] 定义 3 反演算子
+[SCOPE:s_def3_let|let_bind|反演算子变量]
+[18] 对于上述超线性空间 $V$，我们定义 $\Pi V=(\Pi V)_0\oplus(\Pi V)_1$ 为另一个超线性空间，其中 $(\Pi V)_0=V_1$，$(\Pi V)_1=V_0$。
+
+[/SCOPE:s_def3]
+[/SCOPE:s_def3_let]
+[SCOPE:s_def4|description|定义4 同态]
+[19] 超线性空间空间之间的同态（homomorphism）1，定义为一个保次线性映射，
+[SCOPE:s_def4_let|let_bind|同态变量]
+[20] 即如果有两个超线性空间 $V=V_0\oplus V_1$ 和 $W=W_0\oplus W_1$，
+[21] 那么一个线性映射 $f:V\to W$ 是保次的，当且仅当 $f(V_i)\subseteq W_i, i=0, 1$。
+
+[/SCOPE:s_def4_let]
+[22] 定义 4
+[23] 超线性空间 $V$ 到 $W$ 的同态构成的集合，记为 $ \operatorname {Hom}(V, W)$。
+[24] 换句话说，超线性空间同态不改变元素的奇偶性。
+[25] 反过来，如果 $f(V_i)\subseteq W_{1-i}$，
+[26] 那么我们说 $f$ 是奇偶反演（parity reversing）的。
+
+[/SCOPE:s_def4]
+[SCOPE:s_thm1|description|定理1]
+[27] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1变量]
+[28] 对于超线性空间之间的任何线性映射 $f:V\to W$，必然存在一个同态$g:V\to W$ 和一个奇偶反演的线性映射 $h:V\to W$，使得 $f=g+h$。
+[29] 取 $V$ 的一组基，其中每个基向量都是齐次元素，就可以证明定理 1 。
+[/SCOPE:s_thm1_let]
+[30] 如果我们把保次的线性映射称为偶的，奇偶反演的称为奇的，
+[31] 那么全体 $V\to W$ 的线性变换就构成了一个超线性空间，记为 $\mathbf{Hom}(V, W)$。
+[32] 容易证明
+[33] \begin{equation}
+\begin{aligned}
+&\mathbf{Hom}(V, W)=\\& \operatorname {Hom}(V, W)\oplus \operatorname {Hom}(V, \Pi W)\oplus \operatorname {Hom}(\Pi V, W)\oplus \operatorname {Hom}(\Pi V, \Pi W)~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_thm1]
+[SCOPE:s_def5|description|定义5 对偶超空间]
+[34] 定义 5 对偶超空间
+[SCOPE:s_def5_let|let_bind|对偶超空间变量]
+[35] 令 $V$ 是超线性空间，$V^*$ 是其对偶空间，$\{ \boldsymbol{\mathbf{v}} _i\}$ 是 $V$ 的一组齐次基向量，而 $\{f^i\}$ 是其对偶基。
+[36] 定义 $f^i$ 是 $V^*$ 的齐次元素，其奇偶性和 $ \boldsymbol{\mathbf{v}} _i$ 一致。
+[/SCOPE:s_def5_let]
+[37] 由定义易得，如果 $ \operatorname {dim}V=n|m$，
+[38] 那么也有 $ \operatorname {dim}V^*=n|m$，
+[39] 从而在超线性空间意义上，对偶空间也和原空间同构。
+
+[/SCOPE:s_def5]
+[SCOPE:s_ops|description|直和与张量积]
+[SCOPE:s_ops_let|let_bind|直和与张量积变量]
+[40] 对于两个超线性空间 $V=V_0\oplus V_1$ 和 $W=W_0\oplus W_1$，它们的直和 $V\oplus W$ 还是超线性空间，其中 $(V\oplus W)_i=V_i\oplus W_i$。
+[41] 它们的张量积 $V\otimes W$ 也可以构成超线性空间，其中 $(V\otimes W)_i=(V_i\otimes W_0)\oplus(V_0\otimes W_i)$。
+[42] 用抽象指标来描述的话，如果 $v^a$ 和 $w^b$ 分别是 $V$ 和 $W$ 的齐次元素，
+[/SCOPE:s_ops_let]
+[43] 那么 $v^aw^b$ 是 $V\otimes W$ 的齐次元素，次数为 $a+b$。
+[/SCOPE:s_ops]
+[/SCOPE:root]

@@ -1,0 +1,85 @@
+{
+  "article_name": "NLext",
+  "statements": [
+    {
+      "stmt_id": "st_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_main",
+      "exposed_entities": [
+        "f",
+        "∇f"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_let",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let",
+      "exposed_entities": [
+        "x_i",
+        "x̂_i"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_eq1",
+      "subtype": "conclusion",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_eq2",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_proof_let",
+      "target": "st_proof_eq1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_let",
+      "target": "st_proof_eq2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_eq1",
+      "target": "st_proof_eq2",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_formula",
+      "target": "st_proof_eq1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明推出公式"
+    }
+  ],
+  "unresolved": []
+}

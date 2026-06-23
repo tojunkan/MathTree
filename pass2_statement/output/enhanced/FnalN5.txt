@@ -1,0 +1,247 @@
+[SCOPE:root|description|泛函分析笔记 5]
+文章名: FnalN5
+标题: 泛函分析笔记 5
+
+[SCOPE:s_5_1|description|5.1 Extensions and Embeddings]
+[0] 线性空间 $X$ 到 $Y$ 的算符 $A$ 和 $B$ 记为 $B \subseteq A$ 当且仅当定义域 $D(B) \subseteq D(A)$ 且它们在 $D(B)$ 上是同一算符。
+[1] 这时 $A$ 是 $B$ 的 extension
+[2] $A = B$ 当且仅当 $A\subseteq B$ 且 $B\subseteq A$
+[3] embedding $X \subseteq Y$ 是连续的当且仅当存他们之间存在线性，单射，连续的算符
+[4] embedding $X \subseteq Y$ 是紧的当且仅当存他们之间存在线性，单射，紧的算符
+
+[/SCOPE:s_5_1]
+[SCOPE:s_5_2|description|5.2 Self-Adjoint Operators]
+[SCOPE:s_5_2_let_A|let_bind|定义 A 和伴随]
+[5] 令线性算符 $A: D(A) \subseteq X \to X$ 的定义域 $D(A)$ 在希尔伯特空间 $X$ 上稠密。
+[6] 定义 $v \in D(A^*)$ 当且仅当存在 $w\in X$ 使 $(v|Au) = (w|u)$ 对任意 $u\in D(A)$ 都成立。
+[7] 令 $A^*v := w$，就得到了伴随（adjoint）算符 $A^*: D(A^*) \subseteq X \to X$。
+[8] 所以 $D(A^*)$ 是满足定义的最大集合
+[9] 伴随算符：(1) 是线性的 (2) $(\alpha A)^* = \bar \alpha A^*$ (3) $A \subseteq B$ 意味着 $B^* \subseteq A^*$
+[/SCOPE:s_5_2_let_A]
+[10] 如果 $D(A^*)$ 在 $X$ 上稠密，
+[11] 那么存在 $(A^*)^*$，记为 $A^{**}$
+[12] 希尔伯特空间 $X$ 上的线性算符 $A$ 是对称的（symmetric） 当且仅当 $A \subseteq A^*$，
+[13] 即 $(Au|v)=(u|Av)$ 对所有 $u, v\in D(A)$ 成立
+[14] 希尔伯特空间 $X$ 上的线性算符 $A$ 是自伴的（self-adjoint） 当且仅当 $A = A^*$，注意 $D(A) = D(A^*)$。
+[15] 自伴算符都是对称算符
+[16] 希尔伯特空间 $X$ 上的线性算符 $A$ 是 skew-symmetric 当且仅当 $A \subseteq -A^*$
+[17] 希尔伯特空间 $X$ 上的线性算符 $A$ 是 斜自伴（skew-adjoint） 当且仅当 $A = -A^*$
+[18] 希尔伯特空间 $X$ 上的线性连续算符 $A$ 的伴随算符也是线性连续的，且 $ \left\lVert A \right\rVert = \left\lVert A^* \right\rVert $ 以及 $A^{**} = A$
+[SCOPE:s_5_2_let_f|let_bind|积分算符例子]
+[19] 令 $f:[a, b]\times[a,b]\to\mathbb R$ 为连续函数且 $-\infty< a < b < \infty$。
+[20a] (x) := \int_a^b f(x, y)u
+[20b] (y) \,\mathrm{d}{y} $，令 $X := L_2(a, b)$。
+[21a] (x) = \int_a^b f(y, x) u
+[21b] (y) \,\mathrm{d}{y} $，$A^*$ 也是线性紧算符。
+[22] (3) 如果 $f(x, y) = f(y, x)$ 对任意 $x, y\in[a, b]$ 成立，
+[23] 那么算符 $A$ 是自伴算符
+[/SCOPE:s_5_2_let_f]
+[24] 希尔伯特空间 $X$ 上的任意的线性自伴算符 $A$ 都是 maximally symmetric。
+[25] 也就是说，如果 $S$ 是对称算符且 $A \subseteq S$，
+[26] 那么 $A = S$
+[SCOPE:s_5_2_let_B|let_bind|求导算符例子]
+[27a] (x) := u'
+[27b] (x)$（$x \in \mathbb R$），$D(A) := {u\in X: u'\in X}$, $u'$ 为广义导数，
+[28] 那么 (1) 算符 $A$ 是斜自伴算符，(2) $ \mathrm{i} A$ 是自伴算符
+[29] 令 $B$ 为上一条中的 $A$ 改成 “非广义” 的求导算符，且定义域为 $X \bigcap C^1(\mathbb R)$，
+[30] 那么 $B$ 是 skew-symmetric 算符且 $ \mathrm{i} B$ 是对称算符
+[/SCOPE:s_5_2_let_B]
+[SCOPE:s_5_2_let_M|let_bind|乘法算符例子]
+[31a] (x) := xu
+[31b] (x)$（$\forall x\in R$），$D(M) := \left\{u\in X: Mu\in X \right\} $。
+[32] 那么算符 $M$ 是自伴算符
+[/SCOPE:s_5_2_let_M]
+[SCOPE:s_5_2_let_P|let_bind|正交投影]
+[33] 回忆：令 $M$ 为 Hilbert 空间 $X$ 的闭线性子空间，任何 $u\in X$ 存在唯一的分解 $u = v+w$（$v\in M$，$w \in M^\bot$）。
+[34] 正交投影算符 $P:X\to M$ 定义为 $Pu := v$
+[35] 正交投影算符 $P$ 是线性的，连续的，自伴的。
+[36] 且 $P^2 = P$。
+[37] 如果 $M$ 为非空，
+[38] 那么 $ \left\lVert P \right\rVert = 1$
+[39] 如果 $P:X\to X$ 是一个线性连续的自伴算符且 $P^2 = P$，
+[40] 那么 $P$ 就是正交投影算符
+[/SCOPE:s_5_2_let_P]
+[41] 令 $A:D(A)\subseteq X\to X$ 为 Hilbert 空间 $X$ 上的线性对称算符，且 $R(A)$ 在 $X$ 上稠密，
+[42] 那么 $(A^{-1})^* = (A^*)^{-1}$。
+[43] 如果这个 $A$ 是自伴算符，
+[44] 那么 $A^{-1}$ 也是
+[SCOPE:s_5_2_let_U|let_bind|unitary 算符]
+[45] 对 Hilbert 空间 $X$ 上的线性算符 $U:X\to X$，以下条件等价。
+[46] (1) $U$ 是 unitary 算符，(2) $UU^* = U^*U = I$，(3) $U$ 是双射且 $U^{-1} = U^*$，(4) $U$ 是满射且 $ \left\lVert Uv \right\rVert = \left\lVert v \right\rVert $ 对所有 $v\in X$ 成立
+
+[/SCOPE:s_5_2]
+[/SCOPE:s_5_2_let_U]
+[SCOPE:s_5_9|description|5.9 Semigroups, One-Parameter Groups, and Their Physical Relevance]
+[SCOPE:s_5_9_let_semigroup|let_bind|定义 semigroup]
+[47] 令 $X$ 为 Banach 空间。
+[48a] (t) \right\} _{t\ge0}$ 包含一系列算符 $S
+[48b] (t):X\to X$（$\forall t\ge0$）使得：$S(t+s) = S
+[48c] (t)S
+[48d] (s)$（$\forall t, s\ge 0$）以及 $S(0) = I$
+[49a] (t) \right\} _{t\ge0}$ 的 generator $A:D(A) \subseteq X\to X$ 定义为 $Au: = \lim_{t\to+0} [S
+[49b] (t)-I]t^{-1} u$，$u\in D(A)$ 当且仅当这个极限存在
+[50a] (t) := S
+[50b] (t)u_0$（$\forall t \ge 0$）。
+[51] 那么 $\mathcal S_+$ 是强连续的（strongly continuous） 当且仅当对任意 $u_0\in X$，函数 $u:[0,\infty[ \to\mathbb R$ 是连续的
+[52a] (t)u_0 - S
+[52b] (t)v_0 \right\rVert \le \left\lVert u_0 - v_0 \right\rVert $（$\forall u_0, v_0 \in X$，对每个 $t\ge0$）
+[53] $\mathcal S_+$ 被称为线性的（linear） 当且仅当 $S(t): X\to X$（$\forall u_0, v_0\in X$）是线性连续的
+[/SCOPE:s_5_9_let_semigroup]
+[SCOPE:s_5_9_let_group|let_bind|定义 one-parameter group]
+[54a] (t) \right\} _{t\in\mathbb R}$ 包含一系列算符 $S
+[54b] (t):X\to X$（$\forall t\in\mathbb R$），使得：$S(t+s) = S
+[54c] (t)S
+[54d] (s)$（$\forall t, s\in \mathbb R$）以及 $S(0) = I$
+[55] One-parameter group 的 generator $A:D(A) \subseteq X\to X$ 定义为 $Au: = \lim_{t\to0} [S(t)-I]t^{-1} u$，$u\in D(A)$ 当且仅当这个极限存在
+[56] one-parameter group 的强连续和线性类比 semigroup
+[57] $\mathcal S$ 叫做 一致连续（uniformly continuous） 当且仅当 $\mathcal S$ 是线性的且 $ \left\lVert S(t+h)-S(t) \right\rVert \to0$ 当 $h\to0$（$\forall t\in\mathbb R$）
+[58] 一致连续的 $\mathcal S$ 也是强连续的
+[/SCOPE:s_5_9_let_group]
+[SCOPE:s_5_9_let_exp|let_bind|指数生成群]
+[59] 令 $A:X\to X$ 为 Banach 空间 $X$ 上的线性连续算符，令 $S(t) := e^{tA}$（$\forall t\in\mathbb R$）。
+[60] 那么 (1) $\mathcal S = \left\{S(t) \right\} $ 是 $X$ 上的线性 one-parameter group，generator 为 $A$ (2) $\mathcal S$ 是一致连续（强连续）的。
+[61] (3) 给出 $u_0 \in X$，令 $u(t) := e^{tA} u_0$（$\forall t\in\mathbb R$），
+[62a] (t)$ 是微分方程 $u'
+[62b] (t) = Au
+[62c] (t)$（$-\infty< t<\infty$），$u(0) = u_0$ 的唯一解
+[63] 如果上面的 $A$ 是线性连续的，
+[64] 那么上面的微分方程无法用于描述自然中的不可逆过程
+[/SCOPE:s_5_9_let_exp]
+[SCOPE:s_5_9_let_unitary|let_bind|unitary group]
+[65] one-parameter unitary group：强连续，one-parameter group，每个 $S(t)$ 都是 unitary 的
+[66] 令 $A$ 为复 Hilbert 空间 $X$ 中的线性连续的自伴算符，令 $S(t) := e^{iAt}$（$\forall t\in\mathbb R$），
+[67] 那么 $ \left\{S(t) \right\} $ 是 one-parameter unitary group，generator 是 $iA$
+
+[/SCOPE:s_5_9]
+[/SCOPE:s_5_9_let_unitary]
+[SCOPE:s_5_13_let|let_bind|Schrodinger 方程变量]
+[SCOPE:s_5_13|description|5.13 Applications to the Schrodinger Equation]
+[68a] (t) = -iAu
+[68b] (t)$（$-\infty< t<\infty$），$u(0) = u_0$
+[69] 令 $A:D(A) \subseteq X\to X$ 为复 Hilbert 空间 $X$ 的自伴算符，
+
+[/SCOPE:s_5_13_let]
+[/SCOPE:s_5_13]
+[SCOPE:s_5_14|description|5.14 Applications to Quantum Mechanics]
+[70] Hilbert 空间中单位矢量 $\psi\in X$（$(\psi|\psi)=1$）叫做态（state）
+[71] Hilbert 空间中的自伴算符 $A$ 叫做可观测量
+[72] 测量
+[73] 不确定原理
+[SCOPE:s_5_14_let_momentum|let_bind|动量算符]
+[74a] (x) := -i\hbar \mathrm{d}{\phi
+[74b] (x)}/\mathrm{d}{x} $（$\forall x\in\mathbb R$）。
+[75] 其中 $D(A) := \left\{\phi\in X: \phi'\in X \right\} $，$\phi'$ 是广义导数
+[/SCOPE:s_5_14_let_momentum]
+[SCOPE:s_5_14_let_position|let_bind|位置算符]
+[76a] (x) := x\phi
+[76b] (x)$（$x\in\mathbb R$）叫做位置算符，其中 $D(B) := {\phi\in X: B\phi\in X}$
+[77] 位置算符和动量算符都是自伴算符（见上文）
+
+[/SCOPE:s_5_14]
+[/SCOPE:s_5_14_let_position]
+[SCOPE:s_5_15|description|5.15 Generalized Eigenfunctions]
+[SCOPE:s_5_15_let_general|let_bind|广义本征函数定义]
+[78] 令 $X := L_2^{\mathbb C}(\mathbb R)$，$A:D(A) \subseteq X\to X$ 为对称算符，$\mathcal S\subseteq D(A)$ 那么非零的 tempered distribution $T \in\mathcal S'$ 叫做 $A$ 的 广义本征函数（generalized eigenfunction）（具有实数本征值）当且仅当 $T(A\phi) = \lambda T(\phi)$ 对所有 $\phi\in\mathcal S$ 成立
+[79] 广义本征函数系 $ \left\{T_\alpha \right\} _{\alpha\in\mathcal A}$ 称为完备的（complete） 当且仅当 “$T_\alpha(\phi) = 0$ 对所有 $\alpha\in\mathcal A$ 和固定的 $\phi\in\mathcal S$ 成立” 意味着 $\phi = 0$
+[/SCOPE:s_5_15_let_general]
+[SCOPE:s_5_15_let_T|let_bind|映射到广义函数]
+[80a] (x)} \phi
+[80b] (x) \,\mathrm{d}{x} $（$\forall \phi\in\mathcal S$），
+[81] 那么 (1) 对每个 $\psi\in X$，$T\in\mathcal S'$，(2) 映射 $\psi\mapsto T$ 是从 $X$ 到 $\mathcal S'$ 的线性双射算符
+[82] 上面 $A$ 中的每个本征函数 $\psi\in D(A)$ 可以映射到一个广义本征函数
+[/SCOPE:s_5_15_let_T]
+[SCOPE:s_5_15_let_Tp|let_bind|动量广义本征函数]
+[83a] (x)}\phi
+[83b] (x) \,\mathrm{d}{x} $（$\forall \phi\in\mathcal S$）其中 $\phi_p
+[83c] (x) := \exp\left(ipx/\hbar\right) $。
+[84] $T_p \in \mathcal S'$
+[85] $ \left\{\phi_p \right\} _{p\in\mathbb R}$（对应的广义函数 $T_p(\phi)$）是动量算符的完备广义本征函数
+[/SCOPE:s_5_15_let_Tp]
+[SCOPE:s_5_15_let_delta|let_bind|位置广义本征函数]
+[86] $ \left\{\delta_y \right\} _{y\in\mathbb R}$ 是位置算符 $B$ 的完备广义本征函数。
+[87] 即 $\delta_y(B\phi) = y\delta_y(\phi)$（$\forall \phi\in\mathcal S$）
+
+[/SCOPE:s_5_15]
+[/SCOPE:s_5_15_let_delta]
+[SCOPE:s_5_20|description|5.20 A Look at Scattering Theory]
+[88a] (t) := \exp\left(-itH/\hbar\right) \psi(0)$，自由运动：$\psi_0
+[88b] (t) := \exp\left(-itH_0/\hbar\right) \psi_0(0)$
+[89] 运动 $\psi = \psi(t)$ 被称为 asymptotically free 当 $t\to+\infty$
+[90] $\psi(0)$ 是 asymptotically free motion 的初态当且仅当 $\psi(0)$ 与 $H$ 的所有本征矢（bound states）正交
+[91] 散射态 $\phi_p$ 是（对应）$H_0$ 的广义本征函数 $T_p(\phi)$。
+[92] $T_p(H_0 \phi) = p^2/(2m) T_p(\phi)$（$\forall \phi\in\mathcal S, p\in\mathbb R$）
+
+[/SCOPE:s_5_20]
+[SCOPE:s_5_21_let|let_bind|phi_k 定义]
+[SCOPE:s_5_21|description|5.21 The Language of Physicists in Quantum Physics and the Justification of the Dirac Calculus]
+[93] 令 $\phi_k(x) := (2\pi)^{-1/2} e^{ikx}$ $x, k\in\mathbb R$
+
+[/SCOPE:s_5_21_let]
+[/SCOPE:s_5_21]
+[SCOPE:s_lebesgue_measure|description|The Lebesgue Measure]
+[SCOPE:s_lebesgue_measure_let|let_bind|勒贝格测度定义]
+[94] $N$-cuboid：$C := \left\{(\xi_1, \dots, \xi_2) \in \mathbb R^N: a_j < \xi_j < b_j \right\} $（$j = 1, \dots, N$）
+[95] $N$-cuboid 的体积为 $ \operatorname {vol}(C) := \prod_{j=1}^N(b_j - a_j)$
+[96] 勒贝格测度将 $\mathbb R^N$ 中的经典的体积从足够有规律的集合拓展到一些 “无规律” 的集合。
+[97] 令 $\mathcal A$ 为 $\mathbb R^N$ 中可测子集的集合
+[98] (1) $\mathbb R^N$ 中任意开集和闭集属于 $\mathcal A$。
+[99] (2) 如果 $A, B \in \mathcal A$，
+[100] 那么 $A\cup B \in \mathcal A$，$A\cap B \in \mathcal A$，$A - B \in \mathcal A$。
+[101] (3) $A_n \in \mathcal A$ 的无穷交集和无穷并集仍然属于 $\mathcal A$。
+[102] (4) 每个 $A \in\mathcal A$ 可以赋予一个数 $0 \le \mu(A) \le \infty$, 叫做 $N$ 维测度（measure），$A\in\mathcal A$ 叫做可测的（measurable）。
+[103] (5) 如果 $A\cap B = \emptyset$，
+[104] 那么 $\mu(A\cup B) = \mu(A) + \mu(B)$。
+[105] 这对无穷个 $A_n$ 仍然适用。
+[106] (6) 如果 $C$ 是一个 $N$-cuboid，
+[107] 那么 $C\in\mathcal A$ 以及 $\mu(C) = \operatorname {vol}(C)$。
+[108] (7) $A$ 的测度为零当且仅当对任意 $\varepsilon>0$，存在可数个 $N$-cuboid $C_1, C_2, \dots$ 使得 $A \subseteq \bigcup_{j=1}^\infty C_j$ 且 $\sum_{j=1}^\infty \mu(C_j) < \varepsilon$。
+[109] (8) 如果 $A$ 的 $N$ 维测度为零且 $B\subseteq A$，
+[110] 那么 $B$ 的 $N$ 维测度也是零。
+[111a] (9) $\mathcal A$ 叫做最小的（minimal）
+[111b] 如果 $\mathcal A'$ 满足以上条件，则有 $\mathcal A \subseteq \mathcal A'$
+[112] 测度 $\mu$ 在 $\mathcal A$ 上唯一。
+[113] $\mu$ 叫做勒贝格测度，也记为 $ \operatorname {meas}(A) := \mu(A)$（$\forall A\in\mathcal A$）
+[/SCOPE:s_lebesgue_measure_let]
+[114] $\mathbb R^N$ 中有限个或可数个点的 $N$ 维测度为零
+[115] 一个性质 $P$ 几乎到处（almost everywhere）都成立，当且仅当 $P$ 对 $\mathbb R^N$ 中除了测度为零的集合的点都成立
+[116] 几乎所有（almost all）也类似。
+[117] 例如几乎所有的实数都是无理数
+[118a] (x) = \lim_{n\to\infty} u_n
+[118b] (x)$（对几乎所有 $x\in M$）
+[119] $\mu(M)\le\mu(G)$ 当 $M\subseteq G$，$\mu(\mathbb R^N) = +\infty$ 且 $\mu(\emptyset) = 0$
+
+[/SCOPE:s_lebesgue_measure]
+[SCOPE:s_step_functions_let|let_bind|阶梯函数定义]
+[SCOPE:s_step_functions|description|Step Functions]
+[120] 阶梯函数（step function）：$u:M\subseteq\mathbb R^N \to\mathbb K$，piecewise constant。
+[121a] (x) = a_j$（$\forall x\in M_j$ 和 $\forall j$），$u
+[121b] (x) = 0$（otherwise）
+[122] 定义阶梯函数的积分为 $\int_M u \,\mathrm{d}{x} := \sum_j \operatorname {meas}(M_j)a_j$
+
+[/SCOPE:s_step_functions_let]
+[/SCOPE:s_step_functions]
+[SCOPE:s_measurable_functions_let|let_bind|可测函数定义]
+[SCOPE:s_measurable_functions|description|Measurable Functions]
+[123a] (x) = \lim_{n\to\infty} u_n
+[123b] (x)$（对几乎所有 $x\in M$）
+[124] Luzin 定理：令 $M$ 为 $\mathbb R^N$ 的可测子集。
+[125] 函数 $u: M\to\mathbb K$ 是可测的当且仅当对任意 $\delta$，它在除测度为 $\delta$ 的集合外是连续的
+[126] 函数 $f:M\subseteq\mathbb R^N \to \mathbb K$ 是可测的如果他在可测集 $M$ 上几乎到处连续
+[127] 可测函数的线性组合和极限也是可测的
+[128] 可测函数在定义域中测度为 0 的子集上改变了，
+[129] 那么新的函数仍然是可测的
+
+[/SCOPE:s_measurable_functions_let]
+[/SCOPE:s_measurable_functions]
+[SCOPE:s_lebesgue_integral_let|let_bind|勒贝格积分定义]
+[SCOPE:s_lebesgue_integral|description|Lebesgue Integral]
+[130a] (x) = \lim_{n\to\infty} u_n
+[130b] (x)$ 对几乎所有 $x\in M$ 成立 (2) 对任意 $\varepsilon> 0$，存在 $n_0(\varepsilon)$ 使得 $\int_M \left\lvert u_n
+[130c] (x) - u_m
+[130d] (x) \right\rvert \,\mathrm{d}{x} < \varepsilon$ 对所有 $n, m\ge n_0(\varepsilon)$ 成立
+[131] 如果 $u$ 是可积的，
+[132] 那么定义 $\int_M u \,\mathrm{d}{x} := \lim_{n\to\infty} \int_{M} u_n \,\mathrm{d}{x} $
+[133] 显然，可积函数必定可测
+[/SCOPE:s_lebesgue_integral_let]
+[/SCOPE:s_lebesgue_integral]
+[/SCOPE:root]

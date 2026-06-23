@@ -1,0 +1,154 @@
+{
+  "article_name": "MnfAlg",
+  "statements": [
+    {
+      "stmt_id": "st_let_M",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_M",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_space_intro",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_space",
+      "exposed_entities": [
+        "T_pM",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_smooth_vector_fields",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_space",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_module_intro",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_module",
+      "exposed_entities": [
+        "M",
+        "f",
+        "C^\\infty",
+        "\\mathfrak{X}(M)"
+      ]
+    },
+    {
+      "stmt_id": "st_exercise1_statement",
+      "subtype": "exercise",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exercise1_proof",
+      "subtype": "theorem",
+      "clause_range": [
+        24,
+        29
+      ],
+      "truth_value": "true",
+      "scope_id": "s_exercise1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_definition1_statement",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_definition1",
+      "exposed_entities": [
+        "M",
+        "U",
+        "\\varphi",
+        "\\hat{\\boldsymbol{e}}_i",
+        "f^i"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let_M",
+      "target": "st_linear_space_intro",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_M",
+      "target": "st_module_intro",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_linear_space_intro",
+      "target": "st_module_intro",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_exercise1_proof",
+      "target": "st_module_intro",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_definition1_statement",
+      "target": "st_module_intro",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_module_intro",
+      "target": "st_linear_space_intro",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "模是线性空间的推广，线性空间是模的特例"
+    },
+    {
+      "source": "st_exercise1_proof",
+      "target": "st_module_intro",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "习题1证明模结构"
+    },
+    {
+      "source": "st_definition1_statement",
+      "target": "st_module_intro",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "参考系是模的局部基"
+    }
+  ],
+  "unresolved": []
+}

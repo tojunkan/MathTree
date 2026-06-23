@@ -1,0 +1,147 @@
+[SCOPE:root|description|素理想与极大理想]
+文章名: Ideals
+标题: 素理想与极大理想
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=素理想
+  [1] type=definition heading=定义 2 title=极大理想
+  [2] type=theorem heading=定理 1 title=
+  [3] type=theorem heading=定理 2 title=
+  [4] type=example heading=例 1 title=整数环中的理想
+  [5] type=theorem heading=定理 3 title=
+
+[SCOPE:s_def1|description|定义1 素理想]
+[0] 定义 1 素理想
+[SCOPE:s_def1_let|let_bind|素理想定义中的变量]
+[1] 给定交换环$R$，如果 $P$ 是它的一个真理想，并且满足 “对于任意 $a, b\in R$，如果 $ab\in P$，
+[2] 则必有 $a\in P$ 或 $b\in P$”，
+[3] 则称 $P$ 是 $R$ 的一个素理想（prime ideal）。
+[/SCOPE:s_def1_let]
+[4] 注意，素理想的定义不一定非得是整环，也可以是含有零因子的交换环。
+[5] 比较一下它和素元素的定义，形式上是完全一样的。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义2 极大理想]
+[6] 定义 2 极大理想
+[SCOPE:s_def2_let|let_bind|极大理想定义中的变量]
+[7] 给定交换环$R$，如果 $M$ 是它的一个真理想，并且满足 “对于任意 $R$ 的理想 $I$，如果 $M\subsetneq I$，
+[8] 那么 $I=R$”，
+[9] 则称 $M$ 是 $R$ 的一个极大理想（maximal ideal）。
+[/SCOPE:s_def2_let]
+[10] 极大理想的定义很直观，任何比极大理想大的理想都只能是 $R$ 本身。
+[11] 素理想的一大作用，是把零因子收集了起来，使得商环能成为一个整环。
+[12] 同时，素理想和素元素之间高度类似。
+[13] 我们可以把这些话写成如下紧凑的定理：
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|定理1]
+[14] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[15] 给定交换环 $R$ 和它的一个理想 $P$，
+[16] 则以下条件等价：
+[/SCOPE:s_thm1_let]
+[17] $P$ 是 $R$ 的素理想。
+[18] 如果 $R$ 的两个子集 $S_1$、$S_2$ 满足 $S_1S_2\in P$，
+[19] 则 $S_1\in P$ 或 $S_2\in P$。
+[20] $R/P$ 是一个整环。
+[SCOPE:s_thm1_proof|description|定理1的证明]
+[21] 证明：
+[22] （1 到 2）：根据素理想的定义和 $S_1S_2$ 的定义，对于任意的 $s_1\in S_1$ 和 $s_2\in S_2$，
+[23] 那么 $s_1$ 和 $s_2$ 中必有一个是 $P$ 的元素。
+[24] 如果 $S_1\not\subset P$，
+[25] 那么必存在某一个 $s_1\in S_1$ 使得 $s_1\not\in P$。
+[26] 这样，任意和这个 $s_1$ 配对的 $s_2\in S_2$ 都必须是 $P$ 的元素了，
+[27] 从而 $S_2\subseteq P$。
+[28] （2 到 3）：任取 $P$ 的左陪集 $S_1$ 和 $S_2$，如果 $S_1S_2=P$，
+[29] 那么必有 $S_1$ 和 $S_2$ 的其中之一就是 $P$。
+[30] 换句话说，不存在非零（非 $P$）的元素相乘等于 $0$（$P$）。
+[31] 从而 $R/P$ 无零因子，加上继承自 $R$ 的交换性，它就是一个整环。
+[32] （3 到 1）：左陪集的运算可以看成任意选取代表元素进行运算后取结果所在的左陪集。
+[33] 对于任意的 $a, b\in R$，如果 $ab\in P$，
+[34] 那么由于 $R/P$ 是整环，必有 $a\in P$ 或者 $b\in P$。
+[35] 这就是素理想的定义。
+[36] 证毕。
+[/SCOPE:s_thm1_proof]
+[37] 整环的定义已经非常良好了，再进一步，添上 “乘法单位元存在性” 就能得到域。
+[38] 事实上，这正是极大理想的作用：
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理2]
+[39] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[40] 给定交换环 $R$ 和它的一个理想 $M$，
+[41] 则以下两个条件等价：
+[/SCOPE:s_thm2_let]
+[42] $M$ 是 $R$ 的极大理想。
+[43] $R/M$ 是一个域。
+[SCOPE:s_thm2_proof|description|定理2的证明]
+[44] 证明：
+[45] （1 到 2）：我们只需要证明，如果 $\{0\}$ 是 $R$ 的极大理想，
+[46] 那么 $R$ 是域。
+[47] 这是因为如果 $M$ 是 $R$ 的极大理想，
+[48] 那么 $\{M\}$ 就是 $R/M$ 的极大理想。
+[SCOPE:s_thm2_proof_let1|let_bind|定理2证明中的变量r]
+[49] 任取 $r\in R-\{0\}$，令 $I_r=\{sr|s\in R\}$，
+[50] 则显然 $I_r$ 是一个理想。
+[51] 由于 $I_r\supsetneq \{0\}$ 以及 $\{0\}$ 是极大理想，可知 $I_r=R$。
+[52] 也就是说，存在 $s$ 使得 $sr=1$。
+[/SCOPE:s_thm2_proof_let1]
+[53] （2 到 1）：同样地，我们只需要证明域 $R$ 的理想只有 $R$ 和 $\{0\}$ 两种。
+[SCOPE:s_thm2_proof_let2|let_bind|定理2证明中的理想I]
+[54] 设 $I$ 是一个 $R$ 的理想，并且 $I\not=\{0\}$。
+[55] 由于域的逆元存在性以及 $I$ 的吸收律，必有 $1\in I$，
+[56] 因此 $I$ 必须是 $R$ 本身。
+[/SCOPE:s_thm2_proof_let2]
+[57] 证毕。
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_proof]
+[SCOPE:s_example|description|例1 整数环中的理想]
+[58] 例 1 整数环中的理想
+[59] 整数环 $\mathbb{Z}$ 中的理想都是形如 $n\mathbb{Z}=\{nk|k\in\mathbb{Z}\}$ 的集合。
+[60] 其中当且仅当 $p$ 是素数时，$p\mathbb{Z}$ 是一个素理想，同时也是极大理想。
+[61] 由定理 2 可知，对于素数 $p$，必有 $\mathbb{Z}_p=\mathbb{Z}/p\mathbb{Z}$ 是一个域，而且还是只含有限个元素的域，
+[62] 故被称为有限域。
+[63] 要得出 $\mathbb{Z}_p$，还可以应用另一个定理：
+
+[/SCOPE:s_example]
+[SCOPE:s_thm3|description|定理3]
+[64] 定理 3
+[65] 有限整环必是域。
+[66] 证明留给读者。
+[67] 思路提示：由于整环没有零因子，
+[68] 故乘法满足消去律，利用这个消去律和有限性即可证。
+[/SCOPE:s_thm3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是素理想定义的等价刻画"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2是极大理想定义的等价刻画"
+  },
+  {
+    "source_scope": "s_example",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1应用定理2得到Zp是域"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_example",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3可替代定理2得到Zp是域"
+  }
+]

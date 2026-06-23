@@ -1,0 +1,150 @@
+[SCOPE:root|description|旋度的逆运算]
+文章名: HlmPr2
+标题: 旋度的逆运算
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=corollary heading=推论 1 title=
+  [2] type=corollary heading=推论 2 title=
+  [3] type=theorem heading=定理 2 title=
+
+[SCOPE:s_thm1|description|定理 1]
+[0] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[1] 1令 $ \boldsymbol{\mathbf{F}} $ 为无散场，
+[2] 即
+[3] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{F}} = 0~.
+\end{equation}
+[4] \begin{equation}
+\boldsymbol{\mathbf{F}} = \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{G}} ~.
+\end{equation}
+[5] \begin{equation}
+\boldsymbol{\mathbf{G}} ( \boldsymbol{\mathbf{r}} ) = \frac{1}{4\pi}\int \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} ') \boldsymbol\times \frac{ \boldsymbol{\mathbf{R}} }{R^3} \,\mathrm{d}{V'} ~.
+\end{equation}
+[/SCOPE:s_thm1_let]
+[6] 矢势（vector potential）
+[7] 矢量叉乘
+
+[/SCOPE:s_thm1]
+[SCOPE:s_cor1|description|推论 1]
+[8] 推论 1
+[9] $ \boldsymbol{\mathbf{F}} $ 是无散场的充分必要条件是它可以表示为另一个矢量场的旋度 $ \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{G}} $。
+[10] 证明：定理 1 提供了充分性。
+[11] 必要性：我们知道 $ \boldsymbol{\nabla}\boldsymbol{\cdot} ( \boldsymbol{\nabla}\boldsymbol{\times} G) \equiv 0$。
+[12] 证毕。
+[13] 定理 1 在电动力学中有两个重要的应用：一个是证明毕奥—萨伐尔定律满足安培环路定律，另一个是证明磁矢势 $ \boldsymbol{\mathbf{A}} $ 必定存在（因为磁场是无散场）。
+
+[/SCOPE:s_cor1]
+[SCOPE:s_cor2|description|推论 2]
+[14] 推论 2
+[SCOPE:s_cor2_let|let_bind|推论 2 的变量]
+[15] 在定理 1 中，给 $ \boldsymbol{\mathbf{G}} ( \boldsymbol{\mathbf{r}} )$ 加上任意一个无旋场 $ \boldsymbol{\mathbf{H}} ( \boldsymbol{\mathbf{r}} )$（满足 $ \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{H}} = \boldsymbol{\mathbf{0}} $），也能使式 2 成立。
+[16] 通过这种方法可以得到式 2 中所有可能的 $ \boldsymbol{\mathbf{G}} ( \boldsymbol{\mathbf{r}} )$。
+[/SCOPE:s_cor2_let]
+[17] 证明：第一句话证明显然。
+[18] 第二句话：若 $ \boldsymbol{\mathbf{G}} $ 和 $ \boldsymbol{\mathbf{G}} '$ 同时满足式 2 ，
+[19] 那么相减得到 $ \boldsymbol{\nabla}\boldsymbol{\times} ( \boldsymbol{\mathbf{G}} ' - \boldsymbol{\mathbf{G}} ) = \boldsymbol{\mathbf{0}} $。
+[20] 所以二者之差只能是无旋场。
+[21] 证毕。
+[22] 注意 $ \boldsymbol{\mathbf{H}} $ 也可以表示为任意标量函数 $V( \boldsymbol{\mathbf{r}} )$ 的梯度 $ \boldsymbol\nabla V$。
+[23] 我们可以认为式 3 是旋度运算的逆运算，这可以类比不定积分是求导的逆运算。
+[24] 而无旋场 $ \boldsymbol{\mathbf{H}} ( \boldsymbol{\mathbf{r}} )$ 可以类比不定积分中的任意常数。
+[25] 散度也有类似的逆运算。
+
+[/SCOPE:s_cor2]
+[SCOPE:s_thm2|description|定理 2]
+[26] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理 2 的变量]
+[27] 令 $ \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} )$ 为无散场，
+[28] 则式 3 得到的 $ \boldsymbol{\mathbf{G}} ( \boldsymbol{\mathbf{r}} )$ 仍然是一个无散场。
+[/SCOPE:s_thm2_let]
+[29] 显然，给 $ \boldsymbol{\mathbf{G}} ( \boldsymbol{\mathbf{r}} )$ 加上一个任意的无散场 $ \boldsymbol{\mathbf{H}} ( \boldsymbol{\mathbf{r}} )$ 后仍然是一个无散场。
+[30] 若需要满足式 2 ，
+[31] 则 $ \boldsymbol{\mathbf{H}} ( \boldsymbol{\mathbf{r}} )$ 必须也是无旋的，
+[32] 即 $ \boldsymbol{\mathbf{H}} ( \boldsymbol{\mathbf{r}} )$ 是调和场。
+[33] 我们已经知道一个矢量场无论求几次旋度，都一直是无散场。
+[34] 而这个定理告诉我们任意无散场无论求几次 “逆旋度” 也都可以是无散场。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_proof_thm1|description|定理 1 的证明]
+[35] 我们只需要证明式 3 右边第一项求旋度等于 $ \boldsymbol{\mathbf{F}} $，使用式 6 （展开的四项中对 $ \boldsymbol{\mathbf{F}} $ 微分的两项为零，因为 $ \boldsymbol{\mathbf{F}} $ 是 $ \boldsymbol{\mathbf{r}} '$ 的函数）：
+[36] \begin{equation}
+\begin{aligned}
+\boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{G}} &= \frac{1}{4\pi}\int \boldsymbol{\nabla}\boldsymbol{\times} \left( \boldsymbol{\mathbf{F}} \boldsymbol\times \frac{ \boldsymbol{\mathbf{R}} }{R^3} \right…[truncated]…boldsymbol{\cdot} \frac{ \boldsymbol{\mathbf{R}} }{R^3} \right) \,\mathrm{d}{V'} - \frac{1}{4\pi}\int( \boldsymbol{\mathbf{F}} \boldsymbol\cdot \boldsymbol\nabla ) \frac{ \boldsymbol{\mathbf{R}} }{R^3} \,\mathrm{d}{V'} ~,
+\end{aligned}
+\end{equation}
+[37] 其中第一个等号是因为 “对一个变量积分” 再 “对另一个变量求导” 这两个操作可以交换。
+[38] 先来证明上式第二项为零：被积函数中的 $x$ 分量为（$ \boldsymbol\nabla '$ 意味着对 $x', y', z'$ 求偏导，另外注意 $ \boldsymbol{\mathbf{F}} $ 是 $ \boldsymbol{\mathbf{r}} '$ 的函数）
+[39] \begin{equation}
+\begin{aligned}
+( \boldsymbol{\mathbf{F}} \boldsymbol\cdot \boldsymbol\nabla ) \frac{x' - x}{ \left\lvert x'-x \right\rvert ^3} &= \boldsymbol{\mathbf{F}} \boldsymbol\cdot \left( \boldsymbol\nabla \frac{x' - x}{ \left\lvert x'-x \rig…[truncated]…boldsymbol\cdot \left( \boldsymbol{\mathbf{F}} \frac{x' - x}{ \left\lvert x'-x \right\rvert ^3} \right) + ( \boldsymbol\nabla ' \boldsymbol\cdot \boldsymbol{\mathbf{F}} ) \frac{x' - x}{ \left\lvert x'-x \right\rvert ^3}~,
+\end{aligned}
+\end{equation}
+[40] 这里使用了
+[41] 式 3 [链接 L0]
+[42] 。
+[43] 由于 $ \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} ')$ 是无散场，最后一项为零。
+[44] $y, z$ 分量同理。
+[45] 对上式做体积分得（使用散度定理
+[46] 式 13 [链接 L1]
+[47] \begin{equation}
+- \int \boldsymbol\nabla ' \boldsymbol\cdot \left( \boldsymbol{\mathbf{F}} \frac{x' - x}{ \left\lvert x'-x \right\rvert ^3} \right) \,\mathrm{d}{V'} = -\oint \boldsymbol{\mathbf{F}} \frac{x' - x}{ \left\lvert x'-x \right\rvert ^3} \,\mathrm{d}{ \boldsymbol{\mathbf{s}} } ~,
+\end{equation}
+[48] 积分曲面是体积分区域的边界曲面。
+[49] 由于我们假设 $ \boldsymbol{\mathbf{F}} $ 只有在体积分内部（不包括边界）不为零，
+[50] 所以该式为零。
+[51] 再来看式 4 右边第一项，有（式 5 ）
+[52] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\cdot} \frac{ \boldsymbol{\mathbf{R}} }{R^3} = 4\pi \delta^3( \boldsymbol{\mathbf{R}} )~.
+\end{equation}
+[53] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{G}} = \int \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} ') \delta^3( \boldsymbol{\mathbf{r}} - \boldsymbol{\mathbf{r}} ') \,\mathrm{d}{V'} = \boldsymbol{\mathbf{F}} ( \boldsymbol{\mathbf{r}} )~,
+\end{equation}
+
+[/SCOPE:s_proof_thm1]
+[SCOPE:s_proof_thm2|description|定理 2 的证明]
+[54] 使用式 4 ，有
+[55] \begin{equation}
+\begin{aligned}
+& \boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{F}} = \frac{1}{4\pi} \int \boldsymbol{\nabla}\boldsymbol{\cdot} \left( \boldsymbol{\mathbf{F}} \boldsymbol\times \frac{ \boldsymbol{\mathbf{R}} }{R^3} \right…[truncated]…es} \boldsymbol{\mathbf{F}} ) \,\mathrm{d}{V'} - \frac{1}{4\pi} \int \boldsymbol{\mathbf{F}} \boldsymbol\cdot \left( \boldsymbol{\nabla}\boldsymbol{\times} \frac{ \boldsymbol{\mathbf{R}} }{R^3} \right) \,\mathrm{d}{V'} ~.
+\end{aligned}
+\end{equation}
+[56] 注意 $ \boldsymbol{\mathbf{F}} $ 是 $ \boldsymbol{\mathbf{r}} '$ 的函数而不是 $ \boldsymbol{\mathbf{r}} $ 的函数，
+[57] 所以第一项中 $ \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{F}} = \boldsymbol{\mathbf{0}} $。
+[58] 另外由于 $ \boldsymbol{\nabla}\boldsymbol{\times} ( \boldsymbol{\mathbf{R}} /R^3) = \boldsymbol{\mathbf{0}} $，上式恒为零。
+[59] 证毕。
+[/SCOPE:s_proof_thm2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论 1 的充分性由定理 1 提供"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论 2 基于定理 1"
+  },
+  {
+    "source_scope": "s_proof_thm1",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明定理 1"
+  },
+  {
+    "source_scope": "s_proof_thm2",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明定理 2"
+  }
+]

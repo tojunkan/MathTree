@@ -1,0 +1,146 @@
+[SCOPE:root|description|利萨茹曲线]
+文章名: Lissaj
+标题: 利萨茹曲线
+
+[SCOPE:s_intro|description|引言与参数方程]
+[0] 【图解】图 1：利萨茹曲线例子。
+[1] 一个可交互的示例见这里。
+[SCOPE:s_intro_let|let_bind|参数变量]
+[2] 利萨茹曲线（Lissajous curve）是平面上一点 $P$ 在两个垂直的方向 $x, y$ 分别做相简谐运动形成的轨迹，常见于示波器上。
+[3] 莉萨如曲线可以用以下参数方程表示
+[4] \begin{equation}
+\left\{\begin{aligned}
+x &= A \sin\left(a t + \phi\right) \\
+y &= B \sin\left(b t\right)
+\end{aligned}\right. ~.\end{equation}
+[5] 若两简谐运动频率之比 $a/b$ 是一个有理数（通常是两个较小的整数之比），
+[6] 则利萨茹曲线闭合，曲线的周期为两个方向周期 $2\pi/a$ 和 $2\pi/b$ 的最小公倍数；
+[7] 式中 $\phi$ 被称为相位差，顾名思义就是两个简谐振动的相位之差。
+[8] 当曲线闭合时，把式 1 中的 $\sin$ 都换成 $\cos$ 曲线形状也不变，因为这相当于给 $x, y$ 同时加上 $\pi/2$ 相位。
+[9] 给 $x, y$ 同时加上任意相同的相位都不会改变曲线形状。
+[10] 下文中，我们假设 $\phi \in (-\pi, \pi]$。
+[11] 不难证明，给 $\phi$ 取相反数同样不改变曲线的形状，唯一的区别只是点 $P$ 的运动方向相反。
+
+[/SCOPE:s_intro]
+[/SCOPE:s_intro_let]
+[SCOPE:s_freq_equal|description|频率相同]
+[SCOPE:s_freq_equal_let|let_bind|频率相同变量]
+[12] 频率相同时，两个方向上的频率之比固定为 1，
+[13] 故利萨茹曲线必然闭合。
+[14] 当 $\phi = 0$ 时，曲线是延 $y=(B/A)x$ 的线段；
+[15] $\phi = \pi$ 时，是延 $y=-(B/A)x$ 的线段；
+[16] 当 $\phi = \pm\pi/2$ 时，轨迹是一个椭圆，椭圆的长短两个轴与 $x,y$ 坐标轴平行。
+[17a] 特殊地
+[17b] 如果 $\phi = \pm\pi/2$ 且 $A = B$，则轨迹是一个圆。
+[18] 当 $\phi$ 是其他值时，曲线是一个斜置的椭圆。
+[19] 当 $A = B$ 时，椭圆长轴与 $x$ 轴的夹角为 $\pm\pi/4$。
+
+[/SCOPE:s_freq_equal_let]
+[SCOPE:s_freq_equal_proof|description|频率相同证明]
+[SCOPE:s_freq_equal_proof_let|let_bind|证明中引入变量]
+[20] 频率相同，
+[21] 即 $a=b$ 时，式 1 可以化为
+[22] \begin{equation}
+\frac xA-\frac yB\cos\phi-\frac{\sqrt{B^2-y^2}}{B}\sin\phi=0~.
+\end{equation}
+[/SCOPE:s_freq_equal_proof_let]
+[SCOPE:s_freq_equal_cases|cases|phi 分情况]
+[SCOPE:s_case_phi0|description|phi=0]
+[23] 当 $\phi=0$ 时，
+[24] 式 2 [链接 L0]
+[25] 化为 $x/A-y/B=0$，
+[26] 即 $y=(B/A)x$，表示一条斜率为 $B/A$ 的直线。
+[/SCOPE:s_case_phi0]
+[SCOPE:s_case_pi|description|phi=pi]
+[27] 当 $\phi=\pi$ 时，
+[28] 式 2 [链接 L1]
+[29] 化为 $y=-(B/A)x$，表示斜率为 $-B/A$ 的直线。
+[/SCOPE:s_case_pi]
+[SCOPE:s_case_pm_pi2|description|phi=±pi/2]
+[30a] 当 $\phi=\pm\pi/2$ 时，式 2 可以化为 $x/A=\pm\sqrt{B^2-y^2}/B$，两边平方
+[30b] 则可化为式 16 ，表示一个长短轴分别沿 $x$、$y$ 轴的椭圆。
+[31] 又若 $A=B$，
+[32] 则表示为一个圆。
+[/SCOPE:s_case_pm_pi2]
+[SCOPE:s_case_other_let|let_bind|椭圆旋转变量]
+[SCOPE:s_case_other|description|phi 其他值]
+[33] 当 $A=B$ 时，式 2 可以化为
+[34] \begin{equation}
+x^2+y^2-2xy\cos\phi-A^2\sin^2\phi~.
+\end{equation}
+[35] 式 16 [链接 L2]
+[36] 所表示的椭圆旋转 $\theta$ 角度后得到的椭圆方程为
+[37] \begin{equation}
+\frac{(x\cos\theta-y\sin\theta)^2}{a^2}+\frac{(x\sin\theta+y\cos\theta)^2}{b^2}=1~,
+\end{equation}
+[38] 将其展开为一般形式
+[39] \begin{equation}
+(a^2\sin^2\theta+b^2\cos^2\theta)x^2 + (a^2\cos^2\theta+b^2\sin^2\theta)y^2+2(a^2-b^2)(
+\sin\theta\cos\theta)xy-a^2b^2=0~.
+\end{equation}
+[40] 式 3 [链接 L3]
+[41] 式 5 [链接 L4]
+[42] 各项系数，可得
+[43] \begin{equation}
+\left\{\begin{aligned}
+& a^2\sin^2\theta+b^2\cos^2\theta = 1\\
+& a^2\cos^2\theta+b^2\sin^2\theta = 1\\
+& 2(a^2-b^2)\sin\theta\cos\theta = -2\cos\phi\\
+& a^2b^2=A^2\sin^2\phi
+\end{aligned}\right. ~.\end{equation}
+[44] 式 6 [链接 L5]
+[45] 前两式相减，可得 $a^2 \cos\left(2\theta\right) =b^2 \cos\left(2\theta\right) $，这说明若 $ \cos\left(2\theta\right) \neq 0$，
+[46] 则 $a^2 = b^2$。
+[47] 可由第三式，$\phi$ 取其他值时有 $a^2 \neq b^2$，
+[48] 所以必然有 $ \cos\left(2\theta\right) = 0$，
+[49] 即 $\theta = \pm\pi/4$。
+[50] 证毕。
+[/SCOPE:s_freq_equal_cases]
+[/SCOPE:s_case_other_let]
+[/SCOPE:s_case_other]
+[51] 一般而言，我们可以令 $t = 0$，
+[52] 那么曲线与 $x$ 轴的截线长度为 $A \sin\left(\phi\right) $，它与曲线的 $x$ 坐标最大值 $A$ 之比为 $\sin\phi$，
+[53] 由此可判断相位差。
+[54] 【图解】图 2：利萨茹曲线 $A = B = a = b = 1$，$\phi = \pi n/6$（$n = 0,\dots,6$）
+[55] 画图代码如下，读者可以试着使用参数运行。
+[56] 【图解】代码 1：lissajous.m
+
+[/SCOPE:s_freq_equal]
+[/SCOPE:s_freq_equal_proof]
+[SCOPE:s_freq_diff|description|频率不同]
+[SCOPE:s_freq_diff_irrational|description|无理数比]
+[57] 对于频率不同的情况，若频率之比为无理数，
+[58] 则两个方向的周期之比也为无理数，
+[59] 因此不存在这两个周期的最小公倍数（或最小公倍数为无穷），此时周期为无穷大，利萨茹曲线永不闭合。
+[60] 此时，随着时间的增加，曲线将会趋于遍布整个定义域 $-A\leqslant x \leqslant A$，$-B \leqslant y \leqslant B$ 内所有的点（或称曲线在该区域内稠密）。
+[/SCOPE:s_freq_diff_irrational]
+[SCOPE:s_freq_diff_rational|description|有理数比]
+[61] 若频率之比为有理数，
+[62] 则周期之比也为有理数，此时一定存在二者的最小公倍数，
+[63] 即存在一个有限的周期，利萨茹曲线闭合。
+[64] 对于曲线闭合的情况，可以从一个完整周期内的曲线图样推知频率之比。
+[65] 因为在一个完整周期内，某个方向上达到极大值的次数与该方向上的频率呈正比。
+[66] 于是，只要数出一个周期内两个方向的峰值各出现的次数，他们的比值即为两个方向上的频率之比。
+[67] 【图解】图 3：利萨茹曲线（左：$A=B=1$，$a=2$，$b=3$，$\phi=0$；
+[68] 右：$A=B=1$，$a=\sqrt 2$，$b=\sqrt 3$，$\phi=0$)
+[/SCOPE:s_freq_diff]
+[/SCOPE:s_freq_diff_rational]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_freq_equal_proof",
+    "target_scope": "s_freq_equal",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明频率相同情况下的结论"
+  },
+  {
+    "source_scope": "s_freq_diff",
+    "target_scope": "root",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "频率不同情况下的结论"
+  }
+]

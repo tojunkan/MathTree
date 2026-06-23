@@ -1,0 +1,98 @@
+[SCOPE:root|description|有界算子]
+文章名: BoundO
+标题: 有界算子
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=有界算子
+  [1] type=theorem heading=定理 1 title=
+
+[SCOPE:s_def1|description|有界算子定义]
+[0] 定义 1 有界算子
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1] 设 $E,E_1$ 是两个拓扑线性空间，$A:D_A\rightarrow E_1$ 是 $E$ 到 $E_1$ 的线性算子。
+[2] 若 $A$ 把 $E$ 的属于 $D_A$ 的每一有界集都映到 $E_1$ 的 有界集，
+[/SCOPE:s_def1_let]
+[3] 则称 $A$ 是有界的。
+[4] 线性算子的有界性和连续性有着密切的联系，这可以由下面的定理看出。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理1]
+[5] 定理 1
+[SCOPE:s_thm1_part1|description|定理1第1点]
+[6] 1.线性连续算子必有界；
+[SCOPE:s_thm1_part2|description|定理1第2点]
+[SCOPE:s_thm1_part2_let|let_bind|第2点变量]
+[7] 2.若 $A:E\rightarrow E_1$ 是线性有界算子，且 $E$ 满足第一可数性公理，
+[8] 则 $A$ 连续。
+[/SCOPE:s_thm1_part2_let]
+[SCOPE:s_thm1_part1_let|let_bind|第1点变量]
+[9] 证明：1. 令 $A:D_A\rightarrow E_1$ 是 $E$ 到 $E_1$ 上的线性连续算子。
+[SCOPE:s_thm1_part1_reductio|reductio|第1点反证法]
+[SCOPE:s_thm1_part1_reductio_let1|let_bind|反证假设变量]
+[10] 我们利用反证法证明：设 $M\subset D_A$ 是有界集，而 $AM\subset E_1$ 无界。
+[/SCOPE:s_thm1_part1_let]
+[11] 那么存在 $E_1$ 中的零邻域 $V$，使得任意 $n>0$，都有 $ \left\lvert \lambda \right\rvert \geq n,AM\nsubseteq\lambda V$（定义 1 ）。
+[/SCOPE:s_thm1_part1_reductio_let1]
+[12] 即存在 $x\in M$，而 $Ax\nsubseteq \lambda V$。
+[SCOPE:s_thm1_part1_reductio_let2|let_bind|序列变量]
+[13] 选取收敛于无穷大的正数序列 $\{m_i\}$，
+[14] 则存在 $ \left\lvert \lambda_i \right\rvert \geq m_i,x_i\in M$，使得
+[15] \begin{equation}
+Ax_i\nsubseteq \lambda_iM\quad\Rightarrow\quad \frac{1}{\lambda_i}A x_i\nsubseteq V. ~
+\end{equation}
+[/SCOPE:s_thm1_part1_reductio_let2]
+[16] 因为 $\{\frac{1}{\lambda_i}\}$ 是收敛于 0 的正数列，而 $M$ 有界，
+[17] 所以 $\{\frac{1}{\lambda_i}x_i\}$ 收敛于 0（
+[18] 定理 1 [链接 L0]
+[19] 第一点）。
+[20] 结合
+[21] 式 1 [链接 L1]
+[22] ，就有尽管 $\{\frac{1}{\lambda_i}x_i\}$ 收敛于 0，
+[23] 但是 $\{\frac{1}{\lambda_i}A x_i\}$ 不收敛于 0，
+[24] 因此 $A$ 不连续。
+[25] 这一矛盾表明 $AM$ 必有界。
+[/SCOPE:s_thm1_part1]
+[/SCOPE:s_thm1_part1_reductio]
+[SCOPE:s_thm1_part2_reductio|reductio|第2点反证法]
+[SCOPE:s_thm1_part2_reductio_let1|let_bind|反证假设变量]
+[26] 2.同样利用反证法，设 $A$ 不连续，
+[27] 则存在 $E_1$ 中的零邻域 $V$，使得任意 $E$ 的零邻域 $U$，都有 $x\in U,Ax\notin V$。
+[/SCOPE:s_thm1_part2_reductio_let1]
+[SCOPE:s_thm1_part2_reductio_let2|let_bind|序列变量]
+[28] 选取 $E$ 的零邻域系 $\{U_n\}$，其中 $U_{n+1}\subset U_n$（因为第一可数性保证任意零邻域 $U_n$，都存在零邻域 $U_{n+1}$，使得 $U_{n+1}\subset U_n$），
+[29] 于是 $\frac{1}{n^2} U_n$ 是 $E$ 的零邻域（数乘的连续性）。
+[30] 因此存在 $x_n\in \frac{1}{n^2}U_n$，使得 $Ax_n\notin V\Rightarrow A (\frac{1}{n}y_n)\notin n V,y_n\in U_n$。
+[/SCOPE:s_thm1_part2_reductio_let2]
+[31] 现在，我们证明 $\{(1/n) y_n\}$ 在 $E$ 中有界：任意零邻域 $U$，存在 $U_i\subset U$（$\{U_n\}$ 时确定邻域系）。
+[32] 又因为 $y_n\in U_n$，
+[33] 所以 $y_n\in U_n\subset U_i\subset U,n\geq i$，
+[34] 即 $\{y_n\}\rightarrow 0$。
+[35] 由引理 1 ，$\{t_ny_n\}\Rightarrow0$。
+[36] 由定理 1 第 2 点，$\{(1/n) y_n\}$ 在 $E$ 中有界。
+[37] $\{(1/n) y_n\}$ 有界，而 $\{A(1/n y_n)\}$ 在 $E_1$ 中无界（因为它不属于零邻域 $V$），
+[38] 因此 $A$ 无界。
+[39] 此矛盾证明了命题。
+[/SCOPE:s_thm1_part2]
+[/SCOPE:s_thm1_part2_reductio]
+[40] 证毕！
+[/SCOPE:s_thm1]
+[41] 该定理表明，在第一可数空间中，连续性等价于有界性。
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1_part1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1第1点引用有界算子定义"
+  },
+  {
+    "source_scope": "s_thm1_part2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1第2点引用有界算子定义"
+  }
+]

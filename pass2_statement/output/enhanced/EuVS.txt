@@ -1,0 +1,316 @@
+[SCOPE:root|description|欧几里得矢量空间]
+文章名: EuVS
+标题: 欧几里得矢量空间
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=欧几里得矢量空间
+  [1] type=example heading=例 1 title=
+  [2] type=example heading=例 2 title=
+  [3] type=definition heading=定义 2 title=长度
+  [4] type=example heading=例 3 title=矢量的标准化
+  [5] type=theorem heading=定理 1 title=柯西-布尼亚科夫斯基不等式
+  [6] type=corollary heading=推论 1 title=三角不等式
+  [7] type=example heading=例 4 title=
+  [8] type=definition heading=定义 3 title=夹角
+  [9] type=definition heading=定义 4 title=正交
+  [10] type=theorem heading=定理 2 title=毕达哥拉斯定理
+  [11] type=exercise heading=习题 1 title=
+  [12] type=example heading=例 5 title=
+  [13] type=definition heading=定义 5 title=正交补
+  [14] type=definition heading=定义 6 title=正交基底
+  [15] type=exercise heading=习题 2 title=
+  [16] type=definition heading=定义 7 title=投影
+
+[SCOPE:s_def1|description|定义1 欧几里得矢量空间]
+[0] 定义 1 欧几里得矢量空间
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1] 定义在实数域 $\mathbb R$ 上的矢量空间 $V$，若其带有一个对称的双线性型 $( x, y)\mapsto( x| y)$（定义 2 ），且对应的二次型 $ x\mapsto( x| x)$ 是正定的，
+[/SCOPE:s_def1_let]
+[2] 则称空间 $V$ 是一个欧几里得矢量空间。
+[3] 在欧几里得矢量空间，矢量使用正体粗体表示。
+[4] 通常，对称的双线性型 $(*|*)$ 在 $ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} $ 处的值称为它们的内积（或纯量积）。
+[5] 我们用符号 $(*|*)$ 代替通常的 $f( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} )$。
+[6] 这里我们不用 $( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} )$ 和 $\langle \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} \rangle$ 代替内积，出于这样的考虑：已经有简单的矢量对 $( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} )$，它是笛卡尔积 $V\times V$ 的元素（式 2 ）；
+[7] 而 $\langle \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} \rangle $ 又是矢量 $ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} $ 生成的子空间（定义 1 ）。
+[8] 再一次把内积的性质列出来：
+[9] 对称性：$( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{y}} )=( \boldsymbol{\mathbf{y}} | \boldsymbol{\mathbf{x}} )$;
+[10] 线性：$(\alpha \boldsymbol{\mathbf{x}} +\beta \boldsymbol{\mathbf{y}} | \boldsymbol{\mathbf{z}} )=\alpha( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{z}} )+\beta( \boldsymbol{\mathbf{y}} | \boldsymbol{\mathbf{z}} )$；
+[11] 正定性：$( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{x}} )>0,\;\forall \boldsymbol{\mathbf{x}} \neq0(( \boldsymbol{\mathbf{0}} | \boldsymbol{\mathbf{x}} )=0)$。
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|例1]
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[12] 次数 $\leq n-1$ 的多项式（其域为实数域 $\mathbb R$）对通常的加法和数乘构成一个矢量空间 $V=P_n$。
+[/SCOPE:s_ex1_let]
+[13] 对任意两个矢量（多项式）$f,g\in P_n$，数
+[14] \begin{equation}
+(f|g)=\int_a^b f(x)g(x) \,\mathrm{d}{x} ~.
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2]
+[SCOPE:s_ex2_let|let_bind|例2的变量]
+[15] 欧几里得矢量空间 $V$ 的任一子空间 $U$ 本身也是欧几里得矢量空间，因为 $V$ 中内积在 $U$ 中的限制定义了双线性函数 $U\times U\rightarrow\mathbb R$，且保持内积的性质。
+[/SCOPE:s_ex2_let]
+[16] 特别的，域 $\mathbb R$ 本身可看成是个 1 维的实的矢量空间。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_def2|description|定义2 长度]
+[17] 定义 2 长度
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[18] 在欧几里得矢量空间 $V$ 中，称非负实数
+[/SCOPE:s_def2_let]
+[19] \begin{equation}
+\left\lvert \left\lvert \boldsymbol{\mathbf{v}} \right\rvert \right\rvert =\sqrt{( \boldsymbol{\mathbf{v}} | \boldsymbol{\mathbf{v}} )}~.
+\end{equation}
+[20] 因为 $( \boldsymbol{\mathbf{v}} | \boldsymbol{\mathbf{v}} )\neq0$，
+[21] 所以任意矢量 $ \boldsymbol{\mathbf{v}} $ 的长度都是完全确定的。
+[22] 容易验证下面几个性质：
+[23] $ \boldsymbol{\mathbf{v}} \neq0\Rightarrow \left\lvert \left\lvert \boldsymbol{\mathbf{v}} \right\rvert \right\rvert >0$。
+[24] $ \left\lvert \left\lvert \lambda \boldsymbol{\mathbf{v}} \right\rvert \right\rvert = \left\lvert \lambda \right\rvert \cdot \left\lvert \left\lvert \boldsymbol{\mathbf{v}} \right\rvert \right\rvert $.
+
+[/SCOPE:s_def2]
+[SCOPE:s_ex3|description|例3 矢量的标准化]
+[25] 例 3 矢量的标准化
+[SCOPE:s_ex3_let|let_bind|例3的变量]
+[26] 任意矢量 $ \boldsymbol{\mathbf{v}} $ 乘以它的长度的倒数 $\frac{1}{ \left\lvert \left\lvert \boldsymbol{\mathbf{v}} \right\rvert \right\rvert }$ 便可将其标准化，
+[/SCOPE:s_ex3_let]
+[27] 即
+[28] \begin{equation}
+\left\lvert \left\lvert \frac{1}{ \left\lvert \left\lvert \boldsymbol{\mathbf{v}} \right\rvert \right\rvert } \boldsymbol{\mathbf{v}} \right\rvert \right\rvert =1~.
+\end{equation}
+
+[/SCOPE:s_ex3]
+[SCOPE:s_thm1|description|定理1 柯西-布尼亚科夫斯基不等式]
+[29] 定理 1 柯西-布尼亚科夫斯基不等式
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[30] 欧几里得向量空间中，对任意矢量 $ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} \in V$，成立不等式
+[/SCOPE:s_thm1_let]
+[31] \begin{equation}
+\left\lvert ( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{y}} ) \right\rvert \leq \left\lvert \left\lvert \boldsymbol{\mathbf{x}} \right\rvert \right\rvert \, \left\lvert \left\lvert \boldsymbol{\mathbf{y}} \right\rvert \right\rvert ~.
+\end{equation}
+[32] 证明：由内积的性质
+[33] \begin{equation}
+\begin{aligned}
+&(\lambda \boldsymbol{\mathbf{x}} - \boldsymbol{\mathbf{y}} |\lambda \boldsymbol{\mathbf{x}} - \boldsymbol{\mathbf{y}} )\\
+&\underset{\text{线性}}{=}\lambda^2( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{x}} )-\lambda…[truncated]…对称性}}{=}\lambda^2( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{x}} )-2\lambda ( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{y}} )+( \boldsymbol{\mathbf{y}} | \boldsymbol{\mathbf{y}} )\\
+&\underset{\text{正定性}}{\geq}0~.
+\end{aligned}
+\end{equation}
+[34] 式 5 [链接 L0]
+[35] 最后一不等式可看成关于 $\lambda$ 的二次三项式，其判别式满足
+[36] \begin{equation}
+(2( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{y}} ))^2-4( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{x}} )( \boldsymbol{\mathbf{y}} | \boldsymbol{\mathbf{y}} )\leq0~.
+\end{equation}
+[37] \begin{equation}
+\begin{aligned}
+( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{y}} )^2&\leq( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{x}} )( \boldsymbol{\mathbf{y}} | \boldsymbol{\mathbf{y}} )\\
+&\Downarrow\\
+\left\lvert ( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{y}} ) \right\rvert &\leq \left\lvert \left\lvert \boldsymbol{\mathbf{x}} \right\rvert \right\rvert \, \left\lvert \left\lvert \boldsymbol{\mathbf{y}} \right\rvert \right\rvert
+\end{aligned}~.
+\end{equation}
+[38] 当等号成立时，
+[39] 式 6 [链接 L1]
+[40] 应取等，
+[41] 即二次三项式仅有一根 $\lambda_0$。
+[42] 对照
+[43] 式 5 [链接 L2]
+[44] \begin{equation}
+(\lambda_0 \boldsymbol{\mathbf{x}} - \boldsymbol{\mathbf{y}} |\lambda_0 \boldsymbol{\mathbf{x}} - \boldsymbol{\mathbf{y}} )=0~,
+\end{equation}
+[45] 即 $ \boldsymbol{\mathbf{y}} =\lambda_0 \boldsymbol{\mathbf{x}} $。
+[46] 证毕！
+
+[/SCOPE:s_thm1]
+[SCOPE:s_cor1|description|推论1 三角不等式]
+[47] 推论 1 三角不等式
+[SCOPE:s_cor1_let|let_bind|推论1的变量]
+[48] 矢量 $ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} $ 与 $ \boldsymbol{\mathbf{x}} + \boldsymbol{\mathbf{y}} $ 的长度满足不等式
+[/SCOPE:s_cor1_let]
+[49] \begin{equation}
+\left\lvert \left\lvert \boldsymbol{\mathbf{x}} \pm \boldsymbol{\mathbf{y}} \right\rvert \right\rvert \leq \left\lvert \left\lvert \boldsymbol{\mathbf{x}} \right\rvert \right\rvert + \left\lvert \left\lvert \boldsymbol{\mathbf{y}} \right\rvert \right\rvert ~.
+\end{equation}
+[50] 证明：由定理 1
+[51] \begin{equation}
+\begin{aligned}
+\left\lvert \left\lvert \boldsymbol{\mathbf{x}} \pm \boldsymbol{\mathbf{y}} \right\rvert \right\rvert ^2&= \left\lvert \left\lvert \boldsymbol{\mathbf{x}} \right\rvert \right\rvert ^2+ \left\lvert \left\lvert \boldsym…[truncated]… \left\lvert \boldsymbol{\mathbf{y}} \right\rvert \right\rvert =( \left\lvert \left\lvert \boldsymbol{\mathbf{x}} \right\rvert \right\rvert + \left\lvert \left\lvert \boldsymbol{\mathbf{y}} \right\rvert \right\rvert )^2~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_cor1]
+[SCOPE:s_ex4|description|例4]
+[52] 在空间 $C_2(a,b)$（例 1 ）上，式 4 就变为
+[53] \begin{equation}
+\left\lvert \int_a^b f(x)g(x) \,\mathrm{d}{x} \right\rvert \leq\sqrt{\int_a^b f^2(x) \,\mathrm{d}{x} }\cdot\sqrt{\int_a^b g^2(x) \,\mathrm{d}{x} }~.
+\end{equation}
+[54] 定理 1 意味着
+[55] \begin{equation}
+-1\leq\frac{( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{y}} )}{ \left\lvert \left\lvert \boldsymbol{\mathbf{x}} \right\rvert \right\rvert \, \left\lvert \left\lvert \boldsymbol{\mathbf{y}} \right\rvert \right\rvert }\leq1~,
+\end{equation}
+[56] 也就是说，存在一个角 $\varphi$，使得
+[57] \begin{equation}
+\cos\varphi=\frac{( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{y}} )}{ \left\lvert \left\lvert \boldsymbol{\mathbf{x}} \right\rvert \right\rvert \, \left\lvert \left\lvert \boldsymbol{\mathbf{y}} \right\rvert \right\rvert }~.
+\end{equation}
+
+[/SCOPE:s_ex4]
+[SCOPE:s_def3|description|定义3 夹角]
+[58] 定义 3 夹角
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[59] 欧几里得矢量空间中，由
+[/SCOPE:s_def3_let]
+[60] \begin{equation}
+\cos\varphi=\frac{( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{y}} )}{ \left\lvert \left\lvert \boldsymbol{\mathbf{x}} \right\rvert \right\rvert \, \left\lvert \left\lvert \boldsymbol{\mathbf{y}} \right\rvert \right\rvert }~
+\end{equation}
+
+[/SCOPE:s_def3]
+[SCOPE:s_def4|description|定义4 正交]
+[61] 定义 4 正交
+[SCOPE:s_def4_let|let_bind|定义4的变量]
+[62a] 如果矢量的夹角为 $\pi/2$，亦
+[62b] 则$( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{y}} )=0$，
+[/SCOPE:s_def4_let]
+[63] 则称它们是正交的，记作 $ \boldsymbol{\mathbf{x}} \perp \boldsymbol{\mathbf{y}} $。
+
+[/SCOPE:s_def4]
+[SCOPE:s_thm2|description|定理2 毕达哥拉斯定理]
+[64] 定理 2 毕达哥拉斯定理
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[65] \begin{equation}
+\boldsymbol{\mathbf{x}} \perp \boldsymbol{\mathbf{y}} \Rightarrow \left\lvert \left\lvert \boldsymbol{\mathbf{x}} + \boldsymbol{\mathbf{y}} \right\rvert \right\rvert ^2= \left\lvert \left\lvert \boldsymbol{\mathbf{x}} \right\rvert \right\rvert ^2+ \left\lvert \left\lvert \boldsymbol{\mathbf{y}} \right\rvert \right\rvert ^2~.
+\end{equation}
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_let]
+[SCOPE:s_ex1_ex|description|习题1]
+[66] 习题 1
+[SCOPE:s_ex1_ex_let|let_bind|习题1的变量]
+[67] 试证明对两两正交的矢量 $ \boldsymbol{\mathbf{v}} _1,\cdots, \boldsymbol{\mathbf{v}} _n$，成立
+[/SCOPE:s_ex1_ex_let]
+[68] \begin{equation}
+\left\lvert \left\lvert \boldsymbol{\mathbf{v}} _1+\cdots+ \boldsymbol{\mathbf{v}} _n \right\rvert \right\rvert ^2= \left\lvert \left\lvert \boldsymbol{\mathbf{v}} _1 \right\rvert \right\rvert ^2+\cdots+ \left\lvert \left\lvert \boldsymbol{\mathbf{v}} _n \right\rvert \right\rvert ^2~.
+\end{equation}
+
+[/SCOPE:s_ex1_ex]
+[SCOPE:s_ex5|description|例5]
+[SCOPE:s_ex5_let|let_bind|例5的变量]
+[69] 与给定矢量 $ \boldsymbol{\mathbf{v}} $ 正交的所有矢量的集合是一个子空间，该空间称为 $ \boldsymbol{\mathbf{v}} $ 的正交补。
+[/SCOPE:s_ex5_let]
+[70] 事实上，若
+[71] \begin{equation}
+\boldsymbol{\mathbf{x}} \perp \boldsymbol{\mathbf{v}} ,\quad \boldsymbol{\mathbf{y}} \perp \boldsymbol{\mathbf{v}} ~,
+\end{equation}
+[72] \begin{equation}
+(\alpha \boldsymbol{\mathbf{x}} +\beta \boldsymbol{\mathbf{y}} | \boldsymbol{\mathbf{v}} )=\alpha( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{v}} )+\beta( \boldsymbol{\mathbf{y}} | \boldsymbol{\mathbf{v}} )=0,\quad \forall\alpha,\beta\in\mathbb R~.
+\end{equation}
+[73] 若矢量 $ \boldsymbol{\mathbf{v}} $ 与子空间 $U$ 任意矢量都正交，
+[74] 则说 $ \boldsymbol{\mathbf{v}} $ 正交于子空间 $U$，记作 $ \boldsymbol{\mathbf{v}} \perp U$。
+
+[/SCOPE:s_ex5]
+[SCOPE:s_def5|description|定义5 正交补]
+[75] 定义 5 正交补
+[SCOPE:s_def5_let|let_bind|定义5的变量]
+[76] 设 $U$ 是 $V$ 的子空间，
+[/SCOPE:s_def5_let]
+[77] 则集合
+[78] \begin{equation}
+\{ \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{x}} \perp U\wedge \boldsymbol{\mathbf{x}} \in V\}~
+\end{equation}
+
+[/SCOPE:s_def5]
+[SCOPE:s_def6|description|定义6 正交基底]
+[79] 定义 6 正交基底
+[SCOPE:s_def6_let|let_bind|定义6的变量]
+[80] 称欧几里得空间 $V$ 的基底 $( \boldsymbol{\mathbf{e}} _1,\cdots, \boldsymbol{\mathbf{e}} _n)$ 是正交的，如果
+[/SCOPE:s_def6_let]
+[81] \begin{equation}
+( \boldsymbol{\mathbf{e}} _i| \boldsymbol{\mathbf{e}} _j)=0,\;i\neq j=1,\dots,n~
+\end{equation}
+[82] 标准正交基底
+[83] 和所有的正定型一样，欧几里得矢量空间必有标准正交基底（因为对称双线性型必有规范基底定理 1 ，而正定的双线性型是非退化的定义 2 ，而每一基都可标准化例 3 ）。
+
+[/SCOPE:s_def6]
+[SCOPE:s_ex2_ex|description|习题2]
+[84] 习题 2
+[SCOPE:s_ex2_ex_let|let_bind|习题2的变量]
+[85] 在标准正交基底下，矢量 $ \boldsymbol{\mathbf{x}} $ 在基矢量 $ \boldsymbol{\mathbf{e}} _i$ 上的坐标 $x_i$ 为
+[/SCOPE:s_ex2_ex_let]
+[86] \begin{equation}
+( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{e}} _i)=x_i~.
+\end{equation}
+
+[/SCOPE:s_ex2_ex]
+[SCOPE:s_def7|description|定义7 投影]
+[87] 定义 7 投影
+[SCOPE:s_def7_let|let_bind|定义7的变量]
+[88] 称内积 $( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{e}} )$ 是矢量 $ \boldsymbol{\mathbf{x}} $ 在直线 $\langle \boldsymbol{\mathbf{e}} \rangle_{\mathbb R}$ 上的投影，其中 $ \boldsymbol{\mathbf{e}} $ 是个长度为 1 的矢量。
+[/SCOPE:s_def7_let]
+[89] 如此，矢量 $ \boldsymbol{\mathbf{x}} $ 在标准正交基底 $( \boldsymbol{\mathbf{e}} _1,\cdots, \boldsymbol{\mathbf{e}} _n)$ 下的坐标与 $ \boldsymbol{\mathbf{x}} $ 在坐标轴 $\langle \boldsymbol{\mathbf{e}} _i\rangle_\mathbb{R}$ 上的投影一致。
+[/SCOPE:s_def7]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1的证明引用定理1"
+  },
+  {
+    "source_scope": "s_ex4",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例4应用定理1"
+  },
+  {
+    "source_scope": "s_def3",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义3利用定理1的结论"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2基于正交定义"
+  },
+  {
+    "source_scope": "s_ex1_ex",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题1推广毕达哥拉斯定理"
+  },
+  {
+    "source_scope": "s_ex5",
+    "target_scope": "s_def4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例5讨论正交补"
+  },
+  {
+    "source_scope": "s_def5",
+    "target_scope": "s_ex5",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义5正式定义正交补"
+  },
+  {
+    "source_scope": "s_def6",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义6引用长度定义"
+  },
+  {
+    "source_scope": "s_ex2_ex",
+    "target_scope": "s_def7",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题2利用投影定义"
+  }
+]

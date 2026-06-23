@@ -1,0 +1,167 @@
+[SCOPE:root|description|一般线性变换的 Jordan（若尔当）标准形]
+文章名: ltrJor
+标题: 一般线性变换的 Jordan（若尔当）标准形
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=lemma heading=引理 1 title=
+
+[SCOPE:s_intro|description|引言]
+[0] 本文存在未完成的内容。
+[1] 利用幂零变换的结论（定理 1 ），本节进一步证明，任意线性变换都能化为类似的 Jordan 形，并且 Jordan 形是唯一的。
+
+[/SCOPE:s_intro]
+[SCOPE:s_jordan_form|description|线性变换的 Jordan 形]
+[2] 由定理 3 可知，任意线性空间都可以分解为任意线性变换的不变子空间之直和，例如对于线性变换 $A$,我们有：
+[3] \begin{equation}
+V= \operatorname {ker}f(A)= \operatorname {ker}f_1(A)\oplus \operatorname {ker}f_2(A)...\oplus \operatorname {ker}f_m(A)~,
+\end{equation}
+[4] 其中 $f(A)$ 是 $A$ 的特征多项式，$f_i(A)$ 是本征值相关的互素项：$f_i(A)=(A-\lambda_iI)^{k_i}$。
+[SCOPE:s_jordan_let1|let_bind|设 W_i, B_i]
+[5] 为方便计，设 $ \operatorname {ker}f_i(A)=W_i,A-\lambda_iI=B_i$，
+[6] 则 $A=A|_{W_1}\oplus A|_{W_2}\oplus...\oplus A|_{W_n}=\bigoplus^n_{i=1}(B_i+\lambda_iI)$
+[/SCOPE:s_jordan_let1]
+[7] 由定理 1 可知，幂零变换意味着 $W_i$ 存在某组基，使得 $B_i$ 在该基下都是 Jordan 形矩阵，称对应该基的 $A|_{W_i}$ 为一般线性变换的 Jordan 形。
+[8] 归纳此段讨论为下述定理：
+
+[SCOPE:s_theorem1|description|定理 1]
+[9] 定理 1
+[SCOPE:s_theorem1_let|let_bind|定理1的变量]
+[10] 设 $A$ 为域 $\mathbb F$ 上 $n$ 维线性空间 $V$ 内的一个线性变换，其特征多项式的所有根 $\lambda\in\mathbb F$，
+[11] 则在 $V$ 内存在一组基，使线性变换 $A$ 在这组基下可以表示为如下块对角矩阵：
+[/SCOPE:s_theorem1_let]
+[12] \begin{equation}
+J=\left(\begin{array}{cccc}
+J_1 & & & 0 \\
+& J_2 & & \\
+& & \ddots & \\
+0 & & & J_s
+\end{array}\right), \quad J_i=\left(\begin{array}{cccc}
+\lambda_i & 0 & & 0 \\
+1& \lambda_i & & \\
+\vdots& 1& \ddots & 0 \\
+0 &\cdots &1 & \lambda_i
+\end{array}\right)~.
+\end{equation}
+[13] $A|_{W_i}$ 由若干个 Jordan 块直和而成，每块对应一个本征向量，不同块的本征向量线性无关，
+[14] 因此块数就是几何重数。
+[15] 实数域上不能保证根都在域内，
+[16] 因而线性变换未必有 Jordan 形，而复数域上的线性变换总能表示为该形式。
+
+[/SCOPE:s_jordan_form]
+[/SCOPE:s_theorem1]
+[SCOPE:s_another_proof|description|另一种证明思路]
+[17] 对于具有本征值 $\lambda$ 的线性变换 $A$ 而言，我们有如下基本结论：
+[18] \begin{equation}
+\begin{aligned}
+& \operatorname {ker}B\subseteq \operatorname {ker}B^2\subseteq...\subseteq \operatorname {ker}B^k\\
+& \operatorname {Im}B\supseteq \operatorname {Im}B^2\supseteq...\supseteq \operatorname {Im}B^k~,
+\end{aligned}
+\end{equation}
+[SCOPE:s_another_let|let_bind|设 B = A - lambda I]
+[19] 其中 $B=A-\lambda I$。
+[/SCOPE:s_another_let]
+[20] 在这两个序列中，一旦有两个连续的子空间相等，后续序列中的子空间都相等。
+
+[/SCOPE:s_another_proof]
+[SCOPE:s_lemma1|description|引理 1]
+[21] 引理 1
+[SCOPE:s_lemma1_let1|let_bind|引理1的变量]
+[22] 设 $ \operatorname {ker}B^k= \operatorname {ker}B^{k+1}$，对于任意 $m>k$，有
+[/SCOPE:s_lemma1_let1]
+[23] \begin{equation}
+\operatorname {ker}B^{k+m}= \operatorname {ker}B^{k+m+1},\quad \operatorname {Im}B^{k+m}= \operatorname {Im}B^{k+m+1}~.
+\end{equation}
+[SCOPE:s_lemma1_proof|description|引理1的证明]
+[24] Proof.1
+[25] 由式 3 知，我们只需要证明 $ \operatorname {ker}B^{k+m+1}\supseteq \operatorname {ker}B^{k+m}$ 即可。
+[SCOPE:s_lemma1_let2|let_bind|设 x in ker B^{k+m+1}]
+[26] 设任意 $ \boldsymbol{\mathbf{x}} \in \operatorname {ker}B^{k+m+1}$，
+[/SCOPE:s_lemma1_let2]
+[27] 则
+[28] \begin{equation}
+B^{k+m+1} \boldsymbol{\mathbf{x}} =B^{k+1}B^m \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{0}} ~,
+\end{equation}
+[29] 因此可知 $B^m \boldsymbol{\mathbf{x}} \in \operatorname {ker}B^{k+1}$。
+[30] 由题设得：$B^{k}B^m \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{0}} $，遂 $ \boldsymbol{\mathbf{x}} \in \operatorname {ker}B^{k+m}$，得证。
+[31] 由于 $V$ 有限维，象空间或者核空间不可能无限 “扩大”，
+[32] 因而满足上述条件的 $k$ 总是存在的。
+[33] 接下来我们证明：$V= \operatorname {ker}B^k\oplus \operatorname {Im}B^k$，由于 $ \operatorname {dim}V= \operatorname {dim} \operatorname {ker}B^k+ \operatorname {dim} \operatorname {Im}B^k$，
+[34] 因此只需要证明两个子空间无交集即可。
+[SCOPE:s_lemma1_let3|let_bind|设 v in ker B^k cap Im B^k]
+[35] 设任意 $ \boldsymbol{\mathbf{v}} \in \operatorname {ker}B^k\cap \operatorname {Im}B^k$，可令 $ \boldsymbol{\mathbf{v}} =B^k \boldsymbol{\mathbf{u}} $。
+[/SCOPE:s_lemma1_let3]
+[36] 则有 $B^k \boldsymbol{\mathbf{v}} =B^2k \boldsymbol{\mathbf{u}} = \boldsymbol{\mathbf{0}} $，
+[37] 则 $ \boldsymbol{\mathbf{u}} \in \operatorname {ker}B^{2k}= \operatorname {B^k}$，
+[38] 那么我们有 $ \boldsymbol{\mathbf{v}} =B^k \boldsymbol{\mathbf{u}} = \boldsymbol{\mathbf{0}} $，得证。
+[39] 由于 $B^k$ 与 $A$ 可交换，
+[40] 所以 $ \operatorname {ker}B^k, \operatorname {Im}B^k$ 是 $A$ 的不变子空间。
+[SCOPE:s_lemma1_let4|let_bind|设 K, I]
+[41] 设 $K= \operatorname {ker}B^k,I= \operatorname {Im}B^k$，
+[/SCOPE:s_lemma1_let4]
+[42] 则有：
+[43] \begin{equation}
+A=A|_K\oplus A|_I~,
+\end{equation}
+[44] 接下来我们就可以用归纳法证明定理 1 了。
+[45] 依然设 $\lambda$ 为 $A$ 的一个本征值，且 $B=A-\lambda I,n= \operatorname {dim}V$。
+[46] 维度为 $1$ 时 $A$ 是一阶方阵所以该定理成立。
+[47] 假设定理对维度 $< n$ 的线性空间都成立，只要我们推出对 $n$ 维线性空间 $V$ 成立则得证。
+[48] 由于 $B|_K$ 是幂零变换，
+[49] 因此 $A|_K$ 可化为 Jordan 形，$A|_I$ 由题设也有 Jordan 形，定理得证。
+
+[/SCOPE:s_lemma1]
+[/SCOPE:s_lemma1_proof]
+[SCOPE:s_uniqueness|description|Jordan 形的唯一性]
+[50] 当 $A$ 有 Jordan 形时，其对应 $V$ 上的一个幂等变换。
+[51] 因此，只要证明 $B$ 的 Jordan 形是唯一的2，
+[52] 则 $A$ 自然也有唯一的 Jordan 表示。
+[53] （只改变以不同 $\lambda$ 区分的 Jordan 矩阵顺序视为一种表示。）
+[SCOPE:s_uniqueness_let|let_bind|设 B 的 Jordan 形唯一等价于循环子空间分解唯一]
+[54] $B$ 的 Jordan 形是唯一的，等价于说 $V$ 关于 $B$ 的循环子空间分解方式唯一。
+[/SCOPE:s_uniqueness_let]
+[55] 用归纳法证明，并设定理对于 $Im B$ 成立。
+[SCOPE:s_uniqueness_reductio|reductio|反设不唯一]
+[56] 反设不唯一，
+[57] 即：
+[SCOPE:s_uniqueness_let2|let_bind|设两种分解]
+[58] \begin{equation}
+V=V_1\oplus V_2\oplus...\oplus V_k=W_1\oplus W_2\oplus...\oplus W_s~.
+\end{equation}
+[/SCOPE:s_uniqueness_let2]
+[59] 用 $B$ 作用两端后得：
+[60] \begin{equation}
+\operatorname {Im}B=B(V_1)\oplus B(V_2)\oplus...\oplus B(V_k)=B(W_1)\oplus B(W_2)\oplus...\oplus B(W_s)~.
+\end{equation}
+[61] 由于在像上分解唯一，
+[62] 则上述两种分解之间必然有指定同构。
+[63] 比如：$B(V_r)=B(W_s)$。
+[64] 由维度关系知：$V_r=W_s$
+[/SCOPE:s_uniqueness]
+[/SCOPE:s_uniqueness_reductio]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_theorem1",
+    "target_scope": "s_jordan_form",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是Jordan形存在性的核心结论"
+  },
+  {
+    "source_scope": "s_lemma1",
+    "target_scope": "s_theorem1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "引理1用于证明定理1"
+  },
+  {
+    "source_scope": "s_uniqueness_reductio",
+    "target_scope": "s_uniqueness",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "反证法退出后推出唯一性"
+  }
+]

@@ -1,0 +1,282 @@
+{
+  "article_name": "Diff",
+  "statements": [
+    {
+      "stmt_id": "st_let_yfx",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let",
+      "exposed_entities": [
+        "y",
+        "f(x)",
+        "f'(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_approx_relation",
+      "subtype": "conclusion",
+      "clause_range": [
+        2,
+        4
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_differential_form",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "dy",
+        "dx"
+      ]
+    },
+    {
+      "stmt_id": "st_differential_note",
+      "subtype": "remark",
+      "clause_range": [
+        10,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_differential_warning",
+      "subtype": "remark",
+      "clause_range": [
+        17,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_approx_practical",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        25
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_approx",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_approx_condition",
+      "subtype": "condition",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_approx",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let",
+      "exposed_entities": [
+        "a",
+        "sigma_a",
+        "V(a)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_ring_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let1",
+      "exposed_entities": [
+        "A(r)",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_ring_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_sphere_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let2",
+      "exposed_entities": [
+        "V(r)",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_sphere_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_condition",
+      "subtype": "condition",
+      "clause_range": [
+        40,
+        42
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3_let",
+      "exposed_entities": [
+        "y",
+        "x",
+        "f'(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_failure",
+      "subtype": "counterexample_claim",
+      "clause_range": [
+        45,
+        48
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_reason",
+      "subtype": "remark",
+      "clause_range": [
+        49,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let_yfx",
+      "target": "st_approx_relation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_approx_relation",
+      "target": "st_differential_form",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_assump",
+      "target": "st_ex1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_ring_assump",
+      "target": "st_ex2_ring_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_sphere_assump",
+      "target": "st_ex2_sphere_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_assump",
+      "target": "st_ex3_failure",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex1_conclusion",
+      "target": "st_approx_practical",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1应用微分近似"
+    },
+    {
+      "source": "st_ex2_ring_conclusion",
+      "target": "st_approx_practical",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2应用微分近似"
+    },
+    {
+      "source": "st_ex2_sphere_conclusion",
+      "target": "st_approx_practical",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2应用微分近似"
+    },
+    {
+      "source": "st_ex3_failure",
+      "target": "st_approx_practical",
+      "edge_type": "counterexample_of",
+      "category": "logic",
+      "note": "例3展示微分近似失效"
+    }
+  ],
+  "unresolved": []
+}

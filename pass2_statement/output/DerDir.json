@@ -1,0 +1,266 @@
+{
+  "article_name": "DerDir",
+  "statements": [
+    {
+      "stmt_id": "st_intro_question",
+      "subtype": "question",
+      "clause_range": [
+        0,
+        7
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let_f_r",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let",
+      "exposed_entities": [
+        "f",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_2d_let_n",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_2d_let_n",
+      "exposed_entities": [
+        "n_hat",
+        "n_x",
+        "n_y"
+      ]
+    },
+    {
+      "stmt_id": "st_2d_geom",
+      "subtype": "remark",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_2d",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_2d_total_diff",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_2d",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_2d_dxdy",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_2d",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_2d_df",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_2d",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_2d_dir_deriv",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_2d",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_2d_inner_prod",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_2d",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_2d_del_def",
+      "subtype": "definition",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_2d_let_del",
+      "exposed_entities": [
+        "nabla"
+      ]
+    },
+    {
+      "stmt_id": "st_2d_del_f",
+      "subtype": "definition",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_2d_let_del",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_2d_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_2d",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_nd_let_vars",
+      "subtype": "assumption",
+      "clause_range": [
+        34,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_nd_let",
+      "exposed_entities": [
+        "f",
+        "r",
+        "n_hat",
+        "n_x1",
+        "n_x2",
+        "n_xN"
+      ]
+    },
+    {
+      "stmt_id": "st_nd_dir_deriv",
+      "subtype": "conclusion",
+      "clause_range": [
+        36,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_nd",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_nd_del_def",
+      "subtype": "definition",
+      "clause_range": [
+        40,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_nd_let",
+      "exposed_entities": [
+        "nabla"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let_f_r",
+      "target": "st_intro_question",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_2d_let_n",
+      "target": "st_2d_geom",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_2d_total_diff",
+      "target": "st_2d_df",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_2d_dxdy",
+      "target": "st_2d_df",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_2d_df",
+      "target": "st_2d_dir_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_2d_dir_deriv",
+      "target": "st_2d_inner_prod",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_2d_del_def",
+      "target": "st_2d_del_f",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_2d_del_f",
+      "target": "st_2d_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_2d_inner_prod",
+      "target": "st_2d_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_nd_let_vars",
+      "target": "st_nd_dir_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_nd_del_def",
+      "target": "st_nd_dir_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_nd_dir_deriv",
+      "target": "st_2d_final",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "N 元方向导数是二维的推广"
+    }
+  ],
+  "unresolved": []
+}

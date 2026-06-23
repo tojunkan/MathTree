@@ -1,0 +1,660 @@
+{
+  "article_name": "FnalN3",
+  "statements": [
+    {
+      "stmt_id": "st_orthonormal_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_orthonormal",
+      "exposed_entities": [
+        "u_k",
+        "u_m"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_X_orth",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_orth_let1",
+      "exposed_entities": [
+        "X",
+        "u_n"
+      ]
+    },
+    {
+      "stmt_id": "st_complete_finite",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_orth_let1",
+      "exposed_entities": [
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_complete_countable",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_orth_let1",
+      "exposed_entities": [
+        "s_m",
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_finite_complete_iff_basis",
+      "subtype": "theorem",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": "true",
+      "scope_id": "s_orth_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_orth_countable",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_orth_let2",
+      "exposed_entities": [
+        "u_n"
+      ]
+    },
+    {
+      "stmt_id": "st_if_series_converges",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_orth_let2",
+      "exposed_entities": [
+        "c_n",
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_then_cn_eq_inner",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_orth_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bessel_inequality",
+      "subtype": "theorem",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": "true",
+      "scope_id": "s_orth_let2",
+      "exposed_entities": [
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_convergence_criterion",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_orth_let3",
+      "exposed_entities": [
+        "u_n"
+      ]
+    },
+    {
+      "stmt_id": "st_convergence_criterion",
+      "subtype": "theorem",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": "true",
+      "scope_id": "s_orth_let3",
+      "exposed_entities": [
+        "c_n"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_orth_countable2",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_orth_let4",
+      "exposed_entities": [
+        "u_n"
+      ]
+    },
+    {
+      "stmt_id": "st_equiv_complete_dense",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_orth_let4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_complete_orthonormal",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_orth_let5",
+      "exposed_entities": [
+        "u_n"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_u_zero",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_orth_let5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fourier_series_converges",
+      "subtype": "theorem",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_orthonormal",
+      "exposed_entities": [
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_hilbert_spaces",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_unitary_let",
+      "exposed_entities": [
+        "X",
+        "Y"
+      ]
+    },
+    {
+      "stmt_id": "st_unitary_def",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_unitary",
+      "exposed_entities": [
+        "U"
+      ]
+    },
+    {
+      "stmt_id": "st_if_unitary",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_unitary",
+      "exposed_entities": [
+        "U"
+      ]
+    },
+    {
+      "stmt_id": "st_then_bijective_etc",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_unitary",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_inverse_unitary",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_unitary",
+      "exposed_entities": [
+        "U^{-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_extension",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_ext_let",
+      "exposed_entities": [
+        "A",
+        "D",
+        "X",
+        "Y"
+      ]
+    },
+    {
+      "stmt_id": "st_extension_unique",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_extension",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_if_compact",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_extension",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_extension_compact",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_extension",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_S_space_def",
+      "subtype": "definition",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_fourier_S_let1",
+      "exposed_entities": [
+        "u",
+        "p",
+        "q"
+      ]
+    },
+    {
+      "stmt_id": "st_S_limit",
+      "subtype": "definition",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_fourier_S_let1",
+      "exposed_entities": [
+        "u_n",
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_rapidly_decreasing",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_fourier_S_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_integral_condition",
+      "subtype": "definition",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_fourier_S_let1",
+      "exposed_entities": [
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_boundary_terms_zero",
+      "subtype": "remark",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_fourier_S_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_Fourier_transform_def",
+      "subtype": "definition",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_fourier_S_let2",
+      "exposed_entities": [
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_inverse_continuous",
+      "subtype": "remark",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_fourier_S_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_Fourier_extension_unitary",
+      "subtype": "theorem",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": "true",
+      "scope_id": "s_fourier_S",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_inclusion_remark",
+      "subtype": "remark",
+      "clause_range": [
+        36,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_fourier_S",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_Sprime_def",
+      "subtype": "definition",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_tempered_let1",
+      "exposed_entities": [
+        "T"
+      ]
+    },
+    {
+      "stmt_id": "st_tempered_distributions",
+      "subtype": "definition",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_tempered_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_FT_def",
+      "subtype": "definition",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_tempered_let1",
+      "exposed_entities": [
+        "FT"
+      ]
+    },
+    {
+      "stmt_id": "st_FT_linear_bijective",
+      "subtype": "theorem",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": "true",
+      "scope_id": "s_tempered_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_bounded_measurable",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_tempered_let2",
+      "exposed_entities": [
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_T_in_Sprime",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_tempered_let2",
+      "exposed_entities": [
+        "T"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_delta_y",
+      "subtype": "assumption",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_tempered_let3",
+      "exposed_entities": [
+        "y",
+        "δ_y"
+      ]
+    },
+    {
+      "stmt_id": "st_delta_properties",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_tempered_let3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_e_minus_iky_def",
+      "subtype": "definition",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_tempered_let4",
+      "exposed_entities": [
+        "e^{-iky}"
+      ]
+    },
+    {
+      "stmt_id": "st_tensor_product",
+      "subtype": "remark",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_problems",
+      "exposed_entities": [
+        "X",
+        "Y"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_X_orth",
+      "target": "st_complete_finite",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_X_orth",
+      "target": "st_complete_countable",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_X_orth",
+      "target": "st_finite_complete_iff_basis",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_orth_countable",
+      "target": "st_if_series_converges",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_if_series_converges",
+      "target": "st_then_cn_eq_inner",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_orth_countable",
+      "target": "st_bessel_inequality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_convergence_criterion",
+      "target": "st_convergence_criterion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_orth_countable2",
+      "target": "st_equiv_complete_dense",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_complete_orthonormal",
+      "target": "st_conclusion_u_zero",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_hilbert_spaces",
+      "target": "st_unitary_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_if_unitary",
+      "target": "st_then_bijective_etc",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_if_unitary",
+      "target": "st_inverse_unitary",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_extension",
+      "target": "st_extension_unique",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_if_compact",
+      "target": "st_extension_compact",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_bounded_measurable",
+      "target": "st_T_in_Sprime",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_delta_y",
+      "target": "st_delta_properties",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

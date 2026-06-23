@@ -1,0 +1,188 @@
+[SCOPE:root|description|Clifford 代数]
+文章名: clf01
+标题: Clifford 代数
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=线性空间的理想
+  [1] type=definition heading=定义 1 title=几何代数
+  [2] type=definition heading=定义 2 title=Clifford 代数
+  [3] type=definition heading=定义 3 title=
+  [4] type=definition heading=定义 4 title=
+
+[0] 如果要构建有限维结合代数，我们需要对 basis 的结合作出约束。
+[1] 例如，Grassmann 代数要求反对称性：$\mathrm {e_1e_2}=-\mathrm {e_2e_1}$。
+[2] 实际上，Grassmann 代数是 Clifford 代数的一个平凡特例，或者也可以理解为一般 Clifford 代数上的内嵌结构。
+[3] 本节先给出线性空间上的 Clifford 代数的定义，再用集合语言将其拓展为更一般的 Clifford 代数。
+
+[SCOPE:s_ideal|description|线性空间的理想]
+[4] 定理 1 线性空间的理想
+[SCOPE:s_ideal_let|let_bind|理想定理的变量]
+[5a] (v)-q
+[5b] (w)))$.令 $\mathcal T(V)$ 为 $V$ 上的张量代数，
+[6] 那么如下定义的 $\mathcal {I}_q(V)$ 是它的理想:
+[7] \begin{equation}
+\mathcal{I}_{q}(V)=\left\{\sum A_{k} \otimes(v_k \otimes v_k-q(v_k)) \otimes B_{k} \mid v \in V, A_{k}, B_{k} \in \mathcal{T}(V)\right\}~,
+\end{equation}
+[/SCOPE:s_ideal_let]
+[8] proof.
+[9] 环理想首先是加法子群，其次对乘法有 “吸收律”。
+[10] 该定理可以简化成一个更简单的形式。
+[11] 即对于环 $R$ 上的一个非空子集 $S$,我们可以证明该子集生成的理想为
+[12] \begin{equation}
+\mathcal {I}_S=\left\{\sum _k a_k s_kb_k|k\in \mathbb N ,a_k,b_k\in R,s_k\in S\right\}~,
+\end{equation}
+[13] 检查理想的定义，该集合确实构成加法子群。
+[14] 其次，无论是左乘还是右乘环元素，都能表示为该形式，
+[15] 因而是理想。
+[16] 对于张量代数，乘法为张量积。
+
+[/SCOPE:s_ideal]
+[SCOPE:s_geom|description|几何代数]
+[17] 定义 1 几何代数
+[SCOPE:s_geom_let|let_bind|几何代数的变量]
+[18] 给定域 $\mathbb F$ 上的线性空间 $V$，其上有一二次型 $B_q$.理想同上定义，商代数则为几何代数(geometric algebra)，
+[19] 即
+[20] \begin{equation}
+\mathcal{G}(V, q) \stackrel{\text { def }}{=} \mathcal{T}(V) / \mathcal{I}_{q}(V)~,
+\end{equation}
+[/SCOPE:s_geom_let]
+[21] base space
+[22] 划分等价类后，把 $\mathcal{G}(V, q)$ 上的向量积称为几何积，或者Clifford 积，符号可以用 $\cdot$ 或者不写。
+[23] 观察等价类，我们会发现一项特殊的等价关系。即
+[24] \begin{equation}
+v\cdot v=q(v)~,
+\end{equation}
+[25] 理想首先是正规子群。
+[26] 回想对正规子群求商集时，若 $a,b$ 等价，
+[27] 即属于同一左陪集，
+[28] 那么 $a^{-1}b$ 属于该正规子群。
+[29] 因而，上式的等价关系实际上指的是
+[30] $v \otimes v-q(v)$ 在理想里，显然这是成立的。
+[31] 该等价关系得以让我们把重复的 $\mathrm {e_i}$ 约掉。
+[32] 如果 $\{\mathrm{e_i}\}$ 是线性空间中的正交基，由于
+[33] \begin{equation}
+\begin{aligned}
+q(\mathrm{e_i+e_j,e_i+e_j})&=q(\mathrm{e}_i)+q(\mathrm{e}_j)+2 B_q(\mathrm{e}_i,\mathrm{e}_j)\\
+&=\mathrm{e}_i\mathrm{e}_i+\mathrm{e}_j\mathrm{e}_j+\mathrm{e}_i\mathrm{e}_j+\mathrm{e}_j\mathrm{e}_i~,
+\end{aligned}
+\end{equation}
+[34] 因而对于正交基有 $\mathrm{e}_i\mathrm{e}_j=-\mathrm{e}_j\mathrm{e}_i$，满足交换反对称关系。
+[35] 对于 $V$ 中任意的两个向量 $v,w$，由 $q(v+w,v+w)$ 的展开式得到 Clifford 代数下的交换反对称关系：
+[36] \begin{equation}
+vw+wv=2B_q(v,w)~
+\end{equation}
+[37] 二次型是欧几里得空间中内积定义的推广，
+[38] 因此我们可以把两个向量正交定义为对应的二次型结果为 0.
+
+[/SCOPE:s_geom]
+[39] 几何代数的基域为线性空间，而Clifford 代数的基域是交换幺环。
+[40] Clifford 代数实际上是交换环上的模。
+
+[SCOPE:s_cliff|description|Clifford 代数]
+[41] 定义 2 Clifford 代数
+[SCOPE:s_cliff_let|let_bind|Clifford 代数的变量]
+[42] 给定任意指标集合 $X$，任意给定交换幺环 $R$，任意函数 $s:X\rightarrow {R}$ 作为 $X$ 上的符号。
+[43] 幂集 $2^X$ 可以生成如下自由 R-模：
+[44] \begin{equation}
+\mathrm{Cl}(X,R,s)=\bigoplus_{2^X}R~,
+\end{equation}
+[/SCOPE:s_cliff_let]
+[45] Clifford 代数
+[46] 例如，给定整数环，指标集为 $\{1,2,3\}$。
+[47] 那么 $Cl(X,R,s)$ 上的一个元素为 $2\{1\}+3\{2,3\}+4\{\}$
+[48] $Cl(X,R,s)$ 上的乘法是 $R$-线性的，并且对于 $A,B\in 2^X$ 有
+[49] \begin{equation}
+AB=\tau(A,B)A\Delta B~,
+\end{equation}
+[50] 其中映射 $2^X \times 2^X \rightarrow R$ 定义为
+[51] \begin{equation}
+\left\{\begin{aligned}
+\tau(\{x\},\{x\}) & =s(x), \quad \forall x \in X, \\
+\tau(\{x\},\{y\}) & =-\tau(\{y\},\{x\}), \quad \forall x, y \in X, x \neq y, \\
+\tau(A, B) & \in\{1,-1\}, \quad \forall A, B \subseteq X, A \cap B=\varnothing, \\
+\tau(A, \varnothing) & =\tau(\varnothing, A)=1, \quad \forall A \subseteq X, \\
+\tau(A, B) \tau(A \Delta B, C) & =\tau(B, C) \tau(A, B \Delta C), \quad \forall A, B, C \subseteq X~,
+\end{aligned}\right.
+\end{equation}
+[52] 从上式我们可以发现其与定义 1 的联系。
+[53] 幂集是张量积空间基底的拓展。
+[54] 因此 $\tau(\{x\},\{x\})$ 是二次型的拓展。
+[55] 当环为域时可以清晰地看见这种联系：$\tau(\{e_i\},\{e_i\})=q(e_i)=s(e_i)$
+[56] 同样的，上式第二条是正交基的反对称性。
+[57] 实际上是 $\mathrm {e_i e_j=-e_j e_i}$。
+[58] 也就是说，如果集合定义要与定义 1 兼容，各单点集需要构成正交基。
+[59] 第三条定义是为了和第二条自洽
+[60] 第四条是 $1\times e_A=e_A\times 1$ 的拓展
+[61] 最后一条实际上是结合律 $(AB)C=A(BC)$，再次强调这里的 $A,B,C$ 是指标集合 $X$ 的子集（默认该子集的指标按从小到大排列），各自相当于张量积空间的基底。
+[62] 即 $\mathrm {(e_A e_B)e_C=e_A(e_B e_C),e_A=e_i/e_i e_j/...}$
+[63] 式 8 实际上说的是 $\mathrm {e_A e_B\propto e_{A\Delta B}}$。
+[64] 比如 $\mathrm {(e_{1}e_{2}e_{3})(e_{2}e_{3}e_{4}e_{5})=-q(e_2)q(e_3)e_1 e_4 e_5}$
+[65] 下面证明第四条实际上是结合律。
+[66] \begin{equation}
+\begin{aligned}
+\left(e_A e_B\right) e_C & =\tau(A, B) e_{A \Delta B} e_C \\
+& =\tau(A, B) \tau(A \Delta B, C) e_{(A \Delta B) \Delta C} \\
+& =\tau(B, C) \tau(A, B \Delta C) e_{A \Delta(B \Delta C)} \\
+& =\tau(B, C) e_A e_{B \Delta C} \\
+& =e_A\left(e_B e_C\right) .
+\end{aligned}~,
+\end{equation}
+[67] 从第二行到第三行的推导使用 $(A \Delta B) \Delta C=A \Delta(B \Delta C)$
+
+[/SCOPE:s_cliff]
+[SCOPE:s_kvec|description|k-向量]
+[68] 定义 3
+[SCOPE:s_kvec_let|let_bind|k-向量的变量]
+[69] 给定 Clifford 代数 $\mathrm {Cl(X,R,s)}$。
+[70] 定义
+[71] \begin{equation}
+\mathrm{Cl}^k(X,R,s)=\bigoplus_{A \in 2^X:|A|=k}R~,
+\end{equation}
+[/SCOPE:s_kvec_let]
+[72] k-向量
+
+[/SCOPE:s_kvec]
+[SCOPE:s_parity_let|let_bind|偶奇子代数的变量]
+[SCOPE:s_parity|description|偶/奇子代数]
+[73] 定义 4
+[74] \begin{equation}
+\begin{array}{l}
+\mathrm{Cl}^{+}(X, R, s)=\bigoplus_{k \text { 为偶数 }} \mathrm{Cl}^k(X, R, s) \\
+\mathrm{Cl}^{-}(X, R, s)=\bigoplus_{k \text { 为奇数 }} \mathrm{Cl}^k(X, R, s)
+\end{array}~,
+\end{equation}
+[/SCOPE:s_parity_let]
+[/SCOPE:s_parity]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_geom",
+    "target_scope": "s_ideal",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "几何代数定义依赖理想定理"
+  },
+  {
+    "source_scope": "s_cliff",
+    "target_scope": "s_geom",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Clifford 代数是几何代数在交换环上的推广"
+  },
+  {
+    "source_scope": "s_kvec",
+    "target_scope": "s_cliff",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "k-向量是 Clifford 代数的子空间"
+  },
+  {
+    "source_scope": "s_parity",
+    "target_scope": "s_cliff",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "偶/奇子代数是 Clifford 代数的子代数"
+  }
+]

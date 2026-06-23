@@ -1,0 +1,188 @@
+[SCOPE:root|description|平行移动]
+文章名: PTinAS
+标题: 平行移动
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=平行移动公式
+  [1] type=definition heading=定义 2 title=联络系数
+  [2] type=theorem heading=定理 1 title=曲线坐标为仿射坐标的条件
+
+[SCOPE:s_para_intro|description|平行移动问题引入]
+[0] 在仿射空间 $(\mathbb A,V)$ 中，任一点都可看成 $V$ 与 $\mathbb A$ 之间的双射（式 3 ）。
+[1] 这就是相当于在仿射空间中的任一点可作出任一给定的矢量。
+[2] 如此便有这样的问题出现：在区域 $\Omega\in\mathbb A$ 取曲线坐标 $x^i$ 时，如何在任一点作出一已知矢量。
+[SCOPE:s_para_intro_let|let_bind|引入 v0, M0, M1]
+[3] 设已知矢量 $v_0$ 在点 $M_0$ 的坐标为 $v_0^i$，现要求从另一点 $M_1$ 作出这个矢量。
+[4] 这就是说，我们必须确定：如何变更 $v_0^i$，以便在 $M_1$ 的局部标架中，使它们能定出以前的矢量 $v_0$。
+[5] 如果将 $v_0$ 不经过任何中间点而从 $M_0$ 直接移到 $M_1$ 上，
+[6] 则问题的解答就失去了意义。
+[7] 值得注意的是矢量 $v_0$ 沿任一曲线 $\overset{\Huge\frown}{M_0M_1}$ 的连续移动，且坐标 $v_0^i$ 在路径上每一无限小段上连续变化的过程，
+[8] 即平行移动。
+
+[/SCOPE:s_para_intro]
+[/SCOPE:s_para_intro_let]
+[SCOPE:s_para_formula|description|平行移动公式推导]
+[SCOPE:s_para_formula_let1|let_bind|路径参数和函数]
+[9] 设路径 $\overset{\Huge\frown}{M_0M_1}$ 的参数方程为
+[10] \begin{equation}
+x^i=x^i(t),\quad t_0\leq t\leq t_1~,
+\end{equation}
+[11] 式中 $x^i(t)$ 是连续可微的函数。
+[12] 于是曲线上一点的向径 $x$ 是 $t$ 的函数
+[13] \begin{equation}
+x=x(t)~.
+\end{equation}
+[/SCOPE:s_para_formula_let1]
+[14] $v_0$ 在路径上平行移动就是要在路径上每一点 $M(t)$ 作一常矢量 $v_0$。
+[15] 由于局部标架（
+[16] 定义 4 [链接 L0]
+[17] ）随点而变化，
+[18] 因而矢量 $v_0$ 的坐标 $v^i$ 也随点的位置而变，
+[19] 所以
+[20] \begin{equation}
+v^i=v^i(t)~.
+\end{equation}
+[21] 因为 $x^i(t)$ 是连续可微的，
+[22] 因此局部标架的矢量 $\partial_i x(x^1,\cdots,x^n)$ 以及 $v^i$ 沿此路径是 $t$ 的连续可微函数。
+[23] 在点 $M(t)$ 处，按该处局部标架展开矢量 $v_0$：
+[24] \begin{equation}
+v_0=v^i(t)\partial_i x(x^1,\cdots,x^n)~.
+\end{equation}
+[25] 注意，这里 $x^i$ 是依赖于路径参数 $t$ 的。
+[26] 关于 $t$ 逐项微分，因为 $v_0$ 是给定的，
+[27] 即是常矢量，得
+[28] \begin{equation}
+0= \,\mathrm{d}{v} ^i\partial_i x+v^i \,\mathrm{d}{\partial} _i x~.
+\end{equation}
+[29] 由全微分公式得
+[30] \begin{equation}
+\,\mathrm{d}{\partial} _i x(x^1,\cdots,x^n)=\partial_{ij}x \,\mathrm{d}{x} ^j~.
+\end{equation}
+[31] \begin{equation}
+\partial_{ij}x= \frac{\partial x(x^1,\cdots,x^n)}{\partial x^i\partial x^j} ~,
+\end{equation}
+[SCOPE:s_para_formula_let2|let_bind|引入 Gamma 系数]
+[32] 是在 $M(t)$ 处确定的矢量，按该点的局部标架展开，其系数记为 $\Gamma^k_{ij}$，
+[33] 于是
+[34] \begin{equation}
+\partial_{ij}x=\Gamma^k_{ij}\partial_k x~.
+\end{equation}
+[35] 由 $\partial_{ij} x=\partial_{ji} x$，且按标架矢量展开的唯一性，得
+[36] \begin{equation}
+\Gamma^k_{ij}=\Gamma^k_{ji}~.
+\end{equation}
+[37] $\Gamma^k_{ij}$ 显然依赖于点 $M(t)$，
+[38] 即
+[39] \begin{equation}
+\Gamma^k_{ij}(M)=\Gamma^k_{ij}(x^1,\cdots,x^n)~.
+\end{equation}
+[40] 联立式 5 ，式 6 和式 8 ，就有
+[41] \begin{equation}
+0= \,\mathrm{d}{v} ^i\partial_i x+v^i\Gamma^k_{ij}\partial_k x \,\mathrm{d}{x} ^j~.
+\end{equation}
+[42] 由于标架矢量 $\partial_i x$ 的线性无关性，
+[43] 故
+[44] \begin{equation}
+\,\mathrm{d}{v} ^i+\Gamma^i_{jk}v^j \,\mathrm{d}{x} ^k=0~.
+\end{equation}
+[45] 上式或记作
+[46] \begin{equation}
+\,\mathrm{d}{v} ^i=-\Gamma^i_{jk}v^j \,\mathrm{d}{x} ^k~.
+\end{equation}
+
+[/SCOPE:s_para_formula]
+[/SCOPE:s_para_formula_let2]
+[SCOPE:s_para_def1|description|定义1 平行移动公式]
+[47] 定义 1 平行移动公式
+[48] 称式 12 ，式 13 为矢量的平行移动公式。
+
+[/SCOPE:s_para_def1]
+[SCOPE:s_conn_coeff|description|联络系数说明]
+[49] 平行移动公式回答了开头的问题：若在已知点 $M(x^i)$ 处一矢量 $v_0$ 坐标为 $v_0^i$，
+[50] 则在无限接近的一点 $M'(x^i+ \,\mathrm{d}{x} ^i)$ 处作出这个矢量 $v_0$，其坐标为 $v^i=v_0^i+ \,\mathrm{d}{v} ^i=v_0^i-\Gamma^i_{jk}v_0^j \,\mathrm{d}{x} ^k$。
+[51] 当沿路径 $\overset{\Huge\frown}{M_0M_1}$ 移动时，
+[52] 则只需把对应的微分方程组进行积分。
+[53] 当然，我们并没有精确解决这一问题，而是只保留了一阶无穷小，更正确地说，平行移动公式所表达出的不是坐标 $v^i$ 当 $M$ 变到 $M'$ 时的增量，而是它们的微分。
+[54] 从平行移动公式中，我们看到：借助系数 $\Gamma^i_{jk}$ 点 $M$ 的各矢量与点 $M'$ 的各矢量相联系着。
+[55] 因此，系数 $\Gamma^i_{jk}$ 称为联络系数。
+
+[/SCOPE:s_conn_coeff]
+[SCOPE:s_conn_def2|description|定义2 联络系数]
+[56] 定义 2 联络系数
+[57] 称平行移动公式式 13 中的系数 $\Gamma^i_{jk}$ 为联络系数。
+
+[/SCOPE:s_conn_def2]
+[SCOPE:s_theorem1|description|定理1 曲线坐标为仿射坐标的条件]
+[SCOPE:s_theorem1_let|let_bind|定理1变量]
+[58] 定理 1 曲线坐标为仿射坐标的条件
+[59] 在区域 $\Omega$ 中，曲线坐标为仿射坐标的充要条件是：在该曲线坐标下的联络系数 $\Gamma^k_{ij}$ 恒等于 0。
+[/SCOPE:s_theorem1_let]
+[60] 证明：
+[SCOPE:s_theorem1_nec|description|必要性]
+[61] 1。
+[62] 必要性
+[SCOPE:s_theorem1_nec_let|let_bind|必要性假设]
+[63] 设曲线坐标 $x^i$ 为仿射坐标，
+[64] 则 $\partial_i x=e_i$ 是恒定的，
+[/SCOPE:s_theorem1_nec_let]
+[65] 于是
+[66] \begin{equation}
+\partial_{ij} x=\partial_j e_i=0~.
+\end{equation}
+[67] 式 8 [链接 L1]
+[68] \begin{equation}
+\Gamma^k_{ij}=0~.
+\end{equation}
+[/SCOPE:s_theorem1_nec]
+[SCOPE:s_theorem1_suf|description|充分性]
+[69] 2。
+[70] 充分性
+[71] 设在任一曲线坐标 $x^i$ 中，$\Gamma^k_{ij}=0$，由式 8
+[72] \begin{equation}
+\partial_{ij}x=0,\quad \partial_i x=\mathrm{constant}~.
+\end{equation}
+[73] 这就是说标架基矢为常矢量，
+[74] 即曲线坐标是仿射坐标。
+[/SCOPE:s_theorem1_suf]
+[75] 证毕！
+[/SCOPE:s_theorem1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_para_formula",
+    "target_scope": "s_para_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推导引出定义1"
+  },
+  {
+    "source_scope": "s_para_formula",
+    "target_scope": "s_conn_coeff",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推导引出联络系数"
+  },
+  {
+    "source_scope": "s_conn_coeff",
+    "target_scope": "s_conn_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "说明引出定义2"
+  },
+  {
+    "source_scope": "s_theorem1_nec",
+    "target_scope": "s_theorem1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "必要性证明"
+  },
+  {
+    "source_scope": "s_theorem1_suf",
+    "target_scope": "s_theorem1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "充分性证明"
+  }
+]

@@ -1,0 +1,324 @@
+{
+  "article_name": "HsSet",
+  "statements": [
+    {
+      "stmt_id": "st_def1_set",
+      "subtype": "definition",
+      "clause_range": [
+        34,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "集合",
+        "元素"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_judgment",
+      "subtype": "example",
+      "clause_range": [
+        39,
+        42
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_answer",
+      "subtype": "example",
+      "clause_range": [
+        55,
+        59
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example4_judgment",
+      "subtype": "example",
+      "clause_range": [
+        60,
+        63
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_cardinality",
+      "subtype": "definition",
+      "clause_range": [
+        71,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "M",
+        "card(M)",
+        "∅"
+      ]
+    },
+    {
+      "stmt_id": "st_example5_list",
+      "subtype": "example",
+      "clause_range": [
+        92,
+        93
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example5",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_example6_description",
+      "subtype": "example",
+      "clause_range": [
+        102,
+        103
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example6",
+      "exposed_entities": [
+        "A",
+        "x",
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_belong",
+      "subtype": "definition",
+      "clause_range": [
+        116,
+        120
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "a",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_empty",
+      "subtype": "definition",
+      "clause_range": [
+        170,
+        174
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "∅"
+      ]
+    },
+    {
+      "stmt_id": "st_def5_finite_infinite",
+      "subtype": "definition",
+      "clause_range": [
+        177,
+        179
+      ],
+      "truth_value": null,
+      "scope_id": "s_def5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def6_equal",
+      "subtype": "definition",
+      "clause_range": [
+        185,
+        188
+      ],
+      "truth_value": null,
+      "scope_id": "s_def6",
+      "exposed_entities": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_def7_subset",
+      "subtype": "definition",
+      "clause_range": [
+        200,
+        204
+      ],
+      "truth_value": null,
+      "scope_id": "s_def7",
+      "exposed_entities": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem1_subset_equal",
+      "subtype": "theorem",
+      "clause_range": [
+        225,
+        229
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1",
+      "exposed_entities": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_def8_proper_subset",
+      "subtype": "definition",
+      "clause_range": [
+        231,
+        233
+      ],
+      "truth_value": null,
+      "scope_id": "s_def8",
+      "exposed_entities": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_exercise1_solution",
+      "subtype": "exercise",
+      "clause_range": [
+        236,
+        240
+      ],
+      "truth_value": "true",
+      "scope_id": "s_exercise1",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_def9_universal",
+      "subtype": "definition",
+      "clause_range": [
+        242,
+        244
+      ],
+      "truth_value": null,
+      "scope_id": "s_def9",
+      "exposed_entities": [
+        "U"
+      ]
+    },
+    {
+      "stmt_id": "st_def10_complement",
+      "subtype": "definition",
+      "clause_range": [
+        251,
+        254
+      ],
+      "truth_value": null,
+      "scope_id": "s_def10",
+      "exposed_entities": [
+        "U",
+        "A",
+        "B",
+        "∁_U A"
+      ]
+    },
+    {
+      "stmt_id": "st_example7_complement_examples",
+      "subtype": "example",
+      "clause_range": [
+        258,
+        273
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example7",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_set",
+      "target": "st_example2_judgment",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_set",
+      "target": "st_example3_answer",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_set",
+      "target": "st_example4_judgment",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_cardinality",
+      "target": "st_example5_list",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_cardinality",
+      "target": "st_example6_description",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_belong",
+      "target": "st_example2_judgment",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def4_empty",
+      "target": "st_def5_finite_infinite",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def6_equal",
+      "target": "st_theorem1_subset_equal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def7_subset",
+      "target": "st_theorem1_subset_equal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def7_subset",
+      "target": "st_def8_proper_subset",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def8_proper_subset",
+      "target": "st_exercise1_solution",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def9_universal",
+      "target": "st_def10_complement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def10_complement",
+      "target": "st_example7_complement_examples",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

@@ -1,0 +1,213 @@
+[SCOPE:root|description|测地线]
+文章名: geodes
+标题: 测地线
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=测地线
+  [1] type=theorem heading=定理 1 title=匀速性
+  [2] type=exercise heading=习题 1 title=测地线的重新参数化
+  [3] type=theorem heading=定理 2 title=测地线的存在与唯一性
+  [4] type=theorem heading=定理 3 title=
+  [5] type=theorem heading=定理 4 title=
+
+[0] 本节介绍测地线的一般概念，计算实例可参考庞加莱半平面（微分几何计算实例）文章。
+
+[1] 测地线是欧几里得空间中匀速直线运动的推广，而不仅仅是直线的推广。
+[2] 在欧几里得空间中，如何确定一个匀速直线运动呢？
+[3] 当然是速度向量保持不变的运动。
+[4] 什么叫速度向量保持不变呢？
+[5] 那当然是速度随时间求导的结果为零咯。
+[6] 由于速度是一种切向量，而随时间求导就是沿着运动轨迹的协变导数，
+[7] 因此我们自然可以将匀速直线运动的概念推广到任意带仿射联络的流形上。
+
+[SCOPE:s_def1|description|测地线定义]
+[8] 定义 1 测地线
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[9] 令 $(M, \nabla)$ 是一个带仿射联络的流形。
+[10a] (t)=\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }c
+[10b] (t)$ 构成一个沿 $c$ 的切向量场。
+[/SCOPE:s_def1_let]
+[11] 如果协变导数 $\frac{D}{ \,\mathrm{d}{t} }T(t)$ 处处为零，
+[12] 那么我们说这条参数曲线 $c$ 是一条测地线（geodesic）。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|匀速性]
+[13] 定理 1 匀速性
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[14] 如果 $(M, \nabla, \langle *, * \rangle )$ 是一个带黎曼度量的黎曼流形，$c:I\to M$ 是其上一条测地线，
+[15a] (t), c'
+[15b] (t) \rangle }$ 是一个常数。
+[/SCOPE:s_thm1_let]
+[16a] (t) \right\rvert =\sqrt{ \langle c'
+[16b] (t), c'
+[16c] (t) \rangle }$ 为该测地线的速率（speed）。
+[17] 定理 1 的证明很简单，只需要应用协变导数对黎曼度量的 Leibniz 律（相容性）和测地线的定义即可。
+[18] 如果 $c:I\to M$ 是一个测地线，而 $u:I\to I$ 是一个光滑函数，
+[19a] (t))=c\circ u$ 就被称作 $c
+[19b] (t)=c$ 的一个重新参数化（reparametrization）。
+[20] 如果已知 $c$ 是一个测地线，
+[21] 那么什么情况下重新参数化的 $c\circ u$ 是一个测地线呢？
+[22] 答案很简单，$u$ 必须是一个线性函数，
+[23] 即存在实数 $a, b$ 使得 $u(t)=at+b$。
+[24] 证明需要用到测地线的定义和协变导数的链式法则，我们留作习题。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex1|description|测地线的重新参数化]
+[25] 习题 1 测地线的重新参数化
+[SCOPE:s_ex1_let|let_bind|习题1的变量]
+[26] 令 $c:I\to M$ 是一个测地线，而 $u:I\to I$ 是一个光滑函数，证明 $c\circ u$ 是一个测地线当且仅当存在实数 $a, b$ 使得 $u(t)=at+b$。
+
+[/SCOPE:s_ex1]
+[/SCOPE:s_ex1_let]
+[SCOPE:s_eqn|description|测地线方程]
+[27] 实践中，比如广义相对论中，我们更关心的是在具体的图中，该如何计算测地线。
+[SCOPE:s_eqn_let|let_bind|测地线方程的变量]
+[28] 考虑一个带仿射联络的流形 $(M, \nabla)$，和它的一个图 $(U, \varphi)$。
+[29] 令 $c:I\to U$ 是 $M$ 上的一条曲线，
+[30] 那么 $\varphi\circ c$ 就是欧几里得空间 $\varphi(U)$ 上的一条曲线。
+[31a] (t))=y^i
+[31b] (t)$，其中各 $y^i$ 是区间 $I$ 上的实函数。
+[/SCOPE:s_eqn_let]
+[32] 这样一来，在 $M$ 上就有 $c$ 的切向量：
+[33] \begin{equation}
+\begin{aligned}
+T(t)=c'(t)&=\frac{D}{ \,\mathrm{d}{t} }c(t)=\varphi^{-1}(\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }\varphi(c(t)))\\
+&=\varphi^{-1}(\dot{y}^i(t))\\
+&=\dot{y}^i\partial_i|_{c(t)}~.
+\end{aligned}
+\end{equation}
+[34] 因此可以求出
+[35] \begin{equation}
+\begin{aligned}
+\frac{D}{ \,\mathrm{d}{t} }T(t)&=\frac{D}{ \,\mathrm{d}{t} }(\dot{y}^i(t)\partial_i)\\
+&=\ddot{y}^i(t)\partial_i+\dot{y}^i\nabla_{c'(t)}\partial_i\\
+&=\ddot{y}^i\partial_i+\dot{y}^i\nabla_{c'(t)}\partial_i\\
+&=\ddot{y}^i\partial_i+\dot{y}^i\nabla_{\dot{y}^j\partial_j}\partial_i\\
+&=\ddot{y}^i\partial_i+\dot{y}^i\dot{y}^j\nabla_{\partial_j}\partial_i\\
+&=\ddot{y}^k\partial_k+\dot{y}^i\dot{y}^j\Gamma^k_{ji}\partial_k\\
+&=0~.
+\end{aligned}
+\end{equation}
+[36] 计算中要注意，$y^i(t)$ 是实数区间上的函数，不是流形上的函数，
+[37] 因此对它求协变导数就是关于 $t$ 求导。
+[38] $\dot{y}^i$ 同理。
+[39] 由于各 $\partial_k$ 的独立性，我们就得到测地线必须满足的性质：
+[40] \begin{equation}
+\ddot{y}^k+\dot{y}^i\dot{y}^j\Gamma^k_{ji}=0~.
+\end{equation}
+[41] 式 3 [链接 L0]
+[42] 就是给定图中的
+[43] 测地线方程
+
+[/SCOPE:s_eqn]
+[44] 式 3 是一个欧几里得空间中的常微分方程。
+[45] 由常微分方程中解的存在与唯一性定理可得如下定理。
+
+[SCOPE:s_thm2|description|测地线的存在与唯一性]
+[46] 定理 2 测地线的存在与唯一性
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[47] 令 $(M, \nabla)$ 是一个带仿射联络的流形。
+[48] 对于任意一点 $p\in M$，任意给定一个切向量 $ \boldsymbol{\mathbf{v}} _p\in T_pM$，
+[49] 则存在唯一一条测地线 $c:I\to M$，使得 $c(0)=p$ 且 $c'(0)= \boldsymbol{\mathbf{v}} _p$。
+[/SCOPE:s_thm2_let]
+[50] 定理中任意给定一个切向量，其实是确定了测地线的两个初始条件，
+[51] 即方向与速率。
+[52] 这里的 “速率” 并非具体的速率，
+[53] 除非再在 $M$ 上定义了与 $\nabla$ 相容的黎曼度量。
+[54] 保联络微分同胚将一个流形上的联络结构都不变地移动到另一个流形上，
+[55] 因此我们很自然地就有如下定理。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|保联络微分同胚映射测地线]
+[56] 定理 3
+[57] 保联络微分同胚将测地线映射为测地线。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|测地线使作用量取极小值]
+[58] 定理 4
+[SCOPE:s_thm4_let|let_bind|定理4的变量]
+[59] 在流形上，定义关于独立参数 $t$ 和曲线 $y(t)$ 的拉格朗日函数：$L(\dot{y}, y, t) = \sqrt{ \left\lvert \langle \dot{y}, \dot{y} \rangle \right\rvert }$，
+[60a] (t)$ 是测地线时，对于固定的 $y
+[60b] (a)$ 和 $y
+[60c] (b)$，作用量 $S=\int_a^b L \,\mathrm{d}{t} $ 取极小值。
+[SCOPE:s_thm4_proof|description|定理4的证明]
+[61] 证明：
+[62] 我们只需要证明，测地线方程满足定理中所给拉格朗日函数的欧拉—拉格朗日方程。
+[63a] (t)$，$\dot{y}
+[63b] (t)$ 是沿着 $y
+[63c] (t)$ 的向量场。
+[64] 设度量张量为 $g_{ij}$，
+[/SCOPE:s_thm4_let]
+[65] 则拉格朗日函数为
+[66] \begin{equation}
+L = \sqrt{ \left\lvert g_{ij}\dot{y}^i\dot{y}^j \right\rvert }~.
+\end{equation}
+[67] 为方便计算，也可以表示为
+[68] \begin{equation}
+L = \sqrt{\pm{g_{ij}\dot{y}^i\dot{y}^j}}~,
+\end{equation}
+[69] 其中正负号的选择取决于 $g_{ij}$ 的定义，如选择号差为 $-2$ 的闵可夫斯基度量时取负号。
+[70] 求偏微分得：
+[71] \begin{equation}
+\begin{aligned}
+\frac{\partial L}{\partial y_s} &= \pm \frac{\dot{y}^i\dot{y}^j\partial_s g_{ij}}{2\sqrt{\pm{g_{ij}\dot{y}^i\dot{y}^j}}}
+\end{aligned} ~,
+\end{equation}
+[72] \begin{equation}
+\begin{aligned}
+\frac{\partial L}{\partial \dot{y}_s} &= \pm \frac{g_{is}\dot{y}^i+g_{sj}\dot{y}^j}{2\sqrt{\pm{g_{ij}\dot{y}^i\dot{y}^j}}}
+= \pm\frac{g_{is}\dot{y}^i}{\sqrt{\pm{g_{ij}\dot{y}^i\dot{y}^j}}}~.
+\end{aligned}
+\end{equation}
+[73] 对于测地线 $y(t)$，由
+[74] 定理 1 [链接 L1]
+[75] ，$\sqrt{\pm{g_{ij}\dot{y}^i\dot{y}^j}}$ 是常数，
+[76] 因此由
+[77] 式 6 [链接 L2]
+[78] 式 7 [链接 L3]
+[79] 给出的欧拉拉格朗日方程为
+[80] \begin{equation}
+\begin{aligned}
+\dot{y}^i\dot{y}^j\partial_s g_{ij} &= \frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }(2g_{is}\dot{y}^i)~,\\
+\dot{y}^i\dot{y}^j\partial_s g_{ij} &= 2g_{is} \dot{y}^k\partial_k \dot{y}^i + 2\dot{y}^i\dot{y}^k\partial_k g_{i…[truncated]…{1}{2}\dot{y}^i\dot{y}^j(\partial_j g_is + \partial_i g_{sj} - \partial_s g_{ij})~,\\
+\text{（两边同乘 $g^{sk}$）}0 &= \ddot{y}^k + \frac{1}{2}\dot{y}^i\dot{y}^j g^{sk}(\partial_j g_is + \partial_i g_{sj} - \partial_s g_{ij})~.
+\end{aligned}
+\end{equation}
+[81] 将式 8 誊抄如下：
+[82] \begin{equation}
+\Gamma^{k}_{ij}=\frac{1}{2}g^{sk}(\partial_ig_{js}+\partial_jg_{si}-\partial_sg_{ij})~.
+\end{equation}
+[83] 式 8 [链接 L4]
+[84] \begin{equation}
+0 = \ddot{y}^k + \dot{y}^i\dot{y}^j\Gamma^k_{ij}~.
+\end{equation}
+[85] 正是测地线方程。
+[86] 证毕。
+[/SCOPE:s_thm4]
+[/SCOPE:s_thm4_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的证明引用测地线定义"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理4的证明引用定理1的匀速性"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_eqn",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理4的证明最终导出测地线方程"
+  }
+]

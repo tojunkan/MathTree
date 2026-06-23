@@ -1,0 +1,257 @@
+{
+  "article_name": "Velope",
+  "statements": [
+    {
+      "stmt_id": "st_def_envelope",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "包络线",
+        "曲线族"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_curve_family",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let",
+      "exposed_entities": [
+        "F(x,y,C)",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_envelope_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_derivative",
+      "subtype": "theorem",
+      "clause_range": [
+        8,
+        10
+      ],
+      "truth_value": "true",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_envelope_eq",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let1",
+      "exposed_entities": [
+        "R(x,y)",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_envelope_eq2",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_differential",
+      "subtype": "theorem",
+      "clause_range": [
+        22,
+        30
+      ],
+      "truth_value": "true",
+      "scope_id": "s_proof_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_conclusion_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        38
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_heading",
+      "subtype": "example",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_curve_L",
+      "subtype": "assumption",
+      "clause_range": [
+        40,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_example_let",
+      "exposed_entities": [
+        "L",
+        "y=f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_example_normal_eq",
+      "subtype": "theorem",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_envelope_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        44,
+        45
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_param_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        46,
+        48
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_param_deriv",
+      "subtype": "theorem",
+      "clause_range": [
+        49,
+        54
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_remark",
+      "subtype": "remark",
+      "clause_range": [
+        55,
+        55
+      ],
+      "truth_value": null,
+      "scope_id": "s_example_let",
+      "exposed_entities": [
+        "渐曲线",
+        "渐伸线"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_curve_family",
+      "target": "st_conclusion_envelope_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_envelope_eq",
+      "target": "st_conclusion_envelope_eq2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_derivative",
+      "target": "st_conclusion_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_differential",
+      "target": "st_conclusion_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_conclusion_envelope_eq2",
+      "target": "st_conclusion_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_curve_L",
+      "target": "st_example_normal_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_normal_eq",
+      "target": "st_example_envelope_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_envelope_eq",
+      "target": "st_example_param_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_param_eq",
+      "target": "st_example_param_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_remark",
+      "target": "st_example_param_deriv",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_example_heading",
+      "target": "st_def_envelope",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是包络线定义的一个具体应用"
+    }
+  ],
+  "unresolved": []
+}

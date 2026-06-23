@@ -1,0 +1,164 @@
+[SCOPE:root|description|映射的同伦和空间的同伦]
+文章名: HomT1
+标题: 映射的同伦和空间的同伦
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=映射的同伦
+  [1] type=exercise heading=习题 1 title=映射的同伦是道路（对给定点）
+  [2] type=theorem heading=定理 1 title=映射的同伦是道路（对同伦本身）
+  [3] type=theorem heading=定理 2 title=
+  [4] type=theorem heading=定理 3 title=映射同伦关系的继承
+  [5] type=definition heading=定义 2 title=空间同伦
+  [6] type=exercise heading=习题 2 title=
+
+[0] 同胚的两个拓扑空间是完全相同的，在拓扑学意义下无法区分。
+[1] 证明两个拓扑空间同胚通常是非常困难的，
+[2] 但证明两个拓扑空间不同胚却可以有很多容易计算的方法，其中一个方法就是证明两个拓扑空间不同伦。
+[3] 同伦是一种比同胚弱一些的关系。
+[4] 为了介绍拓扑空间中的同伦，我们首先要讨论映射的同伦。
+[5] 我们对于映射之间的关系和拓扑空间之间的关系都使用了 “同伦” 这一术语，
+[6] 但不会造成混淆，因为两个 “同伦” 之间是相互导出的概念，并且所针对的对象不同。
+
+[SCOPE:s_def1|description|映射的同伦]
+[7] 定义 1 映射的同伦
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[8] 设有两个拓扑空间 $X$ 和 $Y$，以及它们之间的两个连续映射 $f_0, f_1:X\rightarrow Y$；
+[9] 记 $I=[0, 1]$，取度量空间 $\mathbb{R}$ 的子空间拓扑。
+[10a] (x)$ 和 $H(x, 1)=f_1
+[10b] (x)$。
+[/SCOPE:s_def1_let]
+[11] 那么我们称 $f_0$ 和 $f_1$ 是同伦的映射，记为 $f_0\overset{H}{\cong} f_1$，或者简单记为 $f_0\cong f_1$；
+[12] $H$ 称为从 $f_0$ 到 $f_1$ 的一个同伦或者伦移。
+[13] 同伦的本质是道路。
+[14] 这句话有两个含义：第一，固定 $X$ 中的某一点 $x_0$，
+[15] 那么 $p(t): = H(x_0, t)$ 就是一个 $I$ 到 $Y$ 的映射，是一条道路；
+[16] 第二，在映射空间 $Y^X$ 中来看，$f_0$ 和 $f_1$ 分别是两个点，而 $H$ 就可以看成是一个从闭区间 $I$ 到 $Y^X$ 上的映射，也是一条道路。
+[17] 因此，我们有以下两条重要定理，一个写为习题，一个写为定理：
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|映射的同伦是道路（对给定点）]
+[18] 习题 1 映射的同伦是道路（对给定点）
+[19] 各空间和映射的定义同定义 1 。
+[SCOPE:s_ex1_let|let_bind|习题1的变量]
+[20] 给定 $x_0\in X$，对于任何的 $t\in I$，构造映射 $p:I\rightarrow Y$，其中 $p(t)=H(x_0, t)$。
+[/SCOPE:s_ex1_let]
+[21] 证明 $p$ 是一个连续映射，
+[22] 从而说明 $p$ 是一条道路。
+[23] 【图解】图 1：习题 1 的示意图。
+[24] 固定 $x_0$ 之后，$p(t)=H(x_0, t)$ 在 $Y$ 中画出一条轨迹。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_thm1|description|映射的同伦是道路（对同伦本身）]
+[25] 定理 1 映射的同伦是道路（对同伦本身）
+[26] 各空间和映射的定义同定义 1 。
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[27] 如果 $p:I\rightarrow Y^X$ 满足 $p(t)=f_t$，
+[/SCOPE:s_thm1_let]
+[28] 那么 $p$ 是一个连续映射。
+[29] 由此可推论出，$H$ 本身可以看成是映射空间里的一条道路。
+[30] 证明：
+[31] 直接引用定理 2 ，令 $Z=I$，$f=H$，
+[32] 则 $p=\widetilde{f}$，
+[33] 因此 $p$ 是连续映射。
+[34] 证毕。
+[35] 习题 1 和定理 1 分别对于 $X$ 中的给定点以及 $X$ 整体的角度描述了同伦和道路的关系。
+[36] 定理 1 说明，两映射同伦，等价于说两映射是同一条道路的两端，还等价于说两映射是同一条道路上的两点。
+[37] 由于道路可以首尾相接从而得到新的道路，
+[38] 因此同一个映射空间中，如果 $f\cong g$ 而 $g\cong h$，
+[39] 那么一定有 $f\cong h$。
+[40] 这就是说，同伦关系是具有传递性的。
+[41] 考虑到同伦关系显然还有自反性和对称性，我们直接可得如下定理：
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|映射的同伦关系是一个等价关系]
+[42] 定理 2
+[43] 映射的同伦关系是一个等价关系。
+[44] 映射之间还有复合运算，同伦关系也会继承到复合运算上。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|映射同伦关系的继承]
+[45] 定理 3 映射同伦关系的继承
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[46] 设 $X$，$Y$ 和 $Z$ 是三个拓扑空间，$f_0, f_1:X\rightarrow Y$，$g_0, g_1:Y\rightarrow Z$ 分别是连续映射，且有 $f_0\overset{F}{\cong}f_1$ 和 $g_0\overset{G}{\cong}g_1$。
+[/SCOPE:s_thm3_let]
+[47] 那么 $g_0\circ f_0\cong g_1\circ f_1$。
+[48] 证明：
+[49] 由于 $F:X\times I\rightarrow Y$ 和 $g_0:Y\rightarrow Z$ 都是连续映射，
+[50] 故 $g_0\circ F:X\times I\rightarrow Z$ 是一个连续映射，
+[51] 故 $g_0\circ F$ 是一个连接了 $g_0\circ f_0$ 和 $g_0\circ f_1$ 的道路。
+[52] 故 $g_0\circ f_0\cong g_0\circ f_1$。
+[53] 类似地，$G \circ (f_1 \times 1_I): X \times I \rightarrow Z$1是一个连接了 $g_0 \circ f_1$ 和 $g_1\circ f_1$ 的道路，
+[54] 故 $g_0 \circ f_1\cong g_1 \circ f_1$。
+[55] 综上，由映射同伦的传递性，$g_0 \circ f_0\cong g_1 \circ f_1$。
+[56] 证毕。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_def2|description|空间同伦]
+[57] 定义 2 空间同伦
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[58] 设有两个拓扑空间 $X$ 和 $Y$，如果存在连续映射 $f:X\rightarrow Y$ 和 $g: Y\rightarrow X$，使得 $g \circ f \cong 1_X$ 且 $f \circ g \cong 1_Y$，
+[/SCOPE:s_def2_let]
+[59] 那么我们称 $X$ 和 $Y$ 是同伦的，或者说具有相同的同伦型。
+[60] $f$ 称为从 $X$ 到 $Y$ 的同伦等价，反过来 $g$ 是从 $Y$ 到 $X$ 的同伦等价，二者互为同伦逆。
+[61] 同伦和同胚一样，也是一个等价关系，只是要更弱一些，使得不同胚的空间也有可能同伦。
+[62] 当然，同胚的空间必然同伦。
+
+[/SCOPE:s_def2]
+[SCOPE:s_ex2|description|习题2]
+[63] 习题 2
+[64] 证明空间的同伦具有传递性，
+[65] 从而推论同伦是一个等价关系。
+
+[/SCOPE:s_ex2]
+[66] 在映射空间中所定义的紧开拓扑看起来很不接地气。
+[67] 本小节习题 1 直观地阐释了同伦的意义，
+[68] 即对于每个固定点 $x_0\in X$，同伦 $H$ 都会在 $Y$ 中画出一条道路，这意味着每个点的映射都是连续地变化的。
+[69] 定理 1 说明，整体上来看，$H$ 本身是映射空间 $Y^X$ 中的一条道路。
+[70] 从这个联系来看，思考一下为什么要用紧开拓扑来定义映射空间。
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题1是定义1中固定点的情况"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是定义1中整体的情况"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2由定义1和同伦性质推出"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3使用定理2的传递性"
+  },
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "空间同伦定义基于映射同伦"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_def2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "习题2证明同伦的传递性，从而推出等价关系"
+  }
+]

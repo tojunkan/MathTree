@@ -1,0 +1,166 @@
+[SCOPE:root|description|线性同余]
+文章名: linmod
+标题: 线性同余
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=theorem heading=定理 2 title=
+  [2] type=theorem heading=定理 3 title=
+  [3] type=theorem heading=定理 4 title=定理 3  在缩系的拓展
+  [4] type=theorem heading=定理 5 title=
+
+[SCOPE:s_t1|description|定理 1]
+[0] 定理 1
+[1] 若 $(k, m) = d$，
+[2] 则
+[3] \begin{equation}
+ka \equiv ka' \pmod m \Leftrightarrow a \equiv a' \pmod{\frac{m}{d}} ~.
+\end{equation}
+[SCOPE:s_t1_let|let_bind|定理 1 的变量]
+[4] 证明：考虑 $k = k_0 d$ 而 $m = m_0 d$，
+[/SCOPE:s_t1_let]
+[5] 则 $(k_0, m_0) = 1$。由
+[6] \begin{equation}
+\frac{ka - ka'}{m} = \frac{k_0(a - a')}{m_0} ~,
+\end{equation}
+[7] 而 $(k_0, m_0) = 1$，
+[8] 故 $m | (k a - k a')$ 当且仅当 $m_0 | (a - a')$，证毕！
+
+[/SCOPE:s_t1]
+[SCOPE:s_t2|description|定理 2]
+[9] 定理 2
+[SCOPE:s_t2_let|let_bind|定理 2 的变量]
+[10] 若 $a_1, a_2, \dots, a_m$ 是模 $m$ 的一个完全剩余系，且整数 $k$ 满足 $(k, m) =1$，
+[/SCOPE:s_t2_let]
+[11] 则 $ka_1, ka_2, \dots, ka_m$ 也是模 $m$ 的一个完全剩余系。
+[12] 证明：对定理 1 取 $d=1$ 时的情况，
+[13] 则由 $ka_i - ka_j \equiv 0 \pmod m$ 可以得到 $a_i - a_j \equiv 0 \pmod m$。
+[14] 而这仅当 $i = j$ 时才可能成立，
+[15] 故各 $ka_i$ 与 $ka_j$ 当 $i \neq j$ 时模 $m$ 不同余，而一共有 $m$ 个数，
+[16] 故必然构成一个 $m$ 的完全剩余系，证毕！
+
+[/SCOPE:s_t2]
+[SCOPE:s_t3|description|定理 3]
+[17] 定理 3
+[SCOPE:s_t3_let|let_bind|定理 3 的变量]
+[18] 设 $(m_1, m_2) = 1$，而 $a_1$ 取遍模 $m_1$ 的一个完全剩余系，$a_2$ 取遍模 $m_2$ 的一个完全剩余系，
+[/SCOPE:s_t3_let]
+[19] 则 $(a_1 m_2 + a_2 m_1)$ 将取遍模 $m_1 \times m_2$ 的一个完全剩余系。
+[20] 证明：由于 $a_1$ 有 $m_1$ 种取值而 $a_2$ 有 $m_2$ 种取值，$a_1m_2+a_2m_1$ 将有 $m_1 \times m_2$ 种取值。
+[21] 考虑若存在某两对 $a_1, a_2$ 与 $a_1', a_2'$ 使得
+[22] \begin{equation}
+a_1 m_2 + a_2 m_1 \equiv a_1' m_2+ a_2' m_1 \pmod{m_1 m_2} ~,
+\end{equation}
+[23] 可以考虑若
+[24] \begin{equation}
+a_1 m_2 + a_2 m_1= r(m_1 \times m_2) + a_1' m_2 + a_2' m_1 ~,
+\end{equation}
+[25] 而两边同时对 $m_1$ 取模，将得到
+[26] \begin{equation}
+a_1 m_2 + a_2 m_1 \equiv r(m_1 \times m_2) + a_1' m_2 + a_2' m_1 \pmod{m_1} ~,
+\end{equation}
+[27] 而含 $m_1$ 的项在模 $m_1$ 的意义下为 $0$，也就是说，
+[28] \begin{equation}
+a_1 m_2 \equiv a_1' m_2 \pmod{m_1} ~.
+\end{equation}
+[29] 而由于 $(m_1, m_2) = 1$，利用
+[30] 定理 1 [链接 L0]
+[31] 可以得到 $a_1 \equiv a_1' \pmod{m_1}$。
+[32] 类似的，将有 $a_2 \equiv a_2' \pmod{m_2}$。
+[33] 从而这 $m_1m_2$ 个数都将是两两不同余的，否则 $a_1$ 或 $a_2$ 将不取遍完全剩余系。
+[34] 故 $a_1m_2+a_2m_1$ 构成了模 $m_1\times m_2$ 的完全剩余系。
+[35] 证毕！
+
+[/SCOPE:s_t3]
+[SCOPE:s_t4|description|定理 4]
+[36] 定理 4 定理 3 在缩系的拓展
+[SCOPE:s_t4_let|let_bind|定理 4 的变量]
+[37] 若 $(m, m') = 1$，而 $a_1$ 取遍一个 $m_1$ 的缩系，$a_2$ 取遍一个 $m_2$ 的缩系，
+[/SCOPE:s_t4_let]
+[38] 则 $(a_1m_2 + a_2 m_1)$ 取遍一个 $m_1m_2$ 的缩系。
+[39] 证明：考虑 $(a_1m_2 + a_2m_1, m_1m_2) = 1$ 当且仅当 $(a_1m_2 + a_2m_1, m_1) = 1$ 并且 $(a_1m_2 + a_2m_1, m_2) = 1$。
+[40] 而由于辗转相除（定理 2 ），
+[41] 则 $(a_1m_2 + a_2m_1, m_1) = 1$ 并且 $(a_1m_2 + a_2m_1, m_2) = 1$ 等价于说 $(a_1m_2, m_1) = 1$ 且 $(a_2m_1, m_2) = 1$。
+[42] 而由于 $(m_1, m_2)=1$，
+[43] 故这又等价于说 $(a_1, m_1) = 1$ 且 $(a_2, m_2) = 1$。
+[44] 故当 $a_1$ 取遍 $m_1$ 的缩系且 $a_2$ 取遍 $m_2$ 的缩系时，$a_1m_2+a_2m_1$ 取遍 $m_1m_2$ 的缩系。
+[45] 证毕！
+
+[/SCOPE:s_t4]
+[SCOPE:s_t5|description|定理 5]
+[46] 定理 5
+[SCOPE:s_t5_let1|let_bind|定理 5 的变量]
+[47] 若 $(k, m) = d$，
+[/SCOPE:s_t5_let1]
+[48] 则同余方程 $kx \equiv l \pmod m$ 有解，当且仅当 $d | l$。
+[49] 且有解时，若考虑同余的解是相同的一组解，
+[50] 则其恰有 $d$ 组不同的解。
+[51] 证明：这同余式 $kx \equiv l \pmod m$ 等价于解 $kx - my = l$，而由裴蜀定理可以知道其有解当且仅当 $d | l$。
+[52] 现在，我们考虑解的个数。
+[SCOPE:s_t5_cases|cases|d=1 与 d>1]
+[53] 若 $d=1$，
+[54] 则可以直接由刚才的定理 2 得到，仅有一组同余的解。
+[55] 若 $d > 1$，考虑有解时，
+[SCOPE:s_t5_let2|let_bind|d>1 时的变量]
+[56] 则 $d|l$，设 $m = m_0 d$，$k = k_0 d$，$l = l_0 d$，
+[/SCOPE:s_t5_let2]
+[57] 则此时 $(k_0, m_0) = 1$，且 $kx \equiv l \pmod m$ 等价于解（直接运用刚才的定理 1 即可得到）
+[58] \begin{equation}
+k_0 x \equiv l_0 \pmod {m_0} ~.
+\end{equation}
+[59] 而此时 $(k_0, m_0) = 1$，
+[60] 故这仅有一组解。
+[61] 考虑设这组解是 $x \equiv x_0 \pmod {m_0}$，
+[62] 则 $\forall c \in \mathbb Z$，$x = x_0 + c m_0$ 都是解。
+[63] 而原方程 $kx \equiv l \pmod m$ 就是遍历所有整数 $c$ 得到的。而
+[64] \begin{equation}
+x_0 + c m_0 \equiv x_0 + b m_0 \pmod m ~~
+\end{equation}
+[65a] 当且仅当 $m | (m_0 (c - b))$，也
+[65b] 则是 $d | (c - b)$。
+[66] 从而恰有 $d$ 组解
+[67] \begin{equation}
+x_0, x_0 + m_0, x_0 + 2 m_0, \dots, x_0 + (d-1) m_0 ~.
+\end{equation}
+[/SCOPE:s_t5]
+[/SCOPE:s_t5_cases]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_t2",
+    "target_scope": "s_t1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2的证明引用定理1取d=1"
+  },
+  {
+    "source_scope": "s_t3",
+    "target_scope": "s_t1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3的证明引用定理1"
+  },
+  {
+    "source_scope": "s_t4",
+    "target_scope": "s_t3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理4是定理3在缩系的拓展"
+  },
+  {
+    "source_scope": "s_t5",
+    "target_scope": "s_t1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理5的证明引用定理1"
+  },
+  {
+    "source_scope": "s_t5",
+    "target_scope": "s_t2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理5的证明引用定理2"
+  }
+]

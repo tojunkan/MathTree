@@ -1,0 +1,163 @@
+[SCOPE:root|description|行列式与体积]
+文章名: DetVol
+标题: 行列式与体积
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=行列式就是向量组的体积
+  [1] type=example heading=例 1 title=
+  [2] type=exercise heading=习题 1 title=
+  [3] type=theorem heading=定理 2 title=线性变换的行列式是体积放缩倍数
+  [4] type=example heading=例 2 title=
+
+[SCOPE:s_intro|description|引言]
+[0] 在 “行列式” 中我们看到了二阶和三阶行列式从几何上分别对应平行四边形的面积（即二维体积）和平行六面体的体积。
+[1] 我们现在来证明 $N > 0$ 维空间的情况。
+
+[/SCOPE:s_intro]
+[SCOPE:s_thm1|description|定理1 行列式就是向量组的体积]
+[2] 定理 1 行列式就是向量组的体积
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[3] 在标准正交基下，所有向量都可以用列矩阵来表示。
+[4] 在 $N$ 维空间中，选出 $N$ 个向量，将它们的列矩阵排成一行，得到一个 $N\times N$ 方阵 $ \boldsymbol{\mathbf{M}} $。
+[5] 那么以这组向量为边长的平行多面体的 “体积”，就是 $ \boldsymbol{\mathbf{M}} $ 的行列式 $ \left\lvert \boldsymbol{\mathbf{M}} \right\rvert $。
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm1_diag|description|对角矩阵情形]
+[6] 我们先来看最简单的例子：一个对角线1元素都为 1，其他元素为零的行列式
+[7] \begin{equation}
+\begin{vmatrix}
+1 & & &\\
+& 1 & &\\
+& & \ddots &\\
+& & & 1
+\end{vmatrix} = 1~.
+\end{equation}
+[8] 这代表 $N$ 维空间中边长都是 1 的立方体的体积。
+[9] 进一步，
+[SCOPE:s_thm1_diag_let|let_bind|对角矩阵变量]
+[10] \begin{equation}
+\begin{vmatrix}
+a_1 & & &\\
+& a_2 & &\\
+& & \ddots &\\
+& & & a_N
+\end{vmatrix} = a_1a_2\cdots a_N~.
+\end{equation}
+[11] 是 $N$ 维空间中各边长为 $a_1, a_2, \cdots, a_N$ 的 “长方体” 的体积。
+[/SCOPE:s_thm1_diag]
+[/SCOPE:s_thm1_diag_let]
+[SCOPE:s_thm1_trans|description|平移法]
+[12] 各边长两两垂直的多面体体积很好算，
+[13] 那么不垂直的情况怎么办呢？
+[14] 回忆小学时学习的平行四边形体积的计算方法，
+[15] 即 “平移法”，如图 1 所示。
+[16] 【图解】图 1：二维多面体的体积计算示意图。
+[17] 左图是由向量 $ \boldsymbol{\mathbf{v}} $ 和 $ \boldsymbol{\mathbf{u}} $ 为边的长方形，右边则是以向量 $ \boldsymbol{\mathbf{v}} $ 和 $ \boldsymbol{\mathbf{u}} + \boldsymbol{\mathbf{v}} /3$ 为边的平行四边形。
+[18] 二者体积相等。
+[SCOPE:s_thm1_trans_let|let_bind|平移法变量]
+[19] 图 1 中二者体积（面积）相等，揭示了一个简单而重要的事实：如果一组向量里，其中一个向量 $ \boldsymbol{\mathbf{u}} $ 进行如下变换：在给定组中，取和 $ \boldsymbol{\mathbf{u}} $ 不共线的另一个向量 $ \boldsymbol{\mathbf{v}} $，再任取一个实数 $a$，将 $ \boldsymbol{\mathbf{u}} $ 变换为 $ \boldsymbol{\mathbf{u}} +a \boldsymbol{\mathbf{v}} $，
+[20] 那么以变换后的向量组为边的平行多面体，其体积和变换前是一样的2。
+[/SCOPE:s_thm1_trans_let]
+[21] 体积的这一不变性，和行列式的一种不变性紧密联系：定理 5 。
+[22] 该定理中进行的列变换，就等价于上一段所说的向量组的变换3。
+[23] 反复利用这个列变换，我们总能把一个任意矩阵化为对角矩阵4，而这个变换每一步都不改变矩阵的行列式。
+[24] 同时，这个列变换相当于上述的 “平移法”，每一步都不改变所得到的多面体的体积。
+[25] 这样一来，任意矩阵所代表的立方体都可以变形为一个长方体，同时不改变其体积；
+[26] 在这个变形过程中，矩阵的行列式都不变。
+[27] 加上我们前面已经证明了，对于立方体（对角矩阵），行列式就等于其体积，
+[28] 因此可以推论，对于任何平行多面体，其体积都等于边长向量构成的矩阵的行列式。
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_trans]
+[SCOPE:s_ex1|description|例1]
+[29] 在三维空间中，给定一个平行六面体，其三边长对应的向量分别是 $  \begin{pmatrix}1&2&3\end{pmatrix}  ^{\mathrm{T}} $、$  \begin{pmatrix}2&2&1\end{pmatrix}  ^{\mathrm{T}} $ 和 $  \begin{pmatrix}1&7&3\end{pmatrix}  ^{\mathrm{T}} $，
+[30] 则这个平行多面体的体积就是
+[31] \begin{equation}
+\begin{vmatrix}
+1&2&1\\
+2&2&7\\
+3&1&3
+\end{vmatrix} = 25~.
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_exer1|description|习题1]
+[32] 习题 1
+[33] 用平移法，将例 1 中的平行多面体变形为立方体，同时保持其面积不变。
+[34] 用这样的方法，计算其面积，验证是否等于 $25$。
+[35] 你的变形过程，相当于矩阵 $  \begin{pmatrix}1&2&1\\2&2&7\\3&1&3\end{pmatrix}  $ 进行什么样的变换（或者说乘以哪些矩阵）得到的？
+
+[/SCOPE:s_exer1]
+[36] 矩阵可以表示很多东西。
+[37] 在上一小节的讨论中，我们用一个矩阵来表示一组向量，同时也表示了以这组向量为边的平行多面体。
+[38] 矩阵还可以用来表示什么呢？
+[39] 线性变换。
+
+[SCOPE:s_thm2|description|定理2 线性变换的行列式是体积放缩倍数]
+[40] 定理 2 线性变换的行列式是体积放缩倍数
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[41] 在 $N$ 维空间中，给定一组标准正交基，再给定一个任意 $N\times N$ 方阵 $ \boldsymbol{\mathbf{M}} $，用 $ \boldsymbol{\mathbf{M}} $ 来表示一个平行多面体。
+[42] 设一个线性变换在这组基下被表示为矩阵 $ \boldsymbol{\mathbf{A}} $，
+[43] 于是 $ \boldsymbol{\mathbf{MA}} $ 就是将 $ \boldsymbol{\mathbf{M}} $ 的各向量都变换后的结果。
+[/SCOPE:s_thm2_let]
+[44] 那么 $ \boldsymbol{\mathbf{MA}} $ 对应的平行多面体体积，是 $ \boldsymbol{\mathbf{M}} $ 对应的体积的 $ \left\lvert \boldsymbol{\mathbf{A}} \right\rvert $ 倍。
+[45] 定理 2 从代数性质上很好证明，引用定理 9 即可。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_ex2|description|例2]
+[SCOPE:s_ex2_let|let_bind|例2的变量]
+[46] 在二维空间中，有一个平行四边形的两边分别对应向量 $  \begin{pmatrix}1& 0\end{pmatrix}  ^{\mathrm{T}} $ 和 $  \begin{pmatrix}1& 3\end{pmatrix}  ^{\mathrm{T}} $。
+[47] 它的面积是 $3$。
+[48] 考虑一个线性变换，它保持各向量的 $y$ 分量不变，$x$ 分量变为原来的 $2$ 倍，
+[49] 那么这个线性变换就可以表示为 $  \begin{pmatrix}1& 0\\ 0& 2\end{pmatrix}  $。
+[/SCOPE:s_ex2_let]
+[50] 这个变换将上述平行四边形的两边分别变为 $  \begin{pmatrix}1& 0\end{pmatrix}  ^{\mathrm{T}} $ 和 $  \begin{pmatrix}1& 2\end{pmatrix}  ^{\mathrm{T}} $。
+[51] 变换后的平行四边形面积是 $6$，其中面积的放缩比例为 $6/3=2$，正是 $  \begin{pmatrix}1& 0\\ 0& 2\end{pmatrix}  $ 的行列式。
+[52] 定理 2 最常见的应用是多元微积分中的雅可比行列式，本质上就是坐标变换之后体积元的体积放缩比例。
+[/SCOPE:s_ex2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_thm1_diag",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "对角矩阵是定理1的特例"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_thm1_trans",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "平移法推出一般情形"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是定理1的实例"
+  },
+  {
+    "source_scope": "s_exer1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题1应用定理1"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2依赖定理1"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2是定理2的实例"
+  }
+]

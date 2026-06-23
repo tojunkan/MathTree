@@ -1,0 +1,211 @@
+[SCOPE:root|description|格林函数解线性非齐次微分方程]
+文章名: GreenF
+标题: 格林函数解线性非齐次微分方程
+
+环境标记 (hints):
+  [0] type=exercise heading=习题 1 title=受力均匀的弦
+
+[SCOPE:s_general|description|一般理论]
+[SCOPE:s_general_let|let_bind|一般理论变量]
+[0] 区间 $(a,b)$ 的非齐次线性微分方程可记为
+[1] \begin{equation}
+\hat{Q} y(x) = f(x)~,
+\end{equation}
+[2] 其中 $ \hat{Q} $ 是线性微分算符。
+[3] 令格林函数为 $G(x', x)$ 满足
+[4] \begin{equation}
+\hat{Q} G(x', x) = \delta(x - x') \qquad (a < x' < b)~.
+\end{equation}
+[/SCOPE:s_general_let]
+[5] 那么方程的解为
+[6] \begin{equation}
+y(x) = \int_a^b f(x') G(x', x) \,\mathrm{d}{x'} ~,
+\end{equation}
+[7] 证明见下文。
+[8a] (x), y
+[8b] (x)$ 变为多元函数 $f( \boldsymbol{\mathbf{r}} ), y( \boldsymbol{\mathbf{r}} )$，算符 $ \hat{Q} $ 变为线性偏微分算符，$\delta$ 函数变为多元狄拉克 $\delta$ 函数 $\delta( \boldsymbol{\mathbf{r}} - \boldsymbol{\mathbf{r}} ')$，积分变为重积分即可。
+
+[/SCOPE:s_general]
+[SCOPE:s_example|description|弦的受力平衡]
+[SCOPE:s_example_let|let_bind|弦的变量]
+[9] 一根两端固定的弦两端固定在 $x$ 轴上，区间为 $[0, L]$，张力为 $T$，形状为 $y(x)$，边界条件为 $y(0) = y(L) = 0$。
+[10] 在弦上有 $y$ 方向的连续受力分布，若弦的受力密度函数为 $f(x)$，
+[11] 即单位长度受到的 $y$ 方向的力，
+[12] 那么当 $ \left\lvert f(x) \right\rvert \ll T$ 时有方程（推导过程类比 “一维波动方程”）
+[13] \begin{equation}
+-T y'' = f(x)~.
+\end{equation}
+[/SCOPE:s_example_let]
+[14] 虽然该方程可以直接对两边积分两次得到解（两个积分常数由边界条件确定）
+[15] \begin{equation}
+y(x) = -\frac{1}{T}\iint f(x) \,\mathrm{d}{x} \,\mathrm{d}{x} + C_1 x + C_2~,
+\end{equation}
+[16] 但为了教学我们用格林函数法。
+[SCOPE:s_example_let2|let_bind|格林函数变量]
+[17] 先令格林函数 $G(x', x)$ 满足
+[18] \begin{equation}
+-T G''(x', x) = \delta(x - x') \qquad (0 < x' < L)~,
+\end{equation}
+[19] 方程右边是
+[20] 狄拉克 $\delta$ 函数 [链接 L0]
+[21] 。
+[22] 且同样有边界条件 $G(x', a) = G(x', b) = 0$。
+[/SCOPE:s_example_let2]
+[23] 这相当于弦上只有一点 $x'$ 受大小为 $F = 1$ 的力。
+[24] 解出格林函数后，$f(x)$ 可以分解为许多不同位置的 $\delta$ 函数的线性组合（积分）
+[25] \begin{equation}
+f(x) = \int_0^L f(x') \delta(x - x') \,\mathrm{d}{x'} ~.
+\end{equation}
+[26] 式 4 [链接 L1]
+[27] 的方程是线性的，
+[28] 那么把 $G(x', x)$ 做同样的线性组合就是满足边界条件的解
+[29] \begin{equation}
+y(x) = \int_0^L f(x') G(x', x) \,\mathrm{d}{x'} ~.
+\end{equation}
+[30] 现在来解式 6 ，事实上我们可以直接从受力分析上得出格林函数 $G(x', x)$ 是一个三角形，顶点的位置为 $x = x'$，令高为 $h = y(x')$ 由受力分析可得
+[31] \begin{equation}
+T\frac{h}{x'} + T\frac{h}{L - x'} = F = 1~,
+\end{equation}
+[32] 【图解】图 1：受力分析示意图
+[33] \begin{equation}
+h = \frac{x' (L - x')}{LT}~.
+\end{equation}
+[34] 即格林函数为
+[35] \begin{equation}
+G(x', x) = \left\{\begin{aligned}
+&\frac{L-x'}{LT}x \qquad (0 < x \le x')\\
+&\frac{L-x}{LT}x' \qquad (0 < x \le x') \qquad (x' < x)~.
+\end{aligned}\right. \end{equation}
+[36] 式 8 [链接 L2]
+[37] \begin{equation}
+y(x) = \int_0^x f(x') \frac{L-x}{LT}x' \,\mathrm{d}{x'} + \int_x^L f(x')\frac{L-x'}{LT}x \,\mathrm{d}{x'} ~,
+\end{equation}
+[38] 分部积分法 [链接 L3]
+[39] （对 $f(x')$ 积分，剩下部分求导）可得
+[40] 式 5 [链接 L4]
+[41] 。
+[42] 分部积分留做习题，其中 $C_1$ 和 $C_2$ 的取值需要保证边界条件 $y(0) = y(L) = 0$。
+
+[SCOPE:s_example_solve|description|求解格林函数]
+[SCOPE:s_example_solve_let|let_bind|求解中的常数]
+[43] 先考虑方程在 $(0,x')$ 区间的解，
+[44] 即
+[45] \begin{align}
+-TG''(x',x) &=0,&
+G(x',0)&=0~,
+\end{align}
+[46] \begin{equation}
+G(x',x)=C_1 x~.
+\end{equation}
+[47] 再考虑 $(x',L)$ 处的方程，
+[48] 即
+[49] \begin{align}
+-TG''(x',x) &= 0,&
+G(x',L) &= 0~,
+\end{align}
+[50] \begin{equation}
+G(x',x) = C_2 (x-L)~.
+\end{equation}
+[/SCOPE:s_example_solve_let]
+[51] 显然根据实际情况可以知道，方程的解需要连续，
+[52] 那么有
+[53] \begin{equation}
+G(x',x'^-) = C_1x' = G(x',x'^+) = C_2 (x'-L)
+~.
+\end{equation}
+[54] 式 6 [链接 L5]
+[55] 在 $(x'^-,x'^+)$ 上积分，得到
+[56] \begin{equation}
+G'(x',x'^+)-G'(x',x'^-)=C_2-C_1=1
+~,
+\end{equation}
+[57] 式 17 [链接 L6]
+[58] 式 18 [链接 L7]
+[59] 就可以解出
+[60] 式 10 [链接 L8]
+
+[/SCOPE:s_example]
+[/SCOPE:s_example_solve]
+[SCOPE:s_exercise|description|习题1]
+[61] 习题 1 受力均匀的弦
+[62] 若式 4 中，$f(x) = 1$，
+[63] 即弦均匀向上受力，求弦的方程 $y(x)$。
+[64] 分别使用式 12 和式 5 两种方法。
+[65] 答案：开口向下的抛物线。
+
+[/SCOPE:s_exercise]
+[SCOPE:s_proof|description|证明]
+[66] 要证明式 3 是方程式 1 的解，把前者代入后者，
+[67] 即证
+[68] \begin{equation}
+\hat{Q} \int_a^b f(x') G(x', x) \,\mathrm{d}{x'} = f(x)~.
+\end{equation}
+[69] $ \hat{Q} $ 是关于 $x$ 的微分算符，与 $x'$ 无关，$f(x')$ 对 $ \hat{Q} $ 来说可以看作线性组合的常系数，又由于 $ \hat{Q} $ 是线性算符，可以放到线性组合（积分）内部
+[70] \begin{equation}
+\begin{aligned}
+& \hat{Q} \int_a^b f(x') G(x', x) \,\mathrm{d}{x'} = \int_a^b f(x') \hat{Q} G(x', x) \,\mathrm{d}{x'} \\
+&= \int_a^b f(x') \delta(x - x') \,\mathrm{d}{x'} = f(x)~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_proof]
+[SCOPE:s_intuitive|description|形象的证明]
+[SCOPE:s_intuitive_let|let_bind|形象证明变量]
+[71a] (x)$ 是非齐次项 $f_i
+[71b] (x)$ 的解（$i = 1,2,\dots, n$），
+[72] 即
+[73] \begin{equation}
+\hat{Q} G_i(x) = f_i(x)~.
+\end{equation}
+[/SCOPE:s_intuitive_let]
+[74] 那么因为算符 $ \hat{Q} $ 是线性的，就有
+[75] \begin{equation}
+\hat{Q} \sum_i c_i G_i(x) = \sum_i c_i \hat{Q} G_i(x) = \sum_i c_i f_i(x)~.
+\end{equation}
+[76] 如果我们能找到满足条件的 $c_i$ 和 $f_i(x)$ 使得
+[77] \begin{equation}
+f(x) = \sum_i c_i f_i(x)~,
+\end{equation}
+[78] 那么根据
+[79] 式 22 [链接 L9]
+[80] ，方程的解就是 $G_i$ 做同样的线性组合
+[81] \begin{equation}
+y(x) = \sum_i c_i G_i(x)~.
+\end{equation}
+[82a] (x)$：每个 $f_i
+[82b] (x)$ 看成一个宽为 $\Delta x$，中心位置在 $x'$ 的长方形函数，面积为 1。
+[83] 那么方程的解就是每个小长方形对应的解 $G_i(x)$ 做同样的线性组合。
+[84a] 当小长方形越来越细，$f_i(x)$
+[84b] 则变成了 $\delta(x - x')$ 以上的求和就变为了积分。
+[85] 于是式 21 就变为式 2 ，而式 22 和式 23 变为积分就是式 20 。
+
+跨文章引用:
+  [L0] 狄拉克 $\delta$ 函数 → Delta
+  [L3] 分部积分法 → IntBP
+[/SCOPE:s_intuitive]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_example",
+    "target_scope": "s_general",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "弦的例子是一般理论的特例"
+  },
+  {
+    "source_scope": "s_proof",
+    "target_scope": "s_general",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明一般理论中的解公式"
+  },
+  {
+    "source_scope": "s_intuitive",
+    "target_scope": "s_proof",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "直观解释证明"
+  }
+]

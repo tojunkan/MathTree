@@ -1,0 +1,65 @@
+[SCOPE:root|description|标准差与方差]
+文章名: StDevi
+标题: 标准差与方差
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=方差
+  [1] type=definition heading=定义 2 title=总体标准差
+  [2] type=definition heading=定义 3 title=标准误差
+  [3] type=definition heading=定义 4 title=样本标准差
+
+[SCOPE:s_var|description|方差]
+[0] 定义 1 方差
+[SCOPE:s_var_let|let_bind|方差变量]
+[1] 设有一组数据 $\{x_i\}_{i=1}^n$，它们的平均值是 $\mu=\frac{x_1+x_2+\cdots+x_n}{n}$。
+[/SCOPE:s_var_let]
+[2] 则定义这组数据的方差为
+[3] \begin{equation}
+\sigma^2 = \frac{(x_1-\mu)^2+(x_2-\mu)^2+\cdots+(x_n-\mu)^2}{n}~.
+\end{equation}
+[4] 定义方差时使用平方，是为了避免向不同方向离开平均值的数据相互抵消。
+
+[/SCOPE:s_var]
+[SCOPE:s_pop_std|description|总体标准差]
+[5] 定义 2 总体标准差
+[SCOPE:s_pop_std_let|let_bind|总体标准差变量]
+[6] 设有一组数据 $\{x_i\}_{i=1}^n$，它们的平均值是 $\mu=\frac{x_1+x_2+\cdots+x_n}{n}$。
+[/SCOPE:s_pop_std_let]
+[7] 则定义这组数据的总体标准差为
+[8] \begin{equation}
+\sigma = \sqrt{\frac{(x_1-\mu)^2+(x_2-\mu)^2+\cdots+(x_n-\mu)^2}{n}}~.
+\end{equation}
+
+[/SCOPE:s_pop_std]
+[SCOPE:s_std_err|description|标准误差]
+[9] 定义 3 标准误差
+[10] 数据的标准误差定义为 $\sigma_n=\sigma/\sqrt{n}$。
+
+[/SCOPE:s_std_err]
+[SCOPE:s_sample_std|description|样本标准差]
+[11] 定义 4 样本标准差
+[SCOPE:s_sample_std_let|let_bind|样本标准差变量]
+[12] 设有一组数据 $\{x_i\}_{i=1}^n$，它们的平均值是 $\mu=\frac{x_1+x_2+\cdots+x_n}{n}$。
+[/SCOPE:s_sample_std_let]
+[13] 则定义这组数据的样本标准差为
+[14] \begin{equation}
+S = \sqrt{\frac{(x_1-\mu)^2+(x_2-\mu)^2+\cdots+(x_n-\mu)^2}{n-1}}~.
+\end{equation}
+
+[/SCOPE:s_sample_std]
+[SCOPE:s_relation|description|与期望值的关系]
+[SCOPE:s_relation_let|let_bind|关系变量]
+[15] 给定一组数据 $\{x_i\}_{i=1}^n$，记它的平均值（期望值）为 $\langle x_i \rangle$，
+[16] 即定义 1 里的 $\mu$。
+[/SCOPE:s_relation_let]
+[17] 有了这个符号，就可以方便地表示 $\{x_i^2\}$ 的平均值了：$\langle x_i^2 \rangle$。
+[18] 根据式 1 ，
+[19] \begin{equation}
+\begin{aligned}
+\sigma^2 &= \frac{x_1^2+x_2^2+\cdots+x_n^2}{n}+\frac{n\mu^2}{n}-\frac{2\mu(x_1+x_2+\cdots+x_n)}{n}\\
+&=\langle x_i^2 \rangle+\mu^2-2\mu\langle x_i \rangle\\
+&=\langle x_i^2 \rangle-\langle x_i \rangle^2~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_relation]
+[/SCOPE:root]

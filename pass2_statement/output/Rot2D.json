@@ -1,0 +1,279 @@
+{
+  "article_name": "Rot2D",
+  "statements": [
+    {
+      "stmt_id": "st_rot_matrix_intro",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_rot_matrix",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_unit_vec_rotation",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_rot_let1",
+      "exposed_entities": [
+        "\\hat{\\boldsymbol{x}}",
+        "\\hat{\\boldsymbol{y}}",
+        "\\theta"
+      ]
+    },
+    {
+      "stmt_id": "st_arbitrary_vec_linear_comb",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_rot_let2",
+      "exposed_entities": [
+        "\\boldsymbol{v}",
+        "v_1",
+        "v_2"
+      ]
+    },
+    {
+      "stmt_id": "st_rotation_matrix_derived",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rot_matrix",
+      "exposed_entities": [
+        "\\boldsymbol{R}_2"
+      ]
+    },
+    {
+      "stmt_id": "st_generalization",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rot_matrix",
+      "exposed_entities": [
+        "\\boldsymbol{\\beta}_i",
+        "\\boldsymbol{A}",
+        "\\boldsymbol{\\alpha}_i"
+      ]
+    },
+    {
+      "stmt_id": "st_arbitrary_rotation_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_arbitrary_rotation",
+      "exposed_entities": [
+        "x_0",
+        "y_0"
+      ]
+    },
+    {
+      "stmt_id": "st_not_linear",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_arbitrary_rotation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_default_origin",
+      "subtype": "remark",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_arbitrary_rotation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_active_understanding",
+      "subtype": "definition",
+      "clause_range": [
+        25,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_active_passive",
+      "exposed_entities": [
+        "\\boldsymbol{v}",
+        "\\boldsymbol{u}",
+        "\\hat{\\boldsymbol{x}}",
+        "\\hat{\\boldsymbol{y}}"
+      ]
+    },
+    {
+      "stmt_id": "st_passive_understanding",
+      "subtype": "definition",
+      "clause_range": [
+        29,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_active_passive",
+      "exposed_entities": [
+        "\\hat{\\boldsymbol{u}}_1",
+        "\\hat{\\boldsymbol{u}}_2",
+        "\\hat{\\boldsymbol{v}}_1",
+        "\\hat{\\boldsymbol{v}}_2"
+      ]
+    },
+    {
+      "stmt_id": "st_matrix_elements_meaning",
+      "subtype": "conclusion",
+      "clause_range": [
+        41,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_matrix_elements",
+      "exposed_entities": [
+        "R_{ij}",
+        "\\hat{\\boldsymbol{u}}_i",
+        "\\hat{\\boldsymbol{v}}_j"
+      ]
+    },
+    {
+      "stmt_id": "st_inverse_transpose",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        52
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_matrix_elements",
+      "exposed_entities": [
+        "\\boldsymbol{R}^{\\mathrm{T}}"
+      ]
+    },
+    {
+      "stmt_id": "st_orthogonal_rotation",
+      "subtype": "remark",
+      "clause_range": [
+        53,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_matrix_elements",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1",
+      "subtype": "theorem",
+      "clause_range": [
+        55,
+        56
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_unit_vec_rotation",
+      "target": "st_rotation_matrix_derived",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_arbitrary_vec_linear_comb",
+      "target": "st_rotation_matrix_derived",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rotation_matrix_derived",
+      "target": "st_generalization",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rotation_matrix_derived",
+      "target": "st_arbitrary_rotation_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_arbitrary_rotation_formula",
+      "target": "st_not_linear",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_active_understanding",
+      "target": "st_passive_understanding",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_passive_understanding",
+      "target": "st_matrix_elements_meaning",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_matrix_elements_meaning",
+      "target": "st_inverse_transpose",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inverse_transpose",
+      "target": "st_theorem1",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_rotation_matrix_derived",
+      "target": "st_arbitrary_rotation_formula",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "旋转矩阵推导后，讨论绕任意点旋转"
+    },
+    {
+      "source": "st_rotation_matrix_derived",
+      "target": "st_active_understanding",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "旋转矩阵推导后，讨论主动与被动理解"
+    },
+    {
+      "source": "st_passive_understanding",
+      "target": "st_matrix_elements_meaning",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "被动理解引出矩阵元意义"
+    },
+    {
+      "source": "st_inverse_transpose",
+      "target": "st_theorem1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "矩阵元意义推导出正交矩阵性质"
+    }
+  ],
+  "unresolved": []
+}

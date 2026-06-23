@@ -1,0 +1,122 @@
+[SCOPE:root|description|奇异值分解（SVD）]
+文章名: SVD
+标题: 奇异值分解（SVD）
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=SVD
+  [1] type=theorem heading=定理 2 title=
+  [2] type=lemma heading=引理 1 title=
+
+[0] 本节默认在复数域及酉空间下讨论。
+
+[SCOPE:s_svd|description|定理1 SVD]
+[1] 定理 1 SVD
+[SCOPE:s_svd_let|let_bind|SVD变量]
+[2] 给定复数域 $\mathbb{C}$ 上的矩阵 $ \boldsymbol{\mathbf{M}} $，
+[3] 则存在同样尺寸的对角矩阵 $ \boldsymbol{\mathbf{D}} $ 和酉矩阵 $ \boldsymbol{\mathbf{P}} $、$ \boldsymbol{\mathbf{Q}} $，使得
+[4] \begin{equation}
+\boldsymbol{\mathbf{M}} = \boldsymbol{\mathbf{P ^\dagger DQ}} ~.
+\end{equation}
+[/SCOPE:s_svd_let]
+[5] 奇异值（singular value）
+[6] 奇异值分解（singular value decomposition）
+
+[/SCOPE:s_svd]
+[7] 我们先从可逆方阵证起，然后再过渡到不要求可逆的任意复矩阵。
+
+[SCOPE:s_thm2|description|定理2]
+[8] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2变量]
+[9] 对于 $n$ 阶可逆方阵$ \boldsymbol{\mathbf{M}} $，存在酉方阵$ \boldsymbol{\mathbf{P}} , \boldsymbol{\mathbf{Q}} $ 和可逆对角矩阵$ \boldsymbol{\mathbf{D}} $ 使得
+[10] \begin{equation}
+\boldsymbol{\mathbf{M}} = \boldsymbol{\mathbf{P}} ^\dagger \boldsymbol{\mathbf{D}} \boldsymbol{\mathbf{Q}} ~.
+\end{equation}
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm2_let2|let_bind|定理2证明中引入的变量]
+[11] 证明：因为 $ \boldsymbol{\mathbf{M}} ^\dagger \boldsymbol{\mathbf{M}} $ 是半正定厄米矩阵，必存在一组标准正交基使之对角化，设为 $ \boldsymbol{\mathbf{A}} $，对应的过渡矩阵为酉方阵 $ \boldsymbol{\mathbf{Q}} $，
+[12] 则该过程表示为 $ \boldsymbol{\mathbf{Q}} \boldsymbol{\mathbf{M}} ^\dagger \boldsymbol{\mathbf{MQ}} ^\dagger = \boldsymbol{\mathbf{A}} $。
+[13] 左右取行列式可证 $ \boldsymbol{\mathbf{A}} $ 是可逆矩阵。
+[14] 在这组基下，对对角元计算后，我们可以得到 $ \boldsymbol{\mathbf{A}} ^{\frac{1}{2}}, \boldsymbol{\mathbf{A}} ^{-\frac{1}{2}}$，显然互逆。
+[15] 我们可以把 $ \boldsymbol{\mathbf{M}} $ 表示为 $ \boldsymbol{\mathbf{MQ}} ^\dagger \boldsymbol{\mathbf{A}} ^{-\frac{1}{2}} \boldsymbol{\mathbf{A}} ^{\frac{1}{2}}Q$，和式 2 比较，我们需要验证 $ \boldsymbol{\mathbf{MQ}} ^\dagger \boldsymbol{\mathbf{A}} ^{-\frac{1}{2}}$ 是酉方阵。
+[16] 设 $ \boldsymbol{\mathbf{P}} ^\dagger = \boldsymbol{\mathbf{M}} \boldsymbol{\mathbf{Q}} ^\dagger \boldsymbol{\mathbf{A}} ^{-\frac{1}{2}}$，
+[17] 则 $ \boldsymbol{\mathbf{P}} = \boldsymbol{\mathbf{A}} ^{-\frac{1}{2}} \boldsymbol{\mathbf{Q}} \boldsymbol{\mathbf{M}} ^\dagger $，
+[18] 则
+[19] \begin{equation}
+\begin{aligned}
+\boldsymbol{\mathbf{P}} ^\dagger \boldsymbol{\mathbf{P}} &= \boldsymbol{\mathbf{MQ}} ^\dagger \boldsymbol{\mathbf{A}} ^{-\frac{1}{2}} \boldsymbol{\mathbf{A}} ^{-\frac{1}{2}} \boldsymbol{\mathbf{Q}} \boldsymbol{\mathbf…[truncated]…athbf{Q}} ^\dagger )^{-1}( \boldsymbol{\mathbf{M}} )^{-1}( \boldsymbol{\mathbf{M}} ^\dagger )^{-1} \boldsymbol{\mathbf{Q}} ^{-1} \boldsymbol{\mathbf{Q}} \boldsymbol{\mathbf{M}} ^\dagger \\
+&= \boldsymbol{\mathbf{E}} ~,
+\end{aligned}
+~.
+\end{equation}
+[20] 定理得证。
+[/SCOPE:s_thm2_let2]
+[21] 在定理 2 的陈述里 $ \boldsymbol{\mathbf{D}} $ 也是可逆矩阵，这并非偶然。
+[22] 考虑到 $ \boldsymbol{\mathbf{P}} ^{-1}= \boldsymbol{\mathbf{P}} ^\dagger $，该定理实际上是 $ \boldsymbol{\mathbf{M}} $ 的广义相似变换。
+[23] 如下图所示，线性映射 $f:V\rightarrow W$ 在不同基下有不同表示。
+[24] 设 $\{ \boldsymbol{\mathbf{e}} _i\},\{ \boldsymbol{\mathbf{\theta}} _i\}$ 是 $V,W$ 的旧基，且 $f$ 在该基下的表示为 $ \boldsymbol{\mathbf{M}} $。
+[25] $ \boldsymbol{\mathbf{P}} , \boldsymbol{\mathbf{Q}} $ 是对应 $W,V$ 的从旧基到新基的过渡矩阵，
+[26] 则 $ \boldsymbol{\mathbf{D}} $ 就自然是 $f$ 在新基下的表示了。
+[27] 作为 $f$ 的不同表示，$ \boldsymbol{\mathbf{M}} $ 与 $ \boldsymbol{\mathbf{N}} $ 的行列数相同，秩也相同。
+[28] 如此一来，我们似乎可以拓展该定理至 $ \boldsymbol{\mathbf{M}} $ 不可逆的情况。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_lemma1|description|引理1]
+[29] 引理 1
+[SCOPE:s_lemma1_let|let_bind|引理1变量]
+[30] 对于任意矩阵 $ \boldsymbol{\mathbf{M}} $，存在酉矩阵 $ \boldsymbol{\mathbf{Q}} ', \boldsymbol{\mathbf{S}} $ 和满秩矩阵 $ \boldsymbol{\mathbf{N}} $，使得
+[31] \begin{equation}
+\boldsymbol{\mathbf{M}} = \boldsymbol{\mathbf{S}} ^\dagger \left(\begin{array}{cc}
+N & 0 \\
+0 & 0
+\end{array}\right) \boldsymbol{\mathbf{Q}} '~.
+\end{equation}
+[/SCOPE:s_lemma1_let]
+[32] 【未完成】引用定理 “非退化情况下，子空间的标准正交基可拓展到全空间”。
+[33] 换一个方式表述，引理 1 实际上是在说对于酉空间的任意线性映射 $f$，原像和像空间存在一组标准正交基，使得 $f$ 在该基下是式 4 所示的块对角形式。
+[34] 考虑到 $ \operatorname {dim}V= \operatorname {dim} \operatorname {ker}f+ \operatorname {dim} \operatorname {Im}f$，我们可以在 $ \operatorname {ker}f$ 内选一组标准正交基，然后扩展到全空间。
+[SCOPE:s_lemma1_let2|let_bind|引理1证明中引入的变量]
+[35] 设 $k= \operatorname {dim} \operatorname {ker}f,s= \operatorname {dim} \operatorname {Im}f$。
+[36] 则在该组基下，$f$ 的后 $k$ 列必为 $0$。
+[37] 同理，$ \operatorname {Im}f$ 作为 $W$ 的子空间，也可以找到一组标准正交基，并拓展到其正交补。
+[38] 因而除去前 $s$ 行，其他行都为 $0$。
+[39] 如此我们就证明了 $f$ 具有式 4 所示的块对角形式，其中 $ \boldsymbol{\mathbf{N}} $ 必为满秩的 $s\times s$方阵，
+[40] 即其可逆。
+[/SCOPE:s_lemma1_let2]
+[41] 如若不然，$ \operatorname {Im}f\cap \operatorname {ker}f\neq\{ \boldsymbol{\mathbf{0}} \}$。
+[42] 现在我们来证明奇异值分解定理。
+[43] 对于任意复矩阵$ \boldsymbol{\mathbf{M}} $，我们可以分解为引理 1 的形式。
+[44] 那么对于满秩$ \boldsymbol{\mathbf{N}} $ 矩阵，自然而然的，我们可以利用定理 2 进行进一步的分解。
+[SCOPE:s_lemma1_let3|let_bind|引理1后续分解变量]
+[45] 设该分解表示为 $ \boldsymbol{\mathbf{N}} = \boldsymbol{\mathbf{T}} ^\dagger \boldsymbol{\mathbf{D}} ' \boldsymbol{\mathbf{F}} $，其中 $ \boldsymbol{\mathbf{D}} '$ 为可逆对角矩阵。
+[46] 构造复矩阵 $ \boldsymbol{\mathbf{T}} _1, \boldsymbol{\mathbf{S}} _1$，其中 $ \boldsymbol{\mathbf{E}} _1, \boldsymbol{\mathbf{E}} _2$ 是用作填充的单位矩阵，比如 $ \boldsymbol{\mathbf{E}} _1$ 使得 $ \boldsymbol{\mathbf{T}} _1$ 的行数等于 $ \boldsymbol{\mathbf{S}} ^\dagger $ 的列数。
+[47] \begin{equation}
+\boldsymbol{\mathbf{T}} _1 ^\dagger = \begin{pmatrix} \boldsymbol{\mathbf{T}} ^\dagger &0\\0& \boldsymbol{\mathbf{E}} _1\end{pmatrix} ,\quad \boldsymbol{\mathbf{F}} _1= \begin{pmatrix} \boldsymbol{\mathbf{F}} &0\\0& \boldsymbol{\mathbf{E}} _2\end{pmatrix}
+~.
+\end{equation}
+[48] 该定义是合理的，因为
+[49] \begin{equation}
+\begin{pmatrix} \boldsymbol{\mathbf{N}} &0\\0&0\end{pmatrix} = \begin{pmatrix} \boldsymbol{\mathbf{T}} ^\dagger &0\\0& \boldsymbol{\mathbf{E}} _1\end{pmatrix} \begin{pmatrix} \boldsymbol{\mathbf{D}} '&0\\0&0\end{pmatrix} \begin{pmatrix} \boldsymbol{\mathbf{S}} &0\\0& \boldsymbol{\mathbf{E}} _2\end{pmatrix} \equiv \boldsymbol{\mathbf{T}} _1 ^\dagger \boldsymbol{\mathbf{D}} \boldsymbol{\mathbf{F}} _1~.
+\end{equation}
+[50] 易证 $ \boldsymbol{\mathbf{T}} _1 ^\dagger , \boldsymbol{\mathbf{F}} _1$ 是酉矩阵，
+[51] 可见 $ \boldsymbol{\mathbf{D}} $ 便是定理里要求的对角矩阵，$ \boldsymbol{\mathbf{P}} ^\dagger = \boldsymbol{\mathbf{S}} ^\dagger \boldsymbol{\mathbf{T}} _1 ^\dagger , \boldsymbol{\mathbf{Q}} = \boldsymbol{\mathbf{F}} _1 \boldsymbol{\mathbf{Q}} '$。
+[/SCOPE:s_lemma1]
+[/SCOPE:s_lemma1_let3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_svd",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2是可逆方阵的SVD，是定理1的特例"
+  },
+  {
+    "source_scope": "s_lemma1",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "引理1结合定理2证明定理1"
+  }
+]

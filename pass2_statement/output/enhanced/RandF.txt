@@ -1,0 +1,234 @@
+[SCOPE:root|description|随机变量、概率密度函数]
+文章名: RandF
+标题: 随机变量、概率密度函数
+
+环境标记 (hints):
+  [0] type=exercise heading=习题 1 title=
+  [1] type=example heading=例 1 title=分子的平均动能
+  [2] type=example heading=例 2 title=彩票中奖概率分布
+
+[SCOPE:s_intro|description|随机变量引入]
+[0] 生活中有许多现象可以看做是随机的，例如掷骰子的点数。
+[1] 事实上骰子作为一个宏观物体，其运动可以用一个复杂的动力学方程来精确描述。
+[2] 但经过诸如 “摇匀” 这种混沌过程后，方程的最终结果对初始条件极为敏感，使结果难以预测。
+[3] 这时我们就有充分的理由将该结果看作是随机的，并用一个变量来表示可能的结果（就像把方程中的未知数用 $x$ 表示）。
+[4] 我们把这样的变量称为随机变量。
+[5] 随机变量可以是离散的也可以是连续的，例如掷骰子的点数只能取 1 到 6 的离散值，而打靶时子弹离靶心的距离就可以用一个连续的随机变量表示。
+[6] 一些更复杂事件的结果可能需要用到不止一个随机变量来描述，本文只讨论单个随机变量，
+[7] 但结论容易拓展到多个变量。
+[8] 对于一些离散的随机变量，可能发现每个离散值得到的概率也都是恒定的。
+[9] 对一个公平的骰子，所有的点数得到的概率都是 $1/6$；
+[10] 对一个公平的硬币，掷到正反两面的概率都是 $1/2$。
+[11] 如果骰子或硬币是不公平的，不同结果会对应不同的概率，
+[12] 但这些概率也是固定的。
+[13] 对于连续的随机变量，得到不同值的概率可能也是固定的，然而这些值有无穷多个，应该如何描述他们对应的概率呢？
+
+[/SCOPE:s_intro]
+[SCOPE:s_pdf|description|连续随机变量的概率密度函数]
+[14] 我们可以用概率密度函数（probability density function，PDF）来描述一个变量取各个值的概率。
+[SCOPE:s_pdf_let|let_bind|PDF 变量]
+[15] 假设一个连续随机变量 $x$ 可以在某个区间内取值，我们就把该区间分为 $n$ 份，第 $i$ 个子区间的长度为 $\Delta x_i$ 然后我们做大量的实验（记为 $N$ 次），把随机变量得到的每个值分类归入这 $n$ 个子区间中，并把第 $i$ 个区间中值的个数记为 $N_i$。
+[/SCOPE:s_pdf_let]
+[16] 现在我们可以画出一种表示概率的直方图（histogram），令第 $i$ 个区间的长方形高度为 $y_i = N_i/(N \Delta x_i)$，
+[17] 则每个长方形的面积 $y_i \Delta x_i = N_i/N$ 表示随机变量的值落在第 $i$ 个区间的概率，注意所有长方形的面积之和为 1。
+[18] 现在，我们令区间数 $n\to \infty$ 且每个区间长度 $\Delta x_i \to 0$，
+[19] 则离散的 $y_i$ 值就可以表示为函数 $y = f(x)$。
+[20] 我们可以用定积分来表示 “所有长方形的面积之和为 1”，
+[21] 即1
+[22] \begin{equation}
+\int_{-\infty}^{+\infty} f(x) \,\mathrm{d}{x} = 1~.
+\end{equation}
+[23] 该式叫做概率密度函数的
+[24] 归一化
+[25] 。
+[26] 满足归一化意味着，所有情况发生的概率总和为 1。
+[27a] 若我们要求随机变量落在区间 $[a,b]$ 内的概率
+[27b] 则求 $[a,b]$ 区间内概率密度函数下方的面积即可。
+[28] 更常见地，我们可以用微分式
+[29] \begin{equation}
+\,\mathrm{d}{P} = f(x) \,\mathrm{d}{x} ~,
+\end{equation}
+[30] 表示 $x$ 处长度为 $ \,\mathrm{d}{x} $ 的区间微元对应的概率 $ \,\mathrm{d}{P} $。
+[31] 所以 $f(x)$ 又被称为
+[32] 概率密度（probability density）
+
+[/SCOPE:s_pdf]
+[SCOPE:s_avg|description|平均值]
+[33] 大学物理中，随机变量 $x$ 的平均值通常被表示为 $\bar x$ 或者 $ \left\langle x \right\rangle $，我们以后都会使用。
+[34] 对于离散的情况，某个量的平均值等于每个可能的值出现的概率乘以该值再求和，
+[35] 即
+[36] \begin{equation}
+\left\langle x \right\rangle = \sum_i x_i P_i~.
+\end{equation}
+[37] 要求某个概率密度函数的平均值，我们同样可以将整个区间划分为 $n$ 个子区间，每个区间的概率近似为 $P_i = f(x_i) \Delta x_i$，
+[38] 则平均值为
+[39] \begin{equation}
+\left\langle x \right\rangle \approx \sum_{i=0}^n x_i P_i = \sum_{i=1}^n x_i f(x_i) \Delta x_i~.
+\end{equation}
+[40] 定积分 [链接 L0]
+[41] 的思想，当子区间无限多且取无限小时，上式变为
+[42] \begin{equation}
+\left\langle x \right\rangle = \int_{-\infty}^{+\infty} x f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+
+[/SCOPE:s_avg]
+[SCOPE:s_var|description|方差、标准差]
+[43] 离散情况下，若已知平均值 $ \left\langle x \right\rangle $，方差（variance）（每个数据点离平均值距离的平方的平均值）可定义为
+[44] \begin{equation}
+\sigma_x^2 \approx \sum_{i=0}^n (x_i - \bar x)^2 P_i~.
+\end{equation}
+[45] 与计算平均值的思路类似，将方差拓展到连续变量的情况得
+[46] \begin{equation}
+\sigma_x^2 = \int_{-\infty}^{+\infty} \left(x-\bar x \right) ^2 f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[47] 容易证明
+[48] \begin{equation}
+\sigma_x^2= \left\langle (x- \left\langle x \right\rangle )^2 \right\rangle = \left\langle x^2-2x \left\langle x \right\rangle + \left\langle x \right\rangle ^2 \right\rangle = \left\langle x^2 \right\rangle - \left\langle x \right\rangle ^2~,
+\end{equation}
+[49] 另外把 $\sigma_x$ 称为
+[50] 标准差（standard deviation）
+
+[/SCOPE:s_var]
+[SCOPE:s_exercise1|description|习题1]
+[51] 习题 1
+[52] 某直流电源存在微小误差，其电压随时间的函数为
+[53] \begin{equation}
+U(t) = U_0 + \varepsilon \sin\left(\omega t\right) ~,
+\end{equation}
+
+[/SCOPE:s_exercise1]
+[SCOPE:s_avg_func|description|任意函数的平均]
+[54] 更一般地，我们可以对离散的随机变量 $x_i$ 定义任意函数 $g(x)$ 的平均值为
+[55] \begin{equation}
+\left\langle g \right\rangle = \sum_{i=0}^n g(x_i) P_i~,
+\end{equation}
+[56] 例如在计算平均值和方差时，$g(x)$ 分别取 $x$ 和 $(x - \bar x)^2$。
+[57] 拓展到连续的随机变量，有
+[58] \begin{equation}
+\left\langle g \right\rangle = \int_{-\infty}^{+\infty} g(x) f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+
+[/SCOPE:s_avg_func]
+[SCOPE:s_example1|description|例1 分子的平均动能]
+[59] 例 1 分子的平均动能
+[SCOPE:s_example1_let|let_bind|例1 变量]
+[60] 某气体中含有大量分子（阿伏伽德罗常数数量级：$10^{23}$），若假设某时刻它们的速度大小 $v$ 的概率密度函数为
+[61] \begin{equation}
+f(v) = A \sin^{2}\left(\frac{\pi v}{v_{m}}\right) \qquad (v \in [0, v_{m}])~,
+\end{equation}
+[/SCOPE:s_example1_let]
+[62] 常数 $A$，使 $f(v)$ 满足归一化（式 1 ）
+[63] 分子速度大小的平均值
+[64] 分子速度大小方差
+[65] 分子动能 $E_k = mv^2/2$ 的平均值
+[66] 分子动能的方差
+[67] 1. 将 $f(v)$ 代入密度函数的归一化条件式 1
+[68] \begin{equation}
+A\int_{0}^{v_{m}} \sin^{2}\left(\frac{\pi v}{v_{m}}\right) \,\mathrm{d}{v} = 1~.
+\end{equation}
+[69] \begin{equation}
+\int \sin^2 x \,\mathrm{d}{x} = \int\frac{(1-\cos 2x)}{2} \,\mathrm{d}{x} = \frac{1}{2}x-\frac{1}{4}\sin 2x+C~,
+\end{equation}
+[70] \begin{equation}
+\begin{aligned}
+&\int_{0}^{v_{m}} \sin^{2}\left(\frac{\pi v}{v_{m}}\right) \,\mathrm{d}{v} =\frac{v_{m}}{\pi}\int_{0}^{v_{m}} \sin^{2}\left(\frac{\pi v}{v_{m}}\right) \,\mathrm{d}\left(\frac{\pi v}{v_{m}} \right) \\
+&=\frac{v_{m}}{\pi} \left(\frac{1}{2}\frac{\pi v}{v_{m}}-\frac{1}{4}\sin \frac{2\pi v}{v_{m}} \right) \Bigg|_{0}^{v_{m}}=\frac{v_{m}}{\pi} \left(\frac{\pi}{2}-0 \right) =\frac{v_{m}}{2}~.
+\end{aligned}
+\end{equation}
+[71] 式 15
+[72] 式 13
+[73] \begin{equation}
+A=\frac{2}{v_{m}}~.
+\end{equation}
+[74] 2.由式 11
+[75] \begin{equation}
+\begin{aligned}
+\left\langle v \right\rangle &=A\int_{0}^{v_{m}} v \sin^{2}\left(\frac{\pi v}{v_{m}}\right) \,\mathrm{d}{v} =\frac{A}{2}\int_0^{v_m}v \left[1-\cos \left(\frac{2\pi v}{v_{m}} \right) \right] \,\mathrm{d}{v} \\
+&=\frac{…[truncated]…{2\pi v}{v_{m}}\right) \cdot\frac{1}{ \left(\frac{2\pi}{v_m} \right) ^2} \right] \right\} \Bigg|_{0}^{v_{m}}\\
+&=\frac{A}{2} \left(\frac{v_{m}^2}{2}-\frac{v_{m}^2}{4\pi^2}+\frac{v_{m}^2}{4\pi^2} \right) =\frac{v_{m}}{2}~.
+\end{aligned}
+\end{equation}
+[76] 3. 使用式 8 有
+[77] \begin{equation}
+\sigma_v^2= \left\langle v^2 \right\rangle - \left\langle v \right\rangle ^2~,
+\end{equation}
+[78] \begin{equation}
+\begin{aligned}
+\left\langle v^2 \right\rangle &=A\int_{0}^{v_{m}} v^2 \sin^{2}\left(\frac{\pi v}{v_{m}}\right) \,\mathrm{d}{v} =\frac{A}{2}\int_{0}^{v_{m}}v^2 \left[1-\cos \left(\frac{2\pi v}{v_{m}} \right) \right] \,\mathrm{d}{v} \…[truncated]…\pi v}{v_{m}}\right) \cdot\frac{2v}{ \left(\frac{2\pi}{v_{m}} \right) ^2} \right\} \right\} \Bigg|_0^{v_{m}}\\
+&=\frac{A}{2} \left(\frac{v_m^3}{3}-\frac{v_{m}^3}{2\pi^2}+\frac{v_{m}^3}{2\pi^2} \right) =\frac{v_{m}^2}{3}~.
+\end{aligned}
+\end{equation}
+[79] 式 17
+[80] 式 19
+[81] 式 18
+[82] \begin{equation}
+\sigma_v^2=\frac{v_{m}^2}{3}-\frac{v_{m}^2}{4}=\frac{v_m^2}{12}~.
+\end{equation}
+[83] \begin{equation}
+\left\langle E_k \right\rangle = \left\langle \frac{mv^2}{2} \right\rangle =\frac{m}{2} \left\langle v^2 \right\rangle =\frac{mv_{m}^2}{6}~.
+\end{equation}
+[84] \begin{equation}
+\sigma_{E_k}= \left\langle E_k^2 \right\rangle - \left\langle E_k \right\rangle ^2~.
+\end{equation}
+[85] \begin{equation}
+\left\langle E_k^2 \right\rangle =\frac{m^2}{4} \left\langle v^4 \right\rangle ~,
+\end{equation}
+[86] \begin{equation}
+\begin{aligned}
+\left\langle v^4 \right\rangle &=A\int_0^{v_{m}}v^4 \sin^{2}\left(\frac{\pi v}{v_{m}}\right) \,\mathrm{d}{v} =\frac{A}{2}\int_0^{v_{m}}v^4 \left[1-\cos \left(\frac{2\pi v}{v_{m}} \right) \right] \,\mathrm{d}{v} \\
+&=\frac{A}{2}\cdot\frac{v^5}{5}\bigg|_0^{v_{m}}=\frac{v_m^4}{5}~.
+\end{aligned}
+\end{equation}
+[87] 式 21
+[88] 式 22
+[89] 式 23
+[90] \begin{equation}
+\begin{aligned}
+\sigma_{E_k}&=\frac{m^2v_m^4}{20}-\frac{m^2v_m^4}{36}=\frac{m^2v_m^4}{45}~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_example1]
+[SCOPE:s_example2|description|例2 彩票中奖概率分布]
+[91] 例 2 彩票中奖概率分布
+[SCOPE:s_example2_let|let_bind|例2 变量]
+[92] 假设某种彩票从 $t = 0$ 开始每隔 $\Delta t$ 开奖一次，开奖时每张彩票有 $\Delta P$ 的概率中奖，每张彩票可以参加任意多次抽奖2。
+[93] 如果假设主办方把开奖的间隔 $\Delta t$ 不断缩短，并且把 $\Delta P$ 按比例缩小，
+[94] 即保持 $\lambda = {\Delta P}/{\Delta t}$ 不变。
+[95] 考虑极限 $\Delta t\to 0$，若持有一张彩票，求第一次中奖时间概率分布 $f(t)$ 以及数学期望值。
+[/SCOPE:s_example2_let]
+[96] 先考虑离散情况，按照高中概率论中的方法画出概率树（图 1 ）
+[97] 图 1：彩票中奖概率树
+[98] 在第 $N$ 次开奖时第一次中奖的概率为（注意要保证前 $N-1$ 次未中奖）
+[99] \begin{equation}
+\begin{aligned}
+P(N) &= (1-\Delta P)^{N-1} \Delta P\\
+&= (1-\lambda\Delta t)^{\frac{t}{\Delta t}-1} \lambda\Delta t\\
+&= [(1-\lambda\Delta t)^{\frac{1}{\lambda\Delta t}}]^{\lambda t} \frac{\lambda\Delta t}{1-\lambda\Delta t}~.
+\end{aligned}
+\end{equation}
+[100] 接下来考虑极限 $\Delta t\to 0$，此过程中保持 $\lambda$ 为常数。
+[101] 那么根据式 7 ，上式中方括号等于 $1/ \mathrm{e} $，
+[102] 所以第一次中奖时间的概率密度函数等于每次中奖的概率除以开奖时间间隔3
+[103] \begin{equation}
+f(t) = \lim_{\Delta t\to 0} \frac{P(N)}{\Delta t} = \lambda \mathrm{e} ^{-\lambda t}\lim_{\Delta t\to 0} \frac{1}{1-\lambda\Delta t} = \lambda \mathrm{e} ^{-\lambda t}~.
+\end{equation}
+[104] 图 2：第一次中奖时间概率密度函数 $f(x)$，平均值为 $1/\lambda$。
+[105] 可以验证 $f(x)$ 满足归一化条件
+[106] \begin{equation}
+\int_0^{+\infty} f(t) \,\mathrm{d}{t} = \int_0^{+\infty} \lambda \mathrm{e} ^{-\lambda t} \,\mathrm{d}{t} = 1~,
+\end{equation}
+[107] \begin{equation}
+T = \int_0^{+\infty} t f(t) \,\mathrm{d}{t} = \int_0^{+\infty}t \lambda \mathrm{e} ^{-\lambda t} \,\mathrm{d}{t} = \frac{1}{\lambda}~.
+\end{equation}
+[108] \begin{equation}
+P(t) = \int_0^{t} f(t') \,\mathrm{d}{t'} = 1 - \mathrm{e} ^{-\lambda t}~.
+\end{equation}
+[109] 表1：中奖概率
+[110] 累计时间 $t$ $T/3$ $T/2$ $T$ $2T$ $3T$ $4T$ $5T$
+[111] 概率 $P(t)$ $0.283$ $0.393$ $0.632$ $0.865$ $0.950$ $0.982$ $0.993$
+
+跨文章引用:
+  [L0] 定积分 → DefInt
+[/SCOPE:s_example2]
+[/SCOPE:root]

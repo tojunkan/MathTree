@@ -1,0 +1,105 @@
+[SCOPE:root|description|等距变换]
+文章名: IsoMe
+标题: 等距变换
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+  [1] type=theorem heading=定理 1 title=
+  [2] type=theorem heading=定理 2 title=
+
+[SCOPE:s_def1|description|定义 1]
+[0] 定义 1
+[SCOPE:s_def1_let1|let_bind|定义 1 的变量]
+[1] $(V,f),(V',f')$ 是两个正交空间或辛空间。
+[2] 若线性映射 $\sigma:(V,f)\rightarrow (V',f')$ 是双射且保内积不变，
+[/SCOPE:s_def1_let1]
+[3] 即
+[4] \begin{equation}
+f( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} )=f'(\sigma \boldsymbol{\mathbf{x}} ,\sigma \boldsymbol{\mathbf{y}} )~,
+\end{equation}
+[5] 等距映射
+[6] 由于等距变换是线性映射，
+[7] 因此保加法和数乘运算，是全体向量的自同构映射。
+[8] 由定义式可知，等距变换复合依然是等距变换。
+[9] 因此全体等距变换的集合可记作 $ \operatorname {Aut}(V,f)$，表明其自同构成群和保内积的性质。
+[10] 从正交变换的定义 1 可知，正交变换特指欧式空间中度量矩阵为 $E$ 的等距变换，
+[11] 因此我们可以拓展正交变换的定义为非退化正交空间的等距变换，并称非退化辛空间的等距变换为辛变换。
+[12] 等距变换的保内积性质意味着其必然受度量矩阵限制。
+[SCOPE:s_def1_let2|let_bind|矩阵表示]
+[13] 设 $\sigma,f$ 的矩阵表示分别为 $A$ 和 $G$，任意向量 $ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} \in V$，
+[14] 则有 $ \boldsymbol{\mathbf{x}} ^{T}G \boldsymbol{\mathbf{y}} =(A \boldsymbol{\mathbf{x}} )^TG(A \boldsymbol{\mathbf{y}} )$，也就是说：
+[15] \begin{equation}
+A^TGA=G~.
+\end{equation}
+[/SCOPE:s_def1_let2]
+[16] 若 $(V,f)$ 是非退化的正交空间和辛空间，
+[17] 则其上的线性变换都可以诱导出伴随变换，
+[18] 所以若设等距变换的伴随变换为 $\sigma':V\rightarrow V$，
+[19] 则有 $f(\sigma( \boldsymbol{\mathbf{x}} ), \boldsymbol{\mathbf{y}} )=f( \boldsymbol{\mathbf{x}} ,\sigma'( \boldsymbol{\mathbf{y}} ))$，
+[20] 因此其伴随变换的形式必然也受度量矩阵约束。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理 1]
+[21] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[22] 设 $(V,f)$ 为 n 维非退化正交（辛）空间，$\sigma$ 是双射线性变换,$\sigma'$ 是其伴随变换。
+[23] 则 $\sigma$ 是等距变换当且仅当 $\sigma'\sigma=1$
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm1_proof|description|定理 1 的证明]
+[24] 证明：
+[SCOPE:s_thm1_proof_let|let_bind|证明中的向量]
+[25] 设 $ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} $ 是任意两个向量，$\sigma$ 是等距变换，由定义得：$f(\sigma( \boldsymbol{\mathbf{x}} ),\sigma( \boldsymbol{\mathbf{y}} ))=f( \boldsymbol{\mathbf{x}} ,\sigma'\sigma( \boldsymbol{\mathbf{y}} ))=f( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} )$。
+[26] 因此，$f( \boldsymbol{\mathbf{x}} ,\sigma'\sigma( \boldsymbol{\mathbf{y}} )- \boldsymbol{\mathbf{y}} )=0$ 对任意 $ \boldsymbol{\mathbf{x}} $ 成立。
+[/SCOPE:s_thm1_proof_let]
+[27] 由于非退化线性空间的根只有零向量，
+[28] 所以 $\sigma'\sigma( \boldsymbol{\mathbf{y}} )= \boldsymbol{\mathbf{y}} $，得证。
+[/SCOPE:s_thm1_proof]
+[29] 欧几里得空间上的正交变换有一系列结论，比如引理 3 可以拓展到非退化正交（辛）空间：
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理 2]
+[30] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理 2 的变量]
+[31] $(V,f)$ 为非退化正交（辛）空间，若 $W$ 是等距变换 $\sigma$ 的不变子空间，
+[32] 则其正交补 $W^{\bot}$ 也为该变换的不变子空间。
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm2_proof|description|定理 2 的证明]
+[33] 证明：
+[SCOPE:s_thm2_proof_let1|let_bind|简化记号]
+[34] 为证明方便，接下来用 $(,)$ 表广义内积运算，
+[35] 即 $( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} )\equiv f( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} ) $。
+[/SCOPE:s_thm2_proof_let1]
+[SCOPE:s_thm2_proof_let2|let_bind|证明中的向量]
+[36] 设任意 $ \boldsymbol{\mathbf{x}} \in W, \boldsymbol{\mathbf{y}} \in W^{\bot}$，
+[37] 则由定义得 $(\sigma ( \boldsymbol{\mathbf{x}} ),\sigma( \boldsymbol{\mathbf{y}} ))=( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} )=0$。
+[/SCOPE:s_thm2_proof_let2]
+[38] 由于 $W$ 是 $\sigma$ 的不变子空间，
+[39] 则 $\sigma ( \boldsymbol{\mathbf{x}} )\in W$。
+[40] 因此 $\sigma( \boldsymbol{\mathbf{y}} )\in W^{\bot}$，得证。
+[/SCOPE:s_thm2_proof]
+[41] 非退化线性空间是可以有退化的子空间的。
+[42] 比如 $f( \boldsymbol{\mathbf{e}} _1, \boldsymbol{\mathbf{e}} _1)=-1,f( \boldsymbol{\mathbf{e}} _2, \boldsymbol{\mathbf{e}} _2)=1$ 则 $ \boldsymbol{\mathbf{e}} _1+ \boldsymbol{\mathbf{e}} _2$ 对应的一维子空间便是退化的。
+[43] 根据定理 2 和定理 3 可知，若 $W$ 是非退化的，
+[44] 则 $V$ 内总存在一组基使得 $V=W\oplus W^{\bot}$。
+[45] 因此，如果 $W$ 同时还是某一等距变换的不变子空间，
+[46] 则该等距变换在 $V$ 下是块对角形式。
+[/SCOPE:s_thm2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是定义1的推论"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2基于等距变换定义"
+  }
+]

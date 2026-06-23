@@ -1,0 +1,273 @@
+{
+  "article_name": "ReNum",
+  "statements": [
+    {
+      "stmt_id": "st_ex1_claim",
+      "subtype": "exercise",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_proof",
+      "subtype": "exercise",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "m",
+        "n",
+        "p",
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_def",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "L",
+        "R",
+        "l",
+        "r",
+        "l'",
+        "r'"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "L",
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_cond1",
+      "subtype": "condition",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "l",
+        "l'"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_cond2",
+      "subtype": "condition",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "r",
+        "r'"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_cond3",
+      "subtype": "condition",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "l",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_cond4",
+      "subtype": "condition",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "L"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_claim",
+      "subtype": "exercise",
+      "clause_range": [
+        36,
+        37
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_claim",
+      "subtype": "exercise",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex3",
+      "exposed_entities": [
+        "L",
+        "R",
+        "N",
+        "l",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_ex4_claim",
+      "subtype": "exercise",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex4_hint1",
+      "subtype": "remark",
+      "clause_range": [
+        48,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex4",
+      "exposed_entities": [
+        "l",
+        "L_x",
+        "L_y"
+      ]
+    },
+    {
+      "stmt_id": "st_ex4_hint2",
+      "subtype": "remark",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex4_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        51,
+        51
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        59,
+        60
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_corollary",
+      "subtype": "corollary",
+      "clause_range": [
+        61,
+        61
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex5_claim",
+      "subtype": "exercise",
+      "clause_range": [
+        76,
+        77
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex6_claim",
+      "subtype": "exercise",
+      "clause_range": [
+        90,
+        91
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex6",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_cond1",
+      "target": "st_def1_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_cond2",
+      "target": "st_def1_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_cond3",
+      "target": "st_def1_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_cond4",
+      "target": "st_def1_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_theorem",
+      "target": "st_thm1_corollary",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

@@ -1,0 +1,311 @@
+[SCOPE:root|description|李导数]
+文章名: lie
+标题: 李导数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+  [1] type=theorem heading=定理 1 title=
+  [2] type=theorem heading=定理 2 title=
+  [3] type=theorem heading=定理 3 title=
+  [4] type=theorem heading=定理 4 title=
+  [5] type=corollary heading=推论 1 title=
+  [6] type=theorem heading=定理 5 title=
+
+[0] TODO: 场不变，定理 5
+
+[1] 区别于仿射联络，李导数（Lie derivative）$\mathcal{L}:\mathfrak{X}(M)\times\mathfrak{X}(M)\to\mathfrak{X}(M)$ 是对向量场微分的另一种思路。
+
+[SCOPE:s_def1|description|定义1]
+[2] 定义 1
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[3] 设 $V,W$ 为 $M$ 上的任意光滑向量场，令 $\theta_t:M_t\rightarrow M$ 为 $V$ 的流，定义 $W$ 关于 $V$ 的李导数为
+[4a] (p)}=\lim_{t\to0}\frac{(\theta_{-t})_*W_{\theta_t
+[4b] (p)}-W_p}{t}~.\end{equation}
+[/SCOPE:s_def1_let]
+[5] 由前推定义可知，$\theta_{t*}W_q\in T_{\theta_t(q)}M$，
+[6] 因而 $(\theta_{-t})_*W_{\theta_t(p)}\in T_p M$，
+[7] 所以该定义是合理的，我们利用前推得到了同一切空间的两个向量并进行微分。
+[8] 其次，我们可以证明 $(\mathcal{L}_VW)_p=[V,W]_p$，因李括号将两个光滑切场映射为光滑切场，
+[9] 从而可知李导数亦然如此，
+[10] 即 $p\mapsto(\mathcal{L}_VW)_p$ 是光滑切场。
+[11] 结合李括号和前推的性质，我们有：
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理1]
+[12] 定理 1
+[13] $\mathcal{L}_VW=-\mathcal{L}_WV.$
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[14] 如果 $F:M\rightarrow N$ 是微分同胚，
+[15] 则 $F_*(\mathcal{L}_VW)=\mathcal{L}_{F_*V}F_*W.$
+[16] 在这里，我们只证明最后一条，
+[17] 即 $F_*[V,W]_{p}=[F_*V,F_*W]|_{F(p)}$。
+[18] 由于 $F$ 是微分同胚，
+[19] 那么对于任意 $X\in \mathcal J(M)$，我们都可以在 $N$ 上找到唯一的向量场与之关联。
+[20] 因此我们可以设 $Y_i=F_*X_i\in \mathcal J(N),f\in C^{\infty}N$，
+[/SCOPE:s_thm1_let]
+[21] 那么我们有
+[22] \begin{equation}
+\begin{aligned}
+F_*[X_1,X_2]f&=[X_1,X_2](f\circ F)\\
+&=(X_1X_2-X_2X_1)f\circ F~,
+\end{aligned}
+\end{equation}
+[23] \begin{equation}
+\begin{aligned}
+(X_1X_2)(f\circ F)&=X_1[(Y_2f)\circ F]\\
+&=(Y_1Y_2f)\circ F~,
+\end{aligned}
+\end{equation}
+[24] 同理可得：$(X_2X_1)(f\circ F)=(Y_2Y_1f)\circ F$。
+[25] 代入
+[26] 式 2 [链接 L0]
+[27] \begin{equation}
+\begin{aligned}
+F_*[X_1,X_2]f&=(Y_1Y_2f-Y_2Y_1f)\circ F\\
+&=([Y_1,Y_2]f)\circ F=([Y_1,Y_2]f)|_{F(p)}~,
+\end{aligned}
+\end{equation}
+[28] 定理得证。
+
+[/SCOPE:s_thm1]
+[29] 同样设 $\theta$ 是光滑切场 $X$ 的流，对于任意 $p\in M$，$\theta_t$ 是 $p$ 点附近一邻域与 $\theta_t(p)$ 附近一邻域的微分同胚——这意味着前推和拉回都是有意义的。
+[30] 于是根据拉回对张量场的定义可知，若设 $\tau$ 是 $k$ 阶张量场，
+[31] 则 $(\theta_t^*\tau)_p=\theta_t^*\tau_{\theta_t(p)}$，依然得到 $p$ 点上的一个 $k$ 阶张量场。
+[32] 因此我们可以定义 $\tau$ 关于 $X$ 的李导数为：
+[33] \begin{equation}
+\left(\mathcal{L}_X \tau\right)_p=\left.\frac{\partial}{\partial t}\right|_{t=0}\left(\theta_t^* \tau\right)_p=\lim _{t \rightarrow 0} \frac{\theta_t^* \tau_{\theta_t(p)}-\tau_p}{t}~.
+\end{equation}
+[34] 可以证明，李导数对光滑张量场作用，依然得到光滑张量场。
+[35] 接下来，我们罗列一些李导数的常见性质。
+
+[SCOPE:s_thm2|description|定理2]
+[36] 定理 2
+[37] 在光滑流形 $M$ 上讨论。
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[38] 设 $\sigma,\tau$ 为协变张量场，$f$ 为光滑函数，$\omega,\eta$ 为微分形式，$X,Y_i$ 是光滑向量场。
+[/SCOPE:s_thm2_let]
+[39] $\mathcal{L}_X f=X f$.
+[40] $\mathcal{L}_X(f \sigma)=\left(\mathcal{L}_X f\right) \sigma+f \mathcal{L}_X \sigma$.
+[41] $\mathcal{L}_X(\sigma \otimes \tau)=\left(\mathcal{L}_X \sigma\right) \otimes \tau+\sigma \otimes \mathcal{L}_X \tau$.
+[42] $\mathcal{L}_X(\omega \wedge \eta)=\mathcal{L}_X \omega \wedge \eta+\omega \wedge \mathcal{L}_X \eta$.
+[43] $\left.\left.\left.\mathcal{L}_X(Y\lrcorner \omega\right)=\left(\mathcal{L}_X Y\right)\right\lrcorner \eta+Y\right\lrcorner \mathcal{L}_X \omega$.
+[44] 设 $Y_1, \ldots, Y_k$ 是光滑向量场，
+[45] 则
+[46] \begin{equation}
+\begin{aligned}
+\mathcal{L}_X\left(\sigma \left(Y_1, \ldots,\right.\right. & \left.\left.Y_k\right)\right)=\left(\mathcal{L}_X \sigma\right)\left(Y_1, \ldots, Y_k\right) \\
+& +\sigma\left(\mathcal{L}_X Y_1, \ldots, Y_k\right)+\cdots+\sigma\left(Y_1, \ldots, \mathcal{L}_X Y_k\right)~.
+\end{aligned}
+\end{equation}
+[47] 证明：
+[48] $f$ 可看作 $0$ 阶张量场，
+[49] 因此其李导数亦可使用本节定义，
+[50] \begin{equation}
+\left(\mathcal{L}_X f\right)_p=\left.\frac{\partial}{\partial t}\right|_{t=0}\left(\theta_t^* f\right)_p=\left.\frac{\partial}{\partial t}\right|_{t=0}(f\circ\theta_t(p))=X_pf~.
+\end{equation}
+[51] 最后一个等号来自于 $X$ 是 $\theta$ 最小生成元的定义。
+[52] $3-5$ 条可视作李导数的莱布尼兹律，在这里只证第三条，，其余同理可得。
+[53] \begin{equation}\begin{aligned}
+(\mathcal{L}_X(\sigma\otimes\tau))_p& =\lim_{t\to0}\frac{\theta_t^*(\sigma\otimes\tau)_{\theta_t(p)}-(\sigma\otimes\tau)_p}t \\
+&=\lim_{t\to0}\frac{\theta_t^*\sigma_{\theta_t(p)}\otimes\theta_t^*\tau_{\theta_t(p)}-\sig…[truncated]…_t(p)}\otimes\frac{\theta_t^*\tau_{\theta_t(p)}-\tau_p}t+\lim_{t\to0}\frac{\theta_t^*\sigma_{\theta_t(p)}-\sigma_p}t\otimes\tau_p \\
+&=\sigma_{p}\otimes(\mathcal{L}_{X}\tau)_{p}+(\mathcal{L}_{X}\sigma)_{p}\otimes\tau_{p}~.
+\end{aligned}\end{equation}
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|定理3]
+[54] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[55] 设 $f \in C^{\infty}(M)$，
+[/SCOPE:s_thm3_let]
+[56] 则 $ \mathcal{L}_X( \,\mathrm{d}{f} )= \,\mathrm{d}\left(\mathcal{L} _X f \right) $
+[57] $ \,\mathrm{d}{f} $ 是一阶张量场，
+[58] 因此我们可以利用定理 2 第六条。
+[59] 两边作用在任意光滑向量场 $Y$ 上，得
+[60] \begin{equation}
+\mathcal (L_X \,\mathrm{d}{f} )(Y)=X( \,\mathrm{d}{f} (Y))- \,\mathrm{d}{f} ([X,Y])~.
+\end{equation}
+[61] 并利用余切场的定义，
+[62] 即 $ \,\mathrm{d}{f} (X)\equiv Xf$，代入上式得：
+[63] \begin{equation}
+\begin{aligned}
+X( \,\mathrm{d}{f} (Y))- \,\mathrm{d}{f} ([X,Y])&=XYf-(XY-YX)f\\
+&=YXf= \,\mathrm{d}\left(Xf \right) (Y)\\
+&= \,\mathrm{d}\left(\mathcal L_Xf \right) (Y)~,
+\end{aligned}
+\end{equation}
+[64] 因此得证。
+
+[/SCOPE:s_thm3]
+[65] 尽管我们可以利用式 6 第六条来得到李导数对微分形式的作用结果，然而其成本是不可忽视的。
+[66] 对于任意 $p\in M$，我们需要引入定义在该点邻域的数个向量场 $(Y_1,Y_2...Y_k)$，还要算得微分形式的作用结果。
+[67] 为了避免这样的麻烦，本节介绍一个便携的计算方法。
+
+[SCOPE:s_thm4|description|定理4]
+[68] 定理 4
+[SCOPE:s_thm4_let|let_bind|定理4的变量]
+[69] 设 $X$ 为流形 $M$ 上的任意矢量场，$\omega$ 是 $k$ 微分形式。
+[/SCOPE:s_thm4_let]
+[70] 那么我们有
+[71] \begin{equation}
+\mathcal L_X\omega=i_X( \,\mathrm{d}{\omega} )+ \,\mathrm{d}\left(i_X\omega \right) ~.
+\end{equation}
+[72] 证明：
+[73] 利用数学归纳法可以证明该结论。
+[SCOPE:s_thm4_cases|cases|归纳法分情况]
+[74] 假设 $\omega$ 为 $n$ 形式。
+[SCOPE:s_thm4_c0|let_bind|n=0情况]
+[75] 当 $n=0$，设 $\omega=f$，$f$ 为光滑函数。
+[76] 根据缩并定义可知，$i_X(df)=Xf$。
+[77] 所以
+[78] \begin{equation}
+\begin{aligned}
+i_X( \,\mathrm{d}{\omega} )+ \,\mathrm{d}\left(i_X\omega \right) &=Xf+ \,\mathrm{d}\left(i_Xf \right) \\
+&=Xf=\mathcal L_Xf~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_thm4_c0]
+[SCOPE:s_thm4_c1|let_bind|n=1情况]
+[79] 当 $n=1$ 时，$\omega=\sum_i u_i \,\mathrm{d}{v} _i$，其中 $u,v$ 为任意函数。
+[80] 由于算符 $ \,\mathrm{d}{,} \mathcal L_X,i_X$ 都是线性映射，
+[81] 因此只要证明对任意 $u \,\mathrm{d}{v} $ 成立即可。
+[82] 分别计算后，我们有：
+[83] \begin{equation}
+\begin{aligned}
+i_X( \,\mathrm{d}{\omega} )&=i_X( \,\mathrm{d}\left(u \,\mathrm{d}{v} \right) )=i_X( \,\mathrm{d}{u} \wedge \,\mathrm{d}{v} )\\
+&=i_X( \,\mathrm{d}{u} )\wedge \,\mathrm{d}{v} - \,\mathrm{d}{u} i_X( \,\mathrm{d}{v} )\\…[truncated]…\mathrm{d}{v} ) \right) \\
+&= \,\mathrm{d}\left(ui_X \,\mathrm{d}{v} \right) = \,\mathrm{d}{u} (Xv)+u \,\mathrm{d}\left(Xv \right) \\
+\mathcal L_X(u \,\mathrm{d}{v} )&=Xu \,\mathrm{d}{v} +u \,\mathrm{d}\left(Xv \right) ~,
+\end{aligned}
+\end{equation}
+[84] 式 11 [链接 L1]
+[85] 显然成立。
+[/SCOPE:s_thm4_c1]
+[SCOPE:s_thm4_cn|let_bind|归纳步骤]
+[86] 假设定理对 $1< n< k$ 成立，且 $\omega=\sum_{I}\omega_I \,\mathrm{d}{x} ^{i_1}\wedge \,\mathrm{d}{x} ^{i_2}...\wedge \,\mathrm{d}{x} ^{i_k}$。
+[87] 那么可以设 $\alpha=\omega_I \,\mathrm{d}{x} ^{i_1},\beta= \,\mathrm{d}{x} ^{i_2}\wedge...\wedge \,\mathrm{d}{x} ^{i_k}$，
+[88] 则 $\omega=\sum_I\alpha\wedge\beta$。
+[89] 只需要证明定理对其中一个排列成立即可。
+[90] 下面为表示方便，用 $X\lrcorner$ 来表示缩并。
+[91] 利用 $ \,\mathrm{d}{,} \mathcal L$ 和缩并算符的性质，我们可以得到：
+[92] \begin{equation}
+\begin{aligned}
+\mathcal L_X\omega&=L_X(\alpha\wedge\beta)\\
+&=(L_X\alpha)\wedge\beta+\alpha\wedge (\mathcal L_X\beta)\\
+&=(X\lrcorner( \,\mathrm{d}{\alpha} )+ \,\mathrm{d}\left(X\lrcorner\alpha \right) )\wedge\beta+\alpha\wedge(X\lr…[truncated]…left(X\lrcorner\beta \right) )\\
+&=[X\lrcorner( \,\mathrm{d}{\alpha} )+ \,\mathrm{d}\left(X\lrcorner\alpha \right) ]\wedge\beta+\alpha\wedge[X\lrcorner( \,\mathrm{d}{\beta} )+ \,\mathrm{d}\left(X\lrcorner\beta \right) ]~.
+\end{aligned}
+\end{equation}
+[93] 另有把 $\omega=\alpha\wedge\beta$ 看作一个整体，
+[94] 则
+[95] \begin{equation}
+\begin{aligned}
+\mathcal L_X\omega&=L_X(\alpha\wedge\beta)\\
+&=X\lrcorner( \,\mathrm{d}{\alpha} \wedge\beta-\alpha\wedge \,\mathrm{d}{\beta} )+ \,\mathrm{d}{(X\lrcorner\alpha)\wedge\beta-\alpha\wedge(X\lrcorner\beta)} )\\
+&=(X\lrcorn…[truncated]…eta} )\\
+&+ \,\mathrm{d}\left(X\lrcorner\alpha \right) \wedge\beta+(X\lrcorner\alpha)\wedge \,\mathrm{d}{\beta} - \,\mathrm{d}{\alpha} \wedge(X\lrcorner\beta)+\alpha\wedge \,\mathrm{d}\left(X\lrcorner\beta \right) =(14)~,
+\end{aligned}
+\end{equation}
+[96] 得证。
+
+[/SCOPE:s_thm4]
+[/SCOPE:s_thm4_cases]
+[/SCOPE:s_thm4_cn]
+[SCOPE:s_cor1|description|推论1]
+[97] 推论 1
+[SCOPE:s_cor1_let|let_bind|推论1的变量]
+[98] 设 $X$ 是光滑向量场，$\omega$ 是 $k$ 形式，
+[/SCOPE:s_cor1_let]
+[99] 则
+[100] \begin{equation}
+\mathcal L_X( \,\mathrm{d}{\omega} )= \,\mathrm{d}\left(\mathcal L_X\omega \right) ~.
+\end{equation}
+[101] 证明：
+[102] 代入式 11 ，我们得
+[103] \begin{equation}
+\begin{aligned}
+\,\mathrm{d}\left(\mathcal L_X\omega \right) &= \,\mathrm{d}\left(X\lrcorner \,\mathrm{d}{\omega} + \,\mathrm{d}\left(X\lrcorner\omega \right) \right) \\
+&= \,\mathrm{d}\left(X\lrcorner \,\mathrm{d}{\omega} \right) \\
+\mathcal L_X \,\mathrm{d}{\omega} &=X\lrcorner \,\mathrm{d}{ \,\mathrm{d}{}} \omega+ \,\mathrm{d}\left(X\lrcorner \,\mathrm{d}{\omega} \right) \\
+&= \,\mathrm{d}\left(X\lrcorner \,\mathrm{d}{\omega} \right) ~,
+\end{aligned}
+\end{equation}
+[104] 因此得证。
+[105] 至此，利用上述结论，我们可以简便地计算微分形式的李导数，不再需要引入向量场并计算微分形式和向量场作用的结果。
+
+[/SCOPE:s_cor1]
+[106] 依旧默认 $X$ 为光滑向量场而 $\tau$ 是光滑张量场。
+[107] 由李导数对张量场作用的定义可知，若 $\tau$ 在 $X$ 的积分曲线流下不变，
+[108] 即 $\theta_t^*\tau_{\theta_t(p)}=\tau_p$，
+[109] 则张量场关于 $X$ 的李导数不变。
+[110] 实际上反向也是成立的。
+
+[SCOPE:s_thm5|description|定理5]
+[111] 定理 5
+[SCOPE:s_thm5_let|let_bind|定理5的变量]
+[112] $X$ 是光滑流形 $M$ 上的光滑切场。
+[/SCOPE:s_thm5_let]
+[113] 任意光滑张量场 $\tau$ 在 $X$ 的流下不变当且仅当 $\mathcal L_X\tau=0$。
+[114] 可以这样理解，设被李导数作用后的张量场为 $\xi$，
+[115] 则对于任意 $p\in M$，$\xi_p=\tau_p=\theta_t^*\tau_{\theta_t(p)}$。
+[116] 最常见的张量场是度规张量 $g$，若度规张量在某光滑向量场下不变，我们便把该光滑向量场称作 $Killing$ 矢量场。
+[117] $Killing$ 方程是等价于 $\mathcal L_X\tau=0$ 的若干方程。
+[118] $Xg_{ij}+g_{jk}\frac{\partial X^k}{\partial x^i}+g_{ik}\frac{\partial X^k}{\partial x^j}=0$。
+[119] 因为 $g=g_{ij} \,\mathrm{d}{x} ^i\otimes \,\mathrm{d}{x} ^j$，利用式 16 ，我们有：
+[120] \begin{equation}
+\begin{aligned}
+\mathcal L_X g&=(\mathcal L_Xg_{ij}) \,\mathrm{d}{x} ^i\otimes \,\mathrm{d}{x} ^j+
+g_{ij}(\mathcal L_X \,\mathrm{d}{x} ^i)\otimes \,\mathrm{d}{x} ^j+g_{ij} \,\mathrm{d}{x} ^i\otimes \mathcal L_X \,\mathrm{d}{x} ^j\\
+&…[truncated]…\mathrm{d}{x} ^i\otimes \frac{\partial X^k}{\partial x^j} \,\mathrm{d}{x} ^j\\
+&=(Xg_{ij}+g_{jk} \frac{\partial X^k}{\partial x^i} +g_{ik} \frac{\partial X^k}{\partial x^j} ) \,\mathrm{d}{x} ^i\otimes \,\mathrm{d}{x} ^j~.
+\end{aligned}
+\end{equation}
+[121] $(\nabla_iX)_j+(\nabla_j X)_i=0$
+[122] 对于任意向量 $Y,Z$ 有 $g\left(\nabla_YX,Z\right)+g\left(Y,\nabla_ZX\right)=0$。
+[/SCOPE:s_thm5]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的证明使用了定义1的李导数与李括号关系"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2的李导数性质基于定义1"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3的证明使用了定理2第六条"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理4的证明使用了定理2的性质"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1的证明使用了定理4"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理5的Killing方程基于李导数定义"
+  }
+]

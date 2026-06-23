@@ -1,0 +1,111 @@
+[SCOPE:root|description|欧拉方程（变分学）]
+文章名: ElueEV
+标题: 欧拉方程（变分学）
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+
+[SCOPE:s_theorem1|description|定理1]
+[0] 定理 1
+[SCOPE:s_theorem1_let|let_bind|定理1的变量]
+[1] 设 $F(x,y,y')$ 及其二阶偏微商对于 $a\leq x\leq b$ 及任意的 $y,y'$ 连续，泛函
+[2] \begin{equation}
+J(y)=\int_a^b F(x,y,y') \,\mathrm{d}{x} ~.
+\end{equation}
+[/SCOPE:s_theorem1_let]
+[3] 满足欧拉方程的曲线便称为极值曲线。
+[4] 在极值曲线上，使 $F''_{y'y'}\neq0$ 的点称为 正规点。
+
+[/SCOPE:s_theorem1]
+[SCOPE:s_proof|description|定理1的证明]
+[SCOPE:s_proof_let1|let_bind|可取曲线族]
+[5] 可取曲线族过 $a,b$ 两点，表示任意的可取曲线族中的曲线 $y(x)$ 都满足
+[6] \begin{equation}
+\delta y(a)=\delta y(b)=0~.
+\end{equation}
+[/SCOPE:s_proof_let1]
+[7] 定理 1 [链接 L1]
+[8a] (x)$ 给出泛函 $J
+[8b] (y)$ 极值的必要条件是
+[9] 式 18 [链接 L2]
+[10] \begin{equation}
+\delta J=\int_a^b \left[F'_y(x,y,y')\delta y+F'_{y'}(x,y,y')\delta y' \right] \,\mathrm{d}{x} =0~.
+\end{equation}
+[11] 由拉格朗日变换
+[12] 式 3 [链接 L3]
+[13] 式 5 [链接 L4]
+[14] \begin{equation}
+\delta J=\int_a^b \left(F'_y- \frac{\mathrm{d}{}}{\mathrm{d}{x}} F'_{y'} \right) \delta y \,\mathrm{d}{x} =0~.
+\end{equation}
+[15] 定理 1 [链接 L5]
+[16] ，
+[17] 即得欧拉方程
+[18] 式 2 [链接 L6]
+[19] 。
+[20] 这样利用拉格朗日变换的和拉格朗日的变分基本定理得到的欧拉方程常被称为
+[21] 欧拉-拉格朗日方程
+[22] ，甚至直接称为
+[23] 拉格朗日方程
+[24] 但是，正如在拉格朗日变换中提到的，对于 $C_1$ 类的函数，拉格朗日变换不合法。
+[25] 所以，这是有缺陷的。
+[SCOPE:s_proof_let2|let_bind|黎曼变换中的N]
+[26] 幸运的是，对于 $C_1$ 类的函数，黎曼变换式 4 是合法的。即
+[27] \begin{equation}
+\delta J=\int_a^b \left(F'_{y'}-N \right) \delta y' \,\mathrm{d}{x}=0 ,\quad where \;N=\int_a^xF'_y \,\mathrm{d}{x} ~.
+\end{equation}
+[/SCOPE:s_proof_let2]
+[28] 定理 2 [链接 L7]
+[29] \begin{equation}
+F'_{y'}-N=F'_{y'}-\int_a^xF'_y \,\mathrm{d}{x} =C~.
+\end{equation}
+[30] 其中，$C$ 是常数。
+[31] 这就是所谓的
+[32] 欧拉方程的积分形式
+[33] 因为 $N$ 可微，
+[34] 即 $N'=F'_y$，
+[35] 所以式 8 ，$F'_{y'}$ 可微
+[36] \begin{equation}
+\frac{\mathrm{d}{}}{\mathrm{d}{x}} F'_{y'}=N'=F'_y~,
+\end{equation}
+[37] 这便是欧拉方程的等价形式。
+[SCOPE:s_proof_let3|let_bind|拉格朗日中值定理中的变量]
+[38] 由多元函数的拉格朗日中值定理定理 2
+[39] \begin{equation}
+\Delta F'_{y'}= \left(\overline{F}''_{xy'}+\frac{\Delta y}{\Delta x}\overline{F}''_{yy'}+\frac{\Delta y'}{\Delta x}\overline{F}''_{y'y'} \right) \Delta x~.
+\end{equation}
+[40] 其中，$\overline{F}''_{xy'},\overline{F}''_{yy'},\overline{F}''_{y'y'}$ 表示这些函数取
+[41] \begin{equation}
+x+\theta_1\delta x,\quad y+\theta_2\delta y,\quad \quad y'+\theta_3\delta y',\quad ( \left\lvert \theta_i \right\rvert <1,i=1,2,3)~
+\end{equation}
+[42] 时的值。
+[/SCOPE:s_proof_let3]
+[43] 由微商（导数）的基本定义
+[44] 式 4 [链接 L8]
+[45] \begin{equation}
+\frac{\mathrm{d}{}}{\mathrm{d}{x}} F'_{y'}=\lim_{\Delta x\rightarrow 0} \left[\overline{F}''_{xy'}+\frac{\Delta y}{\Delta x}\overline{F}''_{yy'}+\frac{\Delta y'}{\Delta x}\overline{F}''_{y'y'} \right] ~.
+\end{equation}
+[46] 由定理条件，$F(x,y,y')$ 对其变量的二阶偏微商连续，且 $y'$ 存在，
+[47] 所以，上式可写为
+[48] \begin{equation}
+\frac{\mathrm{d}{}}{\mathrm{d}{x}} F'_{y'}=F''_{xy'}+y'F''_{yy'}+\lim_{\Delta x\rightarrow0}\frac{\Delta y'}{\Delta x}F''_{y'y'}~.
+\end{equation}
+[49] \begin{equation}
+y''=\lim_{\Delta x\rightarrow0}\frac{\Delta y'}{\Delta x}=\frac{ \frac{\mathrm{d}{}}{\mathrm{d}{x}} F'_{y'}-F''_{xy'}-y'F''_{yy'}}{F''_{y'y'}}~.
+\end{equation}
+[50] 这就是说，对于极值曲线 $y=y(x)$ 上的每一个使 $F''_{y'y'}\neq0$ 的点上，$y''$ 存在，连续性由上式中除 $y''$ 之外的其它项的连续性得到。
+
+跨文章引用:
+  [L0] 变分的基本定理 → VarDef
+[/SCOPE:s_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_proof",
+    "target_scope": "s_theorem1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "证明是定理1的展开"
+  }
+]

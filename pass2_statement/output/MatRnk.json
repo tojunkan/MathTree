@@ -1,0 +1,365 @@
+{
+  "article_name": "MatRnk",
+  "statements": [
+    {
+      "stmt_id": "st_def1_condition",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "V_1",
+        "V_2",
+        "V_n",
+        "a_1",
+        "a_2",
+        "a_n"
+      ]
+    },
+    {
+      "stmt_id": "st_def2",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1",
+      "subtype": "theorem",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_rowrank",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let1",
+      "exposed_entities": [
+        "e_1",
+        "e_2",
+        "e_m"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_colrank",
+      "subtype": "assumption",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let2",
+      "exposed_entities": [
+        "M",
+        "theta_i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_let3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3",
+      "subtype": "definition",
+      "clause_range": [
+        40,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "rank(A)"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_linear_map",
+      "subtype": "remark",
+      "clause_range": [
+        42,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3_let",
+      "exposed_entities": [
+        "x",
+        "e_i",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2",
+      "subtype": "theorem",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_vectors",
+      "subtype": "example",
+      "clause_range": [
+        48,
+        52
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1_let",
+      "exposed_entities": [
+        "v_1",
+        "v_2",
+        "v_3",
+        "c_i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3",
+      "subtype": "theorem",
+      "clause_range": [
+        55,
+        56
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_proof_col",
+      "subtype": "assumption",
+      "clause_range": [
+        58,
+        62
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3_let1",
+      "exposed_entities": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_proof_row",
+      "subtype": "assumption",
+      "clause_range": [
+        63,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3_let2",
+      "exposed_entities": [
+        "z"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        65,
+        65
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm4",
+      "subtype": "theorem",
+      "clause_range": [
+        67,
+        68
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm4_proof",
+      "subtype": "assumption",
+      "clause_range": [
+        70,
+        71
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm4_let",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_thm4_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        72,
+        72
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def4",
+      "subtype": "definition",
+      "clause_range": [
+        73,
+        74
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_gauss",
+      "subtype": "theorem",
+      "clause_range": [
+        82,
+        84
+      ],
+      "truth_value": "true",
+      "scope_id": "s_gauss",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_gauss_proof",
+      "subtype": "assumption",
+      "clause_range": [
+        85,
+        88
+      ],
+      "truth_value": null,
+      "scope_id": "s_gauss_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2",
+      "subtype": "example",
+      "clause_range": [
+        90,
+        93
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2_let",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_proof_rowrank",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_colrank",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_proof_col",
+      "target": "st_thm3_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_proof_row",
+      "target": "st_thm3_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm4_proof",
+      "target": "st_thm4_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_gauss_proof",
+      "target": "st_gauss",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_conclusion",
+      "target": "st_def3",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理1证明行秩等于列秩，为定义3铺垫"
+    },
+    {
+      "source": "st_def3",
+      "target": "st_thm2",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定义3给出秩的定义，定理2给出秩的上界"
+    },
+    {
+      "source": "st_ex1_vectors",
+      "target": "st_def1_condition",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是线性相关性的具体例子"
+    },
+    {
+      "source": "st_thm3",
+      "target": "st_def3",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理3给出秩的乘积不等式"
+    },
+    {
+      "source": "st_thm4",
+      "target": "st_def3",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理4给出秩的和不等式"
+    },
+    {
+      "source": "st_def4",
+      "target": "st_def3",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "满秩矩阵是秩的特殊情况"
+    },
+    {
+      "source": "st_gauss",
+      "target": "st_thm1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "高斯消元法基于初等变换不改变秩"
+    },
+    {
+      "source": "st_ex2",
+      "target": "st_gauss",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2是高斯消元法的具体应用"
+    }
+  ],
+  "unresolved": []
+}

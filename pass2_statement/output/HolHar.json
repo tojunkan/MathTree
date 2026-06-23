@@ -1,0 +1,133 @@
+{
+  "article_name": "HolHar",
+  "statements": [
+    {
+      "stmt_id": "st_thm1",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_exercise",
+      "subtype": "remark",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_phi_existence",
+      "subtype": "conclusion",
+      "clause_range": [
+        4,
+        6
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_let_phi",
+      "exposed_entities": [
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_gradient_rep",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_let_phi",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_h_definition",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let_h",
+      "exposed_entities": [
+        "h",
+        "f*"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_h_curl_zero",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_let_h",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "f",
+        "g",
+        "h"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof_exercise",
+      "subtype": "remark",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_phi_existence",
+      "target": "st_thm1_gradient_rep",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1",
+      "target": "st_thm1_phi_existence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1",
+      "target": "st_thm1_h_definition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_h_definition",
+      "target": "st_thm1_h_curl_zero",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

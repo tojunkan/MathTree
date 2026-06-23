@@ -1,0 +1,625 @@
+{
+  "article_name": "PatCyc",
+  "statements": [
+    {
+      "stmt_id": "st_intro",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_chain",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "G",
+        "V",
+        "E",
+        "varphi",
+        "v_i",
+        "e_j"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_seq",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "W"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_xy",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_simple",
+      "subtype": "remark",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_analogy",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_trail_path_cycle_circuit",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "W",
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_trail",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_path",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_cycle",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_circuit",
+      "subtype": "definition",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_xy",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_note",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        22,
+        23
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let1",
+      "exposed_entities": [
+        "G",
+        "e",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_cycle_circuit",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_contradiction1",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let2",
+      "exposed_entities": [
+        "x",
+        "y",
+        "e1",
+        "e2"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_cycle_circuit2",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_contradiction2",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_independent",
+      "subtype": "definition",
+      "clause_range": [
+        32,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "W1",
+        "W2"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_Hchain",
+      "subtype": "definition",
+      "clause_range": [
+        35,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "H",
+        "W",
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_section",
+      "subtype": "definition",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def5_section",
+      "subtype": "definition",
+      "clause_range": [
+        39,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_def5",
+      "exposed_entities": [
+        "W",
+        "x_i",
+        "x_j"
+      ]
+    },
+    {
+      "stmt_id": "st_def6_girth",
+      "subtype": "definition",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_def6",
+      "exposed_entities": [
+        "G",
+        "g(G)"
+      ]
+    },
+    {
+      "stmt_id": "st_def6_circumference",
+      "subtype": "definition",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_def6",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def6_chord",
+      "subtype": "definition",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_def6",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def7_longest_shortest",
+      "subtype": "definition",
+      "clause_range": [
+        46,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_def7",
+      "exposed_entities": [
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_def8_distance",
+      "subtype": "definition",
+      "clause_range": [
+        49,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_def8",
+      "exposed_entities": [
+        "G",
+        "x",
+        "y",
+        "d_G(x,y)"
+      ]
+    },
+    {
+      "stmt_id": "st_def8_diameter",
+      "subtype": "definition",
+      "clause_range": [
+        52,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_def8",
+      "exposed_entities": [
+        "diam G"
+      ]
+    },
+    {
+      "stmt_id": "st_def8_remark",
+      "subtype": "remark",
+      "clause_range": [
+        53,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_def8",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def9_euler_trail",
+      "subtype": "definition",
+      "clause_range": [
+        55,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "s_def9",
+      "exposed_entities": [
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_def9_euler_circuit",
+      "subtype": "definition",
+      "clause_range": [
+        58,
+        58
+      ],
+      "truth_value": null,
+      "scope_id": "s_def9",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def9_remark",
+      "subtype": "remark",
+      "clause_range": [
+        59,
+        60
+      ],
+      "truth_value": null,
+      "scope_id": "s_def9",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def10_hamilton",
+      "subtype": "definition",
+      "clause_range": [
+        61,
+        63
+      ],
+      "truth_value": null,
+      "scope_id": "s_def10",
+      "exposed_entities": [
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_def10_remark",
+      "subtype": "remark",
+      "clause_range": [
+        64,
+        66
+      ],
+      "truth_value": null,
+      "scope_id": "s_def10",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def11_directed_chain",
+      "subtype": "definition",
+      "clause_range": [
+        67,
+        69
+      ],
+      "truth_value": null,
+      "scope_id": "s_def11",
+      "exposed_entities": [
+        "W",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_def11_remark",
+      "subtype": "remark",
+      "clause_range": [
+        70,
+        70
+      ],
+      "truth_value": null,
+      "scope_id": "s_def11",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        71,
+        73
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "G",
+        "x",
+        "y",
+        "W"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_let",
+      "subtype": "assumption",
+      "clause_range": [
+        76,
+        76
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof_let",
+      "exposed_entities": [
+        "W",
+        "x_i",
+        "x_j"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_step1",
+      "subtype": "conclusion",
+      "clause_range": [
+        74,
+        81
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_step2",
+      "subtype": "conclusion",
+      "clause_range": [
+        82,
+        84
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_length",
+      "subtype": "conclusion",
+      "clause_range": [
+        85,
+        85
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_seq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2_trail",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_def2_path",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let1",
+      "target": "st_ex1_cycle_circuit",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_cycle_circuit",
+      "target": "st_ex1_contradiction1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let2",
+      "target": "st_ex1_cycle_circuit2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_cycle_circuit2",
+      "target": "st_ex1_contradiction2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_let",
+      "target": "st_thm1_proof_step1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_step1",
+      "target": "st_thm1_proof_step2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_step2",
+      "target": "st_thm1_proof_length",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

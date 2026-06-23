@@ -1,0 +1,156 @@
+[SCOPE:root|description|一元隐函数的存在及可微定理]
+文章名: ImFED
+标题: 一元隐函数的存在及可微定理
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=存在定理
+  [1] type=theorem heading=定理 2 title=可微定理
+
+[SCOPE:s_exist_thm|description|存在定理]
+[0] 定理 1 存在定理
+[SCOPE:s_exist_let|let_bind|存在定理的变量]
+[1] 函数 $F(x,y)$ 在以点 $(x_0,y_0)$ 为中心的长方形邻域定义 1
+[2] \begin{equation}
+\mathcal{D}=[x_0-\Delta,x_0+\Delta;y_0-\Delta',y_0+\Delta']~
+\end{equation}
+[3] 中有定义且连续；
+[4] $F(x_0,y_0)=0$；
+[5] 当 $x$ 为常数时，函数 $F(x,y)$ 随着 $y$ 的增大而单调增大（或单调减小）。
+[/SCOPE:s_exist_let]
+[6] 那么，在点 $(x_0,y_0)$ 的某一邻域内：
+[7] 方程 $F(x,y)=0$ 确定 $y$ 为 $x$ 的单值函数：$y=f(x)$；
+[8] $f(x_0)=y_0$；
+[9] $f(x)$ 连续。
+
+[/SCOPE:s_exist_thm]
+[SCOPE:s_diff_thm|description|可微定理]
+[10] 定理 2 可微定理
+[SCOPE:s_diff_let|let_bind|可微定理的变量]
+[11] 函数 $F(x,y)$ 在以点 $(x_0,y_0)$ 为中心的长方形领域
+[12] \begin{equation}
+\mathcal{D}=[x_0-\Delta,x_0+\Delta;y_0-\Delta',y_0+\Delta']~
+\end{equation}
+[13] 中有定义且连续；
+[14] 在 $\mathcal{D}$ 中偏导数 $F_x',F_y'$ 存在且连续；
+[15] $F(x_0,y_0)=0$；
+[16] $F_y'(x_0,y_0)\neq0$。
+[/SCOPE:s_diff_let]
+[17] 那么：
+[18] 除定理 1 的结论 1,2,3 外，还可证明：
+[19] $\quad$4.函数 $f(x)$ 有连续导数。
+
+[/SCOPE:s_diff_thm]
+[SCOPE:s_exist_proof|description|存在定理的证明]
+[20] 存在性
+[21] 【图解】图 1：隐函数存在定理示意图
+[SCOPE:s_exist_proof_let1|let_bind|存在性证明中的变量]
+[22] 如图 1 ，沿着 $x=x_0$ 的竖直线，函数 $F(x,y)$ 变成一个变元 $y$ 的函数 $F(x_0,y)$。
+[23] 根据定理条件 2：$F(x_0,y_0)=0$。
+[24] 根据定理条件 3
+[25] \begin{equation}
+F(B_0)=F(x_0,y_0+\Delta')>0,\quad F(A_0)=F(x_0,y_0-\Delta')<0~
+\end{equation}
+[26] 沿着通过 $A_0,B_0$ 的两条水平直线，得到两个 $x$ 的函数：$F(x,y+\Delta'),F(x,y-\Delta')$。由
+[27] 式 3 [链接 L0]
+[28] 已看到，第一个函数有正值，第二个有负值。
+[29] 按条件 1：这两函数是连续的。
+[30] 因此必有点 $x_0$ 的某一邻域 $(x_0-\delta,x_0+\delta),\quad(0<\delta\leq\Delta)$，使得这两函数保持自己的符号（连续函数的保号性，需编辑文章并引用）。
+[31] 于是当 $x\in(x_0-\delta,x_0+\delta)$ 时，
+[32] \begin{equation}
+F(x,y_0+\Delta')>0,\quad F(x,y_0-\Delta')<0~.
+\end{equation}
+[33] 换而言之，在原矩形的上下底上，有以点 $A_0$ 及 $B_0$ 为中心而长为 $2\delta$ 的线段 $B_1B_2$ 及 $A_1A_2$，沿着这些线段，给定函数 $F(x,y)$ 在 $B_1B_2$ 上有 正值而在 $A_1A_2$ 上有负值。
+[34] 在区间 $(x_0-\delta,x_0+\delta)$ 上任选一点 $\overline{x}$，其在矩形上下底的垂直对应点为 $\overline{B}$ 和 $\overline{A}$，
+[35] 则
+[36] \begin{equation}
+F(\overline{A})=F(\overline{x},y_0-\Delta)<0,\quad F(\overline{B})=F(\overline{x},y_0-\Delta)>0~.
+\end{equation}
+[37] 由连续性（布尔查诺-柯西第一定理（or 连续函数介值定理），编辑文章并引用），必有 $\overline{A}\overline{B}$ 间一点 $y=\overline{y}$，使得
+[38] \begin{equation}
+F(\overline{x},\overline{y})=0~.
+\end{equation}
+[39] 由条件 3，满足
+[40] 式 6 [链接 L1]
+[41] 的 $\overline{y}$ 是唯一的。
+[42] 这样，在点 $(x_0,y_0)$ 的邻域 $(x_0-\delta,x+\delta)$ 内，方程 $F(x,y)=0$ 确实确定 $y$ 为 $x$ 的单值函数定义 2 。
+[/SCOPE:s_exist_proof_let1]
+[43] 连续性
+[SCOPE:s_exist_proof_let2|let_bind|连续性证明中的变量]
+[SCOPE:s_exist_proof_let3|let_bind|连续性证明中的点]
+[44] 对 $y=f(x)$ 上的任一点 $(\overline{x},\overline{y})$，对于任意大于 0 的 $\epsilon$, 只需作该点的长方形邻域 $(\overline{x}-\delta',\overline{x}+\delta';\overline{y}-\epsilon,\overline{y}+\epsilon)$，使得区间 $(\overline{x}-\delta',\overline{x}+\delta')$ 内任一 $x$，有
+[/SCOPE:s_exist_proof_let3]
+[45] \begin{equation}
+\left\lvert f(x)-\overline{y} \right\rvert = \left\lvert f(x)-f(\overline{x}) \right\rvert <\epsilon~.
+\end{equation}
+[46] 就保证了连续性，而上面存在性中的方法保证了这一长方形邻域的存在性。
+[/SCOPE:s_exist_proof_let2]
+[47] 于是定理 1 得证。
+
+[/SCOPE:s_exist_proof]
+[SCOPE:s_diff_proof|description|可微定理的证明]
+[SCOPE:s_diff_proof_let1|let_bind|可微证明中的变量]
+[48] 设 $F'_y(x_0,y_0)>0$，根据定理的条件 2，$F'_y(x,y)$ 是连续的，
+[49] 所以可做正方形
+[50] \begin{equation}
+[x_0-\delta',x_0+\delta';y_0-\delta',y_0+\delta']\quad(\delta'<\Delta \&\Delta')~
+\end{equation}
+[51] 使得对于一切属于它的点有 $F_y'(x,y)>0$（这意味着对这区域，$x$ 不变，$F(x,y)$ 单调增）。
+[/SCOPE:s_diff_proof_let1]
+[52] 于是对这正方形区域而言，
+[53] 定理 1 [链接 L2]
+[54] 的一切条件满足。
+[55] 因此，
+[56] 定理 1 [链接 L3]
+[57] 的结论 1,2,3 成立。
+[58] 现在转而证明函数 $f(x)$ 有连续的导数。
+[SCOPE:s_diff_proof_let2|let_bind|增量公式中的变量]
+[59] 在由方程 $F(x,y)=0$ 确定的隐函数 $y=f(x)$ 上，$F(x,y)=0$。
+[60] 那么在这曲线上给 $x$ 于增量 $\Delta x$，成立 $y+\Delta y=f(x+\Delta x)$。
+[61] 它们共同满足 $F(x+\Delta,y+\Delta)=0$。
+[62] 显然，增量
+[63] \begin{equation}
+\Delta F(x,y)=F(x+\Delta,y+\Delta)-F(x,y)=0~.
+\end{equation}
+[64] 而由有限增量公式（编辑文章并引用），
+[65] \begin{equation}
+\Delta F(x,y)=F_x'\Delta+F_y'\Delta y+\alpha\Delta x+\beta\Delta y~.
+\end{equation}
+[66] 其中，$\alpha,\beta$ 依赖于 $\Delta x,\Delta y$，且当 $\Delta x,\Delta y$ 趋于 0 时也趋于 0。
+[/SCOPE:s_diff_proof_let2]
+[67] 由此
+[68] \begin{equation}
+\frac{\Delta y}{\Delta x}=-\frac{F_x'(x,y)+\alpha}{F_y'(x,y)+\beta}~.
+\end{equation}
+[69] 由条件 4：$F_y'(x,y)\neq0$，
+[70] 所以
+[71] \begin{equation}
+f'(x)=y_x'=\lim_{\Delta x\rightarrow 0}\frac{\Delta y}{\Delta x}=-\frac{F_x'(x,y)}{F_y'(x,y)}~
+\end{equation}
+[72] 存在。
+[73] 代入 $y=f(x)$，上式写为
+[74] \begin{equation}
+f'(x)=-\frac{F_x'(x,f(x))}{F_y'(x,f(x))}~.
+\end{equation}
+[75] 因为等式右边分母分子都是连续函数的连续函数，且分母不为 0，
+[76] 故知 $f'(x)$ 连续。
+[77] 定理得证！
+[/SCOPE:s_diff_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_diff_thm",
+    "target_scope": "s_exist_thm",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "可微定理包含存在定理的结论"
+  },
+  {
+    "source_scope": "s_diff_proof",
+    "target_scope": "s_exist_proof",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "可微证明引用存在证明的结论"
+  }
+]

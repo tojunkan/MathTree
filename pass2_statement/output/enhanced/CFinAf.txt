@@ -1,0 +1,220 @@
+[SCOPE:root|description|仿射空间中的曲线坐标系]
+文章名: CFinAf
+标题: 仿射空间中的曲线坐标系
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=领域，$n$ 维区域
+  [1] type=definition heading=定义 2 title=曲线坐标
+  [2] type=theorem heading=定理 1 title=
+  [3] type=theorem heading=定理 2 title=
+  [4] type=definition heading=定义 3 title=坐标曲线
+  [5] type=definition heading=定义 4 title=局部标架
+  [6] type=theorem heading=定理 3 title=标架转化关系
+
+[SCOPE:s_block0|description|预备知识：仿射坐标变换]
+[SCOPE:s_block0_let1|let_bind|设仿射坐标系]
+[0] 设 $\{\dot o;e_1,\cdots,e_n\}$ 是仿射空间 $\mathbb A$ 中的坐标系。
+[1] 则对其上任一点 $M$，其坐标为矢量 $\overrightarrow{OM}=x^i e_i$ 的坐标（采取坐标和基矢指标的对立约定及爱因斯坦求和约定）。
+[/SCOPE:s_block0_let1]
+[SCOPE:s_block0_let2|let_bind|设新坐标系]
+[2] 若选择一新坐标系 $\{\dot o';e'_1,\cdots,e'_n\}$，
+[3] 则点的坐标变换规则为（定理 4 ）
+[4] \begin{equation}
+x'^i={B^i}_jx^j-{B^i}_j b^j~.
+\end{equation}
+[5] 其中，${B^i}_j$ 是基 $\{e_1,\cdots,e_n\}$ 到基 $\{e'_1,\cdots,e'_n\}$ 的转换矩阵 ${A^i}_j$ 的逆矩阵。
+[6] 而 $b^i$ 是 $\dot o'$ 在旧坐标系 $\{\dot o;e_1,\cdots,e_n\}$ 中的坐标。
+[/SCOPE:s_block0_let2]
+[7] 到目前为止，点的描述都是在仿射坐标（即对应基底 $\{e_i\}$ 的坐标）下进行的，下面将建立曲线坐标的概念来描述点的坐标。
+[8] 为描述方便，先引进仿射空间中领域和 $n$ 维区域的概念。
+
+[/SCOPE:s_block0]
+[SCOPE:s_def1|description|定义1：邻域，n维区域]
+[9] 定义 1 领域，$n$ 维区域
+[SCOPE:s_def1_let|let_bind|设A是n维仿射空间]
+[10] 设 $\mathbb A$ 是 $n$ 维仿射空间，点 $M=x^ie_i\in\mathbb A$ 的 $\delta$ 领域是指坐标满足
+[/SCOPE:s_def1_let]
+[11] \begin{equation}
+\sum_{i}^n(x'^i-x^i)^2<\delta^2~
+\end{equation}
+[12] 若 $\Omega$ 是 $\mathbb A$ 中这样一个集合：对 $\Omega$ 中任一点 $M$，必有 $M$ 的某个领域也属于 $\Omega$。
+[13] 则称 $\Omega$ 是 $\mathbb A$ 中的 $n$ 维区域。
+[14] 若区域 $\Omega$ 中任一点都可连续的变动到 $\Omega$ 中的另一点，
+[15] 即一点的坐标连续变化到另一点的坐标，
+[16] 则区域 $\Omega$ 称为连通的。
+[17] 凡提到区域总是指连通区域。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义2：曲线坐标]
+[18] 定义 2 曲线坐标
+[SCOPE:s_def2_let|let_bind|设区域和函数]
+[19] 设 $\Omega\in\mathbb A$ 是一 $n$ 维连通区域，在其上给定仿射坐标的 $n$ 个连续可微的单值函数 $f_k(x^1,\cdots,x^n)$（$k=1,\cdots,n$），且函数组 $\{f_i\}$ 是可逆的。
+[/SCOPE:s_def2_let]
+[20] 则新定义的变量
+[21] \begin{equation}
+x'^i=f_i(x^1,\cdots,x^n),\quad i=1,\cdots,n~
+\end{equation}
+[22] 曲线坐标
+[23] 注：函数组 $\{f_i\}$ 的可逆性意味着
+[24] \begin{equation}
+x^i=g_i(x'^1,\cdots,x'^n),\quad (i=1,\cdots,n)~,
+\end{equation}
+[25] 且 $g_i$ 也是连续可微的单值函数，且函数组 $\{g_i\}$ 也是可逆的。
+[26] 所谓的
+[27] 连续可微
+[28] ，是指具有直到某一阶数 $N$ 的连续偏导数。
+[29] 通常并不预先说明具体的 $N$ 值，而是简单地写出已知阶的导数就表明假定这些导数的存在和连续。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|定理1]
+[30] 定理 1
+[SCOPE:s_thm1_let|let_bind|设曲线坐标变换]
+[31] \begin{equation}
+x'^i=f_i(x^1,\cdots,x^n),\quad i=1,\cdots,n~
+\end{equation}
+[32] \begin{equation}
+\det \left\lvert \frac{\partial x'^i}{\partial x^j} \right\rvert \neq0;\quad\det \left\lvert \frac{\partial x^i}{\partial x'^j} \right\rvert \neq0~,
+\end{equation}
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm1_proof|description|定理1的证明]
+[33] 证明：由于定义曲线坐标的函数组 $\{f_i\}$ 是可逆的，
+[34] 即变量 $\{x'^i\}$ 和 $\{x^i\}$ 之间可相互单值的表示，
+[35] 那么可把 $x^j$ 看成 $\{x^i\}$ 的复合函数。
+[36] 于是：
+[37] \begin{equation}
+\frac{\partial x^i}{\partial x^j} = \frac{\partial x^i}{\partial x'^k} \frac{\partial x'^k}{\partial x^j} ~.
+\end{equation}
+[38] 由于自变量的导数 $ \frac{\partial x^i}{\partial x^j} =\delta^i_j$，
+[39] 那么
+[40] \begin{equation}
+\frac{\partial x^i}{\partial x^j} = \frac{\partial x^i}{\partial x'^k} \frac{\partial x'^k}{\partial x^j} =\delta^i_j~.
+\end{equation}
+[41] 即 $ \frac{\partial x^i}{\partial x'^k} $ 和 $ \frac{\partial x'^k}{\partial x^j} $ 对应矩阵的积是一个单位矩阵，
+[42] 所以它们对应的矩阵是互逆的，
+[43] 因而对应行列式不为 0，
+[44] 即
+[45] 式 6 [链接 L0]
+[46] 是成立的。
+[47] 证毕！
+[/SCOPE:s_thm1_proof]
+[48] 利用 式 4 用曲线坐标 $x'^i$ 来代替仿射坐标 $x^i$，点 $M$ 的向径 $\overrightarrow {OM}=x^i e_i$ 可表达成
+[49] \begin{equation}
+\overrightarrow{OM}=g_i(x'^1,\cdots,x'^n)e_i~.
+\end{equation}
+[50] 将 $\overrightarrow{OM}$ 简记为 $x$，
+[51] 则可写为
+[52] \begin{equation}
+x=x(x'^1,\cdots,x'^n)~.
+\end{equation}
+[53] 下面的定理在以后都起着重要的作用。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理2]
+[54] 定理 2
+[SCOPE:s_thm2_let|let_bind|设偏导数]
+[55] 所有偏导数 $ \frac{\partial x}{\partial x'^i} ,i=1,\cdots,n$ 在每一点都是线性无关的矢量。
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm2_proof|description|定理2的证明]
+[56] 证明：式 9 关于 $x'^i$ 微分，得
+[57] \begin{equation}
+\frac{\partial x}{\partial x'^i} = \frac{\partial x^j}{\partial x'^i} e_j~.
+\end{equation}
+[58] 定理 1 [链接 L1]
+[59] ，系数 $ \frac{\partial x^j}{\partial x'^i} $ 对应的矩阵行列式 $\det \left\lvert \frac{\partial x^j}{\partial x'^i} \right\rvert \neq0$，
+[60] 所以矢量 $ \frac{\partial x}{\partial x'^i} $ 是线性无关的。
+[61] 证毕！
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_proof]
+[62] 在引入了曲线坐标后，直接记 $x^i$ 为曲线坐标而不带撇号，
+[63] 那么区域 $\Omega$ 上任一点 $M$ 的向径 $x$，可表示为
+[64] \begin{equation}
+x=x(x^1,\cdots,x^n)~.
+\end{equation}
+[65] 要很好的理解坐标系的结构，坐标曲线是很有用的。
+
+[SCOPE:s_def3|description|定义3：坐标曲线]
+[66] 定义 3 坐标曲线
+[SCOPE:s_def3_let|let_bind|设坐标曲线]
+[67] 在区域 $\Omega$ 中，曲线坐标中只有某一个不同的所有点构成的集合称为坐标曲线，若该不同的坐标为 $x^i$，
+[68] 则该曲线称为坐标曲线 $x^i$。
+[/SCOPE:s_def3_let]
+[69] 也就是说，在坐标曲线上仅有一个坐标在变化，而其余坐标保持常数。
+[70] 由坐标曲线的定义，$ \frac{\partial x}{\partial x^i} $ 是坐标曲线 $x^i$ 的切矢量，
+[71] 所以通过 $\Omega$ 上的每一点 $M$，有 $n$ 条切矢量各为 $ \frac{\partial x}{\partial x^i} $ 的坐标曲线，这些矢量记作 $\partial_i x= \frac{\partial x}{\partial x^i} $，由 定理 2 ，它们是线性无关的。
+
+[/SCOPE:s_def3]
+[72] 由于在点 $M$ 处，$n$ 个矢量 $\partial_i x$ 是线性无关的，因为在每一点 $M$ 都可取这些矢量为仿射标架矢量 $\{M;\partial_1 x,\cdots,\partial_n x\}$。
+[73] $x=x(x^1,\cdots,x^n)$ 中的 $x^i$ 是曲线坐标，这就是说，给定了曲线坐标，就在每一点 $M$ 引出了一个完全确定的仿射标架。
+
+[SCOPE:s_def4|description|定义4：局部标架]
+[74] 定义 4 局部标架
+[75] 在区域 $\Omega$ 中，曲线坐标在每一点 $M$ 引出的仿射标架 $\{M;\partial_1 x,\cdots,\partial_n x\}$，称作点 $M$ 的局部标架（或局部坐标系）。
+
+[/SCOPE:s_def4]
+[76] 在仿射坐标下，从点 $M(x^i)$ 到点 $L(y^i)$ 的变动下，坐标的增量即是位移矢量 $\overrightarrow{ML}$ 的坐标：
+[77] \begin{equation}
+\overrightarrow{ML}=\overrightarrow{OL}-\overrightarrow{OM}=(y^i-x^i)e_i~.
+\end{equation}
+[78] 仿射坐标的实质
+[79] 在曲线坐标下，从点 $M(x^i)$ 移动到一无限接近的点 $L(x^i+\Delta x^i)$ 时，其点 $M$ 的向径 $x$ 的增量 $\overrightarrow{ML}$ 为（忽略高阶无穷小量）
+[80] \begin{equation}
+\overrightarrow{ML}=\overrightarrow{OL}-\overrightarrow{OM}=x(x^i+\Delta x^i)-x(x^i)=\partial_i x\Delta x^i~.
+\end{equation}
+[81] 注意 $\partial_i x$ 是在点 $M$ 处的局部标架，这就是说，在局部标架 $\{M;\partial_1 x,\cdots,\partial_n x\}$ 中，位移矢量 $\overrightarrow{ML}$ 具有的坐标，近似地等于曲线坐标的增量 $\Delta x^i$。
+[82] 因此，在点 $M$ 的无穷小邻域内，曲线坐标的增量 $\Delta x^i$，和点 $M$ 的局部标架 $\{M;\partial_1 x,\cdots,\partial_n x\}$ 下的仿射坐标，在一阶无穷小的精度内（式 14 ），完全相同。
+
+[83] 设有另一曲线坐标 $x'^i$，
+[84] 则曲线坐标 $x^i$ 和 $x'^i$ 可相互表示。
+[85] 于是向径 $x$ 可看着 $x'^i$ 的复合函数，
+[86] 那么
+[87] \begin{equation}
+\frac{\partial x}{\partial x'^i} = \frac{\partial x}{\partial x^j} \frac{\partial x^j}{\partial x'^i} ~,
+\end{equation}
+[88] \begin{equation}
+\partial'_i x= \frac{\partial x^j}{\partial x'^i} \partial_j x~.
+\end{equation}
+[89] 因此，下面定理成立
+
+[SCOPE:s_thm3|description|定理3：标架转化关系]
+[90] 定理 3 标架转化关系
+[SCOPE:s_thm3_let|let_bind|设不同曲线坐标]
+[91] 设 $x^i$ 和 $x'^i$ 是不同的曲线坐标，
+[92] 则两曲线坐标对应的局部标架矢量转换关系为
+[/SCOPE:s_thm3_let]
+[93] \begin{equation}
+\partial'_i x= \frac{\partial x^j}{\partial x'^i} \partial_j x,\quad \partial_j x= \frac{\partial x'^i}{\partial x^j} \partial'_i x~.
+\end{equation}
+[94] 注意基 $\{e_i\}$ 到基 $\{e'_i\}$ 的转换关系为
+[95] \begin{equation}
+e'_i=A^j_i e_j,\quad e_j=B^i_j e'_i~.
+\end{equation}
+[96] 于是，若基 $\{e_i\}$ 为基 $\{\partial_i x\}$，基 $\{e'_i\}$ 为基 $\{\partial'_i x\}$，
+[97] 那么 $A^j_i= \frac{\partial x^j}{\partial x'^i} ,B^i_j= \frac{\partial x'^i}{\partial x^j} $。
+[/SCOPE:s_thm3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是定义2中曲线坐标可逆性的推论"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2的证明用到定理1"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3给出局部标架在不同曲线坐标下的转换关系"
+  }
+]

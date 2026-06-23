@@ -1,0 +1,735 @@
+{
+  "article_name": "LiOper",
+  "statements": [
+    {
+      "stmt_id": "st_intro_let1",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let1",
+      "exposed_entities": [
+        "V",
+        "W",
+        "f",
+        "L(V,W)",
+        "Hom(V,W)"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_let2",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "L(V)",
+        "End(V)"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_let3",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let2",
+      "exposed_entities": [
+        "A",
+        "B",
+        "C",
+        "A",
+        "B",
+        "C",
+        "E",
+        "E"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_comp",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_inv_def",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "A",
+        "A^{-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_inv_equiv",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_nullity",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "Ker A",
+        "dim Ker A"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_def",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let",
+      "exposed_entities": [
+        "O",
+        "rank O"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_def",
+      "subtype": "definition",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "A",
+        "lambda"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3_let",
+      "exposed_entities": [
+        "V",
+        "U",
+        "W"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_def",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3_let",
+      "exposed_entities": [
+        "x",
+        "x_U",
+        "x_W",
+        "P"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_prop",
+      "subtype": "theorem",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_block5_let",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_block5_let",
+      "exposed_entities": [
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_block5_span",
+      "subtype": "theorem",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_block5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_block5_linindep",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_block5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_block5_basis",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_block5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_block5_lindep",
+      "subtype": "assumption",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_block5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_block5_proper",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_block5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_block5_zero",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_block5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_block5_degenerate_def",
+      "subtype": "definition",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_block5",
+      "exposed_entities": [
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_block5_image_subspace",
+      "subtype": "theorem",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": "true",
+      "scope_id": "s_block5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_block5_unique_image",
+      "subtype": "theorem",
+      "clause_range": [
+        36,
+        36
+      ],
+      "truth_value": "true",
+      "scope_id": "s_block5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_block5_many_ops",
+      "subtype": "theorem",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": "true",
+      "scope_id": "s_block5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_block5_expand",
+      "subtype": "theorem",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": "true",
+      "scope_id": "s_block5",
+      "exposed_entities": [
+        "v",
+        "e_i",
+        "c_i",
+        "T"
+      ]
+    },
+    {
+      "stmt_id": "st_block5_lindep_implies",
+      "subtype": "assumption",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_block5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_block5_nonzero_null",
+      "subtype": "conclusion",
+      "clause_range": [
+        41,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_block5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exercise1_question",
+      "subtype": "question",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_eq",
+      "subtype": "theorem",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "A",
+        "B",
+        "e_k",
+        "e_i",
+        "a_{ik}",
+        "b_{kj}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof",
+      "subtype": "theorem",
+      "clause_range": [
+        52,
+        52
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_assump1",
+      "subtype": "assumption",
+      "clause_range": [
+        55,
+        55
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let1",
+      "exposed_entities": [
+        "A",
+        "e_1...e_n",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        56,
+        57
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2_let1",
+      "exposed_entities": [
+        "A'",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_let2_def",
+      "subtype": "definition",
+      "clause_range": [
+        63,
+        65
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let2",
+      "exposed_entities": [
+        "B",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_let2_equiv",
+      "subtype": "theorem",
+      "clause_range": [
+        66,
+        71
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2_let2",
+      "exposed_entities": [
+        "A'"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_def",
+      "subtype": "definition",
+      "clause_range": [
+        78,
+        79
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "A'",
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_equiv",
+      "subtype": "theorem",
+      "clause_range": [
+        80,
+        80
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_interpret",
+      "subtype": "remark",
+      "clause_range": [
+        81,
+        81
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_block11_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        82,
+        82
+      ],
+      "truth_value": null,
+      "scope_id": "s_block11_let",
+      "exposed_entities": [
+        "A",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_block11_invariance",
+      "subtype": "theorem",
+      "clause_range": [
+        83,
+        84
+      ],
+      "truth_value": "true",
+      "scope_id": "s_block11",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_det",
+      "subtype": "definition",
+      "clause_range": [
+        86,
+        90
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "det A",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_tr",
+      "subtype": "definition",
+      "clause_range": [
+        91,
+        95
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "tr A",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_well_defined",
+      "subtype": "theorem",
+      "clause_range": [
+        96,
+        97
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_intro_let1",
+      "target": "st_intro_let2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_let2",
+      "target": "st_intro_let3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_let1",
+      "target": "st_intro_comp",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_comp",
+      "target": "st_intro_inv_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_inv_def",
+      "target": "st_intro_inv_equiv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_inv_equiv",
+      "target": "st_intro_nullity",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_assump",
+      "target": "st_ex3_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_def",
+      "target": "st_ex3_prop",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_block5_let",
+      "target": "st_block5_span",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_block5_linindep",
+      "target": "st_block5_basis",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_block5_lindep",
+      "target": "st_block5_proper",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_block5_lindep",
+      "target": "st_block5_zero",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_block5_proper",
+      "target": "st_block5_degenerate_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_block5_degenerate_def",
+      "target": "st_block5_image_subspace",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_block5_image_subspace",
+      "target": "st_block5_unique_image",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_block5_unique_image",
+      "target": "st_block5_many_ops",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_block5_let",
+      "target": "st_block5_expand",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_block5_lindep_implies",
+      "target": "st_block5_nonzero_null",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_eq",
+      "target": "st_thm1_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assump1",
+      "target": "st_thm2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_conclusion",
+      "target": "st_thm2_let2_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let2_def",
+      "target": "st_thm2_let2_equiv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_block11_assump",
+      "target": "st_block11_invariance",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_block11_invariance",
+      "target": "st_def2_det",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_block11_invariance",
+      "target": "st_def2_tr",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_det",
+      "target": "st_def2_well_defined",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_tr",
+      "target": "st_def2_well_defined",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm2_conclusion",
+      "target": "st_def1_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理2表明线性算子对应相似矩阵类，引出定义1"
+    },
+    {
+      "source": "st_block11_invariance",
+      "target": "st_def2_det",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "式12表明行列式和迹是不变量，引出定义2"
+    },
+    {
+      "source": "st_block11_invariance",
+      "target": "st_def2_tr",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "式12表明行列式和迹是不变量，引出定义2"
+    }
+  ],
+  "unresolved": [
+    "文本[0]声明未完成，跳过。",
+    "文本[24]声明未完成，跳过。",
+    "文本[48]声明未完成，跳过。",
+    "文本[76]声明未完成，跳过。",
+    "文本[72]引用定理1，但未明确具体内容，视为已知。",
+    "文本[80]引用子节4，但未提供，视为已知。",
+    "文本[96]引用式12，但未编号，视为已知。"
+  ]
+}

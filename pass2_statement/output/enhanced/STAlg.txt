@@ -1,0 +1,244 @@
+[SCOPE:root|description|结构张量代数]
+文章名: STAlg
+标题: 结构张量代数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=结构常数
+  [1] type=theorem heading=定理 1 title=结构张量
+  [2] type=definition heading=定义 2 title=迹形式
+  [3] type=example heading=例 1 title=
+  [4] type=theorem heading=定理 2 title=李代数中迹形式的结合性
+  [5] type=example heading=例 2 title=3 维李代数（矢量叉积）
+
+[0] 12 在线性算子代数一节提到，代数是一个同时是个环的矢量空间，或者由代数的定义直接获得。
+[1] 那么，要使一个矢量空间构成一个代数，就得赋予矢量空间环的特性，
+[2] 即任意二矢量可进行乘法运算且该乘法对加法满足分配律。
+[3] 由于矢量都可由一组基表示，
+[4] 那么任意二矢量可作乘法及对加法满足分配律的要求，就变成只需规定基矢量之间的乘法。
+[5] 由运算的封闭性，作乘法得到的矢量仍能用基表示，这样的基矢量之间的乘法得到的矢量在该组基下的坐标就称为结构常数，这样只需要求乘法满足结合律，矢量空间便是一个环了，
+[6] 于是就将矢量空间构造成了一个代数。
+[7] 可以证明，结构常数是某一个 $(2,1)$ 型张量的坐标，这个张量就称为结构张量。
+[8] 一句话来说就是：结构张量使得一个矢量空间具有了代数结构。
+
+[SCOPE:s_construct|description|将矢量空间构造成环]
+[SCOPE:s_construct_let1|let_bind|设 V 和基]
+[9] 设 $V$ 是域 $\mathbb F$ 上的矢量空间，$\{e_i\}$ 是它的一个基。
+[10] 那么任意的元都可表示成（使用爱因斯坦求和约定）
+[11] \begin{equation}
+x^i e_i~
+\end{equation}
+[12] 的形式。
+[/SCOPE:s_construct_let1]
+[13] 下面将 $V$ 构造为一个环。
+[14] 为使任意二矢量能进行乘法运算，且乘法是封闭的和对加法满足分配律，
+[15] 那么只需规定
+[16] \begin{equation}
+e_i*e_j=\gamma_{ij}^k e_k~,
+\end{equation}
+[17] 且乘法 “*” 满足
+[18] \begin{equation}
+\begin{aligned}
+&\lambda(e_i*e_j)=(\lambda e_i)*e_j=e_i*(\lambda e_j)\quad (\lambda\in\mathbb F)\\
+&(e_i+e_j)*e_k=e_i*e_k+e_j*e_k~,\\
+&e_i*(e_j+e_k)=e_i*e_j+e_i*e_k~,
+\end{aligned}
+\end{equation}
+[SCOPE:s_construct_let2|let_bind|设 u,v,w]
+[19] 现在来寻找乘法满足结合律的要求，设
+[20] \begin{equation}
+u=u^ie_i~,\quad v=v^je_j~,\quad w=w^ke_k~.
+\end{equation}
+[/SCOPE:s_construct_let2]
+[21] 要 $(uv)w=u(vw)$，就要
+[22] \begin{equation}
+\begin{aligned}
+&u^iv^jw^k (e_i*e_j)*e_k=(u^ie_i *v^je_j)*w^ke_k=u^ie_i *(v^je_j*w^ke_k)\\
+&=u^iv^jw^k e_i*(e_j*e_k)~.
+\end{aligned}
+\end{equation}
+[23] 由 $u,v,w$ 的任意性，只要
+[24] \begin{equation}
+\begin{aligned}
+(e_i*e_j)*e_k&=e_i*(e_j*e_k)~,\\
+&\Downarrow\\
+\gamma_{ij}^le_l*e_k&=\gamma_{jk}^le_i*e_l~,\\
+&\Downarrow\\
+\gamma_{ij}^l\gamma_{lk}^{m}e_m&=\gamma_{jk}^l\gamma_{il}^m e_m~,\\
+&\Downarrow\\
+\gamma_{ij}^l\gamma_{lk}^{m}&=\gamma_{jk}^l\gamma_{il}^m~,
+\end{aligned}
+\end{equation}
+[25] 结合律就满足了。
+[26] 这样，矢量空间在乘法 “*” 之下就构成了一个代数。
+[27] 这就给出了下面的定义。
+
+[/SCOPE:s_construct]
+[SCOPE:s_def1|description|结构常数]
+[28] 定义 1 结构常数
+[29] 由式 2 规定的 $\gamma_{ij}^k\in\mathbb F$ 称为代数 $V$ 在给定基之下的结构常数，其满足
+[30] \begin{equation}
+\gamma_{ij}^l\gamma_{lk}^{m}=\gamma_{jk}^l\gamma_{il}^m~.
+\end{equation}
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|结构张量]
+[31] 定理 1 结构张量
+[32] 结构常数 $\gamma_{ij}^k$ 是某个 $(2,1)$ 型张量 $\Gamma$ 的坐标。
+[33] 该张量 $\Gamma$ 称为结构张量。
+[34] 证明：要证结构常数是某个张量的坐标，就只要证它的坐标满足张量坐标的变换规则，因为如果一个数满足张量的坐标变换规则，
+[35] 那么配上对应基底后就是一个张量。
+[SCOPE:s_thm1_let|let_bind|基变换]
+[36] \begin{equation}
+e_i'=a_i^s e_s~,\quad e_j'=b_j^t e_t~,
+\end{equation}
+[37] 则 $B=(b_j^t)=A^{-1}$，$A=(a_i^s)$。
+[/SCOPE:s_thm1_let]
+[38] 于是
+[39] \begin{equation}
+\begin{aligned}
+{\gamma'}_{ij}^ke'_k&=e'_i*e'_j= \left(a_i^s e_s \right) * \left(a_j^t e_t \right) =a_i^s a_j^te_s*e_t\\
+&=a_i^sa_j^t\gamma_{st}^r e_r=a_i^sa_j^t\gamma_{st}^r b_r^k e'_k~,\\
+&\Downarrow\\
+{\gamma'}_{ij}^k&=a_i^sa_j^t\gamma_{st}^r b_r^k~.
+\end{aligned}
+\end{equation}
+[40] 由张量坐标变换规则（
+[41] 定理 1 [链接 L0]
+[42] 式 9 [链接 L1]
+[43] 表明结构常数和 $(2,1)$ 型张量的坐标变换规则一致。
+[44] 证毕！
+[45] 综上，可以说，在 $V$ 上给出了结构张量 $\Gamma$，就确定了一个代数。
+[46] 反过来，代数 $V$ 的结构张量 $\Gamma$ 是完全确定的。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_trace|description|迹形式引入]
+[47] 对于研究代数 $V$ 的结构，迹形式是一个重要的工具。
+[SCOPE:s_trace_let|let_bind|定义 L_a]
+[48] 定义映射
+[49] \begin{equation}
+L_a:x\rightarrow a*x~,
+\end{equation}
+[50] 由乘法 “*” 的线性性，可知 $L_a$ 是个线性算子。
+
+[/SCOPE:s_trace]
+[/SCOPE:s_trace_let]
+[SCOPE:s_def2|description|迹形式]
+[51] 定义 2 迹形式
+[52] \begin{equation}
+f_V(a,b):=\mathrm{tr}\, L_aL_b~
+\end{equation}
+
+[/SCOPE:s_def2]
+[SCOPE:s_ex1|description|例 1]
+[SCOPE:s_ex1_let|let_bind|设 a,b]
+[53] 设 $a=\alpha^i e_i,b=\beta^j e_j$，试证明：迹形式 $f_V(a,b)$ 可记成张量的完整卷积的形式：
+[/SCOPE:s_ex1_let]
+[54] \begin{equation}
+f_V(a,b)=\alpha^i\beta^j\gamma_{jt}^s\gamma_{is}^t~.
+\end{equation}
+[55] \begin{equation}
+\begin{aligned}
+L_aL_b e_k=a*(b*e_k)=\alpha^i\beta^je_i*(e_j*e_k)=\alpha^i\beta^j\gamma_{jk}^s \gamma_{is}^t e_t~.
+\end{aligned}
+\end{equation}
+[56] \begin{equation}
+f_V(a,b)=\mathrm{tr}\, L_a L_b=(e^k,L_aL_b e_k)=\alpha^i\beta^j\gamma_{jt}^s \gamma_{is}^t~.
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_thm2|description|李代数中迹形式的结合性]
+[57] 定理 2 李代数中迹形式的结合性
+[SCOPE:s_thm2_let|let_bind|设李代数]
+[58] 设 $V$ 是一个有限维李代数（定义 1 ），
+[/SCOPE:s_thm2_let]
+[59] 则其上的迹形式满足结合性：
+[60] \begin{equation}
+f_V([a,b],c)=f_V(a,[b,c])~.
+\end{equation}
+[61] 证明：在李代数上，$[a,b]:=a*b$，利用李代数上的雅可比恒等式
+[62] \begin{equation}
+\begin{aligned}
+&[[x,y],z]+[[z,x],y]+[[y,z],x]=0~,\\
+&\qquad\qquad\Downarrow\\
+&[[x,y],z]=-[[z,x],y]-[[y,z],x]\\
+&=[x,[y,z]]+[y,[z,x]]\\
+&=[x,[y,z]]-[y,[x,z]]~.\\
+\end{aligned}
+\end{equation}
+[63] \begin{equation}
+L_{[x,y]}=L_xL_y-L_yL_x~.
+\end{equation}
+[64] 注意迹的交换性 $\mathrm{tr}\, \mathcal A\mathcal B=\mathrm{tr}\, \mathcal B\mathcal A$（
+[65] 定理 2 [链接 L2]
+[66] ），就有
+[67] \begin{equation}
+\begin{aligned}
+f_V([a,b],c)&=\mathrm{tr}\,L_{[a,b]}L_c=\mathrm{tr}\,(L_aL_bL_c-L_bL_aL_c)\\
+&=\mathrm{tr}\,L_aL_bL_c-\mathrm{tr}L_bL_aL_c\\
+&=\mathrm{tr}\,L_aL_bL_c-\mathrm{tr}L_aL_cL_b\\
+&=\mathrm{tr}\,L_a(L_bL_c-L_cL_b)\\
+&=\mathrm{tr}\,L_aL_{[b,c]}=f_V([a,[b,c]])~.
+\end{aligned}
+\end{equation}
+[68] 证毕！
+
+[/SCOPE:s_thm2]
+[SCOPE:s_ex2|description|3 维李代数（矢量叉积）]
+[69] 例 2 3 维李代数（矢量叉积）
+[70] 3 维矢量的叉积相当于在 3 维空间定义了一个李代数，其结构常数定义如下
+[71] \begin{equation}
+[e_1,e_2]=e_3~,\quad [e_3,e_1]=e_2~,\quad [e_2,e_3]=e_1~.
+\end{equation}
+[72] \begin{equation}
+\begin{aligned}
+\gamma_{12}^3=\gamma_{23}^1=\gamma_{31}^2=1~,\\
+\gamma_{21}^3=\gamma_{32}^1=\gamma_{13}^2=-1~.
+\end{aligned}
+\end{equation}
+[73] \begin{equation}
+\gamma_{jt}^s\gamma_{is}^t=-2\delta_{ij}~.
+\end{equation}
+[74] \begin{equation}
+f_V(a,b)=-2\alpha^i\beta^j\delta_{ij}=-2(a|b)~.
+\end{equation}
+[75] 定理 2
+[76] \begin{equation}
+([a,b]|c)=(a|[b,c])~,
+\end{equation}
+[77] \begin{equation}
+(a\times b)\cdot c=a\cdot(b\times c)~.
+\end{equation}
+[/SCOPE:s_ex2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "结构张量定理依赖于结构常数定义"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是迹形式的具体计算"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2给出迹形式的结合性"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2验证定理2在3维叉积李代数上的表现"
+  }
+]

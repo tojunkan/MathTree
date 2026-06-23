@@ -1,0 +1,347 @@
+{
+  "article_name": "SHCal",
+  "statements": [
+    {
+      "stmt_id": "st_scope_root_intro",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_statement",
+      "subtype": "lemma",
+      "clause_range": [
+        9,
+        11
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "B_0(K)",
+        "epsilon"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_proof_forward",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "m_{ij}",
+        "a_i",
+        "a_j"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_proof_forward_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_proof_backward_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "m_i",
+        "a_i"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_proof_backward_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_corollary_H0",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "H_0(K)",
+        "Z_0(K)",
+        "B_0(K)",
+        "epsilon",
+        "Im epsilon"
+      ]
+    },
+    {
+      "stmt_id": "st_cylinder_triangulation",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "K"
+      ]
+    },
+    {
+      "stmt_id": "st_H0_cylinder",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "root",
+      "exposed_entities": [
+        "H_0(K)"
+      ]
+    },
+    {
+      "stmt_id": "st_no_2cycle",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        31
+      ],
+      "truth_value": "true",
+      "scope_id": "root",
+      "exposed_entities": [
+        "H_2(K)"
+      ]
+    },
+    {
+      "stmt_id": "st_need_H1",
+      "subtype": "remark",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma2_statement",
+      "subtype": "lemma",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma2",
+      "exposed_entities": [
+        "C_1(K)",
+        "a_1a_2",
+        "a_2a_3",
+        "a_3a_2",
+        "a_4a_5",
+        "a_5a_6",
+        "a_6a_4",
+        "a_1a_4"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma2_proof_example",
+      "subtype": "assumption",
+      "clause_range": [
+        36,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma2",
+      "exposed_entities": [
+        "a_1a_5"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma2_proof_homology_condition",
+      "subtype": "remark",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma2_proof_transformation",
+      "subtype": "conclusion",
+      "clause_range": [
+        39,
+        44
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma3_statement",
+      "subtype": "lemma",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma3",
+      "exposed_entities": [
+        "a_1a_2",
+        "a_2a_3",
+        "a_3a_1"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma3_proof_representation",
+      "subtype": "assumption",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma3",
+      "exposed_entities": [
+        "n_1",
+        "n_2"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma3_proof_homology",
+      "subtype": "conclusion",
+      "clause_range": [
+        50,
+        51
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_corollary1_statement",
+      "subtype": "corollary",
+      "clause_range": [
+        53,
+        55
+      ],
+      "truth_value": "true",
+      "scope_id": "s_corollary1",
+      "exposed_entities": [
+        "epsilon",
+        "Z_1(K)"
+      ]
+    },
+    {
+      "stmt_id": "st_corollary1_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        56,
+        59
+      ],
+      "truth_value": "true",
+      "scope_id": "s_corollary1",
+      "exposed_entities": [
+        "B_1(K)",
+        "H_1(K)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_lemma1_proof_forward",
+      "target": "st_lemma1_proof_forward_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_proof_backward_assump",
+      "target": "st_lemma1_proof_backward_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_statement",
+      "target": "st_lemma1_corollary_H0",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cylinder_triangulation",
+      "target": "st_H0_cylinder",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cylinder_triangulation",
+      "target": "st_no_2cycle",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma2_proof_example",
+      "target": "st_lemma2_proof_transformation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma3_proof_representation",
+      "target": "st_lemma3_proof_homology",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma3_statement",
+      "target": "st_corollary1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_corollary1_statement",
+      "target": "st_corollary1_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_statement",
+      "target": "st_lemma2_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma2_statement",
+      "target": "st_lemma3_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma3_statement",
+      "target": "st_corollary1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

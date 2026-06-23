@@ -1,0 +1,112 @@
+[SCOPE:root|description|线性算子的范数]
+文章名: ONorm
+标题: 线性算子的范数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+  [1] type=example heading=例 1 title=
+  [2] type=theorem heading=定理 1 title=
+
+[SCOPE:s_def1|description|定义 1]
+[0] 定义 1
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[1] 设 $\mathcal A$ 是 $V$ 上的线性算子，
+[2] 则其范数定义为1
+[/SCOPE:s_def1_let]
+[3] \begin{equation}
+\left\lVert \mathcal A \right\rVert = \sup_{x\in{V^*}}\frac{ \left\lvert \mathcal Ax \right\rvert }{ \left\lvert x \right\rvert } = \sup_{|x| = 1} \left\lvert \mathcal A x \right\rvert ~.
+\end{equation}
+[4] 它的几何意义恰好是算子 $\mathcal A$ 的最大伸缩系数(矢量模之比)。
+[5] 【未完成】紧空间上的连续实函数能取到最值
+[6] 对于有限维度赋范空间来说，$\{x \in V \mid |x| = 1\}$ 是一个紧空间，
+[7] 因此 $ \left\lVert \mathcal A \right\rVert $ 总是有限，称为有界算子；
+[8] 无限维度赋范空间可以存在不有界的算子。
+[9] 结合两种情况，我们可以考虑有界算子的矢量空间，记做 $B(V)$。
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|例 1]
+[SCOPE:s_ex1_let|let_bind|例 1 的变量]
+[10] 试证明 $B(V)$ 是一个赋范空间（定义 1 ），
+[11] 即：
+[/SCOPE:s_ex1_let]
+[12] $ \left\lVert \mathcal A \right\rVert \geq0$，且 $ \left\lVert \mathcal A \right\rVert =0$ 当且仅当 $ \left\lVert \mathcal A \right\rVert =\mathcal O$，$\mathcal O$ 为零算子（例 1 ）;
+[13] $ \left\lVert \lambda \mathcal A \right\rVert = \left\lvert \lambda \right\rvert \left\lVert \mathcal A \right\rVert $;
+[14] 三角不等式：$ \left\lVert \mathcal A+\mathcal B \right\rVert \leq \left\lVert \mathcal A \right\rVert + \left\lVert \mathcal B \right\rVert $。
+[15] 此外，下面性质成立:
+[16] $ \left\lVert \mathcal{AB} \right\rVert \leq{ \left\lVert \mathcal A \right\rVert } \left\lVert \mathcal B \right\rVert $。
+[17] 证明：1. 由于 $ \left\lvert \mathcal A x \right\rvert \geq0$，且 $x\neq0\Rightarrow \left\lvert x \right\rvert >0$，
+[18] 所以
+[19] $ \left\lVert \mathcal A \right\rVert \geq0$。
+[20] 当 $\mathcal A=0$ 时 意味着 $\sup\limits_{x\in{V^*}} \left\lvert \mathcal A x \right\rvert =0\Rightarrow\mathcal A x=0$，
+[21] 即 $\mathcal A$ 将每个 $x$ 都映射为零矢量，
+[22] 于是 $\mathcal A=\mathcal O$。
+[23] 2.$ \left\lVert \lambda\mathcal A \right\rVert =\sup\limits_{x\in{V^*}}\frac{ \left\lvert \lambda \mathcal Ax \right\rvert }{ \left\lvert x \right\rvert }=\sup\limits_{x\in{V^*}}\frac{ \left\lvert \lambda \right\rvert \left\lvert \mathcal Ax \right\rvert }{ \left\lvert x \right\rvert }= \left\lvert \lambda \right\rvert \sup\limits_{x\in{V^*}}\frac{ \left\lvert \mathcal Ax \right\rvert }{ \left\lvert x \right\rvert }= \left\lvert \lambda \right\rvert \left\lVert \mathcal A \right\rVert
+[24] $。
+[25] \begin{equation}
+\begin{aligned}
+\left\lVert \mathcal A+\mathcal B \right\rVert &=\sup\limits_{x\in{V^*}}\frac{ \left\lvert \mathcal Ax+\mathcal B x \right\rvert }{ \left\lvert x \right\rvert }\leq\sup\limits_{x\in{V^*}} \left(\frac{ \left\lvert \mat…[truncated]…t\rvert }{ \left\lvert x \right\rvert }+\sup\limits_{x\in{V^*}}\frac{ \left\lvert \mathcal B x \right\rvert }{ \left\lvert x \right\rvert }\\
+&= \left\lVert \mathcal A \right\rVert + \left\lVert \mathcal B \right\rVert ~.
+\end{aligned}
+\end{equation}
+[26] 4. 式 1 $\Rightarrow \left\lVert \mathcal A \right\rVert \geq\frac{ \left\lvert \mathcal Ax \right\rvert }{ \left\lvert x \right\rvert }\Rightarrow \left\lVert \mathcal A \right\rVert \left\lvert x \right\rvert \geq \left\lvert \mathcal A x \right\rvert $，
+[27] 于是
+[28] \begin{equation}
+\begin{aligned}
+\left\lVert \mathcal{AB} \right\rVert &=\sup\limits_{x\in{V^*}}\frac{ \left\lvert \mathcal{AB} x \right\rvert }{ \left\lvert x \right\rvert }\leq\sup\limits_{x\in{V^*}}\frac{ \left\lVert \mathcal A \right\rVert \left\…[truncated]…in{V^*}}\frac{ \left\lVert \mathcal A \right\rVert \left\lVert \mathcal B \right\rVert \left\lvert x \right\rvert }{ \left\lvert x \right\rvert }= \left\lVert \mathcal A \right\rVert \left\lVert \mathcal B \right\rVert ~.
+\end{aligned}
+\end{equation}
+[29] 证毕！
+[30] 由矢量的模和度量的关系，$d(\mathcal A,\mathcal B)\equiv \left\lVert \mathcal{A-B} \right\rVert $ 构成了 $B(V)$ 的度量。
+[31] 【未完成】证明过程不够清晰
+
+[/SCOPE:s_ex1]
+[SCOPE:s_thm1|description|定理 1]
+[32] 定理 1
+[33] 赋予度量 $d$ 的线性算子空间构成一完备度量空间。
+[34] 证明：我们只需要证明完备性（定义 3 ）即可。
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[35] 设 $A_i$ 是任一柯西序列，
+[36] 即对每一 $\epsilon>0$，存在 $N(\epsilon)>0$，使得只要 $m,k>N(\epsilon)$ 时就有 $d(\mathcal{A_m,A_k})<\epsilon$。
+[37] 对任意点 $x$，记 $x_i\equiv\mathcal A_i x$，
+[/SCOPE:s_thm1_let]
+[38] 于是对 $m,k>N(\epsilon/ \left\lvert x \right\rvert )$，就有
+[39] \begin{equation}
+\left\lvert x_k-x_m \right\rvert \leq d(\mathcal{A_k,A_m}) \left\lvert x \right\rvert <\epsilon~.
+\end{equation}
+[40] 即点列 $x_i$ 也是柯西序列。
+[41] 但是 $V$ 是完备的（
+[42] ），
+[43] 所以极限
+[44] \begin{equation}
+y=\lim_{i\rightarrow\infty}x_i\in V~
+\end{equation}
+[45] 存在，由于 $y$ 线性依赖于 $x$，
+[46] 于是就有 $V$ 上的线性算子 $\mathcal A$ 存在，使得 $\mathcal Ax=y$。
+[47] 且对 $k>N'(\epsilon \left\lvert x \right\rvert )$
+[48] \begin{equation}
+d(\mathcal{A_k,A})=\sup\limits_{x\in{V^*}}\frac{ \left\lvert x_k -y \right\rvert }{ \left\lvert x \right\rvert }\leq\epsilon~.
+\end{equation}
+[49] \begin{equation}
+\mathcal A=\lim_{k\rightarrow\infty}\mathcal A_k~.
+\end{equation}
+[50] 证毕！
+[/SCOPE:s_thm1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例 1 引用定义 1 的范数定义"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理 1 引用定义 1 的度量"
+  }
+]

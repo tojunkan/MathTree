@@ -1,0 +1,167 @@
+[SCOPE:root|description|凸函数]
+文章名: ConvFu
+标题: 凸函数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=凸函数
+  [1] type=theorem heading=定理 1 title=
+  [2] type=exercise heading=习题 1 title=
+  [3] type=exercise heading=习题 2 title=
+  [4] type=theorem heading=定理 2 title=琴生不等式
+  [5] type=exercise heading=习题 3 title=
+
+[SCOPE:s_def1|description|凸函数定义]
+[0] 定义 1 凸函数
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1] 设函数 $f(x)$ 在区间 $I$ 上有定义，若对于任意的 $x_1,x_2\in I$，$t\in (0,1)$，都有
+[2] \begin{equation}
+f((1-t)x_1+tx_2)\le (1-t)f(x_1)+tf(x_2)~,
+\end{equation}
+[/SCOPE:s_def1_let]
+[3] 严格凸函数
+[4] 严格凹函数
+
+[/SCOPE:s_def1]
+[SCOPE:s_geom|description|凸函数的几何意义]
+[5] 由凸集的子节 1 可知，不等式式 1 的左边的 $(1-t)x_1+tx_2,t\in(0,1)$ 是连接定义域上点 $x_1$ 和 $x_2$ 的开线段，而右边是连接函数值域上点 $f(x_1)$ 和 $f(x_2)$ 的开线段。
+[6] 【图解】图 1：凸函数几何示意图
+[7] 由图 1 ，可看出，不等式式 1 的左边对应的是 $f$ 在 $A_1,A_2$ 间的曲线段，而右边的对应的就是线段 $A_1A_2$。
+[SCOPE:s_geom_let|let_bind|几何意义中的变量]
+[8] 设 $x=(1-t)x_1+tx_2$，
+[9] 则利用三角形相似性，可得
+[10] \begin{equation}
+t=\frac{x-x_1}{x_2-x_1}=\frac{ \left\lvert A_1B \right\rvert }{ \left\lvert A_1A_2 \right\rvert }~
+\end{equation}
+[/SCOPE:s_geom_let]
+[11] 上式表明，在 $t$ 时，不等式
+[12] 式 1 [链接 L0]
+[13] 左边是函数 $f(x)$ 曲线上的点 $A$，而右边对应线段 $A_1A_2$ 上的 $B$ 点。
+[14] 即不等式
+[15] 式 1 [链接 L1]
+[16] 表明，凸函数图形（弧）上的所有点都在相应弦的下面，或位于弦本身上（对凹函数，
+[17] 则 “下面” 改为 “上面”）。
+
+[/SCOPE:s_geom]
+[SCOPE:s_thm1|description|定理1]
+[18] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[19] 设 $f(x)\in C[a,b]$。
+[/SCOPE:s_thm1_let]
+[20] $f(x)$ 满足
+[21] 在 $(a,b)$ 上可导。
+[22a] (x)$ 是（严格）凸函数的充分必要条件是 $f'
+[22b] (x)$ 在 $(a,b)$ 内（严格）单调递增。
+[23] 在 $(a,b)$ 上二阶可导。
+[24a] (x)$ 是凸函数的充分必要条件是 $f''
+[24b] (x)\ge 0$；
+[25a] (x)$ 是严格凸函数的充分必要条件是 $f''
+[25b] (x)\ge 0$ 且 $f''
+[25c] (x)$ 在 $(a,b)$ 的任意子区间上都不恒等于 $0$。
+[26] 凸函数的以上几条充分必要条件可以从图像中直观地理解，事实上，画图常常有助于解决与凸函数性质相关的问题。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex1|description|习题1]
+[27] 习题 1
+[28] 证明两个 $I$ 上的凸函数相加仍然是 $I$ 上的凸函数。
+[29] 提示：由于给定函数在区间 $I$ 上不一定可导，
+[30] 所以不能用
+[31] 定理 1 证明，必须回归到定义。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|习题2]
+[32] 习题 2
+[SCOPE:s_ex2_let|let_bind|习题2的变量]
+[33a] (x)$ 是区间 $(a,b)$ 上的凸函数，证明 $f
+[33b] (x)$ 在 $(a,b)$ 内的任意闭区间 $[\alpha,\beta]$ 上都满足 Lipschitz 条件（也就是说存在 $L>0$，对任意 $x_1,x_2\in [\alpha,\beta]$，都有 $|f(x_1)-f(x_2)|\le L|x_1-x_2|$）。
+[/SCOPE:s_ex2_let]
+[34] 提示：如果将 $[\alpha,\beta]$ 改为开区间，
+[35] 则很容易找到反例，
+[36] 所以在证明这个命题时要充分利用好闭区间的特性，尝试将 $L$ 的上界量化。
+[37] 取充分小的 $h$，使 $[\alpha-h,\beta+h]\subset (a,b)$，令 $x_3=x_2+h$，根据凸函数的定义（事实上可以从图像上很快得出）$(f(x_2)-f(x_1))/(x_2-x_1)<(f(x_3)-f(x_2))/(x_3-x_2)\le (M-m)/h$，其中 $M,m$ 是区间 $[\alpha-h,\beta+h]$ 上函数的最大、最小值（可以证明，闭区间上的凸函数一定有最大最小值）。
+[38] 于是可以令 $L=(M-m)/h$。
+[39] 函数的凹凸性可以通过琴生不等式引出各种不等式，函数的凹凸性的定义是琴生不等式的 $n=2$ 版本，而事实上两者作为定义是等价的。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_thm2|description|琴生不等式]
+[40] 定理 2 琴生不等式
+[SCOPE:s_thm2_let|let_bind|琴生不等式的变量]
+[41] $f(x)$ 在区间 $[a,b]$ 上是凸函数的充分必要条件为：对任意 $x_1,\cdots,x_n\in [a,b],\sum_{i=1}^n t_i=1$，以下不等式总成立
+[42] \begin{equation}
+f(t_1x_1+t_2x_2+\cdots+t_nx_n)\le t_1f(x_1)+t_2f(x_2)+\cdots+t_nf(x_n)~.
+\end{equation}
+[/SCOPE:s_thm2_let]
+[43] 利用凸函数的性质，可以推出一系列不等式，例如调和-几何-算术平均不等式、柯西不等式、赫尔德不等式等。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_ex3|description|习题3]
+[44] 习题 3
+[SCOPE:s_ex3_let1|let_bind|习题3的变量]
+[45] 证明幂平均不等式：设 $x_1,\cdots,x_n>0$，构造以下函数：
+[46] \begin{equation}
+F(p)=\left\{
+\begin{aligned}
+&\left(\frac{x_1^p+x_2^p+\cdots+x_n^p}{n}\right)^{1/p} && (p\neq 0)\\
+&(x_1\cdots x_n)^{1/n} && (p=0)~.
+\end{aligned}
+\right.
+\end{equation}
+[/SCOPE:s_ex3_let1]
+[47] 提示：幂平均不等式是调和-几何-算术平均不等式的自然推广，注意到 $F(-\infty)< F(-1)< F(0)< F(1)< F(\infty)$ 恰好对应着
+[48] \begin{equation}
+\begin{aligned}
+\min\{x_1,\cdots,x_n\}&<\frac{n}{\frac{1}{x_1}+\cdots+\frac{1}{x_n}}<(x_1\cdots x_n)^{1/n}\\
+&<\frac{x_1+\cdots+x_n}{n}<\max\{x_1,\cdots,x_n\}~.
+\end{aligned}
+\end{equation}
+[49a] (p)< F
+[49b] (q)$，其他情况的证明类似。
+[50] 为了能利用上琴生不等式，不等式一侧 $x_i$ 的指数最好为 $1$。
+[SCOPE:s_ex3_let2|let_bind|换元变量]
+[51] 所以进行换元，令 $a_i=x_i^p$，可以得到
+[52] \begin{equation}
+\left(\frac{a_1+\cdots+a_n}{n}\right)^{q/p}\le \frac{a_1^{q/p}+\cdots+a_n^{q/p}}{n}~.
+\end{equation}
+[/SCOPE:s_ex3_let2]
+[53] 函数 $x^{q/p}$ 在 $(0,\infty)$ 上是凸函数，
+[54] 因此可以利用琴生不等式证明这个不等式。
+[/SCOPE:s_ex3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1给出凸函数的判别条件，是定义的推论"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "琴生不等式与凸函数定义等价"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题1是定义的应用"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题2是凸函数的性质"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题3利用琴生不等式证明幂平均不等式"
+  }
+]

@@ -1,0 +1,441 @@
+{
+  "article_name": "RePw",
+  "statements": [
+    {
+      "stmt_id": "st_intro_properties",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "x",
+        "α",
+        "β",
+        "x^α"
+      ]
+    },
+    {
+      "stmt_id": "st_prop1",
+      "subtype": "axiom",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop2",
+      "subtype": "axiom",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop3",
+      "subtype": "axiom",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop4",
+      "subtype": "axiom",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop5",
+      "subtype": "axiom",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop6",
+      "subtype": "axiom",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_special_cases",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_question",
+      "subtype": "question",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_answer",
+      "subtype": "conclusion",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rational_construction",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_rational",
+      "exposed_entities": [
+        "n",
+        "x",
+        "x^{1/n}",
+        "x^{m/n}"
+      ]
+    },
+    {
+      "stmt_id": "st_arithmetic_root_existence",
+      "subtype": "theorem",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": "true",
+      "scope_id": "s_rational_let1",
+      "exposed_entities": [
+        "n",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_dedekind_cut_construction",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_rational_let1",
+      "exposed_entities": [
+        "L",
+        "R",
+        "l",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_cut_verification",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rational_let1",
+      "exposed_entities": [
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_y_n_equals_x",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rational_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rational_power_definition",
+      "subtype": "definition",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_rational_let2",
+      "exposed_entities": [
+        "x",
+        "n",
+        "m",
+        "x^{1/n}",
+        "x^{m/n}"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_statement",
+      "subtype": "exercise",
+      "clause_range": [
+        35,
+        37
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "x",
+        "r_k",
+        "x^{r_k}"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_hint",
+      "subtype": "remark",
+      "clause_range": [
+        37,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_real_power_construction",
+      "subtype": "definition",
+      "clause_range": [
+        42,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_real_let",
+      "exposed_entities": [
+        "x",
+        "α",
+        "L_α",
+        "R_α",
+        "A",
+        "B",
+        "x^α"
+      ]
+    },
+    {
+      "stmt_id": "st_real_power_properties",
+      "subtype": "conclusion",
+      "clause_range": [
+        53,
+        58
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_real",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_continuity_property",
+      "subtype": "remark",
+      "clause_range": [
+        59,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_real",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        60,
+        68
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "x_k",
+        "x",
+        "α_k",
+        "α"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_statement",
+      "subtype": "exercise",
+      "clause_range": [
+        69,
+        70
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_hint",
+      "subtype": "remark",
+      "clause_range": [
+        71,
+        75
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_prop1",
+      "target": "st_answer",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prop2",
+      "target": "st_answer",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prop3",
+      "target": "st_answer",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prop4",
+      "target": "st_answer",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prop5",
+      "target": "st_answer",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prop6",
+      "target": "st_answer",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_arithmetic_root_existence",
+      "target": "st_dedekind_cut_construction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_dedekind_cut_construction",
+      "target": "st_cut_verification",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cut_verification",
+      "target": "st_proof_y_n_equals_x",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_y_n_equals_x",
+      "target": "st_rational_power_definition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rational_power_definition",
+      "target": "st_real_power_construction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_real_power_construction",
+      "target": "st_real_power_properties",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_statement",
+      "target": "st_real_power_construction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_statement",
+      "target": "st_thm1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_statement",
+      "target": "st_ex2_statement",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_hint",
+      "target": "st_ex1_statement",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_ex2_hint",
+      "target": "st_ex2_statement",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_statement",
+      "target": "st_ex1_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1的证明需要习题1的结论"
+    },
+    {
+      "source": "st_real_power_construction",
+      "target": "st_ex1_statement",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "实数次幂构造中用到习题1的结论"
+    },
+    {
+      "source": "st_real_power_construction",
+      "target": "st_rational_power_definition",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "实数次幂构造基于有理数次幂"
+    }
+  ],
+  "unresolved": []
+}

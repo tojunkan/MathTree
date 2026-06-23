@@ -1,0 +1,132 @@
+{
+  "article_name": "HsGmPg",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        22,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "a_n",
+        "q"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1",
+      "subtype": "corollary",
+      "clause_range": [
+        47,
+        49
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": [
+        "a_n",
+        "a_1",
+        "q"
+      ]
+    },
+    {
+      "stmt_id": "st_cor2",
+      "subtype": "corollary",
+      "clause_range": [
+        82,
+        93
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor2",
+      "exposed_entities": [
+        "a_n",
+        "q",
+        "a_1"
+      ]
+    },
+    {
+      "stmt_id": "st_cor3",
+      "subtype": "corollary",
+      "clause_range": [
+        109,
+        112
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor3",
+      "exposed_entities": [
+        "a_n",
+        "m",
+        "n",
+        "p",
+        "q"
+      ]
+    },
+    {
+      "stmt_id": "st_cor4",
+      "subtype": "corollary",
+      "clause_range": [
+        161,
+        163
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor4",
+      "exposed_entities": [
+        "S_n",
+        "a_1",
+        "q"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1",
+      "subtype": "example",
+      "clause_range": [
+        173,
+        186
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "a_n",
+        "S_n",
+        "A",
+        "B",
+        "r"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_cor1",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor2",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor3",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor4",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

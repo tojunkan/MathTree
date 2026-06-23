@@ -1,0 +1,151 @@
+{
+  "article_name": "VietaF",
+  "statements": [
+    {
+      "stmt_id": "st_intro_1",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_2",
+      "subtype": "remark",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem_heading",
+      "subtype": "theorem",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem_let",
+      "exposed_entities": [
+        "a_i",
+        "x_i",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem_remark1",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem_remark2",
+      "subtype": "remark",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_step1",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_step2",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_theorem_assump",
+      "target": "st_theorem_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_assump",
+      "target": "st_proof_step1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_step1",
+      "target": "st_proof_step2",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_proof_step2",
+      "target": "st_theorem_conclusion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明推出定理"
+    }
+  ],
+  "unresolved": []
+}

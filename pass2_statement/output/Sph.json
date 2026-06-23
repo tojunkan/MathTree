@@ -1,0 +1,252 @@
+{
+  "article_name": "Sph",
+  "statements": [
+    {
+      "stmt_id": "st_def_spherical_coords",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "P",
+        "r",
+        "θ",
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_iso_standard",
+      "subtype": "remark",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_other_conventions",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_unit_vectors",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_unitvec",
+      "exposed_entities": [
+        "r̂",
+        "θ̂",
+        "φ̂"
+      ]
+    },
+    {
+      "stmt_id": "st_orthonormal_basis",
+      "subtype": "theorem",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": "true",
+      "scope_id": "s_unitvec",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_unit_vectors_depend_on_position",
+      "subtype": "theorem",
+      "clause_range": [
+        16,
+        20
+      ],
+      "truth_value": "true",
+      "scope_id": "s_unitvec",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_unit_vectors",
+      "subtype": "example",
+      "clause_range": [
+        21,
+        23
+      ],
+      "truth_value": "true",
+      "scope_id": "s_unitvec",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cross_product_relation",
+      "subtype": "theorem",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_unitvec",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_conversion_formulas",
+      "subtype": "theorem",
+      "clause_range": [
+        27,
+        29
+      ],
+      "truth_value": "true",
+      "scope_id": "s_convert",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rep_simple_method",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_rep",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rep_projection_method",
+      "subtype": "definition",
+      "clause_range": [
+        32,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_rep",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_position_vector",
+      "subtype": "example",
+      "clause_range": [
+        36,
+        36
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example",
+      "exposed_entities": [
+        "P",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_example_electric_field",
+      "subtype": "example",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example",
+      "exposed_entities": [
+        "q",
+        "E"
+      ]
+    },
+    {
+      "stmt_id": "st_example_velocity_cylinder",
+      "subtype": "example",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example",
+      "exposed_entities": [
+        "v",
+        "ω"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_symmetry",
+      "subtype": "remark",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def_spherical_coords",
+      "target": "st_def_unit_vectors",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_unit_vectors",
+      "target": "st_orthonormal_basis",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_unit_vectors",
+      "target": "st_unit_vectors_depend_on_position",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_unit_vectors",
+      "target": "st_cross_product_relation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_spherical_coords",
+      "target": "st_conversion_formulas",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_spherical_coords",
+      "target": "st_rep_simple_method",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_spherical_coords",
+      "target": "st_rep_projection_method",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rep_projection_method",
+      "target": "st_example_position_vector",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_rep_projection_method",
+      "target": "st_example_electric_field",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_rep_projection_method",
+      "target": "st_example_velocity_cylinder",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

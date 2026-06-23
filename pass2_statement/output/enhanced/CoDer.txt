@@ -1,0 +1,314 @@
+[SCOPE:root|description|协变导数]
+文章名: CoDer
+标题: 协变导数
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=切向量的整体拓展
+  [1] type=theorem heading=定理 1 title=
+  [2] type=theorem heading=定理 2 title=
+
+[0] 【未完成】应当移动到仿射联络条目下
+[1] 定义联络时，我们讲联络看成是向量场之间的映射，$\nabla_{ \boldsymbol{\mathbf{X}} } \boldsymbol{\mathbf{Y}} $ 中的 $ \boldsymbol{\mathbf{X}} $ 和 $ \boldsymbol{\mathbf{Y}} $ 都是光滑向量场。
+[2] 也就是说，我们着眼于场的整体，而没有关注局部的性质，比如某个点或者某个轨迹上的切向量场如何变化。
+[3] 不过，在Christoffel 符号文章中我们看到，在具体图中计算联络时，只用到了几个定义在欧几里得空间的函数，也就是向量场的坐标值函数和 Christoffel 符号。
+[4] 欧几里得空间上函数的求导是可以考虑局部的，也就是我们可以计算一个点上函数的导数，而不必像联络的定义那样要考虑整个场的变换。
+[5] 这就意味着我们有可能局部地计算联络。
+
+[6] 考虑一个带联络的 $n$ 维实流形 $(M, \nabla)$。
+[7] 令 $c:I\to M$ 是一个从区间 $[0, 1]$ 到流形 $M$ 上的连续映射，我们称之为一条道路。
+[8a] (t)|_{t\in I}$ 定义一个光滑切向量场 $ \boldsymbol{\mathbf{X}}
+[8b] (t)$。
+[9a] (t)$ 都是 $c
+[9b] (t)$ 处的切向量，
+[10] 但不一定是沿着 $c'(t)$ 方向的1。
+[11] 比如说，令 $M$ 二维球面 $S^2$，嵌入为三维欧几里得空间中圆心在原点的单位球面。
+[12] 取 $c(t)=  \begin{pmatrix}\cos t&\sin t&0\end{pmatrix}  ^{\mathrm{T}} $。
+[13] 如果令 $ \boldsymbol{\mathbf{X}} (t)=  \begin{pmatrix}0&0& \mathrm{e} ^t\end{pmatrix}  $，
+[14] 那么它处处是 $S^2$ 上的切向量，且沿着 $c(t)$ 的各坐标分量都是关于 $t$ 的光滑函数，
+[15] 因此是沿着 $c(t)$ 的光滑向量场，
+[16] 但它和 $c'(t)$ 处处都不平行。
+[17] 如果 $M$ 是欧几里得空间，
+[18a] (t)$ 了，因为 $ \boldsymbol{\mathbf{X}}
+[18b] (t)$ 可以自然地表示成坐标形式，我们对每个坐标求导就可以了。
+[19a] (t)=x^i
+[19b] (t)\partial_i$，
+[20a] (t)=\dot{x}^i
+[20b] (t)\partial_i$。
+[21] 欧几里得空间中，沿给定道路求导的过程满足以下性质：
+[22] $\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} } \boldsymbol{\mathbf{X}} $ 对 $ \boldsymbol{\mathbf{X}} $ 满足 $\mathbb{R}-$ 线性性2。
+[23] 任取 $M=$ 上的光滑函数 $f$，
+[24] 则
+[25] \begin{equation}
+\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} } \left(f \boldsymbol{\mathbf{X}} \right) =f\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} } \boldsymbol{\mathbf{X}} + \boldsymbol{\mathbf{X}} \frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }f~.
+\end{equation}
+[26] 如果 $ \boldsymbol{\mathbf{X}} $ 是 $\mathbb{R}^n$ 上光滑切向量场 $\tilde{ \boldsymbol{\mathbf{X}} }$ 的一部分，且记 $D$ 是 $\mathbb{R}^n$ 上的方向导数，
+[27] 那么有
+[28] \begin{equation}
+\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} } \boldsymbol{\mathbf{X}} =D_{c'(t)}\tilde{ \boldsymbol{\mathbf{X}} }~.
+\end{equation}
+[29] 式 2 很重要，它意味着至少在欧几里得空间中，沿着道路对切向量求导，可以由联络（方向导数）导出。
+[30] 顺着这个思想，我们可以尝试将沿道路求导的概念拓展到任意的流形 $M$ 上。
+
+[SCOPE:s_global_extension|description|切向量场从局部拓展到整体]
+[31a] (t)$ 上的 $ \boldsymbol{\mathbf{X}}
+[31b] (t)$，能不能拓展到整个流形 $M$ 呢？
+[32a] (t)=\widetilde{ \boldsymbol{\mathbf{X}} }|_{c
+[32b] (t)}$ 呢？
+[33] 答案是肯定的。
+[34] 这是因为任意 $n$ 维实流形 $M$，都可以嵌入到 $\mathbb{R}^{2n}$ 上。
+[35] 换句话说，存在一个 $\mathbb{R}^{2n}$ 上的光滑函数 $f$，使得 $\mathbb{R}^{2n}$ 的子流形 $\{p\in\mathbb{R}^{2n}|f(p)=0\}$，和 $M$ 微分同胚（或者说就是 $M$ 本身）。
+[36] 使用 $\mathbb{R}^{2n}$ 天然的坐标，可以把任何切向量场表示成 $\mathbb{R}^{2n}$ 上光滑函数的组合3。
+[37] 我们总可以把局部的光滑函数拓展为整个 $\mathbb{R}^{2n}$ 上的光滑函数，
+[38] 从而把局部的光滑切向量场拓展为整个 $\mathbb{R}^{2n}$ 上的光滑切向量场。
+[39] 对这个拓展的切场取在 $M$ 上的限制，再投影到 $M$ 上，
+[40] 即得到在 $M$ 上的拓展。
+[41] 【未完成】投影是为了得到 $M$ 上的切向量。
+
+[/SCOPE:s_global_extension]
+[SCOPE:s_example1|description|例1 切向量的整体拓展]
+[42] 例 1 切向量的整体拓展
+[SCOPE:s_example1_let|let_bind|例1的变量]
+[43] 令 $M$ 为三维欧几里得空间中的单位球 $M=\{  \begin{pmatrix}x&y&z\end{pmatrix}  ^{\mathrm{T}} |x^2+y^2+z^2=1\}$。
+[44] 在 $M$ 的 “赤道”$\{  \begin{pmatrix}x&y&z\end{pmatrix}  |x^2+y^2=1, z=0\}$ 上定义了一个光滑切向量场：
+[45] \begin{equation}
+\boldsymbol{\mathbf{V}} \begin{pmatrix}x&y&z\end{pmatrix} = \begin{pmatrix}-y&x&0\end{pmatrix} ~.
+\end{equation}
+[46] 在 $\mathbb{R}^3$ 上定义
+[47] \begin{equation}
+\widehat{ \boldsymbol{\mathbf{V}} } \begin{pmatrix}x&y&z\end{pmatrix} = \begin{pmatrix}-y&x&0\end{pmatrix} ~,
+\end{equation}
+[48] 那么显然 $ \boldsymbol{\mathbf{V}} $ 是 $\widehat{ \boldsymbol{\mathbf{V}} }$ 的限制。
+[49] 但是对于单位球 $M$ 上的各点 $p=  \begin{pmatrix}x&y&z\end{pmatrix}  ^{\mathrm{T}} $，$\widehat{ \boldsymbol{\mathbf{V}} }(p)$ 却不一定是 $T_pM$ 中的切向量。
+[50] 这时候我们就需要投影：
+[51] \begin{equation}
+\widetilde{ \boldsymbol{\mathbf{V}} }=\widehat{ \boldsymbol{\mathbf{V}} }-\widehat{ \boldsymbol{\mathbf{V}} } \boldsymbol\cdot \boldsymbol{\mathbf{N}} ~.
+\end{equation}
+[52] 这样就能保证 $\widetilde{ \boldsymbol{\mathbf{V}} }|_p$ 一定是 $T_pM$ 的元素了。
+[53] 自此，我们就得到了 $ \boldsymbol{\mathbf{V}} $ 在整个 $M$ 上的拓展：$\widetilde{ \boldsymbol{\mathbf{V}} }|_{M}$。
+
+[/SCOPE:s_example1]
+[/SCOPE:s_example1_let]
+[SCOPE:s_covariant_derivative|description|协变导数]
+[SCOPE:s_covariant_derivative_let|let_bind|协变导数的变量]
+[54a] (t)$ 是沿着 $c
+[54b] (t)$ 的光滑切向量场。
+[55a] (t)$ 拓展为整个 $M$ 上的光滑切场 $\widetilde{ \boldsymbol{\mathbf{X}} }$，$c'
+[55b] (t)$ 拓展为 $ \boldsymbol{\mathbf{T}} $。
+[56] $\nabla_{ \boldsymbol{\mathbf{T}} }\widetilde{ \boldsymbol{\mathbf{X}} }$ 是可以计算出来的。
+[57] 考虑到欧几里得空间中沿道路求导的第 3 条性质，也就是和方向导数（联络）的相容性，我们可以沿着 $c(t)$ 定义一个算子 $\frac{D}{ \,\mathrm{d}{t} }$，使得：
+[58] \begin{equation}
+\frac{D}{ \,\mathrm{d}{t} } \boldsymbol{\mathbf{X}} (t)=\nabla_{ \boldsymbol{\mathbf{T}} }\widetilde{ \boldsymbol{\mathbf{X}} }|_{c(t)}~.
+\end{equation}
+[/SCOPE:s_covariant_derivative_let]
+[59a] (t)$ 为 $ \boldsymbol{\mathbf{X}} $ 沿着道路 $c
+[59b] (t)$ 的协变导数（covariant derivative）。
+[60] 欧几里得空间上沿着 $c(t)$ 求 $ \boldsymbol{\mathbf{X}} $ 的方向导数，就是协变导数的一个特例。
+[61] 一般的协变导数，和这个特例一样，有三个性质：
+[62] $\frac{D}{ \,\mathrm{d}{t} } \boldsymbol{\mathbf{X}} $ 对 $ \boldsymbol{\mathbf{X}} $ 满足 $\mathbb{R}-$ 线性性4。
+[63] 任取 $M=$ 上的光滑函数 $f$，
+[64] 则
+[65] \begin{equation}
+\frac{D}{ \,\mathrm{d}{t} } \left(f \boldsymbol{\mathbf{X}} \right) =f\frac{D}{ \,\mathrm{d}{t} } \boldsymbol{\mathbf{X}} + \boldsymbol{\mathbf{X}} \frac{D}{ \,\mathrm{d}{t} }f~.
+\end{equation}
+[66] 如果 $ \boldsymbol{\mathbf{X}} $ 是 $\mathbb{R}^n$ 上光滑切向量场 $\tilde{ \boldsymbol{\mathbf{X}} }$ 的一部分，且记 $D$ 是 $\mathbb{R}^n$ 上的方向导数，
+[67] 那么有
+[68] \begin{equation}
+\frac{D}{ \,\mathrm{d}{t} } \boldsymbol{\mathbf{X}} =D_{c'(t)}\tilde{ \boldsymbol{\mathbf{X}} }~.
+\end{equation}
+[69] 在 Loring W. Tu 的课本Differential Geometry: Connections, Curvature, and Characteristic Classes [1] 的第 13.1 节，导出协变导数的思路是先给出以上三个性质，然后证明存在且唯一存在满足这三条性质的算子，将其定义为 $\frac{D}{ \,\mathrm{d}{t} }$。
+[70] 如果你使用 GTM 275 作为参考书，请注意这里思路的差别。
+
+[/SCOPE:s_covariant_derivative]
+[SCOPE:s_computation|description|协变导数的计算]
+[SCOPE:s_computation_let|let_bind|计算中的变量]
+[71] 取 $M$ 上的一个局部坐标系5$\{ \boldsymbol{\mathbf{e}} _1, \boldsymbol{\mathbf{e}} _2, \cdots, \boldsymbol{\mathbf{e}} _n\}$。
+[72a] (t)$ 的一个光滑切向量场 $ \boldsymbol{\mathbf{X}} =x^i
+[72b] (t) \boldsymbol{\mathbf{e}} _i$，其中各 $x^i
+[72c] (t)$ 是区间 $I$ 上的光滑函数。
+[73] 将光滑切场 $ \boldsymbol{\mathbf{e}} _i$ 拓展为光滑切场 $\widetilde{ \boldsymbol{\mathbf{e}} }_i$，光滑函数 $x^i$ 拓展为光滑函数 $\widetilde{x}^i$6。
+[74] 此时再将 $c'(t)$ 拓展为整个 $M$ 上的光滑切场 $ \boldsymbol{\mathbf{T}} =T^i\widetilde{ \boldsymbol{\mathbf{e}} }_i$。
+[/SCOPE:s_computation_let]
+[75] 则按定义有：
+[76] \begin{equation}
+\begin{aligned}
+\frac{D}{ \,\mathrm{d}{t} } \boldsymbol{\mathbf{X}} (t) &= \nabla_{ \boldsymbol{\mathbf{T}} } \left(\widetilde{x}^i \widetilde
+{ \boldsymbol{\mathbf{e}} }_i\right) |_{c(t)} \\
+&=\widetilde{x}^i\nabla_{T^j\widetilde{ \…[truncated]… }_i|_{c(t)}\\
+&=T^j\widetilde{x}^i\nabla_{\widetilde{ \boldsymbol{\mathbf{e}} }_j}\left(\widetilde{ \boldsymbol{\mathbf{e}} }_i\right)|_{c(t)}+\frac{ \,\mathrm{d}{x} ^i(t)}{ \,\mathrm{d}{t} } \boldsymbol{\mathbf{e}} _i~.
+\end{aligned}
+\end{equation}
+[77] 按照 GTM 275 中式（13.1）的写法，有
+[78] \begin{equation}
+\frac{D}{ \,\mathrm{d}{t} } \boldsymbol{\mathbf{X}} (t)=\frac{ \,\mathrm{d}{x} ^i(t)}{ \,\mathrm{d}{t} } \boldsymbol{\mathbf{e}} _i+{x}^i(t)\nabla_{ \boldsymbol{\mathbf{T}} } \boldsymbol{\mathbf{e}} _i~
+\end{equation}
+[79] 和式 9 是一样的。
+[80] 将式 9 与Christoffel 符号的概念结合，我们还可以进一步写出给定图中协变导数的计算公式：
+[81] \begin{equation}
+\frac{D}{ \,\mathrm{d}{t} } \boldsymbol{\mathbf{X}} (t)=T^jx^i\Gamma^k_{ji}+\frac{ \,\mathrm{d}{x} ^k(t)}{ \,\mathrm{d}{t} }~.
+\end{equation}
+[82] 式 11 [链接 L0]
+[83] 只写了坐标，省略了 $ \boldsymbol{\mathbf{e}} _i$。
+[84] 这样，只要知道了一个图中的 Christoffel 符号，就可以用式 11 在这个图中计算出协变导数了。
+
+[/SCOPE:s_computation]
+[85] 相关概念参见黎曼联络。
+
+[SCOPE:s_theorem1|description|定理1]
+[86] 定理 1
+[SCOPE:s_theorem1_let|let_bind|定理1的变量]
+[87a] (t)$，沿着道路有两个光滑切场 ${ \boldsymbol{\mathbf{X}} }
+[87b] (t)$ 和 ${ \boldsymbol{\mathbf{Y}} }
+[87c] (t)$。
+[88a] (t), { \boldsymbol{\mathbf{Y}} }
+[88b] (t))$ 就是 $c
+[88c] (t)$ 上的光滑函数，
+[/SCOPE:s_theorem1_let]
+[89] 因此可以直接对 $t$ 求导。
+[90] 此时我们有：
+[91] \begin{equation}
+\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} }g({ \boldsymbol{\mathbf{X}} }(t), { \boldsymbol{\mathbf{Y}} }(t))=g(\frac{D}{ \,\mathrm{d}{t} }{ \boldsymbol{\mathbf{X}} }(t), { \boldsymbol{\mathbf{Y}} }(t))+g({ \boldsymbol{\mathbf{X}} }(t), \frac{D}{ \,\mathrm{d}{t} }{ \boldsymbol{\mathbf{Y}} }(t))~.
+\end{equation}
+[92] 这是由 “度量相容性（见定义 3 的第二条）” 推论得出的。
+
+[/SCOPE:s_theorem1]
+[SCOPE:s_definition|description|定义]
+[93] 设 $TM$ 是 $M$ 上的切丛，利用切丛上的联络 $\nabla$，我们可以诱导作用在张量场上的协变导数。
+
+[/SCOPE:s_definition]
+[SCOPE:s_theorem2|description|定理2]
+[94] 定理 2
+[SCOPE:s_theorem2_let|let_bind|定理2的变量]
+[95] 设 $M$ 上的仿射联络为 $\nabla$；
+[96] $X$ 与 $Y$ 是光滑切场。
+[97] 如果 $\omega$ 是 $M$ 上的光滑 1 形式，
+[/SCOPE:s_theorem2_let]
+[98] 那么
+[99] \begin{equation}
+\left(\nabla_X \omega\right)(Y):=X(\omega(Y))-\omega\left(\nabla_X Y\right)~,
+\end{equation}
+[100] 可以证明 $\nabla_X \omega$ 也是光滑 1 形式。
+[101] 若 $T$ 是光滑的 $(a,b)$ 型张量场，
+[102] 那么
+[103] \begin{equation}
+\begin{aligned}
+\left(\nabla_X T\right)\left(\omega_1, \ldots, \omega_a, Y_1, \ldots, Y_b\right):= & X\left(T\left(\omega_1, \ldots, \omega_a, Y_1, \ldots, Y_b\right)\right) \\
+& -\sum_{i=1}^a T\left(\omega_1, \ldots, \nabla_X \omega_i, \ldots \omega_a, Y_1, \ldots, Y_b\right) \\
+& -\sum_{j=1}^b T\left(\omega_1, \ldots, \omega_a, Y_1, \ldots, \nabla_X Y_j, \ldots Y_b\right)~,
+\end{aligned}
+\end{equation}
+[104] 可以证明 $\nabla_X T$ 也是光滑的 $(a,b)$ 型张量场。
+[105] 上述定义显然是为了呼应 “仿射联络把光滑切场映射为光滑切场”。
+[106] 接下来我们证明这两种定义的合理性。
+[SCOPE:s_theorem2_proof|description|定理2的证明]
+[107] 证明：
+[108] 从定义来看，联络对张量场的作用结果必然是光滑的。
+[109] 要证明结果依然是张量场，只需要证明对括号内的切场（余切场）满足光滑函数线性。
+[110] 设 $f$ 为光滑函数，我们有
+[111] \begin{equation}
+\begin{aligned}
+\nabla_X\omega(fY)&=X(\omega(fY))-\omega(\nabla_XfY)\\
+& =(X f) \omega(Y)+f X(\omega(Y))-\omega((X f) Y)-f \omega\left(\nabla_X Y\right) \\
+& =f\left(\nabla_X \omega\right)(Y)~.
+\end{aligned}
+\end{equation}
+[112] 同理可证，用 $f\omega_i$ 替换
+[113] 式 14 [链接 L1]
+[114] 中的 $\omega_i$，右式第一项为
+[115] \begin{equation}
+\begin{aligned}
+X\left(T\left(\omega_1, \ldots, f\omega_i,\ldots,\omega_a, Y_1, \ldots, Y_b\right)\right)&=(Xf)\left(T\left(\omega_1, \ldots,\omega_a, Y_1, \ldots, Y_b\right)\right)\\&+fX\left(T\left(\omega_1, \ldots,\omega_a, Y_1, \ldots, Y_b\right)\right)~.
+\end{aligned}
+\end{equation}
+[116] 第三项不变，第二项利用莱布尼兹律展开，其中一项与
+[117] 式 16 [链接 L2]
+[118] 右式第一项抵消，然后得到对任意切场是光滑函数线性的性质。
+[119] 对余切场亦同理可证。
+[120] 于是我们便证明了，协变导数对光滑张量场作用，结果依然是光滑张量场。
+
+[/SCOPE:s_theorem2]
+[/SCOPE:s_theorem2_proof]
+[SCOPE:s_coordinate|description|坐标表示]
+[121] 从定义式式 14 可知，只要分别求出联络对切向（协变矢量），余切向量（逆变矢量）basis 作用的表达式，代入此式后我们便能得到对张量场求协变导数的坐标表示。
+[SCOPE:s_coordinate_let|let_bind|坐标表示中的变量]
+[122] 在该节中，我们对上下标采取爱因斯坦求和约定。
+[123] Christoffel 符号的定义式已表明，对于任意切矢量 $V$ 我们有
+[124] \begin{equation}
+\begin{aligned}
+\nabla_{\partial_i}\partial_j&=\Gamma^k_{ij}\partial_k\\
+\nabla_{\partial_i}V&=(\nabla_{\partial_i} V)^j\partial_j\\
+&=(\partial_iV^j+\Gamma^j_{ik}V^k)\partial_j
+\end{aligned}~.
+\end{equation}
+[125] 所以我们只需要求出对余切向量求协变导数的坐标表示即可。
+[126] 为表示方便，接下来我们用 $\nabla_i$ 表示 $\nabla_{\partial_i}$。
+[/SCOPE:s_coordinate_let]
+[127] 光滑 1 形式是余切向量的线性组合，设 $\omega=\omega_i\theta^i$，现在我们利用式 13 ，求出 $(\nabla_i\omega)_j$ 即可。
+[128] 用 $\partial_j$ 代替 $Y$，右式为
+[129] \begin{equation}
+\begin{aligned}
+X(\omega(Y))-\omega\left(\nabla_X Y\right)&=\nabla_i[\omega(\partial_j)]-\omega[\nabla_i\partial_j]\\
+&=\partial_i\omega_j-\omega_k\Gamma^k_{ij}~.
+\end{aligned}
+\end{equation}
+[130] \begin{equation}
+\begin{aligned}
+(\nabla_i\omega)_j&=\partial_i\omega_j-\omega_k\Gamma^k_{ij}\\
+\nabla_i\theta^j&=-\Gamma^j_{ik}\theta^k~.
+\end{aligned}
+\end{equation}
+[131] 现在我们欲求 $(\nabla_iT)^{r_1r_2...r_a}_{s_1s_2...s_b}$，利用定义得
+[132] \begin{equation}
+\begin{aligned}
+(\nabla_i T)^{r_1 r_2 \ldots r_a}_{s_1 s_2 \ldots s_b} &= (\nabla_i T)(\theta^{r_1}, \theta^{r_2}, \ldots, \theta^{r_a}, \partial_{s_1}, \partial_{s_2}, \ldots, \partial_{s_b}) \\
+&= \partial_i [T(\theta^{r_1}, \theta…[truncated]…sigma}^{r_a} T^{r_1 \ldots r_{a-1} \sigma}{ }_{s_1 \ldots s_b}\\
+&\quad-\Gamma^\sigma _{i s_1} T^{r_1 \ldots r_a}{ }_{\sigma s_2 \ldots s_b}-\ldots-\Gamma_{i s_b}^\sigma T^{r_1 \ldots r_a}{ }_{s_1 \ldots s_{b-1} \sigma}~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_coordinate]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_covariant_derivative",
+    "target_scope": "s_global_extension",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "协变导数的定义依赖于切向量场的整体拓展"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_global_extension",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是整体拓展的具体实例"
+  },
+  {
+    "source_scope": "s_computation",
+    "target_scope": "s_covariant_derivative",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "计算基于协变导数的定义"
+  },
+  {
+    "source_scope": "s_theorem1",
+    "target_scope": "s_covariant_derivative",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理1是协变导数的性质"
+  },
+  {
+    "source_scope": "s_theorem2",
+    "target_scope": "s_definition",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2给出张量场协变导数的定义"
+  },
+  {
+    "source_scope": "s_coordinate",
+    "target_scope": "s_theorem2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "坐标表示基于定理2的定义"
+  }
+]

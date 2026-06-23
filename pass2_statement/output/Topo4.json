@@ -1,0 +1,358 @@
+{
+  "article_name": "Topo4",
+  "statements": [
+    {
+      "stmt_id": "st_intro_stronger",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_path",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "I",
+        "X",
+        "f",
+        "f(I)"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        7,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_R",
+      "subtype": "example",
+      "clause_range": [
+        13,
+        15
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "R",
+        "I"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_sin",
+      "subtype": "example",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "a",
+        "b",
+        "sin(1/x)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_closure",
+      "subtype": "example",
+      "clause_range": [
+        17,
+        20
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "S",
+        "barS"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_concat",
+      "subtype": "example",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "f",
+        "g",
+        "h"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_transition",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_path_connected",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "X",
+        "A",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_not_equivalent",
+      "subtype": "remark",
+      "clause_range": [
+        28,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "barS"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_implies_connected",
+      "subtype": "remark",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        33,
+        35
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "X",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_assume_not_connected",
+      "subtype": "assumption",
+      "clause_range": [
+        36,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_reductio",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_exist_open_sets",
+      "subtype": "assumption",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_reductio",
+      "exposed_entities": [
+        "U",
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_choose_points",
+      "subtype": "assumption",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_reductio",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_path_exists",
+      "subtype": "assumption",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_reductio",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_preimages_open",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_contradiction",
+      "subtype": "conclusion",
+      "clause_range": [
+        41,
+        42
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_final_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_intro",
+      "subtype": "remark",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        46,
+        48
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "X",
+        "Y",
+        "f",
+        "A"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_assume_not_connected",
+      "target": "st_thm1_exist_open_sets",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_exist_open_sets",
+      "target": "st_thm1_choose_points",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_choose_points",
+      "target": "st_thm1_path_exists",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_path_exists",
+      "target": "st_thm1_preimages_open",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_preimages_open",
+      "target": "st_thm1_contradiction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_contradiction",
+      "target": "st_thm1_final_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_statement",
+      "target": "st_thm1_final_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_statement",
+      "target": "st_def2_path_connected",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_statement",
+      "target": "st_def2_path_connected",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理1由道路连通性推出连通性，依赖定义2"
+    },
+    {
+      "source": "st_thm2_statement",
+      "target": "st_def2_path_connected",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理2说明道路连通性在同胚下保持，依赖定义2"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,111 @@
+[SCOPE:root|description|素域]
+文章名: FmLT
+标题: 素域
+
+环境标记 (hints):
+  [0] type=lemma heading=引理 1 title=
+  [1] type=theorem heading=定理 1 title=费马小定理
+
+[SCOPE:s_lemma1|description|引理1]
+[0] 引理 1
+[1] 剩余类环 $\mathbb Z_p$ 是个域（定义 2 ），当且仅当 $p$ 是素数。
+[2] 当 $p$ 为素数的时候，我们把 $\mathbb Z_p$ 称为素域（或者质域），记做 $\mathbb F_p$。
+[3] 证明：
+[SCOPE:s_lemma1_let1|let_bind|p非素数时的变量]
+[4] 若 $p$ 不是素数，
+[5] 则由素数定义，存在整数 $1< r,s< p$, 使得 $rs=p$，
+[6] 于是 $\overline r\overline s=\overline p=\overline 0$（见同余性质 2），这就是说 $\mathbb Z_p$ 中有零因子（定义 1 ）$\overline r,\overline s$。
+[7] 由于域不可能有零因子，
+[8] 所以 $p$ 非素数时 $\mathbb Z_p$ 不是域，由逆否命题的正确性，$\mathbb Z_p$ 是域则 $p$ 是素数。
+[/SCOPE:s_lemma1_let1]
+[SCOPE:s_lemma1_let2|let_bind|p是素数时的变量s]
+[9] 其次，假设 $p$ 是素数，由于 $\mathbb Z_p$ 是有单位元的交换环（定理 1 ），证明其是域只需证明其上非零元都有逆元。
+[10a] (p)$，当 $k=1,\cdots,p-1$ 时，有 $ks\not\equiv 0
+[10b] (p)$。
+[SCOPE:s_lemma1_let3|let_bind|k和r的分解]
+[11] 事实上，设 $s\in\overline r, r\in{1,\cdots,p-1}$，
+[12] 则 $\overline k\overline s=\overline k\overline r$（见同余性质 2），由于任一整数都可写成同一组两两不等的素数方幂的乘积，并考虑到 $k,r< p$, 那么：
+[13] \begin{equation}
+k=p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_n^{\alpha_n}p^0, \quad r=p_1^{\beta_1}p_2^{\beta_2}\cdots p_n^{\beta_n}p^0,\quad ks=p_1^{\alpha_1+\beta_1}p_2^{\alpha_2+\beta_2}\cdots p_n^{\alpha_n+\beta_n}p^0~,
+\end{equation}
+[14] 其中 $p_1,\cdots,p_n$ 是小于 $p$ 的素数，而
+[15] \begin{equation}
+p=p_1^0p_2^0\cdots p_n^{0}p~.
+\end{equation}
+[16] $p$ 整除 $kr$ 意味着 $p$ 是 $kr$ 的因数，这相当于 $kr$ 的素数分解式中包含数 $p$ 的分解式（相当于分解式中各素数因子幂次都要大于因数对应素数的幂次）。
+[17] 然而 $kr$ 的分解式中 $p$ 的幂次为 0，这意味着 $p$ 不是 $kr$ 的因数，
+[18] 即 $ks\not\equiv 0(p)$。
+[/SCOPE:s_lemma1_let3]
+[19] 考查元素
+[20] \begin{equation}
+\overline s,\overline{2s},\cdots,\overline{(p-1)s}~,
+\end{equation}
+[21] 其中 $\overline s\not=\overline 0$ 由上面所述，它们都不为 0。
+[22] 容易证得其中任意两元素都不相等，否则 $\overline{ks}=\overline{ls},\;k< l$，
+[23] 则 $\overline(l-k)=\overline 0$，这是不可能的。
+[24] 于是除了顺序之外，序列（
+[25] 式 3 [链接 L0]
+[26] ）和序列
+[27] \begin{equation}
+\overline 1,\overline 2,\cdots,\overline{p-1}~
+\end{equation}
+[28] 重合。
+[29] 注意元素个数相同意味着集合间存在双射，对于这里，映射
+[30] \begin{equation}
+f:\overline{ns}\mapsto \overline n,\quad n\in\{1,\cdots,p-1\}~
+\end{equation}
+[31] 构成这样的双射，
+[32] 于是可以找到整数 $1\leq s'\leq p-1$，使得 $\overline{ss'}=\overline 1$，$\overline{s's}$ 由 $f^{-1}(\overline 1)$ 给出，
+[33] 即 $\overline{s'}$ 是 $\overline s$ 的逆元。
+[34] 于是 $\mathbb Z_p$ 是个域。
+[/SCOPE:s_lemma1_let2]
+[35] 证毕！
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_fermat|description|费马小定理]
+[36] 费马小定理是法国律师费马于 1636 年发现的，其由欧拉在 1736 年出版的名为 “一些与素数有关的定理的证明” 的论文集中第一次给出证明。
+[37] 其描述如下
+
+[38] 定理 1 费马小定理
+[SCOPE:s_fermat_let|let_bind|费马小定理的变量]
+[39] 若 $p$ 是素数，$m$ 是一个不能被 $p$ 整除的整数，
+[40] 则有同余式(定义 1 )
+[41] \begin{equation}
+m^{p-1}\equiv 1(p)~.
+\end{equation}
+[42] 翻译成自然语言，就是说若整数 $m$ 不能被素数 $p$ 整除，
+[43] 则 $p$ 除 $m^{p-1}$ 余数为 1。
+[44] 值得注意的是，费马小定理是更一般的欧拉定理（链接）的特殊情形。
+[45] 证明：
+[46] 由子节 1 中的式 3 和式 4 集合的相等性知
+[47] \begin{equation}
+\{\overline m,\overline{2m},\cdots,\overline{(p-1)m}\}=\{\overline 1,\overline 2,\cdots,\overline{p-1}\}~.
+\end{equation}
+[48] 两边全体元素相乘：
+[49] \begin{equation}
+\left(\Pi_{k=1}^{p-1}\overline k \right) \overline{m}^{p-1}=\Pi_{k=1}^{p-1}\overline k~.
+\end{equation}
+[50] 引理 1
+[51] ，$\mathbb Z_p$ 是个域，域是个无零因子环，其满足消去律（链接），
+[52] 于是乘积 $\Pi_{k=1}^{p-1}\overline k\neq\overline0$(由于每个 $\bar k\neq0$，如果该式不成立，意味着零因子的存在，而这是不可能的)可消去，得到
+[53] \begin{equation}
+\overline m^{p-1}=\overline 1~.
+\end{equation}
+[54] 翻译成同余的语言，
+[55] 即得
+[56] 式 6 [链接 L1]
+[57] 证毕！
+[/SCOPE:s_fermat]
+[/SCOPE:s_fermat_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_fermat",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "费马小定理的证明引用引理1的结论"
+  }
+]

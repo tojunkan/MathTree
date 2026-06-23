@@ -1,0 +1,379 @@
+{
+  "article_name": "ParDer",
+  "statements": [
+    {
+      "stmt_id": "st_ex1_func",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let",
+      "exposed_entities": [
+        "f(x,y)",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_func",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "z",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_analogy",
+      "subtype": "remark",
+      "clause_range": [
+        4,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_geom",
+      "exposed_entities": [
+        "(x_0,y_0)",
+        "Δx"
+      ]
+    },
+    {
+      "stmt_id": "st_geom_approx",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_differential",
+      "subtype": "conclusion",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_genfunc_remark",
+      "subtype": "remark",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_genfunc",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_def_f",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3_let1",
+      "exposed_entities": [
+        "z",
+        "f(x,y)",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_def_g",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3_let2",
+      "exposed_entities": [
+        "z",
+        "g(r,θ)",
+        "r",
+        "θ"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_wrong",
+      "subtype": "counterexample_claim",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_convention1",
+      "subtype": "remark",
+      "clause_range": [
+        19,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_notation",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_complex",
+      "subtype": "remark",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_subsection",
+      "subtype": "remark",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_higher_intro",
+      "subtype": "remark",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_higher_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_higher_list",
+      "subtype": "definition",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_higher",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mixed_def",
+      "subtype": "definition",
+      "clause_range": [
+        33,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_higher",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mixed_property",
+      "subtype": "theorem",
+      "clause_range": [
+        36,
+        36
+      ],
+      "truth_value": "true",
+      "scope_id": "s_higher",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_goal",
+      "subtype": "theorem",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": "true",
+      "scope_id": "s_higher_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_remark",
+      "subtype": "remark",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_higher_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_def_phi_psi",
+      "subtype": "definition",
+      "clause_range": [
+        40,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_higher_proof_let1",
+      "exposed_entities": [
+        "I",
+        "φ(x)",
+        "ψ(y)"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_derivation1",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        44
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_higher_proof_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_derivation2",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_higher_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_equality",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_higher_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        48,
+        49
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_higher_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex1_func",
+      "target": "st_ex1_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_func",
+      "target": "st_ex2_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geom_assump",
+      "target": "st_geom_approx",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geom_assump",
+      "target": "st_geom_differential",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_def_phi_psi",
+      "target": "st_proof_derivation1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_derivation1",
+      "target": "st_proof_derivation2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_derivation2",
+      "target": "st_proof_equality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_equality",
+      "target": "st_proof_final",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

@@ -1,0 +1,222 @@
+{
+  "article_name": "fermse",
+  "statements": [
+    {
+      "stmt_id": "st_fermat_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": "true",
+      "scope_id": "s_fermat",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fermat_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_fermat_let",
+      "exposed_entities": [
+        "p",
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_fermat_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_fermat_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fermat_special",
+      "subtype": "remark",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_fermat",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euler_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        6,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_euler",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euler_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_euler_let",
+      "exposed_entities": [
+        "a",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_euler_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euler_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euler_prod_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_euler_prod",
+      "exposed_entities": [
+        "h"
+      ]
+    },
+    {
+      "stmt_id": "st_euler_prod_step1",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euler_prod",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euler_prod_eq1",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euler_prod",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euler_prod_eq2",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euler_prod",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euler_prod_coprime",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euler_prod",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_euler_prod_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_euler_prod",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_fermat_assump",
+      "target": "st_fermat_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euler_assump",
+      "target": "st_euler_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euler_prod_assump",
+      "target": "st_euler_prod_step1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euler_prod_assump",
+      "target": "st_euler_prod_eq1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euler_prod_step1",
+      "target": "st_euler_prod_eq1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euler_prod_eq1",
+      "target": "st_euler_prod_eq2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euler_prod_eq2",
+      "target": "st_euler_prod_coprime",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euler_prod_coprime",
+      "target": "st_euler_prod_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_euler_prod_final",
+      "target": "st_euler_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_fermat_theorem",
+      "target": "st_euler_theorem",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "费马小定理是费马-欧拉定理的特例"
+    }
+  ],
+  "unresolved": []
+}

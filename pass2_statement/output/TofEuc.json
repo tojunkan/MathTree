@@ -1,0 +1,457 @@
+{
+  "article_name": "TofEuc",
+  "statements": [
+    {
+      "stmt_id": "st_intro_metric_tensor",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "(*|*)",
+        "G",
+        "g_{ij}",
+        "e^i",
+        "e_j"
+      ]
+    },
+    {
+      "stmt_id": "st_natural_isomorphism",
+      "subtype": "theorem",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_convention_coordinate",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "T^{ij}",
+        "T"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "V",
+        "(*|*)"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_gij",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "g_{ij}",
+        "e_i",
+        "e_j"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_inner_product",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_norm",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_symmetry",
+      "subtype": "theorem",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "g_{ij}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        32,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "g'_{ij}",
+        "g_{ij}",
+        "e'_i",
+        "e_i",
+        "A^i_j"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_transform",
+      "subtype": "theorem",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "g'_{ij}",
+        "A^k_i",
+        "A^l_j",
+        "g_{kl}"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_gij_inv",
+      "subtype": "definition",
+      "clause_range": [
+        41,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "g^{ij}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_claim",
+      "subtype": "theorem",
+      "clause_range": [
+        44,
+        47
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "g^{ij}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "g^{ij}",
+        "g_{ij}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        50,
+        63
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        64,
+        69
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_lower",
+      "subtype": "definition",
+      "clause_range": [
+        70,
+        71
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "g_{ij}"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_raise",
+      "subtype": "definition",
+      "clause_range": [
+        72,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "g^{ij}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_claim",
+      "subtype": "theorem",
+      "clause_range": [
+        74,
+        77
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": [
+        "x_i",
+        "x^i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_let",
+      "subtype": "assumption",
+      "clause_range": [
+        75,
+        75
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        78,
+        83
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm4_claim",
+      "subtype": "theorem",
+      "clause_range": [
+        84,
+        86
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm4",
+      "exposed_entities": [
+        "x_i",
+        "x^i",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_thm4_let",
+      "subtype": "assumption",
+      "clause_range": [
+        85,
+        85
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm4_let",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_thm4_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        87,
+        89
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_general_index_raising_lowering",
+      "subtype": "definition",
+      "clause_range": [
+        90,
+        100
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1",
+      "subtype": "example",
+      "clause_range": [
+        101,
+        104
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "g_{ij}",
+        "g^{ij}",
+        "{g^{i}}_j",
+        "\\delta^i_j"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_gij",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_gij",
+      "target": "st_def1_inner_product",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_gij",
+      "target": "st_def1_norm",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1_symmetry",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1_transform",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let",
+      "target": "st_thm2_claim",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let",
+      "target": "st_thm2_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_let",
+      "target": "st_thm3_claim",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_let",
+      "target": "st_thm3_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm4_let",
+      "target": "st_thm4_claim",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm4_let",
+      "target": "st_thm4_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_remark",
+      "target": "st_def3_lower",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_thm2_remark",
+      "target": "st_def3_raise",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_symmetry",
+      "target": "st_def1_gij",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1是定义1的性质"
+    },
+    {
+      "source": "st_thm2_claim",
+      "target": "st_def2_gij_inv",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2证明g^{ij}是张量"
+    },
+    {
+      "source": "st_thm3_claim",
+      "target": "st_def3_lower",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理3是定义3的性质"
+    },
+    {
+      "source": "st_thm4_claim",
+      "target": "st_def3_lower",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理4是定义3的补充"
+    },
+    {
+      "source": "st_example1",
+      "target": "st_def3_lower",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是定义3的应用"
+    }
+  ],
+  "unresolved": []
+}

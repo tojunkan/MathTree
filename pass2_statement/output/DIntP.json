@@ -1,0 +1,424 @@
+{
+  "article_name": "DIntP",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "a",
+        "b",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "a",
+        "b",
+        "x_0",
+        "x_1",
+        "x_n",
+        "f",
+        "ξ_i",
+        "Δx_i",
+        "λ"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        12
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "∫_a^b f(x) dx"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "f(x)",
+        "b",
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "∫_a^b f(x) dx",
+        "∫_b^a f(x) dx"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "∫_a^a f(x) dx"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        28,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_notation",
+      "subtype": "remark",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "∑_c^d f(ξ)Δx",
+        "f(ξ)",
+        "Δx"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_assump1",
+      "subtype": "assumption",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3_let",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_assump2",
+      "subtype": "assumption",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3_let",
+      "exposed_entities": [
+        "c",
+        "d",
+        "e"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3_let",
+      "exposed_entities": [
+        "∫_c^d f(x) dx",
+        "∫_c^e f(x) dx",
+        "∫_e^d f(x) dx"
+      ]
+    },
+    {
+      "stmt_id": "st_thm4_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        48,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm4_let",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_thm4_conclusion1",
+      "subtype": "theorem",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm4_let",
+      "exposed_entities": [
+        "∫_a^b k f(x) dx",
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_thm4_conclusion2",
+      "subtype": "theorem",
+      "clause_range": [
+        51,
+        51
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm4_let",
+      "exposed_entities": [
+        "∫_a^b (f±g)(x) dx"
+      ]
+    },
+    {
+      "stmt_id": "st_thm5_assump1",
+      "subtype": "assumption",
+      "clause_range": [
+        58,
+        58
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm5_let",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_thm5_conclusion1",
+      "subtype": "theorem",
+      "clause_range": [
+        60,
+        60
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm5_let",
+      "exposed_entities": [
+        "∫_a^b f(x) dx"
+      ]
+    },
+    {
+      "stmt_id": "st_thm5_conclusion2",
+      "subtype": "theorem",
+      "clause_range": [
+        61,
+        61
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm5_let",
+      "exposed_entities": [
+        "∫_a^b f(x) dx"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        77,
+        77
+      ],
+      "truth_value": null,
+      "scope_id": "s_cor1_let",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1_conclusion",
+      "subtype": "corollary",
+      "clause_range": [
+        79,
+        79
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": [
+        "∫_a^b f(x) dx",
+        "∫_a^b g(x) dx"
+      ]
+    },
+    {
+      "stmt_id": "st_thm6_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        81,
+        81
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm6_let",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_thm6_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        83,
+        83
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm6_let",
+      "exposed_entities": [
+        "|∫_a^b f(x) dx|",
+        "∫_a^b |f(x)| dx"
+      ]
+    },
+    {
+      "stmt_id": "st_thm7_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        95,
+        96
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm7_let",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b",
+        "m",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_thm7_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        97,
+        97
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm7_let",
+      "exposed_entities": [
+        "∫_a^b f(x) dx"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_assump",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_assump1",
+      "target": "st_thm3_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_assump2",
+      "target": "st_thm3_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm4_assump",
+      "target": "st_thm4_conclusion1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm4_assump",
+      "target": "st_thm4_conclusion2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm5_assump1",
+      "target": "st_thm5_conclusion1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm5_assump1",
+      "target": "st_thm5_conclusion2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor1_assump",
+      "target": "st_cor1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm6_assump",
+      "target": "st_thm6_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm7_assump",
+      "target": "st_thm7_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor1_conclusion",
+      "target": "st_thm5_conclusion1",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_cor1_conclusion",
+      "target": "st_thm5_conclusion1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论1是定理5的直接推论"
+    }
+  ],
+  "unresolved": []
+}

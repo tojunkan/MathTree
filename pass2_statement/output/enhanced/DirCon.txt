@@ -1,0 +1,40 @@
+[SCOPE:root|description|狄利克雷卷积（数论）]
+文章名: DirCon
+标题: 狄利克雷卷积（数论）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=Dirichlet 卷积（数论卷积）
+
+[SCOPE:s_def|description|Dirichlet 卷积（数论卷积）]
+[0] 定义 1 Dirichlet 卷积（数论卷积）
+[SCOPE:s_let_fg|let_bind|定义中的变量]
+[1a] (n)$, $g
+[1b] (n)$ 的狄利克雷卷积（Dirichlet Convolution） 为 $h
+[1c] (n)$ 如下，
+[2] \begin{equation}
+h(n) = f(n) * g(n) = \sum_{d|n}\left(f(d) g(n/d)\right) ~.
+\end{equation}
+[3a] (n) = f
+[3b] (n) * g
+[3c] (n)$ 表示为，
+[4] \begin{equation}
+h(n) = \sum_{uv = n} (f(u) g(v)) ~.
+\end{equation}
+
+[/SCOPE:s_let_fg]
+[SCOPE:s_props|description|Dirichlet 卷积的性质]
+[5] 结合律：$(f*g)*h = f*(g*h)$。
+[6] 交换律：$f*g = g*f$。
+[7] 分配律：$(f+g)*h = f*h + g*h$。
+[8a] (n)$，满足对于任意数论函数 $f
+[8b] (n)$，$f
+[8c] (n)*\varepsilon
+[8d] (n) = f
+[8e] (n)$。
+[9] 单位函数的定义为 $\varepsilon(1)=1$，其余情况 $\varepsilon(n) = 0$。
+[10a] (n)$, $g
+[10b] (n)$ 都是积性的，
+[11] 则 $h = f*g$ 也是积性的。
+[/SCOPE:s_def]
+[/SCOPE:s_props]
+[/SCOPE:root]

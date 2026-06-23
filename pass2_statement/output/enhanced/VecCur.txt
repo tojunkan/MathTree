@@ -1,0 +1,121 @@
+[SCOPE:root|description|曲率（向量丛）]
+文章名: VecCur
+标题: 曲率（向量丛）
+
+[SCOPE:s_setup|description|设定]
+[0] 本节采用爱因斯坦求和约定。
+[SCOPE:s_setup_let|let_bind|设定变量]
+[1] 设 $M$ 是 $n$ 维微分流形，$E$ 是其上秩为 $k$ 的光滑向量丛。
+[2] 设给定了 $E$ 上的联络 $D$。
+
+[/SCOPE:s_setup]
+[/SCOPE:s_setup_let]
+[SCOPE:s_curvature_def|description|曲率算子定义]
+[3] 给定截面 $\xi\in\Gamma(E)$ 和切向量场 $X,Y$，联络 $D$ 的沿着 $X,Y$ 作用在 $\xi$ 上的曲率算子（curvature operator） 定义为
+[4] $$
+R(X,Y)\xi=-D_XD_Y\xi+D_YD_X\xi+D_{[X,Y]}\xi~.
+$$
+[5] 直观来说，曲率算子是量度导数算子的可对易性的：如果取 $X,Y$ 为坐标向量 $\partial_i,\partial_j$，
+[6] 那么 $[X,Y]=0$，
+[7] 从而 $R(\partial_i,\partial_j)\xi$ 就是沿着坐标方向的二阶导数之差。
+
+[/SCOPE:s_curvature_def]
+[SCOPE:s_curvature_matrix|description|曲率方阵]
+[SCOPE:s_curvature_matrix_let|let_bind|局部标架与联络形式]
+[8] 为计算 $R(X,Y)\xi$，设 $\{s_\alpha\}_{\alpha=1}^k$ 是 $E$ 的局部标架，$\xi=\xi^\alpha s_\alpha$ 为 $\xi$ 在此标架下的局部表达式，$\omega$ 是此标架下的联络 1-形式矩阵。
+[/SCOPE:s_curvature_matrix_let]
+[9] 从而
+[10] $$
+\begin{aligned}
+D_X\xi=X(\xi^\alpha)\xi_\alpha+\xi^\beta\omega_\beta^\alpha(X) s_\alpha~,
+\end{aligned}
+$$
+[11] $$
+\begin{aligned}
+D_YD_X\xi&=Y[X(\xi^\alpha)]s_\alpha+Y[\xi^\beta\omega_\beta^\alpha(X)] s_\alpha
++[X(\xi^\beta)+\xi^\gamma\omega_\gamma^\beta(X)]\omega_\beta^\alpha(Y) s_\alpha \\
+&=Y[X(\xi^\alpha)]s_\alpha+Y(\xi^\beta)\omega_\beta^\alpha(X)s_\alpha+\xi^\beta Y[\omega_\beta^\alpha(X)]s_\alpha\\
+&\quad+[X(\xi^\beta)+\xi^\gamma\omega_\gamma^\beta(X)]\omega_\beta^\alpha(Y) s_\alpha ~,
+\end{aligned}
+$$
+[12] 于是
+[13] $$
+\begin{aligned}
+(-&D_XD_Y+D_YD_X)\xi\\
+&=[Y,X](\xi^\alpha)s_\alpha
++[Y(\xi^\beta)\omega_\beta^\alpha(X)-X(\xi^\beta)\omega_\beta^\alpha(Y)]s_\alpha+\left(\xi^\beta Y[\omega_\beta^\alpha(X)]-\xi^\beta X[\omega_\beta^\alpha(Y)]\right)s_\alpha\\
+&\qu…[truncated]…^\gamma\omega_\gamma^\beta(X)\omega_\beta^\alpha(Y)-\xi^\gamma\omega_\gamma^\beta(Y)\omega_\beta^\alpha(X) \right)s_\alpha\\
+&=D_{[Y,X]}\xi-(d\omega_\beta^\alpha-\omega_\beta^\gamma\wedge\omega_\gamma^\alpha)(X,Y)\xi^\beta s_\alpha~.
+\end{aligned}
+$$
+[14] 故
+[15] $$
+R(X,Y)\xi=-(d\omega_\beta^\alpha-\omega_\beta^\gamma\wedge\omega_\gamma^\alpha)(X,Y)\xi~.
+$$
+[16] 由
+[17] $$
+\Omega_\beta^\alpha=d\omega_\beta^\alpha-\omega_\beta^\gamma\wedge\omega_\gamma^\alpha~
+$$
+[18] 给出的 1-形式的矩阵 $\Omega=(\Omega_\beta^\alpha)$ 称为联络 $D$ 的曲率方阵（curvature matrix）。
+
+[/SCOPE:s_curvature_matrix]
+[SCOPE:s_tensor|description|张量运算]
+[19] 对于任何截面，$\xi\in\Gamma(E)$，都有
+[20] $$
+R(X,Y)\xi=-\Omega(X,Y)\xi~.
+$$
+[SCOPE:s_tensor_let|let_bind|局部标架与系数]
+[21] 容易验证在新的局部标架 $\{s_\alpha'\}$ 之下，如果它与原来的标架之间的转换公式为 $s_\alpha=b_\alpha^\beta s_\beta$，
+[22] 则有
+[23] $$
+\Omega'=b\cdot\Omega \cdot b^{-1}~,
+$$
+[24] 因此 $(X,Y,\xi)\to R(X,Y)\xi$ 是张量运算：它对于 $X,Y,\xi$ 都是线性的，而且只依赖于它们在某一点处的值。
+[25] 给定切丛的局部标架 $\{e_i\}_{i=1}^n$ 后，可写 $R(X,Y)\xi=R^\alpha_{ij\beta}X^iY^js_\alpha$。
+[/SCOPE:s_tensor_let]
+[26] 这个张量运算对于 $X,Y$ 是反对称的，而且可写（注意负号！）
+[27] $$
+\Omega_\beta^\alpha=-\frac{1}{2}R^\alpha_{ij\beta}\theta^i\wedge\theta^j~.
+$$
+[28] 这里 $\{\theta^i\}_{i=1}^n$ 是同 $\{e_i\}_{i=1}^n$ 对偶的局部标架。
+[29] 有些文献中 $R(X,Y)\xi$ 的定义比上文定义多一个负号，这样在曲率方阵的定义中就不必出现负号。
+
+[/SCOPE:s_tensor]
+[SCOPE:s_bianchi|description|第二毕安基恒等式]
+[30] 将等式 $\Omega_\beta^\alpha=d\omega_\beta^\alpha-\omega_\beta^\gamma\wedge\omega_\gamma^\alpha$ 微分，得到
+[31] $$
+\begin{aligned}
+d\Omega_\beta^\alpha&=-d\omega_\beta^\gamma\wedge\omega_\gamma^\alpha+\omega_\beta^\gamma\wedge d\omega_\gamma^\alpha\\
+&=-(\Omega_\beta^\gamma+\omega_\beta^\lambda\wedge\omega_\lambda^\gamma)\wedge\omega_\gamma^\alpha
++\omega_\beta^\gamma\wedge(\Omega_\gamma^\alpha+\omega_\gamma^\lambda\wedge\omega_\lambda^\alpha)\\
+&=\omega_\beta^\gamma\wedge\Omega_\gamma^\alpha-\Omega_\beta^\gamma\wedge\omega_\gamma^\alpha~.
+\end{aligned}
+$$
+[32] 这称为第二毕安基恒等式（second Bianchi identity）。
+[/SCOPE:s_bianchi]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_curvature_matrix",
+    "target_scope": "s_curvature_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "曲率方阵是曲率算子的局部表示"
+  },
+  {
+    "source_scope": "s_tensor",
+    "target_scope": "s_curvature_matrix",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "张量运算性质由曲率方阵的变换推出"
+  },
+  {
+    "source_scope": "s_bianchi",
+    "target_scope": "s_curvature_matrix",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "毕安基恒等式由曲率方阵定义微分得到"
+  }
+]

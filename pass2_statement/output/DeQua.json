@@ -1,0 +1,388 @@
+{
+  "article_name": "DeQua",
+  "statements": [
+    {
+      "stmt_id": "st_def1_classification",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "q",
+        "V",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_positive_bilinear",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        18,
+        20
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "F",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_necessity_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let1",
+      "exposed_entities": [
+        "F",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_necessity_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_let1",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_sufficiency_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let2",
+      "exposed_entities": [
+        "F",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_sufficiency_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        31
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_principal_minors",
+      "subtype": "definition",
+      "clause_range": [
+        33,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "F",
+        "Delta_i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        37,
+        40
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "q",
+        "F",
+        "V",
+        "e'_i",
+        "Delta_i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_base_case",
+      "subtype": "assumption",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let1",
+      "exposed_entities": [
+        "V_1"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_induction_hyp",
+      "subtype": "assumption",
+      "clause_range": [
+        43,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let1",
+      "exposed_entities": [
+        "V_{k-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_induction_step_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        44,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let1",
+      "exposed_entities": [
+        "e_i",
+        "V_k",
+        "L",
+        "q",
+        "F",
+        "overline_q",
+        "overline_F",
+        "Delta_i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_induction_step_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        49,
+        52
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_let1",
+      "exposed_entities": [
+        "e'_i",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_construct_e'k_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        53,
+        55
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let2",
+      "exposed_entities": [
+        "x'_i",
+        "e'_i",
+        "V_k",
+        "e'_k"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_construct_e'k_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        56,
+        61
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_let2",
+      "exposed_entities": [
+        "e'_i",
+        "alpha_i",
+        "beta_i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_transition_matrix_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        62,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let3",
+      "exposed_entities": [
+        "e'_k",
+        "V_k",
+        "e_i",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_transition_matrix_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        65,
+        67
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_let3",
+      "exposed_entities": [
+        "A",
+        "Delta_k",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_matrix_F'_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        68,
+        68
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let4",
+      "exposed_entities": [
+        "F'",
+        "f",
+        "e'_i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_matrix_F'_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        69,
+        70
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_let4",
+      "exposed_entities": [
+        "Delta_i",
+        "F'",
+        "A",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_final_expr",
+      "subtype": "conclusion",
+      "clause_range": [
+        71,
+        73
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_let5",
+      "exposed_entities": [
+        "f",
+        "e'_k",
+        "Delta_i",
+        "e'_i"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_necessity_assump",
+      "target": "st_thm1_necessity_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_sufficiency_assump",
+      "target": "st_thm1_sufficiency_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_base_case",
+      "target": "st_thm2_induction_step_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_induction_hyp",
+      "target": "st_thm2_induction_step_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_induction_step_assump",
+      "target": "st_thm2_induction_step_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_construct_e'k_assump",
+      "target": "st_thm2_construct_e'k_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_transition_matrix_assump",
+      "target": "st_thm2_transition_matrix_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_matrix_F'_assump",
+      "target": "st_thm2_matrix_F'_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_induction_step_concl",
+      "target": "st_thm2_final_expr",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_construct_e'k_concl",
+      "target": "st_thm2_final_expr",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_transition_matrix_concl",
+      "target": "st_thm2_final_expr",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_matrix_F'_concl",
+      "target": "st_thm2_final_expr",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_statement",
+      "target": "st_def1_classification",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1是正定矩阵的充要条件，涉及正定二次型定义"
+    },
+    {
+      "source": "st_thm2_statement",
+      "target": "st_def3_principal_minors",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "雅可比方法使用顺序主子式"
+    }
+  ],
+  "unresolved": []
+}

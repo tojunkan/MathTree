@@ -1,0 +1,209 @@
+{
+  "article_name": "powerS",
+  "statements": [
+    {
+      "stmt_id": "st_ps_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_series",
+      "exposed_entities": [
+        "f(x)",
+        "c_n",
+        "x",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_ps_partial_sum",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_series",
+      "exposed_entities": [
+        "f_m(x)",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_ps_limit",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_series",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ps_convergence",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_series",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_ps_complex",
+      "subtype": "remark",
+      "clause_range": [
+        21,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_series",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_radius_extreme",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_radius",
+      "exposed_entities": [
+        "x",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_radius_existence",
+      "subtype": "theorem",
+      "clause_range": [
+        25,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_radius",
+      "exposed_entities": [
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_radius_ratio",
+      "subtype": "theorem",
+      "clause_range": [
+        28,
+        31
+      ],
+      "truth_value": "true",
+      "scope_id": "s_radius",
+      "exposed_entities": [
+        "c_n"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_exp",
+      "subtype": "example",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "f(x)",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_geom",
+      "subtype": "example",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "f(x)",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_div",
+      "subtype": "example",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "f(x)",
+        "x"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ps_partial_sum",
+      "target": "st_ps_limit",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ps_limit",
+      "target": "st_ps_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_radius_extreme",
+      "target": "st_radius_existence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_radius_existence",
+      "target": "st_radius_ratio",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_radius_existence",
+      "target": "st_ps_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "收敛半径是幂级数的性质"
+    },
+    {
+      "source": "st_example1_exp",
+      "target": "st_ps_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例子"
+    },
+    {
+      "source": "st_example1_geom",
+      "target": "st_ps_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例子"
+    },
+    {
+      "source": "st_example1_div",
+      "target": "st_ps_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例子"
+    }
+  ],
+  "unresolved": []
+}

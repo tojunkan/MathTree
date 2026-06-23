@@ -1,0 +1,240 @@
+{
+  "article_name": "VopEq",
+  "statements": [
+    {
+      "stmt_id": "st_gradient_fg",
+      "subtype": "theorem",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": "true",
+      "scope_id": "s_gradient",
+      "exposed_entities": [
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_gradient_AB",
+      "subtype": "theorem",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": "true",
+      "scope_id": "s_gradient",
+      "exposed_entities": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_divergence_fA",
+      "subtype": "theorem",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": "true",
+      "scope_id": "s_divergence",
+      "exposed_entities": [
+        "f",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_divergence_AxB",
+      "subtype": "theorem",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_divergence",
+      "exposed_entities": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_curl_fA",
+      "subtype": "theorem",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": "true",
+      "scope_id": "s_curl",
+      "exposed_entities": [
+        "f",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_curl_AxB",
+      "subtype": "theorem",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_curl",
+      "exposed_entities": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_second_div_grad",
+      "subtype": "theorem",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": "true",
+      "scope_id": "s_second_derivatives",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_second_laplacian_fv",
+      "subtype": "theorem",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_second_derivatives",
+      "exposed_entities": [
+        "f",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_curl_grad_zero",
+      "subtype": "theorem",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": "true",
+      "scope_id": "s_second_derivatives",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_div_curl_zero",
+      "subtype": "theorem",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "true",
+      "scope_id": "s_second_derivatives",
+      "exposed_entities": [
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_curl_curl",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_second_derivatives",
+      "exposed_entities": [
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_chain_rule_intro",
+      "subtype": "remark",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_chain_rule",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_chain_grad",
+      "subtype": "theorem",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_chain_rule",
+      "exposed_entities": [
+        "f",
+        "g",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_chain_div",
+      "subtype": "theorem",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": "true",
+      "scope_id": "s_chain_rule",
+      "exposed_entities": [
+        "f",
+        "g",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_chain_curl",
+      "subtype": "theorem",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "true",
+      "scope_id": "s_chain_rule",
+      "exposed_entities": [
+        "f",
+        "g",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_chain_laplacian",
+      "subtype": "theorem",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_chain_rule",
+      "exposed_entities": [
+        "f",
+        "g",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_remark",
+      "subtype": "remark",
+      "clause_range": [
+        18,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

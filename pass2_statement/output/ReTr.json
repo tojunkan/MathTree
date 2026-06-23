@@ -1,0 +1,242 @@
+{
+  "article_name": "ReTr",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "S",
+        "n",
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_verify",
+      "subtype": "remark",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1",
+      "subtype": "theorem",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_base_case",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_base",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_base_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_base",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_ind_hyp",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_ind_hyp",
+      "exposed_entities": [
+        "R^{k-1}",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let_f",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let_f",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let_z",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let_z",
+      "exposed_entities": [
+        "z",
+        "S_z",
+        "R_z"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_verify_Rz",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_let_z",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_inv_subspace",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_let_z",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_induction_apply",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_let_z",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_let_Ri",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let_Ri",
+      "exposed_entities": [
+        "R_i",
+        "R'_i",
+        "e_i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_final_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_unfinished",
+      "subtype": "remark",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_base_case",
+      "target": "st_thm1_base_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_ind_hyp",
+      "target": "st_thm1_induction_apply",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let_f",
+      "target": "st_thm1_verify_Rz",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let_z",
+      "target": "st_thm1_verify_Rz",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_verify_Rz",
+      "target": "st_thm1_inv_subspace",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_inv_subspace",
+      "target": "st_thm1_induction_apply",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_induction_apply",
+      "target": "st_thm1_let_Ri",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let_Ri",
+      "target": "st_thm1_final_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_base_concl",
+      "target": "st_thm1_final_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理 1 的证明中使用了反射变换的定义。"
+    }
+  ],
+  "unresolved": []
+}

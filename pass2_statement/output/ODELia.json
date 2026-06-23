@@ -1,0 +1,273 @@
+{
+  "article_name": "ODELia",
+  "statements": [
+    {
+      "stmt_id": "st_lyap_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_lyap_let",
+      "exposed_entities": [
+        "F(t,x)",
+        "x(t)",
+        "varphi(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_lyap_stable_def",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_lyap_stable",
+      "exposed_entities": [
+        "varepsilon",
+        "delta",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_asympt_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_asympt_let",
+      "exposed_entities": [
+        "delta_1"
+      ]
+    },
+    {
+      "stmt_id": "st_asympt_stable_def",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_asympt_stable",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_zero_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_zero_let",
+      "exposed_entities": [
+        "y(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_zero_stable_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_zero_stable",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_example_let",
+      "exposed_entities": [
+        "C",
+        "x(t)",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_example_case1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_example_cases",
+      "exposed_entities": [
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_example_case1_concl_stable",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_case1_concl_asympt",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_case2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_example_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_case2_concl_stable",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_case2_concl_not_asympt",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_case3_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_example_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_case3_concl_unstable",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example_cases",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_lyap_let_assump",
+      "target": "st_lyap_stable_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_asympt_let_assump",
+      "target": "st_asympt_stable_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_zero_let_assump",
+      "target": "st_zero_stable_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_let_assump",
+      "target": "st_example_case1_assump",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_case1_assump",
+      "target": "st_example_case1_concl_stable",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_case1_assump",
+      "target": "st_example_case1_concl_asympt",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_let_assump",
+      "target": "st_example_case2_assump",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_case2_assump",
+      "target": "st_example_case2_concl_stable",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_case2_assump",
+      "target": "st_example_case2_concl_not_asympt",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_let_assump",
+      "target": "st_example_case3_assump",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_case3_assump",
+      "target": "st_example_case3_concl_unstable",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_asympt_stable_def",
+      "target": "st_lyap_stable_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "渐进稳定是稳定的特例"
+    },
+    {
+      "source": "st_zero_stable_concl",
+      "target": "st_lyap_stable_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "零解稳定性是Liapunov稳定的特例"
+    }
+  ],
+  "unresolved": []
+}

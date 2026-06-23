@@ -1,0 +1,396 @@
+[SCOPE:root|description|马尔可夫链蒙特卡洛]
+文章名: MCMC
+标题: 马尔可夫链蒙特卡洛
+
+[0] 马尔可夫链蒙特卡洛（Markov Chain Monte Carlo，简称 MCMC）是一种用于从概率分布中抽样的统计方法。
+[1] 这种方法结合了马尔可夫链和蒙特卡洛模拟的思想，被广泛应用于贝叶斯统计、统计物理学、天文学、机器学习等领域。
+
+[SCOPE:s_bayes_let|let_bind|贝叶斯推断变量]
+[SCOPE:s_bayes|description|贝叶斯推断]
+[2] 贝叶斯推断的主要目标是通过结合先验分布和观测数据，利用贝叶斯定理推导参数的后验分布。
+[3] 在观测到数据 \(D\) 后，更新我们对参数 \(\theta\) 的信念。
+[4] 这一过程通过贝叶斯定理实现，其中先验概率分布 \(P(\theta)\) 表达了我们在看到数据之前对参数的信念，似然函数 \(P(D|\theta)\) 表达了在给定参数情况下观测到实际数据的可能性，而后验概率分布 \(P(\theta|D)\) 则是我们在看到数据后对参数的更新信念。
+[5] 该定理建立了先验概率 \(P(\theta)\)、似然函数 \(P(D|\theta)\) 和得到的后验概率 \(P(\theta|D)\) 之间的关系。
+[6] \begin{equation}
+P(\theta|D) = \frac{P(D|\theta) \times P(\theta)}{P(D)} = \frac{P(D|\theta) \times P(\theta)}{\int P(D|\hat{\theta}) \times P(\hat{\theta}) \, d\hat{\theta}}~.
+\end{equation}
+[7] 然而，在计算分母中的证据 \(P(D)\) 时可能具有挑战性，特别是在涉及高维空间或复杂的多峰模型的情况下。
+[8] 这种计算需要在整个参数空间上进行积分，这可能非常耗费资源。
+[9] 因此，当面临没有解析解或共轭先验不可用的情况时，使用蒙特卡洛积分等数值积分方法变得至关重要。
+
+[/SCOPE:s_bayes_let]
+[/SCOPE:s_bayes]
+[SCOPE:s_mc_integration_let|let_bind|蒙特卡罗积分变量]
+[SCOPE:s_mc_integration|description|蒙特卡罗积分]
+[10] 蒙特卡罗积分是一种通过随机抽样来估计复杂积分的数值近似方法。
+[11] 均值估计法包括通过随机抽样在定义域内生成大量均匀分布的随机点。
+[12] 随后，它计算这些随机点对应的函数值的平均值，并乘以定义域的总体积，以得到函数积分的估计值。
+[13] 对于利用均值估计方法计算 \(I = \int_a^b h(x) \,dx\)，其中 \(X \sim \text{D}(a,b)\)，
+[14] \begin{align}
+E [h(X)] =& \ \frac{1}{b-a} \int_a^b h(x) \ dx = \frac{I}{b-a}~.
+\end{align}
+[15] 考虑到 \(\{ X_i\} \ \text{i.i.d.} \sim \text{D}(a,b), \ i=1,\ldots,N \)，使得 \(Y_i = h(X_i)\) 表示一组独立同分布的随机变量，大数定律使我们能够推断：
+[16] \begin{align}
+\frac{1}{N} \sum_{i=1}^N h(X_i) & \to E [h(X)] = \frac{I}{b-a}, \ (N \to \infty)\\
+\tilde I &= \frac{b-a}{N} \sum_{i=1}^N h(X_i)~.
+\end{align}
+[17] 该方法的误差可以使用中心极限定理确定：
+[18] \begin{align} \sqrt{N}(\tilde I - I) \stackrel{\mbox{d}}{\longrightarrow} N\big(0, (b-a)^2 \ \text{Var}(h(X)) \big)~.\end{align}
+[19] 因此，我们得到 \(\tilde I - I = O(1/\sqrt{N})\)，这意味着每增加一位小数的精度计算，所需的样本数需要增加 $100$ 倍。
+[20] 该方法的实现非常直接简单。
+[21] 例如，要使用 $1000$ 个样本计算 \(I = E [|X|^{3/2}]\)，给定 \(X \sim N(0,1)\)，只需一行 Python 代码即可完成：
+[22] 然而，显而易见的是，我们认为这种方法简单是因为在 numpy 中有针对正态分布的内置随机抽样函数。
+[23] 但实际上，从分布中抽样存在相当大的复杂性并遇到许多挑战。
+[24] 这种复杂性凸显了我们即将介绍的抽样方法。
+
+[/SCOPE:s_mc_integration_let]
+[/SCOPE:s_mc_integration]
+[SCOPE:s_sampling|description|抽样方法]
+[SCOPE:s_inverse_transform_let|let_bind|逆变换抽样变量]
+[SCOPE:s_inverse_transform|description|逆变换抽样]
+[25] 逆变换抽样 Inverse transform sampling 利用累积分布函数（CDF）依赖于从均匀分布中抽取的随机数来产生符合期望概率分布的随机变量。
+[26] 本质上，给定累积分布函数 \(\Phi(X) \)，如果 \( Y \sim \text{Uniform}(0, 1) \)，使用逆变换 \( X = \Phi^{-1}(Y) \) 将产生一个随机变量 \( X \)，它符合概率分布 \(\Phi(x)\)，其中 \( \Phi^{-1} \) 表示 \(\Phi\) 的逆函数。
+[27] 为了表明 \(Y\) 在 \([0, 1]\) 上均匀分布，我们需要证明对于任意 \(0 \leq u \leq 1\)，\(P(Y \leq u) = u\)。
+[28] \begin{align}
+P(Y \leq u) &= P(\Phi(X) \leq u) \\
+&= P(X \leq \Phi^{-1}(u)) \quad \text{(使用 } \Phi \text{ 的逆函数)} \\
+&= \Phi(\Phi^{-1}(u)) \quad \text{(根据 CDF 的定义)} \\
+&= u
+~.
+\end{align}
+[29] 然而，这种方法存在显著的局限性。
+[30] 计算概率密度函数的积分通常是非常困难的，这也是我们需要使用蒙特卡洛积分方法的原因。
+[31] 此外，需要注意的是 \( \Phi(x) \) 可能没有逆函数。
+[/SCOPE:s_inverse_transform_let]
+[/SCOPE:s_inverse_transform]
+[SCOPE:s_rejection_let|let_bind|拒绝抽样变量]
+[SCOPE:s_rejection|description|拒绝抽样]
+[32] 拒绝抽样 Rejection sampling 通过使用简单的提议分布生成样本，根据接受或拒绝的标准保留符合目标分布的样本。
+[33a] (x)\) 的样本的目标，令 \(g
+[33b] (x)\) 表示一个易于抽样的已知分布，并假设存在一个常数 \(M\)，使得对所有 \(x\)，都有 \(M \cdot g
+[33c] (x) \geq f
+[33d] (x)\)。
+[34a] (x)\) 中抽取样本 \(x\) 开始，随后从区间 \([0, M \cdot g
+[34b] (x)]\) 中选择一个随机数 \(u\)。
+[35] 如果 \(u \leq f(x)\)，
+[36] 则接受样本 \(x\)；
+[37] 否则拒绝样本，并重新开始抽样过程。
+[38] 通过这个迭代过程，最终获得符合目标分布 \(f(x)\) 的一组随机样本。
+[39] 重要的是，拒绝抽样的有效性取决于选择一个适当的提议分布 \(g(x)\)，该分布紧密围绕目标分布，并最小化被拒绝的样本数量，
+[40] 从而提高抽样效率。
+[/SCOPE:s_rejection_let]
+[/SCOPE:s_rejection]
+[SCOPE:s_importance_let|let_bind|重要性抽样变量]
+[SCOPE:s_importance|description|重要性抽样]
+[41a] (x) \,dx\)，在域 \(\Omega\) 内 \(h
+[41b] (x)\) 值的变异性可能很大，导致采用直接的均值估计方法会导致许多样本点聚集在零附近。
+[42a] (x)|\) 较大的地方密集分配点，在 \(|h
+[42b] (x)|\) 较小的地方稀疏分布点。
+[43a] (x)\) 与 \(|h
+[43b] (x)|\) 的形状相似，当 \(g
+[43c] (x) = 0\) 时，\(h
+[43d] (x) = 0\)，且当 \(|x| \to \infty\) 时，\(h
+[43e] (x)\) 行为类似于 \(o\)-阶无穷小相比于 \(g
+[43f] (x)\)。
+[44] 令 \( X_i \ \text{i.i.d.} \sim g(x), \ i=1,\ldots,N \)，使得 $\eta_i = h(X_i)/g(X_i)$，
+[45] 因此，
+[46] \begin{align}
+E[\eta] = \int_\Omega \frac{h(x)}{g(x)} g(x) \,d x = \int_\Omega h( x) \,d x = I~.
+\end{align}
+[47] 因此，$\{\eta_i\}$ 的样本均值可用于估计 $I$，
+[48] 即，
+[49] \begin{align}
+\hat I = \frac{1}{N} \sum_{i=1}^N \frac{h(X_i)}{g(X_i)}~.
+\end{align}
+[50] 重要性抽样的核心在于将积分 \(I\) 重新定义为期望，
+[51] \begin{align}
+I &= \int h(x) f(x) \, dx = \mathbb{E}_{f}[h(X)]\\
+I &= \int h(x) \frac{f(x)}{g(x)} g(x) \, dx = \mathbb{E}_{g}\left[\frac{h(X)f(X)}{g(X)}\right]~.
+\end{align}
+[52] 表达式 \(\frac{h(X)f(X)}{g(X)}\) 包含了重要性抽样权重。
+[53] 积分 \(I\) 可以使用以下方式估计，
+[54] \begin{align}
+\hat I = \frac{1}{N} \sum_{i=1}^{N} \frac{h(x_i)f(x_i)}{g(x_i)}~.
+\end{align}
+[55a] (x)\) 在 \(h
+[55b] (x)\) 对积分贡献较大的区域与 \(f
+[55c] (x)\) 显著偏离时，估计器可能表现出较高的方差，导致不准确性。
+[56] 因此，我们希望确定一个最优的重要性分布 \(g(x)\) 来最小化方差或增强收敛性。
+[SCOPE:s_importance_optimal|description|最优重要性分布]
+[57] 理论上，以方差为标准的最优重要性分布具有以下形式：
+[58] \begin{align}
+g^{*}(x)=\frac{|h(x)|f(x)}{\int|h(s)f(s)d s|}~.
+\end{align}
+[59] 最优重要性的证明：
+[60] \begin{align}
+\text{Var}\left[\frac{f(x)h(x)}{g^{*}(x)}\right]&=\int\frac{h(x)^{2}f(x)^{2}}{g^{*}(x)}d x+\left(\int h(x) f(x)\right)^{2} \\
+\text{Var}\left[\frac{f(x)h(x)}{g^{*}(x)}\right]&-\left(\int h(x) f(x)\right)^{2}=\int\frac{h(x)^{2}f(x)^{2}}{…[truncated]…(x)dx|}}d x \\
+&=\int|h(x)f(x)d x|\int|h(x)|f(x)d x\\
+&=\left(\frac{\int|h(x)|f(x)}{g(x)} g(x) d x\right)^2\\
+&\leq \frac{\int h(x)^2f(x)^2}{g(x)^2} g(x) d x \text{, Cauchy Schwarz inequality }\\
+&=\int\frac{h(x)^{2}f(x)^{2}}{g(x)}d x\\~.
+\end{align}
+[61a] (x) f
+[61b] (x)$，大多数情况下我们需要找到 $\int|h
+[61c] (x)f
+[61d] (x)dx|$。
+[62a] (x)$ 是多峰的情况下，很难确定一个合适的 $g
+[62b] (x)$。
+
+[/SCOPE:s_sampling]
+[/SCOPE:s_importance_let]
+[/SCOPE:s_importance]
+[/SCOPE:s_importance_optimal]
+[SCOPE:s_high_dim_let|let_bind|高维局限性变量]
+[SCOPE:s_high_dim|description|高维局限性]
+[63] 在拒绝抽样中的接受概率由以下公式确定：
+[64] \begin{align}
+p(\text{接受}) &= \int\frac{f(x)}{M \ g(x)} \ g(x) \ d x \\
+&=\frac{1}{M}\int f(x) \ d x~.
+\end{align}
+[65a] (x) \sim N(0, I)$ 和 $g
+[65b] (x)\sim N(0, \sigma^2 I)$，注意 $\sigma \geq 1$ 以确保 $g
+[65c] (x)$ 足够涵盖 $f
+[65d] (x)$，记得 $f
+[65e] (x) \leq Mg
+[65f] (x)$，在 $d$ 维空间中有，
+[66] \begin{align}
+g(0) = \frac{1}{(\sqrt{2\pi}\sigma)^d}, \ \ f(0) = \frac{1}{(2\pi)^{d/2}}~.
+\end{align}
+[67] 因此，常数 $M$ 需要满足，
+[68] \begin{align}
+M \geq \frac{f(0)}{g(0)} = \frac{(\sqrt{2\pi}\sigma)^d}{(2\pi)^{d/2}} = \sigma^d~.
+\end{align}
+[69] 因此，当 $d \to \infty$ 时，$p(\text{接受})\to 0$。
+[70] 在高维场景中，拒绝抽样的接受率显著降低。
+[71] 因此，在 $N$ 个样本中，找到一个落在 $f(x)$ 内的点变得极为困难。
+[72] 以下是一个使用拒绝抽样计算超球体体积的 Python 代码，使用了 $10000$ 个样本。
+[73] 偶尔在第 $13$ 维时失败，无法找到落在超球体内的点。
+
+[/SCOPE:s_high_dim_let]
+[/SCOPE:s_high_dim]
+[SCOPE:s_mcmc|description|马尔可夫链蒙特卡洛]
+[74] MCMC 是一种高维随机抽样方法，解决了先前的抽样方法在处理高维和复杂分布时的困难。
+[75] 该方法模拟了一个马尔可夫链，使马尔可夫链的稳定分布成为目标分布，
+[76] 从而生成大量大致符合目标分布的样本，
+[77] 但这些样本彼此之间并不独立。
+
+[/SCOPE:s_mcmc]
+[SCOPE:s_markov_chain_let|let_bind|马尔可夫链变量]
+[SCOPE:s_markov_chain|description|马尔可夫链]
+[78] 随机过程 $\{X_t, t=0, 1, \dots \}$ 在有限状态空间 $S=\{1,2, \dots,m\}$ 中运行，其中 $X_t\in S$ 表示时间 $t$ 系统的状态。
+[79] 如果 $\{X_t\}$ 遵循仅依赖于其前一状态的概率转移，表示为，
+[80] \begin{align}
+& P(X_{t+1} = j | X_0=k_0, \dots X_{t-1}=k_{t-1}, X_t=i) \nonumber\\
+=& P(X_{t+1} = j | X_t=i)
+= p_{ij},
+\quad t=0,1,\dots, \ k_0, \dots, k_{t-1}, \ i, j \in S~.
+\end{align}
+[81] 那么 $\{X_t\}$ 构成一个马尔可夫链，其中 $p_{ij}$ 表示转移概率。
+[82] 值得注意的是，$\sum_{j=1}^m p_{ij}=1$。
+[83] 转移概率矩阵 $P = (p_{ij})_{m\times m}$ 记录了系统中任意两个状态之间的转移可能性。
+[84] 以下是一个 Python 代码示例，展示了状态转移矩阵对初始状态的影响。
+[85] 此外，在 $t_{30}$ 处不同的初始概率分布最终收敛到相同的稳定概率分布。
+[86] 然后，本文将从数学角度进行探讨。
+[SCOPE:s_markov_chain_properties|description|马尔可夫链性质]
+[87] 对于任意的 $i,j\in S$，其中 $i \neq j$，如果存在 $k\geq 1$ 使得 $p_{ij}^k > 0$，
+[88] 则 $\{X_t\}$ 是一个不可约链 (irreducible chain)。
+[89] 在这样的链中，所有状态都是相互连接的，在多个步骤后可以进行状态之间的转移。
+[90] 如果 $\{X_t\}$ 中的状态 $i$ 被称为 非周期性 aperiodic，如果存在 $k\geq 0$ 使得 $p_{ii}^{(k)} > 0$ 并且 $p_{ii}^{(k+1) } > 0$。
+[91] 如果一个马尔可夫链的所有状态都具有这个特性，
+[92] 则称其为非周期性。
+[93] 如果不可约马尔可夫链中的一个状态是非周期性 ，
+[94] 则该链中的所有状态都是 非周期性。
+[95] 对于具有有限状态空间的 非周期性 不可约马尔可夫链，存在以下极限：
+[96] \begin{align}
+\lim_{n\to\infty} P(X_n = j | X_0=i) = \pi_j~.
+\end{align}
+[97] 在这里，$\{\pi_j\}$ 表示 $\{X_t\}$ 的极限分布。
+[98] 要使 $\{\pi_j\}$ 成为极限分布，必须满足 $\sum_{j=1}^m \pi_j=1$。
+[99] 如果在具有有限状态空间的 非周期性 不可约马尔可夫链中，极限分布和稳态分布是存在且相等的。
+[100] 这种等价性来源于方程：
+[101] \begin{equation}
+P(X_{t+1}=j)=\sum_{i=1}^{m}P(X_{t}=i)P(X_{t+1}=j|X_ {t}=i)=\sum_{i=1}^{m}P(X_{t}=i)p_{i j}~.
+\end{equation}
+[102] 对两边取极限，可得到关系式 $\sum_{i=1}^m \pi_i p_{ij} = \pi_j$。
+[103] 为什么在蒙特卡洛积分中我们可以模拟一个马尔科夫链来进行采样？
+[104] 该马尔科夫链需要满足那些性质？
+[105] 在马尔可夫链中，状态的性质包括常返和正常返。
+[106] 状态 $i$ 若从该状态出发总能再次返回，
+[107] 则称其为常返。
+[108] 对于常返状态 $i$，若从 $i$ 出发首次返回 $i$ 的时间的期望是有限的，
+[109] 则称其为正常返。
+[110] 在不可约的马尔可夫链中，只要存在正常返状态，所有状态都是正常返的。
+[111] 此时，存在唯一的平稳分布 $\pi$。
+[112] 对于非周期且正常返的不可约马尔可夫链，它具有极限分布，
+[113] 即当 $n$ 趋向于无穷时，状态转移概率矩阵的 $n$ 次幂趋近于平稳分布 $\pi$：
+[/SCOPE:s_markov_chain_properties]
+[SCOPE:s_markov_chain_stationary|description|平稳分布与细致平衡]
+[114] \begin{align}
+\lim_{n\to\infty} p_{ij}^{(n)} = \pi_j, \ \forall i, j \in S ~.
+\end{align}
+[115] 假设不可约马尔可夫链的平稳分布为 $\pi$，并且 $h$ 是状态空间 $S$ 上的有界函数，
+[116] 那么当模拟马尔可夫链并从某个初始分布出发时，函数 $h$ 关于马尔可夫链样本路径的平均值将趋近于 $\sum_{x \in S} \pi_x h(x)$：
+[117] \begin{align}
+P\left( \lim_{n\to\infty} \frac{1}{n} \sum_{k=0}^n h(X_k) = \sum_{x \in S} \pi_x h(x) \right) = 1~.
+\end{align}
+[118] 这类似于独立同分布随机变量平均值的强大数律。
+[119] 当马尔可夫链按照平稳分布 $\pi$ 的转移概率模拟时，上述极限等同于 $E[h(Y)]$，其中 $Y$ 服从平稳分布 $\pi$。
+[120] 因此，可以通过设计满足不可约、非周期、正常返性质的马尔可夫链，并使用其模拟平稳分布 $\pi$，
+[121] 从而估计关于 $Y \sim \pi$ 的随机变量的函数期望 $E[h(Y)]$。
+[122] 如何得到有平稳分布的转移概率矩阵？
+[123] 一个充分条件是转移概率满足细致平衡条件。
+[124] 如果存在 $\{ \pi_j, j \in S \}, \ \pi_j\geq 0, \ \sum_{j\in S} \pi_j = 1$，使得：
+[125] \begin{align}
+\pi_i p_{ij} = \pi_j p_{ji}, \ \forall i \neq j ~.
+\end{align}
+[126] 那么这些马尔可夫链被称为满足细致平衡条件，如果 $P(X_{t+1} = j) = \pi_i$，
+[127] 那么
+[128] \begin{align}
+P(X_{t+1} = j) = \sum_i \pi_i p_{ij} = \sum_i \pi_j p_{ji} = \pi_j \sum_i p_{ji} = \pi_j, \ \forall j \in S. ~.
+\end{align}
+[129] 因此 $\{\pi_j\}$ 是 $\{X_t\}$ 的稳态分布。
+
+[/SCOPE:s_markov_chain_let]
+[/SCOPE:s_markov_chain]
+[/SCOPE:s_markov_chain_stationary]
+[SCOPE:s_mh_let|let_bind|MH算法变量]
+[SCOPE:s_mh_algorithm|description|Metropolis-Hastings 算法]
+[130] 通过马尔可夫链抽样进行蒙特卡洛模拟，需要具有稳态分布样本的转移概率矩阵。
+[131] 然而，通常情况下，目标稳态分布 $\{\pi_j\}$ 和状态转移矩阵 $P$ 不满足详细平衡条件：
+[132] \begin{align}
+\pi_i p_{ij} \neq \pi_j p_{ji}, \ \forall i \neq j ~.
+\end{align}
+[133] 令 $\alpha$ 表示接受概率，使得：
+[134] \begin{align}
+\pi_i p_{ij}\alpha(i, j) = \pi_j p_{ji} \alpha(j, i), \ \forall i \neq j ~.
+\end{align}
+[135] 因此，如果 $\alpha(i, j) = \pi_j p_{ji}$ 且 $\alpha(j, i) = \pi_j p_{ij}$，
+[136] 则可以获得满足详细平衡条件的转移矩阵 $P_d = P \alpha(i,j)$。
+[137] 然而，在这个抽样算法中，$\alpha(i, j)$ 的值可能会非常小，导致拒绝的样本值较多，并且抽样效率大幅降低。
+
+[138] Metropolis–Hastings 算法通过将 $\alpha(i, j)$ 缩放到 $ C\alpha(i, j) = 1$ 来解决抽样接受率低的问题。
+[139] 因此，可以定义：
+[140] \begin{equation}
+\alpha(i, j) = \min \left\{ 1, \frac{\pi(j)P(j, i)}{\pi(i)P(i, j)} \right\}~.
+\end{equation}
+[141] 这种调整加速了收敛速度。
+[142] 假设随机变量 $X$ 服从分布 $\pi(x), x\in \mathcal{X}$。
+[143] 该算法需要一个提议转移概率函数 $T(y, x),\ x,y \in \mathcal {X}$，满足 $0 \leq T(y, x) \leq 1$，$\sum_y T(y, x) = 1$，且 $ T(y, x)>0 \Leftrightarrow T(x, y) >0 $。
+[144] 从 $\mathcal{X}$ 中选择任意初始值 $X^0$。
+[145] 在当前状态 $X^t$ 经过 $t$ 步之后，下一步涉及从提议转移分布 $T(y, X^t)$ 中提取 $Y$ 并生成 $u\sim U (0,1)$。
+[146] 随后是非常关键的步骤：
+[147] 随后的关键步骤是基于以下规则更新 $X^{t+1}$：
+[148] \begin{align}
+X^{(t+1)} = \begin{cases}
+Y & \text{若 } u \leq \alpha(X^{(t)}, Y) \\
+X^{(t)} & \text{其他情况}
+\end{cases} ~.
+\end{align}
+[SCOPE:s_mh_proof|description|MH算法证明]
+[149] 证明：MH 抽样的转移概率 $A(x,y) = P(X^{(t+1)} = y | X^{(t)} = x)$ 满足详细平衡条件。
+[150] 当 $x\neq y$ 时，我们有
+[151] \begin{align}
+\pi(x) A(x,y) =& \pi(x) T(y , x) \min \left\{ 1, \frac{\pi(y)T(x , y)}{\pi(x)T(y , x)} \right\}\\
+=& \min \left\{ \pi(x)T(y , x), \pi(y)T(x , y) \right\}\\
+=&\pi(y) T(x, y) \min \left\{ 1, \frac{\pi(x)T(y , x)}{\pi(y)T(x, y)} \right\}\\
+=& \pi(y) A(y,x)~.
+\end{align}
+[/SCOPE:s_mh_proof]
+[152] 下面的 Python 代码演示了 MH 算法的实现，包括示例和绘制双峰分布的抽样图。
+[153] 这个例子双峰比较靠近彼此，实际上若是双峰分开的比较远，
+[154] 那么有时该算法就不能很好的进行抽样，也就是抽样集中在一个峰上而忽略了另一个，这时就需要我们选择一个方差大的提议分布。
+[155] 【图解】图 1：Metropolis-Hastings Sampling of Bimodal Distribution
+
+[/SCOPE:s_mh_let]
+[/SCOPE:s_mh_algorithm]
+[SCOPE:s_gibbs_let|let_bind|Gibbs采样变量]
+[SCOPE:s_gibbs|description|Gibbs 采样]
+[156] MH 采样方法包括多个步骤，尝试从先前状态转移到新状态。
+[157] 随后，根据样本提议与目标分布的接近程度接受或拒绝提议样本。
+[158] 拒绝导致保留先前状态，
+[159] 从而增强了效率。
+[160] 相比之下，Gibbs 采样仅致力于沿着坐标轴移动，并利用当前点的条件分布确定后续的试验抽样分布。
+[161] 该方法接受所有试验样本，无需拒绝，
+[162] 从而可能提高效率。
+[163] 具体而言，在 Gibbs 采样中，指定 $T(y, x)$ 确保了 $A(x,y) = 1$ 的恒定真值，促进了加速收敛和抽样率。
+[164] Gibbs 采样器通过在每个步骤中仅抽样一个变量（坐标轴）来更新完整的变量集，并利用条件分布从联合分布中抽样。
+[165a] (t)}, x_2^{
+[165b] (t)}, ..., x_n^{
+[165c] (t)})$ 中随机选择一个变量 $x_i$。
+[166a] (t)}, x_2^{
+[166b] (t)}, ..., x_{i-1}^{
+[166c] (t)}, x_{i+1}^{( t)}, ..., x_n^{
+[166d] (t)})$ 中提取新值 $x_i^{(t+1)}$。
+[167] 这个迭代过程持续进行，直到满足收敛条件的样本被获得。
+[168] Gibbs 采样通过在每个步骤中基于条件概率进行迭代抽样，逐渐使样本序列朝向目标分布收敛。
+[SCOPE:s_gibbs_proof|description|Gibbs采样证明]
+[169] 类似于前述解释，证明 Gibbs 采样满足详细平衡条件涉及考虑 $\boldsymbol x = (x_1, x_2, \dots, x_n)$ 和选择 $x_i$ 的概率作为 $q(i)$。
+[170] 如果 $\boldsymbol x$ 和 $\boldsymbol y$ 仅在恰好一个变量 $x_i$ 的状态上不同，其中 $y_j = x_j$ 对于 $j\neq i$，$y_i\neq x_i$，
+[171] 则有：
+[172] \begin{align}
+\pi(\boldsymbol x) A(\boldsymbol x,\boldsymbol y) =& \pi(\boldsymbol x ) q(i) p(y_i, \boldsymbol x_{j\neq i})\\
+=& p(x_i, \boldsymbol x_{j\neq i})q(i)\frac{p(y_i, \boldsymbol x_{j\neq i})}{p(\boldsymbol x_{j\neq i})}\\
+=&p(y_i, \boldsymbol x_{j\neq i})q(i)\frac{p(x_i, \boldsymbol x_{j\neq i})}{p(\boldsymbol x_{j\neq i})}\\
+=& \pi(\boldsymbol y ) q(i) p(x_i, \boldsymbol x_{j\neq i}) = \pi(\boldsymbol x) A(\boldsymbol y,\boldsymbol x)
+~.
+\end{align}
+[/SCOPE:s_gibbs_proof]
+[173] 以下 Python 代码演示了 Gibbs 算法的实现，包括用于对二维正态分布进行抽样的示例和绘图：
+[174] 【图解】图 2：2D Gibbs Sampling with True Distribution Contour
+[/SCOPE:s_gibbs_let]
+[/SCOPE:s_gibbs]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_mc_integration",
+    "target_scope": "s_bayes",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "蒙特卡罗积分用于解决贝叶斯推断中的积分困难"
+  },
+  {
+    "source_scope": "s_sampling",
+    "target_scope": "s_mc_integration",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "抽样方法是蒙特卡罗积分的基础"
+  },
+  {
+    "source_scope": "s_high_dim",
+    "target_scope": "s_rejection",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "高维局限性是拒绝抽样的特例分析"
+  },
+  {
+    "source_scope": "s_mcmc",
+    "target_scope": "s_sampling",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "MCMC 解决了高维抽样困难"
+  },
+  {
+    "source_scope": "s_markov_chain",
+    "target_scope": "s_mcmc",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "马尔可夫链理论是 MCMC 的基础"
+  },
+  {
+    "source_scope": "s_mh_algorithm",
+    "target_scope": "s_markov_chain",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "MH 算法基于马尔可夫链的细致平衡条件"
+  },
+  {
+    "source_scope": "s_gibbs",
+    "target_scope": "s_mh_algorithm",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Gibbs 采样是 MH 算法的特例（接受概率恒为1）"
+  }
+]

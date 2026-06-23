@@ -1,0 +1,59 @@
+[SCOPE:root|description|调和数（基础）]
+文章名: HarNum
+标题: 调和数（基础）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=调和数
+  [1] type=theorem heading=定理 1 title=调和数的阶
+
+[SCOPE:s_def|description|调和数定义]
+[0] 定义 1 调和数
+[SCOPE:s_def_let|let_bind|调和数变量]
+[1] 第 $n$ 调和数 $H_n$ 定义为调和级数的第 $n$ 部分和，
+[2] 即
+[3] \begin{equation}
+H_n = \sum_{i=1}^n\frac{1}{n}~.
+\end{equation}
+[/SCOPE:s_def_let]
+[4] 可以通过积分的方法给出 $H_n$ 的阶。
+
+[/SCOPE:s_def]
+[SCOPE:s_thm|description|调和数的阶]
+[SCOPE:s_thm_let|let_bind|定理变量]
+[5] 定理 1 调和数的阶
+[6] 当 $n\to\infty$ 时，
+[7] \begin{equation}
+H_n = \log n + \gamma + O(1/n) ~.
+\end{equation}
+[/SCOPE:s_thm_let]
+[8] 证明:
+[9] \begin{equation}
+\begin{aligned}
+H_n & = \sum_{i=1}^n\frac{1}{n}\\
+& = \sum_{i=1}^n\int_n^{n+1}\frac{1}{n} \,\mathrm{d}{t} \\
+& = \sum_{i=1}^n\int_n^{n+1} \left(\frac{1}{n}-\frac{1}{t} \right) \,\mathrm{d}{t} +\int_1^{t+1}\frac{1}{t} \,\mathrm{d}{t} …[truncated]…{\lfloor t\rfloor}-\frac{1}{t} \right) \,\mathrm{d}{t} +\log \left(1+\frac{1}{n} \right) \\
+& = \log n+\int_1^{n+1} \left(\frac{1}{\lfloor t\rfloor}-\frac{1}{t} \right) \,\mathrm{d}{t} +\log \left(1+\frac{1}{n} \right) ~.
+\end{aligned}
+\end{equation}
+[10] 我们来考察次项这个积分趋近无限时的表现，
+[11] \begin{equation}
+\int_n^{n+1} \left(\frac{1}{n}-\frac{1}{t} \right) \,\mathrm{d}{t} <\frac{1}{n(n+1)}<\frac{1}{n^2}~,
+\end{equation}
+[12] 可以知道，级数
+[13] \begin{equation}
+\sum_{i=1}^{+\infty} \int_n^{n+1} \left(\frac{1}{\lfloor t\rfloor}-\frac{1}{t} \right) \,\mathrm{d}{t} ~
+\end{equation}
+[SCOPE:s_thm_gamma|let_bind|欧拉常数定义]
+[14] 收敛，也就是积分收敛。令
+[15] \begin{equation}
+\gamma = \int_1^{+\infty} \left(\frac{1}{\lfloor t\rfloor}-\frac{1}{t} \right) \,\mathrm{d}{t} = \sum_{i=1}^{+\infty} \int_n^{n+1} \left(\frac{1}{\lfloor t\rfloor}-\frac{1}{t} \right) \,\mathrm{d}{t} ~,
+\end{equation}
+[/SCOPE:s_thm_gamma]
+[16] 我们得到
+[17] \begin{aligned}
+\int_1^{n+1} \left(\frac{1}{\lfloor t\rfloor}-\frac{1}{t} \right) \,\mathrm{d}{t} &=\gamma - \int_{n+1}^{+\infty} \left(\frac{1}{\lfloor t\rfloor}-\frac{1}{t} \right) \,\mathrm{d}{t}
+
+\end{aligned}
+[18] 进而有
+[/SCOPE:s_thm]
+[/SCOPE:root]

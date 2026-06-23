@@ -1,0 +1,43 @@
+[SCOPE:root|description|极坐标系]
+文章名: Polar
+标题: 极坐标系
+
+环境标记 (hints):
+  [0] type=exercise heading=习题 1 title=
+
+[SCOPE:s_ex1|description|习题 1]
+[0] 习题 1
+[1] 试证明极坐标方程 $r = r_0/ \cos\left(\theta - \theta_0\right) $ 和 $r = 2R \cos\left(\theta - \theta_0\right) $ 分别表示一条直线和一个圆。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_convert_let|let_bind|极坐标变量]
+[SCOPE:s_convert|description|与直角坐标的转换]
+[2] 要在极坐标系的基础上建立一个直角坐标系，习惯的做法是取原点相同，且令 $x$ 轴与极轴重合，$y$ 轴取 $\theta = \pi/2$ 的方向。
+[3] 这样将 $ \boldsymbol{\mathbf{r}} $ 用 $ \hat{\boldsymbol{\mathbf{x}}} $ 和 $ \hat{\boldsymbol{\mathbf{y}}} $ 展开，就得到
+[4] \begin{equation}
+\boldsymbol{\mathbf{r}} = r\cos\theta\, \hat{\boldsymbol{\mathbf{x}}} + r\sin\theta\, \hat{\boldsymbol{\mathbf{y}}} ~,
+\end{equation}
+[5] \begin{equation}
+\begin{cases}
+x = r\cos\theta\\
+y = r\sin\theta
+\end{cases}~.
+\end{equation}
+[6] 这样就从极坐标转换成为直角坐标。
+[7] 要从直角坐标转换为极坐标，首先由勾股定理有 $r^2 = x^2 + y^2$。
+[8] 使用反正切函数，我们可以表示 $x >0$ 或 $\theta\in(-\pi/2,\pi/2)$ 时的 $\theta$，
+[9] 即 $\theta = \arctan\left(y/x\right) $。
+[10] 为了表示任意情况我们可以使用 $ \operatorname{Arctan} $ 函数式 1 。
+[11] 这样，从直角坐标转到极坐标的转换就可以表示为
+[12] \begin{equation}
+\begin{cases}
+r = \sqrt{x^2 + y^2}\\
+\theta = \operatorname{Arctan} (y, x)
+\end{cases}~.
+\end{equation}
+[13] 根据 $ \operatorname{Arctan} $ 的定义（
+[14] 式 1 [链接 L0]
+[15] ），$\theta$ 的范围是 $(-\pi, \pi]$。
+[/SCOPE:s_convert_let]
+[/SCOPE:s_convert]
+[/SCOPE:root]

@@ -1,0 +1,524 @@
+{
+  "article_name": "LagMul",
+  "statements": [
+    {
+      "stmt_id": "st_method_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_method",
+      "exposed_entities": [
+        "f(x_1,...,x_N)",
+        "g_i(x_1,...,x_N)",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_method_lagrangian_def",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_method",
+      "exposed_entities": [
+        "Lambda(x_1,...,x_N)",
+        "lambda_i"
+      ]
+    },
+    {
+      "stmt_id": "st_method_condition",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_method",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_method_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_method",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_method_remark_eqcount",
+      "subtype": "remark",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_method",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "f(x,y)",
+        "x",
+        "y",
+        "a",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_geo_intro",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_geo_desc",
+      "subtype": "remark",
+      "clause_range": [
+        18,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_gradient",
+      "subtype": "theorem",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "nabla f",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_constraint",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_question",
+      "subtype": "question",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_differential",
+      "subtype": "theorem",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "dl"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_condition_dot",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_g_eq",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "g(x,y)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_collinear",
+      "subtype": "theorem",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_equations",
+      "subtype": "theorem",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_extension",
+      "subtype": "remark",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_3d_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "f(x,y,z)",
+        "g1(x,y,z)",
+        "g2(x,y,z)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_3d_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_3d_condition",
+      "subtype": "assumption",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_3d_linear_comb",
+      "subtype": "theorem",
+      "clause_range": [
+        40,
+        42
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "lambda1",
+        "lambda2"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_3d_lagrangian",
+      "subtype": "definition",
+      "clause_range": [
+        43,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_1constraint",
+      "subtype": "remark",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        46,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2",
+      "exposed_entities": [
+        "x",
+        "y",
+        "a",
+        "b",
+        "S",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_lagrangian",
+      "subtype": "definition",
+      "clause_range": [
+        50,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2",
+      "exposed_entities": [
+        "Lambda(x,y)",
+        "lambda"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_equations",
+      "subtype": "theorem",
+      "clause_range": [
+        52,
+        52
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mech_intro",
+      "subtype": "remark",
+      "clause_range": [
+        53,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_mechanics",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mech_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        54,
+        55
+      ],
+      "truth_value": null,
+      "scope_id": "s_mechanics",
+      "exposed_entities": [
+        "C",
+        "f(x,y)",
+        "p(x,y)"
+      ]
+    },
+    {
+      "stmt_id": "st_mech_force_direction",
+      "subtype": "theorem",
+      "clause_range": [
+        56,
+        58
+      ],
+      "truth_value": "true",
+      "scope_id": "s_mechanics",
+      "exposed_entities": [
+        "R",
+        "lambda"
+      ]
+    },
+    {
+      "stmt_id": "st_mech_potential_force",
+      "subtype": "theorem",
+      "clause_range": [
+        59,
+        62
+      ],
+      "truth_value": "true",
+      "scope_id": "s_mechanics",
+      "exposed_entities": [
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_mech_equilibrium",
+      "subtype": "assumption",
+      "clause_range": [
+        64,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_mechanics",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mech_equilibrium_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        65,
+        67
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_mechanics",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mech_remark",
+      "subtype": "remark",
+      "clause_range": [
+        68,
+        68
+      ],
+      "truth_value": null,
+      "scope_id": "s_mechanics",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_method_assump",
+      "target": "st_method_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_method_lagrangian_def",
+      "target": "st_method_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_method_condition",
+      "target": "st_method_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let_assump",
+      "target": "st_ex1_3d_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_constraint",
+      "target": "st_ex1_3d_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_condition_dot",
+      "target": "st_ex1_3d_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_3d_assump",
+      "target": "st_ex1_3d_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_3d_condition",
+      "target": "st_ex1_3d_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_let_assump",
+      "target": "st_ex2_equations",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_lagrangian",
+      "target": "st_ex2_equations",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_mech_assump",
+      "target": "st_mech_equilibrium_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_mech_force_direction",
+      "target": "st_mech_equilibrium_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_mech_potential_force",
+      "target": "st_mech_equilibrium_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_mech_equilibrium",
+      "target": "st_mech_equilibrium_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex1_3d_conclusion",
+      "target": "st_method_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是拉格朗日乘数法的特例"
+    },
+    {
+      "source": "st_ex2_equations",
+      "target": "st_method_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2是拉格朗日乘数法的特例"
+    },
+    {
+      "source": "st_mech_equilibrium_eq",
+      "target": "st_method_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "力学解释是拉格朗日乘数法的特例"
+    }
+  ],
+  "unresolved": []
+}

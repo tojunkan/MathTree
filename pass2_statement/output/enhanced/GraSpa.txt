@@ -1,0 +1,84 @@
+[SCOPE:root|description|图空间与赋权图]
+文章名: GraSpa
+标题: 图空间与赋权图
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=点空间，边空间
+  [1] type=exercise heading=习题 1 title=
+  [2] type=definition heading=定义 2 title=边赋权图
+  [3] type=definition heading=定义 3 title=点赋权图
+  [4] type=definition heading=定义 4 title=混合赋权图
+
+[0] 图空间是指定义在图的点集和边集上的函数全体，它们刚好满足向量空间的定义。
+[1] 定义在点集上的函数全体叫做点空间，而定义在边集上的函数全体叫做边空间。
+[2] 赋权图则是在点或边空间中选择一个函数和图组成的二元组，所选的函数叫做权函数，权函数的值叫做对应点或边的权。
+
+[SCOPE:s_def1|description|点空间，边空间]
+[3] 定义 1 点空间，边空间
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[4] 设 $D$ 是一个图，其点集和边集为 $V(D)=\{v_1,\cdots,v_n\},E(D)=\{a_1,\cdots,e_m\}$。
+[/SCOPE:s_def1_let]
+[5] 则定义在 $V(D)$ 上，值域为 $\mathbb R$ 的函数全体称为 $G$ 的点空间（vertex space），记作 $\mathcal V(G)$。
+[6] 而定义在 $E(D)$ 上，值域为 $\mathbb R$ 的函数全体称为 $G$ 的边空间（edge space），记作 $\mathcal E(G)$。
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|习题1]
+[7] 习题 1
+[SCOPE:s_ex1_let1|let_bind|习题1的变量（点空间基）]
+[8] $\mathcal V(G),\mathcal E(G)$ 上的加法和数乘定义如下：设
+[9] \begin{equation}
+f,g\in\mathcal V(G),x\in V(D)\text{或} f,g\in\mathcal E(G),x\in E(D),\lambda\in \mathbb R,~
+\end{equation}
+[10] \begin{equation}
+\begin{aligned}
+&(f+g)(x):=f(x)+g(x),\\
+&(\lambda f)(x):=\lambda f(x).
+\end{aligned}~
+\end{equation}
+[11] 向量空间
+[12] 注意到 $\forall f\in\mathcal V(G)$ 可由在 $V(G)$ 上 $n$ 个点处的取值 $f(v_1),\cdots f_(v_n)$ 唯一确定，且 $f(v_i)=f(v_i)\cdot 1$，
+[13] 于是若令 $\alpha_i(v_j)=\delta_{ij},i,j=1,\cdots,n$，其中 $\delta_{ij}$ 试 Dirac $\delta$ 函数。
+[14] 那么
+[15] \begin{equation}
+f(v_j)=\sum_{i=1}^n f(v_i)\alpha_i(v_j)= \left(\sum_{i=1}^n f_i\alpha_i \right) (v_j),~
+\end{equation}
+[16] 其中 $f_i:=f(v_i)$。
+[17] 于是
+[18] \begin{equation}
+f=\sum_{i=1}^n f_i\alpha_i.~
+\end{equation}
+[19] 由于 $f$ 的任意性，这表明 $\{\alpha_i|i=1,\cdots,n\}$ 是 $\mathcal V(G)$ 的一组基。
+[20] 因此，$(f_1,\cdots,f_n)$ 就是 $f$ 在该基下的坐标。
+[/SCOPE:s_ex1_let1]
+[SCOPE:s_ex1_let2|let_bind|习题1的变量（边空间基）]
+[21] 同样的，若令 $\beta_i(e_j)=\delta_{ij},i,j=1\cdots,m$，
+[22] 则 $\forall g\in\mathcal E(G)$，$g=\sum\limits_{i=1}^m f_i\beta_i$。
+[23] 即 $\{\beta_i|i=1,\cdots,n\}$ 是 $\mathcal E(G)$ 的一组基。
+[24] 而 $(g_1,\cdots,g_m)$ 就是 $g$ 在该基下的坐标。
+
+[/SCOPE:s_ex1]
+[/SCOPE:s_ex1_let2]
+[SCOPE:s_def2|description|边赋权图]
+[25] 定义 2 边赋权图
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[26] 设 $G$ 是图，$\omega\in\mathcal E(G)$。
+[/SCOPE:s_def2_let]
+[27] 则称二元组 $(G,\omega)$ 为边赋权图（edge weighted graph），$\omega$ 称为边权函数（edge weighted function），$\omega(a)$ 称为边 $a$ 的权（weigth）。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|点赋权图]
+[28] 定义 3 点赋权图
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[29] 设 $G$ 是图，$\omega\in\mathcal V(G)$。
+[/SCOPE:s_def3_let]
+[30] 则称二元组 $(G,\omega)$ 为点赋权图（vertex weighted graph），$\omega$ 称为点权函数（vertex weighted function），$\omega(a)$ 称为点 $a$ 的权（weigth）。
+
+[/SCOPE:s_def3]
+[SCOPE:s_def4|description|混合赋权图]
+[31] 定义 4 混合赋权图
+[SCOPE:s_def4_let|let_bind|定义4的变量]
+[32] 设 $G$ 是图，$\omega_1\in\mathcal V(G),\omega_2\in\mathcal E(G)$。
+[/SCOPE:s_def4_let]
+[33] 则称三元组 $(G,\omega_1,\omega_2)$ 为混合赋权图（mixed weighted graph），$\omega_1,\omega_2$ 分别称为点权和边权函数。
+[/SCOPE:s_def4]
+[/SCOPE:root]

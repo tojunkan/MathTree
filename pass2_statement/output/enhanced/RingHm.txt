@@ -1,0 +1,188 @@
+[SCOPE:root|description|环同态]
+文章名: RingHm
+标题: 环同态
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=环同态
+  [1] type=definition heading=定义 2 title=环同构
+  [2] type=exercise heading=习题 1 title=验证下列映射是否为环同态
+  [3] type=exercise heading=习题 2 title=环同态的基本性质
+  [4] type=definition heading=定义 3 title=核
+  [5] type=theorem heading=定理 1 title=第一同态定理
+  [6] type=theorem heading=定理 2 title=第二同态定理
+  [7] type=theorem heading=定理 3 title=第三同态定理
+
+[SCOPE:s_def1|description|定义1 环同态]
+[0] 定义 1 环同态
+[SCOPE:s_def1_let|let_bind|环同态变量]
+[1a] (r)+f
+[1b] (s)=f(r+s)$ 和 $f(rs)=f
+[1c] (r)f
+[1d] (s)$，
+[2] 那么我们称 $f$ 是一个从 $R_1$ 到 $R_2$ 的环同态映射（ring homomorphism），而环 $R_1$ 和 $R_2$ 是同态（homomorphic）的环。
+[/SCOPE:s_def1_let]
+[3] 容易验证，由于环同态保加法和乘法，乘法对加法的分配律也在同态映射下不变。
+[4] 一个常见的环同态例子为自然同态（也称典范映射）：如果 $I$ 是环 $R$ 的理想，
+[5] 那么我们有环同态 $\pi:R\rightarrow R/I$，使得对于任意 $r\in R$ 都有 $\pi (r)=r+I$。
+[6] 可以验证这是一个满的环同态。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义2 环同构]
+[7] 定义 2 环同构
+[8] 如果一个环同态是双射，
+[9] 那么我们称它为一个环同构（ring isomorphism），相应的两个环就是同构（isomorphic）的。
+[10] 记 “$R_1$ 和 $R_2$ 同构” 为 $R_1\cong R_2$。
+
+[/SCOPE:s_def2]
+[SCOPE:s_ex1|description|习题1 验证环同态]
+[11] 习题 1 验证下列映射是否为环同态
+[12] $f:\mathbb R^{2\times 2}\rightarrow \mathbb R,\quad f(A)=A^i_i,\quad \forall A\in \mathbb R^{2\times 2}$
+[13] $f:\mathbb R^{2\times 2}\rightarrow \mathbb R,f(A)= \operatorname {Tr}A,\quad \forall A\in \mathbb R^{2\times 2}$
+[14] $f:\mathbb R^{2\times 2}\rightarrow \mathbb R,f(A)= \operatorname {det}A,\quad \forall A\in \mathbb R^{2\times 2}$
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|习题2 环同态基本性质]
+[15] 习题 2 环同态的基本性质
+[16] 证明：环同态把单位元映射为单位元（乘法单位元1和加法单位元0）。
+[17] 证明：环同态把子环映射为子环。
+[18] 证明：$f(-r)=f(r)$
+[19] 证明：若 $r$ 和 $f(r)$ 非零，
+[20] 则有 $f(r^{-1})=f(r)^{-1}$
+[21] 同构的两个环具有完全相同的运算结构，而同态的两个环的运算结构似而不同，和群的同态、同构类似。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_def3|description|定义3 核]
+[22] 定义 3 核
+[SCOPE:s_def3_let|let_bind|核变量]
+[23] 给定环同态 $f:R_1\rightarrow R_2$，记 $ \operatorname {ker}f=\{r\in R_1|f(r)=0\}$，称为同态 $f$ 的核。
+[/SCOPE:s_def3_let]
+[24] 从定义可见，环同态首先是加法群的同态，
+[25] 因此同态映射的核是原环的正规子群。
+[26] 实际上，$ \operatorname {ker} f$ 还是 $R_1$ 的理想，只需验证 “左右吸收律” 成立即可。
+[27] 和群同态基本定理类似，我们有如下环同态基本定理：
+
+[/SCOPE:s_def3]
+[SCOPE:s_thm1|description|定理1 第一同态定理]
+[28] 定理 1 第一同态定理
+[SCOPE:s_thm1_let|let_bind|第一同态定理变量]
+[29] 给定满射的环同态：$f:R_1\rightarrow R_2$，记 $K= \operatorname {ker}f$，
+[/SCOPE:s_thm1_let]
+[30] 则有：
+[31] $R_1/K\cong R_2$，且存在同构映射 $g:R_1/K\rightarrow R_2$，使得交换图成立；
+[32] 取 $R_1$ 中包含 $K$ 的子环，
+[33] 则 $f(B)$ 也是子环，且 $B$ 的左陪集与 $f(B)$ 的左陪集一一对应；
+[34] 取 $R_1$ 中包含 $K$ 的理想$I$，
+[35] 则 $R_1/I \cong R_2/f(I)$
+[SCOPE:s_thm1_proof|description|第一同态定理证明]
+[36] Proof.
+[37] 首先是第一条，摘去环的乘法结构后这就是群同态基本定理。
+[SCOPE:s_thm1_proof_let1|let_bind|证明中引入的变量]
+[38] 因此假设同构映射就是 $f$，可证 $f(r+K)=f(r),\forall r\in R_1$。
+[/SCOPE:s_thm1_proof_let1]
+[39] 也就是说，$K$ 的每个左陪集映射到 $R_2$ 上的一个点。
+[40] 同构映射是保运算结构不变的双射，
+[41] 因此先证明运算保加法和乘法：
+[42] \begin{equation}
+\begin{aligned}
+f(r_1 +K)+f(r_2 +K)&=f(r_1)+f(r_2)=f(r_1+r_2+K).\\
+f(r_1 +K)f(r_2 +K)&=f(r_1 r_2+K)~.
+\end{aligned}
+\end{equation}
+[43] 由于该环同态是满射，
+[44] 所以相应的同构映射也是满射。
+[45] 下面证明这还是单射。
+[46] \begin{equation}
+\begin{aligned}
+f(r_1+K)=f(r_2+K)&\Leftrightarrow f(r_1)=f(r_2)\\
+&\Leftrightarrow f(r_1-r_2)=0\\
+&\Leftrightarrow r_1-r_2\in K\\
+&\Leftrightarrow r_1+K=r_2+K~.
+\end{aligned}
+\end{equation}
+[47] 然后我们证明
+[48] 第二条
+[49] 。
+[50] 要证明 $f(B)$ 的子环，只需要证明对加法和乘法封闭即可。
+[SCOPE:s_thm1_proof_let2|let_bind|第二条证明变量]
+[51] 设 $f(b_1),f(b_2)\in R_2,\,\forall b_1,b_2\in R_1$，
+[/SCOPE:s_thm1_proof_let2]
+[52] 则
+[53] \begin{equation}
+\begin{aligned}
+f^{-1}(r_1)f(r_2)\in f(B)&\Leftrightarrow f(r_1^{-1}r_2)\in f(B)\\
+&\Leftrightarrow r_1^{-1}r_2\in B~.
+\end{aligned}
+\end{equation}
+[54] 加法的证明同理。
+[55] $B$ 由 $K$ 的部分左陪集组成。
+[56] 因为设 $r\in B$，有 $r+K\subseteq B$，由于 $f(r+K)=f(r)$，每个被 $B$ 包含的左陪集与 $f(B)$ 内的元素一一对应，设 $B=\bigcup r_i+K$。
+[57] 则 $B$ 的每个左陪集 $r+B=\bigcup (r+r_i)+K$，与 $f(B)$ 的左陪集 $\bigcup f(r+r_i)=f(r)+f(B)$ 一一对应。
+[58] 易证第三条中 $f(I)$ 是 $R_2$ 的理想，同样完整包含 $K$ 的若干左陪集。
+[59] 因此同理我们可以得到 $R_1/I$ 与 $R_2/f(I)$ 的双射。
+[60] 现在利用第一条证明它们同构。
+[61] 也就是说只需证明：
+[62] 存在从 $R_1$ 到 $R_2/f(I)$ 的满同态。
+[63] 构建复合映射为 $g=\pi\circ f:R_1\rightarrow R_2\rightarrow R_2/f(I)$，容易验证该映射符合要求。
+[64] $I$ 为上述满同态的核，
+[65] 即 $I= \operatorname {ker}g$。
+[66] 一方面，设 $r\in I$，
+[67] 则 $g(r)\in f(I)$，
+[68] 因此 $r\in \operatorname {ker}g$；
+[69] 另一方面，设 $r\in \operatorname {ker}g$，
+[70] 则 $g(r)\in f(I)$，两边乘以 $g^{-1}$ 得证 $r\in I$。
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_proof]
+[SCOPE:s_thm2|description|定理2 第二同态定理]
+[71] 定理 2 第二同态定理
+[SCOPE:s_thm2_let|let_bind|第二同态定理变量]
+[72] 若环 $S$ 是环 $R$ 的子环，且 $I$ 为环 $R$ 的理想，
+[/SCOPE:s_thm2_let]
+[73] 则有：
+[74] $S+I:=\{s+a|s\in S,a\in I\}$ 也是 $R$ 的子环。
+[75] $S\cap I$ 是 $S$ 的理想。
+[76] $(S+I)/I$ 同构于 $S/(S\cap I)$。
+[77] 前两条证明从略。
+[78] 第三条只需先证明 $S$ 满同态于 $(S+I)/I$，这是从单点集到陪集的映射，易证满同态，然后证明 $S\cap I$ 是该同态的核即可。
+[79] 设 $s\in S$，该映射为 $f(s)=s+I$，
+[80] 因而若 $s+I=I$，必有 $s\in I$。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|定理3 第三同态定理]
+[81] 定理 3 第三同态定理
+[SCOPE:s_thm3_let|let_bind|第三同态定理变量]
+[82] 令 $R$ 为任意环，$J$ 与 $I$ 为环上的理想，且 $J\subset I$。
+[/SCOPE:s_thm3_let]
+[83] 可得：
+[84] \begin{equation}
+(R/J)/(I/J)\cong R/I~.
+\end{equation}
+[85] 易证 $I/J$ 为 $R/J$ 的理想。
+[86] 仿照第二同态定理的证明过程，接下来先证明存在从 $R/J$ 到 $R/I$ 的满同态（其实就是 $R+J\rightarrow R+I$1），并证明满同态的核正是 $I/J$ 即可。
+[/SCOPE:s_thm3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "第一同态定理使用核的定义"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "第二同态定理的证明类似第一同态定理"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "第三同态定理仿照第二同态定理证明"
+  }
+]

@@ -1,0 +1,58 @@
+[SCOPE:root|description|逆序数]
+文章名: InvNum
+标题: 逆序数
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=theorem heading=定理 1 title=
+  [2] type=corollary heading=推论 1 title=
+
+[SCOPE:s_example1|description|例1]
+[0] 标准排列 $1,2,3,4$ 中对任意 $i < j$ 都有 $\pi_i < \pi_j$，不存在逆序对，逆序数为零。
+[1] $4,3,2,1$ 中对任意 $i < j$ 都有 $\pi_i > \pi_j$，任何两个元素都是逆序对，逆序数等于组合 $C_4^2 = 6$。
+[2] 排列 $1,6,2,5,3,4$ 中，逆序对有 $(6,2)$，$(6,5)$，$(6,3)$，$(6,4)$，$(5,3)$，$(5,4)$。
+[3] 共 $6$ 个。
+[SCOPE:s_example1_let|let_bind|例1的变量]
+[4] 一般情况下，要计算逆序数，我们可以依次令 $i = 1, \dots, N$，对每个 $i$，将其右边所有小于 $\pi_i$ 的元素数求和即可。
+
+[/SCOPE:s_example1]
+[/SCOPE:s_example1_let]
+[SCOPE:s_theorem1|description|定理1]
+[5] 定理 1
+[6] 交换排列中任意两个不同元素，逆序数奇偶性改变。
+
+[SCOPE:s_theorem1_let1|let_bind|定理1的变量]
+[7] 在排列 $p_n$ 中，考虑第 $i, j$（$i < j$）两个元素的置换，不妨把他们的值分别记为 $m, n$。
+[/SCOPE:s_theorem1_let1]
+[8] 不妨假设 $m < n$（$n < m$ 的讨论同理）。
+[9] 为了方便讨论，我们把任意两个不同元素都用弧线连起来，这些弧线有的代表逆序对，有的不是。
+[10] 我们可以把这些连线分为 4 类来讨论：
+[11] 对于不连接到 $m$ 或 $n$ 的线，置换不改变它们之中的逆序数。
+[12] 对于从 $m$ 或 $n$ 连接到 $m$ 左边或 $n$ 右边的线，置换同样不改变他们之中的逆序数。
+[SCOPE:s_theorem1_let2|let_bind|定理1的中间变量q]
+[13] 若 $m,n$ 不相邻，对于从 $m$ 或 $n$ 连接到 $m, n$ 之间某个元素 $q$ 的两条线，只有当 $m < q < n$ 时逆序数会改变：从两个非逆序对变为逆序对。
+[/SCOPE:s_theorem1_let2]
+[14] 但无论有多少满足条件的 $q$，逆序数只会增加偶数个。
+[15] $m,n$ 在置换前不是逆序对，置换后变为逆序对，使逆序数增加 1，改变逆序数的奇偶性。
+[16] 综上所述，逆序对在置换后必定改变奇数个，
+[17] 所以逆序数奇偶性发生变化。
+[18] 证毕。
+
+[/SCOPE:s_theorem1]
+[SCOPE:s_corollary1|description|推论1]
+[19] 推论 1
+[20] 把奇排列变为标准排列需要置换奇数次，把偶排列变为标准排列需要置换偶数次。
+[21] 证明显然。
+[/SCOPE:s_corollary1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_corollary1",
+    "target_scope": "s_theorem1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是定理1的直接推论"
+  }
+]

@@ -1,0 +1,146 @@
+{
+  "article_name": "RamSum",
+  "statements": [
+    {
+      "stmt_id": "st_def_ramanujan_sum",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "c(m;n)",
+        "c_n(m)",
+        "h",
+        "n",
+        "e"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_缩系",
+      "subtype": "remark",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "h^*(n)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_equation",
+      "subtype": "theorem",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "c_n(m)",
+        "h^*(n)",
+        "e",
+        "m",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_intro",
+      "subtype": "theorem",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "c_q(m)",
+        "ρ",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_assumption",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3",
+      "exposed_entities": [
+        "q",
+        "q'"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": [
+        "c_q(m)",
+        "c_{q'}(m)",
+        "c_{qq'}(m)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_proof",
+      "subtype": "remark",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_equation",
+      "target": "st_def_ramanujan_sum",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_intro",
+      "target": "st_def_ramanujan_sum",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_assumption",
+      "target": "st_thm3_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_conclusion",
+      "target": "st_thm2_intro",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

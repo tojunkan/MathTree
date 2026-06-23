@@ -1,0 +1,151 @@
+[SCOPE:root|description|贝塞尔函数]
+文章名: Bessel
+标题: 贝塞尔函数
+
+[SCOPE:s_bessel_def|description|贝塞尔函数定义]
+[0] 贝塞尔微分方程（Bessel's differential equation）也被称为柱谐函数、圆柱函数或圆柱谐波，通常在使用分离变量法求解柱坐标中的拉普拉斯方程时得到：
+[1] \begin{equation}
+x \frac{\mathrm{d}}{\mathrm{d}{x}} \left(x \frac{\mathrm{d}{y}}{\mathrm{d}{x}} \right) + (x^2 - l ^2)y = 0~.
+\end{equation}
+[SCOPE:s_bessel_let|let_bind|阶数 l]
+[2] 其中 $l$ 叫做
+[3] 阶数（order）
+[4] ，一般来说可以是任意实数，
+[5] 但半整数和整数较为常见。
+[/SCOPE:s_bessel_let]
+[6] 两个线性无关的解分别是
+[7] 第一类贝塞尔函数（Bessel function of the first kind）
+[8] $J_l(x)$ 和
+[9] 第二类贝塞尔函数（Bessel function of the second kind）
+[10] $Y_l(x)$。
+[11] 这里只讨论 $x > 0$ 且 $l$ 为整数或半整数的情况
+[12] 1
+[13] 【图解】图 1：第一类和第二类贝塞尔函数（非负整数阶）
+[14] $J_l(x)$ 的级数形式为
+[15] \begin{equation}
+J_l(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m!\Gamma(m+l+1)} \left(\frac x2 \right) ^{2m+l}~,
+\end{equation}
+[16] 其中使用了
+[17] $\Gamma$ 函数 [链接 L0]
+[18] 。
+[19a] (x)$ 可以通过 $J_l
+[19b] (x)$ 来定义
+[20] \begin{equation}
+Y_l(x) = \frac{J_l(x) \cos\left(l\pi\right) - J_{-l}(x)}{ \sin\left(l\pi\right) }~.
+\end{equation}
+[21] 容易证明
+[22] \begin{equation}
+J_{1/2}(x) = \sqrt{\frac{2}{\pi x}} \sin x = -Y_{-1/2}(x)~,
+\end{equation}
+[23] \begin{equation}
+J_{-1/2}(x) = \sqrt{\frac{2}{\pi x}} \cos x = -Y_{1/2}(x)~.
+\end{equation}
+
+[/SCOPE:s_bessel_def]
+[SCOPE:s_var_sub_let|let_bind|变量 u]
+[SCOPE:s_var_sub|description|变量替换]
+[24a] (x) = \sqrt{x} y
+[24b] (x)$，对式 1 替换变量可得更简洁的方程，使一阶导数项消失
+[25] \begin{equation}
+x^2 \frac{\mathrm{d}^{2}{u}}{\mathrm{d}{x}^{2}} + \left(x^2 - l^2 + \frac{1}{4} \right) u = 0~,
+\end{equation}
+[26a] (x)$ 的两组解就是 $\sqrt{x}J_l
+[26b] (x)$ 和 $\sqrt{x}Y_l
+[26c] (x)$。
+
+[/SCOPE:s_var_sub_let]
+[/SCOPE:s_var_sub]
+[SCOPE:s_hankel|description|汉克尔函数]
+[27] 贝塞尔方程的两个线性无关解也可以用第一类和第二类汉克尔函数（Hankel function）来表示2
+[28] \begin{equation}
+H_l ^{(1)}(x) = J_l(x) + \mathrm{i} Y_l(x)~,
+\qquad
+H_l ^{(2)}(x) = J_l(x) - \mathrm{i} Y_l(x)~.
+\end{equation}
+
+[/SCOPE:s_hankel]
+[SCOPE:s_properties_let|let_bind|Z 代表任意贝塞尔函数]
+[SCOPE:s_properties|description|常用性质]
+[29] 令 $Z$ 为 $J, Y, H^{(1)}, H^{(2)}$ 的任意一种，
+[30] 则
+[31] \begin{equation}
+Z_{-l}(x) = (-1)^l Z_l(x)~.
+\end{equation}
+[32] 递推关系
+[33] \begin{equation}
+\frac{2l}{x} Z_l(x) = Z_{l -1}(x) + Z_{l+1}(x)~.
+\end{equation}
+[34] 一阶导数
+[35] \begin{equation}
+\frac{\mathrm{d}{Z_l}}{\mathrm{d}{x}} = \frac12 [Z_{l - 1}(x) - Z_{l +1}(x)]~.
+\end{equation}
+[36] 渐进形式（$x \gg 1$）
+[37] \begin{equation}
+J_l(x) \to \sqrt{\frac{2}{\pi x}} \cos \left(x - \frac{l\pi}{2} - \frac{\pi}{4} \right) ~,
+\end{equation}
+[38] \begin{equation}
+Y_l(x) \to \sqrt{\frac{2}{\pi x}} \sin \left(x - \frac{l\pi}{2} - \frac{\pi}{4} \right) ~.
+\end{equation}
+[39] 正交关系
+[40] \begin{equation}
+\int_0^1 J_l (u_{l ,m} x) J_l (u_{l ,n} x) x \,\mathrm{d}{x} = \frac{\delta_{m,n}}{2}[J_{l + 1} (u_{l ,m})]^2~.
+\end{equation}
+[41] 其中 $u_{l, m}$ 是 $J_l(x)$ 的第 $m$ 个根。
+[42] 连续正交关系（容易从渐进形式得到）
+[43] \begin{equation}
+\int_0^\infty \sqrt{k_1} J_l (k_1 x) \sqrt{k_2}J_l (k_2 x) x \,\mathrm{d}{x} = \delta(k_2 - k_1)~.
+\end{equation}
+
+[/SCOPE:s_properties_let]
+[/SCOPE:s_properties]
+[SCOPE:s_modified|description|修正贝塞尔函数]
+[44] 修正贝塞尔方程为
+[45] \begin{equation}
+x^2 \frac{\mathrm{d}^{2}{y}}{\mathrm{d}{x}^{2}} + x \frac{\mathrm{d}{y}}{\mathrm{d}{x}} - (x^2 + l ^2)y = 0~.
+\end{equation}
+[46] 其解为两个
+[47] 修正贝塞尔函数（Modified Bessel Function）
+[48a] (x)$， 第二类为 $K_l
+[48b] (x)$， 与贝塞尔函数的关系为
+[49] \begin{equation}
+I_l(x) = \mathrm{i} ^{-l} J_l( \mathrm{i} x)~,
+\qquad
+K_l(x) = \frac{\pi}{2} \mathrm{i} ^{l + 1} H_l ^{(1)}( \mathrm{i} x)~.
+\end{equation}
+
+跨文章引用:
+  [L0] $\Gamma$ 函数 → Gamma
+[/SCOPE:s_modified]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_var_sub",
+    "target_scope": "s_bessel_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "变量替换基于贝塞尔方程"
+  },
+  {
+    "source_scope": "s_hankel",
+    "target_scope": "s_bessel_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "汉克尔函数由贝塞尔函数定义"
+  },
+  {
+    "source_scope": "s_properties",
+    "target_scope": "s_bessel_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "性质适用于贝塞尔函数"
+  },
+  {
+    "source_scope": "s_modified",
+    "target_scope": "s_bessel_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "修正贝塞尔函数与贝塞尔函数相关"
+  }
+]

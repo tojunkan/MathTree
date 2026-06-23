@@ -1,0 +1,210 @@
+{
+  "article_name": "GenFut",
+  "statements": [
+    {
+      "stmt_id": "st_def1_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "φ_i",
+        "φ",
+        "C_0^∞(Ω)",
+        "K",
+        "Ω"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "φ_j",
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_summary",
+      "subtype": "remark",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "f",
+        "C_0^∞(Ω)",
+        "ℝ"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_space",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "D'(Ω)"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_notation",
+      "subtype": "remark",
+      "clause_range": [
+        17,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let",
+      "exposed_entities": [
+        "Ω",
+        "x_0",
+        "δ_{x_0}",
+        "C_0^∞(Ω)",
+        "ℝ"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_conclusion",
+      "subtype": "example",
+      "clause_range": [
+        28,
+        30
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "δ_{x_0}",
+        "D'(Ω)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        32,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "Ω",
+        "f",
+        "L_loc^1(Ω)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_conclusion",
+      "subtype": "example",
+      "clause_range": [
+        36,
+        39
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "f",
+        "D'(Ω)",
+        "L_loc^1(Ω)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_assumptions",
+      "target": "st_def1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_assumptions",
+      "target": "st_def2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_assumptions",
+      "target": "st_ex1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_assumptions",
+      "target": "st_ex2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_def2_conclusion",
+      "target": "st_def1_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "广义函数的定义依赖于C0^∞(Ω)中的收敛性"
+    },
+    {
+      "source": "st_ex1_conclusion",
+      "target": "st_def2_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "Dirac δ函数是广义函数的特例"
+    },
+    {
+      "source": "st_ex2_conclusion",
+      "target": "st_def2_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "局部可积函数是广义函数的特例"
+    }
+  ],
+  "unresolved": []
+}

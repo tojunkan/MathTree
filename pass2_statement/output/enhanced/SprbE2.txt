@@ -1,0 +1,291 @@
+[SCOPE:root|description|可分元素的单扩张是可分扩张]
+文章名: SprbE2
+标题: 可分元素的单扩张是可分扩张
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=theorem heading=定理 2 title=
+  [2] type=lemma heading=引理 1 title=
+  [3] type=corollary heading=推论 1 title=
+  [4] type=lemma heading=引理 2 title=可分元素的判定
+  [5] type=lemma heading=引理 3 title=
+  [6] type=corollary heading=推论 2 title=可分扩张的传递性
+  [7] type=corollary heading=推论 3 title=
+  [8] type=corollary heading=推论 4 title=可分元素的封闭性
+
+[0] 本文是专门用来证明下述定理 1 的，其自然语言的描述即是本文的标题。
+[1] 本文部分节选自《代数学基础》。
+
+[SCOPE:s_thm1|description|定理1]
+[2] 定理 1
+[3] 域 $\mathbb{F}$ 上的不可约可分多项式 $f(x)$ 的分裂域 $\mathbb{K}$ 是 $\mathbb{F}$ 的可分扩张。
+[4] 考虑 Artin 本原性定理（定理 2 ），以及可分扩张的定义（所有元素都是可分元），我们还可以得到上述定理 1 的等价描述：
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理2]
+[5] 定理 2
+[6] $\mathbb{F}(a)/\mathbb{F}$ 是可分扩张 $\iff$ $a$ 是 $\mathbb{F}$ 的可分元素。
+[7] 本节我们就要证明定理 2 。
+
+[/SCOPE:s_thm2]
+[8] 该证明的思路取自 University of Connecticut 的 Keith Conrad 教授的讲义，
+[9] 但细节思路会有不同。
+[10] 这是因为本部分有自己的逻辑体系，会大量引用小时百科中的内容来完成证明。
+
+[SCOPE:s_lem1|description|引理1]
+[11] 引理 1
+[SCOPE:s_lem1_let|let_bind|引理1的变量]
+[12] 设 $\mathbb{L}/\mathbb{K}$ 是一个域扩张，且 $[\mathbb{L}:\mathbb{K}]=n$。
+[13] 设 $\sigma:\mathbb{K}\to\mathbb{F}$ 是一个域单同态。
+[/SCOPE:s_lem1_let]
+[14] 1. $\sigma$ 开拓而得的域单同态 $\mathbb{L}\to\mathbb{F}$ 的数量小于等于$n$。
+[15] 2. 如果 $\mathbb{L}/\mathbb{K}$ 是不可分扩张，
+[16] 则 $\sigma$ 开拓而得的域单同态 $\mathbb{L}\to\mathbb{F}$ 的数量小于$n$。
+[17] 3. 如果 $\mathbb{L}/\mathbb{K}$ 是可分扩张，
+[18] 则存在扩域 $\mathbb{F}'/\mathbb{F}$，使得 $\sigma$ 开拓而得的域单同态 $\mathbb{L}\to\mathbb{F}'$ 的数量等于$n$。
+
+[/SCOPE:s_lem1]
+[SCOPE:s_lem1_1|description|引理1中1.的证明]
+[19] 注意，单同态就是定义域和象的同构。
+[SCOPE:s_lem1_1_let|let_bind|引理1.1的变量]
+[20] 取 $a\in\mathbb{L}-\mathbb{K}$，$a$ 在 $\mathbb{K}$ 上的最小多项式是 $f$。
+[21a] (x)\in\mathbb{K}[x]$ 的分裂域是 $\mathbb{K}
+[21b] (a)\subseteq\mathbb{L}$。
+[/SCOPE:s_lem1_1_let]
+[22] 考虑定理 3 ，可知 $\sigma$ 开拓为 $\mathbb{K}(a)$ 到 $\mathbb{F}$ 的同态后，同态象最多只有一种可能。
+[23] 也就是说，$\mathbb{F}$ 中最多只有一个子域同构于 $\mathbb{K}(a)$。
+[24] 于是，如果 $\sigma$ 开拓为 $\mathbb{K}(a)\to\mathbb{F}$ 的同态存在，
+[25a] (a)$（或者 $\sigma(\mathbb{K}
+[25b] (a))$）到自身的保 $\mathbb{K}$（或者保 $\sigma(\mathbb{K})$）自同构。
+[26a] (a)\to\mathbb{F}$ 最多只有 $[\mathbb{K}
+[26b] (a):\mathbb{K}]= \operatorname {deg}f$ 个。
+[27] 上述讨论说明，定理对单扩张情况成立。
+[28] 再考虑定理 4 和中间域升链推论 3 ，
+[29] 则得证。
+
+[/SCOPE:s_lem1_1]
+[SCOPE:s_lem1_2|description|引理1中2.的证明]
+[30] 由于 $\mathbb{L}/\mathbb{K}$ 是不可分扩张，
+[SCOPE:s_lem1_2_let|let_bind|引理1.2的变量]
+[31] 故存在 $a\in\mathbb{L}$ 是 $\mathbb{K}$ 的不可分元素。
+[32] 再据中间域升链推论 3 ，可构造 $\mathbb{L}/\mathbb{K}$ 的中间域升链，其中 $\mathbb{K}$ 邻近的单扩张就是 $\mathbb{K}(a)$。
+[/SCOPE:s_lem1_2_let]
+[33] 不可分多项式的根的数目，小于其次数。
+[34] 但是据定理 2 ，$[\mathbb{K}_2:\mathbb{K}_1]$ 正等于其次数。
+[35] 因此 $\sigma$ 在一步步开拓的过程中，在第一步 $\mathbb{K}(a)/\mathbb{K}$ 这里，开拓出的同态数目就要小于扩张次数。
+[36] 由此得证。
+
+[/SCOPE:s_lem1_2]
+[SCOPE:s_lem1_3|description|引理1中3.的证明]
+[37] 同上一条的证明，可知 $\mathbb{L}/\mathbb{K}$ 的中间域中，任意相邻两个域之间都是单可分扩域的关系。
+[38] 也就是说，每一步扩张都是一个无重根的不可约多项式的分裂域，
+[39] 因此据定理 5 ，每一步中 $\sigma$ 的开拓的数目都恰为扩张的次数。
+[40] 除了一种情况：那就是某一步分裂域扩域无法映射入 $\mathbb{F}$，那就在 $\mathbb{F}$ 上取这个分裂域的多项式在 $\mathbb{F}$ 上的映射的分裂域，
+[41] 即可1。
+[42] 这也是为什么定理中会说存在一个扩域 $\mathbb{F}'/\mathbb{F}$。
+
+[/SCOPE:s_lem1_3]
+[SCOPE:s_thm2_proof|description|定理2的证明]
+[43] 注意，引理 1 的证明中，只出现了 “可分单扩张” 和 “不可分单扩张”，
+[44] 但没有说不可分单扩张所用的元素是不是可分元素（即下面证明要讨论的），
+[45] 所以没有构成循环论证。
+[46] $\Rightarrow$：
+[47] 由可分扩张的定义，显然。
+[48] $\Leftarrow$：
+[SCOPE:s_thm2_proof_let1|let_bind|定理2证明中的变量a]
+[49] 设 $a$ 是域 $\mathbb{K}$ 的可分代数元，其在 $\mathbb{K}$ 上的最小多项式是 $ \operatorname {irr}(a, \mathbb{K})=f(x)\in\mathbb{K}[x]$。
+[50] 设 $ \operatorname {deg}f=n$，$f\in\mathbb{K}[x]$ 的分裂域是 $\mathbb{L}$。
+[/SCOPE:s_thm2_proof_let1]
+[51] 按可分的定义，知 $f$ 是可分多项式，在 $\mathbb{L}$ 上有 $n$ 个根。
+[52] 据定理 2 ，可知 $[\mathbb{L}:\mathbb{K}]=n$。
+[SCOPE:s_thm2_proof_let2|let_bind|定理2证明中的sigma]
+[53] 取 $\mathbb{L}$ 作为引理 1 中的 $\mathbb{L}$ 和 $\mathbb{F}$、$\mathbb{K}$ 作为引理 1 中的 $\mathbb{K}$，且 $\sigma= \operatorname {id}_{\mathbb{K}}$。
+[/SCOPE:s_thm2_proof_let2]
+[54] 据定理 5 ，$\mathbb{L}$ 到自身的保 $\mathbb{K}$ 自同构有 $n$ 个。
+[55] 也就是说，$\sigma$ 开拓而来的单同态 $\mathbb{L}\to\mathbb{F}$ 的数量等于$n$。
+[56] 这违反了引理 1 的第 $2$ 条。
+[57] 因此，$\mathbb{L}/\mathbb{K}$ 必是可分扩张。
+[58] 这样一来，只要有办法判断一个元素是否可分，就能判断其单扩张是否可分了。
+[59] 进一步，任何有限扩张都可以拆分成若干次单扩张的结果，
+[60] 于是也能讨论任何有限扩张的情形了。
+[61a] 当然，这是目前的猜测，真实情况的性质更好，看下去
+[61b] 则知道了。
+
+[/SCOPE:s_thm2_proof]
+[SCOPE:s_cor1|description|推论1]
+[62] 推论 1
+[SCOPE:s_cor1_let|let_bind|推论1的变量]
+[63] 设 $\mathbb{L}/\mathbb{K}$ 是一个可分正规扩张，且 $[\mathbb{L}:\mathbb{K}]=n$。
+[/SCOPE:s_cor1_let]
+[64] 则 $\mathbb{L}$ 的保 $\mathbb{K}$ 自同构有 $n$ 个。
+[65] 证明：
+[66] 取 $\mathbb{F}=\mathbb{F}'=\mathbb{L}$，$\sigma= \operatorname {id}_{\mathbb{K}}$，套用引理 1 第 $3$ 条即可。
+[67] 证毕。
+
+[/SCOPE:s_cor1]
+[SCOPE:s_lem2|description|引理2 可分元素的判定]
+[68] 引理 2 可分元素的判定
+[SCOPE:s_lem2_let|let_bind|引理2的变量]
+[69] 设域 $\mathbb{F}$ 的特征为2
+[70] $p$，
+[71] 则 $\alpha$ 是 $\mathbb{F}$ 的可分元素当且仅当 $\mathbb{F}(\alpha)=\mathbb{F}(\alpha^p)$。
+[/SCOPE:s_lem2_let]
+[72] 证明：
+[SCOPE:s_lem2_nec|description|引理2必要性]
+[73] 必要性：
+[SCOPE:s_lem2_nec_let|let_bind|引理2必要性变量]
+[74] 令 $f(x)=x^p-\alpha^p$，显然 $f(\alpha)=0$，
+[/SCOPE:s_lem2_nec_let]
+[75] 故 $ \operatorname {Irr}(\alpha, \mathbb{F}(\alpha))\mid f$。
+[76] 又因为域特征为 $p$，
+[77] \begin{equation}
+f(x) = x^p-\alpha^p = (x-\alpha)^p~,
+\end{equation}
+[78] 结合 $\alpha$ 在 $\mathbb{F}$ 上可分 $\implies$ 在 $\mathbb{F}(\alpha^p)$ 上可分，可知 $ \operatorname {Irr}(\alpha, \mathbb{F}(\alpha))=x-\alpha$。
+[79] 因此，$\alpha\in\mathbb{F}$，
+[80] 从而得证。
+[/SCOPE:s_lem2_nec]
+[SCOPE:s_lem2_suf|description|引理2充分性]
+[81] 充分性：
+[SCOPE:s_lem2_suf_let1|let_bind|引理2充分性变量m]
+[82] 记 $m= \operatorname {Irr}(\alpha, \mathbb{F})$。
+[/SCOPE:s_lem2_suf_let1]
+[83] 反设 $\alpha$ 在 $\mathbb{F}$ 上不可分，
+[SCOPE:s_lem2_suf_let2|let_bind|引理2充分性变量h,k,g]
+[84] 即存在 $\mathbb{F}$ 上可分的不可约多项式 $h$ 和正整数$k$，使得 $m(x)=h \left(x^{p^k} \right) $。
+[85] 令 $g(x)=h \left(x^{p^{k-1}} \right) $，
+[/SCOPE:s_lem2_suf_let2]
+[86] 则
+[87] \begin{equation}
+g(\alpha^p)= h \left( \left(\alpha^{p} \right) ^{p^{k-1}} \right) = h \left(\alpha^{p^k} \right) = m(\alpha) = 0~,
+\end{equation}
+[88] 即 $g(x)$ 是 $\alpha^p$ 的零化多项式。
+[89] 故 $ \operatorname {deg} \operatorname {Irr}(\alpha^p, \mathbb{F})\leq \operatorname {deg}g< \operatorname {deg}m$。
+[90] 由单扩张的次数定理（定理 2 ）即可知 $[\mathbb{F}(\alpha^p):\mathbb{F}]<[\mathbb{F}(\alpha):\mathbb{F}]$，
+[91] 从而 $\mathbb{F}(\alpha^p))\subsetneq\mathbb{F}(\alpha)$。
+[92] 证毕。
+
+[/SCOPE:s_lem2]
+[/SCOPE:s_lem2_suf]
+[SCOPE:s_lem3|description|引理3]
+[93] 引理 3
+[SCOPE:s_lem3_let1|let_bind|引理3变量F,a,b]
+[94] 给定域 $\mathbb{F}$。
+[95a] (a)/\mathbb{F}$ 和 $\mathbb{F}(a, b)/\mathbb{F}
+[95b] (a)$ 都是可分扩张，
+[96] 则 $\mathbb{F}(a, b)/\mathbb{F}$ 也是。
+[/SCOPE:s_lem3_let1]
+[97] 证明：
+[98] 不妨设 $ \operatorname {ch}\mathbb{F}=p$。
+[99] 因为 $b$ 在 $\mathbb{F}(a)$ 上可分，
+[100] 故由引理 2 知，
+[101] \begin{equation}
+\mathbb{F}(a, b^p) = \mathbb{F}(a)(b^p) = \mathbb{F}(a)(b) = \mathbb{F}(a, b)~.
+\end{equation}
+[SCOPE:s_lem3_let2|let_bind|引理3证明中变量f,g]
+[102] 记 $f= \operatorname {Irr}(a, \mathbb{F}(b))$，$g= \operatorname {Irr}(a, \mathbb{F}(b^p))$，
+[/SCOPE:s_lem3_let2]
+[103] 则由于 $\mathbb{F}(b^p)\subseteq\mathbb{F}(b)$，可知 $f\mid g$。
+[104] 由于域特征为 $p$，$f(x)^p\in\mathbb{F}(b^p)[x]$，且显然是 $a$ 的零化多项式，
+[105] 因此 $g\mid f^p$。
+[106] 又因为 $a$ 在 $\mathbb{F}$ 上可分 $\implies$ 在 $\mathbb{F}(b^p)$ 上可分，
+[107] 故得 $g\mid f$。
+[108] 综上，$f=g$。
+[109] 由单扩张的次数定理（定理 2 ）可知
+[110] \begin{equation}
+[\mathbb{F}(a, b^p):\mathbb{F}(b^p)] = [\mathbb{F}(a, b):\mathbb{F}(b)]~,
+\end{equation}
+[111] 再结合域扩张的次数乘积定理（
+[112] 定理 4 [链接 L0]
+[113] 式 3 [链接 L1]
+[114] \begin{equation}
+[\mathbb{F}(b):\mathbb{F}(b^p)] = \frac{[\mathbb{F}(a, b^p):\mathbb{F}(b^p)]}{[\mathbb{F}(a, b):\mathbb{F}(b)]} = 1~,
+\end{equation}
+[115] 即 $\mathbb{F}(b)=\mathbb{F}(b^p)$。
+[116] 由引理 2 可知 $b$ 是 $\mathbb{F}$ 上的可分元素。
+[117] 证毕。
+
+[/SCOPE:s_lem3]
+[SCOPE:s_cor2|description|推论2 可分扩张的传递性]
+[118] 推论 2 可分扩张的传递性
+[SCOPE:s_cor2_let|let_bind|推论2的变量]
+[119] 设 $\mathbb{K}/\mathbb{F}$ 是域代数扩张，其有一中间域 $\mathbb{M}$。
+[/SCOPE:s_cor2_let]
+[120] 如果 $\mathbb{M}/\mathbb{F}$ 和 $\mathbb{K}/\mathbb{M}$ 都是可分扩张，
+[121] 那么 $\mathbb{K}/\mathbb{F}$ 是可分扩张。
+[122] 证明：
+[123] 证毕。
+
+[/SCOPE:s_cor2]
+[SCOPE:s_cor3|description|推论3]
+[124] 推论 3
+[SCOPE:s_cor3_let|let_bind|推论3的变量]
+[125] 设 $\mathbb{F}(a_1, \cdots, a_n)$ 是域 $\mathbb{F}$ 的代数扩张，且各 $a_i$ 都是 $\mathbb{F}$ 上的可分元素，
+[/SCOPE:s_cor3_let]
+[126] 则 $\mathbb{F}(a_1, \cdots, a_n)/\mathbb{F}$ 是可分扩张。
+[127] 证明：
+[128] 利用可分扩张的传递性推论 2 和本节的核心定理 2 即得证。
+[129] 证毕。
+
+[/SCOPE:s_cor3]
+[SCOPE:s_cor4|description|推论4 可分元素的封闭性]
+[130] 推论 4 可分元素的封闭性
+[131] 可分元素相加、相乘、取负和取逆的结果，仍然是可分元素。
+[132] 推论 4 由推论 3 直接可得。
+[133] 由该推论还可知，一个域的全体可分元素构成一个域，称为其可分闭包（separable closure）；
+[134] $\mathbb{F}$ 的可分闭包与 $\mathbb{K}$ 的交集，称为 $\mathbb{F}$ 在 $\mathbb{K}$ 上的可分闭包。
+[/SCOPE:s_cor4]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_thm2",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "定理1等价于定理2"
+  },
+  {
+    "source_scope": "s_thm2_proof",
+    "target_scope": "s_lem1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2的证明引用引理1"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_lem1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是引理1第3条的特例"
+  },
+  {
+    "source_scope": "s_lem2",
+    "target_scope": "s_lem3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "引理2用于引理3的证明"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_lem3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推论2由引理3推出"
+  },
+  {
+    "source_scope": "s_cor3",
+    "target_scope": "s_cor2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推论3由推论2和定理2推出"
+  },
+  {
+    "source_scope": "s_cor4",
+    "target_scope": "s_cor3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推论4由推论3推出"
+  }
+]

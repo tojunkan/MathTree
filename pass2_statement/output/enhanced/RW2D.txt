@@ -1,0 +1,74 @@
+[SCOPE:root|description|二维随机游走]
+文章名: RW2D
+标题: 二维随机游走
+
+[SCOPE:s_main|description|二维随机游走推导]
+[SCOPE:s_let_xy|let_bind|变量 X, Y, R]
+[0] 若平面上某点从坐标原点出发，每一步沿随机方向走动一个随机步长，步长的分布函数为 $f(r)$，$N\ \ (N \gg 1)$ 步之后，该点的位置分布可以用圆高斯分布表示
+[1] \begin{equation}
+P(X,Y) = \frac{a}{\pi} \mathrm{e} ^{-a(X^2 + Y^2)} \quad \text{或} \quad
+P(R) = 2aR \mathrm{e} ^{-aR^2}~.
+\end{equation}
+[2] \begin{equation}
+a = \frac{1}{N \left\langle r^2 \right\rangle }~, \qquad
+\left\langle r^2 \right\rangle = \int_0^{\infty} r^2 f(r) \,\mathrm{d}{r} ~.
+\end{equation}
+[3] 由分布函数可得，随机点最终离原点的距离的平均值和方均根为
+[4] \begin{equation}
+\left\langle R \right\rangle = \frac{\sqrt{\pi}}{2}\sqrt{N \left\langle r^2 \right\rangle }~, \qquad
+\sqrt{ \left\langle R^2 \right\rangle } = \sqrt{N \left\langle r^2 \right\rangle }~.
+\end{equation}
+
+[/SCOPE:s_let_xy]
+[SCOPE:s_let_x|let_bind|变量 x_i, X]
+[5] 我们先来分析随机点的 $x$ 坐标。
+[6] 假设每一步在 $x$ 方向投影的长度为 $x_i$，$N$ 步以后，该点的 $x$ 坐标为 $X$，
+[7] 则
+[8] \begin{equation}
+\left\langle x^2 \right\rangle = \int_0^{\infty} \int_0^{2\pi} (r\cos\theta)^2 \cdot f(r) \,\mathrm{d}{r} \cdot \frac{1}{2\pi} \,\mathrm{d}{\theta} = \frac12 \left\langle r^2 \right\rangle ~.
+\end{equation}
+[9] 中心极限定理 [链接 L0]
+[10] ，$X$ 满足高斯分布，且
+[11] \begin{equation}
+\left\langle X^2 \right\rangle = N \left\langle x^2 \right\rangle = \frac12 N \left\langle r^2 \right\rangle ~.
+\end{equation}
+[/SCOPE:s_let_x]
+[12] 对 $y$ 轴分析也有类似的结果，将 $P(X,Y)$ 分布归一化后，可以得到
+[13] 式 1 [链接 L1]
+[14] 。
+[15] 我们由
+[16] 式 1 [链接 L2]
+[17] 求 $ \left\langle X^2 \right\rangle $，得
+[18] \begin{equation}
+\left\langle X^2 \right\rangle = \int_0^\infty \int_0^\infty X^2 P(X,Y) \,\mathrm{d}{X} \,\mathrm{d}{Y}
+= \int_0^\infty \sqrt{\frac{a}{\pi}} X^2 \mathrm{e} ^{-a X^2} \,\mathrm{d}{X} =\frac{1}{2a}~,
+\end{equation}
+[19] 式 5 [链接 L3]
+[20] 式 6 [链接 L4]
+[21] 即可得到
+[22] 式 2 [链接 L5]
+[23] 。
+[24] 证毕。
+
+跨文章引用:
+  [L0] 中心极限定理 → CLT
+[/SCOPE:s_main]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_main",
+    "target_scope": "s_let_xy",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "主推导依赖变量定义"
+  },
+  {
+    "source_scope": "s_main",
+    "target_scope": "s_let_x",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "主推导依赖变量定义"
+  }
+]

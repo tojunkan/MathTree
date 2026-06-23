@@ -1,0 +1,45 @@
+[SCOPE:root|description|牛顿—莱布尼兹公式（矢量分析）]
+文章名: NLext
+标题: 牛顿—莱布尼兹公式（矢量分析）
+
+[SCOPE:s_main|description|公式陈述]
+[0] 作为牛顿—莱布尼兹公式的一个高维拓展，有
+[1] \begin{equation}
+\int \boldsymbol\nabla f \,\mathrm{d}{V} = \oint f \,\mathrm{d}{ \boldsymbol{\mathbf{s}} } ~.
+\end{equation}
+[2] 该公式类似于
+[3] 散度定理 [链接 L0]
+[4] ，
+[5] 但被积函数变为标量而不是矢量。
+[6] 对于一维情况，该式就是牛顿—莱布尼兹公式。
+[7] 事实上梯度定理（式 17 ）也可以看作是另一种拓展高维拓展。
+
+[/SCOPE:s_main]
+[SCOPE:s_proof|description|证明]
+[SCOPE:s_proof_let|let_bind|分量证明变量]
+[8] 我们可以对每个分量依次证明。
+[9] 两边乘以第 $i$ 个分量的单位矢量 $ \hat{\boldsymbol{\mathbf{x}}} _i$ 得
+[/SCOPE:s_proof_let]
+[10] \begin{equation}
+\int \frac{\partial}{\partial{x_i}} f \,\mathrm{d}{V} = \oint (f \hat{\boldsymbol{\mathbf{x}}} _i) \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{s}} } ~.
+\end{equation}
+[11] 由散度定理得
+[12] \begin{equation}
+\oint (f \hat{\boldsymbol{\mathbf{x}}} _i) \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{s}} } = \int \boldsymbol{\nabla}\boldsymbol{\cdot} (f \hat{\boldsymbol{\mathbf{x}}} _i) \,\mathrm{d}{V} = \int \frac{\partial}{\partial{x_i}} f \,\mathrm{d}{V} ~,
+\end{equation}
+
+跨文章引用:
+  [L0] 散度定理 → Divgnc
+[/SCOPE:s_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_main",
+    "target_scope": "s_proof",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明推出公式"
+  }
+]

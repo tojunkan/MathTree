@@ -1,0 +1,703 @@
+{
+  "article_name": "MCMC",
+  "statements": [
+    {
+      "stmt_id": "st_mcmc_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "MCMC"
+      ]
+    },
+    {
+      "stmt_id": "st_bayes_goal",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_bayes",
+      "exposed_entities": [
+        "D",
+        "θ",
+        "P(θ)",
+        "P(D|θ)",
+        "P(θ|D)"
+      ]
+    },
+    {
+      "stmt_id": "st_bayes_challenge",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_bayes",
+      "exposed_entities": [
+        "P(D)"
+      ]
+    },
+    {
+      "stmt_id": "st_mc_integration_def",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_mc_integration",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mc_integration_mean_est",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_mc_integration",
+      "exposed_entities": [
+        "h(x)",
+        "X_i",
+        "Y_i",
+        "I"
+      ]
+    },
+    {
+      "stmt_id": "st_mc_integration_error",
+      "subtype": "theorem",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_mc_integration",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mc_integration_simple",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_mc_integration",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_inverse_transform_def",
+      "subtype": "definition",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_inverse_transform",
+      "exposed_entities": [
+        "Φ",
+        "Y",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_inverse_transform_proof",
+      "subtype": "theorem",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_inverse_transform",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_inverse_transform_limit",
+      "subtype": "remark",
+      "clause_range": [
+        29,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_inverse_transform",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rejection_def",
+      "subtype": "definition",
+      "clause_range": [
+        32,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_rejection",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_rejection_effectiveness",
+      "subtype": "remark",
+      "clause_range": [
+        39,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_rejection",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_importance_motivation",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_importance",
+      "exposed_entities": [
+        "h(x)",
+        "g(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_importance_estimator",
+      "subtype": "definition",
+      "clause_range": [
+        44,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_importance",
+      "exposed_entities": [
+        "X_i",
+        "η_i",
+        "I"
+      ]
+    },
+    {
+      "stmt_id": "st_importance_reformulation",
+      "subtype": "definition",
+      "clause_range": [
+        50,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_importance",
+      "exposed_entities": [
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_importance_variance",
+      "subtype": "remark",
+      "clause_range": [
+        55,
+        56
+      ],
+      "truth_value": null,
+      "scope_id": "s_importance",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_importance_optimal_def",
+      "subtype": "definition",
+      "clause_range": [
+        57,
+        58
+      ],
+      "truth_value": null,
+      "scope_id": "s_importance_optimal",
+      "exposed_entities": [
+        "g*(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_importance_optimal_proof",
+      "subtype": "theorem",
+      "clause_range": [
+        59,
+        60
+      ],
+      "truth_value": "true",
+      "scope_id": "s_importance_optimal",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_importance_optimal_difficulty",
+      "subtype": "remark",
+      "clause_range": [
+        61,
+        62
+      ],
+      "truth_value": null,
+      "scope_id": "s_importance_optimal",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_high_dim_accept_prob",
+      "subtype": "theorem",
+      "clause_range": [
+        63,
+        69
+      ],
+      "truth_value": "true",
+      "scope_id": "s_high_dim",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_high_dim_difficulty",
+      "subtype": "remark",
+      "clause_range": [
+        70,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_high_dim",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mcmc_def2",
+      "subtype": "definition",
+      "clause_range": [
+        74,
+        77
+      ],
+      "truth_value": null,
+      "scope_id": "s_mcmc",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_markov_chain_def",
+      "subtype": "definition",
+      "clause_range": [
+        78,
+        83
+      ],
+      "truth_value": null,
+      "scope_id": "s_markov_chain",
+      "exposed_entities": [
+        "X_t",
+        "S",
+        "p_ij",
+        "P"
+      ]
+    },
+    {
+      "stmt_id": "st_markov_chain_example",
+      "subtype": "example",
+      "clause_range": [
+        84,
+        86
+      ],
+      "truth_value": "true",
+      "scope_id": "s_markov_chain",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_irreducible_def",
+      "subtype": "definition",
+      "clause_range": [
+        87,
+        89
+      ],
+      "truth_value": null,
+      "scope_id": "s_markov_chain_properties",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_aperiodic_def",
+      "subtype": "definition",
+      "clause_range": [
+        90,
+        94
+      ],
+      "truth_value": null,
+      "scope_id": "s_markov_chain_properties",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_limit_distribution",
+      "subtype": "theorem",
+      "clause_range": [
+        95,
+        102
+      ],
+      "truth_value": "true",
+      "scope_id": "s_markov_chain_properties",
+      "exposed_entities": [
+        "π_j"
+      ]
+    },
+    {
+      "stmt_id": "st_markov_chain_questions",
+      "subtype": "question",
+      "clause_range": [
+        103,
+        104
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_markov_chain_properties",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_recurrent_def",
+      "subtype": "definition",
+      "clause_range": [
+        105,
+        110
+      ],
+      "truth_value": null,
+      "scope_id": "s_markov_chain_properties",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_stationary_existence",
+      "subtype": "theorem",
+      "clause_range": [
+        111,
+        113
+      ],
+      "truth_value": "true",
+      "scope_id": "s_markov_chain_properties",
+      "exposed_entities": [
+        "π"
+      ]
+    },
+    {
+      "stmt_id": "st_ergodic_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        114,
+        121
+      ],
+      "truth_value": "true",
+      "scope_id": "s_markov_chain_stationary",
+      "exposed_entities": [
+        "h"
+      ]
+    },
+    {
+      "stmt_id": "st_detailed_balance_condition",
+      "subtype": "definition",
+      "clause_range": [
+        122,
+        129
+      ],
+      "truth_value": null,
+      "scope_id": "s_markov_chain_stationary",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mh_motivation",
+      "subtype": "assumption",
+      "clause_range": [
+        130,
+        137
+      ],
+      "truth_value": null,
+      "scope_id": "s_mh_algorithm",
+      "exposed_entities": [
+        "α"
+      ]
+    },
+    {
+      "stmt_id": "st_mh_acceptance",
+      "subtype": "definition",
+      "clause_range": [
+        138,
+        141
+      ],
+      "truth_value": null,
+      "scope_id": "s_mh_algorithm",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mh_algorithm_steps",
+      "subtype": "definition",
+      "clause_range": [
+        142,
+        148
+      ],
+      "truth_value": null,
+      "scope_id": "s_mh_algorithm",
+      "exposed_entities": [
+        "X",
+        "T",
+        "X^0",
+        "Y",
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_mh_proof",
+      "subtype": "theorem",
+      "clause_range": [
+        149,
+        151
+      ],
+      "truth_value": "true",
+      "scope_id": "s_mh_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mh_example",
+      "subtype": "example",
+      "clause_range": [
+        152,
+        155
+      ],
+      "truth_value": "true",
+      "scope_id": "s_mh_algorithm",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_gibbs_motivation",
+      "subtype": "remark",
+      "clause_range": [
+        156,
+        162
+      ],
+      "truth_value": null,
+      "scope_id": "s_gibbs",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_gibbs_def",
+      "subtype": "definition",
+      "clause_range": [
+        163,
+        168
+      ],
+      "truth_value": null,
+      "scope_id": "s_gibbs",
+      "exposed_entities": [
+        "x_i"
+      ]
+    },
+    {
+      "stmt_id": "st_gibbs_proof",
+      "subtype": "theorem",
+      "clause_range": [
+        169,
+        172
+      ],
+      "truth_value": "true",
+      "scope_id": "s_gibbs_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_gibbs_example",
+      "subtype": "example",
+      "clause_range": [
+        173,
+        174
+      ],
+      "truth_value": "true",
+      "scope_id": "s_gibbs",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_bayes_challenge",
+      "target": "st_bayes_goal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_mc_integration_def",
+      "target": "st_mc_integration_mean_est",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_mc_integration_mean_est",
+      "target": "st_mc_integration_error",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inverse_transform_def",
+      "target": "st_inverse_transform_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rejection_def",
+      "target": "st_rejection_effectiveness",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_importance_motivation",
+      "target": "st_importance_estimator",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_importance_estimator",
+      "target": "st_importance_reformulation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_importance_optimal_def",
+      "target": "st_importance_optimal_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_high_dim_accept_prob",
+      "target": "st_high_dim_difficulty",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_markov_chain_def",
+      "target": "st_markov_chain_example",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_irreducible_def",
+      "target": "st_aperiodic_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_aperiodic_def",
+      "target": "st_limit_distribution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_limit_distribution",
+      "target": "st_markov_chain_questions",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_recurrent_def",
+      "target": "st_stationary_existence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_stationary_existence",
+      "target": "st_ergodic_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ergodic_theorem",
+      "target": "st_detailed_balance_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_mh_motivation",
+      "target": "st_mh_acceptance",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_mh_acceptance",
+      "target": "st_mh_algorithm_steps",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_mh_algorithm_steps",
+      "target": "st_mh_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_mh_proof",
+      "target": "st_mh_example",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_gibbs_motivation",
+      "target": "st_gibbs_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_gibbs_def",
+      "target": "st_gibbs_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_gibbs_proof",
+      "target": "st_gibbs_example",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_mc_integration_def",
+      "target": "st_bayes_goal",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "蒙特卡罗积分用于解决贝叶斯推断中的积分困难"
+    },
+    {
+      "source": "st_inverse_transform_def",
+      "target": "st_mc_integration_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "抽样方法是蒙特卡罗积分的基础"
+    },
+    {
+      "source": "st_high_dim_accept_prob",
+      "target": "st_rejection_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "高维局限性是拒绝抽样的特例分析"
+    },
+    {
+      "source": "st_mcmc_def2",
+      "target": "st_inverse_transform_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "MCMC 解决了高维抽样困难"
+    },
+    {
+      "source": "st_markov_chain_def",
+      "target": "st_mcmc_def2",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "马尔可夫链理论是 MCMC 的基础"
+    },
+    {
+      "source": "st_mh_algorithm_steps",
+      "target": "st_markov_chain_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "MH 算法基于马尔可夫链的细致平衡条件"
+    },
+    {
+      "source": "st_gibbs_def",
+      "target": "st_mh_algorithm_steps",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "Gibbs 采样是 MH 算法的特例（接受概率恒为1）"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,120 @@
+[SCOPE:root|description|欧拉方程（微分方程）]
+文章名: Eulequ
+标题: 欧拉方程（微分方程）
+
+[SCOPE:s_euler_def|description|欧拉方程定义与解形式]
+[SCOPE:s_euler_let|let_bind|欧拉方程变量]
+[0] 具有以下形式的方程称为欧拉方程。
+[1] \begin{equation}
+\sum_{i=0}^{n}a_ix^{n-i}y^{(n-i)}=0~,
+\end{equation}
+[2] 其中 $a_0=1,a_1,\cdots,a_n$ 为常数。
+[/SCOPE:s_euler_let]
+[3] 欧拉方程可化为具有如下形式的常系数线性方程
+[4] \begin{equation}
+\varphi(D_t)y=0~.
+\end{equation}
+[5] \begin{equation}
+\begin{aligned}
+&x=e^t~,\\
+&D_t= \frac{\mathrm{d}{}}{\mathrm{d}{t}} ~,\\
+&\varphi(D_t)=\sum_{i=0}^{n-1}a_iD_t(D_t-1)\cdots(D_t-n+i+1)+a_n=0~.
+\end{aligned}
+\end{equation}
+[6] 欧拉方程式 1 具有如下形式的解
+[7] \begin{equation}
+y=\sum_{i=1}^mx^{r_i}P_{k_i-1}(\ln x)~.
+\end{equation}
+[8] 其中，$r_s$ 是下面方程的根
+[9] \begin{equation}
+\varphi(r)=\sum_{i=0}^{n-1}a_ir(r-1)\cdots(r-n+i+1)+a_n=0~.
+\end{equation}
+[10] $k_s$ 是根 $r_s$ 的重数，$m$ 是不同根的个数，$P_{k_s-1}(\ln x)$ 是具有任意系数的 $k_s-1$ 次多项式。
+[11] 特别的，当式 5 的所有根均为单根时，欧拉方程式 1 的解为
+[12] \begin{equation}
+y=\sum_{i=1}^{n}C_ix^{r_i}~.
+\end{equation}
+
+[/SCOPE:s_euler_def]
+[SCOPE:s_proof|description|欧拉方程求解证明]
+[SCOPE:s_proof_let|let_bind|证明中引入变量]
+[13] \begin{equation}
+x=e^t,\quad D_t= \frac{\mathrm{d}{}}{\mathrm{d}{t}} ,\quad D_x= \frac{\mathrm{d}{}}{\mathrm{d}{x}} ~.
+\end{equation}
+[14] \begin{equation}
+D_ty= \frac{\mathrm{d}{y}}{\mathrm{d}{t}} = \frac{\mathrm{d}{y}}{\mathrm{d}{x}} \frac{\mathrm{d}{x}}{\mathrm{d}{t}} =e^tD_xy~,
+\end{equation}
+[15] \begin{equation}
+D_xy=e^{-t}D_ty~.
+\end{equation}
+[16] 上式表明，对自变量 $x$ 的函数 $y$ 施于运算 $D_x$，相当于施于运算 $e^{-t}D_t$。
+[/SCOPE:s_proof_let]
+[17] 于是
+[18] \begin{equation}
+D_x^2y=e^{-t}D_t(e^{-t}D_t)y~.
+\end{equation}
+[19] 由记号因子的性质
+[20] 式 14 [链接 L0]
+[21] 式 13 [链接 L1]
+[22] \begin{equation}
+D_x^2y=e^{-2t}(D_t-1)D_ty=e^{-2t}D_t(D_t-1)y~.
+\end{equation}
+[23] 用数学归纳法，容易证明下式成立
+[24] \begin{equation}
+D_x^sy=e^{-st}D_t(D_t-1)\cdots (D_t-s+1)y~.
+\end{equation}
+[25] 上式可写成
+[26] \begin{equation}
+x^sD_x^sy=D_t(D_t-1)\cdots (D_t-s+1)y~.
+\end{equation}
+[27] 式 13 [链接 L2]
+[28] 式 1 [链接 L3]
+[29] 式 2 [链接 L4]
+[30] 对于算符 $\varphi(D_t)$，若存在函数 $f(t)$，使得
+[31a] (t)=\lambda f
+[31b] (t)$（$\lambda$ 为常数），
+[32] 则称 $f(t)$ 为其具有特征值 $\lambda$ 的特征函数。
+[33] 显然，$e^{rt}$($r$ 为常数)为 $\varphi(D_t)$ 的特征函数，对应特征值为 $\varphi(r)$。
+[34] 对方程式 2 ，这等价于找 $\varphi(D_t)$ 的具有特征值 $0$ 的特征函数，
+[35] 即
+[36] \begin{equation}
+\varphi(r)=0~,
+\end{equation}
+[37] 式 14 [链接 L5]
+[38] 叫作常系数线性方程
+[39] 式 2 [链接 L6]
+[40] 特征方程
+[SCOPE:s_proof_cases|cases|单根与重根情况]
+[SCOPE:s_simple_roots|description|单根情况]
+[41] 对于线性齐次方程，其解的线性叠加仍是其解，
+[42] 即若式 14 的根 $r_1,r_2,\cdots,r_n$ 都是单根，
+[43] 则其方程式 2 的解为
+[44] \begin{equation}
+y=\sum_{i=1}^{n}C_ie^{r_it}=\sum_i^{n}C_ix^{r_i}~.
+\end{equation}
+[/SCOPE:s_simple_roots]
+[SCOPE:s_multiple_roots|description|重根情况]
+[45] 式 14 [链接 L7]
+[46] 的根 $r_1,r_2,\cdots,r_n$ 为重根，其中重数根 $r_s$ 的重数为 $k_s$，不同根的个数为 $m$。
+[47] 则可证明 $e^{r_st}P_{k_s-1}(t)$ 是方程
+[48] 式 2 [链接 L8]
+[49] 的解，
+[50] 于是方程
+[51] 式 1 [链接 L9]
+[52] 的解形式为
+[53] 式 4 [链接 L10]
+[/SCOPE:s_proof]
+[/SCOPE:s_proof_cases]
+[/SCOPE:s_multiple_roots]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_proof",
+    "target_scope": "s_euler_def",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明推导出欧拉方程的解形式"
+  }
+]

@@ -1,0 +1,169 @@
+{
+  "article_name": "Birth",
+  "statements": [
+    {
+      "stmt_id": "st_intro",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_question",
+      "subtype": "question",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": [
+        "365",
+        "2月29日"
+      ]
+    },
+    {
+      "stmt_id": "st_method",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_calc1",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_calc2",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_calc3",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_formula",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_n",
+      "exposed_entities": [
+        "n",
+        "P(所有人生日不同)",
+        "P(至少两人生日相同)"
+      ]
+    },
+    {
+      "stmt_id": "st_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example",
+      "exposed_entities": [
+        "23"
+      ]
+    },
+    {
+      "stmt_id": "st_paradox",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ref",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assumptions",
+      "target": "st_question",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_calc1",
+      "target": "st_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_calc2",
+      "target": "st_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_calc3",
+      "target": "st_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_formula",
+      "target": "st_result",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

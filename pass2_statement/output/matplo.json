@@ -1,0 +1,131 @@
+{
+  "article_name": "matplo",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "A(λ)",
+        "a_{ij}(λ)",
+        "K"
+      ]
+    },
+    {
+      "stmt_id": "st_feature_matrix",
+      "subtype": "remark",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_intro",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "A(λ)",
+        "c",
+        "f(λ)",
+        "K"
+      ]
+    },
+    {
+      "stmt_id": "st_col_transform",
+      "subtype": "remark",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_note_second",
+      "subtype": "remark",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_matrix_poly_rep",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "d_{ij}",
+        "d",
+        "A(k)"
+      ]
+    },
+    {
+      "stmt_id": "st_example",
+      "subtype": "example",
+      "clause_range": [
+        18,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def2_example",
+      "exposed_entities": [
+        "A(λ)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1",
+      "target": "st_feature_matrix",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_def2_intro",
+      "target": "st_col_transform",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_def2_intro",
+      "target": "st_note_second",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_def2_intro",
+      "target": "st_matrix_poly_rep",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_matrix_poly_rep",
+      "target": "st_example",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

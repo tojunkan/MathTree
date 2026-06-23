@@ -1,0 +1,541 @@
+{
+  "article_name": "qua",
+  "statements": [
+    {
+      "stmt_id": "st_def1_quadratic_form",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "q",
+        "v",
+        "k",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_example",
+      "subtype": "example",
+      "clause_range": [
+        3,
+        10
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_symmetric_matrix",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "Q"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_basis_change",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "B",
+        "v'"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_new_form",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_congruence",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "Q'"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_congruence_def",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "C",
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_equivalence",
+      "subtype": "theorem",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_equiv_def",
+      "subtype": "definition",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "q1",
+        "q2"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_standard_form",
+      "subtype": "definition",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_standard_form_existence",
+      "subtype": "theorem",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        36,
+        37
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "V",
+        "Q"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof",
+      "subtype": "remark",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_posdef_def",
+      "subtype": "definition",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_posdef",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_posdef_normalization",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_posdef",
+      "exposed_entities": [
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_posdef_positive_definite",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_posdef",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_posdef_orthonormal",
+      "subtype": "remark",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_posdef",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_posdef_inner_product",
+      "subtype": "remark",
+      "clause_range": [
+        45,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_posdef",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_posdef_invariant",
+      "subtype": "theorem",
+      "clause_range": [
+        48,
+        48
+      ],
+      "truth_value": "true",
+      "scope_id": "s_posdef",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_inertia_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        50,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_inertia",
+      "exposed_entities": [
+        "V",
+        "f",
+        "E",
+        "F",
+        "Q",
+        "P"
+      ]
+    },
+    {
+      "stmt_id": "st_inertia_def_sets",
+      "subtype": "definition",
+      "clause_range": [
+        52,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_inertia",
+      "exposed_entities": [
+        "E+",
+        "E-",
+        "E0",
+        "F+",
+        "F-",
+        "F0"
+      ]
+    },
+    {
+      "stmt_id": "st_inertia_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        55,
+        55
+      ],
+      "truth_value": "true",
+      "scope_id": "s_inertia",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_inertia_proof_extension",
+      "subtype": "assumption",
+      "clause_range": [
+        57,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_inertia_proof",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_inertia_proof_third",
+      "subtype": "conclusion",
+      "clause_range": [
+        62,
+        70
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_inertia_proof",
+      "exposed_entities": [
+        "V1"
+      ]
+    },
+    {
+      "stmt_id": "st_inertia_proof_reductio1_assume",
+      "subtype": "assumption",
+      "clause_range": [
+        64,
+        65
+      ],
+      "truth_value": null,
+      "scope_id": "s_inertia_proof_reductio1",
+      "exposed_entities": [
+        "x",
+        "e_i"
+      ]
+    },
+    {
+      "stmt_id": "st_inertia_proof_reductio1_contra",
+      "subtype": "conclusion",
+      "clause_range": [
+        66,
+        67
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_inertia_proof_reductio1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_inertia_proof_reductio1_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        68,
+        68
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_inertia_proof_reductio1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_inertia_proof_reductio2_assume",
+      "subtype": "assumption",
+      "clause_range": [
+        72,
+        74
+      ],
+      "truth_value": null,
+      "scope_id": "s_inertia_proof_reductio2",
+      "exposed_entities": [
+        "x0",
+        "x+",
+        "y-"
+      ]
+    },
+    {
+      "stmt_id": "st_inertia_proof_reductio2_contra",
+      "subtype": "conclusion",
+      "clause_range": [
+        75,
+        76
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_inertia_proof_reductio2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_inertia_proof_reductio2_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        77,
+        78
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_inertia_proof_reductio2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_inertia_complex",
+      "subtype": "remark",
+      "clause_range": [
+        79,
+        79
+      ],
+      "truth_value": null,
+      "scope_id": "s_inertia",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_inertia_invariants",
+      "subtype": "remark",
+      "clause_range": [
+        80,
+        83
+      ],
+      "truth_value": null,
+      "scope_id": "s_inertia",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_quadratic_form",
+      "target": "st_def1_symmetric_matrix",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_basis_change",
+      "target": "st_def1_new_form",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_new_form",
+      "target": "st_def1_congruence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_congruence_def",
+      "target": "st_def2_equivalence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_equiv_def",
+      "target": "st_def3_standard_form",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_standard_form",
+      "target": "st_def3_standard_form_existence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_posdef_def",
+      "target": "st_posdef_normalization",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_posdef_normalization",
+      "target": "st_posdef_positive_definite",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inertia_assumptions",
+      "target": "st_inertia_def_sets",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inertia_def_sets",
+      "target": "st_inertia_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inertia_proof_extension",
+      "target": "st_inertia_proof_third",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inertia_proof_reductio1_assume",
+      "target": "st_inertia_proof_reductio1_contra",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inertia_proof_reductio1_contra",
+      "target": "st_inertia_proof_reductio1_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inertia_proof_reductio2_assume",
+      "target": "st_inertia_proof_reductio2_contra",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inertia_proof_reductio2_contra",
+      "target": "st_inertia_proof_reductio2_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inertia_proof_reductio1_result",
+      "target": "st_inertia_proof_third",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inertia_proof_reductio2_result",
+      "target": "st_inertia_proof_third",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_statement",
+      "target": "st_inertia_conclusion",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_inertia_proof_third",
+      "target": "st_inertia_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_inertia_conclusion",
+      "target": "st_thm1_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "惯性定理是定理1在实数域上的推广"
+    },
+    {
+      "source": "st_inertia_proof_third",
+      "target": "st_inertia_conclusion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明推出定理"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,185 @@
+[SCOPE:root|description|序关系]
+文章名: OrdRel
+标题: 序关系
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=example heading=例 2 title=整除序
+  [2] type=example heading=例 3 title=包含序
+  [3] type=example heading=例 4 title=有限偏序集的例子
+  [4] type=example heading=例 5 title=字典序
+  [5] type=example heading=例 6 title=小时百科文章序
+  [6] type=lemma heading=引理 1 title=序对偶
+  [7] type=theorem heading=定理 1 title=对偶原理
+  [8] type=definition heading=定义 1 title=全序集
+  [9] type=example heading=例 7 title=
+  [10] type=example heading=例 8 title=
+  [11] type=definition heading=定义 2 title=极小元、极大元
+  [12] type=definition heading=定义 3 title=最小元、最大元
+  [13] type=example heading=例 9 title=
+  [14] type=exercise heading=习题 1 title=
+  [15] type=exercise heading=习题 2 title=
+  [16] type=definition heading=定义 4 title=良序集
+
+[0] 本文需要更多讲解，便于帮助理解。
+[1] 法国的布尔巴基学派曾对数学里的结构进行梳理，并且提炼出了三大基本结构：代数结构，拓扑结构以及序结构，序结构通常是一个装备了序关系的集合，它在组合数学，分析学中有着奠基的作用。
+
+[2] 偏序关系（partially ordering relation）是一类二元关系。
+[3] 称在非空集合 $A$ 上关系 $\leq$ 是一个偏序关系，如果 $\leq$ 满足条件：
+[4] 自反性：$\forall x\in A,x\leq x$；
+[5] 反对称性：$\forall x,y\in A,\ x\leq y,\ y\leq x \Rightarrow x = y $；
+[6] 传递性：$\forall x,y,z\in A,\ x\leq y,\ y\leq z \Rightarrow x\leq z $。
+[7] 我们称 $\leq$ 是 $A$ 上的偏序关系，并且把赋予偏序结构 $\leq$ 的集合 $A$,即 $(A;\leq)$ 称为偏序集（半序集，有序集，序集）
+
+[SCOPE:s_ex1|description|例 1]
+[8] 各种数集（包括 $\mathbb{N},\mathbb{Z},\mathbb{Q},\mathbb{R}$）按通常的序关系（大小关系）构成偏序集。
+[9] 注解:一般我们不提及 $\mathbb{C}$ 上的序关系，因为从 $\mathbb{R}$ 中拓展得到的 $\mathbb{C}$ 上的序关系性质并不良好，
+[10] 但有必要时也可以在 $\mathbb{C}$ 上定义一些特别的序关系来便于研究
+[11] 这个例子说明序关系实际上是数与数大小关系的抽象。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2_let|let_bind|整除序变量]
+[SCOPE:s_ex2|description|整除序]
+[12] 例 2 整除序
+[13] $\mid$ 是自然数集 $\mathbb{N}$ 上的一个可除关系, 即 $m \mid n$ 表示 $ m$ 整除 $n$.则 $(\mathbb{N};\mid)$ 是一个偏序集.
+
+[/SCOPE:s_ex2_let]
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3_let|let_bind|包含序变量]
+[SCOPE:s_ex3|description|包含序]
+[14] 例 3 包含序
+[15] 设 $E$ 是一个集合, $\mathbb{P}(E)$ 表示 $ E $ 的所有子集 (包括空集 $ \varnothing $) 组成 的集合, 称为 $ E $ 的幂集.定义 $\mathbb{P}(E)$ 上的包含关系 $\subseteq $ 为序关系. 则 $(\mathbb{P}(E) ; \subseteq) $ 是 一个有序集.
+
+[/SCOPE:s_ex3_let]
+[/SCOPE:s_ex3]
+[SCOPE:s_ex4_let|let_bind|有限偏序集变量]
+[SCOPE:s_ex4|description|有限偏序集的例子]
+[16] 例 4 有限偏序集的例子
+[17] 设集合 $A = \{a,b,c\}$，关系 $\leq\!= \{(a,a),(a,b),(a,c),(b,b),(c,c)\}$，可以验证 $\leq$ 是 $A$ 上的偏序关系。
+
+[/SCOPE:s_ex4_let]
+[/SCOPE:s_ex4]
+[SCOPE:s_ex5_let|let_bind|字典序变量]
+[SCOPE:s_ex5|description|字典序]
+[18] 例 5 字典序
+[19] 已知 $(A,\prec),(B,\leq)$ 是两个偏序集，
+[20] 那么笛卡尔积 $A\times B$ 按某个序关系 $\leqslant$ 构成偏序集。
+[21] 这个序关系 $\leqslant$ 满足：
+[22] $\forall(a_1,b_1),(a_2,b_2) \in A\times B, a_1\prec a_2 \Rightarrow (a_1,b_1)\leqslant(a_2,b_2)$；
+[23] $\forall(a_1,b_1),(a_2,b_2) \in A\times B, a_1=a_2, b_1\leq b_2 \Rightarrow (a_1,b_1) \leqslant (a_2, b_2)$。
+[24] 由于字典通常按照这样的顺序编排1，
+[25] 因此这种序关系称为字典序。
+
+[/SCOPE:s_ex5_let]
+[/SCOPE:s_ex5]
+[SCOPE:s_ex6|description|小时百科文章序]
+[26] 例 6 小时百科文章序
+[27] 小时百科的知识树可以看做一个偏序集，"文章预备知识"是这个偏序集的序关系，文章 A 在文章 B 前意味着文章 A 是文章 B 的预备知识
+
+[/SCOPE:s_ex6]
+[28a] 从偏序的定义来看，我们发现它是有方向性的
+[28b] 如果我们把方向取反，自然而然能得到一个和原偏序有着千丝万缕关系的新偏序，也，则是偏序的对偶关系。
+
+[SCOPE:s_lemma1_let|let_bind|序对偶变量]
+[SCOPE:s_lemma1|description|序对偶]
+[29] 引理 1 序对偶
+[30] 设 $A$ 是一个非空集合. 若 $R$ 是 $E$ 的一个序关系, 则 $R$ 的对偶关系 $R^{d}$ 也是 $A$ 的一个序关系
+[31] 证明留作读者自行完善。
+[32] 我们将以上引理换一种方式叙述就得到了这条神奇的玩意儿：
+
+[/SCOPE:s_lemma1_let]
+[/SCOPE:s_lemma1]
+[SCOPE:s_theorem1_let|let_bind|对偶原理变量]
+[SCOPE:s_theorem1|description|对偶原理]
+[33] 定理 1 对偶原理
+[34] 设 $A$ 是一个非空集合. 则关于 $(A;\leq)$ 的任意一个命题，都存在与之相对应的 $(A;\geq)$ 上的一个命题
+[35] 于是大多数情况下，我们考虑一对互为对偶的序关系时只用考虑其中一个（如同考虑非交换结构时只考虑左一样）
+[36] （以下内容待修整，修整原因：部分符号与序论符号不一致，顺序不合理）
+
+[/SCOPE:s_theorem1_let]
+[/SCOPE:s_theorem1]
+[SCOPE:s_def1_let|let_bind|全序集变量]
+[SCOPE:s_def1|description|全序集]
+[37] 定义 1 全序集
+[38] 偏序集 $(A;\leq)$ 称为全序集（totally ordered set）或有序集（ordered set），当且仅当对任意 $a,b \in A$，$a \leq b$ 或 $b \leq a$。
+[39] 全序集上的序关系称为全序关系（totally ordered relation）。
+
+[/SCOPE:s_def1_let]
+[/SCOPE:s_def1]
+[SCOPE:s_ex7|description|例 7]
+[40] 数集 $\mathbb{N},\mathbb{Z},\mathbb{Q},\mathbb{R}$ 按通常的序关系构成全序集。
+
+[/SCOPE:s_ex7]
+[SCOPE:s_ex8_let|let_bind|例 8 变量]
+[SCOPE:s_ex8|description|例 8]
+[41] 将例 5 中的偏序集 $A,B$ 换成全序集，
+[42] 则按同样的序关系，$A\times B$ 也构成全序集。
+[43] 一个显然但重要的事实是，任何偏序集的非空子集按原来的序仍是偏序集，任何全序集的非空子集按原来的序仍是全序集。
+
+[/SCOPE:s_ex8_let]
+[/SCOPE:s_ex8]
+[SCOPE:s_def2_let|let_bind|极小元、极大元变量]
+[SCOPE:s_def2|description|极小元、极大元]
+[44] 定义 2 极小元、极大元
+[45] 已知偏序集 $(A;\leq)$：
+[46] 如果存在某个 $a \in A$，使得对任意 $x \in A, x\leq a$ 都有 $x = a$，
+[47] 那么称 $a$ 为偏序集 $A$ 的极小元（minimal element）。
+[48] 如果存在某个 $b \in A$，使得对任意 $x \in A, b\leq x$ 都有 $x = b$，
+[49] 那么称 $b$ 为偏序集 $A$ 的极大元（maximal element）。
+
+[/SCOPE:s_def2_let]
+[/SCOPE:s_def2]
+[SCOPE:s_def3_let|let_bind|最小元、最大元变量]
+[SCOPE:s_def3|description|最小元、最大元]
+[50] 定义 3 最小元、最大元
+[51] 已知偏序集 $(A;\leq)$ 的某个非空子集 $B$：
+[52] 如果存在某个 $a \in B$，使得 $\forall x \in B, a \leq x$。
+[53] 那么 $a$ 被称为 $B$ 的最小元（least element）；
+[54] 如果存在某个 $b \in B$，使得 $\forall x \in B, x \leq b$。
+[55] 那么 $b$ 被称为 $B$ 的最大元（greatest element）。
+[56] 极大元、极小元与最大元、最小元极易混淆。
+[57] 偏序集的极大元、极小元不一定唯一，
+[58] 但最大元、最小元只要存在必然唯一。
+[59] 在全序集中两者统一。2
+
+[/SCOPE:s_def3_let]
+[/SCOPE:s_def3]
+[SCOPE:s_ex9_let|let_bind|例 9 变量]
+[SCOPE:s_ex9|description|例 9]
+[60] 集合 $A=\{0,1,2\}$，在上面定义偏序关系 $\leq$ 为 $0\leq 0$, $1\leq 1$, $1\leq 2$, $2\leq 2$。
+[61] 那么子集 $\{0,1\}$ 的极大元为 0 和 1，不存在最大元。
+
+[/SCOPE:s_ex9_let]
+[/SCOPE:s_ex9]
+[SCOPE:s_exercise1|description|习题 1]
+[62] 习题 1
+[63] 证明：如果偏序集的某个子集存在最大元，
+[64] 那么它的极大元必然存在且唯一，并且两者相等。
+
+[/SCOPE:s_exercise1]
+[SCOPE:s_exercise2|description|习题 2]
+[65] 习题 2
+[66] 证明：对于全序集的任意非空子集，如果存在极大元，
+[67] 则最大元必然存在，且两者相等。
+
+[/SCOPE:s_exercise2]
+[SCOPE:s_def4_let|let_bind|良序集变量]
+[SCOPE:s_def4|description|良序集]
+[68] 定义 4 良序集
+[69] 全序集 $(A,\leq)$ 称为良序集（well-ordered set），当且仅当它的任意非空子集都有极小元。
+[70] 良序集上的序关系称为良序关系（well-ordered relation）。
+[71] 任何良序集的非空子集仍是良序集。
+[/SCOPE:s_def4_let]
+[/SCOPE:s_def4]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_theorem1",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "对偶原理是序对偶引理的推广"
+  }
+]

@@ -1,0 +1,279 @@
+[SCOPE:root|description|Clifford 代数的基本运算]
+文章名: clf02
+标题: Clifford 代数的基本运算
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=外积
+  [1] type=definition heading=定义 2 title=
+  [2] type=definition heading=定义 3 title=右内积
+  [3] type=exercise heading=习题 1 title=
+  [4] type=exercise heading=习题 2 title=
+  [5] type=definition heading=定义 4 title=标量积
+  [6] type=theorem heading=定理 1 title=
+  [7] type=definition heading=定义 5 title=投影
+  [8] type=definition heading=定义 6 title=按次对合
+  [9] type=definition heading=定义 7 title=反转
+  [10] type=definition heading=定义 8 title=共轭
+  [11] type=exercise heading=习题 3 title=
+  [12] type=exercise heading=习题 4 title=
+  [13] type=exercise heading=习题 5 title=
+  [14] type=definition heading=定义 9 title=
+  [15] type=definition heading=定义 10 title=
+  [16] type=theorem heading=定理 2 title=
+
+[0] 本节利用集合语言，介绍 Clifford 代数上的二元线性运算1。
+[1] 通过线性性可以将这些运算推广到 Clifford 代数的其他元素上。
+[2] 我们也会证明，更改线性空间的正交基并不会改变运算的形式。
+
+[SCOPE:s_def1|description|定义1 外积]
+[3] 定义 1 外积
+[SCOPE:s_def1_let|let_bind|外积变量]
+[4] 给定 Clifford 代数 $\mathrm {Cl(X,R,s)}$，对于 $A,B\in 2^x$，定义
+[/SCOPE:s_def1_let]
+[5] \begin{equation}
+A \wedge B=\left\{\begin{aligned}
+A B,\quad& A \cap B=\varnothing \\
+0,\quad& A \cap B \neq \varnothing~,
+\end{aligned}\right.
+\end{equation}
+[6] Clifford 积的结合性使得外积也具有结合性，读者可以自行验证。
+[7] 由运算的线性可知，外积还具有幂零性，
+[8] 即任意 $v\in V,v\wedge v=0$。
+[9] 在上一节，我们说过，集合语言的阐述实际上是指定了线性空间的正交基。
+[10] 正交性体现为 CLifford 积的反对称性。
+[11] 因而对于正交基$\{\mathrm {e_i}\}$，我们有 $\mathrm{e_i\wedge e_j=-e_j\wedge e_i}$。
+[12] 由外积的线性性可得，在给定正交基后，任意两个向量做外积，结果具有反对称性。
+[13] 也就是说，外积的反对称性是依赖于正交基的。
+[14] 在幂零性和正交性的保证下，正交基的外积表现不随正交变换而改变。
+[15] 例如某线性空间下有两组正交基 $\{e_i\},\{\theta_i\}$，且 $\mathrm {\theta_1=a^i e_i,\theta_2=b^i e_i}$.那么我们由线性性和 $\{e_i\}$ 的正交关系得到：$\theta_i\wedge\theta_i=0$，而且有：
+[16] \begin{equation}
+\left\{\begin{array}{l}
+\theta_1 \theta_2=\left(a^i e_i\right) \wedge\left(b^j e_j\right)+\sum_k\left(a^k b^k s(e_k)\right) \\
+\theta_2 \theta_1=\left(b^j e_j\right) \wedge\left(a^i e_i\right)+\sum_k\left(b^k a^k s(e_k)\right)
+\end{array}\right.~,
+\end{equation}
+[17] $a^i,b^i$ 是过渡矩阵里的两个列向量。
+[18] 正交性要求 $\theta_1\theta_2=-\theta_2\theta_1$，对应 $\theta_i\wedge\theta_j=-\theta_j\wedge\theta_i$。
+[19] 从上式可以看到，基的正交性等价于
+[20] 正交变换条件
+[21] $\sum_k(a^k b^k s(e_k))=0$，这其实是
+[22] 正交矩阵在任意线性空间的推广
+[23] 。
+[24] 在配备了正定二次型的欧几里得空间中，这意味着正交矩阵定义为列向量组中任意两个列向量内积为 $0$。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义2 左内积]
+[25] 定义 2
+[SCOPE:s_def2_let|let_bind|左内积变量]
+[26] 给定 Clifford 代数 $\mathrm {Cl(X,R,s)}$，对于 $A,B\in 2^x$，定义
+[/SCOPE:s_def2_let]
+[27] \begin{equation}
+A\left\llcorner B=\left\{\begin{aligned}
+A B,\quad & A \subseteq B ; \\
+0,\quad & A \nsubseteq B .
+\end{aligned}\right.\right.~,
+\end{equation}
+[28] 右内积的定义是对偶的，
+[29] 即:
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|定义3 右内积]
+[30] 定义 3 右内积
+[SCOPE:s_def3_let|let_bind|右内积变量]
+[31] \begin{equation}
+A\lrcorner B=\left\{\begin{aligned}
+A B,\quad & A \supseteq B ; \\
+0,\quad & A \nsupseteq B .
+\end{aligned}\right.~,
+\end{equation}
+[/SCOPE:s_def3_let]
+[32] 下面我们只研究左内积。
+[33] 与外积相同，左内积也具有 “正交基形式不变性”。
+[34] 例如，在同一线性空间中选取两组正交基，$\{e_i\}$,$\{\theta _i\}$，且 $\mathrm {\theta_1=a^i e_i,\theta_2=b^i e_i},\theta_3=c^i e_i$。
+[35] 那么我们有：
+[36] \begin{equation}
+\begin{aligned}
+\theta_1\left\llcorner\theta_2\right. & =\left(a^i e_i\right)\left\llcorner\left(b^j e_j\right)\right. \\
+& =\sum_i s(i) a^i b^i=0
+\end{aligned}~,
+\end{equation}
+
+[/SCOPE:s_def3]
+[SCOPE:s_ex1|description|习题1]
+[37] 习题 1
+[SCOPE:s_ex1_let|let_bind|习题1变量]
+[38] 证明：$\theta_1\left\llcorner(\theta_2\theta_3)\right.$=0。
+[/SCOPE:s_ex1_let]
+[39] 提示：证明每一个分量为 0.
+[40] 左内积可以给出几何代数上的分次结构：
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|习题2]
+[41] 习题 2
+[SCOPE:s_ex2_let|let_bind|习题2变量]
+[42] 对于任意 k-向量 A 和 s-向量 B，证明
+[/SCOPE:s_ex2_let]
+[43] \begin{equation}
+A\left\llcorner B=\langle A B\rangle_{s-k} .\right.~,
+\end{equation}
+
+[/SCOPE:s_ex2]
+[44] 标量积是一种特殊情况，
+[45] 即左右内积相等。
+
+[SCOPE:s_def4|description|定义4 标量积]
+[46] 定义 4 标量积
+[SCOPE:s_def4_let|let_bind|标量积变量]
+[47] 给定 Clifford 代数 $\mathrm {Cl(X,R,s)}$，对于 $A,B\in 2^x$，
+[/SCOPE:s_def4_let]
+[48] \begin{equation}
+A * B=\left\{\begin{array}{cc}
+A B, & A=B \\
+0, & A \neq B .
+\end{array}\right.~,
+\end{equation}
+[49] 读者可以自行证明标量积的正交基形式不变性。
+[50] 在上一节，我们证明了 $e_Ae_B\propto e_{A\Delta B}$。
+[51] 实际上这里的系数是 A 与 B 交集部分的标量积（默认下标都是从小到大排列），我们用 $g_{AB}$ 表示，
+[52] 即标量积可视作利用 V 上二次型 q 诱导出几何代数上的二次型。
+
+[/SCOPE:s_def4]
+[SCOPE:s_thm1|description|定理1]
+[53] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1变量]
+[54] 已知几何代数 $\mathcal {G}(V, q)$ 上的二次型 $q$ 在某基下表示为矩阵 $g_{ij}$，$q $ 诱导的标量积则表示为 $g_{AB}$，其中 $A,B$ 是复杂指标。则
+[/SCOPE:s_thm1_let]
+[55] \begin{equation}
+g_{A B}=e_A*e_B=\left\{\begin{aligned}
+0,\quad & A \neq B \\
+(-1)^{\frac{|A|(|A|-1)}{2}} \prod_{i \in A} g_{i i}, \quad& A=B
+\end{aligned}\right.~,
+\end{equation}
+[56] Proof. 按照标量积定义，$A \neq B$ 时，$g_{AB}$=0。
+[57] $A = B$ 时，$\frac{|A|(|A|-1)}{2}$ 是 $e_B$ 进行对换，使得 $e_i$ 相邻所需要跨过的总次数。
+[58] 比如从 $e_1e_2e_3e_1e_2e_3$ 变换到 $e_1e_1e_2e_2e_3e_3$ 的总步数。
+[59] 根据正交性，每一次变换位置都需要乘以-1。
+[60] 得证。
+[61] 对于任意 $v_1,v_2\in V$，线性运算使得 Clifford 积可以分解为依赖于二次型的标量积和与二次型无关的外积：$v_1v_2=v_1* v_2+v_1\wedge v_2$
+
+[/SCOPE:s_thm1]
+[SCOPE:s_def5|description|定义5 投影]
+[62] 定义 5 投影
+[SCOPE:s_def5_let|let_bind|投影变量]
+[63] 给定 Clifford 代数 $\mathrm {Cl(X,R,s)}$，对于 $A,B\in 2^x$，定义
+[/SCOPE:s_def5_let]
+[64] \begin{equation}
+\langle A\rangle_k=\left\{\begin{array}{cc}
+A, & |A|=k \\
+0, & |A| \neq k
+\end{array}\right.~,
+\end{equation}
+
+[/SCOPE:s_def5]
+[SCOPE:s_def6|description|定义6 按次对合]
+[65] 定义 6 按次对合
+[SCOPE:s_def6_let|let_bind|按次对合变量]
+[66] 给定 Clifford 代数 $\mathrm {Cl(X,R,s)}$，对于 $A,B\in 2^x$，定义
+[/SCOPE:s_def6_let]
+[67] \begin{equation}
+A^{\star}=(-1)^{|A|}A~,
+\end{equation}
+
+[/SCOPE:s_def6]
+[SCOPE:s_def7|description|定义7 反转]
+[68] 定义 7 反转
+[SCOPE:s_def7_let|let_bind|反转变量]
+[69] 给定 Clifford 代数 $\mathrm {Cl(X,R,s)}$，对于 $A,B\in 2^x$，定义
+[/SCOPE:s_def7_let]
+[70] \begin{equation}
+A^{\dagger}=(-1)^{\frac{|A|(|A|-1)}{2}}A~,
+\end{equation}
+[71] 并称之为反转（reversion）、第二类对合（second main involution）或者主反自同构（principal anti-automorphism）。
+[72] 反转是下指标重排的过程：
+[73] $$(e_1e_2...e_n)^{\dagger}=e_ne_{n-1}...e_2e_1~,$$
+
+[/SCOPE:s_def7]
+[SCOPE:s_def8|description|定义8 共轭]
+[74] 定义 8 共轭
+[SCOPE:s_def8_let|let_bind|共轭变量]
+[75] 定 Clifford 代数 $\mathrm {Cl(X,R,s)}$，对于 $A,B\in 2^x$，定义
+[/SCOPE:s_def8_let]
+[76] \begin{equation}
+A^{\square}=A^{\star \dagger}~,
+\end{equation}
+
+[/SCOPE:s_def8]
+[SCOPE:s_ex3|description|习题3]
+[77] 习题 3
+[78] 已知 $\mathcal G(\mathbb R^{0,1})\cong \mathbb C,G(\mathbb R^{0,2})\cong \mathbb H$，证明：按次对合和 Clifford 共轭在 $\mathbb C$ 上就是复共轭，而 Clifford 共轭在 $\mathbb H$ 上是四元数共轭
+
+[/SCOPE:s_ex3]
+[79] 在实际运算的过程中，我们有时候会遇到多个元素通过多个运算结合在一起，下面给出一些结合相关的性质。
+
+[SCOPE:s_ex4|description|习题4]
+[80] 习题 4
+[SCOPE:s_ex4_let|let_bind|习题4变量]
+[81] 对于 $x,y,z\in\mathrm {CL(X,R,s)}$，证明
+[/SCOPE:s_ex4_let]
+[82] \begin{equation}
+\left\{\begin{aligned}
+x \wedge(y \wedge z) & =(x \wedge y) \wedge z ;\\
+x\llcorner(y\lrcorner z) & =(x\llcorner y)\lrcorner z ;\\
+x\llcorner(y\llcorner z) & =(x \wedge y)\llcorner z; \\
+x *(y\llcorner z) & =(x \wedge y) * z ; \\
+1 \wedge x & =x \wedge 1=1\llcorner x=x\lrcorner 1=x .
+\end{aligned}\right.~
+\end{equation}
+[83] 思路是先证明对基成立，才通过线性运算扩张。
+[84] 此外，还有以下可以简化运算的结论。
+
+[/SCOPE:s_ex4]
+[SCOPE:s_ex5|description|习题5]
+[85] 习题 5
+[SCOPE:s_ex5_let|let_bind|习题5变量]
+[86] 对于任意 $x,y\in\mathrm {CL(X,R,s)}$ 和 $v\in \mathrm{CL^1(X,R,s)}$，证明
+[/SCOPE:s_ex5_let]
+[87] \begin{equation}
+\left\{\begin{aligned}
+v x&=v\llcorner x+v \wedge x ; \\
+v \wedge x&=x^{\star} \wedge v=\frac{1}{2}\left(v x+x^{\star} v\right) ; \\
+v\llcorner x&=-x^{\star}\lrcorner v=\frac{1}{2}\left(v x-x^{\star} v\right) ; \\
+v\llcorner(x y)&=\left(v\llcorner x) y+x^{\star}(v\llcorner y) .\right.
+\end{aligned}\right.~
+\end{equation}
+
+[/SCOPE:s_ex5]
+[SCOPE:s_def9|description|定义9 对偶]
+[88] 定义 9
+[SCOPE:s_def9_let|let_bind|对偶变量]
+[89] 给定非退化几何代数\mathcal G(V,q)，对 $x\in\mathcal G(V,q)$ 定义 $x^c=xI^{-1}$，称为 $x$ 的对偶（dual）。
+[/SCOPE:s_def9_let]
+[90] 定义里可见，由于要求体积形式有逆元，元素的对偶存在性依赖于非退化的几何代数。
+[91] 如果满足非退化条件，元素的外积也有其对应的对偶空间的外积。
+
+[/SCOPE:s_def9]
+[SCOPE:s_def10|description|定义10 对偶外积]
+[92] 定义 10
+[SCOPE:s_def10_let|let_bind|对偶外积变量]
+[93] 定义对偶外积（dual outer product），用符号 $\vee$ 表示，使得
+[/SCOPE:s_def10_let]
+[94] \begin{equation}
+x\vee y=(x^c\wedge y^c)^c~.
+\end{equation}
+[95] 对偶定义使得左内积和外积也存在对偶关系。
+
+[/SCOPE:s_def10]
+[SCOPE:s_thm2|description|定理2]
+[96] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2变量]
+[97] 给定非退化的几何代数 $\mathcal G(V,q)$，任取其元素 $x,y$，
+[/SCOPE:s_thm2_let]
+[98] 则有
+[99] \begin{equation}
+x\llcorner y=(x\wedge y^c)^c~.
+\end{equation}
+[100] proof.
+[101] 只需要证明 $x\llcorner y^c=(x\wedge y)^c$。
+[102] $x\llcorner y^c=x\llcorner (yI^{-1})=x\llcorner (y\llcorner I^{-1})=(x\wedge y)\llcorner I^{-1}=(x\wedge y)^c$
+[/SCOPE:s_thm2]
+[/SCOPE:root]

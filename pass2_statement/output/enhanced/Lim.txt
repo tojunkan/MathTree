@@ -1,0 +1,338 @@
+[SCOPE:root|description|极限]
+文章名: Lim
+标题: 极限
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=definition heading=定义 1 title=数列的极限
+  [2] type=definition heading=定义 2 title=距离函数
+  [3] type=definition heading=定义 3 title=点列的极限
+  [4] type=exercise heading=习题 1 title=
+  [5] type=exercise heading=习题 2 title=
+  [6] type=definition heading=定义 4 title=数列的敛散性
+  [7] type=definition heading=定义 5 title=函数趋于正无穷时的极限
+  [8] type=definition heading=定义 6 title=函数的极限
+  [9] type=example heading=例 2 title=
+  [10] type=example heading=例 3 title=
+  [11] type=definition heading=定义 7 title=函数的敛散性
+  [12] type=definition heading=定义 8 title=左极限和右极限
+
+[0] 微积分的核心概念是极限，而极限最基础的情形是数列的极限。
+[1] 数列是离散的，比较容易理解，而所有与极限有关的概念也都可以从数列的极限拓展得到。
+[2] 先来看一个数列的例子。
+
+[SCOPE:s_example1|description|例1]
+[3] 我们都知道 $\pi$ 是一个无理数，
+[4] 所以 $\pi$ 的小数部分是无限多的。
+[5] 目前用计算机，已经可以将 $\pi$ 精确地计算到小数点后数亿位。
+[6] 然而在实际应用中，往往只用取前几位小数的近似即可。
+[SCOPE:s_example1_let|let_bind|例1的变量]
+[7] 下面给出一个数列，定义第 $n$ 项是 $\pi$ 的前 $n$ 位小数近似（不考虑四舍五入），
+[8] 即
+[9] \begin{equation}
+a_0 = 3~,\,\, a_1 = 3.1~,\,\, a_2 = 3.14~,\,\, a_3 = 3.141,\,\dots~
+\end{equation}
+[/SCOPE:s_example1_let]
+[10] 这个数列显而易见的性质，就是当 $n$ 趋于无穷时，$a_n$ 趋（近）于 $\pi$。
+[11] 无穷通常用符号 $\infty$ 来表示（像 “8” 横过来写）。
+[12] 我们把这类过程叫做极限。
+[13] 以上这种情况，用极限符号表示，就是
+[14] \begin{equation}
+\lim_{n \to \infty } {a_n} = \pi ~.
+\end{equation}
+[15] 这里 $\lim$ 是极限（limit）的意思，下方用箭头表示某个量变化的趋势
+[16] 1
+[17] 。
+[18] 算符的 “输出” 就是一个数（$a_n$ 的极限值）。
+[19] 所以不要误以为这条式子是说当 $n = \infty$ 时，$a_n=\pi$
+[20] 2
+[21] ，而要理解成数列 $a_n$ 经过算符 $\lim\limits_{n \to \infty }$ 的作用以后，得出其极限是 $\pi$。
+[22] 类比函数 $\sin x = y$，并不是说 $x=y$，而是说 $x$ 经过正弦函数作用后等于 $y$。
+[23] 所以从概念上来说，极限中的 “趋于” 和 “等于” 是不同的。
+[24] 趋于是数列整体的性质，而不是单个数字的性质。
+[25] 我们可以像这样粗略理解 “趋近”：
+[26] 越来越接近，
+[27] 但不一定相等
+[28] （在不相等的情况下）只有更近，没有最近
+[29] 对极限来说，第 2 点成立是非常必要的。
+[30] 但是怎样能说明 “没有最近” 呢？
+[31] 可以看出，当 $n$ 越大，$a_n$ 越接近 $\pi$，它们的 “距离”，可以用 $ \left\lvert a_n - \pi \right\rvert $ 来表示。
+[32a] 也就是说，对任何一个 $a_n$
+[32b] 如果所对应的距离 $ \left\lvert a_n - \pi \right\rvert \ne 0$，总能找到一个更大的数 $m>n$，使 $ \left\lvert a_m - \pi \right\rvert < \left\lvert a_n - \pi \right\rvert $（也，则是 $a_m$ 比 $a_n$ 更靠近 $\pi$），并且要求 $a_m$ 之后的所有项也都能满足这一条件。
+[33] 只有这样，才能从数学上说明上面两个意思。
+[34] 这就是极限思想的精髓。
+[35] 根据这个思想，下面可以写出数列极限的定义。
+
+[/SCOPE:s_example1]
+[SCOPE:s_def1|description|定义1 数列的极限]
+[36] 定义 1 数列的极限
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[37] 考虑数列 $\{a_n\}$。
+[38] 若存在一个实数 $A$，使得对于任意给定的正实数 $\varepsilon > 0$（无论它有多么小），总存在正整数 $N_\epsilon$，使得对于所有编号 $n>N_\epsilon$，都有 $ \left\lvert a_n - A \right\rvert < \varepsilon$（$A$ 为常数）成立，
+[/SCOPE:s_def1_let]
+[39] 那么数列 $a_n$ 的极限就是 $A$。
+[40] 将 “数列 $\{a_n\}$ 的极限是 $A$” 表示为 $\lim\limits_{n\to\infty}a_n=A$。
+[41] 由于极限的精髓是 “无论多靠近，都能找到 $N$ 使得 $N$ 之后的项满足所要求的靠近程度”，
+[42] 因此极限的概念不仅限于数字序列，也可以推广到任何能定义距离的集合里。
+[43] 比如说，二维平面上可以依次选出点 $P_1, P_2, \cdots$，就得到一个点列，点列同样可以趋于平面上某一个点。
+[44] 当然，我们可以把任意集合里的元素都看作点，
+[45] 于是数列也是一种特殊的点列。
+[46] 把定义 1 稍加修改，就能得到极限的一般定义：
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义2 距离函数]
+[47] 定义 2 距离函数
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[48] 考虑集合 $X$，在 $X$ 上定义一个函数 $d:X\times X\to\mathbb{R}^+\cup\{0\}$，满足：
+[/SCOPE:s_def2_let]
+[49] 对称性：对于任意 $x, y\in X$，都有 $d(x, y)=d(y, x)$；
+[50] 正定性：对于任意 $x, y\in X$，都有 $d(x, y)\geq 0$，且等号仅在 $x=y$ 时成立；
+[51] 三角不等式：对于任意 $x, y, z\in X$，都有 $d(x, z)\leq d(x, y)+d(y, z)$。
+[52] 则称 $d$ 是一个距离函数，$d(x, y)$ 是点 $x$ 和点 $y$ 之间的距离。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|定义3 点列的极限]
+[53] 定义 3 点列的极限
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[54] 考虑集合 $X$，在 $X$ 上给定了距离函数 $d$。
+[55] 对于 $X$ 中的点列 $\{P_n\}_{n=1}^\infty$，若存在点 $P_0\in X$，使得数列 $\{d(P_n-P_0)\}$ 趋近于 $0$，
+[/SCOPE:s_def3_let]
+[56] 则称 $\{P_n\}$ 的极限（limit）或者说极限点（limit point）是 $P_0$。
+[57] 【图解】图 1：两个数列示意图。
+[58] 实心点表示数列 $a_n=(-1)^{n}$，空心点表示数列 $b_n=(1/2)^n$；
+[59] 横实线表示 $y=1$，横虚线表示 $y=1/2$。
+[60] 由图可见，随着 $n$ 增大，黑色点列虽然总有落在 $1$ 上的点，
+[61] 但也总有落在虚线以外的点；
+[62] 而空心点列则总是落在虚线以外。
+[63] 这样，虚线就像一个天堑，随着 $n$ 增大的时候两个数列都有被这个天堑隔开的点，这时我们就说这两个数列都不趋近于 $1$。
+[64] 不过，空心点数列 $\{b_n\}$ 是趋近于 $0$ 的。
+[65] 由于以上讨论中 $\lim$ 作用的对象是数列，
+[66] 那么箭头右边只能是 $\infty$（准确来说应该是正无穷 $+\infty$，
+[67] 但是由于数列的项一般是正的，
+[68] 所以正号省略了）。
+[69a] 把定义套用到上面的例 1 中
+[69b] 如果要求 $ \left\lvert a_n - \pi \right\rvert < 10^{-3}$（给定 $\varepsilon = 10^{-3}$），只要令 $N=3$（当然也可以令 $N=4, N=5$，等），则可以保证第 $N$ 项后面所有的项都满足要求。
+[70] 一般地如果给定 $\varepsilon = b \times 10^{-q} (b > 1)$，就令 $N = q$，第 $N$ 项以后的项就满足要求。
+[71] 根据定义，这就意味着 $\lim\limits_{n \to \infty } a_n = \pi$。
+[72] 我们来看几个简单的例题，加深一下印象。
+
+[/SCOPE:s_def3]
+[SCOPE:s_exercise1|description|习题1]
+[73] 习题 1
+[SCOPE:s_exercise1_let|let_bind|习题1的变量]
+[74] 考虑数列 $a_n=\frac{1}{2^n}$。
+[/SCOPE:s_exercise1_let]
+[75] 根据定义，证明 $\lim\limits_{n\to\infty}a_n=0$。
+
+[/SCOPE:s_exercise1]
+[SCOPE:s_exercise2|description|习题2]
+[76] 习题 2
+[SCOPE:s_exercise2_let|let_bind|习题2的变量]
+[77] 考虑数列 $a_n=(-1)^n$。
+[/SCOPE:s_exercise2_let]
+[78] 这个数列存在极限吗？
+[79] 习题 2 的数列是不存在极限的，因为它的值在 $\pm 1$ 之间反复横跳，也就是说对于任何实数 $A$，$ \left\lvert a_n-A \right\rvert $ 都只有最多两个值，而且其中一个肯定非零。
+[80] 这就导致如果我们把 $\epsilon>0$ 取得足够小（小于两个 $ \left\lvert a_n-A \right\rvert $ 中比较大的那个），
+[81] 那么不管 $N$ 多大，总有 $n>N$ 使得 $ \left\lvert a_n-A \right\rvert >\epsilon$。
+[82] 结果就是这个数列没有任何极限值。
+[83] 我们把这种情况称为发散。
+
+[/SCOPE:s_exercise2]
+[SCOPE:s_def4|description|定义4 数列的敛散性]
+[84] 定义 4 数列的敛散性
+[85a] 如果一个数列 $\{a_n\}$ 不存在极限
+[85b] 则称它是发散（divergent）的。
+[86] 如果 $\{a_n\}$ 存在极限，
+[87] 则称它是收敛（convergent）的。
+
+[/SCOPE:s_def4]
+[88] 实函数 $f(x)$ 可以看成是一种 “连续” 的数列，只不过把元素编号从离散的 $n$ 改为连续的 $x$。
+[89] 类比数列的极限，我们也可以定义函数在正无穷的极限 $\lim\limits_{x\to +\infty} f(x) = A$。
+
+[SCOPE:s_def5|description|定义5 函数趋于正无穷时的极限]
+[90] 定义 5 函数趋于正无穷时的极限
+[SCOPE:s_def5_let|let_bind|定义5的变量]
+[91] 考虑实函数 $f(x)$。
+[92] 若存在实数 $A$，使得对于任意$\epsilon>0$，总存在正实数$X_\epsilon$，使得对于所有 $x>X_\epsilon$，都有 $ \left\lvert f(x)-A \right\rvert <\epsilon$，
+[/SCOPE:s_def5_let]
+[93] 那么我们说 $A$ 是函数 $f(x)$ 在 $x$ 趋于正无穷时的极限。
+[94] 可以看到，定义 5 和定义 1 非常相似，只是简单做了替换。
+[95] 不过，函数并不是简单地把数列的概念拓展到连续的情况。
+[96] 数列的编号只能朝着一个方向增大，
+[97] 但实函数的自变量就自由得多，它可以奔向负无穷，也可以集中到一点 $x_0$。
+[98] 如何描述 “自变量趋于一个给定的实数 $x_0$” 呢？
+[99] 我们可以拓展一下 “趋于无穷” 的概念。
+[100] 函数自变量或者数列编号趋于无穷，就是说我们可以把自变量和数列编号取得越来越 “接近无穷”，虽然这种说法并不严谨，
+[101] 但它可以提供一个很好的借鉴：函数自变量趋于给定实数 $x_0$，就是说我们取的自变量 $x$ 使得 $ \left\lvert x-x_0 \right\rvert $ 越来越接近 $0$。
+[102] 现在问题来了，什么叫 “越来越” 呢？
+[103] 在讨论数列极限的时候，我们没有在意这个细节，因为我们也只能考虑数列编号增大的情况，而这里的 “越来越” 也自然表示 “随着数列编号的增大” 了。
+[104] 但是讨论函数自变量趋于给定实数 $x_0$ 的时候，就有些麻烦了，我们没有一个衡量 “时间流逝” 的自然标准了。
+[105] 要解决这个问题，最好还是再次把数列给请出来。
+[106] 下面，我直接给出函数极限的定义，请仔细咀嚼，看看数列是怎么用来准确描述函数极限的。
+
+[/SCOPE:s_def5]
+[SCOPE:s_def6|description|定义6 函数的极限]
+[107] 定义 6 函数的极限
+[SCOPE:s_def6_let|let_bind|定义6的变量]
+[108] 考虑实函数 $f(x)$，并给定一个实数 $x_0$。
+[109] 取数列 $\{x_n\}$，使得 $\lim\limits_{n\to\infty}=x_0$。
+[/SCOPE:s_def6_let]
+[110] 这样，$\{f(x_n)\}$ 也构成一个数列。
+[111] 如果对于任意的满足上述要求的数列 $\{x_n\}$，都有实数 $A$ 使得 $\lim\limits_{n\to\infty}f(x_n)=A$，
+[112] 那么我们说 $f(x)$ 在 $x$ 趋近于 $x_0$ 时的极限为 $A$。
+[113] 将这个极限表述为 $\lim\limits_{x\to x_0}f(x)=A$。
+[114] 注意看定义 6 中是如何从 $\lim\limits_{n\to\infty}=x_0$ 和 $\lim\limits_{n\to\infty}f(x_n)=A$ 过渡到 $\lim\limits_{x\to x_0}f(x)=A$ 的。
+[115] 这里，从离散到连续的桥梁，正是 “任意” 二字。
+[116] 也就是说，“连续” 就是 “任意的离散”，比如 “连续地接近时满足的条件” 就是 “任意一种离散地接近时都满足的条件”。
+[117] 定义 6 同时也是最为完整的函数极限定义，只需要把 $x_0$ 替换为 $\pm\infty$ 即可囊括无穷的情况。
+
+[/SCOPE:s_def6]
+[SCOPE:s_example2|description|例2]
+[118] 求函数在某个值处的极限时，通常可以直接代入数值计算，如
+[119] \begin{equation}
+\lim_{x\to 1} 2x + 1 = 3 ~,\qquad \lim_{x\to 2}\frac{x + 1}{x + 2} = \frac34~.
+\end{equation}
+[120] 当无穷大与常数相加时，可以忽略常数，如
+[121] \begin{equation}
+\lim_{x\to +\infty} \frac{x + 1}{2x + 2} = \lim_{x\to +\infty} \frac{x}{2x} = \frac12~.
+\end{equation}
+
+[/SCOPE:s_example2]
+[SCOPE:s_example3|description|例3]
+[SCOPE:s_example3_let|let_bind|例3的变量]
+[122a] (x)$，其定义为：$x>0$ 时，$ \operatorname {sgn}
+[122b] (x)=1$，$ \operatorname {sgn}(-x)=-1$，且有 $ \operatorname {sgn}(0)=0$。
+[/SCOPE:s_example3_let]
+[123] 也就是说，正数的函数值为 $1$，负数的为 $2$，$0$ 的就是 $0$。
+[124] 现在考虑 $ \operatorname {sgn}(x)$ 在 $0$ 处的极限值。
+[125] 我们首先要研究那些趋近于 $0$ 的数列。
+[126] 如果我们取数列 $g_n=\frac{1}{2^n}$，
+[127] 那么 $ \operatorname {sgn}(g_n)$ 中各项都恒为 $1$，
+[128] 因此 $\lim\limits_{n\to\infty} \operatorname {sgn}(g_n)=1$。
+[129] 但是如果取数列 $h_n=-\frac{1}{2^n}$，
+[130] 那么 $\lim\limits_{n\to\infty} \operatorname {sgn}(h_n)=-1$。
+[131] 如果再取数列 $j_n=0$，
+[132] 那么 $\lim\limits_{n\to\infty} \operatorname {sgn}(j_n)=0$。
+[133] 以上三个数列都趋于 $0$，
+[134] 但由它们构造的 $ \operatorname {sgn}(g_n)$、$ \operatorname {sgn}(h_n)$ 和 $ \operatorname {sgn}(j_n)$ 的极限却各不相同。
+[135] 这就意味着 $ \operatorname {sgn}(x)$ 在 $0$ 处并没有极限值。
+
+[/SCOPE:s_example3]
+[SCOPE:s_def7|description|定义7 函数的敛散性]
+[136] 定义 7 函数的敛散性
+[137] 拓展数列的敛散性的定义 4 。
+[138] 若函数在一点处有极限值，
+[139] 则称之为收敛的；
+[140] 否则，称之为发散的。
+
+[/SCOPE:s_def7]
+[141] 自变量趋于无穷的过程，只有一个方向，要么是不停增大（正无穷），要么是不停减小（负无穷）。
+[142] 但如果自变量是趋近一个实数 $x_0$，
+[143] 那么至少就有两个方向，从大于 $x_0$ 的点开始减小（正向接近），和从小于 $x_0$ 的点开始增大（负向）接近。
+[144] 由于极限的定义是 “怎么接近都可以”，
+[145] 因此若 $f(x)$ 在 $x=x_0$ 处存在极限，无论怎么取接近 $x_0$ 的数列，正向接近也好反向接近也罢，哪怕是一会儿正一会儿负地反复横跳，只要接近，这些数列的极限值都是一样的。
+[146] 但是有些函数则不然。
+[147a] (x)$，其中 $x<0$ 时 $f
+[147b] (x)=0$，$x\geq 0$ 时 $f
+[147c] (x)=1$。
+[148] 在 $x=0$ 处，如果只考虑正向接近的数列 $\{x_n\}$，
+[149] 那么计算出来的 $\{f(x_n)\}$ 的极限就是 $1$；
+[150] 但如果只考虑负向接近的数列，
+[151] 那么计算出来的极限是 $0$。
+[152] 按照定义，这意味着 $f(x)$ 在 $x=0$ 处没极限。
+[153] 但是这种情况，我们说它是有左极限和右极限的。
+
+[SCOPE:s_def8|description|定义8 左极限和右极限]
+[154] 定义 8 左极限和右极限
+[SCOPE:s_def8_let|let_bind|定义8的变量]
+[155] 对于函数 $f(x)$，给定实数 $x_0$。
+[156] 如果取任意正向接近的数列 $\{x_n\}$，所得到的数列 $\{f(x_n)\}$ 的极限都是 $A$，
+[/SCOPE:s_def8_let]
+[157] 那么称 $A$ 是 $f(x)$ 在 $x=x_0$ 处的右极限（right limit）。
+[158] 如果取任意负向接近的数列 $\{x_n\}$，所得到的数列 $\{f(x_n)\}$ 的极限都是 $B$，
+[159] 那么称 $B$ 是 $f(x)$ 在 $x=x_0$ 处的左极限（left limit）。
+[160] 一个很容易想到的定理是，如果函数在某点的左右极限都存在且相等，
+[161] 那么函数的极限存在且等于左右极限。
+[162] 证明留作思考题，要注意的是，左右极限相等并没有直接说明 “左右横跳” 式的数列，其极限也等于左右极限。
+
+[/SCOPE:s_def8]
+[SCOPE:s_inf_order|description|无穷小的阶]
+[163a] 如果令 $x\to 0$，我们
+[163b] 则说 $x$ 是无穷小。
+[SCOPE:s_inf_order_let|let_bind|无穷小的阶的变量]
+[164] 但一些无穷小会更快地趋近于 $0$，若 $x$ 的某个函数 $\alpha(x)$ 满足
+[165] \begin{equation}
+\lim_{x\to 0} \frac{\alpha(x)}{x} = 0~,
+\end{equation}
+[/SCOPE:s_inf_order_let]
+[166] 那 $\alpha(x)$ 就是 $x$ 的
+[167] 高阶无穷小
+[168] \begin{equation}
+\lim_{x\to 0} \frac{\alpha(x)}{x^n} \ne 0~,
+\end{equation}
+[169] 则称 $\alpha(x)$ 为 $x$ 的 $n$ 阶无穷小。
+[170] 例如，$c x^n$（$c$ 为常数）就是 $x$ 的
+[171] $n$ 阶无穷小
+[172] ，记为 $ \mathcal{O}\left(x^n \right) $。
+[173] 在求极限时，若高阶无穷小与低阶无穷小相加，通常可以忽略高阶无穷小。
+[174] 另外由定义不难推出
+[175] \begin{equation}
+\mathcal{O}\left(x^n \right) x^m = \mathcal{O}\left(x^{n + m} \right) \qquad (m > -n)~.
+\end{equation}
+[176a] 在物理中
+[176b] 当我们用一个函数 $g(x)$ 来近似另一个函数 $f(x)$ 并记为 $f(x) = g(x) + \mathcal{O}\left(h^n \right) $ 时（这里 $x$ 是函数的自变量，$h$ 是函数表达式中一个较小的常数），则说 $g(x)$ 的误差为 $ \mathcal{O}\left(h^n \right) $。
+[/SCOPE:s_inf_order]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def1",
+    "target_scope": "s_example1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义1是数列极限的一般定义，例1是其特例"
+  },
+  {
+    "source_scope": "s_def3",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "点列极限是数列极限的推广"
+  },
+  {
+    "source_scope": "s_def5",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "函数趋于正无穷的极限是数列极限的类比"
+  },
+  {
+    "source_scope": "s_def6",
+    "target_scope": "s_def5",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "函数极限定义包含趋于无穷的情形"
+  },
+  {
+    "source_scope": "s_def8",
+    "target_scope": "s_def6",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "左右极限是函数极限的子概念"
+  },
+  {
+    "source_scope": "s_def4",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "数列敛散性基于数列极限定义"
+  },
+  {
+    "source_scope": "s_def7",
+    "target_scope": "s_def6",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "函数敛散性基于函数极限定义"
+  }
+]

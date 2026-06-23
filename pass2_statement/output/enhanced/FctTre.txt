@@ -1,0 +1,154 @@
+[SCOPE:root|description|真因子树]
+文章名: FctTre
+标题: 真因子树
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=真因子
+  [1] type=definition heading=定义 2 title=单位
+  [2] type=definition heading=定义 3 title=
+  [3] type=definition heading=定义 4 title=真因子树
+  [4] type=definition heading=定义 5 title=
+  [5] type=theorem heading=定理 1 title=有限析因时素元素的等价定义
+  [6] type=theorem heading=定理 2 title=素元素必是不可约元素
+  [7] type=exercise heading=习题 1 title=
+
+[0] 真因子树的概念，是笔者优化了 “因子链” 的概念而得出的一套描述因式分解理论的框架。
+
+[SCOPE:s_def1|description|真因子]
+[1] 定义 1 真因子
+[SCOPE:s_def1_let|let_bind|真因子定义变量]
+[2] 给定整环 $R$，对于 $r, s\in R$，如果 $s|r$ 且 $r\not{|}s$，
+[3] 那么称 $r$ 是 $s$ 的真因子。
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_def2|description|单位]
+[4] 定义 2 单位
+[SCOPE:s_def2_let|let_bind|单位定义变量]
+[5] 给定整环 $R$，对于 $u\in R$，如果 $u^{-1}$ 是存在的，
+[6] 那么称 $u$ 是 $R$ 的一个单位（unit）。
+[7] $R$ 中全体单位的集合，记为 $U$。
+[8] 显然，如果有单位 $u$ 使得 $r=us$，
+[9] 那么 $r$ 和 $s$ 互相不是真因子。
+[10] 我们将这样的 $r, s$ 视为等价的：
+
+[/SCOPE:s_def2]
+[/SCOPE:s_def2_let]
+[SCOPE:s_def3|description|等价关系]
+[11] 定义 3
+[SCOPE:s_def3_let|let_bind|等价关系变量]
+[12] 给定整环 $R$，定义集合 $R$ 上的一个等价关系：对于 $r, s\in R$，$r$ 等价于 $s$ 当且仅当存在单位 $u$ 使得 $r=su$。
+[13] 等价的元素视为同一个元素，或者说把每个等价类看成一个元素，得到的集合是 $R$ 模去该等价关系的商集1，记为 $R_u$。
+[14] 举例来说，在整数环$\mathbb{Z}$ 上，对于任意正整数 $n$，我们把它等价于 $-n$。
+[15] 有了 $R_u$ 的概念，就可以定义本节核心的概念了：真因子树。
+
+[/SCOPE:s_def3]
+[/SCOPE:s_def3_let]
+[SCOPE:s_def4|description|真因子树]
+[16] 定义 4 真因子树
+[SCOPE:s_def4_let|let_bind|真因子树变量]
+[17] 给定整环 $R$，对于 $r\in R$，如果存在非单位的 $a, b\in R$ 使得 $ab=r$，
+[18] 那么可以从 $r$ 画两个箭头分别指向 $a$ 和 $b$，而 $\{a, b\}$ 就是 $r$ 的一个因子分解；
+[19] 同样，如果 $a$ 和 $b$ 可以继续分解为其它非单位元素之积，
+[20] 那么也可以继续画出箭头指向它们对应的因子分解。
+[21] 如是反复，直到不能继续进行下去为止，所获得的整个结构称为 $r$ 的一棵真因子树。
+[22] 每个从 $r$ 开始，出发一路指向末端的路径，称为 $r$ 的一个枝条，枝条中涉及到的箭头数量，称为枝条的长度。
+[23] 一棵真因子树中最长的枝条的长度，称为这棵树的高度。
+[24a] 特别地
+[24b] 如果 $r$ 无法进行分解，也，则是说它的树只包含 $r$ 本身，
+[25] 那么定义这棵树的高度为 $0$。
+[26] 一棵树中从元素 $a$ 到元素 $b$ 的路径，其长度定义为这条路径上包含的箭头数量。
+[27] $r$ 的真因子树一般不止一棵。
+
+[/SCOPE:s_def4]
+[/SCOPE:s_def4_let]
+[28] 以下讨论限制在整环 $R$ 的集合上。
+[29] 利用真因子树的语言来直接翻译各种概念的方式如下：
+
+[SCOPE:s_def5|description|不可约、素、有限析因、唯一析因]
+[30] 定义 5
+[SCOPE:s_def5_let|let_bind|定义5变量]
+[31] 不可约元素：在某一棵树中为末端。
+[32] 素元素：$p$ 是素元素，当且仅当对于任意 $a, b\in R$，如果 $p$ 在 $ab$ 的某棵真因子树上，
+[33] 那么 $p$ 必在 $a$ 或 $b$ 的某棵真因子树上。
+[34] 有限析因性：对于任意 $r$，存在一个正整数 $N_r$，使得 $r$ 的任意枝条长度不超过 $N_r$。
+[35] 唯一析因性：有限析因，且对于任意 $r$，其任何两棵树的末端元素构成的集合都是一样的。
+
+[/SCOPE:s_def5]
+[/SCOPE:s_def5_let]
+[SCOPE:s_thm1|description|有限析因时素元素的等价定义]
+[36] 定理 1 有限析因时素元素的等价定义
+[SCOPE:s_thm1_let|let_bind|定理1变量]
+[37] 设 $p$ 是整环 $R$ 中的一个元素，且 $R$ 具有有限析因性。
+[38] 则 $p$ 是素元素，当且仅当对于任意 $a$，如果 $p|a$，
+[39] 那么 $p$ 必在 $a$ 的每一棵树上。
+[/SCOPE:s_thm1_let]
+[40] 证明：
+[SCOPE:s_thm1_suff|description|充分性]
+[41] 充分性：
+[SCOPE:s_thm1_suff_let|let_bind|充分性变量]
+[42a] 如果 $p$ 满足，只要 $p\mid a$
+[42b] 则$p$ 在 $a$ 的每一棵真因子树上，
+[43] 那么当 $p\mid ab$ 时，取 $ab$ 的真因子树，使得第一次分解为 $a, b$，
+[44] 那么 $p$ 必在这棵树上，也就必在 $a$ 或 $b$ 之后的枝条上，
+[45] 从而整除 $a$ 或 $b$。
+[/SCOPE:s_thm1_suff]
+[/SCOPE:s_thm1_suff_let]
+[SCOPE:s_thm1_nec|description|必要性]
+[46] 必要性：
+[SCOPE:s_thm1_nec_let|let_bind|必要性变量]
+[47] 任取 $x\in R$ 以及 $x$ 的任何一棵真因子树，使得 $p\mid x$。
+[48] 设这棵真因子树的第一次分解为 $x=ab$，
+[49] 那么按照素元素的定义必有 $x\mid a$ 或者 $x\mid b$，不妨设 $x\mid a$。
+[50] 考虑 $a$ 的分解 $a=cd$，
+[51] 则按照素元素的定义，不妨设 $p\mid c$。
+[52] 以此类推，$p$ 整除该真因子树某棵枝条上的所有元素。
+[53] 由有限析因性，该枝条必有终点，而终点是不可约元素，
+[54] 从而终点必是 $p$（或更准确地，$p$ 所在的相伴等价类）。
+[/SCOPE:s_thm1_nec_let]
+[55] 证毕。
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_nec]
+[SCOPE:s_thm2|description|素元素必是不可约元素]
+[56] 定理 2 素元素必是不可约元素
+[SCOPE:s_thm2_let|let_bind|定理2变量]
+[57] 整环 $R$ 中的素元素都是不可约元素。
+[/SCOPE:s_thm2_let]
+[58] 证明：
+[SCOPE:s_thm2_reductio|reductio|反证法]
+[SCOPE:s_thm2_reductio_let|let_bind|反证法变量]
+[59] 反设素元素 $p\in R$ 不是末端，
+[60] 那么就可以得到 $p$ 的长度不为零的一棵树，其第一级分解为 $p=ab$；
+[61] 而由于素元素的定义，它又必须在以 $a$ 和 $b$ 为起点的某棵树上，
+[62] 从而在自己的后面，而这是不可能的。
+[/SCOPE:s_thm2_reductio_let]
+[63] 因此反设不成立，素元素必是末端。
+[/SCOPE:s_thm2_reductio]
+[64] 证毕。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_ex1|description|习题1]
+[65] 习题 1
+[66] 利用定理 1 ，证明定理 2 。
+[67] 今后我们也会引用真因子树的概念来方便阐释因式分解相关的问题。
+[/SCOPE:s_ex1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2的证明引用定理1"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题1要求利用定理1证明定理2"
+  }
+]

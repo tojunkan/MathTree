@@ -1,0 +1,92 @@
+[SCOPE:root|description|函数的连续性]
+文章名: contin
+标题: 函数的连续性
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=函数在一点的连续性和区间的连续性
+  [1] type=definition heading=定义 2 title=一致连续
+  [2] type=example heading=例 1 title=
+  [3] type=exercise heading=习题 1 title=连续但不一致连续的函数
+  [4] type=theorem heading=定理 1 title=
+
+[SCOPE:s_def1|description|函数在一点的连续性和区间的连续性]
+[0] 定义 1 函数在一点的连续性和区间的连续性
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1a] 函数 $f(x)$ 在某点 $x = x_0$ 处连续的定义是：函数 $f(x)$ 在某点 $x=x_0$ 处连续
+[1b] 当且仅当对于任何精度要求 $\epsilon>0$，我们都可以找到一个对应的范围 $\delta>0$，使得只要 $|x-x_0|<\delta$，则有 $|f(x)-f(x_0)|<\epsilon$。
+[/SCOPE:s_def1_let]
+[2] 用极限符号来表示，就是：
+[3] \begin{equation}
+\lim_{x \to x_0} f(x) = f(x_0)~.
+\end{equation}
+[4a] 如果一个函数在某区间的所有点都连续，我们
+[4b] 则说它在这个区间连续。
+[5] 注意这里要求 $x$ 从左边和右边趋近于 $x_0$ 时的极限（即左极限和右极限）都成立。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|一致连续]
+[6] 以上所定义的连续性是针对一个个点 $x_0$ 而言的，就算函数在每一个点都连续，我们也只能说这个函数是逐点连续的（pointwise continuous）。
+[7] 事实上，还有一种更强的连续性，它着眼于整体的性质，这就是一致连续（uniformly continuous）。
+[8] 它的准确定义如下：
+
+[9] 定义 2 一致连续
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[10] 如果函数 $f(x)$ 在区间 $S$ 上，对于任意精度 $\epsilon>0$，都存在对应的范围 $\delta>0$，使得只要 $|x_1-x_2|<\delta$，
+[11] 那么 $|f(x_1)-f(x_2)|<\epsilon$。
+[/SCOPE:s_def2_let]
+[12] 一致连续着眼于整个区间的性质，而不是一个个点。
+[13] 显然，一致连续的函数肯定逐点连续，
+[14] 但是逐点连续的函数不一定一致连续，我们举一个反例。
+
+[/SCOPE:s_def2]
+[SCOPE:s_example1|description|例1]
+[SCOPE:s_example1_let|let_bind|例1的变量]
+[15] 例如考虑函数 $f(x)=1/x$，
+[/SCOPE:s_example1_let]
+[16] 那么在区间 $(0, \infty)$ 上，$f$ 就是逐点连续的，
+[17] 但它并不一致连续；
+[18] 对于同样的精度要求 $\epsilon>0$ 和任何范围 $\delta>0$，只要 $0< x_1<\delta$，
+[19] 那么就总有一个足够小的 $x_2$ 使得 $|f(x_1)-f(x_2)|>\epsilon$，毕竟当 $x_2$ 接近 $0$ 的过程中，$f(x_2)$ 的斜率绝对值会趋近于无穷大。
+
+[/SCOPE:s_example1]
+[SCOPE:s_exercise1|description|习题1]
+[20] 习题 1 连续但不一致连续的函数
+[21] 试证明 $1/x$ 在区间 $(0, +\infty]$ 以及 $x^2$ 在 $\mathbb R$ 都是连续的，
+[22] 但不是一致连续的。
+
+[/SCOPE:s_exercise1]
+[SCOPE:s_theorem1|description|定理1]
+[23] 定理 1
+[SCOPE:s_theorem1_let|let_bind|定理1的变量]
+[24] 设 $S$ 是 $\mathbb{R}$ 的一个区间。
+[25] 函数 $f$ 在 $S$ 上逐点连续的充分必要条件是，对于任何开区间 $A\subset \mathbb{R}$，满足 $f(x)\in A$ 的所有 $x$ 构成的集合，是若干开区间的并集。
+[/SCOPE:s_theorem1_let]
+[26] 用紧凑的写法来表达就是，$f^{-1}(A)$ 是开区间的并集。
+[27] 这个定理还可以等价地用闭区间来表达：$f$ 在 $S$ 上逐点连续的充分必要条件是，任何闭区间的逆映射是闭区间的并集。
+[28] 【图解】图 1：如图，红色水平线在 $f(X)$ 轴上划分出了一个开/闭区间，绿色垂直线是取反函数的过程，$x$ 轴上的靛蓝色线段就是取反函数的结果。
+[29] 从这个图可以直观地看出定理 1 的意义。
+[30] 在实数轴上，开集被定义为任何开区间的并集，而闭集是开集的补集。
+[31] 如果 $S$ 是 $\mathbb{R}$ 的一个子集，
+[32] 那么 $S$ 上的开集被定义为 $\mathbb{R}$ 的开集和 $S$ 的交集。
+[33] 这样一来，定理 1 就可以扩展为：$f$ 在 $S$ 上逐点连续，等价于对于任何开集 $A$，$f^{-1}(A)\cap S$ 是 $S$ 上的开集，等价于对于任何闭集 $B$，$f^{-1}(B)\cap S$ 是 $S$ 上的闭集。
+[34] 用逆映射来刻画连续性是一个非常好用的方法。
+[/SCOPE:s_theorem1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "一致连续是逐点连续的加强"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_def2",
+    "edge_type": "counterexample_of",
+    "category": "logic",
+    "note": "1/x 在 (0,∞) 上逐点连续但不一致连续"
+  }
+]

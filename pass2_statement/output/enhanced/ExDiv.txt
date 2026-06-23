@@ -1,0 +1,181 @@
+[SCOPE:root|description|多项式的整除]
+文章名: ExDiv
+标题: 多项式的整除
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=整除、因式、倍式
+  [1] type=theorem heading=定理 1 title=
+  [2] type=definition heading=定义 2 title=多项式的商
+  [3] type=definition heading=定义 3 title=因式、最大公因式
+  [4] type=example heading=例 1 title=整除性质 1 的证明
+
+[SCOPE:s_def1|description|整除、因式、倍式]
+[0] 定义 1 整除、因式、倍式
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1a] (x),g
+[1b] (x)$ 为数域 $\mathbb{F}$ 上的多项式，若存在数域 $\mathbb{F}$ 上的多项式 $q
+[1c] (x)$ 使得 $f
+[1d] (x)=q
+[1e] (x)g
+[1f] (x)$，
+[2a] (x)$ 整除 $f
+[2b] (x)$，记作 $g
+[2c] (x)|f
+[2d] (x)$，并称 $g
+[2e] (x)$ 为 $f
+[2f] (x)$ 的因式，$f
+[2g] (x)$ 为 $g
+[2h] (x)$ 的倍式.
+[/SCOPE:s_def1_let]
+[3] 由定义 1 ，容易验证：
+[4a] (x)|f
+[4b] (x)$;
+[5] 零多项式只整除零多项式：$0|0$；
+[6] 任意一个非零多项式一定整除零多项式：$f(x)|0$；
+[7] 零次多项式整除任意多项式：$c|f(x)$，其中 $c\neq0\in\mathbb{F}$。
+[8a] (x)$ 的与其次数相同的因式，称为 $f
+[8b] (x)$ 的平凡因式；
+[9a] (x)$ 的与其次数相同的倍式，称为 $f
+[9b] (x)$ 的平凡倍式.
+[10] 有了整除的概念，考虑到带余除法，自然容易想到，两个多项式能够整除是其余式为 0。
+[11] 因此，下面定理是显然的
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理1]
+[12] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[13a] (x),g
+[13b] (x)$ 为数域 $\mathbb{F}$ 上的两个多项式，$g
+[13c] (x)\neq 0$，
+[14a] (x)|f
+[14b] (x)$ 的充要条件是 $g
+[14c] (x)$ 除 $f
+[14d] (x)$ 的余式为 0，
+[15a] (x)$ 使得 $f
+[15b] (x)=q
+[15c] (x)g
+[15d] (x)$。
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_let]
+[SCOPE:s_def2|description|多项式的商]
+[16] 定义 2 多项式的商
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[17a] (x)|f
+[17b] (x)$，
+[18a] (x)$ 除 $f
+[18b] (x)$ 的商 $q
+[18c] (x)$ 可表示
+[19] \begin{equation}
+q(x)=\frac{f(x)}{g(x)}~.
+\end{equation}
+[/SCOPE:s_def2_let]
+[20] 整除具有下面性质：
+[21a] (x)|g
+[21b] (x)$ 且 $g
+[21c] (x)|f
+[21d] (x)$，
+[22a] (x)=cg
+[22b] (x)$，$c$ 为非 0 常数；
+[23a] (x)|g
+[23b] (x)$ 且 $g
+[23c] (x)|h
+[23d] (x)$，
+[24a] (x)|h
+[24b] (x)$；
+[25a] (x)|g_i
+[25b] (x)\;(i=1,2,\cdots,n)$，
+[26a] (x)|\sum\limits_{i=1}^{n}u_i
+[26b] (x)g_i
+[26c] (x)$，$u_i
+[26d] (x)$ 为数域 $\mathbb{F}$ 上的多项式。
+[27] 有了因式，当然可以定义两个多项式的公因式及最大公因式。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|因式、最大公因式]
+[28] 定义 3 因式、最大公因式
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[29a] (x),g
+[29b] (x)$ 为数域 $\mathbb{F}$ 上的两个多项式，若数域 $\mathbb{F}$ 上的多项式 $d
+[29c] (x)$ 满足
+[30] \begin{equation}
+d(x)|f(x)\quad\&\quad d(x)|g(x)~.
+\end{equation}
+[/SCOPE:s_def3_let]
+[31] 最大公因式
+[32] 首项系数为 1
+[33a] (x)$ 和数域 $\mathbb{F}$ 中的数 $c\neq 0$，都有 $c|f
+[33b] (x)$，
+[34] 所以非零多项式的最大公因式总是一个非零多项式。
+[35a] (x)$ 是 $f
+[35b] (x)$ 与 0 的一个最大公因式。
+[36a] (x),d_1
+[36b] (x)$ 是 $f
+[36c] (x)$ 和 $g
+[36d] (x)$ 的两个最大公因式，
+[37a] (x)=cd_1
+[37b] (x)$，其中 $c\neq 0$ 为常数。
+
+[/SCOPE:s_def3]
+[SCOPE:s_ex1|description|整除性质1的证明]
+[38] 例 1 整除性质 1 的证明
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[39a] (x)|g
+[39b] (x)$ 且 $g
+[39c] (x)|f
+[39d] (x)$，
+[40a] (x)=cg
+[40b] (x)$，$c$ 为非 0 常数。
+[/SCOPE:s_ex1_let]
+[SCOPE:s_ex1_cases|cases|f=0 与 f≠0]
+[41a] (x)=0$，由 $f
+[41b] (x)|g
+[41c] (x)$，有 $g
+[41d] (x)=0$，
+[42a] (x)=cg
+[42b] (x)$ 显然成立。
+[43] 下面考虑 $f(x)\neq 0$ 情形。
+[44a] (x)|g
+[44b] (x)$ 和 $g
+[44c] (x)|f
+[44d] (x)$ 意味着
+[45] \begin{equation}
+f(x)=q(x)g(x)\quad g(x)=q_1(x)f(x)~.
+\end{equation}
+[46] \begin{equation}
+f(x)=q(x)q_1(x)f(x)~.
+\end{equation}
+[47] 定理 1
+[48] \begin{equation}
+q(x)q_1(x)=1~,
+\end{equation}
+[49] \begin{equation}
+\mathrm{deg}\;q(x)+\mathrm{deg}\;q_1(x)=0~,
+\end{equation}
+[50] \begin{equation}
+\mathrm{deg}\;q(x)=\mathrm{deg}\;q_1(x)=0~,
+\end{equation}
+[51] \begin{equation}
+q(x)=1/q_1(x)=c\neq 0~.
+\end{equation}
+[/SCOPE:s_ex1]
+[/SCOPE:s_ex1_cases]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是定义1的充要条件"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1证明整除性质1，引用定义2"
+  }
+]

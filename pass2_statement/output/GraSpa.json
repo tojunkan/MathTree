@@ -1,0 +1,260 @@
+{
+  "article_name": "GraSpa",
+  "statements": [
+    {
+      "stmt_id": "st_intro_graph_space",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_vertex_edge_space",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_weighted_graph",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "D",
+        "V(D)",
+        "E(D)",
+        "v_1",
+        "v_n",
+        "a_1",
+        "e_m"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_vertex_space",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "V(G)",
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_edge_space",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "E(G)",
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let1",
+      "exposed_entities": [
+        "f",
+        "g",
+        "x",
+        "lambda"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_vertex_basis",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1_let1",
+      "exposed_entities": [
+        "alpha_i",
+        "delta_ij",
+        "f_i"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_edge_basis",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1_let2",
+      "exposed_entities": [
+        "beta_i",
+        "g_i"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "G",
+        "omega"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_def",
+      "subtype": "definition",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "(G,omega)",
+        "omega(a)"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3_let",
+      "exposed_entities": [
+        "G",
+        "omega"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_def",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "(G,omega)",
+        "omega(a)"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4_let",
+      "exposed_entities": [
+        "G",
+        "omega_1",
+        "omega_2"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_def",
+      "subtype": "definition",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "(G,omega_1,omega_2)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_assump",
+      "target": "st_def1_vertex_space",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_assump",
+      "target": "st_def1_edge_space",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_assump",
+      "target": "st_ex1_vertex_basis",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_assump",
+      "target": "st_ex1_edge_basis",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_assump",
+      "target": "st_def2_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_assump",
+      "target": "st_def3_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def4_assump",
+      "target": "st_def4_def",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

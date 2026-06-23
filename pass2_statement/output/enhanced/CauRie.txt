@@ -1,0 +1,174 @@
+[SCOPE:root|description|复变函数的导数、柯西—黎曼条件]
+文章名: CauRie
+标题: 复变函数的导数、柯西—黎曼条件
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+  [1] type=theorem heading=定理 1 title=柯西—黎曼条件
+  [2] type=example heading=例 1 title=指数函数 $w= \mathrm{e} ^z$ 的可导性
+
+[SCOPE:s_def1|description|定义1]
+[0] 定义 1
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1] 类似实函数的导数，定义复变函数 $w = f(z)$（$f:\mathbb C\to \mathbb C$）的导数为
+[2] \begin{equation}
+f'(z) = \lim_{h\to 0} \frac{f(z + h) - f(z)}{h}~.
+\end{equation}
+[/SCOPE:s_def1_let]
+[3a] (x)$，$x$ 只能沿正负两个方向趋于零; 但对于复函数 $w=f
+[3b] (z)=f(x+ \mathrm{i} y)$，$z$ 可以沿复平面 $x-y$ 上的任意路径趋于零，
+[4] 因此复变函数可导的条件更复杂。
+[5] 这（式 1 ）会让我们联想到二元函数的方向导数, 但由于式 1 中的除法是复数的除法，
+[6] 所以它比方向导数要更复杂一些。
+[7] 在复平面的一个开集 $D$ 上，如果函数 $f(z)$ 处处复可微，
+[8] 那么它就是一个全纯函数（holomorphic function）也叫做解析函数（analytical function）；
+[9a] 如果除了一些孤立点外处处复可微
+[9b] 则叫亚纯函数（meromorphic function）。
+
+[/SCOPE:s_def1]
+[10] 若写为 $w=f(z)$ 形式，
+[11] 则求导法则、方式完全类似于一元实函数。
+[12] 例如 $y=z^2, \frac{\mathrm{d}{y}}{\mathrm{d}{z}} =2z$.
+[13] 若写为 $w=u(x,y)+ \mathrm{i} v(x,y)$ 形式，
+[14] 则由柯西—黎曼条件（子节 2 ）
+[15] \begin{equation}
+\begin{aligned}
+f'(z) &= \frac{\partial u}{\partial x} + \frac{\partial v}{\partial x} \mathrm{i} = \frac{\partial v}{\partial y} - \frac{\partial u}{\partial y} \mathrm{i} \\
+&= \frac{\partial u}{\partial x} - \frac{\partial u}{\partial y} \mathrm{i} = \frac{\partial v}{\partial y} + \frac{\partial v}{\partial x} \mathrm{i} ~.
+\end{aligned}
+\end{equation}
+
+[SCOPE:s_thm1|description|柯西—黎曼条件]
+[16] 定理 1 柯西—黎曼条件
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[17] 令 $z = x + y \mathrm{i} $ 且
+[18] \begin{equation}
+f(z) = u(x, y) + \mathrm{i} v(x, y)~,
+\end{equation}
+[/SCOPE:s_thm1_let]
+[19] \begin{equation}
+\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} ~, \qquad
+\frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x} ~.
+\end{equation}
+[20] 柯西—黎曼条件（Cauchy-Riemann condition）
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex1|description|例1 指数函数]
+[21] 例 1 指数函数 $w= \mathrm{e} ^z$ 的可导性
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[22] 预备知识 2 指数函数（复数）
+[23] $$w = \mathrm{e} ^z = \mathrm{e} ^{x + \mathrm{i} y} = \mathrm{e} ^x \mathrm{e} ^{ \mathrm{i} y}= \mathrm{e} ^x(\cos y + \mathrm{i} \sin y)~
+$$
+[24] $$\therefore u= \mathrm{e} ^x\cos y, v = \mathrm{e} ^x\sin y~
+$$
+[/SCOPE:s_ex1_let]
+[25] $$
+\therefore
+\begin{aligned}
+\frac{\partial u}{\partial x} &= \mathrm{e} ^x\cos y\\
+\frac{\partial u}{\partial y} &= - \mathrm{e} ^x\sin y\\
+\frac{\partial v}{\partial x} &= \mathrm{e} ^x\sin y\\
+\frac{\partial v}{\partial y} &= \mathrm{e} ^x\cos y\\
+\end{aligned}~
+$$
+[26] 可见
+[27] \begin{equation}
+\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} = \mathrm{e} ^x\cos y \qquad
+\frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x} = \mathrm{e} ^x\sin y~.
+\end{equation}
+[28] 若柯西—黎曼条件成立、复函数可导，函数 $u,v$ 的四个偏导数中只有两个是独立的；
+[29] 函数的 $u,v$ 间也存在某种关联，可以由 $u$ 求出 $v$，或由 $v$ 求出 $u$(存在待定系数)。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_nec|description|推导必要性]
+[30] 其实复变函数并没有什么神秘之处，我们完全可以把它看成两个二元函数，用已经熟悉的多元微积分来处理。
+[SCOPE:s_nec_let1|let_bind|全微分变量]
+[31] 根据全微分
+[32] \begin{equation}
+\,\mathrm{d}{w} = \,\mathrm{d}{u} + \mathrm{i} \,\mathrm{d}{v} = \left( \frac{\partial u}{\partial x} \,\mathrm{d}{x} + \frac{\partial u}{\partial y} \,\mathrm{d}{y} \right) + \left( \frac{\partial v}{\partial x} \,\mathrm{d}{x} + \frac{\partial v}{\partial y} \,\mathrm{d}{y} \right) \mathrm{i} ~.
+\end{equation}
+[33] 该式告诉我们 $z$ 在复平面上朝着某方向 $ \,\mathrm{d}{z} = \,\mathrm{d}{x} + \mathrm{i} \,\mathrm{d}{y} $ 移动一小步，函数值 $w$ 会如何变化。
+[/SCOPE:s_nec_let1]
+[SCOPE:s_nec_let2|let_bind|方向导数变量]
+[34] 既然要求各个方向的 “方向导数” 都相等，我们不妨先考虑两个最简单的方向即 $x$ 方向和 $y$ 方向。当
+[35] 式 1 [链接 L0]
+[36] 中 $h$ 延 $x$ 方向移动时，令式中 $ \,\mathrm{d}{y} = 0$，
+[37] 即 $ \,\mathrm{d}{z} = \,\mathrm{d}{x} $，有
+[38] \begin{equation}
+\frac{\mathrm{d}{w}}{\mathrm{d}{z}} = \frac{ \frac{\partial u}{\partial x} \,\mathrm{d}{x} + \mathrm{i} \frac{\partial v}{\partial x} \,\mathrm{d}{x} }{ \,\mathrm{d}{x} } = \frac{\partial u}{\partial x} + \mathrm{i} \frac{\partial v}{\partial x} ~.
+\end{equation}
+[39] 同理，当 $h$ 延 $y$ 方向移动时，令式中 $ \,\mathrm{d}{x} = 0$，
+[40] 即 $ \,\mathrm{d}{z} = \mathrm{i} \,\mathrm{d}{y} $，有
+[41] \begin{equation}
+\frac{\mathrm{d}{w}}{\mathrm{d}{z}} = \frac{ \frac{\partial u}{\partial y} \,\mathrm{d}{y} + \mathrm{i} \frac{\partial v}{\partial y} \,\mathrm{d}{y} }{ \mathrm{i} \,\mathrm{d}{y} } = \frac{\partial v}{\partial y} - \mathrm{i} \frac{\partial u}{\partial y} ~.
+\end{equation}
+[/SCOPE:s_nec_let2]
+[42] 令以上两式相等，
+[43] 即实部虚部分别相等，就得到柯西黎曼条件
+[44] 式 4 [链接 L1]
+[45] 注意我们只通过两个方向的 “方向导数” 相等就得到了柯西黎曼条件，
+[46] 所以这只能说明柯西黎曼条件是可导的必要条件。
+[47] 下面会用更一般的方法说明它是充分必要条件。
+
+[/SCOPE:s_nec]
+[SCOPE:s_suff|description|推导充分必要性]
+[48] 如果直接由式 6 计算 $ \mathrm{d}{w}/\mathrm{d}{z} = ( \,\mathrm{d}{u} + \mathrm{i} \,\mathrm{d}{v} )/( \,\mathrm{d}{x} + \mathrm{i} \,\mathrm{d}{y} )$ 会发现结果和 $ \,\mathrm{d}{y} / \,\mathrm{d}{x} $ 有关，
+[49] 即与式 1 中 $h$ 趋近于零点的方向有关。
+[SCOPE:s_suff_let|let_bind|充分性变量]
+[50] 所以我们换一种思路，先假设导数存在，
+[51] 那么导数函数总可以表示为
+[52] \begin{equation}
+f'(z) = a(z) + b(z) \mathrm{i} ~.
+\end{equation}
+[53] 写成微分形式
+[54] \begin{equation}
+\,\mathrm{d}{w} = f'(z) \,\mathrm{d}{z} ~.
+\end{equation}
+[55] 注意 $ \,\mathrm{d}{z} $ 无论取什么方向上式都成立。
+[/SCOPE:s_suff_let]
+[56] 拆分实部虚部得
+[57] \begin{equation}
+\,\mathrm{d}{w} = \,\mathrm{d}{u} + \mathrm{i} \,\mathrm{d}{v} = (a + b \mathrm{i} )( \,\mathrm{d}{x} + \mathrm{i} \,\mathrm{d}{y} ) = (a \,\mathrm{d}{x} - b \,\mathrm{d}{y} ) + (b \,\mathrm{d}{x} + a \,\mathrm{d}{y} ) \mathrm{i} ~.
+\end{equation}
+[58] 所以如果 $f(z)$ 存在（与方向无关的）导数，
+[59] 式 6 [链接 L2]
+[60] 必然具有
+[61] 式 11 [链接 L3]
+[62] 的形式，二者对比可得
+[63] \begin{equation}
+a(z) = \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} , \qquad
+b(z) = - \frac{\partial u}{\partial y} = \frac{\partial v}{\partial x} ~.
+\end{equation}
+[64] 这样，不仅得到了柯西—黎曼条件，也得到了导数的表达式
+[65] \begin{equation}
+f'(z) = \frac{\partial u}{\partial x} - \frac{\partial u}{\partial y} \mathrm{i} = \frac{\partial v}{\partial y} + \frac{\partial v}{\partial x} \mathrm{i} ~.
+\end{equation}
+[66] 可见我们仅需要 $u, v$ 中的一个就可以求出导数，因为它们在柯西—黎曼条件下并不是独立的。
+[67] 【未完成】举例子，例如 $\exp$, $z^a$ 等都满足柯西—黎曼
+[/SCOPE:s_suff]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_nec",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "必要性推导得出柯西—黎曼条件是可导的必要条件"
+  },
+  {
+    "source_scope": "s_suff",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "充分性推导得出柯西—黎曼条件是可导的充分必要条件"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "指数函数满足柯西—黎曼条件"
+  }
+]

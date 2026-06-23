@@ -1,0 +1,152 @@
+[SCOPE:root|description|正交曲线坐标系]
+文章名: CurCor
+标题: 正交曲线坐标系
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=球坐标系
+
+[SCOPE:s_example1|description|例1 球坐标系]
+[0] 例 1 球坐标系
+[SCOPE:s_example1_let|let_bind|球坐标系变量]
+[1] 以下我们用式 1 重新推导球坐标系中的三个单位矢量（式 3 ），并证明它是一个正交曲线坐标系。
+[2] 球坐标系中，位置矢量可以表示为
+[3] \begin{equation}
+\boldsymbol{\mathbf{r}} = r \hat{\boldsymbol{\mathbf{r}}} = r\sin\theta\cos\phi\, \hat{\boldsymbol{\mathbf{x}}} + r\sin\theta\sin\phi\, \hat{\boldsymbol{\mathbf{y}}} + r\cos\theta \hat{\boldsymbol{\mathbf{z}}} ~.
+\end{equation}
+[4] \begin{equation}
+\left\{\begin{aligned}
+\frac{\partial \boldsymbol{\mathbf{r}} }{\partial r} &= \sin\theta\cos\phi\, \hat{\boldsymbol{\mathbf{x}}} + \sin\theta\sin\phi\, \hat{\boldsymbol{\mathbf{y}}} + \cos\theta\, \hat{\boldsymbol{\mathbf{z}}} \\
+\f…[truncated]… r\sin\theta\, \hat{\boldsymbol{\mathbf{z}}} \\
+\frac{\partial \boldsymbol{\mathbf{r}} }{\partial \phi} &= -r\sin\theta\sin\phi\, \hat{\boldsymbol{\mathbf{x}}} + r\sin\theta\cos\phi\, \hat{\boldsymbol{\mathbf{y}}}
+\end{aligned}\right. ~\end{equation}
+[5] \begin{equation}
+\begin{cases}
+\hat{\boldsymbol{\mathbf{r}}} = \sin\theta\cos\phi\, \hat{\boldsymbol{\mathbf{x}}} + \sin\theta\sin\phi\, \hat{\boldsymbol{\mathbf{y}}} + \cos\theta\, \hat{\boldsymbol{\mathbf{z}}} \\
+\hat{\boldsymbol{\mathbf{\theta}}} …[truncated]…} + \cos\theta\sin\phi\, \hat{\boldsymbol{\mathbf{y}}} - \sin\theta\, \hat{\boldsymbol{\mathbf{z}}} \\
+\hat{\boldsymbol{\mathbf{\phi}}} = -\sin\phi\, \hat{\boldsymbol{\mathbf{x}}} + \cos\phi\, \hat{\boldsymbol{\mathbf{y}}}
+\end{cases}~
+\end{equation}
+
+[/SCOPE:s_example1]
+[/SCOPE:s_example1_let]
+[6] 【未完成】举例：$r \hat{\boldsymbol{\mathbf{r}}} $，$r \hat{\boldsymbol{\mathbf{\phi}}} $ 等。
+[7] 以及和直角坐标的转换。
+
+[SCOPE:s_coords_let|let_bind|曲线坐标变量]
+[SCOPE:s_coords|description|坐标线、坐标面]
+[8] 正如开头所说，若空间任意一点 $M$ 的坐标可用三个新的变量 $u,v,w$ 来表示的话，
+[9] 则 $(u,v,w)$ 称为点 $M$ 的曲线坐标。
+[10] 给定新变量以常数值 $A,B,C$，就得到三族曲坐标面。
+[11] 将 $ \boldsymbol{\mathbf{r}} (u,v,w)$ 写成分量的形式
+[12] \begin{equation}
+x=\varphi_1(u,v,w),\quad y=\psi_1(u,v,w),\quad z=\omega_1(u,v,w)~.
+\end{equation}
+[13] 或写成 $u,v,w$ 的形式
+[14] \begin{equation}
+u=\varphi(x,y,z),\quad v=\psi(x,y,z),\quad w=\omega(x,y,z)~.
+\end{equation}
+[15] 则这些新的曲坐标面在坐标系 $x,y,z$ 中的方程为
+[16] \begin{equation}
+\varphi(x,y,z)=A,\quad \psi(x,y,z)=B,\quad \omega(x,y,z)=C~.
+\end{equation}
+[17] 由不同族中取出任意两个曲坐标面，它们相交于一线
+[18] \begin{equation}
+\psi(x,y,z)=B_0,\quad \omega(x,y,z)=C_0~.
+\end{equation}
+[19] 其中，$B_0,C_0$ 为确定的常数，这条线只有 $u$ 变化，这样的线叫作
+[20] 坐标线
+[21] $u$。
+[22] 同理还可得到坐标线 $v,w$.
+[23] 我们知道，对于含参曲线 $ \boldsymbol{\mathbf{r}} (t)$，$ \mathrm{d}{ \boldsymbol{\mathbf{r}} }/\mathrm{d}{t} $ 是其切线方向向量，而 $( \mathrm{d}{ \boldsymbol{\mathbf{r}} }/\mathrm{d}{t} )/ \left\lvert \mathrm{d}{ \boldsymbol{\mathbf{r}} }/\mathrm{d}{t} \right\rvert $ 是其切线单位向量。
+[24] 而对于曲坐标线 $u,v,w$，$u,v,w$ 分别是其参数，
+[25] 所以曲坐标线 $u,v,w$ 的单位向量便是式 1 中的 $ \hat{\boldsymbol{\mathbf{u}}} , \hat{\boldsymbol{\mathbf{v}}} , \hat{\boldsymbol{\mathbf{w}}} $。
+[26] 所以这三个向量两两正交，便意味着三族曲坐标线的切线两两正交，
+[27] 所以称其为正交曲线坐标系。
+[28] 三条坐标线的切线之间两两正交，这意味着其中任一条坐标线的法向量必与另两个曲坐标在这点构成的曲坐标面相切，而任一曲坐标面上一点的法线必与过该点的另一条坐标线相切。
+
+[/SCOPE:s_coords_let]
+[/SCOPE:s_coords]
+[SCOPE:s_line_element|description|线元]
+[29] 在曲线坐标系中，线元平方为
+[30] \begin{equation}
+\begin{aligned}
+& \,\mathrm{d}{s} ^2= \,\mathrm{d}{x} ^2+ \,\mathrm{d}{y} ^2+ \,\mathrm{d}{z} ^2= \left( \frac{\partial \varphi_1}{\partial u} \,\mathrm{d}{u} + \frac{\partial \varphi_1}{\partial v} \,\mathrm{d}{v} + \frac{\partial \…[truncated]…partial w} \,\mathrm{d}{w} \right) ^2+ \left( \frac{\partial \omega_1}{\partial u} \,\mathrm{d}{u} + \frac{\partial \omega_1}{\partial v} \,\mathrm{d}{v} + \frac{\partial \omega_1}{\partial w} \,\mathrm{d}{w} \right) ^2~.
+\end{aligned}
+\end{equation}
+[31] 此式为 $ \,\mathrm{d}{u} , \,\mathrm{d}{v} , \,\mathrm{d}{w} $ 的二次齐次多项式，其含有乘积 $ \,\mathrm{d}{u} \,\mathrm{d}{v} $ 的项的系数为
+[32] \begin{equation}
+2 \left( \frac{\partial \varphi_1}{\partial u} \cdot \frac{\partial \varphi_1}{\partial v} + \frac{\partial \psi_1}{\partial u} \cdot \frac{\partial \psi_1}{\partial v} + \frac{\partial \omega_1}{\partial u} \cdot \frac{\partial \omega_1}{\partial v} \right) ~.
+\end{equation}
+[33] 同样的，含有 $ \,\mathrm{d}{u} \,\mathrm{d}{w} $ 和 $ \,\mathrm{d}{v} \,\mathrm{d}{w} $ 的项系数分别为
+[34] \begin{equation}
+\begin{aligned}
+& 2 \left( \frac{\partial \varphi_1}{\partial u} \cdot \frac{\partial \varphi_1}{\partial w} + \frac{\partial \psi_1}{\partial u} \cdot \frac{\partial \psi_1}{\partial w} + \frac{\partial \omega_1}{\partial u} \cdot \…[truncated]…ial v} \cdot \frac{\partial \varphi_1}{\partial w} + \frac{\partial \psi_1}{\partial v} \cdot \frac{\partial \psi_1}{\partial w} + \frac{\partial \omega_1}{\partial v} \cdot \frac{\partial \omega_1}{\partial w} \right) ~.
+\end{aligned}
+\end{equation}
+[35] 显然，这些项的系数是各坐标线切线方向向量的点乘，而在正交曲线坐标系中，我们已经知道它们为 0，
+[36] 即正交曲线坐标系中线元平方式 9 可写为
+[37] \begin{equation}
+\,\mathrm{d}{s} ^2=H_u^2 \,\mathrm{d}{u} ^2+H_v^2 \,\mathrm{d}{v} ^2+H_w^2 \,\mathrm{d}{w} ^2~.
+\end{equation}
+[38] \begin{equation}
+\begin{aligned}
+&H_u^2= \left( \frac{\partial \varphi_1}{\partial u} \right) ^2+ \left( \frac{\partial \psi_1}{\partial u} \right) ^2+ \left( \frac{\partial \omega_1}{\partial u} \right) ^2= \left\lvert \frac{\partial \boldsymbol{\ma…[truncated]…i_1}{\partial w} \right) ^2+ \left( \frac{\partial \psi_1}{\partial w} \right) ^2+ \left( \frac{\partial \omega_1}{\partial w} \right) ^2= \left\lvert \frac{\partial \boldsymbol{\mathbf{r}} }{\partial w} \right\rvert ^2~.
+\end{aligned}
+\end{equation}
+[39] 由于每条坐标线上仅有对应的坐标变化，线元 $ \,\mathrm{d}{ \boldsymbol{\mathbf{s}} } $ 可写成
+[40] \begin{equation}
+\,\mathrm{d}{ \boldsymbol{\mathbf{s}} } =H_u \,\mathrm{d}{u} \hat{\boldsymbol{\mathbf{u}}} +H_v \,\mathrm{d}{v} \hat{\boldsymbol{\mathbf{v}}} +H_w \,\mathrm{d}{w} \hat{\boldsymbol{\mathbf{w}}} ~.
+\end{equation}
+[SCOPE:s_line_element_let|let_bind|拉梅系数]
+[41] 其中，$H_u,H_v,H_w$ 称为
+[42] 拉梅系数（Lamé coefficients）
+[43] \begin{equation}
+H_u= \left\lvert \frac{\partial \boldsymbol{\mathbf{r}} }{\partial u} \right\rvert ~,\qquad
+H_v= \left\lvert \frac{\partial \boldsymbol{\mathbf{r}} }{\partial v} \right\rvert ~,\qquad
+H_w= \left\lvert \frac{\partial \boldsymbol{\mathbf{r}} }{\partial w} \right\rvert ~.
+\end{equation}
+[44] 或者，线元可直接求得
+[45] \begin{equation}
+\begin{aligned}
+\,\mathrm{d}{ \boldsymbol{\mathbf{s}} } &= \,\mathrm{d}{ \boldsymbol{\mathbf{r}} } = \frac{\partial \boldsymbol{\mathbf{r}} }{\partial u} \,\mathrm{d}{u} + \frac{\partial \boldsymbol{\mathbf{r}} }{\partial v} \,\mathr…[truncated]…partial \boldsymbol{\mathbf{r}} }{\partial w} \,\mathrm{d}{w} \\
+&=H_u \,\mathrm{d}{u} \hat{\boldsymbol{\mathbf{u}}} +H_v \,\mathrm{d}{v} \hat{\boldsymbol{\mathbf{v}}} +H_w \,\mathrm{d}{w} \hat{\boldsymbol{\mathbf{w}}} ~.
+\end{aligned}
+\end{equation}
+[46] 注意，这里 $ \partial \boldsymbol{\mathbf{r}} /\partial u , \partial \boldsymbol{\mathbf{r}} /\partial v , \partial \boldsymbol{\mathbf{r}} /\partial w $ 是各曲坐标线的切向向量，并且总是分别指向 $u,v,w$ 增大的方向。
+[47] 令 $ \,\mathrm{d}{s} _u=H_u \,\mathrm{d}{u} , \,\mathrm{d}{s} _v=H_v \,\mathrm{d}{v} , \,\mathrm{d}{s} _w=H_w \,\mathrm{d}{w} $，
+[48] 则
+[49] 式 14 [链接 L0]
+[50] 式 16 [链接 L1]
+[51] 可写成更简洁的形式
+[52] \begin{equation}
+\,\mathrm{d}{ \boldsymbol{\mathbf{s}} } = \,\mathrm{d}{s} _u \hat{\boldsymbol{\mathbf{u}}} + \,\mathrm{d}{s} _v \hat{\boldsymbol{\mathbf{v}}} + \,\mathrm{d}{s} _w \hat{\boldsymbol{\mathbf{w}}} ~.
+\end{equation}
+
+[/SCOPE:s_line_element]
+[/SCOPE:s_line_element_let]
+[SCOPE:s_area_volume|description|面积元、体积元]
+[53] 面积元和体积元可用于 “正交曲线坐标系中的重积分”。
+[54] 求得正交曲线坐标系中的线元式 16 后，其面积元 $ \,\mathrm{d}{ \boldsymbol{\mathbf{S}} } $ 和体积元 $ \,\mathrm{d}{V} $ 非常任意求得，
+[55] 即是
+[56] \begin{equation}
+\begin{aligned}
+\,\mathrm{d}{ \boldsymbol{\mathbf{S}} } &= \,\mathrm{d}{s} _v \,\mathrm{d}{s} _w \hat{\boldsymbol{\mathbf{u}}} + \,\mathrm{d}{s} _u \,\mathrm{d}{s} _w \hat{\boldsymbol{\mathbf{v}}} + \,\mathrm{d}{s} _u \,\mathrm{d}{s}…[truncated]…w}}} \\
+&=H_vH_w \,\mathrm{d}{v} \,\mathrm{d}{w} \hat{\boldsymbol{\mathbf{u}}} +H_uH_w \,\mathrm{d}{u} \,\mathrm{d}{w} \hat{\boldsymbol{\mathbf{v}}} +H_uH_v \,\mathrm{d}{u} \,\mathrm{d}{v} \hat{\boldsymbol{\mathbf{w}}} ~,
+\end{aligned}
+\end{equation}
+[57] \begin{equation}
+\,\mathrm{d}{V} = \,\mathrm{d}{s} _u \,\mathrm{d}{s} _v \,\mathrm{d}{s} _w=H_uH_vH_w \,\mathrm{d}{u} \,\mathrm{d}{v} \,\mathrm{d}{w} ~.
+\end{equation}
+[/SCOPE:s_area_volume]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_coords",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "球坐标系是正交曲线坐标系的一个特例"
+  }
+]

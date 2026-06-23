@@ -1,0 +1,291 @@
+{
+  "article_name": "QuaFor",
+  "statements": [
+    {
+      "stmt_id": "st_def1_conditions",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "q",
+        "V",
+        "f",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "q",
+        "f",
+        "rank q",
+        "rank f"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_symmetry",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_polar",
+      "subtype": "remark",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "f",
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_claim",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "q_f"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_verify",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        18,
+        20
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "q",
+        "f",
+        "q_f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_corollary",
+      "subtype": "corollary",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_matrix",
+      "subtype": "definition",
+      "clause_range": [
+        29,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "F",
+        "e_i",
+        "a_i",
+        "b_j",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_formula",
+      "subtype": "remark",
+      "clause_range": [
+        34,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_symmetry",
+      "subtype": "remark",
+      "clause_range": [
+        37,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_diag",
+      "subtype": "definition",
+      "clause_range": [
+        40,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "q",
+        "e_i",
+        "x_i",
+        "f_ii"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_transform",
+      "subtype": "remark",
+      "clause_range": [
+        43,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "A",
+        "u",
+        "v",
+        "F'"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_contract",
+      "subtype": "definition",
+      "clause_range": [
+        49,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "A",
+        "F",
+        "F'"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_conditions",
+      "target": "st_def1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_assump",
+      "target": "st_example1_claim",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_statement",
+      "target": "st_thm1_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof",
+      "target": "st_thm1_corollary",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_example1_claim",
+      "target": "st_def1_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是定义1的特例"
+    },
+    {
+      "source": "st_thm1_statement",
+      "target": "st_def1_conclusion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理1由定义1推出"
+    },
+    {
+      "source": "st_def2_matrix",
+      "target": "st_def1_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义2是定义1在基底下具体化"
+    },
+    {
+      "source": "st_def3_diag",
+      "target": "st_def2_matrix",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "规范型是矩阵的特殊形式"
+    },
+    {
+      "source": "st_def4_contract",
+      "target": "st_def3_transform",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "合同矩阵由基底变换引出"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,167 @@
+[SCOPE:root|description|拓扑空间]
+文章名: Topol
+标题: 拓扑空间
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=拓扑
+  [1] type=example heading=例 1 title=凝聚拓扑和离散拓扑
+  [2] type=example heading=例 2 title=Sierpinski 拓扑
+  [3] type=example heading=例 3 title=反例
+  [4] type=definition heading=定义 2 title=拓扑基
+  [5] type=example heading=例 4 title=度量拓扑
+  [6] type=definition heading=定义 3 title=子拓扑
+  [7] type=example heading=例 5 title=度量空间的子空间
+
+[0] 本文存在未完成的内容。
+[1] 拓扑空间（topological space）是能够定义连续性，连通性，收敛等性质的最一般化的数学空间。
+[2] 度量空间和流形等都是拓扑空间的例子。
+
+[3] 从实函数的连续性中我们知道开集是讨论连续性的基础，
+[4] 所以拓扑学首先要定义什么是开集。
+[5] 我们提取了开集最重要的特征，然后用这些特征来定义开集。
+
+[SCOPE:s_def1|description|定义1 拓扑]
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[6] 定义 1 拓扑
+[7a] 对于任意给定的集合 $X$
+[7b] 如果我们按照一定规，则将它的子集划分为开集（open set）和其它子集，
+[8] 那么所有开集的集合就叫做集合 $X$ 的一个拓扑 $\mathcal{T}$。
+[/SCOPE:s_def1_let]
+[9] 这个规则是：
+[10] 空集 $\varnothing$ 和 $X$ 本身必须是开子集
+[11] 有限交封闭：有限个开子集的交集为开子集
+[12] 任意并封闭：任意个开子集的并集为开子集
+[13] 其中，拓扑空间的第一条公理有时会略去不写。
+[14] 因为我们只要在第二条公理处取指标集为空即可得到 $X \in \mathcal{T}$，取第三条公理的指标集为空就有 $\varnothing \in \mathcal{T}$。
+[15] $X$ 的全体子集构成一个族，
+[16] 即 $X$ 的幂集 $2^X$，显然有 $\mathcal{T}\subset2^X$。
+[17] 同一个集合上的拓扑一般不止一种。
+[18] 每一个开集 $U$ 的补集 $U^C=X-U$，被称为一个闭集（closed set）。
+[19] $2^X$ 的元素中，有些是开集，有些是闭集，有的既开又闭，也有的既不开也不闭。
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|例1 凝聚拓扑和离散拓扑]
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[20] 例 1 凝聚拓扑和离散拓扑
+[21] 对给定的集合 $X$，若只定义 $\varnothing$ 和 $X$ 本身为开集，$X$ 的其他子集为非开，
+[/SCOPE:s_ex1_let]
+[22] 则这个拓扑称为凝聚拓扑或者平凡拓扑（trivial topology），这是符合定义 1 的元素最少的拓扑。
+[23] 相对地，若令 $X$ 的任意子集都为开集，
+[24] 则得到离散拓扑（discrete topology），这是元素最多的拓扑。
+[25] 【未完成】拓扑之间的关系：粗细/疏松致密/强弱
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2 Sierpinski拓扑]
+[SCOPE:s_ex2_let|let_bind|例2的变量]
+[26] 例 2 Sierpinski 拓扑
+[27] 令集合为 $X=\{0, 1\}$，赋予拓扑 $\mathcal{T}=\{\varnothing, \{0\}, X\}$，
+[/SCOPE:s_ex2_let]
+[28] 则我们得到了一个 Sierpinski 空间。
+[29] 光有正例也并不容易建立对 “拓扑” 这一概念的直观，我们再看一个简单的反例：
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|例3 反例]
+[SCOPE:s_ex3_let|let_bind|例3的变量]
+[30] 例 3 反例
+[31] 令集合为 $X=\{0, 1, 2\}$，
+[/SCOPE:s_ex3_let]
+[32] 则集族 $\{\varnothing, \{0\},\{1\},\{2\}, X\}$ 并不是一个拓扑，因为 $\{0\}\cup\{1\}=\{0,1\}$ 并不在这个集族里，
+[33] 从而不满足任意并封闭条件。
+
+[/SCOPE:s_ex3]
+[SCOPE:s_def2|description|定义2 拓扑基]
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[34] 定义 2 拓扑基
+[35] 对于给定的拓扑空间 $(X, \mathcal{T})$，如果 $\mathcal{B}$ 是 $\mathcal{T}$ 的一个子族，而且使得拓扑 $\mathcal{T}$ 中的任何开集都可以表示为 $\mathcal{B}$ 中若干开集（个数任意，可以是 0 个、有限个或无限个）的并，
+[36] 那么称 $\mathcal{B}$ 是 $\mathcal{T}$ 的一个拓扑基（topological basis）。
+[/SCOPE:s_def2_let]
+[37] 拓扑基的定义中，要求 $\mathcal{B}$ 中的元素都是 $X$ 的开集，而 $X$ 中一切开集都可以由这些元素取并集而得到。
+[38] 事实上，也可以不用强调
+[39] $\mathcal{B}$ 中的元素都是开集，而是简单地说一个集合 $U$ 是开集当且仅当 $U$ 是 $\mathcal{B}$ 中若干元素的并，这其中当然也包括单个元素，
+[40] 所以这种说法蕴含了 “$\mathcal{B}$ 中的元素都是开集”。
+[41] 任意拿一些 $X$ 的子集来构成一个族 $\mathcal{A}$，这个族不一定是某个拓扑的拓扑基；
+[42] 也就是说，$\mathcal{A}$ 中任意多个元素的并集所构成的集合，并不一定是一个拓扑。
+[43] 所以不是所有的 $\mathcal{A}$ 都可以成为某个拓扑的拓扑基。
+[44] 如果 $\mathcal{A}$ 是某个拓扑的拓扑基，
+[45] 则简单称其为一个拓扑基1。
+
+[/SCOPE:s_def2]
+[SCOPE:s_ex4|description|例4 度量拓扑]
+[SCOPE:s_ex4_let|let_bind|例4的变量]
+[46] 例 4 度量拓扑
+[47] 参见度量空间文章。
+[48] 通常的欧几里得空间 $\mathbb{R}^n=\{(x_1, \cdots x_n)|x_i\in \mathbb{R}\}$，记 $\{(y_1, \cdots y_n)|y_i\in \mathbb{R}, \sum_i(y_i-x_i)^2< r^2\}$ 为以 $(x_1, \cdots x_n)$ 为球心、$r\geqslant 0$ 为半径的开球（open sphere）. 那么全体开球的集合 $\mathcal{B}$ 是某个拓扑 $\mathcal{T}$ 的拓扑基，$\mathcal{T}$ 此时就是一个度量拓扑（metric topology）。
+[/SCOPE:s_ex4_let]
+[49] 这个拓扑就是最常见的实空间上的拓扑，有很直观的几何意义。
+[50a] 特殊地
+[50b] 当 $N = 1$ 时，$\mathbb R$ 上所有开区间的集合构成一个拓扑基，也，则是说任意个开区间的并和有限个开区间的交都是开区间。
+[51] 由开球生成的这个拓扑，还有一种定义方法：$A\subset \mathbb{R}^n$ 是一个开集，当且仅当对于任意的 $x\in A$，存在一个半径 $r$，使得 $\mathbb R^n$ 中到 $x$ 距离小于 $r$ 的所有点都在 $A$ 内。
+[52] 也就是说，开集的点都是内点。
+[53] 证明所有点都是内点的集合必定可以表示为开球的并：$\mathbb R^n$ 中的集合 $X$ 的内点的定义是必然存在以其为圆心的，由 $X$ 的元素构成的开球，
+[54] 所以如果所有的点都是内点，
+[55] 则 $X$ 必然是开球的并。
+[SCOPE:s_ex4_reductio|reductio|反证：内点集是开球的并]
+[56] 反证：如果 $X$ 中有一点不属于任何由 $X$ 的元素构成的开球，
+[57] 那么它就不是内点，
+[58] 所以 $X$ 也不可能是一个开集。
+
+[/SCOPE:s_ex4]
+[/SCOPE:s_ex4_reductio]
+[SCOPE:s_def3|description|定义3 子拓扑]
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[59] 定义 3 子拓扑
+[60] 如果已经给定了一个拓扑 $(X, \mathcal{T})$，
+[61] 那么在 $X$ 的一个子集 $A$ 上可以继承一个拓扑 $\mathcal{T}|_A$，定义为：
+[/SCOPE:s_def3_let]
+[62] $\mathcal{T}|_A=\{U\cap A|U\in \mathcal{T}\}$。
+[63] 那么 $\mathcal{T}|_A$ 称为 $\mathcal{T}$ 的子拓扑（subtopology）或者限制拓扑，$(A, \mathcal{T}|_A)$ 构成了 $(X, \mathcal{T})$ 的一个子拓扑空间（subspace）。
+[64] 子拓扑的开集，就是原拓扑空间 $X$ 的开集和子空间集合 $A$ 的交。
+
+[/SCOPE:s_def3]
+[SCOPE:s_ex5|description|例5 度量空间的子空间]
+[SCOPE:s_ex5_let|let_bind|例5的变量]
+[65] 例 5 度量空间的子空间
+[66] 设 $(\mathbb{R}^2, \mathcal{T}_2)$ 是二维实度量空间，
+[67] 即 $x-y$ 平面；
+[68] $(\mathbb{R}, \mathcal{T}_1)$ 是一维实度量空间，
+[69] 即 $x$ 轴。
+[/SCOPE:s_ex5_let]
+[70] 那么 $\mathcal{T}_1$ 刚好是 $\mathcal{T}_2$ 的子拓扑。
+
+[/SCOPE:s_ex5]
+[SCOPE:s_summary|description|小结和一点拓展]
+[71] 给定集合 $X$ 上的一个拓扑 $\mathcal{T}$，就是 $X$ 上所有开集的集合。
+[72] 也就是说，一个拓扑是 $X$ 的幂集2的子集：$\mathcal{T}\subset 2^X$。
+[73] 给定拓扑，相当于规定了哪些子集是开集。
+[74] 一个子集可以是开集，也可以是闭集；
+[75] 可以既开又闭，还可以既不开也不闭。
+[76] 我们如上定义了拓扑基的概念，一个拓扑基 $\mathcal{B}$ 也是 $2^X$ 的一个子集，
+[77] 但是它不一定成为拓扑，因为它不要求满足任意并封闭和有限交封闭。
+[78] 事实上，任意给定 $2^X$ 的一个子集 $\mathcal{S}$，
+[79] 即使它不是一个拓扑，我们也可以找到一个包含它的最小拓扑 $T(\mathcal{S})$，这个时候称 $\mathcal{S}$ 是 $T(\mathcal{S})$ 的一个子基（sub-basis）。
+[80] 可以证明，先把 $\mathcal{S}$ 的有限多个元素3拿出来计算出交集，把一切这样的有限交放在一起，构成一个新的集合 $U(\mathcal{S})$；
+[81] 然后再把 $U(\mathcal{S})$ 中的任意多元素拿出来，取并集，再构成一个新的集合 $I(U(\mathcal{S}))$。
+[82] 这样先取全体有限交、再取全体任意并所得到的集合 $I(U(\mathcal{S}))$，就是 $T(\mathcal{S})$。
+[83] 拓扑基也是子基，
+[84] 但是它特殊的地方在于，一个拓扑基 $\mathcal{B}$ 只需要进行一次任意并运算就可以得到拓扑了：$T(\mathcal{B})=I(\mathcal{B})$，省去了考虑交集的麻烦。
+[85] 对于任意的 $\mathcal{S}\subset2^X$，判定它是否是（某个拓扑的）拓扑基的一个常用等价条件是：对于任意的 $S_1, S_2\in \mathcal{S}$ 以及任意的 $x\in S_1\cap S_2$，总能找到一个 $S_3\in\mathcal{S}$，使得 $x\in S_3\subset S_1\cap S_2$。
+[/SCOPE:s_summary]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex4",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "度量拓扑是拓扑基的一个例子"
+  },
+  {
+    "source_scope": "s_ex5",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "度量空间的子空间是子拓扑的例子"
+  }
+]

@@ -1,0 +1,574 @@
+{
+  "article_name": "Commut",
+  "statements": [
+    {
+      "stmt_id": "st_theorem1",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        6
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let_AB",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_AB",
+      "exposed_entities": [
+        "A",
+        "B",
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_cond_commute",
+      "subtype": "condition",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cond_basis",
+      "subtype": "condition",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cond_A_closed",
+      "subtype": "condition",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cond_B_closed",
+      "subtype": "condition",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_deg_discussion",
+      "subtype": "remark",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_nondeg_unique",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_deg_nonunique",
+      "subtype": "conclusion",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_closed_def",
+      "subtype": "remark",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_closed_spec",
+      "subtype": "remark",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_2to1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_2to1",
+      "exposed_entities": [
+        "A",
+        "B",
+        "v_i",
+        "a_i",
+        "b_i"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_2to1_calc",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof_2to1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_2to1_commute",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof_2to1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_1to2_goal",
+      "subtype": "assumption",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_1to2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_nondeg_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_nondeg",
+      "exposed_entities": [
+        "A",
+        "v_i",
+        "a_i"
+      ]
+    },
+    {
+      "stmt_id": "st_nondeg_calc",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        35
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_nondeg",
+      "exposed_entities": [
+        "b_i"
+      ]
+    },
+    {
+      "stmt_id": "st_nondeg_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        36,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_nondeg",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_deg_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        38,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_deg",
+      "exposed_entities": [
+        "A",
+        "B",
+        "a_i",
+        "n_i",
+        "v_i"
+      ]
+    },
+    {
+      "stmt_id": "st_deg_calc",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        49
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_deg",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_deg_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_deg",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_deg_remark_unfinished",
+      "subtype": "remark",
+      "clause_range": [
+        51,
+        68
+      ],
+      "truth_value": null,
+      "scope_id": "s_deg",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_compute_intro",
+      "subtype": "remark",
+      "clause_range": [
+        69,
+        69
+      ],
+      "truth_value": null,
+      "scope_id": "s_compute",
+      "exposed_entities": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_compute_step1",
+      "subtype": "conclusion",
+      "clause_range": [
+        70,
+        70
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_compute",
+      "exposed_entities": [
+        "P"
+      ]
+    },
+    {
+      "stmt_id": "st_compute_step2",
+      "subtype": "conclusion",
+      "clause_range": [
+        71,
+        72
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_compute",
+      "exposed_entities": [
+        "B1"
+      ]
+    },
+    {
+      "stmt_id": "st_compute_step3",
+      "subtype": "conclusion",
+      "clause_range": [
+        73,
+        74
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_compute",
+      "exposed_entities": [
+        "Ci",
+        "Di",
+        "Q"
+      ]
+    },
+    {
+      "stmt_id": "st_compute_step4",
+      "subtype": "conclusion",
+      "clause_range": [
+        75,
+        75
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_compute",
+      "exposed_entities": [
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_data",
+      "subtype": "example",
+      "clause_range": [
+        76,
+        87
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "A",
+        "B",
+        "P",
+        "B1",
+        "C1",
+        "C2",
+        "C3",
+        "Q",
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_explanation",
+      "subtype": "remark",
+      "clause_range": [
+        88,
+        115
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_algebra_goal",
+      "subtype": "assumption",
+      "clause_range": [
+        116,
+        118
+      ],
+      "truth_value": null,
+      "scope_id": "s_algebra",
+      "exposed_entities": [
+        "A",
+        "B",
+        "P",
+        "B1"
+      ]
+    },
+    {
+      "stmt_id": "st_algebra_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        119,
+        162
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_algebra",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_algebra_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        163,
+        163
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_algebra",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let_AB",
+      "target": "st_theorem1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cond_commute",
+      "target": "st_cond_basis",
+      "edge_type": "equivalent",
+      "category": "logic"
+    },
+    {
+      "source": "st_cond_commute",
+      "target": "st_cond_A_closed",
+      "edge_type": "equivalent",
+      "category": "logic"
+    },
+    {
+      "source": "st_cond_commute",
+      "target": "st_cond_B_closed",
+      "edge_type": "equivalent",
+      "category": "logic"
+    },
+    {
+      "source": "st_cond_basis",
+      "target": "st_cond_commute",
+      "edge_type": "equivalent",
+      "category": "logic"
+    },
+    {
+      "source": "st_cond_A_closed",
+      "target": "st_cond_commute",
+      "edge_type": "equivalent",
+      "category": "logic"
+    },
+    {
+      "source": "st_cond_B_closed",
+      "target": "st_cond_commute",
+      "edge_type": "equivalent",
+      "category": "logic"
+    },
+    {
+      "source": "st_cond_commute",
+      "target": "st_nondeg_unique",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cond_commute",
+      "target": "st_deg_nonunique",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_2to1_assump",
+      "target": "st_proof_2to1_calc",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_2to1_calc",
+      "target": "st_proof_2to1_commute",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_nondeg_assump",
+      "target": "st_nondeg_calc",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_nondeg_calc",
+      "target": "st_nondeg_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_deg_assump",
+      "target": "st_deg_calc",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_deg_calc",
+      "target": "st_deg_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_compute_step1",
+      "target": "st_compute_step2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_compute_step2",
+      "target": "st_compute_step3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_compute_step3",
+      "target": "st_compute_step4",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_algebra_goal",
+      "target": "st_algebra_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_algebra_proof",
+      "target": "st_algebra_result",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_proof_2to1_commute",
+      "target": "st_theorem1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明2→1是定理1的一部分"
+    },
+    {
+      "source": "st_deg_result",
+      "target": "st_proof_1to2_goal",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "简并情况完成证明"
+    },
+    {
+      "source": "st_nondeg_result",
+      "target": "st_proof_1to2_goal",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "非简并是简并的特例"
+    },
+    {
+      "source": "st_compute_step4",
+      "target": "st_theorem1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "具体计算是定理的应用"
+    },
+    {
+      "source": "st_algebra_result",
+      "target": "st_theorem1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "代数证明是定理的另一种证明"
+    },
+    {
+      "source": "st_example1_data",
+      "target": "st_compute_step1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是计算步骤的实例"
+    }
+  ],
+  "unresolved": []
+}

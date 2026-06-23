@@ -1,0 +1,371 @@
+{
+  "article_name": "FreGrp",
+  "statements": [
+    {
+      "stmt_id": "st_def1_letter",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "S"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_example",
+      "subtype": "example",
+      "clause_range": [
+        3,
+        11
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_word",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_example",
+      "subtype": "example",
+      "clause_range": [
+        15,
+        21
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_let_S",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3_let",
+      "exposed_entities": [
+        "S"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_W_S",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "W(S)"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_operation",
+      "subtype": "definition",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_example",
+      "subtype": "example",
+      "clause_range": [
+        27,
+        30
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def4_let_S",
+      "subtype": "assumption",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4_let",
+      "exposed_entities": [
+        "S"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_inverse",
+      "subtype": "definition",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "x",
+        "x^{-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_cancel",
+      "subtype": "definition",
+      "clause_range": [
+        37,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_let_S",
+      "subtype": "assumption",
+      "clause_range": [
+        43,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "S"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_F_S",
+      "subtype": "definition",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "F(S)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_group",
+      "subtype": "theorem",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_identity",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_inverse",
+      "subtype": "conclusion",
+      "clause_range": [
+        48,
+        49
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        50,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_let_S_G",
+      "subtype": "assumption",
+      "clause_range": [
+        53,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "S",
+        "G"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_f",
+      "subtype": "assumption",
+      "clause_range": [
+        54,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_extension",
+      "subtype": "theorem",
+      "clause_range": [
+        55,
+        55
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_surjective",
+      "subtype": "conclusion",
+      "clause_range": [
+        57,
+        58
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_quotient",
+      "subtype": "conclusion",
+      "clause_range": [
+        59,
+        59
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def3_let_S",
+      "target": "st_def3_W_S",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_let_S",
+      "target": "st_def3_operation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def4_let_S",
+      "target": "st_def4_inverse",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def4_let_S",
+      "target": "st_def4_cancel",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let_S",
+      "target": "st_thm1_F_S",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let_S",
+      "target": "st_thm1_group",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_group",
+      "target": "st_thm1_identity",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_group",
+      "target": "st_thm1_inverse",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let_S_G",
+      "target": "st_thm2_extension",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_f",
+      "target": "st_thm2_extension",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_extension",
+      "target": "st_thm2_surjective",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_surjective",
+      "target": "st_thm2_quotient",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_group",
+      "target": "st_def3_operation",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1基于定义3的运算构造自由群"
+    },
+    {
+      "source": "st_thm1_group",
+      "target": "st_def4_inverse",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1使用定义4的逆字母和消去规则"
+    },
+    {
+      "source": "st_thm2_extension",
+      "target": "st_thm1_group",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2推广了定理1的自由群性质"
+    }
+  ],
+  "unresolved": []
+}

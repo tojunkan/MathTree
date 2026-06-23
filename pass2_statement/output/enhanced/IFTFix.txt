@@ -1,0 +1,75 @@
+[SCOPE:root|description|隐函数定理的不动点证明]
+文章名: IFTFix
+标题: 隐函数定理的不动点证明
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=隐函数定理
+
+[SCOPE:s_compact|description|紧凑表述]
+[0] 我们可以将隐函数定理用比较紧凑的形式表达出来. 在如下的版本中, 已知的"隐式关系"$F(x,y)$ 是一个映射, 其中 $x$ 是 $n$ 维的, $y$ 是 $m$ 维的, 映射的取值也是 $m$ 维的. 这样一来, 对于给定的 $x$, 求解隐式方程 $F(x,y)=0$ 就相当于从 $m$ 个方程求解 $m$ 个未知量($y$ 的 $m$ 个分量). 为了这个方程能够求解, 自然期望方程之间需要是"独立"的.
+
+[/SCOPE:s_compact]
+[SCOPE:s_theorem|description|隐函数定理]
+[1] 定理 1 隐函数定理
+[SCOPE:s_theorem_let|let_bind|定理变量]
+[2] 设 $(x_0,y_0)\in\mathbb{R}^n\times\mathbb{R}^m$ 是给定的点. 设在某个开集 $B(x_0,R)\times B(y_0,R)$ 上定义了映射 $F:U\to\mathbb{R}^m$, 满足如下条件:
+[3] $F(x_0,y_0)=0$.
+[4] $F(x,y)$ 对 $y$ 是连续可微的, 而且雅可比矩阵
+[5] $$
+\frac{\partial F}{\partial y}(x_0,y_0)~
+$$
+[6] 是可逆的.
+[/SCOPE:s_theorem_let]
+[7] 则存在 $r< R$ 以及映射 $f:B(x_0,r)\to B(y_0,R)$, 使得 $f(x_0)=y_0$, 而且 $F(x,f(x))=0$. 换句话说, 在 $x_0$ 的某个邻域内, 给定了 $x$ 就可以唯一求解 $y$, 从而 $x\to y$ 确定了一个函数关系.
+
+[/SCOPE:s_theorem]
+[SCOPE:s_proof|description|证明]
+[8] 除了文章多元隐函数的存在定理中给出的归纳证明之外, 还可以用不动点定理给出一个简洁的, 而且是构造性的证明.
+[SCOPE:s_proof_let_A|let_bind|选择矩阵A]
+[9a] 如果要求解未知量 $y$ 的方程 $F(x,y)=0$,
+[9b] 则需要对它进行适当的变换, 变成不动点方程的形状. 最简单的变换方式, 就是乘上一个 $m\times m$ 的常值可逆方阵 $A$, 将方程重写为
+[10] $$
+y=y+A\cdot F(x,y)~.
+$$
+[11] 那么该选择怎样的方阵 $A$, 才能使得右边(视为 $y$ 的映射)有不动点呢?
+[SCOPE:s_proof_let_G|let_bind|定义映射G_x]
+[12a] (y)$, 其中 $x$ 接近 $x_0$, 是已知的. 则 $G_x
+[12b] (y)$ 对 $y$ 的微分是
+[13] \begin{equation}
+\frac{\partial G_x(y)}{\partial y}=\mathrm{Id}_m+A\cdot\frac{\partial F}{\partial y}(x,y)~.
+\end{equation}
+[/SCOPE:s_proof_let_G]
+[14a] (y)}{\partial y}$ 尽可能小, 这样就能保证 $y\to G_x
+[14b] (y)$ 是压缩映射. 因此, 最合适的选择当然是
+[15] $$
+A=-\left(\frac{\partial F}{\partial y}(x_0,y_0)\right)^{-1}~.
+$$
+[/SCOPE:s_proof_let_A]
+[SCOPE:s_proof_compression|description|压缩映射论证]
+[16] 根据定理的条件, 雅可比矩阵 $\frac{\partial F(x_0,y_0)}{\partial y}$ 可逆, 所以 $A$ 是良好定义的; 进一步, 根据定理的条件, 如果 $(x,y)$ 足够地接近 $(x_0,y_0)$, 那么
+[17] 式 1 [链接 L0]
+[18] 的矩阵范数就会小于 1/2. 因此, 存在 $r< R$, 使得只要 $|x-x_0|\leq r$, $|y_1-y_0|\leq r$, $|y_2-y_0|\leq r$, 就有
+[19] $$
+|F(x,y_1)-F(x,y_2)|\leq\frac{1}{2}|y_1-y_2|~.
+$$
+[20] 因此对于 $x\in \bar B(x_0,r)$, 映射 $y\to G_x(y)$ 将闭球 $\bar B(y_0,r)$ 映射到它自己, 而且是压缩映射. 根据巴拿赫不动点定理, 它有唯一一个不动点, 而这正是方程 $F(x,y)=0$ 的解. 给定了 $x$ 后, 解 $y$ 就唯一确定了, 它当然给出了 $x$ 的函数. 证毕.
+[/SCOPE:s_proof_compression]
+[21a] (x)$ 的近似计算方法: 对于接近 $x_0$ 的 $x$, 函数值 $y=f
+[21b] (x)$ 由迭代序列
+[22] $$
+y_{k+1}=y_k-\left(\frac{\partial F}{\partial y}(x_0,y_0)\right)^{-1}\cdot F(x,y_k)~
+$$
+[23] 所逼近.
+[/SCOPE:s_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_proof",
+    "target_scope": "s_theorem",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明推出定理"
+  }
+]

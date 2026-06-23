@@ -1,0 +1,212 @@
+{
+  "article_name": "DInt",
+  "statements": [
+    {
+      "stmt_id": "st_intro_let",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let",
+      "exposed_entities": [
+        "f(x)",
+        "[a,b]",
+        "x_i",
+        "λ",
+        "ξ_i"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_let",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "λ_i",
+        "基本区间分划序列"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_dir1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        36,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_dir1_let",
+      "exposed_entities": [
+        "{λ_i}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_dir1_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        41,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_dir1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_dir2_reductio_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        49,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_dir2_reductio",
+      "exposed_entities": [
+        "ε"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_dir2_reductio_let",
+      "subtype": "assumption",
+      "clause_range": [
+        53,
+        61
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_dir2_reductio_let",
+      "exposed_entities": [
+        "{δ_i}",
+        "{λ_i}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_dir2_reductio_contra",
+      "subtype": "conclusion",
+      "clause_range": [
+        62,
+        64
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_dir2_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_dir2_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        48,
+        65
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_dir2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_concl",
+      "subtype": "theorem",
+      "clause_range": [
+        29,
+        66
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def4_main",
+      "subtype": "definition",
+      "clause_range": [
+        67,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "∫_a^b f(x) dx",
+        "可积函数",
+        "黎曼和"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_remark",
+      "subtype": "remark",
+      "clause_range": [
+        74,
+        77
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_intro_let",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_let",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_dir1_let",
+      "target": "st_thm1_dir1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_dir2_reductio_assump",
+      "target": "st_thm1_dir2_reductio_contra",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_dir2_reductio_let",
+      "target": "st_thm1_dir2_reductio_contra",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_dir2_reductio_contra",
+      "target": "st_thm1_dir2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_dir1_concl",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_dir2_concl",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def4_main",
+      "target": "st_def4_remark",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_dir1_concl",
+      "target": "st_thm1_dir2_concl",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "定理1证明的两个方向"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,188 @@
+{
+  "article_name": "Vfield",
+  "statements": [
+    {
+      "stmt_id": "st_def_vector_field",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "P",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_example_electric",
+      "subtype": "example",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_water",
+      "subtype": "example",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_others",
+      "subtype": "example",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rect_representation",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_rect",
+      "exposed_entities": [
+        "x",
+        "y",
+        "z",
+        "v_x",
+        "v_y",
+        "v_z",
+        "hat_x",
+        "hat_y",
+        "hat_z"
+      ]
+    },
+    {
+      "stmt_id": "st_sphere_representation",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_sphere",
+      "exposed_entities": [
+        "r",
+        "theta",
+        "phi",
+        "v_r",
+        "v_theta",
+        "v_phi",
+        "hat_r",
+        "hat_theta",
+        "hat_phi"
+      ]
+    },
+    {
+      "stmt_id": "st_sphere_note",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_sphere",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_field_lines_def",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_field_lines",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_divergence_free",
+      "subtype": "condition",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_field_lines",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_curl_free",
+      "subtype": "condition",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_field_lines",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def_vector_field",
+      "target": "st_example_electric",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_vector_field",
+      "target": "st_example_water",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_vector_field",
+      "target": "st_example_others",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_rect_representation",
+      "target": "st_sphere_representation",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_sphere_representation",
+      "target": "st_sphere_note",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_field_lines_def",
+      "target": "st_divergence_free",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_field_lines_def",
+      "target": "st_curl_free",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": [
+    "Scope s_rect_let 和 s_sphere_let 没有出口 Statement，无法建立跨 scope 边。",
+    "文末未提供 Scope 间关系表。",
+    "第21行【未完成】链接，说明 未处理。"
+  ]
+}

@@ -1,0 +1,370 @@
+{
+  "article_name": "MHDiff",
+  "statements": [
+    {
+      "stmt_id": "st_assump_f",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_second_diff_let",
+      "exposed_entities": [
+        "u",
+        "f",
+        "x_1",
+        "x_n",
+        "D"
+      ]
+    },
+    {
+      "stmt_id": "st_def_first_diff",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_second_diff_let",
+      "exposed_entities": [
+        "du",
+        "dx_i"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_first_diff_name",
+      "subtype": "remark",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_second_diff",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_obs_du_func",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_second_diff",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_second_cond",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_second_diff",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_concl_second_diff_exists",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_second_diff",
+      "exposed_entities": [
+        "d^2u"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_const_dx",
+      "subtype": "remark",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_second_diff",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_formula_second_diff",
+      "subtype": "theorem",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_second_diff",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_notation_first",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_notation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_notation_second",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_notation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_kth_diff",
+      "subtype": "definition",
+      "clause_range": [
+        20,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_higher_diff_let",
+      "exposed_entities": [
+        "d^{k-1}u",
+        "d^ku"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_cont_partials",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_higher_diff_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_concl_kth_diff_exists",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_higher_diff_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_formula_kth_diff",
+      "subtype": "theorem",
+      "clause_range": [
+        25,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_higher_diff",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_base_cases",
+      "subtype": "assumption",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_induction_hypothesis",
+      "subtype": "assumption",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_expand_kth",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        35
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_cont_partials_kplus1",
+      "subtype": "assumption",
+      "clause_range": [
+        36,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_induction",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_diff_kplus1",
+      "subtype": "conclusion",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof_induction",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_formal_multiplication",
+      "subtype": "remark",
+      "clause_range": [
+        39,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_induction",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_power_rule",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        44
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof_induction",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_final_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof_induction",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_qed",
+      "subtype": "remark",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_f",
+      "target": "st_def_first_diff",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_second_cond",
+      "target": "st_concl_second_diff_exists",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_cont_partials",
+      "target": "st_concl_kth_diff_exists",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_base_cases",
+      "target": "st_induction_hypothesis",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_induction_hypothesis",
+      "target": "st_expand_kth",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_cont_partials_kplus1",
+      "target": "st_diff_kplus1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_diff_kplus1",
+      "target": "st_power_rule",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_power_rule",
+      "target": "st_final_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_notation_first",
+      "target": "st_notation_second",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_kth_diff",
+      "target": "st_formula_kth_diff",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_concl_second_diff_exists",
+      "target": "st_formula_second_diff",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_expand_kth",
+      "target": "st_diff_kplus1",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_concl_second_diff_exists",
+      "target": "st_def_kth_diff",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "二阶微分是高阶微分的特例"
+    },
+    {
+      "source": "st_notation_second",
+      "target": "st_concl_second_diff_exists",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "记号约定基于二阶微分"
+    },
+    {
+      "source": "st_final_formula",
+      "target": "st_formula_kth_diff",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明高阶微分的记号化等式"
+    }
+  ],
+  "unresolved": []
+}

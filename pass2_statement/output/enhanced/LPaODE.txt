@@ -1,0 +1,173 @@
+[SCOPE:root|description|一阶线性偏微分方程与常微分方程组的等价性]
+文章名: LPaODE
+标题: 一阶线性偏微分方程与常微分方程组的等价性
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=corollary heading=推论 1 title=
+
+[SCOPE:s_intro|description|引言]
+[0] 1本文将说明，一阶线性偏微分方程与常微分方程组具有直接的联系：一阶线性偏微分方程求解问题可以化为常微分方程组的求解问题。
+[1] 这也是对应常微分方程组被称为一阶线性偏微分方程的特征方程组的原因。
+
+[/SCOPE:s_intro]
+[SCOPE:s_ode_sym|description|将常微分方程组写成更为对称的形式]
+[2] 一般的常微分方程组都可写为下面的形式（定理 2 ）
+[3] \begin{equation}
+\frac{\mathrm{d}{y_i}}{\mathrm{d}{x}} =f_i(x,y_1,\cdots,y_n) \qquad (i=1,\cdots,n)~,
+\end{equation}
+[4] 这可写为下面等价的形式
+[5] \begin{equation}
+\,\mathrm{d}{x} =\frac{ \,\mathrm{d}{y} _1}{f_1(x,y_1,\cdots,y_n)}=\cdots=\frac{ \,\mathrm{d}{y} _n}{f_n(x,y_1,\cdots,y_n)}~.
+\end{equation}
+[SCOPE:s_ode_sym_let|let_bind|变量重命名]
+[6] 为使第一项的分母不为 1，可把该式所有的分母都乘上共同的因子。
+[7] 并且为对称起见，将 $x$ 记为 $x_1$，$y_i$ 记为 $x_{i+1}$，上式可写为更具对称性的等价形式：
+[8] \begin{equation}
+\frac{ \,\mathrm{d}{x} _1}{X_1}=\cdots=\frac{ \,\mathrm{d}{x} _{n+1}}{X_{n+1}}~.
+\end{equation}
+[9] 其中，$X_i$ 是变量 $x_1,\cdots,x_{n+1}$ 的函数。
+[/SCOPE:s_ode_sym_let]
+[10] 当常微分方程组写成式 3 时，可看出这 $n+1$ 个变量是等价的，并没有特定哪个变量作为自变量。
+[11] 在新的记号下，方程组的积分是（定义 3 ）
+[12] \begin{equation}
+\varphi_i(x_1,\cdots,x_{n+1})=C_i,\quad i=1,\cdots,n~.
+\end{equation}
+
+[/SCOPE:s_ode_sym]
+[SCOPE:s_ode_to_pde|description|从常微分方程组到线性偏微分方程]
+[13] 在文章 “一般积分” 的末尾，已经知道，把方程组的解代入其积分里面，积分便是常数。
+[SCOPE:s_ode_to_pde_let|let_bind|设 varphi 是积分]
+[14] 设 $\varphi(x_1,\cdots,x_{n+1})$ 是方程组的积分，不失一般性设 $x_1$ 是自变量，而 $x_2,\cdots,x_{n+1}$ 是 $x_1$ 的函数，它们是方程组的解。
+[/SCOPE:s_ode_to_pde_let]
+[15] 于是 $\varphi(x_1,\cdots,x_{n+1})=C$。
+[16] 这就是说，代入 $x_2,\cdots,x_{n+1}$ 后，应当消去自变量 $x_1$2。
+[17] 于是 $\varphi$ 对 $x_1$ 进行全微商应等于 0：
+[18] \begin{equation}
+\frac{\partial \varphi}{\partial x_1} + \frac{\partial \varphi}{\partial x_2} \frac{\mathrm{d}{x_2}}{\mathrm{d}{x_1}} +\cdots+ \frac{\partial \varphi}{\partial x_{n+1}} \frac{\mathrm{d}{x_{n+1}}}{\mathrm{d}{x_1}} =0~,
+\end{equation}
+[19] \begin{equation}
+\frac{\partial \varphi}{\partial x_1} \,\mathrm{d}{x} _1+ \frac{\partial \varphi}{\partial x_2} \,\mathrm{d}{x_2} +\cdots+ \frac{\partial \varphi}{\partial x_{n+1}} \,\mathrm{d}{x_{n+1}} =0~.
+\end{equation}
+[20] 由式 3 ，无论代入方程组哪个解，$ \,\mathrm{d}{x} _i$ 都与 $X_i$ 的大小成正比，
+[21] 于是式 6 可写成下列一阶线性偏微分方程：
+[22] \begin{equation}
+X_1 \frac{\partial \varphi}{\partial x_1} +X_2 \frac{\partial \varphi}{\partial x_2} +\cdots+X_{n+1} \frac{\partial \varphi}{\partial x_{n+1}} =0~.
+\end{equation}
+[23a] 根据常微分方程组初始条件的任意性
+[23b] 若我们取方程组的所有解，变量 $x_1,\cdots,x_{n+1}$，则可能取任意的值，而对方程组任意解，$\varphi$ 都满足
+[24] 式 7 [链接 L0]
+[25] ，
+[26] 所以函数 $\varphi(x_1,\cdots,x_{n+1})$ 应当恒满足
+[27] 式 7 [链接 L1]
+[28] 。
+[29] 于是证得下面定理一部分
+
+[/SCOPE:s_ode_to_pde]
+[SCOPE:s_theorem1|description|定理 1]
+[30] 定理 1
+[31] $\varphi(x_1,\cdots,x_{n+1})=C$ 是方程组式 3 的积分，当且仅当函数 $\varphi(x_1,\cdots,x_{n+1})$ 满足偏微分方程式 7 。
+[SCOPE:s_theorem1_proof|description|定理 1 证明]
+[32] 证明：现在来证明定理的另一部分。
+[SCOPE:s_theorem1_proof_let|let_bind|设 varphi 是 PDE 解]
+[33] 设 $\varphi(x_1,\cdots,x_{n+1})$ 是偏微分方程式 7 的解，现在代入式 1 的解于 $\varphi$，
+[/SCOPE:s_theorem1_proof_let]
+[34] 于是
+[35] \begin{equation}
+\,\mathrm{d}{\varphi} = \frac{\partial \varphi}{\partial x_1} \,\mathrm{d}{x} _1+ \frac{\partial \varphi}{\partial x_2} \,\mathrm{d}{x_2} +\cdots+ \frac{\partial \varphi}{\partial x_{n+1}} \,\mathrm{d}{x_{n+1}} ~,
+\end{equation}
+[36] \begin{equation}
+\,\mathrm{d}{\varphi} =\lambda \left(X_1 \frac{\partial \varphi}{\partial x_1} +X_2 \frac{\partial \varphi}{\partial x_2} +\cdots+X_{n+1} \frac{\partial \varphi}{\partial x_{n+1}} \right) ~.
+\end{equation}
+[37] 其中已设
+[38] 式 3 [链接 L2]
+[39] 的比例系数为 $\lambda$。
+[40] 于是由
+[41] 式 7 [链接 L3]
+[42] \begin{equation}
+\,\mathrm{d}{\varphi} =0~.
+\end{equation}
+[43] 而一阶微分具有形式不变性（链接），
+[44] 即将函数的变量当成自变量或自变量的函数，函数的一阶微分形式都是一样的。
+[45] 在现在的情形，$\varphi$ 就是一个自变量的函数，不失一般性设为 $x_1$，
+[46] 于是
+[47] 式 10 [链接 L4]
+[48] 相当于 $\varphi$ 对 $x_1$ 的微商为 0，
+[49] 即 $\varphi$ 不依赖于 $x_1$ 而等于常数，根据微分方程组积分的定义(“
+[50] 一般积分 [链接 L5]
+[51] ” 文末所说的)，$\varphi(x_1,\cdots,x_{n+1})$ 是方程组
+[52] 式 3 [链接 L6]
+[53] 的积分。
+[54] 证毕！
+[/SCOPE:s_theorem1_proof]
+[55] 定理 1 建立了微分方程组式 3 的积分与一阶线性偏微分方程式 7 的解的等价性。
+[56] 于是（由 “一般积分” 文末所说的），下面推论成立
+
+[/SCOPE:s_theorem1]
+[SCOPE:s_corollary1|description|推论 1]
+[57] 推论 1
+[58] \begin{equation}
+\varphi_i(x_1,\cdots,x_{n+1})=C_i\qquad (i=1,\cdots,n)~
+\end{equation}
+
+[/SCOPE:s_corollary1]
+[SCOPE:s_general_pde|description|一般的一阶线性偏微分方程]
+[59] 式 7 是一阶的线性齐次偏微分方程，其自由项为 0，对一般的一阶线性偏微分方程，其形式为
+[60] \begin{equation}
+Y_1 \frac{\partial \varphi}{\partial x_1} +Y_2 \frac{\partial \varphi}{\partial x_2} +\cdots+Y_{n+1}=0~,
+\end{equation}
+[61] 其中 $Y_i$ 是 $x_1,\cdots,x_n,\varphi$ 的函数。
+[SCOPE:s_general_pde_let|let_bind|设 omega 是隐函数]
+[62] 设 $\varphi$ 是式 12 的解，我们考虑下面关于解 $\varphi$ 的方程构成的族
+[63] \begin{equation}
+\omega(x_1,\cdots,x_n,\varphi)=C~.
+\end{equation}
+[64] 其中 $C$ 是任意的常数，任意的常数 $C$ 使 $x_1,\cdots,x_n,\varphi$ 能够取任意的值。
+[/SCOPE:s_general_pde_let]
+[65] 依照隐函数求解法则
+[66] \begin{equation}
+\frac{\partial \varphi}{\partial x_i} =-\frac{ \partial \omega/\partial x_i }{ \partial \omega/\partial \varphi }~,
+\end{equation}
+[67] 上式代入
+[68] 式 12 [链接 L7]
+[69] \begin{equation}
+Y_1 \frac{\partial \omega}{\partial x_1} +Y_2 \frac{\partial \omega}{\partial x_2} +\cdots+Y_{n+1} \frac{\partial \omega}{\partial \varphi} =0~.
+\end{equation}
+[70] 由于 $x_1,\cdots,x_n,\varphi$ 可取任意值，
+[71] 于是 $\omega$ 恒满足上式，由
+[72] 定理 1 [链接 L8]
+[73] ，解这个偏微分方程可以化为求它对应的常微分方程组。
+[74] 若求得 $\omega$，带入
+[75] 式 13 [链接 L9]
+[76] ，就确定了 $\varphi$。
+[77] 注意：由推论 1 ，偏微分方程的一般解含有任意函数，而常微分方程的解只有任意常数出现。
+
+跨文章引用:
+  [L5] 一般积分 → IntGen
+[/SCOPE:s_general_pde]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_theorem1",
+    "target_scope": "s_ode_to_pde",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理 1 的充分性由 s_ode_to_pde 推导得出"
+  },
+  {
+    "source_scope": "s_corollary1",
+    "target_scope": "s_theorem1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论 1 是定理 1 的直接推论"
+  },
+  {
+    "source_scope": "s_general_pde",
+    "target_scope": "s_theorem1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "一般一阶线性 PDE 化为齐次后应用定理 1"
+  }
+]

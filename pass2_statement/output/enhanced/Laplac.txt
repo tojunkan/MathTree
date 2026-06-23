@@ -1,0 +1,44 @@
+[SCOPE:root|description|拉普拉斯算符]
+文章名: Laplac
+标题: 拉普拉斯算符
+
+[SCOPE:s_def|description|定义]
+[SCOPE:s_def_let|let_bind|标量函数 u]
+[0] 1我们令一个标量函数 $u(x, y, z)$ 的梯度的散度为它的拉普拉斯（Laplacian），合成的算符（类比复合函数）叫做拉普拉斯算符，记为 $ \boldsymbol{\nabla}^2 $ 或 $\Delta$。
+[1] \begin{equation}
+\Delta u = \boldsymbol{\nabla}^2 u = \boldsymbol{\nabla}\boldsymbol{\cdot} ( \boldsymbol\nabla u) = \frac{\partial^{2}{u}}{\partial{x}^{2}} + \frac{\partial^{2}{u}}{\partial{y}^{2}} + \frac{\partial^{2}{u}}{\partial{z}^{2}} ~,
+\end{equation}
+[/SCOPE:s_def_let]
+[2] 也可以记
+[3] \begin{equation}
+\begin{aligned}
+\boldsymbol{\nabla}^2 &= \boldsymbol{\nabla} \boldsymbol\cdot \boldsymbol{\nabla} = \left( \hat{\boldsymbol{\mathbf{x}}} \frac{\partial}{\partial{x}} + \hat{\boldsymbol{\mathbf{y}}} \frac{\partial}{\partial{y}} + \hat{\boldsymbol{\mathbf{z}}} \frac{\partial}{\partial{z}} \right) ^2\\
+&= \frac{\partial^{2}{}}{\partial{x}^{2}} + \frac{\partial^{2}{}}{\partial{y}^{2}} + \frac{\partial^{2}{}}{\partial{z}^{2}} ~,
+\end{aligned}
+\end{equation}
+[4] 这些定义也容易拓展到 $N = 1, 2, \dots$ 元函数上。
+[5] 柱坐标系中的拉普拉斯算符见式 4 ，球坐标中的拉普拉斯算符见式 4 。
+
+[/SCOPE:s_def]
+[SCOPE:s_apps|description|在物理中的应用]
+[6] 在二维波动方程中，薄膜上一个小面源的受力正比于薄膜形状 $u(x, y)$ 在该处的拉普拉斯。
+[7] 结合牛顿第二定律，就得到了二维波动方程
+[8] \begin{equation}
+\boldsymbol{\nabla}^2 u - \frac{\sigma}{\lambda} \frac{\partial^{2}{u}}{\partial{t}^{2}} = 0~.
+\end{equation}
+[9] 在静电学中，电势 $V$ 的梯度是电场的负，而电场的散度是电荷密度 $\rho$ 除以电介质常数 $\epsilon_0$，这样就得到了静电场的泊松方程
+[10] \begin{equation}
+\boldsymbol{\nabla}^2 V = -\frac{\rho}{\epsilon_0}~.
+\end{equation}
+[11] 由于万有引力也服从平方反比定律，
+[12] 所以同理引力势（引力势能除以质量）$V_G$ 和质量密度 $\rho_m$ 也有类似的关系
+[13] \begin{equation}
+\boldsymbol{\nabla}^2 V_G = 4\pi G \rho_m~.
+\end{equation}
+[14] 在热力学中，对一块均匀的各向同性的介质，温度和能量密度 $u$ 成正比，温度的梯度和能流密度成正比，而能流密度的散度和能量密度的变化率成正比，
+[15] 于是有热传导方程
+[16] \begin{equation}
+\boldsymbol{\nabla}^2 u = \kappa \frac{\partial u}{\partial t} ~.
+\end{equation}
+[/SCOPE:s_apps]
+[/SCOPE:root]

@@ -1,0 +1,306 @@
+{
+  "article_name": "CMfTS",
+  "statements": [
+    {
+      "stmt_id": "st_tangent_real",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_tangent_cotangent",
+      "exposed_entities": [
+        "M",
+        "T_{\\mathbb R, p} M"
+      ]
+    },
+    {
+      "stmt_id": "st_cotangent_real",
+      "subtype": "remark",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_tangent_cotangent",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_complexification_intro",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_holomorphic_antiholomorphic",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let_M_J",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_M_J",
+      "exposed_entities": [
+        "M",
+        "J",
+        "J_p",
+        "T_{\\mathbb R, p} M"
+      ]
+    },
+    {
+      "stmt_id": "st_complexification_def",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_complexification",
+      "exposed_entities": [
+        "T_{\\mathbb R, p} M \\otimes \\mathbb C",
+        "J_p"
+      ]
+    },
+    {
+      "stmt_id": "st_eigenvalue_decomp",
+      "subtype": "theorem",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_holomorphic_antiholomorphic",
+      "exposed_entities": [
+        "T_{\\mathbb C, p} M",
+        "T_p^{1,0} M",
+        "T_p^{0,1} M"
+      ]
+    },
+    {
+      "stmt_id": "st_holomorphic_tangent_space",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_holomorphic_antiholomorphic",
+      "exposed_entities": [
+        "T_p^{1,0} M"
+      ]
+    },
+    {
+      "stmt_id": "st_antiholomorphic_tangent_space",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_holomorphic_antiholomorphic",
+      "exposed_entities": [
+        "T_p^{0,1} M"
+      ]
+    },
+    {
+      "stmt_id": "st_global_decomp",
+      "subtype": "theorem",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": "true",
+      "scope_id": "s_holomorphic_antiholomorphic",
+      "exposed_entities": [
+        "T_{\\mathbb C} M",
+        "T^{1,0} M",
+        "T^{0,1} M"
+      ]
+    },
+    {
+      "stmt_id": "st_holomorphic_bundle",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_holomorphic_antiholomorphic",
+      "exposed_entities": [
+        "T^{1,0} M"
+      ]
+    },
+    {
+      "stmt_id": "st_antiholomorphic_bundle",
+      "subtype": "definition",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_holomorphic_antiholomorphic",
+      "exposed_entities": [
+        "T^{0,1} M"
+      ]
+    },
+    {
+      "stmt_id": "st_eigenvector_formulas",
+      "subtype": "theorem",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "s_holomorphic_antiholomorphic",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_basis_vectors",
+      "subtype": "definition",
+      "clause_range": [
+        22,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_eigenvectors",
+      "exposed_entities": [
+        "\\frac{\\partial}{\\partial z_i}",
+        "\\frac{\\partial}{\\partial \\bar z_i}"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_geometry",
+      "subtype": "remark",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_holomorphic_antiholomorphic",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_decomposition_vars",
+      "subtype": "assumption",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_decomp_vars",
+      "exposed_entities": [
+        "S^a",
+        "S^\\alpha",
+        "S^{\\bar \\alpha}"
+      ]
+    },
+    {
+      "stmt_id": "st_J_expression",
+      "subtype": "theorem",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": "true",
+      "scope_id": "s_decomposition",
+      "exposed_entities": [
+        "J^a_b"
+      ]
+    },
+    {
+      "stmt_id": "st_cotangent_complex",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_cotangent",
+      "exposed_entities": [
+        "T^*_{\\mathbb C} M"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let_M_J",
+      "target": "st_complexification_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_complexification_def",
+      "target": "st_eigenvalue_decomp",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_eigenvalue_decomp",
+      "target": "st_holomorphic_tangent_space",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_eigenvalue_decomp",
+      "target": "st_antiholomorphic_tangent_space",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_holomorphic_tangent_space",
+      "target": "st_global_decomp",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_antiholomorphic_tangent_space",
+      "target": "st_global_decomp",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_global_decomp",
+      "target": "st_holomorphic_bundle",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_global_decomp",
+      "target": "st_antiholomorphic_bundle",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_holomorphic_bundle",
+      "target": "st_eigenvector_formulas",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_antiholomorphic_bundle",
+      "target": "st_eigenvector_formulas",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_eigenvector_formulas",
+      "target": "st_basis_vectors",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_decomposition_vars",
+      "target": "st_J_expression",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

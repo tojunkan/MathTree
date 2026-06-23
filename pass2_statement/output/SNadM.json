@@ -1,0 +1,261 @@
+{
+  "article_name": "SNadM",
+  "statements": [
+    {
+      "stmt_id": "st_intro_mod_to_metric",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_mod_properties_let",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_mod_properties",
+      "exposed_entities": [
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_mod_properties_list",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_mod_properties",
+      "exposed_entities": [
+        "x",
+        "v",
+        "λ"
+      ]
+    },
+    {
+      "stmt_id": "st_metric_def_let",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_metric_def",
+      "exposed_entities": [
+        "d",
+        "E"
+      ]
+    },
+    {
+      "stmt_id": "st_metric_def_conditions",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_metric_def",
+      "exposed_entities": [
+        "u",
+        "v",
+        "w"
+      ]
+    },
+    {
+      "stmt_id": "st_mod_to_metric_construction",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_mod_to_metric",
+      "exposed_entities": [
+        "d",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_mod_to_metric_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        13,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_mod_to_metric",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "V",
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_metric",
+      "subtype": "example",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "d",
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_metric_to_mod_let",
+      "subtype": "assumption",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_metric_to_mod",
+      "exposed_entities": [
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_metric_to_mod_conditions",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_metric_to_mod",
+      "exposed_entities": [
+        "x",
+        "y",
+        "z",
+        "λ"
+      ]
+    },
+    {
+      "stmt_id": "st_metric_to_mod_construction",
+      "subtype": "definition",
+      "clause_range": [
+        22,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_metric_to_mod",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_metric_to_mod_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_metric_to_mod",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_summary",
+      "subtype": "remark",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_summary",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_mod_properties_let",
+      "target": "st_mod_properties_list",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_metric_def_let",
+      "target": "st_metric_def_conditions",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_mod_to_metric_construction",
+      "target": "st_mod_to_metric_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_let",
+      "target": "st_example1_metric",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_metric_to_mod_let",
+      "target": "st_metric_to_mod_conditions",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_metric_to_mod_conditions",
+      "target": "st_metric_to_mod_construction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_metric_to_mod_construction",
+      "target": "st_metric_to_mod_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_mod_to_metric_conclusion",
+      "target": "st_mod_properties_list",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "从模到度量利用了模的性质"
+    },
+    {
+      "source": "st_metric_to_mod_conclusion",
+      "target": "st_metric_def_conditions",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "从度量到模需要度量满足额外性质"
+    },
+    {
+      "source": "st_example1_metric",
+      "target": "st_mod_to_metric_conclusion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例 1 是模到度量的具体例子"
+    }
+  ],
+  "unresolved": []
+}

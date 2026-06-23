@@ -1,0 +1,98 @@
+[SCOPE:root|description|广义函数]
+文章名: GenFut
+标题: 广义函数
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=($C_0^\infty(\Omega)$ 空间中的收敛性)
+  [1] type=definition heading=定义 2 title=(广义函数)
+  [2] type=example heading=例 1 title=(Dirac $\delta$ 函数)
+  [3] type=example heading=例 2 title=(局部可积函数都是广义函数)
+
+[SCOPE:s_def1|description|C0^∞(Ω)空间中的收敛性]
+[0] 定义 1 ($C_0^\infty(\Omega)$ 空间中的收敛性)
+[SCOPE:s_def1_let|let_bind|收敛性定义中的变量]
+[1] 设 $\varphi_i,\varphi\in C_0^\infty(\Omega),\,i=1,2,...$, 若满足以下两个条件：
+[2] $(1)$ 存在紧集 $K\subset\Omega$, 使得 supp $\varphi\subset K$, supp $\varphi_{j}\subset K,$
+[3] $i=1,2,...;$
+[4a] (x)-\partial^{\alpha}\varphi
+[4b] (x)\right|=0}}$，
+[5] 则称 $\varphi_{j}$ 在 $C_{0}^{\infty}(\Omega)$ 中收敛于 $\varphi$, 记作
+[6] $\varphi_{j}\rightarrow\varphi$ $(C_{0}^{\infty}(\Omega))$。
+[/SCOPE:s_def1_let]
+[7] 有了上面收敛性的概念，广义函数即是 $C_0^\infty(\Omega)$ 上的连续线性泛函。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|广义函数]
+[8] 定义 2 (广义函数)
+[SCOPE:s_def2_let|let_bind|广义函数定义中的变量]
+[9] $C_{0}^{\infty}(\Omega)$ 上的一个连续线性泛函称为一个广义函数，换句话说，若 $f:C_{0}^{\infty}(\Omega)\rightarrow\mathbb{R}$
+[10] 满足
+[11] $(1)$ 连续性：当 $\varphi_{j}\rightarrow\varphi(C_{0}^{\infty}(\Omega))$
+[12] 时，有 ${\displaystyle \lim_{j\rightarrow\infty}f(\varphi_{j})=f(\varphi)}$;
+[13] $(2)$ 线性性：当 $\psi,\varphi\in C_{0}^{\infty}(\Omega)$, $k\in\mathbb{R}$
+[14] 时，有 $f(k\psi+\varphi)=kf(\psi)+f(\varphi),$
+[15] 则称 $f$ 是一个 广义函数 (generalized function, 简称 广函) 或 分布 (distribution)
+[/SCOPE:s_def2_let]
+[16] 所有广义函数构成的全体构成一个线性空间，称为 广义函数空间 (简称 广函空间), 记作 $D'(\Omega)$.
+[17] 当 $f\in D'(\Omega)$ 而 $\varphi\in C^\infty_0(\Omega)$ 时，有时也用符号 $\left \langle f,\varphi \right \rangle $ 来表示 $f(\varphi)$ , 这一点是与普通的对偶空间类似的。
+[18] 之所以将广函空间记作 $D'(\Omega)$, 是因为广义函数论的创始人 L.Schwartz 最先引入此概念时将具有上述收敛拓扑的
+[19] $C_{0}^{\infty}(\Omega)$ 空间记作 $D(\Omega)$, 而广函空间正好作为 $D(\Omega)$
+[20] 的对偶空间出现，
+[21] 因而记作 $D'(\Omega)$.
+
+[/SCOPE:s_def2]
+[SCOPE:s_ex1|description|Dirac δ函数]
+[22] 例 1 (Dirac $\delta$ 函数)
+[SCOPE:s_ex1_let|let_bind|δ函数定义中的变量]
+[23] 设 $\Omega\subset\mathbb{R}^{n}$ 开集，$x_{0}\in\Omega,$ 定义 $\delta_{x_{0}}:C_{0}^{\infty}(\Omega)\rightarrow\mathbb{R}$
+[24] 如下：
+[25] \[
+[26] \delta_{x_{0}}(\varphi)=\varphi(x_{0})~,\quad\forall\varphi\in C_{0}^{\infty}(\Omega)~.
+[27] \]
+[/SCOPE:s_ex1_let]
+[28] 易知 $\delta_{x_{0}}$ 是一个广义函数，
+[29] 即 $\delta_{x_{0}}\in D'(\Omega)$, 称为
+[30] Dirac $\delta$ 函数.
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|局部可积函数都是广义函数]
+[31] 例 2 (局部可积函数都是广义函数)
+[SCOPE:s_ex2_let|let_bind|局部可积函数嵌入中的变量]
+[32] $\Omega$ 上的每一个局部可积函数 $f$ 都可以看成是一个广义函数，按以下意义：
+[33] \[
+[34a] (x)\varphi
+[34b] (x)dx}~.
+[35] \]
+[/SCOPE:s_ex2_let]
+[36] 明显 $f\in D'(\Omega)$. 所以当 $f$ 是局部可积函数，我们总是可以将 $f$ 与 $\tilde{f}$
+[37] 视作等同。
+[38] $\Omega$ 上的所有局部可积函数组成的集合记为 $L_{\mathrm{loc}}^1(\Omega)$, 所以
+[39] $L_{\mathrm{loc}}^1(\Omega)\subset D'(\Omega)~.$
+[40] 未完待续
+[/SCOPE:s_ex2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "广义函数的定义依赖于C0^∞(Ω)中的收敛性"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Dirac δ函数是广义函数的特例"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "局部可积函数是广义函数的特例"
+  }
+]

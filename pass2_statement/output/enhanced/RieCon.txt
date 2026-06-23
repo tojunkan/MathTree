@@ -1,0 +1,167 @@
+[SCOPE:root|description|黎曼联络]
+文章名: RieCon
+标题: 黎曼联络
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=黎曼度量
+  [1] type=definition heading=定义 2 title=黎曼流形
+  [2] type=definition heading=定义 3 title=黎曼联络
+  [3] type=lemma heading=引理 1 title=
+  [4] type=theorem heading=定理 1 title=
+  [5] type=corollary heading=推论 1 title=黎曼度量的存在与唯一性
+  [6] type=example heading=例 1 title=
+  [7] type=exercise heading=习题 1 title=
+
+[0] 黎曼度量与伪黎曼度量文章中包含了黎曼度量的概念，
+[1] 但其中使用了高度凝练的术语，对初学者并不友好，
+[2] 因此我们在这里顺便给出更通俗的定义。
+
+[SCOPE:s_metric|description|黎曼度量]
+[3] 定义 1 黎曼度量
+[SCOPE:s_metric_let|let_bind|黎曼度量的变量]
+[4] 给定一个实流形 $M$，定义其上一个映射 $g$，它将 $M$ 上任意点处的两个切向量映射为一个数字。
+[/SCOPE:s_metric_let]
+[5] 如果 $g$ 满足对于任意向量 $ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} , \boldsymbol{\mathbf{z}} $，都有：
+[6] 线性性：$g(a \boldsymbol{\mathbf{x}} +b \boldsymbol{\mathbf{z}} , \boldsymbol{\mathbf{y}} )=a\cdot g( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} )+b\cdot g( \boldsymbol{\mathbf{z}} , \boldsymbol{\mathbf{y}} )$，其中 $a, b$ 为任意实数；
+[7] 对称性：$g( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} )=g( \boldsymbol{\mathbf{y}} , \boldsymbol{\mathbf{x}} )$；
+[8] 正定性：$g( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} )\geq 0$，且仅在 $ \boldsymbol{\mathbf{x}} =0$ 时有 $g( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{x}} )=0$。
+[9] 则称 $g$ 是 $M$ 上的一个黎曼度量（Riemannian metric）。
+[10] 从定义可知，黎曼度量实际上就是规定了 “如何做内积”，进而得到 “切向量的长度”、“切向量之间的角度” 等概念。
+[11] 注意，黎曼度量只对同一个切空间中的向量有用，不同切空间的向量之间无法定义黎曼度量。
+[12] 如果在某个切点附近给定一个图（chart），
+[13] 那么黎曼度量可以表达为这个图中的一个矩阵 $g_{ab}$，而该切点处两个切向量 ${x}^a, {y}^b$ 的内积就是 $g_{ab}{x}^a{y}^b$。
+[14] 对称性意味着 $g_{ab}\equiv g_{ba}$。
+[15] 如果将 $g_{ab}$ 写成方阵1，
+[16] 那么它就是线性代数中讨论的正定矩阵。
+[17] 这就是黎曼度量与伪黎曼度量文章中 “对称” 与 “正定” 二词的含义。
+[18] “截面” 实际上就是指这是一个映射2。
+
+[/SCOPE:s_metric]
+[SCOPE:s_manifold|description|黎曼流形]
+[19] 定义 2 黎曼流形
+[SCOPE:s_manifold_let|let_bind|黎曼流形的变量]
+[20] 给定实流形 $M$。
+[/SCOPE:s_manifold_let]
+[21] 若在 $M$ 上处处定义一个黎曼度量 $g$，且在任意图中 $g$ 的坐标都是光滑函数，
+[22] 则称 $(M, g)$ 为一个黎曼流形（Riemannian manifold）。
+
+[/SCOPE:s_manifold]
+[SCOPE:s_connection|description|黎曼联络]
+[23] 定义 3 黎曼联络
+[SCOPE:s_connection_let|let_bind|黎曼联络的变量]
+[24] 给定黎曼流形 $(M, g)$，如果 $M$ 上有一个仿射联络 $\nabla$，满足以下条件：
+[/SCOPE:s_connection_let]
+[25] 挠率为零（无挠）：对于任意光滑向量场 $X, Y\in\mathfrak{X}(M)$，都有 $\nabla_XY-\nabla_YX={[X, Y]}$；
+[26] 与黎曼度量相容：对于任意光滑向量场 $X, Y, Z\in\mathfrak{X}(M)$，都有 $Zg(X, Y)=g(\nabla_ZX, Y)+g(X, \nabla_ZY)$。
+[27] 则称 $\nabla$ 是 $(M, g)$ 上的一个黎曼联络（Riemannian connection），也可称为列维-奇维塔联络（Levi-Civita connection）。
+[28] 黎曼联络中的 “相容” 条件，实际上就是方向导数对内积的 Leibniz 律。
+[29] 注意 $g(X, Y)$ 是 $M$ 上的一个光滑函数，而 $Zg(X, Y)$ 就是对这个函数沿着 $Z$ 的方向求方向导数的结果。
+[30] 我们已经知道，光滑函数的求导不依赖于图的选择，
+[31] 因此 $Zg(X, Y)$ 不必表达成 $\nabla_Zg(X, Y)$ 的形式。
+[32] 同一个流形上可能有多个不同的仿射联络，
+[33] 但是一旦确定了黎曼度量，
+[34] 则也就唯一确定了一个黎曼联络。
+[35] 我们通过一系列命题来讨论这件事。
+
+[/SCOPE:s_connection]
+[SCOPE:s_lemma1|description|引理1]
+[36] 引理 1
+[SCOPE:s_lemma1_let|let_bind|引理1的变量]
+[37] 给定一个黎曼流形 $(M, g)$，如果对于任意光滑向量场 $Z$，都能计算出 $g(X, Z)$，
+[/SCOPE:s_lemma1_let]
+[38] 那么 $X$ 唯一确定。
+[39] 证明：
+[SCOPE:s_lemma1_reductio|reductio|引理1的反证法]
+[SCOPE:s_lemma1_reductio_let|let_bind|反证法中的假设变量]
+[40] 假设存在向量场 $X, Y$ 使得对于任意 $Z$ 都有 $g(X, Z)=g(Y, Z)$，
+[/SCOPE:s_lemma1_reductio_let]
+[41] 那么由黎曼度量的线性性知，$g(X-Y, Z)\equiv 0$。
+[42] 由 $Z$ 的任意性，取 $Z=X-Y$，知 $g(X-Y, X-Y)\equiv 0$。
+[43] 由黎曼度量的正定性，$X-Y\equiv 0$。
+[/SCOPE:s_lemma1_reductio]
+[44] 证毕。
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_theorem1|description|定理1]
+[45] 定理 1
+[SCOPE:s_theorem1_let|let_bind|定理1的变量]
+[46] 给定一个黎曼流形 $(M, g)$，其上有一个仿射联络 $\nabla$。
+[47] 如果有对于任意光滑切向量场 $X, Y, Z\in\mathfrak{X}(M)$，有：
+[48] $\nabla_XY-\nabla_YX-[X, Y]=T(X, Y)$，其中 $T\in \mathfrak{X}(M)$ 是由 $X, Y$ 确定的光滑向量场（给定了的）；
+[49] $Zg(X, Y)=g(\nabla_ZX, Y)+g(X, \nabla_ZY)$。
+[/SCOPE:s_theorem1_let]
+[50] 则 $\nabla$ 存在且唯一确定。
+[SCOPE:s_theorem1_proof|description|定理1的证明]
+[51] 证明：
+[52] 只需要证明，根据已知条件，我们可以用黎曼度量 $g$ 计算出 $\nabla$ 即可。
+[53] 首先列出两组条件：
+[54] \begin{equation}
+\nabla_XY-\nabla_YX-[X, Y]=T(X, Y)~,
+\end{equation}
+[55] \begin{equation}
+Xg(Y, Z)=g(\nabla_XY, Z)+g(Y, \nabla_XZ)~,
+\end{equation}
+[56] \begin{equation}
+Yg(Z, X)=g(\nabla_YZ, X)+g(Z, \nabla_YX)~,
+\end{equation}
+[57] \begin{equation}
+Zg(X, Y)=g(\nabla_ZX, Y)+g(X, \nabla_ZY)~.
+\end{equation}
+[58] 其中式 1 是 “给定挠率” 条件，式 2 、式 3 和式 4 是定理条件中的第二条，也就是 “和黎曼度量相容” 条件。
+[59] 将式 1 代入式 3 ，可以得到
+[60] \begin{equation}
+Yg(Z, X)=g(\nabla_YZ, X)+g(Z, \nabla_XY)-g(Z, [X, Y])-g(Z, T(X, Y))~.
+\end{equation}
+[61] 计算（式 2 $-$ 式 4 $+$ 式 5 ）可得：
+[62] \begin{equation}
+\begin{aligned}
+2g(\nabla_XY, Z)=&Xg(Y, Z)+Yg(X, Z)-Zg(X, Y)\\&-g(X, \nabla_YZ-\nabla_ZY)+g(Y, \nabla_ZX-\nabla_XZ)\\&+g(Z, [X, Y]+T(X, Y))\\
+=&Xg(Y, Z)+Yg(X, Z)-Zg(X, Y)\\&+g(X, \nabla_ZY-\nabla_YZ)+g(Y, \nabla_ZX-\nabla_XZ)\\&+g(Z, \nabla_XY-\nabla_YX)~.
+\end{aligned}
+\end{equation}
+[63] 由于 $Z$ 的任意性，根据引理 1 可唯一确定 $\nabla_XY$ 的值，也就相当于计算出了 $\nabla_XY$ 了。
+[64] 证毕。
+
+[/SCOPE:s_theorem1]
+[/SCOPE:s_theorem1_proof]
+[SCOPE:s_corollary1|description|推论1]
+[65] 推论 1 黎曼度量的存在与唯一性
+[66] 从定理 1 中取 $T\equiv 0$，立刻得：黎曼流形上有且仅有一个黎曼联络。
+
+[/SCOPE:s_corollary1]
+[SCOPE:s_example1|description|例1]
+[67] 欧几里得空间 $\mathbb{R}^n$ 中，向量场的方向导数是一个黎曼联络。
+
+[/SCOPE:s_example1]
+[SCOPE:s_exercise1|description|习题1]
+[68] 习题 1
+[SCOPE:s_exercise1_let|let_bind|习题1的变量]
+[69] 设 $S$ 是欧几里得空间 $\mathbb{R}^n$ 中一个正则曲面，直接取 $\mathbb{R}^n$ 中的内积作为 $S$ 上的黎曼度量。
+[70] 定义 $S$ 上的仿射联络 $\nabla$ 为 $\mathbb{R}^n$ 中求方向导数后投影到各 $T_pS$ 上。
+[/SCOPE:s_exercise1_let]
+[71] 证明 $\nabla$ 是一个黎曼联络。
+
+[/SCOPE:s_exercise1]
+[SCOPE:s_pseudo|description|伪黎曼度量]
+[72] 相对论中时空流形上的度量通常采用的是一个伪黎曼联络，它和黎曼联络的区别是不要求正定性。
+[73] 伪黎曼联络也是可以类似地导出伪黎曼流形和伪黎曼联络的，而定理 1 和推论 1 仍然适用。
+[/SCOPE:s_pseudo]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_corollary1",
+    "target_scope": "s_theorem1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是定理1中T=0的特例"
+  },
+  {
+    "source_scope": "s_theorem1",
+    "target_scope": "s_lemma1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理1的证明中使用了引理1"
+  }
+]

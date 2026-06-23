@@ -1,0 +1,50 @@
+[SCOPE:root|description|重积分和宇称]
+文章名: IntPry
+标题: 重积分和宇称
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=极坐标中的函数的宇称
+  [1] type=exercise heading=习题 1 title=
+  [2] type=exercise heading=习题 2 title=
+
+[SCOPE:s_example1|description|例1 极坐标中的函数的宇称]
+[0] 例 1 极坐标中的函数的宇称
+[1] 极坐标中的函数
+[2] \begin{equation}
+f( \boldsymbol{\mathbf{r}} ) = f(r, \theta) = r \sin\left(\theta\right) ~.
+\end{equation}
+[3] \begin{equation}
+\int_0^{2\pi} \int_b^a f(r, \theta) \,\mathrm{d}{r} \,\mathrm{d}{\theta} = 0~.
+\end{equation}
+[4] 另一种情况如三维空间中的二维曲面上的积分，如球谐函数满足（见式 17 ）
+[5] \begin{equation}
+Y_{l,m}(- \hat{\boldsymbol{\mathbf{r}}} ) = (-1)^l Y_{l,m}( \hat{\boldsymbol{\mathbf{r}}} )~.
+\end{equation}
+[6] 也就是说当 $l$ 为奇数时球谐函数具有奇宇称，偶数时具有偶宇称。
+[7] 所以在对整个球面积分时，前者必为零。
+
+[/SCOPE:s_example1]
+[SCOPE:s_parity_discussion|description|宇称函数相乘]
+[SCOPE:s_parity_let|let_bind|设f,g]
+[8] 如果两个函数 $f( \boldsymbol{\mathbf{r}} )$ 和 $g( \boldsymbol{\mathbf{r}} )$ 分别可能具有奇宇称或偶宇称，它们相乘所得的函数 $h( \boldsymbol{\mathbf{r}} ) = f( \boldsymbol{\mathbf{r}} ) g( \boldsymbol{\mathbf{r}} )$ 的宇称如何呢？
+[/SCOPE:s_parity_let]
+[9] 从定义不难证明，如果二者宇称相同，
+[10] 那么 $h( \boldsymbol{\mathbf{r}} )$ 具有偶宇称，如果一奇一偶，
+[11] 则是奇宇称。
+
+[/SCOPE:s_parity_discussion]
+[SCOPE:s_exercise1|description|习题1]
+[12] 习题 1
+[SCOPE:s_exercise1_let|let_bind|设f]
+[13] 求球坐标系中函数 $f( \boldsymbol{\mathbf{r}} ) = r^{100} \sin\left(99\theta\right) Y_{l, m}( \hat{\boldsymbol{\mathbf{r}}} )$ 的宇称。
+
+[/SCOPE:s_exercise1]
+[/SCOPE:s_exercise1_let]
+[SCOPE:s_exercise2|description|习题2]
+[14] 习题 2
+[15] 求单位球面上的积分（星号表示复共轭）
+[16] \begin{equation}
+\int Y_{99, 77}^*( \hat{\boldsymbol{\mathbf{r}}} ) Y_{71, -30}( \hat{\boldsymbol{\mathbf{r}}} ) Y_{53, 20}( \hat{\boldsymbol{\mathbf{r}}} ) \,\mathrm{d}{\Omega} ~.
+\end{equation}
+[/SCOPE:s_exercise2]
+[/SCOPE:root]

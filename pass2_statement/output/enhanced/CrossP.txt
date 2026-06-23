@@ -1,0 +1,93 @@
+[SCOPE:root|description|矢量叉乘分配律的几何证明]
+文章名: CrossP
+标题: 矢量叉乘分配律的几何证明
+
+[SCOPE:s_main_proof|description|主证明]
+[SCOPE:s_let_vectors|let_bind|定义矢量 A, B, C, D]
+[0] 以下从几何意义来证明三维几何矢量的叉乘的分配律
+[1] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol\times ( \boldsymbol{\mathbf{B}} + \boldsymbol{\mathbf{C}} ) = \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} + \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{C}} ~.
+\end{equation}
+[2] 【图解】图 1：把 $ \boldsymbol{\mathbf{B}} , \boldsymbol{\mathbf{C}} , \boldsymbol{\mathbf{D}} $ 投影到与 $ \boldsymbol{\mathbf{A}} $ 垂直的平面上
+[3] 首先令
+[4] \begin{equation}
+\boldsymbol{\mathbf{D}} = \boldsymbol{\mathbf{B}} + \boldsymbol{\mathbf{C}} ~.
+\end{equation}
+[/SCOPE:s_let_vectors]
+[SCOPE:s_projection|let_bind|投影矢量 B', C', D']
+[5] 把矢量 $ \boldsymbol{\mathbf{B}} , \boldsymbol{\mathbf{C}} , \boldsymbol{\mathbf{D}} $ 在与矢量 $ \boldsymbol{\mathbf{A}} $ 垂直的平面上投影，分别得到 $ \boldsymbol{\mathbf{B}} ', \boldsymbol{\mathbf{C}} ', \boldsymbol{\mathbf{D}} '$。
+[6] 由于平行线投影到平面后仍然是平行线，
+[7] 所以平行四边形投影后还是平行四边形
+[8] 1
+[9] ，根据矢量加法的
+[10] 平行四边形法则 [链接 L0]
+[11] 有 $ \boldsymbol{\mathbf{D}} '= \boldsymbol{\mathbf{B}} '+ \boldsymbol{\mathbf{C}} '$。
+[12] 另一种证明方法是使用直角坐标：把 $ \boldsymbol{\mathbf{A}} $ 看成 $z$ 轴，与之垂直的平面则是 $x$-$y$ 平面，
+[13] 那么 $ \boldsymbol{\mathbf{B}} + \boldsymbol{\mathbf{C}} = \boldsymbol{\mathbf{D}} $ 对每个分量都成立，
+[14] 即 $x_B + x_C = x_D$，$y_B + y_C = y_D$，而垂直投影后 $x,y$ 坐标不变，
+[15] 所以该加法仍然成立。
+[/SCOPE:s_projection]
+[SCOPE:s_cross_property|description|叉乘性质：A×B = A×B' 等]
+[16] 接下来有
+[17] \begin{equation}
+\begin{aligned}
+& \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} = \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} '\\
+& \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{C}} = \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{C}} '\\
+& \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{D}} = \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{D}} '
+\end{aligned}~
+\end{equation}
+[18] 这是叉乘的一个基本的性质，详见
+[19] 子节 4
+[20] 所以，要证明
+[/SCOPE:s_cross_property]
+[SCOPE:s_final_step|description|最终推导]
+[21] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{D}} = \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} + \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{C}} ~,
+\end{equation}
+[22] 只需要证明
+[23] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{D}} ' = \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} ' + \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{C}} '~.
+\end{equation}
+[24] 由于 $ \boldsymbol{\mathbf{B}} ', \boldsymbol{\mathbf{C}} ', \boldsymbol{\mathbf{D}} '$ 都与 $ \boldsymbol{\mathbf{A}} $ 垂直，
+[25] 所以根据定义 $ \boldsymbol{\mathbf{A}} $ 与之叉乘的结果就是 $ \boldsymbol{\mathbf{B}} ', \boldsymbol{\mathbf{C}} ', \boldsymbol{\mathbf{D}} '$ 的模长分别乘以 $ \left\lvert \boldsymbol{\mathbf{A}} \right\rvert $，且绕 $ \boldsymbol{\mathbf{A}} $ 按
+[26] 右手定则 [链接 L1]
+[27] 逆时针分别旋转 $90^\circ$。
+[28] 所以上式就是在说，若已知 $ \boldsymbol{\mathbf{B}} ' + \boldsymbol{\mathbf{C}} ' = \boldsymbol{\mathbf{D}} '$，
+[29] 那么把它们分别乘以常数并旋转 $90^\circ$ 后这个加法仍然成立。
+[30] 这是显然的，因为把平行四边形放大并旋转任意角度后仍然是平行四边形。
+[31] 证毕。
+
+[/SCOPE:s_main_proof]
+[/SCOPE:s_final_step]
+[SCOPE:s_area_discussion|description|关于面积的讨论]
+[32] 叉乘的另一个几何意义是：叉乘的绝对值等于面积（例 1 ）。
+[33] 然而 $ \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{D}} $ 的面积（标量）一般并不等于 $ \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} $ 的面积（标量）加上 $ \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{C}} $ 的面积（标量），因为式 4 中的加法是矢量相加。
+[34] 从这个角度来说，叉乘所定义的面积也是一个矢量，
+[35] 即面积矢量。
+[36] 要使用面积矢量的几何意义来证明叉乘的分配律，步骤也和上面的证明同理。
+[37] 式 3 告诉我们等式左边的三个平行四边形的面积矢量等于右边三个长方形的面积矢量。
+[38] 但之后步骤中面积矢量的加法同样需要通过矢量的平行四边形法则，而不是简单地把面积的大小相加。
+
+跨文章引用:
+  [L0] 平行四边形法则 → GVecOp
+  [L1] 右手定则 → RHRul
+[/SCOPE:s_area_discussion]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_main_proof",
+    "target_scope": "s_cross_property",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "主证明引用叉乘性质"
+  },
+  {
+    "source_scope": "s_main_proof",
+    "target_scope": "s_final_step",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "主证明推出最终结论"
+  }
+]

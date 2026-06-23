@@ -1,0 +1,110 @@
+{
+  "article_name": "DesCur",
+  "statements": [
+    {
+      "stmt_id": "st_intro_0",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_functional_example_0",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_functional_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let_curve",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_curve",
+      "exposed_entities": [
+        "y(x)",
+        "y'(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_let_J",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_J",
+      "exposed_entities": [
+        "J",
+        "y(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_functional_example_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_functional_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_functional_def_0",
+      "subtype": "definition",
+      "clause_range": [
+        22,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_functional_def",
+      "exposed_entities": [
+        "y(x)",
+        "J[y(x)]"
+      ]
+    },
+    {
+      "stmt_id": "st_admissible_curves_0",
+      "subtype": "definition",
+      "clause_range": [
+        26,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_admissible_curves",
+      "exposed_entities": [
+        "y(x)",
+        "y'(x)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let_curve",
+      "target": "st_let_J",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_J",
+      "target": "st_functional_example_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

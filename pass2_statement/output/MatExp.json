@@ -1,0 +1,697 @@
+{
+  "article_name": "MatExp",
+  "statements": [
+    {
+      "stmt_id": "st_def1_intro",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_eq",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "e^M"
+      ]
+    },
+    {
+      "stmt_id": "st_sim_let",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_sim_let",
+      "exposed_entities": [
+        "M",
+        "Q"
+      ]
+    },
+    {
+      "stmt_id": "st_sim_eq",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        15
+      ],
+      "truth_value": "true",
+      "scope_id": "s_sim",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sim_lin_trans",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_sim",
+      "exposed_entities": [
+        "T"
+      ]
+    },
+    {
+      "stmt_id": "st_sim_rep",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_sim",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_props_let",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_props_let",
+      "exposed_entities": [
+        "M",
+        "N",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_props_commute",
+      "subtype": "assumption",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_props",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_props_exp_sum",
+      "subtype": "theorem",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_props",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_props_transpose",
+      "subtype": "theorem",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_props",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_stmt",
+      "subtype": "theorem",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_let",
+      "subtype": "assumption",
+      "clause_range": [
+        36,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof_let",
+      "exposed_entities": [
+        "m_i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_diag",
+      "subtype": "conclusion",
+      "clause_range": [
+        38,
+        40
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        43,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "M",
+        "t"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_stmt",
+      "subtype": "theorem",
+      "clause_range": [
+        44,
+        46
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exer1",
+      "subtype": "exercise",
+      "clause_range": [
+        47,
+        48
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exer1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_diag_intro",
+      "subtype": "remark",
+      "clause_range": [
+        49,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_diag",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_diag_power",
+      "subtype": "theorem",
+      "clause_range": [
+        52,
+        52
+      ],
+      "truth_value": "true",
+      "scope_id": "s_diag_let1",
+      "exposed_entities": [
+        "a_i"
+      ]
+    },
+    {
+      "stmt_id": "st_diag_exp",
+      "subtype": "theorem",
+      "clause_range": [
+        53,
+        54
+      ],
+      "truth_value": "true",
+      "scope_id": "s_diag",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_diag_cond1",
+      "subtype": "assumption",
+      "clause_range": [
+        55,
+        56
+      ],
+      "truth_value": null,
+      "scope_id": "s_diag",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_diag_cond2",
+      "subtype": "assumption",
+      "clause_range": [
+        57,
+        58
+      ],
+      "truth_value": null,
+      "scope_id": "s_diag",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_diag_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        59,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_diag_let2",
+      "exposed_entities": [
+        "M",
+        "Q"
+      ]
+    },
+    {
+      "stmt_id": "st_diag_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        60,
+        62
+      ],
+      "truth_value": "true",
+      "scope_id": "s_diag",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_diag_def",
+      "subtype": "definition",
+      "clause_range": [
+        63,
+        63
+      ],
+      "truth_value": null,
+      "scope_id": "s_diag",
+      "exposed_entities": [
+        "Q^{-1}MQ"
+      ]
+    },
+    {
+      "stmt_id": "st_diag_not_all",
+      "subtype": "remark",
+      "clause_range": [
+        64,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_diag",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_diag_complex",
+      "subtype": "theorem",
+      "clause_range": [
+        65,
+        65
+      ],
+      "truth_value": "true",
+      "scope_id": "s_diag",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_diag_eigen_eq",
+      "subtype": "definition",
+      "clause_range": [
+        66,
+        68
+      ],
+      "truth_value": null,
+      "scope_id": "s_diag",
+      "exposed_entities": [
+        "lambda"
+      ]
+    },
+    {
+      "stmt_id": "st_diag_fundamental",
+      "subtype": "theorem",
+      "clause_range": [
+        70,
+        72
+      ],
+      "truth_value": "true",
+      "scope_id": "s_diag",
+      "exposed_entities": [
+        "lambda_i"
+      ]
+    },
+    {
+      "stmt_id": "st_diag_eigenvec_eq",
+      "subtype": "definition",
+      "clause_range": [
+        73,
+        74
+      ],
+      "truth_value": null,
+      "scope_id": "s_diag",
+      "exposed_entities": [
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_diag_nontrivial",
+      "subtype": "theorem",
+      "clause_range": [
+        75,
+        76
+      ],
+      "truth_value": "true",
+      "scope_id": "s_diag",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_diag_Q",
+      "subtype": "definition",
+      "clause_range": [
+        79,
+        79
+      ],
+      "truth_value": null,
+      "scope_id": "s_diag",
+      "exposed_entities": [
+        "Q"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        81,
+        82
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_eigenvals",
+      "subtype": "conclusion",
+      "clause_range": [
+        83,
+        84
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "lambda_1",
+        "lambda_2"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_eigenvec1",
+      "subtype": "conclusion",
+      "clause_range": [
+        85,
+        87
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_eigenvec2",
+      "subtype": "conclusion",
+      "clause_range": [
+        88,
+        88
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_Q",
+      "subtype": "conclusion",
+      "clause_range": [
+        89,
+        89
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "Q"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_diag",
+      "subtype": "conclusion",
+      "clause_range": [
+        90,
+        90
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_real",
+      "subtype": "remark",
+      "clause_range": [
+        91,
+        93
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sim_let",
+      "target": "st_sim_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sim_let",
+      "target": "st_sim_lin_trans",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sim_lin_trans",
+      "target": "st_sim_rep",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_props_let",
+      "target": "st_props_commute",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_props_commute",
+      "target": "st_props_exp_sum",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_props_let",
+      "target": "st_props_transpose",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1_stmt",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_assump",
+      "target": "st_thm1_proof_let",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_let",
+      "target": "st_thm1_proof_diag",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let",
+      "target": "st_thm2_stmt",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_diag_power",
+      "target": "st_diag_exp",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_diag_cond1",
+      "target": "st_diag_cond2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_diag_cond2",
+      "target": "st_diag_let2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_diag_let2",
+      "target": "st_diag_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_diag_formula",
+      "target": "st_diag_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_diag_eigen_eq",
+      "target": "st_diag_fundamental",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_diag_fundamental",
+      "target": "st_diag_eigenvec_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_diag_eigenvec_eq",
+      "target": "st_diag_nontrivial",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_diag_nontrivial",
+      "target": "st_diag_Q",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_let",
+      "target": "st_example1_eigenvals",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_eigenvals",
+      "target": "st_example1_eigenvec1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_eigenvals",
+      "target": "st_example1_eigenvec2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_eigenvec1",
+      "target": "st_example1_Q",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_eigenvec2",
+      "target": "st_example1_Q",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_Q",
+      "target": "st_example1_diag",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_stmt",
+      "target": "st_def1_eq",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1的证明使用了矩阵指数的定义"
+    },
+    {
+      "source": "st_thm2_stmt",
+      "target": "st_def1_eq",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2的证明依赖于矩阵指数的定义"
+    },
+    {
+      "source": "st_exer1",
+      "target": "st_thm2_stmt",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "习题1要求证明定理2"
+    },
+    {
+      "source": "st_diag_formula",
+      "target": "st_sim_eq",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "对角化计算利用了相似变换的性质"
+    },
+    {
+      "source": "st_example1_diag",
+      "target": "st_diag_formula",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是对角化方法的具体应用"
+    }
+  ],
+  "unresolved": []
+}

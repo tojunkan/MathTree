@@ -1,0 +1,42 @@
+[SCOPE:root|description|开映射和闭映射]
+文章名: OCMap
+标题: 开映射和闭映射
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=definition heading=定义 1 title=开映射，闭映射
+
+[0] 拓扑空间中，映射是连续的当且将当对像空间的每一开集的原象是开集，或者像空间的每一闭集的原象是闭集。
+[1] 即若 $(X,\mathcal T_X),(Y,\mathcal T_Y)$ 是两个拓扑空间，$f:\mathcal X\rightarrow\mathcal Y$ 是连续的当且将当每一 $O_Y\in\mathcal T_Y$，$f^{-1}(O_Y)\in\mathcal T_X$。
+[2] 然而，我们可以问：在连续映射下，开集的像是否一定是开集？
+[3] 闭集的象是否是闭集？
+[4] 一些例子告诉我们，一般情况下回答是否定的。
+[5] 这就引出了开映射和闭映射的概念。
+[6] 而对理解这两个概念本身来说，我们无需知道连续映射的定义。
+
+[SCOPE:s_example1|description|例1]
+[SCOPE:s_example1_let|let_bind|例1的变量]
+[7] 考虑半开区间 $X=[0,1)$ 到圆周 $O=\{(x,y)|x^2+y^2=1,x,y\in\mathbb R\}$ 的映射：
+[8] \begin{equation}
+f(x)=( \cos\left(2\pi x\right) , \sin\left(2\pi x\right) ).~
+\end{equation}
+[/SCOPE:s_example1_let]
+[9] 同样的，$f$ 将 $X$ 的开集 $[0,1/2)$ 映到 $O$ 的角度在 $[0,\pi)$ 的非开集。
+[10] 因此，一般的连续映射并不会将开（闭）集映射为开（闭）集，
+[11] 因此我们可以在拓扑空间中定义一种将开（闭）集映射为开（闭）集的映射，并给它们专有的名字。
+
+[/SCOPE:s_example1]
+[SCOPE:s_def1|description|定义1 开映射，闭映射]
+[12] 定义 1 开映射，闭映射
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[13] 设 $f$ 是拓扑空间之间的映射，若 $f$ 把任一开集映到开集，
+[/SCOPE:s_def1_let]
+[14] 则称 $f$ 是开的。
+[15] 若 $f$ 把任一闭集映到闭集，
+[16] 则称 $f$ 是闭的。
+[17] 由开映射和连续映射的定义，可以知道，开映射的逆是连续的。
+[18] 因此，尽管不能保证一一的连续映射的逆是连续的，
+[19] 但是我们可以专门研究那种一一的连续映射的逆是连续的那些映射，这样的映射称为同胚映射。
+[20] 显然，同胚映射首先是一个开映射，也是一个闭映射。
+[/SCOPE:s_def1]
+[/SCOPE:root]

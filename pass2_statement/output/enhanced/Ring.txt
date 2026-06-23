@@ -1,0 +1,89 @@
+[SCOPE:root|description|环]
+文章名: Ring
+标题: 环
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=半群和幺半群
+  [1] type=definition heading=定义 2 title=环
+  [2] type=example heading=例 1 title=整数环
+  [3] type=example heading=例 2 title=数域
+  [4] type=example heading=例 3 title=多项式环
+  [5] type=definition heading=定义 3 title=子环
+
+[0] 群是代数学中研究的最简单的结构，只由一个集合配上一个运算构成，这个运算只有 $4$ 条公理进行限制。
+[1] 通常，在群之后会介绍的一个更复杂一些的概念，是环（ring）。
+[2] 一个环就是由一个集合配上两个运算构成的集合，通常把这两个运算叫做加法和乘法；
+[3] 环上的加法和乘法分别构成群，不过乘法群不包括加法的单位元，而加法群是阿贝尔群。
+[4] 为了简洁地定义环，先定义两个群论中并没有涉及到的概念。
+
+[SCOPE:s_semigroup|description|半群和幺半群]
+[5] 定义 1 半群和幺半群
+[SCOPE:s_semigroup_let|let_bind|半群变量]
+[6] 给定集合 $G$ 及其上的一个运算，运算符号忽略。
+[/SCOPE:s_semigroup_let]
+[7] 如果运算满足：
+[8] 封闭性，
+[9] 结合性，
+[10] 那么称 $G$ 配合该运算构成一个半群（semi-group）。
+[11] 如果半群中含单位元，
+[12] 则构成一个幺半群（monoid）。
+[13] 这里的 “幺” 是 “一” 的意思。
+[14] 由此可见，群就是每个元素都有对应可逆元的幺半群。
+[/SCOPE:s_semigroup]
+[15] 有了幺半群的概念，就可以很方便地定义环了。
+
+[SCOPE:s_ring|description|环]
+[16] 定义 2 环
+[SCOPE:s_ring_let|let_bind|环变量]
+[17] 一个环（ring）是一个集合 $R$ 与两种运算 “加” 和 “乘”，分别记为 $+$ 和 $\cdot$。
+[/SCOPE:s_ring_let]
+[18] 其中加法配合 $R$ 中所有元素构成一个阿贝尔群，加法群的单位元通常称为零元，记为 $0$；
+[19] 乘法配合集合 $R$ 构成一个幺半群，其单位元通常称为幺元，记为 $1$。
+[20] 另外还要求加法和乘法满足
+[21] 左分配律：$a \cdot (b + c) = (a \cdot b) + (a \cdot c)$，
+[22] 右分配律：$(b + c) \cdot a = (b \cdot a) + (c \cdot a)$。
+[23] 如果乘法还含有单位元，
+[24] 则称其为幺元，记为 $1$。
+[25] 通常，为了方便表示，我们也会省略环中乘法的符号，将 $a\cdot b$ 写为 $ab$。
+[26] 由定义，环的加法必须是可交换的，
+[27] 但乘法却不一定。
+[28a] 如果 $R$ 的乘法也交换的话，我们
+[28b] 则称 $R$ 为一个交换环（commutative ring）。
+
+[/SCOPE:s_ring]
+[SCOPE:s_example1|description|整数环]
+[29] 例 1 整数环
+[30] 整数集合配上通常的加法和乘法，构成一个交换环，记为 $\mathbb{Z}$。
+
+[/SCOPE:s_example1]
+[SCOPE:s_example2|description|数域]
+[31] 例 2 数域
+[32] 有理数集合配上通常的加法和乘法，构成一个交换环，记为 $\mathbb{Q}$。
+[33] 类似地，实数构成交换环 $\mathbb{R}$，复数构成交换环 $\mathbb{C}$。
+[34] 这三个环都是数域的例子，数域是指包含整数的域，而域是之后基于环而讨论的概念。
+
+[/SCOPE:s_example2]
+[SCOPE:s_example3|description|多项式环]
+[35] 例 3 多项式环
+[SCOPE:s_example3_let|let_bind|多项式环变量]
+[36] 设有交换环 $R$，$x$ 是一个自变量，
+[/SCOPE:s_example3_let]
+[37] 那么集合 $\{\sum\limits_{i=0}^n a_ix^i|n\in\mathbb{Z}^+, a_i\in R\}$ 可以看成是 $x$ 的多项式构成的集合，其系数取遍 $R$。
+[38] 这些多项式之间的加法和乘法由 $R$ 的加法和乘法诱导（定义），并且构成了一个交换环，称为 $R$ 的多项式环。
+[39] 记 $R$ 上的多项式环为 $R[x]$。
+[40] 环的定义在一个细节上有争议，那就是乘法需不需要有幺元。
+[41] 有些书中的定义不要求有幺元，也就是说乘法只构成半群即可，这就使得对于任意正整数 $n$，$n$ 的全体倍数构成的集合 $n\mathbb{Z}$ 也是一个环；
+[42] 在这种定义里，会把含幺元的环称作含幺环或者幺环。
+[43] 由于不含幺元的结构一般不研究，
+[44] 所以主流数学界干脆将环定义为有幺元的。
+[45] 小时百科中为了方便表述，认为环都不一定有幺元，将幺环和环区分开，请读者注意。
+
+[/SCOPE:s_example3]
+[SCOPE:s_subring|description|子环]
+[46] 定义 3 子环
+[SCOPE:s_subring_let|let_bind|子环变量]
+[47] 给定一个环 $R$，如果 $S$ 是 $R$ 的子集，并且在继承 $R$ 的两个运算后也构成环，
+[/SCOPE:s_subring_let]
+[48] 那么称 $S$ 是 $R$ 的子环（subring）。
+[/SCOPE:s_subring]
+[/SCOPE:root]

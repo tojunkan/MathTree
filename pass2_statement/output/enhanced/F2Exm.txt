@@ -1,0 +1,110 @@
+[SCOPE:root|description|二元函数的极值（简明微积分）]
+文章名: F2Exm
+标题: 二元函数的极值（简明微积分）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=二元函数的极值点
+  [1] type=definition heading=定义 2 title=驻点
+  [2] type=exercise heading=习题 1 title=二次函数
+
+[0] 1类似一元函数，二元函数的极值与其偏导数密切相关。
+[1] 以下讨论中，我们假设在某区域内二元函数二阶可导且二阶导数连续。
+
+[SCOPE:s_def1|description|二元函数的极值点]
+[2] 定义 1 二元函数的极值点
+[3] 以一点为圆心在 $xy$ 平面上作一个圆形区域，若当半径足够小时，$f(x_i, y_i)$ 是该圆形区域的最大值或最小值，
+[4] 那么该点就是极大值点或极小值点。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|驻点]
+[SCOPE:s_def2_let|let_bind|驻点定义中的变量]
+[5] 定义 2 驻点
+[6] 如果二元函数 $f(x,y)$ 在某点 $(x_i, y_i)$ 处对 $x, y$ 的偏导数都为零，
+[7] 那么 $(x_i, y_i)$ 就叫做函数 $f(x,y)$ 的驻点。
+[/SCOPE:s_def2_let]
+[8] 根据式 9 ，驻点处各个方向的方向导数也都为零。
+[9] \begin{equation}
+\frac{\partial f}{\partial x} = \frac{\partial f}{\partial y} =0 \Longleftrightarrow \boldsymbol\nabla f= \boldsymbol{\mathbf{0}} ~.
+\end{equation}
+[10] 与一元函数类似，极值点一定是驻点，
+[11] 但驻点不一定是极值点。
+[SCOPE:s_def2_example|description|反例 f(x,y)=xy]
+[12] 例如 $f(x,y) = xy$ 在坐标原点的两个一阶偏导都为零，
+[13] 但原点并不是极值点。
+[/SCOPE:s_def2_example]
+[14] 【图解】图 1：原点是 $f(x,y)=x^2+y^2$ 的极值点
+[15] 【图解】图 2：但原点不是 $f(x,y)=xy$ 的极值点
+
+[/SCOPE:s_def2]
+[SCOPE:s_derivation|description|极值点判别法推导]
+[SCOPE:s_derivation_let|let_bind|判别法中的变量]
+[16] 在驻点处，设
+[17] \begin{equation}
+A= \frac{\partial^{2}{f}}{\partial{x}^{2}} ,\qquad B= \frac{\partial^2 f}{\partial x \partial y} ,\qquad C= \frac{\partial^{2}{f}}{\partial{y}^{2}} ~.
+\end{equation}
+[18] \begin{equation}
+D=AC-B^2=
+\begin{vmatrix}
+A&B\\
+B&C\end{vmatrix} ~.
+\end{equation}
+[/SCOPE:s_derivation_let]
+[SCOPE:s_derivation_cases|cases|判别法分情况]
+[19a] 若 $D<0$,
+[19b] 则该驻点不是极值点
+[20a] 若 $D>0$ 且 $A>0$,
+[20b] 则该驻点为 $f(x,y)$ 的极小值点
+[21a] 若 $D>0$ 且 $A<0$,
+[21b] 则该驻点为 $f(x,y)$ 的极大值点
+[22] 否则，该点可能是也可能不是极值，不能使用该判别法判定
+
+[/SCOPE:s_derivation_cases]
+[SCOPE:s_exercise|description|二次函数]
+[23] 习题 1 二次函数
+[24] 求以下二次函数的极值
+[25] \begin{equation}
+f(x, y) = ax^2 + 2bxy + cy^2 + px + qy~.
+\end{equation}
+
+[/SCOPE:s_exercise]
+[26] 类比一元函数的证明，要证明二元函数的某点是极值点，就要证明该点的任意二阶方向导数都大于零或都小于零2。
+[27] 令某方向为 $ \hat{\boldsymbol{\mathbf{n}}} = \hat{\boldsymbol{\mathbf{x}}} \cos\theta + \hat{\boldsymbol{\mathbf{y}}} \sin\theta$，由式 9 得该方向的方向导数为
+[28] \begin{equation}
+\left(\cos\theta \frac{\partial}{\partial{x}} + \sin\theta \frac{\partial}{\partial{y}} \right) f~,
+\end{equation}
+[29] 再次求方向导数得二阶方向导数为
+[30] \begin{equation}
+\left(\cos\theta \frac{\partial}{\partial{x}} + \sin\theta \frac{\partial}{\partial{y}} \right) ^2 f
+= \frac{\partial^{2}{f}}{\partial{x}^{2}} \cos^2\theta + 2 \frac{\partial^2 f}{\partial x \partial y} \sin\theta\cos\theta + \frac{\partial^{2}{f}}{\partial{y}^{2}} \sin^2\theta~.
+\end{equation}
+[31] 如果你还不习惯看算符的平方，可以把上式的括号项平方看做两个括号项，依次作用在函数上。
+[32] 以极小值为例，令上式恒大于零，并除以 $\cos^2\theta$ 得
+[33] \begin{equation}
+\frac{\partial^{2}{f}}{\partial{y}^{2}} \tan^2\theta + 2 \frac{\partial^2 f}{\partial x \partial y} \tan\theta + \frac{\partial^{2}{f}}{\partial{x}^{2}} > 0~.
+\end{equation}
+[34] 上式左边是关于 $\tan\theta$ 的二次函数，若要恒大于零，
+[35] 则二次项系数要大于零，且判别式需小于零，立即可得 $AC-B^2>0$。
+[36] 同理可得极大值条件。
+[37] 当判别式（$AC-B^2$）小于零时，必然存在不同方向的二阶方向导数具有相反的符号，
+[38] 所以必定不是极值点。
+[39] 而当判别式等于零时，存在某些方向的二阶导数为零，无法判断是否为极值点。
+[/SCOPE:s_derivation]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "驻点是极值点的必要条件"
+  },
+  {
+    "source_scope": "s_derivation",
+    "target_scope": "s_def2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推导出判别法，基于驻点"
+  }
+]

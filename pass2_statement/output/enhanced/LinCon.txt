@@ -1,0 +1,111 @@
+[SCOPE:root|description|线性连续泛函]
+文章名: LinCon
+标题: 线性连续泛函
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=连续
+  [1] type=theorem heading=定理 1 title=在一点处连续的线性泛函处处连续
+  [2] type=theorem heading=定理 2 title=有限维的线性泛函必连续
+  [3] type=theorem heading=定理 3 title=
+
+[SCOPE:s_def1|description|连续]
+[0] 定义 1 连续
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1] 设 $f$ 是拓扑线性空间 $E$ 上的线性泛函。
+[2a] 若对任意 $x_0\in E,0<\epsilon\in\mathbb R$，存在 $x_0$ 的邻域 $U$，使得 $x\in U$
+[2b] 则有
+[3] \begin{equation}
+\left\lvert f(x)-f(x_0) \right\rvert <\epsilon,~
+\end{equation}
+[/SCOPE:s_def1_let]
+[4] 线性连续泛函
+[5] 一般定义映射的连续，往往是先定义映射在一点的连续。
+[6] 然而上面的定义是对每一点都连续，而没有事先定义在一点的连续。
+[7] 事实上，在拓扑线性空间中，线性映射在一点连续必定在全空间连续。
+[8] 这由下面的定理指定。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|在一点处连续的线性泛函处处连续]
+[9] 定理 1 在一点处连续的线性泛函处处连续
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[10] 设线性泛函 $f$ 在某一点 $x\in E$ 处连续，
+[11] 则 $f$ 必定在 $E$ 上处处连续。
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm1_proof|description|定理1的证明]
+[SCOPE:s_thm1_proof_let|let_bind|定理1证明中的变量]
+[12] 证明：由定理 1 ，设 $U$ 是 $x$ 的满足式 1 的邻域，
+[13] 于是 $U-x$ 是零邻域，
+[14] 从而 $V=U-x+y=U+(y-x)$ 是（任一点）$y$ 的邻域。
+[/SCOPE:s_thm1_proof_let]
+[15] 因此，若 $z\in V$，
+[16] 则 $z+x-y\in U$，进而
+[17] \begin{equation}
+\left\lvert f(z)-f(y) \right\rvert = \left\lvert f(z-y+x)-f(x) \right\rvert <\epsilon.~
+\end{equation}
+[18] 即验证线性泛函在点 $y$ 的连续性，只需要验证在某一点 $x$ 的连续性即可。
+[19] 证毕！
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_proof]
+[SCOPE:s_thm2|description|有限维的线性泛函必连续]
+[20] 定理 2 有限维的线性泛函必连续
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[21] 设 $E$ 是有限维的拓扑向量空间，
+[22] 则 $E$ 中的任何线性泛函必定连续。
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm2_proof|description|定理2的证明]
+[SCOPE:s_thm2_proof_let|let_bind|定理2证明中的变量]
+[23] 证明：设 $e_1,\cdots,e_n$ 是 $E$ 的基矢，
+[24] 于是对任意 $\epsilon>0$，要
+[25] \begin{equation}
+f(x)-f(x_0)=\sum_{i=1}^n\Delta x_0^i f(e_i)<\epsilon,\quad\Delta x^i=x^i-x^i_0~
+\end{equation}
+[26] 只需取 $\sum_{i=1}^n\Delta x_0^i<\frac{\epsilon}{M}$ 即可，其中 $M=\max\{ \left\lvert f(e_i) \right\rvert \}_{i=1,\cdots,n}$。
+[27] 从而 $x_0$ 的邻域可以这样选择：由于 $ \left\lVert x-x_0 \right\rVert \leq\sum_{i=1}^n \left\lvert \Delta x_0^i \right\rvert \left\lVert e_i \right\rVert \leq m\sum_{i=1}^n \left\lvert \Delta x_0^i \right\rvert $，其中 $m=\max\{ \left\lVert e_i \right\rVert \}_{i=1,\cdots,n}$。
+[28] 因此只需选择 $x_0$ 的 $\frac{\epsilon}{Mm}$ 开球邻域，
+[/SCOPE:s_thm2_proof_let]
+[29] 则
+[30] 式 3 [链接 L0]
+[31] 证毕！
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_proof]
+[SCOPE:s_thm3|description|定理3]
+[32] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[33] 拓扑线性空间 $E$ 上线性泛函 $f$ 连续的充要条件是：存在 $E$ 中零邻域，使得 $f$ 在该邻域上有界。
+[/SCOPE:s_thm3_let]
+[SCOPE:s_thm3_proof|description|定理3的证明]
+[SCOPE:s_thm3_proof_let|let_bind|定理3证明中的变量]
+[34] 证明：必要性：设 $f$ 在点 0 连续，
+[35] 则由线性泛函连续的定义，
+[36] 那么对任意 $\epsilon>0$，存在零邻域，在该邻域上 $ \left\lvert f(x) \right\rvert <\epsilon$（注意 $f(0)=0$）。
+[37] 充分性：设 $U$ 是使得 $f$ 有界的零邻域，
+[38] 即 $ \left\lvert f(U) \right\rvert < C$，$C$ 是某一正数。
+[39] 并设 $\epsilon>0$，
+[40] 则 $\frac{\epsilon}{C}U$ 是这样的零邻域，在其上 $ \left\lvert f(x) \right\rvert <\epsilon$。
+[/SCOPE:s_thm3_proof_let]
+[41] 即 $f$ 在点 0 处连续，
+[42] 于是由定理 1 ，$f$ 在 $E$ 上处处连续。
+[43] 证毕！
+[/SCOPE:s_thm3]
+[/SCOPE:s_thm3_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是定义1的特例：一点连续推出处处连续"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3的充分性部分引用定理1"
+  }
+]

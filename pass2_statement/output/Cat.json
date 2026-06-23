@@ -1,0 +1,614 @@
+{
+  "article_name": "Cat",
+  "statements": [
+    {
+      "stmt_id": "st_cat_summary",
+      "subtype": "remark",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_intro",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_structure",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "C",
+        "Ob(C)",
+        "Mor_C",
+        "a",
+        "x",
+        "y",
+        "z",
+        "Mor_C(Y,Z)",
+        "Mor_C(X,Y)",
+        "Mor_C(X,Z)"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_rules",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "X",
+        "id_X",
+        "phi",
+        "psi",
+        "Y",
+        "Z",
+        "W",
+        "chi"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_claim",
+      "subtype": "exercise",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        18,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "dom",
+        "cod",
+        "Set",
+        "Ab",
+        "Grp",
+        "G-Set",
+        "R-Mod",
+        "F-Vect",
+        "Top",
+        "Ring",
+        "Ob",
+        "Mor(X,Y)"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_intro",
+      "subtype": "definition",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_isomorphism",
+      "subtype": "definition",
+      "clause_range": [
+        33,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "phi",
+        "X",
+        "Y",
+        "psi",
+        "id_X",
+        "id_Y"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_endomorphisms",
+      "subtype": "definition",
+      "clause_range": [
+        36,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "X",
+        "Endo_C(X)",
+        "Auto_C(X)"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_intro",
+      "subtype": "definition",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_groupoid",
+      "subtype": "definition",
+      "clause_range": [
+        41,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_remark",
+      "subtype": "remark",
+      "clause_range": [
+        43,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_group_example",
+      "subtype": "example",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "G",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_set_example",
+      "subtype": "example",
+      "clause_range": [
+        45,
+        47
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "A",
+        "Ob",
+        "Mor(X,Y)",
+        "id"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_intro",
+      "subtype": "definition",
+      "clause_range": [
+        48,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def4_functor_structure",
+      "subtype": "definition",
+      "clause_range": [
+        49,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "A",
+        "B",
+        "F",
+        "F_Ob^Set",
+        "F_Ob^PrCl",
+        "F_Mor",
+        "X",
+        "Y"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_functor_axioms",
+      "subtype": "axiom",
+      "clause_range": [
+        53,
+        55
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "X",
+        "id_X",
+        "phi",
+        "psi"
+      ]
+    },
+    {
+      "stmt_id": "st_def4_remarks",
+      "subtype": "remark",
+      "clause_range": [
+        56,
+        62
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "id_A"
+      ]
+    },
+    {
+      "stmt_id": "st_def5_intro",
+      "subtype": "definition",
+      "clause_range": [
+        63,
+        63
+      ],
+      "truth_value": null,
+      "scope_id": "s_def5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def5_covariant",
+      "subtype": "definition",
+      "clause_range": [
+        64,
+        68
+      ],
+      "truth_value": null,
+      "scope_id": "s_def5",
+      "exposed_entities": [
+        "C",
+        "A",
+        "h^A",
+        "X",
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_def5_contravariant",
+      "subtype": "definition",
+      "clause_range": [
+        69,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_def5",
+      "exposed_entities": [
+        "B",
+        "h_B",
+        "X",
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_def5_remark",
+      "subtype": "remark",
+      "clause_range": [
+        74,
+        74
+      ],
+      "truth_value": null,
+      "scope_id": "s_def5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def6_intro",
+      "subtype": "definition",
+      "clause_range": [
+        75,
+        75
+      ],
+      "truth_value": null,
+      "scope_id": "s_def6",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def6_covariant_category",
+      "subtype": "definition",
+      "clause_range": [
+        76,
+        78
+      ],
+      "truth_value": null,
+      "scope_id": "s_def6",
+      "exposed_entities": [
+        "Set^C",
+        "phi",
+        "A'",
+        "A",
+        "h_co(phi)",
+        "psi",
+        "X",
+        "Y"
+      ]
+    },
+    {
+      "stmt_id": "st_def6_contravariant_category",
+      "subtype": "definition",
+      "clause_range": [
+        79,
+        84
+      ],
+      "truth_value": null,
+      "scope_id": "s_def6",
+      "exposed_entities": [
+        "Set^{C^op}",
+        "B",
+        "B'",
+        "h_ct(phi)",
+        "psi",
+        "Y",
+        "X",
+        "PSh(C)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_claim",
+      "subtype": "exercise",
+      "clause_range": [
+        85,
+        86
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "h^-",
+        "h_-"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_hint",
+      "subtype": "remark",
+      "clause_range": [
+        87,
+        87
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        88,
+        91
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "C",
+        "A",
+        "B",
+        "F",
+        "G",
+        "Nat(h^A,F)",
+        "F(A)",
+        "Nat(h_B,G)",
+        "G(B)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_part1",
+      "subtype": "conclusion",
+      "clause_range": [
+        92,
+        97
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "Phi",
+        "u",
+        "m",
+        "n",
+        "Psi",
+        "Phi_A",
+        "id_A"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_part2",
+      "subtype": "conclusion",
+      "clause_range": [
+        98,
+        98
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_claim",
+      "subtype": "exercise",
+      "clause_range": [
+        99,
+        100
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_solution_mn",
+      "subtype": "conclusion",
+      "clause_range": [
+        101,
+        103
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex3",
+      "exposed_entities": [
+        "v",
+        "Psi",
+        "Psi_X",
+        "f",
+        "F(f)",
+        "id_A",
+        "id_F(A)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_solution_nm",
+      "subtype": "conclusion",
+      "clause_range": [
+        104,
+        112
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex3",
+      "exposed_entities": [
+        "Phi",
+        "phi",
+        "X'",
+        "Y'",
+        "psi",
+        "A",
+        "X",
+        "f",
+        "id_A",
+        "Psi",
+        "Psi_X"
+      ]
+    },
+    {
+      "stmt_id": "st_ex4_claim",
+      "subtype": "exercise",
+      "clause_range": [
+        113,
+        114
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex4",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_structure",
+      "target": "st_def1_rules",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_isomorphism",
+      "target": "st_def2_endomorphisms",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_groupoid",
+      "target": "st_def3_group_example",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3_groupoid",
+      "target": "st_def3_set_example",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def4_functor_structure",
+      "target": "st_def4_functor_axioms",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def5_covariant",
+      "target": "st_def5_contravariant",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def6_covariant_category",
+      "target": "st_def6_contravariant_category",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_statement",
+      "target": "st_thm1_proof_part1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_statement",
+      "target": "st_thm1_proof_part2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_solution_mn",
+      "target": "st_ex3_solution_nm",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex1_claim",
+      "target": "st_def1_rules",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "习题 1 是关于定义 1 的练习"
+    },
+    {
+      "source": "st_ex2_claim",
+      "target": "st_def5_covariant",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "习题 2 是关于 Hom 函子的练习"
+    },
+    {
+      "source": "st_ex3_claim",
+      "target": "st_thm1_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "习题 3 是关于 Yoneda 引理证明的练习"
+    },
+    {
+      "source": "st_ex4_claim",
+      "target": "st_thm1_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "习题 4 是关于 Yoneda 引理第二部分的练习"
+    }
+  ],
+  "unresolved": []
+}

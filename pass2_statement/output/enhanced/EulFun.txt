@@ -1,0 +1,132 @@
+[SCOPE:root|description|欧拉函数（数论）]
+文章名: EulFun
+标题: 欧拉函数（数论）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=欧拉函数
+  [1] type=corollary heading=推论 1 title=任意非零自然数 $n$ 的欧拉函数
+  [2] type=theorem heading=定理 1 title=
+  [3] type=corollary heading=推论 2 title=
+  [4] type=theorem heading=定理 2 title=
+
+[SCOPE:s_def1|description|定义1 欧拉函数]
+[0] 定义 1 欧拉函数
+[1] 欧拉函数 $\varphi(n)$ 表示 $n$ 以内的非零自然数中与 $n$ 互质的数的个数。
+[2] 也可以表示为，
+[3] $$\varphi(n) = \sum_{1 \le d \le n, \gcd(d, n) = 1} 1 ~.$$
+[4] 其中 $\gcd$ 为求最大公约数，
+[5] 故可以用 $\gcd(d, n)=1$ 表示要求 $d$ 与 $n$ 互质。
+[6] 考察一个数论函数，我们经常按素数——素数幂次——非零自然数的顺序去考察。
+[7] 先探讨前两个的性质。
+[SCOPE:s_def1_let_p|let_bind|素数p]
+[8] 显然对于任意素数 $p$，其欧拉函数为 $\varphi(p) = p-1$。
+[/SCOPE:s_def1_let_p]
+[SCOPE:s_def1_let_pk|let_bind|素数幂p^k]
+[9] 对于一个素数幂次 $p^k$，可以想象在 $[1, p^k]$ 内每 $p$ 个数就有一个与 $p^k$ 不互素（有公因子 $p$）。
+[10] 也就是除去所有的 $p$ 的倍数，均与 $p^k$ 互质，
+[11] 故素数幂次的欧拉函数可以表示为 $\varphi(p^k) = p^k \left(1 - (1/p)\right)$。
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let_pk]
+[SCOPE:s_cor1|description|推论1 任意非零自然数n的欧拉函数]
+[12] 推论 1 任意非零自然数 $n$ 的欧拉函数
+[13] \begin{equation}
+\varphi(n) = n \cdot \prod_{i, p_i | n} \left( 1 - \frac1{p_i}\right)~.
+\end{equation}
+[14] 证明：可以利用容斥原理：
+[SCOPE:s_cor1_let_n|let_bind|n的素因子分解]
+[15] 不妨设 $n = \prod {p_i^{k_i}}$，$p_i$ 是 $n$ 的各素因子，$k_i$ 是其幂次。
+[/SCOPE:s_cor1_let_n]
+[16] 则有：
+[17] 不超过 $n$ 的是某个 $p_i$ 的倍数的分别有 $n/p_i$ 个。
+[18] 不超过 $n$ 的是某两 $p_i$ 的倍数的，也即是 $p_i p_j$ 的倍数（$i \neq j$）的，有 $n/(p_i p_j)$ 个。
+[19] 在上面重复计数，需要减去。
+[20] 不超过 $n$ 的是某三 $p_i$ 的倍数的，也即是 $p_i p_j p_k$ 的倍数（$i, j, k$ 互不相等），有 $n/(p_i p_j p_k)$ 个。
+[21] 在上面被减去了，没有计数到，需要加上。
+[22] 依此类推...
+[23] 不超过 $n$ 的是所有 $p_i$ 的倍数的，
+[24] 即 $\prod p_i$ 的，有 $n/(\prod p_i)$ 个。
+[25] 根据 $i$ 的奇偶性决定是要加上或减去。
+[26] 我们发现这表达式可以将欧拉函数表示为：
+[27] $$\varphi(n) = n - \sum(n/p_i) + \sum_{i\le j} (n/(p_i p_j)) \cdots ~, $$
+[28] 恰好与下面的展开式对应（之后默认的情况下忽略 $p_i | n$ 的条件不写）：
+[29] $$\varphi(n) = n \cdot \prod_i \left( 1 - \frac1{p_i}\right)~.$$
+[30] 这就是计算某任意数的欧拉函数的方法。
+
+[/SCOPE:s_cor1]
+[SCOPE:s_thm1|description|定理1 欧拉函数是积性函数]
+[31] 定理 1
+[32] 欧拉函数是一个积性函数。
+[33] 证明：
+[SCOPE:s_thm1_let_nm|let_bind|互质的n,m]
+[34a] (n) \varphi
+[34b] (m)$。
+[/SCOPE:s_thm1_let_nm]
+[35] 将 $n$、$m$ 的质因子列出，假设 $n$、$m$ 分别有质因子 $p_i$、$q_i$，
+[36] 则 $nm$ 的所有质因子为 $p_i, q_i$（$p_i \neq q_j, \forall (i, j)$，因为 $n$ 与 $m$ 互质）。
+[37] 从而利用上面的推论 1 ，他们的积的欧拉函数可以表示为，
+[38] \begin{equation}
+\begin{aligned}
+\varphi(n m) &= nm \prod_i \left(1-\frac1{p_i}\right) \prod_i \left(1-\frac1{q_i}\right)\\
+&= \left(n \prod_i \left(1 - \frac1{p_i}\right)\right) \left(m \prod_i \left(1 - \frac1{q_i}\right)\right)\\
+&= \varphi(n) \varphi(m) ~.
+\end{aligned}
+\end{equation}
+[39] 这就完成了证明。
+
+[/SCOPE:s_thm1]
+[40] 由欧拉函数的定义，我们可以立刻得知一个推论：
+
+[SCOPE:s_cor2|description|推论2 缩系元素个数]
+[41] 推论 2
+[42] $m$ 的缩系的元素个数是 $\varphi(m)$。
+
+[/SCOPE:s_cor2]
+[SCOPE:s_thm2|description|定理2 缩系与互质整数相乘]
+[43] 定理 2
+[SCOPE:s_thm2_let_a|let_bind|缩系a_i]
+[44] 若 $a_1, a_2, \dots, a_{\varphi(m)}$ 取遍 $m$ 的一个缩系，
+[/SCOPE:s_thm2_let_a]
+[SCOPE:s_thm2_let_k|let_bind|互质整数k]
+[45] 则对于一个与 $m$ 互质的整数 $k: (k, m) = 1$，
+[/SCOPE:s_thm2_let_k]
+[46] 则
+[47] $k a_1, k a_2, \dots, k a_{\varphi(m)}$ 也取遍 $m$ 的一个缩系。
+[48] 证明可以直接考虑模仿完全剩余系时的情形，
+[49] 即定理 2 的证明。
+[50] 可以证明 $k a_i$ 之间两两不同余，而由于 $(k, m) = 1$，各 $k a_i$ 必定都与 $m$ 互质，
+[51] 故他们取遍 $m$ 的一个缩系。
+[/SCOPE:s_thm2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是定义1的公式推广"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_cor1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理1的证明使用了推论1"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推论2由定义1直接得出"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_cor2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2基于缩系概念"
+  }
+]

@@ -1,0 +1,77 @@
+[SCOPE:root|description|厄米矩阵、自伴矩阵]
+文章名: HerMat
+标题: 厄米矩阵、自伴矩阵
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=厄米共轭
+  [1] type=exercise heading=习题 1 title=证明
+
+[SCOPE:s_def_herm_conj|description|厄米共轭定义]
+[0] 我们把矩阵元可以取复数的矩阵叫做复数矩阵。
+[1] 与矩阵转置（式 3 ）类似，可以定义厄米共轭（Hermitian conjugate）操作：
+
+[2] 定义 1 厄米共轭
+[3] 要对一个复数矩阵做厄米共轭，就先将其做转置，再对每个矩阵元取复共轭。
+[SCOPE:s_let_herm_conj|let_bind|厄米共轭变量]
+[4] 矩阵 $ \boldsymbol{\mathbf{A}} $ 的厄米共轭矩阵记为 $ \boldsymbol{\mathbf{A}} ^\dagger $，其第 $i$ 行第 $j$ 列的矩阵元为
+[5] \begin{equation}
+A ^\dagger _{i,j} = A_{j,i}^*~.
+\end{equation}
+[/SCOPE:s_let_herm_conj]
+[6] 伴随矩阵（adjoint matrix）
+
+[/SCOPE:s_def_herm_conj]
+[7] 任意常数乘以厄米矩阵再取共轭，等于该常数的复共轭乘以矩阵的厄米共轭
+[8] \begin{equation}
+(c \boldsymbol{\mathbf{A}} ) ^\dagger = c^* \boldsymbol{\mathbf{A}} ^\dagger ~.
+\end{equation}
+[9] 类比转置，矩阵相乘的厄米共轭等于分别做厄米共轭，逆序排列，再相乘
+[10] \begin{equation}
+( \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{B}} \dots \boldsymbol{\mathbf{C}} ) ^\dagger = \boldsymbol{\mathbf{C}} ^\dagger \dots \boldsymbol{\mathbf{B}} ^\dagger \boldsymbol{\mathbf{A}} ^\dagger ~.
+\end{equation}
+
+[SCOPE:s_exercise1|description|习题1 证明]
+[11] 习题 1 证明
+[12] 请根据相关定义证明式 2 和式 3 。
+
+[/SCOPE:s_exercise1]
+[SCOPE:s_linear_map|description|线性映射的厄米共轭]
+[13] 既然矩阵可以用来表示线性映射，
+[14] 那么其厄米共轭（伴随矩阵）也有对应的算符。
+[SCOPE:s_let_linear_map|let_bind|线性映射变量]
+[15] 上述 $ \boldsymbol{\mathbf{A}} $ 和 $ \boldsymbol{\mathbf{A}} ^\dagger $ 的算符分别记为 $A:X\to Y$，$A ^\dagger : Y\to X$，其中 $Y = A(X)$ 是 $A$ 的值域空间。
+[/SCOPE:s_let_linear_map]
+[16] 为什么 $A ^\dagger $ 要调换 $X, Y$ 呢？
+[17] 考虑长方形矩阵 $ \boldsymbol{\mathbf{A}} $ 的厄米共轭矩阵就会发现转置后定义域和值域的维数互换了，
+[18] 所以 $A ^\dagger :Y\to X$ 是更自然的定义。
+[19] 【未完成】对任意线性映射有 $ \left\langle u \middle| Av \right\rangle = \left\langle A ^\dagger u \middle| v \right\rangle = \left\langle v \middle| A ^\dagger u \right\rangle $，
+[20] 即 $ \boldsymbol{\mathbf{u}} ^\dagger \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{v}} = \boldsymbol{\mathbf{v}} ^\dagger \boldsymbol{\mathbf{A}} ^\dagger \boldsymbol{\mathbf{u}} $（式 3 ）。
+[21] 这可以看作厄米算符的等效定义，在泛函分析中更有用。
+
+[/SCOPE:s_linear_map]
+[SCOPE:s_herm_matrix|description|厄米矩阵、自伴矩阵]
+[SCOPE:s_let_herm_matrix|let_bind|厄米矩阵变量]
+[22] 若 $ \boldsymbol{\mathbf{A}} $ 的厄米共轭是其本身，
+[23] 即
+[24] \begin{equation}
+\boldsymbol{\mathbf{A}} ^\dagger = \boldsymbol{\mathbf{A}} ~.
+\end{equation}
+[25] 那么我们称其为
+[26] 厄米矩阵
+[27] 。
+[28] 厄米矩阵关于对角线对称的任意两个矩阵元互为复共轭
+[29] \begin{equation}
+A_{i,j} = A_{j,i}^*~.
+\end{equation}
+[30] 特殊地，对角线上的矩阵元的复共轭等于本身（$A_{i,i} = A_{i,i}^*$），
+[31] 所以厄米矩阵对角线上的矩阵元都是实数。
+[32] 事实上，厄米矩阵也可以等效定义为满足
+[33] \begin{equation}
+\boldsymbol{\mathbf{v}} _i ^\dagger ( \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{v}} _j) = ( \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{v}} _i) ^\dagger \boldsymbol{\mathbf{v}} _j~.
+\end{equation}
+[34] 对任意列矢量 $ \boldsymbol{\mathbf{v}} _i$ 和 $ \boldsymbol{\mathbf{v}} _j$ 都成立的矩阵。
+[/SCOPE:s_let_herm_matrix]
+[35] 这可以用
+[36] 式 3 [链接 L0]
+[/SCOPE:s_herm_matrix]
+[/SCOPE:root]

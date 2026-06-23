@@ -1,0 +1,236 @@
+{
+  "article_name": "ComSpa",
+  "statements": [
+    {
+      "stmt_id": "st_cauchy_seq_def_intro",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_cauchy_seq_def",
+      "exposed_entities": [
+        "a_n",
+        "a_0",
+        "epsilon",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_cauchy_seq_def_formal",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_cauchy_seq_let",
+      "exposed_entities": [
+        "a_n",
+        "epsilon",
+        "N",
+        "n",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_exercise_claim1",
+      "subtype": "exercise",
+      "clause_range": [
+        13,
+        15
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cauchy_seq2_def",
+      "subtype": "definition",
+      "clause_range": [
+        18,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_cauchy_seq2_let",
+      "exposed_entities": [
+        "M",
+        "x",
+        "y",
+        "d",
+        "a_n",
+        "epsilon",
+        "N",
+        "n",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_uniqueness_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        23,
+        25
+      ],
+      "truth_value": "true",
+      "scope_id": "s_uniqueness_let",
+      "exposed_entities": [
+        "M",
+        "a_n"
+      ]
+    },
+    {
+      "stmt_id": "st_uniqueness_assumption",
+      "subtype": "assumption",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_uniqueness_reductio_let",
+      "exposed_entities": [
+        "a_n",
+        "x_0",
+        "y_0",
+        "L",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_uniqueness_contradiction",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_uniqueness_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_complete_space_intro",
+      "subtype": "definition",
+      "clause_range": [
+        31,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_complete_space",
+      "exposed_entities": [
+        "Q",
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_completion_process",
+      "subtype": "definition",
+      "clause_range": [
+        36,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_complete_space",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_completion_metric_def",
+      "subtype": "definition",
+      "clause_range": [
+        45,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_completion_def_let",
+      "exposed_entities": [
+        "a_n",
+        "M",
+        "a_0",
+        "x",
+        "d"
+      ]
+    },
+    {
+      "stmt_id": "st_completion_metric_exists",
+      "subtype": "remark",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_completion_def",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_cauchy_seq_def_intro",
+      "target": "st_cauchy_seq_def_formal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_uniqueness_assumption",
+      "target": "st_uniqueness_contradiction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cauchy_seq2_def",
+      "target": "st_uniqueness_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cauchy_seq2_def",
+      "target": "st_complete_space_intro",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_complete_space_intro",
+      "target": "st_completion_process",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_completion_process",
+      "target": "st_completion_metric_def",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_cauchy_seq2_def",
+      "target": "st_cauchy_seq_def_formal",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "柯西列是柯西数列在度量空间中的推广"
+    },
+    {
+      "source": "st_uniqueness_theorem",
+      "target": "st_cauchy_seq2_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "唯一性定理依赖于柯西列的定义"
+    },
+    {
+      "source": "st_complete_space_intro",
+      "target": "st_cauchy_seq2_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "完备空间的定义基于柯西列"
+    },
+    {
+      "source": "st_completion_metric_def",
+      "target": "st_complete_space_intro",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "完备化度量用于构造完备空间"
+    }
+  ],
+  "unresolved": []
+}

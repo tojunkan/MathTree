@@ -1,0 +1,404 @@
+{
+  "article_name": "CTrig",
+  "statements": [
+    {
+      "stmt_id": "st_def_sin",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "sin z"
+      ]
+    },
+    {
+      "stmt_id": "st_def_cos",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "cos z"
+      ]
+    },
+    {
+      "stmt_id": "st_why_question",
+      "subtype": "question",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_why_answer",
+      "subtype": "remark",
+      "clause_range": [
+        5,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_compat_def",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_compat",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_compat_let",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_compat",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_compat_sin_real",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_compat",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_compat_euler",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_compat",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_compat_euler_eq1",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_compat",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_compat_euler_eq2",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_compat",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_compat_derivation",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_compat",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_compat_cos_real",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_compat",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sum_formula_sin",
+      "subtype": "theorem",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_sum",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sum_formula_cos",
+      "subtype": "theorem",
+      "clause_range": [
+        21,
+        23
+      ],
+      "truth_value": "true",
+      "scope_id": "s_sum",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_realimag_let",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_realimag",
+      "exposed_entities": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_realimag_sin_expr",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_realimag",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_realimag_cos_expr",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_realimag",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_realimag_cosh",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_realimag",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_realimag_sinh",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_realimag",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_realimag_sin_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_realimag",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_realimag_cos_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_realimag",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_realimag_remark",
+      "subtype": "remark",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_realimag",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_compat_let",
+      "target": "st_compat_sin_real",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_compat_euler",
+      "target": "st_compat_euler_eq1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_compat_euler",
+      "target": "st_compat_euler_eq2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_compat_let",
+      "target": "st_compat_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_compat_euler_eq1",
+      "target": "st_compat_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_compat_euler_eq2",
+      "target": "st_compat_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_compat_let",
+      "target": "st_compat_cos_real",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_compat_euler",
+      "target": "st_compat_cos_real",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_realimag_let",
+      "target": "st_realimag_sin_expr",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_realimag_let",
+      "target": "st_realimag_cos_expr",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_realimag_let",
+      "target": "st_realimag_cosh",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_realimag_let",
+      "target": "st_realimag_sinh",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_realimag_sin_expr",
+      "target": "st_realimag_sin_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_realimag_cosh",
+      "target": "st_realimag_sin_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_realimag_sinh",
+      "target": "st_realimag_sin_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_realimag_cos_expr",
+      "target": "st_realimag_cos_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_realimag_cosh",
+      "target": "st_realimag_cos_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_realimag_sinh",
+      "target": "st_realimag_cos_final",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_compat_sin_real",
+      "target": "st_def_sin",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "兼容性验证是定义在实数上的特例"
+    },
+    {
+      "source": "st_sum_formula_sin",
+      "target": "st_def_sin",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "两角和公式由定义推导"
+    },
+    {
+      "source": "st_sum_formula_cos",
+      "target": "st_def_cos",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "两角和公式由定义推导"
+    },
+    {
+      "source": "st_realimag_sin_final",
+      "target": "st_sum_formula_sin",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "实部和虚部由两角和公式推导"
+    },
+    {
+      "source": "st_realimag_cos_final",
+      "target": "st_sum_formula_cos",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "实部和虚部由两角和公式推导"
+    }
+  ],
+  "unresolved": []
+}

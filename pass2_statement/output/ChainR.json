@@ -1,0 +1,375 @@
+{
+  "article_name": "ChainR",
+  "statements": [
+    {
+      "stmt_id": "st_ex1_heading",
+      "subtype": "example",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_intro",
+      "subtype": "remark",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let1",
+      "exposed_entities": [
+        "u",
+        "x",
+        "f(u)=u^2",
+        "g(x)=sin x",
+        "f'(u)=2u",
+        "g'(x)=cos x"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_result1",
+      "subtype": "conclusion",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let2",
+      "exposed_entities": [
+        "u",
+        "x",
+        "a",
+        "f(u)=sqrt(u)",
+        "g(x)=x^2+a^2",
+        "f'(u)=1/(2 sqrt u)",
+        "g'(x)=2x"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_result2",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_intro",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_start",
+      "subtype": "remark",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_example",
+      "subtype": "example",
+      "clause_range": [
+        8,
+        11
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_let",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_geom_let",
+      "exposed_entities": [
+        "x",
+        "u",
+        "f",
+        "g",
+        "f'(x)",
+        "g'(u)"
+      ]
+    },
+    {
+      "stmt_id": "st_geom_derivation",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        29
+      ],
+      "truth_value": "true",
+      "scope_id": "s_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_chain_rule",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_end",
+      "subtype": "remark",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_notation",
+      "subtype": "remark",
+      "clause_range": [
+        31,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_multi_let",
+      "subtype": "assumption",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_multi_let",
+      "exposed_entities": [
+        "x",
+        "u",
+        "y",
+        "v",
+        "h",
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_multi_rule",
+      "subtype": "theorem",
+      "clause_range": [
+        40,
+        43
+      ],
+      "truth_value": "true",
+      "scope_id": "s_multi",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_heading",
+      "subtype": "example",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "y",
+        "u",
+        "x",
+        "a",
+        "h'(y)=-1/y^2",
+        "f'(u)=1/(2 sqrt u)",
+        "g'(x)=2x"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        48,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_heading",
+      "subtype": "example",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_let",
+      "subtype": "assumption",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3_let",
+      "exposed_entities": [
+        "t",
+        "x(t)",
+        "v(t)",
+        "a(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_chain",
+      "subtype": "conclusion",
+      "clause_range": [
+        51,
+        52
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_dv2",
+      "subtype": "conclusion",
+      "clause_range": [
+        53,
+        53
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_integral",
+      "subtype": "conclusion",
+      "clause_range": [
+        54,
+        56
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex1_let1",
+      "target": "st_ex1_result1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let2",
+      "target": "st_ex1_result2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_geom_let",
+      "target": "st_geom_chain_rule",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_multi_let",
+      "target": "st_multi_rule",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_let",
+      "target": "st_ex2_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_let",
+      "target": "st_ex3_chain",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_let",
+      "target": "st_ex3_dv2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_let",
+      "target": "st_ex3_integral",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

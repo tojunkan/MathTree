@@ -1,0 +1,172 @@
+[SCOPE:root|description|数列的极限（极简微积分）]
+文章名: Lim0
+标题: 数列的极限（极简微积分）
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=圆周率
+  [1] type=definition heading=定义 1 title=数列的极限
+  [2] type=example heading=例 2 title=根据定义证明对数列 $\displaystyle a_n= {(-1)^n}{1\over{2^n}}$，$\lim\limits_{n\to\infty}a_n=0$
+  [3] type=exercise heading=习题 1 title=
+  [4] type=definition heading=定义 2 title=数列的敛散性
+  [5] type=example heading=例 3 title=
+  [6] type=example heading=例 4 title=
+  [7] type=example heading=例 5 title=
+
+[SCOPE:s_example1|description|例1 圆周率]
+[0] 例 1 圆周率
+[1] 我们知道 $\pi$ 是一个无理数，
+[2] 所以 $\pi$ 的小数部分是无限多的。
+[3] 目前用计算机已经可以将 $\pi$ 精确地计算到小数点后数亿位。
+[4] 然而在实际应用中，往往只用取前几位小数的近似即可。
+[SCOPE:s_example1_let|let_bind|圆周率数列变量]
+[5] 下面给出一个数列，定义第 $n$ 项是 $\pi$ 的前 $n$ 位小数近似（去尾），
+[6] 即
+[7] \begin{equation}
+a_0 = 3,\,\, a_1 = 3.1,\,\, a_2 = 3.14,\,\, a_3 = 3.141,\,\dots~
+\end{equation}
+[8] 显而易见，当 $n$ 趋于无穷时，$a_n$ 趋于 $\pi$。
+[/SCOPE:s_example1_let]
+[9] 无穷（Infinity）用符号 $\infty$ 来表示。
+[10] 我们说该数列的极限值是 $\pi$，也可以简称极限（Limit）。
+[11] 以上这种情况，用极限符号表示，就是
+[12] \begin{equation}
+\lim_{n \to \infty } {a_n} = \pi ~.
+\end{equation}
+[13] $\lim\limits_{n \to \infty }$ 在这里相当于一个 “操作”，叫做算符（operator）。
+[14] 它作用在整个数列上，并输出一个数，也就是数列的极限值。
+[15] 这有些类似于函数输入一个自变量并输出一个函数值，只不过 $\lim$ 算符的自变量从数换成了数列。
+[16] 所以不要误以为式 2 是说当 $n = \infty$ 时，有1 $a_n=\pi$，而要理解成数列 $a_n$ 经过算符 $\lim\limits_{n \to \infty }$ 的作用以后，得出的结果是 $\pi$。
+[17] 类比函数 $\sin x = y$，是说 $x$ 经过正弦函数作用后等于 $y$。
+[18] 所以从概念上来说，极限中的 “趋于” 和 “等于” 是不同的。
+[19] 趋于是数列整体的性质，而不是某一个项的性质。
+[20] 我们可以总结出以上数列的一个性质，并把它作为数列极限的一般定义。
+[21] 具有极限的数列最显著的特征是，随着 $n$ 增加，后面的所有项都越来越接近极限值。
+[22] 可是一个难点在于如何定义 “越来越接近”。
+[23] 先看一个错误的理解：考虑数列
+[24] \begin{equation}
+a_1 = 3.21,\ a_2 = 3.201,\ a_3 = 3.2001,\ a_4 = 3.20001, \dots~
+\end{equation}
+[25] 这个数列也同样越来越接近 $\pi$，
+[26] 但直觉告诉我们，它的极限是 $3.2$ 而不是 $\pi$。
+[27] 既然要讨论有多接近，那就要引入距离。
+[28] 我们可以把第 $a_n$ 和极限值 $\pi$ 的距离用绝对值定义为 $ \left\lvert a_n - \pi \right\rvert $。
+[29] 对式 1 的数列，可以发现这个距离不光是越来越小，而且想要多小就有多小。
+[30] 例如要求 $ \left\lvert a_n - \pi \right\rvert < 10^{-2}$，容易发现 $n > 1$ 时就总能满足；
+[31] 又例如要求 $ \left\lvert a_n - \pi \right\rvert < 10^{-10}$，容易发现 $n > 9$ 时就总能满足；
+[32] 一般地如果要求 $ \left\lvert a_n - \pi \right\rvert < 10^{-q}$（$q$ 为整数），只要 $n > q-1$ 就总能满足，这就意味着 $\lim\limits_{n \to \infty } a_n = \pi$。
+[33] 有了这个定义，我们就可以轻易地判断式 3 的极限不是 $\pi$。
+[34] 因为无论 $n$ 为多大，总是有 $ \left\lvert a_n - \pi \right\rvert > 3.2 - \pi > 0.05$，
+[35] 所以如果要求一个比这更小的距离，
+[36] 那么就没有任何 $n$ 可以满足。
+
+[/SCOPE:s_example1]
+[SCOPE:s_def1|description|定义1 数列的极限]
+[37] 定义 1 数列的极限
+[SCOPE:s_def1_let|let_bind|极限定义变量]
+[38] 考虑无穷项的实数数列 $a_1, a_2, \dots$，若存在一个实数 $A$，使得：无论多么小的正数 $\varepsilon$，总存在正整数 $N$，对任意 $n > N$ 都满足 $ \left\lvert a_n - A \right\rvert < \varepsilon$，
+[39] 则该数列的极限就是 $A$。
+[/SCOPE:s_def1_let]
+[40] 【图解】图 1：数列的极限（查看动画）：图中每点代表数列的一项，数列的极限值为 $1$，红色区域表示对距离 $ \left\lvert a_n - A \right\rvert $ 的要求，满足要求的 $a_n$ 为红色，不满足的为蓝色。
+[41] 无论红色区域有多窄（只要不为零），总能找到一个不等式 $n > N$ 使之后所有的点都是红色。
+[42] 我们来看几个简单的例题，加深一下印象。
+
+[/SCOPE:s_def1]
+[SCOPE:s_example2|description|例2 证明极限为0]
+[SCOPE:s_example2_let|let_bind|例2变量]
+[43] 例 2 根据定义证明对数列 $\displaystyle a_n= {(-1)^n}{1\over{2^n}}$，$\lim\limits_{n\to\infty}a_n=0$
+[44] 对任意 $\varepsilon$，取 $N=[-\log_2\varepsilon]$，
+[45] 则 $n>N$ 时有
+[46] $n>-\log_2\varepsilon$，
+[47] 即 $2^{-n}<\varepsilon$。
+[48] 又 $|a_n-0|=2^{-n}$。
+[49] 因此，对任意 $\varepsilon$，存在 $N=[-\log_2\varepsilon]$，使得当 $n>N$ 时，$|a_n-0|<\varepsilon$。
+[50] 根据定义有 $\lim\limits_{n\to\infty}a_n=0$。
+[/SCOPE:s_example2_let]
+[51] 一些数列不存在极限：
+
+[/SCOPE:s_example2]
+[SCOPE:s_exercise1|description|习题1]
+[52] 习题 1
+[SCOPE:s_exercise1_let|let_bind|习题1变量]
+[53] 考虑数列 $a_n = n$ 以及 $a_n=(-1)^n$。
+[/SCOPE:s_exercise1_let]
+[54] 它们存在极限吗？
+
+[/SCOPE:s_exercise1]
+[SCOPE:s_def2|description|定义2 数列的敛散性]
+[55] 定义 2 数列的敛散性
+[56a] 如果一个数列不存在极限
+[56b] 则称它是发散（divergent）的。
+[57] 如果存在极限，
+[58] 则称它是收敛（convergent）的。
+
+[/SCOPE:s_def2]
+[SCOPE:s_example3|description|例3 极限与有限项无关]
+[59] 容易发现数列的极限和前面有限项的值都无关，例如把式 1 中的前 10 项都改成 $0$，
+[60] 那么该数列的极限仍然是 $\pi$。
+[61] 把前一万项改成 $0$ 也同理。
+
+[/SCOPE:s_example3]
+[SCOPE:s_example4|description|例4 项可以等于极限]
+[SCOPE:s_example4_let|let_bind|例4变量]
+[62] 根据定义，数列极限也并不要求 $n\to \infty$ 时数列的项不能等于极限值，例如数列
+[63] \begin{equation}
+b_0 = 3.3~,\,\, b_1 = 3.2~, \,\, b_2 = \pi~, \,\, b_3 = \pi~, \,\, b_n = \pi \;\; (n \ge 2)~.
+\end{equation}
+[/SCOPE:s_example4_let]
+[64] 定义 1
+
+[/SCOPE:s_example4]
+[SCOPE:s_example5|description|例5 距离不必严格递减]
+[65] 注意存在极限的数列未必要求距离 $ \left\lvert a_n - A \right\rvert $ 是严格递减的，例如数列
+[66] \begin{equation}
+\frac{1}{2},\;\; \frac{1}{4},\;\; \frac{1}{3},\;\; \frac{1}{5},\;\; \frac{1}{4},\;\; \frac{1}{6},\;\; \frac{1}{5},\;\; \frac{1}{7},\;\; \dots~
+\end{equation}
+[/SCOPE:s_example5]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1引出极限定义"
+  },
+  {
+    "source_scope": "s_example2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2应用定义1"
+  },
+  {
+    "source_scope": "s_exercise1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题1引出敛散性定义"
+  },
+  {
+    "source_scope": "s_example3",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例3说明极限性质"
+  },
+  {
+    "source_scope": "s_example4",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例4说明极限性质"
+  },
+  {
+    "source_scope": "s_example5",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例5说明极限性质"
+  }
+]

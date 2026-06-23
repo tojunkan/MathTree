@@ -1,0 +1,82 @@
+[SCOPE:root|description|拉马努金和（数论）]
+文章名: RamSum
+标题: 拉马努金和（数论）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=拉马努金和
+  [1] type=theorem heading=定理 1 title=
+  [2] type=theorem heading=定理 2 title=
+  [3] type=theorem heading=定理 3 title=
+
+[SCOPE:s_def|description|定义 1 拉马努金和]
+[0] 定义 1 拉马努金和
+[SCOPE:s_def_let|let_bind|定义中的变量]
+[1] 拉马努金和（Ramanujan's Sum） $c(m; n)$ 定义为：
+[2] \begin{equation}
+c(m; n) = c_n(m) = \sum_{h=1, \gcd(h, n)=1}^{n} e\left(\frac{mh}{n}\right) ~.
+\end{equation}
+[3] 类似 Gauss 和的，可以发现，只要 $h$ 取遍 $n$ 的一个缩系即可，记为 $h^*(n)$。
+
+[/SCOPE:s_def]
+[/SCOPE:s_def_let]
+[SCOPE:s_thm1|description|定理 1]
+[4] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[5] \begin{equation}
+c_n(m) = \sum_{h^*(n)} e\left(mh/n\right) ~.
+\end{equation}
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm2|description|定理 2]
+[6] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[7] 利用本原单位根，可以将 Ramanujan 和表示为
+[8] \begin{equation}
+c_q(m) = \sum \rho^m~,
+\end{equation}
+[9] 利用缩系的定理 3 ，将可以得到 Ramanujan 和的另一性质。
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm3|description|定理 3]
+[10] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[SCOPE:s_thm3_cond|conditional|互素条件]
+[11] 若 $(q, q') = 1$，
+[/SCOPE:s_thm3_cond]
+[12a] (m) = c_q
+[12b] (m) c_{q'}
+[12c] (m)$。
+[13] 这是因为利用这性质将直接有
+[14] \begin{equation}
+c_q(m) c_{q'}(m) = \sum_{h^*(q), h'^*(q')} e\left[ m\left(\frac{h}{q} + \frac{h'}{q'}\right) \right] = \sum_{h^*(q), h'^*(q')} e\left( \frac{m(hq' + h'q)}{q q'} \right) = c_{qq'}(m)~.
+\end{equation}
+[/SCOPE:s_thm3]
+[/SCOPE:s_thm3_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是定义1的另一种表示"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2是定义1的另一种表示"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3的证明使用了定理2的表示"
+  }
+]

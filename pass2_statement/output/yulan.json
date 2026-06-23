@@ -1,0 +1,259 @@
+{
+  "article_name": "yulan",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "n",
+        "nZ"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_verify",
+      "subtype": "exercise",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_contain",
+      "subtype": "remark",
+      "clause_range": [
+        5,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_concl",
+      "subtype": "theorem",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof",
+      "subtype": "remark",
+      "clause_range": [
+        11,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_pos",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_neg_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_neg",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        22,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_equiv",
+      "subtype": "exercise",
+      "clause_range": [
+        26,
+        28
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_reflex",
+      "subtype": "theorem",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_trans",
+      "subtype": "theorem",
+      "clause_range": [
+        31,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "a",
+        "b",
+        "c",
+        "m",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_assump",
+      "target": "st_thm1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_assump",
+      "target": "st_def2_pos",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def2_neg_assump",
+      "target": "st_def2_neg",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_concl",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1的结论基于倍数定义"
+    },
+    {
+      "source": "st_def2_pos",
+      "target": "st_def1",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "整除与倍数是对偶关系"
+    },
+    {
+      "source": "st_ex2_equiv",
+      "target": "st_def2_pos",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "习题2说明倍数与整除等价"
+    },
+    {
+      "source": "st_example1_reflex",
+      "target": "st_def2_pos",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1展示整除的基本性质"
+    },
+    {
+      "source": "st_example1_trans",
+      "target": "st_def2_pos",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1展示整除的基本性质"
+    }
+  ],
+  "unresolved": []
+}

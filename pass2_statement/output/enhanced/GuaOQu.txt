@@ -1,0 +1,136 @@
+[SCOPE:root|description|二次型的规范型]
+文章名: GuaOQu
+标题: 二次型的规范型
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=corollary heading=推论 1 title=
+  [2] type=corollary heading=推论 2 title=
+
+[0] 在规范基底下，二次型有比较简单的形式，这在理论和应用上都有重要价值。
+
+[SCOPE:s_theorem1|description|定理1]
+[SCOPE:s_theorem1_let|let_bind|定理1的变量]
+[1] 定理 1
+[2] 矢量空间 $V$ 上每个对称的双线性型 $f$ 都有规范基底。
+[3] 证明： 对 $V$ 的维度 $n$ 应用数学归纳法。
+[/SCOPE:s_theorem1_let]
+[4] 当 $n=1$ 时命题显然。
+[5a] 如果 $f( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} )=0$ 对所有 $ \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{y}} \in V$ 都成立（
+[5b] 则$f=0$），定理显然对任意基底都适用。
+[6] 如果 $f\neq 0$，
+[7] 那么对应二次型也不为 0（定理 1 ）。
+[8] 于是存在这么一个向量 $ \boldsymbol{\mathbf{e}} _1$，使得 $q( \boldsymbol{\mathbf{e}} _1)=f( \boldsymbol{\mathbf{e}} _1, \boldsymbol{\mathbf{e}} _1)\neq0$。
+[9] 于是，线性函数
+[10] \begin{equation}
+f_1: \boldsymbol{\mathbf{x}} \mapsto f( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{e}} _1)~
+\end{equation}
+[11] 非零（$f_1( \boldsymbol{\mathbf{e}} _1)\neq0$）。由
+[12] 推论 1
+[13] ，线性子空间
+[14] \begin{equation}
+L=\mathrm{Ker} f_1=\{ \boldsymbol{\mathbf{x}} \in V|f_1( \boldsymbol{\mathbf{x}} )=0\}~
+\end{equation}
+[15] 的维数是 $n-1$。
+[16] 其中，$n$ 是矢量空间 $V$ 的维数。
+[17] 根据归纳法假设，对 $L$ 必有基底 $( \boldsymbol{\mathbf{e}} _2,\cdots, \boldsymbol{\mathbf{e}} _n)$，在此基底下，$f$ 限制（定义 4 ）在 $L$ 上的矩阵是对角的，
+[18] 即
+[19] \begin{equation}
+f( \boldsymbol{\mathbf{e}} _i, \boldsymbol{\mathbf{e}} _j)=0,\quad i,j=2,\cdots ,n,\quad i\neq j~
+\end{equation}
+[20] 按构造方式，$f( \boldsymbol{\mathbf{e}} _i, \boldsymbol{\mathbf{e}} _1)=0,i=2,3,\cdots n$。
+[21] 所以得到 $f( \boldsymbol{\mathbf{e}} _i, \boldsymbol{\mathbf{e}} _j)=0,i\neq j$。
+[22] 现在，只需证明向量组 $ \boldsymbol{\mathbf{e}} _1,\cdots, \boldsymbol{\mathbf{e}} _n$ 线性无关，$( \boldsymbol{\mathbf{e}} _k)$ 就具有规范基底的特征了。
+[SCOPE:s_theorem1_reductio|reductio|反证法证明线性无关]
+[23] 设，情形相反，
+[24] 那么在任意非平凡关系式
+[25] \begin{equation}
+\alpha_1 \boldsymbol{\mathbf{e}} _1+\cdots+\alpha_n \boldsymbol{\mathbf{e}} _n= \boldsymbol{\mathbf{0}} ~
+\end{equation}
+[26] 中，只能有 $\alpha_1\neq0$，因为 $( \boldsymbol{\mathbf{e}} _2,\cdots , \boldsymbol{\mathbf{e}} _n)$ 是 $L$ 的基底，
+[27] 但此时 $ \boldsymbol{\mathbf{e}} _1=\sum\limits_{i>1}\beta _i \boldsymbol{\mathbf{e}} _i$ 且
+[28] \begin{equation}
+0\neq f_1( \boldsymbol{\mathbf{e}} _1)=f_1(\sum\limits_{i>1}\beta_i \boldsymbol{\mathbf{e}} _i)=\sum\limits_{i>1}\beta_if_1( \boldsymbol{\mathbf{e}} _i)=0~.
+\end{equation}
+[29] 这是一个矛盾，证毕!
+
+[/SCOPE:s_theorem1]
+[/SCOPE:s_theorem1_reductio]
+[SCOPE:s_cor1|description|推论1]
+[SCOPE:s_cor1_let|let_bind|推论1的变量]
+[30] 推论 1
+[31] 在域 $F$ 上的 $n$ 维向量空间 $V$ 上给定一个秩为 $r\leq n$ 的二次型 $q$。
+[32] 那么，在 $V$ 中存在一个基底 $( \boldsymbol{\mathbf{e}} _i)$，在它之下 $q$ 取规范型式：
+[/SCOPE:s_cor1_let]
+[33] \begin{equation}
+q( \boldsymbol{\mathbf{x}} )=\lambda_1 x_1^2+\cdots+\lambda_r x_r^2~.
+\end{equation}
+
+[/SCOPE:s_cor1]
+[SCOPE:s_cor2|description|推论2]
+[SCOPE:s_cor2_let|let_bind|推论2的变量]
+[34] 推论 2
+[35] 每个对称矩阵 $F$ 都有非退化矩阵（行列式为 0）$A$ 使得 $A^{T}FA$ 是和 $F$ 秩相同的对角矩阵，换言之，每个对称矩阵都合同于某个对角矩阵。
+[/SCOPE:s_cor2_let]
+[36] （链接合同矩阵的文章）
+
+[/SCOPE:s_cor2]
+[SCOPE:s_babylon|description|古巴比伦法化二次型为规范型]
+[SCOPE:s_babylon_let1|let_bind|设二次型表达式]
+[37] 设二次型 $q( \boldsymbol{\mathbf{x}} )$ 表达式为
+[38] \begin{equation}
+q(x_1,\cdots,x_n)=q( \boldsymbol{\mathbf{x}} )=\sum\limits_{i,j=1}^n f_{ij}x_ix_j~.
+\end{equation}
+[/SCOPE:s_babylon_let1]
+[39] 首先提出所有含 $x_1$ 的项：
+[40] \begin{equation}
+q(x_1,\cdots,x_n)=f_{11} x_1^2+2f_{12}x_1x_2+\cdots+2f_{1n}x_1x_n+\sum_{i,j\neq1}f_{ij}x_ix_j~.
+\end{equation}
+[SCOPE:s_babylon_let2|let_bind|设f11≠0并引入新变量]
+[41] 设 $f_{11}\neq0$，且依靠不含 $x_1$ 的项的系数提出来完全项
+[42] \begin{equation}
+q(x_1,\cdots,x_n)=\frac{1}{f_{11}}(f_{11}x_1+f_{12}x_2+\cdots+f_{1n}x_n)^2+\sum_{i,j\neq1}f'_{ij}x_ix_j~.
+\end{equation}
+[43] 现在，令
+[44] \begin{equation}
+x'_1=f_{11}x_1+f_{12}x_2+\cdots+f_{1n}x_n,\quad x_i'=x_i\quad i>1~.
+\end{equation}
+[/SCOPE:s_babylon_let2]
+[45] 就把二次型 $q$ 化为了
+[46] \begin{equation}
+q(x_1,\cdots,x_n)=\frac{1}{f_{11}}x_1'^2+q'(x_2',\cdots,x_n')~.
+\end{equation}
+[47] 其中，$q'(x_2',\cdots,x_n')=\sum\limits_{i,j=2}^nf'_{ij}x_i'x_j'$ 是变量数目更少的一个二次型。
+[48] 重复上面的程序可以把 $q( \boldsymbol{\mathbf{x}} )$ 写成 $r=\mathrm{rank}\; q$ 个二次型的线性组合（因为重新设置的 $(x'_1)^2$ 是个二次型）。
+[49] 对限制性假设 $f_{11},f_{22},\cdots\neq0$ 不成立的情形，比方说 $f_{11}=0$ 而 $f_{kk}\neq0$，
+[50] 那么变动 $x_1,x_k$ 的指标（或基向量顺序）。
+[51] 但，若 $q( \boldsymbol{\mathbf{x}} )\neq0$ 不含任何二次项，
+[52] 即所有 $f_{kk}=0$。
+[SCOPE:s_babylon_let3|let_bind|处理无二次项情形]
+[53] 那么，不失一般性，设 $2f_{12}x_1x_2\neq0$，此时可用替换
+[54] \begin{equation}
+x_1=x_1'+x_2',\quad x_2=x_1'-x_2',\quad x_k=x_k',\quad k>2~,
+\end{equation}
+[/SCOPE:s_babylon_let3]
+[55] 就有不可能被约掉的项 $2f_{12}(x_1'^2-x_2'^2)$ 出现了，
+[56] 于是程序得以运行。
+[/SCOPE:s_babylon]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_theorem1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是定理1的直接推论"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_cor1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论2是推论1的矩阵形式"
+  }
+]

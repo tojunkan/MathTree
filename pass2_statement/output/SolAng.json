@@ -1,0 +1,110 @@
+{
+  "article_name": "SolAng",
+  "statements": [
+    {
+      "stmt_id": "st_cone_def",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "Ω"
+      ]
+    },
+    {
+      "stmt_id": "st_range",
+      "subtype": "conclusion",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": "conditional",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_differential",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "dθ",
+        "dφ"
+      ]
+    },
+    {
+      "stmt_id": "st_integral",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": "conditional",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_total_solid_angle",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_cone",
+      "subtype": "example",
+      "clause_range": [
+        10,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "θ",
+        "Ω"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_cone_def",
+      "target": "st_range",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_differential",
+      "target": "st_integral",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_integral",
+      "target": "st_total_solid_angle",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_cone",
+      "target": "st_cone_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": [
+    "句子[0] '本文存在未完成的内容' 非数学内容，跳过。",
+    "句子[15] '【未完成】例如一个质量分布不均匀的球壳质量' 不完整，跳过。"
+  ]
+}

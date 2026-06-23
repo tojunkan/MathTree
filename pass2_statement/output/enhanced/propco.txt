@@ -1,0 +1,80 @@
+[SCOPE:root|description|命题的连接词]
+文章名: propco
+标题: 命题的连接词
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=否定
+  [1] type=definition heading=定义 2 title=合取
+  [2] type=definition heading=定义 3 title=析取
+  [3] type=definition heading=定义 4 title=蕴含
+  [4] type=definition heading=定义 5 title=等价
+  [5] type=theorem heading=定理 1 title=逆否命题
+  [6] type=definition heading=定义 6 title=原子命题与复合命题
+
+[SCOPE:s_neg|description|否定]
+[0] 定义 1 否定
+[SCOPE:s_neg_let|let_bind|否定变量]
+[1] 对于一个命题 $p$，$\neg p$（或 $\sim p$）表示其否定。
+[/SCOPE:s_neg_let]
+[2] 例如 $p$ 代表 “我喜欢踢足球”，
+[3] 则 $\neg p$ 代表 “我不喜欢踢足球”。
+[4] 下面给出一个命题的否定的真值表（即真值的对应关系的表格）。
+[5] 【图解】表1：命题的否定的真值表
+[6] $p$ $\neg p$
+[7] $1$ $0$
+[8] $0$ $1$
+
+[/SCOPE:s_neg]
+[SCOPE:s_conj|description|合取]
+[9] 定义 2 合取
+[SCOPE:s_conj_let|let_bind|合取变量]
+[10] 对于命题 $p$ 与命题 $q$，$p \land q$ 表示这两个命题的合取，表示要求同时成立。
+[/SCOPE:s_conj_let]
+[11] $(p \land q)$ 为真当且仅当 $p$ 与 $q$ 两者都为真。
+
+[/SCOPE:s_conj]
+[SCOPE:s_disj|description|析取]
+[12] 定义 3 析取
+[SCOPE:s_disj_let|let_bind|析取变量]
+[13] 对于命题 $p$ 与命题 $q$，$p \lor q$ 表示这两个命题的析取，表示要求至少一者成立。
+[/SCOPE:s_disj_let]
+[14] $(p \lor q)$ 为真需 $p$ 与 $q$ 中至少一者为真。
+
+[/SCOPE:s_disj]
+[SCOPE:s_impl|description|蕴含]
+[15] 定义 4 蕴含
+[SCOPE:s_impl_let|let_bind|蕴含变量]
+[16] 对于两命题 $p$ 与 $q$，复合命题 “若 $p$，
+[/SCOPE:s_impl_let]
+[17] 则 $q$” 称为 $p$ 对 $q$ 的蕴涵式，记做 $p \to q$。
+[18] $p \to q$ 为假当且仅当 $p$ 为真时 $q$ 为假。
+[19] 其中 $p$ 称为条件而 $q$ 称为结论。
+
+[/SCOPE:s_impl]
+[SCOPE:s_equiv|description|等价]
+[20] 定义 5 等价
+[SCOPE:s_equiv_let|let_bind|等价变量]
+[21] 对于两命题 $p$ 与 $q$，$p \leftrightarrow q$ 表示这两个命题的等价，表示两个命题是等价的。
+[/SCOPE:s_equiv_let]
+[22] 下面给出以上二元（即两个命题间的）连接词的真值表。
+[23] 【图解】表2：二元连接词的真值表
+[24] $p$ $q$ $p \land q$ $p \lor q$ $p \to q$ $p \leftrightarrow q$
+[25] $0$ $0$ $0$ $0$ $1$ $1$
+[26] $0$ $1$ $0$ $1$ $1$ $0$
+[27] $1$ $0$ $0$ $1$ $0$ $0$
+[28] $1$ $1$ $1$ $1$ $1$ $1$
+
+[/SCOPE:s_equiv]
+[SCOPE:s_contra|description|逆否命题]
+[29] 定理 1 逆否命题
+[SCOPE:s_contra_let|let_bind|逆否命题变量]
+[30] 对于两个命题 $p \rightarrow q$ 的蕴含式 $p \rightarrow q$，与蕴含式的逆否命题 $(\neg q) \rightarrow (\neg p)$ 等价。
+
+[/SCOPE:s_contra]
+[/SCOPE:s_contra_let]
+[SCOPE:s_atom|description|原子命题与复合命题]
+[31] 定义 6 原子命题与复合命题
+[32] 定义不能再继续分解为更简单的命题的命题是原子命题（又称简单命题）。
+[33] 而可以分解为更简单的命题的命题，也就是用命题间的连接词（析取、合取等）连接（例如用 “或者” 或 “如果... 那么...” 连接）的命题称为复合命题。
+[/SCOPE:s_atom]
+[/SCOPE:root]

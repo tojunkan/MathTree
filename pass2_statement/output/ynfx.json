@@ -1,0 +1,208 @@
+{
+  "article_name": "ynfx",
+  "statements": [
+    {
+      "stmt_id": "st_intro_claim",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_special_solution",
+      "subtype": "theorem",
+      "clause_range": [
+        8,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "y_1(x)",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_general_solution",
+      "subtype": "theorem",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "y(x)",
+        "C_i"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let1",
+      "exposed_entities": [
+        "y_1(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let2",
+      "exposed_entities": [
+        "z"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_z_eq_zero",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_z_polynomial",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": [
+        "C_i"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_general_integral",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_let3",
+      "subtype": "assumption",
+      "clause_range": [
+        39,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let3",
+      "exposed_entities": [
+        "y(x)",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_special_solution_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        41,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_n_integrations",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        53
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_proof_let1",
+      "target": "st_proof_z_eq_zero",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_let2",
+      "target": "st_proof_z_eq_zero",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_z_eq_zero",
+      "target": "st_proof_z_polynomial",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_z_polynomial",
+      "target": "st_proof_general_integral",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_let3",
+      "target": "st_proof_special_solution_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_special_solution_formula",
+      "target": "st_proof_n_integrations",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_claim",
+      "target": "st_intro_special_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intro_special_solution",
+      "target": "st_intro_general_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_proof_general_integral",
+      "target": "st_intro_claim",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明中得出通解形式，对应引言中的结论"
+    },
+    {
+      "source": "st_proof_special_solution_formula",
+      "target": "st_intro_special_solution",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明中得出特殊解公式，对应引言中的特殊解"
+    }
+  ],
+  "unresolved": []
+}

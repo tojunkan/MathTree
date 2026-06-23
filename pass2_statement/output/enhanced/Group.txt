@@ -1,0 +1,415 @@
+[SCOPE:root|description|群]
+文章名: Group
+标题: 群
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=群
+  [1] type=theorem heading=定理 1 title=
+  [2] type=exercise heading=习题 1 title=
+  [3] type=exercise heading=习题 2 title=二元群
+  [4] type=example heading=例 1 title=整数加法群
+  [5] type=example heading=例 2 title=$n$ 元循环群
+  [6] type=example heading=例 3 title=$n$ 元置换群
+  [7] type=example heading=例 4 title=二面体群
+  [8] type=exercise heading=习题 3 title=
+  [9] type=example heading=例 5 title=$n$ 阶可逆方阵群
+  [10] type=example heading=例 6 title=映射群
+  [11] type=exercise heading=习题 4 title=
+  [12] type=definition heading=定义 2 title=半群
+  [13] type=definition heading=定义 3 title=幺半群
+  [14] type=example heading=例 7 title=自然数加法幺半群
+  [15] type=example heading=例 8 title=形如 $x^2+dy^2$ 的整数幺半群
+  [16] type=theorem heading=定理 2 title=群运算满足消去律
+  [17] type=exercise heading=习题 5 title=单位元的唯一性
+  [18] type=theorem heading=定理 3 title=逆元的唯一性
+  [19] type=exercise heading=习题 6 title=
+
+[0] 群是一种描述对称的数学对象，几乎每一个对称现象的背后都有一个群。
+[1] 群论起源于伽罗瓦对于五次以上代数方程求根公式的思考，后被应用到了数学和物理的诸多领域当中。
+[2] 我们在 “映射” 的式 3 中定义了二元运算为映射 $A \times B \to C$，如果 $A = B = C$，
+[3] 即一个集合中的任意两个元素运算后的结果仍然在这个集合中，
+[4] 那么我们说这个二元运算是封闭的（closed），有的地方也会称作闭合的。
+[5] 二元运算的符号可以任意决定，如果使用 $\cdot$ 作为运算符，
+[6] 那么二元运算就可以简单写为 $a \cdot b=c$。
+[7] 注意，这里的 $\cdot$ 只是表示某一个运算，不一定是我们通常的乘法或点乘运算。
+
+[SCOPE:s_def1|description|定义1 群]
+[8] 定义 1 群
+[SCOPE:s_def1_let|let_bind|群定义中的变量]
+[9] 一个群 $(G, \cdot)$ 是在集合 $G$ 上赋予了一个二元运算 $\cdot$ 的结构，该运算满足以下要求：
+[/SCOPE:s_def1_let]
+[10] 封闭性（closure）：$\forall x, y\in G, x\cdot y\in G$，
+[11] 即任意 $G$ 中元素 $x$,$y$ 满足 $x\cdot y$ 仍是 $G$ 中元素
+[12] 结合性（associativity）：$\forall x, y, z\in G, x\cdot(y\cdot z)=(x\cdot y)\cdot z$
+[13] 单位元（identity element）存在性：$\exists e\in G, \forall x\in G, e\cdot x=x\cdot e=x$
+[14] 逆元（inverse element）存在性：$\forall x\in G, \exists y\in G, x\cdot y=y\cdot x=e$。
+[15] 通常我们会把这样的 $y$ 称作 $x$ 的逆元，并记为 $x^{-1}$
+[16] 严格来说，这样的一个群应该表示为 $(G,\cdot)$，而 $G$ 表示的是没有赋予运算的集合。
+[17] 但是为了方便，我们通常也会直接把上述定义的群叫做群 $G$。
+[18] 实际上，我们可以用更为弱化的公理系统来定义群，比如第 4 条只要求存在左逆元，
+[19] 即只要求 $\forall x\in G, \exists y\in G, y\cdot x=e$。
+[20] 在这种情况下我们仍然可以证明左逆元都是右逆元（定理 3 ）。
+[21] 有很多不同的弱化版本公理系统也能等价地定义出群来，
+[22] 但是为了方便理解，我们用了以上对称的公理系统。
+[23] 集合的元素数量被称为集合的基数或势，而群 $G$ 的元素数量也可以称为群的阶（order），记作 $|G|$。
+[24] 阶数有限的群称为有限群。
+[25] 以后如果没有特别说明，默认将群元素 $x$ 的逆元记为 $x^{-1}$，将群的单位元记为 $e$。
+[26] 如果群 $G$ 是有限的，
+[27] 那么由封闭性知，对于任意元素 $a$ 都必存在 $n\in \mathbb N$，使得 $a^n=e$，把最小正整数称之为群元素的阶。
+[28] 关于群元素的阶 $O(a)$，有以下命题：
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理1]
+[29] 定理 1
+[30] $O(a)=O(a^{-1})$。
+[SCOPE:s_thm1_let|let_bind|定理1中的变量]
+[31] 设任意 $g\in G$，有 $O(gag^{-1})=O(a)$。
+[32] 若 $O(a)=n$，
+[33] 则 $O(a^r)=\frac{n}{(n,r)}$，$(n,r)$ 表示最大公因子。
+[34] proof.
+[35] 只证明最后一条。
+[36] 设 $(n,r)=d,O(a^r)=k$。
+[/SCOPE:s_thm1_let]
+[37] 因为 $a^{\frac{r}{d}n}=e$，
+[38] 因此 $k|\frac{n}{d}$。
+[39] 要证明 $k=\frac{n}{d}$，只需要证明 $\frac{n}{d}|k$ 即可。
+[40] 因为 $a^{rk}=e$，
+[41] 则 $n|rk$，
+[42] 所以 $\frac{n}{d}|\frac{r}{d}k$。
+[43] 又因为 $d$ 是 $n$ 和 $r$ 的最大公因子，
+[44] 所以 $(\frac{n}{d},\frac{r}{d})=1$，
+[45] 则 $\frac{n}{d}|k$，证毕。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex1|description|习题1]
+[46] 习题 1
+[47] 证明共轭子群定义 6 的阶和原群相同。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|习题2 二元群]
+[48] 习题 2 二元群
+[SCOPE:s_ex2_let|let_bind|二元群中的变量]
+[49] 定义一个只含有两个元素的集合，记为 $\{0, 1\}$。
+[50] 在这个集合上定义运算 “$+$”，由于只有四种运算方式，
+[51] 所以可以通过列举出每一个运算的结果来定义这个运算：
+[52] \begin{equation}
+0+0=0~, \qquad 0+1=1~, \qquad 1+0=1~, \qquad 1+1=0~.
+\end{equation}
+[/SCOPE:s_ex2_let]
+[53] 请用一个 $2\times2$ 的表格表示运算规则
+[54] 请根据定义 1 验证这个二元集合配上运算 $+$ 构成一个群
+[55] 在以上例子中，0 可以理解为 “偶数”，1 可以理解为 “奇数”，而群的运算可以理解为奇数加奇数=偶数加偶数=偶数，而奇数加偶数=奇数。
+[56] 另外，注意尽管 $0+1=1+0$，我依然把它们分别单独写了出来，这是因为群的定义不要求交换律成立，也就是说，群运算允许 $x\cdot y\neq y\cdot x$。
+[57] 群元素选为 $0$ 和 $1$ 没有特殊原因，只是代表这是群里两个不同的元素而已，任何由两个元素构成的群我们都看作同一个。
+[58] 运算满足交换律的群被称为阿贝尔群（abelian group）或交换群（commutative group），否则称为非阿贝尔群（non-abelian group）或非交换群（non-commutative group）。
+[59] 习惯上，我们把阿贝尔群的运算叫做加法，记为 “$+$”，而把非阿贝尔群的运算叫做乘法，记为 “$\cdot$”，甚至简化为没有符号，比如 $ab\not= ba$。
+[60] 不过，
+[61] 即使是非阿贝尔群中也可能存在两个元素 $a$ 和 $b$，使得 $ab=ba$；
+[62] 这时我们说 $a$ 和 $b$ 交换（commute）。
+[63] 一般地，由于在朴素集合论中我们最多只讨论了集合的基数问题，集合中的元素具体如何命名是没有约束的，
+[64] 因此在集合论意义下元素数目相同的集合都看作同一个。
+[65] 比如说，我们认为 $\{\Delta,3, K\}$ 和 $\{1,2,3\}
+[66] $ 是同一个集合。
+[67] 而现在在集合上定义了一个群运算以后所得到的群，
+[68] 即使构成它们的集合相同，群也可能由群运算的不同而产生不同的结构，
+[69] 从而被看作是不同的群。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|例1 整数加法群]
+[70] 例 1 整数加法群
+[71] 所有整数的集合 $\mathbb Z$，配合通常的整数加法运算构成一个群。
+
+[/SCOPE:s_ex3]
+[SCOPE:s_ex4|description|例2 n元循环群]
+[72] 例 2 $n$ 元循环群
+[SCOPE:s_ex4_let|let_bind|循环群中的变量]
+[73] 取一个由 $n$ 个元素组成的集合 $G$，由于集合元素命名的任意性，不妨把 $G$ 记为 $\{0, 1, \cdots n-1\}$，定义运算为模 $n$ 的加法，
+[/SCOPE:s_ex4_let]
+[74] 即在一个有 $n$ 个整点的钟表上的加法（见 “整数”）。
+[75] 那么这个运算构成 $G$ 上的一个群运算，所构成的群 $G$ 称为 $n$ 元循环群（n-element cyclic group），通常记为 $C_n$ 或者 $\mathbb{Z}/n\mathbb{Z}$。
+[76] 命名为 $C_n$ 是取 “cyclic” 的含义，而命名为 $\mathbb{Z}/n\mathbb{Z}$ 是为了说明循环群是整数加法群 $\mathbb{Z}$ 的商群（例 1 ），而商群是将来会提到的重要概念。
+
+[/SCOPE:s_ex4]
+[SCOPE:s_ex5|description|例3 n元置换群]
+[77] 例 3 $n$ 元置换群
+[SCOPE:s_ex5_let|let_bind|置换群中的变量]
+[78] 首先给定一个 $n$ 元集合，记作 $K=\{1,2, \cdots, n\}$，并将 $K$ 中的元素按现有的顺序编号。
+[79] 把 $K$ 看作是 $n$ 个桶中分别装了 1 个写着编号的球，初始状态下球的编号和桶的编号一致。
+[80] 我们可以把球从桶里面拿出来并进行任意的置换，保持每个桶里还是只有一个球，
+[81] 但是球的编号不一定和桶的编号一致了。
+[82] 每一个置换可以详细描述为 “把 1 号桶的球和 2 号桶的球交换”，“把 1 号桶的球放入 3 号桶，3 号桶的放入 4 号桶，4 号桶的放入 1 号桶” 等等。
+[83] 我们用全体 “置换” 动作，
+[84] 即所有 $K$ 到自身的一一映射，来作为元素，构成一个集合，称作 $n$ 个元素的置换集合（$n$ 元置换集），记为 $S_n$。
+[/SCOPE:s_ex5_let]
+[85] $S_n$ 一共有 $n!$ 个元素1。
+[86] 从原始状态进行任意置换，所得到的结果状态和置换是一一对应的，
+[87] 所以我们也可以用 “从原始状态进行置换 $f$ 所得的结果” 来表示置换 $f$ 本身。
+[88] 置换之间可以定义一个运算 “$\circ$”，被称为置换间的复合，它是这样定义的：如果 $f$ 和 $g$ 是两个置换，
+[89] 那么 $g\circ f$ 就是先进行 $f$ 置换，再进行 $g$ 置换。
+[90] 注意先后次序是从右到左进行的。
+[91] 我们也可以这样来理解一个置换：原始状态下，$n$ 号桶中的小球为 $n$。
+[92] 进行一次 $f$ 置换后，$n$ 号桶中的小球就变成了 $f(n)$，再进行一次 $g$ 置换，
+[93] 那么 $n$ 号桶中现在装的小球就变为 $g(f(n))$。
+[94] 这个过程也可以看成是进行了一次 $g\circ f$ 运算，让 $n$ 号桶中的小球变成 $g\circ f(n)$。
+[95] 现在我们有了一个由置换组成的集合以及置换之间的运算，我们来验证在这个运算下，所有的置换构成一个群：
+[96] 显然，任意两个置换的复合还是一个置换，
+[97] 因此该运算是封闭的。
+[98] 映射的符合满足结合律可以通过带入任何一个 $K$ 中的数字来验证。
+[99] 单位元素是恒等映射，
+[100] 即保持所有数字不动的映射。
+[101] 任意一个置换 $f$ 由于是满射，
+[102] 所以对于每一个 $K$ 中的数字 $i$,都存在原像 $j$ 满足 $f(j)=i$，又因为 $f$ 是单射，
+[103] 所以原像唯一。
+[104] 定义 $f^{-1}:K\rightarrow K$ 把每一个 $i$ 对应到它的唯一的原像。
+[105] 可以验证，这样定义了 $f$ 的逆元。
+[106] 因此，$(S_n, \circ)$ 是一个群。
+[107] 注意当 $n>2$ 时 $S_n$ 是不交换（非阿贝尔）的。
+[108] 在以上两个例子中可以看到，尽管元素数量一样，$\mathbb{Z}_{24}$ 和 $S_4$ 的元素数量都是 24，
+[109] 但是前者是阿贝尔群，后者则不交换，显然两个群的运算结构不可能一样。
+[110] 这是一个集合论意义上等价但群论意义上不等价的例子，换句话说，同一个集合上有时可以定义多个不同的运算使之成为不同的群。
+
+[/SCOPE:s_ex5]
+[SCOPE:s_ex6|description|例4 二面体群]
+[111] 例 4 二面体群
+[112] 对称性的意思，是在某种变换（通常是翻转变换或者旋转变换）下保持不变的性质。
+[113] 比如说，平面上的一个正方形，绕着几何中心旋转角度为 $\pi/4$（即角度制下的 $90^\circ$）的时候和没有旋转是完全重合的，
+[114] 那么我们就说正方形是关于角度为 $\pi/4$ 的旋转对称的。
+[115] 所有能够使得这个正方形不变的平面变换，比如特定角度的旋转、关于特定轴的翻转，配上变换间的复合运算（即先进行一个变换，再进行另一个），构成了一个 8 阶群（其元素构成为恒等变换，$\pi/4$ 的倍数的旋转和沿着四条对称轴的翻转），称为这个正方形的二面体群（dihedral group）记为 $D_8$。
+[116] 感兴趣的读者可以尝试验证这些变换的复合是封闭的。
+[117] 一般的，对于任意一个正多边形，保持其位置不变的旋转和翻转都会构成的一个群，统称为二面体群，记作 $D_n$。
+[118] 对称群的概念非常重要且常见。
+[119] 只要有 “不变性” 概念存在的地方就可能存在对称群。
+[120] 一个事物的对称群的结构揭示了这个事物的不变性的特点。
+
+[/SCOPE:s_ex6]
+[SCOPE:s_ex7|description|习题3]
+[121] 习题 3
+[122] 实数集 $\mathbb R$ 以及通常的加法构成一个群。
+[123] 实数集 $\mathbb R$ 除去 $0$ 的集合，以及通常的乘法构成一个群。
+
+[/SCOPE:s_ex7]
+[SCOPE:s_ex8|description|例5 n阶可逆方阵群]
+[124] 例 5 $n$ 阶可逆方阵群
+[125] 给定域 $F$ 上，全体 $n\times n$ 可逆矩阵构成的集合，配上矩阵乘法就构成了一个非阿贝尔群。
+[126] 这样的群被简记为 $GL(n, F)$。
+[127] 当不至于混淆时，这里的 $F$ 一般会指全体实数或者全体复数，这时也会把该群简记为 $GL(n)$。
+[128] 多数情况下，$GL(n)$ 也是不交换的。
+
+[/SCOPE:s_ex8]
+[SCOPE:s_ex9|description|例6 映射群]
+[129] 例 6 映射群
+[SCOPE:s_ex9_let|let_bind|映射群中的变量]
+[130] 给定两个集合 $S$ 和 $T$，考虑从 $S$ 到 $T$ 的所有映射构成的集合，记为 $M$。
+[/SCOPE:s_ex9_let]
+[131] 映射之间有复合运算，$M$ 配上复合以后，构成一个半群（其准确定义见下）。
+[132] $M$ 中全体双射构成的集合，在复合运算下构成群。
+
+[/SCOPE:s_ex9]
+[SCOPE:s_ex10|description|习题4]
+[133] 习题 4
+[SCOPE:s_ex10_let|let_bind|习题4中的变量]
+[134] 考虑实函数构成的集合 $\mathcal{R}$，记 $\mathcal{R}^*$ 是全体恒不等于零的函数的集合。
+[/SCOPE:s_ex10_let]
+[135a] (x)$ 和 $g
+[135b] (x)$，定义它们的加法为：$(f+g)
+[135c] (x)=f
+[135d] (x)+g
+[135e] (x)$；
+[136a] (x)=f
+[136b] (x) g
+[136c] (x)$。
+[137] 证明 $(\mathcal{R}, +)$ 和 $(\mathcal{R}^*,\times )$ 都是阿贝尔群。
+[138] 证明 $(\mathcal{R}^*\cup \{0\}, +)$ 也构成阿贝尔群。
+
+[/SCOPE:s_ex10]
+[139] 群的一种扩展是半群。
+[140] 较群而言，半群只要求封闭性和结合性，而抛弃了单位元存在性和逆元存在性。
+[141] 其严格定义如下：
+
+[SCOPE:s_def2|description|定义2 半群]
+[142] 定义 2 半群
+[SCOPE:s_def2_let|let_bind|半群定义中的变量]
+[143] 一个半群 $(G, \cdot)$ 是在集合 $G$ 上赋予了一个二元运算 $\cdot$ 的结构，该运算满足封闭性和结合性。
+[/SCOPE:s_def2_let]
+[144] 显然群是一种特殊的半群，而半群不一定为群。
+[145] 特别地，有着单位元的半群叫作幺半群，其定义如下：
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|定义3 幺半群]
+[146] 定义 3 幺半群
+[SCOPE:s_def3_let|let_bind|幺半群定义中的变量]
+[147] 若一个半群 $(G,\cdot )$ 满足：$\exists e\in G,\forall x\in G,e\cdot x=x\cdot e=x$，
+[/SCOPE:s_def3_let]
+[148] 则称其为幺半群，其中 $e$ 称为它的幺元或单位元。
+
+[/SCOPE:s_def3]
+[SCOPE:s_ex11|description|例7 自然数加法幺半群]
+[149] 例 7 自然数加法幺半群
+[150] 自然数集 $\mathbb N=\{0,1,2,\cdots \}$，配合通常的加法运算构成一个幺半群。
+
+[/SCOPE:s_ex11]
+[SCOPE:s_ex12|description|例8 形如x^2+dy^2的整数幺半群]
+[151] 例 8 形如 $x^2+dy^2$ 的整数幺半群
+[SCOPE:s_ex12_let|let_bind|例8中的变量]
+[152] 任给整数 $d$，所有形如 $x^2+dy^2(x,y\in \mathbb Z)$ 按通常的乘法构成幺半群。
+[/SCOPE:s_ex12_let]
+[153] 注意它对乘法封闭：
+[154] $$(x^2+dy^2)(u^2+dv^2)=x^2u^2+d^2y^2v^2+d(x^2v^2+y^2u^2)=(ux+dvy)^2+d(vx-uy)^2~.$$
+
+[/SCOPE:s_ex12]
+[155] 群中的单位元和每个元素的逆元都是唯一的：
+
+[SCOPE:s_thm2|description|定理2 群运算满足消去律]
+[156] 定理 2 群运算满足消去律
+[SCOPE:s_thm2_let|let_bind|定理2中的变量]
+[157] 给定一个群 $G$，若 对于 $ a, b\in G$ 有某个 $x\in G$ 使得 $ax=bx$，
+[/SCOPE:s_thm2_let]
+[158] 那么必然有 $a=b$；
+[159] 类似地，如果 $xa=xb$，也必然有 $a=b$。
+[160] 该定理的证明留作习题2。
+[161] 唯一性是所有群都有的性质，
+[162] 但是等到我们讨论环的时候，由于环的乘法不要求逆元一定存在，我们没法对环证明这个唯一性。
+[163] 事实上，很多环都没有唯一性。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_ex5_uni|description|习题5 单位元的唯一性]
+[164] 习题 5 单位元的唯一性
+[165] 从定理 2 可知左右单位元分别是唯一的。
+[166] 请证明左单位 $e_1$ 元等于右单位元 $e_2$（提示：将它们相乘）。
+
+[/SCOPE:s_ex5_uni]
+[SCOPE:s_thm3|description|定理3 逆元的唯一性]
+[167] 定理 3 逆元的唯一性
+[SCOPE:s_thm3_let|let_bind|定理3中的变量]
+[168] 在一个群中，对任意 $x$，假设它存在一个左逆元 $a$，
+[/SCOPE:s_thm3_let]
+[169] 那么我们必然有 $ax=e$。
+[170] 考虑结合性可知，$ae=a=ea=(ax)a=a(xa)$，
+[171] 于是 $xa=e$，
+[172] 即 $a$ 也是 $x$ 的右逆元。
+[173] 也就是说，一个群里的元素只要有左逆元，
+[174] 那么右逆元也存在，并且等于左逆元。
+[175] 反之亦然。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_ex6|description|习题6]
+[176] 习题 6
+[177] 证明 $(ab)^{-1} = b^{-1}a^{-1}$
+[/SCOPE:s_ex6]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1依赖于群的定义"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题2验证二元集合构成群"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "整数加法群是群的一个例子"
+  },
+  {
+    "source_scope": "s_ex4",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "n元循环群是群的一个例子"
+  },
+  {
+    "source_scope": "s_ex5",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "n元置换群是群的一个例子"
+  },
+  {
+    "source_scope": "s_ex6",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "二面体群是群的一个例子"
+  },
+  {
+    "source_scope": "s_ex8",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "n阶可逆方阵群是群的一个例子"
+  },
+  {
+    "source_scope": "s_ex9",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "映射群是群的一个例子"
+  },
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "半群是群的推广"
+  },
+  {
+    "source_scope": "s_def3",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "幺半群是半群的特殊情况"
+  },
+  {
+    "source_scope": "s_ex11",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "自然数加法幺半群是幺半群的例子"
+  },
+  {
+    "source_scope": "s_ex12",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "形如x^2+dy^2的整数幺半群是幺半群的例子"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "消去律是群的性质"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "逆元唯一性是群的性质"
+  },
+  {
+    "source_scope": "s_ex5_uni",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "单位元唯一性可由消去律推出"
+  },
+  {
+    "source_scope": "s_ex6",
+    "target_scope": "s_thm3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题6是逆元唯一性的推论"
+  }
+]

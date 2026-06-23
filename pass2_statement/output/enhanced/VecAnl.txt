@@ -1,0 +1,229 @@
+[SCOPE:root|description|矢量分析总结]
+文章名: VecAnl
+标题: 矢量分析总结
+
+[0] 待整合
+
+[SCOPE:s_formulas|description|矢量分析公式列表]
+[SCOPE:s_formulas_let|let_bind|公式中的变量]
+[1] 令 $ \boldsymbol{\mathbf{a}} , \boldsymbol{\mathbf{b}} , \boldsymbol{\mathbf{c}} , \boldsymbol{\mathbf{d}} $ 为 $\mathbb{R}^3$ 中的可微矢量场，$\phi$ 为 $\mathbb{R}^3$ 中的可微标量场，$\nabla$ 为矢量微分算子 $\hat{ \boldsymbol{\mathbf{x}} }\partial/\partial{x}+\hat{ \boldsymbol{\mathbf{y}} }\partial/\partial{y}+\hat{ \boldsymbol{\mathbf{z}} }\partial/\partial{z}$。
+[/SCOPE:s_formulas_let]
+[2] \begin{equation}
+\boldsymbol{\mathbf{a}} \cdot( \boldsymbol{\mathbf{b}} \times \boldsymbol{\mathbf{c}} )= \boldsymbol{\mathbf{b}} \cdot( \boldsymbol{\mathbf{c}} \times \boldsymbol{\mathbf{a}} )= \boldsymbol{\mathbf{c}} \cdot( \boldsymbol{\mathbf{a}} \times \boldsymbol{\mathbf{b}} )~.
+\end{equation}
+[3] \begin{equation}
+\boldsymbol{\mathbf{a}} \times( \boldsymbol{\mathbf{b}} \times \boldsymbol{\mathbf{c}} )=( \boldsymbol{\mathbf{a}} \cdot \boldsymbol{\mathbf{c}} ) \boldsymbol{\mathbf{b}} -( \boldsymbol{\mathbf{a}} \cdot \boldsymbol{\mathbf{b}} ) \boldsymbol{\mathbf{c}} ~.
+\end{equation}
+[4] \begin{equation}
+( \boldsymbol{\mathbf{a}} \times \boldsymbol{\mathbf{b}} )\cdot( \boldsymbol{\mathbf{c}} \times \boldsymbol{\mathbf{d}} )=( \boldsymbol{\mathbf{a}} \cdot \boldsymbol{\mathbf{c}} )( \boldsymbol{\mathbf{b}} \cdot \boldsymbol{\mathbf{d}} )-( \boldsymbol{\mathbf{a}} \cdot \boldsymbol{\mathbf{d}} )( \boldsymbol{\mathbf{b}} \cdot \boldsymbol{\mathbf{c}} )~.
+\end{equation}
+[5] \begin{equation}
+\nabla\times(\nabla\phi)= \boldsymbol{\mathbf{0}} ~.
+\end{equation}
+[6] \begin{equation}
+\nabla\cdot(\nabla\times \boldsymbol{\mathbf{a}} )=0~.
+\end{equation}
+[7] \begin{equation}
+\nabla\times(\nabla\times \boldsymbol{\mathbf{a}} )=\nabla(\nabla\cdot \boldsymbol{\mathbf{a}} )-(\nabla\cdot\nabla) \boldsymbol{\mathbf{a}} ~.
+\end{equation}
+[8] \begin{equation}
+\nabla\cdot(\phi \boldsymbol{\mathbf{a}} )=(\nabla\phi)\cdot \boldsymbol{\mathbf{a}} +\phi\nabla\cdot \boldsymbol{\mathbf{a}} ~.
+\end{equation}
+[9] \begin{equation}
+\nabla\times(\phi \boldsymbol{\mathbf{a}} )=(\nabla\phi)\times \boldsymbol{\mathbf{a}} +\phi\nabla\times \boldsymbol{\mathbf{a}} ~.
+\end{equation}
+[10] \begin{equation}
+\nabla( \boldsymbol{\mathbf{a}} \cdot \boldsymbol{\mathbf{b}} )=( \boldsymbol{\mathbf{a}} \cdot\nabla) \boldsymbol{\mathbf{b}} + \boldsymbol{\mathbf{b}} \times(\nabla\times \boldsymbol{\mathbf{a}} )+( \boldsymbol{\mathbf{b}} \cdot\nabla) \boldsymbol{\mathbf{a}} + \boldsymbol{\mathbf{a}} \times(\nabla\times \boldsymbol{\mathbf{b}} )~.
+\end{equation}
+[11] \begin{equation}
+\nabla\cdot( \boldsymbol{\mathbf{a}} \boldsymbol\times \boldsymbol{\mathbf{b}} )= \boldsymbol{\mathbf{b}} \cdot(\nabla\times \boldsymbol{\mathbf{a}} )- \boldsymbol{\mathbf{a}} \cdot(\nabla\times \boldsymbol{\mathbf{b}} )~.
+\end{equation}
+[12] \begin{equation}
+\nabla\times( \boldsymbol{\mathbf{a}} \times \boldsymbol{\mathbf{b}} )=( \boldsymbol{\mathbf{b}} \cdot\nabla) \boldsymbol{\mathbf{a}} -( \boldsymbol{\mathbf{a}} \cdot\nabla) \boldsymbol{\mathbf{b}} + \boldsymbol{\mathbf{a}} (\nabla\cdot \boldsymbol{\mathbf{b}} )- \boldsymbol{\mathbf{b}} (\nabla\cdot \boldsymbol{\mathbf{a}} )~.
+\end{equation}
+
+[/SCOPE:s_formulas]
+[SCOPE:s_fields|description|标量场和矢量场]
+[13] 场（field）是指实线性空间 $V$1
+
+[SCOPE:s_scalar|description|标量场]
+[14] \begin{equation}
+\Phi=\Phi(x,y,z)~.
+\end{equation}
+[15] $\Phi$ 的数值是空间位置的函数
+[16] 等值面
+[17] \begin{equation}
+\Phi=C~.
+\end{equation}
+[18] 例如气压场、温度场。
+
+[/SCOPE:s_scalar]
+[SCOPE:s_vector|description|矢量场]
+[19] \begin{equation}
+\boldsymbol{\mathbf{A}} = \boldsymbol{\mathbf{A}} (x,y,z)~,
+\end{equation}
+[20] $ \boldsymbol{\mathbf{A}} $ 的大小、方向是空间位置的函数。
+[21] 例如速度场 $ \boldsymbol{\mathbf{v}} $、电场 $ \boldsymbol{\mathbf{E}} $。
+[22] 场线：有方向的曲线，其上每一点切线方向都与 $ \boldsymbol{\mathbf{A}} $ 的方向一致。
+[23] 场管：由一束场线围城的管状区域。
+
+[/SCOPE:s_fields]
+[/SCOPE:s_vector]
+[SCOPE:s_gradient|description|梯度]
+[SCOPE:s_gradient_let|let_bind|梯度中的变量]
+[24] \begin{equation}
+\frac{\partial \Phi}{\partial l}=\lim_{\Delta l \to 0}\frac{\Delta \Phi}{\Delta l}~,
+\end{equation}
+[25] 标量场 $\Phi$ 在 P 点沿 $\Delta \boldsymbol{\mathbf{l}} $ 方向的方向微商。
+
+[/SCOPE:s_gradient_let]
+[26] 沿方向微商最大的方向（即 $\Delta \boldsymbol{\mathbf{n}} $ 方向）。
+[27] \begin{equation}
+\boldsymbol\nabla \Phi = \frac{\partial \Phi}{\partial n}~,
+\end{equation}
+[28] $\Delta \Phi$ 方向总于 $\Phi$ 的等值面垂直。
+[29] 标量场的梯度是矢量场
+[30] 电势 $U$ 是标量场，其负梯度 $ \boldsymbol{\mathbf{E}} $ 是矢量场。
+
+[/SCOPE:s_gradient]
+[SCOPE:s_divergence|description|散度]
+[SCOPE:s_divergence_let|let_bind|散度中的变量]
+[31] \begin{equation}
+\Phi_A=\iint\limits_{(S)} \boldsymbol{\mathbf{A}} \,\mathrm{d}{ \boldsymbol{\mathbf{S}} } = \iint\limits_{(S)} A\cos\theta dS~.
+\end{equation}
+[/SCOPE:s_divergence_let]
+[32] 流速场、流量、电通量、磁通量。
+
+[33] \begin{equation}
+div \boldsymbol{\mathbf{A}} =\nabla \cdot \boldsymbol{\mathbf{A}} =\lim_{\Delta V \to 0}\frac{\Phi}{\Delta V}~,
+\end{equation}
+[34] 矢量场的散度是标量场。
+
+[35] \begin{equation}
+\nabla \cdot \boldsymbol{\mathbf{A}} = \frac{\partial A_x}{\partial x}+\frac{\partial A_y}{\partial y}+\frac{\partial A_z}{\partial z}~,
+\end{equation}
+[36] \begin{equation}
+\oint \boldsymbol{\mathbf{A}} =\iiint_V \nabla \cdot \boldsymbol{\mathbf{A}} dV~.
+\end{equation}
+[37] 矢量场通过任意闭合曲面 S 的通量等于它向包围体积 V 内的散度积分。
+
+[/SCOPE:s_divergence]
+[SCOPE:s_curl|description|旋度]
+[SCOPE:s_curl_let|let_bind|旋度中的变量]
+[38] 环量 $\Gamma$
+[39] \begin{equation}
+\Gamma=\oint_L \boldsymbol{\mathbf{A}} \cdot d \boldsymbol{\mathbf{l}} ~,
+\end{equation}
+[/SCOPE:s_curl_let]
+[40] 矢量场 $ \boldsymbol{\mathbf{A}} $ 沿闭合回路线积分。
+[41] $\delta S$ 为闭线 L 包围面积，$ \boldsymbol{\mathbf{n}} $ 为右旋单位法向量。
+[42] 旋度 $ \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{A}} $
+[43] \begin{equation}
+rot \boldsymbol{\mathbf{A}} =\nabla \times \boldsymbol{\mathbf{A}} =\lim_{\Delta S \to 0} \frac{\oint_L \boldsymbol{\mathbf{A}} d \boldsymbol{\mathbf{l}} }{\Delta S}~,
+\end{equation}
+[44] 矢量场的旋度仍是矢量场。
+
+[45] \begin{equation}
+\nabla \times \boldsymbol{\mathbf{A}} =
+\begin{vmatrix}
+\boldsymbol{\mathbf{i}} & \boldsymbol{\mathbf{j}} & \boldsymbol{\mathbf{k}} \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z}\\
+A_x & A_y & A_z
+\end{vmatrix}~,
+\end{equation}
+[46] \begin{equation}
+\nabla = \boldsymbol{\mathbf{i}} \frac{\partial}{\partial x}+ \boldsymbol{\mathbf{j}} \frac{\partial}{\partial}y + \boldsymbol{\mathbf{k}} \frac{\partial}{\partial z}~.
+\end{equation}
+
+[/SCOPE:s_curl]
+[SCOPE:s_stokes|description|Stokes定理]
+[47] \begin{equation}
+\oint_L \boldsymbol{\mathbf{A}} d \boldsymbol{\mathbf{l}} =\iint_S (\nabla \times \boldsymbol{\mathbf{A}} )\cdot d \boldsymbol{\mathbf{S}} ~.
+\end{equation}
+[48] 矢量场在任意闭合回路 L 上的环量等于它为边界的曲面 S 上旋度的积分。
+
+[/SCOPE:s_stokes]
+[SCOPE:s_solenoidal|description|有散场和无散场]
+[49] 散度为 0，
+[50] 即无源，为无散场；
+[51] 散度不为 0，
+[52] 即有源，为有散场。由
+[53] \begin{equation}
+\nabla\cdot\nabla\times \boldsymbol{\mathbf{A}} =0~
+\end{equation}
+[54] 知，任何矢量场的旋度永远是无散场。
+[55] 任何无散场 $ \boldsymbol{\mathbf{B}} $ 可表达成某矢量场的旋度
+[56] \begin{equation}
+\boldsymbol{\mathbf{B}} =\nabla\times \boldsymbol{\mathbf{A}} ,\nabla\cdot \boldsymbol{\mathbf{B}} =0~.
+\end{equation}
+
+[/SCOPE:s_solenoidal]
+[SCOPE:s_irrotational|description|有旋场和无旋场]
+[57] 旋度为 0，为无旋场;反之为有旋场。
+[58] \begin{equation}
+\nabla\times\nabla\Phi=0~,
+\end{equation}
+[59] 任何标量场的梯度永远是无旋场。
+[60] 任何无旋场 $ \boldsymbol{\mathbf{A}} $ 可表示为某个标量场 $\Phi$ 的梯度
+[61] \begin{equation}
+\boldsymbol{\mathbf{A}} =\nabla\Phi,\nabla\times \boldsymbol{\mathbf{A}} =0~.
+\end{equation}
+
+[/SCOPE:s_irrotational]
+[SCOPE:s_harmonic|description|谐和场]
+[62] 谐和场为某一矢量 $ \boldsymbol{\mathbf{A}} $ 在某空间内既无散又无旋，由于其无旋，
+[63] 所以可以由势场表示：
+[64] \begin{equation}
+\boldsymbol{\mathbf{A}} =\nabla\Phi,\nabla\times \boldsymbol{\mathbf{A}} =0~.
+\end{equation}
+[65] 同样由于其为无散场，
+[66] 所以有：
+[67] \begin{equation}
+\boldsymbol{\mathbf{B}} =\nabla\times \boldsymbol{\mathbf{A}} ,\nabla\cdot \boldsymbol{\mathbf{B}} =0~.
+\end{equation}
+[68] 故可以导出 Laplace 方程：
+[69] \begin{equation}
+\nabla\cdot\nabla=\nabla^2~,
+\end{equation}
+[70] 谐和场的势函数满足 Laplace 方程。
+[/SCOPE:s_harmonic]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_stokes",
+    "target_scope": "s_curl",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Stokes定理是旋度的积分形式"
+  },
+  {
+    "source_scope": "s_solenoidal",
+    "target_scope": "s_divergence",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "无散场概念基于散度"
+  },
+  {
+    "source_scope": "s_irrotational",
+    "target_scope": "s_curl",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "无旋场概念基于旋度"
+  },
+  {
+    "source_scope": "s_harmonic",
+    "target_scope": "s_solenoidal",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "谐和场是无散场"
+  },
+  {
+    "source_scope": "s_harmonic",
+    "target_scope": "s_irrotational",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "谐和场是无旋场"
+  }
+]

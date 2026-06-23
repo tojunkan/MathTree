@@ -1,0 +1,250 @@
+[SCOPE:root|description|Sylow 定理]
+文章名: Sylow
+标题: Sylow 定理
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=Sylow 子群
+  [1] type=exercise heading=习题 1 title=
+  [2] type=example heading=例 1 title=
+  [3] type=theorem heading=定理 1 title=Sylow 第一定理
+  [4] type=theorem heading=定理 2 title=Sylow 第二定理
+  [5] type=theorem heading=定理 3 title=Sylow 第三定理
+  [6] type=theorem heading=定理 4 title=
+
+[SCOPE:s_def1|description|Sylow 子群]
+[0] 定义 1 Sylow 子群
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1] 给定群 $G$ 和它的子群 $H$。
+[2] 如果 $ \left\lvert H \right\rvert =p^k$，其中 $p$ 是素数，且 $p^{k+1}\not\mid \left\lvert G \right\rvert $，
+[3] 那么称 $H$ 是 $G$ 的一个 $p$-Sylow 子群，或Sylow-$p$子群，或直接统称为Sylow 子群。
+[4] 群 $G$ 的全体 Sylow $p$-子群构成的集合，记为 $ \operatorname {Syl}_p(G)$。
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_exer1|description|习题1]
+[5] 习题 1
+[SCOPE:s_exer1_let|let_bind|习题1的变量]
+[6] 考虑循环群 $C_{12}$，求它的所有 Sylow 子群。
+
+[/SCOPE:s_exer1]
+[/SCOPE:s_exer1_let]
+[SCOPE:s_example1_let|let_bind|例1的变量]
+[SCOPE:s_example1|description|例1]
+[7] 考虑置换群 $S_4$。则
+[8] \begin{equation}
+\begin{aligned}
+C=\\
+&\{1, \begin{pmatrix}1&2\end{pmatrix} \begin{pmatrix}3&4\end{pmatrix} , \begin{pmatrix}1&3\end{pmatrix} \begin{pmatrix}2&4\end{pmatrix} , \begin{pmatrix}1&4\end{pmatrix} \begin{pmatrix}2&3\end{pmatrix} ,\\
+& \begin{pmatrix}1&2\end{pmatrix} , \begin{pmatrix}3&4\end{pmatrix} , \begin{pmatrix}1&3&2&4\end{pmatrix} , \begin{pmatrix}1&4&2&3\end{pmatrix} \}
+\end{aligned}~
+\end{equation}
+[9] $C$ 是 $  \begin{pmatrix}1&2\end{pmatrix}   \begin{pmatrix}3&4\end{pmatrix}  $ 的中心，
+[10] 因此我们可以类似构造出 $S_4$ 的剩下两个 Sylow-$2$ 子群，分别是 $  \begin{pmatrix}1&3\end{pmatrix}   \begin{pmatrix}2&4\end{pmatrix}  $ 和 $  \begin{pmatrix}1&4\end{pmatrix}   \begin{pmatrix}2&3\end{pmatrix}  $ 的中心。
+[11] 这三个 Sylow-$2$ 子群的交集是 $V_4=\{1,  \begin{pmatrix}1&2\end{pmatrix}   \begin{pmatrix}3&4\end{pmatrix}  ,  \begin{pmatrix}1&3\end{pmatrix}   \begin{pmatrix}2&4\end{pmatrix}  ,  \begin{pmatrix}1&4\end{pmatrix}   \begin{pmatrix}2&3\end{pmatrix}  \}$。
+[12] 如果把一个正方形的四个顶点顺时针依次编号为 $1, 3, 2, 4$，
+[13] 则不难看出 $C$ 实际上就是正方形的对称群 $D_4$。
+[14] 类似地，$S_4$ 的每个 Sylow-$2$ 子群都同构于 $D_4$。
+[15] Sylow 定理通常被拆分成三个部分来表述。
+
+[/SCOPE:s_example1_let]
+[/SCOPE:s_example1]
+[SCOPE:s_thm1|description|Sylow 第一定理]
+[16] 定理 1 Sylow 第一定理
+[SCOPE:s_thm1_let1|let_bind|第一定理的变量]
+[17] 取有限群$G$。
+[18] 如果素数 $p\mid \left\lvert G \right\rvert $，
+[19] 那么 $G$ 一定有一个 Sylow $p$-子群 $H_p$。
+[/SCOPE:s_thm1_let1]
+[20] 证明：
+[21] 令 $ \left\lvert G \right\rvert =p^km$，其中 $p\not\mid m$。
+[SCOPE:s_thm1_abelian|description|阿贝尔群情形]
+[22] 先证明当 $G$ 是阿贝尔群时，$p$ 阶子群存在。
+[SCOPE:s_thm1_abelian_let|let_bind|阿贝尔群情形的变量]
+[23] 任取 $g\in G$，如果 $g$ 的阶（定义 2 ）$ \operatorname {ord}g$ 是 $p$ 的倍数 $np$，
+[24] 那么 $g^n$ 生成的循环群就是 $p$ 阶的。
+[25] 否则，设 $ \operatorname {ord}g=r$，取 $g$ 生成的子群 $H_g$，它是 $G$ 的正规子群（因为 $G$ 阿贝尔），
+[26] 于是 $ \left\lvert G/H_g \right\rvert =p^km/r$。
+[27] 在 $G/H_g$ 中再任挑一个元素，如果该元素的阶不是$p$，同样求出其循环群后用 $ \left\lvert G/H_g \right\rvert $ 去除掉这个循环群，得到商群。
+[28] 易证有限步后，总能得到一个阶数为 $p$的倍数的元素2。
+[29] 于是这个元素的一个幂生成的循环群是 $p$ 阶的。
+[/SCOPE:s_thm1_abelian]
+[/SCOPE:s_thm1_abelian_let]
+[SCOPE:s_thm1_general|description|一般群情形]
+[SCOPE:s_thm1_general_let|let_bind|一般群情形的变量]
+[30] 下设 $G$ 是任意的有限群，$Z(G)$ 是它的中心。
+[31] 设定理对于阶数小于 $p^km$ 的群都成立，然后分类进行归纳讨论。
+[/SCOPE:s_thm1_general_let]
+[SCOPE:s_thm1_case1|cases|p|Z(G) 与 p∤Z(G)]
+[SCOPE:s_thm1_case1_sub1|description|p|Z(G) 情形]
+[32] 如果 $p\mid \left\lvert Z(G) \right\rvert $，
+[33] 那么由于 $Z(G)$ 是阿贝尔群，
+[SCOPE:s_thm1_case1_sub1_let|let_bind|p|Z(G) 情形的变量]
+[34] 故存在 $G$ 的 $p$ 阶子群 $A$。
+[35] 由于 $A\subseteq Z(G)$，
+[36] 故 $A\vartriangleleft G$。
+[37] 于是得到商群 $G/A$，其阶数为 $p^{k-1}m$。
+[38] 由归纳假设，$G/A$ 有一个 $p^{k-1}$ 阶 Sylow 子群，
+[39] 因此这个子群是 $G$ 的 $p^k$ 阶子群，
+[40] 从而是 $G$ 的 Sylow $p$-子群。
+[/SCOPE:s_thm1_case1_sub1]
+[/SCOPE:s_thm1_case1_sub1_let]
+[SCOPE:s_thm1_case1_sub2|description|p∤Z(G) 情形]
+[41] 如果 $p\not\mid \left\lvert Z(G) \right\rvert $，
+[42] 那么根据共轭类等式（The Class Equation定理 3 ），
+[43] \begin{equation}
+\left\lvert G \right\rvert = \left\lvert Z(G) \right\rvert + \sum_{C\in O, \left\lvert C \right\rvert >1} \left\lvert C \right\rvert ~,
+\end{equation}
+[SCOPE:s_thm1_case1_sub2_let|let_bind|p∤Z(G) 情形的变量]
+[44] 其中 $O$ 是 $G$ 在伴随作用下全体轨道构成的集合。
+[45] 由于 $p\mid \left\lvert G \right\rvert $，$p\not\mid \left\lvert Z(G) \right\rvert $，
+[46] 故存在 $ \left\lvert C \right\rvert $ 使得 $p\not\mid \left\lvert C \right\rvert $，
+[47] 即存在 $x\in G$ 使得 $p\not\mid \left\lvert C_x \right\rvert $，
+[48] 故 $ \left\lvert C_x \right\rvert \mid m$。
+[49] 由推论 2 ，得 $ \left\lvert C_G(x) \right\rvert =p^km/ \left\lvert C_x \right\rvert =p^ks< \left\lvert G \right\rvert $3，其中 $s>1$。
+[50] 因此由归纳假设，$C_G(x)$ 有一个 $p^k$ 阶子群 $A$，
+[51] 从而 $G$ 有个 Sylow $p$-子群 $A$。
+[/SCOPE:s_thm1_general]
+[/SCOPE:s_thm1_case1]
+[/SCOPE:s_thm1_case1_sub2]
+[/SCOPE:s_thm1_case1_sub2_let]
+[52] 证毕。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|Sylow 第二定理]
+[53] 定理 2 Sylow 第二定理
+[SCOPE:s_thm2_let1|let_bind|第二定理的变量]
+[54] 取有限群$G$，它的所有 Sylow $p$-子群彼此共轭。
+[/SCOPE:s_thm2_let1]
+[SCOPE:s_thm2_proof|description|第二定理的证明]
+[55] 证明：
+[SCOPE:s_thm2_proof_let|let_bind|第二定理证明的变量]
+[56] 令 $ \left\lvert G \right\rvert =p^km$，其中 $p\not\mid m$。
+[57] 任取 $G$ 的两个 Sylow $p$-子群 $A$ 和 $B$，记 $G/B$ 是 $B$ 在 $G$ 中的左陪集构成的集合4。
+[58] 考虑群 $A$ 作用在集合 $G/B$ 上，方式是左伴随作用。
+[59] 据定理 5 ，
+[60] \begin{equation}
+\left\lvert G/B \right\rvert = \left\lvert \operatorname {Fix}_A(G/B) \right\rvert \mod p~.
+\end{equation}
+[61] 由 Sylow 子群的定义，知 $ \left\lvert G/B \right\rvert =m$。
+[62] 故 $m \left\lvert \operatorname {Fix}_A(G/B) \right\rvert \mod p$，意味着 $ \left\lvert \operatorname {Fix}_A(G/B) \right\rvert \neq 0$，
+[63] 即存在不动点$gB\in G/B$。
+[64] 因此 $agB=gB$ 对所有 $a\in A$ 成立，
+[65] 即 $ag\in gB$，
+[66] 即 $A\subseteq gBg^{-1}$。
+[67] 又因为 $ \left\lvert A \right\rvert =p= \left\lvert B \right\rvert = \left\lvert gBg^{-1} \right\rvert $，
+[68] 故 $A=gBg^{-1}$。
+[69] 证毕。
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_proof]
+[/SCOPE:s_thm2_proof_let]
+[SCOPE:s_thm3|description|Sylow 第三定理]
+[70] 定理 3 Sylow 第三定理
+[SCOPE:s_thm3_let1|let_bind|第三定理的变量]
+[71] 取有限群$G$，设 $n_p$ 是它的所有 Sylow $p$-子群的数目。
+[72] 令 $ \left\lvert G \right\rvert =p^km$，其中 $p\not\mid m$。
+[/SCOPE:s_thm3_let1]
+[73] 那么 $n_p\equiv 1\mod p$，或者说 $p\mid n_p-1$；
+[74] 且 $n_p\mid m$。
+[SCOPE:s_thm3_proof1|description|第三定理第一个性质的证明]
+[75] 证明：
+[76] 如果 $ \operatorname {Syl}_p(G)$ 只有一个元素，
+[77] 即 $n_p=1$，那定理自然成立。
+[78] 下设 $n_p>1$。
+[79] 证明第一个性质 $n_p\equiv 1\mod p$：
+[SCOPE:s_thm3_proof1_let|let_bind|第一个性质证明的变量]
+[80] 任取 $P\in \operatorname {Syl}_p(G)$，令 $P$ 在 $ \operatorname {Syl}_p(G)$ 上有共轭作用。
+[81] 这个作用的合理性由定理 2 保证。
+[82] 由于 $n_p>1$，
+[83] 故可取 $Q\in \operatorname {Syl}_p(G)-\{P\}$。
+[84] 由定理 2 ，存在 $g\in G$ 使得 $Q=gPg^{-1}$。
+[85] $P\neq Q$ 且 $ \left\lvert P \right\rvert = \left\lvert Q \right\rvert =p^k$ $\implies$ 存在 $h\in P-Q$ 使得 $ghg^{-1}\in Q-P$。
+[86] 于是 $g^{-1}(ghg^{-1})g=h\in P$，这意味着 $g^{-1}Qg\neq Q$。
+[87] 因此，$ \operatorname {Fix}_P( \operatorname {Syl}_p(G))$ 只有 $P$ 这一个元素，
+[88] 从而 $ \left\lvert \operatorname {Fix}_P( \operatorname {Syl}_p(G)) \right\rvert =1$。
+[89] 由定理 5 ，注意 $ \left\lvert P \right\rvert =p^k$，
+[90] \begin{equation}
+\begin{aligned}
+n_p= \left\lvert \operatorname {Syl}_p(G) \right\rvert \equiv \left\lvert \operatorname {Fix}_P( \operatorname {Syl}_p(G)) \right\rvert \mod p\equiv 1\mod p~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_thm3_proof1]
+[/SCOPE:s_thm3_proof1_let]
+[SCOPE:s_thm3_proof2|description|第三定理第二个性质的证明]
+[91] 证明第二个性质 $n_p\mid m$：
+[92] 考虑整个 $G$ 按共轭作用，作用在 $ \operatorname {Syl}_p(G)$ 上。
+[93] 由定理 2 ，这是一个可递作用，
+[94] 因此只有一个轨道，
+[95] 因此任意元素的轨道中元素数量是 $n_p$。
+[96] 由推论 1 ，$n_p$ 等于 $ \operatorname {Syl}_p(G)$ 中任意元素的迷向子群指数。
+[97] 又由拉格朗日定理（定理 3 ）可知子群指数整除群的阶，
+[98] 即 $n_p\mid p^km$。
+[99] 由式 4 ，$n_p\not \mid p^k$，
+[100] 从而 $n_p\mid m$。
+[101] 证毕。
+[/SCOPE:s_thm3_proof2]
+[102] 定理 3 中第二个性质的证明过程中也蕴含了这一关系：$n_p=[G: \operatorname {Syl}_p(G)]$（子群的指数，见定义 3 ）。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|定理4]
+[103] 定理 4
+[SCOPE:s_thm4_let1|let_bind|定理4的变量]
+[104] 取有限群$G$，令 $P$ 是 $G$ 的一个 Sylow $p$-子群，$N(P)$ 是 $P$ 的正规化子（定义 2 ）。
+[105] 则对 $G$ 的子群 $H\supseteq N(P)$，必有 $N(H)=H$。
+[/SCOPE:s_thm4_let1]
+[SCOPE:s_thm4_proof|description|定理4的证明]
+[106] 证明：
+[107] 显然 $H\subseteq N(H)$。
+[108] 下证 $N(H)\subseteq H$。
+[109] 由于 $P\subseteq N(P)\subseteq H$，由定义显然可知，$P$ 也是 $H$ 的一个 Sylow $p$-子群。
+[SCOPE:s_thm4_proof_let|let_bind|定理4证明的变量]
+[110] 任取 $x\in N(H)$，
+[111] 则 $xPx^{-1}\subseteq H$ 也是 $H$ 的一个 Sylow $p$-子群。
+[112] 于是由定理 2 ，存在 $h\in H$ 使得 $xPx^{-1}=hPh^{-1}$。
+[113] 于是 $h^{-1}xPx^{-1}h=P$，这意味着 $h^{-1}x\in N(P)\subseteq H$。
+[114] 故 $x\in H$，
+[115] 即 $N(H)\subseteq H$。
+[116] 证毕。
+[/SCOPE:s_thm4]
+[/SCOPE:s_thm4_proof]
+[/SCOPE:s_thm4_proof_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "第一定理使用Sylow子群的定义"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "第二定理使用Sylow子群的定义"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "第三定理使用Sylow子群的定义"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "第三定理的证明引用第二定理"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理4的证明引用第二定理"
+  }
+]

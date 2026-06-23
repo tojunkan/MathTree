@@ -1,0 +1,261 @@
+{
+  "article_name": "ODEPr",
+  "statements": [
+    {
+      "stmt_id": "st_def_ode",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_ode_form",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "x",
+        "y",
+        "F",
+        "y'",
+        "y^{(n)}"
+      ]
+    },
+    {
+      "stmt_id": "st_def_system",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "x",
+        "y_i",
+        "F_i",
+        "n_i",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_F_domain",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_def_order",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "n_i",
+        "sum n_i"
+      ]
+    },
+    {
+      "stmt_id": "st_def_solution",
+      "subtype": "definition",
+      "clause_range": [
+        27,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "varphi_i(x)",
+        "r_1",
+        "r_2"
+      ]
+    },
+    {
+      "stmt_id": "st_def_solvable",
+      "subtype": "definition",
+      "clause_range": [
+        38,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "f_i"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_history",
+      "subtype": "remark",
+      "clause_range": [
+        43,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_cardinality",
+      "subtype": "remark",
+      "clause_range": [
+        49,
+        55
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_standard",
+      "subtype": "definition",
+      "clause_range": [
+        56,
+        58
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "x",
+        "y_i",
+        "f_i",
+        "Gamma"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_continuity",
+      "subtype": "assumption",
+      "clause_range": [
+        59,
+        66
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "f_i",
+        "partial f_i/partial y_j",
+        "Gamma"
+      ]
+    },
+    {
+      "stmt_id": "st_example_first_order",
+      "subtype": "example",
+      "clause_range": [
+        67,
+        75
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "x",
+        "y",
+        "F",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def_autonomous",
+      "subtype": "definition",
+      "clause_range": [
+        76,
+        81
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "f_i",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_geo_intro",
+      "subtype": "remark",
+      "clause_range": [
+        82,
+        84
+      ],
+      "truth_value": null,
+      "scope_id": "s_geo",
+      "exposed_entities": [
+        "x",
+        "y",
+        "P",
+        "Gamma",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_def_integral_curve",
+      "subtype": "definition",
+      "clause_range": [
+        85,
+        91
+      ],
+      "truth_value": null,
+      "scope_id": "s_geo",
+      "exposed_entities": [
+        "varphi(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_def_direction_field",
+      "subtype": "definition",
+      "clause_range": [
+        92,
+        95
+      ],
+      "truth_value": null,
+      "scope_id": "s_geo",
+      "exposed_entities": [
+        "l_{x,y}"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_F_domain",
+      "target": "st_def_system",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_continuity",
+      "target": "st_def_standard",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_first_order",
+      "target": "st_def_standard",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_example_first_order",
+      "target": "st_def_standard",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "一阶常微分方程是标准常微分方程的特例（n=1）"
+    }
+  ],
+  "unresolved": []
+}

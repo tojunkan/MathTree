@@ -1,0 +1,102 @@
+[SCOPE:root|description|方向导数]
+文章名: DerDir
+标题: 方向导数
+
+[SCOPE:s_intro|description|方向导数引入]
+[0] 先来看一幅等高线图（图 1 ）。
+[SCOPE:s_intro_let|let_bind|引入函数 f 和位矢 r]
+[1] 令高度 $z$ 为位置的函数 $z = f( \boldsymbol{\mathbf{r}} )$。
+[2] 这里 $ \boldsymbol{\mathbf{r}} $ 是二维平面上的位矢，
+[3] 即 $f( \boldsymbol{\mathbf{r}} ) = f(x,y)$。
+[/SCOPE:s_intro_let]
+[4] 当位矢沿着等高线移动时，$z$ 不变，而当位矢沿垂直于等高线的方向移动时，$z$ 变化得最快。
+[5] 位置沿其他方向运动，$z$ 的变化速度介于两者之间。
+[6] 【图解】图 1：等高线
+[7] 那么如何衡量位置向各个方向移动时 $z$ 变化的快慢呢？
+[/SCOPE:s_intro]
+[SCOPE:s_2d|description|二维方向导数推导]
+[SCOPE:s_2d_let_n|let_bind|引入方向 n_hat]
+[8] 我们先规定一个方向 $ \hat{\boldsymbol{\mathbf{n}}} = (n_x,n_y)$（平面单位矢量，满足 $n_x^2 + n_y^2 = 1$），然后用方向导数来衡量变化率，其定义如下
+[9] \begin{equation}
+\frac{\mathrm{d}{f}}{\mathrm{d}{n}} \equiv \lim_{\Delta s \to 0} \frac{f( \boldsymbol{\mathbf{r}} + \hat{\boldsymbol{\mathbf{n}}} \Delta s) - f( \boldsymbol{\mathbf{r}} )}{\Delta s} = \frac{\mathrm{d}{f}}{\mathrm{d}{s}} ~,
+\end{equation}
+[10] 其中 $ \hat{\boldsymbol{\mathbf{n}}} \Delta s$ 代表沿 $ \hat{\boldsymbol{\mathbf{n}}} $ 方向的微小位移。
+[/SCOPE:s_2d_let_n]
+[11] 从几何上来讲，二维函数 $f( \boldsymbol{\mathbf{r}} )$ 表示一个曲面，曲面上某点的方向导数就是曲面在该方向的斜率。
+[12] 由 “全微分” 中的结论
+[13] \begin{equation}
+\,\mathrm{d}{f} = \frac{\partial f}{\partial x} \,\mathrm{d}{x} + \frac{\partial f}{\partial y} \,\mathrm{d}{y} ~.
+\end{equation}
+[14] 而现在我们往 $ \hat{\boldsymbol{\mathbf{n}}} = (n_x, n_y)$ 方向移动 $ \,\mathrm{d}{s} $，
+[15] 所以
+[16] \begin{equation}
+\,\mathrm{d}{x} = n_x \,\mathrm{d}{s} ~,\qquad \,\mathrm{d}{y} = n_y \,\mathrm{d}{s} ~.
+\end{equation}
+[17] 代入上式，得
+[18] \begin{equation}
+\,\mathrm{d}{f} = \left( \frac{\partial f}{\partial x} n_x + \frac{\partial f}{\partial y} n_y \right) \,\mathrm{d}{s} ~.
+\end{equation}
+[19] 根据导数与微分的关系（也可以通俗地说 “两边同除 $ \,\mathrm{d}{s} $”），就得到方向导数
+[20] \begin{equation}
+\frac{\partial f}{\partial n} = \frac{\mathrm{d}{f}}{\mathrm{d}{s}} = \frac{\partial f}{\partial x} n_x + \frac{\partial f}{\partial y} n_y~.
+\end{equation}
+[21] 如果使用平面的
+[22] 正交归一基 [链接 L0]
+[23] $ \hat{\boldsymbol{\mathbf{x}}} , \hat{\boldsymbol{\mathbf{y}}} $ 写成矢量
+[24] 内积 [链接 L1]
+[25] 的形式，就是
+[26] \begin{equation}
+\frac{\mathrm{d}{f}}{\mathrm{d}{n}} = \left( \frac{\partial f}{\partial x} \hat{\boldsymbol{\mathbf{x}}} + \frac{\partial f}{\partial y} \hat{\boldsymbol{\mathbf{y}}} \right) \boldsymbol\cdot \hat{\boldsymbol{\mathbf{n}}} ~.
+\end{equation}
+[SCOPE:s_2d_let_del|let_bind|引入 Del 算符]
+[27] 二维直角坐标系中的 Del 算符
+[28] \begin{equation}
+\boldsymbol\nabla = \hat{\boldsymbol{\mathbf{x}}} \frac{\partial}{\partial{x}} + \hat{\boldsymbol{\mathbf{y}}} \frac{\partial}{\partial{y}} ~.
+\end{equation}
+[29] 其作用在函数上表示
+[30] \begin{equation}
+\boldsymbol\nabla f = \frac{\partial f}{\partial x} \hat{\boldsymbol{\mathbf{x}}} + \frac{\partial f}{\partial y} \hat{\boldsymbol{\mathbf{y}}} ~.
+\end{equation}
+[/SCOPE:s_2d_let_del]
+[31] 则方向导数可以写成相当简洁的形式，
+[32] 即
+[33] \begin{equation}
+\frac{\partial f}{\partial n} = \boldsymbol\nabla f \boldsymbol\cdot \hat{\boldsymbol{\mathbf{n}}} ~.
+\end{equation}
+
+[/SCOPE:s_2d]
+[SCOPE:s_nd_let|let_bind|引入 N 维变量]
+[SCOPE:s_nd|description|N 元函数方向导数]
+[34] 通过和以上类似的分析，可以得出 $N$ 元函数 $f( \boldsymbol{\mathbf{r}} ) = f(x_1,x_2\dots x_N)$ 在单位方向矢量 $ \hat{\boldsymbol{\mathbf{n}}} = (n_{x1}, n_{x2} \dots n_{x_N})$ 的方向上的微分关系为
+[35] \begin{equation}
+\,\mathrm{d}{f} = \frac{\partial f}{\partial x_1} \,\mathrm{d}{x_1} + \frac{\partial f}{\partial x_2} \,\mathrm{d}{x_2} \ldots = \left( \frac{\partial f}{\partial x_1} n_{x1} + \frac{\partial f}{\partial x_2} n_{x2}\dots \right) \,\mathrm{d}{s} ~.
+\end{equation}
+[36] 方向导数为
+[37] \begin{equation}
+\frac{\partial f}{\partial n} = \frac{\mathrm{d}{f}}{\mathrm{d}{s}} = \left( \frac{\partial f}{\partial x_1} \hat{\boldsymbol{\mathbf{x}}} _1 + \frac{\partial f}{\partial x_2} \hat{\boldsymbol{\mathbf{x}}} _2\ldots \frac{\partial f}{\partial x_N} \hat{\boldsymbol{\mathbf{x}}} _N \right) \boldsymbol\cdot \hat{\boldsymbol{\mathbf{n}}} = \boldsymbol\nabla f \boldsymbol\cdot \hat{\boldsymbol{\mathbf{n}}} ~.
+\end{equation}
+[38] 式 9 [链接 L2]
+[39] 相同。
+[40] 这里定义了
+[41] $N$ 维直角坐标系的 Del 算符
+[42] \begin{equation}
+\boldsymbol\nabla = \hat{\boldsymbol{\mathbf{x}}} _1 \frac{\partial }{\partial x_1} + \hat{\boldsymbol{\mathbf{x}}} _2 \frac{\partial }{\partial x_2} \dots \hat{\boldsymbol{\mathbf{x}}} _n \frac{\partial }{\partial x_N} ~.
+\end{equation}
+
+跨文章引用:
+  [L0] 正交归一基 → OrNrB
+  [L1] 内积 → Dot
+[/SCOPE:s_nd_let]
+[/SCOPE:s_nd]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_nd",
+    "target_scope": "s_2d",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "N 元方向导数是二维的推广"
+  }
+]

@@ -1,0 +1,173 @@
+{
+  "article_name": "IntPry",
+  "statements": [
+    {
+      "stmt_id": "st_example1_func",
+      "subtype": "example",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "f(r,θ)",
+        "r",
+        "θ"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_integral",
+      "subtype": "example",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_spherical_harmonic",
+      "subtype": "example",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "Y_{l,m}(-r̂)",
+        "Y_{l,m}(r̂)"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_parity_rule",
+      "subtype": "example",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_conclusion",
+      "subtype": "example",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_parity_let",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_parity_let",
+      "exposed_entities": [
+        "f(r)",
+        "g(r)",
+        "h(r)"
+      ]
+    },
+    {
+      "stmt_id": "st_parity_same",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_parity_discussion",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_parity_conclusion_same",
+      "subtype": "conclusion",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_parity_discussion",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_parity_opposite",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_parity_discussion",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_parity_conclusion_opposite",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_parity_discussion",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exercise1_let",
+      "subtype": "exercise",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise1_let",
+      "exposed_entities": [
+        "f(r)",
+        "r",
+        "θ",
+        "Y_{l,m}(r̂)"
+      ]
+    },
+    {
+      "stmt_id": "st_exercise2_question",
+      "subtype": "exercise",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise2",
+      "exposed_entities": [
+        "Y_{99,77}*",
+        "Y_{71,-30}",
+        "Y_{53,20}"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_parity_same",
+      "target": "st_parity_conclusion_same",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_parity_opposite",
+      "target": "st_parity_conclusion_opposite",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

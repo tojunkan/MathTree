@@ -1,0 +1,105 @@
+[SCOPE:root|description|泛函分析笔记 3]
+文章名: FnalN3
+标题: 泛函分析笔记 3
+
+[SCOPE:s_orthonormal|description|3.1 Orthonormal Series]
+[0] 正交归一系（orthonormal system）：$(u_k|u_m) = \delta_{k,m}$ 对所有 $k, m$ 成立
+[SCOPE:s_orth_let1|let_bind|令 X 为实 Hilbert 空间，{u_n} 正交归一系]
+[1] 令 $X$ 为实 Hilbert 空间，$\{u_0, u_1,\dots\}$ 为 $X$ 中至多可数的正交归一系。
+[/SCOPE:s_orth_let1]
+[2a] 对有限正交归一系
+[2b] 如果 $u = \sum_{n=0}^N(u_n|u)u_n$ 对所有 $u\in X$ 成立，它，则叫做完备的（complete）。
+[3a] 对可数的正交归一系，令 $s_m := \sum_{n=0}^m(u_n|u)u_n$
+[3b] 如果 $u = \lim_{m\to\infty} s_m$ 对所有 $u\in X$ 成立，它，则叫做完备的（complete）
+[4] 有限的正交归一系在 Hilbert 空间 $X$ 中是完备的当且仅当它是 $X$ 的一组基底
+[SCOPE:s_orth_let2|let_bind|令 {u_n} 为可数正交归一系]
+[5] 令 $\{u_n\}$ 为 Hilbert 空间中可数的正交归一系。
+[/SCOPE:s_orth_let2]
+[6] 如果无穷级数 $u = \sum_{n=0}^\infty c_n u_n$ 对某个 $u\in X$ 收敛，
+[7] 那么 $c_n = (u_n|u)$ 对所有 $n$ 成立
+[8] Bessel inequality：$\sum_{n=0}^m \left\lvert (u_n|u) \right\rvert ^2 \le \left\lvert u \right\rvert ^2$ 对所有 $u \in X$ 和 $m$ 成立
+[SCOPE:s_orth_let3|let_bind|令 {u_n} 为 Hilbert 空间 X 中的可数正交归一系]
+[9] Convergence criterion：令 $\{u_n\}$ 为 Hilbert 空间 $X$ 中的可数正交归一系。
+[/SCOPE:s_orth_let3]
+[10] 那么 $\sum_{n=0}^\infty c_nu_n$ 收敛当且仅当 $\sum_{n=0}^\infty \left\lvert c_n \right\rvert ^2$ 收敛
+[SCOPE:s_orth_let4|let_bind|令 {u_n} 为可数正交归一系]
+[11] 令 $ \left\{u_n \right\} $ 为可数正交归一系，
+[/SCOPE:s_orth_let4]
+[12] 那么以下两个条件等效：(1) 它在 $X$ 中是完备的。
+[13] (2) 它的 linear hull（span）在 $X$ 中是稠密的
+[SCOPE:s_orth_let5|let_bind|对 Hilbert 空间 X 中可数完备的正交归一系 {u_n}]
+[14a] (u) c_n
+[14b] (v)$，(2) $ \left\lVert u \right\rVert ^2 = \sum_{n=0}^\infty \left\lvert (u_n|u) \right\rvert ^2$，(3) 如果 $(u_n|u) = 0$ 对所有 $n$ 和固定的 $u\in X$ 成立，
+[/SCOPE:s_orth_let5]
+[15] 那么 $u=0$
+[16] 对每个 $u\in L_2(-\pi,\pi)$，傅里叶级数收敛。
+[17] 即 $\lim_{m\to\infty}\int_{-\pi}^\pi [u(x)-a_0/2-\sum_k a_k\cos kx + b_k \sin kx]^2 \,\mathrm{d}{x} = 0$
+
+[/SCOPE:s_orthonormal]
+[SCOPE:s_unitary|description|3.5 Unitary Operators]
+[SCOPE:s_unitary_let|let_bind|令 X 和 Y 为希尔伯特空间]
+[18] 令 $X$ 和 $Y$ 为 $\mathbb K$ 上的希尔伯特空间。
+[/SCOPE:s_unitary_let]
+[19] 算符 $U: X\to Y$ 叫做 unitary 当且仅当 $U$ 是线性的，满射的，且 $(Uv|Uw) = (v|w)$ 对所有 $v, w \in X$ 成立
+[20] 如果算符 $U$ 是 unitary 的，
+[21] 那么它就是双射的，连续的，且 $ \left\lVert Uv \right\rVert = \left\lVert v \right\rVert $ 对所有 $v\in X$ 成立。
+[22] 而且，存在逆算符 $U^{-1}: Y\to X$，同样是 unitary 的
+
+[/SCOPE:s_unitary]
+[SCOPE:s_extension|description|3.6 The Extension Principle]
+[SCOPE:s_ext_let|let_bind|令线性算符 A: D⊆X→Y]
+[23] 对 Banach 空间 $X$ 和 $Y$，令线性算符 $A: D\subseteq X\to Y$ 的范数为有限值，$D \subseteq X$ 是稠密线性的。
+[/SCOPE:s_ext_let]
+[24] 那么 (1) $A$ 可以唯一地拓展（extended）到 $A:X\to Y$ 上，范数仍然为有限。
+[25] （2）如果 $A$ 在 $D$ 上的紧算符，
+[26] 那么拓展后也是紧算符
+
+[/SCOPE:s_extension]
+[SCOPE:s_fourier_S|description|3.7 Applications to the Fourier Transformation]
+[SCOPE:s_fourier_S_let1|let_bind|定义 S 空间]
+[27] $\mathcal S$ 空间：包含所有 $C^\infty$ 函数 $u: \mathbb R \to \mathbb C$，满足 $ \left\lVert u \right\rVert _{p,q} < \infty$ 对所有 $p, q=0,1,\dots$ 成立。
+[/SCOPE:s_fourier_S_let1]
+[28a] (n)}
+[28b] (x) \right\rvert $。
+[29] 极限 $u_n \to u$ 以 $ \left\lVert u \right\rVert _{p,q}$ 为准
+[30] $\mathcal S$ 空间中的函数叫做在无穷远处 rapidly decreasing。
+[31a] (n)}
+[31b] (x) \,\mathrm{d}{x} \right\rvert < \infty$ 对所有 $n = 0, 1,\dots$ 成立。
+[32] 且分部积分的边界项为零
+[SCOPE:s_fourier_S_let2|let_bind|定义傅里叶变换 F]
+[33] 傅里叶变换 $F:\mathcal S\to\mathcal S$ 是线性的连续双射的。
+[/SCOPE:s_fourier_S_let2]
+[34] 反傅里叶变换同样是连续的
+[35] 傅里叶变换 $F:\mathcal S\to\mathcal S$ 可以唯一地拓展到酉算符 $F: L_2^{\mathbb C}(\mathbb R) \to L_2^{\mathbb C}(\mathbb R)$。
+[36] 注意 $C_0^\infty(\mathbb R)_{\mathbb C} \subseteq \mathcal S \subseteq L_2^{\mathbb C}(\mathbb R)$
+
+[/SCOPE:s_fourier_S]
+[SCOPE:s_tempered|description|3.8 The Fourier Transform of Tempered General Functions]
+[SCOPE:s_tempered_let1|let_bind|定义 S']
+[37] $\mathcal S'$ 定义为所有线性连续映射 $T: \mathcal S\to \mathbb C$。
+[/SCOPE:s_tempered_let1]
+[38] $T$ 叫做 tempered generalized functions 或者 tempered distributions
+[39] 定义 $(FT)(u) := T(Fu)$（$u \in \mathcal S$）
+[40] 算符 $F : \mathcal S' \to \mathcal S'$ 是线性且双射的
+[SCOPE:s_tempered_let2|let_bind|令 v 为可测有界函数]
+[41] 令 $v : \mathbb R\to\mathbb C$ 为可测的有界函数。
+[/SCOPE:s_tempered_let2]
+[42a] (u) = \int_{-\infty}^\infty v
+[42b] (x)u
+[42c] (x) \,\mathrm{d}{x} $（$\forall u \in \mathcal S$）。
+[43] 那么 $T \in \mathcal S'$
+[SCOPE:s_tempered_let3|let_bind|令 y∈R，定义 δ_y]
+[44a] (u) := u
+[44b] (y)$（$\forall u \in \mathcal S$）。
+[/SCOPE:s_tempered_let3]
+[45] 那么 (1) $\delta_y \in \mathcal S'$，(2) $F\delta_y = (2\pi)^{-1/2}``e^{-iky}"$，(3) $(2\pi)^{-1/2} F^{-1} (``e^{-iky}") = \delta_y$。
+[SCOPE:s_tempered_let4|let_bind|定义 e^{-iky}]
+[46a] (u) := \int_{-\infty}^\infty e^{-iky} u
+[46b] (k) \,\mathrm{d}{k} $（$\forall u\in\mathcal S$）
+
+[/SCOPE:s_tempered]
+[/SCOPE:s_tempered_let4]
+[SCOPE:s_problems|description|Problems]
+[47] Tensor Product $X\otimes Y$
+[/SCOPE:s_problems]
+[/SCOPE:root]

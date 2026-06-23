@@ -1,0 +1,127 @@
+[SCOPE:root|description|内积、内积空间]
+文章名: InerPd
+标题: 内积、内积空间
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+
+[SCOPE:s_def1|description|定义 1]
+[0] 定义 1
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[1] 对域 $\mathbb F$ 上的向量空间，定义内积为满足以下条件的二元运算 $ \left\langle \cdot \middle| \cdot \right\rangle : V\times V\to \mathbb F$。
+[2] 令向量 $u, v\in V$ 以及标量 $a, b \in \mathbb F$
+[/SCOPE:s_def1_let]
+[3] 正定
+[4] \begin{equation}
+\left\langle v \middle| v \right\rangle > 0 \quad (v \ne 0)~.
+\end{equation}
+[5] 线性
+[6] \begin{equation}
+\left\langle w \middle| a u + b v \right\rangle = a \left\langle w \middle| u \right\rangle + b \left\langle w \middle| v \right\rangle ~.
+\end{equation}
+[7] 交换律
+[8] \begin{equation}
+\left\langle u \middle| v \right\rangle = \left\langle v \middle| u \right\rangle ^*~.
+\end{equation}
+[9] 说明：
+[10] 定义中我们使用了狄拉克符号，也有地方将内积记为 $ \left\langle u, v \right\rangle $。
+[11] 向量空间依赖于一个域 $\mathbb F$ 通常取实数或复数域。
+[12] 对于实数（复数）域的向量空间，内积的结果必须是实数（复数）。
+[13] 对实数的情况，定义中的共轭（*）可以略去。
+[14] 由式 3 得无论 $\mathbb F$ 是什么，一个向量和自身的内积必须是实数（复共轭等于自身的数都是实数）。
+[15] 又根据式 1 ，该实数大于零。
+[16] 令式 2 中 $a,b= 0$ 可得零向量和任何向量的内积为零。
+[17a] 如果两个向量内积为零，我们
+[17b] 则说他们是正交（orthogonal）的，这意味着零向量和任何向量正交。
+[18] 根据式 2 ，零向量和任何向量的内积都必定是 0。
+[19] 结合式 3 和式 2 ，可以得到 $ \left\langle a u + b v \middle| w \right\rangle = a^* \left\langle w \middle| u \right\rangle + b^* \left\langle w \middle| v \right\rangle $。
+[20] 结合式 2 和式 3 可得 $ \left\langle \sum_i a_i u_i \middle| \sum_j b_j v_j \right\rangle = \sum_{i,j} a_i^* b_j \left\langle u_i \middle| v_j \right\rangle $。
+[21] 内积一个重要性质就是满足柯西不等式
+[22] \begin{equation}
+\left\lvert \left\langle u \middle| v \right\rangle \right\rvert ^2 \leqslant \left\langle u \middle| u \right\rangle \cdot \left\langle v \middle| v \right\rangle ~.
+\end{equation}
+[23] 即两个向量内积绝对值的平方小于它们分别和自身内积再相乘。
+[24] 由柯西不等式可以证明内积空间必然可以定义范数
+[25] （证明见下文）
+[26] \begin{equation}
+\left\lVert v \right\rVert = \sqrt{ \left\langle v \middle| v \right\rangle }~,
+\end{equation}
+[27] 所以内积空间属于
+[28] 赋范空间 [链接 L0]
+
+[/SCOPE:s_def1]
+[SCOPE:s_coord|description|内积的坐标表示]
+[SCOPE:s_coord_let|let_bind|坐标表示的变量]
+[29] $N$ 维内积空间中，必存在 $N$ 个正交归一基底，任意向量 $v$ 可以在这组基底上找到对应的坐标 $(v_1, \dots, v_N)$，
+[30] 那么任意两个向量 $u, v$ 的内积可以用坐标表示为
+[31] \begin{equation}
+\left\langle u \middle| v \right\rangle = \sum_i u_i^* v_i~.
+\end{equation}
+[32] 但若基底不是正交的，令基底为 $\beta_1, \dots, \beta_N$，
+[33] 那么根据内积的线性容易证明两个向量的内积为
+[34] \begin{equation}
+\left\langle u \middle| v \right\rangle = \boldsymbol{\mathbf{u}} ^\dagger \boldsymbol{\mathbf{M}} \boldsymbol{\mathbf{v}} = \sum_{i,j} M_{i,j} u_i^* v_j~,
+\end{equation}
+[35] 其中矩阵 $ \boldsymbol{\mathbf{M}} $ 的矩阵元为 $M_{i,j} = \left\langle \beta_i \middle| \beta_j \right\rangle $。
+[/SCOPE:s_coord_let]
+[36a] 当 $ \left\langle \beta_i \middle| \beta_j \right\rangle = \delta_{i,j}$ 时，$ \boldsymbol{\mathbf{M}} $ 变为单位矩阵
+[36b] 则回到了
+[37] 式 6 [链接 L1]
+[38] 式 7 [链接 L2]
+[39] 才是最一般坐标内积公式。
+
+[/SCOPE:s_coord]
+[SCOPE:s_pythag|description|勾股定理]
+[SCOPE:s_pythag_let|let_bind|勾股定理的变量]
+[40] 内积空间的勾股定理（Pythagorean theorem）：对任意两个正交的向量，有
+[41] \begin{equation}
+\left\langle u + v \middle| u + v \right\rangle = \left\langle u \middle| u \right\rangle + \left\langle v \middle| v \right\rangle ~.
+\end{equation}
+[/SCOPE:s_pythag_let]
+[42] \begin{equation}
+\left\langle u + v \middle| u + v \right\rangle = \left\langle u \middle| u \right\rangle + \left\langle v \middle| v \right\rangle + \left\langle u \middle| v \right\rangle + \left\langle v \middle| u \right\rangle ~.
+\end{equation}
+[43] 根据正交的定义，$ \left\langle u \middle| v \right\rangle = 0$。
+[44] 证毕。
+
+[/SCOPE:s_pythag]
+[SCOPE:s_norm_proof|description|证明内积必定是范数]
+[SCOPE:s_norm_proof_let|let_bind|证明的变量]
+[45] 要证 $ \left\langle x \middle| x \right\rangle $ 满足范数的要求，最关键是证明性质
+[46] \begin{equation}
+\left\lVert x+y \right\rVert ^2 \leqslant ( \left\lVert x \right\rVert + \left\lVert y \right\rVert )^2 = \left\lVert x \right\rVert ^2 + \left\lVert y \right\rVert ^2 + 2 \left\lVert x \right\rVert \left\lVert y \right\rVert ~.
+\end{equation}
+[/SCOPE:s_norm_proof_let]
+[47] \begin{equation}
+\left\langle x+y \middle| x+y \right\rangle - \left\langle x \middle| x \right\rangle - \left\langle y \middle| y \right\rangle \leqslant 2 \left\lVert x \right\rVert \left\lVert y \right\rVert ~.
+\end{equation}
+[48] \begin{equation}
+\left\langle x+y \middle| x+y \right\rangle = \left\langle x \middle| x \right\rangle + \left\langle y \middle| y \right\rangle + 2 \operatorname{Re} [{ \left\langle x \middle| y \right\rangle }]~,
+\end{equation}
+[49] 代入，
+[50] 即证
+[51] \begin{equation}
+\operatorname{Re} [{ \left\langle x \middle| y \right\rangle }]^2 \leqslant \left\lVert x \right\rVert ^2 \left\lVert y \right\rVert ^2 = \left\langle x \middle| x \right\rangle \left\langle y \middle| y \right\rangle ~.
+\end{equation}
+[52] 由柯西不等式
+[53] \begin{equation}
+\operatorname{Re} [ \left\langle x \middle| y \right\rangle ]^2 + \operatorname{Im} [ \left\langle x \middle| y \right\rangle ]^2 = \left\lvert \left\langle x \middle| y \right\rangle \right\rvert ^2 \leqslant \left\langle x \middle| x \right\rangle \left\langle y \middle| y \right\rangle ~,
+\end{equation}
+[54] 而 $ \operatorname{Im} [ \left\langle x \middle| y \right\rangle ]^2 > 0$。
+[55] 证毕。
+
+跨文章引用:
+  [L0] 赋范空间 → norm
+[/SCOPE:s_norm_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_norm_proof",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "证明引用内积定义和柯西不等式"
+  }
+]

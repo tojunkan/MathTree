@@ -1,0 +1,22 @@
+[SCOPE:root|description|莱布尼兹公式]
+文章名: LeiEqu
+标题: 莱布尼兹公式
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=求函数 $y=xe^{-x}$ 的 $n$ 阶导数
+
+[SCOPE:s_example1|description|例1 求函数 y=xe^{-x} 的 n 阶导数]
+[SCOPE:s_example1_let|let_bind|变量 y, x, n]
+[0] 例 1 求函数 $y=xe^{-x}$ 的 $n$ 阶导数
+[/SCOPE:s_example1_let]
+[1] 可以通过莱布尼兹方程对该函数直接求 $n$ 阶导数。
+[2] \begin{equation}
+\begin{aligned}
+(x \mathrm{e} ^{-x})^{(n)}&=\sum_{k=0}^{n} C_{n}^{k}( \mathrm{e} ^{-x})^{(n-k)}\\
+&=x( \mathrm{e} ^{-x})^{(n)}+n( \mathrm{e} ^{(-x)})^{(n-1)}\\
+&=x(-1)^n \mathrm{e} ^{-x}+n(-1)^{n-1} \mathrm{e} ^{-x}\\
+&=(-1)^{n-1}(n-x) \mathrm{e} ^{-x}~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_example1]
+[/SCOPE:root]

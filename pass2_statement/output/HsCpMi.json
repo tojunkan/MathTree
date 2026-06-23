@@ -1,0 +1,240 @@
+{
+  "article_name": "HsCpMi",
+  "statements": [
+    {
+      "stmt_id": "st_cond_prob_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_cond_prob",
+      "exposed_entities": [
+        "A",
+        "B",
+        "P(B|A)",
+        "D",
+        "A ∩ B"
+      ]
+    },
+    {
+      "stmt_id": "st_cond_prob_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cond_prob",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_independence_def_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_independence",
+      "exposed_entities": [
+        "A",
+        "B",
+        "P(B|A)",
+        "P(B)"
+      ]
+    },
+    {
+      "stmt_id": "st_independence_def",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_independence",
+      "exposed_entities": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_independence_remark",
+      "subtype": "remark",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_independence",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_independence_complement",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_independence",
+      "exposed_entities": [
+        "A",
+        "B",
+        "\\overline{A}",
+        "\\overline{B}"
+      ]
+    },
+    {
+      "stmt_id": "st_independence_product",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_independence",
+      "exposed_entities": [
+        "A",
+        "B",
+        "P(A∩B)",
+        "P(A)",
+        "P(B)"
+      ]
+    },
+    {
+      "stmt_id": "st_independence_multi",
+      "subtype": "theorem",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": "true",
+      "scope_id": "s_independence",
+      "exposed_entities": [
+        "A_1",
+        "A_2",
+        "A_n"
+      ]
+    },
+    {
+      "stmt_id": "st_repeated_trials_def",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_repeated_trials",
+      "exposed_entities": [
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_repeated_trials_formula_derivation",
+      "subtype": "theorem",
+      "clause_range": [
+        19,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "s_repeated_trials",
+      "exposed_entities": [
+        "A",
+        "k",
+        "p",
+        "n",
+        "P_n(k)"
+      ]
+    },
+    {
+      "stmt_id": "st_repeated_trials_explanation",
+      "subtype": "remark",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_repeated_trials",
+      "exposed_entities": [
+        "p",
+        "k",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_binomial_distribution_def",
+      "subtype": "definition",
+      "clause_range": [
+        23,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_repeated_trials",
+      "exposed_entities": [
+        "X",
+        "p",
+        "q",
+        "k",
+        "n",
+        "B(n,p)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_independence_def_assump",
+      "target": "st_independence_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_independence_def",
+      "target": "st_independence_complement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_independence_def",
+      "target": "st_independence_product",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_independence_def",
+      "target": "st_independence_multi",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_repeated_trials_def",
+      "target": "st_repeated_trials_formula_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_repeated_trials_formula_derivation",
+      "target": "st_binomial_distribution_def",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_independence_def",
+      "target": "st_cond_prob_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "独立性是条件概率的特殊情况，当P(B|A)=P(B)时"
+    },
+    {
+      "source": "st_repeated_trials_def",
+      "target": "st_independence_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "独立重复试验基于事件独立性概念"
+    }
+  ],
+  "unresolved": []
+}

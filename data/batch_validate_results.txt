@@ -1,0 +1,49 @@
+=== 批量验证 40 篇小时百科文章 ===
+
+文章数: 40
+环境数: 196
+句子总数: 1119
+
+── 句子子类型分布 ──
+  assertion: 515 (46.0%)
+  definition: 317 (28.3%)
+  conclusion: 127 (11.3%)
+  assumption: 126 (11.3%)
+  quantified: 26 (2.3%)
+  condition: 8 (0.7%)
+
+── Flags 分布 ──
+  unclassified: 397 (35.5%)
+  display_math: 118 (10.5%)
+  equivalence: 24 (2.1%)
+  has_assumption_context: 18 (1.6%)
+  ambiguous: 4 (0.4%)
+  unique_existence: 1 (0.1%)
+
+── 悬置条目: 4436 ──
+── 推断结果 ──
+  Scopes: 73 (let_bind: 69, cases: 4)
+  Internal edges: 75
+  Equivalent edges: 0
+
+── 🔍 被标记的句子样本 (前 10) ──
+  [AlgFie] definition flags=[has_assumption_context,ambiguous] text="设 $A$ 是域 $\mathbb{K}$ 上的向量空间，若在 $A$ 中再定义代数乘法 $\times$，使得 $(A,+,\times)$ 成为环，并且 $..."
+  [AlgFie] assertion flags=[display_math] text="\begin{equation}
+a( \boldsymbol{\mathbf{u}} \times \boldsymbol{\mathbf{v}} )=(a ..."
+  [AlgFie] assertion flags=[unclassified] text="例 1　矩阵代数..."
+  [AlgFie] assertion flags=[unclassified] text="域 $\mathbb{K}$ 上的 $n\times n$ 的矩阵的全体 $\mathrm{GL}(n, \mathbb{K})$（例 5 ）在矩阵的加法，标量..."
+  [AlgFie] assertion flags=[unclassified] text="例 2..."
+  [AlgFie] assertion flags=[unclassified] text="对于域 $\mathbb{K} $ 及有限群 $G=\{g_1,g_2,\cdots,g_n\}$，我们可构成群代数$\displaystyle A(G)=\l..."
+  [AlgFie] assertion flags=[display_math] text="\begin{equation}
+u+v=\sum a^{i} g_{i}+\sum b^{i} g_{i}=\sum\left(a^{i}+b^{i}\rig..."
+  [AlgFie] assertion flags=[unclassified] text="数乘为..."
+  [AlgFie] assertion flags=[display_math] text="\begin{equation}
+a u=\sum\left(a a^{i}\right) g_{i}, a \in \mathbb{K}~,
+\end{equ..."
+  [AlgFie] assertion flags=[unclassified] text="而代数乘法为..."
+
+── 粗略准确率 ──
+  明确分类: 600/1119 (53.6%)
+  显示公式 (display_math, 正确识别): 118 (10.5%)
+  完全无法分类 (unclassified): 397 (35.5%)
+  歧义但已分类 (ambiguous): 4 (0.4%)

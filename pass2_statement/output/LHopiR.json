@@ -1,0 +1,276 @@
+{
+  "article_name": "LHopiR",
+  "statements": [
+    {
+      "stmt_id": "st_thm1_heading",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_assump_fg",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "a",
+        "U°(a,δ)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_assump_limit_ratio",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_idea",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_approx_explanation",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "sf",
+        "sg"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_remark_method",
+      "subtype": "remark",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_heading",
+      "subtype": "theorem",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_assump_fg",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)",
+        "a",
+        "U°(a,δ)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_assump_limit_ratio",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_heading",
+      "subtype": "exercise",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_problem",
+      "subtype": "question",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_heading",
+      "subtype": "exercise",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_problem",
+      "subtype": "question",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_hint",
+      "subtype": "remark",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_approx_method",
+      "subtype": "remark",
+      "clause_range": [
+        25,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_comment",
+      "subtype": "remark",
+      "clause_range": [
+        28,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_assump_fg",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_assump_limit_ratio",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assump_fg",
+      "target": "st_thm2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assump_limit_ratio",
+      "target": "st_thm2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_problem",
+      "target": "st_ex1_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm2_heading",
+      "target": "st_thm1_heading",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "∞/∞型是0/0型的推广？实际上两者并列，但这里作为定理2引用定理1？原文无直接引用，但结构上并列。"
+    }
+  ],
+  "unresolved": [
+    "文本中[7]和[33]标记为【未完成】，内容缺失，无法建立Statement。",
+    "Scope间关系表中source_scope和target_scope的出口Statement选择：s_thm2的出口选为st_thm2_heading（定理2标题），s_thm1的出口选为st_thm1_heading（定理1标题），但两者关系不明确，按原文note处理。"
+  ]
+}

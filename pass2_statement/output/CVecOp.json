@@ -1,0 +1,395 @@
+{
+  "article_name": "CVecOp",
+  "statements": [
+    {
+      "stmt_id": "st_intro_example",
+      "subtype": "example",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": "unknown",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_coords_def",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "r",
+        "u",
+        "v",
+        "w"
+      ]
+    },
+    {
+      "stmt_id": "st_diff_r",
+      "subtype": "conclusion",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": "conditional",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_scale_factors",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "f",
+        "g",
+        "h"
+      ]
+    },
+    {
+      "stmt_id": "st_diff_r_orth",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_s_A",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "s",
+        "A",
+        "A_u",
+        "A_v",
+        "A_w"
+      ]
+    },
+    {
+      "stmt_id": "st_grad_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        18
+      ],
+      "truth_value": "true",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_div_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_curl_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        20
+      ],
+      "truth_value": "true",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_laplac_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_grad_deriv_intro",
+      "subtype": "remark",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_grad_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_grad_orth_cond",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_grad_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_grad_method",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_grad_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_grad_directional",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_grad_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_grad_deriv_alt",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_grad_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_div_wrong",
+      "subtype": "counterexample_claim",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": "true",
+      "scope_id": "s_div_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_div_reason",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_div_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_div_deriv_volume",
+      "subtype": "assumption",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_div_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_div_flux_u",
+      "subtype": "conclusion",
+      "clause_range": [
+        39,
+        40
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_div_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_div_total_flux",
+      "subtype": "conclusion",
+      "clause_range": [
+        41,
+        42
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_div_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_div_formula_derived",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        44
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_div_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_curl_not_simple",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_curl_laplac_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_curl_deriv_method",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_curl_laplac_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_laplac_as_div_grad",
+      "subtype": "conclusion",
+      "clause_range": [
+        48,
+        49
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_curl_laplac_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exercise",
+      "subtype": "exercise",
+      "clause_range": [
+        50,
+        51
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_coords_def",
+      "target": "st_diff_r",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coords_def",
+      "target": "st_scale_factors",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_scale_factors",
+      "target": "st_diff_r_orth",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_s_A",
+      "target": "st_grad_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_s_A",
+      "target": "st_div_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_s_A",
+      "target": "st_curl_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_s_A",
+      "target": "st_laplac_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_grad_orth_cond",
+      "target": "st_grad_method",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_grad_orth_cond",
+      "target": "st_grad_directional",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_grad_orth_cond",
+      "target": "st_grad_deriv_alt",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_div_wrong",
+      "target": "st_div_reason",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_div_deriv_volume",
+      "target": "st_div_flux_u",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_div_flux_u",
+      "target": "st_div_total_flux",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_div_total_flux",
+      "target": "st_div_formula_derived",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_curl_not_simple",
+      "target": "st_curl_deriv_method",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_curl_deriv_method",
+      "target": "st_laplac_as_div_grad",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

@@ -1,0 +1,440 @@
+{
+  "article_name": "DirPro",
+  "statements": [
+    {
+      "stmt_id": "st_intro",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_finite",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_Nx_Ny",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let1",
+      "exposed_entities": [
+        "N_x",
+        "N_y"
+      ]
+    },
+    {
+      "stmt_id": "st_concl_basis_count",
+      "subtype": "conclusion",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_obs_product",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_tensor_product",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "|v⟩",
+        "|x⟩",
+        "|y⟩",
+        "⊗"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_notation",
+      "subtype": "remark",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_bases",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let2",
+      "exposed_entities": [
+        "|x_i⟩",
+        "|y_j⟩"
+      ]
+    },
+    {
+      "stmt_id": "st_def_tensor_space",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let2",
+      "exposed_entities": [
+        "|x_i⟩|y_j⟩",
+        "C_{ij}"
+      ]
+    },
+    {
+      "stmt_id": "st_def_distributive",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "|x⟩",
+        "|y⟩",
+        "a_i",
+        "b_j"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_not_all_product",
+      "subtype": "remark",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_ordering",
+      "subtype": "remark",
+      "clause_range": [
+        24,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_single_index",
+      "subtype": "definition",
+      "clause_range": [
+        28,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let3",
+      "exposed_entities": [
+        "α",
+        "|x,y⟩_α"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_inner_need",
+      "subtype": "assumption",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_inner",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_inner_product",
+      "subtype": "definition",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_inner_let1",
+      "exposed_entities": [
+        "|c⟩|d⟩",
+        "|a⟩|b⟩",
+        "⟨c|a⟩",
+        "⟨d|b⟩"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_hermitian",
+      "subtype": "remark",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_inner_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_notation2",
+      "subtype": "remark",
+      "clause_range": [
+        37,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_inner",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_commute",
+      "subtype": "remark",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_inner",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_concl_inner_property",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        44
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_inner",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_orthonormal",
+      "subtype": "assumption",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_inner",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_concl_orthonormal_tensor",
+      "subtype": "conclusion",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_inner",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_orthonormal_default",
+      "subtype": "remark",
+      "clause_range": [
+        48,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_inner",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_concl_inner_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        49,
+        50
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_inner",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_concl_completeness",
+      "subtype": "conclusion",
+      "clause_range": [
+        51,
+        53
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_inner",
+      "exposed_entities": [
+        "Î"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_f_ket",
+      "subtype": "assumption",
+      "clause_range": [
+        54,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_inner_let2",
+      "exposed_entities": [
+        "|f⟩"
+      ]
+    },
+    {
+      "stmt_id": "st_concl_f_expansion",
+      "subtype": "conclusion",
+      "clause_range": [
+        55,
+        56
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_inner_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_concl_coefficient",
+      "subtype": "conclusion",
+      "clause_range": [
+        57,
+        57
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_inner",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_concl_completeness_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        58,
+        64
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_inner",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_concl_single_product_expansion",
+      "subtype": "conclusion",
+      "clause_range": [
+        65,
+        67
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_inner",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_subspace_bases",
+      "subtype": "assumption",
+      "clause_range": [
+        68,
+        68
+      ],
+      "truth_value": null,
+      "scope_id": "s_subspace_let",
+      "exposed_entities": [
+        "|u_i⟩",
+        "|v_j⟩"
+      ]
+    },
+    {
+      "stmt_id": "st_concl_subspaces",
+      "subtype": "conclusion",
+      "clause_range": [
+        69,
+        72
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_subspace",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_concl_decomposition",
+      "subtype": "conclusion",
+      "clause_range": [
+        73,
+        79
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_subspace",
+      "exposed_entities": [
+        "|a_j⟩",
+        "|b_i⟩"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_Nx_Ny",
+      "target": "st_concl_basis_count",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_bases",
+      "target": "st_def_tensor_space",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_inner_need",
+      "target": "st_def_inner_product",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_orthonormal",
+      "target": "st_concl_orthonormal_tensor",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_f_ket",
+      "target": "st_concl_f_expansion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_subspace_bases",
+      "target": "st_concl_subspaces",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_concl_subspaces",
+      "target": "st_concl_decomposition",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

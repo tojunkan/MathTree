@@ -1,0 +1,157 @@
+[SCOPE:root|description|定积分（极简微积分）]
+文章名: DefInt
+标题: 定积分（极简微积分）
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=不均匀细绳的质量
+  [1] type=example heading=例 2 title=圆的面积
+  [2] type=example heading=例 3 title=球体的表面积
+  [3] type=example heading=例 4 title=球的体积
+
+[SCOPE:s_ex1|description|不均匀细绳的质量]
+[0] 例 1 不均匀细绳的质量
+[SCOPE:s_ex1_let1|let_bind|绳子参数]
+[1] 一条密度不均匀的绳子长为 $L$，横截面积是 $S$，细绳距离 $O$ 端 $x$（$x < L$）处的密度为 $\rho(x)$。
+[/SCOPE:s_ex1_let1]
+[2] 求绳子的质量。
+[3] 图 1：密度不均匀的绳子
+[4] 如果题目中，密度是恒定的，
+[5] 那么直接可以写出绳子的质量为 $m = LS\rho$。
+[6] 但是题中 $\rho(x)$ 是关于 $x$ 的函数，
+[7] 所以我们要寻找另外的做法。
+[SCOPE:s_ex1_let2|let_bind|分割变量]
+[8] 假设绳子的密度变化是连续且 “平滑” 的，我们可以通过把绳子分割成 $n$ 小节（注意这些小节必须严格地首尾相接，不能有重合或者空隙）。
+[9] 第 $i$ 节取 $x_i$ 到 $x_{i +1}$，令其长度为 $x_{i + 1} - {x_i} = \Delta x_i$ 使每一个小节内，密度可以近似看成是恒定的，这样我们可以用 $\rho(\xi_i)\,\, (x_i \leqslant \xi_i \leqslant x_{i + 1})$ 来代替第 $i$ 节的密度，当每一节足够小时，可以认为 $\xi_i$ 在 $x_i \leqslant \xi_i \leqslant x_{i + 1}$ 约束下的取值并不会影响结果。
+[/SCOPE:s_ex1_let2]
+[10] 第 $i$ 小节的质量为
+[11] \begin{equation}
+\Delta {m_i} = \rho (\xi_i)\Delta {x_i}S ~.
+\end{equation}
+[12] \begin{equation}
+m = \sum_{i = 1}^n \Delta m_i \approx \sum_{i = 1}^n \rho(\xi_i)\Delta x_i S = S \sum_{i = 1}^n \rho (\xi_i)\Delta x_i~.
+\end{equation}
+[13] \begin{equation}
+m = \lim_{n \to \infty } \sum_{i = 1}^n {\Delta {m_i}} = \lim_{n \to \infty } \sum_{i = 1}^n \rho(\xi_i)\Delta {x_i} S = S \lim_{n \to \infty } \sum_{i = 1}^n \rho(\xi_i)\Delta {x_i}~.
+\end{equation}
+[14] \begin{equation}
+m = \int \,\mathrm{d}{m} = \int S\rho(x) \,\mathrm{d}{x} = S\int \rho(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[15] 图 2：定积分可以理解为曲线下面的面积，并看做由无限多个无穷窄的矩形组成。
+[16] 当最大的矩形也足够小时，矩形的划分方式将不会影响面积的计算。
+[17] 但 $\int \rho(x) \,\mathrm{d}{x} $ 里面显然不包含 $0$ 和 $L$ 的信息，我们根据题目中的情况，说这个积分是 “从 $0$ 积到 $L$”，其中 $0$ 是积分下限，$L$ 是积分上限。
+[18] 为了表示这个信息，把它写到积分号右边变为
+[19] \begin{equation}
+\int_0^L \rho(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[20] 这样的写法是很形象的，可以想象，积分号顺时针旋转 90 度后就是函数的曲线需要积分的部分，下标的位置代表积分的起点，上标代表终点。
+[21] 这样，很多问题就可以用积分表示了。
+[SCOPE:s_ex1_let3|let_bind|积分上下限]
+[22] 更一般地，如果把积分的起点和终点记为实数 $a,b$，
+[23] 那么对于一元函数的定积分就可以写为如下形式：
+[24] \begin{equation}
+S=\int^b_a f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[/SCOPE:s_ex1_let3]
+[25] 要注意的是，当函数值为负数时，我们
+[26] 定义
+[27] “曲线下方的面积” 也取负数。
+[28] 此外，我们定义当 $a > b$，定义积分的结果是把 $a,b$ 互换后的积分结果乘以 $-1$，
+[29] 即
+[30] \begin{equation}
+\int^b_a f(x) \,\mathrm{d}{x} = -\int^a_b f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[31] 至于计算积分的具体方法，比求导要复杂得多，甚至很多积分的结果不能用初等函数表示，只能表示为级数等形式。
+[32] 然而对于基本初等函数的积分，用牛顿－莱布尼兹公式即可马上求解。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|圆的面积]
+[33] 例 2 圆的面积
+[SCOPE:s_ex2_let|let_bind|圆参数]
+[34] 在直角坐标系中，圆的方程为 $x^2 + y^2 = R^2$，上半圆的方程可看做 $y$ 关于 $x$ 的函数
+[35] \begin{equation}
+y = f(x) = \sqrt{R^2 - x^2} \quad (x\in [-R,R])~.
+\end{equation}
+[/SCOPE:s_ex2_let]
+[36] \begin{equation}
+S = 2\int_{-R}^{R} f(x) \,\mathrm{d}{x} = 2\int_{-R}^{R} \sqrt{R^2 - x^2} \,\mathrm{d}{x} ~,
+\end{equation}
+[37] 我们还可以用另一种方法验证圆的面积公式。
+[38] 把圆划分成许多微小圆环，由例 2 ，每个微小圆环的面积为 $2\pi r \,\mathrm{d}{r} $，
+[39] 所以圆的面积可以用定积分表示为
+[40] \begin{equation}
+S = \int_0^{R} 2\pi r \,\mathrm{d}{r} ~.
+\end{equation}
+[41] 以上两个定积分的结果都为 $\pi R^2$，过程见 “牛顿—莱布尼兹公式” 的例 2 。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|球体的表面积]
+[42] 例 3 球体的表面积
+[43] 图 3：将球的表面划分成许多细圆环，每个对应的极角为 $ \,\mathrm{d}{\theta} $
+[SCOPE:s_ex3_let1|let_bind|球坐标参数]
+[44] 以球心为原点建立球坐标系，我们可以把球体的表面根据不同的 $\theta$ 划分成许多细圆环（如图 3 ），每个圆环的面积等于周长乘以宽度，
+[45] 即
+[46] \begin{equation}
+\,\mathrm{d}{S} = 2\pi R\sin\theta \cdot R \,\mathrm{d}{\theta} ~.
+\end{equation}
+[/SCOPE:s_ex3_let1]
+[47] \begin{equation}
+S = \int_0^{\pi} 2\pi R\sin\theta \cdot R \,\mathrm{d}{\theta} = 2\pi R^2 \int_0^{\pi} \sin\theta \,\mathrm{d}{\theta} ~.
+\end{equation}
+[48] 虽然我们还不会计算这个定积分（见 “牛顿—莱布尼兹公式”），
+[49] 但我们现在可以用一种巧妙的方法来简化问题。
+[50] 让我们来计算每个细圆环在极轴方向投影的长度。
+[SCOPE:s_ex3_let2|let_bind|极轴投影]
+[51] 我们不妨把极轴叫做 $z$ 轴，
+[52] 则对某个细圆环有 $z = R\cos\theta$，微分得 $ \,\mathrm{d}{z} = -R\sin\theta \,\mathrm{d}{\theta} $，将该式消去式 11 中的 $ \,\mathrm{d}{\theta} $ 得
+[/SCOPE:s_ex3_let2]
+[53] \begin{equation}
+\,\mathrm{d}{S} = -2\pi R \,\mathrm{d}{z} ~.
+\end{equation}
+[54] \begin{equation}
+S = \int_{-R}^{R} 2\pi R \,\mathrm{d}{z} ~.
+\end{equation}
+
+[/SCOPE:s_ex3]
+[SCOPE:s_ex4|description|球的体积]
+[55] 例 4 球的体积
+[SCOPE:s_ex4_let|let_bind|球体积参数]
+[56] 要计算一个半径为 $R$ 的球体的体积，可以将球划分为无限个薄球壳，每个薄球壳的体积等于该球壳的表面积乘以厚度（见例 2 ），
+[57] 即 $ \,\mathrm{d}{V} = 4\pi r^2 \,\mathrm{d}{r} $。
+[/SCOPE:s_ex4_let]
+[58] 所以球的体积可用定积分表示为
+[59] \begin{equation}
+V = \int_0^R 4\pi r^2 \,\mathrm{d}{r} ~.
+\end{equation}
+[/SCOPE:s_ex4]
+[60] 牛顿—莱布尼兹公式
+
+[SCOPE:s_properties|description|定积分的基本性质]
+[61] 每一本高数教材 [1] [2] 都会列出一张长长的定积分性质的表格。
+[62] 这里只列举一些其中的一些。
+[63] 这些定理尽管看起来都非常显然，
+[64] 但在实际做题时往往会带给初学者不少困惑。
+[65] 仅仅改变积分变量的名称不影响积分的结果。
+[66a] (x) \,\mathrm{d}{x} = \int^b_a f
+[66b] (t) \,\mathrm{d}{t} ~.$$
+[67] 被积函数可加性。
+[68] 注意乘法可没有这么好的性质，不然我们也不需要大费周章地引入各种方法计算积分了！
+[69a] (x)+g
+[69b] (x)] \,\mathrm{d}{x} = \int^b_a f
+[69c] (x) \,\mathrm{d}{x} + \int^b_a g
+[69d] (x) \,\mathrm{d}{x} ~.$$
+[70] 积分区间可加性
+[71a] (x) \,\mathrm{d}{x} = \int^c_a f
+[71b] (x) \,\mathrm{d}{x} + \int^b_c f
+[71c] (x) \,\mathrm{d}{x} ~.$$
+[72] 图 4：积分区间可加性
+[73a] (x) \,\mathrm{d}{x} = -\int^a_b f
+[73b] (x) \,\mathrm{d}{x} ~.$$
+[74] 积分不等式。
+[75] m 指区间上 f 的最小值，M 指最大值。
+[76] $$m(b-a)\le\int^b_a f(x) \,\mathrm{d}{x} \le M(b-a)~.$$
+[77] 积分中值定理
+[78] $$\exists \xi \in [a,b], \int^b_a f(x) \,\mathrm{d}{x} = f(\xi)(b-a)~.$$ 。
+[79] 或者说，$f(\xi)$ 就是该区间上定积分的 “平均值”。
+[80] $ \overline f= f(\xi)=\frac{\int^b_a f(x) \,\mathrm{d}{x} }{b-a}~.$
+[/SCOPE:s_properties]
+[/SCOPE:root]

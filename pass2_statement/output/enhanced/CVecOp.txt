@@ -1,0 +1,113 @@
+[SCOPE:root|description|正交曲线坐标系中的矢量算符]
+文章名: CVecOp
+标题: 正交曲线坐标系中的矢量算符
+
+环境标记 (hints):
+  [0] type=exercise heading=习题 1 title=
+
+[0] 1我们以三维正交曲线坐标系为例讨论。
+[1] 该坐标系中，位置矢量 $ \boldsymbol{\mathbf{r}} $ 是三个坐标 $u, v, w$ 的（矢量）函数。
+[2] 那么位置矢量的全微分为
+[3] \begin{equation}
+\,\mathrm{d}{ \boldsymbol{\mathbf{r}} } = \frac{\partial \boldsymbol{\mathbf{r}} }{\partial u} \,\mathrm{d}{u} + \frac{\partial \boldsymbol{\mathbf{r}} }{\partial v} \,\mathrm{d}{v} + \frac{\partial \boldsymbol{\mathbf{r}} }{\partial w} \,\mathrm{d}{w} ~.
+\end{equation}
+[4] 根据正交曲线坐标系中单位矢量的定义（
+[5] 式 1 [链接 L0]
+[6] ），上式中三个偏微分分别指向 $ \hat{\boldsymbol{\mathbf{u}}} , \hat{\boldsymbol{\mathbf{v}}} , \hat{\boldsymbol{\mathbf{w}}} $ 方向，令他们的模长为
+[7] \begin{equation}
+f(u,v,w) = \left\lvert \frac{\partial \boldsymbol{\mathbf{r}} }{\partial u} \right\rvert ~, \qquad
+g(u,v,w) = \left\lvert \frac{\partial \boldsymbol{\mathbf{r}} }{\partial v} \right\rvert ~,\qquad
+h(u,v,w) = \left\lvert \frac{\partial \boldsymbol{\mathbf{r}} }{\partial w} \right\rvert ~.
+\end{equation}
+[8] 式 1 [链接 L1]
+[9] \begin{equation}
+\,\mathrm{d}{ \boldsymbol{\mathbf{r}} } = f \,\mathrm{d}{u} \, \hat{\boldsymbol{\mathbf{u}}} + g \,\mathrm{d}{v} \, \hat{\boldsymbol{\mathbf{v}}} + h \,\mathrm{d}{w} \, \hat{\boldsymbol{\mathbf{w}}} ~.
+\end{equation}
+[10] 【未完成】以上内容应该移动到 “正交曲线坐标系” 中，因为 “正交曲线坐标系中的重积分” 也需要使用。
+[11] 令 $s(u, v, w)$ 和 $ \boldsymbol{\mathbf{A}} (u, v, w)$ 分别为一阶可微的标量函数和矢量函数，且
+[12] \begin{equation}
+\boldsymbol{\mathbf{A}} (u, v, w) = A_x(u, v, w) \hat{\boldsymbol{\mathbf{u}}} + A_y(u, v, w) \hat{\boldsymbol{\mathbf{v}}} + A_z(u, v, w) \hat{\boldsymbol{\mathbf{w}}} ~.
+\end{equation}
+[13] 那么该坐标系中的
+[14] 梯度 [链接 L2]
+[15] 散度 [链接 L3]
+[16] 旋度 [链接 L4]
+[17] 拉普拉斯算符 [链接 L5]
+[18] \begin{equation}
+\boldsymbol\nabla s = \frac{1}{f} \frac{\partial s}{\partial u} \hat{\boldsymbol{\mathbf{u}}} + \frac{1}{g} \frac{\partial s}{\partial v} \hat{\boldsymbol{\mathbf{v}}} + \frac{1}{h} \frac{\partial s}{\partial w} \hat{\boldsymbol{\mathbf{w}}} ~,
+\end{equation}
+[19] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{A}} = \frac{1}{fgh} \left[ \frac{\partial}{\partial{u}} (ghA_u) + \frac{\partial}{\partial{v}} (fhA_v) + \frac{\partial}{\partial{w}} (fgA_w) \right] ~,
+\end{equation}
+[20] \begin{equation}
+\begin{aligned}
+& \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{A}} = \frac{1}{gh} \left[ \frac{\partial}{\partial{v}} (hA_w) - \frac{\partial}{\partial{w}} (gA_v) \right] \hat{\boldsymbol{\mathbf{u}}} \\
+&\quad + \frac{…[truncated]…} (fA_u) - \frac{\partial}{\partial{u}} (hA_w) \right] \hat{\boldsymbol{\mathbf{v}}}
++ \frac{1}{fg} \left[ \frac{\partial}{\partial{u}} (gA_v) - \frac{\partial}{\partial{v}} (fA_u) \right] \hat{\boldsymbol{\mathbf{w}}} ~,
+\end{aligned}
+\end{equation}
+[21] \begin{equation}
+\boldsymbol{\nabla}^2 s = \frac{1}{fgh} \left[ \frac{\partial}{\partial{u}} \left(\frac{gh}{f} \frac{\partial s}{\partial u} \right) + \frac{\partial}{\partial{v}} \left(\frac{fh}{g} \frac{\partial s}{\partial v} \right) + \frac{\partial}{\partial{w}} \left(\frac{fg}{h} \frac{\partial s}{\partial w} \right) \right] ~.
+\end{equation}
+
+[SCOPE:s_grad_deriv|description|梯度的推导]
+[22] 球坐标和柱坐标的具体推导见子节 1 。
+[23] 由于正交曲线坐标系中任意一点处 $ \hat{\boldsymbol{\mathbf{u}}} , \hat{\boldsymbol{\mathbf{v}}} , \hat{\boldsymbol{\mathbf{w}}} $ 都互相垂直，
+[24] 所以求该点处梯度的方法和直角坐标系类似：求出三个方向的方向导数，并把他们作为梯度的三个分量。
+[25] 和直角坐标系不同的是，$u$ 坐标增加 $ \,\mathrm{d}{u} $ 时，位矢 $ \boldsymbol{\mathbf{r}} $ 并不是沿 $ \hat{\boldsymbol{\mathbf{u}}} $ 移动 $ \,\mathrm{d}{u} $ 而是移动 $f \,\mathrm{d}{u} $，
+[26] 所以 $ \hat{\boldsymbol{\mathbf{u}}} $ 方向的方向导数是 $( \partial s/\partial u )/f$。
+[27] 当然这只是粗略的推导，我们也可以直接把式 3 乘以式 5 得
+[28] \begin{equation}
+\boldsymbol\nabla s \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{r}} } = \frac{\partial s}{\partial u} \,\mathrm{d}{u} + \frac{\partial s}{\partial v} \,\mathrm{d}{v} + \frac{\partial s}{\partial w} \,\mathrm{d}{w} = \,\mathrm{d}{ \boldsymbol{\mathbf{s}} } ~,
+\end{equation}
+[29] 这符合梯度的定义（
+[30] 式 5 [链接 L6]
+
+[/SCOPE:s_grad_deriv]
+[SCOPE:s_div_deriv|description|散度的推导]
+[31] 一种幼稚的想法是：类比上面梯度的推导，根据直角坐标系中的散度公式（式 7 ）得
+[32] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{A}} = \frac{1}{f} \frac{\partial A_x}{\partial u} + \frac{1}{g} \frac{\partial A_y}{\partial v} + \frac{1}{h} \frac{\partial A_z}{\partial w} ~.\qquad (\text{错})
+\end{equation}
+[33] 这是错误的，因为在
+[34] 直角坐标系的推导过程 [链接 L7]
+[35] 中，我们假设小长方体的相对两个面的表面积完全相等，而在正交曲线坐标系中这不成立。
+[36] 例如球坐标中的体积元 $r \,\mathrm{d}{r} \cdot r \,\mathrm{d}{\theta} \cdot r\sin\theta \,\mathrm{d}{\phi} $ 中，垂直于 $ \hat{\boldsymbol{\mathbf{r}}} $ 的两个面的表面积为 $r \,\mathrm{d}{\theta} \cdot r\sin\theta \,\mathrm{d}{\phi} $，显然与 $r$ 有关，
+[37] 即对 $r$ 求导不为零。
+[38] 所以我们重新按照直角坐标系的推导过程再推导一次，只不过这回考虑上表面积的变化：体积元的体积为 $f \,\mathrm{d}{u} \cdot g \,\mathrm{d}{v} \cdot h \,\mathrm{d}{w} $，三个方向的表面积分别为 $g \,\mathrm{d}{v} \cdot h \,\mathrm{d}{w} $，$h \,\mathrm{d}{w} \cdot f \,\mathrm{d}{u} $，$f \,\mathrm{d}{u} \cdot g \,\mathrm{d}{v} $。
+[39] $A_u$ 在两个与 $ \hat{\boldsymbol{\mathbf{u}}} $ 垂直的表面上的通量为
+[40] \begin{equation}
+\begin{aligned}
+&A_u(u+ \,\mathrm{d}{u} , v, w)\cdot g(u+ \,\mathrm{d}{u} , v, w) \,\mathrm{d}{v} \cdot h(u+ \,\mathrm{d}{u} , v, w) \,\mathrm{d}{w} \\
+&-A_u(u, v, w)\cdot g(u, v, w) \,\mathrm{d}{v} \cdot h(u, v, w) \,\mathrm{d}{w}
+= \frac{\partial}{\partial{u}} (A_u g h) \,\mathrm{d}{u} \,\mathrm{d}{v} \,\mathrm{d}{w} ~.
+\end{aligned}
+\end{equation}
+[41] 同理，总通量为
+[42] \begin{equation}
+\Phi = \frac{\partial}{\partial{u}} (A_u g h) \,\mathrm{d}{u} \,\mathrm{d}{v} \,\mathrm{d}{w} + \frac{\partial}{\partial{v}} (A_v fh) \,\mathrm{d}{u} \,\mathrm{d}{v} \,\mathrm{d}{w} + \frac{\partial}{\partial{w}} (A_w fg) \,\mathrm{d}{u} \,\mathrm{d}{v} \,\mathrm{d}{w} ~.
+\end{equation}
+[43] 最后除以体积元的体积，就得到
+[44] 式 6 [链接 L8]
+
+[/SCOPE:s_div_deriv]
+[SCOPE:s_curl_laplac_deriv|description|旋度和拉普拉斯算子的推导]
+[45] 旋度的推导同样不能直接把直角坐标系公式（式 9 ）中的偏微分替换为方向导数。
+[46] 原因和散度的推导一样：在正交曲线坐标系中取一个小四边形，同样无法保证相对的两条边的边长完全相等。
+[47] 同样地，在直角坐标系中的推导过程中考虑边长的变化，就可以得到式 7 。
+[48] 拉普拉斯算符 $ \boldsymbol{\nabla}^2 s$ 可以看作梯度的散度 $ \boldsymbol{\nabla}\boldsymbol{\cdot} ( \boldsymbol\nabla s)$。
+[49] 把式 5 代入式 6 即可。
+
+[/SCOPE:s_curl_laplac_deriv]
+[SCOPE:s_exercise|description|习题1]
+[50] 习题 1
+[51] 完成式 7 和式 8 的推导。
+
+跨文章引用:
+  [L2] 梯度 → Grad
+  [L3] 散度 → Divgnc
+  [L4] 旋度 → Curl
+  [L5] 拉普拉斯算符 → Laplac
+  [L7] 直角坐标系的推导过程 → Divgnc
+[/SCOPE:s_exercise]
+[/SCOPE:root]

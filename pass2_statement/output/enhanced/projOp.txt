@@ -1,0 +1,105 @@
+[SCOPE:root|description|正交分解、投影算符]
+文章名: projOp
+标题: 正交分解、投影算符
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=正交分解
+  [1] type=example heading=例 1 title=三维几何矢量的正交分解
+  [2] type=definition heading=定义 1 title=投影算符
+  [3] type=theorem heading=定理 2 title=
+
+[SCOPE:s_thm1|description|正交分解]
+[0] 定理 1 正交分解
+[SCOPE:s_thm1_let|let_bind|正交分解的变量]
+[1] 令 $M$ 为 $N$ 维内积空间 $X$ 的子空间。
+[2] 那么任意 $u\in X$ 有唯一的正交分解：
+[/SCOPE:s_thm1_let]
+[3] \begin{equation}
+u = v + w \qquad (v\in M, w\in M^\bot)~,
+\end{equation}
+[4] 定义 2
+[5] 根据正交子空间的定义，分解后的两个向量正交：$ \left\langle v \middle| w \right\rangle = 0$，
+[6] 故有勾股定理（式 8 ）
+[7] \begin{equation}
+\left\lVert u \right\rVert ^2 = \left\lVert v \right\rVert ^2 + \left\lVert w \right\rVert ^2~,
+\end{equation}
+[8] 其中范数使用内积定义 $ \left\lVert u \right\rVert = \sqrt{ \left\langle u \middle| u \right\rangle }$。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex1|description|三维几何矢量的正交分解]
+[9] 例 1 三维几何矢量的正交分解
+[10] 三维几何向量 空间 $X$ 中，一个过原点的平面是它的一个子空间 $M \subset X$，该平面过原点的法线就是它的正交补空间 $M^\bot$。
+[11] 任意 $ \boldsymbol{\mathbf{u}} \in X$ 可以唯一地正交分解成 $M$ 上的一个向量 $ \boldsymbol{\mathbf{v}} $ 和法线上的一个矢量 $ \boldsymbol{\mathbf{w}} $，且满足勾股定理 $ \boldsymbol{\mathbf{u}} ^2 = \boldsymbol{\mathbf{v}} ^2 + \boldsymbol{\mathbf{w}} ^2$。
+[12] 未完成：图
+[13] 这只是定理 1 一个很显然的例子，若考虑 4 维几何矢量空间中矢量正交分解到两个正交的 2 维平面上，
+[14] 则唯一性就没那么显然了。
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[15] 证明：令 $M$ 和 $M^\bot$ 的一组正交归一基底分别为 $\{\alpha_i\}$ 和 $\{\beta_i\}$。
+[16] 那么它们的并集就是 $X$ 的一组正交归一基底（定理 2 ）。
+[/SCOPE:s_ex1_let]
+[17] 将 $u$ 分解到基底上有
+[18] \begin{equation}
+u = \sum_i a_i \alpha_i + \sum_j b_j \beta_j~,
+\end{equation}
+[19] 该分解是唯一的。
+[20] 证毕。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_def1|description|投影算符]
+[21] 定义 1 投影算符
+[22] 对每个子空间 $M\subseteq X$，我们定义对应的（正交）投影算符 $P_M$ 根据式 1 将每个 $u\in X$ 映射到 $v\in M$。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm2|description|定理2]
+[23] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[24] 令投影算符 $P$ 将 $N$ 维空间 $X$ 中的矢量（正交）投影到其子空间 $M$ 中，若 $ \left\{\mu_i \right\} $ 是 $M$ 的一组正交归一基底。
+[25] 那么投影算符可以用狄拉克符号表示为（见式 2 ）
+[/SCOPE:s_thm2_let]
+[26] \begin{equation}
+P = \sum_i \left\lvert \mu_i \right\rangle \left\langle \mu_i \right\rvert ~.
+\end{equation}
+
+[/SCOPE:s_thm2]
+[SCOPE:s_prop1|description|投影算符是厄米算符]
+[27] 投影算符 $P$ 是厄米算符（也叫自伴算符），
+[28] 即对任意 $u, v\in X$ 满足 $ \left\langle u \middle| Pv \right\rangle = \left\langle Pu \middle| v \right\rangle $。
+[29] 投影算符有 $0$ 和 $1$ 两个本征值。
+[30] 对应的本征矢分别是 $M$ 和 $M^\bot$ 空间中的所有矢量。
+
+[SCOPE:s_prop1_let|let_bind|厄米性证明的变量]
+[31] 对任意 $u, v\in X$，有
+[32] \begin{equation}
+\left\langle u \middle| Pv \right\rangle = \sum_i \ \left\langle u \middle| a_i \right\rangle \left\langle a_i \middle| v \right\rangle ~,
+\end{equation}
+[33] \begin{equation}
+\left\langle Pu \middle| v \right\rangle = \overline { \left\langle v \middle| Pu \right\rangle } = \sum_i \overline{\ \left\langle v \middle| a_i \right\rangle }\overline{ \left\langle a_i \middle| u \right\rangle } = \sum_i \ \left\langle u \middle| a_i \right\rangle \left\langle a_i \middle| v \right\rangle = \left\langle u \middle| Pv \right\rangle ~.
+\end{equation}
+[/SCOPE:s_prop1]
+[/SCOPE:s_prop1_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是定理1在三维几何矢量空间中的特例"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2给出了投影算符的狄拉克符号表示，是定义1的具体化"
+  },
+  {
+    "source_scope": "s_prop1",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "由定理2的表示可证明投影算符是厄米算符"
+  }
+]

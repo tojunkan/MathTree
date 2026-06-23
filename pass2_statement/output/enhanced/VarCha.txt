@@ -1,0 +1,107 @@
+[SCOPE:root|description|变分的变换（变分学）]
+文章名: VarCha
+标题: 变分的变换（变分学）
+
+[SCOPE:s_intro|description|引言与泛函定义]
+[SCOPE:s_intro_let|let_bind|泛函变量]
+[0] 在变分一节中，我们得到泛函
+[1] \begin{equation}
+J(y)=\int_a^bF(x,y,y') \,\mathrm{d}{x} ~.
+\end{equation}
+[/SCOPE:s_intro_let]
+[2] 变分的表达式
+[3] 式 18 [链接 L0]
+[4] \begin{equation}
+\delta J=\int_a^b \left[F'_y(x,y,y')\delta y+F'_{y'}(x,y,y')\delta y' \right] \,\mathrm{d}{x} ~.
+\end{equation}
+[5] 利用分部积分
+[6] 式 1 [链接 L1]
+[7] ，可以将上式积分号下只表达为 $\delta y$（
+[8] 拉格朗日变换
+[9] ）或 $\delta y'$（
+[10] 黎曼变换
+[11] ）的线性函数
+[12] 定义 1 [链接 L2]
+[13] 。
+[14] 这就是这里说的
+[15] 变分的变换
+[16] 若在点 $a$ 及 $b$ 上，$\delta y=0$，
+[17] 那么：
+[18] 拉格朗日变换：
+[19] \begin{equation}
+\delta J=\int_a^b \left(F'_y- \frac{\mathrm{d}{}}{\mathrm{d}{x}} F'_{y'} \right) \delta y \,\mathrm{d}{x} ~.
+\end{equation}
+[20] 黎曼变换：
+[21] \begin{equation}
+\delta J=\int_a^b \left(F'_{y'}-N \right) \delta y' \,\mathrm{d}{x} ,\quad where \;N=\int_a^xF'_y \,\mathrm{d}{x} ~.
+\end{equation}
+[22] 注意，在引出式 2 时，仅假定 $y(x)$ 是 $C_1$ 类的，
+[23a] (x)$ 具有连续微商 $y'
+[23b] (x)$, 而没有假定 $y'
+[23c] (x)$ 可微分。
+[24] 这将使我们看到，拉格朗日变换是不合法的，取而代之的将是黎曼变换。
+
+[/SCOPE:s_intro]
+[SCOPE:s_lagrange|description|拉格朗日变换]
+[SCOPE:s_lagrange_let|let_bind|拉格朗日变换变量]
+[25] 利用分部积分，有
+[26] \begin{equation}
+\int_a^bF'_{y'}\delta y' \,\mathrm{d}{x} = \left[F'_{y'}\delta y \right] _a^b-\int_a^b\delta y \frac{\mathrm{d}{}}{\mathrm{d}{x}} F'_{y'} \,\mathrm{d}{x} ~.
+\end{equation}
+[/SCOPE:s_lagrange_let]
+[27] 这里使用了
+[28] 式 17 [链接 L3]
+[29] \begin{equation}
+\delta y'=\overline{y}'-y'=(\overline{y}-y)'=(\delta y)'~.
+\end{equation}
+[30] 当 $\delta y$ 在 $a,b$ 处为 0 时，
+[31] 式 5 [链接 L4]
+[32] 第一项为 0，代入
+[33] 式 2 [链接 L5]
+[34] 式 3 [链接 L6]
+[35] 但是，在进行分部积分式 5 时，必须要求，$ \frac{\mathrm{d}{}}{\mathrm{d}{x}} F'_{y'}$ 存在，而 $F'_{y'}(x,y,y')$ 也是 $y'$ 的函数，这要求 $y'$ 对 $x$ 可微分，
+[36] 即 $y''$ 要存在。
+[37] 然而正如上面所提到的，这是没有假定的，
+[38] 即 $y''$ 不一定存在，
+[39] 所以拉格朗日变换不合法。
+
+[/SCOPE:s_lagrange]
+[SCOPE:s_riemann|description|黎曼变换]
+[SCOPE:s_riemann_let|let_bind|黎曼变换变量]
+[40] 为要去除 $y''$ 的存在的附加假设，黎曼提出另外的变分变换。
+[41] 令 $N(x)=\int_a^xF'_y \,\mathrm{d}{x} $，代入式 2 ，得
+[/SCOPE:s_riemann_let]
+[42] \begin{equation}
+\delta J=\int_a^b \left[ \frac{\mathrm{d}{N}}{\mathrm{d}{x}} \delta y+F'_{y'}\delta y' \right] \,\mathrm{d}{x} ~,
+\end{equation}
+[43] 应用分部积分
+[44] \begin{equation}
+\int_a^b \frac{\mathrm{d}{N}}{\mathrm{d}{x}} \delta y \,\mathrm{d}{x} = \left[N\delta y \right] _a^b-\int_a^bN\delta y' \,\mathrm{d}{x} ~.
+\end{equation}
+[45] 上式代入
+[46] 式 2 [链接 L7]
+[47] ，并考虑在 $a,b$ 处 $\delta y=0$，
+[48] 即得
+[49] 式 4 [链接 L8]
+[50] 。
+[51] 显然，这个变换不要求函数 $y(x)$ 的附加条件。
+[/SCOPE:s_riemann]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_lagrange",
+    "target_scope": "s_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "拉格朗日变换是变分变换的一种特例"
+  },
+  {
+    "source_scope": "s_riemann",
+    "target_scope": "s_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "黎曼变换是变分变换的另一种形式"
+  }
+]

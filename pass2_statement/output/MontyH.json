@@ -1,0 +1,277 @@
+{
+  "article_name": "MontyH",
+  "statements": [
+    {
+      "stmt_id": "st_problem_desc",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_problem",
+      "exposed_entities": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_foxi",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_analysis",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fanxuan",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_analysis",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_jingyan",
+      "subtype": "assumption",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_analysis",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bayes_intro",
+      "subtype": "remark",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_bayes",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let_xy",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_bayes_let",
+      "exposed_entities": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_cases_xy",
+      "subtype": "condition",
+      "clause_range": [
+        22,
+        28
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_bayes_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bayes_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": "true",
+      "scope_id": "s_bayes",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bayes_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_bayes",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_python",
+      "subtype": "example",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": "true",
+      "scope_id": "s_python",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_full_prob_question",
+      "subtype": "question",
+      "clause_range": [
+        39,
+        43
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_full_prob",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_full_prob_cond",
+      "subtype": "conclusion",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_full_prob",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_full_prob_derivation",
+      "subtype": "theorem",
+      "clause_range": [
+        46,
+        48
+      ],
+      "truth_value": "true",
+      "scope_id": "s_full_prob_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_full_prob_heatmap",
+      "subtype": "remark",
+      "clause_range": [
+        49,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_full_prob",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_conclusion_advice",
+      "subtype": "conclusion",
+      "clause_range": [
+        55,
+        57
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_conclusion",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_monty_strategy_short",
+      "subtype": "conclusion",
+      "clause_range": [
+        60,
+        70
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_conclusion",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_monty_strategy_long",
+      "subtype": "conclusion",
+      "clause_range": [
+        71,
+        74
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_conclusion",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_foxi",
+      "target": "st_fanxuan",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_fanxuan",
+      "target": "st_jingyan",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_xy",
+      "target": "st_cases_xy",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cases_xy",
+      "target": "st_bayes_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_bayes_formula",
+      "target": "st_bayes_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_bayes_conclusion",
+      "target": "st_full_prob_cond",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_full_prob_cond",
+      "target": "st_full_prob_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_full_prob_derivation",
+      "target": "st_full_prob_heatmap",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_full_prob_heatmap",
+      "target": "st_conclusion_advice",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_conclusion_advice",
+      "target": "st_monty_strategy_short",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_monty_strategy_short",
+      "target": "st_monty_strategy_long",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_bayes_conclusion",
+      "target": "st_full_prob_cond",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "贝叶斯分析的结果用于全概率公式推导"
+    }
+  ],
+  "unresolved": []
+}

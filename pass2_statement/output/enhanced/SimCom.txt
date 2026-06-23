@@ -1,0 +1,177 @@
+[SCOPE:root|description|单纯形与单纯复形]
+文章名: SimCom
+标题: 单纯形与单纯复形
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=几何无关点集
+  [1] type=definition heading=定义 2 title=单纯形
+  [2] type=definition heading=定义 3 title=标准单纯形
+  [3] type=definition heading=定义 4 title=面
+  [4] type=definition heading=定义 5 title=规则相处
+  [5] type=definition heading=定义 6 title=单纯复形
+  [6] type=example heading=例 1 title=复形的例子
+  [7] type=definition heading=定义 7 title=子复形
+  [8] type=definition heading=定义 8 title=骨架
+  [9] type=definition heading=定义 9 title=多面体
+  [10] type=example heading=例 2 title=有界圆柱面
+  [11] type=example heading=例 3 title=克莱因瓶
+  [12] type=exercise heading=习题 1 title=莫比乌斯带
+  [13] type=example heading=例 4 title=射影平面
+  [14] type=example heading=例 5 title=双环面
+
+[0] 修复图片
+
+[1] 单纯形可以被认为是欧几里得空间中的一种子集，最初的概念来源于对拓扑空间的三角剖分，而单纯形就是剖分出来的每个 “三角形”。
+[2] 这里之所以要打引号，是因为单纯形不仅仅指二维的三角形，也包括三维的锥形，以及从零维到任意维的拓展。
+
+[SCOPE:s_def1|description|几何无关点集]
+[3] 定义 1 几何无关点集
+[SCOPE:s_def1_let|let_bind|几何无关点集变量]
+[4] 给定欧几里得空间中 $n$ 个点构成的集合 $\{ \boldsymbol{\mathbf{r}} _i\}|_{i=0}^{n-1}$。
+[5] 任取一个 $ \boldsymbol{\mathbf{r}} _k$，我们以它为起点构造出若干向量 $ \boldsymbol{\mathbf{v}} _i= \boldsymbol{\mathbf{r}} _i- \boldsymbol{\mathbf{r}} _k$，如果集合 $\{ \boldsymbol{\mathbf{v}} _i\}_{i\not= k}$ 是一个线性无关向量组，
+[6] 那么我们说 $\{ \boldsymbol{\mathbf{r}} _i\}|_{i=0}^{n-1}$ 是一个几何无关（geometrically independent）点集。
+[/SCOPE:s_def1_let]
+[7] 注意几何无关点集和线性无关向量组有一点点区别，那就是几何无关点集里多了一个 “起点” 的位置。
+[8] 这个起点没法简单地排除在外，因为任意一个点都可以做起点，没必要确定谁更特殊。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|单纯形]
+[9] 定义 2 单纯形
+[SCOPE:s_def2_let|let_bind|单纯形变量]
+[10] 给定欧几里得空间中一个几何无关点集 $A=\{ \boldsymbol{\mathbf{r}} _i\}$。
+[11] 记 $[ \boldsymbol{\mathbf{r}} _0, \boldsymbol{\mathbf{r}} _1, \boldsymbol{\mathbf{r}} _2, \cdots, \boldsymbol{\mathbf{r}} _q]$ 为集合 $\{ \boldsymbol{\mathbf{r}} =\sum\lambda_i \boldsymbol{\mathbf{r}} _i|\lambda_i\geq 0, \sum\lambda_i=1\}$，称这个集合为由 $A$ 张成的 $q$ 维单纯形（simplex），简称 $q$-单形。
+[/SCOPE:s_def2_let]
+[12] 比如说，三维空间里 $3$ 个几何无关点 $ \boldsymbol{\mathbf{r}} _0, \boldsymbol{\mathbf{r}} _1, \boldsymbol{\mathbf{r}} _2$ 可以张成一个 $2$-单形，就是以这三个点为顶点的平面三角形。
+[13] 类似地，一个 $3$-单形就是一个三棱锥。
+[14] 一个 $0$-单形就是一个单点集，
+[15] 即 $[ \boldsymbol{\mathbf{r}} ]=\{ \boldsymbol{\mathbf{r}} \}= \boldsymbol{\mathbf{r}} $。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|标准单纯形]
+[16] 定义 3 标准单纯形
+[17] 由欧几里得空间中的原点和各坐标轴上的 $1$ 点（即 $e_i = (0, \dots, 1, \dots, 0)$）构成的单纯形，称为标准单纯形。
+
+[/SCOPE:s_def3]
+[SCOPE:s_def4|description|面]
+[18] 定义 4 面
+[SCOPE:s_def4_let|let_bind|面变量]
+[19] 令 $L$ 为单形 $[ \boldsymbol{\mathbf{r}} _0, \cdots, \boldsymbol{\mathbf{r}} _q]$，
+[20] 则对于 $r\leq q$，$L$ 的一个 $r$ 维面就是 $\{ \boldsymbol{\mathbf{r}} _0, \cdots, \boldsymbol{\mathbf{r}} _q\}$ 的一个 $r$ 阶子集所张成的单形。
+
+[/SCOPE:s_def4]
+[/SCOPE:s_def4_let]
+[SCOPE:s_def5|description|规则相处]
+[21] 定义 5 规则相处
+[SCOPE:s_def5_let|let_bind|规则相处变量]
+[22] 对于两个单形 $A$ 和 $B$，如果 $A\cap B$ 既是 $A$ 的面，也是 $B$ 的面，
+[23] 那么称 $A$ 和 $B$ 是规则相处的。
+[/SCOPE:s_def5_let]
+[24] 从上面的表述可以看出，尽管我们一开始引入单纯形概念的时候依赖于欧几里得空间的性质，是一种高度几何化的语言，
+[25] 但是表示时我们其实只关心是哪些顶点在构成一个单纯形。
+[26] 这就使得我们可以将单纯形的概念抽象化，将 $[ \boldsymbol{\mathbf{r}} _0, \cdots, \boldsymbol{\mathbf{r}} _q]$ 视作这 $q+1$ 个元素的一个组合，忽视掉几何特征，
+[27] 从而可能代数地描述这些结构。
+[28] 从这个角度来说，单形的面就是其子集，而脱去了几何概念之后我们完全可以认为任何单形都是规则相处的——这也是几何语言里要强调规则相处的意义。
+
+[/SCOPE:s_def5]
+[SCOPE:s_def6|description|单纯复形]
+[29] 定义 6 单纯复形
+[30] 一个（单纯）复形（complex），又称复合形，是一个单纯形的集合，其中各单形规则相处，且每个单形的面也都是该复形的一个元素。
+[31] 一些作者会把复形定义成单形集合的并集（类似于参数曲线和它的轨迹的关系）。
+[32] 非空复形的维度是其单形的最大维度（如果存在），或者正无穷（最大维度不存在）；
+[33] 空集（空复形）的维度没有标准的定义，可以认为是负无穷，也可以认为是任意维度，取决于不同的作者。
+[34] 【图解】图 1：复形的例子。
+[35] 这个复形是由一个三角形、四条线段和四个点构成的。
+[36] 【图解】图 2：复形的例子。
+[37] 这个复形是由一个三角形、四条线段和五个点构成的
+
+[/SCOPE:s_def6]
+[SCOPE:s_ex1|description|复形的例子]
+[38] 例 1 复形的例子
+[SCOPE:s_ex1_let1|let_bind|例1变量1]
+[39] 三维欧几里得空间中，集合 $\{(x, 0)|x\in[0,1]\}, \{(0, y)|y\in[0, 1]\}, \{(0, 0)\}, \{(1, 0)\}, \{(0, 1)\}$ 所构成的集合，是一个复形。
+[40] 这个复形中一共有五个元素，分别是两条线段和三个点。
+[/SCOPE:s_ex1_let1]
+[SCOPE:s_ex1_let2|let_bind|例1变量2]
+[41] 如图图 1 所示，四个点 $a, b, c, d$ 几何无关，并且构成了复形 $\{[a], [b], [c], [d], [a, b], [a, c], [b, c], [a, d], [a, b, c]\}$。
+[42] 如图图 2 所示，五个点构成了复形 $\{[a], [b], [c], [d], [e], [a, b], [a, c], [b, c], [d, e], [a, b, c]\}$。
+[/SCOPE:s_ex1_let2]
+[43] 和上一个例子相比，这个复形是有两个连通分支的。
+[44] 闭包复形 一个单形 $L$ 的全体面的集合，构成一个复形，称为 $L$ 的闭包复形，记为 $ \operatorname {Cl} L$。
+[45] 边缘复形 一个单形 $L$ 的全体真面1的集合，构成一个复形，称为 $L$ 的边缘复形，记为 $ \operatorname {Bd} L$。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_def7|description|子复形]
+[46] 定义 7 子复形
+[SCOPE:s_def7_let|let_bind|子复形变量]
+[47] 一个复形 $K$ 的子集 $J$ 如果还是一个复形，
+[48] 那么称 $J$ 是 $K$ 的子复形。
+
+[/SCOPE:s_def7]
+[/SCOPE:s_def7_let]
+[SCOPE:s_def8|description|骨架]
+[49] 定义 8 骨架
+[SCOPE:s_def8_let|let_bind|骨架变量]
+[50] $q$ 维复形 $K$ 的全体维度小于等于$r$ 的单形之集合，称为 $K$ 的 $r$ 维骨架，记为 $K^r$。
+
+[/SCOPE:s_def8]
+[/SCOPE:s_def8_let]
+[SCOPE:s_def9|description|多面体]
+[51] 定义 9 多面体
+[SCOPE:s_def9_let|let_bind|多面体变量]
+[52] 给定复形 $K$，
+[53] 则 $\bigcup\limits_{A\in K}A$ 称为 $K$ 的多面体（polyhedron），记为 $ \left\lvert K \right\rvert $。
+[/SCOPE:s_def9_let]
+[54] 此时称 $K$ 为 $ \left\lvert K \right\rvert $ 的一个三角剖分（triangulation），也称单纯剖分。
+[55] 该定义是先有了复形的概念，再在此基础上得到多面体的概念。
+[56] 反过来，我们也可以认为多面体是欧几里得空间中一种可以表示为若干单纯形之并的子集，而由于单纯形就是各个维度的 “三角形”，这种表示自然被称为三角剖分。
+[57] 许多常见的拓扑空间都可以进行三角剖分。
+
+[/SCOPE:s_def9]
+[SCOPE:s_ex2|description|有界圆柱面]
+[58] 例 2 有界圆柱面
+[SCOPE:s_ex2_let|let_bind|圆柱面变量]
+[59] 考虑一个圆柱体的表面，
+[60] 即集合 $\{(x, y, z)\in\mathbb{R}^3|x^2+y^2=1, z\in [0, 1]\}$，它可以表示为 $6$ 个规则相处的单纯形的并集，(TODO: 插入图片 fig1) 展示的是其展开的样子。
+[/SCOPE:s_ex2_let]
+[61] 图 3：有界圆柱面的单纯剖分示意图。
+[62] 图中展示的是圆柱面沿着单形 $[1, 2]$ 剪开并铺平后的样子，方便观察。
+[63] 注意图中点 $1$ 和点 $2$ 都出现了两次，还原圆柱面的时候要把它们对应粘接起来。
+[64] 圆柱面被剖分成三角形 $[1,2,4], [1,3,4], [3,4,5], [4,5,6], [2,5,6], [1,2,5]$ 的并集。
+[65] 这一剖分使用了六个三角形，看起来有些多余，似乎只用四个三角形也可以，
+[66] 即抛弃图中的 $[1,2,5]$ 和 $[2,5,6]$，而将 $[1, 2]$ 和 $[5, 6]$ 对应粘接，其中 $1$ 粘到 $5$，$2$ 粘到 $6$。
+[67] 然而这样四个三角形的粘接并不满足 “规则相处” 条件，因为这样一来 $[1, 2, 4]$ 和 $[5, 6, 4]$ 的交集就变成了 $[4]\cup[1, 2]$，
+[68] 即一个点和一条边，也即一个 $0$ 维面和一个 $1$ 维面，而规则相处要求任意两个三角形的交集是 “一个面”。
+[69] 为了满足规则相处条件，我们不得不增添两个三角形，形成图中的剖分方法。
+[70] 有界圆柱面进行单纯剖分最少需要这六个三角形，当然也可以使用八个、十个、一百个等。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|克莱因瓶]
+[71] 例 3 克莱因瓶
+[72] 克莱因瓶的三角剖分如图所示。
+[73] 图 4：克莱因瓶的三角剖分示意图。
+[74] 注意点 $4$ 和点 $7$ 的位置。
+
+[/SCOPE:s_ex3]
+[SCOPE:s_exercise1|description|莫比乌斯带]
+[75] 习题 1 莫比乌斯带
+[76] 请尝试给出莫比乌斯带的三角剖分。
+
+[/SCOPE:s_exercise1]
+[SCOPE:s_ex4|description|射影平面]
+[77] 例 4 射影平面
+[78] 射影平面的单纯剖分如(TODO: 插入图片 fig2) 所示。
+[79] 图 5：射影平面的单纯剖分示意图。
+[80] 射影平面是用一个单位圆，将其对径点粘合而成的拓扑空间。
+[81] 图中使用了方形，以方便进行三角剖分的表示。
+
+[/SCOPE:s_ex4]
+[SCOPE:s_ex5|description|双环面]
+[82] 例 5 双环面
+[83] 考虑双环面，
+[84] 即两个环面 $S^1\times S^1$ 各挖去一块连通区域后，把挖去区域的两个边界对应粘连起来得到的一个整体。
+[85] 双环面的单纯剖分如(TODO:插入图片 4) 所示。
+[86] 图 6：双环面的单纯剖分示意图。
+[87] 注意，由顶点 $5, 6, 8, 9$ 构成的方形不在环面上，它就是被挖去的那部分。
+[88] 这个单纯剖分被分为两部分来展示，分别是两个环面，挖去中间部分后对应粘连。
+[/SCOPE:s_ex5]
+[/SCOPE:root]

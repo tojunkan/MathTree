@@ -1,0 +1,280 @@
+{
+  "article_name": "gcdlcm",
+  "statements": [
+    {
+      "stmt_id": "st_def1_main",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "a",
+        "b",
+        "d"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_extend",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "a_i"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_prime_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        4,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "a",
+        "b",
+        "p_i",
+        "alpha_i",
+        "beta_i"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_main",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_main",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "a",
+        "b",
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_extend",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "b_i"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_prime_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        14,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "a",
+        "b",
+        "p_i",
+        "alpha_i",
+        "beta_i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "a",
+        "b",
+        "p_i",
+        "alpha_i",
+        "beta_i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof_assump1",
+      "subtype": "assumption",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "a",
+        "b",
+        "k",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof_assump2",
+      "subtype": "assumption",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "d"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof_step1",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_proof_step2",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        35
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_proof_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        36,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_proof_assump",
+      "target": "st_thm1_proof_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof_assump1",
+      "target": "st_thm2_proof_step1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof_assump2",
+      "target": "st_thm2_proof_step1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof_step1",
+      "target": "st_thm2_proof_step2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof_step2",
+      "target": "st_thm2_proof_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_statement",
+      "target": "st_def1_prime_formula",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1使用定义1的素因子分解表示"
+    },
+    {
+      "source": "st_thm1_statement",
+      "target": "st_def3_prime_formula",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1使用定义3的素因子分解表示"
+    },
+    {
+      "source": "st_thm2_statement",
+      "target": "st_def1_main",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2使用最大公约数的定义"
+    }
+  ],
+  "unresolved": []
+}

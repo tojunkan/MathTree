@@ -1,0 +1,133 @@
+[SCOPE:root|description|一元多项式]
+文章名: OnePol
+标题: 一元多项式
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=一元多项式
+  [1] type=definition heading=定义 2 title=加法
+  [2] type=definition heading=定义 3 title=数乘
+  [3] type=definition heading=定义 4 title=乘法
+
+[SCOPE:s_def1|description|一元多项式]
+[0] 定义 1 一元多项式
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1] 设 $n$ 是一个非负整数，$x$ 是一个符号，$a_0,a_1,\cdots,a_n\in \mathbb{F}$，
+[2] 则表达式
+[/SCOPE:s_def1_let]
+[3] \begin{equation}
+f(x)=\sum_{i=0}^{n}a_i x^i~.
+\end{equation}
+[4] 一元多项式
+[5] $i$ 次项
+[6] $i$ 次项系数
+[7] 首项系数
+[8] 零次多项式
+[9a] (x)$ 和 $g
+[9b] (x)$ 称为相等的，若它们的所有同次项的的系数都相等，并记为 $f
+[9c] (x)=g
+[9d] (x)$。
+
+[/SCOPE:s_def1]
+[SCOPE:s_ops|description|多项式的运算]
+[SCOPE:s_ops_let|let_bind|运算的变量]
+[10] 设数域上的两个多项式
+[11] \begin{equation}
+\begin{aligned}
+f(x)=\sum_{i=0}^{n}a_ix^i\\
+g(x)=\sum_{i=0}^{m}b_ix^i~.
+\end{aligned}
+\end{equation}
+[12] 不失一般性，设 $n\geq m$
+[/SCOPE:s_ops_let]
+[13] 下面定义它们的加法和乘法。
+
+[/SCOPE:s_ops]
+[SCOPE:s_def2|description|加法]
+[14] 定义 2 加法
+[15] 多项式的和（或差）为
+[16] \begin{equation}
+f(x)\pm g(x)=\sum_{i=0}^n (a_i\pm b_i)x^i
+~,
+\end{equation}
+[17] 显然，两个多项式的和或差仍是多项式。
+[18] 式 3 表明两个多项式的和的次数最多和原来次数最大的多项式一样，而系数之和可能为 0，
+[19] 所以和的次数满足不等式
+[20] \begin{equation}
+\mathrm{deg}\;(f(x)\pm g(x))\leq \max\{\mathrm{deg}\;f(x),\mathrm{deg}\;g(x)\}~.
+\end{equation}
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|数乘]
+[21] 定义 3 数乘
+[22] 多项式的数乘定义为
+[23] \begin{equation}
+cf( \boldsymbol{\mathbf{x}} )=\sum_{i=0}^n (ca_i)x^i~.
+\end{equation}
+
+[/SCOPE:s_def3]
+[SCOPE:s_def4|description|乘法]
+[24] 定义 4 乘法
+[25] 多项式的乘积为
+[26] \begin{equation}
+f(x)\cdot g(x)=\sum_{s=0}^{m+n} c_s x^s
+~,
+\end{equation}
+[27] \begin{equation}
+c_s=\sum_{i=0}^s a_i b_{s-i}~,
+\end{equation}
+[28] 显然，两个多项式的乘积仍是多项式。
+[29] 式 6 表明两个多项式的乘积的次数最多为原来两多项式次数的相加，而该次数最高项系数为 $c_{m+n}=a_n b_m$，不可能为 0，
+[30] 所以乘积的次数满足等式
+[31] \begin{equation}
+\mathrm{deg}\;(f(x)g(x))= \mathrm{deg}\;f(x)+\mathrm{deg}\;g(x)~.
+\end{equation}
+[32] 容易验证，多项式运算满足如下规律。
+[33a] (x)+g
+[33b] (x)=g
+[33c] (x)+f
+[33d] (x)$；
+[34a] (x)+g
+[34b] (x) \right) +h
+[34c] (x)=f
+[34d] (x)+(g
+[34e] (x)+h
+[34f] (x))$;
+[35a] (x)g
+[35b] (x)=g
+[35c] (x)f
+[35d] (x)$;
+[36a] (x))g
+[36b] (x)h
+[36c] (x)=f
+[36d] (x)(g
+[36e] (x)h
+[36f] (x))$;
+[37a] (x) \left(g
+[37b] (x)+h
+[37c] (x) \right) =f
+[37d] (x)g
+[37e] (x)+f
+[37f] (x)h
+[37g] (x)$;
+[38a] (x)g
+[38b] (x)=f
+[38c] (x)h
+[38d] (x)$，且 $f
+[38e] (x)\neq0$，
+[39a] (x)=h
+[39b] (x)$.
+[40] 我们将系数在数域 $\mathbb{F}$ 中的一元多项式的全体，称为数域 $\mathbb{F}$ 上的一元多项式环，记为 $\mathbb{F}[x]$，$\mathbb{F}$ 称为 $\mathbb{F}[x]$ 的系数域.
+[41] 一个集合中元素的加法和乘法运算若满足上面 6 条规律且加上运算的封闭性（配上加法和乘法的单位元 e,所谓集合的某个运算的单位元e 是指，集合中任意元素 x 与该元素（单位元）进行运算还是等于这个任意元素 x）就成这个集合为一个环。
+[42] 如果你对环有更多的兴趣，请点击。
+[43] 小结：本节介绍了一元多项式，并定义了一元多项式的加法和乘法，然后得到了相应的运算律。
+[44] 可能你会觉得 “加法” 和 “乘法” 不是很明显吗？
+[45] 为什么称之为 “定义”？
+[46] 其实，这里之所以称 “加法” 和 “乘法” 为定义，是因为记号 $x$，它并不代表一个数，
+[47] 所以和数何来的乘法？
+[48] 数只有和数有乘法，因为数域已经定义好了，而数和一个符号 $x$ 是没有定义的，
+[49] 所以这里的 “加法” 和 “乘法” 是为数和符号 $x$ 定义一种作用（称之为 “加法” 和 “乘法”）。
+[50] 只有当你让 $x\in \mathbb{F}$ 的时候，由于数域已经定义了加法和乘法，这里才不是定义。
+[51] 当然，这只是符号 $x$ 的一种特殊情形。
+[52] 当然，文中已经潜在定义了 $x\cdot x=x^2$, 以此同理。
+[/SCOPE:s_def4]
+[/SCOPE:root]

@@ -1,0 +1,131 @@
+[SCOPE:root|description|幂零群]
+文章名: NipGrp
+标题: 幂零群
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=幂零群
+  [1] type=lemma heading=引理 1 title=
+  [2] type=lemma heading=引理 2 title=
+  [3] type=example heading=例 1 title=$\pi^{-1} \left( \operatorname {C} \left(G/ \operatorname {C}(G) \right) \right) $ 和 $ \operatorname {C}(G)$ 不同的例子
+
+[SCOPE:s_def1|description|定义 1 幂零群]
+[0] 定义 1 幂零群
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[1] 给定群 $G$，若存在正整数 $k$ 使得 $G^k=\{e\}$，
+[2] 则称 $G$ 是幂零的（nilpotent）。
+[/SCOPE:s_def1_let]
+[3] 一个显而易见的性质是：
+
+[/SCOPE:s_def1]
+[SCOPE:s_lemma1|description|引理 1]
+[4] 引理 1
+[5] 幂零群的子群和商群都幂零。
+[6] 证明：
+[SCOPE:s_lemma1_let|let_bind|引理 1 的变量]
+[7] 设 $G$ 是幂零群，$H$ 是其任意子群，$N$ 是其任意正规子群。
+[/SCOPE:s_lemma1_let]
+[SCOPE:s_lemma1_sub|description|子群幂零]
+[8] 由于 $H\subseteq G$，
+[9] 故 $[H, H^{k}]\subseteq [G, H^{k}]$；
+[10] 又因为 $H^1\subseteq G^1$，
+[11] 故可归纳得 $H^k\subseteq G^k$ 对任意正整数 $k$ 成立。
+[12] 由此易证 $H$ 幂零。
+[/SCOPE:s_lemma1_sub]
+[SCOPE:s_lemma1_quot|description|商群幂零]
+[13] 由于 $G$ 幂零，
+[SCOPE:s_lemma1_quot_let|let_bind|商群证明中的变量]
+[14] 故存在正整数 $n$ 使得 $G^n\subseteq N$。
+[15] 这意味着，任取 $g_1, g_2, \cdots, g_n\in G$，
+[16] 则
+[/SCOPE:s_lemma1_quot_let]
+[17] \begin{equation}
+[g_1, [g_2\cdots[g_{n-1}, g_n]\cdots]] \in N~.
+\end{equation}
+[18] \begin{equation}
+[g_1N, [g_2N\cdots[g_{n-1}N, g_nN]\cdots]] = N~.
+\end{equation}
+[19] 由此得证 $ \left(G/N \right) ^n=N$。
+[20] 证毕。
+
+[/SCOPE:s_lemma1]
+[/SCOPE:s_lemma1_quot]
+[SCOPE:s_lemma2|description|引理 2]
+[21] 引理 2
+[SCOPE:s_lemma2_let|let_bind|引理 2 的变量]
+[22] 给定群 $G$。
+[23] 若群 $N\subseteq \operatorname {C}(G)$，且 $G/N$ 和 $N$ 皆为幂零群，
+[/SCOPE:s_lemma2_let]
+[24] 则 $G$ 幂零。
+[SCOPE:s_lemma2_proof|description|引理 2 的证明]
+[25] 证明：
+[SCOPE:s_lemma2_proof_let|let_bind|引理 2 证明中的变量]
+[26] 设 $ \left(G/N \right) ^n=N$。
+[27] 则任取 $g_1, g_2, \cdots, g_n\in G$，有
+[/SCOPE:s_lemma2_proof_let]
+[28] \begin{equation}
+[g_1, [g_2\cdots[g_{n-1}, g_n]\cdots]] \in N~.
+\end{equation}
+[29] 由于 $N\subseteq \operatorname {C}(G)$，
+[30] 故对任意 $g_0\in G$ 和 $c\in \operatorname {C}(G)$ 有 $[g_0, c]=e$。
+[31] 因此
+[32] \begin{equation}
+[g_0, [g_1, [g_2\cdots[g_{n-1}, g_n]\cdots]]] =e~.
+\end{equation}
+[33] 即 $G^{n+1}=e$。
+[34] 证毕。
+[/SCOPE:s_lemma2_proof]
+[35] 幂零群的性质引理 2 和可解群的性质引理 2 非常相似，不同的是可解群的此性质只要求 $N\lhd G$，幂零群则进一步要求 $N\subseteq \operatorname {C}(G)$。
+[36] 注意，$N\subseteq \operatorname {C}(G)$ 可推出 $N\lhd G$。
+[37] 这意味着幂零群的结构与其中心有密不可分的关系。
+[38] 由引理 1 ，$G/ \operatorname {C}(G)$ 也是幂零群，我们可以再计算这个商群的中心 $ \operatorname {C} \left(G/ \operatorname {C}(G) \right) $，然后和 $ \operatorname {C}(G)$ 比较。
+[39] 不过，商群 $G/ \operatorname {C}(G)$ 和原群 $G$ 的元素不一样，无法直接比较，
+[40] 所以我们需要再把商群的元素用自然同态的逆映射对应回原群来讨论，
+[41] 即我们实际上想要比较的是 $\pi^{-1} \left( \operatorname {C} \left(G/ \operatorname {C}(G) \right) \right) $ 和 $ \operatorname {C}(G)$，这两个群可不一定一样大。
+
+[/SCOPE:s_lemma2]
+[SCOPE:s_example1|description|例 1]
+[42] 例 1 $\pi^{-1} \left( \operatorname {C} \left(G/ \operatorname {C}(G) \right) \right) $ 和 $ \operatorname {C}(G)$ 不同的例子
+[SCOPE:s_example1_let|let_bind|例 1 的变量]
+[43] 考虑置换群 $ \operatorname {S}_3$。
+[44] 简单计算验证可得，$ \operatorname {C} \left( \operatorname {S}_3 \right) =\{e\}$。
+[45] 取 $ \operatorname {A}_3\lhd \operatorname {S}_3$，
+[46] 则 $ \operatorname {S}_3/ \operatorname {A}_3=\{0, 1\}$，
+[47] 即二元群，其中 $0$ 代表 $ \operatorname {A}_3$。
+[48] 令 $\pi: \operatorname {S}_3\to \operatorname {S}_3/ \operatorname {A}_3$ 为自然同态。
+[/SCOPE:s_example1_let]
+[49] 显然，$ \operatorname {C} \left(\{0, 1\} \right) =\{0, 1\}$，
+[50] 即 $\pi^{-1} \left( \operatorname {C} \left( \operatorname {S}_3 \right) \right) $
+[/SCOPE:s_example1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_lemma1_sub",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "子群幂零是幂零群定义的特例"
+  },
+  {
+    "source_scope": "s_lemma1_quot",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "商群幂零是幂零群定义的特例"
+  },
+  {
+    "source_scope": "s_lemma2",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "引理2给出幂零的充分条件"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_lemma2",
+    "edge_type": "counterexample_of",
+    "category": "logic",
+    "note": "例1说明引理2中N⊆C(G)的条件不能去掉"
+  }
+]

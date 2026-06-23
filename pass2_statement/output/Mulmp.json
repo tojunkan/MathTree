@@ -1,0 +1,324 @@
+{
+  "article_name": "Mulmp",
+  "statements": [
+    {
+      "stmt_id": "st_thm1",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        11
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "F",
+        "x_1",
+        "x_n",
+        "y",
+        "x_1^0",
+        "x_n^0",
+        "y_0",
+        "Δ_1",
+        "Δ_n",
+        "Δ'",
+        "F_{x_1}'",
+        "F_{x_n}'",
+        "F_y'"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "F_1",
+        "F_m",
+        "x_1",
+        "x_n",
+        "y_1",
+        "y_m",
+        "x_1^0",
+        "x_n^0",
+        "y_1^0",
+        "y_m^0",
+        "Δ_1",
+        "Δ_n",
+        "Δ_1'",
+        "Δ_m'",
+        "J"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "f_1",
+        "f_m"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_intro",
+      "subtype": "remark",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_induction",
+      "subtype": "assumption",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_induction",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_base_case",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof_base",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_induction_hypothesis",
+      "subtype": "assumption",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_step",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_phi_definition",
+      "subtype": "definition",
+      "clause_range": [
+        35,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let_phi",
+      "exposed_entities": [
+        "φ",
+        "F_m",
+        "y_m",
+        "x_1",
+        "x_n",
+        "y_1",
+        "y_{m-1}",
+        "x_1^0",
+        "x_n^0",
+        "y_1^0",
+        "y_{m-1}^0",
+        "y_m^0",
+        "D*"
+      ]
+    },
+    {
+      "stmt_id": "st_equivalence_8_9",
+      "subtype": "remark",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let_phi",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_varphi_definition",
+      "subtype": "definition",
+      "clause_range": [
+        48,
+        55
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let_varphi",
+      "exposed_entities": [
+        "φ_1",
+        "φ_{m-1}",
+        "F_1",
+        "F_{m-1}",
+        "φ",
+        "x_1",
+        "x_n",
+        "y_1",
+        "y_{m-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_jacobian_nonzero",
+      "subtype": "conclusion",
+      "clause_range": [
+        56,
+        76
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof_let_varphi",
+      "exposed_entities": [
+        "J*"
+      ]
+    },
+    {
+      "stmt_id": "st_f_definition",
+      "subtype": "definition",
+      "clause_range": [
+        77,
+        85
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let_f",
+      "exposed_entities": [
+        "f_1",
+        "f_{m-1}",
+        "f_m",
+        "x_1",
+        "x_n",
+        "y_1^0",
+        "y_{m-1}^0",
+        "y_m^0"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem_proved",
+      "subtype": "conclusion",
+      "clause_range": [
+        86,
+        86
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_assumptions",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assumptions",
+      "target": "st_thm2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_induction",
+      "target": "st_base_case",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_induction_hypothesis",
+      "target": "st_phi_definition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_phi_definition",
+      "target": "st_varphi_definition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_varphi_definition",
+      "target": "st_jacobian_nonzero",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_jacobian_nonzero",
+      "target": "st_f_definition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_f_definition",
+      "target": "st_theorem_proved",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_intro",
+      "target": "st_induction",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_base_case",
+      "target": "st_thm1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "m=1时即为定理1"
+    },
+    {
+      "source": "st_theorem_proved",
+      "target": "st_base_case",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "归纳步骤假设m-1成立推出m成立"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,91 @@
+[SCOPE:root|description|一阶常微分方程解法：常数变易法]
+文章名: ODEa2
+标题: 一阶常微分方程解法：常数变易法
+
+环境标记 (hints):
+  [0] type=exercise heading=习题 1 title=
+  [1] type=example heading=例 1 title=
+
+[SCOPE:s_exercise1|description|习题 1]
+[0] 习题 1
+[SCOPE:s_exercise1_let|let_bind|习题 1 的变量]
+[1a] (x)y$ 的通解是 $y=C \mathrm{e} ^{\int P
+[1b] (x) \,\mathrm{d}{x} }$。
+[2] 习题 1 给出了齐次方程的解，其中含一个待定常数 $C$。
+[/SCOPE:s_exercise1_let]
+[3] 非齐次方程是齐次方程的拓展，可以用常数变易法来解。
+[4a] (x)$，再代回非齐次方程，看看能不能解出这个 $C
+[4b] (x)$；
+[5] 如果能，
+[6] 那么非齐次方程也就得解了。
+
+[/SCOPE:s_exercise1]
+[7] 考虑方程式 1 。
+[8a] (x) \mathrm{e} ^{\int P
+[8b] (x) \,\mathrm{d}{x} }$。
+[9] \begin{equation}
+\begin{aligned}
+\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }=C'(x) \mathrm{e} ^{\int P(x) \,\mathrm{d}{x} }+C(x)P(x) \mathrm{e} ^{\int P(x) \,\mathrm{d}{x} }~.
+\end{aligned}
+\end{equation}
+[10] 比较式 1 和式 1 ，发现
+[11] \begin{equation}
+Q(x)=C'(x) \mathrm{e} ^{\int P(x) \,\mathrm{d}{x} }~,
+\end{equation}
+[12] 或改写为
+[13] \begin{equation}
+\frac{ \,\mathrm{d}{C} }{ \,\mathrm{d}{x} }=\frac{Q(x)}{ \mathrm{e} ^{\int P(x) \,\mathrm{d}{x} }}~,
+\end{equation}
+[14] 这是一个变量可分离方程。
+[15] 移项、积分后，得到其通解
+[16] \begin{equation}
+C(x)=\int\frac{Q(x)}{ \mathrm{e} ^{\int P(x) \,\mathrm{d}{x} }} \,\mathrm{d}{x} +K~,
+\end{equation}
+[17] 其中 $K$ 为积分常数。
+[18] 因此，式 1 的解就是
+[19] \begin{equation}
+\begin{aligned}
+y&=C(x) \mathrm{e} ^{\int P(x) \,\mathrm{d}{x} }\\
+&= \left(\int\frac{Q(x)}{ \mathrm{e} ^{\int P(x) \,\mathrm{d}{x} }} \,\mathrm{d}{x} +K \right) \mathrm{e} ^{\int P(x) \,\mathrm{d}{x} }~.
+\end{aligned}
+\end{equation}
+
+[SCOPE:s_example1|description|例 1]
+[SCOPE:s_example1_let|let_bind|例 1 的变量]
+[20] 考虑方程
+[21] \begin{equation}
+\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }=2xy+x~
+\end{equation}
+[/SCOPE:s_example1_let]
+[22] 因此，根据式 6 ，该方程的通解为
+[23] \begin{equation}
+\begin{aligned}
+y&= \left(\int\frac{Q(x)}{ \mathrm{e} ^{\int P(x) \,\mathrm{d}{x} }} \,\mathrm{d}{x} +K \right) \mathrm{e} ^{\int P(x) \,\mathrm{d}{x} }\\
+&= \left(\int\frac{x}{ \mathrm{e} ^{x^2}} \,\mathrm{d}{x} +K \right) \mathrm{e} ^{x^2}\\
+&= \left(-\frac{1}{2} \mathrm{e} ^{-x^2}+K \right) \mathrm{e} ^{x^2}\\
+&=K \mathrm{e} ^{x^2}-\frac{1}{2}~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_example1]
+[SCOPE:s_bernoulli|description|伯努利微分方程]
+[24] \begin{equation}
+\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }=P(x)y+Q(x)y^n~
+\end{equation}
+[25] 的方程，称为
+[26] 伯努利微分方程（Bernoulli differential equation）
+[27] 。
+[28] 它可以通过变量代换，化为一阶线性微分方程。
+[/SCOPE:s_bernoulli]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_exercise1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例 1 是常数变易法的应用，依赖习题 1 的齐次解形式。"
+  }
+]

@@ -1,0 +1,173 @@
+{
+  "article_name": "permut",
+  "statements": [
+    {
+      "stmt_id": "st_let_set",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_set",
+      "exposed_entities": [
+        "N",
+        "{1,2,...,N}"
+      ]
+    },
+    {
+      "stmt_id": "st_def_permutation",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "S",
+        "f",
+        "n",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_question_count",
+      "subtype": "question",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_let_count",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_count_derivation",
+      "subtype": "conclusion",
+      "clause_range": [
+        6,
+        8
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_let_count",
+      "exposed_entities": [
+        "A_N"
+      ]
+    },
+    {
+      "stmt_id": "st_perm_representation",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_perm",
+      "exposed_entities": [
+        "p_i",
+        "p_{i,1}",
+        "p_{i,2}",
+        "p_{i,N}"
+      ]
+    },
+    {
+      "stmt_id": "st_arrangement_number_def",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_formula",
+      "exposed_entities": [
+        "A_n^m"
+      ]
+    },
+    {
+      "stmt_id": "st_unfinished_principle",
+      "subtype": "question",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_formula",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation",
+      "subtype": "theorem",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_unfinished_example",
+      "subtype": "remark",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let_set",
+      "target": "st_def_permutation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_question_count",
+      "target": "st_count_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_permutation",
+      "target": "st_perm_representation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_count_derivation",
+      "target": "st_arrangement_number_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_arrangement_number_def",
+      "target": "st_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_arrangement_number_def",
+      "target": "st_def_permutation",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "排列数公式基于排列定义"
+    },
+    {
+      "source": "st_derivation",
+      "target": "st_arrangement_number_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "变形得到排列数另一种形式"
+    }
+  ],
+  "unresolved": [
+    "分布乘法计数原理未定义，无法建立完整逻辑链",
+    "例题未完成，缺少内容"
+  ]
+}

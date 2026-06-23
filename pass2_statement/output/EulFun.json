@@ -1,0 +1,259 @@
+{
+  "article_name": "EulFun",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "φ(n)",
+        "n",
+        "d",
+        "gcd"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_order",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prime_phi",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def1_let_p",
+      "exposed_entities": [
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_prime_power_phi",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def1_let_pk",
+      "exposed_entities": [
+        "p^k"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1_formula",
+      "subtype": "corollary",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": [
+        "n",
+        "p_i"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_cor1_let_n",
+      "exposed_entities": [
+        "n",
+        "p_i",
+        "k_i"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1_proof_derivation",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cor1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1_method",
+      "subtype": "remark",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_cor1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let_nm",
+      "exposed_entities": [
+        "n",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_derivation",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor2_statement",
+      "subtype": "corollary",
+      "clause_range": [
+        41,
+        42
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor2",
+      "exposed_entities": [
+        "m",
+        "φ(m)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        43,
+        47
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "a_i",
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        48,
+        51
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_prime_phi",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_prime_power_phi",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor1_proof_assump",
+      "target": "st_cor1_proof_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cor1_proof_derivation",
+      "target": "st_cor1_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_assump",
+      "target": "st_thm1_proof_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_derivation",
+      "target": "st_thm1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof",
+      "target": "st_thm2_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_cor1_formula",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论1是定义1的公式推广"
+    },
+    {
+      "source": "st_thm1_statement",
+      "target": "st_cor1_formula",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理1的证明使用了推论1"
+    },
+    {
+      "source": "st_cor2_statement",
+      "target": "st_def1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "推论2由定义1直接得出"
+    },
+    {
+      "source": "st_thm2_statement",
+      "target": "st_cor2_statement",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理2基于缩系概念"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,214 @@
+{
+  "article_name": "EliInt",
+  "statements": [
+    {
+      "stmt_id": "st_def_first_kind",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_first_kind",
+      "exposed_entities": [
+        "F(φ,k)",
+        "F(φ|k^2)",
+        "F(sinφ;k)"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_t_sinx",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_first_let1",
+      "exposed_entities": [
+        "t",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_concl_t_sinx",
+      "subtype": "conclusion",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_first_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_theta_2x",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_first_let2",
+      "exposed_entities": [
+        "θ",
+        "θ_0"
+      ]
+    },
+    {
+      "stmt_id": "st_concl_theta_2x",
+      "subtype": "conclusion",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_first_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_first_kind_func",
+      "subtype": "remark",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_first_kind",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_second_kind",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_second_kind",
+      "exposed_entities": [
+        "E(φ,k)",
+        "E(φ|k^2)",
+        "E(sinφ;k)"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_x_sinphi",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_second_let",
+      "exposed_entities": [
+        "x",
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_concl_x_sinphi",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_second_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_second_kind_arc",
+      "subtype": "remark",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_second_kind",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_second_kind_func",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_second_kind",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_second_kind_fig",
+      "subtype": "remark",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_second_kind",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_complete_second",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_complete_second",
+      "exposed_entities": [
+        "E(k)",
+        "E(π/2,k)",
+        "E(1;k)"
+      ]
+    },
+    {
+      "stmt_id": "st_concl_circumference",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_complete_second",
+      "exposed_entities": [
+        "c",
+        "a",
+        "e"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_t_sinx",
+      "target": "st_concl_t_sinx",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_theta_2x",
+      "target": "st_concl_theta_2x",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_x_sinphi",
+      "target": "st_concl_x_sinphi",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_def_complete_second",
+      "target": "st_def_second_kind",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "完整椭圆积分是不完全椭圆积分在 φ=π/2 时的特例"
+    }
+  ],
+  "unresolved": []
+}

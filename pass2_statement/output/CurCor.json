@@ -1,0 +1,410 @@
+{
+  "article_name": "CurCor",
+  "statements": [
+    {
+      "stmt_id": "st_example1_goal",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_deriv",
+      "subtype": "conclusion",
+      "clause_range": [
+        2,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "r",
+        "θ",
+        "φ",
+        "r̂",
+        "θ̂",
+        "φ̂"
+      ]
+    },
+    {
+      "stmt_id": "st_coords_def",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_coords",
+      "exposed_entities": [
+        "M",
+        "u",
+        "v",
+        "w"
+      ]
+    },
+    {
+      "stmt_id": "st_coords_surfaces",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_coords",
+      "exposed_entities": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_coords_components",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_coords",
+      "exposed_entities": [
+        "φ1",
+        "ψ1",
+        "ω1",
+        "φ",
+        "ψ",
+        "ω"
+      ]
+    },
+    {
+      "stmt_id": "st_coords_equations",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_coords",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_coords_line_u",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_coords",
+      "exposed_entities": [
+        "B0",
+        "C0"
+      ]
+    },
+    {
+      "stmt_id": "st_coords_line_vw",
+      "subtype": "definition",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_coords",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_coords_tangent",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_coords",
+      "exposed_entities": [
+        "t"
+      ]
+    },
+    {
+      "stmt_id": "st_coords_unit_vec",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_coords",
+      "exposed_entities": [
+        "û",
+        "v̂",
+        "ŵ"
+      ]
+    },
+    {
+      "stmt_id": "st_coords_orthogonal_def",
+      "subtype": "definition",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_coords",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_coords_orthogonal_prop",
+      "subtype": "remark",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_coords",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_line_element_general",
+      "subtype": "definition",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_line_element",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_line_element_cross_terms",
+      "subtype": "remark",
+      "clause_range": [
+        31,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_line_element",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_line_element_orthogonal_implies",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_line_element",
+      "exposed_entities": [
+        "Hu",
+        "Hv",
+        "Hw"
+      ]
+    },
+    {
+      "stmt_id": "st_line_element_H_def",
+      "subtype": "definition",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_line_element",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_line_element_ds",
+      "subtype": "definition",
+      "clause_range": [
+        39,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_line_element",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_Lame_def",
+      "subtype": "definition",
+      "clause_range": [
+        41,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_line_element_let",
+      "exposed_entities": [
+        "Hu",
+        "Hv",
+        "Hw"
+      ]
+    },
+    {
+      "stmt_id": "st_line_element_alt",
+      "subtype": "definition",
+      "clause_range": [
+        44,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_line_element",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_line_element_direction",
+      "subtype": "remark",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_line_element",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_line_element_ds_components",
+      "subtype": "definition",
+      "clause_range": [
+        47,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_line_element",
+      "exposed_entities": [
+        "ds_u",
+        "ds_v",
+        "ds_w"
+      ]
+    },
+    {
+      "stmt_id": "st_area_volume_intro",
+      "subtype": "remark",
+      "clause_range": [
+        53,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_area_volume",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_area_volume_formulas",
+      "subtype": "definition",
+      "clause_range": [
+        54,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "s_area_volume",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_example1_goal",
+      "target": "st_example1_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coords_def",
+      "target": "st_coords_surfaces",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coords_def",
+      "target": "st_coords_components",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coords_components",
+      "target": "st_coords_equations",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coords_equations",
+      "target": "st_coords_line_u",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coords_line_u",
+      "target": "st_coords_line_vw",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coords_line_u",
+      "target": "st_coords_unit_vec",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coords_unit_vec",
+      "target": "st_coords_orthogonal_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_line_element_general",
+      "target": "st_line_element_cross_terms",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_line_element_cross_terms",
+      "target": "st_line_element_orthogonal_implies",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_line_element_orthogonal_implies",
+      "target": "st_line_element_H_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_line_element_H_def",
+      "target": "st_line_element_ds",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_line_element_ds",
+      "target": "st_Lame_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_line_element_ds",
+      "target": "st_line_element_alt",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_line_element_alt",
+      "target": "st_line_element_ds_components",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_line_element_ds_components",
+      "target": "st_area_volume_formulas",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_example1_deriv",
+      "target": "st_coords_orthogonal_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "球坐标系是正交曲线坐标系的一个特例"
+    }
+  ],
+  "unresolved": []
+}

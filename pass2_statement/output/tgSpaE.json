@@ -1,0 +1,275 @@
+{
+  "article_name": "tgSpaE",
+  "statements": [
+    {
+      "stmt_id": "st_intro_geom",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geom_let_S",
+      "subtype": "assumption",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_geom_let",
+      "exposed_entities": [
+        "S",
+        "x",
+        "T_xS"
+      ]
+    },
+    {
+      "stmt_id": "st_geom_def",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_geom",
+      "exposed_entities": [
+        "T_xS"
+      ]
+    },
+    {
+      "stmt_id": "st_geom_remark",
+      "subtype": "remark",
+      "clause_range": [
+        22,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_geom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_path_let_S",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_path_let",
+      "exposed_entities": [
+        "S",
+        "p",
+        "r",
+        "I"
+      ]
+    },
+    {
+      "stmt_id": "st_path_def",
+      "subtype": "definition",
+      "clause_range": [
+        29,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_path",
+      "exposed_entities": [
+        "r",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_path_equiv_def",
+      "subtype": "definition",
+      "clause_range": [
+        39,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_path_equiv",
+      "exposed_entities": [
+        "[r]"
+      ]
+    },
+    {
+      "stmt_id": "st_path_equiv_add",
+      "subtype": "definition",
+      "clause_range": [
+        46,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_path_equiv",
+      "exposed_entities": [
+        "[r_1]",
+        "[r_2]"
+      ]
+    },
+    {
+      "stmt_id": "st_path_equiv_scalar",
+      "subtype": "definition",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_path_equiv",
+      "exposed_entities": [
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_path_equiv_remark",
+      "subtype": "remark",
+      "clause_range": [
+        51,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_path_equiv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_deriv_let",
+      "subtype": "assumption",
+      "clause_range": [
+        52,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_deriv_let",
+      "exposed_entities": [
+        "f",
+        "P",
+        "p(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_deriv_def",
+      "subtype": "definition",
+      "clause_range": [
+        54,
+        65
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_deriv",
+      "exposed_entities": [
+        "∂/∂x_i|_p"
+      ]
+    },
+    {
+      "stmt_id": "st_relation_remark",
+      "subtype": "remark",
+      "clause_range": [
+        66,
+        74
+      ],
+      "truth_value": null,
+      "scope_id": "s_relation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_tangent_bundle_def",
+      "subtype": "definition",
+      "clause_range": [
+        75,
+        78
+      ],
+      "truth_value": null,
+      "scope_id": "s_tangent_bundle",
+      "exposed_entities": [
+        "切丛"
+      ]
+    },
+    {
+      "stmt_id": "st_tangent_bundle_example",
+      "subtype": "example",
+      "clause_range": [
+        79,
+        81
+      ],
+      "truth_value": "true",
+      "scope_id": "s_tangent_bundle",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_geom_let_S",
+      "target": "st_geom_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_path_let_S",
+      "target": "st_path_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_path_def",
+      "target": "st_path_equiv_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_path_equiv_def",
+      "target": "st_path_equiv_add",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_path_equiv_def",
+      "target": "st_path_equiv_scalar",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_deriv_let",
+      "target": "st_deriv_def",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_path_def",
+      "target": "st_geom_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "道路定义是几何定义的推广"
+    },
+    {
+      "source": "st_deriv_def",
+      "target": "st_path_def",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "导子定义与道路定义等价"
+    },
+    {
+      "source": "st_relation_remark",
+      "target": "st_geom_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "联系部分说明三种定义的关系"
+    },
+    {
+      "source": "st_relation_remark",
+      "target": "st_path_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "联系部分说明三种定义的关系"
+    },
+    {
+      "source": "st_relation_remark",
+      "target": "st_deriv_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "联系部分说明三种定义的关系"
+    }
+  ],
+  "unresolved": []
+}

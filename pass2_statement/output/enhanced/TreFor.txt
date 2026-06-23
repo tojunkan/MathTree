@@ -1,0 +1,179 @@
+[SCOPE:root|description|树与林]
+文章名: TreFor
+标题: 树与林
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=树，林
+  [1] type=definition heading=定义 2 title=叶子，内部点
+  [2] type=theorem heading=定理 1 title=
+  [3] type=corollary heading=推论 1 title=
+  [4] type=definition heading=定义 3 title=支撑树，支撑林
+  [5] type=theorem heading=定理 2 title=
+
+[SCOPE:s_def1|description|定义1 树，林]
+[0] 定义 1 树，林
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1] 设 $G$ 是图。
+[/SCOPE:s_def1_let]
+[2] 若 $G$ 上无圈，
+[3] 则称 $G$ 为林（forest）；
+[4] 若 $G$ 无圈且连通，
+[5] 则称 $G$ 为树（tree）。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义2 叶子，内部点]
+[6] 定义 2 叶子，内部点
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[7] 设 $G$ 是树，$x\in V(G)$。
+[/SCOPE:s_def2_let]
+[8] 若 $d_G(v)=1$（定义 1 ），
+[9] 则称 $x$ 是 $G$ 的叶子（leaf）。
+[10] 树中非叶子的点称为内部点。
+[11] 由例 1 可知，林和树都是简单图。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|定理1]
+[12] 定理 1
+[13] 下面命题是等价的：
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[14] $T$ 是树；
+[/SCOPE:s_thm1_let]
+[15] $T$ 中任意两个不同点被 $T$ 的唯一路连接；
+[16] $T$ 是极小连通的，
+[17] 即 $T$ 是连通的，
+[18] 但对任一边 $e\in E(T)$，$T-e$（记号见定义 23 ）不连通；
+[19] $T$ 是极大无圈的，
+[20] 即 $T$ 不包含圈，
+[21] 但任意不相邻的点 $x,y\in V(T)$，$T+xy$ 包含圈（其中 $xy$ 是连接 $xy$ 的边）。
+[SCOPE:s_thm1_equiv|description|等价性证明]
+[22] 证明：
+[SCOPE:s_thm1_1to2|description|1⇒2]
+[SCOPE:s_thm1_1to2_let1|let_bind|1⇒2 设x,y]
+[23] 1. $1\Rightarrow 2$：设 $\forall x,y\in T$。
+[/SCOPE:s_thm1_1to2_let1]
+[24] 同于树是连通的，
+[25] 所以存在 $x$ 到 $y$ 的（长为 $l$）路 $R=xe_1x_1\cdots y$。
+[SCOPE:s_thm1_1to2_let2|let_bind|1⇒2 设R']
+[26] 设 $R'=xe'_1x_1'\cdots e'_n y$ 是连接 $x,y$ 的另一（长为 $n$）路。
+[/SCOPE:s_thm1_1to2_let2]
+[27] 由于 $T$ 无圈，
+[28] 所以链 $xe_1\cdots y|e'_n\cdots e'_1x$ 中在 $|$ 两边一定有两个内点相同，否则该链就是一个圈。
+[29] 由于左边和右边分别是路，
+[30] 因此两个内点只能一个在一边。
+[31] 设这两个内点是 $x_{i},x'_{j}$，
+[32] 于是 $W(x_{i},x'_{j})$ 是 $x_{i}x'_{j}$ 链。
+[33] 由于 $W(x_{i},x'_{j})$ 端点相同，我们仍可以重复上面的论述。
+[34] 若 $i\neq j$，不是一般性
+[35] 设 $i>j$，
+[36] 于是至多重复 $l-i+1$ 次后得到链 $x_{l-1}e_ly|e_n'\cdots x'_{i_{l-i+2}}$，继续重复操作，
+[37] 则将出现 $y=y',y'\in R'$。
+[38] 这和 $R'$ 是路矛盾。
+[39] 这一矛盾表明只能是 $x_i=x_i'$。
+[40a] 若 $n\neq l$
+[40b] 则重复 $k-l$ 次又会出现上面的情况，
+[41] 于是只能是 $n=l$。
+[42] 于是重复最多重复 $n-1$ 次，我们就会发现 $x_{n-1}=x'_{n-1}$。
+[43] 然后对路 $R_1=R-x_{n-1}$ 继续上述操作，可以得到 $x_{n-2}=x_{n-2}'$。
+[44] 如此重复，最终得到 $R=R'$。
+[/SCOPE:s_thm1_1to2]
+[SCOPE:s_thm1_2to3|description|2⇒3]
+[45] 2.$2\Rightarrow 3$：由 2 可知 $T$ 是连通的。
+[SCOPE:s_thm1_2to3_let|let_bind|2⇒3 设e]
+[46] $\forall e\in E(T)$，设 其端点为 $x,y$，无圈表明 $x\neq y$。
+[/SCOPE:s_thm1_2to3_let]
+[47] 而 $x,y\in V(T-e)$，$xey$ 是连接 $x,y$ 的唯一路，
+[48] 所以 $T-e$ 中不能有连接 $x,y$ 的路了。
+[49] 否则这条路只能是 $xey$，
+[50] 但是 $e\not\in E(T-e)$。
+[/SCOPE:s_thm1_2to3]
+[SCOPE:s_thm1_3to4|description|3⇒4]
+[51] 3.$3\Rightarrow 4$：a.设 $T$ 包含圈 $R=x_0e_1x_1\cdots x_0$，
+[52] 那么 $R-e_1=x_1e_2\cdots x_0$ 是连接 $x_1,x_0$ 的路，
+[53] 但这是不可能的，
+[54] 所以 $T$ 不包含圈。
+[SCOPE:s_thm1_3to4_let|let_bind|3⇒4 设x,y]
+[55] b.设 $\forall x,y\in V(T)$ 不相邻，记 $xy=e$。
+[/SCOPE:s_thm1_3to4_let]
+[56] 那么由于 $T$ 上有连接 $xy$ 的路 $xe_1x_1\cdots y$，
+[57] 所以此时 $T+xy$ 包含圈 $xe_1x_1\cdots yex$。
+[/SCOPE:s_thm1_3to4]
+[SCOPE:s_thm1_4to1|description|4⇒1]
+[SCOPE:s_thm1_4to1_let|let_bind|4⇒1 设x,y]
+[58] 4. $4\Rightarrow 1$：任意 $x,y\in V(T)$，记 $e=xy$。
+[/SCOPE:s_thm1_4to1_let]
+[59] 由于 $T$ 不含圈，$T+e$ 含圈，
+[60] 所以所含的圈必然包含 $e$，否则 $T$ 有圈。
+[61] 以 $x$ 作为端点，记该圈为 $xe_1x_1\cdots yex$。
+[62] 由于除了 $e$ 以外其它圈的元素都在 $T$ 内，
+[63] 因此路 $x e_1x_1\cdots y$ 属于 $T$，
+[64] 即 $x,y$ 连通。
+[65] 所以 $T$ 是树。
+[/SCOPE:s_thm1_4to1]
+[66] 证毕！
+[/SCOPE:s_thm1_equiv]
+[67] 注意定理的 3 相当于 $T$ 连通且连通分支 $\omega(T-e)=2,\forall e\in E(T)$。
+[68] 于是得下面的推论。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_cor1|description|推论1]
+[69] 推论 1
+[SCOPE:s_cor1_let|let_bind|推论1的变量]
+[70] 若 $T$ 是树等价于 $\forall e\in E(T)$，
+[/SCOPE:s_cor1_let]
+[71] 则 $T-e$ 连通分支数为 2，
+[72] 即 $\omega(T-e)=2$。
+
+[/SCOPE:s_cor1]
+[SCOPE:s_def3|description|定义3 支撑树，支撑林]
+[73] 定义 3 支撑树，支撑林
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[74] 设 $F$ 是 $G$ 的支撑子图，且它们的连通分支相同，
+[/SCOPE:s_def3_let]
+[75] 即 $\omega(F)=\omega(G)$。
+[76] 若 $F$ 是林，
+[77] 则称 $F$ 是 $G$ 的支撑林（spaning forest）；
+[78] 若 $F$ 是树，
+[79] 则称 $F$ 是 $G$ 的支撑树（spaning tree）。
+
+[/SCOPE:s_def3]
+[SCOPE:s_thm2|description|定理2]
+[80] 定理 2
+[81] 每个连通图都含支撑树。
+[82] 证明：
+[SCOPE:s_thm2_let|let_bind|定理2 设T]
+[83] 设 $T$ 是连通图 $G$ 的边最少的连通支撑子图。
+[/SCOPE:s_thm2_let]
+[84] 那么 $\omega(T-e)=2,\forall e\in E(T)$。
+[SCOPE:s_thm2_reductio|reductio|反证法部分]
+[85] 事实上，如若不然，
+[86] 则 $T-e$ 仍是连通的，且点数不变，而边数却少了 1，这和 $T$ 是边最少的连通支撑子图矛盾。
+[/SCOPE:s_thm2_reductio]
+[87] 由推论 1 ，$T$ 是树。
+[88] 证毕！
+[/SCOPE:s_thm2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1_equiv",
+    "target_scope": "s_thm1",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "定理1的等价性证明"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是定理1的推论"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_cor1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2证明中用到推论1"
+  }
+]

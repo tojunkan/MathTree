@@ -1,0 +1,252 @@
+{
+  "article_name": "Dot",
+  "statements": [
+    {
+      "stmt_id": "st_geo_def",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_geo_def",
+      "exposed_entities": [
+        "A",
+        "B",
+        "θ"
+      ]
+    },
+    {
+      "stmt_id": "st_proj_interpret",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_geo_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_max_min_zero",
+      "subtype": "remark",
+      "clause_range": [
+        12,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_geo_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_orthogonal_def",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_geo_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_self_dot",
+      "subtype": "remark",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_geo_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_coord_def_2d",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_coord_def",
+      "exposed_entities": [
+        "A_x",
+        "A_y",
+        "B_x",
+        "B_y"
+      ]
+    },
+    {
+      "stmt_id": "st_coord_def_3d",
+      "subtype": "definition",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_coord_def",
+      "exposed_entities": [
+        "A_z",
+        "B_z"
+      ]
+    },
+    {
+      "stmt_id": "st_coord_def_nd",
+      "subtype": "definition",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_coord_def",
+      "exposed_entities": [
+        "A_i",
+        "B_i",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_equiv_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_equiv",
+      "exposed_entities": [
+        "A",
+        "B",
+        "α",
+        "β",
+        "θ"
+      ]
+    },
+    {
+      "stmt_id": "st_equiv_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_equiv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_equiv_space",
+      "subtype": "remark",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_equiv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_commutative",
+      "subtype": "theorem",
+      "clause_range": [
+        31,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_distributive",
+      "subtype": "theorem",
+      "clause_range": [
+        34,
+        38
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_not_associative",
+      "subtype": "theorem",
+      "clause_range": [
+        39,
+        42
+      ],
+      "truth_value": "true",
+      "scope_id": "s_properties",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_distrib_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_distrib_proof",
+      "exposed_entities": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "L_B",
+        "L_C",
+        "L_D"
+      ]
+    },
+    {
+      "stmt_id": "st_distrib_proof_goal",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_distrib_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_distrib_proof_step",
+      "subtype": "conclusion",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_distrib_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_equiv_assump",
+      "target": "st_equiv_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_distrib_proof_assump",
+      "target": "st_distrib_proof_goal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_distrib_proof_assump",
+      "target": "st_distrib_proof_step",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_coord_def_2d",
+      "target": "st_geo_def",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "坐标定义与几何定义等价，在s_equiv中证明"
+    }
+  ],
+  "unresolved": []
+}

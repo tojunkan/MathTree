@@ -1,0 +1,248 @@
+[SCOPE:root|description|矩阵的秩]
+文章名: MatRnk
+标题: 矩阵的秩
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=线性相关性
+  [1] type=definition heading=定义 2 title=矩阵的行秩、列秩
+  [2] type=theorem heading=定理 1 title=
+  [3] type=definition heading=定义 3 title=
+  [4] type=theorem heading=定理 2 title=
+  [5] type=example heading=例 1 title=
+  [6] type=theorem heading=定理 3 title=
+  [7] type=theorem heading=定理 4 title=
+  [8] type=definition heading=定义 4 title=满秩矩阵
+  [9] type=example heading=例 2 title=
+
+[0] 【未完成】列向量（或者矩阵）版本的线性相关、线性无关
+
+[SCOPE:s_def1|description|线性相关性]
+[1] 定义 1 线性相关性
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[2] 给定一组 $n\times m$ 的矩阵 $\mathcal{V}_1, \mathcal{V}_2, \cdots, \mathcal{V}_n$，如果存在不全为零的系数 $a_1, a_2, \cdots, a_n$ 使得 $a_1\mathcal{V}_1+a_2\mathcal{V}_2+\cdots+a_n\mathcal{V}_n$ 是零矩阵，
+[3] 那么称这组矩阵线性相关（linearly dependent）；
+[4] 否则，称其线性无关（linearly independent）。
+[/SCOPE:s_def1_let]
+[5] 线性相关性的概念源自向量坐标的唯一性。
+[6] 以几何向量为例，当给定一组向量 $ \boldsymbol{\mathbf{v}} _1, \boldsymbol{\mathbf{v}} _2, \cdots, \boldsymbol{\mathbf{v}} _n$，其线性组合 $a_1 \boldsymbol{\mathbf{v}} _1+a_2 \boldsymbol{\mathbf{v}} _2+\cdots+a_n \boldsymbol{\mathbf{v}} _n$ 也是一个向量，我们可以称列矩阵 $  \begin{pmatrix}a_1&a_2&\cdots&a_n\end{pmatrix}  ^{\mathrm{T}}$ 为该向量的坐标。
+[7] 两个向量相加后的坐标，就是两个向量的坐标矩阵直接相加。
+[8] 零向量显然有一个坐标，
+[9] 即零矩阵 $  \begin{pmatrix}0&0&\cdots&0\end{pmatrix}  ^{\mathrm{T}}$；
+[10] 如果零向量还有一个非零的坐标 $  \begin{pmatrix}x_1&x_2&\cdots&x_n\end{pmatrix}  ^{\mathrm{T}}$，
+[11] 那么任何向量也都会有无穷多个坐标。
+[12] 比如说，有一个坐标为 $  \begin{pmatrix}1&2&\cdots&n\end{pmatrix}  ^{\mathrm{T}}$ 的向量，其坐标值也可以是 $  \begin{pmatrix}1+x_1&2+x_2&\cdots&n+x_n\end{pmatrix}  ^{\mathrm{T}}$，乃至 $  \begin{pmatrix}1+2x_1&2+2x_2&\cdots&n+nx_n\end{pmatrix}  ^{\mathrm{T}}$。
+[13] 各向量的坐标唯一，当且仅当零向量的坐标唯一，而零向量的坐标唯一等价于 “对于不全为零的系数 $a_1, a_2, \cdots, a_n$，线性组合 $a_1 \boldsymbol{\mathbf{v}} _1+a_2 \boldsymbol{\mathbf{v}} _2+\cdots+a_n \boldsymbol{\mathbf{v}} _n$ 不可能是零向量”，这便是线性无关的定义。
+[14] 上段所解释的是几何向量线性相关性的定义，
+[15] 但把对象从几何向量改为 $n\times m$ 矩阵，也可以类似推广出矩阵线性相关性的定义。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|矩阵的行秩、列秩]
+[16] 定义 2 矩阵的行秩、列秩
+[17] 定义矩阵的列秩（column rank）等于其线性无关的列数，行秩（row rank）等于线性无关的行数。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|定理1]
+[18] 定理 1
+[19] 初等变换不改变矩阵的行秩与列秩。
+[20] 证明：
+[21] 转置矩阵后有：初等行变换不改变行秩 $\Leftrightarrow$ 初等列变换不改变列秩，以及初等行变换不改变列秩 $\Leftrightarrow$ 初等列变换不改变矩阵行秩。
+[22] 因此我们只需要分别证明一种情况。
+[23] 首先证明初等行变换不改变行秩。
+[24] 易知交换若干行不改变行秩。
+[SCOPE:s_thm1_let1|let_bind|定理1证明中的行向量组]
+[25] 设行秩为 $m$，这意味着有 $m$ 行线性无关，设这部分行向量组为 $ \boldsymbol{\mathbf{e}} _1, \boldsymbol{\mathbf{e}} _2... \boldsymbol{\mathbf{e}} _m$。
+[26] 则 i 行的 k 倍加到 j 行后行向量组为 $ \boldsymbol{\mathbf{e}} _1... \boldsymbol{\mathbf{e}} _i,...k \boldsymbol{\mathbf{e}} _i+ \boldsymbol{\mathbf{e}} _j$，合并 $ \boldsymbol{\mathbf{e}} _i$ 项，
+[27] 则行变换不改变 $\{ \boldsymbol{\mathbf{e}} _i\}^m_{i=1}$ 的线性相关性。
+[/SCOPE:s_thm1_let1]
+[28] 易证将某行乘以 $k$ 倍也不改变行秩。
+[29] 然后证明初等行变换不改变列秩。
+[SCOPE:s_thm1_let2|let_bind|定理1证明中的列向量组]
+[30] 设该初等变换矩阵为 $M$，列向量组为 $\{ \boldsymbol{\mathbf{\theta}} _i\}$，列秩为 $n$ 相当于有 $n$ 列线性无关，设为前 n 列并取这部分进行观察。
+[31] 则对该向量组进行初等行变换相当于：$M( \boldsymbol{\mathbf{\theta}} _1, \boldsymbol{\mathbf{\theta}} _2... \boldsymbol{\mathbf{\theta}} _n)=(A \boldsymbol{\mathbf{\theta}} _1,A \boldsymbol{\mathbf{\theta}} _2...A \boldsymbol{\mathbf{\theta}} _n...)$。
+[32] 由于初等变换可逆，
+[33] 则这是一个一一映射，$\{A \boldsymbol{\mathbf{\theta}} _i\}_{i=1}^n$ 依然线性无关。
+[/SCOPE:s_thm1_let2]
+[34] 所以初等行变换不改变列秩。
+[SCOPE:s_thm1_let3|let_bind|定理1结论中的对角化]
+[35] 经过初等变换，我们总可以把任意矩阵 $M$ 变换为对角矩阵，这个过程为：
+[36] \begin{equation}
+P_i...P_2P_1MQ_1,Q_2...Q_s=
+\left(\begin{array}{lllll}
+1 & & & & \\
+& 1 & & & \\
+& & 1 & & \\
+& & & \ddots & \\
+& & & & 0
+\end{array}\right)~.
+\end{equation}
+[37] 则可知矩阵的行秩等于列秩，
+[38] 因此可以被定义为矩阵的秩。
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_let3]
+[SCOPE:s_def3|description|定义3]
+[39] 定义 3
+[40] 由于任意的矩阵的行秩和列秩相等，
+[41] 因此可以直接称之为矩阵的秩（rank），记为 $ \operatorname {rank}( \boldsymbol{\mathbf{A}} )$。
+[SCOPE:s_def3_let|let_bind|定义3中的线性映射]
+[42] 由于矩阵是线性映射在特定基下的表示，设任意向量 $ \boldsymbol{\mathbf{x}} =x^i \boldsymbol{\mathbf{e}} _i$，矩阵为线性映射 $f$ 的表示，
+[43] 则第 $j$ 列为 $f( \boldsymbol{\mathbf{e}} _j)$ 且有 $M \boldsymbol{\mathbf{x}} =f(x^i \boldsymbol{\mathbf{e}} _i)=x^if( \boldsymbol{\mathbf{e}} _i)$。
+[44] 所以矩阵的秩等价于象的维度。
+
+[/SCOPE:s_def3]
+[/SCOPE:s_def3_let]
+[SCOPE:s_thm2|description|定理2]
+[45] 定理 2
+[46] 根据定义，一个矩阵的秩 $\mathcal R$ 必定小于或等于矩阵的行数 $M$ 以及列数 $N$（取较小者）：
+[47] \begin{equation}
+\mathcal R\leq \min (M, N)~.
+\end{equation}
+
+[/SCOPE:s_thm2]
+[SCOPE:s_ex1|description|例1]
+[SCOPE:s_ex1_let|let_bind|例1中的向量]
+[48] \begin{equation}
+\begin{pmatrix}1 & 1 & 4\\ 1 & 0 & 2\\ 0 & 1 & 2\end{pmatrix} ~
+\end{equation}
+[49] \begin{equation}
+\boldsymbol{\mathbf{v}} _3 = 2 \boldsymbol{\mathbf{v}} _1 + 2 \boldsymbol{\mathbf{v}} _2~,
+\end{equation}
+[50] 当然，我们也可以认为 $ \boldsymbol{\mathbf{v}} _2, \boldsymbol{\mathbf{v}} _3$ 线性无关，排除 $ \boldsymbol{\mathbf{v}} _1$，同样得到秩为 2。
+[51] 一般来说，若有
+[52] \begin{equation}
+\sum_i c_i \boldsymbol{\mathbf{v}} _i = \boldsymbol{\mathbf{0}} \qquad (c_i \ne 0)~.
+\end{equation}
+[/SCOPE:s_ex1_let]
+[53] 关于秩，有两个常用性质：
+
+[/SCOPE:s_ex1]
+[SCOPE:s_thm3|description|定理3]
+[54] 定理 3
+[55] 对于矩阵 $A,B$ 有：
+[56] \begin{equation}
+\mathcal R(AB)\le \operatorname {min}\{\mathcal R(A),\mathcal R(B)\}~.
+\end{equation}
+[57] 证明：1
+[SCOPE:s_thm3_let1|let_bind|定理3证明中的列向量]
+[58] 设行秩为 $L_r$，列秩为 $L_c$。
+[59] 设 $ \boldsymbol{\mathbf{x}} $ 为任意列向量，任意列向量 $ \boldsymbol{\mathbf{y}} \in \operatorname {Im}AB$，
+[60] 即 $ \boldsymbol{\mathbf{y}} =AB \boldsymbol{\mathbf{x}} $。
+[61] 所以 $ \boldsymbol{\mathbf{y}} \in \operatorname {Im}{A}$（象空间为列空间），
+[62] 则 $ L_c(AB)\leq L_c(A)$。
+[/SCOPE:s_thm3_let1]
+[SCOPE:s_thm3_let2|let_bind|定理3证明中的行向量]
+[63] 设 $ \boldsymbol{\mathbf{z}} $ 为任意行向量，同理得：$ \boldsymbol{\mathbf{z}} AB= \boldsymbol{\mathbf{y}} ^T\in \operatorname {Im}B$（象空间为行空间），
+[64] 所以 $L_r(AB)\leq L_r(B)$。
+[/SCOPE:s_thm3_let2]
+[65] 又因为 $L_c=L_r=\mathcal R$，综合上述得：$\mathcal R(AB)\le \operatorname {min}\{\mathcal R(A),\mathcal R(B)\}$。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|定理4]
+[66] 定理 4
+[67] 对于方阵 $A,B$，若有 $AB=0$，
+[68] 则 $\mathcal R(A)+\mathcal R(B)\le n$。
+[69] 证明：
+[SCOPE:s_thm4_let|let_bind|定理4证明中的向量]
+[70] 设 $ \boldsymbol{\mathbf{x}} $ 为任意向量，
+[71] 则 $AB \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{0}} $，也就是说 $ \operatorname {Im}B= \operatorname {ker}A$。
+[72] 结合秩定理：$ \operatorname {dim}V= \operatorname {dim} \operatorname {Im}f+ \operatorname {ker}f$ 及象维度等于矩阵的秩便可得该定理。
+
+[/SCOPE:s_thm4]
+[/SCOPE:s_thm4_let]
+[SCOPE:s_def4|description|满秩矩阵]
+[73] 定义 4 满秩矩阵
+[74a] 若 $n$ 阶方阵的秩为 $n$，我们
+[74b] 则称其为满秩矩阵（full rank matrix）。
+[75] 满秩矩阵意味着矩阵中所有行（列）都线性无关。
+[76] 从运算可知，n 阶方阵是 n 维空间的线性变换，
+[77] 因此若方阵满秩，也可称该线性变换满秩。
+[78] 判断一个方阵是否为满秩矩阵的一种常见方法是计算方阵的行列式，若结果不为零，
+[79] 则矩阵是满秩的，否则不是（定理 7 ）。
+[80] 注意非满秩的情况下行列式并不能判断秩具体是多少。
+[81] 另一种更简单的方法是使用下面的高斯消元法。
+
+[/SCOPE:s_def4]
+[SCOPE:s_gauss|description|高斯消元法计算秩]
+[82] 要确定任意矩阵秩的大小，我们可以先用高斯消元法将矩阵变换为梯形矩阵。
+[83] 矩阵的秩数就是梯形矩阵中不为零的行数。
+[84] 这是因为行变换不会改变矩阵的秩。
+[SCOPE:s_gauss_let|let_bind|高斯消元法中的行变换]
+[85] 证明：如果通过行变换可以把矩阵的某行变为零，
+[86] 那么就说明该行必定可以表示为其他行的线性组合；
+[87] 而梯形矩阵中每一个不为零的行都无法通过行变换变为零，
+[88] 所以他们都是线性无关的（具体证明留作习题）。
+[/SCOPE:s_gauss_let]
+[89] 证毕。
+
+[/SCOPE:s_gauss]
+[SCOPE:s_ex2|description|例2]
+[SCOPE:s_ex2_let|let_bind|例2中的行变换]
+[90] 我们用高斯消元法计算式 3 的秩，该矩阵经过行变换 $ \boldsymbol{\mathbf{r}} _2 \leftrightarrow \boldsymbol{\mathbf{r}} _1$，$ \boldsymbol{\mathbf{r}} _2 - \boldsymbol{\mathbf{r}} _1$，$ \boldsymbol{\mathbf{r}} _3 - \boldsymbol{\mathbf{r}} _2$ 后变为梯形矩阵
+[91] \begin{equation}
+\begin{pmatrix}1 & 0 & 2\\ 0 & 1 & 2\\ 0 & 0 & 0\end{pmatrix} ~
+\end{equation}
+[/SCOPE:s_ex2_let]
+[92] 同理，我们也可以把矩阵先做转置再用高斯消元法计算其线性无关的列。
+[93] 这么做可以验证给定矩阵的行秩等于列秩。
+[/SCOPE:s_ex2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理1证明行秩等于列秩，为定义3铺垫"
+  },
+  {
+    "source_scope": "s_def3",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定义3给出秩的定义，定理2给出秩的上界"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是线性相关性的具体例子"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理3给出秩的乘积不等式"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_def3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理4给出秩的和不等式"
+  },
+  {
+    "source_scope": "s_def4",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "满秩矩阵是秩的特殊情况"
+  },
+  {
+    "source_scope": "s_gauss",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "高斯消元法基于初等变换不改变秩"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_gauss",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2是高斯消元法的具体应用"
+  }
+]

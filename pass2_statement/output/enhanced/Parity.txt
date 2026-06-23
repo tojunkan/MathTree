@@ -1,0 +1,42 @@
+[SCOPE:root|description|宇称算符]
+文章名: Parity
+标题: 宇称算符
+
+[0] 贡献者： addis
+[1] 预备知识 多元函数积分和宇称
+[SCOPE:s_parity_def|description|宇称算符定义]
+[SCOPE:s_parity_let|let_bind|变量 f 和 x]
+[2] 对多元函数 $f( \boldsymbol{\mathbf{x}} ) = f(x_1, \dots, x_N)$。
+[3] 定义宇称算符 $\Pi$ 如下
+[4] \begin{equation}
+\Pi f( \boldsymbol{\mathbf{x}} ) = f(- \boldsymbol{\mathbf{x}} )~.
+\end{equation}
+[/SCOPE:s_parity_let]
+[5] 若函数内积定义为（星号表示复共轭）
+[6] \begin{equation}
+\left\langle f \middle| g \right\rangle = \int f^*( \boldsymbol{\mathbf{x}} ) g( \boldsymbol{\mathbf{x}} ) \,\mathrm{d}^{N}{x} ~,
+\end{equation}
+[7] 容易证明宇称算符是一个厄米算符。
+[/SCOPE:s_parity_def]
+[SCOPE:s_parity_eigen|description|宇称算符本征值]
+[SCOPE:s_eigen_let|let_bind|本征方程变量]
+[8] 对本征方程
+[9] \begin{equation}
+\Pi f( \boldsymbol{\mathbf{x}} ) = \lambda f( \boldsymbol{\mathbf{x}} )~,
+\end{equation}
+[10] 容易证明1宇称算符的本征值 $\lambda$ 只可能等于 $1$ 或 $-1$。
+[/SCOPE:s_eigen_let]
+[11] 我们说 $\lambda = 1$ 的函数具有偶宇称（even parity），$\lambda = -1$ 的函数具有奇宇称（odd parity）。
+[12] 它们分别满足
+[13] \begin{equation}
+f(- \boldsymbol{\mathbf{x}} ) = \pm f( \boldsymbol{\mathbf{x}} )~.
+\end{equation}
+[14] 对于一元函数，具有奇宇称的就是奇函数（odd function），具有偶宇称的就是偶函数（even function）。
+[15] 1. ^ 分别令 $ \boldsymbol{\mathbf{x}} $ 为某对称的两点 $ \boldsymbol{\mathbf{x}} _1$ 和 $- \boldsymbol{\mathbf{x}} _1$，使函数值不为零。
+[16] 本征方程要求 $f(- \boldsymbol{\mathbf{x}} _1) = \lambda f( \boldsymbol{\mathbf{x}} _1)$ 且 $f( \boldsymbol{\mathbf{x}} _1) = \lambda f(- \boldsymbol{\mathbf{x}} _1)$，
+[17] 所以必有 $\lambda^2 = 1$，$\lambda = \pm 1$。
+
+跨文章引用:
+  [L0] 内积 → InerPd
+[/SCOPE:s_parity_eigen]
+[/SCOPE:root]

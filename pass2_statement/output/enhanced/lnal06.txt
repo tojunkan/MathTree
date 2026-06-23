@@ -1,0 +1,63 @@
+[SCOPE:root|description|乘积空间]
+文章名: lnal06
+标题: 乘积空间
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=乘积空间
+  [1] type=theorem heading=定理 1 title=乘积空间的维度
+
+[SCOPE:s_def1|description|定义 1 乘积空间]
+[0] 定义 1 乘积空间
+[SCOPE:s_def1_let|let_bind|乘积空间定义中的变量]
+[1] 给定域 $\mathbb F $ 上的线性空间 $U$ 与 $V$，定义 $U\times V=\{(u, v)|u \in U, v \in V\}$ 上的数乘和加法运算为：
+[2] \begin{equation}
+\left\{\begin{aligned}
+a \cdot (u, v) &= (a \cdot u, a \cdot v), \quad \forall a \in \mathbb F\\
+(u_1, v_1) + (u_2, v_2) &= (u_1 + u_2, v_1 + v_2)
+\end{aligned}\right.~
+\end{equation}
+[3] 根据该定义，我们容易验证积空间在数乘和加法下封闭。
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_thm1|description|定理 1 乘积空间的维度]
+[SCOPE:s_thm1_let|let_bind|定理1中的基变量]
+[4] 若令 $\{x_i\}^r_{i=1}$ 和 $\{y_i\}^s_{i=1}$ 分别为 $U$ 与 $V$ 的基，我们也容易验证 $\{(x_i, 0)\}^r_{i=1}\cup \{(0, y_i)\}^s_{i=1}$ 为乘积空间的一组基。
+[SCOPE:s_thm1_proof|description|定理1的证明（未完成）]
+[5] 【未完成】证明
+
+[/SCOPE:s_thm1_let]
+[/SCOPE:s_thm1_proof]
+[6] 定理 1 乘积空间的维度
+[7] 给定域 $\mathbb F $ 上的线性空间 $U$ 与 $V$，
+[8] $$
+\dim(U \times V) = \dim(U) + \dim(V)~.
+$$
+
+[/SCOPE:s_thm1]
+[SCOPE:s_direct_sum|description|乘积空间与直和空间]
+[SCOPE:s_direct_sum_let|let_bind|子空间定义中的变量]
+[9] 对于乘积空间 $U \times V$，我们定义两个子空间
+[10] $$
+\begin{aligned}
+\tilde{U}: &= U \times \{0\} , \\
+\tilde{V}: &= \{0\} \times V ,
+\end{aligned}~
+$$
+[11] 可以证明 $\tilde{U} \oplus \tilde{V} = U \times V$。
+[/SCOPE:s_direct_sum_let]
+[12] 这也是为什么乘积空间也被称为外直和的原因。
+[13] 【未完成】反过来我们也可以从一个向量空间的两个子空间开始解释这个现象
+[/SCOPE:s_direct_sum]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的结论基于定义1的乘积空间概念"
+  }
+]

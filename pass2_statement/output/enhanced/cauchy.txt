@@ -1,0 +1,135 @@
+[SCOPE:root|description|柯西序列、完备度量空间]
+文章名: cauchy
+标题: 柯西序列、完备度量空间
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=柯西序列
+  [1] type=definition heading=定义 2 title=收敛和发散序列
+  [2] type=theorem heading=定理 1 title=
+  [3] type=theorem heading=定理 2 title=
+  [4] type=definition heading=定义 3 title=完备空间
+
+[SCOPE:s_def1|description|定义1 柯西序列]
+[0] 定义 1 柯西序列
+[SCOPE:s_def1_let|let_bind|柯西序列的变量]
+[1a] 给定某个度量空间 $X$ 中的序列 $ \left\{x_i \right\} $
+[1b] 当满足以下条件时，他，则叫做柯西序列（Cauchy sequence）。
+[2a] 对任意 $\varepsilon > 0$，存在 $N$
+[2b] 当 $m, n \geqslant N$ 时，则满足 $d(x_m, x_n) < \varepsilon$。
+[3] 也就是说，柯西序列要求随着项数趋于无穷，该项之后的所有项之间的距离趋于零。
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_def2|description|定义2 收敛和发散序列]
+[4] 定义 2 收敛和发散序列
+[5] 度量空间中的序列称为收敛的（convergent）当且仅当它存在极限。
+[6a] 如果序列不收敛，那它
+[6b] 则是发散的（divergent）。
+[7] 注意这里的 “存在极限” 要求极限点在所讨论的度量空间中，
+[8] 所以即使是同一个序列，在不同的空间中也可能收敛或发散。
+[9] 例如（式 1 ）一个有理数的数列在实数空间中可能会收敛到一个无理数，
+[10] 但在有理数空间中则不收敛。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|定理1]
+[11] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[12] 如果度量空间 $X$ 中的某个序列存在极限（定义 5 ），
+[13] 则它是一个柯西序列。
+[/SCOPE:s_thm1_let]
+[14] 证明留做习题。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理2]
+[15] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[16] 度量空间 $X$ 中的柯西序列 $ \left\{x_n \right\} $ 若在 $X$ 中不存在极限。
+[17] 则可以定义一个新的元素 $x \notin X$，并定义它和任意 $y\in X$ 的距离为（可以证明该极限存在）
+[/SCOPE:s_thm2_let]
+[18] \begin{equation}
+d(x, y) = \lim_{n\to\infty} d(x_n, y)~,
+\end{equation}
+[SCOPE:s_thm2_proof|description|定理2的证明]
+[19] 证明：由度量空间中的三角不等式，我们有
+[20] \begin{equation}
+d(x_n,y)-d(x_m,y)\leq d(x_n,x_m)~.
+\end{equation}
+[21] 由于序列 $ \left\{x_i \right\} $ 为柯西序列，
+[22a] 故 $\forall\varepsilon>0$，$\exists N$
+[22b] 当 $n,m>N$ 时，则有 $d(x_n,x_m)<\varepsilon$。
+[SCOPE:s_thm2_proof_let1|let_bind|证明中的变量y_i]
+[23] 这意味着若令 $y_i=d(x_i,y)$，
+[24] 则 $ \left\{y_i \right\} $ 为柯西序列。
+[25] 又 $d(x_i,y)\in \mathbb R$，
+[26] 所以 ${y_i}$ 为实数域上的柯西序列。
+[27] 对实数域上的柯西序列，有柯西收敛原理，
+[28] 即实数域上的柯西序列恒有有限极限存在。
+[29] 所以 $ \left\{y_i \right\} $ 极限存在。
+[/SCOPE:s_thm2_proof_let1]
+[SCOPE:s_thm2_proof_let2|let_bind|证明中的极限d(x,y)]
+[30] 若令此极限为 $d(x,y)$，
+[31] 即
+[32] \begin{equation}
+d(x, y) = \lim_{n\to\infty} d(x_n, y)~.
+\end{equation}
+[33a] 则 $\forall\varepsilon>0$，$\exists N$
+[33b] 当 $n>N$ 时，则有
+[34] \begin{equation}
+|d(x,y)-d(x_n,y)|<\varepsilon~.
+\end{equation}
+[35] 注意 $y$ 任意，令 $y=x_n$，就有
+[36] \begin{equation}
+d(x,x_n)<\varepsilon~.
+\end{equation}
+[37] 即对 $x$ 加入 $X$ 后构成的度量空间 $X'$，在 $X'$ 中 $x$ 是序列 $ \left\{x_i \right\} $ 的极限。
+[/SCOPE:s_thm2_proof_let2]
+[38] 注意一些教材中对 “收敛” 的定义更为严格，
+[39] 即只把上述定义中 $x \in X$ 的情况称为收敛。
+[40] 在这种定义下，一些柯西数列既不收敛也不发散（定理 2 中 $x\notin X$ 的情况）。
+[41] 实数域 $\mathbb R$ 上的柯西序列必定是收敛的，这使我们可以通过判断数列是否为柯西序列从而判断该序列是否收敛。
+[42] 但如果我们从 $\mathbb R$ 中把收敛的那点挖走，
+[43] 那么这个柯西序列在这个集合中就不收敛。
+[44] 所以柯西序列是否收敛取决于它所属于的集合。
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_proof]
+[SCOPE:s_def3|description|定义3 完备空间]
+[45] 定义 3 完备空间
+[46a] 如果度量空间 $X$ 中任意柯西序列都收敛到 $x\in X$（
+[46b] 则存在极限），
+[47] 那么该度量空间就是完备（complete）的。
+[48] 在定理 2 中我们介绍了一种方法，可以给不完备度量空间 $X$ 不断加入新的元素。
+[49a] 如果我们不断重复这一过程
+[49b] 则可以在 $X$ 的基础上得到一个最小的完备空间，叫做 $X$ 的完备化空间（complete metric space）。
+[50] “完备” 可以形象理解为空间中没有 “漏洞”。
+[51] 有限维空间都是完备的。
+[52] 可数维空间都是不完备的。
+[53] 例如有理数集和多项式组成的空间就是不完备的（柯西序列的极限可以是 $ \mathrm{e} ^x$，
+[54] 但是 $ \mathrm{e} ^x$ 并不属于该空间）。
+[/SCOPE:s_def3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是定义1的特例：收敛序列是柯西序列"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2给出柯西序列无极限时的构造"
+  },
+  {
+    "source_scope": "s_def3",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "完备空间定义依赖于定理2的构造"
+  }
+]

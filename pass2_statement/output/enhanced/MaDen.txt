@@ -1,0 +1,39 @@
+[SCOPE:root|description|度量空间的稠密性]
+文章名: MaDen
+标题: 度量空间的稠密性
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=稠密子集
+  [1] type=definition heading=定义 2 title=无处稠密
+  [2] type=definition heading=定义 3 title=可分空间
+
+[SCOPE:s_dense|description|稠密子集]
+[0] 定义 1 稠密子集
+[SCOPE:s_dense_let|let_bind|稠密子集的变量]
+[1] 设 $A,B$ 是度量空间 $X$ 的两个子集。
+[2] 若 $A\subset [B]$，
+[/SCOPE:s_dense_let]
+[3] 则称 $B$ 在 $A$ 中稠密。
+[4] 若 $[A]=X$，
+[5] 则称 $A$ 在 $X$ 中处处稠密。
+[6] 由上面定义，若 $A$ 在 $B$ 中不稠密，
+[7] 则 $B$ 中包含有另一与 $A$ 无任一公共点的球 $B'$。
+
+[/SCOPE:s_dense]
+[SCOPE:s_nowhere|description|无处稠密]
+[8] 定义 2 无处稠密
+[SCOPE:s_nowhere_let|let_bind|无处稠密的变量]
+[9] 若度量空间 $X$ 的子集 $A$ 在任一球中不稠密，
+[/SCOPE:s_nowhere_let]
+[10] 则称 $A$ 无处稠密（或处处不稠密）。
+
+[/SCOPE:s_nowhere]
+[SCOPE:s_separable|description|可分空间]
+[11] 定义 3 可分空间
+[SCOPE:s_separable_let|let_bind|可分空间的变量]
+[12] 设 $X$ 是度量空间。
+[/SCOPE:s_separable_let]
+[13] 若 $A\subset X$ 处处稠密且可数，
+[14] 则称 $X$ 是可分空间。
+[/SCOPE:s_separable]
+[/SCOPE:root]

@@ -1,0 +1,162 @@
+[SCOPE:root|description|复合函数求导、链式法则（极简微积分）]
+文章名: ChainR
+标题: 复合函数求导、链式法则（极简微积分）
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=基本初等函数的复合函数求导
+  [1] type=example heading=例 2 title=
+  [2] type=example heading=例 3 title=加速运动公式
+
+[SCOPE:s_ex1|description|例 1 基本初等函数的复合函数求导]
+[0] 例 1 基本初等函数的复合函数求导
+[1] 我们已经知道基本初等函数的导数的导函数，下面对它们的一些常见的复合函数进行求导：
+[SCOPE:s_ex1_let1|let_bind|sin^2 u 的变量]
+[2a] (u) = u^2$ 和 $g
+[2b] (x) = \sin x$ 的复合函数，已知 $f'
+[2c] (u) = 2u$，$g'
+[2d] (x) = \cos x$，代入式 1 得
+[3] \begin{equation}
+(\sin^2 x)' = 2\sin x \cos x~.
+\end{equation}
+[/SCOPE:s_ex1_let1]
+[SCOPE:s_ex1_let2|let_bind|sqrt(x^2+a^2) 的变量]
+[4a] (u) = \sqrt{u}$ 和多项式 $g
+[4b] (x) = x^2 + a^2$ 的复合函数，$f'
+[4c] (u) = 1/(2\sqrt u)$，$g'
+[4d] (x) = 2 x$，代入式 1 得
+[5] \begin{equation}
+1/(2\sqrt{x^2 + a^2}) \cdot 2 x = \frac{x}{x^2 + a^2}~.
+\end{equation}
+
+[/SCOPE:s_ex1]
+[/SCOPE:s_ex1_let2]
+[SCOPE:s_geom|description|几何理解]
+[6] 以下推导用到了微分的记号。
+[7] 推导开始
+[8a] (u) = u^2$ 和 $g
+[8b] (x) = \sin x$ 的复合函数
+[9] 我们可以用类似图 1 的图像来直观地理解复合函数。
+[10a] (u)$ 和 $u = g
+[10b] (x)$ 的图像，并将 $f
+[10c] (u)$ 的图像逆时针旋转 $90^\circ$ 使得两图的 $u$ 轴对齐。
+[11a] (x)$ 的图中画出 $u$ 的位置，再对应到 $f
+[11b] (u)$ 的图像中求出 $y$ 的位置即可。
+[SCOPE:s_geom_let|let_bind|几何推导中的变量]
+[12a] (x)$ 和 $g'
+[12b] (u)$（假设它们在定义域内处处可导）如何求复合函数 $f(g
+[12c] (x))$ 的导数。
+[13] 对于给定的 $x$，我们先来看当 $x$ 增加 $\Delta x$ 时 $y$ 的增量 $\Delta y$ 的大小。
+[14] 我们可以使用与图 1 类似的方法画出图 2 ，然后只需要令 $\Delta x \to 0$，就可以根据定义求出复合函数的导数
+[15] \begin{equation}
+f(g(x))' = \frac{\mathrm{d}}{\mathrm{d}{x}} f(g(x)) = \lim_{\Delta x\to 0} \frac{\Delta y}{\Delta x}~.
+\end{equation}
+[16] 【图解】图 2：用图 1 中的方法求出任意 $\Delta x$ 对应的 $\Delta y$
+[17] 在这个过程中，我们在得到 $\Delta y$ 之前先得到了 $u$ 的增量 $\Delta u$。
+[18] 当 $\Delta x$ 较小时有微分近似（式 2 ）
+[19] \begin{equation}
+\Delta {u} \approx g'(x) \Delta{x}~,
+\qquad
+\Delta{y} \approx f'(u) \Delta{u}~.
+\end{equation}
+[20] 当 $\Delta x \to 0$ 时对应的微分关系（
+[21] 式 3 [链接 L0]
+[22] \begin{equation}
+\,\mathrm{d}{u} = g'(x) \,\mathrm{d}{x} ~,
+\qquad
+\,\mathrm{d}{y} = f'(u) \,\mathrm{d}{u} ~.
+\end{equation}
+[23] 将上式中的左边代入右边得
+[24] \begin{equation}
+\,\mathrm{d}{y} = f'(u) g'(x) \,\mathrm{d}{x} = f'(g(x))g'(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[25] 而复合函数的微分是
+[26] \begin{equation}
+\,\mathrm{d}{y} = f(g(x))' \,\mathrm{d}{x} ~.
+\end{equation}
+[27] 对比以上两式（微分和导数的关系）得
+[28] \begin{equation}
+f(g(x))' = f'(g(x))g'(x)~,
+\end{equation}
+[29] 这就是复合函数的求导公式。
+[30] 推导完毕！
+[31] 复合函数的求导公式也叫链式法则，原因是我们可以把以上推导过程用导数的另外一种符号表示如下。
+[32] \begin{equation}
+\,\mathrm{d}{y} = \left. \frac{\mathrm{d}{y}}{\mathrm{d}{u}} \right|_u \,\mathrm{d}{u} = \left. \frac{\mathrm{d}{y}}{\mathrm{d}{u}} \right|_u \left. \frac{\mathrm{d}{u}}{\mathrm{d}{x}} \right|_x \,\mathrm{d}{x} ~,
+\end{equation}
+[33] \begin{equation}
+\left. \frac{\mathrm{d}{y}}{\mathrm{d}{x}} \right|_{x} = \left. \frac{\mathrm{d}{y}}{\mathrm{d}{u}} \right|_{u = g(x)} \left. \frac{\mathrm{d}{u}}{\mathrm{d}{x}} \right|_{x}~,
+\end{equation}
+[34] 这种书写方式让人不禁想把 $ \mathrm{d}{y}/\mathrm{d}{x} $ 看做是 $ \,\mathrm{d}{y} $ 和 $ \,\mathrm{d}{x} $ 相除，这样的符号分割是错误的，
+[35] 但这个巧合背后蕴含着更深刻的原理。
+[36] 注意：式 12 常常被简写成
+[37] \begin{equation}
+\frac{\mathrm{d}{y}}{\mathrm{d}{x}} = \frac{\mathrm{d}{y}}{\mathrm{d}{u}} \frac{\mathrm{d}{u}}{\mathrm{d}{x}} ~,
+\end{equation}
+[38] 容易造成进一步的误解。
+
+[/SCOPE:s_geom]
+[/SCOPE:s_geom_let]
+[SCOPE:s_multi_let|let_bind|多重复合变量]
+[SCOPE:s_multi|description|多重复合函数]
+[39a] (x)))$ 求导，可以先对 $f(g
+[39b] (x))$ 求导得 $f'(g
+[39c] (x))g'
+[39d] (x)$ 再得到
+[40] \begin{equation}
+h(f(g(x)))' = h'(f(g(x)))f'(g(x))g'(x)~.
+\end{equation}
+[41] 令 $v = h(y)$，用微分符号可以表示为
+[42] \begin{equation}
+\frac{\mathrm{d}{v}}{\mathrm{d}{x}} = \frac{\mathrm{d}{v}}{\mathrm{d}{y}} \frac{\mathrm{d}{y}}{\mathrm{d}{u}} \frac{\mathrm{d}{u}}{\mathrm{d}{x}} ~,
+\end{equation}
+[43] 任意多重的复合函数求导同理可得。
+
+[/SCOPE:s_multi_let]
+[/SCOPE:s_multi]
+[SCOPE:s_ex2_let|let_bind|例 2 变量]
+[SCOPE:s_ex2|description|例 2]
+[44] \begin{equation}
+\frac{1}{\sqrt{x^2+a^2}}~.
+\end{equation}
+[45] 基本初等函数的导数
+[46] \begin{equation}
+\begin{aligned}
+h'(y) &= - 1/y^2 \\
+f'(u) &= \frac{1}{2 \sqrt{u}}, \\
+g'(x) &= 2x.
+\end{aligned}~
+\end{equation}
+[47] \begin{equation}
+\begin{aligned}
+\frac{\mathrm{d}}{\mathrm{d}{x}} \frac{1}{\sqrt{x^2+a^2}} &= \left(- {1 \over x^2 + a^2}\right) \cdot \left( {1 \over 2 \sqrt{x^2 + a^2}} \right) \cdot \left( 2 x \right) \\
+&= -\frac{x}{\sqrt{(x^2+a^2)^3}}~.
+\end{aligned}~
+\end{equation}
+[48a] 一种较灵活的情况是
+[48b] 当三个变量只有一个自由度1时，任何一个变量都可以看做任何另外两个变量的函数2，这时可以根据需要灵活运用链式法，则，如例 3 。
+
+[/SCOPE:s_ex2_let]
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|例 3 加速运动公式]
+[49] 例 3 加速运动公式
+[SCOPE:s_ex3_let|let_bind|加速运动变量]
+[50a] (t)$， $v
+[50b] (t) = \mathrm{d}{x}/\mathrm{d}{t} $， $a
+[50c] (t) = \mathrm{d}{v}/\mathrm{d}{t} $，
+[51] 但若把速度 $v$ 看做复合函数 $v(x(t))$，根据链式法则有
+[52] \begin{equation}
+a = \frac{\mathrm{d}{v}}{\mathrm{d}{t}} = \frac{\mathrm{d}{v}}{\mathrm{d}{x}} \frac{\mathrm{d}{x}}{\mathrm{d}{t}} = \frac{\mathrm{d}{v}}{\mathrm{d}{x}} v~.
+\end{equation}
+[53] \begin{equation}
+\,\mathrm{d}\left(v^2 \right) = 2a \,\mathrm{d}{x} ~.
+\end{equation}
+[54] \begin{equation}
+v_2^2-v_1^2 = 2a(x_2-x_1)~,
+\end{equation}
+[55] 式 20
+[56] \begin{equation}
+v_2^2 - v_1^2 = 2\int_{x_1}^{x_2}a(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[/SCOPE:s_ex3]
+[/SCOPE:s_ex3_let]
+[/SCOPE:root]

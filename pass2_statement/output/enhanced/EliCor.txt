@@ -1,0 +1,359 @@
+[SCOPE:root|description|椭圆坐标系、椭球坐标系]
+文章名: EliCor
+标题: 椭圆坐标系、椭球坐标系
+
+[0] 3D 图
+
+[SCOPE:s_elliptic|description|椭圆坐标系]
+[1] 1
+[2] 二维平面上的椭圆坐标系（elliptic coordinate system）是一个正交曲线坐标系，它是三种三维正交曲线坐标系定义的基础，这三种正交曲线坐标系为：椭圆柱坐标系（elliptic cylindrical coordinate system）、长椭球坐标系（ellipsoidal coordinate system）和扁椭球坐标系（oblate spheroidal coordinate system）。
+[3] 椭圆坐标系的坐标线为共焦的椭圆和双曲线，椭圆柱坐标系由椭圆坐标系沿垂直于椭圆坐标面的方向投影得到；
+[4] 长（短）椭球坐标系是将椭圆坐标系绕椭圆长（短）轴方向旋转得到。
+[5] 【图解】图 1：平面椭圆坐标系（来自 Wikipedia）
+[SCOPE:s_elliptic_let1|let_bind|椭圆坐标系变量]
+[6] 椭圆坐标系上点的位置由 $(\xi,\eta)$ 这 2 个有序实数表示。
+[7] $\xi$ 的等值曲线为一组共焦椭圆族，焦距为 $2c$；
+[8] $\eta$ 的等值曲线为一组共焦的双曲线族，其焦点与椭圆族焦点相重。
+[9] $\xi$、$\eta$ 由直角坐标定义
+[10] \begin{equation}
+\left\{\begin{aligned}
+&x=c\cosh\xi\cdot\cos\eta\\
+&y=c\sinh\xi\cdot\sin\eta
+\end{aligned}\right.~,
+\end{equation}
+[11] 其中 $\xi\geq0,0\leq\eta<2\pi$。
+[/SCOPE:s_elliptic_let1]
+[12] 若令图 1 的横轴和纵轴为直角坐标的 $x, y$ 轴，容易看出椭圆和双曲线的方程分别为
+[13] \begin{equation}
+\frac{x^2}{c^2\cosh^2\xi}+\frac{y^2}{c^2\sinh^2\xi}=1~,
+\end{equation}
+[14] \begin{equation}
+\frac{x^2}{c^2\cos^2\eta}-\frac{y^2}{c^2\sin^2\eta}=1~.
+\end{equation}
+[15] 可得椭圆的离心率为 $e = 1/\cosh \xi$，双曲线的离心率为 $e = 1/ \left\lvert \cos \eta \right\rvert $。
+[16] 容易证明椭圆坐标系是一个正交曲线坐标系。
+[17] 在某点 $ \boldsymbol{\mathbf{r}} $ 处，坐标轴 $\xi$ 和 $\eta$ 的方向分别为 $ \partial \boldsymbol{\mathbf{r}} /\partial \xi $ 和 $ \partial \boldsymbol{\mathbf{r}} /\partial \eta $。
+[18] 由式 1
+[19] \begin{equation}
+\left\{
+\begin{aligned}
+& \,\mathrm{d}{x} =c\sinh\xi\cdot\cos\eta \,\mathrm{d}{\xi} -c\cosh\xi\cdot\sin\eta \,\mathrm{d}{\eta} \\
+& \,\mathrm{d}{y} =c\cosh\xi\cdot\sin\eta \,\mathrm{d}{\xi} +c\sinh\xi\cdot\cos\eta \,\mathrm{d}{\eta} \\
+\end{aligned}\right.~,
+\end{equation}
+[20] \begin{equation}
+\left\{
+\begin{aligned}
+& \partial \boldsymbol{\mathbf{r}} /\partial \xi =c\sinh\xi\cdot\cos\eta\ \hat{\boldsymbol{\mathbf{x}}} +c\cosh\xi\cdot\sin\eta\ \hat{\boldsymbol{\mathbf{y}}} \\
+& \partial \boldsymbol{\mathbf{r}} /\partial \eta =-c\cosh\xi\cdot\sin\eta\ \hat{\boldsymbol{\mathbf{x}}} +c\sinh\xi\cdot\cos\eta\ \hat{\boldsymbol{\mathbf{y}}} \\
+\end{aligned}\right.~.
+\end{equation}
+[SCOPE:s_elliptic_let2|let_bind|单位矢量定义]
+[21] 令椭圆坐标轴 $\xi$、$\eta$ 对应的单位矢量分别为 $ \hat{\boldsymbol{\mathbf{\xi}}} $、$ \hat{\boldsymbol{\mathbf{\eta}}} $，由式 1
+[22] \begin{equation}
+\left\{
+\begin{aligned}
+& \hat{\boldsymbol{\mathbf{\xi}}} =\frac{ \partial \boldsymbol{\mathbf{r}} /\partial \xi }{| \partial \boldsymbol{\mathbf{r}} /\partial \xi |}=\frac{1}{\alpha} \left(\sinh\xi\cdot\cos\eta\ \hat{\boldsymbol{\ma…[truncated]…f{r}} /\partial \eta }{| \partial \boldsymbol{\mathbf{r}} /\partial \eta |}=\frac{1}{\alpha} \left(-\cosh\xi\sin\eta\ \hat{\boldsymbol{\mathbf{x}}} +\sinh\xi\cdot\cos\eta\ \hat{\boldsymbol{\mathbf{y}}} \right) \\
+\end{aligned}\right.~.
+\end{equation}
+[23] 易求得 $ \hat{\boldsymbol{\mathbf{\xi}}} \boldsymbol\cdot \hat{\boldsymbol{\mathbf{\eta}}} = 0$, 即椭圆坐标系 $(\xi,\eta,z)$ 为正交曲线坐标系。
+
+[/SCOPE:s_elliptic]
+[/SCOPE:s_elliptic_let2]
+[SCOPE:s_cylindrical|description|椭圆柱坐标系]
+[SCOPE:s_cyl_let1|let_bind|椭圆柱坐标系变量]
+[24] 椭圆柱坐标系是在椭圆坐标系的基础上增加一垂直于椭圆坐标面的 $z$ 坐标得到，空间一点坐标用 3 个有序数 $(\xi,\eta,z)$ 表示。
+[25] 同样，若用直角坐标系定义椭圆柱坐标系，
+[26] 则
+[27] \begin{equation}
+\left\{\begin{aligned}
+&x=c\cosh\xi\cdot\cos\eta\\
+&y=c\sinh\xi\cdot\sin\eta\\
+&z=z
+\end{aligned}\right.~,
+\end{equation}
+[28] 其中 $\xi\geq0,0\leq\eta<2\pi,-\infty< z<+\infty$。
+[/SCOPE:s_cyl_let1]
+[29] 显然，式 2 、式 3 成立。
+[30] 现在情况变成：$\xi$ 的等值曲面为一组共焦椭圆柱面族，而 $\eta$ 的等值曲面为一组共焦的双曲柱面族，$z$ 的等值面为椭圆坐标面。
+[31] 只增加垂直于椭圆坐标面的坐标轴 $z$ 意味着，椭圆柱坐标系是一个正交曲线坐标系。
+[32] 其单位矢量为
+[33] \begin{equation}
+\left\{
+\begin{aligned}
+& \hat{\boldsymbol{\mathbf{\xi}}} =\frac{ \partial \boldsymbol{\mathbf{r}} /\partial \xi }{| \partial \boldsymbol{\mathbf{r}} /\partial \xi |}=\frac{1}{\sqrt{\sinh^2\xi+\sin^2\eta}} \left(\sinh\xi\cdot\cos\eta…[truncated]…eta \hat{\boldsymbol{\mathbf{y}}} \right) \\
+& \hat{\boldsymbol{\mathbf{z}}} =\frac{ \partial \boldsymbol{\mathbf{r}} /\partial z }{| \partial \boldsymbol{\mathbf{r}} /\partial z |}= \hat{\boldsymbol{\mathbf{z}}}
+\end{aligned}\right.~,
+\end{equation}
+[34] 坐标按 $(\xi,\eta,z)$ 排序是由于 $ \hat{\boldsymbol{\mathbf{\xi}}} \boldsymbol\times \hat{\boldsymbol{\mathbf{\eta}}} = \hat{\boldsymbol{\mathbf{z}}} $（类比直角坐标系 $(x,y,z)$ 中 $ \hat{\boldsymbol{\mathbf{x}}} \boldsymbol\times \hat{\boldsymbol{\mathbf{y}}} = \hat{\boldsymbol{\mathbf{z}}} $）。
+[SCOPE:s_cyl_let2|let_bind|α定义]
+[35] 以下为了方便书写，令
+[36] \begin{equation}
+\alpha \equiv \sqrt{\sinh^2\xi+\sin^2\eta}~.
+\end{equation}
+
+[/SCOPE:s_cylindrical]
+[/SCOPE:s_cyl_let2]
+[SCOPE:s_prolate|description|长椭球坐标系]
+[SCOPE:s_pro_let1|let_bind|长椭球坐标系变量]
+[37] 设二维椭圆坐标系定义在 $xOz$ 平面上，椭圆长轴与 $z$ 轴重合。
+[38] 将椭圆坐标系绕着 $z$ 轴旋转，便可得到长椭球坐标系（而绕 $x$ 轴旋转则得到扁椭球坐标系。
+[39] 不过，在扁椭球坐标系的情况我们仍选择 $z$ 轴为旋转轴，而将焦点置于 $x$ 轴上）。
+[40] 我们将另一坐标记为 $\phi$.
+[41] 现在，情况是这样的：$\xi$ 的等值曲面为旋转椭球面，$\eta$ 的等值曲面为双叶旋转双曲面。
+[42] 由旋转对称性知，任一过旋转轴 $z$ 轴的平面都是椭圆坐标面（因为该平面与原来的椭圆坐标面等价），
+[43] 那么正交性要求 $\phi$ 坐标线必是垂直于旋转轴 $z$ 轴的平面与旋转椭球面的交线。
+[44] 即 $\phi$ 等值面为一组过旋转轴 $z$ 轴的半平面。
+[45] 这意味着，$\phi$ 等值面用直角坐标表示为
+[46] \begin{equation}
+y=f(\phi)x~.
+\end{equation}
+[47] $f(\phi)$ 是 $\phi$ 等值面与 $xOy$ 面的交线与 $x$ 轴夹角的正切值，注意坐标零点选取的任意性，
+[48] 那么可取该夹角即为 $\phi$，
+[49] 则
+[50] \begin{equation}
+y\cos\phi = x\sin\phi\quad(0\geq\phi<2\pi)~.
+\end{equation}
+[51] 要该式永远成立，必有
+[52] \begin{equation}
+y = g(\xi,\eta)\sin\phi,\quad
+x = g(\xi,\eta)\cos\phi~.
+\end{equation}
+[53] $\xi$ 和 $\eta$ 的等值面用直角坐标可表示为
+[54] \begin{equation}
+\begin{aligned}
+\frac{z^2}{c^2\cosh^2\xi}+\frac{x^2+y^2}{c^2\sinh^2\xi}=1~,\\
+\frac{z^2}{c^2\cos^2\eta}-\frac{x^2+y^2}{c^2\sin^2\eta}=1~.
+\end{aligned}
+\end{equation}
+[55] 其中，$\xi\geq 0,0\leq\eta<\pi$。
+[56] $\eta$ 取值为 $[0,\pi)$ 而非 $[0,2\pi)$ 是因为长椭球坐标系应理解为半个椭圆坐标系（$\eta\in[0,\pi)$）绕 $z$ 轴旋转 $2\pi$ 得到。
+[57] 式 13 第一式两边乘 $1/\sin^2\eta$，第二式两边乘 $1/\sinh^2\xi$，再相加可消去 $x^2+y^2$ 的项，
+[58] 从而解得
+[59] \begin{equation}
+z=c\cosh\xi\cos\eta~.
+\end{equation}
+[60] 解得的 $z$ 再代入
+[61] 式 13 [链接 L0]
+[62] \begin{equation}
+x^2+y^2=c^2\sinh^2\xi\sin^2\eta~.
+\end{equation}
+[63] 式 12 [链接 L1]
+[64] \begin{equation}
+x^2+y^2=g^2(\xi,\eta)~.
+\end{equation}
+[65] 式 15 [链接 L2]
+[66] 式 16 [链接 L3]
+[67] \begin{equation}
+g(\xi,\eta)=c\sinh\xi\sin\eta~.
+\end{equation}
+[68] 式 17 [链接 L4]
+[69] 式 12 [链接 L5]
+[70] \begin{equation}
+\begin{aligned}
+x=c\sinh\xi\sin\eta\cos\phi~,\\
+y=c\sinh\xi\sin\eta\sin\phi~.
+\end{aligned}
+\end{equation}
+[71] 综上，长椭球坐标系与直角坐标系有如下关系
+[72] \begin{equation}
+\begin{aligned}
+&x=c\sinh\xi\sin\eta\cos\phi~,\\
+&y=c\sinh\xi\sin\eta\sin\phi~,\\
+&z=c\cosh\xi\cos\eta~.
+\end{aligned}
+\end{equation}
+[73] 其中，$\xi\geq 0,0\leq\eta<\pi,0\leq\phi<2\pi$.
+[/SCOPE:s_pro_let1]
+[74] 当然，这是一个正交曲线坐标系，因为我们正是由正交性条件得到的式 19 。
+[SCOPE:s_pro_let2|let_bind|长椭球单位矢量]
+[75] 与椭圆坐标系和椭圆柱坐标系求单位矢量的方法一样，我们得到下面的结果
+[76] \begin{equation}
+\begin{aligned}
+& \hat{\boldsymbol{\mathbf{\xi}}} =\frac{1}{\alpha} \left(\cosh\xi\sin\eta\cos\phi \hat{\boldsymbol{\mathbf{x}}} +\cosh\xi\sin\eta\sin\phi \hat{\boldsymbol{\mathbf{y}}} +\sinh\xi\cos\eta \hat{\boldsymbol{\mathbf{z}}} …[truncated]…hbf{z}}} \right) ~,\\
+& \hat{\boldsymbol{\mathbf{\phi}}} =\frac{1}{\sqrt{2}\sinh\xi\sin\eta} \left(-\sinh\xi\sin\eta\sin\phi \hat{\boldsymbol{\mathbf{x}}} +\sinh\xi\sin\eta\cos\phi \hat{\boldsymbol{\mathbf{y}}} \right) ~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_prolate]
+[/SCOPE:s_pro_let2]
+[SCOPE:s_oblate|description|扁椭球坐标系]
+[SCOPE:s_obl_let1|let_bind|扁椭球坐标系变量]
+[77] 扁椭球坐标系是由长轴在 $x$ 轴，椭圆坐标面在 $xOz$ 面中的椭圆坐标系绕 $z$ 轴旋转得到的。
+[78] 由此可知，椭圆坐标系的两个焦点，变为一个半径为 $c$ 的圆，包含于三维空间的 $xOy$ 平面。
+[79] 称这圆为焦圆，又称为参考圆。
+[80] 与长椭球坐标系一样的做法，我们可得到扁椭球坐标系与直角坐标系的关系
+[81] \begin{equation}
+\begin{aligned}
+&x=c\cosh\xi\cos\eta\cos\phi~,\\
+&y=c\cosh\xi\cos\eta\sin\phi~,\\
+&z=c\sinh\xi\sin\eta~.
+\end{aligned}
+\end{equation}
+[82] 其中，$\xi\geq 0,-\frac{\pi}{2}\leq\eta<\frac{\pi}{2},-\pi\leq\phi<\pi$。
+[/SCOPE:s_obl_let1]
+[83] 这里，$\phi$ 取 $[-\pi,<\pi)$ 只不过是将 $\phi$ 坐标的起点选为 $-\pi$.
+[SCOPE:s_obl_let2|let_bind|扁椭球单位矢量]
+[84] 扁椭球坐标系中坐标的单位矢量为
+[85] \begin{equation}
+\begin{aligned}
+& \hat{\boldsymbol{\mathbf{\xi}}} =\frac{1}{\alpha} \left(\sinh\xi\cos\eta\cos\phi \hat{\boldsymbol{\mathbf{x}}} +\sinh\xi\cos\eta\sin\phi \hat{\boldsymbol{\mathbf{y}}} +\cosh\xi\sin\eta \hat{\boldsymbol{\mathbf{z}}} …[truncated]…hbf{z}}} \right) ~,\\
+& \hat{\boldsymbol{\mathbf{\phi}}} =\frac{1}{\sqrt{2}\cosh\xi\cos\eta} \left(-\cosh\xi\cos\eta\sin\phi \hat{\boldsymbol{\mathbf{x}}} +\cosh\xi\cos\eta\cos\phi \hat{\boldsymbol{\mathbf{y}}} \right) ~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_oblate]
+[/SCOPE:s_obl_let2]
+[SCOPE:s_lame|description|拉梅系数]
+[86] 我们先来求三个正交曲线坐标系的拉梅系数 $\Big| \partial \boldsymbol{\mathbf{r}} /\partial q_i \Big|\;(i=1,2,3)$，其中 $q_i$ 为坐标系的 3 个坐标。
+[87] 由式 7 ，得椭圆柱坐标系的拉梅系数
+[88] \begin{equation}
+H_\xi=H_\eta=c\alpha ~,\quad \quad H_z=1~.
+\end{equation}
+[89] 式 19 [链接 L6]
+[90] ，得长椭球坐标系的拉梅系数
+[91] \begin{equation}
+H_\xi=H_\eta=c\alpha~, \quad \quad H_\phi=\sqrt{2}c\sinh\xi\sin\eta~.
+\end{equation}
+[92] 式 21 [链接 L7]
+[93] ，得扁椭球坐标系的拉梅系数
+[94] \begin{equation}
+H_\xi=H_\eta=c\alpha ~,\quad \quad H_\phi=\sqrt{2}c\cosh\xi\cos\eta~.
+\end{equation}
+
+[/SCOPE:s_lame]
+[SCOPE:s_vec_cyl|description|椭圆柱坐标系矢量算符]
+[95] 结合式 4 到式 8 ，注意这里，$u=\xi,v=\eta,w=z,H_\xi=f,H_\eta=g,H_z=h$，得
+[96] \begin{equation}
+\boldsymbol\nabla s = \frac{1}{c\alpha} \frac{\partial s}{\partial \xi} \hat{\boldsymbol{\mathbf{\xi}}} + \frac{1}{c\alpha} \frac{\partial s}{\partial \eta} \hat{\boldsymbol{\mathbf{\eta}}} + \frac{\partial s}{\partial z} \hat{\boldsymbol{\mathbf{z}}} ~.
+\end{equation}
+[97] \begin{equation}
+\begin{aligned}
+\boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{A}} = &\frac{1}{c^2 \left(\sinh^2\xi+\sin^2\eta \right) }\Bigg[ \frac{\partial}{\partial{\xi}} (c\alpha A_\xi) \\&+ \frac{\partial}{\partial{\eta}} \left(c\alpha A_\eta \right) + \frac{\partial}{\partial{z}} \left(c^2 \left(\sinh^2\xi+\sin^2\eta \right) A_z \right) \Bigg]~.
+\end{aligned}
+\end{equation}
+[98] \begin{equation}
+\begin{aligned}
+& \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{A}} = \frac{1}{c\alpha} \left[ \frac{\partial}{\partial{\eta}} A_z - \frac{\partial}{\partial{z}} \left(c\alpha A_\eta \right) \right] \hat{\boldsymbol{\mat…[truncated]…&\frac{1}{c^2 \left(\sinh^2\xi+\sin^2\eta \right) } \left[ \frac{\partial}{\partial{\xi}} \left(c\alpha A_\eta \right) - \frac{\partial}{\partial{\eta}} \left(c\alpha A_\xi \right) \right] \hat{\boldsymbol{\mathbf{z}}} ~.
+\end{aligned}
+\end{equation}
+[99] \begin{equation}
+\boldsymbol{\nabla}^2 s = \frac{1}{c^2 \left(\sinh^2\xi+\sin^2\eta \right) } \left( \frac{\partial^{2}{s}}{\partial{\xi}^{2}} + \frac{\partial^{2}{s}}{\partial{\eta}^{2}} \right) + \frac{\partial^{2}{s}}{\partial{z}^{2}} ~.
+\end{equation}
+
+[/SCOPE:s_vec_cyl]
+[SCOPE:s_vec_pro|description|长椭球坐标系矢量算符]
+[100] 这里，$u=\xi,v=\eta,w=\phi,H_\xi=f,H_\eta=g,H_\phi=h$，同样有
+[101] \begin{equation}
+\boldsymbol\nabla s = \frac{1}{c\alpha} \frac{\partial s}{\partial \xi} \hat{\boldsymbol{\mathbf{\xi}}} + \frac{1}{c\alpha} \frac{\partial s}{\partial \eta} \hat{\boldsymbol{\mathbf{\eta}}} + \frac{1}{\sqrt{2}c\sinh\xi\sin\eta} \frac{\partial s}{\partial \phi} \hat{\boldsymbol{\mathbf{\phi}}} ~.
+\end{equation}
+[102] \begin{equation}
+\begin{aligned}
+\boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{A}} = &\frac{1}{c\sinh\xi\sin\eta \left(\sinh^2\xi+\sin^2\eta \right) }\Bigg[\sin\eta \frac{\partial}{\partial{\xi}} (\sinh\xi\alpha A_\xi) \\&+ \sinh\xi \frac{\partial}{\partial{\eta}} \left(\sin\eta\alpha A_\eta \right) + \frac{\sinh^2\xi+\sin^2\eta}{\sqrt{2}} \frac{\partial}{\partial{\phi}} A_\phi\Bigg]~.
+\end{aligned}
+\end{equation}
+[103] \begin{equation}
+\begin{aligned}
+\boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{A}} =& \frac{1}{\sqrt{2}c\sinh\xi\sin\eta\alpha} \left[\sqrt{2}\sinh\xi \frac{\partial}{\partial{\eta}} \left(\sin\eta
+A_\phi \right) - \alpha \frac{\partial}…[truncated]…&+\frac{1}{c \left(\sinh^2\xi+\sin^2\eta \right) } \left[ \frac{\partial}{\partial{\xi}} \left(\alpha A_\eta \right) - \frac{\partial}{\partial{\eta}} \left(\alpha A_\xi \right) \right] \hat{\boldsymbol{\mathbf{\phi}}} ~.
+\end{aligned}
+\end{equation}
+[104] \begin{equation}
+\begin{aligned}
+\boldsymbol{\nabla}^2 s &= \frac{1}{c^2\sinh\xi\sin\eta \left(\sinh^2\xi+\sin^2\eta \right) } \left[\sin\eta \frac{\partial}{\partial{\xi}} \left(\sinh\xi \frac{\partial s}{\partial \xi} \right) + \sinh\xi \frac{\partial}{\partial{\eta}} \left(\sin\eta \frac{\partial s}{\partial \eta} \right) \right] \\
+& + \frac{1}{2c^2\sinh^2\xi\sin^2\eta } \frac{\partial^{2}{s}}{\partial{\phi}^{2}} ~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_vec_pro]
+[SCOPE:s_vec_obl|description|扁椭球坐标系矢量算符]
+[105] 同样的，这里有
+[106] \begin{equation}
+\boldsymbol\nabla s = \frac{1}{c\alpha} \frac{\partial s}{\partial \xi} \hat{\boldsymbol{\mathbf{\xi}}} + \frac{1}{c\alpha} \frac{\partial s}{\partial \eta} \hat{\boldsymbol{\mathbf{\eta}}} + \frac{1}{\sqrt{2}c\cosh\xi\cos\eta} \frac{\partial s}{\partial \phi} \hat{\boldsymbol{\mathbf{\phi}}} ~.
+\end{equation}
+[107] \begin{equation}
+\begin{aligned}
+\boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{A}} = &\frac{1}{c\cosh\xi\cos\eta \left(\sinh^2\xi+\sin^2\eta \right) }\Bigg[\cos\eta \frac{\partial}{\partial{\xi}} (\cosh\xi\alpha A_\xi) \\&+ \cosh\xi \frac{\partial}{\partial{\eta}} \left(\cos\eta\alpha A_\eta \right) + \frac{\sinh^2\xi+\sin^2\eta}{\sqrt{2}} \frac{\partial}{\partial{\phi}} A_\phi\Bigg]~.
+\end{aligned}
+\end{equation}
+[108] \begin{equation}
+\begin{aligned}
+\boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{A}} =& \frac{1}{\sqrt{2}c\cosh\xi\cos\eta\alpha} \left[\sqrt{2}\cosh\xi \frac{\partial}{\partial{\eta}} \left(\cos\eta
+A_\phi \right) - \alpha \frac{\partial}…[truncated]…&+\frac{1}{c \left(\sinh^2\xi+\sin^2\eta \right) } \left[ \frac{\partial}{\partial{\xi}} \left(\alpha A_\eta \right) - \frac{\partial}{\partial{\eta}} \left(\alpha A_\xi \right) \right] \hat{\boldsymbol{\mathbf{\phi}}} ~.
+\end{aligned}
+\end{equation}
+[109] \begin{equation}
+\begin{aligned}
+\boldsymbol{\nabla}^2 s &= \frac{1}{c^2\cosh\xi\cos\eta \left(\sinh^2\xi+\sin^2\eta \right) } \left[\cos\eta \frac{\partial}{\partial{\xi}} \left(\cosh\xi \frac{\partial s}{\partial \xi} \right) + \cosh\xi \frac{\partial}{\partial{\eta}} \left(\cos\eta \frac{\partial s}{\partial \eta} \right) \right] \\
+&+ \frac{1}{2c^2\cosh^2\xi\cos^2\eta } \frac{\partial^{2}{s}}{\partial{\phi}^{2}} ~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_vec_obl]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cylindrical",
+    "target_scope": "s_elliptic",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "椭圆柱坐标系是椭圆坐标系沿z轴投影得到"
+  },
+  {
+    "source_scope": "s_prolate",
+    "target_scope": "s_elliptic",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "长椭球坐标系由椭圆坐标系绕长轴旋转得到"
+  },
+  {
+    "source_scope": "s_oblate",
+    "target_scope": "s_elliptic",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "扁椭球坐标系由椭圆坐标系绕短轴旋转得到"
+  },
+  {
+    "source_scope": "s_lame",
+    "target_scope": "s_cylindrical",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "拉梅系数由椭圆柱坐标系推导"
+  },
+  {
+    "source_scope": "s_lame",
+    "target_scope": "s_prolate",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "拉梅系数由长椭球坐标系推导"
+  },
+  {
+    "source_scope": "s_lame",
+    "target_scope": "s_oblate",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "拉梅系数由扁椭球坐标系推导"
+  },
+  {
+    "source_scope": "s_vec_cyl",
+    "target_scope": "s_cylindrical",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "矢量算符基于椭圆柱坐标系"
+  },
+  {
+    "source_scope": "s_vec_pro",
+    "target_scope": "s_prolate",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "矢量算符基于长椭球坐标系"
+  },
+  {
+    "source_scope": "s_vec_obl",
+    "target_scope": "s_oblate",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "矢量算符基于扁椭球坐标系"
+  }
+]

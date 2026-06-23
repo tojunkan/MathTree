@@ -1,0 +1,86 @@
+[SCOPE:root|description|叉乘的矩阵形式]
+文章名: CrosMt
+标题: 叉乘的矩阵形式
+
+[SCOPE:s_main|description|叉乘的矩阵表示]
+[SCOPE:s_main_let1|let_bind|引入 a, b, c, A]
+[0] 对任意矢量 $ \boldsymbol{\mathbf{a}} $ 和 $ \boldsymbol{\mathbf{b}} $，令
+[1] \begin{equation}
+\boldsymbol{\mathbf{c}} = \boldsymbol{\mathbf{a}} \boldsymbol\times \boldsymbol{\mathbf{b}} ~.
+\end{equation}
+[2] 该运算可以看作列矢量 $ \boldsymbol{\mathbf{b}} $ 到列矢量 $ \boldsymbol{\mathbf{c}} $ 的线性变换。
+[3] 我们知道线性变换可以用
+[4] 矩阵 [链接 L0]
+[5] 表示，
+[6] 所以必存在矩阵 $ \boldsymbol{\mathbf{A}} $，满足
+[7] \begin{equation}
+\boldsymbol{\mathbf{c}} = \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{b}} ~.
+\end{equation}
+[8] 令 $ \boldsymbol{\mathbf{a}} $ 的坐标为 $(a_x, a_y, a_z)$，根据叉乘的分量表达式（
+[9] 式 12 [链接 L1]
+[10] ），易得变换矩阵为
+[11] \begin{equation}
+\boldsymbol{\mathbf{A}} = \begin{pmatrix}
+0 & -a_z & a_y\\
+a_z & 0 & -a_x\\
+-a_y & a_x & 0
+\end{pmatrix} ~\end{equation}
+[/SCOPE:s_main_let1]
+[12] 这是一个
+[13] 反对称矩阵
+[14] \begin{equation}
+\boldsymbol{\mathbf{A}} ^{\mathrm{T}} = - \boldsymbol{\mathbf{A}} ~.
+\end{equation}
+[SCOPE:s_main_let2|let_bind|引入 B]
+[15] 类似地，也有
+[16] \begin{equation}
+\boldsymbol{\mathbf{c}} ^{\mathrm{T}} = \boldsymbol{\mathbf{a}} ^{\mathrm{T}} \boldsymbol{\mathbf{B}} ~,
+\end{equation}
+[17] 其中 $ \boldsymbol{\mathbf{B}} $ 的定义和 $ \boldsymbol{\mathbf{A}} $ 一致。
+[18] 同理，式 1 也可以看作是 $ \boldsymbol{\mathbf{a}} $ 到 $ \boldsymbol{\mathbf{c}} $ 的线性变换
+[19] \begin{equation}
+\boldsymbol{\mathbf{c}} = \boldsymbol{\mathbf{B}} \boldsymbol{\mathbf{a}} ~.
+\end{equation}
+[20] \begin{equation}
+\boldsymbol{\mathbf{B}} = \begin{pmatrix}
+0 & b_z & -b_y\\
+-b_z & 0 & b_x\\
+b_y & -b_x & 0
+\end{pmatrix} ~
+\end{equation}
+[21] 这恰好与
+[22] 式 3 [链接 L2]
+[23] 符号相反。
+
+[/SCOPE:s_main]
+[/SCOPE:s_main_let2]
+[SCOPE:s_rotation_let|let_bind|引入 S, S', R, u, v, U, U']
+[SCOPE:s_rotation|description|叉乘矩阵的旋转变换]
+[24] 令 $S'$ 坐标系与 $S$ 坐标系的原点重合，且 $S'$ 坐标系中的矢量 $ \boldsymbol{\mathbf{r}} $ 到 $S$ 系中的矢量 $ \boldsymbol{\mathbf{r}} '$ 的旋转变换矩阵为 $ \boldsymbol{\mathbf{R}} $，满足 $ \boldsymbol{\mathbf{r}} ' = \boldsymbol{\mathbf{R}} \boldsymbol{\mathbf{r}} $。
+[25] 令两个几何矢量在 $S$ 系中的坐标为 $ \boldsymbol{\mathbf{u}} , \boldsymbol{\mathbf{v}} $，在 $S'$ 中坐标为 $ \boldsymbol{\mathbf{u}} ', \boldsymbol{\mathbf{v}} '$。
+[26] 那么有
+[27] \begin{equation}
+\boldsymbol{\mathbf{u}} ' = \boldsymbol{\mathbf{R}} \boldsymbol{\mathbf{u}} , \qquad
+\boldsymbol{\mathbf{v}} ' = \boldsymbol{\mathbf{R}} \boldsymbol{\mathbf{v}} ~.
+\end{equation}
+[28] 由于叉乘的几何定义不依赖于坐标系，
+[29] 那么必定有
+[30] \begin{equation}
+\boldsymbol{\mathbf{R}} ( \boldsymbol{\mathbf{u}} \boldsymbol\times \boldsymbol{\mathbf{v}} ) = \boldsymbol{\mathbf{u}} ' \boldsymbol\times \boldsymbol{\mathbf{v}} '~.
+\end{equation}
+[31] 如果用 $ \boldsymbol{\mathbf{U}} $ 来代替 $ \boldsymbol{\mathbf{u}} \boldsymbol\times $，用 $ \boldsymbol{\mathbf{U}} '$ 来代替 $ \boldsymbol{\mathbf{u}} ' \boldsymbol\times $，
+[32] 那么上式变为
+[33] \begin{equation}
+\boldsymbol{\mathbf{R}} \boldsymbol{\mathbf{U}} \boldsymbol{\mathbf{v}} = \boldsymbol{\mathbf{U}} ' \boldsymbol{\mathbf{v}} ' = \boldsymbol{\mathbf{U}} ' \boldsymbol{\mathbf{R}} \boldsymbol{\mathbf{v}} ~.
+\end{equation}
+[34] 这对所有 $ \boldsymbol{\mathbf{v}} $ 都成立，
+[35] 所以 $ \boldsymbol{\mathbf{R}} \boldsymbol{\mathbf{U}} = \boldsymbol{\mathbf{U}} ' \boldsymbol{\mathbf{v}} ' = \boldsymbol{\mathbf{U}} ' \boldsymbol{\mathbf{R}} $，或者
+[36] \begin{equation}
+\boldsymbol{\mathbf{U}} ' = \boldsymbol{\mathbf{R}} \boldsymbol{\mathbf{U}} \boldsymbol{\mathbf{R}} ^{\mathrm{T}} ~.
+\end{equation}
+
+跨文章引用:
+  [L0] 矩阵 → Mat
+[/SCOPE:s_rotation_let]
+[/SCOPE:s_rotation]
+[/SCOPE:root]

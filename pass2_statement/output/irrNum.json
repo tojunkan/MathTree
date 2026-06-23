@@ -1,0 +1,374 @@
+{
+  "article_name": "irrNum",
+  "statements": [
+    {
+      "stmt_id": "st_def_rational",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "a",
+        "b",
+        "a/b"
+      ]
+    },
+    {
+      "stmt_id": "st_def_irrational",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1",
+      "subtype": "theorem",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "√2"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_assume",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_reductio",
+      "exposed_entities": [
+        "√2"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "a",
+        "b",
+        "a/b"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_even_a",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_contradiction",
+      "subtype": "conclusion",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proved",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "N",
+        "m",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_assume",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_reductio",
+      "exposed_entities": [
+        "a",
+        "b",
+        "a/b"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_equation",
+      "subtype": "assumption",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_contradiction",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_reductio",
+      "exposed_entities": [
+        "p",
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proved",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3",
+      "subtype": "theorem",
+      "clause_range": [
+        21,
+        23
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": [
+        "x",
+        "c_1",
+        "c_2",
+        "c_n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_assume_cn_nonzero",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_let",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3_let",
+      "exposed_entities": [
+        "x_0",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_equation",
+      "subtype": "assumption",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_contradiction",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm3_reductio",
+      "exposed_entities": [
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_b_no_factor",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm3_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_qed",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm3",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_assume",
+      "target": "st_thm1_let",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1_even_a",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_even_a",
+      "target": "st_thm1_contradiction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_contradiction",
+      "target": "st_thm1_proved",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assume",
+      "target": "st_thm2_equation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_equation",
+      "target": "st_thm2_contradiction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_contradiction",
+      "target": "st_thm2_proved",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_assume_cn_nonzero",
+      "target": "st_thm3_let",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_let",
+      "target": "st_thm3_equation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_equation",
+      "target": "st_thm3_contradiction",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_contradiction",
+      "target": "st_thm3_b_no_factor",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_b_no_factor",
+      "target": "st_thm3_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_conclusion",
+      "target": "st_thm3_qed",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_contradiction",
+      "target": "st_thm1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "反证法推出矛盾，从而原命题成立"
+    },
+    {
+      "source": "st_thm2_contradiction",
+      "target": "st_thm2",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "反证法推出矛盾"
+    },
+    {
+      "source": "st_thm3_contradiction",
+      "target": "st_thm3",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "反证法推出b无素因子"
+    }
+  ],
+  "unresolved": []
+}

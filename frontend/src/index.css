@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 3px;
+}
+
+/* Cytoscape container */
+.cytoscape-container {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+}
+
+/* Markdown content */
+.proof-content h1, .proof-content h2, .proof-content h3 {
+  color: #e5e7eb;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+.proof-content p {
+  margin-bottom: 0.75em;
+  line-height: 1.6;
+}
+.proof-content code {
+  background: #374151;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+.proof-content pre {
+  background: #1f2937;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+/* Node detail slide-in panel */
+.detail-panel {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Toast animations */
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.toast-enter {
+  animation: slideIn 0.3s ease-out;
+}

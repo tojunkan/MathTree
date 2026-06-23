@@ -1,0 +1,193 @@
+{
+  "article_name": "HsAmPg",
+  "statements": [
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "a_n",
+        "d"
+      ]
+    },
+    {
+      "stmt_id": "st_cor1",
+      "subtype": "corollary",
+      "clause_range": [
+        47,
+        49
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": [
+        "a_n",
+        "a_1",
+        "d"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        63,
+        63
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "a_n",
+        "k",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        64,
+        64
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor2",
+      "subtype": "corollary",
+      "clause_range": [
+        87,
+        92
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor2",
+      "exposed_entities": [
+        "d",
+        "a_n"
+      ]
+    },
+    {
+      "stmt_id": "st_cor3",
+      "subtype": "corollary",
+      "clause_range": [
+        99,
+        102
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor3",
+      "exposed_entities": [
+        "a_n",
+        "m",
+        "n",
+        "p",
+        "q"
+      ]
+    },
+    {
+      "stmt_id": "st_cor4",
+      "subtype": "corollary",
+      "clause_range": [
+        140,
+        142
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor4",
+      "exposed_entities": [
+        "S_n",
+        "a_1",
+        "d"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        148,
+        148
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "a_n",
+        "S_n",
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        149,
+        149
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex1_assump",
+      "target": "st_ex1_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_assump",
+      "target": "st_ex2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_cor1",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论1是定义1的直接推论"
+    },
+    {
+      "source": "st_ex1_concl",
+      "target": "st_cor1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1验证了通项公式形式与等差数列的关系"
+    },
+    {
+      "source": "st_cor2",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论2由定义1推出"
+    },
+    {
+      "source": "st_cor3",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论3由定义1推出"
+    },
+    {
+      "source": "st_cor4",
+      "target": "st_cor1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论4由推论1代入求和公式得到"
+    },
+    {
+      "source": "st_ex2_concl",
+      "target": "st_cor4",
+      "edge_type": "counterexample_of",
+      "category": "logic",
+      "note": "例2说明Sn有常数项时不是等差数列，与推论4形式对比"
+    }
+  ],
+  "unresolved": []
+}

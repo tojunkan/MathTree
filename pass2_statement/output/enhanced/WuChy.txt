@@ -1,0 +1,71 @@
+[SCOPE:root|description|Cauchy-Schwarz 不等式]
+文章名: WuChy
+标题: Cauchy-Schwarz 不等式
+
+环境标记 (hints):
+  [0] type=lemma heading=引理 1 title=三角不等式
+  [1] type=lemma heading=引理 2 title=均值不等式
+  [2] type=lemma heading=引理 3 title=Bernoulli 不等式
+  [3] type=lemma heading=引理 4 title=Young 不等式
+  [4] type=theorem heading=定理 1 title=Cauchy-Schwarz 不等式
+
+[SCOPE:s_triangle|description|三角不等式]
+[0] 引理 1 三角不等式
+[SCOPE:s_triangle_let|let_bind|三角不等式的变量]
+[1] $\forall \boldsymbol{x},\boldsymbol{y}\in\mathbb{R}^n$,满足
+[2] \begin{equation}
+\lvert\lvert\boldsymbol{x}\rvert-\lvert\boldsymbol{y}\rvert\rvert\leqslant\lvert\boldsymbol{x}\pm\boldsymbol{y}\rvert\leqslant\lvert\boldsymbol{x}\rvert+\lvert\boldsymbol{y}\rvert~
+\end{equation}
+
+[/SCOPE:s_triangle]
+[/SCOPE:s_triangle_let]
+[SCOPE:s_mean|description|均值不等式]
+[3] 引理 2 均值不等式
+[SCOPE:s_mean_let|let_bind|均值不等式的变量]
+[4] $\forall \boldsymbol{x}\in\mathbb{R}^n$,定义以下和式
+[5] \begin{align}
+H_n&=\frac{1}{\frac{1}{n}\sum\limits_{i=1}^n\frac{1}{x_i}}=\frac{n}{\frac{1}{x_1}+\frac{1}{x_2}+\cdots+\frac{1}{x_n}}\\
+G_n&=\sqrt[n]{\prod_{i}^n x_i}=\sqrt[n]{x_1x_2\cdots x_n}\\
+A_n&=\frac{1}{n}\sum_{i=1}^n x_i=\frac{x_1+x_2+\cdots+x_n}{n}\\
+Q_n&=\sqrt{\frac{1}{n}\sum_{i=1}^n x_i^2}=\sqrt{\frac{x_1^2+x_2^2+\cdots+x_n^2}{n}}~
+\end{align}
+[6] 这些和式满足
+[7] \begin{equation}
+H_n\leqslant G_n\leqslant A_n \leqslant Q_n~
+\end{equation}
+
+[/SCOPE:s_mean]
+[/SCOPE:s_mean_let]
+[SCOPE:s_bernoulli|description|Bernoulli 不等式]
+[8] 引理 3 Bernoulli 不等式
+[SCOPE:s_bernoulli_let|let_bind|Bernoulli 不等式的变量]
+[9] $\forall x > -1,n \in \mathbb{N}^{\ast}$ 满足
+[10] \begin{equation}
+(1+x)^n \geq 1+nx~
+\end{equation}
+
+[/SCOPE:s_bernoulli]
+[/SCOPE:s_bernoulli_let]
+[SCOPE:s_young|description|Young 不等式]
+[11] 引理 4 Young 不等式
+[SCOPE:s_young_let|let_bind|Young 不等式的变量]
+[12] 设 $p,q>1,\frac{1}{p}+\frac{1}{q}=1$,$\forall a,b\geqslant 0$, 满足
+[13] \begin{equation}
+a b \leqslant \frac{1}{p}a^{p}+\frac{1}{q}b^{q}~
+\end{equation}
+
+[/SCOPE:s_young]
+[/SCOPE:s_young_let]
+[SCOPE:s_cauchy|description|Cauchy-Schwarz 不等式]
+[14] 定理 1 Cauchy-Schwarz 不等式
+[SCOPE:s_cauchy_let|let_bind|Cauchy-Schwarz 不等式的变量]
+[15] $\forall \boldsymbol{x},\boldsymbol{y}\in\mathbb{R}^n$,满足
+[16] \begin{equation}
+(\boldsymbol{x}^{\top}\boldsymbol{y})^2\leqslant \Vert \boldsymbol{x}\Vert_2^2\Vert \boldsymbol{y}\Vert_2^2~
+\end{equation}
+[17] \begin{equation}
+\left(\sum_{i=1}^{n}x_iy_i\right)^2\leqslant \left(\sum_{i=1}^nx_i^2\right)\left(\sum_{i=1}^ny_i^2\right)~
+\end{equation}
+[/SCOPE:s_cauchy]
+[/SCOPE:s_cauchy_let]
+[/SCOPE:root]

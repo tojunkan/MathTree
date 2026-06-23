@@ -1,0 +1,144 @@
+[SCOPE:root|description|绝对收敛与条件收敛]
+文章名: Convg
+标题: 绝对收敛与条件收敛
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=绝对收敛
+  [1] type=theorem heading=定理 1 title=重排定理
+
+[0] 乍看起来，一个数项级数 $\sum_{n=1}^\infty a_n$ 的收敛性似乎没有什么特别之处：它只是涉及到部分和的极限而已。
+[1] 然而，鉴于有限项的求和允许任意换序，我们自然要问：对于这个极限过程，还能够这样随意换序吗？
+[2] 由此就生发出了许多微妙的问题。
+
+[SCOPE:s_example|description|例子：交错调和级数]
+[SCOPE:s_example_let|let_bind|定义级数及其部分和]
+[3] 考虑级数
+[4] $$
+\sum_{n=1}^\infty\frac{(-1)^{n+1}}{n}
+=1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+...~
+$$
+[5] 它的各项绝对值组成的级数是发散的调和级数，
+[6] 但这个级数本身却是收敛的。
+[7] 实际上，它的第 $N$ 个部分和 $S_N$ 可以计算如下：当 $N$ 是奇数时，
+[8] $$
+S_N=\left(1-\frac{1}{2}\right)+\left(\frac{1}{3}-\frac{1}{4}\right)+...+\left(\frac{1}{N-2}-\frac{1}{N-1}\right)+\frac{1}{N}~,
+$$
+[9] 而当 $N$ 是偶数时，
+[10] $$
+S_N=\left(1-\frac{1}{2}\right)+\left(\frac{1}{3}-\frac{1}{4}\right)+...+\left(\frac{1}{N-1}-\frac{1}{N}\right)~.
+$$
+[11] 由于
+[12] $$
+0<\frac{1}{N-1}-\frac{1}{N}<\frac{1}{N^2}~,
+$$
+[13] 可见对于 $M>N$ 总有
+[14] $$
+|S_M-S_N|<\sum_{k=N}^M\frac{1}{k^2}~.
+$$
+[15] 根据柯西判据，部分和序列 $\{S_N\}$ 是有极限的，
+[16] 所以原来的级数收敛。
+[/SCOPE:s_example_let]
+[17] 以后将会算出这个极限等于 $\ln2=0.6931...$
+[18] 正如上面证明收敛性的过程所显示的，级数 $\sum_{n=1}^\infty\frac{(-1)^{n+1}}{n}$ 能够收敛，完全是因为求和过程中相邻的项能够相互抵消。
+[SCOPE:s_example_rearrange|let_bind|重排后的级数]
+[19] 如果更换一下求和的次序，
+[20] 那么抵消的结果就会有所不同。
+[21] 例如，将级数重新排列如下：
+[22] $$
+\left(1-\frac{1}{2}\right)-\frac{1}{4}+\left(\frac{1}{3}-\frac{1}{6}\right)-\frac{1}{8}...~
+$$
+[23] 这样重排的一般规律是
+[24] $$
+\left(\frac{1}{2k-1}-\frac{1}{2(2k-1)}\right)-\frac{1}{4k}~,
+\quad k\in\mathbb{N}~.
+$$
+[25] 不难看出这样得到的级数实际上是
+[26] $$
+\frac{1}{2}-\frac{1}{4}+\frac{1}{6}-\frac{1}{8}+...~
+$$
+[27] 根据同样的推理，这个级数的和乃是级数 $\sum_{n=1}^\infty\frac{(-1)^{n+1}}{n}$ 的一半，也就是 $\ln2/2$. 这显示出，级数 $\sum_{n=1}^\infty\frac{(-1)^{n+1}}{n}
+[28] =1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+...$ 的收敛性与有限和的求和是不同的。
+
+[/SCOPE:s_example]
+[/SCOPE:s_example_rearrange]
+[SCOPE:s_absconv_def|description|绝对收敛定义]
+[29] 那么，有没有级数在换序求和之后仍然能够收敛到同一个和呢？
+[30] 这需要引出所谓绝对收敛级数（absolutely convergent）的概念。
+
+[31] 定义 1 绝对收敛
+[SCOPE:s_absconv_let|let_bind|定义中的变量]
+[32] 设 $\{a_n\}$ 是复数序列。
+[33] 称级数 $\sum_{n=1}^\infty a_n$ 为绝对收敛的，如果由各项绝对值组成的级数 $\sum_{n=1}^\infty|a_n|$ 是收敛的。
+[/SCOPE:s_absconv_let]
+[34] 根据柯西判据，绝对收敛的级数本身当然是收敛的，
+[35] 但反过来就不一定了; 上一小节就给出了一个典型例子。
+[36] 术语"绝对收敛"的"绝对"一词有双关含义：它既表示级数一般项的绝对值组成收敛级数，也表示级数的收敛性不是由于部分和取极限的过程中正负抵消导致的，而是"绝对"的收敛。
+[37] 实际上有如下重要的重排定理：
+
+[/SCOPE:s_absconv_def]
+[SCOPE:s_rearrange_thm|description|重排定理]
+[38] 定理 1 重排定理
+[SCOPE:s_rearrange_let|let_bind|定理中的变量]
+[39] 设级数 $\sum_{n=1}^\infty a_n$ 为绝对收敛的，其和为 $A$. 那么对于正整数集到自身的任意置换 $\sigma:\mathbb{N}\to\mathbb{N}$(也就是正整数集自身的一个重排), 级数 $\sum_{n=1}^\infty a_{\sigma(n)}$ 都是收敛的，而且
+[40] $$
+\sum_{n=1}^\infty a_{\sigma(n)}=A~.
+$$
+[/SCOPE:s_rearrange_let]
+[41] 证明。
+[SCOPE:s_rearrange_pos|cases|正项级数情形]
+[42] 先设级数 $\sum_{n=1}^\infty a_n$ 为正项级数。
+[43a] (n)}$ 的部分和序列是单调递增的，而且第 $N$ 个部分和可以估计如下：设 $M$ 是诸 $\sigma
+[43b] (n),n=1,...,N$ 中的最大者，
+[44] 则
+[45] $$
+\sum_{n=1}^Na_{\sigma(n)}\leq\sum_{n=1}^{M}a_n~.
+$$
+[46] 显然当 $N\to\infty$ 时 $M\to\infty$, 因此级数 $\sum_{n=1}^\infty a_{\sigma(n)}$ 的部分和序列组成单调递增的有界序列，
+[47] 从而这级数收敛，而且它的和不大于 $A$. 对于置换 $\sigma$ 的逆变换 $\sigma^{-1}$ 进行同样的推理，
+[48] 可见级数 $\sum_{n=1}^\infty a_{\sigma(n)}$ 的和不小于 $A$. 于是它的和就是 $A$.
+[/SCOPE:s_rearrange_pos]
+[SCOPE:s_rearrange_real|cases|实数项级数情形]
+[49] 接下来不妨设级数的一般项都是实数。
+[SCOPE:s_rearrange_real_let|let_bind|正负部分解]
+[50] 作出如下定义：
+[51] $$
+a_n^+=\left\{\begin{array}{cc}
+{a_n}\quad &(a_n\geq0)\\
+0\quad &(a_n<0),
+\end{array}\right.
+\quad\quad
+a_n^-=\left\{\begin{array}{cc}
+0\quad &(a_n\geq0)~\\
+-a_n\quad &(a_n<0)~.
+\end{array}\right.
+$$
+[52] 如果级数 $\sum_{n=1}^\infty a_n$ 绝对收敛，
+[53] 那么显然级数 $\sum_{n=1}^\infty a_n^+$ 和 $\sum_{n=1}^\infty a_n^-$ 都是收敛的正项级数。
+[54] 把它们的和分别记为 $A^+$ 和 $A^-$. 我们发现，级数 $\sum_{n=1}^\infty a_n$ 的和 $A$ 恰好等于 $A^+-A^-$. 实际上，如果部分和 $\sum_{n=1}^N a_n$ 里有 $N_1$ 个正项和 $N_2$ 个负项，
+[55] 那么
+[56] $$
+\sum_{n=1}^N a_n=\sum_{n=1}^{N_1} a_n^+-\sum_{n=1}^{N_2} a_n^-~.
+$$
+[57] 令 $N\to\infty$, 则此时 $N_1,N_2$ 都趋于无穷，
+[58] 于是得到 $A=A^+-A^-$. 这样一来，级数 $\sum_{n=1}^\infty a_n$ 的任何重排实际上都不过是 $\sum_{n=1}^\infty a_n^+$ 和 $\sum_{n=1}^\infty a_n^-$ 的重排相减而已，
+[/SCOPE:s_rearrange_real_let]
+[59] 因此自然收敛到同一个和。
+[/SCOPE:s_rearrange_real]
+[SCOPE:s_rearrange_complex|cases|复数项级数情形]
+[60] 最后，在级数的一般项是复数的情形，只需要注意到复数项级数的绝对收敛等价于其实部和虚部都分别是绝对收敛的。
+[61] 由此只需要分开实部和虚部进行讨论就够了。
+[/SCOPE:s_rearrange_complex]
+[62] 证毕。
+[/SCOPE:s_rearrange_thm]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_rearrange_thm",
+    "target_scope": "s_absconv_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "重排定理依赖于绝对收敛的定义"
+  }
+]

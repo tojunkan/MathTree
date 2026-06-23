@@ -1,0 +1,290 @@
+{
+  "article_name": "DerRul",
+  "statements": [
+    {
+      "stmt_id": "st_intro_cond",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rules_formulas",
+      "subtype": "theorem",
+      "clause_range": [
+        2,
+        10
+      ],
+      "truth_value": "true",
+      "scope_id": "s_rules",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_proof_intro",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_claim",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_linear",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_let",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear_let",
+      "exposed_entities": [
+        "c_i",
+        "f_i(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_derivation",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_linear_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "f(x)",
+        "sin x",
+        "x^2"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_solution",
+      "subtype": "example",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_product_let",
+      "subtype": "assumption",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_product_let",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_product_derivation",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        31
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_product",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_quotient_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_quotient_let1",
+      "exposed_entities": [
+        "f(x)",
+        "g(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_quotient_question",
+      "subtype": "question",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_quotient",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_quotient_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_quotient_let2",
+      "exposed_entities": [
+        "h(x)",
+        "g(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_quotient_chain",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_quotient",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_quotient_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_quotient",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_intro_cond",
+      "target": "st_intro_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_linear_let",
+      "target": "st_linear_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_linear_proof_intro",
+      "target": "st_linear_claim",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_linear_derivation",
+      "target": "st_linear_claim",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_let",
+      "target": "st_example1_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_product_let",
+      "target": "st_product_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_quotient_let1",
+      "target": "st_quotient_question",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_quotient_let2",
+      "target": "st_quotient_chain",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_quotient_chain",
+      "target": "st_quotient_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_quotient_let1",
+      "target": "st_quotient_final",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_linear_claim",
+      "target": "st_rules_formulas",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "线性法则是求导法则的特例证明"
+    },
+    {
+      "source": "st_example1_solution",
+      "target": "st_linear_claim",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是线性法则的应用"
+    },
+    {
+      "source": "st_product_derivation",
+      "target": "st_rules_formulas",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "乘积法则是求导法则的特例证明"
+    },
+    {
+      "source": "st_quotient_final",
+      "target": "st_rules_formulas",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "商法则是求导法则的特例证明"
+    }
+  ],
+  "unresolved": []
+}

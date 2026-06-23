@@ -1,0 +1,244 @@
+{
+  "article_name": "InvNum",
+  "statements": [
+    {
+      "stmt_id": "st_example1_standard",
+      "subtype": "example",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_reverse",
+      "subtype": "example",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_mixed",
+      "subtype": "example",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_method",
+      "subtype": "remark",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_assume1",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1_let1",
+      "exposed_entities": [
+        "p_n",
+        "i",
+        "j",
+        "m",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem1_assume2",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_case1",
+      "subtype": "condition",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_case2",
+      "subtype": "condition",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_case3",
+      "subtype": "condition",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_theorem1_let2",
+      "exposed_entities": [
+        "q"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem1_conclusion1",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_conclusion2",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_conclusion3",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_corollary1_statement",
+      "subtype": "corollary",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": "true",
+      "scope_id": "s_corollary1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_corollary1_proof",
+      "subtype": "remark",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_corollary1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_theorem1_assume1",
+      "target": "st_theorem1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_assume2",
+      "target": "st_theorem1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_case1",
+      "target": "st_theorem1_conclusion1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_case2",
+      "target": "st_theorem1_conclusion1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_case3",
+      "target": "st_theorem1_conclusion1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_conclusion1",
+      "target": "st_theorem1_conclusion2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_conclusion2",
+      "target": "st_theorem1_conclusion3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_conclusion3",
+      "target": "st_theorem1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_corollary1_statement",
+      "target": "st_theorem1_statement",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_corollary1_statement",
+      "target": "st_theorem1_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论1是定理1的直接推论"
+    }
+  ],
+  "unresolved": []
+}

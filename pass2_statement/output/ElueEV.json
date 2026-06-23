@@ -1,0 +1,202 @@
+{
+  "article_name": "ElueEV",
+  "statements": [
+    {
+      "stmt_id": "st_theorem1",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1",
+      "exposed_entities": [
+        "F(x,y,y')",
+        "J(y)",
+        "y(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_curve_family",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let1",
+      "exposed_entities": [
+        "y(x)",
+        "δy(a)",
+        "δy(b)"
+      ]
+    },
+    {
+      "stmt_id": "st_necessary_condition",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": [
+        "δJ"
+      ]
+    },
+    {
+      "stmt_id": "st_euler_eq_derived",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_defect",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_riemann",
+      "subtype": "assumption",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let2",
+      "exposed_entities": [
+        "N",
+        "δJ"
+      ]
+    },
+    {
+      "stmt_id": "st_integral_form",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": [
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_equivalent_form",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_lagrange_mvt",
+      "subtype": "assumption",
+      "clause_range": [
+        38,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let3",
+      "exposed_entities": [
+        "ΔF'_{y'}",
+        "θ1",
+        "θ2",
+        "θ3"
+      ]
+    },
+    {
+      "stmt_id": "st_derivative_limit",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        45
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_second_derivative_existence",
+      "subtype": "conclusion",
+      "clause_range": [
+        46,
+        50
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": [
+        "y''"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_curve_family",
+      "target": "st_necessary_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_necessary_condition",
+      "target": "st_euler_eq_derived",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_riemann",
+      "target": "st_integral_form",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_integral_form",
+      "target": "st_equivalent_form",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_lagrange_mvt",
+      "target": "st_derivative_limit",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivative_limit",
+      "target": "st_second_derivative_existence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_remark_defect",
+      "target": "st_euler_eq_derived",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_euler_eq_derived",
+      "target": "st_theorem1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "证明是定理1的展开"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,78 @@
+[SCOPE:root|description|里斯引理（泛函分析）]
+文章名: RiLem
+标题: 里斯引理（泛函分析）
+
+环境标记 (hints):
+  [0] type=lemma heading=引理 1 title=里斯引理 (Riesz's lemma)
+
+[SCOPE:s_lemma|description|里斯引理]
+[0] 引理 1 里斯引理 (Riesz's lemma)
+[SCOPE:s_lemma_let1|let_bind|设 X, M]
+[1] 设 $X$ 是赋范空间，$\|\cdot\|$ 是它的范数，$M$ 是它的真闭子空间。
+[/SCOPE:s_lemma_let1]
+[SCOPE:s_lemma_let2|let_bind|任给 alpha]
+[2] 则任给 $\alpha\in(0,1)$，都存在 $x$ 使得 $\|x\|=1$，且 $\text{dist}(x,M)\geq\alpha$。
+[/SCOPE:s_lemma_let2]
+[3] 这个引理有鲜明的直观意义：任给赋范空间中的 “平面”，总有一个单位向量与这平面 “几乎垂直”。
+
+[4] 证明是直接的构造。
+[SCOPE:s_lemma_let3|let_bind|证明中的变量]
+[5] 任取 $y\in X\setminus M$，命 $\delta=\text{dist}(y,M)$。
+[6] 由于 $M$ 是闭的，
+[7] 故 $\delta>0$。
+[8] 根据距离的定义，任给 $\varepsilon>0$，皆存在 $z_0\in M$ 使得
+[9] $$
+\delta\leq \|y-z_0\|<\delta+\varepsilon~.
+$$
+[10] 命 $x=(y-z_0)/\|y-z_0\|$，
+[11] 则 $\|x\|=1$，而且对于任何 $z\in M$ 皆有
+[12] $$
+\|x-z\|
+=\left\|\frac{y-z_0}{\|y-z_0\|}-z\right\|
+=\left\|\frac{y-(z_0+z\|y-z_0\|)}{\|y-z_0\|}\right\|~.
+$$
+[13] 由于 $z_0+z\|y-z_0\|\in M$，
+[14] 所以上式右边大于
+[15] $$
+\frac{\delta}{\delta+\varepsilon}~.
+$$
+[16] 于是对于给定的 $0<\alpha<1$，只要取 $\varepsilon$ 足够小即可使得
+[17] $$
+\text{dist}(x,M)
+=\inf_{z\in M}\|x-z\|
+>\frac{\delta}{\delta+\varepsilon}
+>\alpha~.
+$$
+
+[/SCOPE:s_lemma]
+[/SCOPE:s_lemma_let3]
+[SCOPE:s_app_let|let_bind|无穷维空间中的构造]
+[SCOPE:s_application|description|应用举例]
+[18] 如果 $X$ 是无穷维的赋范空间，
+[19] 那么存在递增的子空间族
+[20] $$
+M_1\subset M_2\subset M_3\subset...~
+$$
+[21] 使得 $\text{dim}(M_k)=k$。
+[22] 有限维的子空间都是闭子空间，
+[23] 所以根据里斯引理，存在 $x_k\in M_k\setminus M_{k-1}$ 使得
+[24] $$
+\|x_k\|=1,\,\text{dist}(x_k,M_k)>\frac{1}{2}~.
+$$
+[25] 这样一来，恒有 $\|x_m-x_n\|>1/2$ 成立，
+[26] 于是 $X$ 中闭单位球面上的序列 $\{x_n\}$ 没有收敛子序列。
+[27] 这表示无穷维赋范空间中的闭单位球不可能是紧的。
+[/SCOPE:s_app_let]
+[/SCOPE:s_application]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_application",
+    "target_scope": "s_lemma",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "应用举例使用了里斯引理的结论"
+  }
+]

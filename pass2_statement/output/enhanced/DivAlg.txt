@@ -1,0 +1,198 @@
+[SCOPE:root|description|带余除法]
+文章名: DivAlg
+标题: 带余除法
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=带余除法
+  [1] type=example heading=例 1 title=
+  [2] type=example heading=例 2 title=
+  [3] type=corollary heading=推论 1 title=余数定理
+  [4] type=definition heading=定义 1 title=零点(根)
+  [5] type=corollary heading=推论 2 title=
+
+[SCOPE:s_divalg|description|带余除法]
+[0] 定理 1 带余除法
+[SCOPE:s_divalg_let|let_bind|带余除法变量]
+[1a] (x)$ 与 $g
+[1b] (x)$ 为 $\mathbb{F}[x]$ 中的两个多项式，并且 $g
+[1c] (x)\neq 0$，
+[2a] (x),r
+[2b] (x)$，使得
+[/SCOPE:s_divalg_let]
+[3] \begin{equation}
+f(x)=q(x)g(x)+r(x)~.
+\end{equation}
+[4] 带余除法
+
+[SCOPE:s_divalg_exist|description|存在性证明]
+[5a] (x)$，$r
+[5b] (x)$ 的存在性。
+[6a] 当 $\mathrm{deg}\;f(x)<\mathrm{deg}\;g(x)$ 时，取 $q(x)=0,r(x)=f(x)$
+[6b] 则可；
+[SCOPE:s_divalg_exist_let1|let_bind|归纳假设变量]
+[7a] (x)-\mathrm{deg}\;g
+[7b] (x)\leq k$ 时，$q
+[7c] (x),r
+[7d] (x)$ 存在，
+[/SCOPE:s_divalg_exist_let1]
+[8a] (x)-\mathrm{deg}\;g
+[8b] (x)=k+1$ 时，设
+[SCOPE:s_divalg_exist_let2|let_bind|f1定义]
+[9] \begin{equation}
+f(x)=\sum_{i=0}^n a_i x^i\quad g(x)=\sum_{i=0}^m b_ix^i~,
+\end{equation}
+[10] \begin{equation}
+f_1(x)=f(x)-\frac{a_n}{b_m}x^{n-m}g(x)~.
+\end{equation}
+[/SCOPE:s_divalg_exist_let2]
+[11] 注意 $f_1(x)$ 的 $n$ 次项系数为 0，由
+[12] 式 4 [链接 L0]
+[13] \begin{equation}
+\mathrm{deg}\;f_1(x)-\mathrm{deg}\;g(x)\leq\mathrm{deg}\; f(x)-1-\mathrm{deg}\;g(x)=k~.
+\end{equation}
+[SCOPE:s_divalg_exist_let3|let_bind|归纳步骤变量]
+[14a] (x),r
+[14b] (x)$ 使得
+[15] \begin{equation}
+f_1(x)=q_1(x)g(x)+r(x)~.
+\end{equation}
+[16a] (x)<\mathrm{deg}\;g
+[16b] (x)$，
+[17] 于是
+[18] \begin{equation}
+f(x)=f_1(x)+\frac{a_n}{b_m}x^{n-m}g(x)= \left(\frac{a_n}{b_m}x^{n-m}+q_1(x) \right) g(x)+r(x)~.
+\end{equation}
+[19a] (x)=\frac{a_n}{b_m}x^{n-m}+q_1
+[19b] (x)$，
+[/SCOPE:s_divalg_exist_let3]
+[20a] (x),r
+[20b] (x)$ 在 $\mathrm{deg}\;f
+[20c] (x)-\mathrm{deg}\;g
+[20d] (x)=k+1$ 时存在。
+[21] 有数学归纳法，存在性得证。
+[/SCOPE:s_divalg_exist]
+[SCOPE:s_divalg_unique|description|唯一性证明]
+[22a] (x),r
+[22b] (x)$ 的唯一性。
+[SCOPE:s_divalg_unique_let|let_bind|唯一性假设变量]
+[23a] (x),r_1
+[23b] (x)$ 使
+[24] \begin{equation}
+f(x)=q_1(x)g(x)+r_1(x)~.
+\end{equation}
+[/SCOPE:s_divalg_unique_let]
+[25a] (x)<\mathrm{deg}\;g
+[25b] (x)$，
+[26] 于是
+[27] \begin{equation}
+q_1(x)g(x)+r_1(x)=q(x)g(x)+r(x)~,
+\end{equation}
+[28] \begin{equation}
+\left(q_1(x)-q(x) \right) g(x)=r(x)-r_1(x)~.
+\end{equation}
+[29a] (x)\neq q_1
+[29b] (x)$，又 $g
+[29c] (x)\neq 0$，
+[30a] (x)-r_1
+[30b] (x)\neq 0$，由
+[31] 式 8 [链接 L1]
+[32] \begin{equation}
+\mathrm{deg}\;(q_1(x)-q(x))+\mathrm{deg}\;g(x)=\mathrm{deg}\; \left(r(x)-r_1(x) \right) ~,
+\end{equation}
+[33] \begin{equation}
+\mathrm{deg}\;g(x)>\mathrm{deg}\; \left(r(x)-r_1(x) \right) ~,
+\end{equation}
+[34] 式 10 [链接 L2]
+[35] 不能成立，这就证明了
+[36a] (x)=q_1
+[36b] (x)$，
+[37a] (x)=r_1
+[37b] (x)$。
+
+[/SCOPE:s_divalg]
+[/SCOPE:s_divalg_unique]
+[SCOPE:s_ex1|description|例1]
+[SCOPE:s_ex1_let|let_bind|例1变量]
+[38a] (x)=x^5+3x^4-7x^2+1$ 和 $g
+[38b] (x)=2x^3+1$，
+[/SCOPE:s_ex1_let]
+[39] 则应取
+[40] \begin{equation}
+\left\{
+\begin{aligned}
+q(x) ={}& \frac{1}{2}x^2+\frac{3}{2}x , \\
+r(x) ={}& -\frac{13}{2}x^2-\frac{3}{2}x+1 ,
+\end{aligned}
+\right. ~
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2]
+[SCOPE:s_ex2_let|let_bind|例2变量]
+[41a] (x)=2x^3+x^2-3x+1$ 和 $g
+[41b] (x)=x^4$，
+[/SCOPE:s_ex2_let]
+[42] 则应取
+[43] \begin{equation}
+\left\{
+\begin{aligned}
+q(x) ={}& 0 , \\
+r(x) ={}& f(x) ,
+\end{aligned}
+\right. ~
+\end{equation}
+
+[/SCOPE:s_ex2]
+[44] 利用定理 1 ，立即得到下面的推论
+
+[SCOPE:s_rem|description|余数定理]
+[45] 推论 1 余数定理
+[SCOPE:s_rem_let|let_bind|余数定理变量]
+[46] 设 $f(x)$ 为 $\mathbb{F}[x]$ 中的任意一个的多项式，并且 $c\in\mathbb{F}$，
+[/SCOPE:s_rem_let]
+[47] 则存在 $\mathbb{F}[x]$ 中的多项式，使得
+[48] \begin{equation}
+f(x)=q(x)(x-c)+f(c)~.
+\end{equation}
+
+[/SCOPE:s_rem]
+[SCOPE:s_zero|description|零点定义]
+[49] 定义 1 零点(根)
+[SCOPE:s_zero_let|let_bind|零点变量]
+[50a] (x)$ 为 $\mathbb{F}[x]$ 中的多项式，$c\in\mathbb{F}$，若 $f
+[50b] (c)=0$，
+[/SCOPE:s_zero_let]
+[51] 则称 $c$ 为 $f(x)$ 的根或零点。
+[52] 由推论 1 很容易得到下面关于多项式根的推论。
+
+[/SCOPE:s_zero]
+[SCOPE:s_cor2|description|推论2]
+[53] 推论 2
+[SCOPE:s_cor2_let|let_bind|推论2变量]
+[54] 设 $f(x)$ 为 $\mathbb{F}[x]$ 中的多项式，$c\in\mathbb{F}$，
+[/SCOPE:s_cor2_let]
+[55a] (x)$ 的根当且仅当存在 $\mathbb{F}[x]$ 中的多项式 $q
+[55b] (x)$，使得
+[56] \begin{equation}
+f(x)=q(x)(x-c)~.
+\end{equation}
+[/SCOPE:s_cor2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_rem",
+    "target_scope": "s_divalg",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "余数定理是带余除法的特例（除式为x-c）"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_rem",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论2是余数定理的直接推论"
+  }
+]

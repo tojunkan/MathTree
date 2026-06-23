@@ -1,0 +1,1551 @@
+{
+  "article_name": "FnalN5",
+  "statements": [
+    {
+      "stmt_id": "st_extension_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_1",
+      "exposed_entities": [
+        "A",
+        "B",
+        "D(B)",
+        "D(A)"
+      ]
+    },
+    {
+      "stmt_id": "st_extension_eq",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_1",
+      "exposed_entities": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_embedding_continuous",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_1",
+      "exposed_entities": [
+        "X",
+        "Y"
+      ]
+    },
+    {
+      "stmt_id": "st_embedding_compact",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_1",
+      "exposed_entities": [
+        "X",
+        "Y"
+      ]
+    },
+    {
+      "stmt_id": "st_dense_domain",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_2_let_A",
+      "exposed_entities": [
+        "A",
+        "D(A)",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_adjoint_def",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_2_let_A",
+      "exposed_entities": [
+        "A^*",
+        "D(A^*)",
+        "v",
+        "w"
+      ]
+    },
+    {
+      "stmt_id": "st_adjoint_max_domain",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_2_let_A",
+      "exposed_entities": [
+        "D(A^*)"
+      ]
+    },
+    {
+      "stmt_id": "st_adjoint_properties",
+      "subtype": "theorem",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_5_2_let_A",
+      "exposed_entities": [
+        "A",
+        "B",
+        "A^*",
+        "B^*"
+      ]
+    },
+    {
+      "stmt_id": "st_dense_adjoint_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_2",
+      "exposed_entities": [
+        "D(A^*)"
+      ]
+    },
+    {
+      "stmt_id": "st_double_adjoint",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_5_2",
+      "exposed_entities": [
+        "A^{**}"
+      ]
+    },
+    {
+      "stmt_id": "st_symmetric_def",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_2",
+      "exposed_entities": [
+        "A",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_selfadjoint_def",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_2",
+      "exposed_entities": [
+        "A",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_selfadjoint_implies_symmetric",
+      "subtype": "theorem",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": "true",
+      "scope_id": "s_5_2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_skew_symmetric_def",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_2",
+      "exposed_entities": [
+        "A",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_skew_adjoint_def",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_2",
+      "exposed_entities": [
+        "A",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_continuous_adjoint_prop",
+      "subtype": "theorem",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "true",
+      "scope_id": "s_5_2",
+      "exposed_entities": [
+        "A",
+        "A^*"
+      ]
+    },
+    {
+      "stmt_id": "st_integral_operator_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_2_let_f",
+      "exposed_entities": [
+        "f",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_integral_adjoint_compact",
+      "subtype": "theorem",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "s_5_2_let_f",
+      "exposed_entities": [
+        "A^*"
+      ]
+    },
+    {
+      "stmt_id": "st_symmetric_kernel_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_2_let_f",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_integral_selfadjoint",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_5_2_let_f",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_selfadjoint_max_symmetric",
+      "subtype": "theorem",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_5_2",
+      "exposed_entities": [
+        "A",
+        "S"
+      ]
+    },
+    {
+      "stmt_id": "st_derivative_skew_adjoint",
+      "subtype": "theorem",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_5_2_let_B",
+      "exposed_entities": [
+        "A",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_non_generalized_derivative",
+      "subtype": "assumption",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_2_let_B",
+      "exposed_entities": [
+        "B",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_non_generalized_skew_symmetric",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_5_2_let_B",
+      "exposed_entities": [
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_multiplication_operator_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_2_let_M",
+      "exposed_entities": [
+        "M",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_multiplication_selfadjoint",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_5_2_let_M",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_orthogonal_projection_recall",
+      "subtype": "remark",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_2_let_P",
+      "exposed_entities": [
+        "M",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_orthogonal_projection_def",
+      "subtype": "definition",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_2_let_P",
+      "exposed_entities": [
+        "P",
+        "M",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_orthogonal_projection_properties",
+      "subtype": "theorem",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": "true",
+      "scope_id": "s_5_2_let_P",
+      "exposed_entities": [
+        "P"
+      ]
+    },
+    {
+      "stmt_id": "st_nonempty_M_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_2_let_P",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_norm_one",
+      "subtype": "conclusion",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_5_2_let_P",
+      "exposed_entities": [
+        "P"
+      ]
+    },
+    {
+      "stmt_id": "st_characterization_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_2_let_P",
+      "exposed_entities": [
+        "P",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_characterization_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_5_2_let_P",
+      "exposed_entities": [
+        "P"
+      ]
+    },
+    {
+      "stmt_id": "st_inverse_adjoint_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_2",
+      "exposed_entities": [
+        "A",
+        "X",
+        "R(A)"
+      ]
+    },
+    {
+      "stmt_id": "st_inverse_adjoint_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_5_2",
+      "exposed_entities": [
+        "A^{-1}",
+        "A^*"
+      ]
+    },
+    {
+      "stmt_id": "st_selfadjoint_inverse_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        43,
+        43
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_2",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_selfadjoint_inverse_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_5_2",
+      "exposed_entities": [
+        "A^{-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_unitary_equiv",
+      "subtype": "theorem",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": "true",
+      "scope_id": "s_5_2_let_U",
+      "exposed_entities": [
+        "U",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_semigroup_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        47,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_9_let_semigroup",
+      "exposed_entities": [
+        "X",
+        "S(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_generator_def",
+      "subtype": "definition",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_9_let_semigroup",
+      "exposed_entities": [
+        "A",
+        "D(A)"
+      ]
+    },
+    {
+      "stmt_id": "st_strongly_continuous_def",
+      "subtype": "definition",
+      "clause_range": [
+        50,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_9_let_semigroup",
+      "exposed_entities": [
+        "u_0",
+        "u(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_contraction_property",
+      "subtype": "theorem",
+      "clause_range": [
+        52,
+        52
+      ],
+      "truth_value": "true",
+      "scope_id": "s_5_9_let_semigroup",
+      "exposed_entities": [
+        "S(t)",
+        "u_0",
+        "v_0"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_semigroup_def",
+      "subtype": "definition",
+      "clause_range": [
+        53,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_9_let_semigroup",
+      "exposed_entities": [
+        "S(t)",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_one_parameter_group_def",
+      "subtype": "definition",
+      "clause_range": [
+        54,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_9_let_group",
+      "exposed_entities": [
+        "S(t)",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_group_generator_def",
+      "subtype": "definition",
+      "clause_range": [
+        55,
+        55
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_9_let_group",
+      "exposed_entities": [
+        "A",
+        "D(A)"
+      ]
+    },
+    {
+      "stmt_id": "st_group_strong_continuous_linear",
+      "subtype": "remark",
+      "clause_range": [
+        56,
+        56
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_9_let_group",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_uniformly_continuous_def",
+      "subtype": "definition",
+      "clause_range": [
+        57,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_9_let_group",
+      "exposed_entities": [
+        "S"
+      ]
+    },
+    {
+      "stmt_id": "st_uniform_implies_strong",
+      "subtype": "theorem",
+      "clause_range": [
+        58,
+        58
+      ],
+      "truth_value": "true",
+      "scope_id": "s_5_9_let_group",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exponential_group_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        59,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_9_let_exp",
+      "exposed_entities": [
+        "A",
+        "X",
+        "S(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_exponential_group_conclusion1",
+      "subtype": "conclusion",
+      "clause_range": [
+        60,
+        60
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_5_9_let_exp",
+      "exposed_entities": [
+        "S"
+      ]
+    },
+    {
+      "stmt_id": "st_exponential_group_conclusion2",
+      "subtype": "conclusion",
+      "clause_range": [
+        61,
+        62
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_5_9_let_exp",
+      "exposed_entities": [
+        "u(t)",
+        "u_0"
+      ]
+    },
+    {
+      "stmt_id": "st_continuous_irreversible_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        63,
+        63
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_9_let_exp",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_continuous_irreversible_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        64,
+        64
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_5_9_let_exp",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_unitary_group_def",
+      "subtype": "definition",
+      "clause_range": [
+        65,
+        65
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_9_let_unitary",
+      "exposed_entities": [
+        "S(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_unitary_group_from_selfadjoint_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        66,
+        66
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_9_let_unitary",
+      "exposed_entities": [
+        "A",
+        "X",
+        "S(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_unitary_group_from_selfadjoint_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        67,
+        67
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_5_9_let_unitary",
+      "exposed_entities": [
+        "S(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_schrodinger_eq",
+      "subtype": "assumption",
+      "clause_range": [
+        68,
+        68
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_13_let",
+      "exposed_entities": [
+        "u(t)",
+        "A",
+        "u_0"
+      ]
+    },
+    {
+      "stmt_id": "st_schrodinger_selfadjoint_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        69,
+        69
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_13_let",
+      "exposed_entities": [
+        "A",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_state_def",
+      "subtype": "definition",
+      "clause_range": [
+        70,
+        70
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_14",
+      "exposed_entities": [
+        "psi",
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_observable_def",
+      "subtype": "definition",
+      "clause_range": [
+        71,
+        71
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_14",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_measurement_remark",
+      "subtype": "remark",
+      "clause_range": [
+        72,
+        72
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_14",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_uncertainty_remark",
+      "subtype": "remark",
+      "clause_range": [
+        73,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_14",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_momentum_operator_def",
+      "subtype": "definition",
+      "clause_range": [
+        74,
+        75
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_14_let_momentum",
+      "exposed_entities": [
+        "A",
+        "X",
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_position_operator_def",
+      "subtype": "definition",
+      "clause_range": [
+        76,
+        76
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_14_let_position",
+      "exposed_entities": [
+        "B",
+        "X",
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_position_momentum_selfadjoint",
+      "subtype": "theorem",
+      "clause_range": [
+        77,
+        77
+      ],
+      "truth_value": "true",
+      "scope_id": "s_5_14_let_position",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_generalized_eigenfunction_def",
+      "subtype": "definition",
+      "clause_range": [
+        78,
+        78
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_15_let_general",
+      "exposed_entities": [
+        "X",
+        "A",
+        "S",
+        "T",
+        "lambda"
+      ]
+    },
+    {
+      "stmt_id": "st_complete_system_def",
+      "subtype": "definition",
+      "clause_range": [
+        79,
+        79
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_15_let_general",
+      "exposed_entities": [
+        "T_alpha",
+        "A",
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_mapping_to_distribution_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        80,
+        80
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_15_let_T",
+      "exposed_entities": [
+        "psi",
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_mapping_to_distribution_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        81,
+        81
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_5_15_let_T",
+      "exposed_entities": [
+        "T",
+        "X",
+        "S'"
+      ]
+    },
+    {
+      "stmt_id": "st_eigenfunction_maps",
+      "subtype": "theorem",
+      "clause_range": [
+        82,
+        82
+      ],
+      "truth_value": "true",
+      "scope_id": "s_5_15_let_T",
+      "exposed_entities": [
+        "A",
+        "psi"
+      ]
+    },
+    {
+      "stmt_id": "st_momentum_generalized_eigenfunction_def",
+      "subtype": "definition",
+      "clause_range": [
+        83,
+        84
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_15_let_Tp",
+      "exposed_entities": [
+        "T_p",
+        "phi_p",
+        "S"
+      ]
+    },
+    {
+      "stmt_id": "st_momentum_complete_eigenfunctions",
+      "subtype": "theorem",
+      "clause_range": [
+        85,
+        85
+      ],
+      "truth_value": "true",
+      "scope_id": "s_5_15_let_Tp",
+      "exposed_entities": [
+        "phi_p",
+        "T_p"
+      ]
+    },
+    {
+      "stmt_id": "st_position_complete_eigenfunctions",
+      "subtype": "theorem",
+      "clause_range": [
+        86,
+        87
+      ],
+      "truth_value": "true",
+      "scope_id": "s_5_15_let_delta",
+      "exposed_entities": [
+        "delta_y",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_scattering_motion",
+      "subtype": "assumption",
+      "clause_range": [
+        88,
+        88
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_20",
+      "exposed_entities": [
+        "psi(t)",
+        "psi_0(t)",
+        "H",
+        "H_0"
+      ]
+    },
+    {
+      "stmt_id": "st_asymptotically_free_def",
+      "subtype": "definition",
+      "clause_range": [
+        89,
+        89
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_20",
+      "exposed_entities": [
+        "psi"
+      ]
+    },
+    {
+      "stmt_id": "st_asymptotically_free_condition",
+      "subtype": "definition",
+      "clause_range": [
+        90,
+        90
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_20",
+      "exposed_entities": [
+        "psi(0)",
+        "H"
+      ]
+    },
+    {
+      "stmt_id": "st_scattering_state",
+      "subtype": "theorem",
+      "clause_range": [
+        91,
+        91
+      ],
+      "truth_value": "true",
+      "scope_id": "s_5_20",
+      "exposed_entities": [
+        "phi_p",
+        "H_0",
+        "T_p"
+      ]
+    },
+    {
+      "stmt_id": "st_scattering_eigenvalue",
+      "subtype": "theorem",
+      "clause_range": [
+        92,
+        92
+      ],
+      "truth_value": "true",
+      "scope_id": "s_5_20",
+      "exposed_entities": [
+        "T_p",
+        "H_0",
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_phi_k_def",
+      "subtype": "definition",
+      "clause_range": [
+        93,
+        93
+      ],
+      "truth_value": null,
+      "scope_id": "s_5_21_let",
+      "exposed_entities": [
+        "phi_k",
+        "x",
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_cuboid_def",
+      "subtype": "definition",
+      "clause_range": [
+        94,
+        94
+      ],
+      "truth_value": null,
+      "scope_id": "s_lebesgue_measure_let",
+      "exposed_entities": [
+        "C",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_cuboid_volume",
+      "subtype": "definition",
+      "clause_range": [
+        95,
+        95
+      ],
+      "truth_value": null,
+      "scope_id": "s_lebesgue_measure_let",
+      "exposed_entities": [
+        "vol(C)"
+      ]
+    },
+    {
+      "stmt_id": "st_lebesgue_intro",
+      "subtype": "remark",
+      "clause_range": [
+        96,
+        96
+      ],
+      "truth_value": null,
+      "scope_id": "s_lebesgue_measure_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_measurable_sets_def",
+      "subtype": "definition",
+      "clause_range": [
+        97,
+        113
+      ],
+      "truth_value": null,
+      "scope_id": "s_lebesgue_measure_let",
+      "exposed_entities": [
+        "A",
+        "mu",
+        "R^N"
+      ]
+    },
+    {
+      "stmt_id": "st_finite_countable_points_zero",
+      "subtype": "theorem",
+      "clause_range": [
+        114,
+        114
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lebesgue_measure",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_almost_everywhere_def",
+      "subtype": "definition",
+      "clause_range": [
+        115,
+        116
+      ],
+      "truth_value": null,
+      "scope_id": "s_lebesgue_measure",
+      "exposed_entities": [
+        "P"
+      ]
+    },
+    {
+      "stmt_id": "st_example_irrational",
+      "subtype": "example",
+      "clause_range": [
+        117,
+        117
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lebesgue_measure",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_limit_almost_everywhere",
+      "subtype": "remark",
+      "clause_range": [
+        118,
+        118
+      ],
+      "truth_value": null,
+      "scope_id": "s_lebesgue_measure",
+      "exposed_entities": [
+        "u_n",
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_measure_properties",
+      "subtype": "theorem",
+      "clause_range": [
+        119,
+        119
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lebesgue_measure",
+      "exposed_entities": [
+        "mu"
+      ]
+    },
+    {
+      "stmt_id": "st_step_function_def",
+      "subtype": "definition",
+      "clause_range": [
+        120,
+        121
+      ],
+      "truth_value": null,
+      "scope_id": "s_step_functions_let",
+      "exposed_entities": [
+        "u",
+        "M",
+        "M_j",
+        "a_j"
+      ]
+    },
+    {
+      "stmt_id": "st_step_integral_def",
+      "subtype": "definition",
+      "clause_range": [
+        122,
+        122
+      ],
+      "truth_value": null,
+      "scope_id": "s_step_functions_let",
+      "exposed_entities": [
+        "u",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_measurable_function_limit",
+      "subtype": "definition",
+      "clause_range": [
+        123,
+        123
+      ],
+      "truth_value": null,
+      "scope_id": "s_measurable_functions_let",
+      "exposed_entities": [
+        "u",
+        "u_n",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_luzin_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        124,
+        125
+      ],
+      "truth_value": "true",
+      "scope_id": "s_measurable_functions_let",
+      "exposed_entities": [
+        "M",
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_measurable_almost_continuous",
+      "subtype": "definition",
+      "clause_range": [
+        126,
+        126
+      ],
+      "truth_value": null,
+      "scope_id": "s_measurable_functions_let",
+      "exposed_entities": [
+        "f",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_measurable_linear_comb_limit",
+      "subtype": "theorem",
+      "clause_range": [
+        127,
+        127
+      ],
+      "truth_value": "true",
+      "scope_id": "s_measurable_functions_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_measurable_change_zero_measure",
+      "subtype": "theorem",
+      "clause_range": [
+        128,
+        129
+      ],
+      "truth_value": "true",
+      "scope_id": "s_measurable_functions_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lebesgue_integral_def",
+      "subtype": "definition",
+      "clause_range": [
+        130,
+        132
+      ],
+      "truth_value": null,
+      "scope_id": "s_lebesgue_integral_let",
+      "exposed_entities": [
+        "u",
+        "u_n",
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_integrable_implies_measurable",
+      "subtype": "theorem",
+      "clause_range": [
+        133,
+        133
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lebesgue_integral_let",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_dense_domain",
+      "target": "st_adjoint_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_dense_adjoint_assump",
+      "target": "st_double_adjoint",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_selfadjoint_def",
+      "target": "st_selfadjoint_implies_symmetric",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_integral_operator_assump",
+      "target": "st_integral_adjoint_compact",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_symmetric_kernel_assump",
+      "target": "st_integral_selfadjoint",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_selfadjoint_def",
+      "target": "st_selfadjoint_max_symmetric",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivative_skew_adjoint",
+      "target": "st_non_generalized_skew_symmetric",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_non_generalized_derivative",
+      "target": "st_non_generalized_skew_symmetric",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_multiplication_operator_assump",
+      "target": "st_multiplication_selfadjoint",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_nonempty_M_assump",
+      "target": "st_norm_one",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_characterization_assump",
+      "target": "st_characterization_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inverse_adjoint_assump",
+      "target": "st_inverse_adjoint_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_selfadjoint_inverse_assump",
+      "target": "st_selfadjoint_inverse_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_semigroup_assump",
+      "target": "st_generator_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exponential_group_assump",
+      "target": "st_exponential_group_conclusion1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exponential_group_assump",
+      "target": "st_exponential_group_conclusion2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_continuous_irreversible_assump",
+      "target": "st_continuous_irreversible_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_unitary_group_from_selfadjoint_assump",
+      "target": "st_unitary_group_from_selfadjoint_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_schrodinger_eq",
+      "target": "st_schrodinger_selfadjoint_assump",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_mapping_to_distribution_assump",
+      "target": "st_mapping_to_distribution_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_momentum_generalized_eigenfunction_def",
+      "target": "st_momentum_complete_eigenfunctions",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_position_complete_eigenfunctions",
+      "target": "st_position_complete_eigenfunctions",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_scattering_motion",
+      "target": "st_asymptotically_free_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_asymptotically_free_def",
+      "target": "st_asymptotically_free_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_scattering_state",
+      "target": "st_scattering_eigenvalue",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cuboid_def",
+      "target": "st_cuboid_volume",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cuboid_def",
+      "target": "st_measurable_sets_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_measurable_sets_def",
+      "target": "st_finite_countable_points_zero",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_measurable_sets_def",
+      "target": "st_almost_everywhere_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_measurable_sets_def",
+      "target": "st_measure_properties",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_step_function_def",
+      "target": "st_step_integral_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_measurable_function_limit",
+      "target": "st_luzin_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_measurable_function_limit",
+      "target": "st_measurable_almost_continuous",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_measurable_function_limit",
+      "target": "st_measurable_linear_comb_limit",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_measurable_function_limit",
+      "target": "st_measurable_change_zero_measure",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lebesgue_integral_def",
+      "target": "st_integrable_implies_measurable",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

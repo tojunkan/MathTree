@@ -1,0 +1,360 @@
+[SCOPE:root|description|商空间（线性代数）]
+文章名: QuoSpa
+标题: 商空间（线性代数）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=通过仿射集构造的等价关系
+  [1] type=theorem heading=定理 1 title=
+  [2] type=theorem heading=定理 2 title=
+  [3] type=definition heading=定义 2 title=剩余类，商空间
+  [4] type=theorem heading=定理 3 title=商空间是矢量空间
+  [5] type=theorem heading=定理 4 title=
+  [6] type=definition heading=定义 3 title=余维数
+  [7] type=example heading=例 1 title=
+  [8] type=theorem heading=定理 5 title=
+  [9] type=corollary heading=推论 1 title=商空间的维度
+  [10] type=theorem heading=定理 6 title=第一同构定理
+  [11] type=theorem heading=定理 7 title=第二同构定理
+  [12] type=theorem heading=定理 8 title=第三同构定理
+  [13] type=corollary heading=推论 2 title=
+
+[SCOPE:s_def1|description|定义1：通过仿射集构造的等价关系]
+[0] 定义 1 通过仿射集构造的等价关系
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1] 设 $U$ 是向量空间 $V$ 的一个子空间。
+[2] 则称 $v_1,v_2\in V$（关于 $U$）是等价的，若 $v_1,v_2$ 同属于一个与 $U$ 相伴的仿射集。
+[/SCOPE:s_def1_let]
+[3] 即存在 $x\in V$，使得 $v_1,v_2\in x+U$。
+[4] 若 $v_1,v_2$ 等价，
+[5] 则记 $v_1\overset{U}{\sim}v_2$。
+[6] 定义中之所以称为等价，是因为这一关系满足自反性，对称性和传递性，这由下面的定理得到保证。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理1：等价关系满足自反性、对称性、传递性]
+[7] 定理 1
+[8] 定义 1 定义的等价关系满足自反性，对称性和传递性。
+[9] 证明：
+[10] 自反性： 任一 $v_1\in V$ 自身显然属于同一个仿射集。
+[11] 所以 $v_1\overset{U}{\sim} v_1$。
+[12] 对称性： 设 $v_1\overset{U}{\sim} v_2$，
+[13] 那么 $v_2,v_1$ 属于同一个仿射集，
+[14] 因此 $v_2\overset{U}{\sim} v_1$。
+[15] 传递性：设 $v_1\overset{U}{\sim} v_2,v_2\overset{U}{\sim} v_3$，
+[16] 那么由于它们都属于同一个仿射集，
+[17] 因此 $v_1\overset{U}{\sim} v_3$。
+[18] 证毕！
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理2：等价条件 v1-v2∈U]
+[19] 定理 2
+[20] $v_1\overset{U}{\sim} v_2$ 的充要条件是 $v_1-v_2\in U$。
+[SCOPE:s_thm2_let1|let_bind|定理2必要性变量]
+[21] 证明：必要性:假设 $v_1\overset{U}{\sim} v_2$，
+[22] 于是存在 $x\in V$，使得 $v_1,v_2\in x+U$，
+[23] 于是可记 $v_1=x+ \boldsymbol{\mathbf{u}} _1,v_2=x+ \boldsymbol{\mathbf{u}} _2$，其中 $ \boldsymbol{\mathbf{u}} _1, \boldsymbol{\mathbf{u}} _2\in U$。
+[24] 那么 $v_1-v_2= \boldsymbol{\mathbf{u}} _1- \boldsymbol{\mathbf{u}} _2\in U$。
+[/SCOPE:s_thm2_let1]
+[SCOPE:s_thm2_let2|let_bind|定理2充分性变量]
+[25] 充分性：假设 $v_1-v_2\in U$。
+[26] 设 $v_1=x+ \boldsymbol{\mathbf{u}} _1,v_1-v_2=u$，其中 $ \boldsymbol{\mathbf{u}} _1,u\in U$，
+[27] 那么 $v_2=v_1-u=x+ \boldsymbol{\mathbf{u}} _1-u\in x+U$。
+[28] 即 $v_1\overset{U}{\sim} v_2$。
+[/SCOPE:s_thm2_let2]
+[29] 证毕！
+[30] 定理 2 表明，我们还可以将定义 1 的等价定义为 $v_1-v_2\in U$，而不使用仿射集的概念。
+[31] 但是在证明所定义的等价是等价关系是定义 1 最方便，因为等价的元素都在同一个集中。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_def2|description|定义2：剩余类，商空间]
+[32] 定义 2 剩余类，商空间
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[33] 在向量空间 $V$ 上（关于子空间 $U$）等价的元素构成的类称为（关于子空间 $U$）剩余类，与 $v_1\in V$ 对应的剩余类记作 $[v_1]$。
+[34] 所有的类的全体称为 $V$ 关于 $U$ 的商空间，记作 $V/U$。
+[/SCOPE:s_def2_let]
+[35] 下面的定理表明利用原空间上的加法和数乘可以定义商空间上的加法和数乘，而使得商空间为矢量空间。
+[36] 这也是称之为 “商空间” 的原因。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm3|description|定理3：商空间是矢量空间]
+[37] 定理 3 商空间是矢量空间
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[38] 设 $U$ 是矢量空间 $V$ 的子空间，
+[39] 则 $V/U$ 在如下加法和数乘下构成一矢量空间：
+[/SCOPE:s_thm3_let]
+[40] 加法：
+[41] $[v_1] + [v_2] := [v_1 + v_2]~;$
+[42] 数乘： $a [v] := [a v]\qquad (a \in \mathbb F)~.$
+[43] 证明：加群：交换性来源于 $[v_1] + [v_2]= [v_1 + v_2]=[v_2+v_1]=[v_2] + [v_1]$；
+[44] 封闭性来源于 $[v_1]+[v_2]=[v_1+v_2]\in V/U$；
+[45] 结合性来源于 $[v_1] + ([v_2]+[v_3])= [v_1 + v_2+v_3]=([v_1]+[v_2])+[v_3]$；
+[46] 零元来源于 $[0]+[v]=[0+v]=[v]$；
+[47] 逆元来源于 $[v_1]+[-v_1]=[v_1-v_1]=[0]$
+[48] 数乘：
+[49] 分配律来源于
+[50] \begin{equation}
+\begin{aligned}
+\lambda([v_1]+[v_2])=&[\lambda v_1+\lambda v_2]=[\lambda v_1]+[\lambda v_2]=\lambda[v_1]+\lambda[v_2];\\
+(\lambda_1+\lambda_2)[v]=&[(\lambda_1+\lambda_2)v]=[\lambda_1v+\lambda_2 v]=\lambda_1[v]+\lambda_2[v].
+\end{aligned}~
+\end{equation}
+[51] 结合律来源于 $\lambda_1(\lambda_2[v])=\lambda_1[\lambda_2 v]=[\lambda_1\lambda_2 v]=(\lambda_1\lambda_2)[v]$
+[52] 证毕！
+[53] 虽然定理 3 表明商空间是矢量空间，
+[54] 但是不代表它上面的加法和数乘定义就是良定义的，
+[55] 即可能依赖于剩余类的代表元。
+[56] 下面定理表明上面在商空间中定义的加法和数乘是良定义的。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|定理4：加法和数乘良定义]
+[57] 定理 4
+[58] 定理 3 中定义的加法和数乘是良定义的，
+[59] 即不依赖于剩余类中的代表元。
+[SCOPE:s_thm4_let|let_bind|定理4的变量]
+[60] 证明：我们需要证明对任意的 $v_1,v_1'\in[v_1],v_2,v_2'\in [v_2]$，成立
+[61] \begin{equation}
+[v_1]+[v_2]=[v_1']+[v_2'],\quad \lambda [v_1]=\lambda [v_1'].~
+\end{equation}
+[/SCOPE:s_thm4_let]
+[62] 事实上，由 $v_1'-v_1\in U,v_2-v_2'\in U$，成立
+[63] \begin{equation}
+\begin{aligned}
+&(v_1'+v_2')-(v_1+v_2)=(v_1'-v_1)+(v_2-v_2')\in U,\\
+&\lambda v_1-\lambda v_1=\lambda (v_1-v_1')\in U.
+\end{aligned}~
+\end{equation}
+[64] 因此，由
+[65] 定理 2 [链接 L0]
+[66] ，$[v_1+v_2]\overset{U}{\sim}[v_1'+v_2'],[\lambda v_1]=[\lambda v_1']$。
+[67] 从而
+[68] 式 2 [链接 L1]
+[69] 证毕！
+
+[/SCOPE:s_thm4]
+[70] 既然定理 3 表明商空间 $V/U$ 是个矢量空间，
+[71] 因此其就有维度的定义。
+
+[SCOPE:s_def3|description|定义3：余维数]
+[72] 定义 3 余维数
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[73] 设 $V$ 是矢量空间，$U$ 是 $V$ 的子空间，
+[74] 则称商空间 $V/U$ 的维度为（$V$ 中）$U$ 的余维数，记作 $\mathrm{codim}_V U$，
+[/SCOPE:s_def3_let]
+[75] 即 $\mathrm{codim}_V U:=\mathrm{dim} V/U$。
+
+[/SCOPE:s_def3]
+[SCOPE:s_ex1|description|例1：子空间有补空间]
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[76] 试用商空间的概念证明线性空间的任意子空间都有补空间：即若 $V$ 是域 $\mathbb F$ 上的线性空间，$W$ 是其子空间，
+[77] 则 $W$ 必有补空间（定义 1 ）。
+[78] 从 $W$ 的左陪集 ${S_{\alpha}}$ 里各选一个元素 $v_a$，$ \operatorname {Span} \{v_{\alpha}\}$ 构成商空间 $V/W$ 的一组基2，张成的也是 $W$ 的补空间。
+[/SCOPE:s_ex1_let]
+[79] 由等价类划分可知，$ \operatorname {Span} \{v_{\alpha}\}$ 与 $W$ 没有交集，
+[80] 因此我们只需要证明所有元素都可以表示为 $b_{\alpha}v_{\alpha} + W$ 即可。
+[81] 设 $v$ 为任意元素，
+[82] 则有 $v + W=b_{\alpha} S_{\alpha}$，由于 $v_{\alpha} \in S_{\alpha}$，
+[83] 所以 $b_{\alpha} v_{\alpha} \in v + W$。
+[84] 也就是说，总可以找到一个元素 $v_1 \in W$，使得 $v=bv_{\alpha} + v_1$，由于左陪集与子空间互不包含，
+[85] 因而和是直和，证毕。
+[86] 该例子的证明过程同时明示着商空间维数和子空间的关系。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_thm5|description|定理5：V=U⊕W时W与V/U同构]
+[87] 定理 5
+[SCOPE:s_thm5_let|let_bind|定理5的变量]
+[88] 设 $V=U\oplus W$，
+[89] 那么映射
+[90] \begin{equation}
+f:W\rightarrow V/U, u\mapsto u+U.~
+\end{equation}
+[/SCOPE:s_thm5_let]
+[91] 证明：线性： 设 $\alpha,\beta\in\mathbb F,u,v\in W$，
+[92] 则
+[93] \begin{equation}
+\begin{aligned}
+f(\alpha u+\beta v)=&\alpha u+\beta v+U\\
+=&\alpha (u+U)+\beta(v+U)\\
+=&\alpha f(u)+\beta f(v).
+\end{aligned}~
+\end{equation}
+[94] 第二个等式用到 $U+U=U,\alpha U=U$（见
+[95] 定义 2 [链接 L2]
+[96] 满射性：设 $v+U\in V/U$。
+[97] 由于 $V=U\oplus W$，
+[98] 所以 $v=x+y,x\in U,y\in W$（见直和的定义（定义 1 ））。
+[99] 于是
+[100] \begin{equation}
+v+U=x+y+U=(x+U)+(y+U)=U+(y+U)=y+U=f(y).~
+\end{equation}
+[101] 上面第三个等式用到 $x\in U\Rightarrow x+U=U$。
+[102] Ker f=0：由于 $\ker f:=\{x|f(x)=0,x\in W\}$，其中 $0$ 代表 $V/U$ 的零元，由定理 3 中的证明可知这个零元就是 $[0]=0+U=U$。
+[103] 因此若 $u\in\ker f$，
+[104] 则 $f(u+U)=u+U=U$，进而 $u\in U$。
+[105] 但是 $u\in W,U\cap W=0$，
+[106] 所以只能是 $u=0$。
+[107] 这表明 $\ker f=0$。
+[108] 由 $f$ 的满射性和 $\ker f=0$（链接），得 $f$ 是双射。
+[109] 证毕！
+
+[/SCOPE:s_thm5]
+[SCOPE:s_cor1|description|推论1：商空间的维度]
+[110] 推论 1 商空间的维度
+[SCOPE:s_cor1_let|let_bind|推论1的变量]
+[111] 对于有限维度向量空间 $V$,
+[112] \begin{equation}
+\dim(V/U) = \dim V - \dim U~.
+\end{equation}
+[/SCOPE:s_cor1_let]
+[113] 证明：由定理 5 和（直和的维度关系）可得。
+[114] 证毕！
+
+[/SCOPE:s_cor1]
+[SCOPE:s_thm6|description|定理6：第一同构定理]
+[115] 定理 6 第一同构定理
+[SCOPE:s_thm6_let|let_bind|定理6的变量]
+[116] 设 $V_1,V_2$ 是域 $\mathbb F$ 上的线性空间，且有线性映射 $f:V_1\rightarrow V_2$ 满足 $ \operatorname {ker}\phi=U\subset V_1$，
+[117] 则 $f$ 诱导出商空间上的同构
+[118] \begin{equation}
+\overline f:V_1/ \operatorname {ker}f \cong \operatorname{Im} f~.
+\end{equation}
+[/SCOPE:s_thm6_let]
+[119] 证明：
+[120] 对于任意 $ \boldsymbol{\mathbf{x}} \in V_1$，$\overline { \boldsymbol{\mathbf{x}} }$ 表示其同余类，
+[121] 即 $\{\overline { \boldsymbol{\mathbf{x}} }= \boldsymbol{\mathbf{x}} + \boldsymbol{\mathbf{a}} | \boldsymbol{\mathbf{a}} \in U\}$。
+[122] 设 $\overline f(\overline { \boldsymbol{\mathbf{x}} })=f( \boldsymbol{\mathbf{x}} )$。
+[123] 则对于任意 $ \boldsymbol{\mathbf{x}} _1 \boldsymbol{\mathbf{x}} _2\in V_1,k_1,k_2\in \mathbb F$，我们有
+[124] \begin{equation}
+\begin{aligned}
+\overline f(k_1 \overline { \boldsymbol{\mathbf{x}} _1}+k_2\overline { \boldsymbol{\mathbf{x}} _2})&=\overline f(k_1 \boldsymbol{\mathbf{x}} _1+k_2 \boldsymbol{\mathbf{x}} _2+ \operatorname {ker}f)\\
+&=f(k_1 \boldsymb…[truncated]…k_2 \boldsymbol{\mathbf{x}} _2)\\
+&=k_1f( \boldsymbol{\mathbf{x}} _1)+k_2f( \boldsymbol{\mathbf{x}} _2)\\
+&=k_1\overline f(\overline { \boldsymbol{\mathbf{x}} _1})+k_2\overline f(\overline { \boldsymbol{\mathbf{x}} _2})~,
+\end{aligned}
+\end{equation}
+[125] 因此，$\overline f$ 是线性的。
+[126] 由式 7 得 $ \operatorname {dim}(V_1/\ker f)= \operatorname {dim}V_1- \operatorname {dim}\ker f= \operatorname {dim} \operatorname{Im} f$，
+[127] 因此这是同构映射。
+
+[/SCOPE:s_thm6]
+[SCOPE:s_thm7|description|定理7：第二同构定理]
+[128] 定理 7 第二同构定理
+[SCOPE:s_thm7_let|let_bind|定理7的变量]
+[129] 设 $U_1,U_2\subset V$，
+[130] 则有自然同构：
+[131] \begin{equation}
+\frac{U_1+U_2}{U_2}\cong \frac{U_1}{U_1\cap U_2}~.
+\end{equation}
+[/SCOPE:s_thm7_let]
+[132] 证明：
+[133] 设任意 $ \boldsymbol{\mathbf{x}} \in U_1+U_2$ 可以分解为 $ \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{u}} _1+ \boldsymbol{\mathbf{u}} _2$，映射 $f$ 为
+[134] \begin{equation}
+f(\overline { \boldsymbol{\mathbf{x}} })=f( \boldsymbol{\mathbf{x}} +U_2)= \boldsymbol{\mathbf{u}} _1~,
+\end{equation}
+[135] 通过类似
+[136] 式 9 [链接 L3]
+[137] 的证明过程可知这是线性映射。
+[138] 又因为
+[139] \begin{equation}
+\begin{aligned}
+\dim\frac{U_1+U_2}{U_2}&=\dim U_1+\dim U_2-\dim (U_1\cap U_2)-U_2\\
+&=U_1-\dim(U_1\cap U_2)~,
+\end{aligned}
+\end{equation}
+[140] 所以这是同构映射。
+[141] 单射是合理的，
+[142] 即使 $ \boldsymbol{\mathbf{x}} $ 有两种分解，也会映射到一个同余类。
+[143] 比如设 $ \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{u}} _1+ \boldsymbol{\mathbf{u}} _2= \boldsymbol{\mathbf{u'}} _1+ \boldsymbol{\mathbf{u'}} _2$，
+[144] 则 $f( \boldsymbol{\mathbf{u}} _1+ \boldsymbol{\mathbf{u}} _2+U_2)-f( \boldsymbol{\mathbf{u'}} _1+ \boldsymbol{\mathbf{u'}} _2+U_2)= \boldsymbol{\mathbf{u}} _1+U_1\cap U_2= \boldsymbol{\mathbf{u'}} _1+U_1\cap U_2$。
+
+[/SCOPE:s_thm7]
+[SCOPE:s_thm8|description|定理8：第三同构定理]
+[145] 定理 8 第三同构定理
+[SCOPE:s_thm8_let|let_bind|定理8的变量]
+[146] 设任意 $U_2\subset U_1\subset V$,则有自然同构
+[147] \begin{equation}
+\frac{V}{U_1}\cong \frac{V/U_2}{U_1/U_2}~.
+\end{equation}
+[/SCOPE:s_thm8_let]
+[148] 证明：
+[149] 建立线性映射 $f:V/U_2\rightarrow V/U_1$ 为 $f( \boldsymbol{\mathbf{x}} +U_2)= \boldsymbol{\mathbf{x}} +U_1$，显然这是线性映射。
+[150] 因为映射的核为 $U_1/U_2$。
+[151] 结合定理 6 可得证。
+
+[/SCOPE:s_thm8]
+[SCOPE:s_cor2|description|推论2：直和商空间同构]
+[152] 推论 2
+[SCOPE:s_cor2_let|let_bind|推论2的变量]
+[153] 设 $V=V_1\oplus V_2$，$U=U_1\oplus U_2\subset V$，
+[154] 则有自然同构
+[/SCOPE:s_cor2_let]
+[155] \begin{equation}
+\frac{V_1\oplus V_2}{U_1\oplus U_2}\cong \frac{V_1}{U_1}\oplus \frac{V_2}{U_2}~.
+\end{equation}
+[/SCOPE:s_cor2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1证明定义1的等价关系是等价关系"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "定理2给出等价条件的另一种刻画"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3表明商空间是矢量空间"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_thm3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理4证明定理3中定义的运算良定义"
+  },
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm5",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1利用定理5得到维度公式"
+  },
+  {
+    "source_scope": "s_thm6",
+    "target_scope": "s_thm5",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "第一同构定理推广了定理5"
+  },
+  {
+    "source_scope": "s_thm7",
+    "target_scope": "s_thm6",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "第二同构定理是第一同构定理的应用"
+  },
+  {
+    "source_scope": "s_thm8",
+    "target_scope": "s_thm6",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "第三同构定理是第一同构定理的应用"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_thm8",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论2是第三同构定理的特例"
+  }
+]

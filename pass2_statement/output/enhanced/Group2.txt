@@ -1,0 +1,306 @@
+[SCOPE:root|description|群的同态与同构]
+文章名: Group2
+标题: 群的同态与同构
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=自同构
+  [1] type=definition heading=定义 2 title=同态映射
+  [2] type=definition heading=定义 3 title=像和核
+  [3] type=exercise heading=习题 1 title=
+  [4] type=exercise heading=习题 2 title=群同态基本定理
+  [5] type=theorem heading=定理 1 title=
+  [6] type=corollary heading=推论 1 title=
+  [7] type=definition heading=定义 4 title=内自同构
+  [8] type=theorem heading=定理 2 title=
+  [9] type=definition heading=定义 5 title=外自同构
+  [10] type=example heading=例 1 title=不是内自同构的自同构
+  [11] type=theorem heading=定理 3 title=
+  [12] type=theorem heading=定理 4 title=
+
+[SCOPE:s_intro|description|同构引入]
+[0] 让我们来观察两个群 $(\mathbb{Z}, +)$ 和 $(2\mathbb{Z},+)$。
+[1] 如果我们把 $2\mathbb{Z}$ 中的 $2$ 都看成 $1$，$4$ 都看成 $2$，以此类推，将 $2k$ 都看成 $k$，
+[2] 那么两个群的运算规则是一模一样的。
+[3] 比如说，$2\mathbb{Z}$ 中有 $2+4=6$，对应的是 $\mathbb{Z}$ 中 $1+2=3$ 的等式。
+[4] 我们研究集合和群的时候，元素叫什么名字并不重要，重要的是元素之间是否相同以及运算规则是怎样的。
+[5a] 那么
+[5b] 如果我们真的将 $2\mathbb{Z}$ 中的元素 $2k$ 都重命名为 $k$，它，则和 $\mathbb{Z}$ 没什么区别了。
+[6a] 所以在群的意义上
+[6b] 如果不考虑子群关系，单独把 $\mathbb{Z}$ 和 $2\mathbb{Z}$ 拿出来的时候，我们，则认为它们是不可区分的，完全相同的两个群。
+[SCOPE:s_intro_let|let_bind|同构映射f]
+[7] 如果我们建立一个映射 $f:\mathbb{Z}\rightarrow2\mathbb{Z}$，定义为 $f(k)=2k$，
+[8] 那么这个 $f$ 就是一个双射，它在两个群的元素之间一一对应地建立了联系。
+[9a] (m)+f
+[9b] (n)=f(m+n)$，也就是说 “先运算再映射” 和 “先映射再运算” 结果是相同的。
+[10a] (x)f
+[10b] (y)=f(xy)$，
+[11] 那么这两个群的运算结构就是一模一样的。
+[12] 这时我们说这两个群是同构（isomorphic）的，而这个使得它们同构的双射就被称为 $G$ 和 $K$ 之间的同构映射（isomorphic mapping），也可以简称同构（isomorphism）这里加粗的两个 “同构”，前者是形容词，后者是名词。
+
+[/SCOPE:s_intro]
+[/SCOPE:s_intro_let]
+[SCOPE:s_def1|description|自同构]
+[13] 定义 1 自同构
+[14] 称群到自身的同构为一个自同构（automorphism）1。
+[15] 群 $G$ 的全体自同构配合映射的复合，又构成一个群，称为 $G$ 的自同构群，记为 $ \operatorname {Aut}(G)$。
+[16] 由于同构使得两个群各方面表现一模一样，研究同构其实没有太大意义，我们甚至直接把同构的两个群看成同一个群，不管元素具体怎么命名的。
+[17] 有意思的结构，是以下定义的 “同态映射”。
+
+[/SCOPE:s_def1]
+[18] 同构映射是一个双射。
+[19a] 如果把这个要求拿掉，我们
+[19b] 则得到同态的概念：
+
+[SCOPE:s_def2|description|同态映射]
+[20] 定义 2 同态映射
+[SCOPE:s_def2_let|let_bind|同态映射变量]
+[21a] (x)f
+[21b] (y)=f(xy)$，
+[22] 那么称 $G$ 和 $K$ 是同态（homomorphic）的，称 $f$ 是同态映射（homomorphic mapping）或同态（homomorphism）。
+
+[/SCOPE:s_def2]
+[/SCOPE:s_def2_let]
+[SCOPE:s_def3|description|像和核]
+[23] 定义 3 像和核
+[SCOPE:s_def3_let|let_bind|像和核变量]
+[24] 沿用定义 2 的设定。
+[25] $K$ 中被映射到的元素构成的集合，称为 $f$ 的像（image），记作 $f(G)$。
+[26] $G$ 中映射到 $K$ 的单位元 $e_K$ 的元素构成的集合，称为 $f$ 的核（kernal），记为 $\ker(f)$。
+[27] 注意，$f(G)\subset K$，$\ker(f)\subset G$。
+[/SCOPE:s_def3_let]
+[28] 同态的两个群，运算结构很相似但又不完全一样。
+[29] 在以上定义的例子中，$K$ 的行为就像是一个弱化版的 $G$，可能会丢失一些细节，
+[30] 但保留的方面和 $G$ 是一模一样的。
+[31] 这么说可能不够具体，我们用习题 1 和习题 2 来理解同态的 “似而不同”。
+
+[/SCOPE:s_def3]
+[SCOPE:s_ex1|description|习题1]
+[32] 习题 1
+[SCOPE:s_ex1_let|let_bind|习题1变量]
+[33] 设两个群 $G$ 和 $K$，$f:G\rightarrow K$ 是一个同态，$x\in G$，求证 $f(x^{-1})=(f(x))^{-1}$。
+
+[/SCOPE:s_ex1]
+[/SCOPE:s_ex1_let]
+[SCOPE:s_ex2|description|群同态基本定理]
+[34] 习题 2 群同态基本定理
+[SCOPE:s_ex2_let|let_bind|习题2变量]
+[35] 设两个群 $G$ 和 $K$，$f:G\rightarrow K$ 是一个满同态。
+[36] 求证：
+[37] $\ker(f)$ 是 $G$ 的一个正规子群2。
+[38a] (f)$ 和 $y_1^{-1}y_2\in \ker
+[38b] (f)$，
+[39a] (x)=f(x_1)$，$f
+[39b] (y)=f(y_1)$。
+[40] 由前两条的结论，证明可以用 $f$ 来导出一个映射 $f': G/\ker(f)\rightarrow K$，它是一个群同构。
+[41] 由习题 2 ，同态的实质就是商群 $G/\ker(f)$ 和 $K$ 之间的同构。
+[42] $G/\ker(f)$ 继承了 $G$ 的运算，
+[43] 但是由于把同余的元素全都当作同一个了，也就丢失了一部分细节。
+[44] 因此我们说同态的两个群也是 “似而不同” 的。
+[45] 对于两个存在满同态关系的群，我们可以利用群同态定理，进一步找到结构上的相似之处。
+
+[/SCOPE:s_ex2]
+[/SCOPE:s_ex2_let]
+[SCOPE:s_thm1|description|定理1]
+[46] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1变量]
+[47] 设 $f:G_1\to G_2$ 是满同态，$N= \operatorname {ker}f$，
+[48] 则
+[49] 若 $B$ 是 $G_1$ 的子群，
+[50] 则 $f(B)$ 是 $G_2$ 的子群。
+[51] 反之，若 $K$ 是 $G_2$ 的子群，
+[52] 则 $f^{-1}(K)=\{x\in G_1\mid f(x)\in K\}$ 是 $G_1$ 的子群且 $f^{-1}(K)\supseteq N$。
+[53] 对于任意 $H\supseteq N,f:H\to f(H)$ 建立了子群之间的一一对应；
+[54] 在该双射下，$H\lhd G_1$ 当且仅当 $f(H)\lhd G_2$。
+[55] $H$ 同上设。
+[56] $G_1/H\cong G_2/f(H)$。
+[/SCOPE:s_thm1_let]
+[57] 证明：
+[58a] (x),f
+[58b] (y)\in f(B)$，
+[59a] (x)f
+[59b] (y)^{-1}=f(xy^{-1})$。
+[60] 又因为 $xy^{-1}\in B$，
+[61] 所以 $f(xy^{-1})\in f(H)$。
+[62] 所以 $f(B)$ 是 $G_2$ 的子群。
+[63] 反之也同理易证 $f^{-1}(K)$ 是 $G_1$ 的子群4。
+[64] 设 $e'=f(e)$，由于 $e'\in K$，
+[65] 所以 $f^{-1}(e')=N\subseteq f^{-1}(K) $。
+[66] 由前文讨论可知，$f(H)$ 必然是 $G_2$ 的子群，
+[67] 因此 $f^{-1}f(H)$ 必然是包含 $N$ 的子群。
+[68] 所以 $f$ 确实建立了包含 $N$ 的 $G_1$子群集合与 $f(H)$ 构成的子群集合之间的映射。
+[69] 在该集合意义上，$f$ 是满射（$f^{-1}f(H)\supseteq H,N$），
+[70] 所以接下来我们只需要证明这是单射即可。
+[SCOPE:s_thm1_reductio|reductio|单射反证]
+[71] 假设这不是单射，
+[SCOPE:s_thm1_reductio_let|let_bind|反证假设变量]
+[72] 即至少存在两个包含 $N$ 的子群 $A,B$ 使得 $f(A)=f(B)$。
+[73a] (a)=f
+[73b] (b)$，
+[74] 则 $f(ab^{-1})=e'$，
+[75] 所以 $ab^{-1}\in N\subseteq B$，
+[76] 则 $a\in B, A\subseteq B$。
+[77] 反之，对于任意 $b'\in B$，存在 $a'\in A$ 使得 $f(a'b'^{-1})=e'$，
+[78] 则 $a'b'^{-1}\subseteq A$，
+[79] 则 $b'\in A,B\subseteq A$，
+[80] 所以 $A=B$，映射是单射；
+[/SCOPE:s_thm1_reductio]
+[/SCOPE:s_thm1_reductio_let]
+[81] 下面证最后一个性质。
+[82] 设 $H\lhd G_1$。
+[83a] (a)\in G_2$ 有 $f
+[83b] (a)f(H)f
+[83c] (a)^{-1}=f(aHa^{-1})=f(H)$，
+[84] 因此 $f(H)\lhd G_2$。
+[85] 反之由 $f$ 是满同态，易证若 $K\lhd G_2$，
+[86] 则 $f^{-1}(K)\lhd G_1$。
+[87] 由上文知 $f(H)\lhd G_2$。
+[88] 现设 $f'=\pi \circ f:G_1\to G_2\to G_2/f(H)$5。
+[89] 这是满同态的复合，
+[90] 因此 $f'$ 也是满同态。
+[91] 因为 $ \operatorname {ker}f'=f^{-1}f(H)=H$，由群同态基本定理得证此条性质。
+[92] 应用定理 1 在自然同态 $\pi:G\to G/N$ 上，可以清楚看到，商群是如何继承原群结构的，具体如下图所示。
+[93] 【图解】图 1：正规子群的一一对应。
+[94] 红色圆代表正规子群 $N$，所有圆都是群 $G$ 关于 $N$ 的陪集分解。
+[95] 紫色部分加上红色圆代表在群 $G$ 意义上的正规子群 $N_2$，$N_2\supseteq N$。
+[96] 黄色圆加上红色圆则代表在商集意义上的正规子群，
+[97] 即 $N_2/N\lhd G/N$。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_cor1|description|推论1]
+[98] 推论 1
+[SCOPE:s_cor1_let|let_bind|推论1变量]
+[99] $G$ 是群，若 $H,N$ 都是 $G$ 的正规子群且 $H\supseteq N$，我们有6
+[100] \begin{equation}G/H\cong (G/N)/(H/N)~.\end{equation}
+
+[/SCOPE:s_cor1]
+[/SCOPE:s_cor1_let]
+[101] 回顾线性代数中的知识：给定线性空间的基以后，线性变换和矩阵就一一对应（我们称之为给定基下用矩阵表示线性变换），而改变基以后同一个线性变换的基也会变。
+[102] 因此，群 $(\{\text{线性变换}\}, \text{映射的复合})$ 与群 $(\{\text{矩阵}\}, \text{矩阵乘法})$ 之间可以建立同构。
+[103] 这样的同构不是唯一的，而是依赖于基的选择。
+[104] 不同的矩阵可以看成同一个线性变换在不同基下的表示，也可以看成两个不同的线性变换在同一个基下的表示。
+[105] 因此，我们可以用一个基来将矩阵对应到线性变换上，再用另一个基将线性变换对应到另一个矩阵上，
+[106] 由此就得到了矩阵之间的对应，这个对应就是矩阵乘法群到自身的同构。
+[107] 同一个线性变换在不同基之间的矩阵表示的关系是相似，具体参见过渡矩阵小节。
+[108] 由上段论述可知，给定可逆矩阵 $ \boldsymbol{\mathbf{Q}} $，
+[109] 则矩阵到自身的映射 $f$ 是一个自同构，其中 $f( \boldsymbol{\mathbf{M}} )= \boldsymbol{\mathbf{Q}} ^{-1} \boldsymbol{\mathbf{MQ}} $。
+[110] 这提示我们一种构建群自同构的方法。
+
+[SCOPE:s_def4|description|内自同构]
+[111] 定义 4 内自同构
+[SCOPE:s_def4_let|let_bind|内自同构变量]
+[112] 给定群 $G$。
+[113] 取 $g\in G$，定义映射 $ \operatorname {Ad}_g:G\to G$ 如下：对于任意 $x\in G$，都有 $ \operatorname {Ad}_g(x)=gxg^{-1}$。
+[114] 称 $ \operatorname {Ad}_g$ 是 $G$ 上的内自同构（inner automorphism），或者共轭自同构（cogredient automorphism）。
+[115] 群 $G$ 的全体内自同构构成 $ \operatorname {Aut}(G)$ 的一个子群，称为 $G$ 的内自同构群，记为 $ \operatorname {Inn}(G)$。
+
+[/SCOPE:s_def4]
+[/SCOPE:s_def4_let]
+[SCOPE:s_thm2|description|定理2]
+[116] 定理 2
+[117] 内自同构群是自同构群的正规子群。
+[118] 证明：
+[SCOPE:s_thm2_let|let_bind|定理2变量]
+[119] 给定群 $G$，设 $f\in \operatorname {Aut}(G)$。
+[120] 任取 $g, x\in G$，
+[121] 则由习题 1 可得，
+[122] \begin{equation}
+\begin{aligned}
+f^{-1} \left(gf(x)g^{-1} \right) &=f^{-1} \left(g \right) f^{-1} \left(f(x) \right) f^{-1} \left(g^{-1} \right) \\
+&=f^{-1} \left(g \right) xf^{-1} \left(g^{-1} \right) \\
+&=f^{-1} \left(g \right) x \left(f^{-1} \left(g \right) \right) ^{-1}
+\end{aligned}~
+\end{equation}
+[123] 由 $x$ 的任意性，式 2 意味着 $f\circ \operatorname {Ad}_g\circ f^{-1}= \operatorname {Ad}_{f^{-1}(g)}$。
+[124] 因此 $f\circ \operatorname {Inn}(G)\circ f^{-1}\subseteq \operatorname {Inn}(G)$，
+[125] 故 $ \operatorname {Inn}(G)$ 是 $ \operatorname {Aut}(G)$ 的正规子群。
+[126] 证毕。
+[/SCOPE:s_thm2_let]
+[127] 由定理 2 ，我们可以计算商群 $ \operatorname {Aut}(G)/ \operatorname {Inn}(G)$。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_def5|description|外自同构]
+[128] 定义 5 外自同构
+[129] 给定群 $G$，称 $ \operatorname {Aut}(G)/ \operatorname {Inn}(G)$ 为 $G$ 的外自同构群（outer automorphism），记为 $ \operatorname {Out} (G)$。
+
+[/SCOPE:s_def5]
+[SCOPE:s_example1|description|例1]
+[130] 例 1 不是内自同构的自同构
+[SCOPE:s_example1_let|let_bind|例1变量]
+[131] 取复数乘法群 $(\mathbb{C}, \times)$，
+[132] 则取共轭映射 $f(z)=\bar{z}$ 是其上一个自同构，
+[133] 但它显然不是内自同构。
+[134] 由于复数乘法的交换性，复数乘法群上的内自同构只有恒等映射一种。
+[135] 对于任意群而言，内自同构群的结构是清楚的，由下述定理给出。
+[136] 这个定理其实是群同态基本定理的一个简单应用。
+
+[/SCOPE:s_example1]
+[/SCOPE:s_example1_let]
+[SCOPE:s_thm3|description|定理3]
+[137] 定理 3
+[138] $ \operatorname {Inn}(G)$ 同构于 $G/C(G)$。
+[139] 证明：
+[SCOPE:s_thm3_let|let_bind|定理3变量]
+[140] 我们只需要给出 $G$ 到 $ \operatorname {Inn}(G)$ 的一个满同态并证明其核为 $C(G)$ 即可。
+[141] 定义映射 $f:G\to \operatorname {Inn} G$ 为 $f(x)= \operatorname {Ad}_x$，容易知道这是个满射，又因为对任意 $g\in G$,有
+[142] \begin{equation}
+\begin{split}
+(f(x)f(y))(g)&=( \operatorname {Ad}_x \operatorname {Ad}_y)(g)= \operatorname {Ad}_x(( \operatorname {Ad}_y)(g))\\
+&=xygy^{-1}x^{-1}=(xy)g(xy)^{-1}\\
+&= \operatorname {Ad}_{xy}(g)\\
+&=(f(xy))(g),
+\end{split}~
+\end{equation}
+[143a] (x)f
+[143b] (y)=f(xy)$，
+[144] 所以这是一个同态映射。
+[145a] (f)=C(G)$，因为若 $x\in\ker
+[145b] (f)$，
+[146] 则对任意 $g\in G$，有 $xgx^{-1}=g$.
+[147] 所以由习题 2 ，$ \operatorname {Inn}(G)$ 同构于 $G/C(G)$。
+[148] 证毕。
+[/SCOPE:s_thm3_let]
+[149] 特别地，由于当 $n\geq 3$ 时 $C(S_n)=\{e\}$，
+[150] 故 $ \operatorname {Inn} S_n$ 与 $S_n$ 同构。
+[151] 相比内自同构群，自同构群的结构复杂得多。
+[152] 这里单就置换群给出结果。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|定理4]
+[153] 定理 4
+[154] 当 $n\neq 2,6$ 时，置换群 $S_n$ 的自同构群同构于自身。
+[155] $S_2$ 的自同构群是平凡群。
+[156] $ \operatorname {Out} S_6$ 是 2 阶循环群。
+[/SCOPE:s_thm4]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "习题2的结论用于定理1的证明"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def5",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2保证商群定义合理"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_thm3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "习题2用于定理3证明"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_thm4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3应用于置换群"
+  }
+]

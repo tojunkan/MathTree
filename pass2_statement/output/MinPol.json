@@ -1,0 +1,257 @@
+{
+  "article_name": "MinPol",
+  "statements": [
+    {
+      "stmt_id": "st_def1_poly",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "V",
+        "A",
+        "f",
+        "f(A)"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_null",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "V",
+        "A",
+        "W",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_hamilton",
+      "subtype": "theorem",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "V",
+        "A",
+        "f(λ)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": [
+        "V",
+        "A",
+        "I",
+        "f(λ)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_adj",
+      "subtype": "definition",
+      "clause_range": [
+        23,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": [
+        "B(λ)",
+        "B_i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_eq1",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_eq2",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_eq3",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        35
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def3_minpoly",
+      "subtype": "definition",
+      "clause_range": [
+        37,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "V",
+        "A",
+        "f",
+        "g",
+        "h"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_exist",
+      "subtype": "theorem",
+      "clause_range": [
+        43,
+        45
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "V",
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        47,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_proof",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof_contra",
+      "subtype": "conclusion",
+      "clause_range": [
+        49,
+        54
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_proof",
+      "exposed_entities": [
+        "g",
+        "h",
+        "r"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        55,
+        56
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_proof_assump",
+      "target": "st_thm1_proof_eq1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_adj",
+      "target": "st_thm1_proof_eq1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_eq1",
+      "target": "st_thm1_proof_eq2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_eq2",
+      "target": "st_thm1_proof_eq3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_eq3",
+      "target": "st_thm1_proof_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof_assump",
+      "target": "st_thm2_proof_contra",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof_contra",
+      "target": "st_thm2_proof_final",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_hamilton",
+      "target": "st_def2_null",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "Hamilton-Cayley 定理是零化多项式存在的一个特例"
+    },
+    {
+      "source": "st_thm2_exist",
+      "target": "st_thm1_hamilton",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理2的证明依赖于定理1（零化多项式存在）"
+    }
+  ],
+  "unresolved": []
+}

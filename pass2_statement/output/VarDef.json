@@ -1,0 +1,224 @@
+{
+  "article_name": "VarDef",
+  "statements": [
+    {
+      "stmt_id": "st_thm1",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "M(x)",
+        "η(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2",
+      "subtype": "theorem",
+      "clause_range": [
+        3,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "M(x)",
+        "η(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof_let",
+      "exposed_entities": [
+        "c",
+        "M(c)",
+        "n",
+        "x0",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_eta0_def",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof_let",
+      "exposed_entities": [
+        "η0(x)",
+        "x0",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_contra",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_proof_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_proof_let",
+      "exposed_entities": [
+        "M(x)",
+        "c1",
+        "c2",
+        "d1",
+        "d2",
+        "x0",
+        "x1",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_etaprime_def",
+      "subtype": "definition",
+      "clause_range": [
+        27,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_proof_let",
+      "exposed_entities": [
+        "η'(x)",
+        "η(x)",
+        "x0",
+        "x1",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof_contra",
+      "subtype": "conclusion",
+      "clause_range": [
+        31,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_proof_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_let",
+      "target": "st_thm2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_assump",
+      "target": "st_eta0_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_eta0_def",
+      "target": "st_thm1_proof_contra",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_contra",
+      "target": "st_thm1_proof_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof_assump",
+      "target": "st_etaprime_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_etaprime_def",
+      "target": "st_thm2_proof_contra",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof_contra",
+      "target": "st_thm2_proof_result",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

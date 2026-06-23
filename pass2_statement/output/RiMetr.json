@@ -1,0 +1,398 @@
+{
+  "article_name": "RiMetr",
+  "statements": [
+    {
+      "stmt_id": "st_riemann_metric_def",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_riemann_metric",
+      "exposed_entities": [
+        "M",
+        "g",
+        "T_pM",
+        "g_p"
+      ]
+    },
+    {
+      "stmt_id": "st_riemann_metric_equiv",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_riemann_metric",
+      "exposed_entities": [
+        "g",
+        "T_pM",
+        "g_p"
+      ]
+    },
+    {
+      "stmt_id": "st_riemann_metric_notation",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_riemann_metric",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_local_coords_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_riemann_metric",
+      "exposed_entities": [
+        "x^i",
+        "g_{ij}(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_local_expr",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_riemann_metric",
+      "exposed_entities": [
+        "g_{ij}(x)",
+        "X^i"
+      ]
+    },
+    {
+      "stmt_id": "st_metric_properties",
+      "subtype": "remark",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_riemann_metric",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_curve_length_def",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_riemann_metric",
+      "exposed_entities": [
+        "gamma",
+        "M",
+        "g",
+        "L[gamma]"
+      ]
+    },
+    {
+      "stmt_id": "st_curve_length_coords",
+      "subtype": "definition",
+      "clause_range": [
+        18,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_riemann_metric",
+      "exposed_entities": [
+        "x^i(t)",
+        "g_{ij}(x(t))",
+        "dot x^i(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_length_param_indep",
+      "subtype": "theorem",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "s_riemann_metric",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_bundle_map_def",
+      "subtype": "definition",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_riemann_metric",
+      "exposed_entities": [
+        "widetilde g",
+        "TM",
+        "T*M",
+        "X",
+        "Y"
+      ]
+    },
+    {
+      "stmt_id": "st_bundle_map_iso",
+      "subtype": "theorem",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_riemann_metric",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_dual_coords",
+      "subtype": "definition",
+      "clause_range": [
+        29,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_riemann_metric",
+      "exposed_entities": [
+        "partial_i",
+        "g_{ij}(p)",
+        "X^i",
+        "X_j"
+      ]
+    },
+    {
+      "stmt_id": "st_inverse_bundle_map",
+      "subtype": "definition",
+      "clause_range": [
+        34,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_riemann_metric",
+      "exposed_entities": [
+        "widetilde g^{-1}",
+        "xi",
+        "g^{ij}(p)",
+        "xi_i"
+      ]
+    },
+    {
+      "stmt_id": "st_gradient_def",
+      "subtype": "definition",
+      "clause_range": [
+        40,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_riemann_metric",
+      "exposed_entities": [
+        "grad f",
+        "df"
+      ]
+    },
+    {
+      "stmt_id": "st_gradient_properties",
+      "subtype": "theorem",
+      "clause_range": [
+        42,
+        44
+      ],
+      "truth_value": "true",
+      "scope_id": "s_riemann_metric",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_gradient_coords",
+      "subtype": "definition",
+      "clause_range": [
+        45,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_riemann_metric",
+      "exposed_entities": [
+        "nabla f",
+        "g^{ij}(p)",
+        "partial_i f",
+        "partial_j"
+      ]
+    },
+    {
+      "stmt_id": "st_euclidean_gradient",
+      "subtype": "example",
+      "clause_range": [
+        48,
+        48
+      ],
+      "truth_value": "true",
+      "scope_id": "s_riemann_metric",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_smooth_function_gradient",
+      "subtype": "theorem",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": "true",
+      "scope_id": "s_riemann_metric",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exercise1",
+      "subtype": "exercise",
+      "clause_range": [
+        50,
+        52
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise1",
+      "exposed_entities": [
+        "square",
+        "g^{nu mu}",
+        "nabla_nu",
+        "nabla_mu",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_pseudo_def",
+      "subtype": "definition",
+      "clause_range": [
+        53,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_pseudo_riemann",
+      "exposed_entities": [
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_nondeg_conditions",
+      "subtype": "definition",
+      "clause_range": [
+        55,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_pseudo_riemann",
+      "exposed_entities": [
+        "g",
+        "V",
+        "sigma_g"
+      ]
+    },
+    {
+      "stmt_id": "st_lorentz_example",
+      "subtype": "example",
+      "clause_range": [
+        60,
+        60
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_lorentz",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_local_coords_assump",
+      "target": "st_local_expr",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_curve_length_def",
+      "target": "st_curve_length_coords",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_bundle_map_def",
+      "target": "st_bundle_map_iso",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_bundle_map_iso",
+      "target": "st_dual_coords",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_dual_coords",
+      "target": "st_inverse_bundle_map",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inverse_bundle_map",
+      "target": "st_gradient_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_gradient_def",
+      "target": "st_gradient_properties",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_gradient_properties",
+      "target": "st_gradient_coords",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_gradient_coords",
+      "target": "st_euclidean_gradient",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_gradient_coords",
+      "target": "st_smooth_function_gradient",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_riemann_metric_def",
+      "target": "st_pseudo_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_lorentz_example",
+      "target": "st_pseudo_def",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_riemann_metric_def",
+      "target": "st_pseudo_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "伪黎曼度量是黎曼度量的推广（正定性放松为非退化）"
+    },
+    {
+      "source": "st_lorentz_example",
+      "target": "st_pseudo_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "洛伦兹度量是伪黎曼度量的特例"
+    }
+  ],
+  "unresolved": []
+}

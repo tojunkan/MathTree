@@ -1,0 +1,180 @@
+[SCOPE:root|description|高斯曲率和平均曲率]
+文章名: GHcurv
+标题: 高斯曲率和平均曲率
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+  [1] type=theorem heading=定理 1 title=Meusnier 定理
+  [2] type=definition heading=定义 2 title=主曲率
+  [3] type=definition heading=定义 3 title=曲率曲线
+  [4] type=definition heading=定义 4 title=高斯曲率与平均曲率
+  [5] type=definition heading=定义 5 title=
+  [6] type=theorem heading=定理 2 title=
+  [7] type=definition heading=定义 6 title=脐点
+  [8] type=theorem heading=定理 3 title=
+  [9] type=definition heading=定义 7 title=渐进曲线
+
+[SCOPE:s_def1|description|定义1 法曲率]
+[0] 定义 1
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1] 给定一个正则曲面 $S$ 和其上一条正则曲线 $C$。
+[2] 任取 $p\in C$，记 $k$ 为 $C$ 在 $p$ 处的曲率，$n$ 为 $C$ 在 $p$ 处的单位法向量，$N$ 为 $S$ 在 $p$ 处的单位法向量，
+[3] 则定义 $k_n=kn\cdot N$ 为曲线 $C$ 在曲面 $S$ 上的法曲率（normal curvature）。
+[/SCOPE:s_def1_let]
+[4] 法曲率和曲线本身的曲率不一定相同。
+[5] 比如说，考虑在纸面上画一个圆，然后把纸卷成圆柱，
+[6] 那么圆上总有两个点的法曲率为零，
+[7] 但是圆本身的曲率处处不为零。
+[8] 至于是哪两个点，你可以先发挥一下想象力，而接下来介绍的定理可以帮助你验证想象是否准确。
+[9] 事实上，法曲率的值和曲线本身关系不是特别大，只需要知道曲线在一点处的切线，就可以唯一确定其法曲率了。
+[10] 这一点被表述为以下定理。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理1 Meusnier定理]
+[11] 定理 1 Meusnier 定理
+[SCOPE:s_thm1_let|let_bind|Meusnier定理的变量]
+[12] 给定正则曲面 $S$ 和其上一点 $p$，如果 $C_1$ 和 $C_2$ 是两条 $S$ 上过 $p$ 的曲线，且在 $p$ 点处二者有相同的切线，
+[/SCOPE:s_thm1_let]
+[13] 那么二者的法曲率相同。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_def2|description|定义2 主曲率]
+[14] 定义 2 主曲率
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[15] 给定正则曲面 $S$ 和其上一点 $p$，由 Meusnier 定理，该点处每一个切线方向都唯一对应一个法曲率值。
+[/SCOPE:s_def2_let]
+[16] 这些法曲率中的最大和最小值被称为 $S$ 在点 $p$ 处的主曲率（principal curvature），对应的方向则是主方向（principal direction）。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|定义3 曲率曲线]
+[17] 定义 3 曲率曲线
+[18] 如果曲面上一条曲线处处都是主方向，
+[19] 那么称其为曲面上的一条曲率曲线（line of curvature）。1
+
+[/SCOPE:s_def3]
+[SCOPE:s_def4|description|定义4 高斯曲率与平均曲率]
+[20] 定义 4 高斯曲率与平均曲率
+[SCOPE:s_def4_let|let_bind|定义4的变量]
+[21] 设曲面 $S$ 在 $p$ 处的主曲率为 $k_1$ 和 $k_2$，
+[22] 那么称 $K_p=k_1k_2$ 为曲面在该点处的高斯曲率（Gaussian Curvature），$H_p=\frac{k_1+k_2}{2}$ 为曲面在该点处的平均曲率（mean curvature）。
+[/SCOPE:s_def4_let]
+[23] 高斯曲率实际上就是形状算子的行列式，而平均曲率是形状算子迹的一半。
+[24] 高斯曲率和形状算子还引出了对曲面上的点的一种分类：
+
+[/SCOPE:s_def4]
+[SCOPE:s_def5|description|定义5 点的分类]
+[25] 定义 5
+[26] 对于曲面 $S$ 上的一点 $p$，我们有：
+[27] 如果 $K_p>0$，
+[28] 则称 $p$ 是一个椭圆点（elliptic）；
+[29] 如果 $K_p<0$，
+[30] 则称 $p$ 是一个双曲点（hyperbolic）；
+[31] 如果 $K_p=0$ 但 $L_p\not=0$，
+[32] 则称 $p$ 是一个抛物点（parabolic）；
+[33] 如果 $L_p=0$，
+[34] 则称 $p$ 是一个平面点（planar）；
+[35] 其中对于椭圆点和双曲点，还特别地有以下性质：
+
+[/SCOPE:s_def5]
+[SCOPE:s_thm2|description|定理2]
+[36] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[37] 对于曲面 $S$ 上的一点 $p$，如果 $p$ 是椭圆点，
+[/SCOPE:s_thm2_let]
+[38] 则存在 $S$ 上 $p$ 的邻域 $V$，使得 $V-\{p\}$ 的所有点都在 $T_pS$ 的同一侧；
+[39] 如果 $p$ 是双曲点，
+[40] 则对于 $S$ 上 $p$ 的任何邻域 $U$，$T_pS$ 的两侧总有 $U$ 的点。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_def6|description|定义6 脐点]
+[41] 定义 6 脐点
+[SCOPE:s_def6_let|let_bind|定义6的变量]
+[42] 对于曲面 $S$ 上的一点 $p$，如果 $k_1=k_2$，
+[/SCOPE:s_def6_let]
+[43] 即所有方向都是主方向，
+[44] 那么称 $p$ 为 $S$ 上的一个脐点（umbilical point）。
+[45] 平面、球面上的每一个点都是脐点；
+[46] 抛物面的顶点也是脐点。
+
+[/SCOPE:s_def6]
+[SCOPE:s_thm3|description|定理3]
+[47] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[48a] 如果一个正
+[48b] 则曲面 $S$ 上处处是脐点，
+[/SCOPE:s_thm3_let]
+[49] 那么 $S$ 必然是球面的一部分。
+[50] 此处将平面视为球面的特例。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_def7|description|定义7 渐进曲线]
+[51] 定义 7 渐进曲线
+[SCOPE:s_def7_let|let_bind|定义7的变量]
+[52] 对于曲面 $S$ 上的一点 $p$，如果某个方向对应的法曲率为零，
+[/SCOPE:s_def7_let]
+[53] 那么称这个方向是 $T_pS$ 上的渐进方向（asymptotic direction）。
+[54a] 如果 $S$ 上一条正
+[54b] 则曲线处处在渐进方向上，
+[55] 则称它为 $S$ 上的一条渐进曲线（asymptotic curve）。
+[/SCOPE:s_def7]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Meusnier定理是法曲率定义的推论"
+  },
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "主曲率定义基于Meusnier定理"
+  },
+  {
+    "source_scope": "s_def4",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "高斯曲率和平均曲率由主曲率定义"
+  },
+  {
+    "source_scope": "s_def5",
+    "target_scope": "s_def4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "点的分类基于高斯曲率"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def5",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2给出椭圆点和双曲点的性质"
+  },
+  {
+    "source_scope": "s_def6",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "脐点定义基于主曲率相等"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def6",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3给出脐点曲面的分类"
+  },
+  {
+    "source_scope": "s_def7",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "渐进曲线定义基于法曲率为零"
+  }
+]

@@ -1,0 +1,937 @@
+{
+  "article_name": "power",
+  "statements": [
+    {
+      "stmt_id": "st_power_op_def",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_op_def",
+      "exposed_entities": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_power_op_let",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_op_let",
+      "exposed_entities": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_power_op_special_names",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_op_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exponentiation_def",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_op_def",
+      "exposed_entities": [
+        "c",
+        "b",
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_same_operation",
+      "subtype": "remark",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_op_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_legality_conditions",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_op_def",
+      "exposed_entities": [
+        "k",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_initial_meaning",
+      "subtype": "remark",
+      "clause_range": [
+        19,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_op_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_extension_analogy",
+      "subtype": "remark",
+      "clause_range": [
+        22,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_op_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_power_law_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        25,
+        32
+      ],
+      "truth_value": "true",
+      "scope_id": "s_power_law",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_power_law_let",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_law_let",
+      "exposed_entities": [
+        "a",
+        "b",
+        "m",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_fractional_power",
+      "subtype": "theorem",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_power_law_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_negative_power",
+      "subtype": "theorem",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_power_law_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_zero_power",
+      "subtype": "theorem",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_power_law_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_first_power",
+      "subtype": "theorem",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": "true",
+      "scope_id": "s_power_law_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_product_power",
+      "subtype": "theorem",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": "true",
+      "scope_id": "s_power_law_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sum_exponent",
+      "subtype": "theorem",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": "true",
+      "scope_id": "s_power_law_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_product_exponent",
+      "subtype": "theorem",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": "true",
+      "scope_id": "s_power_law_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_irrational_power_def",
+      "subtype": "definition",
+      "clause_range": [
+        33,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_law",
+      "exposed_entities": [
+        "a",
+        "b",
+        "p_i",
+        "q_i"
+      ]
+    },
+    {
+      "stmt_id": "st_irrational_remark",
+      "subtype": "remark",
+      "clause_range": [
+        36,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_law",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_2pi",
+      "subtype": "example",
+      "clause_range": [
+        39,
+        42
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example_2pi",
+      "exposed_entities": [
+        "π"
+      ]
+    },
+    {
+      "stmt_id": "st_power_func_def",
+      "subtype": "definition",
+      "clause_range": [
+        44,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_func_def",
+      "exposed_entities": [
+        "x",
+        "a",
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_power_func_let",
+      "subtype": "assumption",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_func_let",
+      "exposed_entities": [
+        "x",
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_a_affects",
+      "subtype": "remark",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_func_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_first_quadrant_always_defined",
+      "subtype": "theorem",
+      "clause_range": [
+        48,
+        50
+      ],
+      "truth_value": "true",
+      "scope_id": "s_power_func_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_analysis_process",
+      "subtype": "remark",
+      "clause_range": [
+        51,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_func_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rational_form",
+      "subtype": "assumption",
+      "clause_range": [
+        53,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_domain_parity",
+      "exposed_entities": [
+        "a",
+        "n",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_domain_general",
+      "subtype": "theorem",
+      "clause_range": [
+        54,
+        54
+      ],
+      "truth_value": "true",
+      "scope_id": "s_domain",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_domain_let",
+      "subtype": "assumption",
+      "clause_range": [
+        54,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_domain_let",
+      "exposed_entities": [
+        "n",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_domain_n_nonpos",
+      "subtype": "theorem",
+      "clause_range": [
+        55,
+        55
+      ],
+      "truth_value": "true",
+      "scope_id": "s_domain_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_domain_m_even",
+      "subtype": "theorem",
+      "clause_range": [
+        56,
+        56
+      ],
+      "truth_value": "true",
+      "scope_id": "s_domain_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_domain_a_irrational",
+      "subtype": "theorem",
+      "clause_range": [
+        57,
+        57
+      ],
+      "truth_value": "true",
+      "scope_id": "s_domain_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_a_zero_special",
+      "subtype": "theorem",
+      "clause_range": [
+        58,
+        59
+      ],
+      "truth_value": "true",
+      "scope_id": "s_domain",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_zero_zero_discussion",
+      "subtype": "remark",
+      "clause_range": [
+        60,
+        65
+      ],
+      "truth_value": null,
+      "scope_id": "s_domain",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_parity_condition",
+      "subtype": "assumption",
+      "clause_range": [
+        66,
+        67
+      ],
+      "truth_value": null,
+      "scope_id": "s_parity",
+      "exposed_entities": [
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_parity_let",
+      "subtype": "assumption",
+      "clause_range": [
+        66,
+        66
+      ],
+      "truth_value": null,
+      "scope_id": "s_parity_let",
+      "exposed_entities": [
+        "a",
+        "k",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_parity_base",
+      "subtype": "theorem",
+      "clause_range": [
+        68,
+        69
+      ],
+      "truth_value": "true",
+      "scope_id": "s_parity",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_parity_cases",
+      "subtype": "theorem",
+      "clause_range": [
+        70,
+        84
+      ],
+      "truth_value": "true",
+      "scope_id": "s_parity_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_parity_positive_int",
+      "subtype": "theorem",
+      "clause_range": [
+        71,
+        74
+      ],
+      "truth_value": "true",
+      "scope_id": "s_parity_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_parity_negative_int",
+      "subtype": "theorem",
+      "clause_range": [
+        75,
+        76
+      ],
+      "truth_value": "true",
+      "scope_id": "s_parity_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_parity_fraction",
+      "subtype": "theorem",
+      "clause_range": [
+        77,
+        78
+      ],
+      "truth_value": "true",
+      "scope_id": "s_parity_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_parity_summary",
+      "subtype": "theorem",
+      "clause_range": [
+        79,
+        84
+      ],
+      "truth_value": "true",
+      "scope_id": "s_parity_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_parity_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        85,
+        86
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_parity",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_first_quadrant_assumption",
+      "subtype": "assumption",
+      "clause_range": [
+        87,
+        88
+      ],
+      "truth_value": null,
+      "scope_id": "s_first_quadrant",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_first_quadrant_props",
+      "subtype": "theorem",
+      "clause_range": [
+        89,
+        91
+      ],
+      "truth_value": "true",
+      "scope_id": "s_first_quadrant",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_monotonicity_let",
+      "subtype": "assumption",
+      "clause_range": [
+        92,
+        97
+      ],
+      "truth_value": null,
+      "scope_id": "s_monotonicity_let",
+      "exposed_entities": [
+        "x1",
+        "x2",
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_monotonicity_result",
+      "subtype": "theorem",
+      "clause_range": [
+        98,
+        100
+      ],
+      "truth_value": "true",
+      "scope_id": "s_monotonicity",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_relation_let",
+      "subtype": "assumption",
+      "clause_range": [
+        101,
+        102
+      ],
+      "truth_value": null,
+      "scope_id": "s_relation_let",
+      "exposed_entities": [
+        "a1",
+        "a2"
+      ]
+    },
+    {
+      "stmt_id": "st_relation_result",
+      "subtype": "theorem",
+      "clause_range": [
+        103,
+        109
+      ],
+      "truth_value": "true",
+      "scope_id": "s_relation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_other_props_inverse",
+      "subtype": "theorem",
+      "clause_range": [
+        110,
+        113
+      ],
+      "truth_value": "true",
+      "scope_id": "s_other_props",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_other_props_limits",
+      "subtype": "theorem",
+      "clause_range": [
+        114,
+        119
+      ],
+      "truth_value": "true",
+      "scope_id": "s_other_props",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_other_props_remark",
+      "subtype": "remark",
+      "clause_range": [
+        120,
+        122
+      ],
+      "truth_value": null,
+      "scope_id": "s_other_props",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_summary_image",
+      "subtype": "theorem",
+      "clause_range": [
+        123,
+        136
+      ],
+      "truth_value": "true",
+      "scope_id": "s_summary",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_summary_remark",
+      "subtype": "remark",
+      "clause_range": [
+        137,
+        143
+      ],
+      "truth_value": null,
+      "scope_id": "s_summary",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exercise",
+      "subtype": "exercise",
+      "clause_range": [
+        144,
+        151
+      ],
+      "truth_value": "true",
+      "scope_id": "s_exercise",
+      "exposed_entities": [
+        "f(x)",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_exercise_let",
+      "subtype": "assumption",
+      "clause_range": [
+        144,
+        144
+      ],
+      "truth_value": null,
+      "scope_id": "s_exercise_let",
+      "exposed_entities": [
+        "n",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_complex_ext_intro",
+      "subtype": "remark",
+      "clause_range": [
+        152,
+        157
+      ],
+      "truth_value": null,
+      "scope_id": "s_complex_ext",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_neg_even_root",
+      "subtype": "theorem",
+      "clause_range": [
+        158,
+        166
+      ],
+      "truth_value": "true",
+      "scope_id": "s_neg_even_root",
+      "exposed_entities": [
+        "x",
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_neg_even_root_let",
+      "subtype": "assumption",
+      "clause_range": [
+        158,
+        158
+      ],
+      "truth_value": null,
+      "scope_id": "s_neg_even_root_let",
+      "exposed_entities": [
+        "x",
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_irrational_power_complex",
+      "subtype": "theorem",
+      "clause_range": [
+        167,
+        172
+      ],
+      "truth_value": "true",
+      "scope_id": "s_irrational_power",
+      "exposed_entities": [
+        "x",
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_irrational_power_let",
+      "subtype": "assumption",
+      "clause_range": [
+        167,
+        167
+      ],
+      "truth_value": null,
+      "scope_id": "s_irrational_power_let",
+      "exposed_entities": [
+        "x",
+        "k"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_power_op_let",
+      "target": "st_power_op_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_legality_conditions",
+      "target": "st_power_op_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_power_law_let",
+      "target": "st_power_law_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_power_law_theorem",
+      "target": "st_fractional_power",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_power_law_theorem",
+      "target": "st_negative_power",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_power_law_theorem",
+      "target": "st_zero_power",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_power_law_theorem",
+      "target": "st_first_power",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_power_law_theorem",
+      "target": "st_product_power",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_power_law_theorem",
+      "target": "st_sum_exponent",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_power_law_theorem",
+      "target": "st_product_exponent",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_power_func_let",
+      "target": "st_power_func_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rational_form",
+      "target": "st_domain_general",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_domain_let",
+      "target": "st_domain_n_nonpos",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_domain_let",
+      "target": "st_domain_m_even",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_domain_let",
+      "target": "st_domain_a_irrational",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_parity_condition",
+      "target": "st_parity_base",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_parity_condition",
+      "target": "st_parity_cases",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_parity_cases",
+      "target": "st_parity_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_first_quadrant_assumption",
+      "target": "st_first_quadrant_props",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_monotonicity_let",
+      "target": "st_monotonicity_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_relation_let",
+      "target": "st_relation_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_neg_even_root_let",
+      "target": "st_neg_even_root",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_irrational_power_let",
+      "target": "st_irrational_power_complex",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_power_law_theorem",
+      "target": "st_power_op_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "幂运算法则基于幂运算定义"
+    },
+    {
+      "source": "st_example_2pi",
+      "target": "st_power_law_theorem",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是幂运算法则中无理数次幂的实例"
+    },
+    {
+      "source": "st_power_func_def",
+      "target": "st_power_op_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "幂函数定义基于幂运算"
+    },
+    {
+      "source": "st_domain_general",
+      "target": "st_power_func_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定义域与奇偶性是幂函数的性质"
+    },
+    {
+      "source": "st_first_quadrant_props",
+      "target": "st_power_func_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "第一象限性质是幂函数的性质"
+    },
+    {
+      "source": "st_exercise",
+      "target": "st_domain_general",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "习题应用定义域与奇偶性结论"
+    },
+    {
+      "source": "st_exercise",
+      "target": "st_first_quadrant_props",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "习题应用第一象限结论"
+    },
+    {
+      "source": "st_neg_even_root",
+      "target": "st_power_op_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "复数域扩展基于幂运算定义"
+    }
+  ],
+  "unresolved": []
+}

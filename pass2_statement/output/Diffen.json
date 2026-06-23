@@ -1,0 +1,246 @@
+{
+  "article_name": "Diffen",
+  "statements": [
+    {
+      "stmt_id": "st_def1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "f(x)",
+        "x",
+        "Δx"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_def",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "Δf(x)",
+        "Δ^n f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_stmt",
+      "subtype": "theorem",
+      "clause_range": [
+        8,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "f(x)",
+        "x_0",
+        "Δx",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_concl1",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "ξ_n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_cond",
+      "subtype": "condition",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_concl2",
+      "subtype": "conclusion",
+      "clause_range": [
+        18,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof1_base",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof1_induction_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof1_induction",
+      "exposed_entities": [
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_proof1_induction_step",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof1_induction",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof1_end",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        31
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof2_base",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof2_induction_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof2_induction",
+      "exposed_entities": [
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_proof2_induction_step",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof2",
+      "exposed_entities": [
+        "ξ_{n-1}",
+        "ξ_n"
+      ]
+    },
+    {
+      "stmt_id": "st_proof2_end",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_assump",
+      "target": "st_def1_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assump",
+      "target": "st_thm2_concl1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assump",
+      "target": "st_thm2_cond",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_cond",
+      "target": "st_thm2_concl2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof1_induction_assump",
+      "target": "st_proof1_induction_step",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof2_induction_assump",
+      "target": "st_proof2_induction_step",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_proof1_end",
+      "target": "st_thm1_stmt",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明推出定理"
+    },
+    {
+      "source": "st_proof2_end",
+      "target": "st_thm2_concl2",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明推出定理"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,68 @@
+[SCOPE:root|description|韦达定理（高等代数）]
+文章名: VietaF
+标题: 韦达定理（高等代数）
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=韦达定理
+
+[SCOPE:s_intro|description|引言]
+[0] 韦达定理描述了多项式根与系数的关系。
+[1] 在中学数学中常见韦达定理最简单的形式，
+[2] 即系数一元二次多项式的根与系数的关系。
+[3] 本文要讨论的是更一般形式下的韦达定理。
+
+[4] 韦达定理适用于一般的复系数多项式的根（实系数多项式是它的一个特殊情况），记忆起来也非常方便：
+
+[/SCOPE:s_intro]
+[SCOPE:s_theorem|description|韦达定理]
+[5] 定理 1 韦达定理
+[SCOPE:s_theorem_let|let_bind|多项式与根]
+[6] 设有复系数多项式 $\sum_{i=0}^n a_i x^i \in \mathbb{C}[x]$，据代数学基本定理知其应有 $n$ 个根（重根按重数记），分别记为 $x_1, x_2, \cdots, x_n$。
+[/SCOPE:s_theorem_let]
+[7] 则有：
+[8] \begin{equation}
+\left\{\begin{aligned}
+x_1+x_2+\cdots+x_n &= -\frac{a_{n-1}}{a_n}~,\\
+x_1x_2+x_1x_3+\cdots+x_{n-1}x_n &= \frac{a_{n-2}}{a_n}~,\\
+&\vdots\\
+x_1x_2\cdots x_n &= (-1)^n\frac{a_0}{a_n}~.
+\end{aligned}\right.
+\end{equation}
+[9] 【未完成】Elementary symmetric polynomial
+[10] 显然，高中版本的韦达定理只是定理 1 的一个特例：实系数一元二次多项式。
+[11] 记忆式 1 也不难：第 $i$ 个式子就是每 $i$ 个根为一组相乘、所有组相加，结果是 $(-1)^i\frac{a_{n-i}}{a_n}$，分母永远是最高次项的系数。
+
+[/SCOPE:s_theorem]
+[SCOPE:s_proof|description|定理证明]
+[12] 按定理 1 题设，知
+[SCOPE:s_proof_let|let_bind|展开式中的A]
+[13] \begin{equation}
+\sum_{i=0}^n a_ix^i = A(x-x_1)(x-x_2)\cdots(x-x_n)~.
+\end{equation}
+[/SCOPE:s_proof_let]
+[14] 展开后，比较各项系数得
+[15] \begin{equation}
+a_nx^n = Ax^n~,
+\end{equation}
+[16] \begin{equation}
+\left\{\begin{aligned}
+a_{n-1}x^{n-1} &= A(-x_1-x_2-\cdots-x_n)x^{n-1}~,\\
+a_{n-2}x^{n-2} &= A(-x_1x_2-x_1x_3-\cdots-x_{n-1}x_n)x^{n-2}~,\\
+&\vdots\\
+a_{0} &= A(-x_1)(-x_2)\cdots(-x_n)~.
+\end{aligned}\right.
+\end{equation}
+[17] 将式 3 代入式 4 ，整理后即得式 1 .
+[/SCOPE:s_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_proof",
+    "target_scope": "s_theorem",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明推出定理"
+  }
+]

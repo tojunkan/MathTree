@@ -1,0 +1,116 @@
+{
+  "article_name": "InvMGs",
+  "statements": [
+    {
+      "stmt_id": "st_example1_heading",
+      "subtype": "example",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let_M",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_solution_intro",
+      "subtype": "remark",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_row_ops",
+      "subtype": "conclusion",
+      "clause_range": [
+        3,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_column_ops",
+      "subtype": "conclusion",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_exercise1_heading",
+      "subtype": "exercise",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exercise1_question",
+      "subtype": "question",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let_M",
+      "target": "st_row_ops",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_M",
+      "target": "st_column_ops",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exercise1_question",
+      "target": "st_example1_heading",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_exercise1_question",
+      "target": "st_example1_heading",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "习题1是例1的变体，使用列变换"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,42 @@
+[SCOPE:root|description|球谐函数表]
+文章名: YlmTab
+标题: 球谐函数表
+
+[0] 贡献者： addis
+[1] 预备知识 球谐函数
+[2] 下面列出一些常见的球谐函数，这和 Mathematica 和 Wolfram Alpha 的定义1 一致。
+[3] Condon–Shortley 相位（子节 3 ）体现在对于奇数 $m$ 的球谐函数表达式前的 $\mp$ 号。
+[SCOPE:s_definition|description|球谐函数定义]
+[4] \begin{equation}
+Y_{l,m}(\theta, \phi) = \sqrt{\frac{2l + 1}{4\pi} \frac{(l - m)!}{(l + m)!}} P_l^m (\cos\theta) \mathrm{e} ^{ \mathrm{i} m\phi}~.
+\end{equation}
+[/SCOPE:s_definition]
+[SCOPE:s_list|description|常见球谐函数列表]
+[5] \begin{equation}
+l = 0~, \qquad
+Y_{0,0} = \sqrt{\frac{1}{4\pi}}
+\end{equation}
+[6] \begin{equation}
+l = 1~, \qquad
+\left\{\begin{aligned}
+Y_{1,0} &= \sqrt{\frac{3}{4\pi}} \cos\theta \\
+Y_{1,{\pm 1}} &= \mp\sqrt{\frac{3}{8\pi}} \sin\theta \ \mathrm{e} ^{\pm \mathrm{i} \phi}
+\end{aligned}\right. \end{equation}
+[7] \begin{equation}
+l = 2~, \qquad
+\left\{\begin{aligned}
+Y_{2,0} &= \sqrt{\frac{5}{16\pi}} (3\cos^2 \theta - 1)\\
+Y_{2,{\pm1}} &= \mp \sqrt{\frac{15}{8\pi}} \sin\theta \cos\theta \ \mathrm{e} ^{ \pm \mathrm{i} \phi}\\
+Y_{2,{\pm 2}} &= \sqrt{\frac{15}{32\pi}} \sin ^2\theta \ \mathrm{e} ^{\pm 2 \mathrm{i} \phi}
+\end{aligned}\right. \end{equation}
+[8] \begin{equation}
+l = 3~, \qquad
+\left\{\begin{aligned}
+Y_{3,0} &= \sqrt{\frac{7}{16\pi}} (5\cos^3 \theta - 3 \cos \theta)\\
+Y_{3,{\pm1}} &= \mp \sqrt{\frac{21}{64\pi}} \sin\theta (5\cos^2\theta - 1) \ \mathrm{e} ^{ \pm \mathrm{i} \phi}\\
+Y_{3,{\pm 2}} &= \sqrt{\frac{105}{32\pi}} \sin ^2\theta \cos\theta \ \mathrm{e} ^{\pm 2 \mathrm{i} \phi}\\
+Y_{3,{\pm 3}} &= \mp \sqrt{\frac{35}{64\pi}} \sin ^3\theta \ \mathrm{e} ^{\pm 3 \mathrm{i} \phi}
+\end{aligned}\right. \end{equation}
+[/SCOPE:s_list]
+[9] 1. ^ 例子：在 wolframalpha.com 中输入 SphericalHarmonics[2,1]，或者在 Mathematica 中输入 SphericalHarmonicY[2, 1, θ, ϕ]
+[/SCOPE:root]

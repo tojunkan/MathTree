@@ -1,0 +1,175 @@
+{
+  "article_name": "Fbasis",
+  "statements": [
+    {
+      "stmt_id": "st_def_real_orth",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_real",
+      "exposed_entities": [
+        "f_i(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_fi",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_real",
+      "exposed_entities": [
+        "f_i(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_cond_nonzero",
+      "subtype": "condition",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_let_real",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cond_orth",
+      "subtype": "condition",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_let_real",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_concl_orth",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_let_real",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_remark_analogy",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_real",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_normalized",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_real",
+      "exposed_entities": [
+        "f_i(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_delta",
+      "subtype": "remark",
+      "clause_range": [
+        16,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_real",
+      "exposed_entities": [
+        "δ_{mn}"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_complex",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_let_complex",
+      "exposed_entities": [
+        "f_i(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_def_complex_orth",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_complex",
+      "exposed_entities": [
+        "f_i(x)",
+        "a",
+        "b"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_fi",
+      "target": "st_cond_nonzero",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_fi",
+      "target": "st_cond_orth",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cond_nonzero",
+      "target": "st_concl_orth",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cond_orth",
+      "target": "st_concl_orth",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_complex",
+      "target": "st_def_complex_orth",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_def_complex_orth",
+      "target": "st_def_real_orth",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "复函数正交定义是实函数正交定义的推广"
+    }
+  ],
+  "unresolved": []
+}

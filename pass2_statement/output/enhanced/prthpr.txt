@@ -1,0 +1,98 @@
+[SCOPE:root|description|素数定理的证明]
+文章名: prthpr
+标题: 素数定理的证明
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=素数个数函数的阶
+  [1] type=corollary heading=推论 1 title=素数定理的推论
+
+[SCOPE:s_thm1|description|素数个数函数的阶]
+[0] 定理 1 素数个数函数的阶
+[1] \begin{equation}
+\pi(x) \sim \frac{\vartheta(x)}{\ln x} \sim \frac{\psi(x)}{\ln x} ~.
+\end{equation}
+[2a] (x)$ 与 $\psi
+[2b] (x)$ 的阶的估计可以导出素数定理的证明。
+[3] 首先指出
+[4] \begin{equation}
+\vartheta(x) = \sum_{p \le x} \ln p \le \ln x \sum_{p \le x} 1 = \pi(x) \ln x ~,
+\end{equation}
+[5] 从而直接得到了
+[6] \begin{equation}
+\pi(x) \ge \vartheta(x)/\ln x > Ax / \ln x ~.
+\end{equation}
+[SCOPE:s_thm1_let1|let_bind|δ 的引入]
+[7] 而若 $0 < \delta < 1$，
+[8] \begin{equation}
+\begin{aligned}
+\vartheta(x) &\ge \sum_{x^{1-\delta} < p \le x} \ln p ~\\
+&\ge (1-\delta) \ln x \sum_{x^{1-\delta} < p \le x} 1 ~\\
+&= (1-\delta) \ln x \left( \pi(x) - \pi(x^{1-\delta}) \right) ~\\
+&\ge (1-\delta) \ln x \left( \pi(x) - x^{1-\delta} \right) ~.
+\end{aligned}
+\end{equation}
+[9] 这就是说，
+[10] \begin{equation}
+\pi(x) \le x^{1-\delta} + \frac{\vartheta(x)}{(1-\delta) \ln x} < Bx/\ln x ~.
+\end{equation}
+[/SCOPE:s_thm1_let1]
+[11a] (x) \sim \vartheta
+[11b] (x)/\ln x$ 即可。
+[12] 利用式 3 与式 5 就直接有
+[13] \begin{equation}
+1 \le \frac{\pi(x) \ln x}{\vartheta(x)} \le \frac{x^{1-\delta} \ln x}{\vartheta(x)} + \frac{1}{1-\delta} ~.
+\end{equation}
+[SCOPE:s_thm1_let2|let_bind|ε, N 的引入]
+[14] 对于任意的 $\varepsilon > 0$，可以选取 $\delta = \delta(\varepsilon) > 0$ 使得 $1/(1-\delta) < 1+ (\varepsilon/2)$，而选取 $N = N(\delta, \varepsilon) = N(\varepsilon)$ 使得对于所有的 $x > N$ 均有
+[15] \begin{equation}
+\frac{x^{1-\delta}\ln x}{\vartheta(x)} < \frac{C \ln x}{x^\delta} < \varepsilon/2 ~.
+\end{equation}
+[16] 从而对于所有 $x>N$ 都有
+[17] \begin{equation}
+1 \le \frac{\pi(x) \ln x}{\vartheta(x)} < 1+ \varepsilon ~.
+\end{equation}
+[18] 而 $\varepsilon$ 可以任意小，就证明了第一部分。
+[/SCOPE:s_thm1_let2]
+[19] 也就完成了这个定理的证明！
+[20a] (x)$ 与 $\psi
+[20b] (x)$ 的阶都是 $x$，
+[21] 故 $\pi(x)$ 的阶是 $x/\ln x$ 也就被成功证明！
+
+[/SCOPE:s_thm1]
+[SCOPE:s_cor1|description|素数定理的推论]
+[22] 推论 1 素数定理的推论
+[23] \begin{equation}
+p_n \asymp n \ln n ~.
+\end{equation}
+[SCOPE:s_cor1_let|let_bind|常数 A 的引入]
+[24] 证明：我们用 $A$ 表示待定常数，
+[25] 但特别的，$A$ 之间可以互不相等，而仅用 $A$ 来估计阶。
+[/SCOPE:s_cor1_let]
+[26] 利用素数定理，
+[27] \begin{equation}
+n = \pi(p_n) < \frac{A p_n}{\ln p_n}, ~ p_n > An\ln p_n > An \ln n ~.
+\end{equation}
+[28] \begin{equation}
+n = \pi(p_n) > \frac{Ap_n}{\ln p_n} ~,
+\end{equation}
+[29] \begin{equation}
+\sqrt{p_n} < \frac{A p_n}{\ln p_n} < A n, ~ p_n < A n^2 ~,
+\end{equation}
+[30] 这指出，
+[31] \begin{equation}
+p_n < A n \ln p_n < An \ln n ~.
+\end{equation}
+[32] 就完成证明。
+[/SCOPE:s_cor1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论引用定理1的结果"
+  }
+]

@@ -1,0 +1,44 @@
+[SCOPE:root|description|二次剩余]
+文章名: quares
+标题: 二次剩余
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=伴随数
+  [1] type=definition heading=定义 2 title=二次剩余
+  [2] type=definition heading=定义 3 title=二次非剩余
+
+[SCOPE:s_def1|description|伴随数]
+[0] 定义 1 伴随数
+[SCOPE:s_def1_let|let_bind|伴随数的变量]
+[1] 若 $p$ 是一个奇素数，且 $p \not{\mid}~ a$，而 $x$ 是 $1, 2, \dots, (p-1)$ 中的一个，
+[2] 则根据定理 2 ，在
+[/SCOPE:s_def1_let]
+[3] \begin{equation}
+1 \cdot x, 2 \cdot x, \dots, (p-1)\cdot x ~~
+\end{equation}
+[4] \begin{equation}
+x x' \equiv a \pmod p ~,
+\end{equation}
+[5] 伴随数（associate）
+[6] 我们会发现，由于伴随数的定义，要么会至少有一个 $x$ 与自己相伴，要么没有这样的 $x$。
+[7] 由此引出了 $x^2 \equiv a \pmod p$ 的解的情况，就是二次剩余。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|二次剩余]
+[8] 定义 2 二次剩余
+[SCOPE:s_def2_let|let_bind|二次剩余的变量]
+[9] 若 $x_1$ 与自己关于 $a$ 在模奇素数 $p$ 意义下相伴，此时同余方程
+[10] \begin{equation}
+x^2 \equiv a \pmod p ~~
+\end{equation}
+[/SCOPE:s_def2_let]
+[11] 二次剩余（quadratic residue）
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|二次非剩余]
+[12] 定义 3 二次非剩余
+[SCOPE:s_def3_let|let_bind|二次非剩余的变量]
+[13] 若不存在任何的 $x$ 与自己相伴，此时称 $a$ 是 $p$ 的二次非剩余（quadratic non-residue），或简称 $p$ 的非剩余，记作 $a \operatorname N p$。
+[/SCOPE:s_def3]
+[/SCOPE:s_def3_let]
+[/SCOPE:root]

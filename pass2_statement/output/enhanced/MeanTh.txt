@@ -1,0 +1,237 @@
+[SCOPE:root|description|微分中值定理]
+文章名: MeanTh
+标题: 微分中值定理
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=函数极值
+  [1] type=example heading=例 1 title=
+  [2] type=theorem heading=定理 1 title=Fermat 定理
+  [3] type=definition heading=定义 2 title=Rolle 中值定理
+  [4] type=theorem heading=定理 2 title=拉格朗日微分中值定理
+  [5] type=exercise heading=习题 1 title=
+  [6] type=exercise heading=习题 2 title=
+  [7] type=theorem heading=定理 3 title=柯西微分中值定理
+  [8] type=exercise heading=习题 3 title=
+
+[SCOPE:s_def1|description|函数极值]
+[0] 定义 1 函数极值
+[SCOPE:s_def1_let|let_bind|极值定义变量]
+[1] 考虑实函数 $f(x)$。
+[/SCOPE:s_def1_let]
+[2] 如果存在一个实数轴上的开集 $O$，且有 $x_0\in O$，使得对于任意的 $x\in O$，都有 $f(x_0)\geq f(x)$，
+[3] 则称 $f(x_0)$ 是 $f$ 在 $O$ 上的一个极大值（maximum）；
+[4] 如果 $x_0$ 满足的条件改为对于任意的 $x\in O$，都有 $f(x_0)\leq f(x)$，
+[5] 则称 $f(x_0)$ 是 $f$ 在 $O$ 上的一个极小值（minimum）。
+[6] 极大值和极小值统称为极值（extremum）。
+[7] 如果 $f(x_0)$ 是一个极大值，
+[8] 那么称 $x_0$ 是一个极大值点（maximum point）；
+[9] 相应地，极小值对应的自变量 $x_0$ 是一个极小值点（minimum point）。
+[10] 极大值点和极小值点统称极值点（extremum point）。
+[11] 简单来说，极大值的意思就是，取包含极大值点的足够小的范围，
+[12] 那么范围内的所有函数值都小于等于极大值。
+[13] 极小值则反过来，范围内的函数值都大于等于它。
+[14] 我们要求 “存在一个开集 $O$”，实际上就是在说存在一个范围。
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|例1]
+[SCOPE:s_ex1_let|let_bind|例1变量]
+[15] 考虑实函数 $f(x)=x^3-x$，如图 1 所示。
+[/SCOPE:s_ex1_let]
+[16] 图 1：$f(x)=x^3-x$ 的函数图像。
+[17] 在 $x=\frac{\sqrt{3}}{3}$ 处，$f$ 取极小值，
+[18] 但显然不是最小值。
+[19] 在 $x=-\frac{\sqrt{3}}{3}$ 处，$f$ 取极大值，也显然不是最大值。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_fermat|description|Fermat定理]
+[20] 定理 1 Fermat 定理
+[SCOPE:s_fermat_let|let_bind|Fermat定理变量]
+[21] 考虑实函数 $f(x)$。
+[/SCOPE:s_fermat_let]
+[22] 如果 $x_0$ 是 $f$ 的一个极值点，且 $f(x)$ 在 $x_0$ 处可导，
+[23] 那么 $f'(x_0)=0$。
+[24] 证明：
+[SCOPE:s_fermat_reductio|reductio|Fermat定理反证法]
+[25] 假设 $f(x)$ 在 $x_0$ 处可导且取极大值，并反设$f'(x_0)>0$1。
+[26] 那么由于可导，$f(x)$ 在 $x_0$ 处的右极限存在且等于导数，
+[27] 即右极限大于零。
+[SCOPE:s_fermat_reductio_let|let_bind|反证法中的数列]
+[28] 这样一来，取任意正向接近 $x_0$ 的数列 $\{a_n\}$，
+[/SCOPE:s_fermat_reductio_let]
+[29] 则对于任意正整数 $N$，必然总有编号大于 $N$ 的 $a_n$ 使得 $f(a_n)>f(x_0)$2。
+[30] 又由于 $\lim\limits_{n\to\infty}a_n=0$，
+[31] 故得，对于任意包含 $x_0$ 的开集（范围）$O$（对应编号 $N$），总有 $f(a_n)>f(x_0)$，
+[32] 于是 $f(x_0)$ 就不是极大值了。
+[33] 结论和假设矛盾，
+[34] 故反设部分不成立。
+[/SCOPE:s_fermat_reductio]
+[35] 将以上讨论推广到 $f(x_0)$ 取极小值和/或反设 $f'(x_0)<0$ 的情况后，可得最终结论：$f'(x_0)$ 必为零。
+[36] 证毕。
+[37] 定理 1 就可以用来快速计算出例 1 里的两个极值点的位置，
+[38] 即导数为零的地方。
+
+[/SCOPE:s_fermat]
+[SCOPE:s_def2|description|Rolle中值定理]
+[39] 定义 2 Rolle 中值定理
+[SCOPE:s_def2_let|let_bind|Rolle定理变量]
+[40a] (x)$ 在区间 $[a, b]$ 上连续，在 $(a, b)$ 内可导，且 $f
+[40b] (a)=f
+[40c] (b)$，
+[/SCOPE:s_def2_let]
+[41] 那么存在一个 $x_0\in(a, b)$，使得 $f'(x_0)=0$。
+[42] 罗尔微分中值定理可以利用费马定理定理 1 证明，
+[43] 即对最大值或最小值点处的导数进行分析。
+[44] 如果将函数 $f(x)$ 叠加上一个一次函数 $kx+b$，
+[45a] (b)-f
+[45b] (a)=k(b-a)$，
+[46] 那么就一定存在 $a< \xi < b$ 使得 $f'(\xi)=k$。
+[47] 于是可以得到以下定理
+
+[/SCOPE:s_def2]
+[SCOPE:s_lagrange|description|拉格朗日微分中值定理]
+[48] 定理 2 拉格朗日微分中值定理
+[SCOPE:s_lagrange_let|let_bind|拉格朗日定理变量]
+[49] 若函数 $f(x)$ 在 $[a,b]$ 上连续，在 $(a,b)$ 内可导，
+[/SCOPE:s_lagrange_let]
+[50] 则一定存在 $a< \xi < b$，使得
+[51] \begin{equation}
+f'(\xi)=\frac{f(b)-f(a)}{b-a}~.
+\end{equation}
+
+[/SCOPE:s_lagrange]
+[SCOPE:s_exer1|description|习题1]
+[52] 习题 1
+[SCOPE:s_exer1_let|let_bind|习题1勒让德多项式]
+[53] 证明勒让德（Legendre）多项式3
+[54] \begin{equation}
+P_n(x)=\frac{1}{2^n n!}\frac{ \,\mathrm{d}{} ^n}{ \,\mathrm{d}{x} ^n}[(x^2-1)^n]~.
+\end{equation}
+[/SCOPE:s_exer1_let]
+[55] 在 $(-1,1)$ 内有 $n$ 个互异的实根。
+[SCOPE:s_exer1_let2|let_bind|习题1辅助函数]
+[56] 提示：考察多项式函数 $f(x)=(x^2-1)^n$，它在 $x=\pm 1$ 处分别有 $n$ 重根。
+[/SCOPE:s_exer1_let2]
+[57] 如果对它求一次导，由罗尔微分中值定理，$f'(x)$ 在 $(-1,1)$ 内至少有一个根，在 $x=\pm 1$ 处分别有 $n-1$ 重根。
+[58] 根据多项式函数因式分解的性质，$f'(x)$ 在 $(-1,1)$ 上只有一个根。
+[59] 再对它求导，……。
+[60a] (n)}
+[60b] (x)$ 在 $(-1,1)$ 内恰好有 $n$ 个互异的根，在 $x=\pm 1$ 不再是 $f^{
+[60c] (n)}
+[60d] (x)$ 的根。
+[61] 由上例可见，罗尔微分中值定理可以用来分析特殊函数的零点情况。
+[62] 有时我们还会通过构造辅助函数来分析零点。
+[63] 例如若连续函数 $f(x)$ 有两个零点 $x_1,x_2$，
+[64] 那么对任意 $a\in \mathbb{R}$，一定存在 $x_1<\xi< x_2$ 满足 $f'(\xi)-af(\xi)=0$。
+[65a] (x)=f
+[65b] (x)e^{-ax}$ 再利用罗尔微分中值定理即可。
+
+[/SCOPE:s_exer1]
+[SCOPE:s_exer2|description|习题2]
+[66] 习题 2
+[SCOPE:s_exer2_let|let_bind|习题2变量]
+[67] $\alpha$ 是大于 $0$ 的一个常数。
+[68] 函数 $f(x)=x^\alpha$ 在 $[0,\infty)$ 上是否一致连续（对 $\alpha$ 分类讨论）？
+[/SCOPE:s_exer2_let]
+[69a] (x)-f
+[69b] (y)|<\epsilon$。
+[70a] (x)-f
+[70b] (y)|=f'(\xi)|x-y|<\delta f'(\xi)$（$f
+[70c] (x)$ 是单调递增函数）。
+[71] 这样一来我们就将一致连续性与导数联系了起来。
+[SCOPE:s_exer2_cases|cases|α分类讨论]
+[72] 要注意的是，当 $\alpha<1$ 时 $f(x)$ 在 $0$ 附近导数趋于无穷大，
+[73] 所以要对 $0$ 附近的邻域单独拎出来讨论（例如取区间 $[0,2]$，闭区间上的连续函数一定一致连续）。
+[74] 当 $\alpha\le1$ 时，邻域以外的部分 $f'(\xi)$ 将有上界，
+[75] 因此函数 $f(x)$ 一致连续。
+[76] 当 $\alpha>1$ 时，$f'(x)$ 随 $x$ 的增加而单调增加，趋于正无穷，
+[77a] (x)|=\delta f'(\xi) \ge\delta f'
+[77b] (x)$，
+[78] 因此 $f(x)$ 不一直连续。
+
+[/SCOPE:s_exer2]
+[/SCOPE:s_exer2_cases]
+[SCOPE:s_cauchy|description|柯西微分中值定理]
+[79] 定理 3 柯西微分中值定理
+[SCOPE:s_cauchy_let|let_bind|柯西定理变量]
+[80a] (x)$ 和 $g
+[80b] (x)$ 在 $[a,b]$ 上连续，在 $(a,b)$ 内可导，而且 $g'
+[80c] (x)\neq 0$，
+[/SCOPE:s_cauchy_let]
+[81] 则在 $(a,b)$ 内至少存在一点 $\xi$，使得
+[82] \begin{equation}{}
+\frac{f'(\xi)}{g'(\xi)}=\frac{f(b)-f(a)}{g(b)-g(a)}~.
+\end{equation}
+
+[/SCOPE:s_cauchy]
+[SCOPE:s_exer3|description|习题3]
+[83] 习题 3
+[SCOPE:s_exer3_let|let_bind|习题3变量]
+[84] 函数 $f(x)$ 在 $(0,\infty)$ 上连续，证明对任意 $0 < a < b$，总是存在 $a < \xi < b, a< \psi < b$，使得
+[/SCOPE:s_exer3_let]
+[85] \begin{equation}
+\frac{2f'(\xi)}{\xi^2}(a^2+ab+b^2)=\frac{3f'(\psi)}{\psi}(a+b)~.
+\end{equation}
+[86] \begin{equation}
+\frac{f'(\xi)}{3\xi^2}(a^3-b^3)=\frac{f'(\psi)}{2\psi}(a^2-b^2)~.
+\end{equation}
+[87] \begin{equation}
+\begin{aligned}
+\frac{f(a)-f(b)}{a^3-b^3}=\frac{f'(\xi)}{3\xi^2}~,\\
+\frac{f(a)-f(b)}{a^2-b^2}=\frac{f'(\psi)}{2\psi}~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_exer3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_fermat",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Fermat定理是极值定义的一个推论"
+  },
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_fermat",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "Rolle定理可由Fermat定理证明"
+  },
+  {
+    "source_scope": "s_lagrange",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "拉格朗日定理是Rolle定理的推广"
+  },
+  {
+    "source_scope": "s_cauchy",
+    "target_scope": "s_lagrange",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "柯西定理是拉格朗日定理的推广"
+  },
+  {
+    "source_scope": "s_exer1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题1应用Rolle定理"
+  },
+  {
+    "source_scope": "s_exer2",
+    "target_scope": "s_lagrange",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题2应用拉格朗日定理"
+  },
+  {
+    "source_scope": "s_exer3",
+    "target_scope": "s_cauchy",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题3应用柯西定理"
+  }
+]

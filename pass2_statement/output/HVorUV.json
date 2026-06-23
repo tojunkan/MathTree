@@ -1,0 +1,420 @@
+{
+  "article_name": "HVorUV",
+  "statements": [
+    {
+      "stmt_id": "st_def1_intro",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "V",
+        "(x|y)"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_inner_product",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "(x|y)"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_properties",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_norm",
+      "subtype": "definition",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "||v||"
+      ]
+    },
+    {
+      "stmt_id": "st_def2_unit_vector",
+      "subtype": "definition",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "v_hat"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_assume",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": [
+        "(x|y)",
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_inequality",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cor1_statement",
+      "subtype": "corollary",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": "true",
+      "scope_id": "s_cor1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_inner_product",
+      "subtype": "definition",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "C2(a,b)",
+        "P_n",
+        "(f|g)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_triangle",
+      "subtype": "example",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_angle",
+      "subtype": "example",
+      "clause_range": [
+        36,
+        37
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "phi"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_orthogonal",
+      "subtype": "definition",
+      "clause_range": [
+        38,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_def3_orthonormal",
+      "subtype": "definition",
+      "clause_range": [
+        41,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_pythagorean",
+      "subtype": "example",
+      "clause_range": [
+        45,
+        47
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "v_1",
+        "v_n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_assume_basis",
+      "subtype": "assumption",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "e_hat_i",
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_expansion",
+      "subtype": "theorem",
+      "clause_range": [
+        50,
+        51
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_parseval",
+      "subtype": "theorem",
+      "clause_range": [
+        52,
+        53
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_norm_sq",
+      "subtype": "theorem",
+      "clause_range": [
+        54,
+        54
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_proof_assume",
+      "subtype": "assumption",
+      "clause_range": [
+        56,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2_proof",
+      "exposed_entities": [
+        "x_i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_proof_coeff",
+      "subtype": "conclusion",
+      "clause_range": [
+        59,
+        59
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_proof_parseval",
+      "subtype": "conclusion",
+      "clause_range": [
+        61,
+        61
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm2_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm3_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        64,
+        67
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": [
+        "V",
+        "V'",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_proof_assume",
+      "subtype": "assumption",
+      "clause_range": [
+        68,
+        70
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm3_proof",
+      "exposed_entities": [
+        "e_hat_i",
+        "e_hat'_i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3_proof_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        71,
+        71
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm3_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_unitary_group_orthogonal",
+      "subtype": "remark",
+      "clause_range": [
+        77,
+        77
+      ],
+      "truth_value": null,
+      "scope_id": "s_unitary_group",
+      "exposed_entities": [
+        "O(n)"
+      ]
+    },
+    {
+      "stmt_id": "st_unitary_group_unitary",
+      "subtype": "definition",
+      "clause_range": [
+        78,
+        78
+      ],
+      "truth_value": null,
+      "scope_id": "s_unitary_group",
+      "exposed_entities": [
+        "U(n)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_thm1_proof_assume",
+      "target": "st_thm1_proof_inequality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assume_basis",
+      "target": "st_thm2_expansion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assume_basis",
+      "target": "st_thm2_parseval",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_assume_basis",
+      "target": "st_thm2_norm_sq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof_assume",
+      "target": "st_thm2_proof_coeff",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm2_proof_assume",
+      "target": "st_thm2_proof_parseval",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm3_proof_assume",
+      "target": "st_thm3_proof_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_statement",
+      "target": "st_def1_intro",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "施瓦茨不等式依赖于内积定义"
+    },
+    {
+      "source": "st_cor1_statement",
+      "target": "st_thm1_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "三角不等式是施瓦茨不等式的推论"
+    },
+    {
+      "source": "st_thm2_expansion",
+      "target": "st_def3_orthogonal",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2关于标准正交基的展开"
+    },
+    {
+      "source": "st_thm3_statement",
+      "target": "st_thm2_expansion",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "同构依赖于标准正交基"
+    }
+  ],
+  "unresolved": []
+}

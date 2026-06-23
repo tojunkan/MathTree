@@ -1,0 +1,750 @@
+{
+  "article_name": "HsFunB",
+  "statements": [
+    {
+      "stmt_id": "st_real_intro",
+      "subtype": "remark",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_real",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_natural_def",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_real",
+      "exposed_entities": [
+        "自然数",
+        "递增",
+        "后继"
+      ]
+    },
+    {
+      "stmt_id": "st_natural_closure",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_real",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_negative_intro",
+      "subtype": "remark",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_real",
+      "exposed_entities": [
+        "负数"
+      ]
+    },
+    {
+      "stmt_id": "st_integer_def",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_real",
+      "exposed_entities": [
+        "整数"
+      ]
+    },
+    {
+      "stmt_id": "st_integer_closure",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_real",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fraction_intro",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_real",
+      "exposed_entities": [
+        "分数"
+      ]
+    },
+    {
+      "stmt_id": "st_rational_def",
+      "subtype": "definition",
+      "clause_range": [
+        18,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_real",
+      "exposed_entities": [
+        "有理数",
+        "m",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_rational_properties",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_real",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_irrational_intro",
+      "subtype": "remark",
+      "clause_range": [
+        28,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_real",
+      "exposed_entities": [
+        "无理数"
+      ]
+    },
+    {
+      "stmt_id": "st_real_def",
+      "subtype": "definition",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_real",
+      "exposed_entities": [
+        "实数"
+      ]
+    },
+    {
+      "stmt_id": "st_real_closure",
+      "subtype": "conclusion",
+      "clause_range": [
+        39,
+        41
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_real",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_real_continuity",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_real",
+      "exposed_entities": [
+        "数轴"
+      ]
+    },
+    {
+      "stmt_id": "st_coordinate_system",
+      "subtype": "definition",
+      "clause_range": [
+        44,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_real",
+      "exposed_entities": [
+        "笛卡尔坐标系",
+        "直角坐标系",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_coordinate_function",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        48
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_real",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_axes_quadrants",
+      "subtype": "definition",
+      "clause_range": [
+        49,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_real",
+      "exposed_entities": [
+        "x轴",
+        "y轴",
+        "象限"
+      ]
+    },
+    {
+      "stmt_id": "st_prop_def",
+      "subtype": "definition",
+      "clause_range": [
+        52,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_prop",
+      "exposed_entities": [
+        "正比例函数",
+        "k",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_prop_remark",
+      "subtype": "remark",
+      "clause_range": [
+        54,
+        55
+      ],
+      "truth_value": null,
+      "scope_id": "s_prop",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop_line",
+      "subtype": "conclusion",
+      "clause_range": [
+        56,
+        58
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_prop",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop_degenerate",
+      "subtype": "conclusion",
+      "clause_range": [
+        59,
+        60
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_prop",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop_slope_intro",
+      "subtype": "remark",
+      "clause_range": [
+        61,
+        62
+      ],
+      "truth_value": null,
+      "scope_id": "s_prop",
+      "exposed_entities": [
+        "斜率"
+      ]
+    },
+    {
+      "stmt_id": "st_slope_def",
+      "subtype": "definition",
+      "clause_range": [
+        63,
+        67
+      ],
+      "truth_value": null,
+      "scope_id": "s_slope",
+      "exposed_entities": [
+        "斜率",
+        "k",
+        "m",
+        "Δx",
+        "Δy",
+        "x1",
+        "x2",
+        "y1",
+        "y2",
+        "θ"
+      ]
+    },
+    {
+      "stmt_id": "st_slope_remark",
+      "subtype": "remark",
+      "clause_range": [
+        68,
+        69
+      ],
+      "truth_value": null,
+      "scope_id": "s_slope",
+      "exposed_entities": [
+        "倾角"
+      ]
+    },
+    {
+      "stmt_id": "st_slope_sign",
+      "subtype": "conclusion",
+      "clause_range": [
+        70,
+        72
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_slope",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_slope_magnitude",
+      "subtype": "conclusion",
+      "clause_range": [
+        73,
+        74
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_slope",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_slope_vertical",
+      "subtype": "conclusion",
+      "clause_range": [
+        75,
+        75
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_slope",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_slope_importance",
+      "subtype": "remark",
+      "clause_range": [
+        76,
+        78
+      ],
+      "truth_value": null,
+      "scope_id": "s_slope",
+      "exposed_entities": [
+        "梯度"
+      ]
+    },
+    {
+      "stmt_id": "st_prop_requirements",
+      "subtype": "conclusion",
+      "clause_range": [
+        79,
+        82
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_prop",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_def",
+      "subtype": "definition",
+      "clause_range": [
+        85,
+        86
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear",
+      "exposed_entities": [
+        "一次函数",
+        "k",
+        "b",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_linear_remark",
+      "subtype": "remark",
+      "clause_range": [
+        87,
+        91
+      ],
+      "truth_value": null,
+      "scope_id": "s_linear",
+      "exposed_entities": [
+        "截距"
+      ]
+    },
+    {
+      "stmt_id": "st_intercept_def",
+      "subtype": "definition",
+      "clause_range": [
+        92,
+        95
+      ],
+      "truth_value": null,
+      "scope_id": "s_intercept",
+      "exposed_entities": [
+        "截距",
+        "y轴截距"
+      ]
+    },
+    {
+      "stmt_id": "st_intercept_x",
+      "subtype": "definition",
+      "clause_range": [
+        96,
+        97
+      ],
+      "truth_value": null,
+      "scope_id": "s_intercept",
+      "exposed_entities": [
+        "零点",
+        "x轴截距"
+      ]
+    },
+    {
+      "stmt_id": "st_intercept_remark",
+      "subtype": "remark",
+      "clause_range": [
+        98,
+        108
+      ],
+      "truth_value": null,
+      "scope_id": "s_intercept",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_conic_remark",
+      "subtype": "remark",
+      "clause_range": [
+        109,
+        109
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "圆锥曲线"
+      ]
+    },
+    {
+      "stmt_id": "st_invprop_def",
+      "subtype": "definition",
+      "clause_range": [
+        110,
+        111
+      ],
+      "truth_value": null,
+      "scope_id": "s_invprop",
+      "exposed_entities": [
+        "反比例函数",
+        "p",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_invprop_remark",
+      "subtype": "remark",
+      "clause_range": [
+        112,
+        112
+      ],
+      "truth_value": null,
+      "scope_id": "s_invprop",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_invprop_quadrants",
+      "subtype": "conclusion",
+      "clause_range": [
+        113,
+        114
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_invprop",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_invprop_symmetry",
+      "subtype": "conclusion",
+      "clause_range": [
+        115,
+        115
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_invprop",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_invprop_asymptotes",
+      "subtype": "conclusion",
+      "clause_range": [
+        116,
+        116
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_invprop",
+      "exposed_entities": [
+        "渐近线"
+      ]
+    },
+    {
+      "stmt_id": "st_invprop_relation",
+      "subtype": "conclusion",
+      "clause_range": [
+        117,
+        121
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_invprop",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_quad_def",
+      "subtype": "definition",
+      "clause_range": [
+        122,
+        123
+      ],
+      "truth_value": null,
+      "scope_id": "s_quad",
+      "exposed_entities": [
+        "二次函数",
+        "a",
+        "b",
+        "c",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_quad_remark",
+      "subtype": "remark",
+      "clause_range": [
+        124,
+        124
+      ],
+      "truth_value": null,
+      "scope_id": "s_quad",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_quad_opening",
+      "subtype": "conclusion",
+      "clause_range": [
+        125,
+        127
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_quad",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_quad_intercept",
+      "subtype": "conclusion",
+      "clause_range": [
+        128,
+        129
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_quad",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_quad_vertex",
+      "subtype": "conclusion",
+      "clause_range": [
+        130,
+        133
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_quad",
+      "exposed_entities": [
+        "对称轴",
+        "最值点"
+      ]
+    },
+    {
+      "stmt_id": "st_quad_intersections",
+      "subtype": "conclusion",
+      "clause_range": [
+        134,
+        135
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_quad",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_quad_table",
+      "subtype": "remark",
+      "clause_range": [
+        136,
+        139
+      ],
+      "truth_value": null,
+      "scope_id": "s_quad",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_quad_applications",
+      "subtype": "remark",
+      "clause_range": [
+        140,
+        141
+      ],
+      "truth_value": null,
+      "scope_id": "s_quad",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_natural_def",
+      "target": "st_natural_closure",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_integer_def",
+      "target": "st_integer_closure",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rational_def",
+      "target": "st_rational_properties",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_real_def",
+      "target": "st_real_closure",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_real_def",
+      "target": "st_real_continuity",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coordinate_system",
+      "target": "st_coordinate_function",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prop_def",
+      "target": "st_prop_line",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prop_def",
+      "target": "st_prop_degenerate",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_slope_def",
+      "target": "st_slope_sign",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_slope_def",
+      "target": "st_slope_magnitude",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_slope_def",
+      "target": "st_slope_vertical",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_invprop_def",
+      "target": "st_invprop_quadrants",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_invprop_def",
+      "target": "st_invprop_symmetry",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_invprop_def",
+      "target": "st_invprop_asymptotes",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_invprop_def",
+      "target": "st_invprop_relation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_quad_def",
+      "target": "st_quad_opening",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_quad_def",
+      "target": "st_quad_intercept",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_quad_def",
+      "target": "st_quad_vertex",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_quad_def",
+      "target": "st_quad_intersections",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_linear_def",
+      "target": "st_prop_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "一次函数是正比例函数的推广（b=0时为正比例函数）"
+    },
+    {
+      "source": "st_prop_def",
+      "target": "st_slope_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "正比例函数的斜率概念抽象为斜率定义"
+    }
+  ],
+  "unresolved": []
+}

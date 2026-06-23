@@ -1,0 +1,226 @@
+[SCOPE:root|description|线性算子]
+文章名: LiOper
+标题: 线性算子
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=零算子
+  [1] type=example heading=例 2 title=数乘算子
+  [2] type=example heading=例 3 title=投影算子
+  [3] type=exercise heading=习题 1 title=
+  [4] type=theorem heading=定理 1 title=
+  [5] type=theorem heading=定理 2 title=
+  [6] type=definition heading=定义 1 title=相似矩阵
+  [7] type=definition heading=定义 2 title=
+
+[0] 本文存在未完成的内容。
+
+[SCOPE:s_intro|description|线性算子介绍]
+[SCOPE:s_intro_let1|let_bind|引入线性映射集合]
+[1] 域 $\mathbb{F}$ 上所有从向量空间 $V$ 到维向量空间 $W$ 的线性映射 $f:V\rightarrow W$ 的集合用符号 $\mathcal{L}(V, W)$ (或者 $\mathrm{Hom}(V, W)$) 表示，它仍是一个向量空间；
+[2] 如果 $V, W$ 是有限维度的，维度分别为 $n, m$，
+[3] 那么线性映射 $f \in \mathcal{L}(V, W)$ 和一个 $m\times n$ 的矩阵一一对应。
+[/SCOPE:s_intro_let1]
+[4] 在 $V=W$ 的情形，向量空间 $\mathcal{L}(V, W)$ 简记为 $\mathcal{L}(V)$（或 $\mathrm{End}(V)$），它的向量通常称为线性算子。
+[SCOPE:s_intro_let2|let_bind|引入算子符号]
+[5] 符号约定：在本文中，线性算子将用手写体字母 $\mathcal{A,B,C}$ 表示，而在向量空间 $V$ 的基底 $(e_i)$ 之下对应的矩阵用粗体正体字母 $ \boldsymbol{\mathbf{A}} , \boldsymbol{\mathbf{B}} , \boldsymbol{\mathbf{C}} $ 表示，另一基底 $(e_i')$ 之下对应矩阵则表示为 $ \boldsymbol{\mathbf{A}} ', \boldsymbol{\mathbf{B}} ', \boldsymbol{\mathbf{C}} '$。
+[6] 总是用 $\mathcal{E}$ 表示恒等映射 $x \mapsto x$，用 $ \boldsymbol{\mathbf{E}} = (\delta_{ij})$ 表示单位矩阵。
+[7] 算子 $\mathcal{A}$ 作用在 $ x$ 上的结果 $\mathcal{A}(x)$ 简写成 $\mathcal{A} x$。
+[/SCOPE:s_intro_let2]
+[8] 线性算子比起一般的线性映射，可以定义复合运算：考虑 $\mathcal{A}, \mathcal{B}: V \to V$，
+[9] \begin{equation}
+(\mathcal{A} \circ \mathcal{B})(x) = \mathcal{A} (\mathcal{B}(x))~.
+\end{equation}
+[10] 方便起见，我们时常省略掉 $\circ$，直接记做 $\mathcal{A} \mathcal{B}$。
+[11] 线性算子 $\mathcal{B}$ 称为 $\mathcal{A}$ 的逆算子，如果 $\mathcal{AB}=\mathcal{BA}=\mathcal{E}$。
+[12] 算子 $\mathcal{A}$ 的逆算子通常记为 $\mathcal{A}^{-1}$。
+[13] 由推论 1 ，$\mathcal{A}^{-1}$ 存在等价于 $\mathrm{Ker}\mathcal{A}=0$ 或者 $\mathrm{dim}\;V=\mathrm{dim\;Im}\mathcal{A}$。
+[14] $\mathrm{dim\;Ker}\mathcal{A}$ 称为 $\mathcal{A}$ 的亏数。
+
+[/SCOPE:s_intro]
+[SCOPE:s_ex1|description|零算子]
+[15] 例 1 零算子
+[SCOPE:s_ex1_let|let_bind|零算子变量]
+[16] 零算子 $\mathcal{O}$ 把每个向量 $ v\in V$ 都变成零：$\mathrm{rank}\; \mathcal{O}=0$。
+
+[/SCOPE:s_ex1]
+[/SCOPE:s_ex1_let]
+[SCOPE:s_ex2|description|数乘算子]
+[17] 例 2 数乘算子
+[SCOPE:s_ex2_let|let_bind|数乘算子变量]
+[18] $\mathcal{A} x=\lambda x$，其中 $\lambda\in\mathbb{F}$。
+
+[/SCOPE:s_ex2]
+[/SCOPE:s_ex2_let]
+[SCOPE:s_ex3|description|投影算子]
+[19] 例 3 投影算子
+[SCOPE:s_ex3_let|let_bind|投影算子变量]
+[20] 设 $V=U\oplus W$，
+[21] 则 $ x= x_U+ x_W$ 且 $\mathcal{P} x= x_U$，
+[22] 那么称 $\mathcal{P}$ 为投影算子或在子空间 $U$ 平行于 $W$ 的投影。
+[/SCOPE:s_ex3_let]
+[23] 显然 $\mathcal{P}^2=\mathcal{P}$。
+
+[/SCOPE:s_ex3]
+[SCOPE:s_block5|description|待定]
+[24] 【未完成】重写相关内容
+[SCOPE:s_block5_let|let_bind|基向量变量]
+[25] 要知道一个具体的线性算子的性质，我们只需要知道它把基向量都映射到哪里去了。
+[26] 我们知道，基向量张成线性空间 $V$ 本身，而任意一组基向量变换后所得到的向量组，张成了线性算子的像空间（image space），
+[27] 即 $V$ 中全体向量变换后的结果之集合。
+[28] 如果基向量变换后的向量组还是线性无关的，
+[29] 那么这个向量组也是一组基，
+[30] 从而像空间就是 $V$ 本身；
+[31] 但有的时候变换后的向量组线性相关了，这时候的像空间就是 $V$ 的一个真子集了。
+[32] 极端情况下甚至把所有向量都变换为零向量，这样的线性算子的像空间就只有零向量了。
+[33] 如果一个线性算子的像空间是 $V$ 的一个真子集，
+[34] 那么这个真子集一定是 $V$ 中的一个 “过原点的平面”，我们把这种线性算子称为退化（degenerate）的。
+[35] 反过来，$V$ 中的一个 “过原点的平面” 可以是某线性算子的像空间。
+[36] 一个线性算子唯一对应一个像空间，
+[37] 但是一个像空间总是对应无穷多个线性算子。
+[38] 如果 $v\in V$ 在基 $\{{e}_i\}$ 中表示为 $\sum c_i {e}_i$，
+[39] 那么它变换后的向量就是 $T v=T\sum c_i {e}_i=\sum c_iT {e}_i$。
+[40] 如果向量组 $\{T {e}_i\}$ 是线性相关的，
+[41] 那么就意味着存在并非全为零的 $\{c_i\}$ 使得 $T v=\sum c_iT {e}_i=0$；
+[42] 而 $\{c_i\}$ 并非全为零意味着 $v$ 不是零向量。
+[43] 这就是说，退化的线性算子会把一些非零向量变换成零向量。
+
+[/SCOPE:s_block5]
+[/SCOPE:s_block5_let]
+[SCOPE:s_exercise1|description|习题1]
+[44] 习题 1
+[45] 如果线性算子非退化，
+[46] 那么非零向量有可能被变换为零向量吗？
+[47] 提示：退化和非退化的区别在于基做了线性算子后得到的向量组还是不是线性无关的，或者说还是不是一组基。
+
+[/SCOPE:s_exercise1]
+[SCOPE:s_block7|description|不同基底下线性算子对应的矩阵]
+[48] 【未完成】移动到线性映射的矩阵表示
+
+[/SCOPE:s_block7]
+[SCOPE:s_thm1|description|定理1]
+[49] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1变量]
+[50] \begin{equation}
+\mathcal{A} e_k = \sum_i^{n}a_{ik} e_i~, \mathcal{B} e_j = \sum_{k=1}^n b_{kj} e_k~.
+\end{equation}
+[/SCOPE:s_thm1_let]
+[51] 证明：
+[52] \begin{equation}
+\begin{aligned}
+\sum_i c_{ij} e_i&=(\mathcal{AB}) e_j=\mathcal{A}(\mathcal{B} e_j)=\mathcal{A} \left(\sum_k b_{kj} e_k \right) =\sum_k b_{kj}\mathcal{A} e_k\\
+&=\sum_k b_{kj}\sum_i a_{ik} e_i=\sum_{i,k}a_{ik}b_{kj} e_i= \boldsymbol{\mathbf{AB}} e_i~.
+\end{aligned}
+\end{equation}
+[53] 证毕！
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理2]
+[54] 定理 2
+[SCOPE:s_thm2_let1|let_bind|定理2变量1]
+[55] 若线性算子 $\mathcal A$ 在基底 $( e_1\cdots e_n)$ 下对应矩阵为 $ \boldsymbol{\mathbf{A}} $，
+[56] 则在另一基底 $( e'_1\cdots e'_n)$ 之下对应的矩阵 $ \boldsymbol{\mathbf{A}} '$ 为
+[57] \begin{equation}
+\boldsymbol{\mathbf{A}} '= \boldsymbol{\mathbf{B}} ^{-1} \boldsymbol{\mathbf{AB}} ~,
+\end{equation}
+[58] 过渡矩阵
+[59] 证明：
+[60] 由定理条件，若设 $ \boldsymbol{\mathbf{A}} =(a_{ij}), \boldsymbol{\mathbf{A}} '=(a_{kj}'), \boldsymbol{\mathbf{B}} =(b_{ij})$，
+[61] 则
+[62] \begin{equation}
+\begin{aligned}
+&\mathcal{A} e_i=\sum_{k} a_{ki} e_k
+~,\\
+&\mathcal{A} e_j'=\sum_{k} a'_{kj} e'_k~,\\
+& e_j'=\sum_i b_{ij} e_i~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_thm2_let1]
+[SCOPE:s_thm2_let2|let_bind|定理2变量2]
+[63] 引入算子 $\mathcal{B}$，它在基底 $( e_1\cdots e_n)$ 下对应的矩阵为 $ \boldsymbol{\mathbf{B}} $，
+[64] 那么
+[65] \begin{equation}
+\mathcal{B} e_j=\sum_i b_{ij} e_i= e_j'~.
+\end{equation}
+[66] 由于线性算子与矩阵之间在固定基底之下一一对应，
+[67] 所以可定义一算子 $\mathcal{A'}$，它在基底 $( e_1\cdots e_n)$ 之下对应的矩阵为 $ \boldsymbol{\mathbf{A}} '$，
+[68] 即
+[69] \begin{equation}
+\mathcal A' e_j=\sum_i a'_{ij} e_i~.
+\end{equation}
+[70] \begin{equation}
+\mathcal{AB} e_j=\mathcal{A} e'_j=\sum_i a'_{ij} e'_i=\sum_i a'_{ij}\mathcal{B} e_i=\mathcal{B} \left(\sum_i a'_{ij} e_i \right) =\mathcal{BA'} e_j~,
+\end{equation}
+[71] \begin{equation}
+\mathcal{A'}=\mathcal{B}^{-1}\mathcal{AB}~.
+\end{equation}
+[/SCOPE:s_thm2_let2]
+[72] 定理 1 [链接 L0]
+[73] ，上式对应的矩阵的形式就为
+[74] \begin{equation}
+\boldsymbol{\mathbf{A}} '= \boldsymbol{\mathbf{B}} ^{-1} \boldsymbol{\mathbf{AB}} ~.
+\end{equation}
+[75] 证毕
+[76] 【未完成】移动到线性代数的矩阵部分
+
+[/SCOPE:s_thm2]
+[SCOPE:s_def1|description|相似矩阵]
+[77] 定义 1 相似矩阵
+[SCOPE:s_def1_let|let_bind|相似矩阵变量]
+[78] 称矩阵 $ \boldsymbol{\mathbf{A}} '$ 相似于矩阵 $ \boldsymbol{\mathbf{A}} $，如果存在可逆矩阵 $ \boldsymbol{\mathbf{B}} $，使得
+[79] \begin{equation}
+\boldsymbol{\mathbf{A}} '= \boldsymbol{\mathbf{B}} ^{-1} \boldsymbol{\mathbf{AB}} ~,
+\end{equation}
+[/SCOPE:s_def1_let]
+[80] 容易验证，矩阵的相似关系是一种等价关系子节 4 .
+[81] 定理 2 表明，每一个线性算子都对应一个相似矩阵类（所以相似的矩阵构成的集合），而其中每一矩阵都相当于同一线性算子在不同基底下的矩阵。
+
+[/SCOPE:s_def1]
+[SCOPE:s_block11|description|线性算子的行列式与迹]
+[SCOPE:s_block11_let|let_bind|行列式迹变量]
+[82] 设 $\mathcal{A}$ 对应矩阵为 $A$，
+[/SCOPE:s_block11_let]
+[83] 则定理 2
+[84] \begin{equation}
+\begin{aligned}
+&\mathrm{det}( \boldsymbol{\mathbf{B}} ^{-1} \boldsymbol{\mathbf{AB}} )=\mathrm{det}( \boldsymbol{\mathbf{A}} )~,\\
+&\mathrm{tr}\;( \boldsymbol{\mathbf{B}} ^{-1} \boldsymbol{\mathbf{AB}} )=\mathrm{tr}\;( \boldsymbol{\mathbf{ABB}} ^{-1})=\mathrm{tr}\;( \boldsymbol{\mathbf{A}} )~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_block11]
+[SCOPE:s_def2|description|定义2]
+[85] 定义 2
+[SCOPE:s_def2_let|let_bind|定义2变量]
+[86] 称
+[87] $
+[88] \mathrm{det}\;\mathcal{A}=\mathrm{det}\;A
+[89] $
+[90] 为线性算子 $\mathcal{A}$ 的行列式。
+[91] 称
+[92] $
+[93] \mathrm{tr}\;\mathcal{A}=\mathrm{tr}\;A
+[94] $
+[95] 为线性算子 $\mathcal{A}$ 的迹。
+[/SCOPE:s_def2_let]
+[96] 式 12 表明，线性算子 $\mathcal{A}$ 的行列式和迹是 $\mathcal{A}$ 的不变量，
+[97] 即这个定义是适当的。
+[/SCOPE:s_def2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理2表明线性算子对应相似矩阵类，引出定义1"
+  },
+  {
+    "source_scope": "s_block11",
+    "target_scope": "s_def2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "式12表明行列式和迹是不变量，引出定义2"
+  }
+]

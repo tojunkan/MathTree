@@ -1,0 +1,211 @@
+{
+  "article_name": "RieRes",
+  "statements": [
+    {
+      "stmt_id": "st_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_series",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem_let",
+      "exposed_entities": [
+        "a_n",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_riemann",
+      "subtype": "conclusion",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem_let",
+      "exposed_entities": [
+        "A",
+        "sigma"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_essence",
+      "subtype": "remark",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_intro",
+      "subtype": "remark",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_posA",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let_A",
+      "exposed_entities": [
+        "A"
+      ]
+    },
+    {
+      "stmt_id": "st_construct_N1",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_construct_let_N1",
+      "exposed_entities": [
+        "N1"
+      ]
+    },
+    {
+      "stmt_id": "st_construct_N2",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_construct_let_N2",
+      "exposed_entities": [
+        "N2"
+      ]
+    },
+    {
+      "stmt_id": "st_rearrangement_exists",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof_construct",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example",
+      "subtype": "example",
+      "clause_range": [
+        22,
+        31
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_series",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_example_let",
+      "exposed_entities": [
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_example_rearrange",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        31
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example_let",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_series",
+      "target": "st_conclusion_riemann",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_posA",
+      "target": "st_construct_N1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_construct_N1",
+      "target": "st_construct_N2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_construct_N2",
+      "target": "st_rearrangement_exists",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_series",
+      "target": "st_rearrangement_exists",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_series",
+      "target": "st_example_rearrange",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_remark_essence",
+      "target": "st_theorem",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_proof_intro",
+      "target": "st_rearrangement_exists",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_example",
+      "target": "st_theorem",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例题是定理的一个具体实例"
+    }
+  ],
+  "unresolved": []
+}

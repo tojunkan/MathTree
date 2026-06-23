@@ -1,0 +1,49 @@
+[SCOPE:root|description|正弦定理与余弦定理（高中）]
+文章名: CosThe
+标题: 正弦定理与余弦定理（高中）
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=余弦定理
+
+[SCOPE:s_coslaw|description|余弦定理]
+[0] 定理 1 余弦定理
+[SCOPE:s_coslaw_let1|let_bind|三角形边角变量]
+[1] 余弦定理（law of cosines）是指：三角形（图 1 ）任何一条边的平方等于其它两边平方的和减去这两边与它们夹角的余弦的积的两倍。
+[2] \begin{equation}
+c^2=a^2 + b^2 - 2ab\cos C~,
+\end{equation}
+[/SCOPE:s_coslaw_let1]
+[3] 在直角三角形中，
+[4] 即 $C=90^\circ = \pi / 2$ 时，余弦定理的形式化简为勾股定理。
+[5] \begin{equation}
+c^2 = a^2 + b^2~.
+\end{equation}
+
+[6] 【图解】图 2：余弦定理的证明
+[SCOPE:s_coslaw_let2|let_bind|坐标系变量]
+[7] 我们在直角坐标系中来推导，如图 2 ，以 $C$ 点为原点，$B$ 点在 $x$ 轴正方向上，
+[8] 则各点坐标为：
+[9] \begin{equation}
+C(0,0),\quad B(a,0),\quad A(b\cos C,b\sin C)~.
+\end{equation}
+[/SCOPE:s_coslaw_let2]
+[10] 正弦定理：$A$ 的 $y$ 坐标可写为 $y_A = b \sin C$，也可写为 $y_A = c \sin B$。
+[11] 因此 $b \sin C = c \sin B$，
+[12] 即 $b/ \sin B = c / \sin C$。
+[13] 余弦定理：由两点之间的距离公式，有
+[14] \begin{equation}
+c^2=\overline{AB}^2=(b\cos C-a)^2+(b\sin C-0)^2=a^2+b^2-2ab\cos C~.
+\end{equation}
+
+[15] 余弦定理的这种推导不依赖坐标。
+[SCOPE:s_coslaw_let3|let_bind|矢量变量]
+[16] 利用几何矢量点乘的分配律，以及点乘的几何定义 $ \boldsymbol{\mathbf{a}} \boldsymbol\cdot \boldsymbol{\mathbf{b}} = ab\cos\theta$：
+[17] \begin{equation}
+\begin{aligned}
+( \boldsymbol{\mathbf{a}} \pm \boldsymbol{\mathbf{b}} )^2 &= \boldsymbol{\mathbf{a}} ^2 + \boldsymbol{\mathbf{b}} ^2 \pm 2 \boldsymbol{\mathbf{a}} \boldsymbol\cdot \boldsymbol{\mathbf{b}} \\
+&= a^2 + b^2 \pm 2ab \cos\theta~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_coslaw]
+[/SCOPE:s_coslaw_let3]
+[/SCOPE:root]

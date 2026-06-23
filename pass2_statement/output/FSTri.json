@@ -1,0 +1,568 @@
+{
+  "article_name": "FSTri",
+  "statements": [
+    {
+      "stmt_id": "st_intro_let",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let",
+      "exposed_entities": [
+        "f(x)",
+        "l",
+        "a_n",
+        "b_n"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_remark_eq",
+      "subtype": "remark",
+      "clause_range": [
+        4,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_parity",
+      "subtype": "theorem",
+      "clause_range": [
+        7,
+        11
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_complex_question",
+      "subtype": "question",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_complex",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_complex_answer",
+      "subtype": "conclusion",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_complex",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_complex_let",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_complex_let",
+      "exposed_entities": [
+        "u(x)",
+        "v(x)",
+        "a'_n",
+        "b'_n",
+        "a''_n",
+        "b''_n",
+        "a_n",
+        "b_n"
+      ]
+    },
+    {
+      "stmt_id": "st_complex_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_complex",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_completeness_claim",
+      "subtype": "theorem",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": "true",
+      "scope_id": "s_completeness",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_let",
+      "subtype": "definition",
+      "clause_range": [
+        31,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let",
+      "exposed_entities": [
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        34,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_let",
+      "subtype": "definition",
+      "clause_range": [
+        39,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_exercise",
+      "subtype": "exercise",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1_exercise",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_coeff_derivation_intro",
+      "subtype": "remark",
+      "clause_range": [
+        44,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_coeff_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_coeff_derivation_let",
+      "subtype": "definition",
+      "clause_range": [
+        48,
+        62
+      ],
+      "truth_value": null,
+      "scope_id": "s_coeff_derivation_let",
+      "exposed_entities": [
+        "sin(nπx/l)",
+        "cos(nπx/l)",
+        "1/2",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_coeff_derivation_ortho",
+      "subtype": "theorem",
+      "clause_range": [
+        63,
+        68
+      ],
+      "truth_value": "true",
+      "scope_id": "s_coeff_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_coeff_derivation_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        69,
+        73
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_coeff_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sine_basis_claim",
+      "subtype": "theorem",
+      "clause_range": [
+        74,
+        76
+      ],
+      "truth_value": "true",
+      "scope_id": "s_sine_basis",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_let",
+      "subtype": "definition",
+      "clause_range": [
+        79,
+        80
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3_let",
+      "exposed_entities": [
+        "f(x)",
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_derivation",
+      "subtype": "conclusion",
+      "clause_range": [
+        81,
+        87
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_generalization",
+      "subtype": "theorem",
+      "clause_range": [
+        88,
+        90
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_arbitrary_interval_let",
+      "subtype": "assumption",
+      "clause_range": [
+        91,
+        94
+      ],
+      "truth_value": null,
+      "scope_id": "s_arbitrary_interval_let",
+      "exposed_entities": [
+        "a",
+        "b",
+        "l",
+        "x_0",
+        "g(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_arbitrary_interval_method1",
+      "subtype": "conclusion",
+      "clause_range": [
+        95,
+        95
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_arbitrary_interval",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_arbitrary_interval_method2",
+      "subtype": "conclusion",
+      "clause_range": [
+        96,
+        100
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_arbitrary_interval",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_arbitrary_interval_method3",
+      "subtype": "conclusion",
+      "clause_range": [
+        101,
+        104
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_arbitrary_interval",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_arbitrary_interval_remark",
+      "subtype": "remark",
+      "clause_range": [
+        105,
+        121
+      ],
+      "truth_value": null,
+      "scope_id": "s_arbitrary_interval",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_orthogonality_proof_claim",
+      "subtype": "theorem",
+      "clause_range": [
+        122,
+        127
+      ],
+      "truth_value": "true",
+      "scope_id": "s_orthogonality_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_orthogonality_proof_norms",
+      "subtype": "conclusion",
+      "clause_range": [
+        128,
+        130
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_orthogonality_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_normalized_basis_let",
+      "subtype": "definition",
+      "clause_range": [
+        131,
+        137
+      ],
+      "truth_value": null,
+      "scope_id": "s_normalized_basis_let",
+      "exposed_entities": [
+        "|S_n>",
+        "|C_n>",
+        "|C_0>",
+        "A_n",
+        "B_n"
+      ]
+    },
+    {
+      "stmt_id": "st_normalized_basis_basis",
+      "subtype": "definition",
+      "clause_range": [
+        138,
+        139
+      ],
+      "truth_value": null,
+      "scope_id": "s_normalized_basis",
+      "exposed_entities": [
+        "1/√(2l)",
+        "sin(nπx/l)/√l",
+        "cos(nπx/l)/√l"
+      ]
+    },
+    {
+      "stmt_id": "st_normalized_basis_orthonorm",
+      "subtype": "theorem",
+      "clause_range": [
+        140,
+        143
+      ],
+      "truth_value": "true",
+      "scope_id": "s_normalized_basis",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_normalized_basis_formula",
+      "subtype": "definition",
+      "clause_range": [
+        144,
+        147
+      ],
+      "truth_value": null,
+      "scope_id": "s_normalized_basis",
+      "exposed_entities": [
+        "|f>",
+        "a_n",
+        "b_n"
+      ]
+    },
+    {
+      "stmt_id": "st_normalized_basis_inner_product",
+      "subtype": "theorem",
+      "clause_range": [
+        148,
+        157
+      ],
+      "truth_value": "true",
+      "scope_id": "s_normalized_basis",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_normalized_basis_parseval",
+      "subtype": "theorem",
+      "clause_range": [
+        158,
+        159
+      ],
+      "truth_value": "true",
+      "scope_id": "s_normalized_basis",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_intro_let",
+      "target": "st_intro_parity",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_complex_let",
+      "target": "st_complex_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let",
+      "target": "st_ex1_remark",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_let",
+      "target": "st_ex2_remark",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coeff_derivation_let",
+      "target": "st_coeff_derivation_ortho",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coeff_derivation_ortho",
+      "target": "st_coeff_derivation_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_let",
+      "target": "st_ex3_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_derivation",
+      "target": "st_ex3_generalization",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_arbitrary_interval_let",
+      "target": "st_arbitrary_interval_method1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_arbitrary_interval_let",
+      "target": "st_arbitrary_interval_method2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_arbitrary_interval_let",
+      "target": "st_arbitrary_interval_method3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_normalized_basis_let",
+      "target": "st_normalized_basis_basis",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_normalized_basis_basis",
+      "target": "st_normalized_basis_orthonorm",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_normalized_basis_orthonorm",
+      "target": "st_normalized_basis_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_normalized_basis_formula",
+      "target": "st_normalized_basis_inner_product",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_normalized_basis_inner_product",
+      "target": "st_normalized_basis_parseval",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex1_let",
+      "target": "st_intro_let",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是傅里叶级数展开的一个具体例子"
+    },
+    {
+      "source": "st_ex2_let",
+      "target": "st_intro_let",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2是傅里叶级数展开的一个具体例子"
+    },
+    {
+      "source": "st_ex3_let",
+      "target": "st_sine_basis_claim",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例3是正弦基底展开的一个具体例子"
+    },
+    {
+      "source": "st_coeff_derivation_formula",
+      "target": "st_intro_let",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "系数公式推导得出傅里叶级数的系数公式"
+    },
+    {
+      "source": "st_orthogonality_proof_claim",
+      "target": "st_coeff_derivation_ortho",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "正交性证明是系数公式推导的基础"
+    },
+    {
+      "source": "st_normalized_basis_formula",
+      "target": "st_coeff_derivation_formula",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "归一化基底是系数公式的另一种表述"
+    }
+  ],
+  "unresolved": []
+}

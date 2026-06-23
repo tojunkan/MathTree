@@ -1,0 +1,191 @@
+{
+  "article_name": "CBTheo",
+  "statements": [
+    {
+      "stmt_id": "st_def_equipollence",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "M",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem_CB",
+      "subtype": "theorem",
+      "clause_range": [
+        3,
+        6
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_A_B",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem",
+      "exposed_entities": [
+        "A",
+        "B",
+        "B_1",
+        "A_1",
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_CB",
+      "subtype": "conclusion",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_disjoint",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_sequence",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_let2",
+      "exposed_entities": [
+        "x",
+        "x_0",
+        "x_n",
+        "x_{n+1}",
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_cases_classification",
+      "subtype": "condition",
+      "clause_range": [
+        12,
+        16
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_let2",
+      "exposed_entities": [
+        "n",
+        "x",
+        "x_n",
+        "x_{n+1}"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_parity",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_cases",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_cases",
+      "exposed_entities": [
+        "A_E",
+        "A_O",
+        "A_I",
+        "B_E",
+        "B_O",
+        "B_I"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_mapping",
+      "subtype": "conclusion",
+      "clause_range": [
+        20,
+        25
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_conclusion_psi",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cases",
+      "exposed_entities": [
+        "ψ"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_A_B",
+      "target": "st_conclusion_CB",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_disjoint",
+      "target": "st_conclusion_CB",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_sequence",
+      "target": "st_conclusion_parity",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_cases",
+      "target": "st_conclusion_mapping",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_conclusion_mapping",
+      "target": "st_conclusion_psi",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

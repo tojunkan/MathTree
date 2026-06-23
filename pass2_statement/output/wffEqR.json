@@ -1,0 +1,239 @@
+{
+  "article_name": "wffEqR",
+  "statements": [
+    {
+      "stmt_id": "st_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_let",
+      "exposed_entities": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_idempotent",
+      "subtype": "conclusion",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_commutative",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_associative",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_identity",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_distributive",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_contrapositive",
+      "subtype": "conclusion",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_absorption",
+      "subtype": "conclusion",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_contradiction_excluded_middle",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_double_negation",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_demorgan",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_implication",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_equivalence",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let",
+      "target": "st_idempotent",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let",
+      "target": "st_commutative",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let",
+      "target": "st_associative",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let",
+      "target": "st_identity",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let",
+      "target": "st_distributive",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let",
+      "target": "st_contrapositive",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let",
+      "target": "st_absorption",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let",
+      "target": "st_contradiction_excluded_middle",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let",
+      "target": "st_double_negation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let",
+      "target": "st_demorgan",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let",
+      "target": "st_implication",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let",
+      "target": "st_equivalence",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

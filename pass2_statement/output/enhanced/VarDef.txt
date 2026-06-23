@@ -1,0 +1,111 @@
+[SCOPE:root|description|变分的基本定理（变分学）]
+文章名: VarDef
+标题: 变分的基本定理（变分学）
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=（拉格朗日）
+  [1] type=theorem heading=定理 2 title=（黎曼）
+
+[SCOPE:s_thm1|description|定理1（拉格朗日）]
+[0] 定理 1 （拉格朗日）
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[1a] (x)$，并且其满足 $\eta
+[1b] (a)=\eta
+[1c] (b)=0$，属于 $C_1$ 类的函数 $M
+[1d] (x)$ 都有
+[2] \begin{equation}
+\int_a^b M(x)\eta(x) \,\mathrm{d}{x} =0~,
+\end{equation}
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm2|description|定理2（黎曼）]
+[3] 定理 2 （黎曼）
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[4a] (x)$，并且其满足 $\eta
+[4b] (a)=\eta
+[4c] (b)=0$，属于 $C_1$ 类的函数 $M
+[4d] (x)$ 都有
+[5] \begin{equation}
+\int_a^b M(x)\eta'(x) \,\mathrm{d}{x} =0~,
+\end{equation}
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_let]
+[6] 以下将用反证法证明。
+
+[SCOPE:s_thm1_proof|reductio|定理1的证明]
+[SCOPE:s_thm1_proof_let|let_bind|定理1证明中的变量]
+[7] 设在区间 $[a,b]$ 上某点 $c$，$M(c)\neq0$。
+[8a] (c)>0$，由于 $M
+[8b] (x)$ 的连续性，取充分大的 $n$，可以得到包含在 $[a,b]$ 内的区间 $[x_0,x_0+\frac{\pi}{n}]$，它包含着 $c$ 点，并且在它上面 $M
+[8c] (x)$ 大于某一正数 $m$。
+[9] 定义
+[10] \begin{equation}
+\eta_0(x)= \left\{\begin{aligned}
+&\sin^2 [n(x-x_0)] \quad && (x\in [x_0,x_0+\frac{\pi}{n}])\\
+&0 \quad &&(other)~.
+\end{aligned}\right. \end{equation}
+[11a] (x)$ 是 $C_1$ 类的，且 $\eta_0
+[11b] (a)=\eta_0
+[11c] (b)=0$。
+[/SCOPE:s_thm1_proof_let]
+[12] 因此，由
+[13] 定理 1 [链接 L0]
+[14] 式 1 [链接 L1]
+[15] 成立。
+[16] 但
+[17] \begin{equation}
+\begin{aligned}
+&\int_a^b M(x)\eta_0(x) \,\mathrm{d}{x} \\
+&=\int_{x_0}^{x_0+\frac{\pi}{n}}M(x)\sin^2[n(x-x_0)] \,\mathrm{d}{x} \\
+&>m\int_{x_0}^{x_0+\frac{\pi}{n}}\sin^2[n(x-x_0)] \,\mathrm{d}{x} =\frac{\pi m}{2n}>0~.
+\end{aligned}
+\end{equation}
+[18] 式 1 [链接 L2]
+[19] 矛盾，
+[20] 故
+[21] 定理 1 [链接 L3]
+
+[/SCOPE:s_thm1_proof]
+[SCOPE:s_thm2_proof|reductio|定理2的证明]
+[SCOPE:s_thm2_proof_let|let_bind|定理2证明中的变量]
+[22] 设 $M(x)$ 不是常数，
+[23] 则在区间 $[a,b]$ 上，至少有两点 $c_1,c_2$，使得 $M(c_1)\neq M(c_2)$，设 $M(c_1)>M(c_2)$。
+[24] 由 $M(x)$ 的连续性，存在 $d_1,d_2$，使得
+[25] \begin{equation}
+M(c_1)>d_1>d_2>M(c_2)~.
+\end{equation}
+[26a] (x)>d_1$，而在另一区间上，$M
+[26b] (x)< d_2$。
+[27] 定义函数
+[28] \begin{equation}
+\eta'(x)= \left\{\begin{aligned}
+&\sin^2[n(x-x_0)]\quad &&(x\in[x_0,x_0+\frac{\pi}{n}])\\
+&-\sin^2[n(x-x_1)]\quad &&(x\in[x_1,x_1+\frac{\pi}{n}])\\
+&0\quad &&(other)~.
+\end{aligned}\right. \end{equation}
+[29] 显然，$\eta'(x)$ 连续，
+[30a] (x)=\int_a^x\eta'
+[30b] (x) \,\mathrm{d}{x} $ 连续且有连续微商 $\eta'
+[30c] (x)$，并且 $\eta
+[30d] (a)=\eta
+[30e] (b)=0$，由
+[/SCOPE:s_thm2_proof_let]
+[31] 定理 2 [链接 L4]
+[32] 式 2 [链接 L5]
+[33] 成立，
+[34] 但
+[35] \begin{equation}
+\begin{aligned}
+&\int_a^b M(x)\eta'(x) \,\mathrm{d}{x} =\\
+&\int_{x_0}^{x_0+\frac{\pi}{n}}M(x)\sin^2[n(x-x_0)] \,\mathrm{d}{x} -\int_{x_1}^{x_1+\frac{\pi}{n}}M(x)\sin^2[n(x-x_1)] \,\mathrm{d}{x} \\
+&>(d_1-d_2)\int_0^{\frac{\pi}{n}}\sin^2nx \,\mathrm{d}{x} >0~.
+\end{aligned}
+\end{equation}
+[36] 式 2 [链接 L6]
+[37] 矛盾，
+[38] 故
+[39] 定理 2 [链接 L7]
+[/SCOPE:s_thm2_proof]
+[/SCOPE:root]

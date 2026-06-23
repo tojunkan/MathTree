@@ -1,0 +1,184 @@
+[SCOPE:root|description|可解群]
+文章名: SlvbGp
+标题: 可解群
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=可解群
+  [1] type=definition heading=定义 2 title=（次）正规序列
+  [2] type=theorem heading=定理 1 title=可解群的另一定义
+  [3] type=lemma heading=引理 1 title=
+  [4] type=lemma heading=引理 2 title=
+
+[0] 可解群在 Galois 理论中起到关键作用，用于判断代数方程的根式可解性，
+[1] 由此而得名。
+[2] 由于我们现在尚未深入 Galois 理论，就不讨论何谓 “可解”，而仅仅从群结构的角度研究这种群的性质。
+
+[SCOPE:s_def1|description|定义1 可解群]
+[3] 定义 1 可解群
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[4] 给定群 $G$，定义 $G^{(0)}=G$ 且对于任意正整数 $k$，$G^{(k)}=[G^{(k-1)}, G^{(k-1)}]$。
+[/SCOPE:s_def1_let]
+[5] \begin{equation}
+G^{(0)}\rhd G^{(1)}\rhd G^{(2)}\rhd \cdots~
+\end{equation}
+[6] 导出列（derived series）
+[7] 若导出列在有限步内终结于 $\{e\}$，或者等价地说，存在非负整数 $n$ 使得 $G^{(n)}=\{e\}$，
+[8] 则称 $G$可解（solvable）。
+[9] 定义 1 的式 1 直接使用了正规子群符号 $\rhd$，这是由定理 1 保证的。
+[10] 定义 1 的基础是换位子群的概念，
+[11] 但我们也可以仅用正规子群的概念来定义可解群：
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义2 （次）正规序列]
+[12] 定义 2 （次）正规序列
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[13] 给定群 $G$，称序列
+[/SCOPE:s_def2_let]
+[14] \begin{equation}
+G=G_1\rhd G_2\rhd\cdots G_n=\{e\}~
+\end{equation}
+[15] 次正规序列（subnormal series）
+[16] 正规序列（normal series）
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|定理1 可解群的另一定义]
+[17] 定理 1 可解群的另一定义
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[18] 给定群 $G$，
+[/SCOPE:s_thm1_let]
+[19] 则 $G$ 是可解群，当且仅当存在 $G$ 的正规序列 $G=G_1\rhd G_2\rhd\cdots G_n=\{e\}$，且对于任意正整数 $k$，$G_k/G_{k+1}$ 都是阿贝尔群。
+[20] 证明：
+[SCOPE:s_thm1_nec|description|必要性]
+[21] 必要性：
+[SCOPE:s_thm1_nec_let|let_bind|必要性中的变量]
+[22] 设 $G$ 可解，
+[23] 即存在非负整数 $n$ 使得 $G^{(n)}=\{e\}$。
+[24] 令 $G_k=G^{(k-1)}$，
+[/SCOPE:s_thm1_nec_let]
+[25] 则对于任意正整数 $k$，$G_{k+1}\subseteq [G_k, G_k]$，
+[26] 于是由定理 2 可知，$G_k/G_{k+1}$ 都是阿贝尔群。
+[27] 又由定理 1 ，可知各 $G_k\lhd G$，
+[28] 因此
+[29] \begin{equation}
+G=G_1\rhd G_2\rhd\cdots\rhd G_{n+1}=\{e\}~
+\end{equation}
+[30] 正规序列
+[/SCOPE:s_thm1_nec]
+[SCOPE:s_thm1_suf|description|充分性]
+[31] 充分性：
+[SCOPE:s_thm1_suf_let|let_bind|充分性中的变量]
+[32] 设存在 $G$ 的正规序列 $G=G_1\rhd G_2\rhd\cdots G_n=\{e\}$，且对于任意正整数 $k$，$G_k/G_{k+1}$ 都是阿贝尔群。
+[/SCOPE:s_thm1_suf_let]
+[33] 由定理 2 可知，$G_{k+1}\supseteq [G_k, G_k]$ 对任意正整数 $k$ 成立。
+[34] 考虑到 $G_2\supseteq[G_1, G_1]=G^{(1)}$，
+[35] 从而 $G_3\supseteq[G_2, G_2]\supseteq [G^{(1)}, G^{(1)}]=G^{(2)}$；
+[36] 以此类推，$G_{k}\supseteq G^{(k-1)}$ 对任意正整数 $k$ 成立。
+[37] 因此，$G_n=\{e\}\implies G^{(n-1)}=\{e\}$。
+[38] 证毕。
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_suf]
+[SCOPE:s_lem1|description|引理1]
+[39] 引理 1
+[40] 可解群的子群和商群都可解。
+[41] 证明：
+[SCOPE:s_lem1_let|let_bind|引理1的变量]
+[42] 给定可解群 $G$。
+[/SCOPE:s_lem1_let]
+[SCOPE:s_lem1_sub|description|子群可解]
+[SCOPE:s_lem1_sub_let|let_bind|子群变量]
+[43] 设 $H$ 是 $G$ 的子群，
+[/SCOPE:s_lem1_sub_let]
+[44a] (k)}\subseteq G^{
+[44b] (k)}$ 对任意非负整数 $k$ 成立。
+[45a] (n)}=\{e\}\implies H^{
+[45b] (n)}=\{e\}$。
+[/SCOPE:s_lem1_sub]
+[SCOPE:s_lem1_quot|description|商群可解]
+[SCOPE:s_lem1_quot_let|let_bind|商群变量]
+[46] 设 $N\lhd G$。
+[/SCOPE:s_lem1_quot_let]
+[47] 若 $[G, G]\subseteq N$，
+[48] 则任取 $g_1, g_2\in G$ 有 $[g_1, g_2]\in N$，
+[49] 于是 $[g_1N, g_2N]\subseteq N$，
+[50] 即 $[G/N, G/N]=N$。
+[51] 若 $N\subseteq [G, G]$，
+[52] 则类似可得 $[G/N, G/N]=G^{(1)}/N$。
+[53a] (n)}=\{e\}$ 即可推出 $ \left(G/N \right) ^{
+[53b] (n)}=\{e\}$。
+[/SCOPE:s_lem1_quot]
+[54] 证毕。
+
+[/SCOPE:s_lem1]
+[SCOPE:s_lem2|description|引理2]
+[55] 引理 2
+[SCOPE:s_lem2_let|let_bind|引理2的变量]
+[56] 给定群 $G$ 及其正规子群 $N$，若 $N$ 和 $G/N$ 均可解，
+[/SCOPE:s_lem2_let]
+[57] 则 $G$ 可解。
+[SCOPE:s_lem2_proof|description|引理2的证明]
+[58] 证明1：
+[SCOPE:s_lem2_proof_let|let_bind|证明中的变量]
+[59] 设 $G/N$ 和 $N$ 分别有正规序列
+[60] \begin{equation}
+\left\{
+\begin{aligned}
+G/N ={}& Q_0\rhd Q_1\rhd Q_2\rhd\cdots\rhd Q_s=N, \\
+N ={}& N_0\rhd N_1\rhd N_2\rhd\cdots\rhd N_t=\{e\}.
+\end{aligned}
+\right. ~
+\end{equation}
+[61] 对于 $0\leq k\leq s$，令 $G_k=\pi^{-1} \left(Q_k \right) $；
+[62] 对于 $s< k\leq s+t+1$，令 $G_k=N_{k-s-1}$。
+[/SCOPE:s_lem2_proof_let]
+[63] 则可以构造序列
+[64] \begin{equation}
+G=G_0\rhd G_1\rhd\cdots\rhd G_{s+t+1}=\{e\}. ~
+\end{equation}
+[65] 其中，$G_s$ 到 $G_{s+t+1}$ 自然构成一个正规序列。
+[66] 而 $G_0$ 到 $G_s$ 也依然满足 “全是 $G_0$ 的正规子群，$G_{k-1}/G_{k}$ 是阿贝尔群”，证明如下：
+[67] \begin{equation}
+\begin{aligned}
+\forall g\in G, \left(Q_k\lhd G/N \right) \iff{}& \left( \left(g^{-1}N \right) \left(Q_k \right) \left(gN \right) =Q_k \right) \\
+\iff{}& \left(g^{-1}N \right) \left(\pi^{-1} \left(Q_k \right) \right) \left(gN \right) = \left\{\pi \right\} ^{-1} \left(Q_k \right) \\
+\implies{}& \left(g^{-1}\pi^{-1} \left(Q_k \right) g\subseteq \pi^{-1} \left(Q_k \right) \right) .
+\end{aligned}~
+\end{equation}
+[68] 此即证明了 $\pi^{-1} \left(Q_k \right) \lhd G=G_0$。
+[69] 注意 $\pi: G\to G/N$ 是自然同态。
+[70] 又根据习题 2 ，
+[71] \begin{equation}
+\begin{aligned}
+Q_k/Q_{k+1} \cong G_k/G_{k+1}.
+\end{aligned}~
+\end{equation}
+[72] 故由 $Q_k/Q_{k+1}$ 是阿贝尔群，得证 $G_k/G_{k+1}$ 是阿贝尔群。
+[73] 证毕。
+[/SCOPE:s_lem2]
+[/SCOPE:s_lem2_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "定理1给出可解群的另一定义，与定义1等价"
+  },
+  {
+    "source_scope": "s_lem1",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "引理1：可解群的子群和商群可解"
+  },
+  {
+    "source_scope": "s_lem2",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "引理2：若N和G/N可解则G可解"
+  }
+]

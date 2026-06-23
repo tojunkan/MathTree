@@ -1,0 +1,303 @@
+{
+  "article_name": "HsFunC",
+  "statements": [
+    {
+      "stmt_id": "st_zero_def",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_zero_def",
+      "exposed_entities": [
+        "f(x)",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_zero_exist_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_zero_exist",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_zero_exist_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        45
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_zero_exist",
+      "exposed_entities": [
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_bisection_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        58,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_bisection",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b",
+        "d",
+        "ε"
+      ]
+    },
+    {
+      "stmt_id": "st_bisection_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        60,
+        73
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_bisection",
+      "exposed_entities": [
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_slope_def",
+      "subtype": "definition",
+      "clause_range": [
+        81,
+        86
+      ],
+      "truth_value": null,
+      "scope_id": "s_slope_def",
+      "exposed_entities": [
+        "f(x)",
+        "k",
+        "θ"
+      ]
+    },
+    {
+      "stmt_id": "st_avg_rate_def",
+      "subtype": "definition",
+      "clause_range": [
+        88,
+        91
+      ],
+      "truth_value": null,
+      "scope_id": "s_avg_rate",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_monotonic_def",
+      "subtype": "definition",
+      "clause_range": [
+        102,
+        109
+      ],
+      "truth_value": null,
+      "scope_id": "s_monotonic_def",
+      "exposed_entities": [
+        "f(x)",
+        "D",
+        "I",
+        "x_1",
+        "x_2"
+      ]
+    },
+    {
+      "stmt_id": "st_monotonic_cond_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        120,
+        120
+      ],
+      "truth_value": null,
+      "scope_id": "s_monotonic_cond",
+      "exposed_entities": [
+        "f(x)",
+        "D",
+        "I",
+        "x_1",
+        "x_2"
+      ]
+    },
+    {
+      "stmt_id": "st_monotonic_cond_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        121,
+        122
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_monotonic_cond",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_extreme_def",
+      "subtype": "definition",
+      "clause_range": [
+        137,
+        145
+      ],
+      "truth_value": null,
+      "scope_id": "s_extreme_def",
+      "exposed_entities": [
+        "f(x)",
+        "D",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_symmetry_def",
+      "subtype": "definition",
+      "clause_range": [
+        158,
+        163
+      ],
+      "truth_value": null,
+      "scope_id": "s_symmetry_def",
+      "exposed_entities": [
+        "f(x)",
+        "D",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_parity_def",
+      "subtype": "definition",
+      "clause_range": [
+        167,
+        173
+      ],
+      "truth_value": null,
+      "scope_id": "s_parity_def",
+      "exposed_entities": [
+        "f(x)",
+        "D"
+      ]
+    },
+    {
+      "stmt_id": "st_period_def",
+      "subtype": "definition",
+      "clause_range": [
+        188,
+        192
+      ],
+      "truth_value": null,
+      "scope_id": "s_period_def",
+      "exposed_entities": [
+        "f(x)",
+        "D",
+        "T"
+      ]
+    },
+    {
+      "stmt_id": "st_abs_def",
+      "subtype": "definition",
+      "clause_range": [
+        233,
+        234
+      ],
+      "truth_value": null,
+      "scope_id": "s_abs_def",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_floor_def",
+      "subtype": "definition",
+      "clause_range": [
+        242,
+        243
+      ],
+      "truth_value": null,
+      "scope_id": "s_floor_def",
+      "exposed_entities": [
+        "x",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_dirichlet_def",
+      "subtype": "definition",
+      "clause_range": [
+        251,
+        252
+      ],
+      "truth_value": null,
+      "scope_id": "s_dirichlet_def",
+      "exposed_entities": [
+        "x"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_zero_exist_assump",
+      "target": "st_zero_exist_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_bisection_assump",
+      "target": "st_bisection_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_monotonic_cond_assump",
+      "target": "st_monotonic_cond_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_zero_exist_concl",
+      "target": "st_zero_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "零点存在定理是零点概念的应用"
+    },
+    {
+      "source": "st_bisection_concl",
+      "target": "st_zero_exist_concl",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "二分法基于零点存在定理"
+    },
+    {
+      "source": "st_monotonic_cond_concl",
+      "target": "st_monotonic_def",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "充要条件"
+    },
+    {
+      "source": "st_parity_def",
+      "target": "st_symmetry_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "奇偶性是对称性的特例"
+    }
+  ],
+  "unresolved": []
+}

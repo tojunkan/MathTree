@@ -1,0 +1,203 @@
+[SCOPE:root|description|巴拿赫不动点定理]
+文章名: ConMap
+标题: 巴拿赫不动点定理
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=落在地面上的地图
+  [1] type=example heading=例 2 title=函数的迭代
+  [2] type=theorem heading=定理 1 title=巴拿赫不动点定理
+  [3] type=example heading=例 3 title=没有完备性
+  [4] type=example heading=例 4 title=没有一致的压缩比
+  [5] type=example heading=例 5 title=平方根的计算
+
+[0] 巴拿赫不动点定理（Banach fixed point theorem） 又称作压缩映像原理（contraction mapping principle）. 它是完备度量空间理论中的基本定理，在分析数学的诸多分支中均有应用。
+
+[SCOPE:s_ex1|description|例1 落在地面上的地图]
+[1] 例 1 落在地面上的地图
+[2] 这是数学科普中常见的命题：将一座公园的地图铺开在公园地面上，
+[3] 则地面上恰有唯一一点与地图上对应的点重合。
+[4] 借助一点线性代数知识，这个命题是不难验证的。
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[5] 设公园可以用有界的面闭区域 $\bar\Omega$ 表示。
+[6] 设地图的压缩比是 $\lambda$ (它当然介于 0 和 1 之间). 现在固定一个平面直角坐标系，把地图铺在区域 $\bar\Omega$ 内，
+[7] 则从 $\bar\Omega$ 内的点（公园中的地点）到地图上对应点的变换由下面的公式给出：
+[8] $$
+x\to \lambda Rx+b~,
+$$
+[9] 这里 $R$ 是一个旋转变换，$b$ 是平移向量。
+[/SCOPE:s_ex1_let]
+[10] 于是，要找的重合点必然满足方程
+[11] $$
+x=\lambda Rx+b~.
+$$
+[12] 由于 $\|\lambda R\|=\lambda<1$, 这方程就有唯一的解
+[13] $$
+x=(1-\lambda R)^{-1}b=\sum_{n=0}^{\infty}\lambda^nR^nb~.
+$$
+[14] 它就是要求的重合点。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2 函数的迭代]
+[15] 例 2 函数的迭代
+[16] 这是一个常见的数学实验：在计算器中任意输入一个数，而后不停地计算它的余弦值（弧度制）, 会得到什么结果？
+[17] 图 1：余弦函数的迭代
+[18] 上图给出了一个结果; 迭代的结果越来越逼近对角线 $y=x$ 与余弦曲线 $y=\cos x$ 的唯一交点。
+[SCOPE:s_ex2_let|let_bind|例2的变量]
+[19] 验算若干数值，不难作出如下猜测：不论实数的迭代序列
+[20] $$
+x_{n+1}=\cos x_n~
+$$
+[21] 开始于哪一个数，它最后都会收敛到方程 $x=\cos x$ 的唯一实数解 $x=0.739...$.
+[22] 这个结论也可以严格证明。
+[23] 不论起点 $x_1$ 是何数，都有 $|x_2|=|\cos x_1|\leq 1$, 从而 $\cos 1\leq x_3\leq 1$. 这样一来，从 $x_3$ 开始，所有点都落在区间 $[\cos 1,1]$ 内。
+[/SCOPE:s_ex2_let]
+[24] 于是可以作出如下估计：
+[25] $$
+\begin{aligned}
+|x_{n+2}-x_{n+1}|
+=\left|\int_{x_{n}}^{x_{n+1}}\sin tdt\right|
+\leq (\sin 1)|x_{n+1}-x_n|.
+\end{aligned}~
+$$
+[26] 由于 $|\sin1|<1$, 这表示序列 $\{x_n\}$ 是柯西序列，
+[27] 从而收敛到某个点 $x_*$. 对等式 $x_{n+1}=\cos x_n$ 取极限即看出这个极限点正是方程 $x=\cos x$ 的解。
+
+[/SCOPE:s_ex2]
+[28] 从上面所举的两个例子，可以抽象出如下的定理：
+
+[SCOPE:s_thm1|description|定理1 巴拿赫不动点定理]
+[29] 定理 1 巴拿赫不动点定理
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[30] 设 $(X,d)$ 是完备度量空间, $T:X\to X$ 是其上的压缩映射，
+[/SCOPE:s_thm1_let]
+[31] 那么映射 $T$ 有唯一的不动点，
+[32] 即满足 $x=Tx$ 的点。
+[33] 而且，对于任意 $x_0\in X$, 点列 $\{T^nx_0\}_{n\in\mathbb{N}}$ 都收敛到这个不动点。
+[SCOPE:s_thm1_proof|description|定理1的证明]
+[SCOPE:s_thm1_proof_let|let_bind|证明中的变量]
+[34] 证明是直接的计算：根据度量空间中的三角不等式，显然有
+[35] $$
+\begin{aligned}
+d(T^nx_0,T^{n+k}x_0)
+&\leq \sum_{j=1}^k d(T^{n+j-1}x_0,T^{n+j}x_0)\\
+&\leq \sum_{j=1}^k q^{n+j-1}d(x_0,Tx_0)\\
+&\leq \frac{q^n}{1-q}d(x_0,Tx_0).
+\end{aligned}~
+$$
+[36] 于是点列 $\{T^nx_0\}_{n\in\mathbb{N}}$ 是柯西序列，在完备度量空间 $X$ 之中自然收敛到某个 $x_*\in X$. 在公式 $T^{n+1}x_0=T(T^nx_0)$ 中令 $n\to\infty$ 就立刻看出 $x_*=Tx_*$. 不动点的唯一性则由 $d(Tx,Ty)\leq qd(x,y)$ 立刻得到。
+[/SCOPE:s_thm1_proof_let]
+[37] 证毕。
+[/SCOPE:s_thm1_proof]
+[38a] 在上面的不等式中
+[38b] 如果令 $k\to\infty$,，则得到估计
+[39] $$
+d(T^nx_0,x_*)\leq\frac{q^n}{1-q}d(x_0,Tx_0)~.
+$$
+[40] 这表示点列 $\{T^nx_0\}_{n\in\mathbb{N}}$ 收敛到不动点 $x_*$ 的速度很快，是指数式的。
+
+[/SCOPE:s_thm1]
+[41] 从许多个意义上来说，巴拿赫不动点定理都是最优的，因为取消任何一条假设都能够让定理不成立（即存在反例）.
+
+[SCOPE:s_ex3|description|例3 没有完备性]
+[42] 例 3 没有完备性
+[43] 这个例子非常简单。
+[SCOPE:s_ex3_let|let_bind|例3的变量]
+[44] 考虑开区间 $(0,1)$ 到自己的映射 $f(x)=x/2$. 它的不动点 $x=0$ 跑出了 $(0,1)$ 的范围。
+[/SCOPE:s_ex3_let]
+[45] 之所以会有这样的反例，是因为开区间 $(0,1)$ 在通常的距离函数之下并不是完备的度量空间。
+
+[/SCOPE:s_ex3]
+[SCOPE:s_ex4|description|例4 没有一致的压缩比]
+[46] 例 4 没有一致的压缩比
+[47] 巴拿赫不动点定理的表述要求一个无关于点 $x,y$ 的数 $q<1$, 这个数有时被称为压缩比。
+[48] 如果没有一致的压缩比，
+[49] 那么就能举出反例。
+[SCOPE:s_ex4_let|let_bind|例4的变量]
+[50] 例如函数
+[51] $$
+f(x)=\frac{3}{4}x-\frac{1}{4}\sqrt{x^2+1},\,x\in\mathbb{R}~.
+$$
+[/SCOPE:s_ex4_let]
+[52] 如图所示，它的图形是双曲线的一支，以对角线 $y=x$ 为渐近线。
+[53] 方程 $x=f(x)$ 当然无解。
+[54] 另一方面，通过微分中值定理，却也容易证明不等式
+[55] $$
+|f(x_1)-f(x_2)|<|x_1-x_2|,\,x_1,x_2\in\mathbb{R}~.
+$$
+[56a] 然而
+[56b] 当 $x_1,x_2\to-\infty$ 时，不难看出 $\frac{|f(x_1)-f(x_2)|}{|x_1-x_2|}$ 越来越接近 1.，则映射 $f$ 没有一致的压缩比。
+[57] 图 2：函数 $f(x)=\frac{3}{4}x-\frac{1}{4}\sqrt{x^2+1}$ 的图形
+
+[/SCOPE:s_ex4]
+[58] 巴拿赫不动点定理在数学中有诸多应用。
+[59] 它可以用来证明方程存在唯一解，而且因为它的证明是构造性的，它还能够给出近似计算解的算法。
+
+[SCOPE:s_ex5|description|例5 平方根的计算]
+[60] 例 5 平方根的计算
+[SCOPE:s_ex5_let|let_bind|例5的变量]
+[61] 对于给定的正数 $a$，它的算术平方根 $\sqrt{a}$ 一定满足方程 $x^2=a$。
+[62] 不妨设 $a>1$，将其改写为下列形式
+[63] \begin{equation}
+\frac{1}{2} \left(x+\frac{a}{x} \right) =x~.
+\end{equation}
+[64] 又对任意 $x_1,x_2\in [\eta,a]$
+[65] \begin{equation}
+\left\lvert Tx_1 - Tx_2 \right\rvert =\frac{1}{2} \left\lvert x_1 - x_2 \right\rvert \left\lvert 1-\frac{a}{x_1x_2} \right\rvert \leq\frac{1}{2} \left\lvert x_1 - x_2 \right\rvert ~.
+\end{equation}
+[/SCOPE:s_ex5_let]
+[66] 根据巴拿赫不动点定理，我们可知算术平方根 $\sqrt{a}$ 必然存在且唯一，且对任意 $x\in[\eta,a]$，点列 $\{T^nx_0\}_{n\in\mathbb{N}}$ 均收敛到 $\sqrt{a}$.
+[67] 所以我们可以这么计算正数 $a(a\geq 2)$ 的算术平方根：先取 $x_1=\frac{1}{2}a$3，然后按下式迭代计算：
+[68] \begin{equation}
+x_{n+1}=\frac{1}{2} \left(x_n+\frac{a}{x_n} \right) ~.
+\end{equation}
+[69] 计算精度估计（$n$ 为迭代计算次数）
+[70] \begin{equation}
+\epsilon\leq \left(\frac{1}{2} \right) ^{n+1} \left\lvert a-4 \right\rvert ~.
+\end{equation}
+[71] 当 $1\leq a<2$ 时，取 $x_1=1$，此时计算精度估计
+[72] \begin{equation}
+\epsilon\leq \left(\frac{1}{2} \right) ^{n-1} \left\lvert a \right\rvert ~.
+\end{equation}
+[73a] 当 $0< a<1$ 时，求 $\sqrt{1/a}$，然后求倒数
+[73b] 则可。
+[/SCOPE:s_ex5]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_ex1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是例1的抽象"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_ex2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是例2的抽象"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_thm1",
+    "edge_type": "counterexample_of",
+    "category": "logic",
+    "note": "例3是取消完备性假设的反例"
+  },
+  {
+    "source_scope": "s_ex4",
+    "target_scope": "s_thm1",
+    "edge_type": "counterexample_of",
+    "category": "logic",
+    "note": "例4是取消一致压缩比假设的反例"
+  },
+  {
+    "source_scope": "s_ex5",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例5是定理1的应用"
+  }
+]

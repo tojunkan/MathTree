@@ -1,0 +1,91 @@
+[SCOPE:root|description|三矢量的混合积]
+文章名: TriVM
+标题: 三矢量的混合积
+
+[SCOPE:s_def|description|混合积定义与性质]
+[SCOPE:s_def_let|let_bind|定义中的矢量]
+[0] 我们定义以下运算
+[1] \begin{equation}
+( \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} ) \boldsymbol\cdot \boldsymbol{\mathbf{C}} ~.
+\end{equation}
+[2] 为矢量 $ \boldsymbol{\mathbf{A}} , \boldsymbol{\mathbf{B}} , \boldsymbol{\mathbf{C}} $ 的
+[3] 混合积
+[/SCOPE:s_def_let]
+[4] ，
+[5] 即 $ \boldsymbol{\mathbf{A}} $ 和 $ \boldsymbol{\mathbf{B}} $ 先做叉乘，然后再把得到的矢量与 $ \boldsymbol{\mathbf{C}} $ 做
+[6] 内积（点乘） [链接 L0]
+[7] 。
+[8] 注意即使我们把括号去掉这个表达式也没有歧义，因为叉乘只能在矢量之间进行，而点乘的结果是标量。
+[9] 混合积满足
+[10] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} \boldsymbol\cdot \boldsymbol{\mathbf{C}} = \boldsymbol{\mathbf{B}} \boldsymbol\times \boldsymbol{\mathbf{C}} \boldsymbol\cdot \boldsymbol{\mathbf{A}} = \boldsymbol{\mathbf{C}} \boldsymbol\times \boldsymbol{\mathbf{A}} \boldsymbol\cdot \boldsymbol{\mathbf{B}} ~,
+\end{equation}
+[11] 这个公式可由
+[12] 图 1 [链接 L1]
+[13] 【图解】图 1：式 2 记忆法
+[14] 图中箭头的方向由叉乘的方向（顺时针或逆时针）决定，与内积无关，
+[15] 即 $ \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} \boldsymbol\cdot \boldsymbol{\mathbf{C}} = \boldsymbol{\mathbf{C}} \boldsymbol\cdot ( \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} )$。
+[16] 如果混合积的顺序取与箭头相反的方向，根据叉乘的性质，需要在前面加上负号（叉乘不满足乘法交换律）。
+[17] 式 2 与式 3 互为相反数
+[18] \begin{equation}
+\boldsymbol{\mathbf{C}} \boldsymbol\times \boldsymbol{\mathbf{B}} \boldsymbol\cdot \boldsymbol{\mathbf{A}} = \boldsymbol{\mathbf{B}} \boldsymbol\times \boldsymbol{\mathbf{A}} \boldsymbol\cdot \boldsymbol{\mathbf{C}} = \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{C}} \boldsymbol\cdot \boldsymbol{\mathbf{B}} ~.
+\end{equation}
+[19] 注意即使将混合积省略括号记为 $ \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} \boldsymbol\cdot \boldsymbol{\mathbf{C}} $ 或者 $ \boldsymbol{\mathbf{C}} \boldsymbol\cdot \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} $ 也应该理解为先叉乘后内积。
+[20] $ \boldsymbol{\mathbf{A}} \boldsymbol\times ( \boldsymbol{\mathbf{B}} \boldsymbol\cdot \boldsymbol{\mathbf{C}} )$ 没有定义，因为矢量不能叉乘标量。
+
+[/SCOPE:s_def]
+[SCOPE:s_geo|description|几何法证明]
+[21] 【图解】图 2：矢量混合积的几何意义
+[22] 如图 2 ，以三个矢量为棱作平行六面体。
+[23] 由例 1 可知 $ \left\lvert \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} \right\rvert $ 就是 $ \boldsymbol{\mathbf{A}} , \boldsymbol{\mathbf{B}} $ 所在平行四边形的面积。
+[SCOPE:s_geo_let|let_bind|几何法中的变量]
+[24] 令 $ \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} = \left\lvert \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} \right\rvert \hat{\boldsymbol{\mathbf{n}}} $，
+[25] 则 $ \hat{\boldsymbol{\mathbf{n}}} $ 为平面的法向量，平行六面体的高为 $ \left\lvert \hat{\boldsymbol{\mathbf{n}}} \boldsymbol\cdot \boldsymbol{\mathbf{C}} \right\rvert $，
+[/SCOPE:s_geo_let]
+[26] 所以平行六面体的体积等于底面积乘以高
+[27] \begin{equation}
+V = \left\lvert \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} \right\rvert \left\lvert \hat{\boldsymbol{\mathbf{n}}} \boldsymbol\cdot \boldsymbol{\mathbf{C}} \right\rvert = \left\lvert \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} \boldsymbol\cdot \boldsymbol{\mathbf{C}} \right\rvert ~.
+\end{equation}
+[28] 同理可得对于同一平行六面体
+[29] \begin{equation}
+V = \left\lvert \boldsymbol{\mathbf{B}} \boldsymbol\times \boldsymbol{\mathbf{C}} \boldsymbol\cdot \boldsymbol{\mathbf{A}} \right\rvert = \left\lvert \boldsymbol{\mathbf{C}} \boldsymbol\times \boldsymbol{\mathbf{A}} \boldsymbol\cdot \boldsymbol{\mathbf{B}} \right\rvert ~.
+\end{equation}
+[30] 这里只证明了
+[31] 式 2 [链接 L2]
+[32] 的绝对值，要证明正负号，定义 $ \hat{\boldsymbol{\mathbf{n}}} \boldsymbol\cdot \boldsymbol{\mathbf{C}} < 0$ 时 $V$ 为负值即可。
+
+[/SCOPE:s_geo]
+[SCOPE:s_algebra|description|代数法证明]
+[33] 不难证明三矢矢积若展开成分量的形式，等于三个矢量组成的行列式，另见 “行列式与体积”
+[34] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} \boldsymbol\cdot \boldsymbol{\mathbf{C}} = \begin{vmatrix}
+A_x & A_y & A_z\\
+B_x & B_y & B_z\\
+C_x & C_y & C_z\end{vmatrix} ~,
+\end{equation}
+[35] 而利用行列式中任意两行置换符号改变，
+[36] 即可证明
+[37] 式 2 [链接 L3]
+
+跨文章引用:
+  [L0] 内积（点乘） → InerPd
+[/SCOPE:s_algebra]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_geo",
+    "target_scope": "s_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "几何法证明混合积的几何意义，是定义的一个特例应用。"
+  },
+  {
+    "source_scope": "s_algebra",
+    "target_scope": "s_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "代数法证明混合积等于行列式，是定义的另一种表达。"
+  }
+]

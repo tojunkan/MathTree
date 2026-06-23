@@ -1,0 +1,424 @@
+{
+  "article_name": "NLeib",
+  "statements": [
+    {
+      "stmt_id": "st_intro_relation",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let",
+      "exposed_entities": [
+        "F(x)",
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_intro",
+      "subtype": "remark",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_geom",
+      "subtype": "remark",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_def",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "x_i",
+        "Δx_i"
+      ]
+    },
+    {
+      "stmt_id": "st_derivation_let1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation_let1",
+      "exposed_entities": [
+        "x_i"
+      ]
+    },
+    {
+      "stmt_id": "st_derivation_fprime",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_let2_approx",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation_let2",
+      "exposed_entities": [
+        "ΔF_i"
+      ]
+    },
+    {
+      "stmt_id": "st_derivation_approx_note",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_interpret",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_limit_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_summary",
+      "subtype": "remark",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_problem",
+      "subtype": "example",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_fig",
+      "subtype": "remark",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_indefinite",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        36
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_intro",
+      "subtype": "example",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_first",
+      "subtype": "conclusion",
+      "clause_range": [
+        39,
+        40
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_second",
+      "subtype": "conclusion",
+      "clause_range": [
+        41,
+        42
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_intro",
+      "subtype": "example",
+      "clause_range": [
+        43,
+        44
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_sphere",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_band",
+      "subtype": "conclusion",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_cap",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        47
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_diff_limits_intro",
+      "subtype": "remark",
+      "clause_range": [
+        48,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_diff_limits",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_diff_limits_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_diff_limits_let",
+      "exposed_entities": [
+        "F(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_diff_limits_upper",
+      "subtype": "conclusion",
+      "clause_range": [
+        51,
+        51
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_diff_limits_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_diff_limits_lower",
+      "subtype": "conclusion",
+      "clause_range": [
+        52,
+        53
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_diff_limits_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_diff_limits_both",
+      "subtype": "conclusion",
+      "clause_range": [
+        54,
+        55
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_diff_limits_let",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_intro_let_assump",
+      "target": "st_intro_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_let1_assump",
+      "target": "st_derivation_fprime",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_fprime",
+      "target": "st_derivation_let2_approx",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_let2_approx",
+      "target": "st_derivation_limit_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_limit_eq",
+      "target": "st_derivation_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_diff_limits_let_assump",
+      "target": "st_diff_limits_upper",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_diff_limits_let_assump",
+      "target": "st_diff_limits_lower",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_diff_limits_let_assump",
+      "target": "st_diff_limits_both",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_derivation_final",
+      "target": "st_intro_formula",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推导是公式的直观解释"
+    },
+    {
+      "source": "st_ex1_indefinite",
+      "target": "st_intro_formula",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1应用公式"
+    },
+    {
+      "source": "st_ex2_second",
+      "target": "st_intro_formula",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2应用公式"
+    },
+    {
+      "source": "st_ex3_sphere",
+      "target": "st_intro_formula",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例3应用公式"
+    },
+    {
+      "source": "st_diff_limits_upper",
+      "target": "st_intro_formula",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "对上下限求导基于公式"
+    }
+  ],
+  "unresolved": []
+}

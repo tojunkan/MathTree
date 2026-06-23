@@ -1,0 +1,40 @@
+[SCOPE:root|description|旋转矩阵的导数]
+文章名: RotDer
+标题: 旋转矩阵的导数
+
+环境标记 (hints):
+  [0] type=exercise heading=习题 1 title=
+
+[SCOPE:s_exercise|description|习题 1]
+[0] 习题 1
+[1] 证明定轴旋转矩阵式 3 符合式 2 。
+
+[SCOPE:s_exercise_let|let_bind|证明中的变量]
+[2] 把式 1 对 $t$ 求导得该点在实验室坐标系的速度为
+[3] \begin{equation}
+\boldsymbol{\mathbf{v}} = \dot{ \boldsymbol{\mathbf{R}} } \boldsymbol{\mathbf{r}} '~.
+\end{equation}
+[4] 角速度和速度之间有 $ \boldsymbol{\mathbf{v}} = \boldsymbol{\mathbf{\omega}} \boldsymbol\times ( \boldsymbol{\mathbf{R}} \boldsymbol{\mathbf{r}} ')$（
+[5] 式 5 [链接 L0]
+[6] ）。
+[7] 我们可以把叉乘用矩阵乘法表示为（
+[8] 式 2 [链接 L1]
+[9] \begin{equation}
+\boldsymbol{\mathbf{v}} = \boldsymbol{\mathbf{\Omega}} \boldsymbol{\mathbf{R}} \boldsymbol{\mathbf{r}} '~.
+\end{equation}
+[10] $ \boldsymbol{\mathbf{\Omega}} $（
+[11] 式 3 [链接 L2]
+[12] ）是一个反对称矩阵，
+[13] 即
+[14] \begin{equation}
+\boldsymbol{\mathbf{\Omega}} ^{\mathrm{T}} = - \boldsymbol{\mathbf{\Omega}} ~.
+\end{equation}
+[15] 由于 $ \boldsymbol{\mathbf{r}} '$ 是任意的，对比
+[16] 式 4 [链接 L3]
+[17] 式 5 [链接 L4]
+[18] 式 2 [链接 L5]
+[19] 。
+[/SCOPE:s_exercise_let]
+[20] 证毕。
+[/SCOPE:s_exercise]
+[/SCOPE:root]

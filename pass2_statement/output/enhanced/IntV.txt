@@ -1,0 +1,112 @@
+[SCOPE:root|description|单变量矢量值函数的积分]
+文章名: IntV
+标题: 单变量矢量值函数的积分
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=加速度，速度和位移的积分关系
+
+[SCOPE:s_indef|description|单变量不定积分]
+[SCOPE:s_indef_let|let_bind|不定积分变量]
+[0] 令 $ \boldsymbol{\mathbf{f}} (t)$ 为只有一个自变量的矢量函数，
+[1] 则与标量函数类似，定义其不定积分为求导的逆运算。
+[2a] 也就是说
+[2b] 若能找到 $ \boldsymbol{\mathbf{F}} (t)$，使得 $ \boldsymbol{\mathbf{F}} (t)$ 对 $t$ 求导，则是 $ \boldsymbol{\mathbf{f}} (t)$，
+[3a] (t) + \boldsymbol{\mathbf{C}} $（$ \boldsymbol{\mathbf{C}} $ 为任意常矢量）就是定积分的结果，都是 $ \boldsymbol{\mathbf{f}}
+[3b] (t)$ 的原函数。
+[/SCOPE:s_indef_let]
+[4] 在直角坐标系中，我们已经知道对矢量函数 $ \boldsymbol{\mathbf{F}} (t)$ 求导就是对它的每个分量函数分别求导，
+[5] 即
+[6] \begin{equation}
+\boldsymbol{\mathbf{F}} '(t) = \boldsymbol{\mathbf{f}} (t)~.
+\end{equation}
+[7] \begin{equation}
+F'_x(t) = f_x(t)~, \qquad F'_y(t) = f_y(t)~, \qquad F'_z(t) = f_z(t)~.
+\end{equation}
+[8] 考虑到标量函数的不定积分是标量函数求导的逆运算，
+[9] 所以对 $ \boldsymbol{\mathbf{f}} (t)$ 不定积分，只需对它的各个分量分别进行不定积分即可。
+[10] 注意每个分量函数在不定积分后都会出现一个待定常数，三个分量中的待定常数相加就得到一个待定常矢量 $ \boldsymbol{\mathbf{C}} $。
+[11] \begin{equation} \begin{aligned}
+\int \boldsymbol{\mathbf{f}} (t) \,\mathrm{d}{t} &= \hat{\boldsymbol{\mathbf{x}}} \int f_x(t) \,\mathrm{d}{t} + \hat{\boldsymbol{\mathbf{y}}} \int f_y(t) \,\mathrm{d}{t} + \hat{\boldsymbol{\mathbf{z}}} \int f_z(t) \,\mathrm{d}{t} \\
+&= [F_x(t)+C_x] \hat{\boldsymbol{\mathbf{x}}} + [F_y(t)+C_y] \hat{\boldsymbol{\mathbf{y}}} + [F_z(t)+C_z] \hat{\boldsymbol{\mathbf{z}}} \\
+&= \boldsymbol{\mathbf{F}} (t) + \boldsymbol{\mathbf{C}} ~.
+\end{aligned} \end{equation}
+[12] 式 1 [链接 L0]
+[13] 式 2 [链接 L1]
+[14a] (t) + \boldsymbol{\mathbf{C}} ]' = \boldsymbol{\mathbf{f}}
+[14b] (t)$。
+
+[/SCOPE:s_indef]
+[SCOPE:s_def|description|单变量定积分]
+[SCOPE:s_def_let|let_bind|定积分变量]
+[15] 类比一元标量函数定积分的定义，要计算一元矢量函数 $ \boldsymbol{\mathbf{f}} (t)$ 从 $t_1$ 到 $t_2$ 的定积分，就先把区间 $[t_1, t_2]$ 分为 $N$ 个小区间，长度分别为 $\Delta t_i$，且令 $t_i$ 为第 $i$ 个区间内的任意一点。
+[16a] 当我们取极限令所有区间长度 $\Delta t_i$ 都趋近于 $0$（这时 $N\to\infty$）时，如果以下极限存在，得到的矢量
+[16b] 则是定积分的结果。
+[17] \begin{equation}
+\int_{t_1}^{t_2} \boldsymbol{\mathbf{f}} (t) \,\mathrm{d}{t} = \lim_{\Delta t_i \to 0} \sum_{i = 0}^N \boldsymbol{\mathbf{f}} (t_i) \Delta t_i~.
+\end{equation}
+[/SCOPE:s_def_let]
+[18] 唯一与标量函数的定积分不同的是，这里的求和是矢量求和。
+[19] 但在直角坐标系中，我们可以把上式对矢量的求和表示成对各个分量分别求和，而每个分量的极限就是一个标量定积分。
+[20] \begin{equation} \begin{aligned}
+\int_{t_1}^{t_2} \boldsymbol{\mathbf{f}} (t) \,\mathrm{d}{t} &= \hat{\boldsymbol{\mathbf{x}}} \lim_{\Delta t_i \to 0} \sum_{i = 0}^N f_x(t_i) \Delta t_i
++ \hat{\boldsymbol{\mathbf{y}}} \lim_{\Delta t_i \to 0} \sum_{i …[truncated]…\
+&= \hat{\boldsymbol{\mathbf{x}}} \int_{t_1}^{t_2} f_x(t) \,\mathrm{d}{t} + \hat{\boldsymbol{\mathbf{y}}} \int_{t_1}^{t_2} f_y(t) \,\mathrm{d}{t} + \hat{\boldsymbol{\mathbf{z}}} \int_{t_1}^{t_2} f_z(t) \,\mathrm{d}{t} ~,
+\end{aligned} \end{equation}
+[21] 所以 $ \boldsymbol{\mathbf{f}} (t)$ 的定积分就是把直角坐标的各个分量分别进行定积分。
+[22] 现在对三个定积分分别运用
+[23] 牛顿—莱布尼兹公式 [链接 L2]
+[24a] (t)$ 的原函数为 $ \boldsymbol{\mathbf{F}}
+[24b] (t)$，各分量的原函数为 $F_x
+[24c] (t), F_y
+[24d] (t), F_z
+[24e] (t)$，
+[25] 则上式等于
+[26] \begin{equation} \begin{aligned}
+\int_{t_1}^{t_2} \boldsymbol{\mathbf{f}} (t) \,\mathrm{d}{t} &= \hat{\boldsymbol{\mathbf{x}}} [F_x(t_2) - F_x(t_1)] + \hat{\boldsymbol{\mathbf{y}}} [F_y(t_2) - F_y(t_1)] + \hat{\boldsymbol{\mathbf{z}}} [F_z(t_2) - F_z(t_1)]\\
+&= \boldsymbol{\mathbf{F}} (t_2) - \boldsymbol{\mathbf{F}} (t_1)~,
+\end{aligned} \end{equation}
+[27] 这就是矢量函数的牛顿—莱布尼兹公式。
+
+[/SCOPE:s_def]
+[SCOPE:s_example1|description|加速度，速度和位移的积分关系]
+[SCOPE:s_example1_let|let_bind|例1变量]
+[28] 例 1 加速度，速度和位移的积分关系
+[29a] (t)$ 是位移—时间函数 $ \boldsymbol{\mathbf{r}}
+[29b] (t)$ 的导函数，后者就是前者的原函数。
+[30] 所以根据牛顿—莱布尼兹公式式 6 有
+[/SCOPE:s_example1_let]
+[31] \begin{equation}
+\boldsymbol{\mathbf{r}} (t) - \boldsymbol{\mathbf{r}} (t_0) = \int_{t_1}^{t_2} \boldsymbol{\mathbf{v}} (t) \,\mathrm{d}{t} ~.
+\end{equation}
+[32] \begin{equation}
+\boldsymbol{\mathbf{r}} (t) = \boldsymbol{\mathbf{r}} (t_0) + \int_{t_1}^{t_2} \boldsymbol{\mathbf{v}} (t) \,\mathrm{d}{t} ~.
+\end{equation}
+[33a] (t)$ 是速度函数 $ \boldsymbol{\mathbf{v}}
+[33b] (t)$ 的导函数，后者可以通过前者定积分得到
+[34] \begin{equation}
+\boldsymbol{\mathbf{v}} (t) = \boldsymbol{\mathbf{v}} (t_0) + \int_{t_1}^{t_2} \boldsymbol{\mathbf{a}} (t) \,\mathrm{d}{t} ~.
+\end{equation}
+[35] \eentry{匀加速运动}
+
+跨文章引用:
+  [L2] 牛顿—莱布尼兹公式 → NLeib
+[/SCOPE:s_example1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def",
+    "target_scope": "s_indef",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定积分利用不定积分（原函数）计算"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_def",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1应用定积分（牛顿-莱布尼兹公式）"
+  }
+]

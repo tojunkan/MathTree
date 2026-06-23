@@ -1,0 +1,298 @@
+{
+  "article_name": "EPQue",
+  "statements": [
+    {
+      "stmt_id": "st_problem_intro",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_problem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_problem_let",
+      "exposed_entities": [
+        "F(x,y,y')",
+        "φ",
+        "ψ"
+      ]
+    },
+    {
+      "stmt_id": "st_problem_statement",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_problem",
+      "exposed_entities": [
+        "γ",
+        "J(γ)"
+      ]
+    },
+    {
+      "stmt_id": "st_observation",
+      "subtype": "remark",
+      "clause_range": [
+        12,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_problem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1",
+      "subtype": "theorem",
+      "clause_range": [
+        18,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_let1",
+      "exposed_entities": [
+        "γ0",
+        "A",
+        "B",
+        "x0",
+        "y0",
+        "x1",
+        "y1"
+      ]
+    },
+    {
+      "stmt_id": "st_proof_dJ_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_part1_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_part1_let",
+      "exposed_entities": [
+        "y0",
+        "y1"
+      ]
+    },
+    {
+      "stmt_id": "st_part1_deltaJ",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        35
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof_part1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_part1_integration_by_parts",
+      "subtype": "remark",
+      "clause_range": [
+        36,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_part1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_part1_result",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof_part1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_part2_assumptions",
+      "subtype": "assumption",
+      "clause_range": [
+        47,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof_part2",
+      "exposed_entities": [
+        "y'(x0)",
+        "y'(x1)"
+      ]
+    },
+    {
+      "stmt_id": "st_part2_dJ_expression",
+      "subtype": "conclusion",
+      "clause_range": [
+        50,
+        51
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof_part2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_part2_another_expression",
+      "subtype": "conclusion",
+      "clause_range": [
+        52,
+        54
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof_part2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_part2_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        55,
+        58
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof_part2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        59,
+        59
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_remark",
+      "subtype": "remark",
+      "clause_range": [
+        60,
+        66
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_solution",
+      "subtype": "definition",
+      "clause_range": [
+        67,
+        68
+      ],
+      "truth_value": null,
+      "scope_id": "s_solution",
+      "exposed_entities": [
+        "斜截条件"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assumptions",
+      "target": "st_problem_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_proof_assumptions",
+      "target": "st_proof_dJ_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_part1_assumptions",
+      "target": "st_part1_deltaJ",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_part1_deltaJ",
+      "target": "st_part1_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_part2_assumptions",
+      "target": "st_part2_dJ_expression",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_part2_assumptions",
+      "target": "st_part2_another_expression",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_part2_dJ_expression",
+      "target": "st_part2_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_part2_another_expression",
+      "target": "st_part2_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_part1_result",
+      "target": "st_proof_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_part2_final",
+      "target": "st_proof_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_proof_conclusion",
+      "target": "st_theorem1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明推出定理1"
+    }
+  ],
+  "unresolved": []
+}

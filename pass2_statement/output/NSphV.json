@@ -1,0 +1,217 @@
+{
+  "article_name": "NSphV",
+  "statements": [
+    {
+      "stmt_id": "st_intro_formula",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let",
+      "exposed_entities": [
+        "R",
+        "n",
+        "V_n"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_def_surface",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let",
+      "exposed_entities": [
+        "R_n",
+        "x_i",
+        "V_n"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_example_3d",
+      "subtype": "example",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intro_example_1d2d",
+      "subtype": "example",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_1d_volume",
+      "subtype": "theorem",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_1d",
+      "exposed_entities": [
+        "R_1",
+        "V_1"
+      ]
+    },
+    {
+      "stmt_id": "st_2d_volume",
+      "subtype": "theorem",
+      "clause_range": [
+        15,
+        24
+      ],
+      "truth_value": "true",
+      "scope_id": "s_2d",
+      "exposed_entities": [
+        "R_2",
+        "V_2"
+      ]
+    },
+    {
+      "stmt_id": "st_3d_volume",
+      "subtype": "theorem",
+      "clause_range": [
+        25,
+        34
+      ],
+      "truth_value": "true",
+      "scope_id": "s_3d",
+      "exposed_entities": [
+        "R_3",
+        "V_3"
+      ]
+    },
+    {
+      "stmt_id": "st_nd_recurrence",
+      "subtype": "theorem",
+      "clause_range": [
+        35,
+        40
+      ],
+      "truth_value": "true",
+      "scope_id": "s_nd_let",
+      "exposed_entities": [
+        "C_n",
+        "R",
+        "V_n"
+      ]
+    },
+    {
+      "stmt_id": "st_nd_integral",
+      "subtype": "theorem",
+      "clause_range": [
+        41,
+        43
+      ],
+      "truth_value": "true",
+      "scope_id": "s_nd_subst",
+      "exposed_entities": [
+        "R",
+        "n",
+        "θ"
+      ]
+    },
+    {
+      "stmt_id": "st_nd_coeff_recurrence",
+      "subtype": "theorem",
+      "clause_range": [
+        44,
+        47
+      ],
+      "truth_value": "true",
+      "scope_id": "s_nd",
+      "exposed_entities": [
+        "C_n"
+      ]
+    },
+    {
+      "stmt_id": "st_nd_final_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        48,
+        51
+      ],
+      "truth_value": "true",
+      "scope_id": "s_nd",
+      "exposed_entities": [
+        "C_n"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_2d_volume",
+      "target": "st_1d_volume",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_3d_volume",
+      "target": "st_2d_volume",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_nd_recurrence",
+      "target": "st_3d_volume",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_nd_integral",
+      "target": "st_nd_recurrence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_nd_coeff_recurrence",
+      "target": "st_nd_integral",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_nd_final_formula",
+      "target": "st_nd_coeff_recurrence",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_2d_volume",
+      "target": "st_1d_volume",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "2维球体积计算使用1维球体积公式"
+    },
+    {
+      "source": "st_3d_volume",
+      "target": "st_2d_volume",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "3维球体积计算使用2维球体积公式"
+    },
+    {
+      "source": "st_nd_recurrence",
+      "target": "st_3d_volume",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "n维球体积递推公式由低维推广"
+    }
+  ],
+  "unresolved": []
+}

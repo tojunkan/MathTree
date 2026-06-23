@@ -1,0 +1,232 @@
+{
+  "article_name": "PnrsGN",
+  "statements": [
+    {
+      "stmt_id": "st_def1_main",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "V",
+        "V*",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_intro_f",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "V",
+        "f",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_vec_covec",
+      "subtype": "example",
+      "clause_range": [
+        18,
+        24
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "v^a",
+        "omega_a"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_tensor",
+      "subtype": "example",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "T_a^b"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        27,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_tensor",
+      "subtype": "example",
+      "clause_range": [
+        32,
+        35
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "T^{ab}",
+        "omega_a"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_swap",
+      "subtype": "example",
+      "clause_range": [
+        36,
+        45
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "T^{ab}",
+        "T^{ba}"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_delta",
+      "subtype": "example",
+      "clause_range": [
+        46,
+        49
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "delta^c_a",
+        "T^{ab}",
+        "omega_c"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_f_and_v",
+      "subtype": "example",
+      "clause_range": [
+        50,
+        56
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "f",
+        "v^a"
+      ]
+    },
+    {
+      "stmt_id": "st_symbols_delta",
+      "subtype": "definition",
+      "clause_range": [
+        58,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_symbols",
+      "exposed_entities": [
+        "delta^a_b"
+      ]
+    },
+    {
+      "stmt_id": "st_symbols_metric",
+      "subtype": "definition",
+      "clause_range": [
+        60,
+        64
+      ],
+      "truth_value": null,
+      "scope_id": "s_symbols",
+      "exposed_entities": [
+        "g_{ab}",
+        "g^{ab}",
+        "delta^a_b"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex1_vec_covec",
+      "target": "st_intro_f",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_tensor",
+      "target": "st_intro_f",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_tensor",
+      "target": "st_intro_f",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_swap",
+      "target": "st_intro_f",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_delta",
+      "target": "st_intro_f",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_f_and_v",
+      "target": "st_intro_f",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_symbols_delta",
+      "target": "st_ex2_delta",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_symbols_metric",
+      "target": "st_ex2_delta",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex1_vec_covec",
+      "target": "st_intro_f",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例 1 是定义 1 的具体例子，但定义 1 在例 1 之前，且例 1 也引用概念引入中的 f。"
+    },
+    {
+      "source": "st_ex2_tensor",
+      "target": "st_intro_f",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例 2 进一步说明彭罗斯记号，并回到 f 的例子。"
+    },
+    {
+      "source": "st_symbols_delta",
+      "target": "st_ex2_delta",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "符号部分建立在例 2 的讨论基础上。"
+    }
+  ],
+  "unresolved": []
+}

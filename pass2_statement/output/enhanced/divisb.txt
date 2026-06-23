@@ -1,0 +1,68 @@
+[SCOPE:root|description|整除]
+文章名: divisb
+标题: 整除
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=整除
+  [1] type=corollary heading=推论 1 title=整除的性质
+  [2] type=theorem heading=定理 1 title=整除的传递性
+  [3] type=theorem heading=定理 2 title=
+  [4] type=theorem heading=定理 3 title=
+  [5] type=definition heading=定义 2 title=
+
+[SCOPE:s_def1|description|整除]
+[0] 定义 1 整除
+[SCOPE:s_def1_let|let_bind|整除的变量]
+[1] 假设对于整数 $a$ 与非 $0$ 整数 $b$，存在第 $3$ 个整数 $c$ 使得
+[2] \begin{equation}
+a = bc ~,
+\end{equation}
+[/SCOPE:s_def1_let]
+[3] 整除（divisible）
+[4] 因子（divisor）
+[5] 有时也用记号 $\nmid$、$\not{\mid}$ 表示不整除，也就是做除法会有余数，例如 $2 \not{\mid}~ 5 $。
+
+[/SCOPE:s_def1]
+[SCOPE:s_cor1|description|整除的性质]
+[6] 推论 1 整除的性质
+[SCOPE:s_cor1_let|let_bind|整除的性质的变量]
+[7] 对于整数 $a$ 与非零整数 $b$，显然有：
+[/SCOPE:s_cor1_let]
+[8] $1 | a$；
+[9] $b | 0$，$b | b$。
+[10] 另外整除还有传递性等性质。
+
+[/SCOPE:s_cor1]
+[SCOPE:s_thm1|description|整除的传递性]
+[11] 定理 1 整除的传递性
+[SCOPE:s_thm1_let|let_bind|整除的传递性的变量]
+[12] 若 $b|a$，$c|b$，
+[/SCOPE:s_thm1_let]
+[13] 则 $c|a$。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理2]
+[14] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[15] 若 $b|a$，
+[/SCOPE:s_thm2_let]
+[16] 则对于非零整数 $c \neq 0$ 有 $(bc) | (ac)$。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|定理3]
+[17] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[18] 若 $c|a$ 并且 $c|b$，
+[/SCOPE:s_thm3_let]
+[19] 则对于任意整数 $m$ 与 $n$ 都有 $c | (ma + nb)$。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_def2|description|定义2]
+[20] 定义 2
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[21] 符号 $a \operatorname {mod} b$ 表示 $a$ 除以 $b$ 的余数。
+[22] 这是指若 $r = a \operatorname {mod} b$，
+[23] 则 $a = kb + r$，且 $k$ 为整数并且 $0 \le r < b$。
+[/SCOPE:s_def2]
+[/SCOPE:s_def2_let]
+[/SCOPE:root]

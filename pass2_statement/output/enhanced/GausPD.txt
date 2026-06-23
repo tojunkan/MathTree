@@ -1,0 +1,83 @@
+[SCOPE:root|description|高斯分布（正态分布）]
+文章名: GausPD
+标题: 高斯分布（正态分布）
+
+[0] 【图解】图 1：正态分布图，来自 Wikipedia
+[SCOPE:s_intro|description|高斯分布定义与性质]
+[SCOPE:s_intro_let|let_bind|高斯分布变量]
+[1] 1高斯分布也叫正态分布，概率密度函数为
+[2] \begin{equation}
+f(x) = \frac{1}{\sqrt{2\pi}\ \sigma} \exp \left[-\frac{(x - \mu )^2}{2\sigma ^2} \right] ~,
+\end{equation}
+[3] 其中 $\mu$ 是分布的的
+[4] 平均值
+[5] ，$\sigma^2$ 是
+[6] 方差
+[7] ，$\sigma$ 是标准差。
+[/SCOPE:s_intro_let]
+[8] 上式也通常记为 $x \sim N(\mu,\sigma^2)$，且满足归一化条件
+[9] \begin{equation}
+\int_{-\infty}^{+\infty} f(x) \,\mathrm{d}{x} = 1~.
+\end{equation}
+[10] $N(0,1)$ 被称为
+[11] 标准正态分布
+[12] 正态分布中，$x$ 落在区间 $[\mu-a,\mu+a]$ 内的概率可以用误差函数 $ \operatorname{erf} $ 表示：
+[13] \begin{equation}
+P\{ \left\lvert x-\mu \right\rvert \leqslant a\} = \int_{-a}^a f(x) \,\mathrm{d}{x} = \operatorname{erf} \left(\frac{a}{\sqrt{2}\ \sigma} \right) ~.
+\end{equation}
+[14] 若已知 $P\{ \left\lvert x-\mu \right\rvert \leqslant a\}$，也可以用
+[15] 反误差函数
+[16] $ \operatorname{erf} ^{-1}$ 求出 $a$。
+
+[/SCOPE:s_intro]
+[SCOPE:s_special|description|特殊值]
+[17] 高斯分布的半峰全宽（FWHM）为
+[18] \begin{equation}
+\text{FWHM} = 2\sqrt{2\ln 2}\ \sigma \approx 2.3548\ \sigma~.
+\end{equation}
+[19] 也就是在 $ \left\lvert x - \mu \right\rvert = \text{FWHM}/2$ 处，函数值为峰值的一半。
+[20] 另外当 $ \left\lvert x - \mu \right\rvert = \sigma$ 处，函数值为峰值的 $ \exp\left(-1/2\right) \approx 0.6065$。
+[21] 其他特殊函数值以及对应的概率如下
+[22] 【图解】表1：高斯分布的特殊值和概率
+[23] $x$ $\sigma$ $2\sigma$ $3\sigma$ $4\sigma$ $5\sigma$ $6\sigma$ $7\sigma$ $8\sigma$
+[24] $f(x)/f_\text{max}$ 0.6065 0.1353 1.111e-2 3.355e-4 3.727e-6 1.523e-8 2.2897e-11 1.2664e-14
+[25] $1-\int_{-x}^x f(t) \,\mathrm{d}{t} $ 0.3173 4.550e-2 2.700e-3 6.334e-5 5.733e-7 1.973e-9 2.56e-12 1.24e-15
+
+[/SCOPE:s_special]
+[SCOPE:s_derivation|description|推导]
+[SCOPE:s_derivation_let|let_bind|推导变量]
+[26] 若已知高斯分布具有如下形式
+[27] \begin{equation}
+f(x) = A\exp \left[-a (x - x_0)^2 \right] ~,
+\end{equation}
+[28] 可见其主要特征就是指数函数中含有 $\Delta x^2$ 项。
+[/SCOPE:s_derivation_let]
+[29] 由对称性，分布函数关于 $x =x_0$ 对称，
+[30] 所以平均值显然为 $\mu = x_0$。
+[SCOPE:s_derivation_let2|let_bind|积分变量]
+[31] 现在我们补充两个积分，由换元积分法（$x=\sqrt{t}$）以及 $\Gamma$ 函数 的性质得
+[32] \begin{equation}
+\int_{-\infty }^{+\infty } \mathrm{e} ^{-x^2} \,\mathrm{d}{x} = \int_0^{+\infty} t^{-1/2} \mathrm{e} ^{ - t} \,\mathrm{d}{t} = \left(-\frac12 \right) ! = \sqrt \pi ~,
+\end{equation}
+[33] \begin{equation}
+\int_{-\infty}^{+\infty} x^2 \mathrm{e} ^{-x^2} \,\mathrm{d}{x} = \int_0^{+\infty} t^{1/2} \mathrm{e} ^{-t} \,\mathrm{d}{t} = \frac12 ! = \frac12 \left(-\frac12 \right) ! = \frac{\sqrt\pi}{2}~.
+\end{equation}
+[/SCOPE:s_derivation_let2]
+[34] 根据归一化条件式 2 ，结合式 6 得
+[35] \begin{equation}
+1 = \int_{-\infty}^{+\infty} f(x) \,\mathrm{d}{x} = A\int_{-\infty}^{+\infty} \exp \left[-a (x - x_0)^2 \right] \,\mathrm{d}{x} = A\sqrt{\frac{\pi}{a}}~,
+\end{equation}
+[36] 即 $A = \sqrt{a/\pi}$。
+[37] 再来计算高斯分布的方差，结合
+[38] 式 7 [链接 L0]
+[39] \begin{equation}
+\sigma ^2 = \int_{-\infty}^{+\infty} (x - x_0)^2 A\exp \left[-a (x - x_0)^2 \right] \,\mathrm{d}{x} = \frac{1}{2a}~.
+\end{equation}
+[40] 式 8 [链接 L1]
+[41] 式 9 [链接 L2]
+[42] 解得 $a = 1/(2\sigma^2)$ 和 $A = 1/(\sqrt{2\pi}\ \sigma)$，代入
+[43] 式 5 [链接 L3]
+[44] 可得高斯分布
+[45] 式 1 [链接 L4]
+[/SCOPE:s_derivation]
+[/SCOPE:root]

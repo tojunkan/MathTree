@@ -1,0 +1,622 @@
+{
+  "article_name": "OFS",
+  "statements": [
+    {
+      "stmt_id": "st_def_orthogonal_system",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let1",
+      "exposed_entities": [
+        "φ_n(x)",
+        "n",
+        "a",
+        "b",
+        "λ_n"
+      ]
+    },
+    {
+      "stmt_id": "st_def_orthonormal_system",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let1",
+      "exposed_entities": [
+        "λ_n",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_orthogonal_to_orthonormal",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_def_let1",
+      "exposed_entities": [
+        "φ_n(x)",
+        "λ_n",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_fourier_coeff_definition",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let2",
+      "exposed_entities": [
+        "f(x)",
+        "c_k",
+        "k",
+        "a",
+        "b",
+        "λ_k",
+        "φ_k(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_fourier_coeff_identity",
+      "subtype": "theorem",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def_let2",
+      "exposed_entities": [
+        "f(x)",
+        "c_k",
+        "φ_k(x)",
+        "λ_k",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_bessel_inequality",
+      "subtype": "theorem",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def_let2",
+      "exposed_entities": [
+        "c_k",
+        "λ_k",
+        "f(x)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_bessel_inequality_orthonormal",
+      "subtype": "remark",
+      "clause_range": [
+        25,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_completeness_definition",
+      "subtype": "definition",
+      "clause_range": [
+        29,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_def_let2",
+      "exposed_entities": [
+        "f(x)",
+        "a",
+        "b",
+        "φ_n(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_trig_orthogonal",
+      "subtype": "example",
+      "clause_range": [
+        31,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1_let1",
+      "exposed_entities": [
+        "n",
+        "x",
+        "π"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_proof",
+      "subtype": "theorem",
+      "clause_range": [
+        34,
+        42
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_orthonormal_system",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        44
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_let2",
+      "exposed_entities": [
+        "n",
+        "π"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_tan_orthogonal",
+      "subtype": "example",
+      "clause_range": [
+        45,
+        50
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1_let3",
+      "exposed_entities": [
+        "ξ",
+        "c",
+        "l",
+        "x",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_cot_orthogonal",
+      "subtype": "example",
+      "clause_range": [
+        51,
+        56
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1_let4",
+      "exposed_entities": [
+        "ξ'_n",
+        "c",
+        "l",
+        "x",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_legendre_orthogonal",
+      "subtype": "example",
+      "clause_range": [
+        57,
+        59
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "X_n(x)",
+        "n",
+        "λ_n"
+      ]
+    },
+    {
+      "stmt_id": "st_bessel_orthogonal",
+      "subtype": "example",
+      "clause_range": [
+        60,
+        61
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "J_0(x)",
+        "ξ_n",
+        "x",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_orthogonalization_intro",
+      "subtype": "remark",
+      "clause_range": [
+        62,
+        63
+      ],
+      "truth_value": null,
+      "scope_id": "s_orthogonalization",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_linear_independence_definition",
+      "subtype": "definition",
+      "clause_range": [
+        64,
+        66
+      ],
+      "truth_value": null,
+      "scope_id": "s_orthogonalization_let1",
+      "exposed_entities": [
+        "ψ_i(x)",
+        "a_i",
+        "a",
+        "b",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_orthogonalization_process",
+      "subtype": "theorem",
+      "clause_range": [
+        67,
+        77
+      ],
+      "truth_value": "true",
+      "scope_id": "s_orthogonalization_let2",
+      "exposed_entities": [
+        "ψ_i(x)",
+        "φ_i(x)",
+        "χ_i",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_complex_extension",
+      "subtype": "remark",
+      "clause_range": [
+        78,
+        79
+      ],
+      "truth_value": null,
+      "scope_id": "s_complex_let",
+      "exposed_entities": [
+        "φ_n(x)",
+        "ρ_n(x)",
+        "σ_n(x)",
+        "x",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_complex_orthonormal_condition",
+      "subtype": "definition",
+      "clause_range": [
+        80,
+        81
+      ],
+      "truth_value": null,
+      "scope_id": "s_complex_let",
+      "exposed_entities": [
+        "φ_m",
+        "φ_n",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_complex_fourier_coeff",
+      "subtype": "definition",
+      "clause_range": [
+        82,
+        83
+      ],
+      "truth_value": null,
+      "scope_id": "s_complex_let",
+      "exposed_entities": [
+        "c_n",
+        "φ_n",
+        "f",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_complex_identity",
+      "subtype": "theorem",
+      "clause_range": [
+        84,
+        86
+      ],
+      "truth_value": "true",
+      "scope_id": "s_complex_let",
+      "exposed_entities": [
+        "f",
+        "c_k",
+        "φ_k",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_complex_bessel",
+      "subtype": "theorem",
+      "clause_range": [
+        87,
+        88
+      ],
+      "truth_value": "true",
+      "scope_id": "s_complex_let",
+      "exposed_entities": [
+        "c_k",
+        "f",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_1_orthogonal",
+      "subtype": "example",
+      "clause_range": [
+        89,
+        89
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1_1_let",
+      "exposed_entities": [
+        "n",
+        "π"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_1_proof",
+      "subtype": "theorem",
+      "clause_range": [
+        90,
+        92
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1_1_proof",
+      "exposed_entities": [
+        "n",
+        "m",
+        "π"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_motivation",
+      "subtype": "remark",
+      "clause_range": [
+        93,
+        97
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2_let1",
+      "exposed_entities": [
+        "L",
+        "π"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_periodic_extension",
+      "subtype": "assumption",
+      "clause_range": [
+        98,
+        99
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2_let1",
+      "exposed_entities": [
+        "f(x)",
+        "L",
+        "F(x)",
+        "π"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_expansion",
+      "subtype": "conclusion",
+      "clause_range": [
+        100,
+        104
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2_let1",
+      "exposed_entities": [
+        "c_n",
+        "n",
+        "L",
+        "π",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_orthonormal_system",
+      "subtype": "conclusion",
+      "clause_range": [
+        105,
+        106
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2_let2",
+      "exposed_entities": [
+        "n",
+        "L",
+        "π",
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_example3_fourier_transform",
+      "subtype": "example",
+      "clause_range": [
+        107,
+        123
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example3_let",
+      "exposed_entities": [
+        "f(x)",
+        "c_n",
+        "z_n",
+        "L",
+        "π",
+        "x",
+        "F_x(z)",
+        "φ_z",
+        "F(z)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def_orthogonal_system",
+      "target": "st_def_orthonormal_system",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_orthogonal_system",
+      "target": "st_orthogonal_to_orthonormal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_fourier_coeff_definition",
+      "target": "st_fourier_coeff_identity",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_fourier_coeff_identity",
+      "target": "st_bessel_inequality",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_bessel_inequality",
+      "target": "st_bessel_inequality_orthonormal",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_trig_orthogonal",
+      "target": "st_example1_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_proof",
+      "target": "st_example1_orthonormal_system",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_trig_orthogonal",
+      "target": "st_example1_orthonormal_system",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_tan_orthogonal",
+      "target": "st_example1_orthonormal_system",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_cot_orthogonal",
+      "target": "st_example1_orthonormal_system",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_linear_independence_definition",
+      "target": "st_orthogonalization_process",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_complex_extension",
+      "target": "st_complex_orthonormal_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_complex_orthonormal_condition",
+      "target": "st_complex_fourier_coeff",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_complex_fourier_coeff",
+      "target": "st_complex_identity",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_complex_identity",
+      "target": "st_complex_bessel",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_1_orthogonal",
+      "target": "st_example1_1_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_motivation",
+      "target": "st_example2_periodic_extension",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_periodic_extension",
+      "target": "st_example2_expansion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_expansion",
+      "target": "st_example2_orthonormal_system",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_example1_trig_orthogonal",
+      "target": "st_def_orthogonal_system",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "三角函数系是正交函数系的一个例子"
+    },
+    {
+      "source": "st_example1_1_orthogonal",
+      "target": "st_def_orthogonal_system",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "复指数函数系是正交函数系的一个例子"
+    },
+    {
+      "source": "st_example2_orthonormal_system",
+      "target": "st_example1_1_orthogonal",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "周期推广到2L，是例1的推广"
+    },
+    {
+      "source": "st_example3_fourier_transform",
+      "target": "st_example2_orthonormal_system",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "傅里叶变换是周期趋于无穷时的极限情况"
+    }
+  ],
+  "unresolved": []
+}

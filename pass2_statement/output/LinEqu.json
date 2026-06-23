@@ -1,0 +1,309 @@
+{
+  "article_name": "LinEqu",
+  "statements": [
+    {
+      "stmt_id": "st_example1_problem",
+      "subtype": "example",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_equations",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_problem",
+      "subtype": "example",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_equations",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_definition_form",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_definition",
+      "exposed_entities": [
+        "x_1",
+        "x_2",
+        "x_n",
+        "y_1",
+        "y_2",
+        "y_m",
+        "a_{1,1}",
+        "a_{1,2}",
+        "a_{1,n}",
+        "a_{2,1}",
+        "a_{n,m}"
+      ]
+    },
+    {
+      "stmt_id": "st_definition_notation",
+      "subtype": "remark",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_definition",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_solving_cases",
+      "subtype": "theorem",
+      "clause_range": [
+        17,
+        20
+      ],
+      "truth_value": "true",
+      "scope_id": "s_solving",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_solving_assume",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_solving_let",
+      "exposed_entities": [
+        "x_1",
+        "x_2",
+        "x_n",
+        "y_1",
+        "y_2",
+        "y_n",
+        "a_{1,1}",
+        "a_{1,2}",
+        "a_{1,n}",
+        "a_{2,1}",
+        "a_{n,n}"
+      ]
+    },
+    {
+      "stmt_id": "st_solving_method",
+      "subtype": "theorem",
+      "clause_range": [
+        23,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_solving_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_solving_consistent",
+      "subtype": "theorem",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_solving_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_solving_inconsistent",
+      "subtype": "theorem",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": "true",
+      "scope_id": "s_solving_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_equations",
+      "subtype": "example",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example3_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        32,
+        69
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example3_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_infinite1",
+      "subtype": "example",
+      "clause_range": [
+        70,
+        74
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example3_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_infinite2",
+      "subtype": "example",
+      "clause_range": [
+        75,
+        81
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example3_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example3_nosol",
+      "subtype": "example",
+      "clause_range": [
+        82,
+        86
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example3_cases",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_example1_let",
+      "target": "st_example1_equations",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_equations",
+      "target": "st_example1_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_equations",
+      "target": "st_example2_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_solving_assume",
+      "target": "st_solving_method",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_solving_assume",
+      "target": "st_solving_consistent",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_solving_assume",
+      "target": "st_solving_inconsistent",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example3_equations",
+      "target": "st_example3_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_example1_problem",
+      "target": "st_definition_form",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "二元一次方程组是线性方程组的特例"
+    },
+    {
+      "source": "st_example2_problem",
+      "target": "st_definition_form",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "三元一次方程组是线性方程组的特例"
+    },
+    {
+      "source": "st_example3_solution",
+      "target": "st_solving_method",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "具体例子说明求解过程"
+    }
+  ],
+  "unresolved": []
+}

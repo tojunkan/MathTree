@@ -1,0 +1,262 @@
+{
+  "article_name": "ImpFun",
+  "statements": [
+    {
+      "stmt_id": "st_implicit_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_one_var",
+      "exposed_entities": [
+        "x",
+        "y",
+        "F(x,y)"
+      ]
+    },
+    {
+      "stmt_id": "st_explicit_def",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_one_var",
+      "exposed_entities": [
+        "y",
+        "x",
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_multi_implicit_def",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_multi_var",
+      "exposed_entities": [
+        "x_1",
+        "x_n",
+        "y",
+        "F(x_1,...,x_n,y)",
+        "f(x_1,...,x_n)"
+      ]
+    },
+    {
+      "stmt_id": "st_general_implicit_def",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_multi_var",
+      "exposed_entities": [
+        "x_1",
+        "x_n",
+        "y_1",
+        "y_m",
+        "F_1",
+        "F_m",
+        "f_1",
+        "f_m"
+      ]
+    },
+    {
+      "stmt_id": "st_multi_valued",
+      "subtype": "remark",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_single_val",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_concern",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_single_val",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_geometric_meaning",
+      "subtype": "remark",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_single_val",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ellipse_example",
+      "subtype": "example",
+      "clause_range": [
+        27,
+        32
+      ],
+      "truth_value": "true",
+      "scope_id": "s_single_val",
+      "exposed_entities": [
+        "x",
+        "y",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_local_single_valuedness",
+      "subtype": "remark",
+      "clause_range": [
+        34,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_single_val",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_need_rectangle",
+      "subtype": "remark",
+      "clause_range": [
+        36,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_single_val",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        37,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "x_1",
+        "x_n",
+        "a_1",
+        "b_1",
+        "a_n",
+        "b_n"
+      ]
+    },
+    {
+      "stmt_id": "st_def2",
+      "subtype": "definition",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "x",
+        "y",
+        "F(x,y)",
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    },
+    {
+      "stmt_id": "st_def3",
+      "subtype": "definition",
+      "clause_range": [
+        47,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_def3",
+      "exposed_entities": [
+        "x_1",
+        "x_n",
+        "y",
+        "F",
+        "a_1",
+        "b_1",
+        "a_n",
+        "b_n",
+        "c",
+        "d"
+      ]
+    },
+    {
+      "stmt_id": "st_def4",
+      "subtype": "definition",
+      "clause_range": [
+        49,
+        52
+      ],
+      "truth_value": null,
+      "scope_id": "s_def4",
+      "exposed_entities": [
+        "x_1",
+        "x_n",
+        "y_1",
+        "y_m",
+        "F_1",
+        "F_m",
+        "a_1",
+        "b_1",
+        "a_n",
+        "b_n",
+        "c_1",
+        "d_1",
+        "c_m",
+        "d_m"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def2",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def4",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def3",
+      "target": "st_def2",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def4",
+      "target": "st_def3",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

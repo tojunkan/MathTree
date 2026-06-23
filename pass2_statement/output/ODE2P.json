@@ -1,0 +1,376 @@
+{
+  "article_name": "ODE2P",
+  "statements": [
+    {
+      "stmt_id": "st_intro_power_series",
+      "subtype": "remark",
+      "clause_range": [
+        1,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_equation",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "y(x)",
+        "a_0",
+        "a_1",
+        "a_i"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_derivation",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "a_k",
+        "b_k"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_method",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_motivation",
+      "subtype": "remark",
+      "clause_range": [
+        24,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_general_equation",
+      "subtype": "assumption",
+      "clause_range": [
+        30,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "p(x)",
+        "q(x)",
+        "y(x)",
+        "x_0"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        35,
+        40
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1",
+      "exposed_entities": [
+        "p(x)",
+        "q(x)",
+        "a_n"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem2_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        41,
+        45
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem2",
+      "exposed_entities": [
+        "x p(x)",
+        "x^2 q(x)",
+        "a_k",
+        "alpha"
+      ]
+    },
+    {
+      "stmt_id": "st_examples_intro",
+      "subtype": "remark",
+      "clause_range": [
+        46,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_legendre",
+      "subtype": "example",
+      "clause_range": [
+        48,
+        55
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example2",
+      "exposed_entities": [
+        "a_k",
+        "y_1(x)",
+        "y_2(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_example3_equation",
+      "subtype": "assumption",
+      "clause_range": [
+        56,
+        60
+      ],
+      "truth_value": null,
+      "scope_id": "s_example3",
+      "exposed_entities": [
+        "y(x)",
+        "a_k"
+      ]
+    },
+    {
+      "stmt_id": "st_example3_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        61,
+        69
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example3",
+      "exposed_entities": [
+        "a_k"
+      ]
+    },
+    {
+      "stmt_id": "st_example4_bessel",
+      "subtype": "example",
+      "clause_range": [
+        70,
+        86
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example4",
+      "exposed_entities": [
+        "n",
+        "a_k",
+        "alpha",
+        "y_1"
+      ]
+    },
+    {
+      "stmt_id": "st_gamma_definition",
+      "subtype": "definition",
+      "clause_range": [
+        87,
+        88
+      ],
+      "truth_value": null,
+      "scope_id": "s_example4_gamma",
+      "exposed_entities": [
+        "Gamma(s)"
+      ]
+    },
+    {
+      "stmt_id": "st_gamma_properties",
+      "subtype": "remark",
+      "clause_range": [
+        89,
+        90
+      ],
+      "truth_value": null,
+      "scope_id": "s_example4_gamma",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example4_normalization",
+      "subtype": "conclusion",
+      "clause_range": [
+        91,
+        95
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example4",
+      "exposed_entities": [
+        "J_n(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_example5_alpha_neg_n",
+      "subtype": "assumption",
+      "clause_range": [
+        96,
+        100
+      ],
+      "truth_value": null,
+      "scope_id": "s_example5",
+      "exposed_entities": [
+        "a_k"
+      ]
+    },
+    {
+      "stmt_id": "st_example5_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        101,
+        107
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example5",
+      "exposed_entities": [
+        "J_{-n}(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_example5_wronskian",
+      "subtype": "conclusion",
+      "clause_range": [
+        108,
+        121
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example5",
+      "exposed_entities": [
+        "W[J_n, J_{-n}]"
+      ]
+    },
+    {
+      "stmt_id": "st_example5_noninteger_n",
+      "subtype": "condition",
+      "clause_range": [
+        122,
+        124
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example5_cases",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example5_integer_n",
+      "subtype": "condition",
+      "clause_range": [
+        125,
+        131
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example5_cases",
+      "exposed_entities": [
+        "N_n"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_example1_equation",
+      "target": "st_example1_derivation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_general_equation",
+      "target": "st_theorem1_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_general_equation",
+      "target": "st_theorem2_statement",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example3_equation",
+      "target": "st_example3_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example4_bessel",
+      "target": "st_example4_normalization",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example5_alpha_neg_n",
+      "target": "st_example5_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example5_solution",
+      "target": "st_example5_wronskian",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example5_noninteger_n",
+      "target": "st_example5_integer_n",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_example1_derivation",
+      "target": "st_theorem1_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例 1 是定理 1 的一个实例"
+    },
+    {
+      "source": "st_example2_legendre",
+      "target": "st_theorem1_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例 2 应用定理 1"
+    },
+    {
+      "source": "st_example3_solution",
+      "target": "st_theorem1_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例 3 应用定理 1"
+    },
+    {
+      "source": "st_example4_normalization",
+      "target": "st_theorem2_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例 4 应用定理 2"
+    },
+    {
+      "source": "st_example5_wronskian",
+      "target": "st_example4_normalization",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例 5 是例 4 的延续"
+    }
+  ],
+  "unresolved": [
+    "文本[0]提到差分方程预备知识，但未展开，跳过。",
+    "文本[118]有未完成标记，无法解析。",
+    "文本[119]提到需要补充Gamma函数文章，但未提供。"
+  ]
+}

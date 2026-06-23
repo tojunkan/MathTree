@@ -1,0 +1,289 @@
+[SCOPE:root|description|线性微分方程的一般理论]
+文章名: ODEb1
+标题: 线性微分方程的一般理论
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+  [1] type=theorem heading=定理 1 title=解的线性叠加原理
+  [2] type=definition heading=定义 2 title=线性相关性
+  [3] type=theorem heading=定理 2 title=
+  [4] type=definition heading=定义 3 title=朗斯基行列式
+  [5] type=theorem heading=定理 3 title=
+  [6] type=example heading=例 1 title=
+  [7] type=theorem heading=定理 4 title=
+  [8] type=theorem heading=定理 5 title=非齐次方程的解集
+  [9] type=example heading=例 2 title=非齐次线性微分方程的常数变易法
+
+[SCOPE:s_def1|description|定义 1]
+[0] 定义 1
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[1a] (x)$ 和 $f
+[1b] (t)$ 都是区间 $[a, b]$ 上的连续函数，
+[2] 则称
+[/SCOPE:s_def1_let]
+[3] \begin{equation}
+\left(\frac{\mathrm{d}^n y}{ \,\mathrm{d}{x} ^n} \right) +a_1 \left(\frac{\mathrm{d}^{n-1} y}{ \,\mathrm{d}{x} ^{n-1}} \right) +a_2 \left(\frac{\mathrm{d}^{n-2} y}{ \,\mathrm{d}{x} ^{n-2}} \right) +\cdots+a_ny=f(x)~
+\end{equation}
+[4] 线性微分方程（linear differential equation）
+[5a] 当 $f(x)=0$ 时，称式 1 为齐次的（homogeneous），否
+[5b] 则称为非齐次的（inhomogeneous）。
+[6] 任取 $x_0\in[a, b]$，如果已知该点处 $y, \left(\frac{\mathrm{d} y}{ \,\mathrm{d}{x} } \right) , \left(\frac{\mathrm{d}^{2} y}{ \,\mathrm{d}{x} ^{2}} \right) , \cdots, \left(\frac{\mathrm{d}^{n-1} y}{ \,\mathrm{d}{x} ^{n-1}} \right) $ 的 $n$ 个值，
+[7] 那么我们可以唯一确定式 1 满足这些初值的特解。
+[8] 这一解的存在与唯一性定理将在线性方程组相关章节讨论。
+[9] 【未完成】引用相关的存在与唯一性定理。
+
+[/SCOPE:s_def1]
+[SCOPE:s_homo_section|description|齐次线性微分方程的解的性质与结构]
+[SCOPE:s_homo_eq|let_bind|齐次方程]
+[10] 区间 $[a, b]$ 上的齐次线性方程形如
+[11] \begin{equation}
+\left(\frac{\mathrm{d}^n y}{ \,\mathrm{d}{x} ^n} \right) +a_1 \left(\frac{\mathrm{d}^{n-1} y}{ \,\mathrm{d}{x} ^{n-1}} \right) +a_2 \left(\frac{\mathrm{d}^{n-2} y}{ \,\mathrm{d}{x} ^{n-2}} \right) +\cdots+a_ny=0~.
+\end{equation}
+
+[/SCOPE:s_homo_eq]
+[SCOPE:s_thm1|description|定理 1 解的线性叠加原理]
+[12] 定理 1 解的线性叠加原理
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[13a] (x), y_2
+[13b] (x), \cdots, y_k
+[13c] (x)$ 是式 2 的 $k$ 个解，而 $c_1, c_2, \cdots, c_k$ 是 $k$ 个常数，
+[/SCOPE:s_thm1_let]
+[14a] (x)+c_2y_2
+[14b] (x)+\cdots+c_ky_k
+[14c] (x)$ 也是一个解。
+[15] 证明很简单，利用求导的线性性即可。
+[16] 线性叠加原理，就是解进行 “数乘” 和 “加法” 后仍为解，意味着式 2 的全体解构成了一个线性空间，称为解空间。
+[17a] 如果我们能找到这个线性空间的一组基，也
+[17b] 则相当于了解了整个线性空间。
+[18] 这样的基向量，被称为基解，一切解都可以表示为它们的线性组合。
+[19] 基解构成的集合，被称为基本解组。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_def2|description|定义 2 线性相关性]
+[20] 定义 2 线性相关性
+[SCOPE:s_def2_let|let_bind|定义 2 的变量]
+[21a] (x)$，如果存在一组不全为零的常数 $c_i$，使得 $c_1y_1
+[21b] (x)+\cdots+c_ky_k
+[21c] (x)=0$，
+[/SCOPE:s_def2_let]
+[22] 那么称 $y_1, \cdots, y_k$ 是线性相关的，否则是线性无关的。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm2|description|定理 2]
+[23] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理 2 的变量]
+[24a] (x), y_2
+[24b] (x), \cdots, y_n
+[24c] (x)$ 是式 2 的 $n$ 个线性无关的解，
+[/SCOPE:s_thm2_let]
+[25] 那么它们构成了一组基解。
+[26] 定理 2 证明思路提示：我们已经知道，式 2 的每个解由 $n$ 个初值唯一确定。
+[27a] (x)+\cdots+c_ny_n
+[27b] (x)$ 满足全部 $n$ 个初值条件，
+[28] 那么
+[29] \begin{equation}
+\left\{\begin{aligned}
+&c_1y_1(x_0)+\cdots+c_ny_n(x_0)=y(x_0)\\
+&c_1y_1'(x_0)+\cdots+c_ny_n'(x_0)=y'(x_0)\\
+&\phantom{123456789012345678}\vdots\\
+&c_1 \left(\frac{\mathrm{d}^{n-1} y_1}{ \,\mathrm{d}{x} ^{n-1}} \right) (x_0)+\cdots+c_n \left(\frac{\mathrm{d}^{n-1} y_n}{ \,\mathrm{d}{x} ^{n-1}} \right) (x_0)=y(x_0)~.
+\end{aligned}\right.
+\end{equation}
+[30a] (x), y_2
+[30b] (x), \cdots, y_n
+[30c] (x)$ 在给定区间上是线性无关的，
+[31] 式 3 [链接 L0]
+[32] 的各方程也就彼此独立
+[33] 1
+[34] ，
+[35] 因此能够解出唯一的常数组 $\{c_i\}$。
+[36a] (x)+\cdots+c_ny_n
+[36b] (x)$”。
+[37a] (x), y_2
+[37b] (x), \cdots, y_n
+[37c] (x)$ 在给定区间 $[a, b]$ 上的线性相关性呢？
+[38] 我们需要借助以下朗斯基行列式。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_def3|description|定义 3 朗斯基行列式]
+[39] 定义 3 朗斯基行列式
+[SCOPE:s_def3_let|let_bind|定义 3 的变量]
+[40] 对于区间 $[a, b]$ 上存在 $k-1$ 次导函数的 $k$ 个函数 $f_1, f_2, \cdots, f_k$，定义在 $[a, b]$ 上的函数 $W[f_1, f_2, \cdots, f_k](x)$ 为如下行列式：
+[/SCOPE:s_def3_let]
+[41] \begin{equation}
+W[f_1, f_2, \cdots, f_k](x)= \begin{vmatrix}f_1&f_2&\cdots&f_k\\f'_1&f'_2&\cdots&f'_k\\ \vdots&\vdots&\ddots&\vdots\\f_1^{(k-1)}&f_2^{(k-1)}&\cdots&f_k^{(k-1)}\end{vmatrix} (x)~,
+\end{equation}
+[42] 朗斯基行列式（Wronskian）
+[43] 朗斯基行列式，本质上就是式 3 的系数矩阵行列式。
+[44] 式 3 解的存在性和 $\{y_i\}$ 的线性相关性紧密相连，
+[45] 因此我们有以下定理：
+
+[/SCOPE:s_def3]
+[SCOPE:s_thm3|description|定理 3]
+[46] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理 3 的变量]
+[47] 对于 $[a, b]$ 上的函数 $f_i(x)$，如果它们在给定区间上线性相关，
+[/SCOPE:s_thm3_let]
+[48] 那么 $W[f_1, f_2, \cdots, f_k](x)$ 在 $[a, b]$ 上恒为 $0$。
+[49] 注意，定理 3 的逆定理（W 恒为 $0$ 则 $\{f_i\}$ 线性相关）不成立。
+[50] 我们试举一例反例来说明：
+
+[/SCOPE:s_thm3]
+[SCOPE:s_ex1|description|例 1]
+[SCOPE:s_ex1_let|let_bind|例 1 的变量]
+[51] 考虑 $\mathbb{R}$ 上的函数：
+[52] \begin{equation}
+f_1(x)= \left\{\begin{aligned}
+&0 &\quad &(x<0)\\
+& \mathrm{e} ^{-\frac{1}{x}} &\quad &(x\geq 0)~.
+\end{aligned}\right.
+\end{equation}
+[53] \begin{equation}
+f_2(x)= \left\{\begin{aligned}
+& \mathrm{e} ^{-\frac{1}{x}} &\quad&(x<0)\\
+&0 &\quad& (x\geq 0)~.
+\end{aligned}\right.
+\end{equation}
+[/SCOPE:s_ex1_let]
+[54] 简单计算可得 $W[f_1, f_2]$ 在 $\mathbb{R}$ 上恒为 $0$，
+[55] 但 $f_1, f_2$ 在 $\mathbb{R}$ 上线性无关，而且它们还是无穷次可导的函数，是绝佳的反例。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_thm4|description|定理 4]
+[56] 定理 4
+[SCOPE:s_thm4_let|let_bind|定理 4 的变量]
+[57a] (x), y_2
+[57b] (x), \cdots, y_n
+[57c] (x)$ 是式 2 的 $n$ 个解且它们线性无关，
+[/SCOPE:s_thm4_let]
+[58] 那么它们的朗斯基行列式在 $[a, b]$ 上处处不为 $0$。
+[SCOPE:s_thm4_reductio|reductio|定理 4 的反证法]
+[59] 定理 4 的证明思路提示：反设存在某 $x_0\in[a, b]$，使得上述朗斯基行列式为 $0$，
+[60] 那么在 $x_0$ 处的初值条件无法总是给出式 3 的解，这与解的存在性矛盾。
+
+[/SCOPE:s_homo_section]
+[/SCOPE:s_thm4]
+[/SCOPE:s_thm4_reductio]
+[SCOPE:s_nonhomo_section|description|非齐次线性微分方程]
+[SCOPE:s_nonhomo_intro|description|非齐次方程解的关系]
+[61a] (x), \phi_2
+[61b] (x)$ 和齐次方程式 2 的解 $\overline{\phi}
+[61c] (x)$ 有如下关系：
+[62a] (x)+\overline{\phi}
+[62b] (x)$ 是非齐次方程式 1 的解；
+[63a] (x)-\phi_2
+[63b] (x)$ 是齐次方程式 2 的解。
+[64] 因此，我们容易得到以下定理
+
+[/SCOPE:s_nonhomo_intro]
+[SCOPE:s_thm5|description|定理 5 非齐次方程的解集]
+[65] 定理 5 非齐次方程的解集
+[SCOPE:s_thm5_let|let_bind|定理 5 的变量]
+[66a] (x), \phi_2
+[66b] (x), \cdots, \phi_n
+[66c] (x)$ 为式 2 的一组基解，$\varphi
+[66d] (x)$ 为式 1 的一个特解，
+[/SCOPE:s_thm5_let]
+[67] 那么式 1 的通解可以表示为
+[68] \begin{equation}
+c_0\varphi(x)+c_1\phi_1(x)+c_2\phi_2(x)+\cdots+c_n\phi_n(x)~.
+\end{equation}
+[69] 知道了式 2 的基本解组以后，我们可以用常数变易法来解出式 1 .
+[70a] (x), \phi_2
+[70b] (x), \cdots, \phi_n
+[70c] (x)$ 为式 2 的一组基解，
+[71a] (x)+c_2\phi_2
+[71b] (x)+\cdots+c_n\phi_n
+[71c] (x)$ 的形式。
+[72] 现在我们把各常数 $c_i$ 写成待定函数 $c_i(x)$，使得
+[73] \begin{equation}
+c_1(x)\phi_1(x)+c_2(x)\phi_2(x)+\cdots+c_n(x)\phi_n(x)~
+\end{equation}
+[74] 式 1 [链接 L1]
+
+[/SCOPE:s_thm5]
+[SCOPE:s_ex2|description|例 2 非齐次线性微分方程的常数变易法]
+[75] 例 2 非齐次线性微分方程的常数变易法
+[SCOPE:s_ex2_let|let_bind|例 2 的变量]
+[76] 考虑方程
+[77] \begin{equation}
+\frac{\mathrm{d}^2 y}{ \,\mathrm{d}{x} ^2}+y=\tan x~,
+\end{equation}
+[78] 设式 9 的通解为
+[79] \begin{equation}
+y=c_1(x)\cos x+c_2(x)\sin x~,
+\end{equation}
+[/SCOPE:s_ex2_let]
+[80] 式 10
+[81] \begin{equation}
+c''_1(x)\cos x+c''_2(x)\sin x-c'_1(x)\sin x+c'_2(x)\cos x=\tan x~.
+\end{equation}
+[82] 式 11 有两个未知函数，
+[83] 所以没有唯一确定的解。
+[84] 我们可以有多种方法指定第二个约束式子，实践中当然是怎么方便计算怎么来。
+[85] 通常，我们令
+[86] \begin{equation}
+c'_1(x)\cos x+c'_2(x)\sin x=0~,
+\end{equation}
+[87] \begin{equation}
+\frac{\mathrm{d}^2 y}{ \,\mathrm{d}{x} ^2}=-c_1(x)\cos x-c_2(x)\sin x-c'_1(x)\sin x+c'_2(x)\cos x~.
+\end{equation}
+[88] 重新将式 13 代回式 9 和式 10 得到
+[89] \begin{equation}
+-c'_1(x)\sin x+c'_2(x)\cos x=\tan x~.
+\end{equation}
+[90] 联立式 12 和式 14 ，解得
+[91] \begin{equation}
+\left\{\begin{aligned}
+c'_1(x)&=\sin^2x/\cos x\\
+c'_2(x)&=\sin x~.
+\end{aligned}\right.
+\end{equation}
+[92] \begin{equation}
+\left\{\begin{aligned}
+c_1(x)&=C_1-\sin x+ \ln\left(\frac{\cos\frac{x}{2}+\sin\frac{x}{2}}{\cos\frac{x}{2}-\sin\frac{x}{2}}\right) \\
+c_2(x)&=C_2-\cos x~,
+\end{aligned}\right.
+\end{equation}
+[93] 代回式 10 ，整理后可得式 9 的通解为
+[94] \begin{equation}
+y=C_1\cos x+C_2\sin x-\sin 2x+\cos x \ln\left(\frac{\cos\frac{x}{2}+\sin\frac{x}{2}}{\cos\frac{x}{2}-\sin\frac{x}{2}}\right) ~.
+\end{equation}
+[95a] (x)\cos x+c'_2
+[95b] (x)\sin x=0$。
+[96] 事实上，同一个思路在用常数变易法解非齐次方程时很常用，因为它能避免出现 $c_i(x)$ 的高阶导函数。
+[/SCOPE:s_nonhomo_section]
+[/SCOPE:s_ex2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2是定理1在n个线性无关解时的特例"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_thm3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理4是定理3在解空间下的推论"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_thm3",
+    "edge_type": "counterexample_of",
+    "category": "logic",
+    "note": "例1是定理3逆命题的反例"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "非齐次通解结构依赖于齐次解的叠加"
+  }
+]

@@ -1,0 +1,384 @@
+{
+  "article_name": "vecSAS",
+  "statements": [
+    {
+      "stmt_id": "st_sym_action_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_sym",
+      "exposed_entities": [
+        "V",
+        "V^{\\otimes n}",
+        "S_n",
+        "\\rho(\\sigma)"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_n2",
+      "subtype": "example",
+      "clause_range": [
+        4,
+        6
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_sym_def",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "\\operatorname{Sym}^n V",
+        "S^n(V)"
+      ]
+    },
+    {
+      "stmt_id": "st_exercise1",
+      "subtype": "exercise",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": "unknown",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_V",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let1",
+      "exposed_entities": [
+        "V",
+        "\\mathbb{R}^2",
+        "\\operatorname{Sym}^2 V",
+        "e_1",
+        "e_2"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_sym_prod_def",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let2",
+      "exposed_entities": [
+        "v \\cdot w"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_remark",
+      "subtype": "remark",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_multi_sym_prod_def",
+      "subtype": "definition",
+      "clause_range": [
+        18,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let3",
+      "exposed_entities": [
+        "v_1 \\cdots v_n",
+        "\\operatorname{Sym}^n V",
+        "e_{i_1} \\cdot \\cdots \\cdot e_{i_n}"
+      ]
+    },
+    {
+      "stmt_id": "st_asym_action_def",
+      "subtype": "definition",
+      "clause_range": [
+        27,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_asym",
+      "exposed_entities": [
+        "\\rho(\\sigma)",
+        "\\operatorname{sgn}(\\sigma)",
+        "\\wedge^n V"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1",
+      "subtype": "theorem",
+      "clause_range": [
+        36,
+        38
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex3_V",
+      "subtype": "assumption",
+      "clause_range": [
+        39,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3_let1",
+      "exposed_entities": [
+        "V",
+        "\\mathbb{R}^2",
+        "\\wedge^2 V",
+        "e_1",
+        "e_2"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_wedge_def",
+      "subtype": "definition",
+      "clause_range": [
+        42,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3_let2",
+      "exposed_entities": [
+        "v \\wedge w"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_multi_wedge_def",
+      "subtype": "definition",
+      "clause_range": [
+        50,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3_let3",
+      "exposed_entities": [
+        "v_1 \\wedge \\cdots \\wedge v_n"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_wedge_extend",
+      "subtype": "definition",
+      "clause_range": [
+        55,
+        62
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex3_let4",
+      "exposed_entities": [
+        "\\nu \\wedge \\omega",
+        "\\wedge^{n_1} V \\times \\wedge^{n_2} V",
+        "\\wedge^{n_1+n_2} V",
+        "e_{i_1} \\wedge \\cdots \\wedge e_{i_n}"
+      ]
+    },
+    {
+      "stmt_id": "st_decomp",
+      "subtype": "theorem",
+      "clause_range": [
+        63,
+        68
+      ],
+      "truth_value": "true",
+      "scope_id": "s_decomp",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_quotient_sym",
+      "subtype": "definition",
+      "clause_range": [
+        69,
+        75
+      ],
+      "truth_value": null,
+      "scope_id": "s_quotient",
+      "exposed_entities": [
+        "\\operatorname{Sym}",
+        "\\operatorname{Sym}^n V"
+      ]
+    },
+    {
+      "stmt_id": "st_quotient_asym",
+      "subtype": "definition",
+      "clause_range": [
+        76,
+        77
+      ],
+      "truth_value": null,
+      "scope_id": "s_quotient",
+      "exposed_entities": [
+        "\\wedge",
+        "\\wedge^n V"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2",
+      "subtype": "theorem",
+      "clause_range": [
+        79,
+        82
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2",
+      "exposed_entities": [
+        "\\operatorname{Sym}",
+        "\\operatorname{Sym}^n V",
+        "\\bar{f}"
+      ]
+    },
+    {
+      "stmt_id": "st_thm3",
+      "subtype": "theorem",
+      "clause_range": [
+        84,
+        87
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm3",
+      "exposed_entities": [
+        "\\wedge",
+        "\\wedge^n V",
+        "\\bar{f}"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex1_n2",
+      "target": "st_ex1_sym_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_V",
+      "target": "st_ex2_sym_prod_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_V",
+      "target": "st_ex2_multi_sym_prod_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_V",
+      "target": "st_ex3_wedge_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_V",
+      "target": "st_ex3_multi_wedge_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_V",
+      "target": "st_ex3_wedge_extend",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_quotient_sym",
+      "target": "st_quotient_asym",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex1_n2",
+      "target": "st_sym_action_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是n=2时的对称幂"
+    },
+    {
+      "source": "st_ex2_V",
+      "target": "st_sym_action_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2具体化对称幂"
+    },
+    {
+      "source": "st_ex3_V",
+      "target": "st_asym_action_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例3具体化反对称幂"
+    },
+    {
+      "source": "st_thm1",
+      "target": "st_asym_action_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1刻画反对称幂"
+    },
+    {
+      "source": "st_decomp",
+      "target": "st_sym_action_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "分解涉及对称幂"
+    },
+    {
+      "source": "st_decomp",
+      "target": "st_asym_action_def",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "分解涉及反对称幂"
+    },
+    {
+      "source": "st_quotient_sym",
+      "target": "st_sym_action_def",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "商空间构造等价于子空间构造"
+    },
+    {
+      "source": "st_quotient_asym",
+      "target": "st_asym_action_def",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "商空间构造等价于子空间构造"
+    },
+    {
+      "source": "st_thm2",
+      "target": "st_sym_action_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2给出对称幂的万有性质"
+    },
+    {
+      "source": "st_thm3",
+      "target": "st_asym_action_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理3给出反对称幂的万有性质"
+    }
+  ],
+  "unresolved": []
+}

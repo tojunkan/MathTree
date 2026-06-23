@@ -1,0 +1,98 @@
+{
+  "article_name": "ODEint",
+  "statements": [
+    {
+      "stmt_id": "st_ode_def",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_ode_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_question",
+      "subtype": "question",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_v",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_example_let",
+      "exposed_entities": [
+        "v",
+        "k",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_equation",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_example",
+      "exposed_entities": [
+        "v",
+        "t",
+        "k",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example",
+      "exposed_entities": [
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_ode_classification",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_ode_intro",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_v",
+      "target": "st_equation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_equation",
+      "target": "st_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

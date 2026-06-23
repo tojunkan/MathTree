@@ -1,0 +1,301 @@
+{
+  "article_name": "OrthSp",
+  "statements": [
+    {
+      "stmt_id": "st_def1_orth_vec",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let1",
+      "exposed_entities": [
+        "V",
+        "v_1",
+        "v_2"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_orth_sub",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let2",
+      "exposed_entities": [
+        "V_1",
+        "V_2"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_construct",
+      "subtype": "theorem",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "V",
+        "x_i",
+        "y_j"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1",
+      "subtype": "theorem",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "V_1",
+        "V_2",
+        "v_alpha",
+        "w_beta"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_example",
+      "subtype": "example",
+      "clause_range": [
+        9,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "x_hat",
+        "y_hat",
+        "z_hat"
+      ]
+    },
+    {
+      "stmt_id": "st_exer1_claim",
+      "subtype": "exercise",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exer1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exer1_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_exer1_let1",
+      "exposed_entities": [
+        "V_1",
+        "V_2"
+      ]
+    },
+    {
+      "stmt_id": "st_exer1_concl1",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_exer1_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exer1_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_exer1_let2",
+      "exposed_entities": [
+        "V_1",
+        "V_2",
+        "v_alpha",
+        "w_beta"
+      ]
+    },
+    {
+      "stmt_id": "st_exer1_concl2",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_exer1_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exer1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_exer1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def2_orth_comp",
+      "subtype": "definition",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2_let",
+      "exposed_entities": [
+        "V",
+        "V_1",
+        "V_2"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2",
+      "subtype": "theorem",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm2_let",
+      "exposed_entities": [
+        "V_1",
+        "V_2",
+        "alpha_i",
+        "beta_i"
+      ]
+    },
+    {
+      "stmt_id": "st_thm2_unfinished1",
+      "subtype": "remark",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm2_unfinished2",
+      "subtype": "remark",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_orth_vec",
+      "target": "st_def1_orth_sub",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_orth_sub",
+      "target": "st_def1_construct",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exer1_let1",
+      "target": "st_exer1_concl1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exer1_let2",
+      "target": "st_exer1_concl2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exer1_concl1",
+      "target": "st_exer1_claim",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exer1_concl2",
+      "target": "st_exer1_claim",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exer1_remark",
+      "target": "st_exer1_claim",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_thm2_unfinished1",
+      "target": "st_thm2",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_thm2_unfinished2",
+      "target": "st_thm2",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1",
+      "target": "st_def1_orth_sub",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1是定义1的基底表述"
+    },
+    {
+      "source": "st_ex1_example",
+      "target": "st_def1_orth_sub",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1是正交定义的实例"
+    },
+    {
+      "source": "st_exer1_claim",
+      "target": "st_def1_orth_sub",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "习题1基于正交定义"
+    },
+    {
+      "source": "st_def2_orth_comp",
+      "target": "st_def1_orth_sub",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "正交补基于正交和直和"
+    },
+    {
+      "source": "st_thm2",
+      "target": "st_def2_orth_comp",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2是正交补的基底条件"
+    }
+  ],
+  "unresolved": []
+}

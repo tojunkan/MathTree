@@ -1,0 +1,129 @@
+[SCOPE:root|description|一元函数的微分、微分近似（极简微积分）]
+文章名: Diff
+标题: 一元函数的微分、微分近似（极简微积分）
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=测量误差
+  [1] type=example heading=例 2 title=细圆环的面积和薄球壳的体积
+  [2] type=example heading=例 3 title=失败的例子
+
+[SCOPE:s_intro|description|微分定义与形式]
+[SCOPE:s_intro_let|let_bind|引入 y=f(x)]
+[0] 我们回顾导数的定义，令 $y = f(x)$，
+[1] \begin{equation}
+f'(x) = \frac{\mathrm{d}{y}}{\mathrm{d}{x}} = \lim_{\Delta x\to 0} \frac{\Delta y}{\Delta x}~.
+\end{equation}
+[/SCOPE:s_intro_let]
+[2a] 这告诉我们
+[2b] 当 $\Delta x$ 越小，以下近似，则在某种意义上越精确
+[3] \begin{equation}
+\Delta y \approx f'(x) \Delta x~.
+\end{equation}
+[4] 这说明，当 $\Delta x$ 很小的时候，对应的 $\Delta y$ 和 $\Delta x$ 成正比。
+[5] 形式上，为了表示 $\Delta x\to 0$ 的过程中上式越来越精确地成立，我们可以写成
+[6] \begin{equation}
+\,\mathrm{d}{y} = f'(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[7] 并把它叫做函数 $f(x)$ 的
+[8] 微分
+[9] 。
+[10] 要特别注意在 “极简微积分” 部分中，该式只是
+[11] 式 1 [链接 L0]
+[12] 的另一种方便的
+[13] 书写形式
+[14] 。
+[15] 而不可以理解为等号左边的无穷小等于右边的无穷小。
+[16] 因为无穷小并不是具体的实数而是一个过程，无法比较是否精确相等。
+[17] 1
+[18] 从式 1 到式 3 你可能会误以为我们可以把第一个等号两边同时乘以 $ \,\mathrm{d}{x} $，且把 $ \mathrm{d}{y}/\mathrm{d}{x} $ 中的分母 “约去”。
+[19] 这只是一种形式上的操作，可以帮助理解和记忆，
+[20] 但不能过度解读。
+[21] 毕竟 $ \mathrm{d}{y}/\mathrm{d}{x} $ 是一个整体符号而不表示除法。
+
+[/SCOPE:s_intro]
+[SCOPE:s_approx|description|微分近似]
+[22] 在实际应用中，
+[23] 即使 $\Delta x$ 只是一个较小的具体的数而不是无穷小，我们也往往可以适用式 2 来估计 $\Delta y$。
+[24] \begin{equation}
+\Delta y \approx f'(x) \Delta x~.
+\end{equation}
+[25] 注意在该近似式中不能使用微分符号 $\mathrm{d}$ 或等号。
+[26] 【图解】图 1：微分近似用函数曲线的切线增量 $f'(x)\Delta x$ 来近似函数增量 $\Delta y$，另见图 3 。
+[27a] (x)$ 的变化足够小，或者说 $f
+[27b] (x)$ 在该区间足够的线性（即足够接近直线）。
+
+[/SCOPE:s_approx]
+[SCOPE:s_ex1|description|例1 测量误差]
+[28] 例 1 测量误差
+[SCOPE:s_ex1_let|let_bind|例1变量]
+[29] 若测得立方体的边长为 $a$，测量边长的最大可能误差为 $\sigma_a$，假设 $\sigma_a \ll a$，估计立方体体积的最大误差 $\sigma_V$。
+[30] 解：立方体的体积与边长的关系为 $V(a)=a^3$，根据微分近似，有
+[/SCOPE:s_ex1_let]
+[31] \begin{equation}
+\sigma_V \approx V'(a) \sigma_a = 3a^2 \sigma_x~.
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2 细圆环的面积和薄球壳的体积]
+[32] 例 2 细圆环的面积和薄球壳的体积
+[33] 图 2：细圆环的面积
+[SCOPE:s_ex2_let1|let_bind|例2圆环变量]
+[34] 1. 圆的面积关于其半径的函数为 $A(r) = \pi r^2$，对该式进行微分得 $ \,\mathrm{d}{A} = 2\pi r \,\mathrm{d}{r} $。
+[35] 注意到 $2\pi r$ 为 $r$ 对应的周长，
+[36] 所以微分近似告诉我们，半径为 $r$，宽度为 $\Delta r \ll r$ 的圆环的面积约等于该圆环的周长乘以圆环的宽度。
+[/SCOPE:s_ex2_let1]
+[SCOPE:s_ex2_let2|let_bind|例2球壳变量]
+[37] 2. 球的体积关于其半径的函数为 $V(r) = 4\pi r^3/3$，求微分得 $ \,\mathrm{d}{V} = 4\pi r^2 \,\mathrm{d}{r} $。
+[38] 注意到 $4\pi r^2$ 为 $r$ 对应的球表面积，
+[39] 所以微分近似告诉我们，半径为 $r$，厚度为 $\Delta r \ll r$ 的球壳的体积等于该球壳的表面积乘以球壳厚度。
+[/SCOPE:s_ex2_let2]
+[40a] (r)$ 或 $V'
+[40b] (r)$ 变化得足够慢。
+[41] 也就是需要满足
+[42] \begin{equation}
+\Delta r \ll r~,
+\end{equation}
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|例3 失败的例子]
+[43] 例 3 失败的例子
+[SCOPE:s_ex3_let|let_bind|例3变量]
+[44] 作为一个失败的例子，我们对 $y = x^2$ 以及 $x=0$ 使用式 4 。
+[45] 由于 $f'(x) = 2x$，有 $f'(0) = 0$，也就是说无论 $\Delta x$ 多小都会估计出 $\Delta y = 0$。
+[46] 但若 $\Delta x = x - 0$，
+[47] 则精确来说 $\Delta y = x^2 - 0^2 = \Delta x^2$。
+[/SCOPE:s_ex3_let]
+[48] 所以该近似的相对误差达到了 $-100\%$。
+[49] 为什么会失败呢？
+[50] 还记得我们上文说过，该近似要求斜率在 $\Delta x$ 范围内变化很小。
+[51] 但该例中 $x=0$ 处的斜率为 0，而 $x=\Delta x$ 处斜率为 $2\Delta x$，导致后者的斜率的相对增长是无穷大。
+[52] 这也是为什么上例中我们要求式 6 （试想如果 $\Delta r$ 的区间取 $[0, \Delta r]$ 会发生什么）。
+[53] 该例中要得到更好的近似公式或理解，就需要了解之后我们要学习的二阶无穷小和泰勒展开。
+[54] 但暂时你只需要知道当斜率接近 0 时，该近似很可能失效。
+[/SCOPE:s_ex3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_approx",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1应用微分近似"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_approx",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2应用微分近似"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_approx",
+    "edge_type": "counterexample_of",
+    "category": "logic",
+    "note": "例3展示微分近似失效"
+  }
+]

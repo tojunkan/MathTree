@@ -1,0 +1,244 @@
+[SCOPE:root|description|度规张量与指标升降（欧氏空间）]
+文章名: TofEuc
+标题: 度规张量与指标升降（欧氏空间）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=度规张量
+  [1] type=theorem heading=定理 1 title=度规张量的性质
+  [2] type=definition heading=定义 2 title=
+  [3] type=theorem heading=定理 2 title=
+  [4] type=definition heading=定义 3 title=矢量的指标升降
+  [5] type=theorem heading=定理 3 title=
+  [6] type=theorem heading=定理 4 title=
+  [7] type=example heading=例 1 title=度规张量的指标升降
+
+[0] 欧氏矢量空间是在矢量空间中定义了一个正定的双线性型 $(*|*)$（它也称为矢量空间上的内积），双线性型又是一个 2 阶共变张量，这表明可以直接用张量来描述欧氏矢量空间，这只需将欧氏矢量空间中的双线性型 $(*|*)$ 用一个张量 $G$ 来代替：
+[1] \begin{equation}
+G:=g_{ij} e^i\otimes e^j~.
+\end{equation}
+[2] 其中，$g_{ij}=G(e_i,e_j)=(e_i|e_j)$。
+[3] 上式使用了
+[4] 爱因斯坦求和约定 [链接 L0]
+[5] （以下也将使用这一约定），其中张量坐标和基的指标是对立（见
+[6] ）。
+[7] 由于双线性型 $(*|*)$ 给定了欧氏矢量空间中的度量性质，
+[8] 所以这个欧氏矢量空间中的双线性型 $(*|*)$ 对应的张量 $G$ 叫作欧氏矢量空间的
+[9] 度规张量
+[10] 度量张量
+[11] 在给定了 $(*|*)$ 的欧氏矢量空间 $V$ 中，$V$ 和 $V^*$ 是自然同构的（定理 4 ），
+[12] 即 $v\in V $ 和 $(v|*)\in V^*$ 没有本质上的区别。
+[13] 这也是定义了内积的矢量空间相对于未定义内积的矢量空间多出的性质，这一性质在用张量表述时表现在指标的升降上。
+[14] 约定：为方便描述起见，同时和大多数习惯相一致，我们将用张量的坐标表示来替代张量本身。
+[15] 即若 $T=T^{ij} e_{i}\otimes e_{j}$，
+[16] 则直接用 $T^{ij}$ 来表示张量 $T$。
+[17] 事实上，这样并未丢失任何信息，要还原张量 $T$ 只需在 $T^{ij}$ 后补上基矢 $e_{i}\otimes e_{j}$ 即可。
+[18] 使用这一约定，$g_{ij}$ 就是度规张量本身，二阶张量 $g_{ij}$ 对应的矩阵仍记作 $g_{ij}$。
+
+[SCOPE:s_def1|description|定义 1 度规张量]
+[19] 定义 1 度规张量
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[20] 设 $(V,(*|*))$ 是欧几里得矢量空间，
+[/SCOPE:s_def1_let]
+[21] 则坐标
+[22] \begin{equation}
+g_{ij}=(e_i|e_j)~
+\end{equation}
+[23] 度规张量
+[24] 度量张量
+[25] 有了度规张量的定义，$V$ 上两矢量的内积 $(x|y)$ 便可记成
+[26] \begin{equation}
+(x|y)=g_{ij}x^i y^i~,
+\end{equation}
+[27] 于是矢量的模平方便成了
+[28] \begin{equation}
+\left\lVert x \right\rVert ^2=g_{ij}x^i x^j~.
+\end{equation}
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理 1 度规张量的性质]
+[29] 定理 1 度规张量的性质
+[30] 对称性：
+[31] \begin{equation}
+g_{ij}=g_{ji}~.
+\end{equation}
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[32] 坐标变换规律： 设 $g'_{ij},g_{ij}$ 分别是在基底 $\{e'_i\},\{e_i\}$ 中的表示，
+[33] 则
+[34] \begin{equation}
+g'_{ij}=A^k_{i} A^l_{j}g_{kl}~.
+\end{equation}
+[35] 其中，$A^i_j$ 是基底 $\{e_i\}$ 到 $\{e'_i\}$ 的转换矩阵。
+[/SCOPE:s_thm1_let]
+[36] 证明：对称性由内积的对称性直接得到；
+[37] 式 6 证明如下：
+[38] \begin{equation}
+g'_{ij}=(e'_i|e'_j)=(A^k_i e_k|A^l_j e_l)=A^k_{i} A^l_{j}(e_k|e_l)=A^k_{i} A^l_{j}g_{kl}~.
+\end{equation}
+
+[/SCOPE:s_thm1]
+[39] 根据正定双线性型 $(*|*)$ 的非退化性，$g_{ij}$ 对应的矩阵显然是可逆的，
+[40] 即其逆矩阵存在。
+
+[SCOPE:s_def2|description|定义 2]
+[41] 定义 2
+[42] 度规张量 $g_{ij}$ 对应的矩阵的逆矩阵记作 $g^{ij}$。
+[43] 从记法上看，$g^{ij}$ 是一二阶逆变张量，下面定理给出了这一论断。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm2|description|定理 2]
+[44] 定理 2
+[45] $g^{ij}$ 是对应一二阶逆变张量，
+[46] 即其在不同基底下坐标变换规律为
+[47] \begin{equation}
+g'^{ij}=B^i_kB^j_l g^{kl}~.
+\end{equation}
+[48] 证明：
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[49] 因为 $g^{ij}$ 定义为 $g_{ij}$ 的逆矩阵，
+[50] 那么在新基底下有
+[51] \begin{equation}
+g'^{ik}g'_{kj}=\delta^i_j~,
+\end{equation}
+[52] 其中 $\delta^i_j$ 是单位矩阵。由
+[53] 式 6 [链接 L1]
+[54] \begin{equation}
+g'^{ik}A^r_k A^s_j g_{rs}=\delta^i_j~,
+\end{equation}
+[55] 上式两边乘 $B^j_l$，并注意 $B^j_lA^s_j=\delta^s_l$ 就有
+[56] \begin{equation}
+g'^{ik}A^r_k g_{rl}=B^
+i_l~.
+\end{equation}
+[57] 上式两边乘 $g^{lj}$，有
+[58] \begin{equation}
+g'^{ik}A^j_k=B^i_lg^{lj}~,
+\end{equation}
+[59] 两边再乘 $B^r_j$，
+[60] 即得
+[61] \begin{equation}
+g'^{ir}=B^i_lB^r_jg^{lj}~,
+\end{equation}
+[62] 式 8 [链接 L2]
+[63] 证毕！
+[/SCOPE:s_thm2_let]
+[64] $g^{ij}$ 也称着度规张量，
+[65] 但和 $g_{ij}$ 不同，其是逆变的。
+[66] 由于 $g_{ij},g^{ij}$ 分别是二阶共变和二阶逆变张量，
+[67] 所以 $x_i=g_{ij}x^j$ 和 $x^i=g^{ij}x_j$ 分别是共变的和逆变的矢量。
+[68] 这就是说，$g_{ij}$ 作用到逆变矢量 $x^j$ 上得到共变的矢量 $x_i$，而 $g^{ij}$ 作用到共变的矢量 $x_j$ 上得到逆变的矢量 $x^i$。
+[69] 这便是指标升降。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_def3|description|定义 3 矢量的指标升降]
+[70] 定义 3 矢量的指标升降
+[71] 通过共变的度规张量 $g_{ij}$ 作用在逆变矢量上得到共变的矢量，这称为指标下降。
+[72] 而通过逆变的度规张量 $g^{ij}$ 作用在共变矢量上得到逆变的矢量，
+[73] 则称为指标上升。
+
+[/SCOPE:s_def3]
+[SCOPE:s_thm3|description|定理 3]
+[74] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[75] 指标升降运算得到的矢量是唯一确定的；
+[76] 对同一逆变矢量先降再升指标得到的是原来的逆变矢量，对同一逆变矢量先升再降指标得到的是原来的逆变矢量。即
+[77] \begin{equation}
+\begin{aligned}
+&x_i=g_{ij}x^j\Rightarrow x^j=g^{ji}x_i
+\\
+&x^i=g^{ij}x_j\Rightarrow x_j=g_{ji}x^i~.
+\end{aligned}
+\end{equation}
+[78] 证明：因为 $g_{ij}$ 是确定的，而 $g^{ij}$ 是其逆，
+[79] 所以 $g^{ij}$ 也是确定的，
+[80] 所以指标升降是确定的。
+[81] $g_{ij}$ 和 $g_{ij}$ 互逆导致升降运算抵消，下式是明显的
+[82] \begin{equation}
+\begin{aligned}
+&x^j=g^{jk}g_{ki}x^i=g^{jk}x_k\\
+&x_j=g_{jk}g^{ki}x_i=g_{jk}x^k~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_thm3_let]
+[83] 证毕！
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|定理 4]
+[84] 定理 4
+[SCOPE:s_thm4_let|let_bind|定理4的变量]
+[85] 对矢量 $x$ 的坐标 $x^i$ 进行指标下降，得到的是这一矢量与基矢量的内积。即
+[86] \begin{equation}
+x_i=g_{ij}x^j=(e_i|x)~.
+\end{equation}
+[87] 证明：
+[88] \begin{equation}
+x_i=g_{ij}x^j=(e_i|e_j)x^j=(e_i|x)~.
+\end{equation}
+[/SCOPE:s_thm4_let]
+[89] 证毕！
+
+[/SCOPE:s_thm4]
+[90] 矢量是一阶张量，其可进行指标升降，这让我们想把这一升降指标的运算作用到任意张量上。
+[91] 然而。
+[92] 对于高阶张量，要扩展这一运算需要将指标进行重新标记，因为对高阶张量，在将指标上升或下降的过程中，原本上升或下降后的位置可能就被其它指标占领了。
+[93] 为对任意张量进行指标升降运算，约定：上指标的正下方不能再有其它指标；
+[94] 下指标的正上方也不能再有其它指标。
+[95] 在此约定下，任意张量便可进行指标的升降运算：在对某个下指标进行指标上升运算时，
+[96] 则上升后的指标放在原来的上方；
+[97] 在对某个上指标进行指标下降运算时，
+[98] 则下降后的指标放在原来的下方（因为由约定，升降后的位置原本并无其它指标，
+[99] 所以不会有任何歧义）。
+[100] 这便是任意张量的指标升降运算。
+
+[SCOPE:s_example1|description|例 1 度规张量的指标升降]
+[101] 例 1 度规张量的指标升降
+[102] 上升 $g_{ij}$ 的第一个指标
+[103] \begin{equation}
+{g^{i}}_{j}=g^{ik} g_{kj}=\delta^i_j~,
+\end{equation}
+[104] \begin{equation}
+g^{ij}=g^{jk}{g^i}_k=g^{jk}\delta^i_k=g^{ij}~.
+\end{equation}
+
+跨文章引用:
+  [L0] 爱因斯坦求和约定 → EinSum
+[/SCOPE:s_example1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是定义1的性质"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2证明g^{ij}是张量"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3是定义3的性质"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理4是定义3的补充"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是定义3的应用"
+  }
+]

@@ -1,0 +1,139 @@
+[SCOPE:root|description|线性无关判别法]
+文章名: LinInD
+标题: 线性无关判别法
+
+环境标记 (hints):
+  [0] type=lemma heading=引理 1 title=
+  [1] type=lemma heading=引理 2 title=
+  [2] type=theorem heading=定理 1 title=
+
+[SCOPE:s_lemma1|description|引理1]
+[0] 引理 1
+[SCOPE:s_lemma1_let|let_bind|引理1的变量]
+[1] 若 $ \boldsymbol{\mathbf{a}} _1,\cdots, \boldsymbol{\mathbf{a}} _m$ 是 $V$ 中线性相关的向量，而 $f_1,\cdots,f_m$ 是 $V$ 上任意的线性函数定义 1 ，
+[2] 那么
+[/SCOPE:s_lemma1_let]
+[3] \begin{equation}
+\det(f_i( \boldsymbol{\mathbf{a}} _j))=0\qquad (1\leq i,j\leq m)~.
+\end{equation}
+[4] 证明：由于 $ \boldsymbol{\mathbf{a}} _1,\cdots, \boldsymbol{\mathbf{a}} _m$ 线性相关，必有一个向量是其余向量的线性组合，不失一般性，设这个向量就是 $ \boldsymbol{\mathbf{a}} _m$，
+[5] 则
+[6] \begin{equation}
+\boldsymbol{\mathbf{a}} _m=\sum_{i\neq m}\alpha_i \boldsymbol{\mathbf{a}} _i~
+\end{equation}
+[7] 在行列式 $\det(f_i( \boldsymbol{\mathbf{a}} _j))$ 中，从最后一列减去第一列乘 $\alpha_1$，$\cdots$，第 $m-1$ 列乘 $\alpha_{m-1}$，
+[8] 于是最后一列变为
+[9] \begin{equation}
+\begin{aligned}
+&f_i( \boldsymbol{\mathbf{a}} _m)-\sum_{j\neq m}\alpha_j f_i( \boldsymbol{\mathbf{a}} _j)=f_i( \boldsymbol{\mathbf{a}} _m-\sum_{j\neq m}\alpha_{j} \boldsymbol{\mathbf{a}} _j)\\
+&=f_i( \boldsymbol{\mathbf{0}} )=0 \qquad (i=1,\cdots ,m)~,
+\end{aligned}
+\end{equation}
+[10] 所以行列式为 0.
+[11] 证毕！
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_lemma2|description|引理2]
+[12] 引理 2
+[SCOPE:s_lemma2_let|let_bind|引理2的变量]
+[13] 如果 $(f_1,\cdots,f_n)$ 是向量空间 $V$ 的 对偶空间 $V^*$ 的一个基底，
+[14] 那么，向量 $ \boldsymbol{\mathbf{a}} _1,\cdots, \boldsymbol{\mathbf{a}} _n\in V$ 线性无关的充要条件为
+[/SCOPE:s_lemma2_let]
+[15] \begin{equation}
+\det(f_i( \boldsymbol{\mathbf{a}} _j))\neq 0~.
+\end{equation}
+[16] 证明：
+[17] 充分性：由引理 1 直接得证！
+[18] 必要性：向量 $ \boldsymbol{\mathbf{a}} _1,\cdots, \boldsymbol{\mathbf{a}} _n\in V$ 线性无关，意味着 $V=\langle \boldsymbol{\mathbf{a}} _1,\cdots, \boldsymbol{\mathbf{a}} _n\rangle$（定义 1 ）.用 $( \boldsymbol{\mathbf{e}} _1,\cdots, \boldsymbol{\mathbf{e}} _n)$ 代表 $V$ 的对偶于 $(f_1,\cdots,f_n)$ 的基底（子节 3 ），而用 $\alpha_{1j},\cdots,\alpha_{nj}$ 代表向量 $ \boldsymbol{\mathbf{a}} _j$ 在这个基底下的坐标。
+[19] 那么
+[20] \begin{equation}
+\begin{pmatrix}
+\alpha_{11}&\cdots&\alpha_{1n}\\
+\vdots&\vdots&\vdots\\
+\alpha_{n1}&\cdots&\alpha_{nn}
+\end{pmatrix}~
+\end{equation}
+[21] 就是由基底 $( \boldsymbol{\mathbf{e}} _1,\cdots, \boldsymbol{\mathbf{e}} _n)$ 到基底 $( \boldsymbol{\mathbf{a}} _1, \boldsymbol{\mathbf{a}} _n)$ 的过渡矩阵。
+[22] 由例 1 ，它是可逆的，
+[23] 从而 $\det(\alpha_{ij}))\neq0$。
+[24] 但 $\alpha_{ij}=f_i( \boldsymbol{\mathbf{a}} _j)$，
+[25] 故而式 4 成立。
+[26] 证毕！
+
+[/SCOPE:s_lemma2]
+[SCOPE:s_theorem1|description|定理1]
+[27] 定理 1
+[SCOPE:s_theorem1_let1|let_bind|定理1的变量]
+[28] 设 $(f_1,\cdots,f_n)$ 是对偶于 $V$ 的空间 $V^*$ 的一个基底。
+[29] 那么，向量组 $ \boldsymbol{\mathbf{a}} _1,\cdots, \boldsymbol{\mathbf{a}} _k\in V$ 的秩等于所有形如
+[/SCOPE:s_theorem1_let1]
+[30] \begin{equation}
+\det(f_i( \boldsymbol{\mathbf{a}} _j))\qquad (1\leq i=i_1~,\cdots~ ,i_m\leq n;\;1\leq j=j_1~,\cdots~,j_m\leq k)~
+\end{equation}
+[31] 证明：用 $r$ 代表向量组 $ \boldsymbol{\mathbf{a}} _1,\cdots, \boldsymbol{\mathbf{a}} _k$ 的秩。
+[32] 任意 $m>r$，$ \boldsymbol{\mathbf{a}} _{j1},\cdots, \boldsymbol{\mathbf{a}} _{jm}$ 必线性相关。
+[33] 据引理 1 ，阶数 $m>r$ 的形如式 6 的行列式必为 0。
+[34] 现在只需证明，存在一个形如式 6 的非零行列式，其秩为 $r$。
+[SCOPE:s_theorem1_let2|let_bind|限制函数]
+[35] 用 $\overline{f_1},\cdots,\overline{f_n}$ 代表线性函数 $f_1,\cdots,f_n$ 在子空间 $U=\langle \boldsymbol{\mathbf{a}} _1,\cdots, \boldsymbol{\mathbf{a}} _k\rangle$ 上的限制。
+[36] 现要证明
+[/SCOPE:s_theorem1_let2]
+[37] \begin{equation}
+\langle\overline{f_1},\cdots,\overline{f_n}\rangle=U^*~.
+\end{equation}
+[38] 事实上，显然 $\langle\overline{f_1},\cdots,\overline{f_n}\rangle \in U^*$。
+[SCOPE:s_theorem1_let3|let_bind|扩展基底]
+[39] 齐次，设 $\tilde f$ 是 $U^*$ 的任一向量，$( \boldsymbol{\mathbf{e}} _1,\cdots, \boldsymbol{\mathbf{e}} _r)$ 的基底，而 $( \boldsymbol{\mathbf{e}} _1,\cdots, \boldsymbol{\mathbf{e}} _r; \boldsymbol{\mathbf{e}} _{r+1},\cdots, \boldsymbol{\mathbf{e}} _n)$ 是它在 $V$ 中的扩展基底。
+[40] 对这样的线性函数 $f\in V^*$，其中
+[41] \begin{equation}
+f( \boldsymbol{\mathbf{e}} _i)=\tilde f( \boldsymbol{\mathbf{e}} _i) \quad(i=1~,\cdots ~,r)~,\quad f( \boldsymbol{\mathbf{e}} _i)=0
+\quad (i=r+1,\cdots,n)~,
+\end{equation}
+[/SCOPE:s_theorem1_let3]
+[42] 因为 $V^*=\langle f_1,\cdots,f_n\rangle$，
+[43] 故 $f$ 可写成
+[44] \begin{equation}
+f=\sum \beta_if_i~.
+\end{equation}
+[45] 把 $f$ 限制在 $U$ 上，显然 $\overline f=f|_U=\tilde f$，
+[46] 于是
+[47] \begin{equation}
+\tilde f=\overline f=\sum \beta_i \overline f_i~,
+\end{equation}
+[48] 即 $\tilde f\in\langle\overline{f_1},\cdots,\overline{f_n}\rangle$，
+[49] 故 $U^*\subset\langle\overline{f_1},\cdots,\overline{f_n}\rangle$，
+[50] 于是证得
+[51] 式 7 [链接 L0]
+[52] 最后，在 $ \boldsymbol{\mathbf{a}} _1,\cdots, \boldsymbol{\mathbf{a}} _k$ 中选择 $r$ 个线性无关的向量（设为 $ \boldsymbol{\mathbf{a}} _{j1},\cdots, \boldsymbol{\mathbf{a}} _{jr} $），在 $\overline f_1,\cdots ,\overline f_n$ 中选择 $r$ 个线性无关的向量（设为 $\overline f_{i1},\cdots,\overline f_{ir}$），它们分别构成 $U,U^*$ 的基底，由引理 2
+[53] \begin{equation}
+\det(\overline f_i( \boldsymbol{\mathbf{a}} _j))\neq0 \qquad (i=i_1,\cdots ,i_r;\; j=j_1,\cdots,j_r)~.
+\end{equation}
+[54] 剩下只需注意 $\overline f_i( \boldsymbol{\mathbf{a}} _j)=f_i( \boldsymbol{\mathbf{a}} _j)$。
+[55] 证毕！
+[/SCOPE:s_theorem1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_lemma2",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "引理2的充分性由引理1直接得证"
+  },
+  {
+    "source_scope": "s_theorem1",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1证明中用到引理1"
+  },
+  {
+    "source_scope": "s_theorem1",
+    "target_scope": "s_lemma2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1证明中用到引理2"
+  }
+]

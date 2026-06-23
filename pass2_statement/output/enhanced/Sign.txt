@@ -1,0 +1,202 @@
+[SCOPE:root|description|记号方法]
+文章名: Sign
+标题: 记号方法
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=记号因子的方幂
+  [1] type=definition heading=定义 2 title=记号因子的负幂
+  [2] type=definition heading=定义 3 title=记号因子的加减法
+  [3] type=definition heading=定义 4 title=记号因子的数乘
+  [4] type=example heading=例 1 title=
+
+[0] 记号方法(常系数的常微分方程的算子法)用于求解常系数线性方程（组），适当推广该方法，也可以用于比较复杂的问题。
+[1] 该方法要点在于把对自变量 $x$ 求微商的运算记号记作因子 $D$，写在需要求微商的函数的左边，
+[2] 于是若 $y$ 是 $x$ 的某一个函数，
+[3] 则
+[4] \begin{equation}
+Dy= \frac{\mathrm{d}{y}}{\mathrm{d}{x}} ~.
+\end{equation}
+
+[SCOPE:s_def1_let|let_bind|方幂变量]
+[SCOPE:s_def1|description|记号因子的方幂]
+[5] 定义 1 记号因子的方幂
+[6] $D^ny=D(D^{n-1}y)\quad(n\in\mathbb{Z^{+}})~.$
+
+[/SCOPE:s_def1_let]
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|记号因子的负幂]
+[SCOPE:s_def2_let1|let_bind|负幂变量]
+[7] 定义 2 记号因子的负幂
+[8] 若 $D^sy=f(x)$ 且方程满足零初条件
+[9] \begin{equation}
+y|_{x=x_0}=y'|_{x=x_0}=\cdots=y^{s-1}|_{x=x_0}=0\quad({s\in\mathbb{Z^{+}}})~,
+\end{equation}
+[10] \begin{equation}
+D^{-s}f(x)=y~.
+\end{equation}
+[/SCOPE:s_def2_let1]
+[11] 记号因子的负幂之所以这样定义，是为了使得记号 $D^{-s}f(x)$ 有确定的意义。
+[12] 根据式 4
+[13] \begin{equation}
+D^{-s}f(x)=\frac{1}{(s-1)!}\int_{x_0}^x(x-t)^{s-1}f(t) \,\mathrm{d}{t} ~,
+\end{equation}
+[14] 则方程 $D^sy=f(x)$ 一般解为
+[15] 式 2 [链接 L0]
+[16] \begin{equation}
+y=D^{-s}f(x)+P_{s-1}(x)=\frac{1}{(s-1)!}\int_{x_0}^x(x-t)^{s-1}f(t) \,\mathrm{d}{t} +P_{s-1}(x)~,
+\end{equation}
+[SCOPE:s_def2_let2|let_bind|多项式变量]
+[17] 其中 $P_{s-1}(x)$ 是 $x$ 的具有任意系数的 $s-1$ 次多项式。
+
+[/SCOPE:s_def2]
+[/SCOPE:s_def2_let2]
+[SCOPE:s_def3_let|let_bind|加减法变量]
+[SCOPE:s_def3|description|记号因子的加减法]
+[18] 定义 3 记号因子的加减法
+[19] \begin{equation}
+(D^{n_1}+D^{n_2})y=D^{n_1}y+D^{n_2}y\quad(n_1,n_2\in \mathbb{Z^{+
+}})~.
+\end{equation}
+
+[/SCOPE:s_def3_let]
+[/SCOPE:s_def3]
+[SCOPE:s_def4|description|记号因子的数乘]
+[SCOPE:s_def4_let1|let_bind|数乘变量]
+[20] 定义 4 记号因子的数乘
+[21] \begin{equation}
+(aD)y=a\cdot(Dy)\quad(a\in\mathbb{C})~.
+\end{equation}
+[/SCOPE:s_def4_let1]
+[22] 显然，形如 $\sum\limits_{i=0}^\infty a_iD^i(a_i\in\mathbb{C})$ 的所有记号因子构成的集合 $ \left\{\sum\limits_{i=0}^\infty a_iD^i|a_i\in\mathbb{C} \right\} $ 为域 $\mathbb C$ 上的线性空间，而集合中的元素 $\sum\limits_{i=0}^\infty aD^n$ 自然叫作该空间中的向量。
+[23] 利用上面的定义，容易证明以下几条性质
+[24] \begin{equation}
+D^sy= \frac{\mathrm{d}^{s}{y}}{\mathrm{d}{x}^{s}} ~.
+\end{equation}
+[25] \begin{equation}
+D^{n_1}(D^{n_2}y)=D^{n_1+n_2}y~.
+\end{equation}
+[26] 记号因子与任意常数因子可交换，
+[27] 即若 $a$ 为常数，
+[28] 则
+[29] \begin{equation}
+aD^sy=D^s(ay)~.
+\end{equation}
+[SCOPE:s_def4_let2|let_bind|多项式变量]
+[30] 若 $F(D)$ 是 $D$ 的具有常系数的多项式
+[31] \begin{equation}
+F(D)=\sum_{i=0}^{n}a_iD^{n-i}~.
+\end{equation}
+[32] 则
+[33] \begin{equation}
+F(D)y=\sum_{i=0}^{n}a_iD^{n-i}y~,\quad F(D)ay=aF(D)y~.
+\end{equation}
+[/SCOPE:s_def4_let2]
+[SCOPE:s_def4_let3|let_bind|乘积多项式变量]
+[34] 若 $\varphi_1(D),\varphi_2(D)$ 是两个多项式，$\varphi(D)$ 是它们乘积，
+[35] 则
+[36] \begin{equation}
+\varphi_1(D) \left[\varphi_2(D)y \right] =\varphi(D)y,\quad \left[\varphi_1(D)+\varphi_2(D) \right] y=\varphi_1(D)y+\varphi_2(D)y~.
+\end{equation}
+[37] 并且因子 $\varphi_1(D),\varphi_2(D)$ 可交换。
+[/SCOPE:s_def4_let3]
+[38] \begin{equation}
+F(D)(e^{mx}y)=e^{mx}F(D+m)y~.
+\end{equation}
+[SCOPE:s_def4_proof|description|最后一条性质的证明]
+[39] 前 5 条性质是显然的，我们仅来证明最后一条性质。
+[SCOPE:s_def4_proof_let|let_bind|证明中引入的变量]
+[40] 证明：表达式 $F(D)(e^{mx}y)$ 由形为 $a_{i}D^{n-i}(e^{mx}y)$ 的项组成，
+[41] 于是只需证明对于每一个这样的项式 14 成立，
+[42] 即只需证明
+[43] \begin{equation}
+D^{n-i}(e^{mx}y)=e^{mx}(D+m)^{n-i}y~.
+\end{equation}
+[/SCOPE:s_def4_proof_let]
+[44] 应用求乘积微商的莱布尼茨公式
+[45] 式 2 [链接 L1]
+[46] \begin{equation}
+\begin{aligned}
+D^{(n-i)}(e^{mx}y)&=\sum_{s=0}^{n-i}C_{n-i}^s \left(e^{mx} \right) ^{(s)}y^{(n-i-s)}=e^{mx}\sum_{s=0}^{n-i}C_{n-i}^sm^sy^{(n-i-s)}\\
+&=e^{mx}\sum_{s=0}^{n-i}C_{n-i}^sm^sD^{n-i-s}y~.
+\end{aligned}
+\end{equation}
+[47] 应用二项式定理
+[48] 式 1 [链接 L2]
+[49] \begin{equation}
+\sum_{s=0}^{n-i}C_{n-i}^sm^sD^{n-i-s}=(D+m)^{n-i}~.
+\end{equation}
+[50] 式 17 [链接 L3]
+[51] 式 16 [链接 L4]
+[52] 式 15 [链接 L5]
+[53] . 于是便证明了
+[54] 式 14 [链接 L6]
+
+[/SCOPE:s_def4]
+[/SCOPE:s_def4_proof]
+[SCOPE:s_example1|description|例 1]
+[SCOPE:s_example1_let|let_bind|例 1 变量]
+[55] 求解方程
+[56] \begin{equation}
+(D-\alpha)^sy=f(x) \quad (s\in \mathbb{Z}^{+})~
+\end{equation}
+[57] \begin{equation}
+y=e^{\alpha t}z~.
+\end{equation}
+[/SCOPE:s_example1_let]
+[58] 式 19
+[59] 式 18
+[60] 式 14
+[61] \begin{equation}
+D^sz=e^{-\alpha t}f(x)~.
+\end{equation}
+[62] 定义 2
+[63] 式 20
+[64] \begin{equation}
+z|_{x=x_0}=z'|_{x=x_0}=\cdots=z^{(s-1)}|_{x=x_0}=0~
+\end{equation}
+[65] \begin{equation}
+z=\frac{1}{(s-1)!}\int_{x_0}^x(x-t)^{s-1}e^{-\alpha t}f(t) \,\mathrm{d}{t} ~.
+\end{equation}
+[66] 式 20
+[67] 式 18
+[68] \begin{equation}
+\begin{aligned}
+y&=(D-\alpha)^{-s}f(x)+e^{\alpha x}P_{s-1}(x)\\
+&=\frac{e^{\alpha x}}{(s-1)!}\int_{x_0}^x(x-t)^{s-1}e^{-\alpha t}f(t) \,\mathrm{d}{t} +e^{\alpha t}P_{s-1}(x)~.
+\end{aligned}
+\end{equation}
+[69] 特别的，$f(x)=0$ 时，得到方程
+[70] \begin{equation}
+(D-\alpha)^sy=0~
+\end{equation}
+[71] \begin{equation}
+y=e^{\alpha t}P_{s-1}(x)~.
+\end{equation}
+[72] 利用该方法的例子，可参见欧拉方程的求解。
+[/SCOPE:s_example1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "负幂定义依赖于方幂定义"
+  },
+  {
+    "source_scope": "s_def4",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "数乘定义推广了方幂"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1应用了负幂定义"
+  }
+]

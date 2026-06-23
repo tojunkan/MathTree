@@ -1,0 +1,66 @@
+[SCOPE:root|description|反射变换（高等代数）]
+文章名: ReTr
+标题: 反射变换（高等代数）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+  [1] type=theorem heading=定理 1 title=
+
+[SCOPE:s_def1|description|定义 1]
+[0] 定义 1
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[1] 设 $S$ 是 $n$ 维向量空间 $\mathbb R^n$ 中的平面，$ \boldsymbol{\mathbf{n}} $ 是其单位法向量，对于任意 $ \boldsymbol{\mathbf{x}} \in \mathbb R^n$，定义其反射（reflection）$R:\mathbb R^n\rightarrow \mathbb R^n$ 为
+[2] \begin{equation}
+R( \boldsymbol{\mathbf{x}} )= \boldsymbol{\mathbf{x}} -2( \boldsymbol{\mathbf{x}} , \boldsymbol{\mathbf{n}} ) \boldsymbol{\mathbf{n}} ~.
+\end{equation}
+[/SCOPE:s_def1_let]
+[3] 可以验证，$R$ 是保距变换。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理 1]
+[4] 定理 1
+[5] 保距变换一定是反射变换的复合。
+[SCOPE:s_thm1_base|cases|n=1 情形]
+[6] 证明：1
+[7] 在 $n=1$ 的时候，保距变换要么是恒等变换，要么是反射变换，因为只有这两种变换不改变基向量的范数。
+[8] 因此，定理自然成立。
+[/SCOPE:s_thm1_base]
+[SCOPE:s_thm1_ind_hyp|conditional|归纳假设]
+[9] 假设定理对 $1< n< k$ 成立，设 $\mathbb R^{k-1}$ 上的保距变换可以写为至多 $m$ 个反射变换的复合。
+[/SCOPE:s_thm1_ind_hyp]
+[SCOPE:s_thm1_let_f|let_bind|设 f 是保距变换]
+[10] 假设 $f$ 是 $\mathbb R^k$ 中的保距变换，且不是恒等变换。
+[/SCOPE:s_thm1_let_f]
+[SCOPE:s_thm1_let_z|let_bind|设 z 和 R_z]
+[11] 设 $f( \boldsymbol{\mathbf{x}} )= \boldsymbol{\mathbf{y}} , \boldsymbol{\mathbf{z}} = \boldsymbol{\mathbf{y}} - \boldsymbol{\mathbf{x}} $，$S_z$ 为以 $ \boldsymbol{\mathbf{z}} $ 为法向量的超平面，并用 $R_z$ 表示关于该超平面的反射变换。
+[/SCOPE:s_thm1_let_z]
+[12] 不失一般性，设 $ \boldsymbol{\mathbf{z}} $ 为单位法向量，可以验证：$R_z\circ f( \boldsymbol{\mathbf{x}} )= \boldsymbol{\mathbf{x}} $ 且 $R_z\circ f( \boldsymbol{\mathbf{y}} )=x$2，
+[13] 则 $R_z\circ f( \boldsymbol{\mathbf{z}} )= \boldsymbol{\mathbf{z}} $。
+[14] 即 $ \boldsymbol{\mathbf{z}} $ 是 $R_z\circ f$ 的不变子空间。
+[15] 在欧几里得空间中，保距变换即为正交变换，且其复合依然保距，根据引理 3 ，$S_z$ 也为 $R_z\circ f$ 的不变子空间。
+[16] 根据假设，$R_z\circ f|_{S_z}$ 可写为最多 $m$ 个反射变换的复合。
+[SCOPE:s_thm1_let_Ri|let_bind|设 R_i 和 R'_i]
+[17] 设为
+[18] \begin{equation}
+R_z\circ f|_{S_z}=R_1R_2...R_{m}~,
+\end{equation}
+[19] 设 $ \boldsymbol{\mathbf{e}} _i\in S_z$，是对应超平面的单位法向量。
+[20] 拓展 $R_i$ 为对全空间向量作用的 $R'_i$，各单位法向量对应的超平面从 $n-2$ 维变为 $n-1$ 维，且 $R'_i( \boldsymbol{\mathbf{z}} )= \boldsymbol{\mathbf{z}} $，容易验证该定义是自洽合理的3。
+[/SCOPE:s_thm1_let_Ri]
+[21] 现在我们有 $R_z \circ f=R'_1R'_2...R'_{m}$，
+[22] 则 $f=R_zR'_1R'_2...R'_{m}$，
+[23] 所以不仅定理成立，而且$n$ 维欧几里得空间中保持原点不变的保距变换是最多 $n$ 个反射变换的复合4。
+[/SCOPE:s_thm1]
+[24] 【未完成】还需要增加一些实例
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理 1 的证明中使用了反射变换的定义。"
+  }
+]

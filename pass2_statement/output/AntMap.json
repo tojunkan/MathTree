@@ -1,0 +1,244 @@
+{
+  "article_name": "AntMap",
+  "statements": [
+    {
+      "stmt_id": "st_def1_main",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "X",
+        "Y",
+        "f",
+        "-1",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "X",
+        "Y",
+        "-1"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_condition",
+      "subtype": "condition",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_main",
+      "subtype": "theorem",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "i",
+        "j",
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_proof_base",
+      "subtype": "conclusion",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_induction",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_step",
+      "subtype": "conclusion",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_induction",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_main",
+      "subtype": "example",
+      "clause_range": [
+        14,
+        18
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "wedge"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_def",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_def",
+      "exposed_entities": [
+        "f",
+        "V",
+        "Lambda^k(V)",
+        "wedge"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_thm",
+      "subtype": "theorem",
+      "clause_range": [
+        26,
+        28
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1_thm",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        29,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let",
+      "exposed_entities": [
+        "pi"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1_condition",
+      "target": "st_def1_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_base",
+      "target": "st_thm1_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_proof_step",
+      "target": "st_thm1_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_def",
+      "target": "st_ex1_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_let",
+      "target": "st_ex1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_conclusion",
+      "target": "st_ex1_thm",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_remark",
+      "target": "st_ex1_main",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_thm1_main",
+      "target": "st_def1_main",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1是定义1的推广"
+    },
+    {
+      "source": "st_ex1_thm",
+      "target": "st_thm1_main",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "外积定理是定理1的特例"
+    }
+  ],
+  "unresolved": []
+}

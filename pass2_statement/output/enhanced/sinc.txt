@@ -1,0 +1,31 @@
+[SCOPE:root|description|sinc 函数]
+文章名: sinc
+标题: sinc 函数
+
+[SCOPE:s_def|description|sinc 函数定义]
+[0] $ \operatorname{sinc} $ 函数的定义为
+[1] \begin{equation}
+\operatorname{sinc} x =
+\left\{\begin{aligned}
+&\frac{\sin x}{x} &\quad & (x \ne 0)\\
+&\quad 1 && (x = 0)
+\end{aligned}\right. ~.\end{equation}
+[2] $ \operatorname{sinc} $ 函数的图像如图 1 ，可以证明，该函数在 $x=0$ 处是连续的，
+[3] 即
+[4] \begin{equation}
+\lim_{x \to 0}\frac{\sin x}{x} = \operatorname{sinc} 0 = 1~.
+\end{equation}
+[/SCOPE:s_def]
+[5] 【图解】图 1：sinc 函数（来自维基百科）
+
+[SCOPE:s_prop|description|积分性质]
+[6] \begin{equation}
+\int_{-\infty}^{+\infty} \operatorname{sinc} x \,\mathrm{d}{x} = \pi~,
+\end{equation}
+[7] 证明见例 1 。
+[8] \begin{equation}
+\int_{-\infty}^{+\infty} \operatorname{sinc} ^2 x \,\mathrm{d}{x} = \pi~.
+\end{equation}
+[9] $ \operatorname{sinc} $ 函数的原函数称为正弦积分函数，详见 “三角积分”。
+[/SCOPE:s_prop]
+[/SCOPE:root]

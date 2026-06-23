@@ -1,0 +1,104 @@
+{
+  "article_name": "BHeig",
+  "statements": [
+    {
+      "stmt_id": "st_theorem1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1",
+      "exposed_entities": [
+        "H"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem1_concl1",
+      "subtype": "conclusion",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_concl2",
+      "subtype": "conclusion",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": [
+        "P_i",
+        "P"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem2",
+      "exposed_entities": [
+        "H",
+        "V",
+        "V_i"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem2_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem2",
+      "exposed_entities": [
+        "v_{n,i}",
+        "v_{n,j}"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_theorem1_assump",
+      "target": "st_theorem1_concl1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_assump",
+      "target": "st_theorem1_concl2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem2_assump",
+      "target": "st_theorem2_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_theorem2_concl",
+      "target": "st_theorem1_concl2",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理2是定理1的推广，从矩阵到算符"
+    }
+  ],
+  "unresolved": [
+    "定理2的结论部分未完成，缺少具体本征矢构造"
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "article_name": "AdjMap",
+  "statements": [
+    {
+      "stmt_id": "st_def1_intro",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def1_main",
+      "subtype": "definition",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "V",
+        "W",
+        "f",
+        "f*",
+        "w",
+        "v"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_remark",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_matrix_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_matrix_let1",
+      "exposed_entities": [
+        "e_i",
+        "epsilon_j",
+        "a^i_j"
+      ]
+    },
+    {
+      "stmt_id": "st_matrix_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_matrix_let1",
+      "exposed_entities": [
+        "theta_i",
+        "tau_j"
+      ]
+    },
+    {
+      "stmt_id": "st_matrix_fstar_matrix",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_matrix_let2",
+      "exposed_entities": [
+        "b^i_j"
+      ]
+    },
+    {
+      "stmt_id": "st_matrix_transpose",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_matrix",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_adjoint_trans_intro",
+      "subtype": "remark",
+      "clause_range": [
+        27,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_adjoint_trans",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_adjoint_trans_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        29,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_adjoint_trans_let1",
+      "exposed_entities": [
+        "g",
+        "sigma_g"
+      ]
+    },
+    {
+      "stmt_id": "st_adjoint_trans_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        37,
+        38
+      ],
+      "truth_value": null,
+      "scope_id": "s_adjoint_trans_let2",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_adjoint_trans_F_def",
+      "subtype": "definition",
+      "clause_range": [
+        45,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_adjoint_trans_let3",
+      "exposed_entities": [
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_adjoint_trans_remark",
+      "subtype": "remark",
+      "clause_range": [
+        49,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_adjoint_trans",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_intro",
+      "target": "st_def1_main",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_matrix_let1",
+      "target": "st_matrix_fstar_matrix",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_matrix_let2",
+      "target": "st_matrix_fstar_matrix",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_matrix_fstar_matrix",
+      "target": "st_matrix_transpose",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_adjoint_trans_let1",
+      "target": "st_adjoint_trans_F_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_adjoint_trans_let2",
+      "target": "st_adjoint_trans_F_def",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_matrix_transpose",
+      "target": "st_def1_main",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "矩阵表示是伴随映射在基下的具体形式"
+    },
+    {
+      "source": "st_adjoint_trans_F_def",
+      "target": "st_def1_main",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "伴随变换是伴随映射在内积下的特例"
+    }
+  ],
+  "unresolved": []
+}

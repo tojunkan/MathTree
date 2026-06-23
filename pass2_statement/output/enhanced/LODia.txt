@@ -1,0 +1,137 @@
+[SCOPE:root|description|线性算子对角化的充要条件]
+文章名: LODia
+标题: 线性算子对角化的充要条件
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+  [1] type=theorem heading=定理 1 title=线性算子可对角化的充要条件
+  [2] type=lemma heading=引理 1 title=
+
+[SCOPE:s_def1|description|定义 1]
+[0] 定义 1
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[1] $n$ 维矢量空间 $V$ 中，若有一基底，使得在该基底下，线性算子 $\mathcal{A}$ 对应的矩阵 $A$ 取对角形式
+[2] \begin{equation}
+A=\begin{pmatrix}
+\lambda_1&0&\cdots&0\\
+0&\lambda_2&\cdots&0\\
+\vdots&\vdots&\cdots&\vdots\\
+0&0&\cdots&\lambda_n
+\end{pmatrix}~,
+\end{equation}
+[/SCOPE:s_def1_let]
+[3] 可对角化
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理 1]
+[4] 定理 1 线性算子可对角化的充要条件
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[5] 定义在域 $\mathbb{F}$ 上的 $n$ 维矢量空间，其上的线性算子 $\mathcal{A}$ 可对角化的充要条件为：$\mathcal{A}$ 的本征多项式 $\mathrm{det}{\mathcal{A}-t \mathcal{E}}$ 的 所有根都在 $\mathbb{F}$ 上，且每个本征值 $\lambda$ 的几何重数等于代数重数。
+
+[/SCOPE:s_thm1_let]
+[6] 先引入一个引理
+
+[SCOPE:s_lemma1|description|引理 1]
+[7] 引理 1
+[SCOPE:s_lemma1_let|let_bind|引理 1 的变量]
+[8] 属于不同本征值的本征向量必然线性无关，且 $\sum\limits_{i=1}^nV^{\lambda_i}$ 是直和（各 $\lambda_i$ 不相同）。
+[9] 证明：对每个 $V^{\lambda_i}$ 选取一个本征矢量 $ \boldsymbol{\mathbf{e_i}} $，现证明它们线性无关。
+[/SCOPE:s_lemma1_let]
+[SCOPE:s_lemma1_reductio|reductio|反证法证明线性无关]
+[10] 当 $m=1$ 时显然。
+[SCOPE:s_lemma1_reductio_let|let_bind|反证法中的变量]
+[11] 对 $m$ 用数学归纳法，设存在线性关系式
+[12] \begin{equation}
+\sum_{i=1}^{m}\alpha_i \boldsymbol{\mathbf{e}} _i= \boldsymbol{\mathbf{0}} ~,
+\end{equation}
+[13] 对某一系数 $\alpha_i$ 不为 0，不失一般性，设 $\alpha_1\neq0$。
+[/SCOPE:s_lemma1_reductio_let]
+[14] 两边作用 $\mathcal A$：
+[15] \begin{equation}
+\sum_{i=1}^m\alpha_i\lambda_i \boldsymbol{\mathbf{e}} _i= \boldsymbol{\mathbf{0}} ~.
+\end{equation}
+[16] $\lambda_m\times$
+[17] 式 2 [链接 L0]
+[18] 式 3 [链接 L1]
+[19] \begin{equation}
+\sum_{i=1}^{m-1}\alpha_i(\lambda_m-\lambda_i) \boldsymbol{\mathbf{e}} _i= \boldsymbol{\mathbf{0}} ~.
+\end{equation}
+[20] 由归纳假定 $\alpha_i(\lambda_m-\lambda_i)=0,\;(i=1\cdots m-1)$。
+[21] 这和
+[22] \begin{equation}
+\alpha_1\ne0,\;\lambda_m\neq\lambda_i,\;i< m\Rightarrow \alpha_1(\lambda
+_m-\lambda_1)\neq0~
+\end{equation}
+[23] 矛盾。
+[24] 于是线性无关性得证！
+[/SCOPE:s_lemma1_reductio]
+[25] 由本征子空间 $V^\lambda$ 的定义（定义 2 ），任意非零矢量 $ \boldsymbol{\mathbf{e}} _i\in V^{\lambda _i}$ 都是本征矢量。
+[26] 所以
+[27] \begin{equation}
+V^{\lambda_i}\cap\sum_{j\neq i}V^{\lambda_j}= \boldsymbol{\mathbf{0}} ~,
+\end{equation}
+[28] 即 $\sum\limits_{i=1}^nV^{\lambda_i}$ 是直和。
+[29] 证毕！
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_thm1_suff|description|充分性]
+[SCOPE:s_thm1_suff_let|let_bind|充分性中的变量]
+[30] 充分性：设 $\lambda_i\;(i=1,\cdots, m)$ 是不同本征值。
+[/SCOPE:s_thm1_suff_let]
+[31] 由于本征多项式所有根都在 $\mathbb{F}$ 内（意味着所有本征值代数重数之和=$n$），且代数重数且每一本征值代数重数和几何重数相同，
+[32] 所以
+[33] \begin{equation}
+\sum_{i=1}^m \mathrm{dim}\;V^{\lambda_i}=n=\mathrm{dim}\; V~,
+\end{equation}
+[34] \begin{equation}
+V=\bigoplus_{i=1}^m V^{\lambda_i}~.
+\end{equation}
+[35] 直和文章部分应证明上两式等价并链接
+[36] 于是把 $V^{\lambda_i}$ 的基底合并就得到 $V$ 的一个基底。
+[37] 在此基底下 $\mathcal{A}$ 是对角化的定理 3 。
+[/SCOPE:s_thm1_suff]
+[SCOPE:s_thm1_nec|description|必要性]
+[SCOPE:s_thm1_nec_let|let_bind|必要性中的变量]
+[38] 必要性：设 $\lambda_i\;(i=1,\cdots, m)$ 是 $\mathcal A$ 的不同本征值。
+[/SCOPE:s_thm1_nec_let]
+[39] 由于 $\mathcal A$ 是对角化的，
+[40] 所以
+[41] \begin{equation}
+A=\mathrm{diag}\;(\underbrace{\lambda_1,\cdots,\lambda_1}_{\mathrm{dim}\;V^{\lambda_1}};\cdots;\underbrace{\lambda_m,\cdots,\lambda_m}_{\mathrm{dim}\;V^{\lambda_m}})~.
+\end{equation}
+[42] 因为矢量空间在域 $\mathbb{F}$ 上，
+[43] 所以矩阵 $A$ 的元素 $\lambda_i\in \mathbb{F}$。
+[44] 于是
+[45] \begin{equation}
+\mathrm{det}(\mathcal{A}-t\mathcal E)=(\lambda_1-t)^{\mathrm{dim}\;V^{\lambda_1}}\cdots(\lambda_m-t)^{\mathrm{dim}\;V^{\lambda_m}}~.
+\end{equation}
+[46] 上式的解释即要证的结论。
+[47] 证毕！
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_nec]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理 1 的证明中引用了引理 1"
+  },
+  {
+    "source_scope": "s_thm1_suff",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "充分性推出定理"
+  },
+  {
+    "source_scope": "s_thm1_nec",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "必要性推出定理"
+  }
+]

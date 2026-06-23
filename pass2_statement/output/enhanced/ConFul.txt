@@ -1,0 +1,126 @@
+[SCOPE:root|description|齐次凸泛函]
+文章名: ConFul
+标题: 齐次凸泛函
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=凸泛函
+  [1] type=definition heading=定义 2 title=正齐次
+  [2] type=definition heading=定义 3 title=齐次凸泛函
+  [3] type=theorem heading=定理 1 title=
+  [4] type=theorem heading=定理 2 title=凸泛函的性质
+  [5] type=example heading=例 1 title=
+
+[SCOPE:s_def1|description|凸泛函]
+[0] 定义 1 凸泛函
+[SCOPE:s_def1_let|let_bind|凸泛函的变量]
+[1] 设 $L$ 是实线性空间。
+[2] $L$ 上的泛函 $p$ 称为凸的，是指对任意 $x,y\in L,0\leq\alpha\leq1$，成立
+[3] \begin{equation}
+p(\alpha x+(1-\alpha)y)\leq \alpha p(x)+(1-\alpha)p(y).~
+\end{equation}
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_def2|description|正齐次]
+[4] 定义 2 正齐次
+[SCOPE:s_def2_let|let_bind|正齐次的变量]
+[5] $L$ 上的泛函 $p$ 称为正齐次的，是指对所有的 $x\in L,\alpha >0$，
+[6] \begin{equation}
+p(\alpha x)=\alpha p(x).~
+\end{equation}
+[/SCOPE:s_def2_let]
+[7] 注意，齐次凸泛函就是指有凸性和正齐次性的泛函，而不仅仅是齐次。
+[8] 这里齐次只是正齐次的简称。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|齐次凸泛函]
+[9] 定义 3 齐次凸泛函
+[10] 正齐次的凸泛函简称为齐次凸泛函。
+
+[/SCOPE:s_def3]
+[SCOPE:s_thm1|description|定理1]
+[11] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[12] 设 $p$ 是正齐次泛函，
+[/SCOPE:s_thm1_let]
+[13] 则 $p$ 凸当且仅当
+[14] \begin{equation}
+p(x+y)\leq p(x)+p(y).~
+\end{equation}
+[SCOPE:s_thm1_proof|description|定理1的证明]
+[15] 证明：当：设 $p$ 凸。则
+[16] \begin{equation}
+p(x+y)=2p \left(\frac{x+y}{2} \right) \leq 2 \left(p \left(\frac{x}{2} \right) +p \left(\frac{y}{2} \right) \right) =p(x)+p(y).~
+\end{equation}
+[17] 仅当：
+[18] 式 3 [链接 L0]
+[19] 成立。则
+[20] \begin{equation}
+p(\alpha x+(1-\alpha)y)\leq p(\alpha x)+p((1-\alpha)y)\leq \alpha p(x)+(1-\alpha)p(y).~
+\end{equation}
+[21] 即 $p$ 凸。
+[22] 证毕！
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_proof]
+[SCOPE:s_thm2|description|凸泛函的性质]
+[23] 定理 2 凸泛函的性质
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[24] 设 $p$ 是凸泛函，
+[/SCOPE:s_thm2_let]
+[25] 则成立
+[26] $p(0)=0$；
+[27] $0\leq p(x)+p(-x)$；
+[28] $p(\alpha x)\geq\alpha p(x).\alpha\in\mathbb R$。
+[SCOPE:s_thm2_proof|description|定理2的证明]
+[29] 证明：由正齐次性，$\forall \alpha\in\mathbb R,p(\alpha 0)=\alpha p(0)\Rightarrow p(0)=0$；
+[30] 紧接着，由定理 1 ，$0=f(x+(-x))\leq p(x)+p(-x)$。
+[31] 1，2 点得证。
+[32] 第 3 点证明如下：$\alpha>0$ 由正齐次性直接得到；
+[33] 当 $\alpha=0$ 时可由 $p(0)=0$ 推得；
+[34] 当当 $\alpha<0$，
+[35] 则由已证得的 2，得
+[36] \begin{equation}
+0\leq p(\alpha x)+p( \left\lvert \alpha \right\rvert x)=p(\alpha x)+ \left\lvert \alpha \right\rvert p(x).~
+\end{equation}
+[37a] (x)=\alpha p
+[37b] (x)$。
+[38] 证明！
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_proof]
+[SCOPE:s_example_let|let_bind|例1的变量]
+[SCOPE:s_example|description|例1]
+[39] 设 $m$ 是有界序列 $x=(x_1,\cdots,\cdots,\cdots)$ 组成的空间。
+[40] 泛函
+[41] \begin{equation}
+p(x)=\sup_n \left\lvert x_n \right\rvert ~
+\end{equation}
+[/SCOPE:s_example_let]
+[/SCOPE:s_example]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1给出凸泛函的等价条件，是凸泛函定义的特例"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2是凸泛函的性质，是定义1的推论"
+  },
+  {
+    "source_scope": "s_example",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是齐次凸泛函的例子"
+  }
+]

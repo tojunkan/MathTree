@@ -1,0 +1,204 @@
+{
+  "article_name": "MulFun",
+  "statements": [
+    {
+      "stmt_id": "st_ex1_observation",
+      "subtype": "example",
+      "clause_range": [
+        0,
+        11
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "d(n)",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_def1",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "f(n)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_list",
+      "subtype": "example",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "u(n)",
+        "e(n)",
+        "d(n)",
+        "σ(n)",
+        "μ(n)",
+        "φ(n)",
+        "λ(n)"
+      ]
+    },
+    {
+      "stmt_id": "st_def2",
+      "subtype": "definition",
+      "clause_range": [
+        18,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_def2",
+      "exposed_entities": [
+        "f(n)",
+        "a",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_ex3_list",
+      "subtype": "example",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex3",
+      "exposed_entities": [
+        "u(n)",
+        "e(n)",
+        "λ(n)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": [
+        "f(n)"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_concl1",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_concl2",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_concl3",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex1_observation",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_def1",
+      "target": "st_def2",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_list",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex3_list",
+      "target": "st_def2",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_assump",
+      "target": "st_thm1_concl1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_assump",
+      "target": "st_thm1_concl2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_assump",
+      "target": "st_thm1_concl3",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex1_observation",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例1引出定义1"
+    },
+    {
+      "source": "st_def1",
+      "target": "st_def2",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "完全积性函数是积性函数的特例"
+    },
+    {
+      "source": "st_ex2_list",
+      "target": "st_def1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2列举积性函数实例"
+    },
+    {
+      "source": "st_ex3_list",
+      "target": "st_def2",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例3列举完全积性函数实例"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,72 @@
+[SCOPE:root|description|椭圆积分]
+文章名: EliInt
+标题: 椭圆积分
+
+[SCOPE:s_first_kind|description|第一类不完全椭圆积分]
+[0] 1第一类不完全椭圆积分（incomplete elliptic integral of the first kind）为
+[1] \begin{equation}
+F(\phi, k) = \int_0^\phi \frac{ \,\mathrm{d}{x} }{\sqrt{1 - k^2\sin^2 x}}~,
+\end{equation}
+[2] 椭圆积分有时候也记为 $F(\phi | k^2) = F(\sin\phi ; k)$。
+[SCOPE:s_first_let1|let_bind|换元 t = sin x]
+[3] 使用积分换元法，令 $t = \sin x$，有
+[4] \begin{equation}
+F \left(\phi, k \right) = \int_0^{\sin{\phi}} \frac{ \,\mathrm{d}{t} }{\sqrt{(1 - t^2)(1 - k^2 t^2)}}~.
+\end{equation}
+[/SCOPE:s_first_let1]
+[SCOPE:s_first_let2|let_bind|换元 θ = 2x]
+[5] 另一种换元法是令 $\theta = 2x$，$k = \csc\left(\theta_0/2\right) $，$F(\phi, k)$ 也可以表示为
+[6] \begin{equation}
+F \left(\phi, \csc\frac{\theta_0}{2} \right) = \frac{1}{\sqrt{2}} \sin\frac{\theta_0}{2} \int_0^{2\phi} \frac{ \,\mathrm{d}{\theta} }{\sqrt{\cos\theta - \cos\theta_0}}~.
+\end{equation}
+
+[/SCOPE:s_first_let2]
+[7] $F(\phi | m)$ 的 Matlab 函数为 ellipticF(phi, m)，Mathematica 函数为 EllipticF[phi, m]。
+
+[/SCOPE:s_first_kind]
+[SCOPE:s_second_kind|description|第二类不完全椭圆积分]
+[8] 第二类不完整椭圆积分（incomplete elliptic integral of the second kind）为
+[9] \begin{equation}
+E(\varphi, k) = E(\varphi | k^2) = E(\sin\varphi; k) = \int_0^\varphi \sqrt{1 - k^2\sin^2\theta} \,\mathrm{d}{\theta} ~.
+\end{equation}
+[SCOPE:s_second_let|let_bind|换元 x = sin φ]
+[10] 令 $x = \sin\varphi$，
+[11] 则有
+[12] \begin{equation}
+E(x; k) = \int_0^x \frac{\sqrt{1 - k^2t^2}}{\sqrt{1 - t^2}} \,\mathrm{d}{t} ~.
+\end{equation}
+[/SCOPE:s_second_let]
+[13] 该函数可用于计算椭圆的弧长，详见
+[14] 例 2 [链接 L0]
+
+[15] $E(\phi | m)$ 的 Matlab 函数为 ellipticE(phi, m)，Mathematica 函数为 EllipticE[phi, m]。
+[16] 【未完成】图
+
+[/SCOPE:s_second_kind]
+[SCOPE:s_complete_second|description|第二类完整椭圆积分]
+[17] 令以上的 $\varphi = \pi/2$ 或 $x = 1$，就得到第二类完整椭圆积分（complete elliptic integral of the second kind）
+[18] \begin{equation}
+\begin{aligned}
+E(k) &= E \left(\frac{\pi}{2}, k \right) = \int_0^{\pi/2} \sqrt{1 - k^2\sin^2\theta} \,\mathrm{d}{\theta} \\
+&= E(1; k) = \int_0^1 \frac{\sqrt{1 - k^2 t^2}}{\sqrt{1 - t^2}} \,\mathrm{d}{t} ~.
+\end{aligned}
+\end{equation}
+[19] 椭圆的周长为（见
+[20] 例 2 [链接 L1]
+[21] \begin{equation}
+c = 4aE(e)~.
+\end{equation}
+[22] 其中 $a$ 是椭圆的长轴，$e$ 是离心率。
+[/SCOPE:s_complete_second]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_complete_second",
+    "target_scope": "s_second_kind",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "完整椭圆积分是不完全椭圆积分在 φ=π/2 时的特例"
+  }
+]

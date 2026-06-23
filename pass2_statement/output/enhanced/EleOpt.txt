@@ -1,0 +1,217 @@
+[SCOPE:root|description|初等矩阵与初等变化]
+文章名: EleOpt
+标题: 初等矩阵与初等变化
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=example heading=例 1 title=
+  [2] type=example heading=例 2 title=
+  [3] type=example heading=例 3 title=
+  [4] type=definition heading=定义 1 title=行等价
+
+[0] 本文缺少预备知识，初学者可能会遇到困难。
+
+[SCOPE:s_elem_ops|description|初等变换]
+[1] 初等变换包括三种类型，以下分别举例说明：
+[2] 交换两行（列）
+[3] \begin{equation}
+\begin{pmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{21} & a_{22} & a_{23}\\
+a_{31} & a_{32} & a_{33}\\
+\end{pmatrix}
+\Rightarrow
+\begin{pmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{31} & a_{32} & a_{33}\\
+a_{21} & a_{22} & a_{23}\\
+\end{pmatrix}~.
+\end{equation}
+[4] 一行（列）扩大非零常数倍数
+[5] \begin{equation}
+\begin{pmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{21} & a_{22} & a_{23}\\
+a_{31} & a_{32} & a_{33}\\
+\end{pmatrix}
+\Rightarrow
+\begin{pmatrix}
+a_{11} & a_{12} & a_{13}\\
+ca_{21} & ca_{22} & ca_{23}\\
+a_{31} & a_{32} & a_{33}\\
+\end{pmatrix}~.
+\end{equation}
+[6] 一行（列）加上另一行（列）的常数倍数
+[7] \begin{equation}
+\begin{pmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{21} & a_{22} & a_{23}\\
+a_{31} & a_{32} & a_{33}\\
+\end{pmatrix}
+\Rightarrow
+\begin{pmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{21}+ca_{31} & a_{21}+ca_{32} & a_{21}+ca_{33}\\
+a_{31} & a_{32} & a_{33}\\
+\end{pmatrix}~.
+\end{equation}
+
+[/SCOPE:s_elem_ops]
+[SCOPE:s_elem_matrices_let|let_bind|初等矩阵变量]
+[SCOPE:s_elem_matrices|description|初等矩阵]
+[8] 初等矩阵是单位矩阵 $ \boldsymbol{\mathbf{I}} $ 只经一次初等变化得到的矩阵，也包括三种类型，常记作 $ \boldsymbol{\mathbf{E}} $。
+[9] 以下分别举例说明。
+[10] 【图解】表1：初等矩阵
+[11] 种类 效果 形式 逆矩阵 行列式
+[12] 1 交换两行（列）
+[13] 交换第 2，3 行
+[14] $
+[15] \boldsymbol{\mathbf{E}} _1=
+[16] \begin{pmatrix}
+1 & 0 & 0\\
+0 & 0 & 1\\
+0 & 1 & 0\\
+\end{pmatrix}
+[17] $
+[18] $
+[19] \boldsymbol{\mathbf{E}} _1^{-1}= \boldsymbol{\mathbf{E}} _1=
+[20] \begin{pmatrix}
+1 & 0 & 0\\
+0 & 0 & 1\\
+0 & 1 & 0\\
+\end{pmatrix}
+[21] $
+[22] $\det ( \boldsymbol{\mathbf{E}} _1) = -1$
+[23] 2 一行（列）扩大非零常数倍数
+[24] 第 2 行扩大 c 倍
+[25] $
+[26] \boldsymbol{\mathbf{E}} _2=  \begin{pmatrix}
+1 & 0 & 0\\
+0 & c & 0\\
+0 & 0 & 1\\
+\end{pmatrix}
+[27] $
+[28] $
+[29] \boldsymbol{\mathbf{E}} _2^{-1}=  \begin{pmatrix}
+1 & 0 & 0\\
+0 & \frac{1}{c} & 0\\
+0 & 0 & 1\\
+\end{pmatrix}
+[30] $
+[31] $\det ( \boldsymbol{\mathbf{E}} _2) = c$
+[32] 3 一行（列）加上另一行（列）的常数倍数
+[33] 第 2 行加上第 3 行的 c 倍
+[34] $
+[35] \boldsymbol{\mathbf{E}} _3 =  \begin{pmatrix}
+1 & 0 & 0\\
+0 & 1 & c\\
+0 & 0 & 1\\
+\end{pmatrix}
+[36] $
+[37] $
+[38] \boldsymbol{\mathbf{E}} _3^{-1} =  \begin{pmatrix}
+1 & 0 & 0\\
+0 & 1 & -c\\
+0 & 0 & 1\\
+\end{pmatrix}
+[39] $
+[40] $\det ( \boldsymbol{\mathbf{E}} _3) = 1$
+[41] 初等矩阵的逆矩阵仍是原类型的初等矩阵。
+
+[/SCOPE:s_elem_matrices_let]
+[/SCOPE:s_elem_matrices]
+[SCOPE:s_theorem1|description|定理 1]
+[42] 定理 1
+[43] 对矩阵进行一次初等行操作⇔相应的初等矩阵 E*矩阵（左乘）
+[44] 对矩阵进行一次初等列操作⇔矩阵*相应的初等矩阵 E（右乘）
+
+[/SCOPE:s_theorem1]
+[SCOPE:s_example1|description|例 1]
+[45] \begin{equation}
+\begin{pmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{31} & a_{32} & a_{33}\\
+a_{21} & a_{22} & a_{23}\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 & 0 & 0\\
+0 & 0 & 1\\
+0 & 1 & 0\\
+\end{pmatrix}
+\begin{pmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{21} & a_{22} & a_{23}\\
+a_{31} & a_{32} & a_{33}\\
+\end{pmatrix}~.
+\end{equation}
+[46] 运用初等变换的性质，可以很容易地理解一些结论。
+
+[/SCOPE:s_example1]
+[SCOPE:s_example2|description|例 2]
+[47] 例如行列式的性质的定理 3 “将行列式的两列交换，结果取相反数”：交换两列，相当于对相应矩阵做一次初等列变换。
+[48] 那么自然有，
+[49] $$\det ( \boldsymbol{\mathbf{A}} \boldsymbol{\mathbf{E}} _1)=\det ( \boldsymbol{\mathbf{A}} ) \det( \boldsymbol{\mathbf{E}} _1)=-\det ( \boldsymbol{\mathbf{A}} )~.$$
+
+[/SCOPE:s_example2]
+[SCOPE:s_example3|description|例 3]
+[50] 如何理解初等矩阵的逆矩阵？
+[51] 以 “交换第 2，3 行” 的初等矩阵为例。
+[52] 根据逆矩阵的定义，$ \boldsymbol{\mathbf{E}} _1^{-1} \boldsymbol{\mathbf{E}} _1 = \boldsymbol{\mathbf{I}} $。
+[53] 既然 $ \boldsymbol{\mathbf{E}} _1$ 的效果是"交换第 2，3 行"，
+[54] 那么左乘的 $ \boldsymbol{\mathbf{E}} _1^{-1}$ 的效果也应该是再次"交换第 2，3 行"，才可使矩阵恢复 $ \boldsymbol{\mathbf{I}} $。
+[55] 所以，$ \boldsymbol{\mathbf{E}} _1^{-1} = \boldsymbol{\mathbf{E}} _1$
+[56] 同理可理解剩余两种变换，试着自己给出说明。
+
+[/SCOPE:s_example3]
+[SCOPE:s_def_row_equiv|description|定义 1 行等价]
+[57] 定义 1 行等价
+[58a] 若 $ \boldsymbol{\mathbf{A}} $ 经过有限次初等行变换
+[58b] 则可得到 $ \boldsymbol{\mathbf{B}} $，
+[59] 则称 $ \boldsymbol{\mathbf{A}} $ 与 $ \boldsymbol{\mathbf{B}} $ 行等价。
+[60] \begin{equation}
+\boldsymbol{\mathbf{A}} = ... \boldsymbol{\mathbf{E}} _3 \boldsymbol{\mathbf{E}} _2 \boldsymbol{\mathbf{E}} _1 \boldsymbol{\mathbf{B}} ~.
+\end{equation}
+[61] 可以证明，所有可逆矩阵都行等价于单位矩阵 $ \boldsymbol{\mathbf{I}} $。
+[62] 可以用该思路来理解高斯消元法求逆矩阵。
+[/SCOPE:s_def_row_equiv]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_theorem1",
+    "target_scope": "s_elem_matrices",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1引用初等矩阵概念"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_theorem1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是定理1的实例"
+  },
+  {
+    "source_scope": "s_example2",
+    "target_scope": "s_theorem1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2应用定理1"
+  },
+  {
+    "source_scope": "s_example3",
+    "target_scope": "s_elem_matrices",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例3解释初等矩阵逆矩阵"
+  },
+  {
+    "source_scope": "s_def_row_equiv",
+    "target_scope": "s_elem_matrices",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "行等价定义基于初等矩阵"
+  }
+]

@@ -1,0 +1,109 @@
+[SCOPE:root|description|线性算子的行列式]
+文章名: APdet
+标题: 线性算子的行列式
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=平行多胞体
+  [1] type=example heading=例 1 title=
+  [2] type=example heading=例 2 title=有向长度
+  [3] type=example heading=例 3 title=
+  [4] type=definition heading=定义 2 title=行列式
+
+[0] 本文存在未完成的内容。
+
+[SCOPE:s_vol_form|description|体积形式]
+[1] 我们把 $n$ 维向量空间 $V$ 上的反对称 $n$-形式称为体积形式。
+[2] 当 $\mathbb{F} = \mathbb{R}$ 时，这个定义符合我们的直觉，体积指的是定向平行多胞体的有向体积（signed volume）。
+
+[/SCOPE:s_vol_form]
+[SCOPE:s_paral|description|平行多胞体]
+[3] 定义 1 平行多胞体
+[SCOPE:s_paral_let|let_bind|平行多胞体的变量]
+[4] $n$ 维向量空间 $V$ 的一个 $k$ 维平行多胞体（又称超平行体）简称平行 $k$-胞体，是由 $k$ 个向量 $v_1, \cdots, v_k$ 生成的闭子集
+[5] \begin{equation}
+P: = \left\{ \sum_i a_i v_i \mid a_i \in [0, 1] \right\}~.
+\end{equation}
+[/SCOPE:s_paral_let]
+[6] 非退化的
+
+[/SCOPE:s_paral]
+[SCOPE:s_ex1|description|例1]
+[7] （定向）平行 $1$-胞体就是一条（有向）线段，$2$-胞体就是平行四边形，$3$-胞体就是平行六面体。
+[8] 【图解】图 1：平行四边性
+[9] 【图解】图 2：平行六面体
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2 有向长度]
+[10] 例 2 有向长度
+[SCOPE:s_ex2_let|let_bind|有向长度的变量]
+[11] $V$ 上的一个反对称 $1$-形式（即线性函数）$l: V \to \mathbb{F}$ 给每个定向平行 $1$-胞体 $(P, v_1)$ 定义了一个有向长度 $l(v_1)$。
+[12] 更一般的，反对称 $k$-形式 $\omega$ 给每个定向平行 $k$-胞体定义了一个有向 $k$ 维体积：
+[13] \begin{equation}
+\operatorname {vol}_k(P, v_1, \cdots, v_k): = \omega(v_1, \cdots, v_k)~.
+\end{equation}
+[/SCOPE:s_ex2_let]
+[14] 【未完成】画图
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|例3]
+[15] 我们以三维空间的正方体 $P: = [0, 1]^3 \subseteq \mathbb{R}^3$ 为例，定向平行六面体 $(P, e_1, e_2, e_3)$ 和 $(P, e_2, e_1, e_3)$ 是关于平面 $x = y$ 对称的，
+[16] 因此我们把它们的体积是为相反的（一正一负）。
+
+[/SCOPE:s_ex3]
+[SCOPE:s_det_def|description|行列式]
+[SCOPE:s_det_let|let_bind|行列式的变量]
+[17] $f$ 的 $k$ 阶张量幂 $f^{\otimes k}: V^{\otimes k} \to W^{\otimes k}$ 保留了 $V^{\otimes k}$ 元素的反对称性，
+[18] \begin{equation}
+\begin{aligned}
+f(v_1 \wedge \cdots \wedge v_k) &= \sum_{\sigma \in S_n} \operatorname {sign}(\sigma) f(v_{\sigma(1)}) \otimes \cdots \otimes f(v_{\sigma(k)}) \\
+&= f(v_1) \wedge \cdots \wedge f(v_k)~.
+\end{aligned}~
+\end{equation}
+[19] 如果 $f$ 是一个线性算子，
+[20] 即 $f: V \to V$，我们发现 $k$ 阶反对称幂子空间 ${\large \wedge}^k V$ 是 $f^{\otimes k}$ 的不变子空间，
+[21] 因此 ${\large \wedge}^k f$ 是 ${\large \wedge}^k V$ 上的线性算子。
+[22] 特别的记 $V$ 的维度为 $n$，我们有 $\dim({\large \wedge}^n V) = 1$，
+[23] 因此
+[24] \begin{equation}
+{\large \wedge}^k f: {\large \wedge}^n V \to {\large \wedge}^n V~
+\end{equation}
+[25] 是一个一维到一维的映射，此时存在 $\lambda \in \mathbb{F}$ 满足
+[26] \begin{equation}
+({\large \wedge}^k f)(v) = \lambda v~
+\end{equation}
+[27] $\lambda$ 就是我们想要的 $f$ 的行列式。
+
+[/SCOPE:s_det_let]
+[28] 定义 2 行列式
+[29] 线性算子 $f: V \to V$ 被定义为 $\lambda$。
+[SCOPE:s_det_incomplete|description|未完成的证明]
+[30] 【未完成】证明 1：线性算子的行列式等于它对应的矩阵的行列式
+[31] 【未完成】证明 2：线性算子的行列式等于体积形式的变化因子
+[/SCOPE:s_det_def]
+[/SCOPE:s_det_incomplete]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_vol_form",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2是体积形式在k=1时的特例"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_ex2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例3是例2在三维空间的具体例子"
+  },
+  {
+    "source_scope": "s_det_def",
+    "target_scope": "s_vol_form",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "行列式定义依赖于体积形式的概念"
+  }
+]

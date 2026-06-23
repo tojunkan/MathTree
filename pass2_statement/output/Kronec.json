@@ -1,0 +1,58 @@
+{
+  "article_name": "Kronec",
+  "statements": [
+    {
+      "stmt_id": "st_def_delta",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "δ_{ij}",
+        "i",
+        "j"
+      ]
+    },
+    {
+      "stmt_id": "st_prop1",
+      "subtype": "theorem",
+      "clause_range": [
+        5,
+        6
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop2",
+      "subtype": "theorem",
+      "clause_range": [
+        5,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_def",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def_delta",
+      "target": "st_prop1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_delta",
+      "target": "st_prop2",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

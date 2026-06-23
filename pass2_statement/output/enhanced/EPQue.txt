@@ -1,0 +1,156 @@
+[SCOPE:root|description|端点可变问题]
+文章名: EPQue
+标题: 端点可变问题
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+
+[SCOPE:s_problem|description|问题的提出]
+[0] 在前面的问题中，总是取以两个固定点为端点的曲线作为可取曲线。
+[1] 现在，我们研究以更广泛的曲线作为可取曲线的泛函极值问题。
+[SCOPE:s_problem_let|let_bind|问题中的变量]
+[2] 设函数 $F(x,y,y')$ 满足普通的连续性及可微性条件；
+[3] 此外，在 $xOy$ 平面上，给定两个 $C_1$ 类的曲线 $\varphi$ 及 $\psi$：
+[4] \begin{equation}
+y=\varphi(x),\quad y=\psi(x)~.
+\end{equation}
+[5] 在此规定下，我们的
+[/SCOPE:s_problem_let]
+[6] 问题
+[7] 可叙述如下：
+[8] 取端点分别在曲线 $\varphi$ 及曲线 $\psi$ 上的 $C_1$ 类中全体曲线 $\gamma$，作为可取曲线族。
+[9] 现在要求泛函
+[10] \begin{equation}
+J(\gamma)=\int_\gamma F(x,y,y') \,\mathrm{d}{x} ~
+\end{equation}
+[11] 的极值，其中积分是沿曲线 $\gamma$ 而取的。
+[12] 注意到：若某一以 $A$ 和 $B$ 为端点的曲线 $\gamma_0$ 是本问题的解，
+[13] 即 $\gamma_0$ 给积分式 2 以极值，
+[14] 那么这一曲线 $\gamma_0$ 也在连接 $A$ 及 $B$ 的所有 $C_1$ 类曲线中，给 $J$ 以极值。
+[15] 由最简单问题时的欧拉定理，曲线 $\gamma_0$ 满足欧拉方程
+[16] \begin{equation}
+F_y- \frac{\mathrm{d}{}}{\mathrm{d}{x}} F_{y'}=0~.
+\end{equation}
+[17] 这就是说，若以可取曲线族中的极端曲线构成新的可取曲线族，得到的使 $J$ 取极值的曲线和以 $C_1$ 类曲线作为可取曲线族时得到的是同一条曲线。
+
+[/SCOPE:s_problem]
+[SCOPE:s_theorem1|description|定理1]
+[18] 定理 1
+[19] 泛函 $J$ 式 2 对极端曲线（其起点和终点坐标分别为 $x_0,y_0;x_1,y_1$）的微分为
+[20] \begin{equation}
+\begin{aligned}
+& \frac{\partial J}{\partial x_0} =-(F-y'F_{y'})^{(0)},\quad \frac{\partial J}{\partial y_0} =-F_{y'}^{(0)}\\
+& \frac{\partial J}{\partial x_1} =(F-y'F_{y'})^{(1)},\quad \frac{\partial J}{\partial y_1} =F_{y'}^{(1)}\\
+& \,\mathrm{d}{J} =-[(F-y'F_{y'})^{(0)}\delta {x_0}+ F_{y'}^{(0)}\delta y_0]+[(F-y'F_{y'})^{(1)}\delta {x_1}+F_{y'}^{(1)}\delta y_1]~.
+\end{aligned}
+\end{equation}
+[21] 指标 ${(0)},{(1)}$ 在这里及以后（特指变分学相关文章）都表示对应的函数值是取在弧的起点及终点上
+
+[/SCOPE:s_theorem1]
+[SCOPE:s_proof|description|定理1的证明]
+[SCOPE:s_proof_let1|let_bind|证明中的变量]
+[22] 设 $\gamma_0$ 是起点为 $A$ 终点为 $B$ 的极端曲线，考虑临近于它的极端曲线族 $\{\gamma\}$，它们的端点在 $A,B$ 的某二邻区内。
+[23] 假设 $\{\gamma\}$ 中只有唯一的弧通过每二端点，
+[24] 则 $\{\gamma\}$ 中每一条弧将由它们的起点和终点坐标 $x_0,y_0;x_1,y_1$ 决定，
+[25] 即在族 $\{\gamma\}$ 上的泛函 $J(\gamma)$ 变成弧 $\gamma$ 的端点的坐标函数：$J(\gamma)=J(x_0,y_0,x_1,y_1)$。
+[/SCOPE:s_proof_let1]
+[26] 于是当变数微分为 $\delta x_0,\delta y_0,\delta x_1,\delta y_1$ 时，就有
+[27] \begin{equation}
+\,\mathrm{d}{J} = \left( \frac{\partial J}{\partial x_0} \delta x_0+ \frac{\partial J}{\partial y_0} \delta y_0 \right) + \left( \frac{\partial J}{\partial x_1} \delta x_1+ \frac{\partial J}{\partial y_1} \delta y_1 \right) ~.
+\end{equation}
+[SCOPE:s_proof_part1|description|证明第一部分：固定x0,x1]
+[28] 首先
+[SCOPE:s_proof_part1_let|let_bind|第一部分变量]
+[29] ，考虑 $x_0,x_1$ 固定的族 $\{\gamma\}$ 中的曲线构成的部分族（弧 $\gamma$ 的端点在两条平行于 $y$ 轴的直线上流动），
+[30] 于是这个部分族只含两参变数 $y_0,y_1$，且在该部分族上微分与变分重合。
+[31a] (x)$ 与 $y=y
+[31b] (x)+\delta y
+[31c] (x)$ 是这个部分族中的两条无限接近的极端曲线弧。
+[32] 于是 $y_0=y(x_0),y_1=y(x_1)$，并令 $\delta y_0=\delta y(x_0),\delta y_1=\delta y(x_1)$。
+[/SCOPE:s_proof_part1_let]
+[33] 于是，
+[34a] (x)$ 到 $y=y
+[34b] (x)+\delta y
+[34c] (x)$ 的变分 $\delta J$ 等于取在前一弧上的积分定理 1
+[35] \begin{equation}
+\delta J=\int_{x_0}^{x_1}(F_{y}\delta y+F_{y'}\delta y') \,\mathrm{d}{x} ~.
+\end{equation}
+[36] 式 6 [链接 L0]
+[37] ，并利用
+[38] 分部积分 [链接 L1]
+[39] \begin{equation}
+\int_{x_0}^{x_1}F_{y'}\delta y' \,\mathrm{d}{x} =F_{y'}^{(1)}\delta y_1-F_{y'}^{(0)}\delta y_0-\int_{x_0}^{x_1} \left( \frac{\mathrm{d}{}}{\mathrm{d}{x}} F_{y'} \right) \delta y \,\mathrm{d}{x} ~.
+\end{equation}
+[40] 式 6 [链接 L2]
+[41] \begin{equation}
+\begin{aligned}
+\delta J&=F_{y'}^{(1)}\delta y_1-F_{y'}^{(0)}\delta y_0+\int_{x_0}^{x_1} \left(F_y- \frac{\mathrm{d}{}}{\mathrm{d}{x}} F_{y'} \right) \delta y \,\mathrm{d}{x} \\
+&=F_{y'}^{(1)}\delta y_1-F_{y'}^{(0)}\delta y_0~.
+\end{aligned}
+\end{equation}
+[42] 其中，积分项为 0 是因为弧 $y=y(x)$ 为极端曲线，满足欧拉方程。
+[43] 同时，因为对该部分族有
+[44] \begin{equation}
+\delta J= \,\mathrm{d}{J} = \frac{\partial J}{\partial y_0} \delta y_0+ \frac{\partial J}{\partial y_1} \delta y_1~,
+\end{equation}
+[45] 比较上面两式得
+[46] \begin{equation}
+\frac{\partial J}{\partial y_0} =-F_{y'}^{(0)},\quad \frac{\partial J}{\partial y_1} =F_{y'}^{(1)}~.
+\end{equation}
+[/SCOPE:s_proof_part1]
+[SCOPE:s_proof_part2|description|证明第二部分：同一条曲线]
+[47] 现在
+[48] ，考虑另一部分族，它由同一条极端曲线 $y=y(x)$ 组成（见末尾的注），这些弧的起止点坐标有下列关系
+[49] \begin{equation}
+\delta y_0=y'(x_0)\delta x_0=y'_0\delta x_0,\quad \delta y_1=y'(x_1)\delta x_1=y'_1\delta x_1~.
+\end{equation}
+[50] 于是，微分 $ \,\mathrm{d}{J} $ 的表示化为
+[51] \begin{equation}
+\,\mathrm{d}{J} = \left( \frac{\partial J}{\partial x_0} +y'_0 \frac{\partial J}{\partial y_0} \right) \delta x_0+ \left( \frac{\partial J}{\partial x_1} +y'_1 \frac{\partial J}{\partial y_1} \right) \delta x_1~.
+\end{equation}
+[52] 另一方面，按对积分上下限求微分法则，从
+[53] \begin{equation}
+J=\int_{x_0}^{x_1}F(x,y,y') \,\mathrm{d}{x} ~,
+\end{equation}
+[54] \begin{equation}
+\,\mathrm{d}{J} =F^{(1)} \,\mathrm{d}{x} _1-F^{(0)} \,\mathrm{d}{x} _0~.
+\end{equation}
+[55] 式 12 [链接 L3]
+[56] 式 14 [链接 L4]
+[57] \begin{equation}
+\begin{aligned}
+& \frac{\partial J}{\partial x_0} =-F^{(0)}-y'_0 \frac{\partial J}{\partial y_0} =-(F-y'F_{y'})^{(0)}~,\\
+& \frac{\partial J}{\partial x_1} =F^{(1)}-y'_1 \frac{\partial J}{\partial y_1} =(F-y'F_{y'})^{(1)}~.
+\end{aligned}
+\end{equation}
+[58] 综合 1，2，便得式 4 。
+[/SCOPE:s_proof_part2]
+[59] 定理得证！
+[60] 证明中，1 中加黑体处（式 6 前）表明仅需起始弧为极端曲线弧，而不要求移动的弧是极端曲线弧，
+[61] 即当族 $\{\gamma'\}$ 不是极端曲线族，
+[62] 但包含着极端曲线 $\gamma_0$，
+[63] 那么定理仍成立；
+[64] 在证明中的 2 部分，之所以能这样取部分族是因为，点 $A,B$ 是面上的点，
+[65] 那么它们各自的邻区当然是以它们为中心的一个圆了，
+[66] 那么这样取的部分族只需要在这个圆内延长曲线的端点就行了。
+
+[/SCOPE:s_proof]
+[SCOPE:s_solution|description|问题的解决]
+[67] 给出问题中泛函以极值的曲线的端点满足的方程称为斜截条件，解该方程就能得到所要的曲线的端点，
+[68] 那么所要的曲线就是端点满足斜截条件的极端曲线。
+
+跨文章引用:
+  [L1] 分部积分 → IntBP
+[/SCOPE:s_solution]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_proof",
+    "target_scope": "s_theorem1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明推出定理1"
+  }
+]

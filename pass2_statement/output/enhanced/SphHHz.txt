@@ -1,0 +1,52 @@
+[SCOPE:root|description|球坐标系中的亥姆霍兹方程]
+文章名: SphHHz
+标题: 球坐标系中的亥姆霍兹方程
+
+[0] 贡献者： addis
+[1] 预备知识 球谐函数
+[SCOPE:s_main|description|求解过程]
+[2] 亥姆霍兹方程为1
+[3] \begin{equation}
+( \boldsymbol{\nabla}^2 + k^2)f = 0~,
+\end{equation}
+[4] 球坐标系中的求解过程与拉普拉斯方程中的过程类似。
+[5] 将拉普拉斯算子分解为径向和角向两部分（式 6 ）
+[6] \begin{equation}
+\boldsymbol{\nabla}^2 = \boldsymbol{\nabla}^2 _r + \frac{ \boldsymbol{\nabla}^2 _{\Omega}}{r^2} = \frac{1}{r^2} \frac{\partial}{\partial{r}} \left(r^2 \frac{\partial u}{\partial r} \right) + \frac{1}{r^2\sin\theta} \frac{\partial}{\partial{\theta}} \left(\sin \theta \frac{\partial u}{\partial \theta} \right) + \frac{1}{r^2\sin^2 \theta} \frac{\partial^{2}{u}}{\partial{\phi}^{2}} ~.
+\end{equation}
+[7] 则式 1 乘 $r^2$ 得
+[8] \begin{equation}
+\left(r^2 \boldsymbol{\nabla}^2 _r + k^2 r^2 - \boldsymbol{\nabla}^2 _\Omega \right) f = 0~.
+\end{equation}
+[9] 注意前两项只含有 $r$ 的偏导，第三项只含有 $\theta,\phi$ 的偏导。
+[SCOPE:s_sep_var|let_bind|分离变量]
+[10] 用分离变量法，令 $f( \boldsymbol{\mathbf{r}} ) = R(r) Y( \hat{\boldsymbol{\mathbf{r}}} )$，
+[11] 则分离后的角向方程和径向方程分别为
+[12] \begin{equation}
+\boldsymbol{\nabla}^2 _{\Omega} Y( \hat{\boldsymbol{\mathbf{r}}} ) = -l(l+1) Y( \hat{\boldsymbol{\mathbf{r}}} )~,
+\end{equation}
+[13] \begin{equation}
+\left[r^2 \boldsymbol{\nabla}^2 _r + k^2 r^2 - l(l+1) \right] R(r) = 0~,
+\end{equation}
+[14] 我们已知角向的解为球谐函数 $Y_{l,m}( \hat{\boldsymbol{\mathbf{r}}} )$。
+[/SCOPE:s_sep_var]
+[SCOPE:s_radial_sub|let_bind|变量代换]
+[15] 而径向方程比普拉斯方程中的（式 6 ）多出了一项 $k^2r^2$，使用变量代换 $\rho = kr$ 得
+[16] \begin{equation}
+\rho^2 \frac{\partial^{2}{R}}{\partial{\rho}^{2}} + 2\rho \frac{\partial R}{\partial \rho} + [\rho^2 - l(l+1)] R = 0~.
+\end{equation}
+[17] 该方程被称为球贝塞尔方程，两个线性无关解分别是第一和第二类球贝塞尔函数 $j_l(\rho)$ 和 $y_l(\rho)$。
+[/SCOPE:s_radial_sub]
+[18] 综上，方程的通解为
+[19] \begin{equation}
+f( \boldsymbol{\mathbf{r}} ) = \sum_{l,m} [A_l j_l(kr) + B_l y_l(kr)] Y_{l,m}( \hat{\boldsymbol{\mathbf{r}}} )~.
+\end{equation}
+[20] 1. ^ 一般地，$k$ 可以是复数，
+[21] 所以 $k^2$ 也可以是负实数。
+
+跨文章引用:
+  [L0] 拉普拉斯方程 → SphLap
+  [L3] 球谐函数 → SphHar
+  [L5] 球贝塞尔方程 → SphBsl
+[/SCOPE:s_main]
+[/SCOPE:root]

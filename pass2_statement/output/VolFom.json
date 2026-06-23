@@ -1,0 +1,291 @@
+{
+  "article_name": "VolFom",
+  "statements": [
+    {
+      "stmt_id": "st_def1_volform",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "M",
+        "n-form"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_assump_M",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let1",
+      "exposed_entities": [
+        "M",
+        "R^2",
+        "g_{ab}"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_assump_polar",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let2",
+      "exposed_entities": [
+        "o",
+        "R",
+        "r",
+        "theta"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_metric_polar",
+      "subtype": "conclusion",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_assump_basis",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let3",
+      "exposed_entities": [
+        "dr",
+        "dtheta",
+        "partial_r",
+        "partial_theta",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_2form_action",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1_let3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex1_area_def",
+      "subtype": "assumption",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "epsilon_x",
+        "epsilon_y"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_volform_expr",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex1",
+      "exposed_entities": [
+        "r dr ^ dtheta"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let",
+      "exposed_entities": [
+        "M",
+        "x^mu",
+        "dx^mu",
+        "partial_mu",
+        "g_{mu nu}"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_volform",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_ex2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_pseudo",
+      "subtype": "remark",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_ex2_counterexample",
+      "subtype": "counterexample_claim",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex2",
+      "exposed_entities": [
+        "Mobius strip"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        31,
+        32
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_thm1_proof_sketch",
+      "subtype": "remark",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_measure_def",
+      "subtype": "definition",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": null,
+      "scope_id": "s_measure_let",
+      "exposed_entities": [
+        "M",
+        "omega",
+        "mu_omega"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex1_assump_M",
+      "target": "st_ex1_metric_polar",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_assump_polar",
+      "target": "st_ex1_metric_polar",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_assump_basis",
+      "target": "st_ex1_2form_action",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_metric_polar",
+      "target": "st_ex1_2form_action",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_assump_M",
+      "target": "st_ex1_volform_expr",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_assump_polar",
+      "target": "st_ex1_volform_expr",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_assump_basis",
+      "target": "st_ex1_volform_expr",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex1_area_def",
+      "target": "st_ex1_volform_expr",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_assump",
+      "target": "st_ex2_volform",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_volform",
+      "target": "st_ex2_pseudo",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_counterexample",
+      "target": "st_thm1_statement",
+      "edge_type": "counterexample_of",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex2_volform",
+      "target": "st_ex1_volform_expr",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例2指出例1是黎曼流形的特例"
+    },
+    {
+      "source": "st_thm1_statement",
+      "target": "st_def1_volform",
+      "edge_type": "equivalent",
+      "category": "logic",
+      "note": "定理1给出体积形式存在性与可定向性的充要条件"
+    }
+  ],
+  "unresolved": []
+}

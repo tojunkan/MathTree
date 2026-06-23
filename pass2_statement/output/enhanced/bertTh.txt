@@ -1,0 +1,112 @@
+[SCOPE:root|description|Bertrand 定理]
+文章名: bertTh
+标题: Bertrand 定理
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=Bertrand 定理
+
+[SCOPE:s_theorem|description|Bertrand 定理]
+[0] 定理 1 Bertrand 定理
+[SCOPE:s_let_n|let_bind|取足够大的 n]
+[1] 对于足够大的 $n$，
+[2] 那么至少存在一个素数 $p$ 使得
+[3] \begin{equation}
+n < p \le 2n ~,
+\end{equation}
+[4] \begin{equation}
+p_{m+1} < 2 p_m ~.
+\end{equation}
+[5] 证明：这两个命题是等价的。
+[6] 我们考虑式 1 的证明。
+[SCOPE:s_reductio|reductio|反证法假设无素数]
+[SCOPE:s_let_alpha|let_bind|定义 alpha_p]
+[SCOPE:s_let_p|let_bind|设 p 是 N 的素因子]
+[7] 我们取足够大的 $n$，不妨令 $n > 2^9 = 512$，假设没有满足 $n < p \le 2n$ 的素数存在，沿用数论函数 theta 与 psi 的阶中式 14 的记号，设 $p$ 是 $N$ 的一个素因子，就有 $\alpha_p \ge 1$，而由于假设，$p \ge n$，若 $\frac 23 n < p \le n$ 则
+[/SCOPE:s_let_n]
+[8] \begin{equation}
+2p \le 2n < 3p, ~ p^2 > \frac 49 n^2 > 2n~,
+\end{equation}
+[9] 从而 $\alpha_p$ 可以表示为
+[10] \begin{equation}
+\alpha_p = \left\lfloor \frac{2n}p \right\rfloor - 2 \left \lfloor \frac np \right \rfloor = 2 - 2 = 0 ~,
+\end{equation}
+[11] 从而对于 $N$ 的每个素因子 $p$ 都有 $p \le \frac23 n$。
+[/SCOPE:s_let_p]
+[12] 利用
+[13] 推论 1
+[14] 可以得到
+[15] \begin{equation}
+\sum_{p | N} \ln p \le \sum_{p\le \frac 23 n} \ln p = \vartheta(\frac 23 n) \le \frac 43 n \ln 2 ~.
+\end{equation}
+[16a] 若 $\alpha_p \ge 2$
+[16b] 则利用
+[17] 式 18 [链接 L0]
+[18] 可以得到
+[19] \begin{equation}
+2 \ln p \le \alpha_p \ln p \le \ln\left(2n\right) , ~ p \le \sqrt{2n } ~,
+\end{equation}
+[20] 因此最多有 $\sqrt{2n}$ 个这样的 $p$，
+[21] 从而
+[22] \begin{equation}
+\sum_{\alpha_p \ge 2} \alpha_p \ln p \le \sqrt{2n} \ln\left(2n\right) ~,
+\end{equation}
+[/SCOPE:s_let_alpha]
+[23] 式 5 [链接 L1]
+[24] 可以得到
+[25] \begin{equation}
+\begin{aligned}
+\ln N &\le \sum_{\alpha_p = 1} \ln p + \sum_{\alpha_p \ge 2} \alpha_p \ln p ~\\
+& \le \sum_{p | N} \ln p + \sqrt{2n} \ln\left(2n\right) ~\\
+& \le \frac43 n \ln 2 + \sqrt{2n} \ln\left(2n\right) ~.
+\end{aligned}
+\end{equation}
+[26] 而 $N$ 是 $2^{2n} = (1+1)^{2n}$ 的二项式系数展开式中最大的一项，
+[27] 故
+[28] \begin{equation}
+2^{2n} = 2 + \binom{2n}{1} + \binom{2n}{2} + \cdots + \binom{2n}{2n-1} \le 2nN ~.
+\end{equation}
+[29] 其中 $\binom{a}{b} = C^b_a$ 就是二项式系数。
+[30] 联立式 8 与式 9 会得到
+[31] \begin{equation}
+2n \ln 2 \le \ln\left(2n\right) + \ln N \le \frac43 n \ln 2 + (1+\sqrt{2n}) \ln\left(2n\right) ~.
+\end{equation}
+[SCOPE:s_let_j|let_bind|定义 j]
+[32] 而可以简化为 $2n\ln2\le3(1+\sqrt{2n}) \ln\left(2n\right) $。记
+[33] \begin{equation}
+j = \frac{ \ln\left(n/512\right) }{10 \ln 2} ~,
+\end{equation}
+[34] 则 $2n = 2^{10(1+j)}$，由于 $n > 512$，$j > 0$，可以再把不等式化为
+[35] \begin{equation}
+2^{10 (1+j)} \le 30(2^{5+5j} + 1)(1+j) ~,
+\end{equation}
+[36] \begin{equation}
+2^{5j} \le 30 \times 2^{-5} (1 + 2^{-5 - 5j})(1+j) < (1-2^{-5})(1+2^{-5})(1+j) < 1+j ~,
+\end{equation}
+[37] 而 $2^{5j} = \exp\left(5j\ln2\right) >1+5j\ln2>1+j$，矛盾！
+[/SCOPE:s_reductio]
+[/SCOPE:s_let_j]
+[38] 综上，对于大 $n$（$n > 512$），必定存在这样的素数。
+[SCOPE:s_small_n|description|小 n 情况]
+[39] 而对于小 $n$ 可以直接证明也成立。
+[/SCOPE:s_small_n]
+[40] 这就完成了证明！
+[/SCOPE:s_theorem]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_reductio",
+    "target_scope": "s_reductio",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "反证法推出矛盾，从而原命题成立"
+  },
+  {
+    "source_scope": "s_small_n",
+    "target_scope": "s_theorem",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "小 n 情况是定理的特例"
+  }
+]

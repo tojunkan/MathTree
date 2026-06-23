@@ -1,0 +1,79 @@
+[SCOPE:root|description|多项式的可约性质]
+文章名: RedPol
+标题: 多项式的可约性质
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+  [1] type=theorem heading=定理 1 title=
+  [2] type=theorem heading=定理 2 title=
+
+[SCOPE:s_def1|description|定义 1]
+[0] 定义 1
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[1a] (x)$ 是数域 $\mathbb{F}$ 上的多项式，若 $p
+[1b] (x)$ 在数域 $\mathbb{F}$ 上只有平凡因式，
+[2a] (x)$ 为域 $\mathbb{F}$ 上的不可约多项式，否则，称 $p
+[2b] (x)$ 为域 $\mathbb{F}$ 上的可约多项式。
+[/SCOPE:s_def1_let]
+[3] 按照定义，一次多项式总是不可约多项式。
+[4a] (x)$ 与任一多项式 $f
+[4b] (x)$ 之间只可能有两种关系，或者 $p
+[4c] (x)|f
+[4d] (x)$，或者 $(p
+[4e] (x),f
+[4f] (x))=1$（该符号见定义 3 ）。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理 1]
+[5] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[6a] (x)$ 是数域 $\mathbb{F}$ 上的不可约多项式，$f
+[6b] (x),g
+[6c] (x)$ 是数域 $\mathbb{F}$ 上的 两个多项式，若 $p
+[6d] (x)|f
+[6e] (x)g
+[6f] (x)$，
+[7a] (x)|f
+[7b] (x)$ 或者 $p
+[7c] (x)|g
+[7d] (x)$
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm1_cases|cases|p(x)|f(x) 或 p(x)∤f(x)]
+[8a] (x)|f
+[8b] (x)$，
+[9] 那么结论以及成立。
+[10a] (x)\nmid f
+[10b] (x)$，
+[11a] (x)$ 的不可约性，说明 $(p
+[11b] (x),f
+[11c] (x))=1$，由定理 4 即得 $p
+[11d] (x)|g
+[11e] (x)$。
+[/SCOPE:s_thm1_cases]
+[12] 由数学归纳法很容易将这个定理推广
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理 2]
+[13] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理 2 的变量]
+[14a] (x)$ 整除对多项式 $f_1
+[14b] (x),f_2
+[14c] (x),\cdots,f_s
+[14d] (x)$ 的乘积
+[15] \begin{equation}
+p(x)|f_1(x)f_2(x)\cdots f_s(x)~,
+\end{equation}
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2是定理1的推广，由归纳法得到"
+  }
+]

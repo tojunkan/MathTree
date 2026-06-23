@@ -1,0 +1,87 @@
+{
+  "article_name": "HarNum",
+  "statements": [
+    {
+      "stmt_id": "st_def_harmonic",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "H_n",
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_thm_order",
+      "subtype": "theorem",
+      "clause_range": [
+        5,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm",
+      "exposed_entities": [
+        "H_n",
+        "n",
+        "γ"
+      ]
+    },
+    {
+      "stmt_id": "st_assump_n_infty",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm_let",
+      "exposed_entities": [
+        "n"
+      ]
+    },
+    {
+      "stmt_id": "st_concl_order",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_gamma_def",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm_gamma",
+      "exposed_entities": [
+        "γ"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_n_infty",
+      "target": "st_concl_order",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_harmonic",
+      "target": "st_thm_order",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

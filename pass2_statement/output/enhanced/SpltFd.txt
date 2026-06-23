@@ -1,0 +1,471 @@
+[SCOPE:root|description|分裂域]
+文章名: SpltFd
+标题: 分裂域
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=分裂域
+  [1] type=theorem heading=定理 1 title=分裂域的存在性
+  [2] type=corollary heading=推论 1 title=
+  [3] type=corollary heading=推论 2 title=
+  [4] type=example heading=例 1 title=分裂域的一个例子
+  [5] type=corollary heading=推论 3 title=
+  [6] type=corollary heading=推论 4 title=
+  [7] type=example heading=例 2 title=单扩张不等于分裂域的例子
+  [8] type=theorem heading=定理 2 title=
+  [9] type=theorem heading=定理 3 title=
+  [10] type=definition heading=定义 2 title=正规扩张
+  [11] type=theorem heading=定理 4 title=有限扩张时，正规扩张等价于分裂域
+  [12] type=example heading=例 3 title=正规扩张的反例
+  [13] type=exercise heading=习题 1 title=
+  [14] type=corollary heading=推论 5 title=
+  [15] type=theorem heading=定理 5 title=
+  [16] type=example heading=例 4 title=
+  [17] type=example heading=例 5 title=
+  [18] type=exercise heading=习题 2 title=
+  [19] type=exercise heading=习题 3 title=
+  [20] type=exercise heading=习题 4 title=
+  [21] type=exercise heading=习题 5 title=
+
+[0] 本节我们要介绍一个在代数中非常基础且重要的概念：分裂域。
+[1] 简单来说，分裂域就是在一个域中添加某个多项式的全体根所得到的扩域。
+[2] 从分裂域出发，我们可以讨论代数扩域的自同构问题。
+[3] 关于分裂域的进一步讨论，请参阅正规扩张文章。
+
+[SCOPE:s_def1|description|定义 1 分裂域]
+[4] 定义 1 分裂域
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[5] 给定域 $\mathbb{F}$ 及其上一个多项式 $f(x)$。
+[6a] (x)$ 在 $\mathbb{K}$ 上可以分解为 $f
+[6b] (x)=\prod_{i=1}^n (x-a_i)$，且 $\mathbb{K}=\mathbb{F}(a_1, a_2, \cdots, a_n)$，
+[7] 则称 $\mathbb{K}$ 是 $f(x)\in \mathbb{F}[x]$ 上的分裂域（splitting field）。
+[/SCOPE:s_def1_let]
+[8] 定义看起来有些绕口，先说 $f$ 在 $\mathbb{K}$ 中可以分解，也就是说每一个根都存在，再说 $\mathbb{K}$ 可以看成用这些根对 $\mathbb{F}$ 进行扩域的结果。
+[9] 这么定义是因为我们要先确定元素 $a_i$ 都存在，而为此就需要先确定 $\mathbb{K}$ 存在。
+[10] 但是定义中只说了 “若 $\mathbb{K}$ 存在”，这个假设到底成立与否呢？
+[11] 答案是肯定的。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm1|description|定理 1 分裂域的存在性]
+[12] 定理 1 分裂域的存在性
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[13] 给定域 $\mathbb{F}$ 及其上一个多项式 $f(x)$，
+[14] 则 $f(x)\in \mathbb{F}[x]$ 上的分裂域存在。
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm1_proof|description|定理 1 的证明]
+[15] 证明：
+[16a] 当 $ \operatorname {deg}f=1$ 时，定理自然成立，此时 $f\in\mathbb{F}[x]$ 的分裂域
+[16b] 则是其本身。
+[SCOPE:s_thm1_proof_let1|let_bind|证明中的变量 h(x)]
+[17] 首先在环 $\mathbb{F}[x]$ 上对元素 $f(x)$ 进行因式分解1，得到其不可约因子。
+[18] 任选其中一个不可约因子 $h(x)$，如果 $ \operatorname {deg} h = 1$，
+[19] 则跳过本段接下来的步骤。
+[20a] (x)/\langle h
+[20b] (x) \rangle =\mathbb{F}[a_1]=\mathbb{F}(a_1)$2
+[21] ，记为 $\mathbb{F}_1$。
+[22] 由多项式环的定理 1 ，$(x-a_1)|h(x)$，
+[23a] (x)=h
+[23b] (x)/(x-a_1)$。
+[24] 如果 $ \operatorname {deg}h_1 = 1$，
+[25] 则跳过本段接下来的步骤。
+[26a] (x)$ 进行相同的操作：构造商环 $\mathbb{F}
+[26b] (x)/\langle h_1
+[26c] (x) \rangle =\mathbb{F}[a_2] = \mathbb{F}(a_2)=\mathbb{F}_2$。
+[27] 以此类推，直到 $h(x)$ 在 $\mathbb{F}_{k_1}$ 上分解为一阶多项式之积。
+[/SCOPE:s_thm1_proof_let1]
+[SCOPE:s_thm1_proof_let2|let_bind|证明中的变量 g(x)]
+[28] 接下来，取 $f$ 在 $\mathbb{F}_{k_1}$ 上的不可约因子 $g(x)$，如果 $ \operatorname {deg} g = 1$，
+[29] 则跳过本段接下来的步骤。
+[30] 执行相同的扩域操作，直到得到 $\mathbb{F}_{k_1+k_2}$，使得 $g$ 在 $\mathbb{F}_{k_1+k_2}$ 上分解为一阶多项式之积。
+[/SCOPE:s_thm1_proof_let2]
+[SCOPE:s_thm1_proof_let3|let_bind|证明中的最终域]
+[31] 以此类推，最终可以得到 $\mathbb{F}_k$，使得 $f$ 在 $\mathbb{F}_k$ 上可以分解为一阶多项式之积。
+[32] 则 $\mathbb{F}_k$ 就是 $f\in\mathbb{F}[x]$ 的分裂域。
+[/SCOPE:s_thm1_proof_let3]
+[33] 证毕。
+[/SCOPE:s_thm1_proof]
+[34] 该证明过程的大体思路，就是看 $f$ 的根是否在已知的域中。
+[35a] (x)$ 必是 $f
+[35b] (x)$ 的一个不可约因子。
+[36] 如果 $a$ 在已知的域中，
+[37] 那么 $f$ 就可以因式分解出一阶多项式因子 $(x-a)$；
+[38] 否则，就添加 $a$ 进行一次单扩域，这次扩域至少能把 $a$ 纳入，
+[39] 但也有可能把其它根一起纳入。
+[40] 因此我们容易得到以下推论：
+
+[/SCOPE:s_thm1]
+[SCOPE:s_cor1|description|推论 1]
+[41] 推论 1
+[SCOPE:s_cor1_let|let_bind|推论 1 的变量]
+[42] 设 $\mathbb{K}$ 是 $f(x)\in \mathbb{F}[x]$ 上的分裂域，
+[43] 则 $[\mathbb{K}:\mathbb{F}]\leq \operatorname {deg}f$。
+
+[/SCOPE:s_cor1]
+[/SCOPE:s_cor1_let]
+[SCOPE:s_cor2|description|推论 2]
+[44] 推论 2
+[SCOPE:s_cor2_let|let_bind|推论 2 的变量]
+[45] 设 $\mathbb{K}$ 是 $f(x)\in \mathbb{F}[x]$ 上的分裂域，$\mathbb{M}$ 是 $\mathbb{K}$ 和 $\mathbb{F}$ 之间的中间域，
+[46] 则 $\mathbb{K}$ 也是 $f(x)\in \mathbb{E}[x]$ 上的分裂域。
+[/SCOPE:s_cor2_let]
+[47] 为了加深理解，我们讨论一个分裂域的例子。
+[48] 添加元素的过程中会遇到的主要情况在这里都出现了。
+
+[/SCOPE:s_cor2]
+[SCOPE:s_ex1|description|例 1 分裂域的一个例子]
+[49] 例 1 分裂域的一个例子
+[SCOPE:s_ex1_let|let_bind|例 1 的变量]
+[50] 在有理数域 $\mathbb{Q}$ 上有多项式 $f(x)=(x^2-2)^2(x^2-3)(x^2-6)(x^2+1)$，其在 $\mathbb{Q}$ 上有五个阶数大于 $1$ 的不可约因子：$(x^2-2), (x^2-2), (x^2-3), (x^2-6), (x^2+1)$。
+[51] 考虑因子 $(x^2-2)$，得到扩域 $\mathbb{Q}(\sqrt{2})$。
+[52] 在 $\mathbb{Q}(\sqrt{2})$ 上，$f$ 有分解：
+[53] \begin{equation}
+f(x)=(x+\sqrt{2})^2(x-\sqrt{2})^2(x^2-3)(x^2-6)(x^2+1)~,
+\end{equation}
+[54] 取其阶数大于 $1$ 的不可约因子 $x^2-3$，得到扩域 $\mathbb{Q}(\sqrt{2}, \sqrt{3})$。
+[55] 在 $\mathbb{Q}(\sqrt{2}, \sqrt{3})$ 上，$f$ 有分解：
+[56] \begin{equation}
+\begin{aligned}
+f(x)=&(x+\sqrt{2})^2(x-\sqrt{2})^2(x+\sqrt{3})(x-\sqrt{3})\times\\
+&(x+\sqrt{2}\sqrt{3})(x-\sqrt{2}\sqrt{3})(x^2+1)~,
+\end{aligned}
+\end{equation}
+[57] 取其阶数大于 $1$ 的不可约因子 $x^2+1$，得到扩域 $\mathbb{Q}(\sqrt{2}, \sqrt{3}, \mathrm{i} )$。
+[58] 你可以验证，在最后这个扩域下，$f$ 可分解为一阶多项式之积。
+[59] 因此
+[60] \begin{equation}
+\begin{aligned}
+&\mathbb{Q}(\sqrt{2}, \sqrt{3}, \mathrm{i} )=\\
+&\{a+A \mathrm{i} +(b+B \mathrm{i} )\sqrt{2}+(c+C \mathrm{i} )\sqrt{3}\\
+&+(d+D \mathrm{i} )\sqrt{6} | a, A, b, B, c, C, d, D\in\mathbb{Q}\}~,
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_ex1]
+[/SCOPE:s_ex1_let]
+[SCOPE:s_cor3|description|推论 3]
+[61] 推论 3
+[SCOPE:s_cor3_let|let_bind|推论 3 的变量]
+[62] 设 $\mathbb{K}$ 是 $f(x)\in \mathbb{F}[x]$ 上的分裂域，
+[63] 则 $[\mathbb{K}:\mathbb{F}]\leq \operatorname {deg}f$。
+
+[/SCOPE:s_cor3]
+[/SCOPE:s_cor3_let]
+[SCOPE:s_cor4|description|推论 4]
+[64] 推论 4
+[SCOPE:s_cor4_let|let_bind|推论 4 的变量]
+[65] 设 $\mathbb{K}$ 是 $f(x)\in \mathbb{F}[x]$ 上的分裂域，$\mathbb{M}$ 是 $\mathbb{K}$ 和 $\mathbb{F}$ 之间的中间域，
+[66] 则 $\mathbb{K}$ 也是 $f(x)\in \mathbb{E}[x]$ 上的分裂域。
+[/SCOPE:s_cor4_let]
+[67] 注意，给定一个域 $\mathbb{F}$ 和其上一个不可约多项式 $f$，
+[68] 则 $f\in\mathbb{F}[x]$ 的分裂域不一定是$\mathbb{F}[x]/\langle f(x) \rangle $，因为添加 $f$ 的一个根进行单扩张，不一定囊括了 $f$ 的所有根。
+
+[/SCOPE:s_cor4]
+[SCOPE:s_ex2|description|例 2 单扩张不等于分裂域的例子]
+[69] 例 2 单扩张不等于分裂域的例子
+[SCOPE:s_ex2_let|let_bind|例 2 的变量]
+[70] 在 $\mathbb{Q}$ 上添加 $x^3-2$ 的一个根 $\sqrt[3]{2}$ 得到 $\mathbb{Q}(\sqrt[3]{2})$，
+[71] 但这个单扩域里并没有 $x^3-2$ 的剩下两个根 $\omega\sqrt[3]{2}$ 和 $\omega^2\sqrt[3]{2}$，其中 $\omega=-1/2+ \mathrm{i} \sqrt{3}/2$ 是 $3$ 次单位根。
+
+[/SCOPE:s_ex2]
+[/SCOPE:s_ex2_let]
+[72] 从开拓（定义 8 ）的角度来说，如果存在域同构 $\sigma:\mathbb{F}_1\to\mathbb{F}_2$，将其开拓为环同构 $\sigma:\mathbb{F}_1[x]\to\mathbb{F}_2[x]$，任取 $f\in\mathbb{F}_1[x]$，设 $f\in\mathbb{F}_1[x]$ 的分裂域为 $\mathbb{K}_1$，$\sigma(f)\in\mathbb{F}_2[x]$ 的分裂域为 $\mathbb{K}_2$，
+[73] 则 $\sigma$ 可以开拓为 $\mathbb{K}_1\to\mathbb{K}_2$ 的同构。
+[74] 上述开拓的角度或许有些绕，
+[75] 但考虑到 “同构的域就是同一个域”，我们完全可以大大简化上述表达：
+
+[SCOPE:s_thm2|description|定理 2]
+[76] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理 2 的变量]
+[77] 给定域 $\mathbb{F}$ 和其上一个多项式 $f$ 以后，所构造出来的分裂域是唯一的，或者说构造出来的两个分裂域都是同构的。
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_let]
+[SCOPE:s_thm3|description|定理 3]
+[78] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理 3 的变量]
+[79] 设 $\mathbb{K}$ 是多项式 $f\in\mathbb{F}[x]$ 的分裂域，$\mathbb{E}$ 是 $\mathbb{K}$ 的扩域。
+[80] 则对于 $\mathbb{E}$ 的任意保 $\mathbb{F}$自同态$\sigma$，有 $\sigma(\mathbb{K})=\mathbb{K}$。
+[/SCOPE:s_thm3_let]
+[SCOPE:s_thm3_proof|description|定理 3 的证明]
+[81] 证明：
+[SCOPE:s_thm3_proof_let|let_bind|定理 3 证明中的变量]
+[82] 设 $f=(x-a_1)(x-a_2)\cdots(x-a_n)$，其中各 $a_i\in\mathbb{E}$，
+[83] 则 $\mathbb{K}=\mathbb{F}(a_1, a_2, \cdots, a_n)$.
+[/SCOPE:s_thm3_proof_let]
+[84] 由于是同态，$\sigma$ 必将 $f$ 的根映射为另一根，也就是对 $f$ 的根的置换。
+[85] 因此
+[86] \begin{equation}
+\begin{aligned}
+\sigma(\mathbb{K})&=\mathbb{F}(\sigma(a_1), \sigma(a_2), \cdots, \sigma(a_n))\\
+&=\mathbb{F}(a_1, a_2, \cdots, a_n)\\
+&=\mathbb{K}~,
+\end{aligned}
+\end{equation}
+[87] 证毕。
+
+[/SCOPE:s_thm3]
+[/SCOPE:s_thm3_proof]
+[88] 分裂域的性质，其实对应的是一种非常重要的域扩张，它与代数方程的根式解问题息息相关。
+
+[SCOPE:s_def2|description|定义 2 正规扩张]
+[89] 定义 2 正规扩张
+[SCOPE:s_def2_let|let_bind|定义 2 的变量]
+[90] 设 $\mathbb{K}/\mathbb{F}$ 是一个代数扩域。
+[91a] 如果对于 $\mathbb{F}$ 上的任意不可约多项式 $f$，要么 $f$ 在 $\mathbb{K}$ 中无根，要么
+[91b] 则所有根都在 $\mathbb{K}$ 中，
+[92] 则称 $\mathbb{K}/\mathbb{F}$ 是一个正规扩张。
+[/SCOPE:s_def2_let]
+[93] 实际上，有限情况下正规扩张和分裂域是等价的概念，尽管它们表述差异很大。
+[94] 或者换句话说，分裂域的一个重要性质，就是正规性。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm4|description|定理 4 有限扩张时，正规扩张等价于分裂域]
+[95] 定理 4 有限扩张时，正规扩张等价于分裂域
+[SCOPE:s_thm4_let|let_bind|定理 4 的变量]
+[96] 设 $\mathbb{K}/\mathbb{F}$ 是一个有限扩域，
+[97] 那么有：
+[98] $\mathbb{K}/\mathbb{F}$ 为正规扩张 $\iff$ $\mathbb{K}$ 是某个多项式 $f\in\mathbb{F}[x]$ 的分裂域。
+[/SCOPE:s_thm4_let]
+[99] 证明：
+[SCOPE:s_thm4_proof_left|description|定理 4 的证明：左推右]
+[100] $\Leftarrow$：
+[SCOPE:s_thm4_proof_left_let|let_bind|左推右中的变量]
+[101] 设 $\mathbb{K}$ 是多项式 $f\in\mathbb{F}[x]$ 的分裂域。
+[102a] (x)\in\mathbb{F}[x]$ 且 $\exists a\in\mathbb{K}$ 使得 $h
+[102b] (a)=0$。
+[103] 我们要证明 $h$ 的根都在 $\mathbb{K}$ 中。
+[104] 设 $h\in\mathbb{K}[x]$ 的分裂域为 $\mathbb{E}$，$\sigma:\mathbb{E}\to\mathbb{E}$ 是域自同构。
+[105] 则据定理 3 ，$\sigma(\mathbb{K})=\mathbb{K}$。
+[106] 于是，$\sigma(a)\in\mathbb{K}$。
+[/SCOPE:s_thm4_proof_left_let]
+[107] 由 $\sigma$ 的任意性（即任意一个 $\mathbb{E}$ 自同构，也即任意一个 $h$ 的根的置换），知 $h$ 的根都在 $\mathbb{K}$ 中。
+[/SCOPE:s_thm4_proof_left]
+[SCOPE:s_thm4_proof_right|description|定理 4 的证明：右推左]
+[108] $\Rightarrow$：
+[SCOPE:s_thm4_proof_right_let|let_bind|右推左中的变量]
+[109] 由于 $\mathbb{K}/\mathbb{F}$ 为有限扩张，
+[110] 故存在 $a_1, a_2, \cdots, a_n\in \mathbb{K}$，使得 $\mathbb{K}=\mathbb{F}(a_1, a_2, \cdots, a_n)$。
+[111a] (x)$，令 $f
+[111b] (x)=\prod_{i=1}^n f_i
+[111c] (x)$。
+[112] 由于 $\mathbb{K}/\mathbb{F}$ 为正规扩张，而各 $f_i$ 在 $\mathbb{K}$ 上至少有一个根，
+[113] 故 $f(x)$ 可以在 $\mathbb{K}$ 上写为一次多项式的乘积：
+[114] \begin{equation}
+f(x) = \prod_{i=1}^k (x-b_i)~,
+\end{equation}
+[115] 且各 $a_i\in\{b_j\}$，各 $b_i\in\mathbb{K}=\mathbb{F}(a_1, \cdots, a_n)$。
+[/SCOPE:s_thm4_proof_right_let]
+[116] 于是 $f\in\mathbb{F}$ 的分裂域为 $\mathbb{F}(b_1, \cdots, b_k)=\mathbb{F}(a_1, \cdots, a_n)=\mathbb{K}$。
+[/SCOPE:s_thm4_proof_right]
+[117] 证毕。
+
+[/SCOPE:s_thm4]
+[SCOPE:s_ex3|description|例 3 正规扩张的反例]
+[118] 例 3 正规扩张的反例
+[SCOPE:s_ex3_let|let_bind|例 3 的变量]
+[119] $\mathbb{Q}(2^{1/3})$ 不是 $\mathbb{Q}$ 的正规扩张。
+[120] 因为存在多项式 $f(x)=x^3-2$，它在 $\mathbb{Q}$ 上不可约，有一个根 $2^{1/3}$ 在 $\mathbb{Q}(2^{1/3})$ 上，
+[121] 但另外两个根都是复数，不在其中。
+[/SCOPE:s_ex3_let]
+[122] 显然，另外两个根的模都是 $2^{1/3}$，与正实轴的夹角分别为 $\pm 2\pi/3$。
+
+[/SCOPE:s_ex3]
+[SCOPE:s_ex1_1|description|习题 1]
+[123] 习题 1
+[124] 求 $x^3-2\in\mathbb{Q}[x]$ 的分裂域。
+
+[/SCOPE:s_ex1_1]
+[SCOPE:s_cor5|description|推论 5]
+[125] 推论 5
+[SCOPE:s_cor5_let|let_bind|推论 5 的变量]
+[126] 设有域扩张 $\mathbb{E}/\mathbb{F}$。
+[127] 则任意 $f\in\mathbb{F}[x]$ 的分裂域 $\mathbb{K}$，在 $\mathbb{E}$ 中最多只有一个。
+
+[/SCOPE:s_cor5]
+[/SCOPE:s_cor5_let]
+[128] 由定理 5 第 2 条，可知，域自同构一定把每个多项式的根映射到其它根上，并且对于任意两个根 $\alpha, \beta$，总存在域自同构 $\sigma$ 使得 $\sigma \alpha=\beta$。
+[129a] (x)g
+[129b] (x)$，
+[130] 则 $fg$ 关于 $\mathbb{F}$ 的分裂域，是先求 $f\in\mathbb{F}[x]$ 的分裂域 $\mathbb{F}_1$ 后再求 $g\in\mathbb{F}_1$ 的分裂域。
+
+[SCOPE:s_thm5|description|定理 5]
+[131] 定理 5
+[SCOPE:s_thm5_let|let_bind|定理 5 的变量]
+[132] 给定域 $\mathbb{F}$ 和其上一个多项式 $f$，设 $f\in\mathbb{F}[x]$ 的分裂域是 $\mathbb{K}$，$\mathbb{K}$ 到自身的保 $\mathbb{F}$ 自同构数量为 $N$，
+[133] 那么 $N\leq[\mathbb{K}:\mathbb{F}]$。
+[134] 当且仅当 $f$ 的每一个不可约因子 $h$ 的不同根数目恰为 $ \operatorname {deg}h$ 时3，等号成立。
+[/SCOPE:s_thm5_let]
+[SCOPE:s_thm5_proof|description|定理 5 的证明]
+[135] 证明：
+[136] 我们主要用数学归纳法和对单扩张情况的讨论来证明。
+[SCOPE:s_thm5_proof_let1|let_bind|证明中的变量 h, alpha_i, F_1]
+[137] 不妨设 $f$ 的各不可约因子互不相同。
+[138] 设 $\sigma:\mathbb{K}\to\mathbb{K}$ 是保 $\mathbb{F}$ 自同构，$h$ 是 $f$ 在 $\mathbb{F}$ 上的一个不可约因子，其在 $\overline{\mathbb{F}}$ 上的全体根为 $\{\alpha_i\}_{i=1}^m$，$ \operatorname {deg}h=n\geq m$。
+[139] 记 $h\in\mathbb{F}[x]$ 的分裂域为 $\mathbb{F}_1$。
+[/SCOPE:s_thm5_proof_let1]
+[SCOPE:s_thm5_proof_let2|let_bind|证明中的单扩张 F(alpha_1)]
+[140] 考虑单扩张 $\mathbb{F}(\alpha_1)$ 的保 $\mathbb{F}$ 自同构。
+[141] 由于 $\alpha_1$ 可以在这种自同构下映射到 $\mathbb{F}(\alpha_1)$中的任意 $\alpha_i$ 上，并且确定了 $\alpha_1$ 的映射就确定了整个自同构映射，
+[142] 故这种自同构的数量等于 $\mathbb{F}(\alpha_1)$ 中所包含的 $h$ 的根的数量。
+[143] 因此，如果 $\mathbb{F}(\alpha_1)$ 包含所有 $\alpha_i$，
+[144] 则自同构数量等于所有根的数量，定理成立（包括等号的充要条件）：由定理 2 和 “多项式不同根的数目小于等于其次数” 即可。
+[/SCOPE:s_thm5_proof_let2]
+[145a] 如果 $\mathbb{F}(\alpha_1)$ 不包含所有 $\alpha_i$，那
+[145b] 则要用上归纳法了。
+[146] 当 $ \operatorname {deg}f=1$ 时，定理显然成立。
+[147] 下设定理对于任意 $ \operatorname {deg}f< n$ 的情况成立。
+[148] 先考虑 $h$ 无重根的情况，设 $\mathbb{F}_1$ 是 $h\in\mathbb{F}[x]$ 的分裂域。
+[149] 此时，$h$ 的根的数目 $m= \operatorname {deg}f=n$。
+[150] 由定理 2 ，$[\mathbb{F}(\alpha_1):
+[151] \mathbb{F}]=n$。
+[152] 只要确定了 $\alpha_1$ 的映射便确定了 $\mathbb{F}(\alpha_1)$ 中其它 $\alpha_i$ 的映射。
+[SCOPE:s_thm5_proof_let3|let_bind|证明中的基和同态]
+[153] 1. 给定 $\mathbb{F}_1$ 作为 $\mathbb{F}$ 上线性空间的一组基 $\{\nu_i\}\subseteq\{\alpha_j^k\}$，并任挑一个$\alpha_i$ 来构造保 $\mathbb{F}$ 单同态 $\sigma: \mathbb{F}(\alpha_1)\to\mathbb{F}_1$，其中 $\sigma(\alpha_1)=\alpha_i$。
+[154] 则根据定理 6 的证明过程，可知总能唯一地把 $\sigma$ 开拓为与 $\{\nu_i\}$ 关联的保 $\mathbb{F}$ 自同构 $\sigma: \mathbb{F}_1\to\mathbb{F}_1$。
+[/SCOPE:s_thm5_proof_let3]
+[155] 于是，我们得到了 $n$ 个保 $\mathbb{F}$ 自同构。
+[156] 2. 但这些自同构不是全部，因为只是针对一组基构造出来的。
+[157] $\mathbb{F}_1$ 上所有的保 $\mathbb{F}$ 自同构，应该是上段构造的自同构和全体保 $\mathbb{F}(\alpha_1)$ 复合的结果4。
+[SCOPE:s_thm5_proof_let4|let_bind|证明中的归纳假设]
+[158] 3. 据归纳假设，$\mathbb{F}_1$ 上的保 $\mathbb{F}(\alpha_1)$ 自同构的数量，等于扩张次数 $[\mathbb{F}_1:\mathbb{F}(\alpha_1)]$。
+[159] 而 $\mathbb{F}(\alpha_1)$ 的保 $\mathbb{F}$ 自同构又有 $n$ 个，也等于扩张次数 $[\mathbb{F}(\alpha_1):\mathbb{F}]$。
+[160] 所以由定理 4 ，$[\mathbb{F}_1:\mathbb{F}]=[\mathbb{F}_1:\mathbb{F}(\alpha_1)][\mathbb{F}(\alpha_1):\mathbb{F}]$，进而知定理的等号情况成立。
+[/SCOPE:s_thm5_proof_let4]
+[161] 对于 $h$ 有重根的情况，第 1. 步和第 2. 步中至少有一步不能取等号，进而定理的非等号情况成立。
+[162] 对于整个 $f$ 的情况，
+[163] 则在讨论完 $\mathbb{F}_1$ 后，取 $f$ 在 $\mathbb{F}_1$ 上的不可约因子继续讨论，得到其分裂域 $\mathbb{F}_2$，再取 $f$ 在 $\mathbb{F}_2$ 上的不可约因子继续讨论，直到将 $f$ 完全分裂。
+[164] 由于不同的多项式的根之间不可能互相映射到，
+[165] 因此计算同构数量的时候可以简单相乘，而不必像 1. 和 2. 那样讨论。
+[166] 证毕。
+
+[/SCOPE:s_thm5]
+[/SCOPE:s_thm5_proof]
+[SCOPE:s_ex4|description|例 4]
+[SCOPE:s_ex4_let|let_bind|例 4 的变量]
+[167] 给定有理数域 $\mathbb{Q}$ 及其上的多项式 $f(x)=x^2-2$。
+[168] 则 $f\in\mathbb{Q}[x]$ 的分裂域为 $\mathbb{Q}(\sqrt{2})=\{a+b\sqrt{2}|a, b\in\mathbb{Q}\}$。
+[169] $\mathbb{Q}(\sqrt{2})$ 一共有两个保 $\mathbb{Q}$ 自同构：第一个就是恒等映射，第二个 $\sigma$ 则定义如下：
+[170] \begin{equation}
+\sigma(a+b\sqrt{2})=a-b\sqrt{2}~.
+\end{equation}
+[/SCOPE:s_ex4_let]
+[171] 而 $[\mathbb{Q}(\sqrt{2}):\mathbb{Q}]=2$，
+[172] 因此这是一个定理 5 取等号的例子。
+
+[/SCOPE:s_ex4]
+[SCOPE:s_ex5|description|例 5]
+[SCOPE:s_ex5_let|let_bind|例 5 的变量]
+[173] 给定实数域 $\mathbb{R}$ 及其上的多项式 $f(x)=x^2+x+1$，
+[174] 则 $f\in\mathbb{R}[x]$ 的分裂域为 $\mathbb{R}(\omega)=\{a+b\omega+c\omega^2 \mid a, b, c\in\mathbb{R}\}$，其中 $\omega$ 是 $1$ 的三次单位根 $\frac{1}{2}(-1+ \mathrm{i} \sqrt{3})= \mathrm{e} ^{\frac{2\pi}{3} \mathrm{i} }$。
+[175] $\mathbb{R}(\omega)$ 一共有两个保 $\mathbb{R}$ 自同构：第一个是恒等映射；
+[176] 第二个则是将 $\omega$ 映射到 $\omega^2$、$\omega^2$ 映射到 $\omega$ 的映射。
+[/SCOPE:s_ex5_let]
+[177] $[\mathbb{R}(\omega):\mathbb{R}]=2$。
+[178] 这可以从定理 2 得到，也可以验证 $\omega^2=-1-\omega$ 得到。
+
+[/SCOPE:s_ex5]
+[SCOPE:s_ex2_1|description|习题 2]
+[179] 习题 2
+[SCOPE:s_ex2_1_let|let_bind|习题 2 的变量]
+[180] 给定实数域 $\mathbb{R}$ 及其上的多项式 $f(x)=x^4+x^3+x^2+x+1$，
+[181] 则 $f\in\mathbb{R}[x]$ 的分裂域为 $\mathbb{R}(\gamma)=\{a+b\gamma+c\gamma^2+d\gamma^3+e\gamma^4 \mid a, b, c, d, e\in\mathbb{R}\}$，其中 $\gamma$ 是 $1$ 的五次单位根 $ \mathrm{e} ^{\frac{2\pi}{5} \mathrm{i} }$。
+[182] $\mathbb{R}(\gamma)$ 一共有四个保 $\mathbb{R}$ 自同构。
+[/SCOPE:s_ex2_1_let]
+[183] 找出它们。
+[184] 提示：考虑 $\gamma$ 被映射到某根 $\gamma'$，
+[185] 那么 $\gamma^2$ 就被映射到 $\gamma'^2$。
+[186] 所以每个自同构唯一对应一个根 $\gamma'$。
+
+[/SCOPE:s_ex2_1]
+[SCOPE:s_ex3_1|description|习题 3]
+[187] 习题 3
+[188] 求 $x^3-2\in\sqrt{Q}[x]$ 的分裂域及其所有保 $\mathbb{Q}$ 自同构。
+
+[/SCOPE:s_ex3_1]
+[SCOPE:s_ex4_1|description|习题 4]
+[189] 习题 4
+[SCOPE:s_ex4_1_let|let_bind|习题 4 的变量]
+[190] 求 $x^p-1\in\mathbb{Q}[x]$ 的分裂域及其所有保 $\mathbb{Q}$ 自同构。
+[191] 这里 $p$ 为素数。
+[/SCOPE:s_ex4_1_let]
+[192] 注意判断 $x^p-1$ 是否为不可约多项式。
+
+[/SCOPE:s_ex4_1]
+[SCOPE:s_ex5_1|description|习题 5]
+[193] 习题 5
+[194] 求 $x^6-1\in\mathbb{Q}[x]$ 的分裂域及其所有保 $\mathbb{Q}$ 自同构。
+[/SCOPE:s_ex5_1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论 1 是定理 1 的直接推论"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论 2 是定理 1 的直接推论"
+  },
+  {
+    "source_scope": "s_cor3",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论 3 是定理 1 的直接推论"
+  },
+  {
+    "source_scope": "s_cor4",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论 4 是定理 1 的直接推论"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_def2",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "定理 4 说明有限扩张时正规扩张等价于分裂域"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_def2",
+    "edge_type": "counterexample_of",
+    "category": "logic",
+    "note": "例 3 是正规扩张的反例"
+  },
+  {
+    "source_scope": "s_cor5",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论 5 是定理 1 的直接推论"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_thm3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理 5 的证明使用了定理 3"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理 5 的证明使用了定理 2"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_thm4",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理 5 的证明使用了定理 4"
+  }
+]

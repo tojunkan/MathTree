@@ -1,0 +1,223 @@
+[SCOPE:root|description|导数（简明微积分）]
+文章名: Der
+标题: 导数（简明微积分）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=函数一点处的导数
+  [1] type=definition heading=定义 2 title=单侧导数
+  [2] type=theorem heading=定理 1 title=
+  [3] type=example heading=例 1 title=
+  [4] type=definition heading=定义 3 title=导函数
+  [5] type=example heading=例 2 title=直线方程的导函数
+  [6] type=example heading=例 3 title=常函数的导函数
+  [7] type=example heading=例 4 title=二次函数的导函数
+
+[SCOPE:s_geom_let|let_bind|几何含义的变量]
+[SCOPE:s_geom|description|几何含义]
+[0] 12一个一元函数 $y = f(x)$ 在直角坐标系中表示为一条曲线。
+[1] 在切线与割线中，我们已经初步了解了什么是切线与割线。
+[2] 【图解】图 1：B 趋向 A，割线趋向切线
+[3] 我们先写出割线的直线方程。
+[4] 由于割线就是一条经过 A，B 两点的直线，根据高中数学知识，很容易得到
+[5] \begin{equation}
+y-y_A=\frac{y_B-y_A}{x_B-x_A}(x-x_A)=\frac{f(x_B)-f(x_A)}{x_B-x_A}(x-x_A)~.
+\end{equation}
+[6] 观察割线的方程，除了斜率项 $k=\frac{f(x_B)-f(x_A)}{x_B-x_A}$，其余项均与 $x_B$ 无关。
+[7] 现在，如图 1 所示，我们固定 A 点不动，让 B 点趋近于 A 点，
+[8] 即令 $x_B\rightarrow x_A$，这使割线趋向于切线，它的斜率即可用极限来定义
+[9] \begin{equation}
+k=\lim_{x_B\to x_A}\frac{f(x_B)-f(x_A)}{x_B-x_A}~.
+\end{equation}
+[10] 我们把这个切线的斜率定义为 $x=x_A$ 处 $f(x)$ 的导数，一般记为 $f'(x_A)$ 或 $ \frac{\mathrm{d}{f}}{\mathrm{d}{x}} |_{x=x_A}$。
+[11] 因此，我们说函数一点处的导数值就等于这点处切线的斜率。
+[12] 【图解】图 2：点 $A$ 的切线。
+[13] $f'(x_A)=k=\tan \theta$
+[14] 更一般的，有
+
+[/SCOPE:s_geom_let]
+[/SCOPE:s_geom]
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[SCOPE:s_def1|description|定义 1 函数一点处的导数]
+[15] 定义 1 函数一点处的导数
+[16] $f(x)$ 在 $x=x_0$ 处的导数为
+[17] \begin{equation}
+f'(x_0)=\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}~,
+\end{equation}
+[18] \begin{equation}
+f'(x_0)=\lim_{\Delta x \to 0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}~.
+\end{equation}
+
+[/SCOPE:s_def1_let]
+[/SCOPE:s_def1]
+[SCOPE:s_phys|description|物理含义]
+[19] 仔细观察 $x=x_0$ 附近切线的形状与 $f(x)$ 的形状，你很容易看出这两者是几乎一样的3，这启发我们在一个小区域内用切线来近似原函数。
+[20] 【图解】图 3：将切点放大，会发现切线和曲线在切点附近 “重合”
+[21a] 此时
+[21b] 若想计算 $x$ 轻微增加后，函数值 $y$ 的增量，则没有必要复杂地计算
+[22] $$\Delta y = f(x_0+\Delta x) - f(x_0)~,$$
+[23] 而只需要计算
+[24] \begin{equation}
+\Delta y = f'(x_0) \Delta x~,
+\end{equation}
+[25] 这就引入了
+[26] 微分的概念 [链接 L0]
+[27] 。
+[28] 更重要的是，这启发了我们导数的另一层含义：导函数确定了 $x=x_0$ 处，$y$ 关于 $x$ 变化的 “敏感度”，
+[29] 即 $x$ 轻微变化时，$y$ 会做出多大的响应。
+[30] 例如，一个绝对值大的导数值意味着 $y$ 会因为 $x$ 的轻微变化而剧烈变化。
+[31] 理解这一含义的最直白例子或许是速度，速度被定义为物体位置关于时间的导数 $v= \frac{\mathrm{d}{r}}{\mathrm{d}{t}} $。
+[32] 即使只靠直觉，我们也能理解“速度快” 就是指 “一瞬间他就从我眼前飞过去了”，这就是说当时间轻微增加时，物体的位置大幅变化。
+
+[/SCOPE:s_phys]
+[SCOPE:s_sided_let|let_bind|单侧导数的变量]
+[SCOPE:s_sided|description|单侧导数]
+[33] 类似于单侧极限，我们也可以引入单侧导数的概念。
+[34] 如果 B 点从右侧趋近 A 点，
+[35] 但始终不运动到 A 点的左侧，
+[36] 那么此时切线的斜率即为该点处函数的右导数值，可以记为 $f'_+(x_A)$。
+[37] 更一般地，用极限的语言可以写为：
+
+[/SCOPE:s_sided_let]
+[/SCOPE:s_sided]
+[SCOPE:s_def2_let|let_bind|定义 2 的变量]
+[SCOPE:s_def2|description|定义 2 单侧导数]
+[38] 定义 2 单侧导数
+[39] $f(x)$ 在 $x=x_0$ 处的右导数为：
+[40] \begin{equation}
+f'_+(x_0) = \lim_{x\to x_0^+} \frac{f(x)-f(x_0)}{x-x_0}~.
+\end{equation}
+[41] \begin{equation}
+f'_-(x_0) = \lim_{x\to x_0^-} \frac{f(x)-f(x_0)}{x-x_0}~.
+\end{equation}
+[42] 类似于极限，我们也有
+
+[/SCOPE:s_def2_let]
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|定理 1]
+[43] 定理 1
+[44] 函数在某点可导的充分必要条件是它左右导数都存在并相等。
+[45] $$f'(x_0)=A\Longleftrightarrow f'_+(x_0)=f'_-(x_0)=A~.$$
+[46a] 也就是说
+[46b] 若左（或右）导数不存在，或者左、右导数存在但不相等，那此处的导数，则不存在。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex1|description|例 1]
+[47] 如图，在棱角处，虽然函数连续，甚至左、右导数均存在，
+[48] 但他们的大小不相同，
+[49] 因此在棱角处该函数不可导。
+[50] 图 4：棱角处不可导
+[51] 一个更明确的例子是绝对值函数 $f(x) = |x|$, 它在零点的左导数为 $-1$，而右导数为 $1$。
+[52] 未完成：作图：函数图像和导函数图像
+
+[/SCOPE:s_ex1]
+[SCOPE:s_def3|description|定义 3 导函数]
+[53] 在上文中，我们定义了一点处函数的导数。
+[54] 原则上我们可以任意选取函数定义域中的一点，然后用根据上文 “导数的定义” 找到该点处的导数值。
+[55] 这也就是说，对于函数定义域中的任意一点，都有一个导数值与之对应，这符合函数的定义，也就是说我们可以在这二者间定义一个新函数，这就是 $f(x)$ 的 “导函数”；
+[56] 在不引起混淆的情况下往往简称为 “导数”。
+[57] 字面上看，导函数的定义与一点处函数的导数完全类似。
+
+[SCOPE:s_def3_let|let_bind|定义 3 的变量]
+[58] 定义 3 导函数
+[59] \begin{equation}
+f'(x)=\lim_{\Delta x \to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}~.
+\end{equation}
+[60] 通常将导函数记为以下的一种
+[61] \begin{equation}
+f'(x),\quad [f(x)]',\quad \frac{\mathrm{d}{y}}{\mathrm{d}{x}} ,\quad \frac{\mathrm{d}{f}}{\mathrm{d}{x}} ,\quad \frac{\mathrm{d}}{\mathrm{d}{x}} f(x)~.
+\end{equation}
+[62a] (t) = \mathrm{d}{f
+[62b] (t)}/\mathrm{d}{t} $。
+
+[/SCOPE:s_def3]
+[/SCOPE:s_def3_let]
+[SCOPE:s_ex2_let|let_bind|例 2 的变量]
+[SCOPE:s_ex2|description|例 2 直线方程的导函数]
+[63] 例 2 直线方程的导函数
+[64] 计算 $f(x)=2x+3$ 的导函数。
+[65] 根据定义，
+[66] $$
+\begin{aligned}
+f'(x)&=\lim_{\Delta x \to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}\\
+&=\lim_{\Delta x \to 0}\frac{[2(x+\Delta x)+3]-(2x+3)}{\Delta x}\\
+&=\lim_{\Delta x \to 0}\frac{2\Delta x}{\Delta x}\\
+&=2~.
+\end{aligned}
+$$
+[67] 事实上，所有直线方程的导函数都是常函数，且数值上等于自己的斜率。
+[68] 当然，实际上很少直接使用定义计算导数，有一些技巧可以简化求导过程（见本节其他文章）。
+
+[/SCOPE:s_ex2_let]
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3_let|let_bind|例 3 的变量]
+[SCOPE:s_ex3|description|例 3 常函数的导函数]
+[69] 例 3 常函数的导函数
+[70] 计算 $f(x)=C$ 的导函数, 其中 $C$ 是常数。
+[71] 仍然根据定义，
+[72] $$
+\begin{aligned}
+f'(x)&=\lim_{\Delta x \to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}\\
+&=\lim_{\Delta x \to 0}\frac{C-C}{\Delta x}\\
+&=\lim_{\Delta x \to 0}\frac{0}{\Delta x}\\
+&=0~,\\
+\end{aligned}
+$$
+[73] 因此常函数的导数为零。
+[74] 这可以理解为例 2 当 $x$ 的系数为零时的特例。
+
+[/SCOPE:s_ex3_let]
+[/SCOPE:s_ex3]
+[SCOPE:s_ex4_let|let_bind|例 4 的变量]
+[SCOPE:s_ex4|description|例 4 二次函数的导函数]
+[75] 例 4 二次函数的导函数
+[76] 计算 $f(x)= a x^2 + b x + c$ 的导函数。
+[77] 仍然根据定义，
+[78] $$
+\begin{aligned}
+f'(x)&=\lim_{\Delta x \to 0} \frac{f(x+\Delta x)-f(x)}{\Delta x} \\
+&=\lim_{\Delta x \to 0} \frac{a(x + \Delta x)^2 + b (x + \Delta x) + c - a x^2 - b x - c}{\Delta x} \\
+&=\lim_{\Delta x \to 0} \frac{2 a x (\Delta x) + a (\Delta x)^2 + b \Delta x}{\Delta x} \\
+&=\lim_{\Delta x \to 0} 2 a x + a (\Delta x) + b \\
+&= 2 a x + b ~,\\
+\end{aligned}
+$$
+[79] 因此二次函数的导数为一次函数。
+[80] 当 $a = 0$，二次函数退化为直线方程。
+
+跨文章引用:
+  [L0] 微分的概念 → Diff
+[/SCOPE:s_ex4_let]
+[/SCOPE:s_ex4]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1（可导充要条件）是定义1（导数）的推论"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1（棱角处不可导）是定理1的应用"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_ex2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "常函数是直线方程当斜率为0的特例"
+  },
+  {
+    "source_scope": "s_ex4",
+    "target_scope": "s_ex2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "二次函数当a=0退化为直线方程"
+  }
+]

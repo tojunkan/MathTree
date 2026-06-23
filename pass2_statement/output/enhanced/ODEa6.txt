@@ -1,0 +1,155 @@
+[SCOPE:root|description|判别曲线法求一阶隐式常微分方程的奇解]
+文章名: ODEa6
+标题: 判别曲线法求一阶隐式常微分方程的奇解
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=$p$-判别曲线
+  [1] type=definition heading=定义 2 title=$c$-判别曲线
+  [2] type=theorem heading=定理 1 title=$c$-判别曲线是否是包络的充分条件
+
+[0] 需要补充习题
+[1] 或许和 包络和奇解 重复？
+[2] 这里写的做法与证明更多一些。
+[3] 一般的一阶隐式常微分方程，往往可能会出现对于一阶隐式常微分方程的存在唯一性定理的判定中，条件 $(3)$ 的不满足。
+[4] 也就是可能出现 $F(x,y,y'), F'_y(x,y,y'), F'_{y'}(x,y,y')$ 连续，
+[5] 但在某处 $F(x,y,y')=0$ 的情况。
+[6] 在这一点处解的唯一性可能不成立，
+[7] 从而 $F(x,y,y')=0$ 可能有奇解产生。
+[8] 由奇解性质可以知道，奇解就是由通解构成的曲线族的包络线，由包络线的求法引出了求一阶隐式常微分方程的奇解的以下两种求法。
+
+[9] $p$-判别曲线法的思路是直接求包络线，再检验包络线是否是原方程的解。
+
+[SCOPE:s_p_discriminant|description|p-判别曲线]
+[10] 定义 1 $p$-判别曲线
+[SCOPE:s_p_let|let_bind|p-判别曲线变量]
+[11] 若方程 $F(x,y,y')=0$ 有奇解，
+[12] 则这奇解必定满足两方程：
+[13] \begin{equation}
+F(x,y,y')=0, F'_{y'}(x,y,y')=0 ~.
+\end{equation}
+[14] \begin{equation}
+\left \{
+\begin{aligned}
+F(x,y,p) &= 0~, \\
+F'_{p}(x,y,p) &= 0~.
+\end{aligned}
+\right .
+\end{equation}
+[/SCOPE:s_p_let]
+[15] $p$-判别曲线
+[16] 显然，若原方程有奇解，
+[17] 则一定包含在方程组 式 2 所确定的 $p$-判别曲线中，
+[18] 但 $p$-判别曲线不一定是原方程的解。
+[19] 求解出 $p$-判别曲线后应当做以下两个检验：
+[20] 检验某条 $p$-判别曲线是否是原方程的解；
+[21] 检验这条曲线上的各点，是否至少有原方程的另一条积分曲线相切。
+[22] 若两项都成立，
+[23] 那么这条 $p$-判别曲线就是原方程的奇解。
+[24] 两项中任意一项不成立都将使得这条 $p$-判别曲线不是原方程的奇解。
+
+[/SCOPE:s_p_discriminant]
+[25] $c$-判别曲线法的思路是先求出通解的曲线族，再求这曲线族的包络。
+
+[SCOPE:s_c_discriminant|description|c-判别曲线]
+[26] 定义 2 $c$-判别曲线
+[SCOPE:s_c_let|let_bind|c-判别曲线变量]
+[27] 设已求出原方程组的通解为曲线族 $V(x,y,c)=0$，其中 $c$ 为参数，每条曲线都是连续可微的。
+[28] $\Gamma$ 为单参数曲线族 $V(x,y,c)=0$ 的包络，
+[29] 则 $\Gamma$ 是由下列方程组
+[30] \begin{equation}
+\left \{
+\begin{aligned}
+V(x,y,c) &= 0~,\\
+V'_c(x,y,c) &= 0~
+\end{aligned}
+\right .
+\end{equation}
+[/SCOPE:s_c_let]
+[31] $c$-判别曲线
+[SCOPE:s_c_proof|description|c-判别曲线证明]
+[32] 下面给出曲线族 $V(x,y,c)=0$ 的包络必然是 $\Gamma$ 中的一条的简单证明：
+[SCOPE:s_c_proof_let|let_bind|证明中引入参数曲线]
+[33] 可以将 $\Gamma$ 上的点 $(x, y)$ 视为单参数曲线族 $V(x,y,c)=0$ 中某条以 $c$ 为参数的曲线上的点，
+[34] 从而 $\Gamma$ 为一条以 $c$ 为参数的曲线，
+[35] 即其具有下列参数形式：
+[36] \begin{equation}
+\Gamma: x=x(c), y=y(c), (c \in A) ~.
+\end{equation}
+[/SCOPE:s_c_proof_let]
+[37] 而参数 $c$ 对应的点在曲线 $V(x,y,c)=0$ 上，
+[38] 故有：
+[39] \begin{equation}
+V(x(c), y(c), c) \equiv 0, (c \in A) ~.
+\end{equation}
+[40] 包络是连续可微的，
+[41a] (c), y
+[41b] (c)$ 也是关于 $c$ 连续可微的，将
+[42] 式 5 [链接 L0]
+[43] 对 $c$ 求导可以得到：
+[44] \begin{equation}
+V'_x(x(c), y(c), c) \cdot x'(c) + V'_y(x(c), y(c), c) \cdot y'(c) + V'_c(x(c), y(c), c) \equiv 0 (c \in A)~.
+\end{equation}
+[45a] (c), y
+[45b] (c))$，
+[46] 从而有：
+[47] \begin{equation}
+\frac{y'(c)}{x'(c)} = -\frac{V'_x(x(c), y(c), c)}{V'_y(x(c), y(c), c)} ~.
+\end{equation}
+[48] 式 6 [链接 L1]
+[49] 就可以得到 $V'_c(x, y, c)=0$。
+[50] 也就得到了证明。
+
+[/SCOPE:s_c_discriminant]
+[/SCOPE:s_c_proof]
+[SCOPE:s_theorem1|description|c-判别曲线是否是包络的充分条件]
+[51] 定理 1 $c$-判别曲线是否是包络的充分条件
+[SCOPE:s_theorem1_let|let_bind|定理1变量]
+[52] 若对于曲线族 $V(x,y,c)=0$ 的 $c$-判别曲线
+[53a] (c), y=y
+[53b] (c), (c \in A) ~,$$
+[54] 连续可微，并且沿 $\Gamma$ 满足
+[55] $$(V'_x)^2 + (V'_y)^2 \neq 0 ~.$$
+[/SCOPE:s_theorem1_let]
+[56] 那么曲线 $\Gamma$ 是曲线族的包络。
+[SCOPE:s_theorem1_proof|description|定理1证明]
+[57a] (c), y
+[57b] (c))$，
+[58] 则根据定义满足
+[59] \begin{equation}
+\left \{
+\begin{aligned}
+V(x(c), y(c), c) &= 0~, \\
+V'_c(x(c), y(c), c) &= 0~.
+\end{aligned}
+\right .
+\end{equation}
+[60] 式 6 [链接 L2]
+[61] 可以得到
+[62a] (c), y
+[62b] (c), c) \cdot x'
+[62c] (c) + V'_y(x
+[62d] (c), y
+[62e] (c), c) \cdot y'
+[62f] (c) \equiv 0 ~,$$
+[63] 由条件 $(V'_x)^2 + (V'_y)^2 \neq 0$ 可知沿 $\Gamma$，$V'_x$ 与 $V'_y$ 不同时为 $0$，不妨设 $V'_y \neq 0$，
+[64] 则有
+[65] \begin{equation}
+\frac{y'(c)}{x'(c)} = -\frac{V'_x(x(c), y(c), c)}{V'_y(x(c), y(c), c)} ~,
+\end{equation}
+[66a] (c), y
+[66b] (c))$ 处相切。
+[67] 就完成了证明。
+[/SCOPE:s_theorem1]
+[/SCOPE:s_theorem1_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_c_discriminant",
+    "target_scope": "s_p_discriminant",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "c-判别曲线法是p-判别曲线法的另一种方法，但两者并列，无直接逻辑推出关系，但可视为特例？实际上两者是不同方法，这里不设关系。"
+  }
+]

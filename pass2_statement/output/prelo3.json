@@ -1,0 +1,123 @@
+{
+  "article_name": "prelo3",
+  "statements": [
+    {
+      "stmt_id": "st_def_rules",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "x",
+        "y",
+        "c",
+        "A(x)",
+        "A(y)",
+        "A(c)"
+      ]
+    },
+    {
+      "stmt_id": "st_let_vars",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_let",
+      "exposed_entities": [
+        "x",
+        "y",
+        "c"
+      ]
+    },
+    {
+      "stmt_id": "st_US_rule",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "A(x)",
+        "A(y)",
+        "A(c)"
+      ]
+    },
+    {
+      "stmt_id": "st_ES_rule",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "A(x)",
+        "A(c)"
+      ]
+    },
+    {
+      "stmt_id": "st_UG_rule",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "A(y)",
+        "A(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_EG_rule",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "A(c)",
+        "A(x)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let_vars",
+      "target": "st_US_rule",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_vars",
+      "target": "st_ES_rule",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_vars",
+      "target": "st_UG_rule",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_vars",
+      "target": "st_EG_rule",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

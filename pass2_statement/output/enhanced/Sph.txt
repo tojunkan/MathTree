@@ -1,0 +1,84 @@
+[SCOPE:root|description|球坐标系]
+文章名: Sph
+标题: 球坐标系
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+
+[SCOPE:s_def|description|球坐标的定义]
+[SCOPE:s_def_let|let_bind|球坐标变量]
+[0] 1球坐标往往在直角坐标的基础上定义，三维直角坐标系中的一点 $P$ 的位置可以用 $(r,\theta ,\phi )$ 这 3 个有序实数来表示，称为该点的球坐标（spherical coordinates）（图 1 ）。
+[1] 其中 $r$ 表示该点到原点的距离（$r \geqslant 0$），
+[2] 即位矢的模长；
+[3] $\theta$ 表示该点的位矢与 $z$ 轴的夹角（$\theta \in [0,\pi]$），
+[4] 即极角（polar angle）；
+[5] $\phi$ 表示该点的位矢在 $x$-$y$ 平面上的投影与 $x$ 轴的夹角（$\phi \in [0,2\pi)$ 或 $(- \pi,\pi]$），
+[6] 即方位角（azimuthal angle）。
+[/SCOPE:s_def_let]
+[7] 【图解】图 1：球坐标系
+[8] 以上定义的球坐标系符合 ISO 标准，小时百科统一使用该定义。
+[9] 一些其他文献或软件2中时常把 $\theta$ 取补角，
+[10] 即和 $x$-$y$ 平面的夹角。
+[11] 另一些教材中也可能用 $\theta $ 表示方位角，$\phi $ 表示极角，或者将 $\phi $ 记为 $\varphi $， $r$ 记为 $\rho $ 等，需要通过上下文判断每个坐标符号的具体含义。
+
+[/SCOPE:s_def]
+[SCOPE:s_unitvec|description|球坐标系中的单位矢量]
+[SCOPE:s_unitvec_let|let_bind|单位矢量定义]
+[12] 三个球坐标分别有对应的单位矢量 $ \hat{\boldsymbol{\mathbf{r}}} , \hat{\boldsymbol{\mathbf{\theta}}} , \hat{\boldsymbol{\mathbf{\phi}}} $（如图 1 ）。
+[13] 定义它们的方向分别指向对应坐标增加的方向，例如 $r$ 增加时，点 $P(r,\theta ,\phi )$ 就向 $ \hat{\boldsymbol{\mathbf{r}}} $ 的方向移动，$\theta$ 增加时 $P(r,\theta ,\phi )$ 就向 $ \hat{\boldsymbol{\mathbf{\theta}}} $ 方向移动。
+[14] 三个单位矢量两两垂直，形成一组正交归一基底，任意三维矢量都可以表示成它们的线性组合（式 4 ）
+[/SCOPE:s_unitvec_let]
+[15] \begin{equation}
+\boldsymbol{\mathbf{v}} = ( \boldsymbol{\mathbf{v}} \boldsymbol\cdot \hat{\boldsymbol{\mathbf{r}}} )\, \hat{\boldsymbol{\mathbf{r}}} + ( \boldsymbol{\mathbf{v}} \boldsymbol\cdot \hat{\boldsymbol{\mathbf{\theta}}} )\, \hat{\boldsymbol…[truncated]…{\mathbf{v}} \boldsymbol\cdot \hat{\boldsymbol{\mathbf{\phi}}} )\, \hat{\boldsymbol{\mathbf{\phi}}} = v_r \, \hat{\boldsymbol{\mathbf{r}}} + v_\theta \, \hat{\boldsymbol{\mathbf{\theta}}} + v_\phi \, \hat{\boldsymbol{\mathbf{\phi}}} ~.
+\end{equation}
+[16] 注意根据
+[17] 图 1 [链接 L0]
+[18] 对三个单位矢量的定义，当 $P$ 取不同位置时，三个单位矢量一般也会改变方向。
+[19] 所以与直角坐标系的一个显著不同是，球坐标的三个单位矢量是关于 $\theta$ 和 $\phi$ 的函数。
+[20] 具体表示出来，就是 $ \hat{\boldsymbol{\mathbf{r}}} (\theta ,\phi )$， $ \hat{\boldsymbol{\mathbf{\theta}}} (\theta ,\phi )$， $ \hat{\boldsymbol{\mathbf{\phi}}} (\phi )$。
+[21] 例如 $P$ 的球坐标为 $(1, \pi/2, 0)$，直角坐标为 $(1, 0, 0)$ 时，
+[22] $ \hat{\boldsymbol{\mathbf{r}}} = \hat{\boldsymbol{\mathbf{x}}} $，$ \hat{\boldsymbol{\mathbf{\theta}}} = - \hat{\boldsymbol{\mathbf{z}}} $，$ \hat{\boldsymbol{\mathbf{\phi}}} = \hat{\boldsymbol{\mathbf{y}}} $。
+[23] 但是球坐标为 $(1, \pi/2, \pi/2)$，直角坐标为 $(0, 1, 0)$ 时，$ \hat{\boldsymbol{\mathbf{r}}} = \hat{\boldsymbol{\mathbf{y}}} $，$ \hat{\boldsymbol{\mathbf{\theta}}} = - \hat{\boldsymbol{\mathbf{z}}} $，$ \hat{\boldsymbol{\mathbf{\phi}}} = - \hat{\boldsymbol{\mathbf{x}}} $。
+[24] 三个坐标按照 $(r, \theta , \phi )$ 排序，是为了使对应的单位矢量满足叉乘关系 $ \hat{\boldsymbol{\mathbf{r}}} \boldsymbol\times \hat{\boldsymbol{\mathbf{\theta}}} = \hat{\boldsymbol{\mathbf{\phi}}} $。
+[25] 这可以类比直角坐标系的三个单位矢量必须满足 $ \hat{\boldsymbol{\mathbf{x}}} \boldsymbol\times \hat{\boldsymbol{\mathbf{y}}} = \hat{\boldsymbol{\mathbf{z}}} $。
+[26] 这也是对所有正交曲线坐标系的要求，球坐标系是正交曲线坐标系 的一种。
+
+[/SCOPE:s_unitvec]
+[SCOPE:s_convert|description|球坐标和直角坐标的转换]
+[27] 对于球坐标为 $(r, \theta , \phi )$ 的任意点，球坐标和直角坐标间的转换以及单位矢量 $ \hat{\boldsymbol{\mathbf{r}}} , \hat{\boldsymbol{\mathbf{\theta}}} , \hat{\boldsymbol{\mathbf{\phi}}} $ 与 $ \hat{\boldsymbol{\mathbf{x}}} , \hat{\boldsymbol{\mathbf{y}}} , \hat{\boldsymbol{\mathbf{z}}} $ 之间的转换见详见 “球坐标与直角坐标的转换”，这里引用（式 1 和式 2 ）：
+[28] \begin{equation}
+\begin{cases}
+x = r\sin \theta \cos \phi \\
+y = r\sin \theta \sin \phi \\
+z = r\cos \theta
+\end{cases}~.
+\end{equation}
+[29] \begin{equation}
+\left\{\begin{aligned}
+r &= \sqrt {x^2 + y^2 + z^2} \\
+\theta &= \operatorname{Arctan} \left(\sqrt{x^2 + y^2}, z \right) \\
+\phi &= \operatorname{Arctan} (y, x)
+\end{aligned}\right. ~.\end{equation}
+
+[/SCOPE:s_convert]
+[SCOPE:s_rep|description|球坐标系中矢量的两种表示方法]
+[30] 球坐标系中，表示矢量的一种简单方法是直接规定矢量以原点为起点，以球坐标 $(r, \theta, \phi)$ 的点为终点。
+[31] 但这样表示的缺点是两个矢量相加（减）不能直接表示为三个分量的加，而是要经过一些繁琐的变换，例如先变换到直角坐标系中，相加后再变回球坐标中。
+[32] 更常见的方法，是将矢量投影到球坐标的 3 个单位矢量 $ \hat{\boldsymbol{\mathbf{r}}} , \hat{\boldsymbol{\mathbf{\theta}}} , \hat{\boldsymbol{\mathbf{\phi}}} $ 上，用单位矢量的线性组合来表示（式 1 ）。
+[33] 但由于单位矢量的方向取决于坐标，要说明是关于哪个点的单位矢量。
+[34] 在矢量分析中，这种方法常用于表示矢量场，
+[35] 即每个位置对应一个矢量。
+
+[/SCOPE:s_rep]
+[SCOPE:s_example|description|例 1]
+[SCOPE:s_example_let|let_bind|例 1 变量]
+[36] 任意一点 $P(r, \theta, \phi)$ 的位置矢量都可以表示为 $ \boldsymbol{\mathbf{r}} = r\, \hat{\boldsymbol{\mathbf{r}}} $。
+[/SCOPE:s_example_let]
+[37] 原点处电荷 $q$ 产生的电场为 $ \boldsymbol{\mathbf{E}} = k q \, \hat{\boldsymbol{\mathbf{r}}} /r^2$，详见 “电场” 的式 4 。
+[38] 一个绕 $z$ 轴逆时针旋转（角速度 $\omega $）的圆柱，在圆柱内任意一点的速度矢量为（详见 “圆周运动的速度”）
+[39] \begin{equation}
+\boldsymbol{\mathbf{v}} (r, \theta, \phi) = \omega r_\bot \, \hat{\boldsymbol{\mathbf{\phi}}} = \omega r\sin \theta \, \hat{\boldsymbol{\mathbf{\phi}}} ~.
+\end{equation}
+[40] 可见一些具有球对称性或柱对称性的场在球坐标系中具有更简单的形式，对具体问题选取合适的坐标系往往能大大简化计算。
+[/SCOPE:s_example]
+[/SCOPE:root]

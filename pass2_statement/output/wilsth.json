@@ -1,0 +1,163 @@
+{
+  "article_name": "wilsth",
+  "statements": [
+    {
+      "stmt_id": "st_wilson_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": "true",
+      "scope_id": "s_wilson",
+      "exposed_entities": [
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_wilson_proof_base",
+      "subtype": "assumption",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_wilson",
+      "exposed_entities": [
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_wilson_proof_odd",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_wilson",
+      "exposed_entities": [
+        "p",
+        "a"
+      ]
+    },
+    {
+      "stmt_id": "st_wilson_proof_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_wilson",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_legendre_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": "true",
+      "scope_id": "s_legendre",
+      "exposed_entities": [
+        "a",
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_legendre_proof_start",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_legendre",
+      "exposed_entities": [
+        "a",
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_legendre_proof_mid",
+      "subtype": "conclusion",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_legendre",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_legendre_proof_wilson",
+      "subtype": "assumption",
+      "clause_range": [
+        13,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_legendre",
+      "exposed_entities": [
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_legendre_proof_final",
+      "subtype": "conclusion",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_legendre",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_wilson_proof_base",
+      "target": "st_wilson_proof_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_wilson_proof_odd",
+      "target": "st_wilson_proof_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_legendre_proof_start",
+      "target": "st_legendre_proof_mid",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_legendre_proof_mid",
+      "target": "st_legendre_proof_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_legendre_proof_wilson",
+      "target": "st_legendre_proof_final",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_legendre_theorem",
+      "target": "st_wilson_theorem",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "Legendre 符号的计算方法证明中使用了 Wilson 定理"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,249 @@
+[SCOPE:root|description|线性映射]
+文章名: LinMap
+标题: 线性映射
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=线性映射
+  [1] type=corollary heading=推论 1 title=
+  [2] type=exercise heading=习题 1 title=几何矢量的线性变换
+  [3] type=exercise heading=习题 2 title=
+  [4] type=definition heading=定义 2 title=值空间
+  [5] type=definition heading=定义 3 title=零空间
+  [6] type=definition heading=定义 4 title=线性方程
+  [7] type=theorem heading=定理 1 title=
+
+[0] 重整中：线性变换和线性映射改为同义词
+
+[1] 线性空间是一种集合，自然可以考虑其上各种各样的映射。
+[2] 比如在几何向量空间中，向量 $ \boldsymbol{\mathbf{v}} $ 有长度，表示为 $\lVert \boldsymbol{\mathbf{v}} \rVert$，我们可以定义映射 $f( \boldsymbol{\mathbf{v}} )=\lVert \boldsymbol{\mathbf{v}} \rVert \boldsymbol{\mathbf{v}} $，也就是把每个向量都伸长，伸长倍数恰为自己的长度。
+[3] 可线性空间又不仅仅是个集合，它还有线性结构，
+[4] 即数乘和加法运算。
+[5] 上述 $f$ 并不能体现线性结构的威力，因为它不能保持线性结构——所谓保持线性结构，就是 “线性组合与映射可交换”。
+[6] 比如说，考虑三维几何向量的投影变换，记为 $\pi$。
+[7] 任取若干向量 $ \boldsymbol{\mathbf{v}} _i$，它们的线性组合 $\sum_{i}a_i \boldsymbol{\mathbf{v}} _i$ 也是一个向量。
+[8] 你可以先将 $ \boldsymbol{\mathbf{v}} _i$ 组合起来，再将结果用 $\pi$ 投影，得到 $\pi \left(\sum_{i}a_i \boldsymbol{\mathbf{v}} _i \right) $；
+[9] 也可以先将每个 $ \boldsymbol{\mathbf{v}} _i$ 投影为 $\pi( \boldsymbol{\mathbf{v}} _i)$，再用同一组系数 $a_i$ 做组合，得到 $\sum_{i}a_i\pi( \boldsymbol{\mathbf{v}} _i)$。
+[10] 验算一下，两条路是不是殊途同归？
+[11] 这就叫保持线性结构。
+[12] 保持线性结构的映射体现了线性性的威力，也是线性代数的核心之一。
+
+[SCOPE:s_def1|description|定义1 线性映射]
+[13] 定义 1 线性映射
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[14] 给定域 $\mathbb F$（通常取实数域 $\mathbb R$ 或复数域 $\mathbb C$）上的线性空间 $V$ 和 $U$。
+[15] 如果有映射 $f:V\rightarrow U$ 满足：对于任意的向量 ${v}_1, {v}_2\in V$ 和标量 $c_1, c_2 \in \mathbb{F}$，都有
+[16] \begin{equation}
+f(c_1 {v}_1+c_2 {v}_2)=c_1f({v}_1)+c_2f({v}_2)~.
+\end{equation}
+[/SCOPE:s_def1_let]
+[17] 线性映射（linear map）
+[18] 线性变换（linear transform）
+[19] 特殊地，把 $f:V\to V$ 称为线性算子（linear operator），“算子” 也叫 “算符”。
+[20] 注意一些材料中只把 $f:V\to V$ 称为线性变换，小时百科以定义 1 为准。
+[21] 定义 1 的内涵比看上去广一些，不仅仅是对 $V$ 中两个向量的线性组合成立。
+[22] 容易证明对于任意的一组有限个向量 $\{v_i\}\subseteq V$ 和一组对应的标量 $\{c_i\}\subseteq\mathbb{F}$，都有
+[23] \begin{equation}
+f \left(\sum_i c_i v_i \right) =\sum_i c_i f(v_i)~.
+\end{equation}
+[24] 特殊地，若令所有 $c_i = 0$ 可得
+
+[/SCOPE:s_def1]
+[SCOPE:s_cor1|description|推论1]
+[25] 推论 1
+[26] 线性映射 $f:V\to U$ 总把 $0 \in V$ 映射到 $0 \in U$。
+
+[/SCOPE:s_cor1]
+[SCOPE:s_ex1|description|习题1 几何矢量的线性变换]
+[27] 习题 1 几何矢量的线性变换
+[SCOPE:s_ex1_let|let_bind|习题1的变量]
+[28] 请证明 $N$ 维几何线性空间 $V_N$ 中，以下变换 $f:V\to V$ 都是线性变换：
+[/SCOPE:s_ex1_let]
+[29] 缩放：把矢量乘以一个固定标量 $\lambda$。
+[30] 旋转：把矢量绕任意固定轴逆时针旋转固定角度 $\theta$。
+[31] 镜像：把矢量关于某条过原点的固定直线做镜像对称。
+[32] 投影：把二维矢量垂直投影到过原点的固定直线，或者把三维矢量垂直投影到过原点的平面（也可以拓展到 $N$ 维空间中的矢量投影到 $N-1$ 维平面）。
+[33] 以上几种变换的任意组合。
+[34] 注意在以上映射中，除了投影外都是双射，且都把零向量映射到零向量。
+[35] 多对一映射也会把一些非零向量映射到零向量。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|习题2]
+[36] 习题 2
+[SCOPE:s_ex2_let|let_bind|习题2的变量]
+[37] 请证明两个线性映射 $f, g$ 的复合映射 $f \circ g$ 仍然是线性映射。
+[/SCOPE:s_ex2_let]
+[38] 注意 $f$ 的值域必须是 $g$ 的定义域的子集。
+[39] 在映射中，我们把一个映射的像定义为值域中所有被映射到的元素的集合。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_def2|description|定义2 值空间]
+[40] 定义 2 值空间
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[41] 线性映射 $f:V\to U$ 的像 $M = f(V) \subseteq U$ 是一个线性空间，
+[/SCOPE:s_def2_let]
+[42] 即 $U$ 的子空间。
+[43] 称为 $f$ 的值空间（range space）。
+[44] 在不造成歧义的情况下我们也可以把该映射记为 $f: V\to M \subseteq U$。
+[45] 我们把值空间的维度称为线性映射 $f$ 的秩，记做 $ \operatorname {rank}(f)$。
+[46] 证明留作习题，使用线性空间的定义即可。
+[47] 反过来，我们可以定义所有映射到零向量的元素的集合。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|定义3 零空间]
+[48] 定义 3 零空间
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[49a] (v)= 0\}$ 构成 $V$ 的子空间，称为 $f$ 的零空间（null space），也称为零化子空间或零化子，记做 $ \operatorname {null}
+[49b] (f)$ 或 $\ker{f}$。
+[/SCOPE:s_def3_let]
+[50a] (f))$）称为线性映射 $f$ 的零化度，记做 $ \operatorname {nullity}
+[50b] (f)$。
+[51] 证明留做习题：只需要根据定义证明 $\{v\in V|f(v)= 0\}$ 是一个线性空间即可。
+[52] 【未完成】这两段应该放到后面展开讲解，太浓缩
+[53] 如果 $\{{e}_i\}_{i=1}^n$ 是 $V$ 的一组基底，
+[54] 那么任意 $v\in V$ 都可以唯一地表示为 $v=\sum_i c_i {e}_i$ 的形式，其中 $c_i\in\mathbb{F}$。
+[55] 这样，由于线性性，$f(v)=\sum_ic_if({e}_i)$。
+[56] 也就是说，只需要知道了基向量被 $f$ 映射到哪里，也就可以计算出任意向量映射到哪里。
+[57] 于是，和线性函数一样，确定一个线性映射的时候，我们最多只能自由选择基向量映射到哪里，只不过这里的函数值不再是数字，而是 $U$ 中的向量。
+[58] 在向量空间的表示中我们还会看到，选定两个空间的基以后，一个线性映射也可以看成是多个线性函数的排列，
+[59] 因此线性映射和线性函数性质很相似。
+[60] 线性函数是一种特殊的线性映射，$V$ 上的所有线性函数组成的向量空间叫做对偶空间。
+
+[/SCOPE:s_def3]
+[SCOPE:s_def4|description|定义4 线性方程]
+[61] 定义 4 线性方程
+[SCOPE:s_def4_let|let_bind|定义4的变量]
+[62] 对给定的线性映射 $A:X\to Y$ 和 $b \in Y$，线性方程为 $A (x) = b$；
+[/SCOPE:s_def4_let]
+[63] 所有满足该式的 $x \in X$ 的集合 $X_s$ 叫做方程的解集。
+[64] 首先注意 $A$ 未必把 $Y$ 中的每个元素都射中，
+[65] 即值空间 $A(X) \subseteq Y$ 只是 $Y$ 的一个子空间。
+[66] 所以只有 $b \in A(X)$ 时方程有解，否则无解（解集为空集）。
+[67] 用映射的语言，解集 $X_s$ 就是集合 $ \left\{b \right\} $ 的逆像 $A^{-1}( \left\{b \right\} )$。
+[68] 当 $b = 0$ 时方程叫做算符 $A$ 的齐次方程。
+[69] 齐次方程的解就是映射的零空间（定义 3 ）。1
+
+[/SCOPE:s_def4]
+[SCOPE:s_thm1|description|定理1]
+[70] 定理 1
+[71] 线性方程 $A (x) = b$ 的解集可以表示为
+[72] \begin{equation}
+X_s = X_0 + x_1~.
+\end{equation}
+[SCOPE:s_thm1_let1|let_bind|定理1的变量：零空间]
+[73] 说明：$X_0 + x_1 = \{x \in x_1 \mid x \in X_0\}$ 表示把 $X_0$ 中的每一个向量与 $x_1$ 相加得到的集合。
+[/SCOPE:s_thm1_let1]
+[74] 易证当 $x_1 \ne 0$ 时解集 $X_s$ 不是一向量个子空间（因为不包含零向量）。
+[75] 首先证明集合 $X_0 + x_1$ 中的元素满足 $Ax = b$。
+[SCOPE:s_thm1_let2|let_bind|定理1的变量：x0]
+[76] 令任意 $x_0 \in X_0$
+[/SCOPE:s_thm1_let2]
+[77] \begin{equation}
+A(x_0 + x_1) = Ax_0 + Ax_1 = 0 + b = b~,
+\end{equation}
+[78] 证毕。
+[79] 再来证明解集中不存在 $X_0 + x_1$ 之外的向量。
+[SCOPE:s_thm1_let3|let_bind|定理1的变量：x2]
+[80] 令 $x_2 \in X_S$ 且 $x_2 \ne x_1$，
+[/SCOPE:s_thm1_let3]
+[81] 那么
+[82] \begin{equation}
+A(x_2 - x_1) = Ax_2 - Ax_1 = b - b = 0~,
+\end{equation}
+[83] 即 $x_2 - x_1 \in X_0$，
+[84] 即 $x_2 \in x_1 + X_0$。
+[85] 证毕。
+[86] 到此为止我们就可以非常清晰地勾画出多对一线性映射的结构了 $A: X \to Y$。
+[87] 我们先找到定理 1 中的零空间 $X_0$ 和它的补空间 $X_1$，其中 $X_1$ 的元素和值域空间 $A(X)$ 一一对应。
+[88] 那么对每个 $x_1 \in X_1$，线性映射就会把集合 $x_1 + X_0$ 所有元素映射到 $A(X)$ 中的同一个元素 $y_1 = Ax_1$ 上。
+[89] 【未完成】需要一个 3 维几何向量空间的真实例子，零空间 1 维，补空间 2 维
+
+[/SCOPE:s_thm1]
+[SCOPE:s_linmap_space|description|线性映射空间]
+[90] 【未完成】\mapsto 第一次出现，解释一下用法
+[SCOPE:s_linmap_space_let|let_bind|线性映射空间的变量]
+[91] 从向量空间 $V$ 到向量空间 $W$ 有很多线性映射，全体线性映射的集合记做 $L(V, W)$，它也构成一个向量空间：对标量 $a \in \mathbb{F}$，线性映射 $f \in L(V, W)$，我们定义数乘为
+[/SCOPE:s_linmap_space_let]
+[92] \begin{equation}
+\begin{aligned}
+a \cdot f: V &\to W, \\
+v &\mapsto a \cdot (f(v))~,
+\end{aligned}
+\end{equation}
+[93] 对于线性映射 $f, f \in L(V, W)$，我们定义加法为
+[94] \begin{equation}
+\begin{aligned}
+f + f': V &\to W, \\
+v &\mapsto f(v) + f(v')~.
+\end{aligned}
+\end{equation}
+[95] 特别的，零函数 $v \mapsto 0_W$ 是向量空间 $L(V, W)$ 的零向量。
+
+[/SCOPE:s_linmap_space]
+[SCOPE:s_matrix_rep|description|矩阵表示线性变换]
+[SCOPE:s_matrix_rep_let|let_bind|矩阵表示的变量]
+[96] 2给定实向量空间 $V$，并指定它的一组基 $\{ \boldsymbol{\mathbf{v}} _i\}_{i=1}^n$，这样就可以把每个向量都表示为一个 $n\times 1$ 的列矩阵，而每个线性变换也可以表示为一个 $n\times n$ 的方阵。
+[97] 如果一个线性变换 $f$ 将各基向量 $ \boldsymbol{\mathbf{v}} _i$ 变换成 $a_{i1} \boldsymbol{\mathbf{v}} _2+a_{i2} \boldsymbol{\mathbf{v}} _1+\cdots+a_{in} \boldsymbol{\mathbf{v}} _n$，
+[/SCOPE:s_matrix_rep_let]
+[98] 那么我们可以把这个线性变换表示为矩阵：
+[99] \begin{equation}
+\begin{pmatrix}
+a_{11}&a_{12}&a_{13}&\cdots&a_{1n}\\
+a_{21}&a_{22}&a_{23}&\cdots&a_{2n}\\
+a_{31}&a_{32}&a_{33}&\cdots&a_{1n}\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+a_{n1}&a_{n2}&a_{n3}&\cdots&a_{nn}\\
+\end{pmatrix}~.
+\end{equation}
+[100] 这样，任何向量 $b_1 \boldsymbol{\mathbf{v_1}} +b_2 \boldsymbol{\mathbf{v}} _2+\cdots+b_n \boldsymbol{\mathbf{v}} _n$ 变换为 $c_1 \boldsymbol{\mathbf{v}} _1+c_2 \boldsymbol{\mathbf{v}} _2+\cdots+c_n \boldsymbol{\mathbf{v}} _n$ 的过程，就可以用矩阵表示为：
+[101] \begin{equation}
+\begin{pmatrix}
+c_1\\c_2\\c_3\\\vdots\\c_n
+\end{pmatrix}
+=
+\begin{pmatrix}
+a_{11}&a_{12}&a_{13}&\cdots&a_{1n}\\
+a_{21}&a_{22}&a_{23}&\cdots&a_{2n}\\
+a_{31}&a_{32}&a_{33}&\cdots&a_{1n}\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+a_{n1}&a_{n2}&a_{n3}&\cdots&a_{nn}\\
+\end{pmatrix}
+\begin{pmatrix}
+b_1\\b_2\\b_3\\\vdots\\b_n
+\end{pmatrix}~.
+\end{equation}
+[102] 注意，这个矩阵的第 $j$ 列单独拿出来看的话，正好就是第 $j$ 个基向量变换后的结果 $f( \boldsymbol{\mathbf{v}} _j)$。
+[103] 这一点很容易验证，只要把第 $j$ 个基向量的坐标代入计算就可以了。
+[104] 这一点使得我们可以很容易写出给定基下线性变换的矩阵，只需要把第 $j$ 个基向量变换后所得向量的坐标填入变换矩阵的第 $j$ 列就可以了。
+[105] 最简单的矩阵对应的也就是最简单的线性变换：恒等变换，其矩阵是
+[106] \begin{equation}
+\begin{pmatrix}
+1&0&0&\cdots&0\\
+0&1&0&\cdots&0\\
+0&0&1&\cdots&0\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+0&0&0&\cdots&1\\
+\end{pmatrix}~.
+\end{equation}
+
+[/SCOPE:s_matrix_rep]
+[107] 到目前为止，我们对于向量的描述依然是抽象的，并未涉及许多具体的性质，如向量垂直、向量长度、向量坐标等概念。
+[108] 在将来的文章中，我们会看到如何在给定了具体的基时用矩阵来描述向量和线性变换，以及当基的选择变化时，这些矩阵该如何变化。
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论1是定义1的直接推论"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def4",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理1给出了线性方程解集的结构"
+  }
+]

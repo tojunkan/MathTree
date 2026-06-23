@@ -1,0 +1,203 @@
+[SCOPE:root|description|几何向量的叉乘]
+文章名: Cross
+标题: 几何向量的叉乘
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=向量叉乘
+  [1] type=example heading=例 1 title=求三角形或平行四边形的面积与法向量
+
+[SCOPE:s_def1|description|向量叉乘定义]
+[0] 向量叉乘在物理定律中十分常见，例如在讨论力学中的力矩，角动量，以及电磁学中的洛伦兹力，安培力时都会使用。
+[1] 以下我们讨论的向量都是三维中的空间向量；
+[2] 在讨论它们的坐标时，我们默认取正交归一基底。
+
+[3] 【图解】图 1：叉乘的示意图
+[SCOPE:s_let_vectors|let_bind|引入向量 A, B, C]
+[4] 两个几何向量 $ \boldsymbol{\mathbf{A}} $， $ \boldsymbol{\mathbf{B}} $ 的叉乘（cross product） 也叫叉积，向量积（vector product）或向量积。
+[5] 叉乘的结果是一个向量。
+[6] 叉乘用 $ \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} $ 表示，且 “$ \boldsymbol\times $” 不可省略。
+
+[7] 定义 1 向量叉乘
+[8] 要确定一个几何向量，只需分别确定模长和方向：
+[9] $ \boldsymbol{\mathbf{C}} $ 的模长等于 $ \boldsymbol{\mathbf{A}} , \boldsymbol{\mathbf{B}} $ 的模长之积与夹角 $\theta$（$0 \leqslant \theta \leqslant \pi$）的正弦值相乘。
+[10] \begin{equation}
+\left\lvert \boldsymbol{\mathbf{C}} \right\rvert = \left\lvert \boldsymbol{\mathbf{A}} \right\rvert \left\lvert \boldsymbol{\mathbf{B}} \right\rvert \sin\theta ~.
+\end{equation}
+[11] $ \boldsymbol{\mathbf{C}} $ 的方向垂直于 $ \boldsymbol{\mathbf{A}} , \boldsymbol{\mathbf{B}} $ 所在的平面，且由右手定则决定。
+[12] 结合图 1 与式 1 ，可看出 $ \boldsymbol{\mathbf{C}} $ 的大小就是 $ \boldsymbol{\mathbf{A}} , \boldsymbol{\mathbf{B}} $ 所围成的平行四边形的面积，亦即用平行四边形法则计算 $ \boldsymbol{\mathbf{A}} + \boldsymbol{\mathbf{B}} $ 时的平行四边形。
+
+[/SCOPE:s_let_vectors]
+[13] 特别地，由式 1 可知，当两向量平行时，叉乘为零向量；
+[14] 当它们垂直，叉乘的模长等于两模长直接相乘。
+
+[15] 与内积和数乘不同，叉乘不满足一般意义上的交换律。
+[16] 根据几何定义，$ \boldsymbol{\mathbf{B}} \boldsymbol\times \boldsymbol{\mathbf{A}} $ 与 $ \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} $ 模长相同，方向却相反。
+[17] 表示某个向量的反方向，就是在前面加负号，
+[18] 所以有
+[19] \begin{equation}
+\boldsymbol{\mathbf{B}} \boldsymbol\times \boldsymbol{\mathbf{A}} = - \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} ~.
+\end{equation}
+
+[20] 在 $ \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} = \boldsymbol{\mathbf{C}} $ 中，$ \boldsymbol{\mathbf{C}} $ 的方向仅由 $ \boldsymbol{\mathbf{A}} $ 和 $ \boldsymbol{\mathbf{B}} $ 的方向决定。
+[21] 当 $ \boldsymbol{\mathbf{A}} $ 和 $ \boldsymbol{\mathbf{B}} $ 的方向不变时，$ \boldsymbol{\mathbf{C}} $ 的模长正比于 $ \boldsymbol{\mathbf{A}} $ 和 $ \boldsymbol{\mathbf{B}} $ 的模长之积。
+[22] 假设 $\lambda $ 为常数（标量），显然有
+[23] \begin{equation}
+(\lambda \boldsymbol{\mathbf{A}} ) \boldsymbol\times \boldsymbol{\mathbf{B}} = \boldsymbol{\mathbf{A}} \boldsymbol\times (\lambda \boldsymbol{\mathbf{B}} ) = \lambda ( \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} )~.
+\end{equation}
+[24] 即标量的位置可以任意变换，
+[25] 但向量与乘号的位置关系始终要保持不变。
+
+[26] 叉乘一个最重要的特性，就是它满足分配律。
+[27] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol\times ( \boldsymbol{\mathbf{B}} + \boldsymbol{\mathbf{C}} ) = \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} + \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{C}} ~,
+\end{equation}
+[28] 式 2 [链接 L0]
+[29] 及上式可以推出
+[30] \begin{equation}
+( \boldsymbol{\mathbf{A}} + \boldsymbol{\mathbf{B}} ) \boldsymbol\times \boldsymbol{\mathbf{C}} = - \boldsymbol{\mathbf{C}} \boldsymbol\times ( \boldsymbol{\mathbf{A}} + \boldsymbol{\mathbf{B}} ) = - \boldsymbol{\mathbf{C}} \boldsymb…[truncated]…imes \boldsymbol{\mathbf{A}} - \boldsymbol{\mathbf{C}} \boldsymbol\times \boldsymbol{\mathbf{B}} = \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{C}} + \boldsymbol{\mathbf{B}} \boldsymbol\times \boldsymbol{\mathbf{C}} ~.
+\end{equation}
+[31] 从几何的角度理解，这个结论并不显然（见向量叉乘分配律的几何证明）。
+
+[32] 【图解】图 2：坐标轴
+[33] 按照上面的定义，在右手系中，三个坐标轴的单位向量 $ \hat{\boldsymbol{\mathbf{x}}} , \hat{\boldsymbol{\mathbf{y}}} , \hat{\boldsymbol{\mathbf{z}}} $ 满足
+[34] \begin{equation}
+\hat{\boldsymbol{\mathbf{x}}} \boldsymbol\times \hat{\boldsymbol{\mathbf{y}}} = \hat{\boldsymbol{\mathbf{z}}}
+\qquad
+\hat{\boldsymbol{\mathbf{y}}} \boldsymbol\times \hat{\boldsymbol{\mathbf{z}}} = \hat{\boldsymbol{\mathbf{x}}}
+\qquad
+\hat{\boldsymbol{\mathbf{z}}} \boldsymbol\times \hat{\boldsymbol{\mathbf{x}}} = \hat{\boldsymbol{\mathbf{y}}} ~
+\end{equation}
+[35] 式 2 [链接 L1]
+[36] \begin{equation}
+\hat{\boldsymbol{\mathbf{y}}} \boldsymbol\times \hat{\boldsymbol{\mathbf{x}}} = - \hat{\boldsymbol{\mathbf{z}}}
+\qquad
+\hat{\boldsymbol{\mathbf{z}}} \boldsymbol\times \hat{\boldsymbol{\mathbf{y}}} = - \hat{\boldsymbol{\mathbf{x}}}
+\qquad
+\hat{\boldsymbol{\mathbf{x}}} \boldsymbol\times \hat{\boldsymbol{\mathbf{z}}} = - \hat{\boldsymbol{\mathbf{y}}} ~
+\end{equation}
+[37] 根据定义，一个向量叉乘自身，模长为 $0$。
+[38] 所以叉乘结果是零向量 $ \boldsymbol{\mathbf{0}} $。
+[39] 于是又有
+[40] \begin{equation}
+\hat{\boldsymbol{\mathbf{x}}} \boldsymbol\times \hat{\boldsymbol{\mathbf{x}}} = \boldsymbol{\mathbf{0}}
+\qquad
+\hat{\boldsymbol{\mathbf{y}}} \boldsymbol\times \hat{\boldsymbol{\mathbf{y}}} = \boldsymbol{\mathbf{0}}
+\qquad
+\hat{\boldsymbol{\mathbf{z}}} \boldsymbol\times \hat{\boldsymbol{\mathbf{z}}} = \boldsymbol{\mathbf{0}} ~
+\end{equation}
+[41] 式 6 [链接 L2]
+[42] 式 7 [链接 L3]
+[43] 式 8 [链接 L4]
+[44] 中共 9 条等式描述了 $ \hat{\boldsymbol{\mathbf{x}}} , \hat{\boldsymbol{\mathbf{y}}} , \hat{\boldsymbol{\mathbf{z}}} $ 中任意两个叉乘的结果。
+
+[SCOPE:s_let_coords|let_bind|引入坐标分量]
+[45] 把向量 $ \boldsymbol{\mathbf{A}} $ 和 $ \boldsymbol{\mathbf{B}} $ 分别在直角坐标系的三个单位向量展开，得到
+[46] \begin{equation}
+\boldsymbol{\mathbf{A}} = a_x\, \hat{\boldsymbol{\mathbf{x}}} + a_y\, \hat{\boldsymbol{\mathbf{y}}} + a_z\, \hat{\boldsymbol{\mathbf{z}}} \qquad \boldsymbol{\mathbf{B}} = b_x\, \hat{\boldsymbol{\mathbf{x}}} + b_y\, \hat{\boldsymbol{\mathbf{y}}} + b_z\, \hat{\boldsymbol{\mathbf{z}}} ~
+\end{equation}
+[47] $(a_x,a_y,a_z)$ 和 $(b_x,b_y,b_z)$ 分别是 $ \boldsymbol{\mathbf{A}} $ 和 $ \boldsymbol{\mathbf{B}} $ 的坐标。
+[48] 根据叉乘的分配律（
+[49] 式 4 [链接 L5]
+[50] 式 5 [链接 L6]
+[51] ），可得到如下 9 项
+[52] \begin{equation}
+\begin{aligned}
+\boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} ={} &(a_x\, \hat{\boldsymbol{\mathbf{x}}} + a_y\, \hat{\boldsymbol{\mathbf{y}}} + a_z\, \hat{\boldsymbol{\mathbf{z}}} ) \boldsymbol\times (b_x\, \hat{\…[truncated]…times \hat{\boldsymbol{\mathbf{x}}} ) + a_z b_y( \hat{\boldsymbol{\mathbf{z}}} \boldsymbol\times \hat{\boldsymbol{\mathbf{y}}} ) + a_z b_z( \hat{\boldsymbol{\mathbf{z}}} \boldsymbol\times \hat{\boldsymbol{\mathbf{z}}} )~.
+\end{aligned} \end{equation}
+[53] 注意每一项中的运算在
+[54] 式 6 [链接 L7]
+[55] 式 8 [链接 L8]
+[56] 中都能找到答案，
+[57] 于是上式化为
+[58] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} = (a_y b_z - a_z b_y)\, \hat{\boldsymbol{\mathbf{x}}} + (a_z b_x - a_x b_z)\, \hat{\boldsymbol{\mathbf{y}}} + (a_x b_y - a_y b_x)\, \hat{\boldsymbol{\mathbf{z}}} ~.
+\end{equation}
+[59] 令 $ \boldsymbol{\mathbf{C}} = \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} $，
+[60] 则 $ \boldsymbol{\mathbf{C}} $ 的分量表达式为
+[61] \begin{equation}
+\begin{cases}
+c_x = a_y b_z - a_z b_y\\
+c_y = a_z b_x - a_x b_z\\
+c_z = a_x b_y - a_y b_x
+\end{cases}~
+\end{equation}
+[62] 式 11 [链接 L9]
+[63] 三阶行列式 [链接 L10]
+[64] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} =
+\begin{vmatrix}
+\hat{\boldsymbol{\mathbf{x}}} & \hat{\boldsymbol{\mathbf{y}}} & \hat{\boldsymbol{\mathbf{z}}} \\
+a_x & a_y & a_z\\
+b_x & b_y & b_z
+\end{vmatrix} ~\end{equation}
+[65] 与普通行列式不同的是，这个行列式中第一行的元素是向量，
+[66] 所以得出的结果也是向量。
+
+[/SCOPE:s_let_coords]
+[SCOPE:s_let_equiv|let_bind|引入等效叉乘中的变量]
+[67] 【图解】图 3：$ \boldsymbol{\mathbf{A}} $ 与 $ \boldsymbol{\mathbf{B}} _i$ 相乘结果相同
+[68] 根据定义 1 ，当两向量叉乘时，若把一个向量延着与另一个向量垂直的方向投影，叉乘结果不变。
+[69] 例如在图 3 中有
+[70] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} _1 = \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} _3 = \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} _2~.
+\end{equation}
+[71] 这是因为 $ \left\lvert \boldsymbol{\mathbf{B}} _i \right\rvert \sin\theta_i$ 就是投影后的 $ \boldsymbol{\mathbf{ \boldsymbol{\mathbf{B}} _2}} $ 的模长。
+[72] 另一种证明方法：所有指向虚线的 $ \boldsymbol{\mathbf{B}} _i$ 都可以表示为 $ \boldsymbol{\mathbf{B}} _2 + \lambda \boldsymbol{\mathbf{A}} $（$\lambda$ 为任意实数）。
+[73] 根据分配律，有
+[74] \begin{equation}
+\boldsymbol{\mathbf{A}} \boldsymbol\times ( \boldsymbol{\mathbf{B}} _2 + \lambda \boldsymbol{\mathbf{A}} ) = \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} _2 + \boldsymbol{\mathbf{A}} \boldsymbol\times (\lambda \boldsymbol{\mathbf{A}} ) = \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} _2~.
+\end{equation}
+
+[/SCOPE:s_let_equiv]
+[75] 在高中阶段面积只是一个标量概念，
+[76] 但在微积分和大学物理中，我们也可以把它拓展为向量。
+[77] 定义面积向量的模长是一个平面几何图形的面积，方向是其所在平面的两个法向量之一。
+[78] 具体到这里讨论的平行四边形，我们可以根据叉乘结果来明确定义平行四边形的面积向量。
+
+[/SCOPE:s_def1]
+[SCOPE:s_example1|description|求三角形或平行四边形的面积与法向量]
+[79] 例 1 求三角形或平行四边形的面积与法向量
+[SCOPE:s_example_let|let_bind|引入例1中的变量]
+[80] 空间直角坐标系中三角形的三点分别为 $O(0,0,0)$， $A(1,1,0)$， $B(-1,1,1)$。
+[81] 求三角形的面积和一个单位法向量。
+[82] 以这三点为顶点的平行四边形的面积显然是该三角形的两倍，
+[83] 所以下面只讨论三角形。
+[84] 令 $O$ 到 $A$ 的向量和 $O$ 到 $B$ 的向量分别为
+[85] \begin{equation}
+\begin{aligned}
+\boldsymbol{\mathbf{a}} &= (1,1,0) - (0,0,0) = (1,1,0)\\
+\boldsymbol{\mathbf{b}} &= (-1,1,1) - (0,0,0) = (-1,1,1)
+\end{aligned} ~\end{equation}
+[86] \begin{equation}
+S = \frac12 ab \sin \theta ~.
+\end{equation}
+[87] \begin{equation}
+S = \frac12 ab \sin \theta = \frac12 \left\lvert \boldsymbol{\mathbf{a}} \boldsymbol\times \boldsymbol{\mathbf{b}} \right\rvert ~.
+\end{equation}
+[88] \begin{equation}
+\boldsymbol{\mathbf{v}} = \boldsymbol{\mathbf{a}} \boldsymbol\times \boldsymbol{\mathbf{b}} =
+\begin{vmatrix} \hat{\boldsymbol{\mathbf{x}}} & \hat{\boldsymbol{\mathbf{y}}} & \hat{\boldsymbol{\mathbf{z}}} \\ 1&1&0\\-1&1&1 \end{vmatrix}
+= \hat{\boldsymbol{\mathbf{x}}} - \hat{\boldsymbol{\mathbf{y}}} + 2\, \hat{\boldsymbol{\mathbf{z}}} ~.
+\end{equation}
+[89] 根据叉乘的几何定义，$ \boldsymbol{\mathbf{v}} = (1,-1,2)$ 就是三角形的法向量，进行归一化
+[90] 得单位法向量为
+[91] \begin{equation}
+\hat{\boldsymbol{\mathbf{v}}} = \frac{ \boldsymbol{\mathbf{v}} }{ \left\lvert \boldsymbol{\mathbf{v}} \right\rvert } = \frac{(1,-1,2)}{\sqrt 6} = \left(\frac{\sqrt 6 }{6}, - \frac{\sqrt 6 }{6}, \frac{\sqrt 6 }{3} \right) ~.
+\end{equation}
+
+跨文章引用:
+  [L10] 三阶行列式 → Deter
+[/SCOPE:s_example1]
+[/SCOPE:s_example_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1应用叉乘定义求面积和法向量"
+  }
+]

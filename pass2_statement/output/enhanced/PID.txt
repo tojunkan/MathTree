@@ -1,0 +1,35 @@
+[SCOPE:root|description|主理想整环]
+文章名: PID
+标题: 主理想整环
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=definition heading=定义 1 title=主理想
+  [2] type=definition heading=定义 2 title=主理想环
+
+[SCOPE:s_example|description|例1]
+[SCOPE:s_example_let|let_bind|例1的变量]
+[0] 设 $R$ 为幺环，
+[/SCOPE:s_example_let]
+[1] 则有
+[2] \begin{equation}
+\langle S\rangle=\left\{\sum_{i=1}^n x_i a_iy_i \mid n \in \mathbb{N}, x_i,y_i \in R, a_i \in S, i=1,2, \cdots, n\right\}~.
+\end{equation}
+
+[/SCOPE:s_example]
+[SCOPE:s_def1|description|定义1 主理想]
+[3] 定义 1 主理想
+[4] 单个元素生成的理想，称为一个主理想（principal ideal），并称该元素为主理想上的一个生成元。
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[5] 对于整环 $R$，任取 $a\in R$，可证 $\langle a \rangle=\{ra|r\in R\}$。
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_def2|description|定义2 主理想环]
+[6] 定义 2 主理想环
+[7] 对于环$R$，如果它的理想全都是主理想，
+[8] 那么称它为一个主理想环（principal ideal ring），常简称 PIR。
+[9] 对于整环$R$，如果它是 PIR，
+[10] 那么称它为一个主理想整环（principal ideal domain），常简称 PID。
+[/SCOPE:s_def2]
+[/SCOPE:root]

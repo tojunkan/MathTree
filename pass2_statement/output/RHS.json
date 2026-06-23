@@ -1,0 +1,259 @@
+{
+  "article_name": "RHS",
+  "statements": [
+    {
+      "stmt_id": "st_nuclear_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_nuclear",
+      "exposed_entities": [
+        "Φ",
+        "Φ_n",
+        "T_{m,n}"
+      ]
+    },
+    {
+      "stmt_id": "st_nuclear_notation",
+      "subtype": "remark",
+      "clause_range": [
+        5,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_nuclear",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rhs_def",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_rhs",
+      "exposed_entities": [
+        "H",
+        "Φ",
+        "τ_Φ",
+        "Φ_0"
+      ]
+    },
+    {
+      "stmt_id": "st_rhs_example_motivation",
+      "subtype": "question",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_rhs_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rhs_example_setup",
+      "subtype": "assumption",
+      "clause_range": [
+        15,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_rhs_example",
+      "exposed_entities": [
+        "L^2(R^n)",
+        "X",
+        "i∇",
+        "S(R^n)"
+      ]
+    },
+    {
+      "stmt_id": "st_rhs_example_nuclear",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_rhs_example",
+      "exposed_entities": [
+        "Φ_k",
+        "T_{m+n,m}"
+      ]
+    },
+    {
+      "stmt_id": "st_rhs_example_triple",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rhs_example",
+      "exposed_entities": [
+        "S(R^n)",
+        "L^2(R^n)",
+        "S'(R^n)"
+      ]
+    },
+    {
+      "stmt_id": "st_rhs_example_claim1",
+      "subtype": "conclusion",
+      "clause_range": [
+        23,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rhs_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rhs_example_delta_eigen",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rhs_example",
+      "exposed_entities": [
+        "δ(x-x_0)",
+        "X^j"
+      ]
+    },
+    {
+      "stmt_id": "st_rhs_example_momentum_eigen",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rhs_example",
+      "exposed_entities": [
+        "e^{ik·x}",
+        "i∂_{x^j}",
+        "-Δ"
+      ]
+    },
+    {
+      "stmt_id": "st_rhs_example_remark",
+      "subtype": "remark",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_rhs_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rhs_example_moral",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        35
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rhs_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rhs_example_decomp",
+      "subtype": "conclusion",
+      "clause_range": [
+        36,
+        39
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rhs_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rhs_example_not_coincidence",
+      "subtype": "remark",
+      "clause_range": [
+        40,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_rhs_example",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_rhs_example_spectral",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_rhs_example",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_rhs_example_setup",
+      "target": "st_rhs_example_triple",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rhs_example_setup",
+      "target": "st_rhs_example_claim1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rhs_example_setup",
+      "target": "st_rhs_example_delta_eigen",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rhs_example_setup",
+      "target": "st_rhs_example_momentum_eigen",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rhs_example_setup",
+      "target": "st_rhs_example_moral",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rhs_example_setup",
+      "target": "st_rhs_example_decomp",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_rhs_example_setup",
+      "target": "st_rhs_example_spectral",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_rhs_def",
+      "target": "st_nuclear_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "RHS 的定义依赖于核空间的概念。"
+    },
+    {
+      "source": "st_rhs_example_triple",
+      "target": "st_rhs_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例子是 RHS 的一个具体实例。"
+    }
+  ],
+  "unresolved": []
+}

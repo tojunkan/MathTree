@@ -1,0 +1,210 @@
+{
+  "article_name": "FmLT",
+  "statements": [
+    {
+      "stmt_id": "st_lemma1_statement",
+      "subtype": "lemma",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "Z_p",
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_assump_notprime",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1_let1",
+      "exposed_entities": [
+        "p",
+        "r",
+        "s"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_concl_notprime",
+      "subtype": "conclusion",
+      "clause_range": [
+        6,
+        8
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_assump_prime",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1_let2",
+      "exposed_entities": [
+        "p"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_goal_prime",
+      "subtype": "conclusion",
+      "clause_range": [
+        34,
+        34
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_let3_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1_let3",
+      "exposed_entities": [
+        "s",
+        "r",
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_let3_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1_let3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_inverse_existence",
+      "subtype": "conclusion",
+      "clause_range": [
+        19,
+        33
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fermat_statement",
+      "subtype": "theorem",
+      "clause_range": [
+        38,
+        43
+      ],
+      "truth_value": "true",
+      "scope_id": "s_fermat",
+      "exposed_entities": [
+        "p",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_fermat_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        39,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_fermat_let",
+      "exposed_entities": [
+        "p",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_fermat_concl",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_fermat_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_fermat_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        46,
+        57
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_fermat",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_lemma1_assump_notprime",
+      "target": "st_lemma1_concl_notprime",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_assump_prime",
+      "target": "st_lemma1_goal_prime",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_let3_assump",
+      "target": "st_lemma1_let3_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_assump_prime",
+      "target": "st_lemma1_inverse_existence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_fermat_assump",
+      "target": "st_fermat_concl",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_fermat_assump",
+      "target": "st_fermat_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_fermat_statement",
+      "target": "st_lemma1_statement",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_fermat_statement",
+      "target": "st_lemma1_statement",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "费马小定理的证明引用引理1的结论"
+    }
+  ],
+  "unresolved": []
+}

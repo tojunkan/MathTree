@@ -1,0 +1,284 @@
+{
+  "article_name": "ODEb3",
+  "statements": [
+    {
+      "stmt_id": "st_definition_intro",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "x_i",
+        "a_ij",
+        "M",
+        "x(t)"
+      ]
+    },
+    {
+      "stmt_id": "st_definition1",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_definition1",
+      "exposed_entities": [
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem1_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_proof",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_setup",
+      "subtype": "assumption",
+      "clause_range": [
+        31,
+        33
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "x1",
+        "x2"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_solution",
+      "subtype": "example",
+      "clause_range": [
+        34,
+        41
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_eigenvector_assumption",
+      "subtype": "assumption",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": null,
+      "scope_id": "s_eigenvector_let1",
+      "exposed_entities": [
+        "M",
+        "v_i",
+        "lambda_i"
+      ]
+    },
+    {
+      "stmt_id": "st_eigenvector_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        44
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_eigenvector_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_eigenvector_verification",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_eigenvector_let1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_non_diag_assumption",
+      "subtype": "assumption",
+      "clause_range": [
+        46,
+        46
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_non_diag_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        48
+      ],
+      "truth_value": "conditional",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_goal",
+      "subtype": "assumption",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_unit_vector_assumption",
+      "subtype": "assumption",
+      "clause_range": [
+        53,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_eigenvector_let2",
+      "exposed_entities": [
+        "e_i"
+      ]
+    },
+    {
+      "stmt_id": "st_unit_vector_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        54,
+        55
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_eigenvector_let2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_identity_assumption",
+      "subtype": "assumption",
+      "clause_range": [
+        57,
+        57
+      ],
+      "truth_value": null,
+      "scope_id": "s_eigenvector_let3",
+      "exposed_entities": [
+        "E"
+      ]
+    },
+    {
+      "stmt_id": "st_identity_formula",
+      "subtype": "conclusion",
+      "clause_range": [
+        58,
+        59
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_eigenvector_let3",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_decomposition_method",
+      "subtype": "conclusion",
+      "clause_range": [
+        60,
+        69
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_eigenvector_let3",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_definition_intro",
+      "target": "st_definition1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_definition1",
+      "target": "st_theorem1_conclusion",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_conclusion",
+      "target": "st_theorem1_proof",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_setup",
+      "target": "st_example1_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_eigenvector_assumption",
+      "target": "st_eigenvector_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_eigenvector_assumption",
+      "target": "st_eigenvector_verification",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_non_diag_assumption",
+      "target": "st_non_diag_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_unit_vector_assumption",
+      "target": "st_unit_vector_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_identity_assumption",
+      "target": "st_identity_formula",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_identity_formula",
+      "target": "st_decomposition_method",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_theorem1_conclusion",
+      "target": "st_definition1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "定理1的结论是定义1的一个实例"
+    }
+  ],
+  "unresolved": []
+}

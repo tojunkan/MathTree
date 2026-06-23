@@ -1,0 +1,274 @@
+[SCOPE:root|description|欧几里得矢量空间的正交化、同构及正交群]
+文章名: EVOIOG
+标题: 欧几里得矢量空间的正交化、同构及正交群
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=标准正交化过程
+  [1] type=theorem heading=定理 2 title=
+  [2] type=theorem heading=定理 3 title=
+  [3] type=theorem heading=定理 4 title=
+  [4] type=definition heading=定义 1 title=正交矩阵
+  [5] type=theorem heading=定理 5 title=
+  [6] type=definition heading=定义 2 title=正交群
+
+[0] 本文存在未完成的内容。
+[1] 需说明欧几里得矢量空间和 $\mathbb{R}^n$ 的关系。
+[2] 1对欧几里得矢量空间 $V$（定义 1 ），其上任一基底都可正交标准化，而空间 $V$ 上的对称双线性型 $(*|*)$ 实际上给出了 $V$ 中的度量性质，
+[3] 即长度（定义 2 ）和夹角（定义 3 ），这意味着就度量性质来说，欧几里得矢量空间 $V$ 和 $\mathbb{R}^n$ 没有差别。
+[4] 由于标准正交基底的重要作用，往往要研究不同标准正交基底之间的转换关系，
+[5] 即两基底对应的过渡矩阵（或转换矩阵），与两标准正交基底对应的过渡矩阵称为正交矩阵，它们将构成一个群，称之正交群。
+
+[SCOPE:s_orthonormalization|description|标准正交化过程]
+[6] 定理 1 标准正交化过程
+[SCOPE:s_orth_let1|let_bind|设线性无关组]
+[7] 设 $\{ \boldsymbol{\mathbf{e}} _1,\cdots, \boldsymbol{\mathbf{e}} _m\}$ 是 $n$ 维欧几里得矢量空间 $V$ 中的一组 $m$ 个线性无关的矢量。
+[/SCOPE:s_orth_let1]
+[8] 那么，存在一个标准正交矢量组 $\{ \hat{\boldsymbol{\mathbf{e}}} '_1,\cdots, \hat{\boldsymbol{\mathbf{e}}} '_m\}$，使得线性包络（或称张成空间定义 1 ）
+[9] \begin{equation}
+L_i=\langle \boldsymbol{\mathbf{e}} _1,\cdots, \boldsymbol{\mathbf{e}} _i\rangle~
+\end{equation}
+[10] \begin{equation}
+L'_i=\langle \hat{\boldsymbol{\mathbf{e}}} '_1,\cdots, \hat{\boldsymbol{\mathbf{e}}} '_i\rangle~.
+\end{equation}
+[11] 证明：令 $ \hat{\boldsymbol{\mathbf{e}}} '_1=\lambda \boldsymbol{\mathbf{e}} _1,\;\lambda= \left\lVert \boldsymbol{\mathbf{e}} _1 \right\rVert ^{-1}$，
+[12] 则 $L_1=\langle \boldsymbol{\mathbf{e}} _1\rangle=\langle \hat{\boldsymbol{\mathbf{e}}} '_1\rangle=L'_1$ 显然成立，
+[13] 即 $m=1$ 的情形。
+[SCOPE:s_orth_let2|let_bind|归纳假设]
+[14] 设当 $1\leq k< m$ 时，已构造出所需的矢量组 $\{ \hat{\boldsymbol{\mathbf{e}}} '_1,\cdots, \hat{\boldsymbol{\mathbf{e}}} '_k\}$，使得 $L_1=L'_i,\;i=1,\cdots,k$。
+[/SCOPE:s_orth_let2]
+[15] 我们来找出 $ \hat{\boldsymbol{\mathbf{e}}} '_{k+1}$。
+[SCOPE:s_orth_let3|let_bind|构造v和lambda]
+[16] 首先，矢量 $ \boldsymbol{\mathbf{e}} _{k+1}$ 不包含在 $L_k=L'_k$ 中（否则，$ \boldsymbol{\mathbf{e}} _{k+1}$ 可用 $ \boldsymbol{\mathbf{e}} _1,\cdots, \boldsymbol{\mathbf{e}} _k$ 线性表示）。令
+[17] \begin{equation}
+\boldsymbol{\mathbf{v}} = \boldsymbol{\mathbf{e}} _{k+1}-\sum_{i=1}^{k}\lambda_i \hat{\boldsymbol{\mathbf{e}}} '_i~,
+\end{equation}
+[18] 而 $\lambda_1,\cdots,\lambda_k$ 是任意纯量（显然 $ \boldsymbol{\mathbf{v}} \neq \boldsymbol{\mathbf{0}} $）。
+[19] 于是
+[20] \begin{equation}
+L_{k+1}=\langle \boldsymbol{\mathbf{e}} _1,\cdots, \boldsymbol{\mathbf{e}} _k, \boldsymbol{\mathbf{e}} _{k+1}\rangle=\langle \boldsymbol{\mathbf{e}} _1,\cdots, \boldsymbol{\mathbf{e}} _k, \boldsymbol{\mathbf{v}} \rangle~.
+\end{equation}
+[21] 如果 $ \boldsymbol{\mathbf{v}} \perp L'_k$，
+[22] 那么便找到了 $ \hat{\boldsymbol{\mathbf{e}}} '_{k+1}=\frac{ \boldsymbol{\mathbf{v}} }{ \left\lVert \boldsymbol{\mathbf{v}} \right\rVert }$。
+[23] 而做到这一点的充要条件是，对任意 $j=1,\cdots,k$，成立
+[24] \begin{equation}
+\begin{aligned}
+&0= \left( \boldsymbol{\mathbf{v}} | \hat{\boldsymbol{\mathbf{e}}} '_j \right) = \left( \boldsymbol{\mathbf{e}} _{k+1}| \hat{\boldsymbol{\mathbf{e}}} '_j \right) - \left(\sum_{i=1}^k\lambda_i \hat{\boldsymbol{\mathbf{…[truncated]…dsymbol{\mathbf{e}}} '_j \right) -\sum_{i=1}^k\lambda_i( \hat{\boldsymbol{\mathbf{e}}} '_i| \hat{\boldsymbol{\mathbf{e}}} '_j)= \left( \boldsymbol{\mathbf{e}} _{k+1}| \hat{\boldsymbol{\mathbf{e}}} '_j \right) -\lambda_j~,
+\end{aligned}
+\end{equation}
+[25] 故只需取 $\lambda_j= \left( \boldsymbol{\mathbf{e}} _{k+1}| \hat{\boldsymbol{\mathbf{e}}} '_j \right) $ 即可。
+[/SCOPE:s_orth_let3]
+[26] 于是，便得到了标准正交组 $ \hat{\boldsymbol{\mathbf{e}}} '_1,\cdots, \hat{\boldsymbol{\mathbf{e}}} '_k$，且 $L_{k+1}=L'_{k+1}$。
+[27] 由数学归纳法，定理得证！
+
+[/SCOPE:s_orthonormalization]
+[SCOPE:s_thm2|description|定理2]
+[28] 定理 2
+[SCOPE:s_thm2_let1|let_bind|设L和标准正交基]
+[29] 设 $L$ 是有限维欧几里得矢量空间 $V$ 的一个子空间，$L^{\perp}$ 是它的正交补，
+[30] 那么
+[31] \begin{equation}
+V=L\oplus L^{\perp},\quad L^{\perp\perp}=L~.
+\end{equation}
+[32] 证明：在 $L$ 中取任一标准正交基 $( \boldsymbol{\mathbf{e}} _1,\cdots, \boldsymbol{\mathbf{e}} _m)$，如定理 1 中找出 $ \boldsymbol{\mathbf{v}} $ 的过程一样，可知对 $\forall \boldsymbol{\mathbf{w}} \in V$，矢量 $ \boldsymbol{\mathbf{v}} $:
+[/SCOPE:s_thm2_let1]
+[33] \begin{equation}
+\boldsymbol{\mathbf{v}} = \boldsymbol{\mathbf{w}} -\sum_{i=1}^m( \boldsymbol{\mathbf{w}} | \boldsymbol{\mathbf{e}} _i) \boldsymbol{\mathbf{e}} _i~.
+\end{equation}
+[34] 正交于 $L$，
+[35] 即 $ \boldsymbol{\mathbf{w}} = \boldsymbol{\mathbf{u}} + \boldsymbol{\mathbf{v}} $，其中 $ \boldsymbol{\mathbf{u}} =\sum_{i=1}^m( \boldsymbol{\mathbf{w}} | \boldsymbol{\mathbf{e}} _i) \boldsymbol{\mathbf{e}} _i\in L$，而 $ \boldsymbol{\mathbf{v}} \in L^{\perp}$，亦即 $V=L+L^{\perp}$。
+[36] 要证 $V=L\oplus L^{\perp}$，只需证 $L\cap L^{\perp}= \boldsymbol{\mathbf{0}} $。
+[SCOPE:s_thm2_let2|let_bind|设x属于交]
+[37] 设 $ \boldsymbol{\mathbf{x}} \in L\cap L^{\perp}$，
+[/SCOPE:s_thm2_let2]
+[38] 则 $( \boldsymbol{\mathbf{x}} |L)=0$，又 $ \boldsymbol{\mathbf{x}} \in L$，
+[39] 于是 $( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{x}} )=0$，由内积的正定性，$ \boldsymbol{\mathbf{x}} = \boldsymbol{\mathbf{0}} $，
+[40] 从而 $V=L\oplus L^{\perp}$。
+[41] 任意 $ \boldsymbol{\mathbf{w}} \in L^{\perp\perp}$，由 $V=L\oplus L^{\perp}$，有 $ \boldsymbol{\mathbf{w}} = \boldsymbol{\mathbf{u}} + \boldsymbol{\mathbf{v}} ( \boldsymbol{\mathbf{u}} \in L, \boldsymbol{\mathbf{v}} \in L^{\perp})$，
+[42] 于是 $( \boldsymbol{\mathbf{w}} | \boldsymbol{\mathbf{v}} )= \left\lVert \boldsymbol{\mathbf{v}} \right\rVert ^2=0$，
+[43] 故 $ \boldsymbol{\mathbf{w}} = \boldsymbol{\mathbf{u}} \in L$，
+[44] 于是 $L^{\perp\perp}\subset L$。
+[45] 其次，由 $L^{\perp\perp}=(L^{\perp})^{\perp}$，而 $(L|L^{\perp})=0$，
+[46] 从而 $L\subset L^{\perp\perp}$。
+[47] 于是 $L^{\perp\perp}=L$。
+[48] 证毕！
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|定理3]
+[49] 定理 3
+[SCOPE:s_thm3_let1|let_bind|设V,V'和标准正交基]
+[50] 任意两个维数相同的欧几里得矢量空间 $V,V'$ 都是同构的。
+[51] 即存在矢量空间的同构映射 $f:V\rightarrow V'$，它还保持内积：
+[52] \begin{equation}
+( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{y}} )=(f( \boldsymbol{\mathbf{x}} )|f( \boldsymbol{\mathbf{y}} ))'~.
+\end{equation}
+[53] 证明： 取 $V,V'$ 的标准正交基底 $\{ \hat{\boldsymbol{\mathbf{e}}} _i\}$ 和 $\{ \hat{\boldsymbol{\mathbf{e}}} '_i\}$。
+[/SCOPE:s_thm3_let1]
+[54] 则映射：
+[55] \begin{equation}
+f: \boldsymbol{\mathbf{x}} =\sum_{i=1}^{n}x_i \hat{\boldsymbol{\mathbf{e}}} _i\mapsto \boldsymbol{\mathbf{x}} '=\sum_{i=1}^{n}x_i \hat{\boldsymbol{\mathbf{e}}} '_i~,
+\end{equation}
+[56] 显然是个线性的双射
+[57] 2
+[58] 。
+[59] 并且由于选取的基底皆为标准正交基，
+[60] 所以内积 $( \boldsymbol{\mathbf{x}} | \boldsymbol{\mathbf{y}} )$ 和 $( \boldsymbol{\mathbf{x}} '| \boldsymbol{\mathbf{y}} ')'$ 都按同一公式进行。
+[61] 证毕!
+[SCOPE:s_thm3_let2|let_bind|固定v]
+[62] 若固定矢量 $ \boldsymbol{\mathbf{v}} $，
+[/SCOPE:s_thm3_let2]
+[63] 则映射
+[64] \begin{equation}
+\varphi_{ \boldsymbol{\mathbf{v}} }=( \boldsymbol{\mathbf{v}} |*):V\rightarrow\mathbb{R}~
+\end{equation}
+[65] 是 $V$ 上的线性映射，
+[66] 即 $( \boldsymbol{\mathbf{v}} |*)\in V^*$
+[67] 3
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|定理4]
+[68] 定理 4
+[69] 映射 $\varphi: \boldsymbol{\mathbf{v}} \mapsto ( \boldsymbol{\mathbf{v}} |*)=\varphi_{ \boldsymbol{\mathbf{v}} }$ 是矢量空间 $V$ 到 $V^*$ 的自然同构4。
+[SCOPE:s_thm4_let1|let_bind|设标准正交基]
+[70] 在此同构下，$V$ 的基底 $ \hat{\boldsymbol{\mathbf{e}}} _1,\cdots, \hat{\boldsymbol{\mathbf{e}}} _n$ 被映射到 $V^*$ 中与其对偶的基底 $e^1,\cdots,e^n$，
+[/SCOPE:s_thm4_let1]
+[71] 即 $\varphi_{ \hat{\boldsymbol{\mathbf{e_i}}} }=e^i$。
+[72] 证明：$\varphi$ 是线性的：
+[73] \begin{equation}
+\varphi_{(\alpha \boldsymbol{\mathbf{u}} +\beta \boldsymbol{\mathbf{v}} )}=(\alpha \boldsymbol{\mathbf{u}} +\beta \boldsymbol{\mathbf{v}} |*)=\alpha( \boldsymbol{\mathbf{u}} |*)+\beta( \boldsymbol{\mathbf{v}} |*)=\alpha\varphi_{ \boldsymbol{\mathbf{u}} }+\beta\varphi_{ \boldsymbol{\mathbf{v}} }~.
+\end{equation}
+[74] \begin{equation}
+\boldsymbol{\mathbf{v}} \in \mathrm{Ker}\,\varphi\Rightarrow( \boldsymbol{\mathbf{v}} | \boldsymbol{\mathbf{x}} )=0,\forall \boldsymbol{\mathbf{x}} \in V~,
+\end{equation}
+[75] 所以 $( \boldsymbol{\mathbf{v}} | \boldsymbol{\mathbf{v}} )=0\Rightarrow \boldsymbol{\mathbf{v}} = \boldsymbol{\mathbf{0}} $，
+[76] 故 $\mathrm{Ker}\,\varphi= \boldsymbol{\mathbf{0}} $，
+[77] 于是 $\varphi$ 为单射。
+[78] $V^*$ 上任意元素必可由 $V^*$ 的基底线性表示，
+[79] 故若 $V^*$ 的任一基底都有 $V$ 的元与之对应，
+[80] 则 $\varphi$ 为满射。
+[81] 特别地
+[82] \begin{equation}
+\varphi_{ \hat{\boldsymbol{\mathbf{e}}} _i}=( \hat{\boldsymbol{\mathbf{e}}} _i|*)=\sum_{j=1}^{n} a_{ij}e^j~.
+\end{equation}
+[83] 因为 $ \hat{\boldsymbol{\mathbf{e}}} _1,\cdots, \hat{\boldsymbol{\mathbf{e}}} _n$ 是标准正交基底，
+[84] 所以
+[85] \begin{equation}
+a_{ij}=\sum_{k=1}^n a_{ik}e^k( \hat{\boldsymbol{\mathbf{e}}} _j)=( \hat{\boldsymbol{\mathbf{e}}} _i| \hat{\boldsymbol{\mathbf{e}}} _j)=\delta_{ij}~,
+\end{equation}
+[86] 于是有 $\varphi_{ \hat{\boldsymbol{\mathbf{e}}} _i}=e^i$。
+[87] 这就证明了满射性。
+[88] 进而，$\varphi$ 是双射。
+[89] 显然，定义 $\varphi$ 的过程并没有选择特定的基底，
+[90] 即 $\varphi$ 是矢量空间 $V$ 到 $V^*$ 自然同构。
+[91] 证毕！
+[92] 由于同构的双方可认为是同一事物的不同表现形式，这意味着，欧几里得矢量空间中每一矢量 $ \boldsymbol{\mathbf{v}} $ 都可看成是一个线性函数 $ \boldsymbol{\mathbf{v}} :V\rightarrow\mathbb{R}$。
+[93] （即把 $ \boldsymbol{\mathbf{v}} $ 看成 $V$ 的线性函数时，$ \boldsymbol{\mathbf{v}} $ 相当于 $\varphi_{ \boldsymbol{\mathbf{v}} }=( \boldsymbol{\mathbf{v}} |*)$）。
+
+[/SCOPE:s_thm4]
+[SCOPE:s_orthogonal_group|description|正交群推导]
+[SCOPE:s_orth_group_let|let_bind|设两组标准正交基和转换矩阵]
+[94] 设 $( \hat{\boldsymbol{\mathbf{e}}} _1,\cdots, \hat{\boldsymbol{\mathbf{e}}} _n)$ 和 $( \hat{\boldsymbol{\mathbf{e}}} '_1,\cdots, \hat{\boldsymbol{\mathbf{e}}} '_n)$ 是矢量空间 $V$ 的不同标准正交基底。
+[95] 设 $ \hat{\boldsymbol{\mathbf{e}}} '_i$ 到 $ \hat{\boldsymbol{\mathbf{e}}} _i$ 的转换矩阵为 $ \boldsymbol{\mathbf{A}} =(a_{ij})$，
+[/SCOPE:s_orth_group_let]
+[96] 即
+[97] \begin{equation}
+\hat{\boldsymbol{\mathbf{e}}} '_j=\sum_{i=1}^n a_{ij} \hat{\boldsymbol{\mathbf{e}}} _i~.
+\end{equation}
+[98] \begin{equation}
+\begin{aligned}
+\delta_{ij}&=( \hat{\boldsymbol{\mathbf{e}}} '_i| \hat{\boldsymbol{\mathbf{e}}} '_j)= \left(\sum_{k=1}^n a_{ki} \hat{\boldsymbol{\mathbf{e}}} _k|\sum_{l=1}^n a_{lj} \hat{\boldsymbol{\mathbf{e}}} _l \right) =\sum_{k,l}a_{ki}a_{lj}( \hat{\boldsymbol{\mathbf{e}}} _k| \hat{\boldsymbol{\mathbf{e}}} _l)\\
+&=\sum_{k}a_{ki}a_{kj}~,
+\end{aligned}
+\end{equation}
+[99] \begin{equation}
+\boldsymbol{\mathbf{A}} ^T \boldsymbol{\mathbf{A}} = \boldsymbol{\mathbf{E}} ~.
+\end{equation}
+[100] 从而 $ \boldsymbol{\mathbf{A}} ^T= \boldsymbol{\mathbf{A}} ^{-1}$。
+[101] 而 $ \boldsymbol{\mathbf{AA}} ^{-1}= \boldsymbol{\mathbf{E}} $，
+[102] 故又有
+[103] \begin{equation}
+\boldsymbol{\mathbf{AA}} ^T= \boldsymbol{\mathbf{E}} ~.
+\end{equation}
+
+[/SCOPE:s_orthogonal_group]
+[SCOPE:s_def1|description|正交矩阵定义]
+[104] 定义 1 正交矩阵
+[105] 满足式 17 和式 18 的任一矩阵 $ \boldsymbol{\mathbf{A}} $ 称为正交矩阵。
+[106] 所有 $n$ 阶正交矩阵的集合记为 $O(n)$。
+[107] 这就是说，两个标准正交基之间的转换矩阵为正交矩阵。
+[108] 反过来，设 $ \boldsymbol{\mathbf{A}} $ 是正交矩阵，
+[109] 那么由标准正交基底 $( \hat{\boldsymbol{\mathbf{e}}} _1,\cdots, \hat{\boldsymbol{\mathbf{e}}} _n)$ 按式 15 得到的矢量组也是标准正交基底，
+[110] 即下面定理成立
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm5|description|定理5]
+[111] 定理 5
+[112] 由一个标准正交基底到另一个标准正交基底的转换矩阵是正交矩阵，而且，所有正交矩阵都可以是这种转换矩阵。
+[SCOPE:s_thm5_let|let_bind|设A,B为正交矩阵]
+[113] 设 $ \boldsymbol{\mathbf{A}} , \boldsymbol{\mathbf{B}} $ 是两正交矩阵，
+[/SCOPE:s_thm5_let]
+[114] 则 $ \boldsymbol{\mathbf{(AB)}} ^T \boldsymbol{\mathbf{(AB)}} = \boldsymbol{\mathbf{B}} ^T \boldsymbol{\mathbf{A}} ^T \boldsymbol{\mathbf{AB}} = \boldsymbol{\mathbf{E}} $（几何意义就是将一个标准正交基底 $\{ \hat{\boldsymbol{\mathbf{e}}} _i\}$ 通过 $B$ 转换到另一标准正交基底 $\{ \hat{\boldsymbol{\mathbf{e}}} '_i\}$，再将 $\{ \hat{\boldsymbol{\mathbf{e}}} '_i\}$ 通过 $ \boldsymbol{\mathbf{A}} $ 转到另一标准正交基底 $\{ \hat{\boldsymbol{\mathbf{e}}} ''_i\}$），
+[115] 即正交矩阵的矩阵乘法也是正交矩阵（封闭性）。
+[116] 由于矩阵乘法满足结合律，并且 $ \boldsymbol{\mathbf{A}} $ 有逆元 $ \boldsymbol{\mathbf{A}} ^T$，且 $ \boldsymbol{\mathbf{E}} $ 也是正交矩阵，
+[117] 所以 $O(n)$ 构成一个群。
+
+[/SCOPE:s_thm5]
+[SCOPE:s_def2|description|正交群定义]
+[118] 定义 2 正交群
+[119] 所有正交矩阵构成的集合 $O(n)$ 称为正交群。
+[120] 由式 15
+[121] \begin{equation}
+a_{ij}=( \hat{\boldsymbol{\mathbf{e}}} _i| \hat{\boldsymbol{\mathbf{e}}} '_j)=\cos{\theta_{ij}}~,
+\end{equation}
+[122] 其中 $\theta_{ij}$ 是基底矢量 $ \hat{\boldsymbol{\mathbf{e}}} _i$ 和 $ \hat{\boldsymbol{\mathbf{e}}} '_j$ 的夹角。
+[123] 这便是正交矩阵元的几何解释。
+[124] 由正交矩阵的定义
+[125] 式 17 [链接 L0]
+[126] ，显然，所有正交矩阵行列式为 1 或 -1。
+[/SCOPE:s_def2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_orthonormalization",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2引用定理1的构造方法"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_orthonormalization",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3使用标准正交基"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_thm3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理4推广定理3的映射"
+  },
+  {
+    "source_scope": "s_orthogonal_group",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "推导引出正交矩阵定义"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理5基于正交矩阵定义"
+  },
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "正交群定义基于正交矩阵"
+  }
+]

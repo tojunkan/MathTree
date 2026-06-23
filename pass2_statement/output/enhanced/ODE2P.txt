@@ -1,0 +1,371 @@
+[SCOPE:root|description|二阶齐次变系数线性微分方程的幂级数解法]
+文章名: ODE2P
+标题: 二阶齐次变系数线性微分方程的幂级数解法
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=theorem heading=定理 1 title=
+  [2] type=theorem heading=定理 2 title=
+  [3] type=example heading=例 2 title=Legendre 方程
+  [4] type=example heading=例 3 title=
+  [5] type=example heading=例 4 title=$n$ 阶贝塞尔方程
+  [6] type=example heading=例 5 title=
+
+[0] 【未完成】是不是还要加上差分方程作为预备知识？
+
+[1] 从微积分学中我们知道，许多函数是可以表示为幂级数的形式：$f(x)=a_0+a_1x+a_2x^2+\cdots$。
+[2] 幂级数良好的性质可以用于解二阶微分方程。
+[3] 我们先看一个简单的实例。
+[4] 遵循微积分学的习惯，我们这里以 $x$ 为自变量了。
+
+[SCOPE:s_example1|description|例 1]
+[SCOPE:s_example1_let|let_bind|例 1 的变量]
+[5] 考虑方程
+[6] \begin{equation}
+\frac{\mathrm{d}^2 y}{ \,\mathrm{d}{x} ^2}-2x\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }-4y=0~.
+\end{equation}
+[7] \begin{equation}
+\left\{\begin{aligned}
+y(0)&=0\\
+y(1)&=1
+\end{aligned}\right. ~
+\end{equation}
+[8] \begin{equation}
+y(x)=a_0+a_1x+a_2x^2+\cdots=\sum\limits_{i=0}^\infty a_ix^i~.
+\end{equation}
+[/SCOPE:s_example1_let]
+[9] 接着，考虑到
+[10] \begin{equation}
+\left\{\begin{aligned}
+&\frac{\mathrm{d}^2 y}{ \,\mathrm{d}{x} ^2}=2a_2+6a_3x+12a_4x^2+\cdots=\sum\limits_{k=0}^\infty (k+1)(k+2)a_{k+2}x^k\\
+&2x\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }=2a_1x+4a_2x^2+6a_3x^3+\cdots=\cdots=\sum\limits_{k=1}^\infty 2ka_kx^k~.
+\end{aligned}\right.
+\end{equation}
+[11] 将式 4 和式 3 代回式 1 ，比较各 $x^k$ 的系数，得到
+[12] \begin{equation}
+(k+1)(k+2)a_{k+2}=(2k+4)a_k~,
+\end{equation}
+[13] \begin{equation}
+a_{k+2}=\frac{2}{k+1}a_k~.
+\end{equation}
+[14] 这是一个二阶差分方程。
+[15] 由于 $a_0=0$，
+[16] 故 $a_{2k}=0$ 对所有 $k$ 成立。
+[17] 我们只需要考虑奇数项即可。
+[18] 令 $b_k=a_{2k-1}$1，
+[19] 则我们有 $b_1=a_1=1$ 和 $b_{\frac{k+3}{2}}=\frac{2}{k+1}b_{\frac{k+1}{2}}$；
+[20] 换个写法，就是 $b_{k+1}=\frac{1}{k}b_k$。
+[21] \begin{equation}
+b_k=\frac{1}{(k-1)!}~,
+\end{equation}
+[22] \begin{equation}
+\begin{aligned}
+y&=b_1x+b_2x^3+b_3x^5+\cdots\\
+&=x\sum\limits_{k=1}^\infty b_kx^{2k-2}\\
+&=x\sum\limits_{k=1}^\infty \frac{x^{(2k-2)}}{(k-1)!}\\
+&=x\sum\limits_{k=0}^\infty \frac{x^{2k}}{k!}\\
+&=x \mathrm{e} ^{x^2} ~.
+\end{aligned}
+\end{equation}
+[23] 例 1 中 “假设解为 $x$ 的幂级数，通过比较系数来求出解” 的方法，被称为幂级数解法。
+
+[/SCOPE:s_example1]
+[24] 例 1 和我们之前所解的方程不一样，式 1 中的系数 $2x$ 不再是一个常数，而是 $x$ 的函数，这使得我们应对常系数方程的方法无效了。
+[25] 对于二阶变系数方程，幂级数解法是很有用的。
+[26] 哪些方程能应用幂级数解法呢？
+[27] 幂级数解的收敛区间又是否能覆盖所要求解的区间呢？
+[28] 这些问题有完善的解答，
+[29] 但由于较为深入，我们在此只给出重要的结论。
+[30] 我们所考虑的方程是形如
+[31] \begin{equation}
+\left(\frac{\mathrm{d}^2}{ \,\mathrm{d}{x} ^2}+p(x)\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{x} }+q(x) \right) y(x)=0~
+\end{equation}
+[32] 在 $x=0$ 处的
+[33] 特解
+[34] $x=x_0$ 处的特解，可以通过变量代换 $t=x-x_0$，来化为 $y(t)$ 的方程在 $t=0$ 处的特解问题。
+
+[SCOPE:s_theorem1|description|定理 1]
+[35] 定理 1
+[36a] (x)$ 和 $q
+[36b] (x)$ 都可以写为 $x$ 的幂级数形式，且它们在区间 $ \left\lvert x \right\rvert < X$ 上收敛，
+[37] 那么方程有形如
+[38] \begin{equation}
+y=\sum\limits_{k=0}^\infty a_nx^n~
+\end{equation}
+[39] 例 1 中的系数为 $-2x$ 和 $-4$，它们都在整个实数轴上收敛，
+[40] 因此我们最终算出来的特解式 8 也在整个实数轴上收敛。
+
+[/SCOPE:s_theorem1]
+[SCOPE:s_theorem2|description|定理 2]
+[41] 定理 2
+[42a] (x)$ 和 $x^2q
+[42b] (x)$ 均能展成幂级数形式，并且都在 $ \left\lvert x \right\rvert < X$ 上收敛，
+[43] 那么式 9 有形如
+[44] \begin{equation}
+y=x^\alpha\sum\limits_{k=0}^\infty a_kx^k~
+\end{equation}
+[45] 式 11
+
+[/SCOPE:s_theorem2]
+[46] 二阶变系数线性微分方程在工程和物理中应用广泛，
+[47] 因此我们在此举出一些例题，以帮助读者熟悉其解法。
+
+[SCOPE:s_example2|description|例 2 Legendre 方程]
+[SCOPE:s_example2_let|let_bind|例 2 的变量]
+[48] 例 2 Legendre 方程
+[49] \begin{equation}
+\begin{aligned}
+(1-x^2)\frac{ \,\mathrm{d}^{2}{y} }{ \,\mathrm{d}{x} ^2}-2x\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }+\nu(\nu+1)y=0~.
+\end{aligned}
+\end{equation}
+[50] \begin{equation}
+\begin{aligned}
+y(x) = \sum_{k=0}^\infty a_k x^k~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_example2_let]
+[51] 将式 13 代入 式 12 可以得到
+[52] \begin{equation}
+\begin{aligned}
+(1-x^2)\sum_{k=0}^{\infty}(k+2)(k+1)a_{k+2}x^k
+-2x\sum_{k=0}^\infty (k+1)a_{k+1}x^k+\nu(\nu+1) \sum_{k=0}^\infty a_k x^k=0~.
+\end{aligned}
+\end{equation}
+[53] \begin{equation}
+\begin{aligned}
+a_{k+2} = a_k \frac{k(k+1)-\nu(\nu+1)}{(k+2)(k+1)}=\frac{(k-\nu)(k+\nu+1)}{(k+2)(k+1)},\quad \forall k\ge 0~.
+\end{aligned}
+\end{equation}
+[54] \begin{equation}
+\begin{aligned}
+a_{2n} &= \frac{1}{(2n)!}a_0\cdot (2n-2-\nu)(2n-4-\nu)\cdots(-\nu) ~\\
+&\times (2n-1+\nu)(2n-3+\nu)\cdots(1+\nu)~,\\
+&=a_0\cdot \frac{2^{2n}}{(2n)! }\frac{\Gamma(n-\nu/2)}{\Gamma(-\nu/2)}\frac{\Gamma(n+(1+\nu)/2)}{\Gamma((1+\nu)/2)}~.\\
+a_{2n+1} &= a_0 \cdot \frac{2^{2n}}{(2n+1)! }
+\frac{\Gamma(n+(1-\nu)/2)}{\Gamma((1-\nu)/2)}\frac{\Gamma(n+1+\nu/2)}{\Gamma(1+\nu/2)}~.
+\end{aligned}
+\end{equation}
+[55] \begin{equation}
+\begin{aligned}
+y_1(x) &= \sum_{n=0}^\infty \frac{2^{2n}}{(2n)! }\frac{\Gamma(n-\nu/2)}{\Gamma(-\nu/2)}\frac{\Gamma(n+(1+\nu)/2)}{\Gamma((1+\nu)/2)} x^{2n}~,\\
+y_2(x) &= \sum_{n=0}^\infty \frac{2^{2n}}{(2n+1)! }
+\frac{\Gamma(n+(1-\nu)/2)}{\Gamma((1-\nu)/2)}\frac{\Gamma(n+1+\nu/2)}{\Gamma(1+\nu/2)} x^{2n+1}~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_example2]
+[SCOPE:s_example3|description|例 3]
+[SCOPE:s_example3_let|let_bind|例 3 的变量]
+[56] 考虑方程
+[57] \begin{equation}
+\left(\frac{\mathrm{d}^2}{ \,\mathrm{d}{x} ^2}+\frac{1}{x}\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{x} }-\frac{1}{x} \right) y(x)=0~
+\end{equation}
+[58] \begin{equation}
+\left\{\begin{aligned}
+y(0)&= 1\\
+y'(0)&= 1\\
+\end{aligned}\right. ~
+\end{equation}
+[59] 设所求特解为
+[60] \begin{equation}
+\sum\limits_{k=0}^\infty a_kx^k~.
+\end{equation}
+[/SCOPE:s_example3_let]
+[61] 这次我们先求通解，再代入初值条件求特解。
+[62] 首先将式 20 代入式 18 ，得到
+[63] \begin{equation}
+\sum\limits_{k=0}^\infty (k+2)(k+1)a_{k+2}x^k+(k+2)a_{k+2}x^k-a_{k+1}x^k=0~,
+\end{equation}
+[64] 从而得到
+[65] \begin{equation}
+a_{k+2}=\frac{a_{k+1}}{(k+2)^2}~,
+\end{equation}
+[66] \begin{equation}
+a_k=\frac{a_{k-1}}{k^2}~,
+\end{equation}
+[67] 由初值条件式 19 得
+[68] \begin{equation}
+a_k=\frac{1}{(k!)^2}~,
+\end{equation}
+[69] \begin{equation}
+y=\sum\limits_{k=0}^\infty \frac{x^k}{(k!)^2}~
+\end{equation}
+
+[/SCOPE:s_example3]
+[SCOPE:s_example4|description|例 4 n 阶贝塞尔方程]
+[SCOPE:s_example4_let|let_bind|例 4 的变量]
+[70] 例 4 $n$ 阶贝塞尔方程
+[71] $n$ 阶贝塞尔方程形如
+[72] \begin{equation}
+x^2\frac{\mathrm{d}^2 y}{ \,\mathrm{d}{x} ^2}+x\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }+(x^2-n^2)y=0~,
+\end{equation}
+[73] 不一定是整数
+[74] 首先把式 26 改写为
+[75] \begin{equation}
+\frac{\mathrm{d}^2 y}{ \,\mathrm{d}{x} ^2}+\frac{1}{x}\frac{ \,\mathrm{d}{y} }{ \,\mathrm{d}{x} }+(1-\frac{n^2}{x^2})y=0~,
+\end{equation}
+[76] 由定理 2 ，它的特解形如
+[77] \begin{equation}
+y=\sum\limits_{k=0}^\infty a_kx^{k+\alpha}~,
+\end{equation}
+[/SCOPE:s_example4_let]
+[78] 将式 28 代入式 26 ，可得
+[79] \begin{equation}
+\begin{aligned}
+&\sum\limits^\infty_{k=0}a_k(k+\alpha)(k+\alpha-1)x^{k+\alpha}\\+
+&\sum\limits^\infty_{k=0}a_k(k+\alpha)x^{k+\alpha}\\+
+&\sum\limits^\infty_{k=0}a_kx^{k+\alpha+2}\\-
+&\sum\limits^\infty_{k=0}a_kn^2x^{k+\alpha}\\
+&=0~,
+\end{aligned}
+\end{equation}
+[80] 重新整理一下式 29 ，将 $x$ 的同次幂放在一起，得到
+[81] \begin{equation}
+\begin{aligned}
+\sum\limits^\infty_{k=0}[(k+\alpha)^2-n^2]a_kx^{k+\alpha}\\
++\sum\limits^\infty_{k=2}a_{k-2}x^{k+\alpha}=0~.
+\end{aligned}
+\end{equation}
+[82] \begin{equation}
+\left\{\begin{aligned}
+(\alpha^2-n^2)a_0&=0\\
+[(1+\alpha)^2-n^2]a_1&=0\\
+[(2+\alpha)^2-n^2]a_2+a_0&=0\\
+[(3+\alpha)^2-n^2]a_3+a_1&=0\\
+&\vdots
+\end{aligned}\right. ~
+\end{equation}
+[83] 将 $\alpha=n$ 代入式 31 ，可以逐个计算出 $a_k$（除了 $a_0$）
+[84] \begin{equation}
+\left\{\begin{aligned}
+a_1&=0\\
+a_k&=-\frac{a_{k-2}}{k(k+2n)}, k=2, 3,\cdots
+\end{aligned}\right. ~
+\end{equation}
+[85] 再把 $\alpha$ 和 $a_k$ 一起代入式 28 ，得到一个解
+[86] \begin{equation}
+y_1=a_0x^n+\sum\limits^\infty_{k=2}\frac{(-1)^ka_0}{2^{2k}k!(n+1)(n+2)\cdots(n+k)}x^{n+2k}~,
+\end{equation}
+[SCOPE:s_example4_gamma|description|Gamma 函数定义与性质]
+[87] 定义Gamma 函数为：当 $s>0$ 时，$\Gamma(s)=\int_0^{+\infty}x^{s-1} \mathrm{e} ^{-x} \,\mathrm{d}{x} $；
+[88] 当 $s\leq 0$ 时，$\Gamma(s)=\frac{1}{s}\Gamma(s+1)$。
+[89] Gamma 函数有两个性质：对正整数 $n$, $\Gamma(n+1)=n!$；
+[90] $\Gamma(s+1)=s\Gamma(s)$。
+[/SCOPE:s_example4_gamma]
+[91] 例 4 中的解式 33 仍有一个待定常数 $a_0$。
+[92] 如果令 $a_0=\frac{1}{2^n\Gamma(n+1)}$，
+[93] 那么我们就能得到：
+[94] \begin{equation}
+\begin{aligned}
+y_1&=\sum\limits^\infty_{k=0}\frac{(-1)^k}{k!(n+1)(n+2)\cdots(n+k)\Gamma(n+1)} \left(\frac{x}{2} \right) ^{n+2k}\\
+&=\sum\limits^\infty_{k=0}\frac{(-1)^k}{k!\Gamma(n+k+1)} \left(\frac{x}{2} \right) ^{n+2k}~.
+\end{aligned}
+\end{equation}
+[95] 式 34 被称为$n$ 阶贝塞尔函数，常记作 $J_n(x)$。
+
+[/SCOPE:s_example4]
+[SCOPE:s_example5|description|例 5]
+[SCOPE:s_example5_let|let_bind|例 5 的变量]
+[96] 依然是考虑例 4 中的贝塞尔方程。
+[97] 我们已经知道，对于 $n$ 阶贝塞尔方程，总有一个特解 $J_n(x)$。
+[98] 为了求出另一个线性无关的特解，我们考虑 $\alpha=-n$ 的情况。
+[99] 类似地，通过式 31 我们能得到（$k$ 取遍正整数）：
+[100] \begin{equation}
+\left\{\begin{aligned}
+&a_{2k-1}=0\\
+&a_{2k}=\frac{(-1)^ka_0}{2^{2k}k!(-n+1)(-n+2)\cdots(-n+k)}~.
+\end{aligned}\right.
+\end{equation}
+[/SCOPE:s_example5_let]
+[101] 然后类似例 4 ，得到特解
+[102] \begin{equation}
+y_2=a_0x^{-n}+\sum\limits^\infty_{k=1}\frac{(-1)^ka_0}{2^{2k}k!(-n+1)(-n+2)\cdots(-n+k)}x^{-n+2k}~.
+\end{equation}
+[103] 令 $a_0=\frac{1}{2^{-n}\Gamma(-n+1)}$，代入式 36 得
+[104] \begin{equation}
+y_2=\sum\limits^\infty_{k=0}\frac{(-1)^k}{k!\Gamma(-n+k+1)} \left(\frac{x}{2} \right) ^{-n+2k}~.
+\end{equation}
+[105] 式 37
+[106] $-n$ 阶贝塞尔函数
+[107] $J_n$ 和 $J_{-n}$ 统称为第一类贝塞尔函数。
+[108] 设这两个函数的朗斯基行列式为 $W[J_n, J_{-n}]$，
+[109] 那么由阿贝尔微分方程恒等式得
+[110] \begin{equation}
+W[J_n, J_{-n}]'(x)=-\frac{1}{x}W[J_n, J_{-n}](x)~,
+\end{equation}
+[111] 从而解得
+[112] \begin{equation}
+W[J_n, J_{-n}](x) = \frac{C}{x}~,
+\end{equation}
+[113] 其中 $C$ 是某个待定常数。
+[114] 直接使用朗斯基行列式的定义，计算 $xW[J_n, J_{-n}](x)$，得到一个贼长的级数和，
+[115] 但由于我们已经知道这个级数和是常数 $C$，
+[116] 因此可以令 $x\to 0$，结果依然应该是 $C$，
+[117] 于是得到
+[118] 【未完成】最后一步是为什么？
+[119] 需要补充 Gamma 函数文章专门讨论。
+[120] \begin{equation}
+C = \frac{2n}{\Gamma(n+1)\Gamma(-n+1)} = \frac{2n}{n\Gamma(n)\Gamma(-n+1)} = -\frac{2\sin n\pi}{\pi}~,
+\end{equation}
+[121] \begin{equation}
+W[J_n, J_{-n}](x) = -\frac{2\sin n\pi}{\pi x}~,
+\end{equation}
+[SCOPE:s_example5_cases|cases|n 是否为整数]
+[122] 当 $n$不是整数时，$J_{\pm n}$ 线性无关，
+[123] 因而可以用来将贝塞尔方程式 26 的通解表示为
+[124] \begin{equation}
+y(x)=C_1J_n(x)+C_2J_{-n}(x)~.
+\end{equation}
+[125] 但如果 $n$是整数，由式 41 可知 $J_{\pm n }$ 的朗斯基行列式为零，
+[126] 从而二式线性相关。
+[127] 因此，$n$ 为整数时常使用贝塞尔方程的另外一个特解来代替 $J_{-n}$，
+[128] 即 Neumann 函数：
+[129] \begin{equation}
+N_n = \frac{(\cos n \pi)J_n - J_{-n}}{\sin n \pi}~,
+\end{equation}
+[130] 当 $n$ 为整数时，$N_n$ 定义为
+[131] \begin{equation}
+N_n = \lim_{\nu\to n} N_\nu~.
+\end{equation}
+[/SCOPE:s_example5]
+[/SCOPE:s_example5_cases]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_theorem1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例 1 是定理 1 的一个实例"
+  },
+  {
+    "source_scope": "s_example2",
+    "target_scope": "s_theorem1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例 2 应用定理 1"
+  },
+  {
+    "source_scope": "s_example3",
+    "target_scope": "s_theorem1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例 3 应用定理 1"
+  },
+  {
+    "source_scope": "s_example4",
+    "target_scope": "s_theorem2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例 4 应用定理 2"
+  },
+  {
+    "source_scope": "s_example5",
+    "target_scope": "s_example4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例 5 是例 4 的延续"
+  }
+]

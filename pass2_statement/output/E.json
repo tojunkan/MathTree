@@ -1,0 +1,112 @@
+{
+  "article_name": "E",
+  "statements": [
+    {
+      "stmt_id": "st_example1_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "x",
+        "λ",
+        "t"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_numerical_observation",
+      "subtype": "remark",
+      "clause_range": [
+        16,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_numerical",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_corollaries_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_corollaries_let",
+      "exposed_entities": [
+        "k"
+      ]
+    },
+    {
+      "stmt_id": "st_corollaries_result",
+      "subtype": "theorem",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": "true",
+      "scope_id": "s_corollaries",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_corollaries_k_neg1",
+      "subtype": "theorem",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_corollaries",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_extension_definition",
+      "subtype": "definition",
+      "clause_range": [
+        28,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_extension",
+      "exposed_entities": [
+        "e"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_example1_let_assump",
+      "target": "st_example1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_corollaries_let_assump",
+      "target": "st_corollaries_result",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_corollaries_result",
+      "target": "st_corollaries_k_neg1",
+      "edge_type": "special_case",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

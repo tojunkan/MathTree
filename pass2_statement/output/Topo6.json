@@ -1,0 +1,196 @@
+{
+  "article_name": "Topo6",
+  "statements": [
+    {
+      "stmt_id": "st_finite_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_finite_let",
+      "exposed_entities": [
+        "X1",
+        "T1",
+        "X2",
+        "T2"
+      ]
+    },
+    {
+      "stmt_id": "st_finite_def_base",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_finite_def",
+      "exposed_entities": [
+        "X",
+        "T",
+        "O1",
+        "O2"
+      ]
+    },
+    {
+      "stmt_id": "st_finite_def_general",
+      "subtype": "definition",
+      "clause_range": [
+        5,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_finite_def",
+      "exposed_entities": [
+        "Xn",
+        "Tn",
+        "X",
+        "B"
+      ]
+    },
+    {
+      "stmt_id": "st_finite_def_name",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_finite_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_arbitrary_let_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_arbitrary_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_arbitrary_def_subbasis",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_arbitrary_def",
+      "exposed_entities": [
+        "X_alpha",
+        "T_alpha",
+        "Lambda",
+        "X",
+        "S"
+      ]
+    },
+    {
+      "stmt_id": "st_arbitrary_def_equiv",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_arbitrary_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_arbitrary_def_includes_finite",
+      "subtype": "remark",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_arbitrary_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_product_map_def",
+      "subtype": "definition",
+      "clause_range": [
+        22,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_product_map",
+      "exposed_entities": [
+        "f",
+        "g",
+        "A",
+        "B",
+        "X",
+        "Y",
+        "f x g"
+      ]
+    },
+    {
+      "stmt_id": "st_exercise_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_exercise",
+      "exposed_entities": [
+        "f",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_exercise_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_exercise",
+      "exposed_entities": [
+        "f x g"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_finite_let_assump",
+      "target": "st_finite_def_base",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_finite_let_assump",
+      "target": "st_finite_def_general",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_arbitrary_let_assump",
+      "target": "st_arbitrary_def_subbasis",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exercise_assump",
+      "target": "st_exercise_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_arbitrary_def_includes_finite",
+      "target": "st_finite_def_general",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "任意维积拓扑包含有限维作为特例"
+    }
+  ],
+  "unresolved": []
+}

@@ -1,0 +1,133 @@
+{
+  "article_name": "FTvec",
+  "statements": [
+    {
+      "stmt_id": "st_intro_remark",
+      "subtype": "remark",
+      "clause_range": [
+        0,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let1_assump_xk_basis",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let1",
+      "exposed_entities": [
+        "x_0",
+        "k_0",
+        "|x_0⟩",
+        "|k_0⟩"
+      ]
+    },
+    {
+      "stmt_id": "st_let2_assump_v_coords",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro_let2",
+      "exposed_entities": [
+        "|v⟩",
+        "f(x)",
+        "g(k)"
+      ]
+    },
+    {
+      "stmt_id": "st_basis_transform_let1_assump_F",
+      "subtype": "assumption",
+      "clause_range": [
+        22,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_basis_transform_let1",
+      "exposed_entities": [
+        "F",
+        "F^{-1}"
+      ]
+    },
+    {
+      "stmt_id": "st_basis_transform_let2_assump_matrix_elem",
+      "subtype": "assumption",
+      "clause_range": [
+        27,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_basis_transform_let2",
+      "exposed_entities": [
+        "|k_0⟩",
+        "⟨x_0|k_0⟩",
+        "F^*(x_0,k_0)",
+        "F(k_0,x_0)"
+      ]
+    },
+    {
+      "stmt_id": "st_basis_transform_ortho_k",
+      "subtype": "conclusion",
+      "clause_range": [
+        46,
+        48
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_basis_transform",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        49,
+        53
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_basis_transform_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let1_assump_xk_basis",
+      "target": "st_let2_assump_v_coords",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let2_assump_v_coords",
+      "target": "st_basis_transform_let1_assump_F",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_basis_transform_let1_assump_F",
+      "target": "st_basis_transform_let2_assump_matrix_elem",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_basis_transform_let2_assump_matrix_elem",
+      "target": "st_basis_transform_ortho_k",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_basis_transform_let2_assump_matrix_elem",
+      "target": "st_proof_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

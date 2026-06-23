@@ -1,0 +1,55 @@
+[SCOPE:root|description|共轭空间与代数共轭空间]
+文章名: ConSpa
+标题: 共轭空间与代数共轭空间
+
+环境标记 (hints):
+  [0] type=lemma heading=引理 1 title=
+  [1] type=definition heading=定义 1 title=共轭空间
+  [2] type=definition heading=定义 2 title=代数共轭空间
+
+[SCOPE:s_lemma1|description|引理 1]
+[0] 引理 1
+[SCOPE:s_lemma1_let|let_bind|引理 1 的变量]
+[1] 设 $L$ 是线性空间，
+[/SCOPE:s_lemma1_let]
+[2] 则其上的线性泛函的全体在下面的加法和数乘之下构成一个线性空间：
+[3a] (x):=f_1
+[3b] (x)+f_2
+[3c] (x)$；
+[4a] (x):=\alpha f
+[4b] (x)$。
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_def1|description|共轭空间]
+[5] 定义 1 共轭空间
+[SCOPE:s_def1_let|let_bind|共轭空间的变量]
+[6] 设 $E$ 是拓扑线性空间，
+[/SCOPE:s_def1_let]
+[7] 则其上的全体线性连续泛函在引理 1 的加法和数乘下构成的线性空间称为与 $E$ 共轭的空间，记为 $E^*$。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|代数共轭空间]
+[8] 定义 2 代数共轭空间
+[SCOPE:s_def2_let|let_bind|代数共轭空间的变量]
+[9] 在拓扑线性空间上所有（不一定连续）线性泛函的全体在引理 1 的加法和数乘下构成的线性空间称为与 $E$ 代数共轭的空间，记为 $E^{\#}$。
+[/SCOPE:s_def2]
+[/SCOPE:s_def2_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def1",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义 1 引用引理 1 的加法和数乘"
+  },
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定义 2 引用引理 1 的加法和数乘"
+  }
+]

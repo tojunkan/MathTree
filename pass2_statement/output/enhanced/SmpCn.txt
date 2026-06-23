@@ -1,0 +1,49 @@
+[SCOPE:root|description|单连通性]
+文章名: SmpCn
+标题: 单连通性
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=单连通空间
+  [1] type=theorem heading=定理 1 title=
+  [2] type=example heading=例 1 title=
+
+[SCOPE:s_def1|description|单连通空间]
+[0] 定义 1 单连通空间
+[SCOPE:s_def1_let|let_bind|定义中的变量]
+[1] 一个拓扑空间 $X$ 被称为单连通空间（simply connected space）如果 $X$ 上任意一条闭合路径 $p: S^1 \to X$ 都同伦于某一个常函数路径 $p(t) = x_0 \in X$。
+[2] 等价的，我们可以考虑保起点和终点路径同伦的回路定义 2 。
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_thm1|description|定理1]
+[3] 定理 1
+[4] 单连通空间是道路连通的。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex1_let|let_bind|例子中的变量]
+[SCOPE:s_ex1|description|例1]
+[5] 考虑二维欧几里得空间 $\mathbb{R}^2$，它是一个单连通空间，它上面的所有回路之间都是保起点和终点路径同伦的，
+[6] 因此关于任何基点的回路都保基点同伦，特别的，和常函数路径同伦。
+[7] 任意维的欧几里得空间 $\mathbb{R}^N$ 都是单连通的；
+[8] 当 $N \geq 2$ 时，球面 $S^N$ 也都是单连通的。
+[/SCOPE:s_ex1_let]
+[/SCOPE:s_ex1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是定义1的推论"
+  },
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是定义1的例子"
+  }
+]

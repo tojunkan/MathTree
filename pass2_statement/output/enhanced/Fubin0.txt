@@ -1,0 +1,64 @@
+[SCOPE:root|description|重积分的换序（简明微积分）]
+文章名: Fubin0
+标题: 重积分的换序（简明微积分）
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=
+  [1] type=theorem heading=定理 1 title=
+
+[SCOPE:s_example1|description|例 1]
+[0] \begin{equation}
+f(x, y) = \frac{x - y}{(x+y)^3}~.
+\end{equation}
+[1] 图 1：式 2 函数曲面图
+[2] 该函数在 $(0,0)$ 处有一个奇点，
+[3] 即没有定义。
+[4] 但是 $x \in (0, 1]$，$y \in (0, 1]$ 的重积分仍然收敛
+[5] \begin{equation}
+\int_0^1 \int_0^1 f(x,y) \,\mathrm{d}{x} \,\mathrm{d}{y} = -\frac{1}{2}~,
+\qquad
+\int_0^1 \int_0^1 f(x,y) \,\mathrm{d}{y} \,\mathrm{d}{x} = \frac{1}{2}~.
+\end{equation}
+[6] 观察图 1 会发现，函数曲面关于积分区域的正方形的对角线 $x=y$ 反对称，也就是对角线的下半三角形的区域中函数值为负，上半三角形函数值为正。
+[7] 且函数在 $x$ 轴和 $y$ 轴靠近原点的地方分别出现了无穷大和无穷小。
+[8] 所以 “曲面下的体积” 是否能取有限值（收敛），取决于无穷大和无穷小是否能在积分过程中抵消。
+[SCOPE:s_example1_let|let_bind|坐标变换]
+[9] 为了更好理解，我们不妨延正方形的两个对角线方向分别进行积分，
+[10] 即令
+[11] \begin{equation}
+u = (x+y)/\sqrt{2}~, \qquad
+v=(x-y)/\sqrt{2}
+\end{equation}
+[12] \begin{equation}
+g(u,v) = f(x(u,v), y(u,v)) = \frac{v}{2u^3}~.
+\end{equation}
+[/SCOPE:s_example1_let]
+[13] 主值积分
+[14] 所以现在我们看到曲面下方的体积完全取决于我们采用哪两个方向积分。
+[15] 如果积分的过程中刚好可以把正无穷和负无穷实时抵消，
+[16] 那么积分结果就是有限值甚至是零，且值的大小取决于具体抵消的方式。
+[17] 如果上面的坐标旋转变换使用其他角度，还会得到许多其他不同的值。
+
+[/SCOPE:s_example1]
+[SCOPE:s_theorem1|description|定理 1]
+[18] 定理 1
+[19] 对多重黎曼积分，如果被积函数是绝对值可积的，
+[20] 那么积分结果与积分变量的次序无关。
+[21] 定理 1 是数学分析中 Fubini 定理的一个特殊应用，Fubini 定理的完整形式和证明超出了本文的范围，将在数学分析中介绍
+[22] 套用在例 1 中，我们需要看看 $ \left\lvert x-y \right\rvert /(x+y)^3$ 的积分是否是有限的。
+[23] 容易验证积分结果是 $+\infty$，
+[24] 所以并不能保证换序积分结果不变。
+[25] 过程留做习题。
+[/SCOPE:s_theorem1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_theorem1",
+    "target_scope": "s_example1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1是Fubini定理的特例，例1是定理1的反例"
+  }
+]

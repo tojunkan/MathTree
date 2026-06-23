@@ -1,0 +1,73 @@
+[SCOPE:root|description|代数学基本定理]
+文章名: BscAlg
+标题: 代数学基本定理
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=代数学基本定理
+
+[0] 本文存在未完成的内容。
+
+[SCOPE:s_def|description|代数学基本定理]
+[1] 定义 1 代数学基本定理
+[SCOPE:s_def_let|let_bind|多项式变量]
+[2] 设 $f(z)=\sum\limits_{i=0}^n a_iz^i$ 为复数域上的多项式，
+[/SCOPE:s_def_let]
+[3] 那么必存在 $z_0\in\mathbb{C}$，使得 $f(z_0)=0$。
+[4] 由推论 2 ，如果 $f(z_0)=0$，
+[5a] (z)$，使得 $f
+[5b] (z)=g
+[5c] (z)\cdot(z-z_0)$。
+[6a] (z)$ 重复此步骤，再对接下来得到的每一个次数大于 $1$ 的多项式都重复此步骤，最终结果是存在一系列 $z_i\in\mathbb{C}$，使得 $f
+[6b] (z)=\prod\limits_{i=0}^{n}(z-z_i)$。
+
+[/SCOPE:s_def]
+[SCOPE:s_proof_intro|description|证明引言]
+[7] 本小节将用不同思路证明代数学基本定理。
+
+[/SCOPE:s_proof_intro]
+[SCOPE:s_topology|description|代数拓扑方法]
+[SCOPE:s_topology_let1|let_bind|度量拓扑]
+[8] 考虑 $\mathbb{C}$ 的度量拓扑，其中度量 $d(z_1, z_2)= \left\lvert z_1-z_2 \right\rvert $；
+[9] 换句话说，把 $\mathbb{C}$ 看成二维欧氏空间。
+[/SCOPE:s_topology_let1]
+[SCOPE:s_topology_reductio|reductio|反证法假设]
+[SCOPE:s_topology_let2|let_bind|映射 p]
+[10a] (z)$ 使得任意复数 $z$ 都满足 $f
+[10b] (z)\not=0$，
+[11] 那么 $ \left\lvert f(z) \right\rvert \not=0$，
+[12a] (z)=f
+[12b] (z)/ \left\lvert f
+[12c] (z) \right\rvert $；
+[13] 换句话说，$p$ 将每个 $z\in\mathbb{C}$ 先映射到 $f(z)$，再保持辐角不变并移动到单位圆上。
+[14a] (z)$ 是连续映射，且 $f
+[14b] (z)/ \left\lvert f
+[14c] (z) \right\rvert $ 没有奇点，
+[15a] (z)=f
+[15b] (z)/ \left\lvert f
+[15c] (z) \right\rvert $ 也是连续映射。
+[/SCOPE:s_topology_let2]
+[SCOPE:s_topology_let3|let_bind|回路与基点]
+[16] 在 $\mathbb{C}$ 上选择任意一点 $z_0$ 作为基点来构造基本群。
+[17] 设任意回路 $r:S^1\rightarrow\mathbb{C}$，以及零回路 $n:S^1\rightarrow\mathbb{C}$，其中 $n(t)=z_0$ 对所有 $t$ 成立。
+[18] 由于 $\mathbb{C}$ 是可缩空间，
+[19] 因此必有 $r\cong n$。
+[/SCOPE:s_topology_let3]
+[20] 由定理 3 ，$p\circ r\cong p\circ n$，
+[21] 因此单位圆上的回路也彼此同伦。
+[22] 然而我们知道 $S^1$ 的基本群是 $\mathbb{Z}$，意味着并非所有回路都彼此同伦，
+[23] 因此出现了矛盾。
+[24] 矛盾意味着假设错误，也就是说 $f(z)$ 必然有零点。
+[/SCOPE:s_topology]
+[/SCOPE:s_topology_reductio]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_topology_reductio",
+    "target_scope": "s_topology_reductio",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "反证法退出时自动生成 implies，指回自身"
+  }
+]

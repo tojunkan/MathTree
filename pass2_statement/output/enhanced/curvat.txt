@@ -1,0 +1,113 @@
+[SCOPE:root|description|平面曲线的曲率和曲率半径（极简微积分）]
+文章名: curvat
+标题: 平面曲线的曲率和曲率半径（极简微积分）
+
+[SCOPE:s_intro|description|曲率与曲率半径的定义]
+[0] 1我们来看一个平面上的一个光滑曲线（即处处存在切线），我们如何描述它某点处的弯曲程度呢？
+[1] 一种常用方法是在这点附近取曲线的一小段，然后做一个尽量与它吻合的圆，当这小段的长度趋近于 0 时，这个圆可以唯一确定。
+[2] 我们把这个圆叫做密切圆（osculating circle），把密切圆的半径叫做曲线在该点的曲率半径（radius of curvature） 常记为 $\rho$，曲率半径的倒数 $1/\rho$ 叫做曲率（curvature）。
+[3] 下面我们来具体定义曲率半径。
+[4] 【图解】图 1：密切圆和曲率半径
+[SCOPE:s_intro_let1|let_bind|圆的小段圆弧变量]
+[5] 我们先来看一个半径为 $R$ 的圆的一小段圆弧，令其长度为 $\Delta l$。
+[6] 作这段圆弧两端的切线，令它们的夹角为 $\Delta \theta$，
+[7] 那么显然满足 $R \Delta\theta = \Delta l$。
+[/SCOPE:s_intro_let1]
+[SCOPE:s_intro_let2|let_bind|曲线上小段变量]
+[8] 同理，对于图 1 中光滑曲线上一点，取该点附近长度为 $\Delta l$ 的一段，在其两端分别作切线，令夹角为 $\Delta\theta$ 并分别作切线的垂直线，
+[9] 那么当 $\Delta l \to 0$ 时两个切线在切点处的垂直线的交点就是密切圆的圆心。
+[10] 此时密切圆的半径，
+[11] 即曲率半径 $\rho$ 就是
+[12] \begin{equation}
+\rho = \lim_{\Delta l \to 0} \frac{\Delta l}{\Delta \theta}~.
+\end{equation}
+[/SCOPE:s_intro_let2]
+[13] 曲率的具体的计算公式取决于使用什么方式定义曲线，最常见描述方式就是在直角坐标系中通过函数 $y(x)$ 来定义曲线。
+[14] 此时点 $(x, y)$ 处的曲率半径为（$\dot y, \ddot y$ 分别表示导数和二阶导数）
+[15] \begin{equation}
+\rho = \frac{(1 + \dot y^2)^{3/2}}{\ddot y}~.
+\end{equation}
+[16] 如果通过
+[17] 极坐标 [链接 L0]
+[18] 函数 $r(\theta)$ 定义曲线，
+[19] 则点 $(r, \theta)$ 处的曲率半径为
+[20] \begin{equation}
+\rho = \frac{(r^2 + \dot r^2)^{3/2}}{r^2 + 2\dot r^2 - r\ddot r}~.
+\end{equation}
+[21] 推导见下文。
+
+[/SCOPE:s_intro]
+[SCOPE:s_rect|description|直角坐标系的推导]
+[22] 【未完成】需要画图
+[SCOPE:s_rect_let|let_bind|直角坐标系变量]
+[23] 平面上曲线的最常见描述方式就是通过定义函数 $y(x)$。
+[24] 我们可以通过
+[25] 导数 [链接 L1]
+[26] 计算曲线上某点切线关于 $x$ 轴的夹角 $\theta$。
+[27] \begin{equation}
+\dot y \approx \frac{\Delta y}{\Delta x} = \tan \theta~.
+\end{equation}
+[28] 曲线很短时
+[29] \begin{equation}
+\Delta{l} \approx \frac{\Delta{x}}{\cos\theta}~.
+\end{equation}
+[30] \begin{equation}
+\cos\theta = \frac{1}{\sqrt{1 + \tan^2\theta}} = \frac{1}{\sqrt{1 + \dot y^2}}~.
+\end{equation}
+[31] 为了得到 $\Delta{\theta}$，我们对
+[32] 式 4 [链接 L2]
+[33] 两边做微分，近似有
+[34] \begin{equation}
+\ddot y \Delta{x} \approx \frac{\Delta{\theta}}{\cos^2\theta}~,
+\end{equation}
+[35] 其中 $\Delta{\theta}$ 就是 $\Delta{x}$ 对应的一小段曲线两端切线的夹角。
+[36] 所以由
+[37] 式 1 [链接 L3]
+[38] ，曲率半径为（在取极限后精确成立）
+[39] \begin{equation}
+\rho = \lim_{\Delta l\to 0}\frac{\Delta l}{\Delta \theta} = \frac{1}{\ddot y\cos^3\theta} = \frac{(1 + \dot y^2)^{3/2}}{\ddot y}~.
+\end{equation}
+
+[/SCOPE:s_rect]
+[/SCOPE:s_rect_let]
+[SCOPE:s_polar_let|let_bind|极坐标系变量]
+[SCOPE:s_polar|description|极坐标系的推导]
+[40] 极坐标系中，同样可以用函数 $r(\theta)$ 描述曲线。
+[41] 为了方便，也可以姑且把上面的 $\Delta$ 都写成 $ \,\mathrm{d}{} $ 并取等号。令
+[42] \begin{equation}
+\frac{ \,\mathrm{d}{r} }{r \,\mathrm{d}{\theta} } = \tan\alpha~,
+\end{equation}
+[43] 【未完成】需要画图
+[44] \begin{equation}
+\dot r = r\tan\alpha~.
+\end{equation}
+[45] 长度微分为
+[46] \begin{equation}
+\,\mathrm{d}{l} = \frac{r \,\mathrm{d}{\theta} }{\cos\alpha}~.
+\end{equation}
+[47] \begin{equation}
+\ddot r \,\mathrm{d}{\theta} = \dot r\tan\alpha \,\mathrm{d}{\theta} + \frac{r}{\cos^2\alpha} \,\mathrm{d}{\alpha} ~.
+\end{equation}
+[48] \begin{equation}
+\frac{\mathrm{d}{\alpha}}{\mathrm{d}{\theta}} = (\ddot r - \dot r \tan\alpha) \frac{\cos^2\alpha}{r} = \frac{\ddot r - \dot r\tan\alpha}{r(t + \tan^2\alpha)}~.
+\end{equation}
+[49] 注意切线方向的微分是 $ \,\mathrm{d}{\theta} - \,\mathrm{d}{\alpha} $。
+[50] 所以
+[51] \begin{equation}
+\rho = \frac{ \,\mathrm{d}{l} }{ \,\mathrm{d}{\theta} - \,\mathrm{d}{\alpha} } = \frac{ \,\mathrm{d}{l} / \,\mathrm{d}{\theta} }{1 - \,\mathrm{d}{\alpha} / \,\mathrm{d}{\theta} }~.
+\end{equation}
+[52] 式 1 [链接 L4]
+[53] 式 13 [链接 L5]
+[54] 代入，再使用
+[55] 式 10 [链接 L6]
+[56] 消去 $\alpha$ 得
+[57] \begin{equation}
+\rho = \frac{(r^2 + \dot r^2)^{3/2}}{r^2 + 2\dot r^2 - r\ddot r}~.
+\end{equation}
+
+跨文章引用:
+  [L0] 极坐标 → Polar
+  [L1] 导数 → Der
+[/SCOPE:s_polar_let]
+[/SCOPE:s_polar]
+[/SCOPE:root]

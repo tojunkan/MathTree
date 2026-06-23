@@ -1,0 +1,99 @@
+[SCOPE:root|description|光滑映射（简明微积分）]
+文章名: SmthM
+标题: 光滑映射（简明微积分）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=实数集上的光滑函数
+  [1] type=definition heading=定义 2 title=多元光滑函数
+  [2] type=definition heading=定义 3 title=光滑映射
+  [3] type=example heading=例 1 title=
+
+[0] 本节讨论欧几里得空间间一类可以无穷次求（偏）导的线性映射，称为光滑映射。
+
+[1] 为了讨论光滑映射，我们首先引入光滑函数的概念。
+
+[SCOPE:s_smooth_func|description|实数集上的光滑函数]
+[2] 定义 1 实数集上的光滑函数
+[SCOPE:s_smooth_func_let|let_bind|光滑函数变量]
+[3] 给定函数 $f:\mathbb{R}\rightarrow\mathbb{R}$，如果在某一点 $x_0\in\mathbb{R}$，对于任意的 $k\in\mathbb{Z}^+$，存在 $f$ 的 $k$ 阶导数 $f^{(k)}(x_0)$，
+[4] 则称 $f$ 是在点 $x_0$ 处任意阶可导的，或 $C^\infty$ 的，或光滑的（smooth）。
+[/SCOPE:s_smooth_func_let]
+[5] 今后，我们将术语 $C^{\infty}$ 和光滑看成完全等价的。
+[6] 如果 $f$ 处处光滑，
+[7] 则称其本身是一个光滑函数。
+[8] 光滑函数的概念可以通过偏导数来推广到多自变量的情况。
+
+[/SCOPE:s_smooth_func]
+[SCOPE:s_multi_smooth_func|description|多元光滑函数]
+[9] 定义 2 多元光滑函数
+[SCOPE:s_multi_smooth_func_let|let_bind|多元光滑函数变量]
+[10] 给定函数 $f:\mathbb{R}^n\rightarrow\mathbb{R}$，如果在某一点 $(x_0^1, x_0^2, \cdots x_0^n) \in\mathbb{R}^n$，对于任意的 $k\in\mathbb{Z}^+$，存在 $f$ 的 $k$ 阶偏导数 $$\frac{\partial^k}{\partial x^{i_1}\partial x^{i_2}\cdots\partial x^{i_k}}f(x_0^1, x_0^2, \cdots x_0^n)~.$$ 其中各 $i_j$ 都是 $1$ 到 $n$ 的任意整数，可以有重复；
+[11] 则称 $f$ 在 $(x_0^1, x_0^2, \cdots x_0^n)$ 处光滑。
+[/SCOPE:s_multi_smooth_func_let]
+[12] 如果 $f$ 处处光滑，
+[13] 则简称 $f$ 光滑。
+
+[/SCOPE:s_multi_smooth_func]
+[14] 两个欧几里得空间之间的线性映射 $f:\mathbb{R}^m\rightarrow \mathbb{R}^n$，可以看成是 $m$ 个自变量的 $n$ 维向量值函数；
+[15] 进一步，也可以把向量看成 $n$ 个标量，也就是说把这个线性映射看成 $n$ 个线性函数组合在一起。
+
+[SCOPE:s_smooth_map|description|光滑映射]
+[16] 定义 3 光滑映射
+[SCOPE:s_smooth_map_let|let_bind|光滑映射变量]
+[17] 设 $f:\mathbb{R}^m\rightarrow \mathbb{R}^n$ 是欧几里得空间之间的线性映射。
+[18] 对于 $\forall \boldsymbol{\mathbf{x_0}} \in \mathbb{R}^m$，记 $f( \boldsymbol{\mathbf{x_0}} )=(f_1( \boldsymbol{\mathbf{x_0}} ), f_2( \boldsymbol{\mathbf{x_0}} ),\cdots, f_n( \boldsymbol{\mathbf{x_0}} ))$。
+[/SCOPE:s_smooth_map_let]
+[19] 如果每一个 $f_i$ 都是光滑函数，
+[20] 则称 $f$ 是一个光滑映射（smooth map）。
+
+[/SCOPE:s_smooth_map]
+[SCOPE:s_analytic_compare|description|光滑函数和解析函数的比较]
+[21] 解析函数是一种性质良好的函数，它可以表示成幂级数的形式。
+[22] 如果一个函数解析，
+[23] 那么我们总可以在任何点处对它进行泰勒展开，展开结果就是其幂级数表达。
+[24] 能进行泰勒展开固然需要可以无穷求导，也就是说解析函数必然是光滑的；
+[25] 但反过来却不成立，有的光滑函数就不解析。
+
+[/SCOPE:s_analytic_compare]
+[SCOPE:s_example1|description|例1]
+[SCOPE:s_example1_let|let_bind|例1变量]
+[26a] (x)=\exp{(-1/x)}$，当 $x\leq 0$ 时 $f
+[26b] (x)=0$。
+[/SCOPE:s_example1_let]
+[27] 可以验证，$f$ 处处光滑，
+[28] 但是它在 $x=0$ 处的泰勒展开是常数 $0$，而它显然不是一个常函数，
+[29] 因此 $f$ 在 $x=0$ 处不解析。
+[/SCOPE:s_example1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_smooth_map",
+    "target_scope": "s_multi_smooth_func",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "光滑映射的定义依赖于多元光滑函数"
+  },
+  {
+    "source_scope": "s_multi_smooth_func",
+    "target_scope": "s_smooth_func",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "多元光滑函数是一元光滑函数的推广"
+  },
+  {
+    "source_scope": "s_analytic_compare",
+    "target_scope": "s_smooth_func",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "解析函数必光滑，但光滑不一定解析"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_analytic_compare",
+    "edge_type": "counterexample_of",
+    "category": "logic",
+    "note": "例1给出光滑但不解析的函数"
+  }
+]

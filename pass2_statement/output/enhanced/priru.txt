@@ -1,0 +1,74 @@
+[SCOPE:root|description|单位根与本原单位根（数论）]
+文章名: priru
+标题: 单位根与本原单位根（数论）
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=单位根
+  [1] type=definition heading=定义 2 title=本原单位根
+  [2] type=theorem heading=定理 1 title=
+  [3] type=theorem heading=定理 2 title=单位根的取值
+  [4] type=theorem heading=定理 3 title=单位根与本原单位根的关系
+
+[SCOPE:s_def1|description|定义1 单位根]
+[0] 定义 1 单位根
+[1a] 若 $p^q=1$
+[1b] 则说 $p$ 是 $q$ 次单位根。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义2 本原单位根]
+[2] 定义 2 本原单位根
+[3a] 若 $p^q = 1$
+[3b] 则称 $p$ 是本原 $q$ 次单位根（primitive $q$-th root of unity）。
+[4] 但对于任何小于 $q$ 的正 $r$，$q^r$ 都不等于 $1$。
+[5] 我们会注意到 $p$ 几乎总是复数。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|定理1]
+[6] 定理 1
+[7] 任何 $q$ 次单位根都是对 $q$ 的某个因子 $r$ 而言的一个本原 $r$ 次单位根。
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[8] 证明：假设 $p^q=1$，而 $r$ 是使 $p^r=1$ 的最小正整数，
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm1_reductio|reductio|定理1的反证法部分]
+[9] 则对于 $q = kr+s$，其中 $0\le s < r$，将有
+[10] \begin{equation}
+p^s = p^{q - kr} = 1~,
+\end{equation}
+[11] 故 $s=0$ 且 $r | q$。
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_reductio]
+[SCOPE:s_thm2|description|定理2 单位根的取值]
+[12] 定理 2 单位根的取值
+[13] $q$ 次单位根是下列各数，
+[14] \begin{equation}
+e\left( h/q \right), ~ (h = 0, 1, \dots, q-1) ~.
+\end{equation}
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|定理3 单位根与本原单位根的关系]
+[15] 定理 3 单位根与本原单位根的关系
+[16] 对于所有 $q$ 次单位根
+[17] \begin{equation}
+e(h/q), ~(h = 0, 1, \dots, q-1) ~,
+\end{equation}
+[/SCOPE:s_thm3]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1的结论是单位根与本原单位根的关系，是定义1的特例"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理3给出本原单位根的具体形式，是定义2的特例"
+  }
+]

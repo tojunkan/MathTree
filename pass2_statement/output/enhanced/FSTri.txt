@@ -1,0 +1,377 @@
+[SCOPE:root|description|傅里叶级数（三角）]
+文章名: FSTri
+标题: 傅里叶级数（三角）
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=方波
+  [1] type=example heading=例 2 title=正弦函数的绝对值
+  [2] type=exercise heading=习题 1 title=
+  [3] type=example heading=例 3 title=用正弦基底展开闭区间内的函数
+
+[SCOPE:s_intro|description|傅里叶级数定义]
+[SCOPE:s_intro_let|let_bind|引入变量 f, l, a_n, b_n]
+[0] 满足狄利克雷条件1的周期函数 $f(x)$，令周期为 $2l$，可以使用以下三角级数展开
+[1] \begin{equation}
+f( x ) = \frac{a_0}{2} + \sum_{n = 1}^\infty a_n \cos\left(\frac{n\pi}{l}x\right) + \sum_{n = 1}^\infty b_n \sin\left(\frac{n\pi}{l}x\right) ~.
+\end{equation}
+[2] \begin{equation}
+a_n = \frac{1}{l} \int_{ - l}^l f( x ) \cos\left(\frac{n\pi}{l}x\right) \,\mathrm{d}{x} ~,
+\end{equation}
+[3] \begin{equation}
+b_n = \frac{1}{l} \int_{ - l}^l f( x ) \sin\left(\frac{n\pi}{l}x\right) \,\mathrm{d}{x} ~.
+\end{equation}
+[/SCOPE:s_intro_let]
+[4] 要特别注意的是，严格来说式 1 并不能用等号。
+[5a] (x)$ 在某点不连续，在该点处等式右边的级数未必会收敛到 $f
+[5b] (x)$。
+[6] 对此本文并不过多讨论，且为了方便仍然使用等号。
+[7] 式 1 的所有 $a_n$ 项为偶函数项，所有 $b_n$ 项为奇函数项。
+[8] 若 $f(x)$ 是偶函数，所有 $b_n$ 项为零，若是奇函数，
+[9] 则所有 $a_n$ 项为零2。
+[10] 如果 $f(x)$ 不具有奇偶性，可以表示为偶函数和奇函数之和，分别对应所有 $a_n$ 项和所有 $b_n$ 项
+[11] \begin{equation}
+f(x) = \frac12 [f(x)+f(-x)] + \frac12 [f(x)-f(-x)]~.
+\end{equation}
+
+[/SCOPE:s_intro]
+[SCOPE:s_complex|description|复值函数]
+[12a] (x)$ 成立，当 $f
+[12b] (x)$ 的函数值变为复数时是否仍然成立呢？
+[13] 答案是肯定的。
+[14] 所以在以下的例子和推导中，我们都只讨论实函数的情况就足够了。
+[SCOPE:s_complex_let|let_bind|引入 u, v, 系数]
+[15] 推导：我们可以把复值函数拆分成实部函数和虚部函数
+[16] \begin{equation}
+f(x) = u(x) + \mathrm{i} v(x)~.
+\end{equation}
+[17a] (x), v
+[17b] (x)$ 是和 $f
+[17c] (x)$ 相同周期的实函数，且都满足迪利克雷条件。
+[18] 那么，可以把它们分别做傅里叶展开。
+[19a] (x)$ 的展开系数为 $a'_n, b'_n$，而 $v
+[19b] (x)$ 的系数为 $a''_n, b''_n$。
+[20a] (x), v
+[20b] (x)$ 列出
+[21] 式 1 [链接 L0]
+[22] 式 3 [链接 L1]
+[23] ，且令 $a_n = a'_n + \mathrm{i} a''_n$，$b_n = b'_n + \mathrm{i} b''_n$，会发现
+[/SCOPE:s_complex_let]
+[24] 式 1 [链接 L2]
+[25] 式 3 [链接 L3]
+[26] 同样成立。
+[27] 显然，实函数的展开系数 $a_n, b_n$ 都是实数，而复函数的展开系一定不全是实数。
+
+[/SCOPE:s_complex]
+[SCOPE:s_completeness|description|完备性]
+[28] 傅里叶级数最奇妙的地方大概就是它能展开任意满足狄利克雷条件的函数，这个性质叫做完备性。
+[29] 我们先不证明完备性，只给出几个例子说明随着求和项数增加，三角函数如何逼近不连续或不光滑的函数。
+
+[/SCOPE:s_completeness]
+[SCOPE:s_ex1|description|例1 方波]
+[30] 例 1 方波
+[SCOPE:s_ex1_let|let_bind|定义方波 f]
+[31] 首先定义一个方波为
+[32] \begin{equation}
+f(x) =
+\begin{cases}
+1 & (2k\pi < x \leqslant (2k + 1)\pi) \\
+- 1 & ((2k - 1)\pi < x \leqslant 2k\pi)
+\end{cases}~,
+\end{equation}
+[33] \begin{equation}
+f(x) = \sum_{k = 0}^\infty \frac{4}{\pi (2k + 1)} \sin\left(2k + 1\right) x~.
+\end{equation}
+[/SCOPE:s_ex1_let]
+[34] 图 1：有限项傅里叶级数逼近方波
+[35] 理论上虽然随着项数变多三角级数会收敛于方波，
+[36] 但是容易发现在函数不连续点的附近，收敛会比较慢，而且会出现高频振荡。
+[37] 这被称为龙格现象，在多项式插值中同样会遇到。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2 正弦函数的绝对值]
+[38] 例 2 正弦函数的绝对值
+[SCOPE:s_ex2_let|let_bind|定义 f(x)=|sin x|]
+[39] 偶函数 $f(x) = \left\lvert \sin x \right\rvert $ 存在不光滑的点，展开成傅里叶级数为
+[40] \begin{equation}
+f(x) = \left\lvert \sin x \right\rvert = \frac{2}{\pi } - \frac{4}{\pi }\sum_{k = 1}^{+\infty} \frac{1}{4 k^2 - 1}\cos 2k x~,
+\end{equation}
+[/SCOPE:s_ex2_let]
+[41] 图 2：有限项傅里叶级数逼近 $ \left\lvert \sin\left(x\right) \right\rvert $
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex1_exercise|description|习题1]
+[42] 习题 1
+[43] 根据傅里叶级数的定义用定积分计算式 7 和式 8 。
+
+[/SCOPE:s_ex1_exercise]
+[SCOPE:s_coeff_derivation|description|系数公式推导]
+[44] 在泰勒级数中，我们通过求 $n$ 阶导数的方式来 “过滤” 出第 $n$ 阶系数。
+[45] 这里我们用积分的方式来 “ 过滤” 系数。
+[46] 我们在推导中还要介绍一个重要的类比来讲解，
+[47] 即把级数中的 $\sin$ 和 $\cos$ 的性质对比几何矢量在正交（不归一）基底上的展开（式 2 ）。
+[SCOPE:s_coeff_derivation_let|let_bind|引入函数基底和内积]
+[48] 给出一组无穷多个函数
+[49] \begin{equation}
+\begin{aligned}
+&\frac12,\; \sin\left(\frac{\pi}{l} x\right) ,\; \cos\left(\frac{\pi}{l} x\right) ,\; \sin\left(\frac{2\pi}{l} x\right) ,\; \cos\left(\frac{2\pi}{l} x\right) ,\; \dots\\
+& \sin\left(\frac{n\pi}{l} x\right) ,\; \cos\left(\frac{n\pi}{l} x\right) \; \dots
+\end{aligned}~\end{equation}
+[50] 其中 $n$ 是正整数。
+[51] 我们把任意满足狄利克雷条件的函数（以下简称任意函数）比作几何矢量，把上面这组函数（
+[52] 式 9 [链接 L4]
+[53] ）比作矢量基底（称为
+[54] 函数基底
+[55] ）
+[56] ，任意函数都可以表示成这组基底的线性组合（即
+[57] 式 1 [链接 L5]
+[58] ）。
+[59a] (x)$ 和 $g
+[59b] (x)$ 的
+[60] 内积
+[61] 定义为它们的乘积在 $[-l,l]$ 内积分
+[62] \begin{equation}
+\left\langle f \middle| g \right\rangle = \int_{-l}^{l} f(x) g(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[/SCOPE:s_coeff_derivation_let]
+[63] 可以证明这组基底
+[64] 正交
+[65] （即任意两个不同的基底内积为 0，证明见下文）但不
+[66] 归一
+[67] 3
+[68] 。
+[69] 与 “几何矢量在正交但不归一的基底上展开” 一样，我们只要把函数分别与各个基底内积，再除以基底的模长平方（模方）
+[70] 即可获得线性组合的系数 $a_n$ 和 $b_n$。
+[71] 可以证明所有基底的模方为 $l$，这样我们就得到了系数公式（
+[72] 式 2 [链接 L6]
+[73] 式 3 [链接 L7]
+
+[/SCOPE:s_coeff_derivation]
+[SCOPE:s_sine_basis|description|正弦基底]
+[74] 若我们只需要在一个区间 $[0,l]$ 上展开函数 $f(x)$ 而不在意其他地方，
+[75a] (x)$ 是以 $2l$ 为周期的奇函数，这样，我们只需要用正弦基底展开 $f
+[75b] (x)$ 即可4。
+[76] 于是我们可以说，式 9 中给出的所有正弦基底在区间 $[0,l]$ 具有完备性。
+
+[/SCOPE:s_sine_basis]
+[SCOPE:s_ex3|description|例3 用正弦基底展开闭区间内的函数]
+[77] 例 3 用正弦基底展开闭区间内的函数
+[78] 图 3：三角形函数
+[SCOPE:s_ex3_let|let_bind|定义三角形函数 f]
+[79] 定义区间 $[0,a]$ 内的一个三角形函数如下（图 3 ），先把函数归一化，再用正弦基底做傅里叶展开。
+[80] \begin{equation}
+f(x) = \left\{\begin{aligned}
+&\frac2a x &\quad \left(0 \leqslant x \leqslant \frac a2 \right) \\
+&2 -\frac2a x &\quad \left(\frac a2 < x \leqslant a \right)
+\end{aligned}\right. ~\end{equation}
+[/SCOPE:s_ex3_let]
+[81] 首先假想 $f(x)$ 为奇函数，原则上可以直接使用式 3 计算展开系数，
+[82] 但由于被积函数 $f(x) \sin\left(x\right) $ 为偶函数，可以先把式 3 化简为
+[83] \begin{equation}
+{b_n} = \frac{2}{a}\int_{0}^a f( x ) \sin\left(\frac{n\pi}{a}x\right) \,\mathrm{d}{x} ~.
+\end{equation}
+[84] 又注意 $f(x)$ 关于区间中点的对称性，我们可以进一步判断出 $n$ 为偶数时 $b_n$ 项都为零，而 $n$ 为奇数项的 $b_n$ 在 $[0, a/2]$ 的积分等于在 $[a/2, a]$ 的积分，
+[85] 所以
+[86] \begin{equation}
+\begin{aligned}
+{b_n} &= \frac{4}{a}\int_{0}^{a/2} f( x ) \sin\left(\frac{n\pi}{a}x\right) \,\mathrm{d}{x} \\
+&= \frac{8}{a^2} \int_{0}^{a/2} x \sin\left(\frac{n\pi}{a}x\right) \,\mathrm{d}{x} ~.
+\end{aligned} \end{equation}
+[87] \begin{equation}
+b_n = (-1)^{\frac{n-1}{2}} \frac{8}{\pi^2 n^2} \quad (\text{$n$ 为奇数})~.
+\end{equation}
+[88] 进一步说，我们可以用正弦基底在任意区间 $[x_0,x_0+l]$ 上展开任意函数。
+[89] 要这样做，我们只需要把所有正弦基底平移 $x_0$ 即可。
+[90] \begin{equation}
+\sin\frac{\pi}{l} (x-x_0),\; \sin\frac{2\pi}{l} (x-x_0),\; \dots\;\sin\frac{n\pi}{l} (x-x_0) \dots~
+\end{equation}
+
+[/SCOPE:s_ex3]
+[SCOPE:s_arbitrary_interval|description|任意区间的展开]
+[SCOPE:s_arbitrary_interval_let|let_bind|引入变量 a, b, l, x_0, g]
+[91a] (x)$ 在某个任意区间 $[a, b]$ 内做类似式 1 的三角级数，却并不关心 $f
+[91b] (x)$ 是否有周期性，周期是多少，甚至不关心 $f
+[91c] (x)$ 在该区间外是否有定义。
+[92] 那么此时我们将有多种可能的展开方式。
+[93a] (x)$ 是周期为 $2l$ 的周期函数，且在区间 $[a, b]$ 内 $g
+[93b] (x) = f
+[93c] (x)$，然后对 $g$ 傅里叶展开。
+[94] 令式 1 中 $l = (b-a)/2$，
+[/SCOPE:s_arbitrary_interval_let]
+[95] 那么容易证明只需要把系数公式式 2 式 3 的积分范围改为 $[a,b]$ 即可（留做习题）。
+[96] 第二种方法令式 1 中 $l = (b-a)/2$，把 $f(x)$ 先向左平移 $x_0 = (a+b)/2$，也就是使原来 $[a,b]$ 的移动到 $[-l,l]$，展开成式 1 的傅里叶级数，再向右平移 $x_0$ 即可。
+[97] 这样傅里叶展开变为（$a < x < b$，下同）
+[98] \begin{equation}
+f(x) = \frac{a_0}{2} + \sum_{n = 1}^\infty a_n \cos [\frac{n\pi}{l}(x-x_0)] + \sum_{n = 1}^\infty b_n \sin [\frac{n\pi}{l}(x-x_0)]~,
+\end{equation}
+[99] \begin{equation}
+a_n = \frac{1}{l} \int_{a}^b f(x)\cos [\frac{n\pi}{l}(x-x_0)] \,\mathrm{d}{x} ~,
+\end{equation}
+[100] \begin{equation}
+b_n = \frac{1}{l} \int_{a}^b f(x)\sin [\frac{n\pi}{l}(x-x_0)] \,\mathrm{d}{x} ~.
+\end{equation}
+[101] 第三种方法令 $l = b - a$，然后只用正弦或余弦函数来展开（例 3 ）：
+[102] \begin{equation}
+f(x) = \sum_{n = 1}^\infty b_n \sin [\frac{n\pi}{l}(x-a)]~,
+\end{equation}
+[103] \begin{equation}
+b_n = \frac{2}{l} \int_{a}^b f(x)\sin [\frac{n\pi}{l}(x-a)] \,\mathrm{d}{x} ~.
+\end{equation}
+[104] 把两式中的 $\sin$ 替换为 $\cos$ 也成立，以下不再赘述。
+[105] 从图像上来看，
+[106] 式 19 [链接 L8]
+[107] 中 $n=1$ 的项表示横跨 $[a,b]$ 的一个拱形（$\sin$ 的半个周期），$n=2$ 代表两个拱形（$\sin$ 的一个周期），等。
+[108a] (x)$，会发现在区间 $[a-l, a+l]$ 中， $g
+[108b] (x)$ 是关于点 $x = a$ 的奇函数，而在整个实轴上，$g
+[108c] (x)$ 是周期为 $2l$ 的函数。
+[109] 为什么这里只需要用 $\sin$ 基底就可以实现完备？
+[110] 这是因为若把 $g(x)$ 向左平移 $a$ 后，在区间 $[-l, l]$ 上是一个奇函数，而奇函数的傅里叶展开是不需要 $\cos$ 项的。
+[111] 如果对比式 19 的右边和式 16 的右边，它们在 $[a, b]$ 内的的部分是相同的，而在 $[a, b]$ 外的部分却不同。
+[112] 在实际操作中要如何选择各种方法呢？
+[113] 前两种方法实际上是等价的，把式 16 利用两两角和公式（式 4 ）拆开即可证明。
+[114] 另一个主要的考虑因素是例 1 提到的龙格效应。
+[115a] (a) = f
+[115b] (b)$，
+[116] 那么用前两种方法把 $f(x)$ 拓展为周期函数后，$[a,b]$ 的两个端点不是间断点，这就可以避免此处的龙格效应。
+[117a] (a) = f
+[117b] (b) = 0$，
+[118a] (a) = f'
+[118b] (b) = 0$，
+[119] 那么当然最好只用 $\cos$ 来展开。
+[120] 事实上，使用任何 $l > (b - a)/2$ 都可以在区间 $[a,b]$ 内展开函数，
+[121] 所以存在无穷多种展开的方法。
+
+[/SCOPE:s_arbitrary_interval]
+[SCOPE:s_orthogonality_proof|description|证明函数基底正交]
+[122] 现在证明式 9 中任意两个不同的基底内积等于 $0$。
+[123] 当 $m \ne n$ 时，有（使用积化和差式 19 到式 21 ）
+[124] \begin{equation} \begin{aligned}
+&\int_{ - \pi }^\pi \sin\left(mx\right) \sin\left(nx\right) \,\mathrm{d}{x} \\
+= &\frac12 \int_{-\pi}^\pi \cos [(m - n)x] \,\mathrm{d}{x} - \frac12\int_{-\pi}^\pi \cos [(m + n)x] \,\mathrm{d}{x} = 0~,
+\end{aligned} \end{equation}
+[125] \begin{equation} \begin{aligned}
+&\int_{-\pi}^\pi \cos\left(mx\right) \cos\left(nx\right) \,\mathrm{d}{x} \\
+= &-\frac12 \int_{-\pi}^\pi \cos[(m - n)x] \,\mathrm{d}{x} + \frac12 \int_{-\pi}^\pi \cos [(m + n)x] \,\mathrm{d}{x} = 0~,
+\end{aligned} \end{equation}
+[126] \begin{equation} \begin{aligned}
+&\int_{-\pi}^\pi \sin\left(mx\right) \cos\left(nx\right) \,\mathrm{d}{x} \\
+= &\frac12 \int_{-\pi}^\pi \sin[(m + n)x] \,\mathrm{d}{x} - \frac12 \int_{-\pi}^\pi \sin [(m - n)x] \,\mathrm{d}{x} = 0~,
+\end{aligned} \end{equation}
+[127] 其中任意一个函数与自己内积都等于 $\pi $（除了常函数 1 积分为 $2\pi$）。
+[128] \begin{equation}
+\int_{-\pi}^\pi \sin^{2}\left(nx\right) \,\mathrm{d}{x} = \pi~,
+\end{equation}
+[129] \begin{equation}
+\int_{-\pi}^\pi \cos^{2}\left(nx\right) \,\mathrm{d}{x} = \pi~,
+\end{equation}
+[130] \begin{equation}
+\int_{-\pi}^\pi 1^2 \,\mathrm{d}{x} = 2\pi~.
+\end{equation}
+
+[/SCOPE:s_orthogonality_proof]
+[SCOPE:s_normalized_basis|description|使用归一化的基底]
+[SCOPE:s_normalized_basis_let|let_bind|引入归一化基底和系数]
+[131] 我们也可以将式 9 的每个基底乘以一个常数进行归一化，
+[132] 即让每个基底的模长为 1。
+[133] 我们将归一化后的正弦项和余弦项分别记为 $ \left\lvert S_n \right\rangle $，$ \left\lvert C_n \right\rangle $（$n = 1, 2,\dots$），将常数项记为 $ \left\lvert C_0 \right\rangle $。
+[134] \begin{equation}
+\left\langle S_n \middle| S_n \right\rangle = \int_{-l}^l \left[B_n \sin\left(\frac{n\pi}{l}x\right) \right] ^2 \,\mathrm{d}{x} = 1~,
+\end{equation}
+[135] \begin{equation}
+\left\langle C_n \middle| C_n \right\rangle = \int_{-l}^l \left[A_n \cos\left(\frac{n\pi}{l}x\right) \right] ^2 \,\mathrm{d}{x} = 1~.
+\end{equation}
+[136] 解得 $A_n = B_n = 1/\sqrt{l\ }$。
+[137] 最后将常数项归一化变为 $1/\sqrt{2l}$ 即可。
+[/SCOPE:s_normalized_basis_let]
+[138] 所以正交归一得傅里叶级数基底为
+[139] \begin{equation}
+\frac{1}{\sqrt{2l}},\; \frac{1}{\sqrt{l\ }} \sin\left(\frac{\pi}{l} x\right) ,\; \frac{1}{\sqrt{l\ }} \cos\left(\frac{\pi}{l} x\right) ,\; \dots\; \frac{1}{\sqrt{l\ }} \sin\left(\frac{n\pi}{l} x\right) ,\; \frac{1}{\sqrt{l\ }} \cos\left(\frac{n\pi}{l} x\right) \; \dots~
+\end{equation}
+[140] 易证将基底乘以常数不影响它们的正交性，我们可以将正交归一基底的性质用克罗内克 $\delta$ 函数（
+[141] 式 6 [链接 L9]
+[142] ）表示（常数基底可以记为 $ \left\lvert C_0 \right\rangle $）
+[143] \begin{equation}
+\left\langle S_m \middle| S_n \right\rangle = \delta_{m,n}~,
+\qquad
+\left\langle C_m \middle| C_n \right\rangle = \delta_{m, n}~,
+\qquad
+\left\langle S_m \middle| C_n \right\rangle = 0~.
+\end{equation}
+[144] 如果将任意函数 $f(x)$ 记为 $ \left\lvert f \right\rangle $，傅里叶级数的公式可以记为（下面默认 $ \left\lvert C_n \right\rangle $ 求和时 $n = 0, 1, \dots$，对 $ \left\lvert S_n \right\rangle $ 求和时 $n = 1, 2, \dots$）
+[145] \begin{equation}
+\left\lvert f \right\rangle = \sum_n \left(a_n \left\lvert C_n \right\rangle + b_n \left\lvert S_n \right\rangle \right) ~,
+\end{equation}
+[146] \begin{equation}
+a_n = \left\langle f \middle| C_n \right\rangle ~,
+\qquad
+b_n = \left\langle f \middle| S_n \right\rangle ~.
+\end{equation}
+[147] 这比上文的定义要更简洁。
+[148a] (x)$ 和 $g
+[148b] (x)$ 的内积为
+[149] \begin{equation}
+\begin{aligned}
+\left\langle f \middle| g \right\rangle &= \sum_m \left(a_m \left\langle C_m \right\rvert + b_m \left\langle S_m \right\rvert \right) \sum_n \left(c_n \left\lvert C_n \right\rangle + d_n \left\lvert S_n \right\rangle \right) \\
+&= \sum_{m, n} a_m c_n \delta_{m, n} + b_m d_n \delta_{m, n}\\
+&= \sum_n (a_n c_n + b_n d_n)~.
+\end{aligned}
+\end{equation}
+[150] 该式可以类比几何矢量的坐标计算（
+[151] 式 3 [链接 L10]
+[152] ），
+[153] 即把两个函数在所有基底上的展开系数分别相乘再相加。
+[154] 特殊地，一个任意函数的模方为
+[155] \begin{equation}
+\left\langle{f}\middle| f \right\rangle = \sum_n (a_n^2 + b_n^2)~.
+\end{equation}
+[156] 即将所有展开系数分别平方再相加。
+[157] 这与几何矢量模方公式也相同。
+[158] 这叫做
+[159] Parseval 定理
+[/SCOPE:s_normalized_basis]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是傅里叶级数展开的一个具体例子"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2是傅里叶级数展开的一个具体例子"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_sine_basis",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例3是正弦基底展开的一个具体例子"
+  },
+  {
+    "source_scope": "s_coeff_derivation",
+    "target_scope": "s_intro",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "系数公式推导得出傅里叶级数的系数公式"
+  },
+  {
+    "source_scope": "s_orthogonality_proof",
+    "target_scope": "s_coeff_derivation",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "正交性证明是系数公式推导的基础"
+  },
+  {
+    "source_scope": "s_normalized_basis",
+    "target_scope": "s_coeff_derivation",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "归一化基底是系数公式的另一种表述"
+  }
+]

@@ -1,0 +1,270 @@
+{
+  "article_name": "CyCar",
+  "statements": [
+    {
+      "stmt_id": "st_coord_let",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_coord_let",
+      "exposed_entities": [
+        "r",
+        "θ",
+        "z",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_coord_transform_eq1",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_coord_transform",
+      "exposed_entities": [
+        "x",
+        "y",
+        "z",
+        "r",
+        "θ"
+      ]
+    },
+    {
+      "stmt_id": "st_coord_transform_eq2",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_coord_transform",
+      "exposed_entities": [
+        "r",
+        "θ",
+        "z",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_arctan_def",
+      "subtype": "definition",
+      "clause_range": [
+        4,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_coord_transform",
+      "exposed_entities": [
+        "Arctan",
+        "atan2"
+      ]
+    },
+    {
+      "stmt_id": "st_non_unique",
+      "subtype": "remark",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_coord_transform",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_one_to_one",
+      "subtype": "remark",
+      "clause_range": [
+        10,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_coord_transform",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vector_let",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_vector_let",
+      "exposed_entities": [
+        "R",
+        "θ",
+        "v",
+        "v_x",
+        "v_y",
+        "v_z",
+        "v_r",
+        "v_θ",
+        "v_z"
+      ]
+    },
+    {
+      "stmt_id": "st_vector_rep_cart",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_vector_transform",
+      "exposed_entities": [
+        "v",
+        "v_x",
+        "v_y",
+        "v_z",
+        "x̂",
+        "ŷ",
+        "ẑ"
+      ]
+    },
+    {
+      "stmt_id": "st_vector_rep_cyl",
+      "subtype": "definition",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_vector_transform",
+      "exposed_entities": [
+        "v",
+        "v_r",
+        "v_θ",
+        "v_z",
+        "r̂",
+        "θ̂",
+        "ẑ"
+      ]
+    },
+    {
+      "stmt_id": "st_vector_transform_eq",
+      "subtype": "theorem",
+      "clause_range": [
+        23,
+        25
+      ],
+      "truth_value": "true",
+      "scope_id": "s_vector_transform",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_let",
+      "subtype": "assumption",
+      "clause_range": [
+        26,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation_let",
+      "exposed_entities": [
+        "P",
+        "r",
+        "x",
+        "y",
+        "z",
+        "θ"
+      ]
+    },
+    {
+      "stmt_id": "st_derivation_basis",
+      "subtype": "theorem",
+      "clause_range": [
+        29,
+        42
+      ],
+      "truth_value": "true",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_derivation_final",
+      "subtype": "theorem",
+      "clause_range": [
+        43,
+        53
+      ],
+      "truth_value": "true",
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_angle_let",
+      "subtype": "assumption",
+      "clause_range": [
+        54,
+        55
+      ],
+      "truth_value": null,
+      "scope_id": "s_angle_let",
+      "exposed_entities": [
+        "z1",
+        "θ1",
+        "z2",
+        "θ2",
+        "α"
+      ]
+    },
+    {
+      "stmt_id": "st_angle_result",
+      "subtype": "theorem",
+      "clause_range": [
+        56,
+        60
+      ],
+      "truth_value": "true",
+      "scope_id": "s_angle",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_coord_let",
+      "target": "st_coord_transform_eq1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coord_let",
+      "target": "st_coord_transform_eq2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_vector_let",
+      "target": "st_vector_transform_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_let",
+      "target": "st_derivation_basis",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_derivation_basis",
+      "target": "st_derivation_final",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_angle_let",
+      "target": "st_angle_result",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

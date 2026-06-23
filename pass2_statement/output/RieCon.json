@@ -1,0 +1,527 @@
+{
+  "article_name": "RieCon",
+  "statements": [
+    {
+      "stmt_id": "st_metric_def",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_metric",
+      "exposed_entities": [
+        "M",
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_metric_let",
+      "subtype": "assumption",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_metric_let",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_metric_linearity",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": null,
+      "scope_id": "s_metric",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_metric_symmetry",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_metric",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_metric_positivity",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_metric",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_metric_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_metric",
+      "exposed_entities": [
+        "g"
+      ]
+    },
+    {
+      "stmt_id": "st_manifold_def",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_manifold",
+      "exposed_entities": [
+        "M",
+        "g",
+        "(M,g)"
+      ]
+    },
+    {
+      "stmt_id": "st_manifold_let",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_manifold_let",
+      "exposed_entities": [
+        "M"
+      ]
+    },
+    {
+      "stmt_id": "st_manifold_cond",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_manifold",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_manifold_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        22,
+        22
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_manifold",
+      "exposed_entities": [
+        "(M,g)"
+      ]
+    },
+    {
+      "stmt_id": "st_connection_def",
+      "subtype": "definition",
+      "clause_range": [
+        23,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_connection",
+      "exposed_entities": [
+        "(M,g)",
+        "∇"
+      ]
+    },
+    {
+      "stmt_id": "st_connection_let",
+      "subtype": "assumption",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_connection_let",
+      "exposed_entities": [
+        "(M,g)"
+      ]
+    },
+    {
+      "stmt_id": "st_connection_torsion",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_connection",
+      "exposed_entities": [
+        "X",
+        "Y"
+      ]
+    },
+    {
+      "stmt_id": "st_connection_compat",
+      "subtype": "assumption",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_connection",
+      "exposed_entities": [
+        "X",
+        "Y",
+        "Z"
+      ]
+    },
+    {
+      "stmt_id": "st_connection_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_connection",
+      "exposed_entities": [
+        "∇"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1",
+      "subtype": "lemma",
+      "clause_range": [
+        36,
+        44
+      ],
+      "truth_value": "true",
+      "scope_id": "s_lemma1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        37,
+        37
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1_let",
+      "exposed_entities": [
+        "(M,g)",
+        "Z"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        38,
+        38
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1",
+      "exposed_entities": [
+        "X"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_reductio_assume",
+      "subtype": "assumption",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_lemma1_reductio_let",
+      "exposed_entities": [
+        "X",
+        "Y"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma1_reductio_step1",
+      "subtype": "conclusion",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_reductio_step2",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        42
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma1_reductio_step3",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_lemma1_reductio",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1",
+      "subtype": "theorem",
+      "clause_range": [
+        45,
+        50
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        46,
+        49
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem1_let",
+      "exposed_entities": [
+        "(M,g)",
+        "∇",
+        "X",
+        "Y",
+        "Z",
+        "T"
+      ]
+    },
+    {
+      "stmt_id": "st_theorem1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        50,
+        50
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": [
+        "∇"
+      ]
+    },
+    {
+      "stmt_id": "st_corollary1",
+      "subtype": "corollary",
+      "clause_range": [
+        65,
+        66
+      ],
+      "truth_value": "true",
+      "scope_id": "s_corollary1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1",
+      "subtype": "example",
+      "clause_range": [
+        67,
+        67
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "R^n"
+      ]
+    },
+    {
+      "stmt_id": "st_exercise1",
+      "subtype": "exercise",
+      "clause_range": [
+        68,
+        71
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_exercise1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exercise1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        69,
+        70
+      ],
+      "truth_value": null,
+      "scope_id": "s_exercise1_let",
+      "exposed_entities": [
+        "S",
+        "R^n",
+        "∇"
+      ]
+    },
+    {
+      "stmt_id": "st_exercise1_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        71,
+        71
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_exercise1",
+      "exposed_entities": [
+        "∇"
+      ]
+    },
+    {
+      "stmt_id": "st_pseudo_remark",
+      "subtype": "remark",
+      "clause_range": [
+        72,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_pseudo",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_metric_let",
+      "target": "st_metric_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_metric_linearity",
+      "target": "st_metric_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_metric_symmetry",
+      "target": "st_metric_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_metric_positivity",
+      "target": "st_metric_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_manifold_let",
+      "target": "st_manifold_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_manifold_cond",
+      "target": "st_manifold_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_connection_let",
+      "target": "st_connection_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_connection_torsion",
+      "target": "st_connection_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_connection_compat",
+      "target": "st_connection_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_let",
+      "target": "st_lemma1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_reductio_assume",
+      "target": "st_lemma1_reductio_step1",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_reductio_step1",
+      "target": "st_lemma1_reductio_step2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_reductio_step2",
+      "target": "st_lemma1_reductio_step3",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma1_reductio_step3",
+      "target": "st_lemma1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1_let",
+      "target": "st_theorem1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exercise1_let",
+      "target": "st_exercise1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_corollary1",
+      "target": "st_theorem1",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem1",
+      "target": "st_lemma1",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_corollary1",
+      "target": "st_theorem1",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "推论1是定理1中T=0的特例"
+    },
+    {
+      "source": "st_theorem1",
+      "target": "st_lemma1",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "定理1的证明中使用了引理1"
+    }
+  ],
+  "unresolved": []
+}

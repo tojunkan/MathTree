@@ -1,0 +1,61 @@
+[SCOPE:root|description|二项式定理（非整数幂）]
+文章名: BiNorR
+标题: 二项式定理（非整数幂）
+
+[0] 【未完成】应该结合泰勒展开来讲
+[SCOPE:s_theorem|description|二项式定理（非整数幂）]
+[SCOPE:s_theorem_let|let_bind|定理变量]
+[1] 当 $a$， $b$ 为实数，$u$ 为非零实数时，有
+[2] \begin{equation}
+\begin{aligned}
+(a+b)^u &= a^u + u a^{(u-1)}b + \frac{u(u-1)}{2!}a^{(u-2)}b^2 + \dots\\
+&= \sum_{i=0}^{+\infty} \frac{u(u-1)\dots (u-i+1)}{i!} a^i b^{u-i}
+\end{aligned}~
+\end{equation}
+[/SCOPE:s_theorem_let]
+[3] 容易看出，当 $u$ 为整数时，$i>u$ 的所有项为 $0$，得到整数指数的
+[4] 二项式定理 [链接 L0]
+
+[/SCOPE:s_theorem]
+[SCOPE:s_verify|description|数值验证]
+[5] 在学习微积分之前，这里只给出一个数值验证的方法（而不是证明）。
+[6] 在微积分中，这个定理可以用泰勒展开推导出来。
+[SCOPE:s_verify_let|let_bind|验证变量]
+[7] 首先化简上式，不妨令 $|a|<|b|$，把 $b^u$ 提出括号，再令 $x \equiv a/b$，有 $|x|<1$。
+[8] \begin{equation}
+(a+b)^u = b^u (1+x)^u = b^u \sum_{i=0}^{+\infty} \frac{u(u-1)\dots (u-i+1)}{i!} x^i~,
+\end{equation}
+[/SCOPE:s_verify_let]
+[9] 所以只要用数值验证
+[10] \begin{equation}
+(1+x)^u = \sum_{i=0}^{+\infty} \frac{u(u-1)\dots (u-i+1)}{i!} x^i~
+\end{equation}
+[11] 即可。
+[12] 接下来，可以用计算器或程序对
+[13] 式 3 [链接 L1]
+[14] 的前 $N$ 项进行求和。
+[15] 如果增加 $N$ 使结果趋近精确值，
+[16] 则验证成功（见下表）。
+[17] 这里给出计算下表的
+[18] Matlab 程序 [链接 L2]
+[19] 【图解】表1：数值验证二项式定理（非整数幂）
+[20] $(1+x)^u$ $N = 5$ $N = 20$ $N = 100$ 精确值前 8 位
+[21] $x = 0.5, u = -0.3$ 0.88445640 0.88546751 0.88546749 0.88546749
+[22] $x = 0.6, u = 3.1$ 4.2930453 4.2931093 4.2931093 4.2931093
+
+跨文章引用:
+  [L0] 二项式定理 → BiNor
+  [L2] Matlab 程序 → BiNorM
+[/SCOPE:s_verify]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_theorem",
+    "target_scope": "s_verify",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理的数值验证"
+  }
+]

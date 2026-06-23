@@ -1,0 +1,326 @@
+{
+  "article_name": "IntN",
+  "statements": [
+    {
+      "stmt_id": "st_area_intro",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_area_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_area_let_S",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        7
+      ],
+      "truth_value": null,
+      "scope_id": "s_area_let",
+      "exposed_entities": [
+        "S"
+      ]
+    },
+    {
+      "stmt_id": "st_area_partition",
+      "subtype": "assumption",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_area_let",
+      "exposed_entities": [
+        "Δx_i",
+        "Δy_j",
+        "f(x_i,y_i)"
+      ]
+    },
+    {
+      "stmt_id": "st_area_limit",
+      "subtype": "conclusion",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_area_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_area_integral",
+      "subtype": "definition",
+      "clause_range": [
+        13,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_area_let",
+      "exposed_entities": [
+        "V",
+        "S",
+        "f(x,y)"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_problem",
+      "subtype": "example",
+      "clause_range": [
+        17,
+        20
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "f(x,y)",
+        "x",
+        "y",
+        "V"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_method",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_example1_let",
+      "exposed_entities": [
+        "S(x)",
+        "y_1(x)",
+        "y_2(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_example1_Sx",
+      "subtype": "conclusion",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_V",
+      "subtype": "conclusion",
+      "clause_range": [
+        25,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example1_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_volume_intro",
+      "subtype": "definition",
+      "clause_range": [
+        31,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_volume_intro",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_problem",
+      "subtype": "example",
+      "clause_range": [
+        32,
+        33
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_example2",
+      "exposed_entities": [
+        "M",
+        "f(x,y,z)"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_partition",
+      "subtype": "assumption",
+      "clause_range": [
+        34,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2_let",
+      "exposed_entities": [
+        "Δx_i",
+        "Δy_j",
+        "Δz_k",
+        "x_i",
+        "y_j",
+        "z_k"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_limit",
+      "subtype": "conclusion",
+      "clause_range": [
+        36,
+        37
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_integral",
+      "subtype": "definition",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2_let",
+      "exposed_entities": [
+        "V",
+        "f(x,y,z)"
+      ]
+    },
+    {
+      "stmt_id": "st_example2_sigma",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_lambda",
+      "subtype": "conclusion",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_M",
+      "subtype": "conclusion",
+      "clause_range": [
+        42,
+        43
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_iterated",
+      "subtype": "conclusion",
+      "clause_range": [
+        44,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_example2_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example2_coords",
+      "subtype": "remark",
+      "clause_range": [
+        47,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_example2_let",
+      "exposed_entities": [
+        "r",
+        "θ",
+        "ϕ"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_area_let_S",
+      "target": "st_area_limit",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_area_partition",
+      "target": "st_area_limit",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_area_limit",
+      "target": "st_area_integral",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_method",
+      "target": "st_example1_Sx",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_Sx",
+      "target": "st_example1_V",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_partition",
+      "target": "st_example2_limit",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_limit",
+      "target": "st_example2_integral",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_integral",
+      "target": "st_example2_sigma",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_sigma",
+      "target": "st_example2_lambda",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_lambda",
+      "target": "st_example2_M",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example2_M",
+      "target": "st_example2_iterated",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": [
+    "文本[0]声明本文未完成，但未提供具体内容，跳过。",
+    "文本[19a]和[19b]不完整，无法解析y1(x)和y2(x)的具体表达式。",
+    "文本[29a]和[29b]不完整，无法解析y1(x)和y2(x)的表达式。",
+    "文本[49]声明未完成，跳过。",
+    "未提供Scope间关系表，因此没有跨Scope边。"
+  ]
+}

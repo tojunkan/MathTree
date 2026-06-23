@@ -1,0 +1,43 @@
+[SCOPE:root|description|导数的运算法则]
+文章名: Der3
+标题: 导数的运算法则
+
+环境标记 (hints):
+  [0] type=exercise heading=习题 1 title=
+
+[SCOPE:s_ex1|description|习题 1]
+[0] 习题 1
+[SCOPE:s_ex1_let|let_bind|设函数 f 和反函数 g]
+[1a] (x)$ 在 $\mathbb{R}$ 上严格单调，其反函数为 $g
+[1b] (y)=f^{-1}
+[1c] (y)$。
+[2a] (x)$ 在 $\mathbb{R}$ 上二阶可导，给定它的一阶导函数和二阶导函数，且一阶导数处处不为 $0$，求 $g'
+[2b] (y),g''
+[2c] (y)$（$x=f^{-1}
+[2d] (y)$ 在其定义域范围内存在）。
+[/SCOPE:s_ex1_let]
+[3a] (y)=1/f'
+[3b] (x)$（其中 $x=f^{-1}
+[3c] (y)$），严格证明可以利用导数定义或函数在一点附近的一阶近似公式。
+[4] 但二阶导不是那么容易求，逐步推导过程如下：
+[5] \begin{equation}
+\begin{aligned}
+\frac{ \,\mathrm{d}{g} '(y)}{ \,\mathrm{d}{y} }&=\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{y} }\left(\frac{1}{f'(x)}\right)=\frac{-1}{f'(x)^2}\frac{ \,\mathrm{d}{f} '(x)}{ \,\mathrm{d}{y} }=\frac{-1}{f'(x)^2}\frac{ \,\mathrm{d}{x} }{ \,\mathrm{d}{y} }\frac{ \,\mathrm{d}{f} '(x)}{ \,\mathrm{d}{x} }\\
+&=\frac{-1}{f'(x)^2}\frac{1}{f'(x)}\frac{ \,\mathrm{d}{f} '(x)}{ \,\mathrm{d}{x} }=-\frac{f''(x)}{f'(x)^3}~.
+\end{aligned}
+\end{equation}
+[6] \begin{equation}
+\begin{aligned}
+f(x+h)=f(x)+f'(x)h+f''(x)h^2+o(h^2)~,\\
+g(y+\eta)=g(y)+g'(y)\eta+g''(y)\eta^2+o(\eta^2)~.
+\end{aligned}
+\end{equation}
+[7] \begin{equation}
+\begin{aligned}
+x+h&=x+g'(y)(f'(x)h+f''(x)h^2+o(h^2))\\
+&\ +g''(y)(f'(x)h+f''(x)h^2+o(h^2))^2+o(h^2)~,\\
+x+h&=x+g'(y)f'(x)h + (g'(y)f''(x)+g''(y)f'(x)^2)h^2+o(h^2)~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_ex1]
+[/SCOPE:root]

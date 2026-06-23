@@ -1,0 +1,175 @@
+{
+  "article_name": "ExLina",
+  "statements": [
+    {
+      "stmt_id": "st_def1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1_let",
+      "exposed_entities": [
+        "L",
+        "L_0",
+        "f_0"
+      ]
+    },
+    {
+      "stmt_id": "st_def1_conclusion",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_def1",
+      "exposed_entities": [
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_let",
+      "exposed_entities": [
+        "p",
+        "L",
+        "L_0",
+        "f_0"
+      ]
+    },
+    {
+      "stmt_id": "st_thm1_conclusion",
+      "subtype": "theorem",
+      "clause_range": [
+        4,
+        48
+      ],
+      "truth_value": "true",
+      "scope_id": "s_thm1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_step1_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        9,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_step1_let1",
+      "exposed_entities": [
+        "L_0",
+        "L",
+        "z",
+        "L'"
+      ]
+    },
+    {
+      "stmt_id": "st_step1_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_step1_let2",
+      "exposed_entities": [
+        "f'"
+      ]
+    },
+    {
+      "stmt_id": "st_step1_condition",
+      "subtype": "condition",
+      "clause_range": [
+        15,
+        40
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_thm1_step1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_step2_let",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_thm1_step2_let",
+      "exposed_entities": [
+        "x_1",
+        "x_n",
+        "L^{(k)}"
+      ]
+    },
+    {
+      "stmt_id": "st_step2_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_thm1_step2",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_def1_let",
+      "target": "st_def1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_thm1_let",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_step1_let1",
+      "target": "st_step1_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_step1_let2",
+      "target": "st_step1_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_step2_let",
+      "target": "st_step2_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_step1_condition",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "单步延拓是定理证明的一部分，推出最终结论"
+    },
+    {
+      "source": "st_step2_conclusion",
+      "target": "st_thm1_conclusion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "可数情形归纳延拓推出定理结论"
+    }
+  ],
+  "unresolved": []
+}

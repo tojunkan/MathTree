@@ -1,0 +1,111 @@
+{
+  "article_name": "PolyNm",
+  "statements": [
+    {
+      "stmt_id": "st_poly_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": "true",
+      "scope_id": "s_poly_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_expand_product",
+      "subtype": "assumption",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof",
+      "exposed_entities": [
+        "a_i",
+        "i_1",
+        "i_2",
+        "i_N"
+      ]
+    },
+    {
+      "stmt_id": "st_combine_like_terms",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof",
+      "exposed_entities": [
+        "n_1",
+        "n_2",
+        "n_m",
+        "a_1",
+        "a_2",
+        "a_m"
+      ]
+    },
+    {
+      "stmt_id": "st_sum_constraint",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_proof",
+      "exposed_entities": [
+        "n_i",
+        "N"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        0,
+        2
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_expand_product",
+      "target": "st_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_combine_like_terms",
+      "target": "st_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sum_constraint",
+      "target": "st_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_conclusion",
+      "target": "st_poly_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_conclusion",
+      "target": "st_poly_theorem",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "证明推出定理"
+    }
+  ],
+  "unresolved": []
+}

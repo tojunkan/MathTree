@@ -1,0 +1,373 @@
+[SCOPE:root|description|张量的对称化和交错化]
+文章名: SIofTe
+标题: 张量的对称化和交错化
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=definition heading=定义 1 title=对称，对称化
+  [2] type=theorem heading=定理 2 title=张量的对称化
+  [3] type=exercise heading=习题 1 title=
+  [4] type=definition heading=定义 2 title=对称张量子空间
+  [5] type=exercise heading=习题 2 title=
+  [6] type=definition heading=定义 3 title=斜对称张量
+  [7] type=example heading=例 1 title=
+  [8] type=exercise heading=习题 3 title=
+  [9] type=definition heading=定义 4 title=张量的交错化
+  [10] type=theorem heading=定理 3 title=
+  [11] type=definition heading=定义 5 title=斜对称张量子空间
+  [12] type=theorem heading=定理 4 title=
+  [13] type=theorem heading=定理 5 title=
+  [14] type=definition heading=定义 6 title=外 $p$ 形式，$p$ 矢量
+
+[SCOPE:s_intro|description|引言]
+[0] 张量可按选出来的共变或逆变指标的集合来讨论对称性和斜对称性。
+[1] 由于张量的共变和逆变指标的对称性（即共边和逆变或矢量和对偶矢量的区别仅在于原矢量空间的选择），在讨论张量的对称性和斜对称性时可直接将张量限制在 $(p,0)$ 型或 $(0,p)$ 型张量，而不减少一般性。
+[2] 比如：讨论张量 $T^{i_1 i_2\cdots i_p}$ 和 ${S_{i_1}}^{i_2\cdots i_p}$ 在指标 $\{i_1,i_2\}$ 上的对称性质没有任何区别，只需将 $T$ 的上指标 $i_1$ 当作下指标即可移值到张量 $S$。
+[3] 故在本文里，我们总是将张量限制为 $(p,0)$ 型张量。
+[4] 并且讨论的是这 $p$ 个指标的对称性和斜对称性，而不是它的一部分（因为在讨论某些指标的（斜）对称性质的时候，只需将其它指标当作固定的就变成这里讨论的情形）。
+[5] 本节将引入对称化映射和交错化映射，并证明在这两映射作用下，张量将变为对称张量和斜对称张量。
+[6] 张量的对称性和斜对称性的概念事实上已在对称/反对称多线性映射中指出。
+
+[/SCOPE:s_intro]
+[SCOPE:s_sym|description|张量的对称化]
+[SCOPE:s_sym_let|let_bind|对称化中的变量]
+[7] 设 $T\in \mathbb{T}_p^0(V)$（定义 2 ），
+[8] 即
+[9] \begin{equation}
+T=\sum_{i_1,\cdots,i_p}T_{i_1,\cdots,i_p}e^{i_1}\otimes\cdots\otimes e^{i_p}~,
+\end{equation}
+[10] 而 $S_p$ 是作用在指标集合 $\{1,2,\cdots,p\}$ 上的 $p$ 阶
+[11] 置换群 [链接 L0]
+[12] 对任意置换 $\pi\in S_p$，定义映射：
+[13] \begin{equation}
+f_\pi(T)(x_1,x_2,\cdots,x_p):=T(x_{\pi1},\cdots,x_{\pi p})~,
+\end{equation}
+[14] 其中，$x_i$ 是以 $i$ 为指标的矢量。
+
+[/SCOPE:s_sym_let]
+[SCOPE:s_thm1|description|定理1]
+[15] 定理 1
+[16] $\forall \pi,\sigma\in S_p$ 都有
+[17] \begin{equation}
+f_{\pi}(T)\in\mathbb{T}_p^0~,
+\end{equation}
+[18] \begin{equation}
+f_\pi \circ f_\sigma=f_{\pi\sigma}~,
+\end{equation}
+[19] \begin{equation}
+f_{\pi}(T)=\sum_{i_1\cdots i_p}T_{i_{\pi1}\cdots i_{\pi p}}e^{i_1}\otimes\cdots\otimes e^{i_p}~.
+\end{equation}
+[20] \begin{equation}
+f_{\pi}(T)=\sum_{i_1\cdots i_p}T_{i_1\cdots i_p}e^{i_{\pi^{-1}1}}\otimes\cdots\otimes e^{i_{\pi^{-1}p}}~.
+\end{equation}
+[SCOPE:s_thm1_proof|description|定理1的证明]
+[21] 证明：
+[22] 1。
+[23] $f_\pi(T)\in\mathbb{T}_p^0$
+[24] 不失一般性，设 $\pi k=1$，
+[25] 那么由式 2
+[26] \begin{equation}
+\begin{aligned}
+f_\pi(T)(\alpha x_1+\beta y_1,x_2,\cdots,x_p)&=T(x_{\pi1},\cdots,\alpha x_1+\beta y_1,\cdots,x_{\pi p})\\
+&=\alpha T(x_{\pi1},\cdots,x_1,\cdots,x_{\pi p})+\beta T(x_{\pi1},\cdots,y_1,\cdots,x_{\pi p})\\
+&=\alpha f_{\pi}(T)(x_1,x_2,\cdots,x_p)+\beta f_{\pi}(T)(y_1,x_2,\cdots,x_p)~.
+\end{aligned}
+\end{equation}
+[27] 2. $f_\pi \circ f_\sigma=f_{\pi\sigma}$
+[28] 由式 2 和函数的复合，有
+[29] \begin{equation}
+\begin{aligned}
+f_\pi\circ f_\sigma(T)(x_1,\cdots,x_p)&=f_\pi(f_\sigma(T))(x_{1},\cdots,x_{p})\\
+&=f_\sigma(T)(x_{\pi1},\cdots,x_{\pi p})\\
+&=T(x_{\pi\sigma1},\cdots,x_{\pi\sigma p})\\
+&=f_{\pi\sigma}(T)(x_1,\cdots,x_p)~.
+\end{aligned}
+\end{equation}
+[30] 上面第三个等式来源于
+[31] 式 2 [链接 L1]
+[32] 式 2 [链接 L2]
+[33] 中左边括号内的变量从左到右恒为按从 1 开始依次增大的顺序编号的。
+[34] 3.式 5 ，式 6 的证明：
+[35] 由张量坐标的定义（定义 1 ）
+[36] \begin{equation}
+\begin{aligned}
+f_{\pi}(T)_{i_1\cdots i_p}&=f_{\pi}(T)(e_{i_1},\cdots,e_{i_p})=T(e_{i_{\pi1}},\cdots,e_{i_{\pi p}})=T_{i_{\pi1}\cdots i_{\pi p}}~.
+\end{aligned}
+\end{equation}
+[37] 定理 1 [链接 L3]
+[38] 式 5 [链接 L4]
+[39] 式 5 [链接 L5]
+[40] 指标中的 $i$ 换为 $\pi^{-1} i$，
+[41] 即得
+[42] 式 6 [链接 L6]
+[43] 证毕！
+[/SCOPE:s_thm1_proof]
+[44] 若设 $f_\pi(\alpha T+\beta T')=\alpha f(T)+\beta f_\pi(T')$，
+[45] 则任意 $\pi \in S_p$ 引导出非退化的线性算子 $f_\pi:\mathbb{T}_p^0\rightarrow\mathbb{T}_p^0$。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_def1|description|定义1 对称，对称化]
+[46] 定义 1 对称，对称化
+[47] 称 $(p,0)$ 型张量 $T$ 是对称的，如果 $\forall \pi\in S_p$ 都有 $f_{\pi}(T)=T$。
+[48] 称映射
+[49] \begin{equation}
+S=\frac{1}{p!}\sum_{\pi\in S_p} f_\pi:\mathbb{T}_p^0\rightarrow\mathbb{T}_p^0~
+\end{equation}
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm2|description|定理2 张量的对称化]
+[50] 定理 2 张量的对称化
+[51] 每个张量经 $S$ 的作用后都是对称的，
+[52] 即 $\forall \pi\in S_p$，都有 $f_\pi(S(T))=S(T)$。
+[SCOPE:s_thm2_proof|description|定理2的证明]
+[53] 证明：
+[54] \begin{equation}
+f_\pi(S(T))=\frac{1}{p!}\sum_{\sigma\in S_p} f_\pi(f_\sigma(T))=\frac{1}{p!}\sum_{\sigma\in S_p} f_{\pi\sigma}(T)~.
+\end{equation}
+[55] 由于 $S_p$ 是个群，
+[56] 则其上任一个元素 $\pi$ 都是其上的一个双射。
+[57] 即当 $\sigma$ 取遍 $S_p$ 时，$\pi\sigma$ 也取遍 $S_p$。
+[58] 所以上式变为
+[59] \begin{equation}
+f_\pi(S(T))=\frac{1}{p!}\sum_{\tau\in S_p} f_{\tau}(T)=S(T)~.
+\end{equation}
+[60] 证毕！
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_proof]
+[SCOPE:s_ex1|description|习题1]
+[61] 习题 1
+[62] 试证明：$\mathbb{T}_p^0(V)$ 上所有对称张量构成一个子空间（矢量空间）。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_def2|description|定义2 对称张量子空间]
+[63] 定义 2 对称张量子空间
+[64] $\mathbb{T}_p^0(V)$ 中全体对称张量构成的子空间记作 $\mathbb{T}_p^+(V)$。
+
+[/SCOPE:s_def2]
+[SCOPE:s_ex2|description|习题2]
+[65] 习题 2
+[66] 试证明：若 $T\in\mathbb{T}_p^+(V)$，
+[67] 则 $S(T)=T$。
+[68] 由于 $\mathbb{T}_p^0$ 型张量共 $p$ 个指标，每个指标所在处需放一个数字，这些数字在 $\{1,\cdots,n\}$ 中选取。
+[69] 对 $\mathbb{T}_p^0$ 的对称张量，独立分量的个数相当于从 $n$ 个数字中一次选 $p$ 个的重复组合（定义 6 ），该个数为 $ \left( \begin{aligned}
+&n+p-1\\&\qquad p
+\end{aligned}  \right) $。
+
+[/SCOPE:s_sym]
+[/SCOPE:s_ex2]
+[SCOPE:s_antisym|description|张量的交错化]
+[SCOPE:s_def3|description|定义3 斜对称张量]
+[70] 定义 3 斜对称张量
+[71] 称张量 $T$ 是斜对称（反对称）的，若 $\forall \pi\in S_p$，都有
+[72] \begin{equation}
+f_\pi(T)=\epsilon_\pi T~,
+\end{equation}
+[73] 式 13 等价为
+[74] \begin{equation}
+f_\tau(T)=-T~,
+\end{equation}
+[75] 其中，$\tau$ 是 $S_p$ 上的对换。
+
+[/SCOPE:s_def3]
+[SCOPE:s_example1|description|例1]
+[76] 式 13 和式 14 等价性的证明
+[77] 证明：
+[78] 根据定理 1 ，置换都可分解成轮换的乘积，而由定理 2 ，轮换都可分解成对换的乘积，而奇偶性不变，
+[79] 即最终置换都能写成对换的乘积，而奇偶性不变，而对换都是奇置换，
+[80] 那么由 式 13 可得式 14 ；
+[81] 同样由式 14 ，任意对换 $\tau$ 的符号 $\epsilon_\tau=-1$，
+[82] 那么对任意置换 $\pi$，有
+[83] \begin{equation}
+\begin{aligned}
+&\pi=\tau_1\cdots\tau_{2n} \quad &(\text{ $\pi$ 为偶置换})\\
+&\pi=\tau_1\cdots\tau_{2n+1} &\quad (\text{ $\pi$ 为奇置换})~,
+\end{aligned}
+\end{equation}
+[84] 式 14
+[85] \begin{equation}
+\begin{aligned}
+&f_\pi(T)=f_{\tau_1}\cdots f_{\tau_{2n}}(T)=(-1)^{2n}T=\epsilon_\pi T\quad&(\text{$\pi$ 是偶置换})\\
+&f_\pi(T)=f_{\tau_1}\cdots f_{\tau_{2n+1}}(T)=(-1)^{2n+1}T=\epsilon_\pi T\quad&(\text{$\pi$ 是奇置换})~.
+\end{aligned}
+\end{equation}
+[86] 式 14
+[87] 式 13
+
+[/SCOPE:s_example1]
+[SCOPE:s_ex3|description|习题3]
+[88] 习题 3
+[89] 试证明：若 $T$ 是斜对称的，
+[90] 则 $T_{i_{\pi1}\cdots i_{\pi p}}=\epsilon_\pi T_{i_1\cdots i_p}$，特别的，$ T_{i_1\cdots i_p}$ 在任两指标相同时为 0。
+[91] 由习题 3 ，对于 $p$ 个数字构成的所有排列中，只要确定了一个排列下的坐标即可。
+[92] 而 $p$ 个指标中有两个相同则该坐标为 0，
+[93] 所以独立的坐标个数相当于从 $n$ 个数中选择 $p$ 个不同的数的个数，
+[94] 即共有 $\left( \begin{aligned}
+&n\\
+&p
+\end{aligned} \right)$
+[95] 个独立的指标。
+
+[/SCOPE:s_ex3]
+[SCOPE:s_def4|description|定义4 张量的交错化]
+[96] 定义 4 张量的交错化
+[97] \begin{equation}
+A=\frac{1}{p!}\sum_{\pi\in S_p}\epsilon_\pi f_\pi:\mathbb{T}_p^0(V)\rightarrow\mathbb{T}_p^0(V)~
+\end{equation}
+
+[/SCOPE:s_def4]
+[SCOPE:s_thm3|description|定理3]
+[98] 定理 3
+[99] $\mathbb{T}_p^0(V)$ 上所有斜对称张量的集合构成 $\mathbb{T}_p^0(V)$ 的一个子空间。
+[SCOPE:s_thm3_proof|description|定理3的证明]
+[100] 证明：结合律、单位元显然，封闭性证明如下：
+[101] \begin{equation}
+\begin{aligned}
+f_\pi P=\epsilon_\pi P,\quad&f_\pi R=\epsilon_\pi R\\
+&\Downarrow\\
+f_\pi(\alpha P+\beta R)&=\alpha f_\pi P+\beta f_\pi R\\
+&=\alpha \epsilon_\pi P+\beta \epsilon_\pi R~.
+\end{aligned}
+\end{equation}
+[102] 斜对称张量的逆元由 $f_\pi$ 的线性易证也是斜对称张量。
+[103] 证毕！
+
+[/SCOPE:s_thm3]
+[/SCOPE:s_thm3_proof]
+[SCOPE:s_def5|description|定义5 斜对称张量子空间]
+[104] 定义 5 斜对称张量子空间
+[105] $\mathbb{T}_p^0(V)$ 上所有斜对称张量构成的子空间记作 $\Lambda^p(V^*)$。
+[106] 之所以记作 $\Lambda^p(V^*)$ 而非 $\Lambda^p(V)$ 是因为 $\Lambda^p(V^*)$ 的元素是 $p$ 个 $V^*$ 上的元素的张量积，$V^*$ 就暗示了这一点，而 $\Lambda^p(V)$ 则是 $\mathbb{T}_0^p(V)$ 的斜对称张量子空间。
+
+[/SCOPE:s_def5]
+[SCOPE:s_thm4|description|定理4]
+[107] 定理 4
+[108] 交错化映射 $A$ 是个线性算子，且满足：
+[109] $A^2=A$;
+[110] $\mathrm{Im} A=\Lambda^p(V^*)$;
+[111] $Af_\sigma=f_\sigma A=\epsilon_\sigma A$。
+[SCOPE:s_thm4_proof|description|定理4的证明]
+[112] 证明：1.由式 17
+[113] \begin{equation}
+\begin{aligned}
+A^2&=\frac{1}{(p!)^2}\sum_{\sigma,\pi\in S_p}\epsilon_\sigma\epsilon_\pi f_\sigma\circ f_\pi=\frac{1}{(p!)^2}\sum_{\sigma,\pi\in S_p}\epsilon_{\sigma\pi} f_{\sigma\pi}\\
+\end{aligned}~.
+\end{equation}
+[114] 由于对任意 $\rho\in S_p$，任选 $\sigma\in S_p$，都有 $\pi=\sigma^{-1}\rho$，使得 $\rho=\sigma\pi$。
+[115] 而每个 $\rho$ 都是 $S_p$ 上的双射，
+[116] 所以表示成 $\rho=\sigma\pi$ 的 $\sigma$ 和 $\pi$ 一一对应，而 $\sigma$ 共能取 $ \left\lvert S_p \right\rvert =p!$ 个，
+[117] 那么每一个 $\rho$ 都有 $p!$ 种方式被表达成 $\sigma \pi$ 的形式。
+[118] 所以，若提取出
+[119] 式 19 [链接 L7]
+[120] 中的 $\sigma\pi=\rho$ 的项，其系数就是 $p!$，
+[121] 因此
+[122] \begin{equation}
+A^2=\frac{1}{(p!)}\sum_{\rho\in S_p}\epsilon_\rho f_\rho=A~.
+\end{equation}
+[123] 2。
+[124] 注意 ${\epsilon_\sigma}^2=1$
+[125] \begin{equation}
+f_\sigma(A(T))=\frac{1}{p!}\sum_{\pi\in S_p}\epsilon_\pi f_\sigma(f_\pi(T))=\epsilon_\sigma\frac{1}{p!}\sum_{\pi\in S_p}\epsilon_{\sigma\pi} f_{\sigma\pi}(T)=\epsilon_\sigma A(T)~,
+\end{equation}
+[126] 所以 $\mathrm{Im} A\subset\Lambda^p(V^*)$。
+[127] 另外，任意 $T\in\Lambda_p(V^*)$，都有
+[128] \begin{equation}
+A(T)=\frac{1}{p!}\sum_{\pi\in S_p}\epsilon_\pi f_\pi(T)=\frac{1}{p!}\sum_{\pi\in S_p}T=T~,
+\end{equation}
+[129] 即 $T\in \operatorname{Im} A\Rightarrow\Lambda_p(V^*)\subset\mathrm{Im} A$。
+[130] 故 $\mathrm{Im} A=\Lambda^p(V^*)$。
+[131] 3。
+[132] 由式 21 ，$f_\sigma A=\epsilon_\sigma A$。
+[133] 同样的易证 $Af_\sigma=\epsilon_\sigma A$，
+[134] 故 $Af_\sigma=f_\sigma A=\epsilon_\sigma A$。
+[135] 证毕！
+[/SCOPE:s_thm4_proof]
+[136] 定理 4 的第 2 条说明在 $A$ 的作用下张量变为斜对称张量。
+
+[/SCOPE:s_thm4]
+[SCOPE:s_thm5|description|定理5]
+[137] 定理 5
+[138] 对任意张量 $Q\in\mathbb T_q^0(V),R\in\mathbb T_r^0(V)$，成立
+[139] \begin{equation}
+A(A(Q)\otimes R)=A(Q\otimes A(R))=A(Q\otimes R)~.
+\end{equation}
+[SCOPE:s_thm5_proof|description|定理5的证明]
+[140] 证明：由定义 4 ，并注意 $A(Q)\in\mathbb T_q^0(V),R\in\mathbb T_r^0(V)\Rightarrow A(Q)\otimes R\in\mathbb T_{q+r}^0(V)$ 得
+[141] \begin{equation}
+A(A(Q)\otimes R)=\frac{1}{(q+r)!}\sum_{\pi\in S_{q+r}}\epsilon_\pi f_{\pi}(A(Q)\otimes R)~.
+\end{equation}
+[142] 利用 $A$ 的线性性，得到
+[143] \begin{equation}
+A(A(Q)\otimes R)=\frac{1}{q!}\sum_{\pi\in S_q}\epsilon_\pi A(f_{\pi}(Q)\otimes R)~.
+\end{equation}
+[144] 定义嵌入映射 $\varphi:S_q\rightarrow S_{q+r}$，并记 $\tilde \pi=\varphi(\pi)$，其作用规则为
+[145] \begin{equation}
+\tilde\pi i=\left\{\begin{aligned}
+&\pi i\quad &(i\leq p)\\
+&i\quad &(i>p)~,
+\end{aligned}\right.
+\end{equation}
+[146] 那么，$f_\pi(Q)\otimes R=f_{\tilde\pi}(Q\otimes R)$，
+[147] 从而由
+[148] 定理 4 [链接 L8]
+[149] 式 25 [链接 L9]
+[150] 可写成（注意 $\epsilon_{\tilde\pi}=\epsilon_\pi$）
+[151] \begin{equation}
+\begin{aligned}
+A(A(Q)\otimes R)&=\frac{1}{q!}\sum_{\pi\in S_q}\epsilon_\pi A(f_{\tilde\pi}(Q\otimes R))\\
+&=\frac{1}{q!}\sum_{\pi\in S_q}\epsilon_\pi^2 A(Q\otimes R)\\
+&=A(Q\otimes R)~.
+\end{aligned}
+\end{equation}
+[152] 同理，$A(Q\otimes A(R))=A(Q\otimes R)$。
+[153] 证毕！
+
+[/SCOPE:s_thm5]
+[/SCOPE:s_thm5_proof]
+[SCOPE:s_def6|description|定义6 外p形式，p矢量]
+[154] 定义 6 外 $p$ 形式，$p$ 矢量
+[155] 称共变的斜对称张量，
+[156] 即 $\Lambda^p(V^*)$ 的元素为 外 $p$ 形式或 $V$ 上的$p$ 次外形式（exterior form）。
+[157] 而称反变的斜对称张量，
+[158] 即 $\Lambda^p(V)$ 的元素为$p$ 矢量。
+[159] 这里，$\Lambda^p(V^*)$ 的元素叫作 “p 次外形式”，表示的是它是 $V$ 的 $p$ 次函数，而 “函数” 通常也称作 “型”（定义 2 ），“型” 或 “形式” 都是对应英文 “form”。
+[160] 而 $\Lambda^p(V)$ 的元素为称为 $p$ 矢量，可理解成它是 $p$ 个 $V$ 上矢量的张量积。
+[161] 只不过这些专门的术语是对斜对称来说的。
+
+跨文章引用:
+  [L0] 置换群 → Perm
+[/SCOPE:s_antisym]
+[/SCOPE:s_def6]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2的证明使用了定理1的结论"
+  },
+  {
+    "source_scope": "s_example1",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1证明定义3中等价性"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_def4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理4研究交错化映射A的性质"
+  },
+  {
+    "source_scope": "s_thm5",
+    "target_scope": "s_thm4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理5的证明使用了定理4"
+  }
+]

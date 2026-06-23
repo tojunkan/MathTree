@@ -1,0 +1,500 @@
+{
+  "article_name": "SphLap",
+  "statements": [
+    {
+      "stmt_id": "st_laplace_eq",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "f(r)",
+        "∇^2"
+      ]
+    },
+    {
+      "stmt_id": "st_spherical_laplacian",
+      "subtype": "definition",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "r",
+        "θ",
+        "φ",
+        "u"
+      ]
+    },
+    {
+      "stmt_id": "st_general_solution_intro",
+      "subtype": "theorem",
+      "clause_range": [
+        4,
+        7
+      ],
+      "truth_value": "true",
+      "scope_id": "s_intro",
+      "exposed_entities": [
+        "f(r,θ,φ)",
+        "A_{l,m}",
+        "B_{l,m}",
+        "Y_{l,m}(θ,φ)"
+      ]
+    },
+    {
+      "stmt_id": "st_laplacian_decomp",
+      "subtype": "definition",
+      "clause_range": [
+        8,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "∇^2_r",
+        "∇^2_Ω"
+      ]
+    },
+    {
+      "stmt_id": "st_multiply_r2",
+      "subtype": "assumption",
+      "clause_range": [
+        10,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sep_var_assume",
+      "subtype": "assumption",
+      "clause_range": [
+        14,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_sep_var",
+      "exposed_entities": [
+        "R(r)",
+        "Y(θ,φ)"
+      ]
+    },
+    {
+      "stmt_id": "st_radial_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        16,
+        18
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_sep_var",
+      "exposed_entities": [
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_angular_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_sep_var",
+      "exposed_entities": [
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_angular_sep_var",
+      "subtype": "assumption",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_sep_var",
+      "exposed_entities": [
+        "Θ(θ)",
+        "Φ(φ)"
+      ]
+    },
+    {
+      "stmt_id": "st_angular_sep_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_sep_var",
+      "exposed_entities": [
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_constant_m2",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_sep_var",
+      "exposed_entities": [
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_radial_euler_eq",
+      "subtype": "definition",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_radial",
+      "exposed_entities": [
+        "R(r)",
+        "l"
+      ]
+    },
+    {
+      "stmt_id": "st_radial_substitution",
+      "subtype": "assumption",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_radial_sub",
+      "exposed_entities": [
+        "t"
+      ]
+    },
+    {
+      "stmt_id": "st_radial_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_radial_sub",
+      "exposed_entities": [
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "stmt_id": "st_theta_eq",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_angular",
+      "exposed_entities": [
+        "Θ(θ)",
+        "l",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_theta_substitution",
+      "subtype": "assumption",
+      "clause_range": [
+        32,
+        32
+      ],
+      "truth_value": null,
+      "scope_id": "s_angular_sub",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_legendre_eq",
+      "subtype": "definition",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_angular_sub",
+      "exposed_entities": [
+        "Θ(x)",
+        "l",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_legendre_solution",
+      "subtype": "theorem",
+      "clause_range": [
+        35,
+        37
+      ],
+      "truth_value": "true",
+      "scope_id": "s_angular_sub",
+      "exposed_entities": [
+        "P_l^m(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_phi_eq",
+      "subtype": "definition",
+      "clause_range": [
+        38,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_phi_eq",
+      "exposed_entities": [
+        "Φ(φ)",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_phi_solution",
+      "subtype": "conclusion",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_phi_eq",
+      "exposed_entities": [
+        "e^{imφ}"
+      ]
+    },
+    {
+      "stmt_id": "st_m_real",
+      "subtype": "assumption",
+      "clause_range": [
+        41,
+        41
+      ],
+      "truth_value": null,
+      "scope_id": "s_phi_eq",
+      "exposed_entities": [
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_periodic_bc",
+      "subtype": "assumption",
+      "clause_range": [
+        42,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_phi_eq",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_m_integer",
+      "subtype": "conclusion",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_phi_eq",
+      "exposed_entities": [
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_final_solution",
+      "subtype": "theorem",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": "true",
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "C_{l,m}",
+        "C'_{l,m}",
+        "P_l^m(cosθ)",
+        "e^{imφ}"
+      ]
+    },
+    {
+      "stmt_id": "st_spherical_harmonics",
+      "subtype": "definition",
+      "clause_range": [
+        47,
+        51
+      ],
+      "truth_value": null,
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "Y_{l,m}(θ,φ)"
+      ]
+    },
+    {
+      "stmt_id": "st_symmetry_assume",
+      "subtype": "assumption",
+      "clause_range": [
+        54,
+        54
+      ],
+      "truth_value": null,
+      "scope_id": "s_symmetry",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_symmetry_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        55,
+        56
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_symmetry",
+      "exposed_entities": [
+        "m=0",
+        "勒让德多项式"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_sep_var_assume",
+      "target": "st_radial_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sep_var_assume",
+      "target": "st_angular_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_angular_sep_var",
+      "target": "st_angular_sep_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_angular_sep_eq",
+      "target": "st_constant_m2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_radial_substitution",
+      "target": "st_radial_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theta_substitution",
+      "target": "st_legendre_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_legendre_eq",
+      "target": "st_legendre_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_phi_eq",
+      "target": "st_phi_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_m_real",
+      "target": "st_periodic_bc",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_periodic_bc",
+      "target": "st_m_integer",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_symmetry_assume",
+      "target": "st_symmetry_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_radial_solution",
+      "target": "st_final_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_legendre_solution",
+      "target": "st_final_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_phi_solution",
+      "target": "st_final_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_m_integer",
+      "target": "st_final_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_final_solution",
+      "target": "st_general_solution_intro",
+      "edge_type": "equivalent",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_final_solution",
+      "target": "st_general_solution_intro",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "推导得到通解，与引言中的通解一致。"
+    },
+    {
+      "source": "st_radial_eq",
+      "target": "st_sep_var_assume",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "径向方程由分离变量得到。"
+    },
+    {
+      "source": "st_angular_eq",
+      "target": "st_sep_var_assume",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "角向方程由分离变量得到。"
+    },
+    {
+      "source": "st_phi_eq",
+      "target": "st_sep_var_assume",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "φ方程由分离变量得到。"
+    }
+  ],
+  "unresolved": []
+}

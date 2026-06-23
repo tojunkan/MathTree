@@ -1,0 +1,204 @@
+{
+  "article_name": "PChain",
+  "statements": [
+    {
+      "stmt_id": "st_ex1_let",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex1_let",
+      "exposed_entities": [
+        "u(x,y)",
+        "v(x,y)",
+        "f(u,v)",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "stmt_id": "st_ex1_solution",
+      "subtype": "example",
+      "clause_range": [
+        1,
+        5
+      ],
+      "truth_value": "true",
+      "scope_id": "s_ex1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_explicit_def",
+      "subtype": "definition",
+      "clause_range": [
+        6,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_explicit",
+      "exposed_entities": [
+        "f",
+        "u_i",
+        "∂f/∂u_i"
+      ]
+    },
+    {
+      "stmt_id": "st_explicit_special",
+      "subtype": "definition",
+      "clause_range": [
+        11,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_explicit",
+      "exposed_entities": [
+        "u_i",
+        "x_j",
+        "f"
+      ]
+    },
+    {
+      "stmt_id": "st_implicit_def",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_explicit",
+      "exposed_entities": [
+        "f",
+        "u_i",
+        "x_j",
+        "∂u_i/∂x_j"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_let1",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let1",
+      "exposed_entities": [
+        "E(v_x)",
+        "v_x",
+        "t",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_let2",
+      "subtype": "assumption",
+      "clause_range": [
+        21,
+        22
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let2",
+      "exposed_entities": [
+        "E(v_x,v_y)",
+        "v_y(t)",
+        "t",
+        "a",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_let3",
+      "subtype": "assumption",
+      "clause_range": [
+        23,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2_let3",
+      "exposed_entities": [
+        "E(v_x,t)",
+        "v_y(t)",
+        "t",
+        "a",
+        "m"
+      ]
+    },
+    {
+      "stmt_id": "st_ex2_comment",
+      "subtype": "remark",
+      "clause_range": [
+        26,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_ex2",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_total_derivative",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_total_derivative",
+      "exposed_entities": [
+        "f",
+        "u_i",
+        "x",
+        "df/dx"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_ex1_let",
+      "target": "st_ex1_solution",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_explicit_def",
+      "target": "st_explicit_special",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_explicit_special",
+      "target": "st_implicit_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_ex2_let1",
+      "target": "st_ex2_comment",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_ex2_let2",
+      "target": "st_ex2_comment",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_ex2_let3",
+      "target": "st_ex2_comment",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_ex2_comment",
+      "target": "st_explicit_def",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "例 2 是显含与隐含概念的具体例子"
+    }
+  ],
+  "unresolved": []
+}

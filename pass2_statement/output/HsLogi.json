@@ -1,0 +1,623 @@
+{
+  "article_name": "HsLogi",
+  "statements": [
+    {
+      "stmt_id": "st_prop_def",
+      "subtype": "definition",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_proposition",
+      "exposed_entities": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "stmt_id": "st_truth_value_def",
+      "subtype": "definition",
+      "clause_range": [
+        19,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_proposition",
+      "exposed_entities": [
+        "True",
+        "False",
+        "T",
+        "F"
+      ]
+    },
+    {
+      "stmt_id": "st_true_false_prop",
+      "subtype": "definition",
+      "clause_range": [
+        22,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_proposition",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_prop_exclusive",
+      "subtype": "axiom",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": "true",
+      "scope_id": "s_proposition",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_non_prop_condition",
+      "subtype": "definition",
+      "clause_range": [
+        26,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_proposition",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_atomic_prop_def",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_proposition",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_open_prop_def",
+      "subtype": "definition",
+      "clause_range": [
+        33,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_proposition",
+      "exposed_entities": [
+        "x"
+      ]
+    },
+    {
+      "stmt_id": "st_concept_def",
+      "subtype": "definition",
+      "clause_range": [
+        44,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_concept_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_definition_def",
+      "subtype": "definition",
+      "clause_range": [
+        45,
+        45
+      ],
+      "truth_value": null,
+      "scope_id": "s_concept_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_intension_extension",
+      "subtype": "definition",
+      "clause_range": [
+        46,
+        48
+      ],
+      "truth_value": null,
+      "scope_id": "s_concept_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example1_triangle",
+      "subtype": "example",
+      "clause_range": [
+        49,
+        51
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example1",
+      "exposed_entities": [
+        "三角形"
+      ]
+    },
+    {
+      "stmt_id": "st_intension_extension_relation",
+      "subtype": "theorem",
+      "clause_range": [
+        52,
+        53
+      ],
+      "truth_value": "true",
+      "scope_id": "s_concept_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_axiom_def",
+      "subtype": "definition",
+      "clause_range": [
+        62,
+        62
+      ],
+      "truth_value": null,
+      "scope_id": "s_axiom_paradox",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_axiom_principles",
+      "subtype": "definition",
+      "clause_range": [
+        69,
+        75
+      ],
+      "truth_value": null,
+      "scope_id": "s_axiom_paradox",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_paradox_def",
+      "subtype": "definition",
+      "clause_range": [
+        85,
+        86
+      ],
+      "truth_value": null,
+      "scope_id": "s_axiom_paradox",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem_def",
+      "subtype": "definition",
+      "clause_range": [
+        101,
+        103
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem_conjecture",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_conjecture_def",
+      "subtype": "definition",
+      "clause_range": [
+        105,
+        105
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem_conjecture",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_lemma_def",
+      "subtype": "definition",
+      "clause_range": [
+        113,
+        113
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem_conjecture",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_corollary_def",
+      "subtype": "definition",
+      "clause_range": [
+        114,
+        114
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem_conjecture",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_deductive_def",
+      "subtype": "definition",
+      "clause_range": [
+        131,
+        131
+      ],
+      "truth_value": null,
+      "scope_id": "s_deductive",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_deductive_reliability",
+      "subtype": "theorem",
+      "clause_range": [
+        132,
+        133
+      ],
+      "truth_value": "true",
+      "scope_id": "s_deductive",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example4_syllogism",
+      "subtype": "example",
+      "clause_range": [
+        139,
+        142
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example4",
+      "exposed_entities": [
+        "苏格拉底"
+      ]
+    },
+    {
+      "stmt_id": "st_inductive_def",
+      "subtype": "definition",
+      "clause_range": [
+        150,
+        150
+      ],
+      "truth_value": null,
+      "scope_id": "s_inductive",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_inductive_limitation",
+      "subtype": "theorem",
+      "clause_range": [
+        154,
+        156
+      ],
+      "truth_value": "true",
+      "scope_id": "s_inductive",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_abductive_def",
+      "subtype": "definition",
+      "clause_range": [
+        171,
+        171
+      ],
+      "truth_value": null,
+      "scope_id": "s_abductive",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_abductive_process",
+      "subtype": "definition",
+      "clause_range": [
+        172,
+        176
+      ],
+      "truth_value": null,
+      "scope_id": "s_abductive",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example5_sudden_silence",
+      "subtype": "example",
+      "clause_range": [
+        177,
+        183
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example5",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_reductive_def",
+      "subtype": "definition",
+      "clause_range": [
+        193,
+        195
+      ],
+      "truth_value": null,
+      "scope_id": "s_reductive",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_reductive_logic",
+      "subtype": "theorem",
+      "clause_range": [
+        196,
+        199
+      ],
+      "truth_value": "true",
+      "scope_id": "s_reductive",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example6_even_proof",
+      "subtype": "example",
+      "clause_range": [
+        202,
+        206
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example6",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_analogical_def",
+      "subtype": "definition",
+      "clause_range": [
+        210,
+        211
+      ],
+      "truth_value": null,
+      "scope_id": "s_analogical",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_analogical_core",
+      "subtype": "theorem",
+      "clause_range": [
+        212,
+        213
+      ],
+      "truth_value": "true",
+      "scope_id": "s_analogical",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example7_circuit_water",
+      "subtype": "example",
+      "clause_range": [
+        215,
+        220
+      ],
+      "truth_value": "true",
+      "scope_id": "s_example7",
+      "exposed_entities": [
+        "电流",
+        "水流",
+        "电压",
+        "水的高度差",
+        "电阻",
+        "管道的狭窄程度"
+      ]
+    },
+    {
+      "stmt_id": "st_heuristic_deductive",
+      "subtype": "remark",
+      "clause_range": [
+        237,
+        240
+      ],
+      "truth_value": null,
+      "scope_id": "s_heuristic",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_heuristic_inductive",
+      "subtype": "remark",
+      "clause_range": [
+        241,
+        241
+      ],
+      "truth_value": null,
+      "scope_id": "s_heuristic",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_heuristic_abductive",
+      "subtype": "remark",
+      "clause_range": [
+        242,
+        244
+      ],
+      "truth_value": null,
+      "scope_id": "s_heuristic",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_heuristic_reductive",
+      "subtype": "remark",
+      "clause_range": [
+        245,
+        247
+      ],
+      "truth_value": null,
+      "scope_id": "s_heuristic",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_heuristic_analogical",
+      "subtype": "remark",
+      "clause_range": [
+        248,
+        249
+      ],
+      "truth_value": null,
+      "scope_id": "s_heuristic",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_prop_def",
+      "target": "st_truth_value_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_truth_value_def",
+      "target": "st_true_false_prop",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_true_false_prop",
+      "target": "st_prop_exclusive",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prop_exclusive",
+      "target": "st_non_prop_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_non_prop_condition",
+      "target": "st_atomic_prop_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_atomic_prop_def",
+      "target": "st_open_prop_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_concept_def",
+      "target": "st_definition_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_definition_def",
+      "target": "st_intension_extension",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_intension_extension",
+      "target": "st_intension_extension_relation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_axiom_def",
+      "target": "st_axiom_principles",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_axiom_principles",
+      "target": "st_paradox_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem_def",
+      "target": "st_conjecture_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_conjecture_def",
+      "target": "st_lemma_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_lemma_def",
+      "target": "st_corollary_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_deductive_def",
+      "target": "st_deductive_reliability",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_inductive_def",
+      "target": "st_inductive_limitation",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_abductive_def",
+      "target": "st_abductive_process",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_reductive_def",
+      "target": "st_reductive_logic",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_analogical_def",
+      "target": "st_analogical_core",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example1_triangle",
+      "target": "st_intension_extension_relation",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_example4_syllogism",
+      "target": "st_deductive_reliability",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_example5_sudden_silence",
+      "target": "st_abductive_process",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_example6_even_proof",
+      "target": "st_reductive_logic",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_example7_circuit_water",
+      "target": "st_analogical_core",
+      "edge_type": "special_case",
+      "category": "logic"
+    },
+    {
+      "source": "st_heuristic_deductive",
+      "target": "st_deductive_reliability",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_heuristic_inductive",
+      "target": "st_inductive_limitation",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_heuristic_abductive",
+      "target": "st_abductive_process",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_heuristic_reductive",
+      "target": "st_reductive_logic",
+      "edge_type": "hint",
+      "category": "link"
+    },
+    {
+      "source": "st_heuristic_analogical",
+      "target": "st_analogical_core",
+      "edge_type": "hint",
+      "category": "link"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

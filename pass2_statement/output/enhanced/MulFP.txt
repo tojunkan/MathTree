@@ -1,0 +1,123 @@
+[SCOPE:root|description|多元函数泛函的极值]
+文章名: MulFP
+标题: 多元函数泛函的极值
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=$C_1$ 类函数的距离及邻区
+  [1] type=lemma heading=引理 1 title=
+
+[SCOPE:s_def1|description|定义1: C1类函数的距离及邻区]
+[0] 定义 1 $C_1$ 类函数的距离及邻区
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1] 若 $\varphi,\phi\in C_1$，
+[2] 则
+[3] \begin{equation}
+\begin{aligned}
+r(\varphi,\phi)=&\mathrm{max}\{ \left\lvert \varphi(x_1,\cdots,x_n)-\phi(x_1,\cdots,x_n) \right\rvert \\
+& \left\lvert \partial_i\varphi(x_1,\cdots,x_n)-\partial_i\phi(x_1,\cdots,x_n) \right\rvert \}~\quad (i=1,\cdots,n)~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_proof|description|式2的证明]
+[SCOPE:s_proof_let1|let_bind|设φ+δφ]
+[4] 设 $\varphi+\delta\varphi$ 是位于 $\varphi$ 的 $\epsilon$ 邻区的 $\overline{C_1}$ 函数。
+[/SCOPE:s_proof_let1]
+[5] 于是 $\delta{\varphi}(\Omega)=0$
+[6] \begin{equation}
+\begin{aligned}
+J(\varphi+\delta\varphi)-J(\varphi)=&\int\cdots\int\limits_Q [F(x_i,\varphi+\delta\varphi,\partial_i(\varphi+\delta\varphi))-\\
+&F(x_i,\varphi,\partial_i\varphi)] \,\mathrm{d}{x} _1\cdots \,\mathrm{d}{x} _n\\
+=&\int\c…[truncated]…ial_i\varphi)] \,\mathrm{d}{x} _1\cdots \,\mathrm{d}{x} _n\\
+=&\int\cdots\int\limits_Q [F'_\varphi\delta\varphi+\sum_{i=1}^nF'_{\partial_i\varphi}\delta\partial_i\varphi] \,\mathrm{d}{x} _1\cdots \,\mathrm{d}{x} _n+\eta~,
+\end{aligned}
+\end{equation}
+[7] 其中，$\eta$ 在 $\delta\varphi\rightarrow0$ 时是比 $r(\varphi,\varphi+\delta\varphi)$ 更高阶的小量。
+[8] \begin{equation}
+\int\cdots\int\limits_Q [F'_\varphi\delta\varphi+\sum_{i=1}^nF'_{\partial_i\varphi}\delta\partial_i\varphi] \,\mathrm{d}{x} _1\cdots \,\mathrm{d}{x} _n~.
+\end{equation}
+[9] 显然对 $\varphi$ 是线性的，
+[10] 即是泛函 $J(\varphi)$ 的主要线性部分，称为 $J$ 的变分，同样记为 $\delta J$
+[11] \begin{equation}
+\delta J=\int\cdots\int\limits_Q [F'_\varphi\delta\varphi+\sum_{i=1}^nF'_{\partial_i\varphi}\delta\partial_i\varphi] \,\mathrm{d}{x} _1\cdots \,\mathrm{d}{x} _n~,
+\end{equation}
+[12] 泛函 $J(\varphi)$ 在 $\varphi$ 上达到极值，必要条件是 $\delta J=0$(同
+[13] 定理 1 [链接 L0]
+[14] 证明一样的。)
+[SCOPE:s_proof_let2|let_bind|考虑直线AB]
+[15] 考虑 $Q$ 内一条平行于 $Ox_i$ 的直线，其上的区间 $AB$ 端点在边界 $\Omega$ 上。
+[16] 于是
+[17] \begin{equation}
+\begin{aligned}
+\int_A^B F'_{\partial_i\varphi}\delta\partial_i\varphi \,\mathrm{d}{x} _i=&F'_{\partial_i\varphi}\delta\varphi\Big|_A^B-\int_A^B \partial_iF'_{\partial_i\varphi}\delta\varphi \,\mathrm{d}{x} _i\\
+&=-\int_A^B \partial_iF'_{\partial_i\varphi}\delta\varphi \,\mathrm{d}{x} _i~.
+\end{aligned}
+\end{equation}
+[18] 式 6 [链接 L1]
+[19] 式 7 [链接 L2]
+[20] \begin{equation}
+\begin{aligned}
+\delta J=&\int\cdots\int\limits_Q [F'_\varphi\delta\varphi-\sum_{i=1}^n\partial_iF'_{\partial_i\varphi}\delta\varphi] \,\mathrm{d}{x} _1\cdots \,\mathrm{d}{x} _n\\
+=&\int\cdots\int\limits_Q [F'_\varphi-\sum_{i=1}^n\partial_iF'_{\partial_i\varphi}]\delta\varphi \,\mathrm{d}{x} _1\cdots \,\mathrm{d}{x} _n~.
+\end{aligned}
+\end{equation}
+[/SCOPE:s_proof_let2]
+[21] 有下面的引理即得
+[22] 式 2 [链接 L3]
+[23] 证毕！
+
+[/SCOPE:s_proof]
+[SCOPE:s_lemma1|description|引理1]
+[SCOPE:s_lemma1_let|let_bind|引理1的变量]
+[24] 引理 1
+[25] \begin{equation}
+\int\cdots\int\limits_Q M\eta \,\mathrm{d}{x} _1\cdots \,\mathrm{d}{x} _n=0~,
+\end{equation}
+[26] \begin{equation}
+M(Q)=0~.
+\end{equation}
+[/SCOPE:s_lemma1_let]
+[SCOPE:s_lemma1_reductio|reductio|反证法假设M(A)≠0]
+[SCOPE:s_lemma1_let2|let_bind|反证法中的构造]
+[27] 证明：设 $M(A)=c\neq0,\;A\in Q$，不失一般性，设 $c>0$。
+[28] 围绕 $A$ 作长方形 $R$:
+[29] \begin{equation}
+a_i\leq x_i\leq b_i~.
+\end{equation}
+[30] 它完全包含在 $Q$ 内，且 $\forall A'\in R,M(A')>\frac{c}{2}$（$M$ 的连续性保证这是可能的）。
+[31] 定义函数 $\eta$
+[32] \begin{equation}
+\eta(x_1,\cdots,x_n)=\left\{
+\begin{aligned}
+&\prod_{i=1}^n \sin^2\frac{\pi(x_i-a_i)}{b_i-a_i} &\quad &(x_1,\cdots,x_n)\in R\\
+&0 &\quad &(x_1,\cdots,x_n)\notin R~.
+\end{aligned}\right.
+\end{equation}
+[33] 显然 $\eta\in C_1,\eta(\Omega)=0$，
+[34] 因此
+[35] \begin{equation}
+\begin{aligned}
+\int\cdots\int\limits_Q M\eta \,\mathrm{d}{x} _1\cdots \,\mathrm{d}{x} _n=\int\cdots\int\limits_R M\eta \,\mathrm{d}{x} _1\cdots \,\mathrm{d}{x} _n>\\
+>\frac{c}{2}\int_{a_1}^{b_1}\cdots\int_{a_n}^{b_n}\prod_{i=1}^n \sin^2\frac{\pi(x_i-a_i)}{b_i-a_i} \,\mathrm{d}{x} _1\cdots \,\mathrm{d}{x} _n>0~.
+\end{aligned}
+\end{equation}
+[36] 式 9 [链接 L4]
+[/SCOPE:s_lemma1_let2]
+[37] 矛盾，
+[38] 于是
+[/SCOPE:s_lemma1_reductio]
+[39] 引理得证！
+[/SCOPE:s_lemma1]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_proof",
+    "target_scope": "s_lemma1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明中引用引理1得出结论"
+  }
+]

@@ -1,0 +1,339 @@
+{
+  "article_name": "SphCar",
+  "statements": [
+    {
+      "stmt_id": "st_coord_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_coord_let",
+      "exposed_entities": [
+        "原点",
+        "极轴",
+        "z轴",
+        "x轴",
+        "y轴"
+      ]
+    },
+    {
+      "stmt_id": "st_coord_transform_eq",
+      "subtype": "definition",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_coord_let",
+      "exposed_entities": [
+        "x",
+        "y",
+        "z",
+        "r",
+        "θ",
+        "φ"
+      ]
+    },
+    {
+      "stmt_id": "st_inverse_transform",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_coord_transform",
+      "exposed_entities": [
+        "r",
+        "θ",
+        "φ",
+        "x",
+        "y",
+        "z",
+        "Arctan"
+      ]
+    },
+    {
+      "stmt_id": "st_nonuniqueness",
+      "subtype": "remark",
+      "clause_range": [
+        7,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_coord_transform",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vec_basis_transform",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_vec_let",
+      "exposed_entities": [
+        "x̂",
+        "ŷ",
+        "ẑ",
+        "r̂",
+        "θ̂",
+        "φ̂",
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_R_matrix",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_vec_transform",
+      "exposed_entities": [
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_R_orthogonal",
+      "subtype": "remark",
+      "clause_range": [
+        20,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_vec_transform",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vec_rep",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_vec_transform",
+      "exposed_entities": [
+        "v",
+        "v_x",
+        "v_y",
+        "v_z",
+        "v_r",
+        "v_θ",
+        "v_φ"
+      ]
+    },
+    {
+      "stmt_id": "st_vec_transform_eq",
+      "subtype": "definition",
+      "clause_range": [
+        24,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_vec_transform",
+      "exposed_entities": [
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_vec_field_transform",
+      "subtype": "remark",
+      "clause_range": [
+        27,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_vec_transform",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_deriv_coord",
+      "subtype": "conclusion",
+      "clause_range": [
+        30,
+        32
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_deriv_let",
+      "exposed_entities": [
+        "P",
+        "r",
+        "θ",
+        "φ",
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    {
+      "stmt_id": "st_deriv_vec",
+      "subtype": "conclusion",
+      "clause_range": [
+        33,
+        49
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_derivation",
+      "exposed_entities": [
+        "r̂",
+        "θ̂",
+        "φ̂",
+        "x̂",
+        "ŷ",
+        "ẑ",
+        "R"
+      ]
+    },
+    {
+      "stmt_id": "st_angle_question",
+      "subtype": "question",
+      "clause_range": [
+        61,
+        61
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_angle_let",
+      "exposed_entities": [
+        "θ1",
+        "φ1",
+        "θ2",
+        "φ2",
+        "α"
+      ]
+    },
+    {
+      "stmt_id": "st_angle_method",
+      "subtype": "conclusion",
+      "clause_range": [
+        62,
+        64
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_angle_let",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_angle_cos",
+      "subtype": "conclusion",
+      "clause_range": [
+        65,
+        69
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_angle",
+      "exposed_entities": [
+        "α"
+      ]
+    },
+    {
+      "stmt_id": "st_matlab_note",
+      "subtype": "remark",
+      "clause_range": [
+        70,
+        72
+      ],
+      "truth_value": null,
+      "scope_id": "s_matlab",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_coord_assump",
+      "target": "st_coord_transform_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_coord_assump",
+      "target": "st_inverse_transform",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_vec_basis_transform",
+      "target": "st_R_matrix",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_R_matrix",
+      "target": "st_R_orthogonal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_vec_rep",
+      "target": "st_vec_transform_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_deriv_coord",
+      "target": "st_coord_transform_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_deriv_vec",
+      "target": "st_vec_basis_transform",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_deriv_vec",
+      "target": "st_vec_transform_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_angle_question",
+      "target": "st_angle_method",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_angle_method",
+      "target": "st_angle_cos",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_vec_basis_transform",
+      "target": "st_coord_transform_eq",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "矢量变换依赖于坐标变换公式"
+    },
+    {
+      "source": "st_deriv_coord",
+      "target": "st_coord_transform_eq",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "推导证明了坐标变换公式"
+    },
+    {
+      "source": "st_deriv_vec",
+      "target": "st_vec_basis_transform",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "推导证明了矢量变换公式"
+    },
+    {
+      "source": "st_angle_cos",
+      "target": "st_coord_transform_eq",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "夹角计算应用坐标变换"
+    }
+  ],
+  "unresolved": []
+}

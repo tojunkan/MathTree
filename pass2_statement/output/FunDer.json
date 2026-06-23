@@ -1,0 +1,601 @@
+{
+  "article_name": "FunDer",
+  "statements": [
+    {
+      "stmt_id": "st_basic_funcs_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_basic_funcs",
+      "exposed_entities": [
+        "a",
+        "x^a",
+        "a^x",
+        "log_a x",
+        "ln x",
+        "sin x",
+        "cos x",
+        "tan x",
+        "arcsin x",
+        "arccos x",
+        "arctan x"
+      ]
+    },
+    {
+      "stmt_id": "st_elementary_func_def",
+      "subtype": "definition",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_basic_funcs",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_examples",
+      "subtype": "example",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": "unknown",
+      "scope_id": "s_basic_funcs",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_deriv_formulas_intro",
+      "subtype": "theorem",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": "true",
+      "scope_id": "s_deriv_formulas",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_power_deriv_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        16,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_deriv_formulas",
+      "exposed_entities": [
+        "a",
+        "x^a"
+      ]
+    },
+    {
+      "stmt_id": "st_trig_deriv_formulas",
+      "subtype": "theorem",
+      "clause_range": [
+        18,
+        19
+      ],
+      "truth_value": "true",
+      "scope_id": "s_deriv_formulas",
+      "exposed_entities": [
+        "sin x",
+        "cos x",
+        "tan x"
+      ]
+    },
+    {
+      "stmt_id": "st_arctrig_deriv_formulas",
+      "subtype": "theorem",
+      "clause_range": [
+        20,
+        21
+      ],
+      "truth_value": "true",
+      "scope_id": "s_deriv_formulas",
+      "exposed_entities": [
+        "arctan x",
+        "arcsin x",
+        "arccos x"
+      ]
+    },
+    {
+      "stmt_id": "st_exp_deriv_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        22,
+        23
+      ],
+      "truth_value": "true",
+      "scope_id": "s_deriv_formulas",
+      "exposed_entities": [
+        "a^x"
+      ]
+    },
+    {
+      "stmt_id": "st_exp_special",
+      "subtype": "theorem",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": "true",
+      "scope_id": "s_deriv_formulas",
+      "exposed_entities": [
+        "e^x"
+      ]
+    },
+    {
+      "stmt_id": "st_log_deriv_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        25,
+        26
+      ],
+      "truth_value": "true",
+      "scope_id": "s_deriv_formulas",
+      "exposed_entities": [
+        "log_a x"
+      ]
+    },
+    {
+      "stmt_id": "st_ln_special",
+      "subtype": "theorem",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": "true",
+      "scope_id": "s_deriv_formulas",
+      "exposed_entities": [
+        "ln x"
+      ]
+    },
+    {
+      "stmt_id": "st_remark_derivation",
+      "subtype": "remark",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": null,
+      "scope_id": "s_deriv_formulas",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_power_deriv_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        29,
+        31
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_deriv",
+      "exposed_entities": [
+        "x",
+        "h",
+        "a",
+        "f(x)"
+      ]
+    },
+    {
+      "stmt_id": "st_power_deriv_binom",
+      "subtype": "assumption",
+      "clause_range": [
+        32,
+        34
+      ],
+      "truth_value": null,
+      "scope_id": "s_power_deriv",
+      "exposed_entities": [
+        "ε"
+      ]
+    },
+    {
+      "stmt_id": "st_power_deriv_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        35,
+        36
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_power_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sin_geo_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        38,
+        44
+      ],
+      "truth_value": null,
+      "scope_id": "s_sin_geo",
+      "exposed_entities": [
+        "θ",
+        "sinθ",
+        "dθ"
+      ]
+    },
+    {
+      "stmt_id": "st_sin_geo_diff",
+      "subtype": "conclusion",
+      "clause_range": [
+        45,
+        46
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_sin_geo",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sin_geo_deriv",
+      "subtype": "conclusion",
+      "clause_range": [
+        47,
+        48
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_sin_geo",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sin_algebra_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        49,
+        50
+      ],
+      "truth_value": null,
+      "scope_id": "s_sin_algebra",
+      "exposed_entities": [
+        "x",
+        "h"
+      ]
+    },
+    {
+      "stmt_id": "st_sin_algebra_limit",
+      "subtype": "assumption",
+      "clause_range": [
+        51,
+        53
+      ],
+      "truth_value": null,
+      "scope_id": "s_sin_algebra",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sin_algebra_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        54,
+        54
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_sin_algebra",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cos_deriv_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        55,
+        56
+      ],
+      "truth_value": null,
+      "scope_id": "s_cos_deriv",
+      "exposed_entities": [
+        "x",
+        "b"
+      ]
+    },
+    {
+      "stmt_id": "st_cos_deriv_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        57,
+        57
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_cos_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_cos_deriv_remark",
+      "subtype": "remark",
+      "clause_range": [
+        58,
+        58
+      ],
+      "truth_value": null,
+      "scope_id": "s_cos_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_tan_deriv_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        59,
+        59
+      ],
+      "truth_value": null,
+      "scope_id": "s_tan_deriv",
+      "exposed_entities": [
+        "tan x",
+        "sin x",
+        "cos x"
+      ]
+    },
+    {
+      "stmt_id": "st_tan_deriv_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        60,
+        61
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_tan_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_log_deriv_ln_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        63,
+        69
+      ],
+      "truth_value": null,
+      "scope_id": "s_log_deriv",
+      "exposed_entities": [
+        "x",
+        "h",
+        "ε"
+      ]
+    },
+    {
+      "stmt_id": "st_log_deriv_ln_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        70,
+        71
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_log_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_log_deriv_general_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        72,
+        73
+      ],
+      "truth_value": null,
+      "scope_id": "s_log_deriv",
+      "exposed_entities": [
+        "a",
+        "log_a x"
+      ]
+    },
+    {
+      "stmt_id": "st_log_deriv_general_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        74,
+        74
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_log_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exp_deriv_e_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        76,
+        78
+      ],
+      "truth_value": null,
+      "scope_id": "s_exp_deriv",
+      "exposed_entities": [
+        "x",
+        "e^x",
+        "ln x"
+      ]
+    },
+    {
+      "stmt_id": "st_exp_deriv_e_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        79,
+        79
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_exp_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_exp_deriv_general_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        80,
+        83
+      ],
+      "truth_value": null,
+      "scope_id": "s_exp_deriv",
+      "exposed_entities": [
+        "a",
+        "a^x"
+      ]
+    },
+    {
+      "stmt_id": "st_exp_deriv_general_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        84,
+        84
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_exp_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_arctan_deriv_assump",
+      "subtype": "assumption",
+      "clause_range": [
+        85,
+        88
+      ],
+      "truth_value": null,
+      "scope_id": "s_arctan_deriv",
+      "exposed_entities": [
+        "x",
+        "y",
+        "arctan x",
+        "tan y"
+      ]
+    },
+    {
+      "stmt_id": "st_arctan_deriv_conclusion",
+      "subtype": "conclusion",
+      "clause_range": [
+        89,
+        89
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_arctan_deriv",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_arctan_deriv_remark",
+      "subtype": "remark",
+      "clause_range": [
+        90,
+        90
+      ],
+      "truth_value": null,
+      "scope_id": "s_arctan_deriv",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_power_deriv_assump",
+      "target": "st_power_deriv_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_power_deriv_binom",
+      "target": "st_power_deriv_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sin_geo_assump",
+      "target": "st_sin_geo_diff",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sin_geo_diff",
+      "target": "st_sin_geo_deriv",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sin_algebra_assump",
+      "target": "st_sin_algebra_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_sin_algebra_limit",
+      "target": "st_sin_algebra_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_cos_deriv_assump",
+      "target": "st_cos_deriv_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_tan_deriv_assump",
+      "target": "st_tan_deriv_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_log_deriv_ln_assump",
+      "target": "st_log_deriv_ln_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_log_deriv_general_assump",
+      "target": "st_log_deriv_general_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exp_deriv_e_assump",
+      "target": "st_exp_deriv_e_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_exp_deriv_general_assump",
+      "target": "st_exp_deriv_general_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_arctan_deriv_assump",
+      "target": "st_arctan_deriv_conclusion",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [
+    {
+      "source": "st_sin_algebra_conclusion",
+      "target": "st_sin_geo_deriv",
+      "edge_type": "special_case",
+      "category": "logic",
+      "note": "代数法是几何法的另一种推导方式，结论相同。"
+    },
+    {
+      "source": "st_cos_deriv_conclusion",
+      "target": "st_sin_algebra_conclusion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "余弦导数由正弦导数推导得出。"
+    },
+    {
+      "source": "st_tan_deriv_conclusion",
+      "target": "st_sin_algebra_conclusion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "正切导数由正弦和余弦导数推导得出。"
+    },
+    {
+      "source": "st_log_deriv_ln_conclusion",
+      "target": "st_exp_deriv_e_conclusion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "指数导数利用对数导数及反函数求导法则。"
+    },
+    {
+      "source": "st_arctan_deriv_conclusion",
+      "target": "st_tan_deriv_conclusion",
+      "edge_type": "implies",
+      "category": "logic",
+      "note": "反正切导数利用正切导数及反函数求导法则。"
+    }
+  ],
+  "unresolved": []
+}

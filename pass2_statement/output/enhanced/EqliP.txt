@@ -1,0 +1,161 @@
+[SCOPE:root|description|平衡位置和圈]
+文章名: EqliP
+标题: 平衡位置和圈
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=
+  [1] type=definition heading=定义 1 title=周期
+  [2] type=theorem heading=定理 2 title=周期集的性质
+  [3] type=corollary heading=推论 1 title=
+
+[SCOPE:s_thm1|description|定理 1]
+[0] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[1] 设 $y^i=\varphi_i(x)$ 是自治系统的解，其最大存在区间为 $(m_1,m_2)$，并且存在 $m_1< x_1\neq x_2< m_2$，满足
+[2] \begin{equation}
+\varphi_i(x_1)=\varphi_i(x_2)~.
+\end{equation}
+[/SCOPE:s_thm1_let]
+[3] 平衡位置
+[4] \begin{equation}
+\varphi_i(x+T)=\varphi_i(x)~.
+\end{equation}
+[5] 最小正周期
+[6] 圈（环）
+
+[/SCOPE:s_thm1]
+[SCOPE:s_def1|description|定义 1 周期]
+[7] 定义 1 周期
+[SCOPE:s_def1_let|let_bind|定义 1 的变量]
+[8] 满足式 2 的 $T$ 称为解 $y^i=\varphi_i(x)$ 的周期。
+[/SCOPE:s_def1_let]
+[9] $T$ 之所以是最小的正周期，是因为否则的化，将会存在 $T_1< T$，使得 $\varphi_i(x+T_1)=\varphi_i(x)$，
+[10] 那么对任意 $\tau_2=\tau_1+T_1$，成立 $\varphi_i(\tau_1)=\varphi_i(\tau_2)$，然而此时 $ \left\lvert \tau_1-\tau_2 \right\rvert =T_1< T$，结果与 $\varphi_i(\tau_1)\neq\varphi_i(\tau_2)$ 矛盾。
+[11] 所得矛盾证明了定理中的 $T$ 是最小正周期。
+
+[/SCOPE:s_def1]
+[SCOPE:s_thm2|description|定理 2 周期集的性质]
+[12] 定理 2 周期集的性质
+[SCOPE:s_thm2_let|let_bind|定理 2 的变量]
+[13] 设 $F$ 是解的所有周期构成的集合，
+[/SCOPE:s_thm2_let]
+[14] 则 $F$ 是闭的，且其配合加法构成一群。
+[SCOPE:s_thm2_proof|description|定理 2 的证明]
+[15] 证明：将 $x$ 换成 $x-T$, 就有 $\varphi_i(x)=\varphi_i(x-T)$，
+[16] 于是 $-T$ 也是周期。
+[SCOPE:s_thm2_proof_let1|let_bind|设 T1,T2]
+[17] 设 $T_1,T_2\in F$，
+[18] 则
+[19] \begin{equation}
+\varphi_i((x+T_1)+T_2)=\varphi_i(x+T_1)=\varphi_i(x)~.
+\end{equation}
+[20] 因此此 $T_1+T_2$ 是周期。
+[/SCOPE:s_thm2_proof_let1]
+[21] 于是 $F$ 在加法下构成群。
+[22] 闭集是集的任意收敛点都在集中的集合（定义 4 ）。
+[SCOPE:s_thm2_proof_let2|let_bind|设序列 Tm]
+[23] 所以要证 $F$ 闭，只需对任意收敛于 $T_0$ 的周期序列 $T_1,\cdots, T_m,\cdots$，证明
+[24] \begin{equation}
+\varphi_i(x+T_0)=\varphi_i(x)~
+\end{equation}
+[25] 即可。
+[26] 由于
+[27] \begin{equation}
+\varphi_i(x+T_m)=\varphi_i(x)~
+\end{equation}
+[28] 恒成立，并且 $\varphi_i(x)$ 连续，
+[29] 所以
+[30] \begin{equation}
+\lim_{m\rightarrow\infty}\varphi_i(x+T_i)=\lim_{m\rightarrow\infty}\varphi_i(x)~.
+\end{equation}
+[31] 即 $\varphi_i(x+T_0)=\varphi_i(x)$。
+[/SCOPE:s_thm2_proof_let2]
+[32] 证毕！
+
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_proof]
+[SCOPE:s_cor1|description|推论 1]
+[33] 推论 1
+[SCOPE:s_cor1_let|let_bind|推论 1 的变量]
+[34] 周期集 $F$ 要么是实数集 $\mathbb R$，要么成为 $F=\{mT|m\in\mathbb Z\}$ 而 $T$ 是最小正周期。
+[/SCOPE:s_cor1_let]
+[SCOPE:s_cor1_proof|description|推论 1 的证明]
+[35] 证明：
+[SCOPE:s_cor1_proof_let1|let_bind|设 c, m]
+[36a] 若周期集 $F$ 中无最小正数，也
+[36b] 则对任意 $\epsilon$, 有正周期 $c<\epsilon$，由 $F$ 是加法群，
+[37] 所以 $mc$（$m$ 是整数）是周期。
+[38] 任意实数 $c_0$，可选取满足
+[39] \begin{equation}
+(c_0-\epsilon)/c< c_0/c-1< m< c_0/c+1<(c_0+\epsilon)/c~
+\end{equation}
+[40] 的整数 $m$，
+[41] 于是有 $ \left\lvert mc-c_0 \right\rvert <\epsilon$。
+[42] 于是 $c_0$ 是 $F$ 的收敛点（
+[43] 定义 3 [链接 L0]
+[44] ）。
+[45] 由 $F$ 是闭的，有 $c_0\in F$，由于 $F$ 的元素必定是实数，而现在任意实数都在 $F$ 中，
+[46] 所以 $F=\mathbb R$。
+[/SCOPE:s_cor1_proof_let1]
+[SCOPE:s_cor1_proof_let2|let_bind|设 c, m]
+[47] 若 $F$ 有最小正数 $T$，任意 $c\in F$，可取满足
+[48] \begin{equation}
+(-T+c)/T=-1+c/T< m<(T+c)/T=1+c/T~
+\end{equation}
+[49] 的整数，
+[50] 于是 $ \left\lvert c-mT \right\rvert < T$。
+[51] 若 $c\neq mT$，
+[52] 那么由 $F$ 是加法群，$ \left\lvert c-mT \right\rvert $ 是小于 $T$ 周期，这就与 $T$ 是最小正周期相矛盾，
+[53] 于是只能有 $c=mT$.
+[/SCOPE:s_cor1_proof_let2]
+[54] 证毕！
+
+[/SCOPE:s_cor1]
+[/SCOPE:s_cor1_proof]
+[SCOPE:s_thm1_proof|description|定理 1 的证明]
+[SCOPE:s_thm1_proof_let|let_bind|定理 1 证明的变量]
+[55] 证明：由式 1 ，并根据定理 2
+[56] \begin{equation}
+\varphi_i(x)=\varphi_i(x+x_1-x_2)~.
+\end{equation}
+[/SCOPE:s_thm1_proof_let]
+[57] 由此，区间 $(m_1-x_1+x_2,m_2-x_1+x_2)$ 应合于 $(m_1,m_2)$，
+[58] 于是 $m_1=-\infty,m_2=+\infty$。
+[59] 式 9 [链接 L1]
+[60] 也表明 $x_1-x_2$ 是解的周期。由
+[61] 推论 1
+[62] ，此时解的周期集要么是实数集，
+[63] 即任意 $x$，都有
+[64] \begin{equation}
+\varphi_i(x)=\varphi_i(x_1+(x-x_1))=\varphi(x_1)=a_i~.
+\end{equation}
+[65] 这表明解是平衡位置；
+[66] 要么有最小正周期，这表明解是周期解。
+[67] 证毕！
+[/SCOPE:s_thm1_proof]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1_proof",
+    "target_scope": "s_thm2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明引用定理 2"
+  },
+  {
+    "source_scope": "s_thm1_proof",
+    "target_scope": "s_cor1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明引用推论 1"
+  },
+  {
+    "source_scope": "s_thm2_proof",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "证明引用周期定义"
+  }
+]

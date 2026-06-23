@@ -1,0 +1,333 @@
+[SCOPE:root|description|复变函数的积分]
+文章名: CpxInt
+标题: 复变函数的积分
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=复积分的定义
+  [1] type=example heading=例 1 title=
+  [2] type=theorem heading=定理 1 title=
+  [3] type=example heading=例 2 title=
+  [4] type=example heading=例 3 title=
+  [5] type=example heading=例 4 title=
+  [6] type=example heading=例 5 title=
+  [7] type=example heading=例 6 title=
+  [8] type=example heading=例 7 title=
+
+[SCOPE:s_def1|description|复积分的定义]
+[0] 定义 1 复积分的定义
+[SCOPE:s_def1_let|let_bind|定义中的变量]
+[1] 设 $C$ 为复平面上一条起点在 $a$，终点在 $b$（$a,b\in\mathbb C$）的有向曲线，其方程为
+[2] \begin{equation}
+z(t)=x(t)+\mathrm{i} y(t) \qquad(t_a \leqslant t \leqslant t_b)~.
+\end{equation}
+[3] \begin{equation}
+S = \lim_{d \rightarrow 0} \sum_{k=1}^{n} f\left(\zeta_{k}\right) \Delta z_{k}~,
+\end{equation}
+[4] \begin{equation}
+S=\int_{C} f(z) \mathrm{d} z~.
+\end{equation}
+[/SCOPE:s_def1_let]
+[5] 被积函数
+[6] 积分路径
+[7] 现在来看一下用定义计算复积分的一个简单例子。
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|例1]
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[8] 设 $C$ 是一条起点为 $a$ 终点为 $b$ 的曲线，试计算 $\displaystyle S=\int_C\mathrm dz$。
+[9] 解：用定义来计算该积分。
+[10] 由定义，将 $f(z)=1$ 代入，得：
+[11] \begin{equation}
+\int_{C} \mathrm{d} z=\lim _{d \rightarrow 0} \sum_{k=1}^{n}\left(z_{k}-z_{k-1}\right)= b-a~.
+\end{equation}
+[/SCOPE:s_ex1_let]
+[12] 通过这道例题，我们发现对于函数 $f(z)=1$，它的积分值只依赖于积分路径 $C$ 的起点 $a$ 和终点 $b$，而与积分路径的形状是无关的。
+[13] 这个性质对于更一般的 $f$ 是否成立？
+[14] 在后面的柯西积分定理中，我们将给出答案。
+[15] 有了积分定义后，最先关心的问题是：积分存在的条件，积分的性质与积分的计算。
+[16] 下面就来讨论这几个问题。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_thm1|description|定理1]
+[17] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[18] 令复平面的实轴为 $x$ 轴，虚轴为 $y$ 轴，用两个二元实函数 $u, v$ 来表示 $f(z)$
+[19] \begin{equation}
+f (z) = u(x, y) + \mathrm iv(x, y)~,
+\end{equation}
+[20] \begin{equation}
+\boldsymbol{\mathbf{f}} ( \boldsymbol{\mathbf{r}} ) = u \hat{\boldsymbol{\mathbf{x}}} - v \hat{\boldsymbol{\mathbf{y}}}
+\qquad
+\boldsymbol{\mathbf{g}} ( \boldsymbol{\mathbf{r}} ) = v \hat{\boldsymbol{\mathbf{x}}} + u \hat{\boldsymbol{\mathbf{y}}} ~,
+\end{equation}
+[21] \begin{equation}
+\begin{aligned}
+\int_{C} f(z) \,\mathrm{d}{z} &= \int_C \boldsymbol{\mathbf{f}} ( \boldsymbol{\mathbf{r}} ) \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{r}} } + \mathrm{i} \int_C \boldsymbol{\mathbf{g}} ( \boldsymbol{\mathbf{r}} ) \boldsymbol\cdot \,\mathrm{d}{ \boldsymbol{\mathbf{r}} } \\
+&= \int_{C} u \mathrm{d} x-v \mathrm{d} y+\mathrm{i} \int_{C} v \mathrm{d} x+u \mathrm{d} y~.
+\end{aligned}
+\end{equation}
+[22] 研究复变函数的积分问题，可以转化为研究实变量的二元实值函数沿曲线 $C$ 的线积分问题。
+
+[/SCOPE:s_thm1_let]
+[23] \begin{equation}
+\begin{aligned}
+\int_C f(z) \,\mathrm{d}{z} &= \int_C (u+iv)( \,\mathrm{d}{x} + \mathrm{i} \,\mathrm{d}{y} )\\
+&= \int_C u \,\mathrm{d}{x} - v \,\mathrm{d}{y} + \mathrm{i} \int_{C} v \mathrm{d} x+u \mathrm{d} y~.
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_thm1]
+[SCOPE:s_prop|description|复积分的性质与计算]
+[24] 上面我们看到了将线积分和复积分联系起来的。
+[25] 容易想到，线积分的一些性质可移到复变函数的积分上来。
+[SCOPE:s_prop_let1|let_bind|性质中的变量]
+[26a] (z)$ 与 $g
+[26b] (z)$ 沿曲线 $C,C^-$（$C^-$ 表示与曲线 $C$ 方向相反的同一条曲线）可积，
+[27] 则有
+[28] \begin{equation}
+\int_{C} A f(z) \mathrm{d} z=A \int_{C} f(z) \mathrm{d} z \quad(A \text { 为复常数 })~,
+\end{equation}
+[29] \begin{equation}
+\int_{C}[Af(z)+ Bg(z)] \mathrm{d} z= A\int_{C} f(z) \mathrm{d} z + B\int_{C} g(z) \mathrm{d} z~,
+\end{equation}
+[30] \begin{equation}
+\int_{C} f(z) \mathrm{d} z=-\int_{C^{-}} f(z) \mathrm{d} z~,
+\end{equation}
+[31] \begin{equation}
+\int_{C} f(z) \mathrm{d} z=\int_{C_{1}} f(z) \mathrm{d} z+\int_{C_{2}} f(z) \mathrm{d} z \quad\left(C \text{ 由 } C_{1} \text{ 与 } C_{2} \text { 首尾相接而成}\right)~.
+\end{equation}
+[/SCOPE:s_prop_let1]
+[SCOPE:s_prop_let2|let_bind|估计式中的变量]
+[32a] (z)$ 沿 $C$ 可积，且在 $C$ 上满足 $ \left\lvert f
+[32b] (z) \right\rvert \leqslant M $，
+[33] 则
+[34] \begin{equation}
+\left|\int_{c} f(z) \mathrm{d} z\right| \leqslant \int_{c}|f(z)| \mathrm{d} s \leqslant M L~.
+\end{equation}
+[35] 该式提供了一种估计复变函数积分的模的方法。
+[/SCOPE:s_prop_let2]
+[36] 【未完成】以下待审阅
+[37] 到现在为止，计算复变函数积分只有两种方法，一是定义，二是。
+[38] 有无其他方法呢？
+[39] 我们注意到，由于积分路径常取光滑曲线（或逐段光滑曲线），
+[40a] (z) $ 沿曲线 $C $ 的积分可归结为 $f [z
+[40b] (t)]$ 关于曲线 $C$ 的参数的积分。
+[SCOPE:s_prop_let3|let_bind|参数化中的变量]
+[41] 事实上，若 $C$ 为光滑曲线（或逐段光滑曲线）
+[42] \begin{equation}
+\begin{aligned} z &=z(t) \\ &=x(t)+\mathrm{i} y(t),(t_a \leqslant t \leqslant t_b)~. \end{aligned}
+\end{equation}
+[43a] (t)$ 在 $[t_a, t_b]$ 上连续，且 $z^\prime
+[43b] (t) = x^\prime
+[43c] (t) + \mathrm iy^\prime
+[43d] (t) \neq 0$。
+[44] 再设 $ f (z)$ 在 $C$ 上连续及
+[45] \begin{equation}
+\begin{aligned} f[z(t)] &=u[x(t), y(t)]+\mathrm{i} v[x(t), y(t)] \\ &=u_{1}(t)+\mathrm{i} v_{1}(t)~. \end{aligned}
+\end{equation}
+[46] \begin{equation}
+\begin{aligned} \int_{C} f(z) \mathrm{d} z &=\int u \mathrm{d} x-v \mathrm{d} y+\mathrm{i} \int_{C} v \mathrm{d} x+u \mathrm{d} y \\ &=\int_{t_a}^{t_b}\left\{u[x(t), y(t)] x^{\prime}(t)-v[x(t), y(t)] y^{\prime}(t)\right\} \mathrm{d} …[truncated]…+u[x(t), y(t)] y^{\prime}(t)\right\} \mathrm{d} t \\ &=\int_{t_a}^{t_b}\left[u_{1}(t)+\mathrm{i} v_{1}(t)\right]\left[x^{\prime}(t)+\mathrm{i} y^{\prime}(t)\right] \mathrm{d} t \\ &=\int_{t_a}^{t_b} f[z(t)] \mathrm{d} t ~.\end{aligned}
+\end{equation}
+[47a] (z)$ 沿曲线 $C$ 的积分归结为 $ f
+[47b] (z)$ 关于曲线 $C$ 的参数 $t$ 的积分。
+[48] 用式 16 来计算积分 $\displaystyle \int_{C} f(z) \mathrm{d} z$ 包含三个步骤：
+[49a] (t)=x
+[49b] (t)+i y
+[49c] (t), t_a \leqslant t \leqslant t_b$
+[50a] (t)$ 与 $\mathrm{d}z = z^\prime
+[50b] (t)\mathrm{d}t $ 代入所求积分 $\displaystyle \int_{c} f
+[50c] (z) \mathrm{d} z$ 中
+[51] 计算式 16 右端的关于参数 $t$ 的积分。
+[52] 有了上述求复变函数的积分的方法之后，我们一起来看几个例子，并尝试用不同的方法来求解。
+
+[/SCOPE:s_prop]
+[/SCOPE:s_prop_let3]
+[SCOPE:s_ex2|description|例2]
+[SCOPE:s_ex2_let|let_bind|例2的变量]
+[53] 计算 $\displaystyle \int _ C z \mathrm dz$，其中 $C$ 为起点在 $a$ 终点在 $b$ 的一条逐段光滑曲线。
+[54] 我们用定义来计算一下。
+[55] 由题知，$f(z)=z$。
+[56] 取 $\zeta_k=z_{k-1}$，
+[57] 则 $f\left(\zeta_{k}\right)=z_{k-1}$，作和：
+[/SCOPE:s_ex2_let]
+[58] \begin{equation}
+A_{n}=\sum_{k=1}^{n} f\left(\zeta_{k}\right) \Delta z_{k}=\sum_{k=1}^{n} z_{k-1}\left(z_{k}-z_{k-1}\right)~.
+\end{equation}
+[59] \begin{equation}
+\int_{C} f(\mathrm{z}) \mathrm{d} \mathrm{z}=\lim _{n \rightarrow \infty \atop d \rightarrow 0} A_{n}~.
+\end{equation}
+[60] \begin{equation}
+B_{n}=\sum_{k=1}^{n} f\left(\zeta_{k}\right) \Delta z_{k}=\sum_{k=1}^{n} z_{k}\left(z_{k}-z_{k-1}\right)~.
+\end{equation}
+[61] \begin{equation}
+\int_{C} f(\mathrm{z}) \mathrm{d} \mathrm{z}=\lim _{n \rightarrow \infty \atop d \rightarrow 0} B_{n}~.
+\end{equation}
+[62] 式 18
+[63] 式 20
+[64] \begin{equation}
+\begin{aligned} \int_{C} f(z) \mathrm{d} z &=\frac{1}{2} \lim _{n \rightarrow \infty \atop d \rightarrow 0}\left(A_{n}+B_{n}\right) \\ &=\frac{1}{2}\left(b^{2}-a^{2}\right)~. \end{aligned}
+\end{equation}
+[65a] (z) = z$ 也有一个和 $f
+[65b] (z)=1$ 一样好的性质：它沿曲线 $C$ 的积分只依赖于起点与终点，而与 $C $ 的形状无关！
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|例3]
+[SCOPE:s_ex3_let|let_bind|例3的变量]
+[66] 试计算 $\displaystyle \int_{C} x \mathrm{d} z$，其中 $C$ 为起点在 $z = 0$，终点在 $z =1+\mathrm i$ 的直线段。
+[67] 图 2：积分路径
+[68] 我们用式 16 计算。
+[69] 首先，写出 $C$ 的方程为
+[70] \begin{equation}
+z=z(t)=(1+i) t \qquad (0 \leqslant t \leqslant 1)~.
+\end{equation}
+[/SCOPE:s_ex3_let]
+[71] \begin{equation}
+\int_{C} x \mathrm{d} z=\int_{0}^{1}(1+\mathrm{i}) t \mathrm{d} t~,
+\end{equation}
+[72] \begin{equation}
+\int_{C} x \mathrm{d} z=\frac{1+\mathrm{i}}{2}~.
+\end{equation}
+
+[/SCOPE:s_ex3]
+[SCOPE:s_ex4|description|例4]
+[SCOPE:s_ex4_let|let_bind|例4的变量]
+[73] 设 $\Gamma$ 为由 $C_1$ 与 $C_2$ 首尾相接而成的起点在 $z=0$，终点在 $ z =1+ \mathrm i $ 的曲线，如图 3 所示。
+[74] 计算 $\displaystyle \int_{\Gamma} x \mathrm{d}z$。
+[75] 图 3：积分路径
+[76] 首先写出 $C_1$ 和 $C_2$ 的方程为
+[77] \begin{equation}
+\begin{array}{l}C_{1}: z=z(t)=t(0 \leqslant t \leqslant 1) \\ C_{2}: z=z(t)=1+\text { i }t(0 \leqslant t \leqslant 1)~.\end{array}
+\end{equation}
+[/SCOPE:s_ex4_let]
+[78] 在 $C_1$ 上有 $x=t, \mathrm{d} z=\mathrm{d} t$，代入 $\displaystyle \int_{C_{1}} x \mathrm{d} z$ 得 $\displaystyle \int_{C_{1}} x \mathrm{d} z=\int_{0}^{1} t \mathrm{d} t$。
+[79] 在 $C_2$ 上有 $\displaystyle x=\operatorname{Re} z(t)=1, \mathrm{d} z=\mathrm{id} t$，代入 $\displaystyle \int_{C_{2}} x \mathrm{d} z$ 得到 $\displaystyle \int_{C_{2}} x \mathrm{d} z=\int_{0}^{1} \mathrm{id} t$。
+[80] 最后，计算积分得
+[81] \begin{equation}
+\int_{\Gamma} x \mathrm{d} z=\int_{C_{1}} x \mathrm{d} z+\int_{C_{2}} x \mathrm{d} z=\int_{0}^{1} t \mathrm{d} t+\int_{0}^{1} \mathrm{i} \mathrm{d} t=\frac{1}{2}+\mathrm{i}~.
+\end{equation}
+[82] 比较例 3 和例 4 ，我们发现，对于复变函数 $f(z)=x$，积分的结果却与积分路径的选取很有关系。
+[83] 再来介绍一个十分重要的例题。
+
+[/SCOPE:s_ex4]
+[SCOPE:s_ex5|description|例5]
+[SCOPE:s_ex5_let|let_bind|例5的变量]
+[84] \begin{equation}
+\oint_{C} \frac{1}{(z-a)^{n}}=
+\left\{\begin{aligned}
+&2 \pi \mathrm{i} && (n=1) \\
+&0 && (n \neq 1 \text{且为整数})~.
+\end{aligned}\right. \end{equation}
+[85] 证明：这里的 $C $ 是一条围线，对于沿围线的积分，若无特殊声明，
+[86] 则今后总理解为沿围线的正向积分。
+[87] 用计算积分的方法来证明本题。
+[88] 首先，写出 $C $ 的方程为
+[89] \begin{equation}
+\begin{aligned} z &=z(t) \\ &=a+R \mathrm{e}^{\mathrm{i} \theta} \quad(0 \leqslant \theta \leqslant 2 \pi) ~.\end{aligned}
+\end{equation}
+[/SCOPE:s_ex5_let]
+[90] 再次，计算积分，$n=1$ 时，有
+[91] \begin{equation}
+\begin{aligned} \oint_{c} \frac{1}{z-a} \mathrm{d} z &=\int_{0}^{2 \pi} \frac{\mathrm{i} R \mathrm{e}^{\mathrm{i} \theta}}{R \mathrm{e}^{\mathrm{i} \theta}} \mathrm{d} \theta \\ &=2 \pi \mathrm{i} \end{aligned}~.
+\end{equation}
+[92] \begin{equation}
+\begin{aligned} \oint_{C} \frac{1}{(z-a)^{n}} \mathrm{d} z &=\int_{0}^{2 \pi} \frac{\mathrm{i} R \mathrm{e}^{\mathrm{i} \theta}}{R^{n} \mathrm{e}^{\mathrm{i} n \theta}} \mathrm{d} \theta \\ &=\frac{\mathrm{i}}{R^{n-1}} \int_{0}^{2 \p…[truncated]…rm{i}(n-1) \theta} \mathrm{d} \theta \\ &=\frac{\mathrm{i}}{R^{n-1}}\left[\int_{0}^{2 \pi} \cos\left(n-1\right) \theta \mathrm{d} \theta-\mathrm{i} \int_{0}^{2 \pi} \sin\left(n-1\right) \theta \mathrm{d} \theta\right]=0~. \end{aligned}
+\end{equation}
+
+[/SCOPE:s_ex5]
+[SCOPE:s_ex6|description|例6]
+[SCOPE:s_ex6_let|let_bind|例6的变量]
+[93] 计算积分
+[94] \begin{equation}
+\oint_{|z-1|=1} \frac{z}{z-1} \mathrm{d} z~.
+\end{equation}
+[95] \begin{equation}
+z=z(\theta)=1+\mathrm{e}^{\mathrm{i} \theta},(0 \leqslant \theta \leqslant 2 \pi)~.
+\end{equation}
+[/SCOPE:s_ex6_let]
+[96] \begin{equation}
+\begin{aligned} \oint_{z-1} \frac{z}{z-1} \mathrm{d} z &=\int_{0}^{2 \pi} \frac{1+\mathrm{e}^{\mathrm{i} \theta}}{\mathrm{e}^{\mathrm{i} \theta}} \mathrm{ie}^{\mathrm{i} \theta} \mathrm{d} \theta \\ &=\int_{0}^{2 \pi} \mathrm{id} \theta+\int_{0}^{2 \pi}(\cos \theta+\mathrm{i} \sin \theta) \mathrm{d} \theta \\ &=2 \pi \mathrm{i} ~.\end{aligned}
+\end{equation}
+
+[/SCOPE:s_ex6]
+[SCOPE:s_ex7|description|例7]
+[SCOPE:s_ex7_let|let_bind|例7的变量]
+[97] 计算积分
+[98] \begin{equation}
+\oint_{|z-2|=1} \frac{3 z^{2}}{(z-2)^{3}} \mathrm{d} z~.
+\end{equation}
+[99] \begin{equation}
+z=z(\theta)=2+\mathrm{e}^{\mathrm{i} \theta},(0 \leqslant \theta \leqslant 2 \pi)~.
+\end{equation}
+[/SCOPE:s_ex7_let]
+[100] \begin{equation}
+\begin{aligned} \oint_{|z-2|=1} \frac{3 z^{2}}{(z-2)^{3}} \mathrm{d} z &=\int_{0}^{2 \pi} \frac{3\left(2+\mathrm{e}^{\mathrm{i} \theta}\right)^{2}}{\left(\mathrm{e}^{\mathrm{i} \theta}\right)^{3}} \mathrm{ie}^{\mathrm{i} \theta} \mathrm{d} \theta \\ &=3 \mathrm{i} \int_{0}^{2 \pi}\left(4 \mathrm{e}^{-\mathrm{i} 2 \theta}+4 \mathrm{e}^{\mathrm{i} \theta}+1\right) \mathrm{d} \theta \\ &=6 \pi \mathrm{i}~. \end{aligned}
+\end{equation}
+[/SCOPE:s_ex7]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例1是定义1的特例"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理1由定义1推导"
+  },
+  {
+    "source_scope": "s_prop",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "性质由定理1推导"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例2是定义1的特例"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_prop",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例3应用参数化方法"
+  },
+  {
+    "source_scope": "s_ex4",
+    "target_scope": "s_prop",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例4应用参数化方法"
+  },
+  {
+    "source_scope": "s_ex5",
+    "target_scope": "s_prop",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例5应用参数化方法"
+  },
+  {
+    "source_scope": "s_ex6",
+    "target_scope": "s_ex5",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例6是例5的特例"
+  },
+  {
+    "source_scope": "s_ex7",
+    "target_scope": "s_ex5",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例7是例5的特例"
+  }
+]

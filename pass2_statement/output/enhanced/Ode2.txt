@@ -1,0 +1,156 @@
+[SCOPE:root|description|二阶常系数齐次微分方程]
+文章名: Ode2
+标题: 二阶常系数齐次微分方程
+
+[SCOPE:s_intro|description|引言与特征方程]
+[0] 需要补充例题。
+[1] 更深入的讨论，可参见常系数线性齐次微分方程。
+[2] 1二阶常系数齐次微分方程形式如下
+[3] \begin{equation}
+ay'' + by' + cy = 0~.
+\end{equation}
+[SCOPE:s_let_exp|let_bind|尝试指数函数]
+[4] 注意到指数函数 $y = \mathrm{e} ^{rx}$ 第 $n$ 阶导数为 $r^n \mathrm{e} ^{rx}$，不妨尝试把指数函数代入方程，得
+[5] \begin{equation}
+(a r^2 + br + c) \mathrm{e} ^{rx} = 0~.
+\end{equation}
+[6] 由于 $ \mathrm{e} ^{rx} \ne 0$，必有 $a r^2 + br + c = 0$。
+[/SCOPE:s_let_exp]
+[7] 把这个二次函数叫做
+[8] 特征方程
+[9] ，解特征方程，就可以得到方程的解。
+[/SCOPE:s_intro]
+[SCOPE:s_cases|cases|四种情况]
+[10] 根据根的分布，有如下四种情况
+[SCOPE:s_case1|description|两个不同实根]
+[11] 有两个不同的实根 $r_1$ 和 $r_2$（$b^2 - 4ac > 0$），方程的通解为
+[12] \begin{equation}
+y = C_1 \mathrm{e} ^{r_1 x} + C_2 \mathrm{e} ^{r_2 x}~.
+\end{equation}
+[/SCOPE:s_case1]
+[SCOPE:s_case2|description|重根]
+[13] 有一个重根 $r$（$b^2 - 4ac = 0$），方程的通解为
+[14] \begin{equation}
+y = C_1 \mathrm{e} ^{rx} + C_2 x \mathrm{e} ^{rx}~.
+\end{equation}
+[/SCOPE:s_case2]
+[SCOPE:s_case3|description|纯虚数根]
+[15] 有两个纯虚数根 $\pm \mathrm{i} \omega_0$（$b = 0,\,\, b^2 - 4ac < 0$），方程的通解为
+[16] \begin{equation}
+y = C_1 \cos\left(\omega_0 x\right) + C_2 \sin\left(\omega_0 x\right) ~,
+\end{equation}
+[17] 或
+[18] \begin{equation}
+y = C_1 \cos\left(\omega_0 x + C_2\right) ~,
+\end{equation}
+[19] 其中 $\omega_0 = \sqrt{c/a}$。
+[/SCOPE:s_case3]
+[SCOPE:s_case4|description|复数根]
+[20] 有两个复数根 $r \pm \mathrm{i} \omega$（$b \ne 0,\,\, b^2 - 4ac < 0$），方程的通解为
+[21] \begin{equation}
+y = \mathrm{e} ^{rx} [ C_1 \cos\left(\omega x\right) + C_2 \sin\left(\omega x\right) ]~,
+\end{equation}
+[22] 或
+[23] \begin{equation}
+y = C_1 \mathrm{e} ^{rx} \cos\left(\omega x + C_2\right) ~,
+\end{equation}
+[24] 其中
+[25] \begin{equation}
+r = - \frac{b}{2a} ~,\qquad \omega = \frac{1}{2a}\sqrt{4ac - b^2} ~.
+\end{equation}
+[/SCOPE:s_case4]
+[26] 应用常微分方程解的存在唯一性定理，
+[27] 即皮卡-林德勒夫定理, 我们可以确认：方程 (1) 的通解一定是上面四种情况之一。
+
+[/SCOPE:s_cases]
+[SCOPE:s_detail|description|详细推导]
+[SCOPE:s_detail_case3|description|情况3推导]
+[28] 情况 1 的结论是显然的，我们先来看情况 3。
+[29] 根据 $y = C \mathrm{e} ^{rx}$ 的假设，通解应该是
+[30] \begin{equation}
+y = C_1 \mathrm{e} ^{ \mathrm{i} \omega x} + C_2 \mathrm{e} ^{- \mathrm{i} \omega x}~.
+\end{equation}
+[31] 如果这里的 $C_1$ 和 $C_2$ 取任意复数，
+[32] 那么上式就是方程在复数域的通解，其中包含了实数域的通解。
+[SCOPE:s_let_complex|let_bind|复数通解变换]
+[33] 这个通解还有另一种等效的形式，令
+[34] \begin{equation}
+C_1 = \frac{C_3}{2} + \frac{C_4}{2 \mathrm{i} }~, \qquad C_2 = \frac{C_3}{2} - \frac{C_4}{2 \mathrm{i} }~.
+\end{equation}
+[35] 代入上式得
+[36] \begin{equation} \begin{aligned}
+y &= C_3 \frac{ \mathrm{e} ^{ \mathrm{i} \omega x} + \mathrm{e} ^{- \mathrm{i} \omega x}}{2} + C_4 \frac{ \mathrm{e} ^{ \mathrm{i} \omega x} - \mathrm{e} ^{- \mathrm{i} \omega x}}{2 \mathrm{i} }\\
+&=C_3 \cos\left(\omega x\right) + C_4 \sin\left(\omega x\right) ~.
+\end{aligned} \end{equation}
+[/SCOPE:s_let_complex]
+[37] 注意如果 $C_3, C_4$ 取任意复数，该式仍然是复数域的通解（因为任何 $C_1, C_2$ 都可以找到对应的 $C_3, C_4$），
+[38] 但只要把 $C_3, C_4$ 限制在实数域中，该式就是实数域的通解。
+[/SCOPE:s_detail_case3]
+[SCOPE:s_detail_case2|description|情况2推导]
+[39] 情况 4 的结论可以类比情况 3 得出，最后我们来看情况 2。
+[40] 我们可以把情况 2 看做情况 4 的一个极限，
+[41] 即 $\omega \to 0$ 时的情况。
+[42] 如果式 7 中的 $C_1, C_2$ 都是普通常数，
+[43] 则取该极限时可以得到式 4 的第一项 $C_1 \mathrm{e} ^{rx}$。
+[44] 那如何得到第二项呢？
+[SCOPE:s_let_limit|let_bind|极限推导]
+[45] 我们不妨令式 7 中的 $C_1 = 0$，$C_2 = C_3/\omega$，再来取极限，得
+[46] \begin{equation}
+\lim_{\omega\to 0} C_3 \mathrm{e} ^{rx} \frac{ \sin\left(\omega x\right) }{\omega x} x = C_3 x \mathrm{e} ^{rx}~,
+\end{equation}
+[/SCOPE:s_let_limit]
+[47] 这里用到了 “
+[48] 小角值极限 [链接 L0]
+[49] ” 中的结论。
+
+跨文章引用:
+  [L0] 小角值极限 → LimArc
+[/SCOPE:s_detail]
+[/SCOPE:s_detail_case2]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_case1",
+    "target_scope": "s_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "情况1是特征方程根分布的特例"
+  },
+  {
+    "source_scope": "s_case2",
+    "target_scope": "s_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "情况2是特征方程根分布的特例"
+  },
+  {
+    "source_scope": "s_case3",
+    "target_scope": "s_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "情况3是特征方程根分布的特例"
+  },
+  {
+    "source_scope": "s_case4",
+    "target_scope": "s_intro",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "情况4是特征方程根分布的特例"
+  },
+  {
+    "source_scope": "s_detail_case3",
+    "target_scope": "s_case3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "详细推导情况3的通解形式"
+  },
+  {
+    "source_scope": "s_detail_case2",
+    "target_scope": "s_case2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "详细推导情况2的通解形式"
+  }
+]

@@ -1,0 +1,447 @@
+{
+  "article_name": "axioms",
+  "statements": [
+    {
+      "stmt_id": "st_prop_def",
+      "subtype": "definition",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "s_prop",
+      "exposed_entities": [
+        "proposition"
+      ]
+    },
+    {
+      "stmt_id": "st_question_prop",
+      "subtype": "conclusion",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_prop",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_true_false_def",
+      "subtype": "definition",
+      "clause_range": [
+        3,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_prop",
+      "exposed_entities": [
+        "true proposition",
+        "false proposition"
+      ]
+    },
+    {
+      "stmt_id": "st_truth_in_prop",
+      "subtype": "conclusion",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_prop",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_example_false",
+      "subtype": "example",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theory",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_relative_truth",
+      "subtype": "conclusion",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theory",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theory_def",
+      "subtype": "definition",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_theory",
+      "exposed_entities": [
+        "theory"
+      ]
+    },
+    {
+      "stmt_id": "st_prove_def",
+      "subtype": "definition",
+      "clause_range": [
+        10,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_theory",
+      "exposed_entities": [
+        "prove"
+      ]
+    },
+    {
+      "stmt_id": "st_falsify_note",
+      "subtype": "remark",
+      "clause_range": [
+        11,
+        11
+      ],
+      "truth_value": null,
+      "scope_id": "s_theory",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_axiom_need",
+      "subtype": "assumption",
+      "clause_range": [
+        12,
+        13
+      ],
+      "truth_value": null,
+      "scope_id": "s_axiom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_axiom_def",
+      "subtype": "definition",
+      "clause_range": [
+        14,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_axiom",
+      "exposed_entities": [
+        "axiom"
+      ]
+    },
+    {
+      "stmt_id": "st_axiom_consistent",
+      "subtype": "axiom",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": "true",
+      "scope_id": "s_axiom",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_need",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_def",
+      "subtype": "definition",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": [
+        "definition"
+      ]
+    },
+    {
+      "stmt_id": "st_def_analogy",
+      "subtype": "remark",
+      "clause_range": [
+        22,
+        23
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_def_phrase",
+      "subtype": "remark",
+      "clause_range": [
+        24,
+        24
+      ],
+      "truth_value": null,
+      "scope_id": "s_def",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem_derivation",
+      "subtype": "assumption",
+      "clause_range": [
+        25,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theorem_def",
+      "subtype": "definition",
+      "clause_range": [
+        26,
+        26
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem",
+      "exposed_entities": [
+        "theorem"
+      ]
+    },
+    {
+      "stmt_id": "st_lemma_corollary",
+      "subtype": "remark",
+      "clause_range": [
+        27,
+        27
+      ],
+      "truth_value": null,
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_theory_composed",
+      "subtype": "conclusion",
+      "clause_range": [
+        28,
+        28
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_indep_intro",
+      "subtype": "assumption",
+      "clause_range": [
+        29,
+        29
+      ],
+      "truth_value": null,
+      "scope_id": "s_indep",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_indep_def",
+      "subtype": "definition",
+      "clause_range": [
+        30,
+        30
+      ],
+      "truth_value": null,
+      "scope_id": "s_indep",
+      "exposed_entities": [
+        "independent proposition"
+      ]
+    },
+    {
+      "stmt_id": "st_indep_example",
+      "subtype": "example",
+      "clause_range": [
+        31,
+        33
+      ],
+      "truth_value": "true",
+      "scope_id": "s_indep",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_equiv_def",
+      "subtype": "definition",
+      "clause_range": [
+        34,
+        35
+      ],
+      "truth_value": null,
+      "scope_id": "s_equiv",
+      "exposed_entities": [
+        "equivalent axiom systems"
+      ]
+    },
+    {
+      "stmt_id": "st_contain_def",
+      "subtype": "definition",
+      "clause_range": [
+        36,
+        39
+      ],
+      "truth_value": null,
+      "scope_id": "s_equiv",
+      "exposed_entities": [
+        "containment of axiom systems"
+      ]
+    },
+    {
+      "stmt_id": "st_godel_note",
+      "subtype": "remark",
+      "clause_range": [
+        40,
+        40
+      ],
+      "truth_value": null,
+      "scope_id": "s_godel",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_godel_theorem",
+      "subtype": "theorem",
+      "clause_range": [
+        41,
+        42
+      ],
+      "truth_value": "true",
+      "scope_id": "s_godel",
+      "exposed_entities": [
+        "Gödel's first incompleteness theorem"
+      ]
+    },
+    {
+      "stmt_id": "st_godel_consequence",
+      "subtype": "conclusion",
+      "clause_range": [
+        43,
+        44
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_godel",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_godel_difficulty",
+      "subtype": "remark",
+      "clause_range": [
+        45,
+        47
+      ],
+      "truth_value": null,
+      "scope_id": "s_godel",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_prop_def",
+      "target": "st_question_prop",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_prop_def",
+      "target": "st_true_false_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_true_false_def",
+      "target": "st_truth_in_prop",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_example_false",
+      "target": "st_relative_truth",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_relative_truth",
+      "target": "st_theory_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theory_def",
+      "target": "st_prove_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_axiom_need",
+      "target": "st_axiom_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_axiom_def",
+      "target": "st_axiom_consistent",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_def_need",
+      "target": "st_def_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem_derivation",
+      "target": "st_theorem_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_theorem_def",
+      "target": "st_theory_composed",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_indep_intro",
+      "target": "st_indep_def",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_indep_def",
+      "target": "st_indep_example",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_godel_note",
+      "target": "st_godel_theorem",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_godel_theorem",
+      "target": "st_godel_consequence",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_godel_consequence",
+      "target": "st_godel_difficulty",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

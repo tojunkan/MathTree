@@ -1,0 +1,62 @@
+[SCOPE:root|description|费马小定理与欧拉定理]
+文章名: fermse
+标题: 费马小定理与欧拉定理
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=费马小定理
+  [1] type=theorem heading=定理 2 title=费马-欧拉定理
+
+[SCOPE:s_fermat|description|费马小定理]
+[0] 定理 1 费马小定理
+[SCOPE:s_fermat_let|let_bind|费马小定理的变量]
+[1] 若 $p$ 是素数，且 $p \not{\mid}~ a$，
+[2] 则
+[/SCOPE:s_fermat_let]
+[3] \begin{equation}
+a^{p-1} \equiv 1 \pmod p ~.
+\end{equation}
+[4] 费马小定理只是费马-欧拉定理的一个特例，我们只要证明了费马-欧拉定理就自动证明了费马小定理。
+[5] 其中，费马-欧拉定理是指：
+
+[/SCOPE:s_fermat]
+[SCOPE:s_euler|description|费马-欧拉定理]
+[6] 定理 2 费马-欧拉定理
+[SCOPE:s_euler_let|let_bind|费马-欧拉定理的变量]
+[7] 若 $(a, m) = 1$，
+[8] 则
+[/SCOPE:s_euler_let]
+[9] \begin{equation}
+a^{\varphi(m)} \equiv 1 \pmod m ~,
+\end{equation}
+[SCOPE:s_euler_prod|let_bind|缩系乘积]
+[10] 证明：考虑 $h$ 取遍 $m$ 的一个缩系，
+[11] 则由于 $(a, m) = 1$，利用定理 2 ，$ah$ 也将取遍 $m$ 的一个缩系。
+[12] 这就使得
+[13] \begin{equation}
+\prod_{h^*(m)}{a h} \equiv \prod _{h^*(m)}h \pmod m ~,
+\end{equation}
+[14] 此处记号使用数论求和的记号，$h^*(m)$ 代表 $h$ 枚举 $m$ 的一个缩系。
+[/SCOPE:s_euler_prod]
+[15] 这式子也就指出
+[16] \begin{equation}
+a^{\varphi(m)} \prod_{h^*(m)} h \equiv \prod_{h^*(m)} h \pmod m ~,
+\end{equation}
+[17] 而由于 $h$ 取 $m$ 的缩系，
+[18] 故每个 $h$ 都与 $m$ 互质，这必将导致他们的乘积也与 $m$ 互质，
+[19] 从而使得有
+[20] \begin{equation}
+a^{\varphi(m)} \equiv 1 \pmod m ~.
+\end{equation}
+[/SCOPE:s_euler]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_fermat",
+    "target_scope": "s_euler",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "费马小定理是费马-欧拉定理的特例"
+  }
+]

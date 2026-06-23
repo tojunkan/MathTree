@@ -1,0 +1,185 @@
+[SCOPE:root|description|环的理想和商环]
+文章名: Ideal
+标题: 环的理想和商环
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=左理想
+  [1] type=exercise heading=习题 1 title=
+  [2] type=theorem heading=定理 1 title=
+  [3] type=definition heading=定义 2 title=商环
+  [4] type=example heading=例 1 title=整数环的理想和商环
+  [5] type=definition heading=定义 3 title=极小多项式
+  [6] type=example heading=例 2 title=多项式环
+  [7] type=exercise heading=习题 2 title=多项式环的性质
+
+[SCOPE:s_intro|description|概念的来源]
+[0] 环 $R$ 的理想$I$，是一种 “正规子环1”，
+[1] 即它使得商集 $R/I$ 能自然成环，就像正规子群的作用一样。
+[2] 之所以不叫正规子环，是因为理想最初来自代数数论，库默尔（Ernst Eduard Kummer）定义了一个他称为 “理想数” 的概念，证明了费马大定理在 $n<100$ 时大多数情况成立。
+[3] 后来，戴德金（Julius Wilhelm Richard Dedekind）发现，库默尔定义的理想数，正是能诱导出商环的 “正规子环”，
+[4] 于是直接借用了 “理想数” 的名字，将其命名为 “理想”。
+[SCOPE:s_intro_let|let_bind|引入环R和子环I]
+[5] 给定环 $R$ 和它的子环 $I$，
+[6] 那么 $I$ 要满足什么条件才能使得 $R/I$ 成环呢？
+[7] 显然，$I$ 关于环的加法，得构成一个正规子群，而这是天然满足的，因为环的加法群是阿贝尔群，而阿贝尔群的一切子群都是正规子群。
+[8] $R/I$ 中的每个元素，被定义为 $I$ 作为子群的陪集。
+[9] 元素 $a\in R$ 所在的陪集就是 $a+I$。
+[10] 陪集之间显然可以进行加法运算：
+[11] \begin{equation}
+(a+I)+(b+I)=a+b+I+I=(a+b)+I~.
+\end{equation}
+[12] 这满足诱导运算的要求：$a$ 的陪集加 $b$ 的陪集，等于 $a$ 加 $b$ 的陪集。
+[13] 为了让 $R/I$ 诱导一个环乘法，我们还需要：$a$ 的陪集乘 $b$ 的陪集，等于 $a$ 乘 $b$ 的陪集。
+[14] 也就是说，
+[15] \begin{equation}
+(a+I)(b+I)=ab+aI+Ib+I=ab+I~.
+\end{equation}
+[16] 这就意味着 $aI+Ib\in I$，对于任意的 $a, b\in R$ 都成立。
+[17] 那就是说，对于任意的 $a, b\in R$，都有 $aI\in I$ 和 $Ib\in I$ 才行（注意 $a, b$ 中有一个是幺元的情况）。
+[18] 如果 $I$ 是 $R$ 的子环，并且对于任意的 $a\in R$，都有 $aI, Ia\in I$，
+[19] 那么我们就可以利用 $R$ 的环运算，诱导出 $R/I$ 上的环运算。
+[20] 这样的 $I$ 就是我们要的理想。
+
+[/SCOPE:s_intro]
+[/SCOPE:s_intro_let]
+[SCOPE:s_def1|description|定义1 左理想]
+[21] 定义 1 左理想
+[SCOPE:s_def1_let|let_bind|引入环R和子集I]
+[22] 给定环 $R$，
+[23] 则 $R$ 的一个子集 $I$ 是 $R$ 的一个左理想（left ideal），当且仅当 $I$ 是 $R$ 的加法子群，且对乘法满足左吸收律：$\forall r\in R$，有 $rI\in I$。
+[24] 类似地，可以定义环的右理想，
+[25] 即满足右吸收律：$\forall r\in R$，有 $Ir\in I$。
+[26] 如果一个子环既是左理想也是右理想，
+[27] 那么称它为一个双边理想（2-sided ideal），简称理想（ideal）。
+[28] 另外，如果一个理想不是环本身，
+[29] 则称其为一个真理想。
+[30] 吸收律的一个直接推论是，如果一个理想包含乘法单位元，
+[31] 那么这个理想就是环本身。
+
+[/SCOPE:s_def1]
+[/SCOPE:s_def1_let]
+[SCOPE:s_ex1|description|习题1]
+[32] 习题 1
+[SCOPE:s_ex1_let|let_bind|引入环R和理想I,J]
+[33] 证明：给定环 $R$，如果 $I, J\subset R$ 都是它的理想，
+[34] 那么 $IJ=\{ij|i\in I, j\in J\}$ 等于 $I\cap J$。
+[35] 这个习题的结论在将来类比素理想和素元素能清晰展示这两个概念之间的相似之处。
+
+[/SCOPE:s_ex1]
+[/SCOPE:s_ex1_let]
+[SCOPE:s_thm1|description|定理1]
+[36] 定理 1
+[SCOPE:s_thm1_let|let_bind|引入环R和理想I,J]
+[37] 给定环 $R$，如果 $I, J\subset R$ 都是它的理想，
+[38] 那么 $I\cap J$ 是它的理想。
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_let]
+[SCOPE:s_def2|description|定义2 商环]
+[39] 定义 2 商环
+[SCOPE:s_def2_let|let_bind|引入环R和理想I]
+[40] 给定环 $R$ 和它的一个理想 $I$，$R/I$ 自然构成一个环，称为 $R$ 模去 $I$ 的商环（quotient ring）。
+[41] 商环可以继承原环的结构。
+[42] 易证：
+[43] 若环 $R$ 为交换环，
+[44] 则 $R/I$ 也是交换环。
+[45] 若 $e$ 为环 $R$ 的单位元，
+[46] 则 $e+I$ 为 $R/I$ 上的单位元。
+[47] 若 $u$ 为环 $R$ 的单位2，
+[48] 则 $u+I$ 为 $R/I$ 上的单位。
+[49] 若 $r+I$ 为商环上的理想，
+[50] 则对应的左陪集是原环的理想。
+
+[/SCOPE:s_def2]
+[/SCOPE:s_def2_let]
+[SCOPE:s_ex2|description|例1 整数环的理想和商环]
+[51] 例 1 整数环的理想和商环
+[SCOPE:s_ex2_let|let_bind|引入正整数n]
+[52] 对于正整数 $n$，记 $n\mathbb{Z}$ 为集合 $\{nm|m\in\mathbb{Z}\}$，
+[53] 即全体 $n$ 的倍数构成的集合。
+[54] $n\mathbb{Z}$ 是 $\mathbb{Z}$ 的理想。
+[55] 记商环 $\mathbb{Z}/n\mathbb{Z}=\mathbb{Z}_n$。
+[56] 例 1 中定义的 $\mathbb{Z}_n$ 相当于整数文章所描述的 “具有 $n$ 个钟点的钟表”。
+[57] 理想和商环的概念能帮助理解多项式环的结构。
+[58] 在讨论多项式环以前，我们要先定义一个概念：
+
+[/SCOPE:s_ex2]
+[/SCOPE:s_ex2_let]
+[SCOPE:s_def3|description|定义3 极小多项式]
+[59] 定义 3 极小多项式
+[SCOPE:s_def3_let|let_bind|引入环R和元素a]
+[60] 给定环 $R$ 和某个元素 $a$（不一定属于 $R$），
+[61] 那么 $f(a)=\sum\limits^{n}_{i=0}r_ia^i$ 是 $a$ 的一个多项式。
+[62] 有的 $f$ 使得 $f(a)=0$，这样的多项式就叫做 $a$ 的零化多项式（null polynomial）。
+[63] 非零的零化多项式中次数最低的，被称为 $a$ 的极小多项式（minimal polynomial）。
+[64] 由于多项式环是一个欧几里得环3，
+[65] 因此还可得知，一切零化多项式都能被极小多项式整除4。
+[66] 如果元素 $a$ 有零化多项式，
+[67] 那么称它是 $R$ 的代数元；
+[68] 反之，称它是 $R$ 的超越元。
+[69] 显然，超越元的不同多项式的值彼此不相等，也就是说，超越元的多项式可以和多项式本身进行一一对应，或者说超越元的多项式和多项式环是同构的。
+[70] 但是代数元的不同多项式有可能值相同。
+[71] 我们依然用 $R[a]$ 来表示 $a$ 的所有多项式的值的集合，其中多项式的系数取遍 $R$。
+[72] 换言之，当 $a$ 是超越元时，$R[a]\cong R[x]$。
+
+[/SCOPE:s_def3]
+[/SCOPE:s_def3_let]
+[SCOPE:s_ex3|description|例2 多项式环]
+[73] 例 2 多项式环
+[SCOPE:s_ex3_let|let_bind|引入多项式环R[x]和元素a]
+[74] 定义多项式环 $R[x]$ 的时候，我们说 $x$ 是一个自变量，言下之意就是，$R[x]$ 中的多项式 $f(x)$ 都表示函数；
+[75a] (x)$ 和 $g
+[75b] (x)$ 只有每个系数都相等才被认为相等，如果任何系数不相等，
+[76a] (x)\not=g
+[76b] (x)$。
+[77] 如果取某个元素 $a$（不一定属于 $R$），
+[78] 那么 $f(a)$ 就不是一个函数，而是一个固定的元素了（不一定属于 $R$）。
+[79] 比如说，取 $R$ 是整数环，
+[80] 那么 $f(x)=2x+x^2$ 就是一个函数，图像表示为一条抛物线；
+[81] 但 $f(\sqrt{2})=2\sqrt{2}+2$ 就是一个元素，尽管它不在整数环中。
+[82a] (a)=g
+[82b] (a)$。
+[83] 给定环 $R$ 的代数元 $a$，
+[84] 那么 $a$ 的全体零化多项式构成了 $R[x]$ 的一个理想 $R_0$。
+
+[/SCOPE:s_ex3]
+[/SCOPE:s_ex3_let]
+[SCOPE:s_ex4|description|习题2 多项式环的性质]
+[85] 习题 2 多项式环的性质
+[SCOPE:s_ex4_let|let_bind|引入代数元a和零化多项式集合R_0]
+[86] 证明 $a$ 的零化多项式集合 $R_0$ 构成 $R[x]$ 的理想，并验证：$R[a]\cong R[x]/R_0$。
+[/SCOPE:s_ex4]
+[/SCOPE:s_ex4_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题1的结论是定理1的特例？实际上习题1声称IJ=I∩J，而定理1说I∩J是理想，但习题1的结论更强，可能不是特例。这里暂不建立关系。"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "整数环的商环是商环概念的特例。"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "多项式环的例子展示了极小多项式的应用。"
+  },
+  {
+    "source_scope": "s_ex4",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题2涉及零化多项式集合构成理想，与极小多项式相关。"
+  }
+]

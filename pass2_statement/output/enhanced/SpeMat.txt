@@ -1,0 +1,93 @@
+[SCOPE:root|description|例: 有限维方阵]
+文章名: SpeMat
+标题: 例: 有限维方阵
+
+环境标记 (hints):
+  [0] type=theorem heading=定理 1 title=若尔当分解
+
+[0] 如果将之前提到的泛函分析概念应用于有限维方阵，
+[1] 则更容易看出它们的意义，加深直观理解。
+[SCOPE:s_let_A|let_bind|设A是n×n复矩阵]
+[2] 这里一直设 $A$ 是 $n\times n$ 复矩阵。
+[/SCOPE:s_let_A]
+[3] 我们把它视为 $\mathbb{C}^n$ 到自己的一个线性算子。
+[4] 如文章有界算子的谱所说，谱集 $\sigma(A)$ 恰为 $A$ 的本征值的集合，而谱半径 $r(A)$ 当然就是本征值的最大模。
+[5] 现在设 $\sigma(A)=\{\lambda_1,...,\lambda_h\}$(重数大于 1 的本征值算作一个谱点). 我们可以把预解式 $R(z;A)=(z-A)^{-1}$ 视为矩阵值亚纯函数，而显然 $\sigma(A)$ 就是它的极点集。
+[6] 我们更可以借助矩阵的若尔当分解而写出 $R(z;A)$ 的明显表达式。
+
+[SCOPE:s_jordan|description|若尔当分解]
+[7] 并不是所有的矩阵都可以对角化，例如简单的上三角矩阵
+[8] $$
+\left(
+\begin{matrix}
+\lambda & 1 \\
+0 & \lambda
+\end{matrix}
+\right)~.
+$$
+[9] 不过对于不能对角化的矩阵，仍然可以讨论它的相似标准型。
+[10] 首先来回忆若尔当标准型分解定理：
+
+[11] 定理 1 若尔当分解
+[SCOPE:s_jordan_let1|let_bind|本征值λ_k和子空间V^(k)]
+[12a] (k)}$, 全空间恰等于诸 $V^{
+[12b] (k)}$ 的直和。
+[13] $V_k$ 的维数 $n_k$ 恰等于 $\lambda_k$ 的代数重数（即 $\lambda_k$ 作为特征多项式 $\det(z-A)$ 根的重数).
+[/SCOPE:s_jordan_let1]
+[SCOPE:s_jordan_let2|let_bind|几何重数m_k和向量e^(k)_l等]
+[14a] (k)}$ 中存在一组线性无关的向量 $e^{
+[14b] (k)}_1,...,e^{
+[14c] (k)}_{m_k}$, 和一组相应的正整数 $d^{
+[14d] (k)}_1,...,d^{
+[14e] (k)}_{m_k}$, 使得向量组
+[15] $$
+\begin{aligned}
+&e^{(k)}_1,\quad(A-\lambda_k)e^{(k)}_1,\quad...,\quad(A-\lambda_k)^{d^{(k)}_1-1}e^{(k)}_1~,\\
+&......\\
+&e^{(k)}_{m_k},\quad(A-\lambda_k)e^{(k)}_{m_k},\quad...,\quad(A-\lambda_k)^{d^{(k)}_{m_k}-1}e^{(k)}_{m_k}~
+\end{aligned}
+$$
+[16a] (k)}$ 的一组基底，而且 $\{(A-\lambda_k)^{d^{
+[16b] (k)}_l-1}e^{
+[16c] (k)}_l\}_{l=1}^{m_k}$ 是 $A$ 的相应于 $\lambda_k$ 的一组线性无关的本征向量。
+[/SCOPE:s_jordan_let2]
+[17] 根据这个定理，如果取 $\mathbb{C}^n$ 的基底为向量组
+[18] $$
+\begin{aligned}
+&e^{(k)}_1,\quad(A-\lambda_k)e^{(k)}_1,\quad...,\quad(A-\lambda_k)^{d^{(k)}_1-1}e^{(k)}_1~,\\
+&......\\
+&e^{(k)}_{m_k},\quad(A-\lambda_k)e^{(k)}_{m_k},\quad...,\quad(A-\lambda_k)^{d^{(k)}_{m_k}-1}e^{(k)}_{m_k}~,
+\end{aligned}
+$$
+[19] 其中 $k$ 跑遍 $1,...,h$, 那么矩阵 $A$ 在这个新的基底下就分解成了分块矩阵
+[20] $$
+\left(
+\begin{matrix}
+&J(\lambda_1) & & & \\
+& &J(\lambda_2) & & \\
+& & &...\\
+& & & & J(\lambda_h)
+\end{matrix}
+\right)~,
+$$
+[21] 在这里，每个 $J(\lambda_k)$ 是 $n_k\times n_k$ 方阵，由 $m_k$ 个若尔当块组成：
+[22] $$
+J_l(\lambda_k)
+=\left(
+\begin{matrix}
+&\lambda_k & 1 & & & \\
+& &\lambda_k & 1 & & \\
+& & &...\\
+& & & & \lambda_k & 1\\
+& & & & & \lambda_k
+\end{matrix}
+\right)~,
+$$
+[23a] (k)}\times d_{m_k}^{
+[23b] (k)}$ 方阵。
+[24] 于是，矩阵 $A$ 可以重写为
+[25] $$
+A=S\sum_{k=1}^h\left(\lambda_kI_{n_k}+\sum_{l=1}^k N_l^{(k)}\right)S^{-1}~.
+$$
+[/SCOPE:s_jordan]
+[/SCOPE:root]

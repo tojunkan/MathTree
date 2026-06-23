@@ -1,0 +1,136 @@
+[SCOPE:root|description|自由群]
+文章名: FreGrp
+标题: 自由群
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=字母
+  [1] type=example heading=例 1 title=字母的例子
+  [2] type=definition heading=定义 2 title=词
+  [3] type=example heading=例 2 title=词的例子
+  [4] type=definition heading=定义 3 title=词的运算：首尾相连
+  [5] type=example heading=例 3 title=词的运算
+  [6] type=definition heading=定义 4 title=字母的逆
+  [7] type=theorem heading=定理 1 title=自由生成群
+  [8] type=theorem heading=定理 2 title=自由群的一般性质
+
+[SCOPE:s_def1|description|定义 1 字母]
+[0] 定义 1 字母
+[1] 没有赋予任何运算关系的元素，被称为一个字母（letter）。
+[2] 给定没有赋予任何运算结构的任意集合 $S$，它的每个元素都可以作为一个字母。
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|例 1 字母的例子]
+[3] 例 1 字母的例子
+[4] 随便取一个元素，取名为 $x$，
+[5] 那么 $x$ 可以看成一个字母。
+[6] 取 $52$ 个英文字母构成的集合，
+[7] 则每个元素都可以当作字母。
+[8] 字母就是纯粹的符号，除了 “指代一个元素” 以外没有更多的结构。
+[9] 没有更多结构当然没有研究的意义不过，
+[10] 所以我们考虑拓展字母的用途，比如把若干字母按顺序排列起来，得到新的元素。
+[11] 这种元素不同于字母，我们把它叫做 “词”。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_def2|description|定义 2 词]
+[12] 定义 2 词
+[13] 有限个字按照一定顺序排列构成的元素，称作一个词（word）或字。
+[14] 在计算机理论中，也称为字符串。
+
+[/SCOPE:s_def2]
+[SCOPE:s_ex2|description|例 2 词的例子]
+[15] 例 2 词的例子
+[16] 单元素集合的元素 $x$，可以构成词 $x$，$xx$，$xxxxxxx$ 等。
+[17] $52$ 个英文字母构成集合 $S$，
+[18] 那么 $S$ 中的元素 $l, e, t, r$ 都是字母，它们可以进行有限排列，得到词 $letter$。
+[19] 单个字母也可以看成是特殊的词，这样一来，就可以把字的排列拓展成词之间的一种运算。
+[20] 两个词首尾相连，可以构成一个更大的排列，仍然是有限个字的排列，
+[21] 因此得到的还是词。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_def3|description|定义 3 词的运算：首尾相连]
+[22] 定义 3 词的运算：首尾相连
+[SCOPE:s_def3_let|let_bind|定义 3 的变量]
+[23] 给定集合 $S$。
+[24] 用 $S$ 中的元素作为字母所排出的词，构成一个 “词集合”，记为 $W(S)$。
+[25] 在集合 $W(S)$ 上可以定义一个运算 “$\cdot$” 如下：设 $a, b\in W(S)$，
+[26] 那么 $a\cdot b=c$，其中 $c$ 是 $a$ 和 $b$ 首尾相连的结果。
+
+[/SCOPE:s_def3]
+[/SCOPE:s_def3_let]
+[SCOPE:s_ex3|description|例 3 词的运算]
+[27] 例 3 词的运算
+[28] 还是用英文字母构成的集合 $S$。
+[29] $lov$ 是一个词，$ely$ 也是一个词，$lov\cdot ely=lovely$ 是这两个词进行首尾相连运算的结果。
+[30] 我们也常常省略运算符号 “$\cdot$”，这时 $lov$ 和 $ely$ 的连接运算就直接写成 $lovely$ 了，和运算的结果形式上一样，非常简练。
+
+[/SCOPE:s_ex3]
+[31] 我们希望改进一下词集合和词运算，构造出一个群。
+[32] 为了做到这一点，我们首先需要扩展一下词集合。
+
+[SCOPE:s_def4|description|定义 4 字母的逆]
+[33] 定义 4 字母的逆
+[SCOPE:s_def4_let|let_bind|定义 4 的变量]
+[34] 给定集合 $S$。
+[35] 给 $S$ 中的每一个元素 $x$ 都赋予一个 “逆字母”，记为 $x^{-1}$。
+[36] 字母的逆是用来满足群的 “逆元存在性” 的。
+[37] 如果一个词中出现某个字母和对应的逆字母相连接，
+[38] 那么它们就必须被 “消除”。
+[39] 比如说，$lsdd^{-1}l^{-1}m^{-1}m$ 被认为和 $lsl^{-1}$ 是相同的。
+[40] 特别地，对于任何字母 $x, y$，我们认为 $xx^{-1}$，$x^{-1}x$，$yy^{-1}$，$y^{-1}y$ 都是同一个词，称为空词（empty word）或空字。
+[41] 有了这个规则，我们就可以构造出一个群了：
+
+[/SCOPE:s_def4]
+[/SCOPE:s_def4_let]
+[SCOPE:s_thm1|description|定理 1 自由生成群]
+[42] 定理 1 自由生成群
+[SCOPE:s_thm1_let|let_bind|定理 1 的变量]
+[43] 给定集合 $S$，用它的元素作为字母。
+[44] $S$ 中的全体字母和它们的逆字母可构成词，并且构词过程中把相邻的互逆字母消除，这样得到的词所构成的集合记为 $F(S)$。
+[45] 在 $F(S)$ 中定义运算为词的首尾相连，
+[46] 那么 $F(S)$ 配合该运算构成一个群，称为由集合 $S$ 生成的自由群（free group），或自由生成群。
+[47] 自由群的单位元就是空词。
+[48] 一个词的字母都取逆以后反序排列，就得到了这个词的逆元。
+[49] 比如说，$le^{-1}tter$ 的逆元素就是 $r^{-1}e^{-1}t^{-1}t^{-1}r^{-1}el^{-1}$。
+[50] 自由群是结构复杂度最高的群，这是因为所有的群都可以看成某个自由群的商群，而商群是把原来的群中一些细节特征忽略掉的结果。
+[51] 这个结论是由以下定理保证的：
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_let]
+[SCOPE:s_thm2|description|定理 2 自由群的一般性质]
+[52] 定理 2 自由群的一般性质
+[SCOPE:s_thm2_let|let_bind|定理 2 的变量]
+[53] 给定任意的集合 $S$ 和群 $G$。
+[54] 如果 $f:S\rightarrow G$ 是两个集合间的任意映射，
+[55] 那么总可以把 $f$ 拓展成群同态 $\varphi:F(S)\rightarrow G$，并且这种拓展是唯一的。
+[56] 证明见例 5 。
+[57] 考虑集合 $G$ 到群 $G$ 上的映射 $f:f(g)=g, \forall g\in G$，
+[58] 那么由 $f$ 拓展而来的同态 $\varphi$ 就是 $F(G)$ 到 $G$ 的满射。
+[59] 结合群同态基本定理（习题 2 ）可推知，这意味着 $G$ 是 $f(G)$ 的商群。
+[/SCOPE:s_thm2]
+[/SCOPE:s_thm2_let]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1基于定义3的运算构造自由群"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def4",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1使用定义4的逆字母和消去规则"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2推广了定理1的自由群性质"
+  }
+]

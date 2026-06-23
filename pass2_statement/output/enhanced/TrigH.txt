@@ -1,0 +1,70 @@
+[SCOPE:root|description|双曲函数]
+文章名: TrigH
+标题: 双曲函数
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=反双曲正弦函数
+
+[SCOPE:s_intro|description|双曲函数定义]
+[SCOPE:s_intro_let|let_bind|定义变量]
+[0] 1这里介绍三种双曲函数（hyperbolic function）：双曲正弦函数，双曲余弦函数和双曲正切函数。
+[1] 本文只讨论实数自变量的情况。
+[2] 他们的定义分别为
+[3] \begin{align}
+\sinh x &= \frac{ \mathrm{e} ^x - \mathrm{e} ^{-x}}{2}~,\\
+\cosh x &= \frac{ \mathrm{e} ^x + \mathrm{e} ^{-x}}{2}~,\\
+\tanh x &= \frac{\sinh x}{\cosh x} = \frac{ \mathrm{e} ^x - \mathrm{e} ^{-x}}{ \mathrm{e} ^x + \mathrm{e} ^{-x}}~.
+\end{align}
+[/SCOPE:s_intro_let]
+[4] 其中 $ \mathrm{e} $ 是一个高等数学中常见的常数，叫做
+[5] 自然对数底 [链接 L0]
+[6] 。
+[7] 这三个函数的图像如
+[8] 图 1 [链接 L1]
+[9] 【图解】图 1：三种双曲函数的图像
+[10] 注意 $\sinh x$ 和 $\tanh x$ 是奇函数，$\cosh x$ 是偶函数。
+
+[/SCOPE:s_intro]
+[SCOPE:s_identities|description|恒等式]
+[SCOPE:s_identities_let|let_bind|恒等式变量]
+[11] 以下恒等式中，$x,y$ 可以取任意复数
+[/SCOPE:s_identities_let]
+[12] \begin{equation}
+\cosh^2 x - \sinh^2 x = 1~,
+\end{equation}
+[13] \begin{equation}
+\sinh\left(x+y\right) = \sinh x \cosh y + \cosh x \sinh y~,
+\end{equation}
+[14] \begin{equation}
+\cosh\left(x+y\right) = \cosh x \cosh y + \sinh x \sinh y~.
+\end{equation}
+
+[/SCOPE:s_identities]
+[SCOPE:s_inverse|description|反函数]
+[15] \begin{equation}
+\tanh^{-1} x = \frac12 \ln\left(\frac{1+x}{1-x}\right) \qquad ( \left\lvert x \right\rvert < 1)~.
+\end{equation}
+
+[/SCOPE:s_inverse]
+[SCOPE:s_example1|description|反双曲正弦函数]
+[16] 例 1 反双曲正弦函数
+[SCOPE:s_example1_let|let_bind|反函数推导变量]
+[17] 要求 $\sinh x$ 的反函数，我们令
+[18] \begin{equation}
+x = \sinh y = \frac{ \mathrm{e} ^y - \mathrm{e} ^{-y}}{2}~.
+\end{equation}
+[/SCOPE:s_example1_let]
+[19] \begin{equation}
+( \mathrm{e} ^y)^2 - 2x \mathrm{e} ^y - 1 = 0~.
+\end{equation}
+[20] \begin{equation}
+\mathrm{e} ^y = x \pm \sqrt{x^2 + 1}~.
+\end{equation}
+[21] \begin{equation}
+y = \sinh^{-1} x = \ln\left(x + \sqrt{x^2 + 1}\right) ~.
+\end{equation}
+
+跨文章引用:
+  [L0] 自然对数底 → E
+[/SCOPE:s_example1]
+[/SCOPE:root]

@@ -1,0 +1,222 @@
+[SCOPE:root|description|循环群]
+文章名: cyclic
+标题: 循环群
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=
+  [1] type=definition heading=定义 2 title=
+  [2] type=example heading=例 1 title=
+  [3] type=example heading=例 2 title=
+  [4] type=example heading=例 3 title=
+  [5] type=theorem heading=定理 1 title=
+  [6] type=theorem heading=定理 2 title=
+  [7] type=exercise heading=习题 1 title=
+  [8] type=exercise heading=习题 2 title=
+  [9] type=theorem heading=定理 3 title=
+  [10] type=theorem heading=定理 4 title=
+  [11] type=theorem heading=定理 5 title=
+
+[SCOPE:s_def1|description|定义1]
+[0] 定义 1
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[1] 若群 $G$ 的元素都是由某个元素生成，
+[2] 即 $G= \left\langle a \right\rangle $，
+[3] 则称群 $G$ 为循环群（cyclic group），称 $a$ 是循环群的生成元。
+[/SCOPE:s_def1_let]
+[4] 显然，循环群的群元都可以表示为生成元的整数次幂，
+[5] 因此循环群实际上是阿贝尔群。
+[6] 由群的封闭性可知，给定群 $G$ 的一个群元素 $g$，
+[7] 那么 $ \left\langle g \right\rangle \subset G$。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义2]
+[8] 定义 2
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[9] 对于群 $G$，若 $H$ 是其循环子群，且不是其他循环子群的真子群，
+[10] 则称 $H$ 为 $G$ 的极大循环子群。
+
+[/SCOPE:s_def2]
+[/SCOPE:s_def2_let]
+[SCOPE:s_ex1|description|例1]
+[11] 整数群 $\mathbb Z$ 是有无限元素的循环群，群乘法为加法。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2]
+[12] 模 $n$ 同余类 $\mathbb Z_n$。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_ex3|description|例3]
+[SCOPE:s_ex3_let|let_bind|例3的变量]
+[13] 群 $G=\{-1,-\mathrm i,1,\mathrm i\}= \left\langle \mathrm i \right\rangle $。
+[/SCOPE:s_ex3_let]
+[14] 循环群的形式看似没有什么规律，
+[15] 但我们可以借助同构来缩减研究对象。
+
+[/SCOPE:s_ex3]
+[SCOPE:s_thm1|description|定理1]
+[16] 定理 1
+[17] 无限循环群同构于整数加群；
+[18] $n$ 元有限循环群同构于 $\{\mathbb Z_n;+\}$。
+[19] proof.1
+[SCOPE:s_thm1_let1|let_bind|定理1的变量1]
+[20] 设 $G$ 是无限循环群，建立 $\mathbb Z\rightarrow G$ 的同态映射，使得对于任意 $n\in \mathbb Z$，都有 $f(n)=a^n$。
+[/SCOPE:s_thm1_let1]
+[21] 根据群同态基本定理习题 2 ，我们有 $\mathbb Z/ \operatorname {ker}f\cong G$。
+[22] 由于 $\mathbb Z$ 的正规子群都是 $n\mathbb Z,n\in \mathbb N$，
+[23] 因此模 $n$ 同余类与 $G$ 同构。
+[SCOPE:s_thm1_let2|let_bind|定理1的变量2]
+[24] 当该 $n=0$ 时，对应无限循环群；
+[25] 当 $m\neq 0$ 时，$\mathbb Z_n$ 与 n 元循环群同构。
+[/SCOPE:s_thm1_let2]
+[26] 因为有限循环群可以继承整数群的乘法，
+[27] 因此还是一个环。
+[28] 可以证明，$\mathbb Z_n$ 环上的零因子是 $n$ 的因子。
+[29] 所以，如果 $n$ 是素数，
+[30] 那么这个环就是无零因子交换幺环了，我们一般简称其为整环。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_thm2|description|定理2]
+[31] 定理 2
+[32] 有限整环必是域。
+[33] 只要证明任意环元都有逆在环内即可。
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[34] 因为是有限整环，假设生成元为 $a$，
+[/SCOPE:s_thm2_let]
+[35] 则由封闭性知对于每个非零同余类都必有 $a^m=a^n,m\neq n$。
+[36] 设 $m n$，因为 $a^{m-n}a^n=1\cdot a^n$，
+[37] 所以 $a^{m-n}=1$2。
+[38] 因此，$a^{m-n-1}$ 为 $a$ 的逆元，$a^{k(m-n-1)}$ 是 $a^k$ 的逆元，证毕。
+
+[/SCOPE:s_thm2]
+[SCOPE:s_exer1|description|习题1]
+[39] 习题 1
+[40] 无限循环群的生成元只有两个。
+
+[/SCOPE:s_exer1]
+[SCOPE:s_exer2|description|习题2]
+[41] 习题 2
+[SCOPE:s_exer2_let|let_bind|习题2的变量]
+[42] 若 $n$ 元有限循环群 $G= \left\langle a \right\rangle $，那任意元素 $a^k,k\in N$ 的阶是多少。
+[/SCOPE:s_exer2_let]
+[43] 一个推论是：若 $k$ 与 $n$ 互素，
+[44] 则 $ \left\langle a \right\rangle = \left\langle a^k \right\rangle $，
+[45] 因此我们可以得知一个 $n$ 元循环群的生成元个数。
+
+[/SCOPE:s_exer2]
+[SCOPE:s_thm3|description|定理3]
+[46] 定理 3
+[47] 循环群的子群必是循环群。
+[48] proof.
+[SCOPE:s_thm3_let1|let_bind|定理3的变量1]
+[49] 设循环群 $G= \left\langle a \right\rangle $，
+[/SCOPE:s_thm3_let1]
+[50] 则其子群元素必定包含 $a$ 的某次幂。
+[SCOPE:s_thm3_let2|let_bind|定理3的变量2]
+[51] 设任意子群为 $G_1$ 包含元素的最小次幂为 $k$，
+[52] 则该子群包含 $a^{kn},n\in \mathbb Z$。
+[/SCOPE:s_thm3_let2]
+[SCOPE:s_thm3_reductio|reductio|反证法假设]
+[53] 若该群不是循环群，必然包含元素形如 $a^{kn+r}$，其中 $0< r< k$。
+[54] 由封闭性知也包含 $a^{-kn}=(a^{kn})^{-1}$。
+[55] 则 $a^{r}\in G^{1}$，与假设里 $k$ 是最小正整数矛盾，
+[/SCOPE:s_thm3_reductio]
+[56] 所以循环群的子群必是循环群。
+
+[/SCOPE:s_thm3]
+[SCOPE:s_thm4|description|定理4]
+[57] 定理 4
+[SCOPE:s_thm4_let1|let_bind|定理4的变量1]
+[58] 设 $G$ 是 $n$ 元循环群，若 $d|n$，
+[/SCOPE:s_thm4_let1]
+[59] 则 $G$ 内存在唯一一个 $d$ 阶子群。
+[60] proof.
+[61] 因为 $a^{\frac{n}{d}d}=e$，
+[62] 因此 $ \left\langle a \right\rangle ^{\frac{n}{d}}$ 是一个 $d$ 阶子群。
+[63] 下面证明唯一性。
+[SCOPE:s_thm4_let2|let_bind|定理4的变量2]
+[64] 设 $H=\{x\in G|x^d=e\}$，易证这是 $G$ 的子群且具有唯一性。
+[/SCOPE:s_thm4_let2]
+[SCOPE:s_thm4_let3|let_bind|定理4的变量3]
+[65] 又设 $x=a^k$，
+[/SCOPE:s_thm4_let3]
+[66] 则 $a^{kd}=e$ 意味着 $n|kd$，
+[67] 则 $\frac{n}{d}|k$。
+[68] 因为 $G$ 是 $n$ 阶子群，
+[69] 所以 $k$ 的可能取值范围为 $\{1,2...n\}$，也即 $\{\frac{n}{d},2\frac{n}{d}...d\frac{n}{d}\}$。
+[70] 所以 $H$ 的阶小于或等于 $d$。
+[71] 又因为 $a^{\frac{n}{d}}\in H$，
+[72] 则 $ \left\langle a \right\rangle ^{\frac{n}{d}}\subset H$，
+[73] 所以 $H$ 的阶必等于 $d$ 且 $H= \left\langle a \right\rangle ^{\frac{n}{d}}$。
+[74] 换句话说，循环群的不同子群阶数不同。
+[75] 实际上，其逆命题也是成立的。
+[76] 即 $G$ 是循环群 $\Longleftrightarrow G$ 的不同子群阶数不同。
+
+[/SCOPE:s_thm4]
+[SCOPE:s_thm5|description|定理5]
+[77] 定理 5
+[78] 若群 $G$ 的不同子群阶数不同，
+[79] 则 $G$ 是循环群。
+[80] proof.3
+[SCOPE:s_thm5_let1|let_bind|定理5的变量1]
+[81] 设 $H$ 为 $G$ 的任意子群，因为共轭子群的阶与原群相等，
+[82] 即对于任意 $g\in G$ 都有 $|gHg^{-1}|=|H|$，题设条件使得 $G$ 的任意子群都是正规子群——$H\lhd G$。
+[/SCOPE:s_thm5_let1]
+[SCOPE:s_thm5_let2|let_bind|定理5的变量2]
+[83] 设 $G'=G/H$ 且 $H_1$ 是 $G'$ 的任意子群，
+[84] 那么对于 $G$ 而言，$H_1$ 是运算封闭的左陪集之并，也就是说，$H_1$ 也是原群的子群，题设及 “任意子群都是正规子群” 在商群意义上得以继承。
+[/SCOPE:s_thm5_let2]
+[85] 因此，我们可以利用循环子群来构造商群列。
+[SCOPE:s_thm5_let3|let_bind|定理5的变量3]
+[86] 从 $G$ 里选任意元素 $x_1$，构造商群 $G_1=G/ \left\langle x \right\rangle _1$，从 $G_1$ 中选任意元素 $x_2$，构造商群 $G_2=G_1/ \left\langle x \right\rangle _2$，以此类推——
+[/SCOPE:s_thm5_let3]
+[87] \begin{equation}
+G>G_1>G_2>...>G_{s-1}>G_S=\{e\}~.
+\end{equation}
+[88] 我们知道，根据拉格朗日定理，商群的基数必是原群基数的因子，
+[89] 因此商群列总是有限的，最后终结于平凡群。
+[90] 又因为该平凡群是 $G_{s-1}$ 商去循环群得到的，
+[91] 所以 $G_{s-1}$ 必是循环群。
+[92] 接下来我们只需要证明，对于 $G_{n}=G_{n-1}/ \left\langle x \right\rangle _n$，若满足 $G_{n}$ 为循环群，
+[93] 则 $G_{n-1}$ 也必是循环群即可。
+[94] 这其实是从商群列逆向推导出 $G$ 是循环群。
+[SCOPE:s_thm5_let4|let_bind|定理5的变量4]
+[95] 设 $r$ 是 $G_n$ 的生成元代表元素，
+[96] 即 $r \left\langle x \right\rangle _n$ 生成了这个循环群。
+[97] 设 $|G_{n}|=d$，
+[/SCOPE:s_thm5_let4]
+[98] 则对于任意 $r_1,r_2\in r \left\langle x \right\rangle _n$ 都有 $r_1^d,r_2^d\in \left\langle x \right\rangle _n$。
+[99] $r_1\rightarrow r_1^d$ 是从左陪集 $r \left\langle x \right\rangle _n$ 到正规子群 $ \left\langle x \right\rangle _n$ 的映射，下面证明这是一个双射。
+[SCOPE:s_thm5_reductio|reductio|反证法假设]
+[100] 设 $r_1\neq r_2$，且 $r_1^d=r_2^d$。
+[101] 在 $G_{n-1}$ 中，$ \left\langle r \right\rangle _1$ 和 $ \left\langle r \right\rangle _2$ 是两个阶数相同，
+[102] 但元素不同的子群，与题设矛盾。
+[/SCOPE:s_thm5_reductio]
+[103] 所以 $r_1\rightarrow r_1^d$ 是单射。
+[104] 又因为正规子群和陪集的基数相同，
+[105] 所以该映射既单又满。
+[SCOPE:s_thm5_let5|let_bind|定理5的变量5]
+[106] 因此在 $r \left\langle x \right\rangle _n$ 中存在唯一的 $a$ 使得 $a^d=x$，把陪集表示为 $a^i \left\langle a^d \right\rangle ,i=1,2...d$，
+[/SCOPE:s_thm5_let5]
+[107] 则 $G_{n-1}$ 确实是一个循环群，证毕。
+[108] 取 $d=5$，上述的 $G_{n-1}$ 及其陪集划分如下图所示。
+[109] 【图解】图 1：$G_{n-1}/x_n$
+[/SCOPE:s_thm5]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_exer2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理1证明中引用习题2"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_thm5",
+    "edge_type": "equivalent",
+    "category": "logic",
+    "note": "定理4和定理5互为逆命题"
+  }
+]

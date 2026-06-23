@@ -1,0 +1,185 @@
+{
+  "article_name": "SunDia",
+  "statements": [
+    {
+      "stmt_id": "st_question",
+      "subtype": "question",
+      "clause_range": [
+        0,
+        1
+      ],
+      "truth_value": "unknown",
+      "scope_id": "root",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_horizontal_desc",
+      "subtype": "remark",
+      "clause_range": [
+        2,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_horizontal",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_horizontal_pointer_axis",
+      "subtype": "remark",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_horizontal",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_sun_rotation",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_horizontal",
+      "exposed_entities": [
+        "太阳",
+        "日晷指针"
+      ]
+    },
+    {
+      "stmt_id": "st_latitude_dependence",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        10
+      ],
+      "truth_value": null,
+      "scope_id": "s_horizontal",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_equator_fail",
+      "subtype": "remark",
+      "clause_range": [
+        11,
+        12
+      ],
+      "truth_value": null,
+      "scope_id": "s_horizontal",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_formula_intro",
+      "subtype": "remark",
+      "clause_range": [
+        13,
+        14
+      ],
+      "truth_value": null,
+      "scope_id": "s_horizontal_formula",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_let_beta",
+      "subtype": "definition",
+      "clause_range": [
+        15,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_horizontal_let",
+      "exposed_entities": [
+        "β"
+      ]
+    },
+    {
+      "stmt_id": "st_let_theta",
+      "subtype": "definition",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_horizontal_let",
+      "exposed_entities": [
+        "θ"
+      ]
+    },
+    {
+      "stmt_id": "st_let_alpha",
+      "subtype": "definition",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": null,
+      "scope_id": "s_horizontal_let",
+      "exposed_entities": [
+        "α"
+      ]
+    },
+    {
+      "stmt_id": "st_pole_verify",
+      "subtype": "theorem",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": "true",
+      "scope_id": "s_horizontal_formula",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_proof_hint",
+      "subtype": "remark",
+      "clause_range": [
+        19,
+        19
+      ],
+      "truth_value": null,
+      "scope_id": "s_horizontal_formula",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_equatorial_desc",
+      "subtype": "remark",
+      "clause_range": [
+        23,
+        25
+      ],
+      "truth_value": null,
+      "scope_id": "s_equatorial",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_let_beta",
+      "target": "st_formula_intro",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_theta",
+      "target": "st_formula_intro",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_let_alpha",
+      "target": "st_formula_intro",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_formula_intro",
+      "target": "st_pole_verify",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

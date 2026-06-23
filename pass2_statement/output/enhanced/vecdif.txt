@@ -1,0 +1,310 @@
+[SCOPE:root|description|向量函数的微分]
+文章名: vecdif
+标题: 向量函数的微分
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=(全微分)
+  [1] type=definition heading=定义 2 title=(导映射 或 导矩阵)
+  [2] type=theorem heading=定理 1 title=
+  [3] type=example heading=例 1 title=
+  [4] type=example heading=例 2 title=
+  [5] type=definition heading=定义 3 title=(方向导数)
+  [6] type=theorem heading=定理 2 title=(方向导数与微分的关系)
+  [7] type=theorem heading=定理 3 title=(链式法则)
+  [8] type=example heading=例 3 title=
+  [9] type=theorem heading=定理 4 title=(微分中值不等式)
+
+[0] 本文中我们约定，当 $x\in \mathbb{R}^n$ 时，用 $|x|$ 表示 $x$ 的欧氏范数。
+
+[SCOPE:s_def1|description|定义1 (全微分)]
+[1] 定义 1 (全微分)
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[2] 设有向量函数 $F:\mathbb{R}^{n}\rightarrow\mathbb{R}^{m}$, 且 $p$ 是 $\mathbb{R}^n$ 中的一点。
+[3] 若存在线性变换 $A:\mathbb{R}^{n}\rightarrow\mathbb{R}^{m}$
+[4] 使成立
+[/SCOPE:s_def1_let]
+[5] \begin{equation}
+F(x)=F(p)+A(x-p)+o(| x-p| )\quad\quad(x\rightarrow p\in\mathbb{R}^{n})~,
+\end{equation}
+[6] 当然，根据书写习惯，也可以写成 $\mathrm{d}F(p)=A\mathrm{d}x,$ 其中 $\mathrm{d}x=(\mathrm{d}x_1,\mathrm{d}x_2,\cdots,\mathrm{d}x_n).$
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义2 (导映射或导矩阵)]
+[7] 定义 2 (导映射 或 导矩阵)
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[8] 设有向量函数 $F:\mathbb{R}^{n}\rightarrow\mathbb{R}^{m}$, $F$ 可表为分量函数形式
+[9] $$
+F(x)=\left(\begin{array}{c}
+F_{1}(x)\\
+F_{2}(x)\\
+\vdots\\
+F_{m}(x)
+\end{array}\right)~,\quad x:=(x_{1},x_{2},\ldots,x_{n})\in\mathbb{R}^{n}~,
+$$
+[10] 其中 $F_{j}:\mathbb{R}^{n}\rightarrow\mathbb{R}$ 是数量函数 $(j=1,2,\ldots,m)$.
+[11] 若每个 $F_{j}$ 在 $x=p$ 处可微，
+[/SCOPE:s_def2_let]
+[12] 则 ${\displaystyle \frac{\partial F_{j}}{\partial x_{i}}(p)}$
+[13] 都有意义 $(i=1,2,\ldots,n)~,$ 因而可定义
+[14] $$
+\frac{\partial F}{\partial x_{i}}(p):=\left(\begin{array}{c}
+\frac{\partial F_{1}}{\partial x_{i}}(p)\\
+\frac{\partial F_{2}}{\partial x_{i}}(p)\\
+\vdots\\
+\frac{\partial F_{m}}{\partial x_{i}}(p)
+\end{array}\right)\qquad (i=1,2,\ldots,n)~
+$$
+[15] 称为 $F(x)$ 在 $x=p$ 处关于 $x_{i}$ 变元的 偏导数, 以及也可定义
+[16] \[
+[17a] (p)=(\frac{\partial F}{\partial x_{1}}
+[17b] (p)~,\frac{\partial F}{\partial x_{2}}
+[17c] (p)~,\ldots,\frac{\partial F}{\partial x_{n}}
+[17d] (p))~.
+[18] \]
+[19] 称为 $F(x)$ 在 $x=p$ 处的 导映射 或 导矩阵, 也叫 雅可比（Jocobi）
+[20] 矩阵, 即
+[21] $$
+\mathrm{D}F(p)=\left(\begin{array}{cccc}
+\frac{\partial F_{1}}{\partial x_{1}}(p) & \frac{\partial F_{1}}{\partial x_{2}}(p) & \cdots & \frac{\partial F_{1}}{\partial x_{n}}(p)\\
+\frac{\partial F_{2}}{\partial x_{1}}(p) & \frac{\partial F_{2}}{\pa…[truncated]…dots & \frac{\partial F_{2}}{\partial x_{n}}(p)\\
+\vdots & \vdots & & \vdots\\
+\frac{\partial F_{m}}{\partial x_{1}}(p) & \frac{\partial F_{m}}{\partial x_{2}}(p) & \ldots & \frac{\partial F_{m}}{\partial x_{n}}(p)
+\end{array}\right)_{m\times n}~.
+$$
+[22] 关于 Jocobi 矩阵的记号，有些书也将其记为 $\mathrm{D}F(p):={\displaystyle \left.\frac{\mathrm{\partial}(F_{1},F_{2},\ldots,F_{m})}{\mathrm{\partial}(x_{1},x_{2},\ldots,x_{n})}\right|_{x=p}~.}$
+[23] 注：线性变换与矩阵之间存在 代数同构 的关系，见《线性变换与矩阵的代数关系》一节，这就是既可称为 导映射 又可称为 导矩阵 的原因。
+[24] 下面的定理表明，上面两个定义是完全等价的。
+
+[/SCOPE:s_def2]
+[SCOPE:s_thm1|description|定理1]
+[25] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理1的变量]
+[26] 向量函数 $F:\mathbb{R}^{n}\rightarrow\mathbb{R}^{m}$ 在 $p\in\mathbb{R}^{n}$
+[27] 处可微的充要条件是它的每个分量函数 $F_{j}:\mathbb{R}^{n}\rightarrow\mathbb{R}$ ($j=1,2,\ldots,$ $m$)
+[28] 都在 $p$ 处可微。
+[/SCOPE:s_thm1_let]
+[29a] (p)$ 的主部恰好是 $\mathrm{D}F
+[29b] (p)$, 即 $\mathrm{d}F
+[29c] (p)=\mathrm{D}F
+[29d] (p)~\mathrm{d}x$.
+[30] 此定理表明，( 式 1 ) 也可以写成
+[31] \[
+[32a] (x)=F
+[32b] (p)+\mathrm{D}F
+[32c] (p)(x-p)+o(| x-p| )\quad\quad(x\rightarrow p)~.
+[33] \]
+[34] 或
+[35] \[
+[36a] (p)=\mathrm{D}F
+[36b] (p)\cdot\triangle p+o(|\triangle p|)\quad\quad(\triangle p\rightarrow0)~,
+[37] \]
+[38] 其中 $\triangle p\in\mathbb{R}^{n},$ $|\triangle p|\ll1.$
+[39] 注：定理 1 表明向量函数 $F$ 的微分 $\mathrm{d}F$ 只与其导矩阵 $\mathrm{D}F$ 有关，
+[40] 因此，有时我们也直接说该导矩阵就是它的微分，而省略 “主部” 二字。
+[41] 下面给出向量函数全微分的一些例子。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex1|description|例1]
+[SCOPE:s_ex1_let|let_bind|例1的变量]
+[42] 若矩阵 $A\in\mathbb{R}^{m\times n}$ ($m$ 行 $n$ 列), 向量函数 $F:\mathbb{R}^{n}\rightarrow\mathbb{R}^{m},$
+[43a] (x)=Ax,$ 则 $F
+[43b] (x)$ 在任意点 $x=p$ 处的微分都等于 $A,$ 即
+[/SCOPE:s_ex1_let]
+[44] \[
+[45] \mathrm{d}F(p)\equiv A~.
+[46] \]
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|例2]
+[SCOPE:s_ex2_let|let_bind|例2的变量]
+[47] 设 $F(x,y)=(x^{2}+xy,y^{2}+xy)$, 求 $\mathrm{D}F(x,y).$
+[/SCOPE:s_ex2_let]
+[48] 解：
+[49] $$
+\mathrm{D}F(x,y)=\left(\begin{array}{cc}
+2x+y\quad & x\\
+y & 2y+x
+\end{array}\right)~.
+$$
+
+[/SCOPE:s_ex2]
+[SCOPE:s_def3|description|定义3 (方向导数)]
+[50] 定义 3 (方向导数)
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[51] 设有向量函数 $F:\mathbb{R}^{n}\rightarrow\mathbb{R}^{m}$, 以及向量 $v\in\mathbb{R}^{n},$
+[52] 定义 $F$ 在点 $p$ 处沿方向 $v$ 的 方向导数 为
+[/SCOPE:s_def3_let]
+[53] \[
+[54a] (p)={\displaystyle \lim_{\varepsilon\rightarrow0}{\displaystyle \frac{F(p+\varepsilon v)-F
+[54b] (p)}{\varepsilon}}~.}}
+[55] \]
+
+[/SCOPE:s_def3]
+[SCOPE:s_thm2|description|定理2 (方向导数与微分的关系)]
+[56] 定理 2 (方向导数与微分的关系)
+[SCOPE:s_thm2_let|let_bind|定理2的变量]
+[57] 若向量函数 $F:\mathbb{R}^{n}\rightarrow\mathbb{R}^{m}$ 在 $p\in\mathbb{R}^{n}$
+[58] 处可微，
+[59] 则对任意单位向量 $v\in\mathbb{R}^{n}$, 有
+[/SCOPE:s_thm2_let]
+[60] \[
+[61a] (p)=[\mathrm{D}F
+[61b] (p)]
+[61c] (v)=[\mathrm{D}F
+[61d] (p)]\cdot v~,
+[62] \]
+[63a] (p)$ 表示导映射（看成线性变换对 $v$ 作用）, 第二个等号后的 $\mathrm{D}F
+[63b] (p)$
+[64] 表示导矩阵（看成矩阵与列向量 $v$ 作矩阵乘法运算）.
+
+[/SCOPE:s_thm2]
+[SCOPE:s_thm3|description|定理3 (链式法则)]
+[65] 定理 3 (链式法则)
+[SCOPE:s_thm3_let|let_bind|定理3的变量]
+[66] 设有向量函数 $F:\mathbb{R}^{n}\rightarrow\mathbb{R}^{m}$, $x\mapsto F(x)$,
+[67] 又有 $G:\mathbb{R}^{m}\rightarrow\mathbb{R}^{k}$, $y\mapsto G(y)$.
+[68] 假设 $F$ 在点 $p$ 处可微，$G$ 在点 $F(p)$ 处可微，
+[/SCOPE:s_thm3_let]
+[69] 则复合函数 $G\circ F$ 也在点 $p$
+[70] 处可微，且
+[71] \[
+[72a] (p)=\mathrm{D}G(F
+[72b] (p))\mathrm{D}F
+[72c] (p)~.
+[73] \]
+
+[/SCOPE:s_thm3]
+[SCOPE:s_ex3|description|例3]
+[SCOPE:s_ex3_let|let_bind|例3的变量]
+[74] 设 $F(x,y)=(2x+y,2y+x),$ $G(u,v)=u^{2}+v^{2}$, 则
+[/SCOPE:s_ex3_let]
+[75] \[
+[76] (G\circ F)(x,y)=(2x+y)^{2}+(2y+x)^{2}=5x^{2}+5y^{2}+8xy~,
+[77] \]
+[78] 一方面有
+[79] $$
+\mathrm{D}F(x,y)=\left(\begin{array}{cc}
+2& 1\\
+1 & 2
+\end{array}\right),\quad\mathrm{D}G(u,v)=(2u,2v)~,
+$$
+[80] \[
+[81] \mathrm{D}(G\circ F)(x,y)=(10x+8y,10y+8x)~.
+[82] \]
+[83] 另一方面
+[84] $$
+\mathrm{D}G(F(x,y))\mathrm{D}F(x,y) = \left.(2u,2v)\right|_{u=2x+y,\,v=2y+x}\cdot\left(\begin{array}{cc}
+2 & 1\\
+1 & 2
+\end{array}\right)~
+$$
+[85] $$
+= (4x+2y,4y+2x)\left(\begin{array}{cc}
+2 & 1\\
+1 & 2
+\end{array}\right)
+= (10x+8y,10y+8x)~,
+$$
+[86] 说明 $\mathrm{D}(G\circ F)(x,y)=\mathrm{D}G(F(x,y))\mathrm{D}F(x,y)$.
+
+[/SCOPE:s_ex3]
+[87] 与数量函数拥有微分中值定理不同，向量函数没有微分中值定理，只有微分中值不等式。
+
+[SCOPE:s_thm4|description|定理4 (微分中值不等式)]
+[88] 定理 4 (微分中值不等式)
+[SCOPE:s_thm4_let|let_bind|定理4的变量]
+[89] 设 $\Omega$ 是 $\mathbb{R}^{n}$ 中的凸区域，向量函数 $F:D\rightarrow\mathbb{R}^{m}$
+[90] 处处可微，
+[91] 则对任意 $x,y\in D,$ 存在 $x$ 与 $y$ 的连续上的点 $\xi,$ 使成立
+[/SCOPE:s_thm4_let]
+[92] \[
+[93a] (x)-F
+[93b] (y)|\leqslant\left\Vert \mathrm{D}F(\xi)\right\Vert |x-y|~,
+[94] \]
+[95] 其中 $\left\Vert \cdot\right\Vert $ 可看成是矩阵范数或有界线性算子范数。
+
+[/SCOPE:s_thm4]
+[SCOPE:s_partial|description|向量函数关于分量的微分]
+[SCOPE:s_partial_let|let_bind|分量微分的变量]
+[96] 设有向量函数 $F:\mathbb{R}^{n}\rightarrow\mathbb{R}^{m},$ $n=k+l$, $\mathbb{R}^{n}\cong\mathbb{R}^{k}\times\mathbb{R}^{l}$.
+[97] 再设点 $x\in\mathbb{R}^{n}$, $x$ 可表示为 $x=(u,v)$ 其中 $u=(u_{1},\ldots,u_{k})\in\mathbb{R}^{k}$,
+[98] $v=(v_{1},\ldots,v_{l})\in\mathbb{R}^{l}~.$
+[/SCOPE:s_partial_let]
+[99] ① 若 $F(u,v)$ 有关于变元 $u$ 的全微分，
+[100] 则其导映射记为 $\mathrm{D}_{u}F(u,v)$；
+[101] ② 若 $F(u,v)$ 有关于变元 $v$ 的全微分，
+[102] 则其导映射记为 $\mathrm{D}_{v}F(u,v)$；
+[103] ③ 若 $F(u,v)$ 有关于变元 $x$ 的全微分，
+[104] 则其导映射记为 $\mathrm{D}_{x}F(u,v)$ 或 $\mathrm{D}_{(u,v)}F(u,v)$,
+[105] 简记为 $\mathrm{D}F(u,v)$ .
+[106] 易知，此时
+[107] $$
+\begin{aligned}
+\mathrm{D}F(u,v) & \in L(\mathbb{R}^{n},\mathbb{R}^{m})\cong\mathbb{R}^{m\times n},\\
+\mathrm{D}_{u}F(u,v) & \in L(\mathbb{R}^{k},\mathbb{R}^{m})\cong\mathbb{R}^{m\times k},\\
+\mathrm{D}_{v}F(u,v) & \in L(\mathbb{R}^{l},\mathbb{R}^{m})\cong\mathbb{R}^{m\times l}~.
+\end{aligned}
+$$
+[108] 它们之间有如下关系：
+[109] $$
+\mathrm{D}F(u,v)\cdot\left(\begin{array}{c}
+\mathrm{d}u\\
+\mathrm{d}v
+\end{array}\right)=\mathrm{D}_{u}F(u,v)\mathrm{d}u+\mathrm{D}_{v}F(u,v)\mathrm{d}v~,
+$$
+[110] 其中 $\mathrm{d}u=(\mathrm{d}u_{1},\ldots,\mathrm{d}u_{k})\in\mathbb{R}^{k}$,
+[111] $\mathrm{d}v=(\mathrm{d}v_{1},\ldots,\mathrm{d}v_{l})\in\mathbb{R}^{l}$
+[112] 看成列向量。
+[113] 设有向量函数 $F:\mathbb{R}^{k+l}\rightarrow\mathbb{R}^{m},$ $x=(u,v)\mapsto F(u,v)=F(x)$.
+[114] 再设点 $\overline{x}=(\overline{u},\overline{v})\in\mathbb{R}^{k}\times\mathbb{R}^{l}~.$
+[115] 若 $F$ 在点 $\overline{x}=(\overline{u},\overline{v})$ 处可微，
+[116] 则以下两个微分公式等价：
+[117] \[
+[118] F(\overline{x}+\triangle x)-F(\overline{x})=\mathrm{D}F(\overline{x})\cdot\triangle x+o(|\triangle x|)~,
+[119] \]
+[120] \[
+[121] F(\overline{u}+\triangle u,\overline{v}+\triangle v)-F(\overline{u},\overline{v})=\mathrm{D}_{u}F(\overline{u},\overline{v})\cdot\triangle u+\mathrm{D}_{v}F(\overline{u},\overline{v})\cdot\triangle v+o(\sqrt{|\triangle u|^{2}+|\triangle v|^{2}})~,
+[122] \]
+[123] 其中 $\triangle x=(\triangle u,\triangle v)$。
+[124] 写在后面：本文关于向量函数的微分、导映射、方向导数的内容，可以平行地推广到泛函分析 Banach 空间上的算子的 Frechet 微分或 Frechet 导数，这一点是十分重要的。
+[/SCOPE:s_partial]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1表明定义1和定义2等价，但这里仅作为引用关系"
+  },
+  {
+    "source_scope": "s_thm1",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理1表明定义1和定义2等价"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "定理2给出方向导数与微分的关系"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "链式法则基于全微分定义"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_thm3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "例3验证链式法则"
+  }
+]

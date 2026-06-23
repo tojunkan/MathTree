@@ -1,0 +1,59 @@
+[SCOPE:root|description|广义斯托克斯定理（简明微积分）]
+文章名: Stoke2
+标题: 广义斯托克斯定理（简明微积分）
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=二维散度定理
+  [1] type=example heading=例 2 title=三维旋度定理
+  [2] type=exercise heading=习题 1 title=
+
+[SCOPE:s_ex1|description|二维散度定理]
+[0] 例 1 二维散度定理
+[SCOPE:s_ex1_let|let_bind|二维散度定理的变量]
+[1] 二维平面上的一个区域，其边界取逆时针为正，线积分的 $1$-微分形式为
+[2] \begin{equation}
+\omega = f_x \,\mathrm{d}{x} + f_y \,\mathrm{d}{y} ~.
+\end{equation}
+[/SCOPE:s_ex1_let]
+[3] \begin{equation}
+\,\mathrm{d}{\omega} = \frac{\partial f_x}{\partial x} \,\mathrm{d}{x} \,\mathrm{d}{x} + \frac{\partial f_x}{\partial y} \,\mathrm{d}{y} \,\mathrm{d}{x}
++ \frac{\partial f_y}{\partial x} \,\mathrm{d}{x} \,\mathrm{d}{y} + \frac{\partial f_y}{\partial y} \,\mathrm{d}{y} \,\mathrm{d}{y} ~.
+\end{equation}
+[4] \begin{equation}
+\,\mathrm{d}{\omega} = \left( \frac{\partial f_y}{\partial x} - \frac{\partial f_x}{\partial y} \right) \,\mathrm{d}{x} \,\mathrm{d}{y} ~.
+\end{equation}
+[5] \begin{equation}
+\oint f_x \,\mathrm{d}{x} + f_y \,\mathrm{d}{y} = \iint \left( \frac{\partial f_y}{\partial x} - \frac{\partial f_x}{\partial y} \right) \,\mathrm{d}{x} \,\mathrm{d}{y} ~,
+\end{equation}
+
+[/SCOPE:s_ex1]
+[SCOPE:s_ex2|description|三维旋度定理]
+[6] 例 2 三维旋度定理
+[SCOPE:s_ex2_let|let_bind|三维旋度定理的变量]
+[7] 微分形式为
+[8] \begin{equation}
+\omega = f_x \,\mathrm{d}{x} + f_y \,\mathrm{d}{y} + f_z \,\mathrm{d}{z} ~.
+\end{equation}
+[/SCOPE:s_ex2_let]
+[9] \begin{equation}
+\begin{aligned}
+\,\mathrm{d}{\omega} &= \frac{\partial f_x}{\partial y} \,\mathrm{d}{y} \,\mathrm{d}{x} + \frac{\partial f_x}{\partial z} \,\mathrm{d}{z} \,\mathrm{d}{x}
++ \frac{\partial f_y}{\partial x} \,\mathrm{d}{x} \,\mathrm{d}{…[truncated]…rac{\partial f_x}{\partial z} - \frac{\partial f_z}{\partial x} \right) \,\mathrm{d}{z} \,\mathrm{d}{x}
++ \left( \frac{\partial f_z}{\partial y} - \frac{\partial f_y}{\partial z} \right) \,\mathrm{d}{y} \,\mathrm{d}{z} ~.
+\end{aligned}
+\end{equation}
+[10] \begin{equation}
+\begin{aligned}
+&\oint f_x \,\mathrm{d}{x} + f_y \,\mathrm{d}{y} + f_z \,\mathrm{d}{z} \\
+&= \iint \left( \frac{\partial f_y}{\partial x} - \frac{\partial f_x}{\partial y} \right) \,\mathrm{d}{x} \,\mathrm{d}{y}
++ \left( \frac{\partial f_x}{\partial z} - \frac{\partial f_z}{\partial x} \right) \,\mathrm{d}{z} \,\mathrm{d}{x}
++ \left( \frac{\partial f_z}{\partial y} - \frac{\partial f_y}{\partial z} \right) \,\mathrm{d}{y} \,\mathrm{d}{z} ~,
+\end{aligned}
+\end{equation}
+
+[/SCOPE:s_ex2]
+[SCOPE:s_exercise1|description|习题1]
+[11] 习题 1
+[12] 试写出四维空间中三维曲面的散度定理以及旋度定理。
+[/SCOPE:s_exercise1]
+[/SCOPE:root]

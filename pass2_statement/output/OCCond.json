@@ -1,0 +1,102 @@
+{
+  "article_name": "OCCond",
+  "statements": [
+    {
+      "stmt_id": "st_theorem1",
+      "subtype": "theorem",
+      "clause_range": [
+        0,
+        14
+      ],
+      "truth_value": "true",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_curve",
+      "subtype": "assumption",
+      "clause_range": [
+        1,
+        2
+      ],
+      "truth_value": null,
+      "scope_id": "s_let1",
+      "exposed_entities": [
+        "x",
+        "y",
+        "y(x)",
+        "φ(x)",
+        "ψ(x)",
+        "γ",
+        "J(γ)",
+        "F(x,y,y')"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_extremal",
+      "subtype": "conclusion",
+      "clause_range": [
+        3,
+        5
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_assump_endpoints",
+      "subtype": "assumption",
+      "clause_range": [
+        6,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_let2",
+      "exposed_entities": [
+        "x0",
+        "x1",
+        "y0",
+        "y1",
+        "φ(x0)",
+        "ψ(x1)",
+        "δx0",
+        "δx1",
+        "δy0",
+        "δy1"
+      ]
+    },
+    {
+      "stmt_id": "st_conclusion_condition",
+      "subtype": "conclusion",
+      "clause_range": [
+        10,
+        13
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_theorem1",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_assump_curve",
+      "target": "st_conclusion_extremal",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_assump_endpoints",
+      "target": "st_conclusion_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_conclusion_extremal",
+      "target": "st_conclusion_condition",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}

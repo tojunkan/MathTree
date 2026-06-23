@@ -1,0 +1,135 @@
+[SCOPE:root|description|欧几里得空间中的曲线]
+文章名: eucur
+标题: 欧几里得空间中的曲线
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=参数曲线
+  [1] type=definition heading=定义 2 title=连续可微参数曲线
+  [2] type=definition heading=定义 3 title=速度、速率、弧长
+  [3] type=definition heading=定义 4 title=常速率参数曲线
+  [4] type=definition heading=定义 5 title=光滑参数曲线
+  [5] type=definition heading=定义 6 title=曲线
+
+[0] 【未完成】增加线性代数的预备知识
+
+[1] 把 $\mathbb{R}^n$ 视作一个向量空间，任意取定一个坐标系（等价于向量空间的一组基），我们可以把向量值函数 $f$ 分为 $n$ 个标量值函数，简称为 $f$ 的分量。
+
+[SCOPE:s_def1|description|定义1 参数曲线]
+[2] 定义 1 参数曲线
+[SCOPE:s_def1_let|let_bind|定义1的变量]
+[3] 令 $I = (a, b)$ 是实数轴 $\mathbb{R}$ 上的一个开区间，
+[4a] (a)$ 到 $f
+[4b] (b)$ 的道路（path）），$f$ 的值域 $f(I) \subseteq \mathbb{R}^n$ 被称为参数曲线的轨迹。
+[/SCOPE:s_def1_let]
+[5] 此处连续是指函数的 $n$ 个分量都是 $\mathbb{R}\to\mathbb{R}$ 的连续函数。
+[6] 如果 $f$ 是一个单射，
+[7] 则被称为简单参数曲线。
+[8] 你可能自然会想确认，由 $f$ 的分量定义的连续性，和取定坐标系的方式是否有关？
+[9] 答案是无关的。
+[10] 我们可以用另一种方式来理解此处的 “连续”：取集合 $I$ 与 $\mathbb{R}^n$，配上通常的拓扑——即 $I$ 取 $\mathbb{R}$ 的子拓扑，$\mathbb{R}^n$ 取 $\mathbb{R}$ 的乘积拓扑——所得到的拓扑空间，
+[11] 那么 $f$ 就是拓扑空间之间的映射，其连续性取决于拓扑意义上的连续性，和具体坐标系的选择就无关了。
+[12] 要强调的一点是，
+[13] 即便两条参数曲线的轨迹一样，它们也不一定是同一条参数曲线。
+[14a] (t)=  \begin{pmatrix}\cos t\\\sin t\end{pmatrix}  $ 和 $g
+[14b] (t)=  \begin{pmatrix}\cos 2t\\\sin 2t\end{pmatrix}  $，
+[15] 那么尽管它们的轨迹都是平面上的单位圆，
+[16] 但由于两条参数曲线的 “速度” 不一样，我们依然把它们认为是不同的参数曲线。
+[17] 想要严格的定义 “速度” 我们需要更强大的结构：
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|定义2 连续可微参数曲线]
+[18] 定义 2 连续可微参数曲线
+[SCOPE:s_def2_let|let_bind|定义2的变量]
+[19a] 如果参数曲线 $f: I \to \mathbb{R}^n$ 对于任意分量都是连续可微的（
+[19b] 则其导函数连续），
+[20] 那么称 $f$ 是一个连续可微参数曲线（differentiable curve）（$I$ 为闭曲线时称为连续可微道路（differentiable path）），也记为 $C^1$ 参数曲线。
+[/SCOPE:s_def2_let]
+[21] 类似的我们可以定义 $p$ 阶连续可微参数曲线，也记为 $C^p$ 参数曲线。
+[22] 同样地，$f$ 本身的连续可微性，和具体坐标系的选择也无关1。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|定义3 速度、速率、弧长]
+[23] 定义 3 速度、速率、弧长
+[SCOPE:s_def3_let|let_bind|定义3的变量]
+[24] 对于连续可微参数曲线 $f: I \to \mathbb{R}^n$，我们把 $t = t_0$ 时的速度（velocity）定义为向量 $f'(t_0)$，或者记做 $\frac{ \,\mathrm{d}{}} { \,\mathrm{d}{t} } f |_{t = t_0}$，把速度的模长 $\|f'(t_0)\|$ 称为 $t = t_0$ 时的速率（speed）；
+[25a] (a)$ 到 $f
+[25b] (b)$ 的弧长为 $\int_a^b \|f'
+[25c] (t)\| \,\mathrm{d}{t} $。
+
+[/SCOPE:s_def3]
+[/SCOPE:s_def3_let]
+[SCOPE:s_def4|description|定义4 常速率参数曲线]
+[26] 定义 4 常速率参数曲线
+[SCOPE:s_def4_let|let_bind|定义4的变量]
+[27] 如果连续可微参数曲线 $f: I \to \mathbb{R}^n$ 每个点的速率是一个常数，
+[28] 那么称 $f$ 是一个常速率参数曲线。
+[29] 特别的我们把速率为 $1$ 的常速率参数曲线称为单位速率参数曲线，也称（以）弧长（为）参数（的）曲线，此时我们常用 $s$ 来代替参数 $t$。
+[/SCOPE:s_def4_let]
+[30] $p$ 可以推广到无限，
+[31] 即：
+
+[/SCOPE:s_def4]
+[SCOPE:s_def5|description|定义5 光滑参数曲线]
+[32] 定义 5 光滑参数曲线
+[SCOPE:s_def5_let|let_bind|定义5的变量]
+[33] 如果参数曲线 $f: I \to \mathbb{R}^n$ 对于任意分量都是光滑的，
+[34] 那么称 $f$ 是一个光滑参数曲线（smooth curve）（$I$ 为闭曲线时称为光滑道路（smooth path）），有时也记为 $C^\infty$ 的参数曲线。
+[/SCOPE:s_def5_let]
+[35] 和上述坐标变换的讨论类似，可证明光滑参数曲线的光滑性不依赖于坐标系的选择。
+[36] 等价的，光滑参数曲线是任意阶连续可微参数曲线。
+[37] 除了参数曲线之外，我们还可以定义曲线为 $\mathbb{R}^n$ 的子集。
+[38] 我们可以把曲线理解成参数曲线的轨迹，
+[39] 但需要一些额外的要求。
+
+[/SCOPE:s_def5]
+[SCOPE:s_def6|description|定义6 曲线]
+[40] 定义 6 曲线
+[SCOPE:s_def6_let|let_bind|定义6的变量]
+[41] 如果 $\mathbb{R}^n$ 的子集 $C$ 满足对 $C$ 上任意一点 $p$，存在点 $p$ 的一个（足够小的）开邻域 $U \subseteq \mathbb{R}^n$，使得 $C \cap U$ 是一条简单参数曲线的轨迹，
+[42] 那么 $C$ 就被称为 $\mathbb{R}^n$ 上的一条曲线。
+[/SCOPE:s_def6_let]
+[43] 如果参数曲线是连续可微的/光滑的而且速度处处不为零，
+[44] 那么我们就称之为连续可微的/光滑曲线，有时也简称为曲线。
+[45] 在微分几何中，我们一般要求曲线是连通的。
+[46] 在不会引起误解的情况下，我们也会把参数曲线简称为曲线，读者需要依凭上下文进行判断它到底是一个映射还是一个子集。
+[/SCOPE:s_def6]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_def2",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "连续可微参数曲线是参数曲线的特例"
+  },
+  {
+    "source_scope": "s_def3",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "速度、速率、弧长定义在连续可微参数曲线上"
+  },
+  {
+    "source_scope": "s_def4",
+    "target_scope": "s_def3",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "常速率参数曲线是连续可微参数曲线的特例"
+  },
+  {
+    "source_scope": "s_def5",
+    "target_scope": "s_def2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "光滑参数曲线是任意阶连续可微参数曲线"
+  },
+  {
+    "source_scope": "s_def6",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "曲线是局部为简单参数曲线轨迹的子集"
+  }
+]

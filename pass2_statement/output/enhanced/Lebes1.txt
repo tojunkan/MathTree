@@ -1,0 +1,491 @@
+[SCOPE:root|description|Lebesgue 积分]
+文章名: Lebes1
+标题: Lebesgue 积分
+
+环境标记 (hints):
+  [0] type=example heading=例 1 title=Dirichlet 函数
+  [1] type=definition heading=定义 1 title=可测分划
+  [2] type=definition heading=定义 2 title=上和与下和
+  [3] type=lemma heading=引理 1 title=
+  [4] type=corollary heading=推论 1 title=
+  [5] type=definition heading=定义 3 title=
+  [6] type=theorem heading=定理 1 title=
+  [7] type=theorem heading=定理 2 title=
+  [8] type=exercise heading=习题 1 title=
+  [9] type=definition heading=定义 4 title=任意可测集上任意非负可测函数的积分
+  [10] type=corollary heading=推论 2 title=
+  [11] type=theorem heading=定理 3 title=
+  [12] type=definition heading=定义 5 title=正部与负部
+  [13] type=definition heading=定义 6 title=Lebesgue 积分
+  [14] type=exercise heading=习题 2 title=
+  [15] type=theorem heading=定理 4 title=
+
+[0] 我们熟知的 Riemann 积分是对函数定义域进行分划，也就是将函数图像转化为若干柱子，每个柱子的底是一个区间，高度是这个区间里某个函数值。
+[1] Riemann 定积分的结果，就是用柱子的总面积来逼近的。
+[2] 如果柱子的高度都选成最高点（函数值上确界），
+[3] 那么柱子总面积一定大于等于真正的积分值；
+[4] 柱子的高度都选成最低点（函数值下确界），
+[5] 那么柱子总面积一定小于等于真正的积分值。
+[6a] 当柱子划分得越来越细，这两种选择高度的策略所计算出来的面积差有可能会趋于 $0$，此时我们
+[6b] 则根据两边夹的原则，认为两种计算结果的共同极限就是真正的积分值；
+[7] 但对于一些奇怪的函数，两种策略计算出来的面积差无法趋于 $0$，
+[8] 那么就无法定义真正的积分值，比如下列 Dirichlet 函数的例子：
+
+[SCOPE:s_example1|description|Dirichlet 函数]
+[9] 例 1 Dirichlet 函数
+[SCOPE:s_example1_let|let_bind|Dirichlet 函数定义]
+[10] 定义函数 $f(x)$ 如下：
+[11] \begin{equation}
+f(x)=
+\left\{
+\begin{aligned}
+&{} 1, x\in \mathbb{Q}; \\
+&{} 0, x\not\in\mathbb{Q}.
+\end{aligned}
+\right. ~
+\end{equation}
+[/SCOPE:s_example1_let]
+[12] 则由于有理数和无理数的稠密性，无论如何分划定义域，每个柱子内总是既有高度为 $1$ 又有高度为 $0$ 的点，无法定义 Riemann 积分。
+[13] Riemann 积分之所以要将定义域划分为区间，是因为这样方便定义柱子的 “底边长”，
+[14] 即区间的长度。
+[15] 但代价是，柱子的高度如果像 Dirichlet 函数一样总是反复横跳，就无法定义积分了。
+[16] 这限制了我们做积分的范围。
+[17] Lebesgue 积分的解决了柱子高度的问题，直接对函数的值域进行分划，以相应值域的逆映射作为 “柱底”。
+[18] 也就是说，选择值域上的某个区间，看看定义域上哪些点的函数值在这个区间里，把这些点构成的集合当作柱底。
+[19] 但这么一来，柱的底通常就不是简单的区间了。
+[20] 因此我们需要讨论除了区间以外，哪些区间可以定义 “长度”，以及该如何定义。
+[21] 看起来，我们是牺牲底边长的简洁性换取了高度的简洁性，似乎不赚不亏，
+[22] 但实际上这样将 “不一定有极限” 的问题转化为 “不一定能定义底边长” 的问题了，后者更容易解决，或者说 Lebesgue 积分能处理的范围比 Riemann 积分更广。
+
+[/SCOPE:s_example1]
+[23] 我们从 “将可测集划分为两两不交的可测子集” 入手，先研究这种分划的性质。
+
+[SCOPE:s_def1|description|可测分划]
+[24] 定义 1 可测分划
+[SCOPE:s_def1_let|let_bind|可测分划变量]
+[25] 设 $E\in\mathbb{R}^n$ 是可测集。
+[26] 如果有限族$\{E_1, E_2, \cdots, E_n\}$ 中各 $E_i$ 两两不交、都是 $E$ 的子集、可测，且 $E=\bigcup^n_{i=1}E_i$，
+[/SCOPE:s_def1_let]
+[27] 那么称集族 $\{E_i\}_{i=1}^n$ 为可测集 $E$ 的一个分划，或者可测分划。
+[28] 如果 $A=\{E_i\}_{i=1}^n$ 和 $B=\{F_i\}_{i=1}^m$ 都是 $E$ 的分划，
+[29] 那么易证 $C=\{E_i\cap F_j|E_i\in A, F_j\in B\}$ 也是 $E$ 的分划。
+[30] 称 $C$ 是分划 $A$ 和 $B$ 的合并。
+[31] 容易看到，$C$ 中存在每一个 $E_i$ 的分划 $\{E_i\cap F_j\}_{j=1}^m$，类似地也存在每一个 $F_j$ 的分划，像是更细一层地进行分划。
+[32a] 因此
+[32b] 如果分划 $C$ 是 $A$ 和另一个分划的合并，我们，则称 $C$ 是比 $A$ 更细的分划，反过来 $A$ 比 $C$ 更粗。
+
+[/SCOPE:s_def1]
+[SCOPE:s_def2|description|上和与下和]
+[33] 定义 2 上和与下和
+[SCOPE:s_def2_let|let_bind|上和下和变量]
+[34] 设 $f$ 是 $E$ 上的非负可测函数，$D=\{E_i\}_{i=1}^n$ 是 $E$ 的一个可测分划。
+[35a] (x)$，$A_i=\sup_{x\in E_i}f
+[35b] (x)$，
+[/SCOPE:s_def2_let]
+[36] 则称
+[37] \begin{equation}
+s_D=\sum_{i=1}^n a_i \operatorname {m}E_i~
+\end{equation}
+[38] \begin{equation}
+S_D=\sum_{i=1}^n A_i \operatorname {m}E_i~
+\end{equation}
+[39] 如果 $A\subseteq B\subseteq E$，
+[40] 那么显然 $f$ 在 $A$ 上的上确界要小于等于在 $B$ 上的上确界，在 $A$ 上的下确界要大于等于在 $B$ 上的下确界，
+[41] 因此容易得出以下引理：
+
+[/SCOPE:s_def2]
+[SCOPE:s_lemma1|description|引理 1]
+[42] 引理 1
+[SCOPE:s_lemma1_let|let_bind|引理 1 变量]
+[43] 设 $f$ 是可测集 $E$ 上的可测函数，$A$ 和 $B$ 是 $E$ 的可测分划，且 $A$ 比 $B$ 更细。
+[/SCOPE:s_lemma1_let]
+[44] 那么
+[45] \begin{equation}
+s_B\leq s_A\leq S_A\leq S_B~.
+\end{equation}
+[46] 由此可得一个有用的推论：
+
+[/SCOPE:s_lemma1]
+[SCOPE:s_cor1|description|推论 1]
+[47] 推论 1
+[SCOPE:s_cor1_let|let_bind|推论 1 变量]
+[48] 设 $f$ 是可测集 $E$ 上的可测函数，$D_1$ 和 $D_2$ 是 $E$ 的可测分划。
+[/SCOPE:s_cor1_let]
+[49] 那么
+[50] \begin{equation}
+s_{D_i}\leq S_{D_j}~
+\end{equation}
+[51] 就是说，不管怎么求分划，任意两个分划之间，上和一定大于等于下和，不会出现一个分划的下和大于另一个分划的上和这种情况。
+
+[/SCOPE:s_cor1]
+[52] 有了分划和上下和的概念，我们描述起积分就方便多了。
+
+[SCOPE:s_def3|description|定义 3]
+[53] 定义 3
+[SCOPE:s_def3_let|let_bind|定义 3 变量]
+[54] 设 $f$ 是可测集 $E$ 上的可测函数，$\Lambda$ 是 $E$ 的一切可能的分划之集合。
+[/SCOPE:s_def3_let]
+[55] 那么称
+[56] \begin{equation}
+\overline{\int_E} f(x) \,\mathrm{d}{x} =\inf_{D\in \lambda} \{S_D\}~
+\end{equation}
+[57] \begin{equation}
+\underline{\int_E} f(x) \,\mathrm{d}{x} =\sup_{D\in \lambda} \{s_D\}~
+\end{equation}
+[58] 简而言之，上积分就是上和的下确界，下积分就是下和的上确界。
+[59] 显然，简单函数的上积分和下积分总是相等，也就是可测函数的结构中式 1 所定义的简单函数的 Lebesgue 积分。
+[60] 函数的上下积分有以下重要的性质：
+
+[/SCOPE:s_def3]
+[SCOPE:s_thm1|description|定理 1]
+[61] 定理 1
+[SCOPE:s_thm1_let|let_bind|定理 1 变量]
+[62] 设 $f$、$g$ 是可测集 $E$ 上的可测函数，$\{E_1, E_2\}$ 是 $E$ 的某个分划。
+[/SCOPE:s_thm1_let]
+[63] 若 $f\leq g$ 几乎处处成立，
+[64] 则有
+[65] \begin{equation}
+\underline{\int_E} f(x) \,\mathrm{d}{x} \leq \underline{\int_E} g(x) \,\mathrm{d}{x} \leq \overline{\int_E} f(x) \,\mathrm{d}{x} \leq \overline{\int_E} g(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[66] 若 $\{E_1, E_2\}$ 是 $E$ 的某个分划，
+[67] 则
+[68] \begin{equation}
+\underline{\int_E} f(x) \,\mathrm{d}{x} =\underline{\int_{E_1}} f(x) \,\mathrm{d}{x} +\underline{\int_{E_2}} f(x) \,\mathrm{d}{x} ~,
+\end{equation}
+[69] 且
+[70] \begin{equation}
+\overline{\int_E} f(x) \,\mathrm{d}{x} =\overline{\int_{E_1}} f(x) \,\mathrm{d}{x} +\overline{\int_{E_2}} f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[71] 恒有
+[72] \begin{equation}
+\underline{\int_E} \left(f(x)+g(x) \right) \,\mathrm{d}{x} \geq \underline{\int_E} f(x) \,\mathrm{d}{x} +\underline{\int_E} g(x) \,\mathrm{d}{x} ~
+\end{equation}
+[73] 和
+[74] \begin{equation}
+\overline{\int_E} \left(f(x)+g(x) \right) \,\mathrm{d}{x} \leq \overline{\int_E} f(x) \,\mathrm{d}{x} +\overline{\int_E} g(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[SCOPE:s_thm1_proof|description|定理 1 证明]
+[75] 证明：
+[76] 1。
+[77] 太过显然，在此从略1。
+[SCOPE:s_thm1_proof_let1|let_bind|证明中的集合 A, A']
+[78] 2. 为方便，记 $A$ 为对 $E$ 进行任意分划后求上和的结果的集合；
+[79] $A'$ 为先将 $E$ 作分划 $\{E_1, E_2\}$ 后，再分别对这两个 $E_i$ 作分划后求上和，将两个上和相加后，所得值的集合。
+[/SCOPE:s_thm1_proof_let1]
+[80] 这样，按定义，式 10 的左边就是 $A$ 的下确界，右边就是 $A'$ 的下确界。
+[81] 式 10 左边是对 $E$ 作分划，右边则是先将 $E$ 作分划 $\{E_1, E_2\}$ 后，再分别对这两个 $E_i$ 作分划，
+[82] 因此可知 $A'\subseteq A$，
+[83] 故必有2
+[84] \begin{equation}
+\underline{\int_E} f(x) \,\mathrm{d}{x} \leq \underline{\int_{E_1}} f(x) \,\mathrm{d}{x} +\underline{\int_{E_2}} f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[85] 另一方面，由引理 1 ，可知任取 $A$ 中一个数字 $a$，都必有 $A'$ 中的数字 $a'$，使得 $a'\leq a$。
+[86] 因此又有
+[87] \begin{equation}
+\underline{\int_E} f(x) \,\mathrm{d}{x} \geq \underline{\int_{E_1}} f(x) \,\mathrm{d}{x} +\underline{\int_{E_2}} f(x) \,\mathrm{d}{x} ~,
+\end{equation}
+[88] 综合式 13 和式 14 即得式 10 。
+[89] 由上下和与上下积分定义的对偶性，可直接推得式 9 。
+[90] 由此得证。
+[91] 3. 只需证明式 11 即可，之后可由对偶性直接推知式 12 .
+[92] 考虑任意可测集 $E_i\subseteq E$ 上的 $f$ 和 $g$，
+[93] 则由加法和下确界的定义直接可得 “$f$ 的下确界加 $g$ 的下确界小于等于$f+g$ 的下确界”。
+[SCOPE:s_thm1_proof_let2|let_bind|证明中的分划 D1, D2]
+[94] 于是，对于 $E$ 的任意分划 $D$，总存在两个分划 $D_1$ 和 $D_2$3，使得 “$f$ 对于 $D_1$ 计算出来的下和加上 $g$ 对于 $D_2$ 计算出来的下和”，大于等于“$f+g$ 对于 $D$ 计算出来的下和”。
+[/SCOPE:s_thm1_proof_let2]
+[95] 因此，前者的上确界大于等于后者的下确界，也即式 11 .
+[96] 证毕。
+
+[/SCOPE:s_thm1]
+[/SCOPE:s_thm1_proof]
+[97] 定理 1 所描述的性质是非常符合直觉的。
+[98] 类比 Riemann 积分的定义过程，我们也希望上下积分相等，
+[99] 从而成为新的积分定义。
+[100] 事实上，可测函数就具有这样优良的性质。
+
+[SCOPE:s_thm2|description|定理 2]
+[101] 定理 2
+[SCOPE:s_thm2_let|let_bind|定理 2 变量]
+[102] 设 $E\subseteq \mathbb{R}^n$ 是测度有限的可测集，$f$ 是其上非负有界函数，
+[/SCOPE:s_thm2_let]
+[103] 那么
+[104] \begin{equation}
+\overline{\int_E} f(x) \,\mathrm{d}{x} = \underline{\int_E} f(x) \,\mathrm{d}{x} ~
+\end{equation}
+[105] 充要条件
+[106] 可测函数
+[SCOPE:s_thm2_proof|description|定理 2 证明]
+[107] 证明：
+[108] 充分性：
+[109] 设 $f$ 是非负有界的可测函数。
+[110] 由推论 1 ，必有
+[111] \begin{equation}
+\overline{\int_E} f(x) \,\mathrm{d}{x} \geq \underline{\int_E} f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[112] 因此，接下来只需要证明：对于任意 $\epsilon>0$，总存在一个分划 $D$，使得 $s_D\geq S_D-\epsilon$。
+[SCOPE:s_thm2_proof_let1|let_bind|证明中的 c, s, k, i]
+[113] 设 $ \operatorname {m}E=c$，由题设知 $c<+\infty$。
+[114] 又因为 $f$ 非负有界，不妨设 $f(x)\in [0, s)$。
+[115] 将 $[0, s)$ 拆分为一系列区间 $A_{k, i}=[\frac{i}{k}s, \frac{i+1}{k}s)$ 的不交并，其中 $k$ 是任意给定的正整数，$i$ 是取值范围为 $[0, k)$ 的整数。
+[/SCOPE:s_thm2_proof_let1]
+[SCOPE:s_thm2_proof_let2|let_bind|证明中的 E_{k,i}]
+[116] 利用区间 $A_{k, i}$ 来对 $E$ 进行分划：$E_{k, i}=\{x\in E|f(x)\in A_{k, i}\}$。
+[/SCOPE:s_thm2_proof_let2]
+[117] 显然，固定 $k$ 时，各 $E_{k, i}$ 构成 $E$ 的一组分划。
+[118] 对于任意固定的 $k$，在每个 $E_{k, i}$ 上，$f$ 的上确界和下确界之差小于等于$s/k$，而各 $E_{k, i}$ 的外测度之和为 $c$。
+[119] 因此，该固定的 $k$ 按上述方式决定的分划下，$f$ 在 $E$ 上的上和与下和之差小于等于$sc/k$。
+[120] 因此，只需要取 $k>sc/\epsilon$，所得分划就是所要的 $D$。
+[121] 必要性：
+[122] 设 $f$非负有界，且式 15 式成立。
+[123] 【未完成】笔者不明白这里为什么需要必要性。
+[124] 按理说只有可测函数才能定义上和与下和、进而有上下极限的概念啊？
+[125] 没有可测条件谈什么式 15 的存在性？
+[126] 更不用说成立了。
+[127] 证毕。
+[/SCOPE:s_thm2_proof]
+[128] 定理 2 告诉我们，对于测度有限的 $E$ 上的非负可测函数 $f$，其上下积分是相等的，
+[129] 于是我们就可以把它们统一称为 “积分”，记为
+[130] \begin{equation}
+\int_E f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[131] 进一步，由
+[132] 式 11 [链接 L0]
+[133] 式 12 [链接 L1]
+[134] 可知，对于可测函数 $f$，有
+[135] \begin{equation}
+\int_E [f(x)+g(x)] \,\mathrm{d}{x} =\int_E f(x) \,\mathrm{d}{x} +\int_E g(x) \,\mathrm{d}{x} ~.
+\end{equation}
+
+[/SCOPE:s_thm2]
+[136] 定理 2 讨论的是 “有界” 的可测函数，颇有限制。
+[137] 任意的非负函数有没有类似的性质呢？
+[138] 我们没法套用定理 2 的证明方式，因为失去了有界性就无法用同样的方法对 $E$ 进行有限划分了。
+[139] 不过，回想一下定理 1 是怎么证明的，你会发现我们可以用同样的思路来从有界推广到无界。
+[140] 设 $f$ 是测度有限的可测集 $E$ 上的非负可测函数。
+[141a] (x)=\min \{k, f
+[141b] (x)\}$。
+[142] 直观来说，$f_k$ 就像是用一根长棍子去 “压”$f$，把 $k$ 以上的部分全都压平到 $k$ 的高度。
+[143] 这样，每个 $f_k$ 都是非负有界的可测函数，它们都是有积分的了。
+[144] 于是，我们可以定义 $f$ 的积分为：
+[145] \begin{equation}
+\int_E f(x) \,\mathrm{d}{x} = \lim\limits_{k\to\infty} \int_E f_k(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[146] 上述非负可测函数的积分具有积分应有的性质，我们写为以下习题：
+
+[SCOPE:s_exer1|description|习题 1]
+[147] 习题 1
+[SCOPE:s_exer1_let|let_bind|习题 1 变量]
+[148] 设 $f$、$g$ 都是测度有限的可测集 $E$ 上的非负可测函数，$\{E_1, E_2\}$ 是 $E$ 的一个分划。
+[/SCOPE:s_exer1_let]
+[149] 证明以下性质：
+[150a] (x)\leq g
+[150b] (x)$ 时，有
+[151] \begin{equation}
+\int_E f(x) \,\mathrm{d}{x} \leq \int_E g(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[152] \begin{equation}
+\int_E f(x) \,\mathrm{d}{x} =\int_{E_1} f(x) \,\mathrm{d}{x} +\int_{E_2} f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[153] \begin{equation}
+\int_E [f(x)+g(x)] \,\mathrm{d}{x} = \int_E f(x) \,\mathrm{d}{x} +\int_E g(x) \,\mathrm{d}{x} ~.
+\end{equation}
+
+[/SCOPE:s_exer1]
+[154] 到此为止，我们已经讨论清楚了测度有限可测集 $E$ 上任意非负可测函数的积分了。
+[155] 接下来讨论的是 $ \operatorname {m}E=+\infty$、或者说任意可测集 $E$ 的情况。
+
+[SCOPE:s_def4|description|定义 4]
+[156] 定义 4 任意可测集上任意非负可测函数的积分
+[SCOPE:s_def4_let|let_bind|定义 4 变量]
+[157] 设 $f$ 是可测集 $E$ 上的非负可测函数。
+[158] 对于任意正整数 $k$，定义 $E_k=E\cap [-k, k]$。
+[/SCOPE:s_def4_let]
+[159] 那么 $f$ 在各 $E_k$ 上都有上述定义的积分。
+[160] 于是可以定义 $f$ 在 $E$ 上的积分为
+[161] \begin{equation}
+\int_E f(x) \,\mathrm{d}{x} = \lim\limits_{k\to\infty}\int_{E_k} f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[162] 利用极限的知识，结合习题 1 ，我们很容易得到以下推论：
+
+[/SCOPE:s_def4]
+[SCOPE:s_cor2|description|推论 2]
+[163] 推论 2
+[SCOPE:s_cor2_let|let_bind|推论 2 变量]
+[164] 设 $f$、$g$ 都是可测集 $E$ 上的非负可测函数，$\{E_1, E_2\}$ 是 $E$ 的一个分划。
+[/SCOPE:s_cor2_let]
+[165] 证明以下性质：
+[166a] (x)\leq g
+[166b] (x)$ 时，有
+[167] \begin{equation}
+\int_E f(x) \,\mathrm{d}{x} \leq \int_E g(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[168] \begin{equation}
+\int_E f(x) \,\mathrm{d}{x} =\int_{E_1} f(x) \,\mathrm{d}{x} +\int_{E_2} f(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[169] \begin{equation}
+\int_E [f(x)+g(x)] \,\mathrm{d}{x} = \int_E f(x) \,\mathrm{d}{x} +\int_E g(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[170] 另外，由于 Lebesgue 积分是基于测度定义的，而 “零测” 在测度论意义下相当于不存在，
+[171] 因此也容易得到以下定理：
+
+[/SCOPE:s_cor2]
+[SCOPE:s_thm3|description|定理 3]
+[172] 定理 3
+[SCOPE:s_thm3_let|let_bind|定理 3 变量]
+[173] 如果 $f$ 和 $g$ 都是可测集 $E$ 上的非负可测函数，且彼此几乎处处相等，
+[/SCOPE:s_thm3_let]
+[174] 那么
+[175] \begin{equation}
+\int_E f(x) \,\mathrm{d}{x} = \int_E g(x) \,\mathrm{d}{x} ~.
+\end{equation}
+
+[/SCOPE:s_thm3]
+[176] 本节讨论的全部都是非负函数的情况，
+[177] 但结论很容易推广到任意函数上。
+
+[SCOPE:s_def5|description|正部与负部]
+[178] 定义 5 正部与负部
+[SCOPE:s_def5_let|let_bind|正部负部变量]
+[179] 考虑可测集 $E\subseteq\mathbb{R}^n$ 上的可测函数 $f$，定义如下两个新函数：
+[/SCOPE:s_def5_let]
+[180] \begin{equation}
+f^+(x) = \max\{f(x), 0\}~,
+\end{equation}
+[181] \begin{equation}
+f^-(x) = -\max\{f(x), 0\}~.
+\end{equation}
+[182] 注意定义中式 29 右边的负号。
+[183] 可测函数的正部与负部都是非负可测函数，这有些像复数的实部与虚部都是实数一样的逻辑。
+[184] 因此，我们之前讨论的 “非负可测函数的积分” 可以完全适用于任意可测函数的正部与负部。
+[185] 再考虑到任意可测集上恒等于 $0$ 的简单函数的积分都是 $0$，我们就可以得到任意可测函数的 Lebesgue 积分了：
+
+[/SCOPE:s_def5]
+[SCOPE:s_def6|description|Lebesgue 积分]
+[186] 定义 6 Lebesgue 积分
+[SCOPE:s_def6_let|let_bind|Lebesgue 积分变量]
+[187] 设 $f$ 是可测集 $E\subseteq\mathbb{R}^n$ 上的可测函数，$f^+$ 和 $f^-$ 分别是其正部与负部。
+[/SCOPE:s_def6_let]
+[188a] (x) \,\mathrm{d}{x} $ 和 $\int_E f^-
+[188b] (x) \,\mathrm{d}{x} $ 中至少有一个是有限的，
+[189] 则可定义其 Lebesgue 积分为：
+[190] \begin{equation}
+\int_E f(x) \,\mathrm{d}{x} = \int_E f^+(x) \,\mathrm{d}{x} - \int_E f^-(x) \,\mathrm{d}{x} ~.
+\end{equation}
+
+[/SCOPE:s_def6]
+[191] 回忆定义 4 所述，$G(E; f)$ 是函数 $f$ 在可测集 $E$ 上的下方图形。
+[192] 在简明的微积分课程中，常把（Riemann）积分解释为 “求函数图像下方图形的面积”。
+[193] 实际上，这一点也适用于我们现在讨论的 Lebesgue 积分。
+
+[SCOPE:s_exer2|description|习题 2]
+[194] 习题 2
+[195] 证明以下命题：
+[SCOPE:s_exer2_let|let_bind|习题 2 变量]
+[196] 由定理 1 ，可测集 $E$ 上的任意非负可测函数 $f$ 都可以表示为一列非负简单函数 $f_k$ 的极限，
+[/SCOPE:s_exer2_let]
+[197] 则必有
+[198] \begin{equation}
+\int_E f(x) \,\mathrm{d}{x} = \lim\limits_{k\to\infty} \int_{E} f_x(x) \,\mathrm{d}{x} ~.
+\end{equation}
+[199] 同上，设可测集 $E$ 上的非负可测函数 $f$ 表示为一列非负简单函数 $f_k$ 的极限，
+[200] 则必有
+[201] \begin{equation}
+\operatorname {m}G(E; f)=\lim\limits_{k\to \infty} \operatorname {m}G(E; f_k)~.
+\end{equation}
+[202] 若 $g$ 是 $E$ 上的简单函数，
+[203] 则
+[204] \begin{equation}
+\int_E g(x) \,\mathrm{d}{x} = G(E; g)~.
+\end{equation}
+[205] 如果前两条的证明有困难，可以从 $f_k$ 处处关于 $k$ 单调不减的情况入手，也可以干脆弱化命题，只证明 $f_k$ 处处关于 $k$ 单调不减的情况。
+[206] 弱化的命题不影响接下来的讨论。
+[207] 有了习题 2 的结论，我们就可以得到一个非常符合直觉的定理：
+
+[/SCOPE:s_exer2]
+[SCOPE:s_thm4|description|定理 4]
+[208] 定理 4
+[SCOPE:s_thm4_let|let_bind|定理 4 变量]
+[209] 设 $f$ 是可测集 $E$ 上的非负可测函数，
+[/SCOPE:s_thm4_let]
+[210] 则
+[211] \begin{equation}
+\int_E f(x) \,\mathrm{d}{x} = G(E; f)~.
+\end{equation}
+[212] 定理 4 有力地说明 Lebesgue 积分定义的合理性，并且可以用于推论出，当函数 Riemann 可积时，其 Riemann 积分和 Lebesgue 积分相等。
+[213] 由此可知，Lebesgue 积分是 Riemann 积分的推广。
+[/SCOPE:s_thm4]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_cor1",
+    "target_scope": "s_lemma1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论 1 是引理 1 的直接推论"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_def3",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理 2 基于定义 3 的上下积分"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_cor1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理 2 证明中用到推论 1"
+  },
+  {
+    "source_scope": "s_thm2",
+    "target_scope": "s_thm1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理 2 证明中用到定理 1"
+  },
+  {
+    "source_scope": "s_exer1",
+    "target_scope": "s_thm2",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题 1 是定理 2 的推广"
+  },
+  {
+    "source_scope": "s_def4",
+    "target_scope": "s_exer1",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定义 4 基于习题 1 的结论"
+  },
+  {
+    "source_scope": "s_cor2",
+    "target_scope": "s_exer1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "推论 2 是习题 1 的推广"
+  },
+  {
+    "source_scope": "s_thm3",
+    "target_scope": "s_def4",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理 3 基于定义 4 的积分"
+  },
+  {
+    "source_scope": "s_def6",
+    "target_scope": "s_def5",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定义 6 基于定义 5 的正部负部"
+  },
+  {
+    "source_scope": "s_thm4",
+    "target_scope": "s_exer2",
+    "edge_type": "implies",
+    "category": "logic",
+    "note": "定理 4 基于习题 2 的结论"
+  }
+]

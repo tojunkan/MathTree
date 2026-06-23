@@ -1,0 +1,246 @@
+[SCOPE:root|description|范畴论]
+文章名: Cat
+标题: 范畴论
+
+环境标记 (hints):
+  [0] type=definition heading=定义 1 title=范畴
+  [1] type=exercise heading=习题 1 title=
+  [2] type=definition heading=定义 2 title=范畴论同构
+  [3] type=definition heading=定义 3 title=群胚
+  [4] type=definition heading=定义 4 title=函子
+  [5] type=definition heading=定义 5 title=$ \operatorname {Hom}$ 函子
+  [6] type=definition heading=定义 6 title=$ \operatorname {Hom}$ 函子范畴
+  [7] type=exercise heading=习题 2 title=
+  [8] type=theorem heading=定理 1 title=Yoneda 引理
+  [9] type=exercise heading=习题 3 title=
+  [10] type=exercise heading=习题 4 title=
+
+[0] 本文缺少预备知识，初学者可能会遇到困难。
+[1] 本文需要更多参考文献。
+[2] 本文需要更多讲解，便于帮助理解。
+
+[3] 概括地说，范畴是由对象（Object）及其间的态射（Morphism）组成的数学结构。
+
+[SCOPE:s_def1|description|定义 1 范畴]
+[4] 定义 1 范畴
+[SCOPE:s_def1_let1|let_bind|范畴的结构]
+[5] 范畴 $\mathcal{C}$ 包含以下结构。
+[6] 集合 $\operatorname{Ob}(\mathcal{C})$，其元素称作 $\mathcal{C}$ 的对象；
+[7] 集合 $\operatorname{Mor}_{\mathcal{C}}$，其元素称作 $\mathcal{C}$ 的态射，配上一对映射 $\operatorname{Mor}(\mathcal{C})\rightrightarrows_{a}$；
+[SCOPE:s_def1_let2|let_bind|复合映射的变量]
+[8] 对于每三个元素 $x,y,z\in\operatorname{Ob}(\mathcal{C})$，存在态射复合映射 ${\circ}:\operatorname{Mor}_\mathcal{C}(Y,Z)\times\operatorname{Mor}_{\mathcal{C}}(X,Y)\to\operatorname{Mor}_\mathcal{C}(X,Z)$。
+[/SCOPE:s_def1_let1]
+[9] 这些结构满足以下规则。
+[/SCOPE:s_def1_let2]
+[SCOPE:s_def1_let3|let_bind|单位态射的变量]
+[10] 对于每个元素 $X\in\operatorname{Ob}(\mathcal{C})$，存在单位态射 $\operatorname{id}_X\in\operatorname{Mor}_\mathcal{C}(X,X)$，使得 $\operatorname{id}_X\circ\phi=\phi$ 和 $\psi\circ\operatorname{id}_X=\psi$ 成立，其中 $\phi\in\operatorname{Mor}_\mathcal{C}(Y,X)$ 对于任意 $Y\in\operatorname{Ob}(\mathcal{C})$，$\psi\in\operatorname{Mor}_\mathcal{C}(X,Z)$ 对于任意 $Z\in\operatorname{Ob}(\mathcal{C})$；
+[11] 复合具有结合性，
+[12] 即对于 $\phi\in\operatorname{Mor}_\mathcal{C}(Y,Z),\psi\in\operatorname{Mor}_\mathcal{C}(X,Y),\chi\in\operatorname{Mor}_\mathcal{C}(W,X)$，有 $(\phi\circ\psi)\circ\chi=\phi\circ(\psi\circ\chi)$；
+[/SCOPE:s_def1_let3]
+[13] 任意态射集合 $ \operatorname {Mor}_\mathcal{C}(X,Y)$ 和 $ \operatorname {Mor}_\mathcal{C}(X',Y')$ 不交，
+[14] 除非 $X=X',Y=Y'$，此时它们相等。
+[15] 由于以下练习，我们讨论单位态射的时候可以省去选择，只讨论唯一的单位映射。
+
+[/SCOPE:s_def1]
+[SCOPE:s_ex1|description|习题 1]
+[16] 习题 1
+[17] 证明同个元素的任意两个单位态射是相等的。
+[18] 有时我们也会使用 $\operatorname{dom}$（域）和 $\operatorname{cod}$（陪域）来讨论态射。
+[19] 值得注意的是，我们一般情况下要求元素为一个集合而不是一个类，仅在如下范畴中我们放宽要求允许元素为一个真类：
+[20] 集合范畴 $(\mathbf{Set})$，态射为映射；
+[21] 交换群范畴 $(\mathbf{Ab})$，态射为交换群同态；
+[22] 群范畴 $(\mathbf{Grp})$，态射为群同态；
+[23] 左 $G$-群作用范畴 $(\mathbf{G{-}Set})$，态射为 $G$-映射；
+[24] 对于含幺交换环 $R$，模范畴 $(\mathbf{R{-}Mod})$，态射为模同态；
+[25] 对于域 $F$，向量空间范畴 $(\mathbf{F{-}Vect})$，态射为线性映射；
+[26] 拓扑空间范畴 $(\mathbf{Top})$，态射为连续映射；
+[27] 含幺交换环范畴 $(\mathbf{Ring})$，态射为环同态。
+[28] 我们称 $ \operatorname {Ob}$ 为一集合的范畴集合范畴，称其为真类范畴若其 $ \operatorname {Ob}$ 不构成集合。
+[29] 另外，若一真类范畴的每个态射类都构成集合，我们称它是一个局部集合范畴。
+[30] 为简化我们所使用的符号，若所讨论的范畴在上下文中没有歧义，可使用符号 $ \operatorname {Ob}$ 和 $ \operatorname {Mor}(X,Y)$；
+[31] 另对于态射 $\phi\in \operatorname {Mor}(X,Y)$，我们通常使用映射符号将其写为 $\phi:X\to Y$。
+
+[/SCOPE:s_ex1]
+[SCOPE:s_def2|description|定义 2 范畴论同构]
+[32] 定义 2 范畴论同构
+[SCOPE:s_def2_let1|let_bind|同构的变量]
+[33] 对于一个态射 $\phi:X\to Y$，若存在另一个态射 $\psi:Y\to X$ 使得 $\phi\circ\psi= \operatorname {id}_Y$ 和 $\psi\circ\phi= \operatorname {id}_X$ 成立，
+[34] 则我们说它是一个范畴论同构。
+[35] 此时 $\phi$ 也被称为一个可逆态射，而 $\phi^{-1}=\psi$ 则被称为它的逆。
+[/SCOPE:s_def2_let1]
+[36] 若一态射的域和陪域相同，
+[37] 则它可被称为一个自态射，元素 $X\in \operatorname {Ob}$ 的所有自态射形成一个幺半群，被称为 $ \operatorname {Endo}_\mathcal{C}(X)$；
+[38] 若它还是一个同态，
+[39] 则被称为自同态，所有元素 $X$ 的自同态形成一个群，被称为 $ \operatorname {Auto}_\mathcal{C}(X)$。
+
+[/SCOPE:s_def2]
+[SCOPE:s_def3|description|定义 3 群胚]
+[40] 定义 3 群胚
+[SCOPE:s_def3_let1|let_bind|群胚的变量]
+[41] 若范畴 $\mathcal{C}$ 的所有态射都是范畴论同构，
+[42] 则称范畴 $\mathcal{C}$ 为一群胚。
+[/SCOPE:s_def3_let1]
+[43] 群胚是群的一般化结构。
+[SCOPE:s_def3_let2|let_bind|群生成群胚的变量]
+[44] 一个群 $G$ 可以生成一个群胚，使得其结构被保留：这个群胚由一个元素 $X$ 构成，其仅有的态射为 $ \operatorname {Mor}(X,X)=G$，态射复合被定义为 $a\circ b=ab$，请自行验证如此定义的范畴为一个群胚。
+[/SCOPE:s_def3_let2]
+[45] 集合 $A$ 也可生成群胚，定义
+[46] \begin{equation}
+\operatorname {Ob}=A\quad \operatorname {Mor}(X,Y)=\begin{cases}\emptyset&X\neq Y\\\{ \operatorname {id}\}&X=Y\end{cases}~,
+\end{equation}
+[47] 请自行验证它是一个群胚。
+
+[/SCOPE:s_def3]
+[SCOPE:s_def4|description|定义 4 函子]
+[48] 定义 4 函子
+[SCOPE:s_def4_let1|let_bind|函子的结构]
+[49] 范畴 $\mathcal{A},\mathcal{B}$ 间的协变函子 $F:\mathcal{A}\to\mathcal{B}$ 包含以下结构。
+[50] 若 $\mathcal{A}$ 和 $\mathcal{B}$ 均为集合范畴，
+[51] 则函子包含一个映射 $F_{ \operatorname {Ob}}^{\text{Set}}: \operatorname {Ob}(\mathcal{A})\to \operatorname {Ob}(\mathcal{B})$，否则函子包含一个从 $ \operatorname {Ob}(\mathcal{A})$ 到 $ \operatorname {Ob}(\mathcal{B})$ 的关联 $F_{ \operatorname {Ob}}^{\text{PrCl}}$；
+[52] 函子包含一个映射 $F_{ \operatorname {Mor}}: \operatorname {Mor}_\mathcal{C}(X,Y)\to \operatorname {Mor}_\mathcal{B}(F_{ \operatorname {Ob}}^{\text{Set/PrCl}}(X),F_{ \operatorname {Ob}}^{\text{Set/PrCl}}(Y))$，对于每个 $x,y\in \operatorname {Ob}(A)$。
+[/SCOPE:s_def4_let1]
+[53] 函子满足如下公理。
+[SCOPE:s_def4_let2|let_bind|函子公理的变量]
+[54] 对于任意元素 $X\in \operatorname {Ob}(A)$，$F( \operatorname {id}_X)= \operatorname {id}_{F(x)}$；
+[55] 对于任意可复合的元素对 $(\phi,\psi)$，$F(\phi\circ_\mathcal{A}\psi)=F(\phi)\circ_\mathcal{B}F(\psi)$。
+[/SCOPE:s_def4_let2]
+[56] 我们仅考虑域和陪域为上方列出的真类范畴的具有 $F_{ \operatorname {Ob}}^{\text{PrCl}}$ 的函子。
+[57] 我们考虑的大部分范畴和函子都是数学对象（可用 ZFC 公理化集合论描述的对象）。
+[58] 注意若函子对象关系的类型（映射或关联）明确，我们可以将其省略。
+[59] 另外我们也会在语义明确时省略下标 $ \operatorname {Ob}$ 和 $ \operatorname {Mor}$。
+[60] 任何范畴 $\mathcal{A}$ 都有一个显然的单位函子 $ \operatorname {id}_\mathcal{A}$，同时对于两个函子 $F:\mathcal{A}\to\mathcal{B}$ 和 $G:\mathcal{B}\to\mathcal{C}$，我们可以定义它们的复合。
+[61] TODO opposite category and contravariant functor
+[62] TODO natural transformation
+
+[/SCOPE:s_def4]
+[SCOPE:s_def5|description|定义 5 Hom 函子]
+[63] 定义 5 $ \operatorname {Hom}$ 函子
+[SCOPE:s_def5_let1|let_bind|协变 Hom 函子的变量]
+[64] 若 $\mathcal{C}$ 是一个局部集合范畴，对于每个 $A\in\mathcal{C}$，记 $A$-协变 $ \operatorname {Hom}$ 函子为 $h^A= \operatorname {Hom}(A,-):\mathcal{C}\to\mathbf{Set}$，其定义如下：
+[65] 若 $X\in \operatorname {Ob}(\mathcal{C})$，
+[66] 则 $h^A(X)= \operatorname {Mor}_\mathcal{C}(A,X)\in \operatorname {Ob}(\mathbf{Set})$；
+[67] 若 $f\in \operatorname {Mor}_\mathcal{C}(X,Y)$，
+[68] 则对于 $g:A\to X$，有 $h^A(f)=g\mapsto f\circ g:A\to Y\in h^A(Y)$。
+[/SCOPE:s_def5_let1]
+[SCOPE:s_def5_let2|let_bind|逆变 Hom 函子的变量]
+[69] 记 $B$-逆变 $ \operatorname {Hom}$ 函子为 $h_B= \operatorname {Hom}(-,B):\mathcal{C}\to\mathbf{Set}$，其定义如下：
+[70] 若 $X\in \operatorname {Ob}(\mathcal{C})$，
+[71] 则 $h_A(X)= \operatorname {Mor}_\mathcal{C}(X,B)\in \operatorname {Ob}(\mathbf{Set})$；
+[72] 若 $f\in \operatorname {Mor}_\mathcal{C}(X,Y)$，
+[73] 则对于 $g:X\to B$，有 $h_A(f)=g\mapsto g\circ f:Y\to B\in h_A(Y)$。
+[/SCOPE:s_def5_let2]
+[74] 若我们使用现代代数几何的语言，如上定义的逆变 $ \operatorname {Hom}$ 函子还可被称为一个预层。
+
+[/SCOPE:s_def5]
+[SCOPE:s_def6|description|定义 6 Hom 函子范畴]
+[75] 定义 6 $ \operatorname {Hom}$ 函子范畴
+[SCOPE:s_def6_let1|let_bind|自然变换的变量]
+[76] 我们使用 $\mathbf{Set}^\mathcal{C}$ 来记协变 $ \operatorname {Hom}$ 函子所构成的范畴，对于每个 $\mathcal{C}$ 中的态射 $\phi:A'\to A$，我们可以获得一个自然变换 $h_{\text{co}}(\phi):(h^A:\mathcal{C}\to\mathbf{Set})\Rightarrow(h^{A'}:\mathcal{C}\to\mathbf{Set})$。
+[77] 我们可以简单地看出，下图是交换的对于任意 $\psi\in \operatorname {Mor}_\mathcal{C}(X,Y)$，
+[78] 于是 $h_\text{co}(\phi)$ 的确是一自然变换。
+[/SCOPE:s_def6_let1]
+[79] 图 1：$h_{\text{co}}(\phi)$ 的自然性
+[80] 类似地，我们可以定义逆变 $ \operatorname {Hom}$ 函子所构成的范畴 $\mathbf{Set}^{\mathcal{C}^\text{op}}$，唯一不同的一点是我们需要给出一个相反的映射 $\phi:B\to B'$ 来使得下图交换。
+[81] 注意下图中 $h_B(-)$ 是一逆变函子，
+[82] 所以关于图交换的结论是对于 $\psi:Y\to X$ 而言的。
+[83] 图 2：$h_{\text{ct}}(\phi)$ 的自然性
+[84] 如上定义的 $\mathbf{Set}^{\mathcal{C}^\text{op}}$ 在代数几何中也被记为 $\mathbf{PSh}(\mathcal{C})$。
+
+[/SCOPE:s_def6]
+[SCOPE:s_ex2|description|习题 2]
+[85] 习题 2
+[86] 请验证 $h^{-}:\mathcal{C}\to\mathbf{Set}^\mathcal{C}$ 和 $h_{-}:\mathcal{C}\to\mathbf{Set}^{\mathcal{C}^\text{op}}$ 为函子。
+[87] 提示：观察上述定义，可以注意到前者为逆变函子，后者为协变函子。
+
+[/SCOPE:s_ex2]
+[SCOPE:s_thm1|description|定理 1 Yoneda 引理]
+[88] 定理 1 Yoneda 引理
+[SCOPE:s_thm1_let1|let_bind|Yoneda 引理的变量]
+[89] 对于任意局部集合范畴 $\mathcal{C}$ 和 $A,B\in \operatorname {Ob}(\mathcal{C})$，
+[90] 给定协变函子 $F:\mathcal{C}\overset{\text{co}}{\to}\mathbf{Set}$，存在双射 $ \operatorname {Nat}(h^A,F)\simeq F(A)$；
+[91] 给定逆变函子 $G:\mathcal{C}\overset{\text{ct}}{\to}\mathbf{Set}$，存在双射 $ \operatorname {Nat}(h_B,G)\simeq G(B)$
+[/SCOPE:s_thm1_let1]
+[92] 证明。
+[SCOPE:s_thm1_let2|let_bind|证明中的变量 1]
+[93] 对于自然变换 $\Phi:h^A\Rightarrow F$，我们将它映射到 $u=m(\Psi)=\Phi_A( \operatorname {id}_A)$（注意此处 $\Phi_A$ 是 $\mathbf{Set}$ 中 $h^A(A)\to F(A)$ 的态射，
+[94] 即一个映射）；
+[/SCOPE:s_thm1_let2]
+[SCOPE:s_thm1_let3|let_bind|证明中的变量 2]
+[95a] (f)
+[95b] (v)$ 定义的自然变换 $n
+[95c] (v)=\Psi$。
+[/SCOPE:s_thm1_let3]
+[96] 以下练习证明了 $m\circ n= \operatorname {id}$ 和 $n\circ m= \operatorname {id}$，
+[97] 即得所需双射。
+[98] 另一部分的证明留作练习。
+
+[/SCOPE:s_thm1]
+[SCOPE:s_ex3|description|习题 3]
+[99] 习题 3
+[100] 请尝试证明在上述证明中，$m\circ n= \operatorname {id}$ 和 $n\circ m= \operatorname {id}$。
+[101] 解答。
+[SCOPE:s_ex3_let1|let_bind|习题 3 变量 1]
+[102] $m\circ n$：若 $v\in F(A)$，
+[103a] (v)=\Psi$，其中 $\Psi_X
+[103b] (f)=F
+[103c] (f)
+[103d] (v)$，我们有 $m(\Psi)=\Psi_A( \operatorname {id}_A)=F(id_A)
+[103e] (v)=id_{F(A)}
+[103f] (v)=v$；
+[/SCOPE:s_ex3_let1]
+[SCOPE:s_ex3_let2|let_bind|习题 3 变量 2]
+[104] $n\circ m$：若 $\Phi\in \operatorname {Nat}(h^A,F)$，
+[105] 则下图对任意 $\phi:X'\to Y'$ 和 $\psi:A\to X'$ 交换，
+[106] 图 3：此图交换
+[107] 即 $F(\phi)(\Phi_{X'}(\psi))=\Phi_{Y'}(h^A(\phi)(\psi))$ 成立。
+[108] 取 $X'=A,\,Y'=X,\,\phi=f:A\to X,\,\psi= \operatorname {id}_A:A\to A$，
+[109a] (f)(\Phi_A( \operatorname {id}_A))=\Phi_X(h^A
+[109b] (f)( \operatorname {id}_A))=\Phi_X(f\circ \operatorname {id}_A)=\Phi_X
+[109c] (f)$。
+[110a] (u)=\Psi$，其中 $\Psi_X
+[110b] (f)=F
+[110c] (f)(\Phi_A( \operatorname {id}_A))$。
+[111a] (f)=F
+[111b] (f)(\Phi_A( \operatorname {id}_A))=\Psi_X
+[111c] (f)$，
+[112] 即得 $\Psi=\Phi$。
+
+[/SCOPE:s_ex3]
+[/SCOPE:s_ex3_let2]
+[SCOPE:s_ex4|description|习题 4]
+[113] 习题 4
+[114] 模仿上述证明，证明 Yoneda 引理的第二部分。
+[/SCOPE:s_ex4]
+[/SCOPE:root]
+
+## Scope 间关系
+[
+  {
+    "source_scope": "s_ex1",
+    "target_scope": "s_def1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题 1 是关于定义 1 的练习"
+  },
+  {
+    "source_scope": "s_ex2",
+    "target_scope": "s_def5",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题 2 是关于 Hom 函子的练习"
+  },
+  {
+    "source_scope": "s_ex3",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题 3 是关于 Yoneda 引理证明的练习"
+  },
+  {
+    "source_scope": "s_ex4",
+    "target_scope": "s_thm1",
+    "edge_type": "special_case",
+    "category": "logic",
+    "note": "习题 4 是关于 Yoneda 引理第二部分的练习"
+  }
+]

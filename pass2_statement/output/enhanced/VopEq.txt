@@ -1,0 +1,75 @@
+[SCOPE:root|description|矢量算符运算法则]
+文章名: VopEq
+标题: 矢量算符运算法则
+
+[0] 每个等式给出一些百科中应用的链接
+[1] 1这里列举一些常用的矢量算符恒等式，证明见文末。
+
+[SCOPE:s_gradient|description|梯度]
+[2] \begin{equation}
+\boldsymbol\nabla (fg) = f \boldsymbol\nabla g + g \boldsymbol\nabla f~,
+\end{equation}
+[3] \begin{equation}
+\boldsymbol\nabla ( \boldsymbol{\mathbf{A}} \boldsymbol\cdot \boldsymbol{\mathbf{B}} ) = \boldsymbol{\mathbf{A}} \boldsymbol\times ( \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{B}} ) + \boldsymbol{\mathbf{B}} \boldsymb…[truncated]…l{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{A}} ) + ( \boldsymbol{\mathbf{A}} \boldsymbol\cdot \boldsymbol\nabla ) \boldsymbol{\mathbf{B}} + ( \boldsymbol{\mathbf{B}} \boldsymbol\cdot \boldsymbol\nabla ) \boldsymbol{\mathbf{A}} ~.
+\end{equation}
+
+[/SCOPE:s_gradient]
+[SCOPE:s_divergence|description|散度]
+[4] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\cdot} (f \boldsymbol{\mathbf{A}} ) = f ( \boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{A}} ) + \boldsymbol{\mathbf{A}} \boldsymbol\cdot ( \boldsymbol\nabla f)~,
+\end{equation}
+[5] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\cdot} ( \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} ) = \boldsymbol{\mathbf{B}} \boldsymbol\cdot ( \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{A}} ) - \boldsymbol{\mathbf{A}} \boldsymbol\cdot ( \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{B}} )~.
+\end{equation}
+
+[/SCOPE:s_divergence]
+[SCOPE:s_curl|description|旋度]
+[6] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\times} (f \boldsymbol{\mathbf{A}} ) = f ( \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{A}} ) + ( \boldsymbol\nabla f) \boldsymbol\times \boldsymbol{\mathbf{A}} ~,
+\end{equation}
+[7] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\times} ( \boldsymbol{\mathbf{A}} \boldsymbol\times \boldsymbol{\mathbf{B}} ) = ( \boldsymbol{\mathbf{B}} \boldsymbol\cdot \boldsymbol\nabla ) \boldsymbol{\mathbf{A}} - ( \boldsymbol{\mathbf{A}} \boldsy…[truncated]…\cdot \boldsymbol\nabla ) \boldsymbol{\mathbf{B}} + \boldsymbol{\mathbf{A}} ( \boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{B}} ) - \boldsymbol{\mathbf{B}} ( \boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{A}} )~.
+\end{equation}
+
+[/SCOPE:s_curl]
+[SCOPE:s_second_derivatives|description|二阶导数]
+[8] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\cdot} ( \boldsymbol\nabla f) = \boldsymbol{\nabla}^2 f~,
+\end{equation}
+[9] \begin{equation}
+\boldsymbol{\nabla}^2 (f \boldsymbol{\mathbf{v}} ) = ( \boldsymbol{\nabla}^2 f) \boldsymbol{\mathbf{v}} + f \boldsymbol{\nabla}^2 \boldsymbol{\mathbf{v}} + 2 ( \boldsymbol\nabla f \boldsymbol\cdot \boldsymbol\nabla ) \boldsymbol{\mathbf{v}} ~,
+\end{equation}
+[10] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\times} ( \boldsymbol\nabla f) = \boldsymbol{\mathbf{0}} ~,
+\end{equation}
+[11] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\cdot} ( \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{v}} ) = 0~,
+\end{equation}
+[12] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\times} ( \boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{v}} ) = \boldsymbol\nabla ( \boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{v}} ) - \boldsymbol{\nabla}^2 \boldsymbol{\mathbf{v}} ~.
+\end{equation}
+
+[/SCOPE:s_second_derivatives]
+[SCOPE:s_chain_rule|description|复合函数求导]
+[13] 使用链式法则容易证明以下关系
+[14] \begin{equation}
+\boldsymbol\nabla f[g( \boldsymbol{\mathbf{r}} )] = f'[g( \boldsymbol{\mathbf{r}} )] \boldsymbol\nabla g( \boldsymbol{\mathbf{r}} )~,
+\end{equation}
+[15] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\cdot} \boldsymbol{\mathbf{f}} [g( \boldsymbol{\mathbf{r}} )] = \boldsymbol{\mathbf{f}} '[g( \boldsymbol{\mathbf{r}} )] \boldsymbol\cdot \boldsymbol\nabla g( \boldsymbol{\mathbf{r}} )~,
+\end{equation}
+[16] \begin{equation}
+\boldsymbol{\nabla}\boldsymbol{\times} \boldsymbol{\mathbf{f}} [g( \boldsymbol{\mathbf{r}} )] = \left[ \boldsymbol\nabla g( \boldsymbol{\mathbf{r}} ) \right] \boldsymbol\times \boldsymbol{\mathbf{f}} '[g( \boldsymbol{\mathbf{r}} )]~,
+\end{equation}
+[17] \begin{equation}
+\boldsymbol{\nabla}^2 f[g( \boldsymbol{\mathbf{r}} )] = f''[g( \boldsymbol{\mathbf{r}} )] ( \boldsymbol\nabla g)^2 + f'[g( \boldsymbol{\mathbf{r}} )] \boldsymbol{\nabla}^2 g( \boldsymbol{\mathbf{r}} )~.
+\end{equation}
+
+[/SCOPE:s_chain_rule]
+[SCOPE:s_proof|description|证明]
+[18] 理论上，我们可以直接根据定义，将各个矢量记为分量的形式证明，
+[19] 但直接写出来非常繁琐。
+[20] 一种简单的记号是使用克罗内克 delta 函数 $\delta_{i,j}$ 和 Levi-Civita 符号 $\epsilon_{i,j,k}$，再结合爱因斯坦求和约定证明。
+[21] 我们另外推荐一种不需要写出分量的推导方法，见 “一种矢量算符的运算方法”。
+[/SCOPE:s_proof]
+[/SCOPE:root]

@@ -1,0 +1,235 @@
+{
+  "article_name": "IntBP2",
+  "statements": [
+    {
+      "stmt_id": "st_region_setup",
+      "subtype": "assumption",
+      "clause_range": [
+        0,
+        0
+      ],
+      "truth_value": null,
+      "scope_id": "root",
+      "exposed_entities": [
+        "V",
+        "S"
+      ]
+    },
+    {
+      "stmt_id": "st_scalar_intro",
+      "subtype": "remark",
+      "clause_range": [
+        1,
+        1
+      ],
+      "truth_value": null,
+      "scope_id": "s_scalar",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_scalar_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        2,
+        2
+      ],
+      "truth_value": "true",
+      "scope_id": "s_scalar",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_scalar_2d",
+      "subtype": "remark",
+      "clause_range": [
+        3,
+        3
+      ],
+      "truth_value": null,
+      "scope_id": "s_scalar",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_scalar_1d",
+      "subtype": "remark",
+      "clause_range": [
+        4,
+        4
+      ],
+      "truth_value": null,
+      "scope_id": "s_scalar",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_scalar_proof_start",
+      "subtype": "assumption",
+      "clause_range": [
+        5,
+        5
+      ],
+      "truth_value": null,
+      "scope_id": "s_scalar_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_scalar_proof_eq2",
+      "subtype": "conclusion",
+      "clause_range": [
+        6,
+        6
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_scalar_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_scalar_proof_need",
+      "subtype": "assumption",
+      "clause_range": [
+        7,
+        8
+      ],
+      "truth_value": null,
+      "scope_id": "s_scalar_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_scalar_proof_ref",
+      "subtype": "remark",
+      "clause_range": [
+        9,
+        9
+      ],
+      "truth_value": null,
+      "scope_id": "s_scalar_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_scalar_proof_conclude",
+      "subtype": "conclusion",
+      "clause_range": [
+        10,
+        11
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_scalar_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vector_formula",
+      "subtype": "theorem",
+      "clause_range": [
+        12,
+        12
+      ],
+      "truth_value": "true",
+      "scope_id": "s_vector",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vector_ref",
+      "subtype": "remark",
+      "clause_range": [
+        13,
+        15
+      ],
+      "truth_value": null,
+      "scope_id": "s_vector",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vector_proof_start",
+      "subtype": "assumption",
+      "clause_range": [
+        16,
+        16
+      ],
+      "truth_value": null,
+      "scope_id": "s_vector_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vector_proof_eq",
+      "subtype": "conclusion",
+      "clause_range": [
+        17,
+        17
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_vector_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vector_proof_div",
+      "subtype": "assumption",
+      "clause_range": [
+        18,
+        18
+      ],
+      "truth_value": null,
+      "scope_id": "s_vector_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vector_proof_ref",
+      "subtype": "remark",
+      "clause_range": [
+        19,
+        20
+      ],
+      "truth_value": null,
+      "scope_id": "s_vector_proof",
+      "exposed_entities": []
+    },
+    {
+      "stmt_id": "st_vector_proof_conclude",
+      "subtype": "conclusion",
+      "clause_range": [
+        21,
+        21
+      ],
+      "truth_value": "conditional",
+      "scope_id": "s_vector_proof",
+      "exposed_entities": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "st_scalar_proof_start",
+      "target": "st_scalar_proof_eq2",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_scalar_proof_need",
+      "target": "st_scalar_proof_conclude",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_scalar_proof_eq2",
+      "target": "st_scalar_proof_conclude",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_vector_proof_start",
+      "target": "st_vector_proof_eq",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_vector_proof_div",
+      "target": "st_vector_proof_conclude",
+      "edge_type": "implies",
+      "category": "logic"
+    },
+    {
+      "source": "st_vector_proof_eq",
+      "target": "st_vector_proof_conclude",
+      "edge_type": "implies",
+      "category": "logic"
+    }
+  ],
+  "cross_scope_edges": [],
+  "unresolved": []
+}
