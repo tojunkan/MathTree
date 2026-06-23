@@ -35,8 +35,13 @@ def resolve_article(article_name: str, anchor_map: dict) -> tuple[str | None, li
         if anchor in anchors:
             rng = anchors[anchor]
             if rng[0] == rng[1]:
-                return f"[{prefix}:{ref_text}|idx:{rng[0]}]"
-            return f"[{prefix}:{ref_text}|idx:{rng[0]}-{rng[1]}]"
+                idx_str = str(rng[0])
+            else:
+                idx_str = f"{rng[0]}-{rng[1]}"
+            if prefix == "EXT":
+                return f"[EXT:{ref_text}|{ref_article}|idx:{idx_str}]"
+            return f"[REF:{ref_text}|idx:{idx_str}]"
+            return f"[REF:{ref_text}|idx:{idx_str}]"
         unresolved.append(f"[{prefix}:{ref_text}|{ref_article}#{anchor}]")
         return f"[{prefix}:{ref_text}|{ref_article}#{anchor}]"
 
