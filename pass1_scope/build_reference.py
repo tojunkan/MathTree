@@ -27,20 +27,21 @@ def resolve_article(article_name: str, anchor_map: dict) -> tuple[str | None, li
     unresolved: list[str] = []
 
     def _resolve(m):
-        ref_text = m.group(1)
-        ref_article = m.group(2)
-        anchor = m.group(3)
+        prefix = m.group(1)  # REF or EXT
+        ref_text = m.group(2)
+        ref_article = m.group(3)
+        anchor = m.group(4)
         anchors = anchor_map.get(ref_article, {})
         if anchor in anchors:
             rng = anchors[anchor]
             if rng[0] == rng[1]:
-                return f"[REF:{ref_text}|idx:{rng[0]}]"
-            return f"[REF:{ref_text}|idx:{rng[0]}-{rng[1]}]"
-        unresolved.append(f"[REF:{ref_text}|{ref_article}#{anchor}]")
-        return f"[REF:{ref_text}|{ref_article}#{anchor}]"
+                return f"[{prefix}:{ref_text}|idx:{rng[0]}]"
+            return f"[{prefix}:{ref_text}|idx:{rng[0]}-{rng[1]}]"
+        unresolved.append(f"[{prefix}:{ref_text}|{ref_article}#{anchor}]")
+        return f"[{prefix}:{ref_text}|{ref_article}#{anchor}]"
 
     text = re.sub(
-        r"\[REF:([^\]|]+)\|([^#]+)#([^\]]+)\]",
+        r"\[(REF|EXT):([^\]|]+)\|([^#]+)#([^\]]+)\]",
         _resolve,
         text,
     )

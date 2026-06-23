@@ -51,7 +51,9 @@ def _replace_links_in_text(html: str, article_name: str) -> str:
             path = href.rsplit("#", 1)[0]
             if "/" in path:
                 article = path.rsplit("/", 1)[-1].replace(".html", "")
-        return f"[REF:{text.strip()}|{article or article_name}#{anchor}]"
+        ref_article = article or article_name
+        prefix = "EXT" if (article and article != article_name) else "REF"
+        return f"[{prefix}:{text.strip()}|{ref_article}#{anchor}]"
     return re.sub(r"<a\s[^>]*?href\s*=\s*[\"']([^\"']+)[\"'][^>]*>(.*?)</a>", _replace_link, html, flags=re.DOTALL)
 
 
