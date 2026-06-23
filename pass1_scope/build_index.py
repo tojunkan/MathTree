@@ -104,7 +104,7 @@ def process_html(raw_html: str, article_name: str) -> tuple[str, dict, list, str
 
     # span 锚点：替换 span → 开标签，找后续 div → 闭标签
     for m in re.finditer(
-        r"<span\s[^>]*?\bid\s*=\s*[\"']((the_|def_|eq_|lem_|cor_|ex_|fig_|exe_)\w+)[\"'][^>]*>\s*</span>", html
+        r"<span\s[^>]*?\bid\s*=\s*[\"']((the_|def_|eq_|lem_|cor_|ex_|fig_|exe_|sub_)\w+)[\"'][^>]*>\s*</span>", html
     ):
         start, end = m.start(), m.end()
         aid = m.group(1)
