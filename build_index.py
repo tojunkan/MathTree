@@ -97,6 +97,48 @@ def _protect_display_math(text: str) -> tuple[str, list[str]]:
     return "".join(result), blocks
 
 
+# ── 内联文本构建（保留段落内的 <a> 链接标记）──
+
+def _build_inline_text(elem, links_list: list) -> str:
+    """遍历段落子元素，文内引用标 [REF:文字|idx:X]，文外引用标 [EXT:文字|name:...]。"""
+    parts = []
+    for child in elem.children:
+        if hasattr(child, "name") and child.name == "a":
+            text = child.get_text(strip=True)
+            if not text:
+                continue
+            link_info = _extract_link_info(child)
+            if link_info and link_info.get("type") == "cross_ref":
+                # 文外引用 → [EXT:...|name:...]
+                target = link_info.get("target_article", "?")
+                link_info["id"] = f"L{len(links_list)}"
+                links_list.append(link_info)
+                parts.append(f"[EXT:{text}|name:{target}]")
+            elif link_info and link_info.get("type") in ("internal_ref", "footnote_ref", "bib_ref"):
+                # 文内引用 → [REF:...|idx:X]
+                link_info["id"] = f"L{len(links_list)}"
+                links_list.append(link_info)
+                parts.append(f"[REF:{text}|idx:L{len(links_list)-1}]")
+            else:
+                parts.append(text)
+        elif hasattr(child, "name") and child.name == "sup":
+            # 脚注引用 → [FN:n]
+            a_tag = child.find("a", href=True) if hasattr(child, "find") else None
+            if a_tag and re.search(r"note\d+", a_tag.get("href", "")):
+                text = child.get_text(strip=True)
+                if text:
+                    parts.append(f"[FN:{text}]")
+            else:
+                text = child.get_text(strip=True)
+                if text:
+                    parts.append(text)
+        else:
+            text = _clean(child.get_text() if hasattr(child, "get_text") else str(child))
+            if text:
+                parts.append(text)
+    return " ".join(parts).strip()
+
+
 # ── 子句切分 ──
 
 def _split_to_clauses(text: str) -> list[str]:
@@ -154,6 +196,14 @@ def _extract_from_html(html_path: Path) -> dict:
     h1 = soup.find("h1")
     title = _extract_text(h1) if h1 else ""
 
+    # ── 预处理：把脚注 <sup> 替换为 [FN:n] 文本节点 ──
+    for sup in soup.find_all("sup"):
+        a_tag = sup.find("a", href=True)
+        if a_tag and re.search(r"note\d+", a_tag.get("href", "")):
+            text = sup.get_text(strip=True)
+            if text:
+                sup.replace_with(f"[FN:{text}]")
+
     # 定位正文容器
     card = soup.select_one("div.w3-card-4")
     containers = card.find_all("div", class_="w3-container", recursive=False) if card else []
@@ -208,10 +258,34 @@ def _extract_from_html(html_path: Path) -> dict:
     def _flush_block():
         nonlocal current_heading, current_parts
         if current_heading is not None and current_parts:
+            # 合并过短的相邻片段（如 \"是\" + \"实系数\" + \"多项式\" → 一行）
+            merged = []
+            buf = ""
+            for p in current_parts:
+                stripped = p.strip()
+                if not stripped:
+                    continue
+                # 显示公式、链接标记、环境标题 不合并，独立行
+                if stripped.startswith("\\begin{") or stripped.startswith("[REF:") or stripped.startswith("[EXT:") or stripped.startswith("【"):
+                    if buf:
+                        merged.append(buf.strip())
+                        buf = ""
+                    merged.append(stripped)
+                elif len(stripped) < 20 and not re.search(r"[。！？]$", stripped):
+                    buf += stripped
+                else:
+                    if buf:
+                        buf += stripped
+                        merged.append(buf.strip())
+                        buf = ""
+                    else:
+                        merged.append(stripped)
+            if buf:
+                merged.append(buf.strip())
             blocks.append({
                 "level": current_heading["level"],
                 "heading": current_heading["heading"],
-                "text": "\n\n".join(current_parts),
+                "text": "\n\n".join(merged),
             })
         current_heading = None
         current_parts = []
@@ -221,7 +295,7 @@ def _extract_from_html(html_path: Path) -> dict:
         for child in main.children:
             if not hasattr(child, "name") or child.name is None:
                 text = _clean(str(child))
-                if text and len(text) > 3:
+                if text:
                     current_parts.append(text)
                 continue
 
@@ -272,13 +346,21 @@ def _extract_from_html(html_path: Path) -> dict:
                     _flush_block()
                     current_heading = {"level": 3, "heading": env_heading}
 
-                # 收集面板内的所有文本
+                # 收集面板内的所有文本（含 NavigableString，<p> 内联处理）
                 for sub in child.children:
-                    if not hasattr(sub, "name") or sub.name is None:
-                        continue
-                    sub_text = _extract_text(sub)
-                    if sub_text and len(sub_text) > 3:
-                        current_parts.append(sub_text)
+                    if hasattr(sub, "name") and sub.name is not None:
+                        if sub.name in ("p",):
+                            sub_text = _build_inline_text(sub, links)
+                            if sub_text:
+                                current_parts.append(sub_text)
+                        else:
+                            sub_text = _extract_text(sub)
+                            if sub_text:
+                                current_parts.append(sub_text)
+                    else:
+                        sub_text = _clean(str(sub))
+                        if sub_text:
+                            current_parts.append(sub_text)
 
                 # 注意：不在这里 flush——面板后的 prose/proof 也归入此 block
                 continue
@@ -297,33 +379,35 @@ def _extract_from_html(html_path: Path) -> dict:
                     current_parts.append("【图解】" + text)
                 continue
 
-            # <a> 标签 — 提取为链接清单，同时在正文中保留文本
+            # <a> 标签（直接子元素）— 文内/文外引用区分
             if tag_name == "a":
                 link_info = _extract_link_info(child)
                 text = child.get_text(strip=True)
-                if link_info:
+                if link_info and link_info.get("type") == "cross_ref":
+                    target = link_info.get("target_article", "?")
                     link_info["id"] = f"L{global_link_idx}"
                     links.append(link_info)
-                    # 在正文中用占位符标记
-                    current_parts.append(f"{text} [链接 L{global_link_idx}]")
+                    current_parts.append(f"[EXT:{text}|name:{target}]")
+                    global_link_idx += 1
+                elif link_info:
+                    link_info["id"] = f"L{global_link_idx}"
+                    links.append(link_info)
+                    current_parts.append(f"[REF:{text}|idx:L{global_link_idx}]")
                     global_link_idx += 1
                 elif text:
                     current_parts.append(text)
                 continue
 
-            # 段落、列表
+            # 段落、列表 — 遍历子元素，保留内联 <a> 链接
             if tag_name in ("p", "ul", "ol"):
-                # 检查此元素内是否有链接
-                sub_links = child.find_all("a", href=True)
-                text = _extract_text(child)
-                if not text or len(text) < 3:
+                para_text = _build_inline_text(child, links)
+                if not para_text:
                     continue
-                # 不在此处标记链接——链接文本已在 get_text() 中
-                if re.match(r"贡献者[：:]", text):
+                if re.match(r"贡献者[：:]", para_text):
                     continue
-                if re.match(r"^\d+\.\s*\^", text):
+                if re.match(r"^\d+\.\s*\^", para_text):
                     continue
-                current_parts.append(text)
+                current_parts.append(para_text)
                 continue
 
             # 其他 div / span — 有文本就收集
@@ -343,11 +427,17 @@ def _extract_from_html(html_path: Path) -> dict:
                     current_parts.append(text)
                 continue
 
-            # sup — 脚注引用
+            # sup — 脚注引用 → [FN:n]
             if tag_name == "sup":
-                text = child.get_text(strip=True)
-                if text:
-                    current_parts.append(text)
+                a_tag = child.find("a", href=True)
+                if a_tag and re.search(r"note\d+", a_tag.get("href", "")):
+                    text = child.get_text(strip=True)
+                    if text:
+                        current_parts.append(f"[FN:{text}]")
+                else:
+                    text = child.get_text(strip=True)
+                    if text:
+                        current_parts.append(text)
                 continue
 
         # flush last block
@@ -359,12 +449,36 @@ def _extract_from_html(html_path: Path) -> dict:
         if all_text:
             blocks = [{"level": 1, "heading": title, "text": all_text}]
 
+    # ── 提取脚注（<hr> 后的 1.^ 2.^ 格式）──
+    footnotes = {}
+    hr = soup.find("hr")
+    if hr:
+        fn_parts = []
+        current = hr.find_next_sibling()
+        while current:
+            classes = " ".join(current.get("class", [])) if hasattr(current, "get") else ""
+            if "w3-pale-green" in classes or "w3-gray" in classes:
+                break
+            if current.name == "p":
+                text = _extract_text(current)
+                if text:
+                    fn_parts.append(text)
+            current = current.find_next_sibling()
+        full_fn = "\n".join(fn_parts)
+        for m in re.finditer(r"(\d+)\.\s*\^\s*(.*?)(?=\n?\d+\.\s*\^|$)", full_fn, re.DOTALL):
+            num = m.group(1)
+            content = _clean(m.group(2))
+            content = re.sub(r"\n\[\d+\].*$", "", content).strip()
+            if content:
+                footnotes[num] = content
+
     return {
         "title": title,
         "sections": sections,
         "environments": environments,
         "blocks": blocks,
         "links": links,
+        "footnotes": footnotes,
     }
 
 
@@ -380,7 +494,9 @@ def build_indexed(extracted: dict, article_name: str) -> str:
         for ei, env in enumerate(extracted["environments"]):
             parts.append(f"  [{ei}] type={env['type']} heading={env.get('heading','')} title={env.get('title','')}")
     parts.append(f"\n正文（{len(extracted.get('blocks', []))} 个 block，每个子句前的数字是唯一索引）:")
+    footnotes = extracted.get("footnotes", {})
     global_idx = 0
+    fn_re = re.compile(r"\[FN:(\d+)\]")
     for bi, block in enumerate(extracted.get("blocks", [])):
         parts.append(f"\n## Block {bi}: {block['heading']}（索引 {global_idx}）\n")
         clauses = _split_to_clauses(block["text"])
@@ -388,12 +504,13 @@ def build_indexed(extracted: dict, article_name: str) -> str:
             display = clause if len(clause) <= 500 else clause[:250] + "…[truncated]…" + clause[-250:]
             parts.append(f"[{global_idx}] {display}")
             global_idx += 1
-    # 链接清单（精简，只放有 target_article 的跨文章引用）
-    cross_refs = [l for l in extracted.get("links", []) if l.get("type") == "cross_ref"]
-    if cross_refs:
-        parts.append(f"\n\n跨文章引用:")
-        for l in cross_refs:
-            parts.append(f"  [{l['id']}] {l['text']} → {l['target_article']}")
+            # 如果子句中有 [FN:n]，插入脚注内容作为下一个子句
+            for m in fn_re.finditer(clause):
+                fn_num = m.group(1)
+                fn_text = footnotes.get(fn_num, "")
+                if fn_text:
+                    parts.append(f"[{global_idx}] ^ {fn_text}")
+                    global_idx += 1
     return "\n".join(parts)
 
 
