@@ -377,7 +377,11 @@ def main():
         html_paths = sorted(RAW_DIR.glob("*.html"))
     print(f"Building indexed input from {len(html_paths)} HTML files")
 
-    all_anchors = {}
+    # 锚点表：--all 清空，--article 追加
+    anchor_path = OUTPUT_DIR / "anchors.json"
+    if args.all and anchor_path.exists():
+        anchor_path.unlink()
+    all_anchors = json.loads(anchor_path.read_text(encoding="utf-8")) if anchor_path.exists() else {}
     success = 0
     for html_path in html_paths:
         name = html_path.stem
@@ -406,7 +410,6 @@ def main():
             print(f"  {name}: FAIL - {e}")
 
     if all_anchors:
-        anchor_path = OUTPUT_DIR / "anchors.json"
         anchor_path.write_text(json.dumps(all_anchors, ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"Anchors saved: {len(all_anchors)} articles")
 
